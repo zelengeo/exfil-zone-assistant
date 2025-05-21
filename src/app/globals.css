@@ -1,26 +1,176 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@config "../../tailwind.config.js";
+@layer base {
+  html {
+    @apply text-tan-100 bg-military-900;
+    scroll-behavior: smooth;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  body {
+    @apply font-sans text-base antialiased;
+    /* Replace image background with CSS pattern */
+    background-image:
+            radial-gradient(rgba(77, 82, 68, 0.1) 2px, transparent 2px),
+            radial-gradient(rgba(77, 82, 68, 0.1) 2px, transparent 2px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    background-blend-mode: overlay;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Improved readability for VR */
+  p {
+    @apply leading-relaxed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  /* Military-style form controls for VR */
+  button,
+  [type='button'],
+  [type='submit'] {
+    @apply cursor-pointer min-h-12 min-w-12 flex items-center justify-center border border-olive-600;
+  }
+
+  input,
+  select,
+  textarea {
+    @apply min-h-12 px-4 text-lg bg-military-800 border border-olive-700 focus:border-olive-500;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  /* VR-specific utilities */
+  .vr-touch-target {
+    @apply min-h-16 min-w-16 p-4;
+  }
+
+  .vr-text {
+    @apply text-lg md:text-xl;
+  }
+
+  .vr-heading {
+    @apply text-2xl md:text-3xl;
+  }
+
+  /* Military-style elements */
+  .military-box {
+    @apply bg-military-800 border border-olive-700 shadow-lg;
+  }
+
+  .military-card {
+    @apply bg-military-800 border border-olive-700 shadow-md;
+  }
+
+  .military-button {
+    @apply bg-olive-600 hover:bg-olive-500 text-tan-100 border border-olive-700;
+  }
+
+  .military-button-secondary {
+    @apply bg-military-700 hover:bg-military-600 text-tan-100 border border-olive-800;
+  }
+
+  /* High contrast for VR readability */
+  .vr-high-contrast {
+    @apply text-tan-100 bg-military-900 shadow-lg;
+  }
+
+  /* Depth effect for VR */
+  .vr-depth {
+    @apply shadow-xl transform transition-transform hover:scale-105;
+  }
+
+  /* Stencil pattern */
+  .military-stencil {
+    font-family: 'Special Elite', monospace;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* Custom scrollbar for better VR navigation */
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-military-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-olive-600 rounded-full border-4 border-solid border-military-800;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-olive-500;
+}
+
+/* Military-style elements */
+.ammo-count {
+  font-family: 'Digital-7', monospace;
+}
+
+/* Overlay texture */
+.texture-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  /* CSS-based camo pattern */
+  background-image:
+          linear-gradient(45deg, rgba(121, 131, 69, 0.3) 25%, transparent 25%),
+          linear-gradient(-45deg, rgba(121, 131, 69, 0.3) 25%, transparent 25%),
+          linear-gradient(45deg, transparent 75%, rgba(121, 131, 69, 0.3) 75%),
+          linear-gradient(-45deg, transparent 75%, rgba(121, 131, 69, 0.3) 75%);
+  background-size: 60px 60px;
+  background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+}
+
+/* Diagonal clip effect */
+.clip-diagonal {
+  clip-path: polygon(0 0, 100% 100%, 100% 0, 0% 100%);
+}
+
+/* Military-style dividers */
+.military-divider {
+  position: relative;
+  height: 20px;
+  overflow: hidden;
+}
+
+.military-divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: repeating-linear-gradient(
+          -45deg,
+          rgba(102, 95, 66, 0.7),
+          rgba(102, 95, 66, 0.7) 10px,
+          rgba(26, 28, 24, 0.7) 10px,
+          rgba(26, 28, 24, 0.7) 20px
+  );
+}
+
+/* Animation utilities */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Ensure correct rendering in VR browsers */
+@media (min-resolution: 2dppx) {
+  html {
+    @apply text-lg;
+  }
 }
