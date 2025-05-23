@@ -1,0 +1,404 @@
+{
+  "weapons": [
+    {
+      "id": "weapon-001",
+      "name": "M4A1 Assault Rifle",
+      "description": "A reliable and versatile assault rifle chambered in 5.56mm.",
+      "category": "weapons",
+      "subcategory": "5.56mm",
+      "images": {
+        "icon": "/images/items/weapons/m4a1_icon.png",
+        "thumbnail": "/images/items/weapons/m4a1_thumb.png",
+        "fullsize": "/images/items/weapons/m4a1_full.png"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 35000,
+        "weight": 3.4,
+        "size": "2x4",
+        "safeSlots": 0,
+        "damage": 55,
+        "penetration": 45,
+        "fireRate": 800,
+        "recoil": 70,
+        "accuracy": 85,
+        "effectiveRange": 300
+      },
+      "locations": [
+        {
+          "map": "factory",
+          "spots": [
+            { "x": 120, "y": 340, "description": "Found in weapons crate near extraction point" },
+            { "x": 230, "y": 180, "description": "Potential spawn on weapon rack in the armory" }
+          ]
+        },
+        {
+          "map": "woods",
+          "spots": [
+            { "x": 430, "y": 260, "description": "Military camp weapon box" }
+          ]
+        }
+      ],
+      "relatedQuests": ["quest-007", "quest-015"],
+      "notes": "Popular choice for mid to late game engagements. Can be heavily customized.",
+      "tips": "Works best with a compensator to reduce recoil. High fire rate makes it deadly in close quarters."
+    },
+    {
+      "id": "weapon-002",
+      "name": "AK-74 Assault Rifle",
+      "description": "Soviet-designed assault rifle chambered in 5.45x39mm. Reliable in harsh conditions.",
+      "category": "weapons",
+      "subcategory": "5.56mm",
+      "images": {
+        "icon": "/images/items/weapons/ak74_icon.png",
+        "thumbnail": "/images/items/weapons/ak74_thumb.png",
+        "fullsize": "/images/items/weapons/ak74_full.png"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 28000,
+        "weight": 3.6,
+        "size": "2x4",
+        "safeSlots": 0,
+        "damage": 60,
+        "penetration": 40,
+        "fireRate": 650,
+        "recoil": 75,
+        "accuracy": 80,
+        "effectiveRange": 350
+      },
+      "locations": [
+        {
+          "map": "factory",
+          "spots": [
+            { "x": 150, "y": 220, "description": "Weapons crate in the main factory floor" }
+          ]
+        },
+        {
+          "map": "customs",
+          "spots": [
+            { "x": 310, "y": 180, "description": "Military checkpoint" },
+            { "x": 420, "y": 310, "description": "Dorms weapon locker" }
+          ]
+        }
+      ],
+      "relatedQuests": ["quest-003"],
+      "notes": "Standard issue rifle that can be found on most AI combatants.",
+      "tips": "Lower fire rate than the M4 but with higher damage per shot. Effective at medium range."
+    }
+  ],
+  "ammo": [
+    {
+      "id": "ammo-001",
+      "name": "5.56x45mm NATO",
+      "description": "Standard NATO rifle cartridge used in weapons like the M4A1.",
+      "category": "ammo",
+      "subcategory": "5.56mm",
+      "images": {
+        "icon": "/images/items/ammo/556_icon.png",
+        "thumbnail": "/images/items/ammo/556_thumb.png",
+        "fullsize": "/images/items/ammo/556_full.png"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 300,
+        "weight": 0.01,
+        "size": "1x1",
+        "safeSlots": 60,
+        "damage": 54,
+        "penetration": 37
+      },
+      "locations": [
+        {
+          "map": "factory",
+          "spots": [
+            { "x": 130, "y": 160, "description": "Ammo crate in the armory" }
+          ]
+        },
+        {
+          "map": "customs",
+          "spots": [
+            { "x": 280, "y": 210, "description": "Military tents near checkpoint" }
+          ]
+        }
+      ],
+      "craftingRecipes": [
+        {
+          "inputs": [
+            { "itemId": "junk-012", "quantity": 2 },
+            { "itemId": "junk-015", "quantity": 1 }
+          ],
+          "output": { "quantity": 150 }
+        }
+      ]
+    }
+  ],
+  "medicine": [
+    {
+      "id": "medicine-001",
+      "name": "Combat Medkit",
+      "description": "Military-grade medkit for treating various injuries in the field.",
+      "category": "medicine",
+      "subcategory": "Medkits",
+      "images": {
+        "icon": "/images/items/medicine/medkit_icon.png",
+        "thumbnail": "/images/items/medicine/medkit_thumb.png",
+        "fullsize": "/images/items/medicine/medkit_full.png"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 15000,
+        "weight": 1.2,
+        "size": "1x2",
+        "safeSlots": 1,
+        "healAmount": 250,
+        "useTime": 5,
+        "duration": 0
+      },
+      "locations": [
+        {
+          "map": "factory",
+          "spots": [
+            { "x": 220, "y": 180, "description": "Medical cabinet in the office area" }
+          ]
+        },
+        {
+          "map": "customs",
+          "spots": [
+            { "x": 350, "y": 240, "description": "Medical supply crate" }
+          ]
+        }
+      ],
+      "relatedQuests": ["quest-008", "quest-020"],
+      "notes": "Heals all types of damage except fractures.",
+      "tips": "Use from a safe position as it has a lengthy application time."
+    },
+    {
+      "id": "medicine-002",
+      "name": "Combat Stimulant",
+      "description": "Military stimulant that temporarily boosts performance.",
+      "category": "medicine",
+      "subcategory": "Stims",
+      "images": {
+        "icon": "/images/items/medicine/stim_icon.png",
+        "thumbnail": "/images/items/medicine/stim_thumb.png",
+        "fullsize": "/images/items/medicine/stim_full.png"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 25000,
+        "weight": 0.1,
+        "size": "1x1",
+        "safeSlots": 1,
+        "useTime": 1,
+        "duration": 300
+      },
+      "locations": [
+        {
+          "map": "labs",
+          "spots": [
+            { "x": 180, "y": 320, "description": "Lab refrigerator" }
+          ]
+        }
+      ],
+      "relatedQuests": ["quest-035"],
+      "notes": "Provides increased stamina, reduced recoil, and pain resistance.",
+      "tips": "Save for high-stakes fights or when carrying heavy loot for extraction."
+    }
+  ],
+  "food": [
+    {
+      "id": "food-001",
+      "name": "MRE Package",
+      "description": "Military Meal Ready-to-Eat. Provides significant energy and hydration.",
+      "category": "food",
+      "subcategory": "",
+      "images": {
+        "icon": "/images/items/food/mre_icon.png",
+        "thumbnail": "/images/items/food/mre_thumb.png",
+        "fullsize": "/images/items/food/mre_full.png"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 12000,
+        "weight": 0.8,
+        "size": "1x2",
+        "safeSlots": 1,
+        "energyValue": 70,
+        "hydrationValue": 10,
+        "useTime": 6
+      },
+      "locations": [
+        {
+          "map": "woods",
+          "spots": [
+            { "x": 400, "y": 280, "description": "Military camp supply crates" }
+          ]
+        },
+        {
+          "map": "customs",
+          "spots": [
+            { "x": 320, "y": 230, "description": "Military checkpoint storage room" }
+          ]
+        }
+      ],
+      "relatedQuests": ["quest-014"],
+      "notes": "Complete field ration with long shelf life.",
+      "tips": "One of the best food items for restoring energy during long raids."
+    }
+  ],
+  "junk": [
+    {
+      "id": "junk-001",
+      "name": "Military Circuit Board",
+      "description": "High-grade circuit board used in military electronics.",
+      "category": "junk",
+      "subcategory": "Electronic",
+      "images": {
+        "icon": "/images/items/junk/circuit_icon.png",
+        "thumbnail": "/images/items/junk/circuit_thumb.png",
+        "fullsize": "/images/items/junk/circuit_full.png"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 45000,
+        "weight": 0.2,
+        "size": "1x1",
+        "safeSlots": 1
+      },
+      "locations": [
+        {
+          "map": "labs",
+          "spots": [
+            { "x": 200, "y": 180, "description": "Server room racks" }
+          ]
+        },
+        {
+          "map": "reserve",
+          "spots": [
+            { "x": 340, "y": 220, "description": "Communications building" }
+          ]
+        }
+      ],
+      "relatedQuests": ["quest-027", "quest-032"],
+      "craftingRecipes": [
+        {
+          "inputs": [
+            { "itemId": "junk-001", "quantity": 2 },
+            { "itemId": "junk-008", "quantity": 1 }
+          ],
+          "output": { "quantity": 1 }
+        }
+      ],
+      "notes": "Required for advanced hideout upgrades.",
+      "tips": "High value item for traders. Prioritize extraction if found."
+    },
+    {
+      "id": "junk-002",
+      "name": "Duct Tape",
+      "description": "Standard adhesive tape with numerous uses in crafting and repairs.",
+      "category": "junk",
+      "subcategory": "Household",
+      "images": {
+        "icon": "/images/items/junk/tape_icon.png",
+        "thumbnail": "/images/items/junk/tape_thumb.png",
+        "fullsize": "/images/items/junk/tape_full.png"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 8000,
+        "weight": 0.3,
+        "size": "1x1",
+        "safeSlots": 3
+      },
+      "locations": [
+        {
+          "map": "factory",
+          "spots": [
+            { "x": 150, "y": 180, "description": "Maintenance area shelves" }
+          ]
+        },
+        {
+          "map": "customs",
+          "spots": [
+            { "x": 270, "y": 190, "description": "Storage room shelves" },
+            { "x": 350, "y": 210, "description": "Garage workbench" }
+          ]
+        }
+      ],
+      "relatedQuests": ["quest-005", "quest-018"],
+      "notes": "Common crafting component for hideout and weapon mods.",
+      "tips": "Collect whenever possible as it's used in many crafting recipes."
+    }
+  ],
+  "gear": [
+    {
+      "id": "gear-001",
+      "name": "Tactical Helmet",
+      "description": "Advanced combat helmet with mount points for accessories.",
+      "category": "gear",
+      "subcategory": "Helmets",
+      "images": {
+        "icon": "/images/items/gear/helmet_icon.png",
+        "thumbnail": "/images/items/gear/helmet_thumb.png",
+        "fullsize": "/images/items/gear/helmet_full.png"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 85000,
+        "weight": 1.5,
+        "size": "2x2",
+        "safeSlots": 0,
+        "armorClass": 4,
+        "durability": 35,
+        "repairability": "Good",
+        "ergoPenalty": -2,
+        "turnPenalty": -8
+      },
+      "locations": [
+        {
+          "map": "reserve",
+          "spots": [
+            { "x": 200, "y": 240, "description": "Military barracks locker" }
+          ]
+        }
+      ],
+      "relatedQuests": ["quest-040"],
+      "notes": "Provides protection against mid-tier ammunition.",
+      "tips": "Can be fitted with night vision and tactical accessories."
+    }
+  ],
+  "keys": [
+    {
+      "id": "keys-001",
+      "name": "Armory Key",
+      "description": "Key to the factory armory containing high-tier weapons and ammunition.",
+      "category": "keys",
+      "subcategory": "",
+      "images": {
+        "icon": "/images/items/keys/armory_icon.png",
+        "thumbnail": "/images/items/keys/armory_thumb.png",
+        "fullsize": "/images/items/keys/armory_full.png"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 120000,
+        "weight": 0.01,
+        "size": "1x1",
+        "safeSlots": 1,
+        "uses": 25
+      },
+      "locations": [
+        {
+          "map": "customs",
+          "spots": [
+            { "x": 340, "y": 180, "description": "Office desk drawer in the security room" }
+          ]
+        }
+      ],
+      "relatedQuests": ["quest-022"],
+      "notes": "Opens the armory in Factory which contains high-tier weapon spawns.",
+      "tips": "High-value target for all players. Always store in your secure container."
+    }
+  ]
+}
