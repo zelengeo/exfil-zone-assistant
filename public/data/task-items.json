@@ -1,0 +1,268 @@
+{
+  "taskItems": [
+    {
+      "id": "task-intel-phone",
+      "name": "Intelligence Phone",
+      "description": "Encrypted smartphone containing sensitive intelligence data.",
+      "category": "task-items",
+      "subcategory": "Intelligence",
+      "images": {
+        "icon": "/images/items/task/valuable_task_intelphone.webp",
+        "thumbnail": "/images/items/task/valuable_task_intelphone.webp",
+        "fullsize": "/images/items/task/valuable_task_intelphone.webp"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 45000,
+        "weight": 0.2,
+        "size": "1x1",
+        "safeSlots": 1
+      },
+      "relatedQuests": ["quest-intel-001", "quest-intel-005"],
+      "notes": "Contains classified information required for intelligence missions.",
+      "tips": "High-priority quest item. Store in secure container immediately."
+    },
+    {
+      "id": "task-tracker-device",
+      "name": "Tracking Device",
+      "description": "GPS tracking device used for surveillance operations.",
+      "category": "task-items",
+      "subcategory": "Intelligence",
+      "images": {
+        "icon": "/images/items/task/valuable_task_tracker.webp",
+        "thumbnail": "/images/items/task/valuable_task_tracker.webp",
+        "fullsize": "/images/items/task/valuable_task_tracker.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 25000,
+        "weight": 0.1,
+        "size": "1x1",
+        "safeSlots": 1
+      },
+      "relatedQuests": ["quest-surveillance-003"],
+      "notes": "Used to track enemy movements and positions.",
+      "tips": "Must be planted at specific locations for quest completion."
+    },
+    {
+      "id": "task-maggie-camera",
+      "name": "Maggie's Camera",
+      "description": "Digital camera belonging to photographer Maggie with important photos.",
+      "category": "task-items",
+      "subcategory": "Personal",
+      "images": {
+        "icon": "/images/items/task/valuable_task_maggie_camera.webp",
+        "thumbnail": "/images/items/task/valuable_task_maggie_camera.webp",
+        "fullsize": "/images/items/task/valuable_task_maggie_camera.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 15000,
+        "weight": 0.8,
+        "size": "1x2",
+        "safeSlots": 1
+      },
+      "relatedQuests": ["quest-maggie-001"],
+      "notes": "Contains photographs needed for investigation.",
+      "tips": "Handle with care - quest giver specifically requested this camera."
+    },
+    {
+      "id": "task-maggie-medical",
+      "name": "Maggie's Medical Supplies",
+      "description": "Special medical supplies requested by field medic Maggie.",
+      "category": "task-items",
+      "subcategory": "Medical",
+      "images": {
+        "icon": "/images/items/task/valuable_task_maggie_medical.webp",
+        "thumbnail": "/images/items/task/valuable_task_maggie_medical.webp",
+        "fullsize": "/images/items/task/valuable_task_maggie_medical.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 12000,
+        "weight": 1.2,
+        "size": "2x1",
+        "safeSlots": 1
+      },
+      "relatedQuests": ["quest-maggie-medical-001"],
+      "notes": "Specialized medical equipment for field operations.",
+      "tips": "Maggie pays well for these supplies."
+    },
+    {
+      "id": "task-igor-box",
+      "name": "Igor's Storage Box",
+      "description": "Locked storage container belonging to trader Igor.",
+      "category": "task-items",
+      "subcategory": "Personal",
+      "images": {
+        "icon": "/images/items/task/valuable_task_igor_box.webp",
+        "thumbnail": "/images/items/task/valuable_task_igor_box.webp",
+        "fullsize": "/images/items/task/valuable_task_igor_box.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 35000,
+        "weight": 2.5,
+        "size": "2x2",
+        "safeSlots": 0
+      },
+      "relatedQuests": ["quest-igor-retrieval-001"],
+      "notes": "Contains Igor's personal belongings and trade goods.",
+      "tips": "Heavy but valuable - Igor will pay handsomely for its return."
+    },
+    {
+      "id": "task-johnny-drill",
+      "name": "Johnny's Electric Drill",
+      "description": "Professional power drill belonging to contractor Johnny.",
+      "category": "task-items",
+      "subcategory": "Tools",
+      "images": {
+        "icon": "/images/items/task/valuable_task_johnny_drill.webp",
+        "thumbnail": "/images/items/task/valuable_task_johnny_drill.webp",
+        "fullsize": "/images/items/task/valuable_task_johnny_drill.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 18000,
+        "weight": 1.8,
+        "size": "2x1",
+        "safeSlots": 0
+      },
+      "relatedQuests": ["quest-johnny-tools-001"],
+      "notes": "High-quality construction tool needed for building projects.",
+      "tips": "Johnny needs this for his construction work."
+    },
+    {
+      "id": "task-max-gold-cup",
+      "name": "Max's Golden Cup",
+      "description": "Ornate golden trophy cup belonging to collector Max.",
+      "category": "task-items",
+      "subcategory": "Valuables",
+      "images": {
+        "icon": "/images/items/task/valuable_task_max_goldcup.webp",
+        "thumbnail": "/images/items/task/valuable_task_max_goldcup.webp",
+        "fullsize": "/images/items/task/valuable_task_max_goldcup.webp"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 85000,
+        "weight": 1.2,
+        "size": "2x2",
+        "safeSlots": 0
+      },
+      "relatedQuests": ["quest-max-collection-001"],
+      "notes": "Valuable antique trophy from Max's collection.",
+      "tips": "Extremely valuable - Max will pay premium for rare items."
+    },
+    {
+      "id": "task-max-phone",
+      "name": "Max's Smartphone",
+      "description": "Expensive smartphone belonging to wealthy collector Max.",
+      "category": "task-items",
+      "subcategory": "Electronics",
+      "images": {
+        "icon": "/images/items/task/valuable_task_max_phone.webp",
+        "thumbnail": "/images/items/task/valuable_task_max_phone.webp",
+        "fullsize": "/images/items/task/valuable_task_max_phone.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 28000,
+        "weight": 0.2,
+        "size": "1x1",
+        "safeSlots": 1
+      },
+      "relatedQuests": ["quest-max-personal-001"],
+      "notes": "High-end smartphone with important contacts.",
+      "tips": "Max values his communication devices highly."
+    },
+    {
+      "id": "task-tommy-baseball",
+      "name": "Tommy's Baseball",
+      "description": "Signed baseball with sentimental value to Tommy.",
+      "category": "task-items",
+      "subcategory": "Personal",
+      "images": {
+        "icon": "/images/items/task/valuable_task_tommy_baseball.webp",
+        "thumbnail": "/images/items/task/valuable_task_tommy_baseball.webp",
+        "fullsize": "/images/items/task/valuable_task_tommy_baseball.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 8000,
+        "weight": 0.15,
+        "size": "1x1",
+        "safeSlots": 2
+      },
+      "relatedQuests": ["quest-tommy-keepsake-001"],
+      "notes": "Childhood memento with great personal significance.",
+      "tips": "Not valuable to traders but extremely important to Tommy."
+    },
+    {
+      "id": "task-ark-telescope",
+      "name": "Ark's Telescope",
+      "description": "Professional astronomical telescope belonging to scientist Ark.",
+      "category": "task-items",
+      "subcategory": "Scientific",
+      "images": {
+        "icon": "/images/items/task/valuable_task_ark_telescope.webp",
+        "thumbnail": "/images/items/task/valuable_task_ark_telescope.webp",
+        "fullsize": "/images/items/task/valuable_task_ark_telescope.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 45000,
+        "weight": 3.5,
+        "size": "1x4",
+        "safeSlots": 0
+      },
+      "relatedQuests": ["quest-ark-research-001"],
+      "notes": "Precision scientific instrument for astronomical observations.",
+      "tips": "Fragile equipment - handle with care during transport."
+    },
+    {
+      "id": "task-ark-floppy",
+      "name": "Ark's Floppy Disk",
+      "description": "Vintage floppy disk containing Ark's research data.",
+      "category": "task-items",
+      "subcategory": "Data",
+      "images": {
+        "icon": "/images/items/task/valuable_task_ark_floppydisk.webp",
+        "thumbnail": "/images/items/task/valuable_task_ark_floppydisk.webp",
+        "fullsize": "/images/items/task/valuable_task_ark_floppydisk.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 5000,
+        "weight": 0.05,
+        "size": "1x1",
+        "safeSlots": 3
+      },
+      "relatedQuests": ["quest-ark-data-001"],
+      "notes": "Contains important research data from the 1990s.",
+      "tips": "Outdated storage medium but contains irreplaceable data."
+    },
+    {
+      "id": "task-csp-phone",
+      "name": "CSP Communication Device",
+      "description": "Specialized communication device used by CSP operatives.",
+      "category": "task-items",
+      "subcategory": "Military",
+      "images": {
+        "icon": "/images/items/task/CSP_Phone.webp",
+        "thumbnail": "/images/items/task/CSP_Phone.webp",
+        "fullsize": "/images/items/task/CSP_Phone.webp"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 65000,
+        "weight": 0.4,
+        "size": "1x1",
+        "safeSlots": 1
+      },
+      "relatedQuests": ["quest-csp-intel-001"],
+      "notes": "Military-grade encrypted communication device.",
+      "tips": "Highly sought after by intelligence agencies."
+    }
+  ]
+}

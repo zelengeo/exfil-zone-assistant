@@ -1,0 +1,244 @@
+{
+  "keys": [
+    {
+      "id": "key-factory-a1",
+      "name": "Factory A1 Zone Key",
+      "description": "Key to access the restricted A1 zone in the factory complex.",
+      "category": "keys",
+      "subcategory": "",
+      "images": {
+        "icon": "/images/items/keys/Icon_Factory_A1_zone_Key.webp",
+        "thumbnail": "/images/items/keys/Icon_Factory_A1_zone_Key.webp",
+        "fullsize": "/images/items/keys/Icon_Factory_A1_zone_Key.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 85000,
+        "weight": 0.01,
+        "size": "1x1",
+        "safeSlots": 1,
+        "uses": 15
+      },
+      "locations": [
+        {
+          "map": "customs",
+          "spots": [
+            { "x": 280, "y": 320, "description": "Office building, second floor, manager's desk" }
+          ]
+        }
+      ],
+      "notes": "Opens high-value loot room in Factory map.",
+      "tips": "Always store in secure container. Room contains weapon spawns."
+    },
+    {
+      "id": "key-factory-b",
+      "name": "Factory B Zone Key",
+      "description": "Access key for the Factory B zone manufacturing area.",
+      "category": "keys",
+      "subcategory": "",
+      "images": {
+        "icon": "/images/items/keys/Icon_Factory_B_zone_Key.webp",
+        "thumbnail": "/images/items/keys/Icon_Factory_B_zone_Key.webp",
+        "fullsize": "/images/items/keys/Icon_Factory_B_zone_Key.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 45000,
+        "weight": 0.01,
+        "size": "1x1",
+        "safeSlots": 1,
+        "uses": 20
+      },
+      "locations": [
+        {
+          "map": "factory",
+          "spots": [
+            { "x": 180, "y": 240, "description": "Foreman's office, hanging on wall" }
+          ]
+        }
+      ],
+      "notes": "Opens manufacturing wing with industrial loot.",
+      "tips": "Good for finding valuable electronic components."
+    },
+    {
+      "id": "key-hospital-2f",
+      "name": "Hospital 2F Key",
+      "description": "Key to the second floor of the abandoned hospital.",
+      "category": "keys",
+      "subcategory": "",
+      "images": {
+        "icon": "/images/items/keys/Icon_Hospital_2F_Key.webp",
+        "thumbnail": "/images/items/keys/Icon_Hospital_2F_Key.webp",
+        "fullsize": "/images/items/keys/Icon_Hospital_2F_Key.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 95000,
+        "weight": 0.01,
+        "size": "1x1",
+        "safeSlots": 1,
+        "uses": 12
+      },
+      "locations": [
+        {
+          "map": "urban",
+          "spots": [
+            { "x": 420, "y": 180, "description": "Nurse's station, first floor" }
+          ]
+        }
+      ],
+      "notes": "Access to medical supplies and high-value pharmaceuticals.",
+      "tips": "Excellent source of medical items and rare stims."
+    },
+    {
+      "id": "key-police-1f",
+      "name": "Police Station 1F Key",
+      "description": "Key to the first floor of the police station.",
+      "category": "keys",
+      "subcategory": "",
+      "images": {
+        "icon": "/images/items/keys/Icon_Police_Station_1F_Key.webp",
+        "thumbnail": "/images/items/keys/Icon_Police_Station_1F_Key.webp",
+        "fullsize": "/images/items/keys/Icon_Police_Station_1F_Key.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 35000,
+        "weight": 0.01,
+        "size": "1x1",
+        "safeSlots": 1,
+        "uses": 25
+      },
+      "locations": [
+        {
+          "map": "urban",
+          "spots": [
+            { "x": 320, "y": 280, "description": "Police car, glove compartment" }
+          ]
+        }
+      ],
+      "notes": "Access to police armory with weapons and ammunition.",
+      "tips": "Good source of pistols and basic equipment."
+    },
+    {
+      "id": "key-police-2f",
+      "name": "Police Station 2F Key",
+      "description": "Key to the second floor of the police station.",
+      "category": "keys",
+      "subcategory": "",
+      "images": {
+        "icon": "/images/items/keys/Icon_Police_Station_2F_Key.webp",
+        "thumbnail": "/images/items/keys/Icon_Police_Station_2F_Key.webp",
+        "fullsize": "/images/items/keys/Icon_Police_Station_2F_Key.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 65000,
+        "weight": 0.01,
+        "size": "1x1",
+        "safeSlots": 1,
+        "uses": 18
+      },
+      "locations": [
+        {
+          "map": "urban",
+          "spots": [
+            { "x": 340, "y": 200, "description": "Detective's desk, locked drawer" }
+          ]
+        }
+      ],
+      "notes": "Access to evidence room with valuable items.",
+      "tips": "Contains high-value electronics and confiscated items."
+    },
+    {
+      "id": "key-motel-201",
+      "name": "Motel Room 201 Key",
+      "description": "Key to room 201 in the abandoned motel.",
+      "category": "keys",
+      "subcategory": "",
+      "images": {
+        "icon": "/images/items/keys/Icon_Motel_Room_201_Key.webp",
+        "thumbnail": "/images/items/keys/Icon_Motel_Room_201_Key.webp",
+        "fullsize": "/images/items/keys/Icon_Motel_Room_201_Key.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 15000,
+        "weight": 0.01,
+        "size": "1x1",
+        "safeSlots": 1,
+        "uses": 30
+      },
+      "locations": [
+        {
+          "map": "urban",
+          "spots": [
+            { "x": 280, "y": 340, "description": "Motel reception desk" }
+          ]
+        }
+      ],
+      "notes": "Access to motel room with civilian loot.",
+      "tips": "Good for finding basic supplies and civilian items."
+    },
+    {
+      "id": "card-blue",
+      "name": "Blue Access Card",
+      "description": "Electronic access card for secure facilities.",
+      "category": "keys",
+      "subcategory": "",
+      "images": {
+        "icon": "/images/items/keys/Icon_card_blue01_.webp",
+        "thumbnail": "/images/items/keys/Icon_card_blue01_.webp",
+        "fullsize": "/images/items/keys/Icon_card_blue01_.webp"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 150000,
+        "weight": 0.005,
+        "size": "1x1",
+        "safeSlots": 1,
+        "uses": 5
+      },
+      "locations": [
+        {
+          "map": "labs",
+          "spots": [
+            { "x": 200, "y": 160, "description": "Security office desk" }
+          ]
+        }
+      ],
+      "notes": "High-security clearance for laboratory areas.",
+      "tips": "Extremely valuable, opens multiple high-tier loot areas."
+    },
+    {
+      "id": "card-red",
+      "name": "Red Access Card",
+      "description": "High-security electronic access card.",
+      "category": "keys",
+      "subcategory": "",
+      "images": {
+        "icon": "/images/items/keys/Icon_card_red_01.webp",
+        "thumbnail": "/images/items/keys/Icon_card_red_01.webp",
+        "fullsize": "/images/items/keys/Icon_card_red_01.webp"
+      },
+      "stats": {
+        "rarity": "Legendary",
+        "price": 250000,
+        "weight": 0.005,
+        "size": "1x1",
+        "safeSlots": 1,
+        "uses": 3
+      },
+      "locations": [
+        {
+          "map": "labs",
+          "spots": [
+            { "x": 180, "y": 200, "description": "Director's office safe" }
+          ]
+        }
+      ],
+      "notes": "Maximum security clearance for restricted areas.",
+      "tips": "Rarest key card, opens the most valuable loot rooms."
+    }
+  ]
+}

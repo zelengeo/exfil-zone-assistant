@@ -1,8 +1,9 @@
 'use client';
 
-import React, {useEffect, useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import {ChevronLeft, Crosshair, Shield, Timer, Info} from 'lucide-react';
+import Image from 'next/image';
+import { ChevronLeft, Crosshair, Shield, Timer, Info, ZoomIn } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import ItemLocations from '@/components/items/ItemLocations';
 import RelatedItems from '@/components/items/RelatedItems';
@@ -15,6 +16,88 @@ import {
 } from '@/types/items';
 import {getItemById} from "@/services/ItemService";
 
+// Component for displaying item images with zoom functionality
+const ItemImageDisplay: React.FC<{
+    src: string;
+    alt: string;
+    className?: string;
+}> = ({ src, alt, className = '' }) => {
+    const [imageError, setImageError] = useState(false);
+    const [imageLoading, setImageLoading] = useState(true);
+    const [isZoomed, setIsZoomed] = useState(false);
+
+    const handleImageError = () => {
+        setImageError(true);
+        setImageLoading(false);
+    };
+
+    const handleImageLoad = () => {
+        setImageLoading(false);
+    };
+
+    const toggleZoom = () => {
+        setIsZoomed(!isZoomed);
+    };
+
+    if (imageError) {
+        // Fallback when image fails to load
+        return (
+            <div className={`flex items-center justify-center bg-military-800 ${className}`}>
+                <div className="text-center p-4">
+                    <div className="text-olive-500 mb-2 font-medium military-stencil">{alt}</div>
+                    <div className="text-tan-400 text-sm">Image not available</div>
+                </div>
+            </div>
+        );
+    }
+
+    return (
+        <div className={`relative ${className} group`}>
+            {/* Loading spinner */}
+            {imageLoading && (
+                <div className="absolute inset-0 flex items-center justify-center bg-military-800 z-10">
+                    <div className="animate-spin w-8 h-8 border-2 border-olive-600 border-t-transparent rounded-full"></div>
+                </div>
+            )}
+
+            {/* Image */}
+            <div
+                className={`relative w-full h-full cursor-pointer transition-transform duration-200 ${
+                    isZoomed ? 'scale-150 z-20' : 'hover:scale-105'
+                }`}
+                onClick={toggleZoom}
+            >
+                <Image
+                    src={src}
+                    alt={alt}
+                    fill
+                    className="object-contain p-4"
+                    onError={handleImageError}
+                    onLoad={handleImageLoad}
+                    sizes="(max-width: 768px) 400px, 600px"
+                    priority
+                />
+            </div>
+
+            {/* Zoom indicator */}
+            {!imageLoading && !isZoomed && (
+                <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="bg-military-800/80 border border-military-700 rounded-sm p-1">
+                        <ZoomIn size={16} className="text-olive-400" />
+                    </div>
+                </div>
+            )}
+
+            {/* Zoom overlay background */}
+            {isZoomed && (
+                <div
+                    className="fixed inset-0 bg-military-950/80 z-10"
+                    onClick={toggleZoom}
+                />
+            )}
+        </div>
+    );
+};
 
 // Helper to render stats based on item category
 const renderCategorySpecificStats = (item: Item) => {
@@ -23,22 +106,22 @@ const renderCategorySpecificStats = (item: Item) => {
             return (
                 <div className="grid grid-cols-2 gap-4">
                     <div className="flex items-center gap-2">
-                        <Crosshair size={18} className="text-olive-400"/>
+                        <Crosshair size={18} className="text-olive-400" />
                         <span className="text-tan-300">Damage:</span>
                         <span className="text-tan-100 font-mono">{item.stats.damage}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                        <Shield size={18} className="text-olive-400"/>
+                        <Shield size={18} className="text-olive-400" />
                         <span className="text-tan-300">Penetration:</span>
                         <span className="text-tan-100 font-mono">{item.stats.penetration}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                        <Timer size={18} className="text-olive-400"/>
+                        <Timer size={18} className="text-olive-400" />
                         <span className="text-tan-300">Fire Rate:</span>
                         <span className="text-tan-100 font-mono">{item.stats.fireRate} rpm</span>
                     </div>
                     <div className="flex items-center gap-2">
-                        <Info size={18} className="text-olive-400"/>
+                        <Info size={18} className="text-olive-400" />
                         <span className="text-tan-300">Recoil:</span>
                         <span className="text-tan-100 font-mono">{item.stats.recoil}</span>
                     </div>
@@ -48,12 +131,12 @@ const renderCategorySpecificStats = (item: Item) => {
             return (
                 <div className="grid grid-cols-2 gap-4">
                     <div className="flex items-center gap-2">
-                        <Crosshair size={18} className="text-olive-400"/>
+                        <Crosshair size={18} className="text-olive-400" />
                         <span className="text-tan-300">Damage:</span>
                         <span className="text-tan-100 font-mono">{item.stats.damage}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                        <Shield size={18} className="text-olive-400"/>
+                        <Shield size={18} className="text-olive-400" />
                         <span className="text-tan-300">Penetration:</span>
                         <span className="text-tan-100 font-mono">{item.stats.penetration}</span>
                     </div>
@@ -64,21 +147,21 @@ const renderCategorySpecificStats = (item: Item) => {
                 <div className="grid grid-cols-2 gap-4">
                     {item.stats.healAmount && (
                         <div className="flex items-center gap-2">
-                            <Info size={18} className="text-olive-400"/>
+                            <Info size={18} className="text-olive-400" />
                             <span className="text-tan-300">Heal Amount:</span>
                             <span className="text-tan-100 font-mono">{item.stats.healAmount}</span>
                         </div>
                     )}
                     {item.stats.useTime && (
                         <div className="flex items-center gap-2">
-                            <Timer size={18} className="text-olive-400"/>
+                            <Timer size={18} className="text-olive-400" />
                             <span className="text-tan-300">Use Time:</span>
                             <span className="text-tan-100 font-mono">{item.stats.useTime}s</span>
                         </div>
                     )}
                     {item.stats.duration && (
                         <div className="flex items-center gap-2">
-                            <Timer size={18} className="text-olive-400"/>
+                            <Timer size={18} className="text-olive-400" />
                             <span className="text-tan-300">Duration:</span>
                             <span className="text-tan-100 font-mono">{item.stats.duration}s</span>
                         </div>
@@ -90,21 +173,21 @@ const renderCategorySpecificStats = (item: Item) => {
                 <div className="grid grid-cols-2 gap-4">
                     {item.stats.energyValue && (
                         <div className="flex items-center gap-2">
-                            <Info size={18} className="text-olive-400"/>
+                            <Info size={18} className="text-olive-400" />
                             <span className="text-tan-300">Energy:</span>
                             <span className="text-tan-100 font-mono">+{item.stats.energyValue}</span>
                         </div>
                     )}
                     {item.stats.hydrationValue && (
                         <div className="flex items-center gap-2">
-                            <Info size={18} className="text-olive-400"/>
+                            <Info size={18} className="text-olive-400" />
                             <span className="text-tan-300">Hydration:</span>
                             <span className="text-tan-100 font-mono">+{item.stats.hydrationValue}</span>
                         </div>
                     )}
                     {item.stats.useTime && (
                         <div className="flex items-center gap-2">
-                            <Timer size={18} className="text-olive-400"/>
+                            <Timer size={18} className="text-olive-400" />
                             <span className="text-tan-300">Use Time:</span>
                             <span className="text-tan-100 font-mono">{item.stats.useTime}s</span>
                         </div>
@@ -116,21 +199,21 @@ const renderCategorySpecificStats = (item: Item) => {
                 <div className="grid grid-cols-2 gap-4">
                     {item.stats.armorClass && (
                         <div className="flex items-center gap-2">
-                            <Shield size={18} className="text-olive-400"/>
+                            <Shield size={18} className="text-olive-400" />
                             <span className="text-tan-300">Armor Class:</span>
                             <span className="text-tan-100 font-mono">{item.stats.armorClass}</span>
                         </div>
                     )}
                     {item.stats.durability && (
                         <div className="flex items-center gap-2">
-                            <Info size={18} className="text-olive-400"/>
+                            <Info size={18} className="text-olive-400" />
                             <span className="text-tan-300">Durability:</span>
                             <span className="text-tan-100 font-mono">{item.stats.durability}</span>
                         </div>
                     )}
                     {item.stats.ergoPenalty && (
                         <div className="flex items-center gap-2">
-                            <Info size={18} className="text-olive-400"/>
+                            <Info size={18} className="text-olive-400" />
                             <span className="text-tan-300">Ergo Penalty:</span>
                             <span className="text-tan-100 font-mono">{item.stats.ergoPenalty}</span>
                         </div>
@@ -148,8 +231,8 @@ interface PageProps {
     }>;
 }
 
-export default function ItemDetail({params}: PageProps) {
-    const {id} = React.use(params);
+export default function ItemDetail({ params }: PageProps) {
+    const { id } = React.use(params);
     const [activeTab, setActiveTab] = useState('stats');
     const [item, setItem] = useState<Item | null>(null);
     const [loading, setLoading] = useState(true);
@@ -210,7 +293,7 @@ export default function ItemDetail({params}: PageProps) {
                 {/* Breadcrumb navigation */}
                 <div className="flex items-center gap-2 mb-6 text-tan-300">
                     <Link href="/items" className="flex items-center gap-1 hover:text-olive-400 transition-colors">
-                        <ChevronLeft size={16}/>
+                        <ChevronLeft size={16} />
                         <span>Items</span>
                     </Link>
                     <span>/</span>
@@ -256,18 +339,14 @@ export default function ItemDetail({params}: PageProps) {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Left column - Item image */}
                     <div className="md:col-span-1">
-                        {/* Simple item image display */}
+                        {/* Item image display */}
                         <div className="military-card rounded-sm p-4 overflow-hidden">
-                            <div
-                                className="aspect-square relative bg-military-950 rounded-sm overflow-hidden border border-military-700">
-                                {/* Placeholder for image */}
-                                <div className="w-full h-full flex items-center justify-center bg-military-900">
-                                    <div className="text-center p-4">
-                                        <div
-                                            className="text-olive-500 mb-2 font-medium military-stencil">{item.name}</div>
-                                        <div className="text-tan-400 text-sm">Item Image</div>
-                                    </div>
-                                </div>
+                            <div className="aspect-square relative bg-military-950 rounded-sm overflow-hidden border border-military-700">
+                                <ItemImageDisplay
+                                    src={item.images.fullsize}
+                                    alt={item.name}
+                                    className="w-full h-full"
+                                />
                             </div>
                         </div>
 
@@ -275,8 +354,7 @@ export default function ItemDetail({params}: PageProps) {
                         <div className="military-card rounded-sm mt-6 p-5">
                             <div className="flex justify-between items-center mb-4">
                                 <span className="text-tan-300">Market Value:</span>
-                                <span
-                                    className="text-olive-400 font-mono text-xl">{formatPrice(item.stats.price)}</span>
+                                <span className="text-olive-400 font-mono text-xl">{formatPrice(item.stats.price)}</span>
                             </div>
                             <div className="flex justify-between items-center mb-4">
                                 <span className="text-tan-300">Weight:</span>
@@ -360,12 +438,12 @@ export default function ItemDetail({params}: PageProps) {
 
                         {/* Use ItemLocations component for Locations tab */}
                         {activeTab === 'locations' && (
-                            <ItemLocations item={item}/>
+                            <ItemLocations item={item} />
                         )}
 
                         {/* Use RelatedItems component for Related tab */}
                         {activeTab === 'related' && (
-                            <RelatedItems item={item}/>
+                            <RelatedItems item={item} />
                         )}
                     </div>
                 </div>

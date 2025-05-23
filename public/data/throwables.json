@@ -1,0 +1,179 @@
+{
+  "throwables": [
+    {
+      "id": "grenade-f1",
+      "name": "F1 Fragmentation Grenade",
+      "description": "Soviet-era defensive fragmentation grenade with large blast radius.",
+      "category": "throwables",
+      "subcategory": "Fragmentation",
+      "images": {
+        "icon": "/images/items/throwables/WF_FragmentGrenade_F1.webp",
+        "thumbnail": "/images/items/throwables/WF_FragmentGrenade_F1.webp",
+        "fullsize": "/images/items/throwables/WF_FragmentGrenade_F1.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 12000,
+        "weight": 0.6,
+        "size": "1x1",
+        "safeSlots": 2,
+        "damage": 150,
+        "blastRadius": 8,
+        "fuseTime": 4.0,
+        "throwRange": 40
+      },
+      "notes": "High damage defensive grenade with wide fragmentation pattern.",
+      "tips": "Excellent for clearing rooms and area denial."
+    },
+    {
+      "id": "grenade-rdg5",
+      "name": "RDG-5 Fragmentation Grenade",
+      "description": "Compact offensive fragmentation grenade with shorter fuse.",
+      "category": "throwables",
+      "subcategory": "Fragmentation",
+      "images": {
+        "icon": "/images/items/throwables/WF_FragmentGrenade_RDG5.webp",
+        "thumbnail": "/images/items/throwables/WF_FragmentGrenade_RDG5.webp",
+        "fullsize": "/images/items/throwables/WF_FragmentGrenade_RDG5.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 8500,
+        "weight": 0.31,
+        "size": "1x1",
+        "safeSlots": 3,
+        "damage": 110,
+        "blastRadius": 6,
+        "fuseTime": 3.2,
+        "throwRange": 45
+      },
+      "notes": "Lighter offensive grenade for aggressive tactics.",
+      "tips": "Shorter fuse time - be careful with cooking."
+    },
+    {
+      "id": "grenade-rgn",
+      "name": "RGN Impact Grenade",
+      "description": "Impact-triggered fragmentation grenade that explodes on contact.",
+      "category": "throwables",
+      "subcategory": "Fragmentation",
+      "images": {
+        "icon": "/images/items/throwables/WF_FragmentGrenade_RGN.webp",
+        "thumbnail": "/images/items/throwables/WF_FragmentGrenade_RGN.webp",
+        "fullsize": "/images/items/throwables/WF_FragmentGrenade_RGN.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 18000,
+        "weight": 0.31,
+        "size": "1x1",
+        "safeSlots": 1,
+        "damage": 120,
+        "blastRadius": 6,
+        "fuseTime": 0.1,
+        "throwRange": 42
+      },
+      "notes": "Impact detonation - explodes immediately on contact.",
+      "tips": "Dangerous to use in close quarters due to instant detonation."
+    },
+    {
+      "id": "grenade-rgo",
+      "name": "RGO Dual-Function Grenade",
+      "description": "Advanced grenade with both impact and time-delay fusing.",
+      "category": "throwables",
+      "subcategory": "Fragmentation",
+      "images": {
+        "icon": "/images/items/throwables/WF_FragmentGrenade_RGO.webp",
+        "thumbnail": "/images/items/throwables/WF_FragmentGrenade_RGO.webp",
+        "fullsize": "/images/items/throwables/WF_FragmentGrenade_RGO.webp"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 25000,
+        "weight": 0.53,
+        "size": "1x1",
+        "safeSlots": 1,
+        "damage": 135,
+        "blastRadius": 7,
+        "fuseTime": 3.8,
+        "throwRange": 38
+      },
+      "notes": "Dual-fusing system: impact trigger or 3.8s timer backup.",
+      "tips": "Most versatile grenade with reliable detonation."
+    },
+    {
+      "id": "grenade-vog17",
+      "name": "VOG-17 Rifle Grenade",
+      "description": "40mm rifle grenade for underbarrel grenade launchers.",
+      "category": "throwables",
+      "subcategory": "Launcher",
+      "images": {
+        "icon": "/images/items/throwables/WF_FragmentGrenade_VOG17.webp",
+        "thumbnail": "/images/items/throwables/WF_FragmentGrenade_VOG17.webp",
+        "fullsize": "/images/items/throwables/WF_FragmentGrenade_VOG17.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 15000,
+        "weight": 0.25,
+        "size": "1x1",
+        "safeSlots": 2,
+        "damage": 180,
+        "blastRadius": 10,
+        "fuseTime": 2.5,
+        "launcherOnly": true
+      },
+      "notes": "Requires underbarrel grenade launcher to use.",
+      "tips": "Much higher damage and range than hand grenades."
+    },
+    {
+      "id": "grenade-vog25",
+      "name": "VOG-25 Rifle Grenade",
+      "description": "Improved 40mm rifle grenade with enhanced fragmentation.",
+      "category": "throwables",
+      "subcategory": "Launcher",
+      "images": {
+        "icon": "/images/items/throwables/WF_FragmentGrenade_VOG25.webp",
+        "thumbnail": "/images/items/throwables/WF_FragmentGrenade_VOG25.webp",
+        "fullsize": "/images/items/throwables/WF_FragmentGrenade_VOG25.webp"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 22000,
+        "weight": 0.28,
+        "size": "1x1",
+        "safeSlots": 1,
+        "damage": 200,
+        "blastRadius": 12,
+        "fuseTime": 2.2,
+        "launcherOnly": true
+      },
+      "notes": "Advanced rifle grenade with improved lethality.",
+      "tips": "Most powerful explosive available for launchers."
+    },
+    {
+      "id": "grenade-basic",
+      "name": "Basic Grenade",
+      "description": "Standard military fragmentation grenade.",
+      "category": "throwables",
+      "subcategory": "Fragmentation",
+      "images": {
+        "icon": "/images/items/throwables/Icon_grenade_01.webp",
+        "thumbnail": "/images/items/throwables/Icon_grenade_01.webp",
+        "fullsize": "/images/items/throwables/Icon_grenade_01.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 7500,
+        "weight": 0.4,
+        "size": "1x1",
+        "safeSlots": 3,
+        "damage": 100,
+        "blastRadius": 5,
+        "fuseTime": 4.0,
+        "throwRange": 35
+      },
+      "notes": "Standard issue fragmentation grenade.",
+      "tips": "Reliable and affordable option for basic explosive needs."
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "weapons": [
+    {
+      "id": "weapon-ak74",
+      "name": "AK-74",
+      "description": "Soviet assault rifle chambered in 5.45x39mm. Reliable and widely used.",
+      "category": "weapons",
+      "subcategory": "5.45x39mm",
+      "images": {
+        "icon": "/images/items/weapons/Icon_gun_ak74.webp",
+        "thumbnail": "/images/items/weapons/Icon_gun_ak74.webp",
+        "fullsize": "/images/items/weapons/Icon_gun_ak74.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 28000,
+        "weight": 3.4,
+        "size": "4x1",
+        "safeSlots": 0,
+        "damage": 57,
+        "penetration": 38,
+        "fireRate": 650,
+        "recoil": 78,
+        "accuracy": 82,
+        "effectiveRange": 350
+      },
+      "locations": [
+        {
+          "map": "factory",
+          "spots": [
+            { "x": 150, "y": 220, "description": "Weapons crate in the main factory floor" }
+          ]
+        }
+      ],
+      "relatedQuests": ["quest-003"]
+    },
+    {
+      "id": "weapon-ak74m",
+      "name": "AK-74M",
+      "description": "Modernized version of the AK-74 with improved ergonomics and rail system.",
+      "category": "weapons",
+      "subcategory": "5.45x39mm",
+      "images": {
+        "icon": "/images/items/weapons/Icon_gun_ak74m.webp",
+        "thumbnail": "/images/items/weapons/Icon_gun_ak74m.webp",
+        "fullsize": "/images/items/weapons/Icon_gun_ak74m.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 32000,
+        "weight": 3.5,
+        "size": "4x1",
+        "safeSlots": 0,
+        "damage": 57,
+        "penetration": 38,
+        "fireRate": 650,
+        "recoil": 75,
+        "accuracy": 85,
+        "effectiveRange": 350
+      }
+    },
+    {
+      "id": "weapon-akm",
+      "name": "AKM",
+      "description": "Modernized AK-47 chambered in 7.62x39mm. Higher damage, more recoil.",
+      "category": "weapons",
+      "subcategory": "7.62x39mm",
+      "images": {
+        "icon": "/images/items/weapons/Icon_gun_akm.webp",
+        "thumbnail": "/images/items/weapons/Icon_gun_akm.webp",
+        "fullsize": "/images/items/weapons/Icon_gun_akm.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 30000,
+        "weight": 3.8,
+        "size": "4x1",
+        "safeSlots": 0,
+        "damage": 65,
+        "penetration": 42,
+        "fireRate": 600,
+        "recoil": 85,
+        "accuracy": 80,
+        "effectiveRange": 400
+      }
+    },
+    {
+      "id": "weapon-aks74u",
+      "name": "AKS-74U",
+      "description": "Compact carbine version of the AK-74. Higher mobility, shorter range.",
+      "category": "weapons",
+      "subcategory": "5.45x39mm",
+      "images": {
+        "icon": "/images/items/weapons/Icon_gun_aks74u.webp",
+        "thumbnail": "/images/items/weapons/Icon_gun_aks74u.webp",
+        "fullsize": "/images/items/weapons/Icon_gun_aks74u.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 25000,
+        "weight": 2.9,
+        "size": "3x1",
+        "safeSlots": 0,
+        "damage": 55,
+        "penetration": 36,
+        "fireRate": 700,
+        "recoil": 80,
+        "accuracy": 75,
+        "effectiveRange": 250
+      }
+    },
+    {
+      "id": "weapon-m4a1",
+      "name": "M4A1",
+      "description": "American assault rifle chambered in 5.56x45mm NATO. Versatile and customizable.",
+      "category": "weapons",
+      "subcategory": "5.56x45mm",
+      "images": {
+        "icon": "/images/items/weapons/Icon_gun_m4a1.webp",
+        "thumbnail": "/images/items/weapons/Icon_gun_m4a1.webp",
+        "fullsize": "/images/items/weapons/Icon_gun_m4a1.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 35000,
+        "weight": 3.2,
+        "size": "4x1",
+        "safeSlots": 0,
+        "damage": 55,
+        "penetration": 40,
+        "fireRate": 800,
+        "recoil": 72,
+        "accuracy": 88,
+        "effectiveRange": 400
+      },
+      "relatedQuests": ["quest-007", "quest-015"]
+    },
+    {
+      "id": "weapon-hk416",
+      "name": "HK416",
+      "description": "German-designed rifle based on AR-15 platform. High reliability and accuracy.",
+      "category": "weapons",
+      "subcategory": "5.56x45mm",
+      "images": {
+        "icon": "/images/items/weapons/Icon_gun_hk416.webp",
+        "thumbnail": "/images/items/weapons/Icon_gun_hk416.webp",
+        "fullsize": "/images/items/weapons/Icon_gun_hk416.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 45000,
+        "weight": 3.6,
+        "size": "4x1",
+        "safeSlots": 0,
+        "damage": 58,
+        "penetration": 42,
+        "fireRate": 750,
+        "recoil": 70,
+        "accuracy": 90,
+        "effectiveRange": 450
+      }
+    },
+    {
+      "id": "weapon-mp5",
+      "name": "MP5",
+      "description": "German submachine gun chambered in 9x19mm. Excellent for close quarters.",
+      "category": "weapons",
+      "subcategory": "9x19mm",
+      "images": {
+        "icon": "/images/items/weapons/Icon_gun_mp5.webp",
+        "thumbnail": "/images/items/weapons/Icon_gun_mp5.webp",
+        "fullsize": "/images/items/weapons/Icon_gun_mp5.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 22000,
+        "weight": 2.5,
+        "size": "3x1",
+        "safeSlots": 0,
+        "damage": 40,
+        "penetration": 25,
+        "fireRate": 800,
+        "recoil": 55,
+        "accuracy": 82,
+        "effectiveRange": 150
+      }
+    },
+    {
+      "id": "weapon-m1911",
+      "name": "M1911",
+      "description": "Classic American pistol chambered in .45 ACP. High damage per shot.",
+      "category": "weapons",
+      "subcategory": ".45 ACP",
+      "images": {
+        "icon": "/images/items/weapons/Icon_gun_m1911.webp",
+        "thumbnail": "/images/items/weapons/Icon_gun_m1911.webp",
+        "fullsize": "/images/items/weapons/Icon_gun_m1911.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 8000,
+        "weight": 1.1,
+        "size": "2x1",
+        "safeSlots": 1,
+        "damage": 70,
+        "penetration": 35,
+        "fireRate": 450,
+        "recoil": 85,
+        "accuracy": 75,
+        "effectiveRange": 50
+      }
+    },
+    {
+      "id": "weapon-glock18c",
+      "name": "Glock 18C",
+      "description": "Austrian pistol with full-auto capability. High rate of fire.",
+      "category": "weapons",
+      "subcategory": "9x19mm",
+      "images": {
+        "icon": "/images/items/weapons/Icon_gun_Glock18C.webp",
+        "thumbnail": "/images/items/weapons/Icon_gun_Glock18C.webp",
+        "fullsize": "/images/items/weapons/Icon_gun_Glock18C.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 12000,
+        "weight": 0.8,
+        "size": "2x1",
+        "safeSlots": 1,
+        "damage": 35,
+        "penetration": 20,
+        "fireRate": 1200,
+        "recoil": 45,
+        "accuracy": 70,
+        "effectiveRange": 40
+      }
+    },
+    {
+      "id": "weapon-mosin",
+      "name": "Mosin Nagant",
+      "description": "Russian bolt-action rifle chambered in 7.62x54mmR. High damage, slow rate of fire.",
+      "category": "weapons",
+      "subcategory": "7.62x54mmR",
+      "images": {
+        "icon": "/images/items/weapons/Icon_gun_mosin.webp",
+        "thumbnail": "/images/items/weapons/Icon_gun_mosin.webp",
+        "fullsize": "/images/items/weapons/Icon_gun_mosin.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 15000,
+        "weight": 4.0,
+        "size": "5x1",
+        "safeSlots": 0,
+        "damage": 110,
+        "penetration": 75,
+        "fireRate": 60,
+        "recoil": 120,
+        "accuracy": 95,
+        "effectiveRange": 800
+      }
+    },
+    {
+      "id": "weapon-pkp",
+      "name": "PKP Pecheneg",
+      "description": "Russian machine gun chambered in 7.62x54mmR. Devastating firepower.",
+      "category": "weapons",
+      "subcategory": "7.62x54mmR",
+      "images": {
+        "icon": "/images/items/weapons/Icon_gun_pkp.webp",
+        "thumbnail": "/images/items/weapons/Icon_gun_pkp.webp",
+        "fullsize": "/images/items/weapons/Icon_gun_pkp.webp"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 85000,
+        "weight": 8.2,
+        "size": "5x1",
+        "safeSlots": 0,
+        "damage": 95,
+        "penetration": 65,
+        "fireRate": 700,
+        "recoil": 110,
+        "accuracy": 75,
+        "effectiveRange": 600
+      }
+    },
+    {
+      "id": "weapon-m590",
+      "name": "Mossberg 590",
+      "description": "American pump-action shotgun chambered in 12 gauge. Devastating at close range.",
+      "category": "weapons",
+      "subcategory": "12 Gauge",
+      "images": {
+        "icon": "/images/items/weapons/Icon_gun_m590.webp",
+        "thumbnail": "/images/items/weapons/Icon_gun_m590.webp",
+        "fullsize": "/images/items/weapons/Icon_gun_m590.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 18000,
+        "weight": 3.2,
+        "size": "4x1",
+        "safeSlots": 0,
+        "damage": 200,
+        "penetration": 15,
+        "fireRate": 120,
+        "recoil": 150,
+        "accuracy": 60,
+        "effectiveRange": 30
+      }
+    }
+  ]
+}

@@ -1,0 +1,336 @@
+{
+  "misc": [
+    {
+      "id": "valuable-gold-ingot",
+      "name": "Gold Ingot",
+      "description": "Pure gold ingot with high market value.",
+      "category": "misc",
+      "subcategory": "High Value",
+      "images": {
+        "icon": "/images/items/misc/Icon_valuable_goldingot.webp",
+        "thumbnail": "/images/items/misc/Icon_valuable_goldingot.webp",
+        "fullsize": "/images/items/misc/Icon_valuable_goldingot.webp"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 85000,
+        "weight": 0.8,
+        "size": "1x1",
+        "safeSlots": 1
+      },
+      "notes": "High-value item for trading.",
+      "tips": "Prioritize extraction when found."
+    },
+    {
+      "id": "valuable-military-hdd",
+      "name": "Military Hard Drive",
+      "description": "Encrypted military hard drive containing sensitive data.",
+      "category": "misc",
+      "subcategory": "Intel",
+      "images": {
+        "icon": "/images/items/misc/Icon_ValuableItem_B_MilitaryHardDrive.webp",
+        "thumbnail": "/images/items/misc/Icon_ValuableItem_B_MilitaryHardDrive.webp",
+        "fullsize": "/images/items/misc/Icon_ValuableItem_B_MilitaryHardDrive.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 45000,
+        "weight": 0.3,
+        "size": "1x1",
+        "safeSlots": 1
+      },
+      "relatedQuests": ["quest-intel-001"],
+      "notes": "Required for intelligence gathering missions.",
+      "tips": "High value to traders and quest givers."
+    },
+    {
+      "id": "valuable-cpu",
+      "name": "CPU",
+      "description": "High-performance computer processor.",
+      "category": "misc",
+      "subcategory": "Electronic",
+      "images": {
+        "icon": "/images/items/misc/Icon_valuable_cpu.webp",
+        "thumbnail": "/images/items/misc/Icon_valuable_cpu.webp",
+        "fullsize": "/images/items/misc/Icon_valuable_cpu.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 25000,
+        "weight": 0.2,
+        "size": "1x1",
+        "safeSlots": 2
+      },
+      "notes": "Valuable electronic component.",
+      "tips": "Good value-to-weight ratio for traders."
+    },
+    {
+      "id": "valuable-graphics-card",
+      "name": "Graphics Card",
+      "description": "High-end graphics processing unit.",
+      "category": "misc",
+      "subcategory": "Electronic",
+      "images": {
+        "icon": "/images/items/misc/Icon_valuable_graphiccard.webp",
+        "thumbnail": "/images/items/misc/Icon_valuable_graphiccard.webp",
+        "fullsize": "/images/items/misc/Icon_valuable_graphiccard.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 55000,
+        "weight": 0.8,
+        "size": "2x1",
+        "safeSlots": 1
+      },
+      "notes": "High-value electronic component for cryptocurrency mining.",
+      "tips": "Extremely valuable to certain traders."
+    },
+    {
+      "id": "valuable-duct-tape",
+      "name": "Duct Tape",
+      "description": "Industrial-grade adhesive tape with multiple uses.",
+      "category": "misc",
+      "subcategory": "Tools",
+      "images": {
+        "icon": "/images/items/misc/Icon_valuable_ducttape.webp",
+        "thumbnail": "/images/items/misc/Icon_valuable_ducttape.webp",
+        "fullsize": "/images/items/misc/Icon_valuable_ducttape.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 8000,
+        "weight": 0.3,
+        "size": "1x1",
+        "safeSlots": 3
+      },
+      "craftingRecipes": [
+        {
+          "inputs": [
+            { "itemId": "valuable-duct-tape", "quantity": 1 }
+          ],
+          "output": { "quantity": 1 }
+        }
+      ],
+      "notes": "Essential crafting material for hideout upgrades.",
+      "tips": "Always collect for hideout construction."
+    },
+    {
+      "id": "valuable-gunpowder",
+      "name": "Gunpowder",
+      "description": "High-quality gunpowder for ammunition crafting.",
+      "category": "misc",
+      "subcategory": "Combustibles",
+      "images": {
+        "icon": "/images/items/misc/Icon_valuable_gunpowder.webp",
+        "thumbnail": "/images/items/misc/Icon_valuable_gunpowder.webp",
+        "fullsize": "/images/items/misc/Icon_valuable_gunpowder.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 15000,
+        "weight": 0.4,
+        "size": "1x1",
+        "safeSlots": 2
+      },
+      "craftingRecipes": [
+        {
+          "inputs": [
+            { "itemId": "valuable-gunpowder", "quantity": 2 }
+          ],
+          "output": { "quantity": 150 }
+        }
+      ],
+      "notes": "Required for ammunition crafting.",
+      "tips": "Essential for self-sufficient ammo production."
+    },
+    {
+      "id": "valuable-spark-plug",
+      "name": "Spark Plug",
+      "description": "Automotive spark plug used in various mechanical applications.",
+      "category": "misc",
+      "subcategory": "Tools",
+      "images": {
+        "icon": "/images/items/misc/Icon_valuable_sparkplug.webp",
+        "thumbnail": "/images/items/misc/Icon_valuable_sparkplug.webp",
+        "fullsize": "/images/items/misc/Icon_valuable_sparkplug.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 12000,
+        "weight": 0.2,
+        "size": "1x1",
+        "safeSlots": 3
+      },
+      "notes": "Used in hideout generator upgrades.",
+      "tips": "Collect for power-related hideout improvements."
+    },
+    {
+      "id": "valuable-batteries",
+      "name": "Batteries",
+      "description": "High-capacity batteries for electronic devices.",
+      "category": "misc",
+      "subcategory": "Power",
+      "images": {
+        "icon": "/images/items/misc/Icon_valuable_batteries.webp",
+        "thumbnail": "/images/items/misc/Icon_valuable_batteries.webp",
+        "fullsize": "/images/items/misc/Icon_valuable_batteries.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 6500,
+        "weight": 0.4,
+        "size": "1x1",
+        "safeSlots": 4
+      },
+      "notes": "Power source for various electronic equipment.",
+      "tips": "Needed for flashlights and electronic devices."
+    },
+    {
+      "id": "valuable-lighter",
+      "name": "Lighter",
+      "description": "Reliable butane lighter for ignition purposes.",
+      "category": "misc",
+      "subcategory": "Tools",
+      "images": {
+        "icon": "/images/items/misc/Icon_valuable_lighter.webp",
+        "thumbnail": "/images/items/misc/Icon_valuable_lighter.webp",
+        "fullsize": "/images/items/misc/Icon_valuable_lighter.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 3500,
+        "weight": 0.05,
+        "size": "1x1",
+        "safeSlots": 5
+      },
+      "notes": "Used for various crafting recipes.",
+      "tips": "Light weight, good for filling extra inventory slots."
+    },
+    {
+      "id": "valuable-pliers",
+      "name": "Pliers",
+      "description": "Heavy-duty pliers for mechanical work.",
+      "category": "misc",
+      "subcategory": "Tools",
+      "images": {
+        "icon": "/images/items/misc/Icon_valuable_plier.webp",
+        "thumbnail": "/images/items/misc/Icon_valuable_plier.webp",
+        "fullsize": "/images/items/misc/Icon_valuable_plier.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 9500,
+        "weight": 0.3,
+        "size": "1x2",
+        "safeSlots": 2
+      },
+      "notes": "Essential tool for mechanical work and crafting.",
+      "tips": "Required for weapon modification and repair."
+    },
+    {
+      "id": "valuable-screwdriver",
+      "name": "Screwdriver",
+      "description": "Multi-purpose screwdriver for mechanical tasks.",
+      "category": "misc",
+      "subcategory": "Tools",
+      "images": {
+        "icon": "/images/items/misc/Icon_valuable_screwdriver.webp",
+        "thumbnail": "/images/items/misc/Icon_valuable_screwdriver.webp",
+        "fullsize": "/images/items/misc/Icon_valuable_screwdriver.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 4500,
+        "weight": 0.15,
+        "size": "1x1",
+        "safeSlots": 4
+      },
+      "notes": "Basic tool for equipment maintenance.",
+      "tips": "Always useful for hideout construction."
+    },
+    {
+      "id": "valuable-wrench",
+      "name": "Wrench",
+      "description": "Adjustable wrench for mechanical repairs.",
+      "category": "misc",
+      "subcategory": "Tools",
+      "images": {
+        "icon": "/images/items/misc/Icon_valuable_wrench.webp",
+        "thumbnail": "/images/items/misc/Icon_valuable_wrench.webp",
+        "fullsize": "/images/items/misc/Icon_valuable_wrench.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 7500,
+        "weight": 0.4,
+        "size": "1x2",
+        "safeSlots": 2
+      },
+      "notes": "Heavy-duty tool for construction and repair.",
+      "tips": "Required for advanced hideout upgrades."
+    },
+    {
+      "id": "valuable-gas-can",
+      "name": "Gas Can",
+      "description": "Portable fuel container for generators and vehicles.",
+      "category": "misc",
+      "subcategory": "Combustibles",
+      "images": {
+        "icon": "/images/items/misc/Icon_valuable_gascan.webp",
+        "thumbnail": "/images/items/misc/Icon_valuable_gascan.webp",
+        "fullsize": "/images/items/misc/Icon_valuable_gascan.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 18000,
+        "weight": 2.5,
+        "size": "2x2",
+        "safeSlots": 0
+      },
+      "notes": "Fuel for generators and power systems.",
+      "tips": "Heavy but valuable for hideout power upgrades."
+    },
+    {
+      "id": "valuable-wire-cutter",
+      "name": "Wire Cutter",
+      "description": "Professional wire cutting tool for electrical work.",
+      "category": "misc",
+      "subcategory": "Tools",
+      "images": {
+        "icon": "/images/items/misc/Icon_valuable_wirecutter.webp",
+        "thumbnail": "/images/items/misc/Icon_valuable_wirecutter.webp",
+        "fullsize": "/images/items/misc/Icon_valuable_wirecutter.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 11000,
+        "weight": 0.25,
+        "size": "1x1",
+        "safeSlots": 2
+      },
+      "notes": "Specialized tool for electrical installations.",
+      "tips": "Required for advanced electrical work in hideout."
+    },
+    {
+      "id": "valuable-measuring-tape",
+      "name": "Measuring Tape",
+      "description": "Precision measuring tape for construction work.",
+      "category": "misc",
+      "subcategory": "Tools",
+      "images": {
+        "icon": "/images/items/misc/Icon_valuable_measuringtape.webp",
+        "thumbnail": "/images/items/misc/Icon_valuable_measuringtape.webp",
+        "fullsize": "/images/items/misc/Icon_valuable_measuringtape.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 5500,
+        "weight": 0.2,
+        "size": "1x1",
+        "safeSlots": 3
+      },
+      "notes": "Essential for accurate construction measurements.",
+      "tips": "Needed for precise hideout construction projects."
+    }
+  ]
+}

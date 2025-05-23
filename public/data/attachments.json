@@ -1,0 +1,198 @@
+{
+  "attachments": [
+    {
+      "id": "sight-red-t1",
+      "name": "T1 Red Dot Sight",
+      "description": "Compact red dot sight for close to medium range engagements.",
+      "category": "attachments",
+      "subcategory": "Sights",
+      "images": {
+        "icon": "/images/items/attachments/Icon_at_red_t1.webp",
+        "thumbnail": "/images/items/attachments/Icon_at_red_t1.webp",
+        "fullsize": "/images/items/attachments/Icon_at_red_t1.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 8500,
+        "weight": 0.3,
+        "size": "1x1",
+        "safeSlots": 1,
+        "ergoPenalty": -1,
+        "accuracyBonus": 5,
+        "targetAcquisition": 15
+      },
+      "notes": "Improves target acquisition speed and accuracy.",
+      "tips": "Essential for fast-paced combat situations."
+    },
+    {
+      "id": "sight-4x-acog",
+      "name": "4x ACOG Scope",
+      "description": "Advanced Combat Optical Gunsight with 4x magnification.",
+      "category": "attachments",
+      "subcategory": "Sights",
+      "images": {
+        "icon": "/images/items/attachments/Icon_at_4x_acog.webp",
+        "thumbnail": "/images/items/attachments/Icon_at_4x_acog.webp",
+        "fullsize": "/images/items/attachments/Icon_at_4x_acog.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 25000,
+        "weight": 0.8,
+        "size": "2x1",
+        "safeSlots": 0,
+        "ergoPenalty": -4,
+        "accuracyBonus": 15,
+        "magnification": 4
+      },
+      "notes": "Excellent for medium to long range engagements.",
+      "tips": "Heavy but provides significant accuracy improvement."
+    },
+    {
+      "id": "grip-vertical-rvg",
+      "name": "RVG Vertical Grip",
+      "description": "Tactical vertical foregrip for improved weapon control.",
+      "category": "attachments",
+      "subcategory": "Grips",
+      "images": {
+        "icon": "/images/items/attachments/Icon_WF_VerticalGrip_RVG_BK.webp",
+        "thumbnail": "/images/items/attachments/Icon_WF_VerticalGrip_RVG_BK.webp",
+        "fullsize": "/images/items/attachments/Icon_WF_VerticalGrip_RVG_BK.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 6500,
+        "weight": 0.2,
+        "size": "1x1",
+        "safeSlots": 1,
+        "ergoPenalty": -2,
+        "recoilReduction": 12,
+        "stabilityBonus": 8
+      },
+      "notes": "Reduces recoil and improves weapon stability.",
+      "tips": "Essential for automatic weapons with high recoil."
+    },
+    {
+      "id": "flashlight-h200",
+      "name": "H200 Tactical Flashlight",
+      "description": "High-intensity tactical flashlight with strobe function.",
+      "category": "attachments",
+      "subcategory": "Tactical",
+      "images": {
+        "icon": "/images/items/attachments/Icon_at_flashlight_h200.webp",
+        "thumbnail": "/images/items/attachments/Icon_at_flashlight_h200.webp",
+        "fullsize": "/images/items/attachments/Icon_at_flashlight_h200.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 12000,
+        "weight": 0.4,
+        "size": "1x1",
+        "safeSlots": 1,
+        "ergoPenalty": -1,
+        "lightRadius": 25,
+        "strobeEffect": true
+      },
+      "notes": "Illuminates dark areas and can blind enemies.",
+      "tips": "Useful for night operations but reveals your position."
+    },
+    {
+      "id": "laser-faliro",
+      "name": "Faliro Laser Sight",
+      "description": "Precision laser sight for improved hip-fire accuracy.",
+      "category": "attachments",
+      "subcategory": "Tactical",
+      "images": {
+        "icon": "/images/items/attachments/Icon_at_laser_faliro.webp",
+        "thumbnail": "/images/items/attachments/Icon_at_laser_faliro.webp",
+        "fullsize": "/images/items/attachments/Icon_at_laser_faliro.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 9500,
+        "weight": 0.15,
+        "size": "1x1",
+        "safeSlots": 1,
+        "ergoPenalty": 0,
+        "hipFireAccuracy": 20,
+        "targetAcquisition": 10
+      },
+      "notes": "Significantly improves accuracy when not aiming down sights.",
+      "tips": "Great for close-quarters combat and point shooting."
+    },
+    {
+      "id": "suppressor-rifle",
+      "name": "Rifle Suppressor",
+      "description": "Sound suppressor for rifle-caliber weapons.",
+      "category": "attachments",
+      "subcategory": "Muzzle Devices",
+      "images": {
+        "icon": "/images/items/attachments/Icon_at_scoperail_riflesuppressor.webp",
+        "thumbnail": "/images/items/attachments/Icon_at_scoperail_riflesuppressor.webp",
+        "fullsize": "/images/items/attachments/Icon_at_scoperail_riflesuppressor.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 35000,
+        "weight": 0.9,
+        "size": "1x3",
+        "safeSlots": 0,
+        "ergoPenalty": -5,
+        "soundReduction": 85,
+        "muzzleFlashReduction": 95,
+        "recoilReduction": 5
+      },
+      "notes": "Greatly reduces weapon sound signature and muzzle flash.",
+      "tips": "Essential for stealth operations but affects weapon handling."
+    },
+    {
+      "id": "compensator-riflecom",
+      "name": "Rifle Compensator",
+      "description": "Muzzle compensator designed to reduce recoil and muzzle rise.",
+      "category": "attachments",
+      "subcategory": "Muzzle Devices",
+      "images": {
+        "icon": "/images/items/attachments/Icon_at_com_riflecom.webp",
+        "thumbnail": "/images/items/attachments/Icon_at_com_riflecom.webp",
+        "fullsize": "/images/items/attachments/Icon_at_com_riflecom.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 15000,
+        "weight": 0.3,
+        "size": "1x1",
+        "safeSlots": 1,
+        "ergoPenalty": -1,
+        "recoilReduction": 18,
+        "muzzleRiseReduction": 25
+      },
+      "notes": "Significantly reduces vertical recoil and muzzle climb.",
+      "tips": "Excellent for automatic fire and follow-up shots."
+    },
+    {
+      "id": "stock-ratel",
+      "name": "Ratel Stock",
+      "description": "Adjustable tactical stock for improved weapon ergonomics.",
+      "category": "attachments",
+      "subcategory": "Stocks",
+      "images": {
+        "icon": "/images/items/attachments/Icon_at_scoperail_quickerbk.webp",
+        "thumbnail": "/images/items/attachments/Icon_at_scoperail_quickerbk.webp",
+        "fullsize": "/images/items/attachments/Icon_at_scoperail_quickerbk.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 8000,
+        "weight": 0.7,
+        "size": "1x2",
+        "safeSlots": 0,
+        "ergoPenalty": -3,
+        "ergoBonus": 8,
+        "recoilReduction": 10,
+        "stabilityBonus": 12
+      },
+      "notes": "Improves overall weapon handling and comfort.",
+      "tips": "Good balance of recoil control and ergonomics."
+    }
+  ]
+}

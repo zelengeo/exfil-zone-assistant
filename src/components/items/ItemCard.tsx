@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { ShieldIcon, DollarSign, Info } from 'lucide-react';
 import { Item, getRarityColorClass, getRarityBorderClass, getCategoryById, formatPrice } from '@/types/items';
+import { ItemImage } from './ItemImage';
 
 // Helper function to render icon based on category
 const getCategoryIcon = (categoryId: string) => {
@@ -152,14 +153,14 @@ const ItemCard: React.FC<ItemCardProps> = ({ item }) => {
       `}
         >
             {/* Item image and rarity badge */}
-            <div className="relative aspect-square bg-military-900 border-b border-military-700">
-                {/* Placeholder for image */}
-                <div className="flex items-center justify-center h-full">
-                    <div className="text-olive-500 text-sm">
-                        {/* If we had actual images, we'd use next/image here */}
-                        Item Image
-                    </div>
-                </div>
+            <div className="relative aspect-square bg-military-900 border-b border-military-700 overflow-hidden">
+                {/* Item image */}
+                <ItemImage
+                    item={item}
+                    size="thumbnail"
+                    className="w-full h-full"
+                    showZoom={false}
+                />
 
                 {/* Rarity tag */}
                 <div className={`absolute top-0 right-0 px-2 py-0.5 text-xs ${rarityColorClass} border-l border-b ${rarityBorderClass}`}>

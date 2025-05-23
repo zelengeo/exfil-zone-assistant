@@ -3,8 +3,23 @@ import { Item } from '@/types/items';
 // Cache for the items data
 let itemsCache: Item[] | null = null;
 
+// List of data files to fetch
+const DATA_FILES = [
+    'weapons.json',
+    'ammunition.json',
+    'medical.json',
+    'gear.json',
+    'food.json',
+    'attachments.json',
+    'keys.json',
+    'misc.json',
+    'magazines.json',
+    'throwables.json',
+    'task-items.json'
+];
+
 /**
- * Fetch and parse items data from JSON file
+ * Fetch and parse items data from multiple JSON files
  */
 export async function fetchItemsData(): Promise<Item[]> {
     // Return cached data if available
@@ -13,26 +28,41 @@ export async function fetchItemsData(): Promise<Item[]> {
     }
 
     try {
-        const response = await fetch('/data/items.json');
-        if (!response.ok) {
-            throw new Error(`Failed to fetch items data: ${response.statusText}`);
-        }
-
-        const data = await response.json();
-
-        // Flatten the categorized data into a single array
         const allItems: Item[] = [];
 
-        // Combine all categories into one array
-        Object.values(data).forEach((categoryItems: any) => {
-            if (Array.isArray(categoryItems)) {
-                allItems.push(...categoryItems);
+        // Fetch all data files concurrently
+        const fetchPromises = DATA_FILES.map(async (filename) => {
+            try {
+                const response = await fetch(`/data/${filename}`);
+                if (!response.ok) {
+                    console.warn(`Failed to fetch ${filename}: ${response.statusText}`);
+                    return [];
+                }
+
+                const data = await response.json();
+
+                // Each file should have a single category key with an array of items
+                const categoryKey = Object.keys(data)[0];
+                return data[categoryKey] || [];
+            } catch (error) {
+                console.warn(`Error fetching ${filename}:`, error);
+                return [];
+            }
+        });
+
+        const results = await Promise.all(fetchPromises);
+
+        // Flatten all results into a single array
+        results.forEach(items => {
+            if (Array.isArray(items)) {
+                allItems.push(...items);
             }
         });
 
         // Cache the results
         itemsCache = allItems;
 
+        console.log(`✅ Loaded ${allItems.length} items from ${DATA_FILES.length} data files`);
         return allItems;
     } catch (error) {
         console.error('Error fetching items data:', error);

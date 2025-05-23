@@ -1,0 +1,244 @@
+{
+  "medical": [
+    {
+      "id": "med-bandage",
+      "name": "Bandage",
+      "description": "Basic medical bandage for treating bleeding wounds.",
+      "category": "medicine",
+      "subcategory": "Bandages",
+      "images": {
+        "icon": "/images/items/medical/icon_bandage.webp",
+        "thumbnail": "/images/items/medical/icon_bandage.webp",
+        "fullsize": "/images/items/medical/icon_bandage.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 800,
+        "weight": 0.1,
+        "size": "1x1",
+        "safeSlots": 3,
+        "healAmount": 35,
+        "useTime": 3,
+        "duration": 0
+      },
+      "notes": "Stops bleeding and provides minor healing.",
+      "tips": "Essential for any raid. Always carry several."
+    },
+    {
+      "id": "med-military-bandage",
+      "name": "Military Bandage",
+      "description": "Advanced military-grade bandage with superior healing properties.",
+      "category": "medicine",
+      "subcategory": "Bandages",
+      "images": {
+        "icon": "/images/items/medical/icon_Military_Bandage.webp",
+        "thumbnail": "/images/items/medical/icon_Military_Bandage.webp",
+        "fullsize": "/images/items/medical/icon_Military_Bandage.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 2500,
+        "weight": 0.15,
+        "size": "1x1",
+        "safeSlots": 2,
+        "healAmount": 65,
+        "useTime": 4,
+        "duration": 0
+      },
+      "notes": "Higher healing capacity than standard bandages.",
+      "tips": "More efficient than regular bandages for severe wounds."
+    },
+    {
+      "id": "med-gauze",
+      "name": "Gauze",
+      "description": "Medical gauze for wound dressing and bleeding control.",
+      "category": "medicine",
+      "subcategory": "Bandages",
+      "images": {
+        "icon": "/images/items/medical/icon_Gauze.webp",
+        "thumbnail": "/images/items/medical/icon_Gauze.webp",
+        "fullsize": "/images/items/medical/icon_Gauze.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 600,
+        "weight": 0.08,
+        "size": "1x1",
+        "safeSlots": 5,
+        "healAmount": 25,
+        "useTime": 2,
+        "duration": 0
+      },
+      "notes": "Quick application but lower healing.",
+      "tips": "Good for emergency bleeding control."
+    },
+    {
+      "id": "med-painkiller",
+      "name": "Painkiller",
+      "description": "Standard pain relief medication for managing injury effects.",
+      "category": "medicine",
+      "subcategory": "Painkillers",
+      "images": {
+        "icon": "/images/items/medical/icon_painkiller.webp",
+        "thumbnail": "/images/items/medical/icon_painkiller.webp",
+        "fullsize": "/images/items/medical/icon_painkiller.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 1200,
+        "weight": 0.05,
+        "size": "1x1",
+        "safeSlots": 4,
+        "healAmount": 0,
+        "useTime": 2,
+        "duration": 180
+      },
+      "notes": "Reduces pain effects and tremor from injuries.",
+      "tips": "Use when injured to maintain combat effectiveness."
+    },
+    {
+      "id": "med-military-painkiller",
+      "name": "Military Painkiller",
+      "description": "High-strength military-grade pain relief medication.",
+      "category": "medicine",
+      "subcategory": "Painkillers",
+      "images": {
+        "icon": "/images/items/medical/icon_Military_Painkiller.webp",
+        "thumbnail": "/images/items/medical/icon_Military_Painkiller.webp",
+        "fullsize": "/images/items/medical/icon_Military_Painkiller.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 4500,
+        "weight": 0.08,
+        "size": "1x1",
+        "safeSlots": 2,
+        "healAmount": 0,
+        "useTime": 3,
+        "duration": 300
+      },
+      "notes": "Longer duration and stronger effect than standard painkillers.",
+      "tips": "Save for extended firefights or severe injuries."
+    },
+    {
+      "id": "med-morphine",
+      "name": "Morphine",
+      "description": "Powerful opiate painkiller for severe trauma management.",
+      "category": "medicine",
+      "subcategory": "Painkillers",
+      "images": {
+        "icon": "/images/items/medical/icon_morphine.webp",
+        "thumbnail": "/images/items/medical/icon_morphine.webp",
+        "fullsize": "/images/items/medical/icon_morphine.webp"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 8000,
+        "weight": 0.1,
+        "size": "1x1",
+        "safeSlots": 1,
+        "healAmount": 0,
+        "useTime": 4,
+        "duration": 450
+      },
+      "notes": "Provides complete pain relief and fracture treatment.",
+      "tips": "Essential for treating broken bones and severe injuries."
+    },
+    {
+      "id": "med-adrenaline",
+      "name": "Adrenaline Injector",
+      "description": "Emergency adrenaline injection for combat stimulation.",
+      "category": "medicine",
+      "subcategory": "Stims",
+      "images": {
+        "icon": "/images/items/medical/icon_Adrenaline_injector.webp",
+        "thumbnail": "/images/items/medical/icon_Adrenaline_injector.webp",
+        "fullsize": "/images/items/medical/icon_Adrenaline_injector.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 15000,
+        "weight": 0.2,
+        "size": "1x1",
+        "safeSlots": 1,
+        "healAmount": 0,
+        "useTime": 2,
+        "duration": 240
+      },
+      "notes": "Increases movement speed and reduces stamina drain.",
+      "tips": "Use when you need to quickly reposition or escape."
+    },
+    {
+      "id": "med-suturing-device",
+      "name": "Suturing Device",
+      "description": "Advanced medical device for treating severe wounds and fractures.",
+      "category": "medicine",
+      "subcategory": "Medkits",
+      "images": {
+        "icon": "/images/items/medical/icon_suturingdevice.webp",
+        "thumbnail": "/images/items/medical/icon_suturingdevice.webp",
+        "fullsize": "/images/items/medical/icon_suturingdevice.webp"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 25000,
+        "weight": 0.8,
+        "size": "1x2",
+        "safeSlots": 1,
+        "healAmount": 180,
+        "useTime": 8,
+        "duration": 0
+      },
+      "notes": "Can treat multiple injury types including fractures.",
+      "tips": "Expensive but very effective for comprehensive healing."
+    },
+    {
+      "id": "med-hp-syringe1",
+      "name": "HP Syringe Mk1",
+      "description": "Medical syringe that restores health over time.",
+      "category": "medicine",
+      "subcategory": "Stims",
+      "images": {
+        "icon": "/images/items/medical/icon_HPsyringe1.webp",
+        "thumbnail": "/images/items/medical/icon_HPsyringe1.webp",
+        "fullsize": "/images/items/medical/icon_HPsyringe1.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 8500,
+        "weight": 0.1,
+        "size": "1x1",
+        "safeSlots": 2,
+        "healAmount": 120,
+        "useTime": 3,
+        "duration": 60
+      },
+      "notes": "Provides healing over time rather than instant.",
+      "tips": "Use in cover as it takes time to reach full effect."
+    },
+    {
+      "id": "med-hp-syringe2",
+      "name": "HP Syringe Mk2",
+      "description": "Advanced medical syringe with enhanced healing properties.",
+      "category": "medicine",
+      "subcategory": "Stims",
+      "images": {
+        "icon": "/images/items/medical/icon_HPsyringe2.webp",
+        "thumbnail": "/images/items/medical/icon_HPsyringe2.webp",
+        "fullsize": "/images/items/medical/icon_HPsyringe2.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 14000,
+        "weight": 0.12,
+        "size": "1x1",
+        "safeSlots": 1,
+        "healAmount": 180,
+        "useTime": 4,
+        "duration": 90
+      },
+      "notes": "More potent version with longer healing duration.",
+      "tips": "Best used when you have time to let the full effect work."
+    }
+  ]
+}

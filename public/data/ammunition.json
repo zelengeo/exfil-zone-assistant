@@ -1,0 +1,256 @@
+{
+  "ammunition": [
+    {
+      "id": "ammo-545x39-fmj",
+      "name": "5.45x39mm FMJ",
+      "description": "Standard full metal jacket cartridge for AK-74 series rifles.",
+      "category": "ammo",
+      "subcategory": "5.45x39mm",
+      "images": {
+        "icon": "/images/items/ammo/545x39mm_FMJ.webp",
+        "thumbnail": "/images/items/ammo/545x39mm_FMJ.webp",
+        "fullsize": "/images/items/ammo/545x39mm_FMJ.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 280,
+        "weight": 0.01,
+        "size": "1x1",
+        "safeSlots": 60,
+        "damage": 52,
+        "penetration": 35
+      }
+    },
+    {
+      "id": "ammo-545x39-bs",
+      "name": "5.45x39mm BS",
+      "description": "High-penetration armor-piercing cartridge with steel core.",
+      "category": "ammo",
+      "subcategory": "5.45x39mm",
+      "images": {
+        "icon": "/images/items/ammo/545x39mm_BS.webp",
+        "thumbnail": "/images/items/ammo/545x39mm_BS.webp",
+        "fullsize": "/images/items/ammo/545x39mm_BS.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 450,
+        "weight": 0.01,
+        "size": "1x1",
+        "safeSlots": 60,
+        "damage": 48,
+        "penetration": 51
+      }
+    },
+    {
+      "id": "ammo-545x39-7n40",
+      "name": "5.45x39mm 7N40",
+      "description": "Modern armor-piercing cartridge with enhanced penetration.",
+      "category": "ammo",
+      "subcategory": "5.45x39mm",
+      "images": {
+        "icon": "/images/items/ammo/545x39mm_7N40.webp",
+        "thumbnail": "/images/items/ammo/545x39mm_7N40.webp",
+        "fullsize": "/images/items/ammo/545x39mm_7N40.webp"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 650,
+        "weight": 0.01,
+        "size": "1x1",
+        "safeSlots": 60,
+        "damage": 50,
+        "penetration": 58
+      }
+    },
+    {
+      "id": "ammo-556x45-fmj",
+      "name": "5.56x45mm FMJ",
+      "description": "Standard NATO rifle cartridge used in M4A1 and similar rifles.",
+      "category": "ammo",
+      "subcategory": "5.56x45mm",
+      "images": {
+        "icon": "/images/items/ammo/556X45_FMJ.webp",
+        "thumbnail": "/images/items/ammo/556X45_FMJ.webp",
+        "fullsize": "/images/items/ammo/556X45_FMJ.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 300,
+        "weight": 0.01,
+        "size": "1x1",
+        "safeSlots": 60,
+        "damage": 54,
+        "penetration": 37
+      }
+    },
+    {
+      "id": "ammo-556x45-m995",
+      "name": "5.56x45mm M995",
+      "description": "High-performance armor-piercing cartridge with tungsten core.",
+      "category": "ammo",
+      "subcategory": "5.56x45mm",
+      "images": {
+        "icon": "/images/items/ammo/556X45_M995.webp",
+        "thumbnail": "/images/items/ammo/556X45_M995.webp",
+        "fullsize": "/images/items/ammo/556X45_M995.webp"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 750,
+        "weight": 0.01,
+        "size": "1x1",
+        "safeSlots": 60,
+        "damage": 42,
+        "penetration": 65
+      }
+    },
+    {
+      "id": "ammo-762x39-ps",
+      "name": "7.62x39mm PS",
+      "description": "Standard steel-core cartridge for AKM and similar rifles.",
+      "category": "ammo",
+      "subcategory": "7.62x39mm",
+      "images": {
+        "icon": "/images/items/ammo/762x39mm_PS.webp",
+        "thumbnail": "/images/items/ammo/762x39mm_PS.webp",
+        "fullsize": "/images/items/ammo/762x39mm_PS.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 320,
+        "weight": 0.016,
+        "size": "1x1",
+        "safeSlots": 60,
+        "damage": 58,
+        "penetration": 40
+      }
+    },
+    {
+      "id": "ammo-762x39-bp",
+      "name": "7.62x39mm BP",
+      "description": "Armor-piercing cartridge with hardened steel core.",
+      "category": "ammo",
+      "subcategory": "7.62x39mm",
+      "images": {
+        "icon": "/images/items/ammo/762x39mm_BP.webp",
+        "thumbnail": "/images/items/ammo/762x39mm_BP.webp",
+        "fullsize": "/images/items/ammo/762x39mm_BP.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 480,
+        "weight": 0.016,
+        "size": "1x1",
+        "safeSlots": 60,
+        "damage": 55,
+        "penetration": 52
+      }
+    },
+    {
+      "id": "ammo-9x19-fmj",
+      "name": "9x19mm FMJ",
+      "description": "Standard pistol cartridge used in various handguns and SMGs.",
+      "category": "ammo",
+      "subcategory": "9x19mm",
+      "images": {
+        "icon": "/images/items/ammo/9x19mm_FMJ.webp",
+        "thumbnail": "/images/items/ammo/9x19mm_FMJ.webp",
+        "fullsize": "/images/items/ammo/9x19mm_FMJ.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 150,
+        "weight": 0.008,
+        "size": "1x1",
+        "safeSlots": 50,
+        "damage": 35,
+        "penetration": 18
+      }
+    },
+    {
+      "id": "ammo-9x19-apv1",
+      "name": "9x19mm AP V1",
+      "description": "Armor-piercing pistol cartridge with enhanced penetration.",
+      "category": "ammo",
+      "subcategory": "9x19mm",
+      "images": {
+        "icon": "/images/items/ammo/9x19mm_APV1.webp",
+        "thumbnail": "/images/items/ammo/9x19mm_APV1.webp",
+        "fullsize": "/images/items/ammo/9x19mm_APV1.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 280,
+        "weight": 0.008,
+        "size": "1x1",
+        "safeSlots": 50,
+        "damage": 32,
+        "penetration": 30
+      }
+    },
+    {
+      "id": "ammo-45acp-fmj",
+      "name": ".45 ACP FMJ",
+      "description": "Standard .45 caliber pistol cartridge with good stopping power.",
+      "category": "ammo",
+      "subcategory": ".45 ACP",
+      "images": {
+        "icon": "/images/items/ammo/45acp_FMJ.webp",
+        "thumbnail": "/images/items/ammo/45acp_FMJ.webp",
+        "fullsize": "/images/items/ammo/45acp_FMJ.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 200,
+        "weight": 0.015,
+        "size": "1x1",
+        "safeSlots": 30,
+        "damage": 70,
+        "penetration": 25
+      }
+    },
+    {
+      "id": "ammo-12ga-buck",
+      "name": "12 Gauge Buckshot",
+      "description": "Standard shotgun shell loaded with lead pellets.",
+      "category": "ammo",
+      "subcategory": "12 Gauge",
+      "images": {
+        "icon": "/images/items/ammo/12ga_BUCK_HP.webp",
+        "thumbnail": "/images/items/ammo/12ga_BUCK_HP.webp",
+        "fullsize": "/images/items/ammo/12ga_BUCK_HP.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 180,
+        "weight": 0.038,
+        "size": "1x1",
+        "safeSlots": 20,
+        "damage": 200,
+        "penetration": 8
+      }
+    },
+    {
+      "id": "ammo-12ga-slug",
+      "name": "12 Gauge Slug",
+      "description": "Single projectile shotgun shell for increased accuracy and penetration.",
+      "category": "ammo",
+      "subcategory": "12 Gauge",
+      "images": {
+        "icon": "/images/items/ammo/12ga_SLUG_HP.webp",
+        "thumbnail": "/images/items/ammo/12ga_SLUG_HP.webp",
+        "fullsize": "/images/items/ammo/12ga_SLUG_HP.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 300,
+        "weight": 0.038,
+        "size": "1x1",
+        "safeSlots": 20,
+        "damage": 280,
+        "penetration": 35
+      }
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "gear": [
+    {
+      "id": "helmet-beanie",
+      "name": "Beanie",
+      "description": "Simple knit cap providing minimal protection but good concealment.",
+      "category": "gear",
+      "subcategory": "Helmets",
+      "images": {
+        "icon": "/images/items/gear/Icon_Beanie.webp",
+        "thumbnail": "/images/items/gear/Icon_Beanie.webp",
+        "fullsize": "/images/items/gear/Icon_Beanie.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 2500,
+        "weight": 0.2,
+        "size": "2x2",
+        "safeSlots": 0,
+        "armorClass": 1,
+        "durability": 15,
+        "repairability": "Poor",
+        "ergoPenalty": 0,
+        "turnPenalty": 0
+      },
+      "notes": "Minimal protection but no movement penalties.",
+      "tips": "Good for stealth operations where mobility matters."
+    },
+    {
+      "id": "helmet-warfare",
+      "name": "Warfare Helmet",
+      "description": "Standard military combat helmet with good protection.",
+      "category": "gear",
+      "subcategory": "Helmets",
+      "images": {
+        "icon": "/images/items/gear/Icon_WarfareHelmet.webp",
+        "thumbnail": "/images/items/gear/Icon_WarfareHelmet.webp",
+        "fullsize": "/images/items/gear/Icon_WarfareHelmet.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 35000,
+        "weight": 1.5,
+        "size": "2x2",
+        "safeSlots": 0,
+        "armorClass": 4,
+        "durability": 40,
+        "repairability": "Good",
+        "ergoPenalty": -3,
+        "turnPenalty": -5
+      },
+      "notes": "Solid protection against most rifle rounds.",
+      "tips": "Essential for high-threat environments."
+    },
+    {
+      "id": "helmet-6b47",
+      "name": "6B47 Helmet",
+      "description": "Russian military helmet with excellent protection and modularity.",
+      "category": "gear",
+      "subcategory": "Helmets",
+      "images": {
+        "icon": "/images/items/gear/Icon_WarfareHelmet_6B47.webp",
+        "thumbnail": "/images/items/gear/Icon_WarfareHelmet_6B47.webp",
+        "fullsize": "/images/items/gear/Icon_WarfareHelmet_6B47.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 45000,
+        "weight": 1.8,
+        "size": "2x2",
+        "safeSlots": 0,
+        "armorClass": 5,
+        "durability": 50,
+        "repairability": "Excellent",
+        "ergoPenalty": -4,
+        "turnPenalty": -6
+      },
+      "notes": "High-tier protection with accessory mounting options.",
+      "tips": "Can mount night vision and communication equipment."
+    },
+    {
+      "id": "vest-lv2",
+      "name": "Level 2 Vest",
+      "description": "Basic tactical vest providing moderate protection.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/gear/Icon_vest_lv2.webp",
+        "thumbnail": "/images/items/gear/Icon_vest_lv2.webp",
+        "fullsize": "/images/items/gear/Icon_vest_lv2.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 25000,
+        "weight": 3.5,
+        "size": "3x4",
+        "safeSlots": 0,
+        "armorClass": 2,
+        "durability": 45,
+        "repairability": "Good",
+        "ergoPenalty": -8,
+        "turnPenalty": -5
+      },
+      "notes": "Entry-level armor effective against pistol rounds.",
+      "tips": "Good starting armor for new players."
+    },
+    {
+      "id": "vest-lv4",
+      "name": "Level 4 Vest",
+      "description": "Military-grade body armor with ceramic plates.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/gear/Icon_vest_lv4.webp",
+        "thumbnail": "/images/items/gear/Icon_vest_lv4.webp",
+        "fullsize": "/images/items/gear/Icon_vest_lv4.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 65000,
+        "weight": 6.2,
+        "size": "3x4",
+        "safeSlots": 0,
+        "armorClass": 4,
+        "durability": 80,
+        "repairability": "Good",
+        "ergoPenalty": -15,
+        "turnPenalty": -8
+      },
+      "notes": "Stops most rifle rounds but limits mobility.",
+      "tips": "Balance protection with movement penalties."
+    },
+    {
+      "id": "vest-lv6",
+      "name": "Level 6 Vest",
+      "description": "Heavy-duty armor vest with maximum protection.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/gear/Icon_vest_lv6.webp",
+        "thumbnail": "/images/items/gear/Icon_vest_lv6.webp",
+        "fullsize": "/images/items/gear/Icon_vest_lv6.webp"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 150000,
+        "weight": 9.8,
+        "size": "3x4",
+        "safeSlots": 0,
+        "armorClass": 6,
+        "durability": 120,
+        "repairability": "Excellent",
+        "ergoPenalty": -25,
+        "turnPenalty": -12
+      },
+      "notes": "Top-tier protection against all but the most powerful rounds.",
+      "tips": "Only use when you expect heavy combat."
+    },
+    {
+      "id": "backpack-lv1",
+      "name": "Level 1 Backpack",
+      "description": "Small tactical backpack for basic loadouts.",
+      "category": "gear",
+      "subcategory": "Backpacks",
+      "images": {
+        "icon": "/images/items/gear/Icon_backpack_lv1_01.webp",
+        "thumbnail": "/images/items/gear/Icon_backpack_lv1_01.webp",
+        "fullsize": "/images/items/gear/Icon_backpack_lv1_01.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 8000,
+        "weight": 1.2,
+        "size": "4x5",
+        "safeSlots": 0,
+        "storageSlots": 20,
+        "ergoPenalty": -3,
+        "turnPenalty": -2
+      },
+      "notes": "Basic storage capacity for essential items.",
+      "tips": "Sufficient for short raids or budget loadouts."
+    },
+    {
+      "id": "backpack-lv3",
+      "name": "Level 3 Backpack",
+      "description": "Large military backpack with extensive storage capacity.",
+      "category": "gear",
+      "subcategory": "Backpacks",
+      "images": {
+        "icon": "/images/items/gear/Icon_backpack_lv3_01.webp",
+        "thumbnail": "/images/items/gear/Icon_backpack_lv3_01.webp",
+        "fullsize": "/images/items/gear/Icon_backpack_lv3_01.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 45000,
+        "weight": 2.8,
+        "size": "5x7",
+        "safeSlots": 0,
+        "storageSlots": 42,
+        "ergoPenalty": -8,
+        "turnPenalty": -5
+      },
+      "notes": "High-capacity storage for extended operations.",
+      "tips": "Essential for loot runs and long raids."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Hammer, FileText, Home, ChevronRight } from 'lucide-react';
+import { Hammer, FileText, ChevronRight } from 'lucide-react';
 import { Item } from '@/types/items';
 
 interface RelatedItemsProps {
