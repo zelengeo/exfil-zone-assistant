@@ -1,0 +1,2733 @@
+{
+  "armor": [
+    {
+      "id": "armor-6b17",
+      "name": "6B17 Body Armor",
+      "description": "Russian military body armor vest providing Class 4 protection with ceramic plates. Offers excellent protection against rifle rounds while maintaining reasonable mobility.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/Icon_SKM_Vest_013_02_Ck.webp",
+        "thumbnail": "/images/items/armor/Icon_SKM_Vest_013_02_Ck.webp",
+        "fullsize": "/images/items/armor/Icon_SKM_Vest_013_02_Ck.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 85000,
+        "weight": 7.2,
+        "armorClass": 4,
+        "maxDurability": 90,
+        "durabilityDamageScalar": 0.32,
+        "bluntDamageScalar": 0.7,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.7,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.7,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.7,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "pelvis",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.7,
+            "protectionAngle": 75
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.92,
+            "arriveTangent": -4.856966,
+            "leaveTangent": -4.856977
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.12,
+            "arriveTangent": -0.463078,
+            "leaveTangent": -0.463078
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0.03,
+            "arriveTangent": -0.035238,
+            "leaveTangent": -0.035238
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.001887,
+            "leaveTangent": -0.001887
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.75,
+            "arriveTangent": -0.279961,
+            "leaveTangent": -0.279962
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.4,
+            "value": 0.6,
+            "arriveTangent": -0.438411,
+            "leaveTangent": -0.43841
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "antiPenetrationDurabilityScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 1,
+            "arriveTangent": -0.057609,
+            "leaveTangent": -0.057609
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.65,
+            "value": 0.833333,
+            "arriveTangent": -0.649538,
+            "leaveTangent": -0.649537
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0,
+            "arriveTangent": -5.025785,
+            "leaveTangent": -5.025785
+          }
+        ]
+      },
+      "notes": "Military-grade protection with ceramic trauma plates. Effective against most rifle calibers.",
+      "tips": "Balance the excellent protection against the mobility penalty. Best used when expecting heavy combat or holding defensive positions."
+    },
+    {
+      "id": "armor-apex-bk",
+      "name": "ApexBK Body Armor",
+      "description": "High-end tactical body armor featuring advanced ceramic plates and improved ergonomics. Provides Class 5 protection with reduced weight penalty.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/Icon_SKM_Vest_013_01_Ck.webp",
+        "thumbnail": "/images/items/armor/Icon_SKM_Vest_013_01_Ck.webp",
+        "fullsize": "/images/items/armor/Icon_SKM_Vest_013_01_Ck.webp"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 120000,
+        "weight": 7.2,
+        "armorClass": 5,
+        "maxDurability": 105,
+        "durabilityDamageScalar": 0.32,
+        "bluntDamageScalar": 0.7,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 5,
+            "bluntDamageScalar": 0.7,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 5,
+            "bluntDamageScalar": 0.7,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 5,
+            "bluntDamageScalar": 0.7,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "pelvis",
+            "armorClass": 5,
+            "bluntDamageScalar": 0.7,
+            "protectionAngle": 75
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.92,
+            "arriveTangent": -4.856966,
+            "leaveTangent": -4.856977
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.12,
+            "arriveTangent": -0.463078,
+            "leaveTangent": -0.463078
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0.03,
+            "arriveTangent": -0.035238,
+            "leaveTangent": -0.035238
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.001887,
+            "leaveTangent": -0.001887
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.75,
+            "arriveTangent": -0.279961,
+            "leaveTangent": -0.279962
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.4,
+            "value": 0.6,
+            "arriveTangent": -0.438411,
+            "leaveTangent": -0.43841
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "antiPenetrationDurabilityScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 1,
+            "arriveTangent": -0.057609,
+            "leaveTangent": -0.057609
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.65,
+            "value": 0.833333,
+            "arriveTangent": -0.649538,
+            "leaveTangent": -0.649537
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0,
+            "arriveTangent": -5.025785,
+            "leaveTangent": -5.025785
+          }
+        ]
+      },
+      "notes": "Advanced tactical armor with improved protection and durability.",
+      "tips": "Excellent choice for high-threat environments where maximum protection is needed."
+    },
+    {
+      "id": "armor-sudden-attack",
+      "name": "Sudden Attack Vest",
+      "description": "Lightweight tactical vest designed for rapid deployment operations. Provides basic protection while maintaining high mobility.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/Icon_SKM_Vest_015_Hcj.webp",
+        "thumbnail": "/images/items/armor/Icon_SKM_Vest_015_Hcj.webp",
+        "fullsize": "/images/items/armor/Icon_SKM_Vest_015_Hcj.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 35000,
+        "weight": 3.5,
+        "armorClass": 2,
+        "maxDurability": 110,
+        "durabilityDamageScalar": 0.45,
+        "bluntDamageScalar": 0.9,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 2,
+            "bluntDamageScalar": 0.9,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 2,
+            "bluntDamageScalar": 0.9,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 2,
+            "bluntDamageScalar": 0.9,
+            "protectionAngle": 85
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.95,
+            "arriveTangent": -3.216769,
+            "leaveTangent": -3.216769
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.2,
+            "arriveTangent": -0.669775,
+            "leaveTangent": -0.669775
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 1,
+            "value": 0.05,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.010324,
+            "leaveTangent": -0.010324
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.95,
+            "arriveTangent": -0.140034,
+            "leaveTangent": -0.140035
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.4,
+            "value": 0.7,
+            "arriveTangent": -0.438411,
+            "leaveTangent": -0.43841
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "antiPenetrationDurabilityScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 1,
+            "arriveTangent": -0.057609,
+            "leaveTangent": -0.057609
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.65,
+            "value": 0.833333,
+            "arriveTangent": -0.649538,
+            "leaveTangent": -0.649537
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0,
+            "arriveTangent": -5.025785,
+            "leaveTangent": -5.025785
+          }
+        ]
+      },
+      "notes": "Entry-level armor effective against pistol rounds and light rifle fire.",
+      "tips": "Good starting armor for new operators or stealth missions where mobility is critical."
+    },
+    {
+      "id": "armor-apex-mc",
+      "name": "ApexMC Body Armor",
+      "description": "Premium tactical body armor with multicam pattern. Features advanced materials for superior protection with optimized weight distribution.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/Icon_vest_lv6.webp",
+        "thumbnail": "/images/items/armor/Icon_vest_lv6.webp",
+        "fullsize": "/images/items/armor/Icon_vest_lv6.webp"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 145000,
+        "weight": 5.5,
+        "armorClass": 5,
+        "maxDurability": 90,
+        "durabilityDamageScalar": 0.25,
+        "bluntDamageScalar": 0.6,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 5,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 5,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 5,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 90
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.92,
+            "arriveTangent": -3.813308,
+            "leaveTangent": -3.813313
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.15,
+            "arriveTangent": -0.463078,
+            "leaveTangent": -0.463078
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0.03,
+            "arriveTangent": -0.035238,
+            "leaveTangent": -0.035238
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.001887,
+            "leaveTangent": -0.001887
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.65,
+            "arriveTangent": -0.439704,
+            "leaveTangent": -0.439705
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.4,
+            "value": 0.5,
+            "arriveTangent": -0.379154,
+            "leaveTangent": -0.379153
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ]
+      },
+      "notes": "High-performance armor with excellent protection-to-weight ratio.",
+      "tips": "Premium choice for experienced operators who need reliable protection without excessive bulk."
+    },
+    {
+      "id": "armor-duo-mountains",
+      "name": "Duo Mountains Vest",
+      "description": "Rugged tactical vest designed for mountainous terrain operations. Balances protection with environmental adaptability.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/Icon_vest_lv7.webp",
+        "thumbnail": "/images/items/armor/Icon_vest_lv7.webp",
+        "fullsize": "/images/items/armor/Icon_vest_lv7.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 75000,
+        "weight": 4.9,
+        "armorClass": 4,
+        "maxDurability": 130,
+        "durabilityDamageScalar": 0.4,
+        "bluntDamageScalar": 0.8,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.8,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.8,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.8,
+            "protectionAngle": 90
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.95,
+            "arriveTangent": -3.216769,
+            "leaveTangent": -3.216769
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.2,
+            "arriveTangent": -0.669775,
+            "leaveTangent": -0.669775
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 1,
+            "value": 0.05,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.001887,
+            "leaveTangent": -0.001887
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.85,
+            "arriveTangent": -0.279961,
+            "leaveTangent": -0.279962
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5384327,
+            "value": 0.60900515,
+            "arriveTangent": -0.3884785,
+            "leaveTangent": -0.3884778
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": -0.043284934,
+            "leaveTangent": -0.043284975
+          }
+        ]
+      },
+      "notes": "Reliable protection with enhanced durability for extended operations.",
+      "tips": "Excellent choice for long missions where equipment reliability is paramount."
+    },
+    {
+      "id": "armor-imtv",
+      "name": "IMTV Body Armor",
+      "description": "Improved Modular Tactical Vest providing comprehensive protection. Features modular design for mission-specific configurations.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/Icon_vest_lv3.webp",
+        "thumbnail": "/images/items/armor/Icon_vest_lv3.webp",
+        "fullsize": "/images/items/armor/Icon_vest_lv3.webp"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 165000,
+        "weight": 8.8,
+        "armorClass": 5,
+        "maxDurability": 150,
+        "durabilityDamageScalar": 0.28,
+        "bluntDamageScalar": 0.6,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 5,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 5,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 5,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 90
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.92,
+            "arriveTangent": -4.5845437,
+            "leaveTangent": -4.584543
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.1,
+            "arriveTangent": -0.24428187,
+            "leaveTangent": -0.24428144
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0.02,
+            "arriveTangent": -0.1596991,
+            "leaveTangent": -0.1596996
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.355189,
+            "leaveTangent": -0.355189
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.6,
+            "arriveTangent": -0.358831,
+            "leaveTangent": -0.358831
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.4,
+            "value": 0.4,
+            "arriveTangent": -0.290739,
+            "leaveTangent": -0.290738
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ]
+      },
+      "notes": "Modular tactical vest with excellent protection and customization options.",
+      "tips": "Heavy but reliable armor for sustained combat operations."
+    },
+    {
+      "id": "armor-iotvgen3",
+      "name": "IOTV Gen3 Full Body Armor",
+      "description": "Improved Outer Tactical Vest Generation 3 with full body protection including arm and pelvis coverage. Maximum protection for high-threat environments.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/Icon_vest_lv5-imtv.webp",
+        "thumbnail": "/images/items/armor/Icon_vest_lv5-imtv.webp",
+        "fullsize": "/images/items/armor/Icon_vest_lv5-imtv.webp"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 195000,
+        "weight": 9.3,
+        "armorClass": 6,
+        "maxDurability": 200,
+        "durabilityDamageScalar": 0.28,
+        "bluntDamageScalar": 0.6,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 6,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 6,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 6,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "pelvis",
+            "armorClass": 6,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 60
+          },
+          {
+            "bodyPart": "UpperArm_L",
+            "armorClass": 3,
+            "bluntDamageScalar": 1,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "UpperArm_R",
+            "armorClass": 3,
+            "bluntDamageScalar": 1,
+            "protectionAngle": 90
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.92,
+            "arriveTangent": -4.584544,
+            "leaveTangent": -4.584543
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.1,
+            "arriveTangent": -0.244282,
+            "leaveTangent": -0.244281
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0.02,
+            "arriveTangent": -0.159699,
+            "leaveTangent": -0.1597
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.355189,
+            "leaveTangent": -0.355189
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.6,
+            "arriveTangent": -0.358831,
+            "leaveTangent": -0.358831
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.4,
+            "value": 0.4,
+            "arriveTangent": -0.290739,
+            "leaveTangent": -0.290738
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ]
+      },
+      "notes": "Military-grade full body protection including arm guards and pelvis protection.",
+      "tips": "Ultimate protection for extreme combat situations. The weight penalty is significant but the protection is unmatched."
+    },
+    {
+      "id": "armor-jpc",
+      "name": "JPC Plate Carrier",
+      "description": "Jumpable Plate Carrier designed for high mobility operations. Lightweight design with essential protection for rapid deployment scenarios.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/Icon_vest_lv4.webp",
+        "thumbnail": "/images/items/armor/Icon_vest_lv4.webp",
+        "fullsize": "/images/items/armor/Icon_vest_lv4.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 55000,
+        "weight": 2.8,
+        "armorClass": 4,
+        "maxDurability": 75,
+        "durabilityDamageScalar": 0.25,
+        "bluntDamageScalar": 0.8,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 3.5,
+            "bluntDamageScalar": 0.8,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 3.5,
+            "bluntDamageScalar": 0.8,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 3.5,
+            "bluntDamageScalar": 0.8,
+            "protectionAngle": 80
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.95,
+            "arriveTangent": -3.813308,
+            "leaveTangent": -3.813313
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.15,
+            "arriveTangent": -0.463078,
+            "leaveTangent": -0.463078
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0.05,
+            "arriveTangent": -0.035238,
+            "leaveTangent": -0.035238
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.001887,
+            "leaveTangent": -0.001887
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.8,
+            "arriveTangent": -0.279961,
+            "leaveTangent": -0.279962
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.4,
+            "value": 0.6,
+            "arriveTangent": -0.438411,
+            "leaveTangent": -0.43841
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ]
+      },
+      "notes": "Lightweight plate carrier optimized for mobility without sacrificing essential protection.",
+      "tips": "Perfect for fast-paced operations where speed and agility are more important than maximum protection."
+    },
+    {
+      "id": "armor-police-vest",
+      "name": "Police Soft Armor",
+      "description": "Standard police issue soft body armor vest. Designed for patrol duty with protection against common threats while maintaining comfort during extended wear.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/Icon_SKM_Vest_017_Hcj.webp",
+        "thumbnail": "/images/items/armor/Icon_SKM_Vest_017_Hcj.webp",
+        "fullsize": "/images/items/armor/Icon_SKM_Vest_017_Hcj.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 42000,
+        "weight": 4.7,
+        "armorClass": 3,
+        "maxDurability": 120,
+        "durabilityDamageScalar": 0.4,
+        "bluntDamageScalar": 0.9,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 3,
+            "bluntDamageScalar": 0.9,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 3,
+            "bluntDamageScalar": 0.9,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 3,
+            "bluntDamageScalar": 0.9,
+            "protectionAngle": 90
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.95,
+            "arriveTangent": -3.216769,
+            "leaveTangent": -3.216769
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.2,
+            "arriveTangent": -0.669775,
+            "leaveTangent": -0.669775
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 1,
+            "value": 0.05,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.001887,
+            "leaveTangent": -0.001887
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.85,
+            "arriveTangent": -0.279961,
+            "leaveTangent": -0.279962
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.538433,
+            "value": 0.609005,
+            "arriveTangent": -0.388478,
+            "leaveTangent": -0.388478
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": -0.043285,
+            "leaveTangent": -0.043285
+          }
+        ],
+        "antiPenetrationDurabilityScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 1,
+            "arriveTangent": -0.057609,
+            "leaveTangent": -0.057609
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.65,
+            "value": 0.833333,
+            "arriveTangent": -0.649538,
+            "leaveTangent": -0.649537
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0,
+            "arriveTangent": -5.025785,
+            "leaveTangent": -5.025785
+          }
+        ]
+      },
+      "notes": "Reliable soft armor for law enforcement operations and civilian protection.",
+      "tips": "Good protection against handgun rounds and light rifle fire. Comfortable for extended wear."
+    },
+    {
+      "id": "armor-press-vest",
+      "name": "Press Vest",
+      "description": "Civilian press vest with basic ballistic protection. Clearly marked for media personnel operating in conflict zones.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/Icon_SKM_Vest_008_Hcj.webp",
+        "thumbnail": "/images/items/armor/Icon_SKM_Vest_008_Hcj.webp",
+        "fullsize": "/images/items/armor/Icon_SKM_Vest_008_Hcj.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 28000,
+        "weight": 3.9,
+        "armorClass": 2,
+        "maxDurability": 95,
+        "durabilityDamageScalar": 0.7,
+        "bluntDamageScalar": 0.9,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 2,
+            "bluntDamageScalar": 0.9,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 2,
+            "bluntDamageScalar": 0.9,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 2,
+            "bluntDamageScalar": 0.9,
+            "protectionAngle": 90
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.95,
+            "arriveTangent": -3.2167695,
+            "leaveTangent": -3.2167687
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.2,
+            "arriveTangent": -0.66977525,
+            "leaveTangent": -0.6697755
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 1,
+            "value": 0.05,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.010324,
+            "leaveTangent": -0.010324
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.95,
+            "arriveTangent": -0.140034,
+            "leaveTangent": -0.140035
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.4,
+            "value": 0.7,
+            "arriveTangent": -0.438411,
+            "leaveTangent": -0.43841
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ]
+      },
+      "notes": "Basic protection for non-combatant personnel in dangerous areas.",
+      "tips": "Minimal protection but clearly identifies the wearer as press. Not suitable for combat operations."
+    },
+    {
+      "id": "armor-raid-explorer-black",
+      "name": "Raid Explorer Black",
+      "description": "Tactical vest designed for urban exploration and reconnaissance missions. Black coating provides better concealment in low-light environments.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/Icon_vest_lv2-black.webp",
+        "thumbnail": "/images/items/armor/Icon_vest_lv2-black.webp",
+        "fullsize": "/images/items/armor/Icon_vest_lv2-black.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 48000,
+        "weight": 3.3,
+        "armorClass": 3,
+        "maxDurability": 105,
+        "durabilityDamageScalar": 0.45,
+        "bluntDamageScalar": 0.8,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 3,
+            "bluntDamageScalar": 0.8,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 3,
+            "bluntDamageScalar": 0.8,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 3,
+            "bluntDamageScalar": 0.8,
+            "protectionAngle": 90
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.95,
+            "arriveTangent": -3.813308,
+            "leaveTangent": -3.813313
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.15,
+            "arriveTangent": -0.463078,
+            "leaveTangent": -0.463078
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0.05,
+            "arriveTangent": -0.035238,
+            "leaveTangent": -0.035238
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.1,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.9,
+            "arriveTangent": -0.139771,
+            "leaveTangent": -0.139771
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.953716,
+            "value": 0.482122,
+            "arriveTangent": -0.379154,
+            "leaveTangent": -0.379153
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "antiPenetrationDurabilityScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 1,
+            "arriveTangent": -0.057609,
+            "leaveTangent": -0.057609
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.65,
+            "value": 0.833333,
+            "arriveTangent": -0.649538,
+            "leaveTangent": -0.649537
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0,
+            "arriveTangent": -5.025785,
+            "leaveTangent": -5.025785
+          }
+        ]
+      },
+      "notes": "Tactical vest with stealth-oriented design and moderate protection.",
+      "tips": "Good balance of protection and mobility for urban operations. Black color aids concealment at night."
+    },
+    {
+      "id": "armor-raid-explorer-sd",
+      "name": "Raid Explorer SD",
+      "description": "Sand-colored tactical vest optimized for desert and arid environment operations. Provides reliable protection while blending with sandy terrain.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/Icon_vest_lv2-sd.webp",
+        "thumbnail": "/images/items/armor/Icon_vest_lv2-sd.webp",
+        "fullsize": "/images/items/armor/Icon_vest_lv2-sd.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 48000,
+        "weight": 3.3,
+        "armorClass": 3,
+        "maxDurability": 105,
+        "durabilityDamageScalar": 0.45,
+        "bluntDamageScalar": 0.8,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 3,
+            "bluntDamageScalar": 0.8,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 3,
+            "bluntDamageScalar": 0.8,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 3,
+            "bluntDamageScalar": 0.8,
+            "protectionAngle": 90
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.95,
+            "arriveTangent": -3.813308,
+            "leaveTangent": -3.813313
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.15,
+            "arriveTangent": -0.463078,
+            "leaveTangent": -0.463078
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0.05,
+            "arriveTangent": -0.035238,
+            "leaveTangent": -0.035238
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.100000024,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.9,
+            "arriveTangent": -0.13977107,
+            "leaveTangent": -0.13977107
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.9537163,
+            "value": 0.48212177,
+            "arriveTangent": -0.3791538,
+            "leaveTangent": -0.3791529
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ]
+      },
+      "notes": "Desert camouflage tactical vest with moderate protection and mobility.",
+      "tips": "Ideal for operations in sandy or desert environments where concealment is important."
+    },
+    {
+      "id": "armor-rampage",
+      "name": "Rampage Tactical Vest",
+      "description": "Aggressive tactical vest designed for assault operations. Features enhanced protection with tactical accessories mounting points.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/Icon_vest_lv5.webp",
+        "thumbnail": "/images/items/armor/Icon_vest_lv5.webp",
+        "fullsize": "/images/items/armor/Icon_vest_lv5.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 78000,
+        "weight": 5.3,
+        "armorClass": 4,
+        "maxDurability": 130,
+        "durabilityDamageScalar": 0.32,
+        "bluntDamageScalar": 0.7,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.7,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.7,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.7,
+            "protectionAngle": 90
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.92,
+            "arriveTangent": -4.856966,
+            "leaveTangent": -4.856977
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.12,
+            "arriveTangent": -0.463078,
+            "leaveTangent": -0.463078
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0.03,
+            "arriveTangent": -0.035238,
+            "leaveTangent": -0.035238
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.001887,
+            "leaveTangent": -0.001887
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.75,
+            "arriveTangent": -0.279961,
+            "leaveTangent": -0.279962
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.4,
+            "value": 0.6,
+            "arriveTangent": -0.438411,
+            "leaveTangent": -0.43841
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ]
+      },
+      "notes": "High-performance tactical vest with excellent durability and protection.",
+      "tips": "Great for sustained combat operations where reliable protection is essential."
+    },
+    {
+      "id": "armor-rampage-od",
+      "name": "Rampage OD Tactical Vest",
+      "description": "Olive drab variant of the Rampage tactical vest. Optimized for woodland and forest operations with enhanced camouflage properties.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/WarfareTecVest_Rampage_OD.webp",
+        "thumbnail": "/images/items/armor/WarfareTecVest_Rampage_OD.webp",
+        "fullsize": "/images/items/armor/WarfareTecVest_Rampage_OD.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 78000,
+        "weight": 5.3,
+        "armorClass": 4,
+        "maxDurability": 130,
+        "durabilityDamageScalar": 0.32,
+        "bluntDamageScalar": 0.7,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.7,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.7,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.7,
+            "protectionAngle": 90
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.92,
+            "arriveTangent": -4.856966,
+            "leaveTangent": -4.856977
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.12,
+            "arriveTangent": -0.463078,
+            "leaveTangent": -0.463078
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0.03,
+            "arriveTangent": -0.035238,
+            "leaveTangent": -0.035238
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.001887,
+            "leaveTangent": -0.001887
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.75,
+            "arriveTangent": -0.279961,
+            "leaveTangent": -0.279962
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.4,
+            "value": 0.6,
+            "arriveTangent": -0.438411,
+            "leaveTangent": -0.43841
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ]
+      },
+      "notes": "Woodland camouflage version with identical protection to standard Rampage vest.",
+      "tips": "Perfect for forest and jungle operations where green/brown camouflage is advantageous."
+    },
+    {
+      "id": "armor-sd-protector",
+      "name": "S.D. Protector Full Body Armor",
+      "description": "State-of-the-art full body protection system covering torso, arms, and legs. The ultimate in personal protection for extreme threat environments.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/WarfareTecVest_SDprotecter.webp",
+        "thumbnail": "/images/items/armor/WarfareTecVest_SDprotecter.webp",
+        "fullsize": "/images/items/armor/WarfareTecVest_SDprotecter.webp"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 285000,
+        "weight": 14.0,
+        "armorClass": 6,
+        "maxDurability": 275,
+        "durabilityDamageScalar": 0.25,
+        "bluntDamageScalar": 0.6,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 6,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 6,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 6,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "pelvis",
+            "armorClass": 6,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "UpperArm_L",
+            "armorClass": 3,
+            "bluntDamageScalar": 1,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "UpperArm_R",
+            "armorClass": 3,
+            "bluntDamageScalar": 1,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "Thigh_L",
+            "armorClass": 3,
+            "bluntDamageScalar": 1,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "Thigh_R",
+            "armorClass": 3,
+            "bluntDamageScalar": 1,
+            "protectionAngle": 90
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.92,
+            "arriveTangent": -3.813308,
+            "leaveTangent": -3.813313
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.15,
+            "arriveTangent": -0.463078,
+            "leaveTangent": -0.463078
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0.02,
+            "arriveTangent": -0.035238,
+            "leaveTangent": -0.035238
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.355189,
+            "leaveTangent": -0.355189
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.65,
+            "arriveTangent": -0.358831,
+            "leaveTangent": -0.358831
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.4,
+            "value": 0.4,
+            "arriveTangent": -0.290739,
+            "leaveTangent": -0.290738
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "antiPenetrationDurabilityScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 1,
+            "arriveTangent": -0.05760855,
+            "leaveTangent": -0.057608537
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.75,
+            "value": 0.8333333,
+            "arriveTangent": -0.64953756,
+            "leaveTangent": -0.649537
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0,
+            "arriveTangent": -5.0257854,
+            "leaveTangent": -5.0257854
+          }
+        ]
+      },
+      "notes": "Maximum protection full body armor system with limb coverage. Extremely heavy but nearly impenetrable.",
+      "tips": "Ultimate protection for the most dangerous situations. The weight penalty is severe but the protection is unmatched. Consider mobility carefully."
+    },
+    {
+      "id": "armor-sd-protector-black",
+      "name": "S.D. Protector Full Body Armor Black",
+      "description": "Black variant of the S.D. Protector system optimized for urban and night operations. Provides maximum protection with tactical black finish.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/WarfareTecVest_SDprotecter_Black.webp",
+        "thumbnail": "/images/items/armor/WarfareTecVest_SDprotecter_Black.webp",
+        "fullsize": "/images/items/armor/WarfareTecVest_SDprotecter_Black.webp"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 285000,
+        "weight": 14.0,
+        "armorClass": 6,
+        "maxDurability": 275,
+        "durabilityDamageScalar": 0.25,
+        "bluntDamageScalar": 0.6,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 6,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 6,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 6,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "pelvis",
+            "armorClass": 6,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "UpperArm_L",
+            "armorClass": 3,
+            "bluntDamageScalar": 1,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "UpperArm_R",
+            "armorClass": 3,
+            "bluntDamageScalar": 1,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "Thigh_L",
+            "armorClass": 3,
+            "bluntDamageScalar": 1,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "Thigh_R",
+            "armorClass": 3,
+            "bluntDamageScalar": 1,
+            "protectionAngle": 90
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.92,
+            "arriveTangent": -3.813308,
+            "leaveTangent": -3.813313
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.15,
+            "arriveTangent": -0.463078,
+            "leaveTangent": -0.463078
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0.02,
+            "arriveTangent": -0.035238,
+            "leaveTangent": -0.035238
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.355189,
+            "leaveTangent": -0.355189
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.65,
+            "arriveTangent": -0.358831,
+            "leaveTangent": -0.358831
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.4,
+            "value": 0.4,
+            "arriveTangent": -0.290739,
+            "leaveTangent": -0.290738
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "antiPenetrationDurabilityScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 1,
+            "arriveTangent": -0.05760855,
+            "leaveTangent": -0.057608537
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.75,
+            "value": 0.8333333,
+            "arriveTangent": -0.64953756,
+            "leaveTangent": -0.649537
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0,
+            "arriveTangent": -5.0257854,
+            "leaveTangent": -5.0257854
+          }
+        ]
+      },
+      "notes": "Black tactical variant of the ultimate protection system. Same performance with enhanced concealment.",
+      "tips": "Ideal for urban operations where black camouflage provides an advantage. Maximum protection at maximum weight penalty."
+    },
+    {
+      "id": "armor-security-vest",
+      "name": "Security Soft Armor",
+      "description": "Basic security guard vest with minimal ballistic protection. Designed for civilian security applications with comfort prioritized over protection.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/Icon_SKM_Vest_008_Hcj_BK.webp",
+        "thumbnail": "/images/items/armor/Icon_SKM_Vest_008_Hcj_BK.webp",
+        "fullsize": "/images/items/armor/Icon_SKM_Vest_008_Hcj_BK.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 25000,
+        "weight": 3.9,
+        "armorClass": 2,
+        "maxDurability": 95,
+        "durabilityDamageScalar": 0.7,
+        "bluntDamageScalar": 0.9,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 2,
+            "bluntDamageScalar": 0.9,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 2,
+            "bluntDamageScalar": 0.9,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 2,
+            "bluntDamageScalar": 0.9,
+            "protectionAngle": 90
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.95,
+            "arriveTangent": -3.2167695,
+            "leaveTangent": -3.2167687
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.2,
+            "arriveTangent": -0.66977525,
+            "leaveTangent": -0.6697755
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 1,
+            "value": 0.05,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.010324,
+            "leaveTangent": -0.010324
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.95,
+            "arriveTangent": -0.140034,
+            "leaveTangent": -0.140035
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.4,
+            "value": 0.7,
+            "arriveTangent": -0.438411,
+            "leaveTangent": -0.43841
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ]
+      },
+      "notes": "Entry-level protection for security personnel and civilian use.",
+      "tips": "Basic protection suitable for low-threat environments. Prioritizes comfort and affordability over protection."
+    },
+    {
+      "id": "armor-soft-armor",
+      "name": "Soft Armor Vest",
+      "description": "Standard soft body armor using flexible ballistic materials. Provides good protection against handgun rounds while maintaining flexibility.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/Icon_vest_lv2.webp",
+        "thumbnail": "/images/items/armor/Icon_vest_lv2.webp",
+        "fullsize": "/images/items/armor/Icon_vest_lv2.webp"
+      },
+      "stats": {
+        "rarity": "Uncommon",
+        "price": 38000,
+        "weight": 4.2,
+        "armorClass": 3,
+        "maxDurability": 120,
+        "durabilityDamageScalar": 0.7,
+        "bluntDamageScalar": 0.9,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 3,
+            "bluntDamageScalar": 0.9,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 3,
+            "bluntDamageScalar": 0.9,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 3,
+            "bluntDamageScalar": 0.9,
+            "protectionAngle": 90
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.95,
+            "arriveTangent": -3.2167695,
+            "leaveTangent": -3.2167687
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.2,
+            "arriveTangent": -0.66977525,
+            "leaveTangent": -0.6697755
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 1,
+            "value": 0.05,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.04699569,
+            "leaveTangent": -0.04699569
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.95,
+            "arriveTangent": -0.05438406,
+            "leaveTangent": -0.05438426
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.4,
+            "value": 0.7,
+            "arriveTangent": -0.43841073,
+            "leaveTangent": -0.4384104
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ]
+      },
+      "notes": "Flexible ballistic vest effective against pistol rounds and light rifle fire.",
+      "tips": "Good balance of protection and comfort for extended wear. Suitable for patrol and general security work."
+    },
+    {
+      "id": "armor-wdcs",
+      "name": "WDCS Tactical Armor",
+      "description": "Woodland Defense Combat System featuring advanced modular protection. Designed for extended operations in varied terrain with arm protection.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/Icon_vest_lv8.webp",
+        "thumbnail": "/images/items/armor/Icon_vest_lv8.webp",
+        "fullsize": "/images/items/armor/Icon_vest_lv8.webp"
+      },
+      "stats": {
+        "rarity": "Epic",
+        "price": 175000,
+        "weight": 7.5,
+        "armorClass": 6,
+        "maxDurability": 160,
+        "durabilityDamageScalar": 0.25,
+        "bluntDamageScalar": 0.6,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 6,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 6,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 6,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "pelvis",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 60
+          },
+          {
+            "bodyPart": "UpperArm_L",
+            "armorClass": 3,
+            "bluntDamageScalar": 1,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "UpperArm_R",
+            "armorClass": 3,
+            "bluntDamageScalar": 1,
+            "protectionAngle": 90
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.92,
+            "arriveTangent": -3.813308,
+            "leaveTangent": -3.813313
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.15,
+            "arriveTangent": -0.463078,
+            "leaveTangent": -0.463078
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0.02,
+            "arriveTangent": -0.035238,
+            "leaveTangent": -0.035238
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.355189,
+            "leaveTangent": -0.355189
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.65,
+            "arriveTangent": -0.358831,
+            "leaveTangent": -0.358831
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.4,
+            "value": 0.4,
+            "arriveTangent": -0.290739,
+            "leaveTangent": -0.290738
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "antiPenetrationDurabilityScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 1,
+            "arriveTangent": -0.05760855,
+            "leaveTangent": -0.057608537
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.75,
+            "value": 0.8333333,
+            "arriveTangent": -0.64953756,
+            "leaveTangent": -0.649537
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0,
+            "arriveTangent": -5.0257854,
+            "leaveTangent": -5.0257854
+          }
+        ]
+      },
+      "notes": "Advanced tactical system with Class 6 torso protection and arm guards.",
+      "tips": "High-end armor providing excellent protection with reasonable weight. Includes arm protection for comprehensive coverage."
+    },
+    {
+      "id": "armor-wdcs-swat",
+      "name": "WDCS SWAT Tactical Armor",
+      "description": "Elite SWAT variant of the WDCS system with enhanced protection and tactical accessories. Designed for high-risk law enforcement operations.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/Icon_WarfareTecVest_WDCS_Swat.webp",
+        "thumbnail": "/images/items/armor/Icon_WarfareTecVest_WDCS_Swat.webp",
+        "fullsize": "/images/items/armor/Icon_WarfareTecVest_WDCS_Swat.webp"
+      },
+      "stats": {
+        "rarity": "Legendary",
+        "price": 225000,
+        "weight": 8.2,
+        "armorClass": 6,
+        "maxDurability": 160,
+        "durabilityDamageScalar": 0.25,
+        "bluntDamageScalar": 0.6,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 6,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 6,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 6,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "pelvis",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.6,
+            "protectionAngle": 60
+          },
+          {
+            "bodyPart": "UpperArm_L",
+            "armorClass": 3,
+            "bluntDamageScalar": 1,
+            "protectionAngle": 90
+          },
+          {
+            "bodyPart": "UpperArm_R",
+            "armorClass": 3,
+            "bluntDamageScalar": 1,
+            "protectionAngle": 90
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.92,
+            "arriveTangent": -3.813308,
+            "leaveTangent": -3.813313
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.15,
+            "arriveTangent": -0.463078,
+            "leaveTangent": -0.463078
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0.02,
+            "arriveTangent": -0.035238,
+            "leaveTangent": -0.035238
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.355189,
+            "leaveTangent": -0.355189
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.65,
+            "arriveTangent": -0.358831,
+            "leaveTangent": -0.358831
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.4,
+            "value": 0.4,
+            "arriveTangent": -0.290739,
+            "leaveTangent": -0.290738
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "antiPenetrationDurabilityScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 1,
+            "arriveTangent": -0.05760855,
+            "leaveTangent": -0.057608537
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.75,
+            "value": 0.86,
+            "arriveTangent": -0.64953756,
+            "leaveTangent": -0.649537
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0,
+            "arriveTangent": -5.0257854,
+            "leaveTangent": -5.0257854
+          }
+        ]
+      },
+      "notes": "Elite law enforcement armor with premium materials and enhanced durability retention.",
+      "tips": "Top-tier armor for the most dangerous operations. Legendary rarity reflects its exceptional performance and availability."
+    },
+    {
+      "id": "armor-sudden-attack-vest",
+      "name": "Sudden Attack Tactical Vest",
+      "description": "Lightweight tactical vest optimized for rapid deployment and surprise attacks. Prioritizes mobility while providing essential protection.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/Icon_vest_lv1-sudden.webp",
+        "thumbnail": "/images/items/armor/Icon_vest_lv1-sudden.webp",
+        "fullsize": "/images/items/armor/Icon_vest_lv1-sudden.webp"
+      },
+      "stats": {
+        "rarity": "Common",
+        "price": 32000,
+        "weight": 2.6,
+        "armorClass": 2,
+        "maxDurability": 70,
+        "durabilityDamageScalar": 0.45,
+        "bluntDamageScalar": 0.8,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 2,
+            "bluntDamageScalar": 0.8,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 2,
+            "bluntDamageScalar": 0.8,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 2,
+            "bluntDamageScalar": 0.8,
+            "protectionAngle": 80
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.95,
+            "arriveTangent": -3.8133075,
+            "leaveTangent": -3.8133132
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.15,
+            "arriveTangent": -0.46307826,
+            "leaveTangent": -0.46307763
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0.05,
+            "arriveTangent": -0.035238,
+            "leaveTangent": -0.035238
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.100000024,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.9,
+            "arriveTangent": -0.13977107,
+            "leaveTangent": -0.13977107
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.9537163,
+            "value": 0.48212177,
+            "arriveTangent": -0.3791538,
+            "leaveTangent": -0.3791529
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ]
+      },
+      "notes": "Ultra-lightweight armor designed for hit-and-run tactics and stealth operations.",
+      "tips": "Minimal protection but maximum mobility. Best suited for operations where speed is more important than protection."
+    },
+    {
+      "id": "armor-rampage-bells",
+      "name": "Rampage Christmas Special",
+      "description": "Special holiday variant of the Rampage vest decorated with tactical bells. Limited edition armor with enhanced protection for the festive season.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/Icon_event_xmas_boss.webp",
+        "thumbnail": "/images/items/armor/Icon_event_xmas_boss.webp",
+        "fullsize": "/images/items/armor/Icon_event_xmas_boss.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 95000,
+        "weight": 5.3,
+        "armorClass": 5,
+        "maxDurability": 130,
+        "durabilityDamageScalar": 0.32,
+        "bluntDamageScalar": 0.7,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.7,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.7,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.7,
+            "protectionAngle": 90
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.92,
+            "arriveTangent": -4.856966,
+            "leaveTangent": -4.856977
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.12,
+            "arriveTangent": -0.463078,
+            "leaveTangent": -0.463078
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0.03,
+            "arriveTangent": -0.035238,
+            "leaveTangent": -0.035238
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.001887,
+            "leaveTangent": -0.001887
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.75,
+            "arriveTangent": -0.279961,
+            "leaveTangent": -0.279962
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.4,
+            "value": 0.6,
+            "arriveTangent": -0.438411,
+            "leaveTangent": -0.43841
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ]
+      },
+      "notes": "Festive limited edition armor with enhanced protection rating. The bells are surprisingly tactical.",
+      "tips": "Special holiday armor with better protection than standard Rampage. Collectors item with practical benefits."
+    },
+    {
+      "id": "armor-rampage-skull",
+      "name": "Rampage Skull Edition",
+      "description": "Intimidating skull-decorated variant of the Rampage tactical vest. Designed to strike fear into enemies while providing excellent protection.",
+      "category": "gear",
+      "subcategory": "Body Armor",
+      "images": {
+        "icon": "/images/items/armor/WarfareTecVest_Rampage_skull.webp",
+        "thumbnail": "/images/items/armor/WarfareTecVest_Rampage_skull.webp",
+        "fullsize": "/images/items/armor/WarfareTecVest_Rampage_skull.webp"
+      },
+      "stats": {
+        "rarity": "Rare",
+        "price": 85000,
+        "weight": 5.3,
+        "armorClass": 5,
+        "maxDurability": 130,
+        "durabilityDamageScalar": 0.32,
+        "bluntDamageScalar": 0.7,
+        "protectiveData": [
+          {
+            "bodyPart": "spine_03",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.7,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_02",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.7,
+            "protectionAngle": 80
+          },
+          {
+            "bodyPart": "spine_01",
+            "armorClass": 4,
+            "bluntDamageScalar": 0.7,
+            "protectionAngle": 90
+          }
+        ],
+        "penetrationChanceCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.92,
+            "arriveTangent": -4.856966,
+            "leaveTangent": -4.856977
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.5,
+            "value": 0.12,
+            "arriveTangent": -0.463078,
+            "leaveTangent": -0.463078
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 1,
+            "value": 0.03,
+            "arriveTangent": -0.035238,
+            "leaveTangent": -0.035238
+          }
+        ],
+        "penetrationDamageScalarCurve": [
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": -1,
+            "value": 1,
+            "arriveTangent": -0.001887,
+            "leaveTangent": -0.001887
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0,
+            "value": 0.75,
+            "arriveTangent": -0.279961,
+            "leaveTangent": -0.279962
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 0.4,
+            "value": 0.6,
+            "arriveTangent": -0.438411,
+            "leaveTangent": -0.43841
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 2,
+            "value": 0.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ]
+      },
+      "notes": "Intimidating skull design with enhanced armor classification for psychological warfare.",
+      "tips": "Same reliable Rampage protection with enhanced armor class rating and psychological impact. Perfect for aggressive playstyles."
+    }
+  ]
+}
