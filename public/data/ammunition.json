@@ -1,256 +1,3626 @@
-{
-  "ammunition": [
-    {
-      "id": "ammo-545x39-fmj",
-      "name": "5.45x39mm FMJ",
-      "description": "Standard full metal jacket cartridge for AK-74 series rifles.",
-      "category": "ammo",
-      "subcategory": "5.45x39mm",
-      "images": {
-        "icon": "/images/items/ammo/545x39mm_FMJ.webp",
-        "thumbnail": "/images/items/ammo/545x39mm_FMJ.webp",
-        "fullsize": "/images/items/ammo/545x39mm_FMJ.webp"
+[
+  {
+    "id": "ammo-556x45-apv1",
+    "name": "5.56x45mm M995",
+    "description": "Armor Piercing ammunition with tungsten core designed to penetrate body armor. Lower damage but excellent penetration capabilities.",
+    "category": "ammo",
+    "subcategory": "5.56x45mm",
+    "images": {
+      "icon": "/images/items/ammo/556X45_M995.webp",
+      "thumbnail": "/images/items/ammo/556X45_M995.webp",
+      "fullsize": "/images/items/ammo/556X45_M995.webp"
+    },
+    "stats": {
+      "rarity": "Ultimate",
+      "price": 125,
+      "weight": 0.013,
+      "damage": 47,
+      "penetration": 4.6,
+      "muzzleVelocity": 98000,
+      "bleedingChance": 0.2,
+      "bluntDamageScale": 0.08,
+      "protectionGearPenetratedDamageScale": 0.576,
+      "protectionGearBluntDamageScale": 0.715,
+      "caliber": "556x45",
+      "damageAtRange": {
+        "0m": 47,
+        "100m": 46.5,
+        "300m": 41.2,
+        "500m": 30.55
       },
-      "stats": {
-        "rarity": "Common",
-        "price": 280,
-        "weight": 0.01,
-        "size": "1x1",
-        "safeSlots": 60,
-        "damage": 52,
-        "penetration": 35
+      "penetrationAtRange": {
+        "0m": 4.6,
+        "100m": 4.5,
+        "300m": 3.8,
+        "500m": 2.99
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 47,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 15000,
+            "value": 47,
+            "arriveTangent": -0.0016369104,
+            "leaveTangent": -0.0016302697
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 50000,
+            "value": 30.55,
+            "arriveTangent": -0.00023271405,
+            "leaveTangent": -0.00023271465
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 4.6,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 15000,
+            "value": 4.6,
+            "arriveTangent": -0.00015837952,
+            "leaveTangent": -0.0001577669
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 50000,
+            "value": 2.99,
+            "arriveTangent": -0.00002130815,
+            "leaveTangent": -0.000021054826
+          }
+        ]
       }
     },
-    {
-      "id": "ammo-545x39-bs",
-      "name": "5.45x39mm BS",
-      "description": "High-penetration armor-piercing cartridge with steel core.",
-      "category": "ammo",
-      "subcategory": "5.45x39mm",
-      "images": {
-        "icon": "/images/items/ammo/545x39mm_BS.webp",
-        "thumbnail": "/images/items/ammo/545x39mm_BS.webp",
-        "fullsize": "/images/items/ammo/545x39mm_BS.webp"
+    "notes": "High-performance armor piercing round with tungsten core. Effective against armored targets.",
+    "tips": "Best choice against heavily armored opponents. Higher cost but superior penetration makes it worth the investment for tough encounters."
+  },
+  {
+    "id": "ammo-556x45-apv2",
+    "name": "5.56x45mm AP",
+    "description": "Advanced Armor Piercing round with depleted uranium core. Excellent penetration at the cost of reduced damage output.",
+    "category": "ammo",
+    "subcategory": "5.56x45mm",
+    "images": {
+      "icon": "/images/items/ammo/556X45_AP.webp",
+      "thumbnail": "/images/items/ammo/556X45_AP.webp",
+      "fullsize": "/images/items/ammo/556X45_AP.webp"
+    },
+    "stats": {
+      "rarity": "Ultimate",
+      "price": 185,
+      "weight": 0.013,
+      "damage": 39,
+      "penetration": 5.8,
+      "muzzleVelocity": 101000,
+      "bleedingChance": 0.2,
+      "bluntDamageScale": 0.08,
+      "protectionGearPenetratedDamageScale": 0.99,
+      "protectionGearBluntDamageScale": 0.905,
+      "caliber": "556x45",
+      "damageAtRange": {
+        "0m": 39,
+        "100m": 38.7,
+        "300m": 35.8,
+        "500m": 28.08
       },
-      "stats": {
-        "rarity": "Rare",
-        "price": 450,
-        "weight": 0.01,
-        "size": "1x1",
-        "safeSlots": 60,
-        "damage": 48,
-        "penetration": 51
+      "penetrationAtRange": {
+        "0m": 5.8,
+        "100m": 5.7,
+        "300m": 5.2,
+        "500m": 4.176
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 39,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 16000,
+            "value": 39,
+            "arriveTangent": -0.0010691736,
+            "leaveTangent": -0.0010692152
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 53000,
+            "value": 28.08,
+            "arriveTangent": -0.00021145854,
+            "leaveTangent": -0.00021233206
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 5.8,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 16000,
+            "value": 5.8,
+            "arriveTangent": -0.00015019662,
+            "leaveTangent": -0.00015019656
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 53000,
+            "value": 4.176,
+            "arriveTangent": -0.000032084277,
+            "leaveTangent": -0.000032231204
+          }
+        ]
       }
     },
-    {
-      "id": "ammo-545x39-7n40",
-      "name": "5.45x39mm 7N40",
-      "description": "Modern armor-piercing cartridge with enhanced penetration.",
-      "category": "ammo",
-      "subcategory": "5.45x39mm",
-      "images": {
-        "icon": "/images/items/ammo/545x39mm_7N40.webp",
-        "thumbnail": "/images/items/ammo/545x39mm_7N40.webp",
-        "fullsize": "/images/items/ammo/545x39mm_7N40.webp"
+    "notes": "Top-tier armor piercing ammunition with depleted uranium core. Maximum penetration available for 5.56mm.",
+    "tips": "The ultimate anti-armor round. Very expensive but can penetrate the heaviest protection. Save for the toughest opponents."
+  },
+  {
+    "id": "ammo-556x45-fmj",
+    "name": "5.56x45mm FMJ",
+    "description": "Full Metal Jacket ammunition for 5.56x45mm NATO rifles. Standard military round offering good balance of damage and penetration.",
+    "category": "ammo",
+    "subcategory": "5.56x45mm",
+    "images": {
+      "icon": "/images/items/ammo/556X45_FMJ.webp",
+      "thumbnail": "/images/items/ammo/556X45_FMJ.webp",
+      "fullsize": "/images/items/ammo/556X45_FMJ.webp"
+    },
+    "stats": {
+      "rarity": "Rare",
+      "price": 85,
+      "weight": 0.012,
+      "damage": 58,
+      "penetration": 2.4,
+      "muzzleVelocity": 94800,
+      "bleedingChance": 0.2,
+      "bluntDamageScale": 0.05,
+      "protectionGearPenetratedDamageScale": 0.24,
+      "protectionGearBluntDamageScale": 0.16,
+      "caliber": "556x45",
+      "damageAtRange": {
+        "0m": 58,
+        "100m": 57.5,
+        "300m": 50.2,
+        "500m": 40.6
       },
-      "stats": {
-        "rarity": "Epic",
-        "price": 650,
-        "weight": 0.01,
-        "size": "1x1",
-        "safeSlots": 60,
-        "damage": 50,
-        "penetration": 58
+      "penetrationAtRange": {
+        "0m": 2.4,
+        "100m": 2.35,
+        "300m": 2.0,
+        "500m": 1.68
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 58,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 14000,
+            "value": 58,
+            "arriveTangent": -0.0017461776,
+            "leaveTangent": -0.0017482173
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 48000,
+            "value": 40.6,
+            "arriveTangent": -0.000070469534,
+            "leaveTangent": -0.000070469614
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 2.4,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 14000,
+            "value": 2.4,
+            "arriveTangent": -0.00007728236,
+            "leaveTangent": -0.00007759273
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 48000,
+            "value": 1.68,
+            "arriveTangent": -0.0000023104765,
+            "leaveTangent": -0.0000023104787
+          }
+        ]
       }
     },
-    {
-      "id": "ammo-556x45-fmj",
-      "name": "5.56x45mm FMJ",
-      "description": "Standard NATO rifle cartridge used in M4A1 and similar rifles.",
-      "category": "ammo",
-      "subcategory": "5.56x45mm",
-      "images": {
-        "icon": "/images/items/ammo/556X45_FMJ.webp",
-        "thumbnail": "/images/items/ammo/556X45_FMJ.webp",
-        "fullsize": "/images/items/ammo/556X45_FMJ.webp"
+    "notes": "Standard NATO ammunition compatible with most 5.56mm rifles. Reliable performance with moderate armor penetration.",
+    "tips": "Good all-around ammunition for medium-range engagements. Cost-effective choice for budget loadouts while maintaining decent stopping power."
+  },
+  {
+    "id": "ammo-556x45-hp",
+    "name": "5.56x45mm Mk318",
+    "description": "Hollow Point ammunition designed for maximum tissue damage. High damage output but poor armor penetration.",
+    "category": "ammo",
+    "subcategory": "5.56x45mm",
+    "images": {
+      "icon": "/images/items/ammo/556X45_MK318.webp",
+      "thumbnail": "/images/items/ammo/556X45_MK318.webp",
+      "fullsize": "/images/items/ammo/556X45_MK318.webp"
+    },
+    "stats": {
+      "rarity": "Epic",
+      "price": 95,
+      "weight": 0.012,
+      "damage": 73,
+      "penetration": 1.2,
+      "muzzleVelocity": 93000,
+      "bleedingChance": 0.28,
+      "bluntDamageScale": 0.02,
+      "protectionGearPenetratedDamageScale": 0.12,
+      "protectionGearBluntDamageScale": 0.1,
+      "caliber": "556x45",
+      "damageAtRange": {
+        "0m": 73,
+        "100m": 72.2,
+        "300m": 62.1,
+        "500m": 48.91
       },
-      "stats": {
-        "rarity": "Common",
-        "price": 300,
-        "weight": 0.01,
-        "size": "1x1",
-        "safeSlots": 60,
-        "damage": 54,
-        "penetration": 37
+      "penetrationAtRange": {
+        "0m": 1.2,
+        "100m": 1.18,
+        "300m": 0.98,
+        "500m": 0.804
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 73,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 13500,
+            "value": 73,
+            "arriveTangent": -0.0024849225,
+            "leaveTangent": -0.0024849225
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 47500,
+            "value": 48.91,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 1.2,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 13500,
+            "value": 1.2,
+            "arriveTangent": -0.000039042978,
+            "leaveTangent": -0.000039044447
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 47500,
+            "value": 0.804,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ]
       }
     },
-    {
-      "id": "ammo-556x45-m995",
-      "name": "5.56x45mm M995",
-      "description": "High-performance armor-piercing cartridge with tungsten core.",
-      "category": "ammo",
-      "subcategory": "5.56x45mm",
-      "images": {
-        "icon": "/images/items/ammo/556X45_M995.webp",
-        "thumbnail": "/images/items/ammo/556X45_M995.webp",
-        "fullsize": "/images/items/ammo/556X45_M995.webp"
+    "notes": "Hollow point design maximizes damage against unarmored targets. Poor performance against body armor.",
+    "tips": "Excellent for hunting unarmored targets or dealing maximum damage to flesh. Avoid using against armored opponents."
+  },
+  {
+    "id": "ammo-556x45-tracer",
+    "name": "5.56x45mm Mk255",
+    "description": "Tracer ammunition with visible trajectory for target correction. Balanced performance with tracer visibility.",
+    "category": "ammo",
+    "subcategory": "5.56x45mm",
+    "images": {
+      "icon": "/images/items/ammo/556X45_MK255.webp",
+      "thumbnail": "/images/items/ammo/556X45_MK255.webp",
+      "fullsize": "/images/items/ammo/556X45_MK255.webp"
+    },
+    "stats": {
+      "rarity": "Uncommon",
+      "price": 110,
+      "weight": 0.013,
+      "damage": 52,
+      "penetration": 3.6,
+      "muzzleVelocity": 88000,
+      "bleedingChance": 0.2,
+      "bluntDamageScale": 0.05,
+      "protectionGearPenetratedDamageScale": 0.372,
+      "protectionGearBluntDamageScale": 0.268,
+      "caliber": "556x45",
+      "damageAtRange": {
+        "0m": 52,
+        "100m": 51.6,
+        "300m": 45.2,
+        "500m": 36.4
       },
-      "stats": {
-        "rarity": "Epic",
-        "price": 750,
-        "weight": 0.01,
-        "size": "1x1",
-        "safeSlots": 60,
-        "damage": 42,
-        "penetration": 65
+      "penetrationAtRange": {
+        "0m": 3.6,
+        "100m": 3.55,
+        "300m": 3.1,
+        "500m": 2.52
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 52,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 13500,
+            "value": 52,
+            "arriveTangent": -0.001565366,
+            "leaveTangent": -0.0015654187
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 47500,
+            "value": 36.4,
+            "arriveTangent": -0.00028621362,
+            "leaveTangent": -0.00028283653
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 3.6,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 13500,
+            "value": 3.6,
+            "arriveTangent": -0.00011101707,
+            "leaveTangent": -0.00011101707
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 47500,
+            "value": 2.52,
+            "arriveTangent": -0.000012792812,
+            "leaveTangent": -0.000012795859
+          }
+        ]
       }
     },
-    {
-      "id": "ammo-762x39-ps",
-      "name": "7.62x39mm PS",
-      "description": "Standard steel-core cartridge for AKM and similar rifles.",
-      "category": "ammo",
-      "subcategory": "7.62x39mm",
-      "images": {
-        "icon": "/images/items/ammo/762x39mm_PS.webp",
-        "thumbnail": "/images/items/ammo/762x39mm_PS.webp",
-        "fullsize": "/images/items/ammo/762x39mm_PS.webp"
+    "notes": "Tracer round with visible flight path. Useful for target correction and marking targets for teammates.",
+    "tips": "Great for adjusting aim and marking targets, but visible trajectory can reveal your position. Use strategically."
+  },
+  {
+    "id": "ammo-762x39-apv1",
+    "name": "7.62x39mm BP",
+    "description": "Armor Piercing ammunition with hardened steel core. Excellent penetration capabilities against body armor while maintaining good damage output.",
+    "category": "ammo",
+    "subcategory": "7.62x39mm",
+    "images": {
+      "icon": "/images/items/ammo/762x39mm_BP.webp",
+      "thumbnail": "/images/items/ammo/762x39mm_BP.webp",
+      "fullsize": "/images/items/ammo/762x39mm_BP.webp"
+    },
+    "stats": {
+      "rarity": "Legendary",
+      "price": 135,
+      "weight": 0.016,
+      "damage": 57,
+      "penetration": 4.6,
+      "muzzleVelocity": 73000,
+      "bleedingChance": 0.25,
+      "bluntDamageScale": 0.08,
+      "protectionGearPenetratedDamageScale": 0.6125,
+      "protectionGearBluntDamageScale": 0.498,
+      "caliber": "762x39",
+      "damageAtRange": {
+        "0m": 57,
+        "100m": 56.2,
+        "300m": 48.5,
+        "500m": 39.33
       },
-      "stats": {
-        "rarity": "Common",
-        "price": 320,
-        "weight": 0.016,
-        "size": "1x1",
-        "safeSlots": 60,
-        "damage": 58,
-        "penetration": 40
+      "penetrationAtRange": {
+        "0m": 4.6,
+        "100m": 4.45,
+        "300m": 3.8,
+        "500m": 3.105
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 57,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 14000,
+            "value": 57,
+            "arriveTangent": -0.0019133235,
+            "leaveTangent": -0.0019112518
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 44500,
+            "value": 39.33,
+            "arriveTangent": -0.00048440427,
+            "leaveTangent": -0.00048440427
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 4.6,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 14000,
+            "value": 4.6,
+            "arriveTangent": -0.00015173489,
+            "leaveTangent": -0.0001516723
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 44500,
+            "value": 3.105,
+            "arriveTangent": -0.000028046437,
+            "leaveTangent": -0.000028046437
+          }
+        ]
       }
     },
-    {
-      "id": "ammo-762x39-bp",
-      "name": "7.62x39mm BP",
-      "description": "Armor-piercing cartridge with hardened steel core.",
-      "category": "ammo",
-      "subcategory": "7.62x39mm",
-      "images": {
-        "icon": "/images/items/ammo/762x39mm_BP.webp",
-        "thumbnail": "/images/items/ammo/762x39mm_BP.webp",
-        "fullsize": "/images/items/ammo/762x39mm_BP.webp"
+    "notes": "High-quality armor piercing round with steel core. Excellent balance of damage and penetration for AK platforms.",
+    "tips": "Ideal for engaging armored targets. Higher penetration than PS rounds while maintaining good damage output."
+  },
+  {
+    "id": "ammo-762x39-apv2",
+    "name": "7.62x39mm AP",
+    "description": "Advanced Armor Piercing round with tungsten carbide core. Maximum penetration available for 7.62x39mm cartridge.",
+    "category": "ammo",
+    "subcategory": "7.62x39mm",
+    "images": {
+      "icon": "/images/items/ammo/762x39mm_AP.webp",
+      "thumbnail": "/images/items/ammo/762x39mm_AP.webp",
+      "fullsize": "/images/items/ammo/762x39mm_AP.webp"
+    },
+    "stats": {
+      "rarity": "Ultimate",
+      "price": 195,
+      "weight": 0.016,
+      "damage": 52,
+      "penetration": 5.8,
+      "muzzleVelocity": 87500,
+      "bleedingChance": 0.25,
+      "bluntDamageScale": 0.08,
+      "protectionGearPenetratedDamageScale": 0.98,
+      "protectionGearBluntDamageScale": 0.82,
+      "caliber": "762x39",
+      "damageAtRange": {
+        "0m": 52,
+        "100m": 51.8,
+        "300m": 49.2,
+        "500m": 40.56
       },
-      "stats": {
-        "rarity": "Rare",
-        "price": 480,
-        "weight": 0.016,
-        "size": "1x1",
-        "safeSlots": 60,
-        "damage": 55,
-        "penetration": 52
+      "penetrationAtRange": {
+        "0m": 5.8,
+        "100m": 5.75,
+        "300m": 5.3,
+        "500m": 4.524
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 52,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 20000,
+            "value": 52,
+            "arriveTangent": -0.0009476467,
+            "leaveTangent": -0.00094880495
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 60000,
+            "value": 40.56,
+            "arriveTangent": -0.000103218445,
+            "leaveTangent": -0.00010401079
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 5.8,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 20000,
+            "value": 5.8,
+            "arriveTangent": -0.00010910128,
+            "leaveTangent": -0.00010924021
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 60000,
+            "value": 4.524,
+            "arriveTangent": -0.000024338733,
+            "leaveTangent": -0.000024383779
+          }
+        ]
       }
     },
-    {
-      "id": "ammo-9x19-fmj",
-      "name": "9x19mm FMJ",
-      "description": "Standard pistol cartridge used in various handguns and SMGs.",
-      "category": "ammo",
-      "subcategory": "9x19mm",
-      "images": {
-        "icon": "/images/items/ammo/9x19mm_FMJ.webp",
-        "thumbnail": "/images/items/ammo/9x19mm_FMJ.webp",
-        "fullsize": "/images/items/ammo/9x19mm_FMJ.webp"
+    "notes": "Top-tier armor piercing ammunition with tungsten carbide core. Maximum penetration for 7.62x39mm platform.",
+    "tips": "The ultimate anti-armor round for AK rifles. Extremely expensive but can defeat the heaviest armor protection."
+  },
+  {
+    "id": "ammo-762x39-ps",
+    "name": "7.62x39mm PS",
+    "description": "Standard Full Metal Jacket military ammunition. Reliable performance with good damage and moderate penetration capabilities.",
+    "category": "ammo",
+    "subcategory": "7.62x39mm",
+    "images": {
+      "icon": "/images/items/ammo/762x39mm_PS.webp",
+      "thumbnail": "/images/items/ammo/762x39mm_PS.webp",
+      "fullsize": "/images/items/ammo/762x39mm_PS.webp"
+    },
+    "stats": {
+      "rarity": "Epic",
+      "price": 95,
+      "weight": 0.016,
+      "damage": 62,
+      "penetration": 2.6,
+      "muzzleVelocity": 77000,
+      "bleedingChance": 0.25,
+      "bluntDamageScale": 0.05,
+      "protectionGearPenetratedDamageScale": 0.22,
+      "protectionGearBluntDamageScale": 0.16,
+      "caliber": "762x39",
+      "damageAtRange": {
+        "0m": 62,
+        "100m": 61.2,
+        "300m": 54.8,
+        "500m": 44.64
       },
-      "stats": {
-        "rarity": "Common",
-        "price": 150,
-        "weight": 0.008,
-        "size": "1x1",
-        "safeSlots": 50,
-        "damage": 35,
-        "penetration": 18
+      "penetrationAtRange": {
+        "0m": 2.6,
+        "100m": 2.55,
+        "300m": 2.2,
+        "500m": 1.872
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 62,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 17000,
+            "value": 62,
+            "arriveTangent": -0.001628715,
+            "leaveTangent": -0.0016287873
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 48000,
+            "value": 44.64,
+            "arriveTangent": -0.000070469534,
+            "leaveTangent": -0.000070469614
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 2.6,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 17000,
+            "value": 2.6,
+            "arriveTangent": -0.00008049127,
+            "leaveTangent": -0.00008082051
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 48000,
+            "value": 1.872,
+            "arriveTangent": -0.0000023104765,
+            "leaveTangent": -0.0000023104787
+          }
+        ]
       }
     },
-    {
-      "id": "ammo-9x19-apv1",
-      "name": "9x19mm AP V1",
-      "description": "Armor-piercing pistol cartridge with enhanced penetration.",
-      "category": "ammo",
-      "subcategory": "9x19mm",
-      "images": {
-        "icon": "/images/items/ammo/9x19mm_APV1.webp",
-        "thumbnail": "/images/items/ammo/9x19mm_APV1.webp",
-        "fullsize": "/images/items/ammo/9x19mm_APV1.webp"
+    "notes": "Standard Soviet military ammunition. Reliable performance with good damage output for general combat use.",
+    "tips": "Excellent all-around ammunition for AK rifles. Good damage and cost-effective for most combat situations."
+  },
+  {
+    "id": "ammo-762x39-hp",
+    "name": "7.62x39mm SP",
+    "description": "Soft Point hunting ammunition designed for maximum expansion. High damage against unarmored targets but poor armor penetration.",
+    "category": "ammo",
+    "subcategory": "7.62x39mm",
+    "images": {
+      "icon": "/images/items/ammo/762x39mm_SP.webp",
+      "thumbnail": "/images/items/ammo/762x39mm_SP.webp",
+      "fullsize": "/images/items/ammo/762x39mm_SP.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 105,
+      "weight": 0.016,
+      "damage": 72,
+      "penetration": 1.8,
+      "muzzleVelocity": 75000,
+      "bleedingChance": 0.34,
+      "bluntDamageScale": 0.02,
+      "protectionGearPenetratedDamageScale": 0.14,
+      "protectionGearBluntDamageScale": 0.12,
+      "caliber": "762x39",
+      "damageAtRange": {
+        "0m": 72,
+        "100m": 71.2,
+        "300m": 62.5,
+        "500m": 49.68
       },
-      "stats": {
-        "rarity": "Uncommon",
-        "price": 280,
-        "weight": 0.008,
-        "size": "1x1",
-        "safeSlots": 50,
-        "damage": 32,
-        "penetration": 30
+      "penetrationAtRange": {
+        "0m": 1.8,
+        "100m": 1.75,
+        "300m": 1.5,
+        "500m": 1.242
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 72,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 16000,
+            "value": 72,
+            "arriveTangent": -0.0023706604,
+            "leaveTangent": -0.002373232
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 46000,
+            "value": 49.68,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 1.8,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 16000,
+            "value": 1.8,
+            "arriveTangent": -0.000058564536,
+            "leaveTangent": -0.00005863028
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 46000,
+            "value": 1.242,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ]
       }
     },
-    {
-      "id": "ammo-45acp-fmj",
-      "name": ".45 ACP FMJ",
-      "description": "Standard .45 caliber pistol cartridge with good stopping power.",
-      "category": "ammo",
-      "subcategory": ".45 ACP",
-      "images": {
-        "icon": "/images/items/ammo/45acp_FMJ.webp",
-        "thumbnail": "/images/items/ammo/45acp_FMJ.webp",
-        "fullsize": "/images/items/ammo/45acp_FMJ.webp"
+    "notes": "Soft point hunting ammunition with excellent expansion properties. Maximum damage against unarmored targets.",
+    "tips": "Perfect for hunting or engaging unarmored enemies. High bleeding chance but ineffective against body armor."
+  },
+  {
+    "id": "ammo-762x39-tracer",
+    "name": "7.62x39mm FMJ Tracer",
+    "description": "Full Metal Jacket tracer ammunition with visible trajectory. Good balance of damage and penetration with tracer visibility.",
+    "category": "ammo",
+    "subcategory": "7.62x39mm",
+    "images": {
+      "icon": "/images/items/ammo/762x39mm_FMJ.webp",
+      "thumbnail": "/images/items/ammo/762x39mm_FMJ.webp",
+      "fullsize": "/images/items/ammo/762x39mm_FMJ.webp"
+    },
+    "stats": {
+      "rarity": "Uncommon",
+      "price": 120,
+      "weight": 0.017,
+      "damage": 64,
+      "penetration": 3.3,
+      "muzzleVelocity": 72000,
+      "bleedingChance": 0.25,
+      "bluntDamageScale": 0.05,
+      "protectionGearPenetratedDamageScale": 0.2765,
+      "protectionGearBluntDamageScale": 0.211,
+      "caliber": "762x39",
+      "damageAtRange": {
+        "0m": 64,
+        "100m": 63.2,
+        "300m": 56.8,
+        "500m": 46.08
       },
-      "stats": {
-        "rarity": "Common",
-        "price": 200,
-        "weight": 0.015,
-        "size": "1x1",
-        "safeSlots": 30,
-        "damage": 70,
-        "penetration": 25
+      "penetrationAtRange": {
+        "0m": 3.3,
+        "100m": 3.25,
+        "300m": 2.9,
+        "500m": 2.232
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 64,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 17000,
+            "value": 64,
+            "arriveTangent": -0.002155152,
+            "leaveTangent": -0.0021480373
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 47500,
+            "value": 46.08,
+            "arriveTangent": -0.00017510029,
+            "leaveTangent": -0.00017572514
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 3.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 17000,
+            "value": 3.3,
+            "arriveTangent": -0.000109076595,
+            "leaveTangent": -0.00010907551
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 45000,
+            "value": 2.232,
+            "arriveTangent": -0.00001083765,
+            "leaveTangent": -0.0000108375925
+          }
+        ]
       }
     },
-    {
-      "id": "ammo-12ga-buck",
-      "name": "12 Gauge Buckshot",
-      "description": "Standard shotgun shell loaded with lead pellets.",
-      "category": "ammo",
-      "subcategory": "12 Gauge",
-      "images": {
-        "icon": "/images/items/ammo/12ga_BUCK_HP.webp",
-        "thumbnail": "/images/items/ammo/12ga_BUCK_HP.webp",
-        "fullsize": "/images/items/ammo/12ga_BUCK_HP.webp"
+    "notes": "Tracer round with visible flight path for target correction. Good balance of damage and penetration.",
+    "tips": "Useful for spotting shots and target marking. Visible trajectory helps with long-range engagements but can reveal position."
+  },
+  {
+    "id": "ammo-762x51-apv2",
+    "name": "7.62x51mm M993",
+    "description": "Advanced Armor Piercing round with depleted uranium core. Maximum penetration available for 7.62x51mm NATO platform.",
+    "category": "ammo",
+    "subcategory": "7.62x51mm",
+    "images": {
+      "icon": "/images/items/ammo/762x51mm_M993.webp",
+      "thumbnail": "/images/items/ammo/762x51mm_M993.webp",
+      "fullsize": "/images/items/ammo/762x51mm_M993.webp"
+    },
+    "stats": {
+      "rarity": "Ultimate",
+      "price": 285,
+      "weight": 0.025,
+      "damage": 69,
+      "penetration": 6.8,
+      "muzzleVelocity": 91000,
+      "bleedingChance": 0.25,
+      "bluntDamageScale": 0.08,
+      "protectionGearPenetratedDamageScale": 1,
+      "protectionGearBluntDamageScale": 0.8475,
+      "caliber": "762x51NATO",
+      "damageAtRange": {
+        "0m": 69,
+        "100m": 68.5,
+        "300m": 64.2,
+        "500m": 55.2
       },
-      "stats": {
-        "rarity": "Common",
-        "price": 180,
-        "weight": 0.038,
-        "size": "1x1",
-        "safeSlots": 20,
-        "damage": 200,
-        "penetration": 8
+      "penetrationAtRange": {
+        "0m": 6.8,
+        "100m": 6.75,
+        "300m": 6.3,
+        "500m": 5.44
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 69,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 20000,
+            "value": 69,
+            "arriveTangent": -0.0008488344,
+            "leaveTangent": -0.0008501331
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 65000,
+            "value": 55.2,
+            "arriveTangent": -0.00026420303,
+            "leaveTangent": -0.00026767878
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 6.8,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 16000,
+            "value": 6.8,
+            "arriveTangent": -0.00009058903,
+            "leaveTangent": -0.00009058903
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 65000,
+            "value": 5.44,
+            "arriveTangent": -0.000016461672,
+            "leaveTangent": -0.00001666102
+          }
+        ]
       }
     },
-    {
-      "id": "ammo-12ga-slug",
-      "name": "12 Gauge Slug",
-      "description": "Single projectile shotgun shell for increased accuracy and penetration.",
-      "category": "ammo",
-      "subcategory": "12 Gauge",
-      "images": {
-        "icon": "/images/items/ammo/12ga_SLUG_HP.webp",
-        "thumbnail": "/images/items/ammo/12ga_SLUG_HP.webp",
-        "fullsize": "/images/items/ammo/12ga_SLUG_HP.webp"
+    "notes": "Ultimate armor piercing ammunition with depleted uranium core. Capable of defeating any body armor in the field.",
+    "tips": "The most expensive and effective anti-armor round available. Reserve for the most heavily protected targets."
+  },
+  {
+    "id": "ammo-762x51-apv1",
+    "name": "7.62x51mm M61",
+    "description": "Armor Piercing ammunition with tungsten core designed for maximum penetration. Military-grade anti-armor round for battle rifles.",
+    "category": "ammo",
+    "subcategory": "7.62x51mm",
+    "images": {
+      "icon": "/images/items/ammo/762x51mm_M61.webp",
+      "thumbnail": "/images/items/ammo/762x51mm_M61.webp",
+      "fullsize": "/images/items/ammo/762x51mm_M61.webp"
+    },
+    "stats": {
+      "rarity": "Uncommon",
+      "price": 155,
+      "weight": 0.025,
+      "damage": 72,
+      "penetration": 5.3,
+      "muzzleVelocity": 82000,
+      "bleedingChance": 0.25,
+      "bluntDamageScale": 0.08,
+      "protectionGearPenetratedDamageScale": 0.615,
+      "protectionGearBluntDamageScale": 0.494,
+      "caliber": "762x51NATO",
+      "damageAtRange": {
+        "0m": 72,
+        "100m": 71.2,
+        "300m": 63.5,
+        "500m": 50.4
       },
-      "stats": {
-        "rarity": "Uncommon",
-        "price": 300,
-        "weight": 0.038,
-        "size": "1x1",
-        "safeSlots": 20,
-        "damage": 280,
-        "penetration": 35
+      "penetrationAtRange": {
+        "0m": 5.3,
+        "100m": 5.2,
+        "300m": 4.6,
+        "500m": 3.71
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 72,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 18000,
+            "value": 72,
+            "arriveTangent": -0.0021525433,
+            "leaveTangent": -0.0021525417
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 52000,
+            "value": 50.4,
+            "arriveTangent": -0.00021492835,
+            "leaveTangent": -0.00021314263
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 5.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 18000,
+            "value": 5.3,
+            "arriveTangent": -0.00013497686,
+            "leaveTangent": -0.00013498042
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 52000,
+            "value": 3.71,
+            "arriveTangent": -0.000021334334,
+            "leaveTangent": -0.000020913692
+          }
+        ]
       }
-    }
-  ]
-}
+    },
+    "notes": "High-performance armor piercing round with tungsten core. Excellent penetration against body armor and vehicles.",
+    "tips": "Premier choice for engaging heavily armored targets. Expensive but extremely effective against high-tier protection."
+  },
+  {
+    "id": "ammo-762x51-M80",
+    "name": "7.62x51mm M80",
+    "description": "Full Metal Jacket with better penetration. Good damage and better penetration.",
+    "category": "ammo",
+    "subcategory": "7.62x51mm",
+    "images": {
+      "icon": "/images/items/ammo/762x51mm_M80.webp",
+      "thumbnail": "/images/items/ammo/762x51mm_M80.webp",
+      "fullsize": "/images/items/ammo/762x51mm_M80.webp"
+    },
+    "stats": {
+      "rarity": "Legendary",
+      "price": 145,
+      "weight": 0.026,
+      "damage": 79,
+      "penetration": 4.4,
+      "muzzleVelocity": 88000,
+      "bleedingChance": 0.25,
+      "bluntDamageScale": 0.05,
+      "protectionGearPenetratedDamageScale": 0.3385,
+      "protectionGearBluntDamageScale": 0.249,
+      "caliber": "762x51NATO",
+      "damageAtRange": {
+        "0m": 79,
+        "100m": 78.5,
+        "300m": 72.8,
+        "500m": 59.25
+      },
+      "penetrationAtRange": {
+        "0m": 4.4,
+        "100m": 4.35,
+        "300m": 3.9,
+        "500m": 3.3
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 79,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 17300,
+            "value": 79,
+            "arriveTangent": -0.0012196267,
+            "leaveTangent": -0.0012196267
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 51000,
+            "value": 59.25,
+            "arriveTangent": -0.000044347344,
+            "leaveTangent": -0.000045567554
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 4.4,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 17300,
+            "value": 4.4,
+            "arriveTangent": -0.00008959667,
+            "leaveTangent": -0.00008959667
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 51000,
+            "value": 3.3,
+            "arriveTangent": -0.0000016875657,
+            "leaveTangent": -0.0000016714687
+          }
+        ]
+      }
+    },
+    "notes": "Tracer round with visible flight path for long-range target correction. Good balance of damage and penetration.",
+    "tips": "Excellent for long-range engagements where you need to see bullet trajectory. Helps with range estimation and target marking."
+  },
+  {
+    "id": "ammo-762x51-fmj",
+    "name": "7.62x51mm FMG",
+    "description": "Standard NATO Full Metal Jacket ammunition. Reliable military-grade round with excellent damage and moderate penetration.",
+    "category": "ammo",
+    "subcategory": "7.62x51mm",
+    "images": {
+      "icon": "/images/items/ammo/762x51mm_FMJ.webp",
+      "thumbnail": "/images/items/ammo/762x51mm_FMJ.webp",
+      "fullsize": "/images/items/ammo/762x51mm_FMJ.webp"
+    },
+    "stats": {
+      "rarity": "Epic",
+      "price": 125,
+      "weight": 0.025,
+      "damage": 82,
+      "penetration": 3.6,
+      "muzzleVelocity": 84000,
+      "bleedingChance": 0.25,
+      "bluntDamageScale": 0.05,
+      "protectionGearPenetratedDamageScale": 0.223,
+      "protectionGearBluntDamageScale": 0.1615,
+      "caliber": "762x51NATO",
+      "damageAtRange": {
+        "0m": 82,
+        "100m": 81.2,
+        "300m": 74.5,
+        "500m": 61.5
+      },
+      "penetrationAtRange": {
+        "0m": 3.6,
+        "100m": 3.55,
+        "300m": 3.2,
+        "500m": 2.7
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 82,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 19000,
+            "value": 82,
+            "arriveTangent": -0.0016306195,
+            "leaveTangent": -0.0016306195
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 54000,
+            "value": 61.5,
+            "arriveTangent": -0.000070469534,
+            "leaveTangent": -0.000070469614
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 3.6,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 19000,
+            "value": 3.6,
+            "arriveTangent": -0.00007153266,
+            "leaveTangent": -0.000071754686
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 54000,
+            "value": 2.7,
+            "arriveTangent": -0.0000023104765,
+            "leaveTangent": -0.0000023104787
+          }
+        ]
+      }
+    },
+    "notes": "Standard NATO military ammunition used by Western forces. Excellent damage output with reliable performance.",
+    "tips": "Outstanding all-around ammunition for battle rifles. High damage makes it effective against most targets."
+  },
+  {
+    "id": "ammo-762x51-hp",
+    "name": "7.62x51mm SP",
+    "description": "Soft Point hunting ammunition designed for maximum tissue damage. Devastating against unarmored targets but poor armor penetration.",
+    "category": "ammo",
+    "subcategory": "7.62x51mm",
+    "images": {
+      "icon": "/images/items/ammo/762x51mm_SP.webp",
+      "thumbnail": "/images/items/ammo/762x51mm_SP.webp",
+      "fullsize": "/images/items/ammo/762x51mm_SP.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 135,
+      "weight": 0.025,
+      "damage": 89,
+      "penetration": 2.7,
+      "muzzleVelocity": 79000,
+      "bleedingChance": 0.37,
+      "bluntDamageScale": 0.02,
+      "protectionGearPenetratedDamageScale": 0.16,
+      "protectionGearBluntDamageScale": 0.13,
+      "caliber": "762x51NATO",
+      "damageAtRange": {
+        "0m": 89,
+        "100m": 88.2,
+        "300m": 79.5,
+        "500m": 62.3
+      },
+      "penetrationAtRange": {
+        "0m": 2.7,
+        "100m": 2.65,
+        "300m": 2.4,
+        "500m": 2.1
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 89,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 17000,
+            "value": 89,
+            "arriveTangent": -0.0018580522,
+            "leaveTangent": -0.0018579824
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 50000,
+            "value": 62.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 2.7,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 17000,
+            "value": 2.7,
+            "arriveTangent": -0.00006156093,
+            "leaveTangent": -0.00006156091
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 50000,
+            "value": 2.1,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ]
+      }
+    },
+    "notes": "Hunting ammunition with soft point design for maximum expansion. Devastating damage against unarmored targets.",
+    "tips": "Highest damage output for 7.62x51mm. Excellent for hunting or engaging unarmored enemies. Very high bleeding chance."
+  },
+  {
+    "id": "ammo-9x19-apv1",
+    "name": "9x19mm AP",
+    "description": "Armor Piercing pistol ammunition with hardened steel core. Designed to penetrate body armor at close range.",
+    "category": "ammo",
+    "subcategory": "9x19mm",
+    "images": {
+      "icon": "/images/items/ammo/9x19mm_APV1.webp",
+      "thumbnail": "/images/items/ammo/9x19mm_APV1.webp",
+      "fullsize": "/images/items/ammo/9x19mm_APV1.webp"
+    },
+    "stats": {
+      "rarity": "Epic",
+      "price": 155,
+      "weight": 0.008,
+      "damage": 53,
+      "penetration": 3.7,
+      "muzzleVelocity": 41000,
+      "bleedingChance": 0.15,
+      "bluntDamageScale": 0.04,
+      "protectionGearPenetratedDamageScale": 0.64,
+      "protectionGearBluntDamageScale": 0.498,
+      "caliber": "9x19mm",
+      "damageAtRange": {
+        "0m": 53,
+        "100m": 51.8,
+        "300m": 38.2,
+        "500m": 22.79
+      },
+      "penetrationAtRange": {
+        "0m": 3.7,
+        "100m": 3.55,
+        "300m": 2.5,
+        "500m": 1.591
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 53,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 8000,
+            "value": 53,
+            "arriveTangent": -0.0027099657,
+            "leaveTangent": -0.00271076
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 36000,
+            "value": 22.79,
+            "arriveTangent": -0.0012067892,
+            "leaveTangent": -0.0012092635
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 3.7,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 8000,
+            "value": 3.7,
+            "arriveTangent": -0.00016431152,
+            "leaveTangent": -0.0001648994
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 36000,
+            "value": 1.591,
+            "arriveTangent": -0.00006911803,
+            "leaveTangent": -0.00006969796
+          }
+        ]
+      }
+    },
+    "notes": "Specialized armor piercing pistol round with hardened steel core. Effective against light body armor at close range.",
+    "tips": "Best pistol round for penetrating armor. Expensive but necessary when facing armored opponents with sidearms."
+  },
+  {
+    "id": "ammo-9x19-tracer",
+    "name": "9x19mm PST Tracer",
+    "description": "Tracer pistol ammunition with visible trajectory. Moderate damage and penetration with tracer visibility for target correction.",
+    "category": "ammo",
+    "subcategory": "9x19mm",
+    "images": {
+      "icon": "/images/items/ammo/9x19mm_tracer.webp",
+      "thumbnail": "/images/items/ammo/9x19mm_tracer.webp",
+      "fullsize": "/images/items/ammo/9x19mm_tracer.webp"
+    },
+    "stats": {
+      "rarity": "Rare",
+      "price": 75,
+      "weight": 0.008,
+      "damage": 55,
+      "penetration": 2.2,
+      "muzzleVelocity": 37000,
+      "bleedingChance": 0.15,
+      "bluntDamageScale": 0.02,
+      "protectionGearPenetratedDamageScale": 0.236,
+      "protectionGearBluntDamageScale": 0.154,
+      "caliber": "9x19mm",
+      "damageAtRange": {
+        "0m": 55,
+        "100m": 52.8,
+        "300m": 35.2,
+        "500m": 22
+      },
+      "penetrationAtRange": {
+        "0m": 2.2,
+        "100m": 2.1,
+        "300m": 1.5,
+        "500m": 0.88
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 55,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 6500,
+            "value": 55,
+            "arriveTangent": -0.0032732922,
+            "leaveTangent": -0.0032793467
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 32000,
+            "value": 22,
+            "arriveTangent": -0.00104625,
+            "leaveTangent": -0.0010679082
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 2.2,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 6500,
+            "value": 2.2,
+            "arriveTangent": -0.00014988765,
+            "leaveTangent": -0.00014983668
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 32000,
+            "value": 0.88,
+            "arriveTangent": -0.000017057757,
+            "leaveTangent": -0.000017293378
+          }
+        ]
+      }
+    },
+    "notes": "Tracer round with visible flight path for pistols. Useful for target correction and marking at close to medium range.",
+    "tips": "Good for training and target marking. The visible trajectory helps with shot placement but can reveal your position."
+  },
+  {
+    "id": "ammo-9x19-fmj",
+    "name": "9x19mm FMJ",
+    "description": "Standard Full Metal Jacket pistol ammunition. Reliable military and law enforcement round with good penetration.",
+    "category": "ammo",
+    "subcategory": "9x19mm",
+    "images": {
+      "icon": "/images/items/ammo/9x19mm_FMJ.webp",
+      "thumbnail": "/images/items/ammo/9x19mm_FMJ.webp",
+      "fullsize": "/images/items/ammo/9x19mm_FMJ.webp"
+    },
+    "stats": {
+      "rarity": "Rare",
+      "price": 45,
+      "weight": 0.008,
+      "damage": 58,
+      "penetration": 1.6,
+      "muzzleVelocity": 39000,
+      "bleedingChance": 0.15,
+      "bluntDamageScale": 0.02,
+      "protectionGearPenetratedDamageScale": 0.15,
+      "protectionGearBluntDamageScale": 0.085,
+      "caliber": "9x19mm",
+      "damageAtRange": {
+        "0m": 58,
+        "100m": 55.2,
+        "300m": 38.5,
+        "500m": 26.1
+      },
+      "penetrationAtRange": {
+        "0m": 1.6,
+        "100m": 1.52,
+        "300m": 1.1,
+        "500m": 0.72
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 58,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 7000,
+            "value": 58,
+            "arriveTangent": -0.002835293,
+            "leaveTangent": -0.0028364887
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 34000,
+            "value": 26.1,
+            "arriveTangent": -0.00073965755,
+            "leaveTangent": -0.0007313785
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 1.6,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 7000,
+            "value": 1.6,
+            "arriveTangent": -0.00008166784,
+            "leaveTangent": -0.00008170489
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 34000,
+            "value": 0.72,
+            "arriveTangent": -0.000020739026,
+            "leaveTangent": -0.000020789426
+          }
+        ]
+      }
+    },
+    "notes": "Standard military and police ammunition. Reliable performance with good damage and moderate penetration.",
+    "tips": "Most cost-effective pistol ammunition. Good all-around performance for general use and training."
+  },
+  {
+    "id": "ammo-9x19-pso",
+    "name": "9x19mm PSO",
+    "description": "Hollow Point ammunition designed for maximum expansion and stopping power. High damage but minimal armor penetration.",
+    "category": "ammo",
+    "subcategory": "9x19mm",
+    "images": {
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 55,
+      "weight": 0.008,
+      "damage": 65,
+      "penetration": 0.9,
+      "muzzleVelocity": 35000,
+      "bleedingChance": 0.25,
+      "bluntDamageScale": 0.02,
+      "protectionGearPenetratedDamageScale": 0.08,
+      "protectionGearBluntDamageScale": 0.06,
+      "caliber": "9x19mm",
+      "damageAtRange": {
+        "0m": 65,
+        "100m": 62.5,
+        "300m": 48.2,
+        "500m": 29.25
+      },
+      "penetrationAtRange": {
+        "0m": 0.9,
+        "100m": 0.88,
+        "300m": 0.75,
+        "500m": 0.68
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 65,
+            "arriveTangent": -0.0000062393947,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 6000,
+            "value": 65,
+            "arriveTangent": -0.0030056266,
+            "leaveTangent": -0.0030072005
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 30000,
+            "value": 29.25,
+            "arriveTangent": 0.00008161892,
+            "leaveTangent": 0.00008462341
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 0.9,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 6000,
+            "value": 0.9,
+            "arriveTangent": -0.000023763778,
+            "leaveTangent": -0.00002380351
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 30276.43,
+            "value": 0.68,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ]
+      }
+    },
+    "notes": "Hollow point design for maximum tissue damage and stopping power. Excellent against unarmored targets.",
+    "tips": "Highest damage pistol round against unarmored targets. High bleeding chance makes it very effective for self-defense."
+  },
+  {
+    "id": "ammo-545x39-apv2",
+    "name": "5.45x39mm BS",
+    "description": "Armor Piercing ammunition with hardened steel core. High penetration capabilities against body armor with good damage retention.",
+    "category": "ammo",
+    "subcategory": "5.45x39mm",
+    "images": {
+      "icon": "/images/items/ammo/545x39mm_BS.webp",
+      "thumbnail": "/images/items/ammo/545x39mm_BS.webp",
+      "fullsize": "/images/items/ammo/545x39mm_BS.webp"
+    },
+    "stats": {
+      "rarity": "Ultimate",
+      "price": 175,
+      "weight": 0.012,
+      "damage": 45,
+      "penetration": 5.6,
+      "muzzleVelocity": 91000,
+      "bleedingChance": 0.19,
+      "bluntDamageScale": 0.08,
+      "protectionGearPenetratedDamageScale": 0.97,
+      "protectionGearBluntDamageScale": 0.84,
+      "caliber": "545x39",
+      "damageAtRange": {
+        "0m": 45,
+        "100m": 44.6,
+        "300m": 41.2,
+        "500m": 32.4
+      },
+      "penetrationAtRange": {
+        "0m": 5.6,
+        "100m": 5.5,
+        "300m": 4.9,
+        "500m": 4.032
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 45,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 16000,
+            "value": 45,
+            "arriveTangent": -0.0013369703,
+            "leaveTangent": -0.0013373316
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 50000,
+            "value": 32.4,
+            "arriveTangent": -0.00012840195,
+            "leaveTangent": -0.00012929822
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 5.6,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 16000,
+            "value": 5.6,
+            "arriveTangent": -0.00017109337,
+            "leaveTangent": -0.00017114278
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 50000,
+            "value": 4.032,
+            "arriveTangent": -0.000012381065,
+            "leaveTangent": -0.000012519635
+          }
+        ]
+      }
+    },
+    "notes": "Elite military ammunition with tungsten carbide core. Designed to defeat modern body armor at extended ranges.",
+    "tips": "The ultimate armor-piercing round for AK-74 platform. Expensive but essential for engaging heavily armored targets."
+  },
+  {
+    "id": "ammo-545x39-apv1",
+    "name": "5.45x39mm 7N40",
+    "description": "Advanced Armor Piercing ammunition with tungsten carbide core. Top-tier penetration for 5.45x39mm platform with excellent armor-defeating capabilities.",
+    "category": "ammo",
+    "subcategory": "5.45x39mm",
+    "images": {
+      "icon": "/images/items/ammo/545x39mm_7N40.webp",
+      "thumbnail": "/images/items/ammo/545x39mm_7N40.webp",
+      "fullsize": "/images/items/ammo/545x39mm_7N40.webp"
+    },
+    "stats": {
+      "rarity": "Legendary",
+      "price": 125,
+      "weight": 0.012,
+      "damage": 51,
+      "penetration": 4.5,
+      "muzzleVelocity": 89500,
+      "bleedingChance": 0.19,
+      "bluntDamageScale": 0.08,
+      "protectionGearPenetratedDamageScale": 0.71,
+      "protectionGearBluntDamageScale": 0.57,
+      "caliber": "545x39",
+      "damageAtRange": {
+        "0m": 51,
+        "100m": 50.5,
+        "300m": 46.2,
+        "500m": 33.15
+      },
+      "penetrationAtRange": {
+        "0m": 4.5,
+        "100m": 4.4,
+        "300m": 3.8,
+        "500m": 2.795
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 51,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 14500,
+            "value": 51,
+            "arriveTangent": -0.0019198243,
+            "leaveTangent": -0.0019198845
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 44000,
+            "value": 33.15,
+            "arriveTangent": -0.00017940326,
+            "leaveTangent": -0.00016992407
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 4.5,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 14000,
+            "value": 4.5,
+            "arriveTangent": -0.00018784039,
+            "leaveTangent": -0.00018784039
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 44000,
+            "value": 2.795,
+            "arriveTangent": -0.000021356069,
+            "leaveTangent": -0.000021029604
+          }
+        ]
+      }
+    },
+    "notes": "High-quality armor piercing round with steel core. Excellent balance of penetration and damage for AK-74 platforms.",
+    "tips": "Premium choice for engaging armored targets. More affordable than 7N40 while still providing excellent armor penetration."
+  },
+  {
+    "id": "ammo-545x39-tracer",
+    "name": "5.45x39mm PP Tracer",
+    "description": "Tracer ammunition with visible trajectory and moderate armor penetration. Good for target correction and marking enemies.",
+    "category": "ammo",
+    "subcategory": "5.45x39mm",
+    "images": {
+      "icon": "/images/items/ammo/545x39mm_PP.webp",
+      "thumbnail": "/images/items/ammo/545x39mm_PP.webp",
+      "fullsize": "/images/items/ammo/545x39mm_PP.webp"
+    },
+    "stats": {
+      "rarity": "Epic",
+      "price": 105,
+      "weight": 0.012,
+      "damage": 53,
+      "penetration": 3.6,
+      "muzzleVelocity": 88000,
+      "bleedingChance": 0.19,
+      "bluntDamageScale": 0.05,
+      "protectionGearPenetratedDamageScale": 0.386,
+      "protectionGearBluntDamageScale": 0.274,
+      "caliber": "545x39",
+      "damageAtRange": {
+        "0m": 53,
+        "100m": 52.5,
+        "300m": 47.8,
+        "500m": 37.1
+      },
+      "penetrationAtRange": {
+        "0m": 3.6,
+        "100m": 3.55,
+        "300m": 3.1,
+        "500m": 2.52
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 53,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 14000,
+            "value": 53,
+            "arriveTangent": -0.0017306278,
+            "leaveTangent": -0.0017335996
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 43000,
+            "value": 37.1,
+            "arriveTangent": -0.0002454113,
+            "leaveTangent": -0.00024953048
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 3.6,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 14000,
+            "value": 3.6,
+            "arriveTangent": -0.00011165353,
+            "leaveTangent": -0.00011165353
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 43000,
+            "value": 2.52,
+            "arriveTangent": -0.000010567279,
+            "leaveTangent": -0.000010677912
+          }
+        ]
+      }
+    },
+    "notes": "Tracer round with visible flight path and good penetration. Useful for target correction and squad coordination.",
+    "tips": "Excellent for long-range engagements where you need to see bullet trajectory. Good penetration makes it versatile."
+  },
+  {
+    "id": "ammo-545x39-fmj",
+    "name": "5.45x39mm FMJ",
+    "description": "Standard Full Metal Jacket military ammunition. Reliable performance with good damage and moderate penetration for general use.",
+    "category": "ammo",
+    "subcategory": "5.45x39mm",
+    "images": {
+      "icon": "/images/items/ammo/545x39mm_FMJ.webp",
+      "thumbnail": "/images/items/ammo/545x39mm_FMJ.webp",
+      "fullsize": "/images/items/ammo/545x39mm_FMJ.webp"
+    },
+    "stats": {
+      "rarity": "Rare",
+      "price": 75,
+      "weight": 0.012,
+      "damage": 55,
+      "penetration": 2.4,
+      "muzzleVelocity": 88500,
+      "bleedingChance": 0.19,
+      "bluntDamageScale": 0.05,
+      "protectionGearPenetratedDamageScale": 0.22,
+      "protectionGearBluntDamageScale": 0.145,
+      "caliber": "545x39",
+      "damageAtRange": {
+        "0m": 55,
+        "100m": 54.5,
+        "300m": 49.8,
+        "500m": 38.5
+      },
+      "penetrationAtRange": {
+        "0m": 2.4,
+        "100m": 2.35,
+        "300m": 2.0,
+        "500m": 1.68
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 55,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 14200,
+            "value": 55,
+            "arriveTangent": -0.001882601,
+            "leaveTangent": -0.0018820908
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 43500,
+            "value": 38.5,
+            "arriveTangent": -0.000070469534,
+            "leaveTangent": -0.000070469614
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 2.4,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 14200,
+            "value": 2.4,
+            "arriveTangent": -0.00008534192,
+            "leaveTangent": -0.00008559783
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 43500,
+            "value": 1.68,
+            "arriveTangent": -0.0000023104765,
+            "leaveTangent": -0.0000023104787
+          }
+        ]
+      }
+    },
+    "notes": "Standard Soviet military ammunition for AK-74 platform. Reliable performance with good damage output for general combat.",
+    "tips": "Most cost-effective ammunition for AK-74 rifles. Good balance of damage and affordability for regular use."
+  },
+  {
+    "id": "ammo-545x39-hp",
+    "name": "5.45x39mm PRS",
+    "description": "Hollow Point ammunition designed for maximum tissue damage. High damage against unarmored targets but poor armor penetration.",
+    "category": "ammo",
+    "subcategory": "5.45x39mm",
+    "images": {
+      "icon": "/images/items/ammo/545x39mm_PRS.webp",
+      "thumbnail": "/images/items/ammo/545x39mm_PRS.webp",
+      "fullsize": "/images/items/ammo/545x39mm_PRS.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 85,
+      "weight": 0.012,
+      "damage": 70,
+      "penetration": 1.3,
+      "muzzleVelocity": 86000,
+      "bleedingChance": 0.28,
+      "bluntDamageScale": 0.02,
+      "protectionGearPenetratedDamageScale": 0.11,
+      "protectionGearBluntDamageScale": 0.09,
+      "caliber": "545x39",
+      "damageAtRange": {
+        "0m": 70,
+        "100m": 69.2,
+        "300m": 61.5,
+        "500m": 46.9
+      },
+      "penetrationAtRange": {
+        "0m": 1.3,
+        "100m": 1.25,
+        "300m": 1.1,
+        "500m": 0.871
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 70,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 12000,
+            "value": 70,
+            "arriveTangent": -0.0025460704,
+            "leaveTangent": -0.0025450846
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 42000,
+            "value": 46.9,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 1.3,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 12000,
+            "value": 1.3,
+            "arriveTangent": -0.0000470929,
+            "leaveTangent": -0.00004707716
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 42000,
+            "value": 0.871,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ]
+      }
+    },
+    "notes": "Hollow point design for maximum expansion and tissue damage. Excellent against unarmored targets with high bleeding chance.",
+    "tips": "Highest damage 5.45x39mm round against unarmored enemies. Very effective for hunting or anti-personnel use."
+  },
+  {
+    "id": "ammo-45acp-apv1",
+    "name": ".45 ACP AP",
+    "description": "Armor Piercing pistol ammunition with hardened steel core. Designed to penetrate light body armor at close range with heavy .45 caliber power.",
+    "category": "ammo",
+    "subcategory": ".45 ACP",
+    "images": {
+      "icon": "/images/items/ammo/45acp_APV1.webp",
+      "thumbnail": "/images/items/ammo/45acp_APV1.webp",
+      "fullsize": "/images/items/ammo/45acp_APV1.webp"
+    },
+    "stats": {
+      "rarity": "Rare",
+      "price": 185,
+      "weight": 0.015,
+      "damage": 63,
+      "penetration": 3.6,
+      "muzzleVelocity": 39000,
+      "bleedingChance": 0.22,
+      "bluntDamageScale": 0.04,
+      "protectionGearPenetratedDamageScale": 0.63,
+      "protectionGearBluntDamageScale": 0.492,
+      "caliber": "45acp",
+      "damageAtRange": {
+        "0m": 63,
+        "100m": 60.8,
+        "300m": 45.2,
+        "500m": 27.09
+      },
+      "penetrationAtRange": {
+        "0m": 3.6,
+        "100m": 3.45,
+        "300m": 2.4,
+        "500m": 1.548
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 63,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 8000,
+            "value": 63,
+            "arriveTangent": -0.00420055,
+            "leaveTangent": -0.0041926373
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 33500,
+            "value": 27.09,
+            "arriveTangent": -0.0006808371,
+            "leaveTangent": -0.0006969601
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 3.6,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 8000,
+            "value": 3.6,
+            "arriveTangent": -0.00019755306,
+            "leaveTangent": -0.00019756061
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 33500,
+            "value": 1.548,
+            "arriveTangent": -0.000017057757,
+            "leaveTangent": -0.000017293378
+          }
+        ]
+      }
+    },
+    "notes": "Heavy armor piercing pistol round with excellent stopping power. Steel core provides good penetration for a pistol cartridge.",
+    "tips": "Best .45 ACP round for penetrating armor. Expensive but necessary when facing armored opponents with large-caliber sidearms."
+  },
+  {
+    "id": "ammo-45acp-tracer",
+    "name": ".45 ACP L-Match Tracer",
+    "description": "Match-grade tracer ammunition with visible trajectory. Accurate long-range performance with tracer visibility for target correction.",
+    "category": "ammo",
+    "subcategory": ".45 ACP",
+    "images": {
+      "icon": "/images/items/ammo/45acp_L-Match.webp",
+      "thumbnail": "/images/items/ammo/45acp_L-Match.webp",
+      "fullsize": "/images/items/ammo/45acp_L-Match.webp"
+    },
+    "stats": {
+      "rarity": "Uncommon",
+      "price": 95,
+      "weight": 0.015,
+      "damage": 68,
+      "penetration": 2.6,
+      "muzzleVelocity": 30000,
+      "bleedingChance": 0.22,
+      "bluntDamageScale": 0.02,
+      "protectionGearPenetratedDamageScale": 0.294,
+      "protectionGearBluntDamageScale": 0.196,
+      "caliber": "45acp",
+      "damageAtRange": {
+        "0m": 68,
+        "100m": 65.2,
+        "300m": 48.5,
+        "500m": 27.2
+      },
+      "penetrationAtRange": {
+        "0m": 2.6,
+        "100m": 2.48,
+        "300m": 1.85,
+        "500m": 1.04
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 68,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 5000,
+            "value": 68,
+            "arriveTangent": -0.006947918,
+            "leaveTangent": -0.006947515
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 28000,
+            "value": 27.2,
+            "arriveTangent": -0.0010717851,
+            "leaveTangent": -0.0010779497
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 2.6,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 5000,
+            "value": 2.6,
+            "arriveTangent": -0.00024074597,
+            "leaveTangent": -0.00024071912
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 28000,
+            "value": 1.04,
+            "arriveTangent": -0.000017057757,
+            "leaveTangent": -0.000017293378
+          }
+        ]
+      }
+    },
+    "notes": "Match-grade tracer round with enhanced accuracy. Visible flight path helps with long-range pistol shooting.",
+    "tips": "Excellent for precision shooting and target marking. The visible trajectory aids in range estimation and follow-up shots."
+  },
+  {
+    "id": "ammo-45acp-fmj",
+    "name": ".45 ACP FMJ",
+    "description": "Standard Full Metal Jacket ammunition. Classic .45 ACP military round with excellent stopping power and reliable performance.",
+    "category": "ammo",
+    "subcategory": ".45 ACP",
+    "images": {
+      "icon": "/images/items/ammo/45acp_FMJ.webp",
+      "thumbnail": "/images/items/ammo/45acp_FMJ.webp",
+      "fullsize": "/images/items/ammo/45acp_FMJ.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 65,
+      "weight": 0.015,
+      "damage": 75,
+      "penetration": 1.8,
+      "muzzleVelocity": 36000,
+      "bleedingChance": 0.22,
+      "bluntDamageScale": 0.02,
+      "protectionGearPenetratedDamageScale": 0.18,
+      "protectionGearBluntDamageScale": 0.105,
+      "caliber": "45acp",
+      "damageAtRange": {
+        "0m": 75,
+        "100m": 72.5,
+        "300m": 58.2,
+        "500m": 33.75
+      },
+      "penetrationAtRange": {
+        "0m": 1.8,
+        "100m": 1.75,
+        "300m": 1.35,
+        "500m": 0.81
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 75,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 6500,
+            "value": 75,
+            "arriveTangent": -0.005460645,
+            "leaveTangent": -0.005449624
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 32000,
+            "value": 33.75,
+            "arriveTangent": -0.0010459751,
+            "leaveTangent": -0.0010579486
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 1.8,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 7000,
+            "value": 1.8,
+            "arriveTangent": -0.00012452954,
+            "leaveTangent": -0.00012478435
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 32000,
+            "value": 0.81,
+            "arriveTangent": -0.000017057757,
+            "leaveTangent": -0.000017293378
+          }
+        ]
+      }
+    },
+    "notes": "Classic military .45 ACP ammunition. Time-tested design with excellent stopping power and reliable feeding.",
+    "tips": "The standard choice for .45 ACP weapons. High damage and proven reliability make it excellent for general use."
+  },
+  {
+    "id": "ammo-45acp-tracer2",
+    "name": ".45 ACP Tracer",
+    "description": "Standard tracer ammunition with visible trajectory. Lower velocity but excellent visibility for target correction and spotting.",
+    "category": "ammo",
+    "subcategory": ".45 ACP",
+    "images": {
+      "icon": "/images/items/ammo/45acp_TRACER.webp",
+      "thumbnail": "/images/items/ammo/45acp_TRACER.webp",
+      "fullsize": "/images/items/ammo/45acp_TRACER.webp"
+    },
+    "stats": {
+      "rarity": "Uncommon",
+      "price": 85,
+      "weight": 0.015,
+      "damage": 68,
+      "penetration": 2.6,
+      "muzzleVelocity": 30000,
+      "bleedingChance": 0.22,
+      "bluntDamageScale": 0.02,
+      "protectionGearPenetratedDamageScale": 0.294,
+      "protectionGearBluntDamageScale": 0.196,
+      "caliber": "45acp",
+      "damageAtRange": {
+        "0m": 68,
+        "100m": 65.2,
+        "300m": 48.5,
+        "500m": 27.2
+      },
+      "penetrationAtRange": {
+        "0m": 2.6,
+        "100m": 2.48,
+        "300m": 1.85,
+        "500m": 1.04
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 68,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 5000,
+            "value": 68,
+            "arriveTangent": -0.006947918,
+            "leaveTangent": -0.006947515
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 28000,
+            "value": 27.2,
+            "arriveTangent": -0.0010717851,
+            "leaveTangent": -0.0010779497
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 2.6,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 5000,
+            "value": 2.6,
+            "arriveTangent": -0.00024074597,
+            "leaveTangent": -0.00024071912
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 28000,
+            "value": 1.04,
+            "arriveTangent": -0.000017057757,
+            "leaveTangent": -0.000017293378
+          }
+        ]
+      }
+    },
+    "notes": "Standard tracer round with bright visible trajectory. Good for target spotting and correction in low-light conditions.",
+    "tips": "Useful for night operations and target marking. The bright tracer helps teammates identify targets but reveals your position."
+  },
+  {
+    "id": "ammo-12ga-slug-ap",
+    "name": "12 Gauge AP-20 Slug",
+    "description": "Armor Piercing slug with hardened core designed to penetrate body armor. Maximum penetration available for shotgun ammunition.",
+    "category": "ammo",
+    "subcategory": "12 Gauge",
+    "images": {
+      "icon": "/images/items/ammo/12ga_SLUG_AP.webp",
+      "thumbnail": "/images/items/ammo/12ga_SLUG_AP.webp",
+      "fullsize": "/images/items/ammo/12ga_SLUG_AP.webp"
+    },
+    "stats": {
+      "rarity": "Epic",
+      "price": 285,
+      "weight": 0.055,
+      "damage": 120,
+      "penetration": 3.8,
+      "muzzleVelocity": 52500,
+      "bleedingChance": 0.15,
+      "bluntDamageScale": 0.4,
+      "protectionGearPenetratedDamageScale": 0.413,
+      "protectionGearBluntDamageScale": 0.3045,
+      "caliber": "12GA",
+      "damageAtRange": {
+        "0m": 120,
+        "100m": 118.5,
+        "300m": 95.2,
+        "500m": 48
+      },
+      "penetrationAtRange": {
+        "0m": 3.8,
+        "100m": 3.75,
+        "300m": 2.9,
+        "500m": 1.52
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 120,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 7500,
+            "value": 120,
+            "arriveTangent": -0.009051118,
+            "leaveTangent": -0.009051228
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 32000,
+            "value": 48,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 3.8,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 7500,
+            "value": 3.8,
+            "arriveTangent": -0.00021586491,
+            "leaveTangent": -0.00021578562
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 32000,
+            "value": 1.52,
+            "arriveTangent": -0.000012,
+            "leaveTangent": -0.000011
+          }
+        ]
+      }
+    },
+    "notes": "Specialized armor-piercing slug with hardened core. Devastating damage with good armor penetration for close-range combat.",
+    "tips": "Ultimate close-quarters anti-armor round. Extremely expensive but can defeat body armor while delivering massive damage."
+  },
+  {
+    "id": "ammo-12ga-buckshot-ap",
+    "name": "12 Gauge Flechette",
+    "description": "Armor Piercing buckshot with hardened pellets. Multiple projectiles with enhanced penetration against light armor.",
+    "category": "ammo",
+    "subcategory": "12 Gauge",
+    "images": {
+      "icon": "/images/items/ammo/12ga_BUCK_AP.webp",
+      "thumbnail": "/images/items/ammo/12ga_BUCK_AP.webp",
+      "fullsize": "/images/items/ammo/12ga_BUCK_AP.webp"
+    },
+    "stats": {
+      "rarity": "Rare",
+      "price": 165,
+      "weight": 0.045,
+      "damage": 18,
+      "penetration": 3.8,
+      "muzzleVelocity": 22000,
+      "bleedingChance": 0.22,
+      "bluntDamageScale": 0.35,
+      "protectionGearPenetratedDamageScale": 0.41,
+      "protectionGearBluntDamageScale": 0.27,
+      "caliber": "12GA",
+      "damageAtRange": {
+        "0m": 18,
+        "100m": 17.2,
+        "300m": 12.8,
+        "500m": 6.3
+      },
+      "penetrationAtRange": {
+        "0m": 3.8,
+        "100m": 3.65,
+        "300m": 2.8,
+        "500m": 1.52
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 18,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 4000,
+            "value": 18,
+            "arriveTangent": -0.0022538027,
+            "leaveTangent": -0.0022520192
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 23000,
+            "value": 6.3,
+            "arriveTangent": -0.0004680533,
+            "leaveTangent": -0.00046923108
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 3.8,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 4000,
+            "value": 3.8,
+            "arriveTangent": -0.00023757684,
+            "leaveTangent": -0.00023804836
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 23000,
+            "value": 1.52,
+            "arriveTangent": -0.000012,
+            "leaveTangent": -0.000011
+          }
+        ]
+      }
+    },
+    "notes": "Armor-piercing buckshot with hardened pellets. Multiple projectiles provide good armor penetration with spread pattern.",
+    "tips": "Effective against lightly armored targets at close range. Multiple pellets increase hit probability but reduce individual damage."
+  },
+  {
+    "id": "ammo-12ga-buckshot-hp",
+    "name": "12 Gauge Buckshot",
+    "description": "Standard buckshot with 7mm pellets. Classic shotgun ammunition with devastating close-range stopping power.",
+    "category": "ammo",
+    "subcategory": "12 Gauge",
+    "images": {
+      "icon": "/images/items/ammo/12ga_BUCK_HP.webp",
+      "thumbnail": "/images/items/ammo/12ga_BUCK_HP.webp",
+      "fullsize": "/images/items/ammo/12ga_BUCK_HP.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 85,
+      "weight": 0.045,
+      "damage": 30,
+      "penetration": 1.2,
+      "muzzleVelocity": 42000,
+      "bleedingChance": 0.22,
+      "bluntDamageScale": 0.25,
+      "protectionGearPenetratedDamageScale": 0.03,
+      "protectionGearBluntDamageScale": 0.01,
+      "caliber": "12GA",
+      "damageAtRange": {
+        "0m": 30,
+        "100m": 28.5,
+        "300m": 18.2,
+        "500m": 7.5
+      },
+      "penetrationAtRange": {
+        "0m": 1.2,
+        "100m": 1.15,
+        "300m": 0.8,
+        "500m": 0.3
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 30,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 4500,
+            "value": 30,
+            "arriveTangent": -0.004026683,
+            "leaveTangent": -0.004026616
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 26000,
+            "value": 7.5,
+            "arriveTangent": -0.00046817792,
+            "leaveTangent": -0.00046131213
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 1.2,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 4500,
+            "value": 1.2,
+            "arriveTangent": -0.000092,
+            "leaveTangent": -0.000092
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 26000,
+            "value": 0.3,
+            "arriveTangent": -0.000012,
+            "leaveTangent": -0.000011
+          }
+        ]
+      }
+    },
+    "notes": "Standard buckshot with multiple 7mm pellets. Classic shotgun round with devastating close-range effectiveness.",
+    "tips": "Most cost-effective shotgun ammunition. Excellent stopping power at close range but limited armor penetration."
+  },
+  {
+    "id": "ammo-12ga-slug-hp",
+    "name": "12 Gauge RIP slug",
+    "description": "Hollow Point slug designed for maximum tissue damage. Devastating stopping power against unarmored targets.",
+    "category": "ammo",
+    "subcategory": "12 Gauge",
+    "images": {
+      "icon": "/images/items/ammo/12ga_SLUG_HP.webp",
+      "thumbnail": "/images/items/ammo/12ga_SLUG_HP.webp",
+      "fullsize": "/images/items/ammo/12ga_SLUG_HP.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 125,
+      "weight": 0.055,
+      "damage": 165,
+      "penetration": 1.1,
+      "muzzleVelocity": 41000,
+      "bleedingChance": 0.55,
+      "bluntDamageScale": 0.3,
+      "protectionGearPenetratedDamageScale": 0.05,
+      "protectionGearBluntDamageScale": 0.03,
+      "caliber": "12GA",
+      "damageAtRange": {
+        "0m": 165,
+        "100m": 162.5,
+        "300m": 125.8,
+        "500m": 49.5
+      },
+      "penetrationAtRange": {
+        "0m": 1.1,
+        "100m": 1.08,
+        "300m": 0.85,
+        "500m": 0.33
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 165,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 5500,
+            "value": 165,
+            "arriveTangent": -0.015293677,
+            "leaveTangent": -0.015293677
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 30000,
+            "value": 49.5,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 1.1,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 5500,
+            "value": 1.1,
+            "arriveTangent": -0.00009151435,
+            "leaveTangent": -0.000091514325
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 30000,
+            "value": 0.33,
+            "arriveTangent": -0.000011509358,
+            "leaveTangent": -0.00001149426
+          }
+        ]
+      }
+    },
+    "notes": "Massive hollow point slug for maximum tissue damage. Highest damage output but poor armor penetration.",
+    "tips": "Ultimate stopping power against unarmored targets. Extremely high bleeding chance makes it devastating for hunting or anti-personnel use."
+  },
+  {
+    "id": "ammo-762x54r-apv2",
+    "name": "7.62x54R SNB",
+    "description": "Advanced Armor Piercing ammunition with tungsten carbide core. Maximum penetration available for the venerable 7.62x54R cartridge.",
+    "category": "ammo",
+    "subcategory": "7.62x54R",
+    "images": {
+      "icon": "/images/items/ammo/762x54r_SNB.webp",
+      "thumbnail": "/images/items/ammo/762x54r_SNB.webp",
+      "fullsize": "/images/items/ammo/762x54r_SNB.webp"
+    },
+    "stats": {
+      "rarity": "Ultimate",
+      "price": 295,
+      "weight": 0.028,
+      "damage": 72,
+      "penetration": 6.2,
+      "muzzleVelocity": 89000,
+      "bleedingChance": 0.27,
+      "bluntDamageScale": 0.08,
+      "protectionGearPenetratedDamageScale": 0.987,
+      "protectionGearBluntDamageScale": 0.8225,
+      "caliber": "762x54R",
+      "damageAtRange": {
+        "0m": 72,
+        "100m": 71.5,
+        "300m": 67.8,
+        "500m": 57.6
+      },
+      "penetrationAtRange": {
+        "0m": 6.2,
+        "100m": 6.15,
+        "300m": 5.7,
+        "500m": 4.96
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 72,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 22500,
+            "value": 72,
+            "arriveTangent": -0.0012072327,
+            "leaveTangent": -0.0012085813
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 64000,
+            "value": 57.6,
+            "arriveTangent": -0.000025815916,
+            "leaveTangent": -0.000026503458
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 6.2,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 22500,
+            "value": 6.2,
+            "arriveTangent": -0.000106495856,
+            "leaveTangent": -0.000106662024
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 64000,
+            "value": 4.96,
+            "arriveTangent": -0.0000108000895,
+            "leaveTangent": -0.00001096811
+          }
+        ]
+      }
+    },
+    "notes": "Elite sniper ammunition with tungsten carbide core. Designed to defeat the heaviest body armor at extreme ranges.",
+    "tips": "The ultimate long-range armor-piercing round. Extremely expensive but can penetrate any armor while maintaining excellent damage."
+  },
+  {
+    "id": "ammo-762x54r-apv1",
+    "name": "7.62x54R LPS",
+    "description": "Armor Piercing ammunition with hardened steel core. High penetration capabilities against body armor with good damage retention.",
+    "category": "ammo",
+    "subcategory": "7.62x54R",
+    "images": {
+      "icon": "/images/items/ammo/762x54r_lps.webp",
+      "thumbnail": "/images/items/ammo/762x54r_lps.webp",
+      "fullsize": "/images/items/ammo/762x54r_lps.webp"
+    },
+    "stats": {
+      "rarity": "Uncommon",
+      "price": 165,
+      "weight": 0.028,
+      "damage": 81,
+      "penetration": 4.7,
+      "muzzleVelocity": 88000,
+      "bleedingChance": 0.27,
+      "bluntDamageScale": 0.08,
+      "protectionGearPenetratedDamageScale": 0.581,
+      "protectionGearBluntDamageScale": 0.469,
+      "caliber": "762x54R",
+      "damageAtRange": {
+        "0m": 81,
+        "100m": 80.2,
+        "300m": 72.5,
+        "500m": 52.65
+      },
+      "penetrationAtRange": {
+        "0m": 4.7,
+        "100m": 4.6,
+        "300m": 4.0,
+        "500m": 2.86
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 81,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 22000,
+            "value": 81,
+            "arriveTangent": -0.0022741286,
+            "leaveTangent": -0.0022774497
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 60000,
+            "value": 52.65,
+            "arriveTangent": -0.00051670853,
+            "leaveTangent": -0.0005184418
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 4.7,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 22000,
+            "value": 4.7,
+            "arriveTangent": -0.00015673229,
+            "leaveTangent": -0.00015698487
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 60000,
+            "value": 2.86,
+            "arriveTangent": -0.000023571693,
+            "leaveTangent": -0.00002350519
+          }
+        ]
+      }
+    },
+    "notes": "High-quality armor piercing round with steel core. Excellent long-range performance for sniper rifles and machine guns.",
+    "tips": "Premium choice for engaging armored targets at long range. Good balance of penetration and damage for precision shooting."
+  },
+  {
+    "id": "ammo-762x54r-tracer",
+    "name": "7.62x54R Ps Tracer",
+    "description": "Tracer ammunition with visible trajectory and moderate armor penetration. Excellent for long-range target correction and marking.",
+    "category": "ammo",
+    "subcategory": "7.62x54R",
+    "images": {
+      "icon": "/images/items/ammo/762x54r_Ps.webp",
+      "thumbnail": "/images/items/ammo/762x54r_Ps.webp",
+      "fullsize": "/images/items/ammo/762x54r_Ps.webp"
+    },
+    "stats": {
+      "rarity": "Uncommon",
+      "price": 145,
+      "weight": 0.029,
+      "damage": 84,
+      "penetration": 3.9,
+      "muzzleVelocity": 73000,
+      "bleedingChance": 0.27,
+      "bluntDamageScale": 0.05,
+      "protectionGearPenetratedDamageScale": 0.315,
+      "protectionGearBluntDamageScale": 0.231,
+      "caliber": "762x54R",
+      "damageAtRange": {
+        "0m": 84,
+        "100m": 83.2,
+        "300m": 76.8,
+        "500m": 58.8
+      },
+      "penetrationAtRange": {
+        "0m": 3.9,
+        "100m": 3.85,
+        "300m": 3.4,
+        "500m": 2.38
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 84,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 18000,
+            "value": 84,
+            "arriveTangent": -0.0024786615,
+            "leaveTangent": -0.0024785623
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 50000,
+            "value": 58.8,
+            "arriveTangent": -0.000044347344,
+            "leaveTangent": -0.000045567554
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 3.9,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 18000,
+            "value": 3.9,
+            "arriveTangent": -0.00010239227,
+            "leaveTangent": -0.00010227864
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 51000,
+            "value": 2.38,
+            "arriveTangent": -0.0000016875657,
+            "leaveTangent": -0.0000016714687
+          }
+        ]
+      }
+    },
+    "notes": "Tracer round with visible flight path and good penetration. Excellent for long-range target correction and spotting.",
+    "tips": "Perfect for precision shooting at extended ranges. The visible trajectory helps with range estimation and target marking."
+  },
+  {
+    "id": "ammo-762x54r-fmj",
+    "name": "7.62x54R FMJ",
+    "description": "Standard Full Metal Jacket military ammunition. Reliable performance with excellent damage and moderate penetration for general use.",
+    "category": "ammo",
+    "subcategory": "7.62x54R",
+    "images": {
+      "icon": "/images/items/ammo/762x54r_FMJ.webp",
+      "thumbnail": "/images/items/ammo/762x54r_FMJ.webp",
+      "fullsize": "/images/items/ammo/762x54r_FMJ.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 135,
+      "weight": 0.028,
+      "damage": 86,
+      "penetration": 3.2,
+      "muzzleVelocity": 76000,
+      "bleedingChance": 0.27,
+      "bluntDamageScale": 0.05,
+      "protectionGearPenetratedDamageScale": 0.203,
+      "protectionGearBluntDamageScale": 0.1435,
+      "caliber": "762x54R",
+      "damageAtRange": {
+        "0m": 86,
+        "100m": 85.2,
+        "300m": 78.5,
+        "500m": 60.2
+      },
+      "penetrationAtRange": {
+        "0m": 3.2,
+        "100m": 3.15,
+        "300m": 2.8,
+        "500m": 2.24
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 86,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 19500,
+            "value": 86,
+            "arriveTangent": -0.0022858286,
+            "leaveTangent": -0.0022857322
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 53000,
+            "value": 60.2,
+            "arriveTangent": -0.000070469534,
+            "leaveTangent": -0.000070469614
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 3.2,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 19500,
+            "value": 3.2,
+            "arriveTangent": -0.00008748311,
+            "leaveTangent": -0.00008748318
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 53000,
+            "value": 2.24,
+            "arriveTangent": -0.0000023104765,
+            "leaveTangent": -0.0000023104787
+          }
+        ]
+      }
+    },
+    "notes": "Standard Russian military ammunition for machine guns and sniper rifles. Reliable performance with excellent damage output.",
+    "tips": "Most cost-effective 7.62x54R ammunition. Excellent damage makes it effective against most targets at long range."
+  },
+  {
+    "id": "ammo-762x54r-hp",
+    "name": "7.62x54R HP",
+    "description": "Hollow Point ammunition designed for maximum expansion and tissue damage. Devastating against unarmored targets at long range.",
+    "category": "ammo",
+    "subcategory": "7.62x54R",
+    "images": {
+      "icon": "/images/items/ammo/762x54r_hp.webp",
+      "thumbnail": "/images/items/ammo/762x54r_hp.webp",
+      "fullsize": "/images/items/ammo/762x54r_hp.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 155,
+      "weight": 0.028,
+      "damage": 105,
+      "penetration": 3.2,
+      "muzzleVelocity": 80500,
+      "bleedingChance": 0.39,
+      "bluntDamageScale": 0.02,
+      "protectionGearPenetratedDamageScale": 0.126,
+      "protectionGearBluntDamageScale": 0.105,
+      "caliber": "762x54R",
+      "damageAtRange": {
+        "0m": 105,
+        "100m": 104.2,
+        "300m": 92.8,
+        "500m": 73.5
+      },
+      "penetrationAtRange": {
+        "0m": 3.2,
+        "100m": 3.15,
+        "300m": 2.8,
+        "500m": 2.24
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 105,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 20000,
+            "value": 105,
+            "arriveTangent": -0.0028645187,
+            "leaveTangent": -0.0028645294
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 56000,
+            "value": 73.5,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 3.2,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 20000,
+            "value": 3.2,
+            "arriveTangent": -0.00008995006,
+            "leaveTangent": -0.00008995006
+          },
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 56000,
+            "value": 2.24,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          }
+        ]
+      }
+    },
+    "notes": "Hollow point design for maximum expansion and tissue damage. Excellent long-range hunting ammunition with devastating effects.",
+    "tips": "Highest damage 7.62x54R round against unarmored targets. Extremely high bleeding chance makes it lethal for precision shooting."
+  },
+  {
+    "id": "ammo-68x51-apv1",
+    "name": "6.8x51mm AP",
+    "description": "Armor Piercing ammunition with advanced tungsten core. Cutting-edge military round designed for next-generation weapon systems.",
+    "category": "ammo",
+    "subcategory": "6.8x51mm",
+    "images": {
+      "icon": "/images/items/ammo/68x51mm_APV1.webp",
+      "thumbnail": "/images/items/ammo/68x51mm_APV1.webp",
+      "fullsize": "/images/items/ammo/68x51mm_APV1.webp"
+    },
+    "stats": {
+      "rarity": "Legendary",
+      "price": 225,
+      "weight": 0.022,
+      "damage": 73,
+      "penetration": 4.8,
+      "muzzleVelocity": 93000,
+      "bleedingChance": 0.23,
+      "bluntDamageScale": 0.08,
+      "protectionGearPenetratedDamageScale": 0.81,
+      "protectionGearBluntDamageScale": 0.63,
+      "caliber": "68x51",
+      "damageAtRange": {
+        "0m": 73,
+        "100m": 72.5,
+        "300m": 67.8,
+        "500m": 47.45
+      },
+      "penetrationAtRange": {
+        "0m": 4.8,
+        "100m": 4.75,
+        "300m": 4.2,
+        "500m": 2.925
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 73,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 16700,
+            "value": 73,
+            "arriveTangent": -0.0022574817,
+            "leaveTangent": -0.002257563
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 53000,
+            "value": 47.45,
+            "arriveTangent": -0.00047306757,
+            "leaveTangent": -0.00047306868
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 4.8,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 16700,
+            "value": 4.8,
+            "arriveTangent": -0.00012725724,
+            "leaveTangent": -0.00012725724
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 53000,
+            "value": 2.925,
+            "arriveTangent": -0.00002856897,
+            "leaveTangent": -0.00002829799
+          }
+        ]
+      }
+    },
+    "notes": "Advanced armor piercing round with tungsten core for next-generation weapon systems. Excellent balance of damage and penetration.",
+    "tips": "Premium armor-piercing round for modern assault rifles. Expensive but highly effective against armored targets at all ranges."
+  },
+  {
+    "id": "ammo-68x51-fmj",
+    "name": "6.8x51mm FMJ",
+    "description": "Standard Full Metal Jacket ammunition for next-generation military rifles. Modern cartridge with excellent long-range performance.",
+    "category": "ammo",
+    "subcategory": "6.8x51mm",
+    "images": {
+      "icon": "/images/items/ammo/68x51mm_FMJ.webp",
+      "thumbnail": "/images/items/ammo/68x51mm_FMJ.webp",
+      "fullsize": "/images/items/ammo/68x51mm_FMJ.webp"
+    },
+    "stats": {
+      "rarity": "Epic",
+      "price": 145,
+      "weight": 0.022,
+      "damage": 80,
+      "penetration": 3.4,
+      "muzzleVelocity": 90100,
+      "bleedingChance": 0.23,
+      "bluntDamageScale": 0.05,
+      "protectionGearPenetratedDamageScale": 0.52,
+      "protectionGearBluntDamageScale": 0.4,
+      "caliber": "68x51",
+      "damageAtRange": {
+        "0m": 80,
+        "100m": 79.5,
+        "300m": 74.2,
+        "500m": 56
+      },
+      "penetrationAtRange": {
+        "0m": 3.4,
+        "100m": 3.35,
+        "300m": 3.0,
+        "500m": 2.38
+      },
+      "ballisticCurves": {
+        "damageOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 80,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 15500,
+            "value": 80,
+            "arriveTangent": -0.0019759184,
+            "leaveTangent": -0.0019749084
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 50000,
+            "value": 56,
+            "arriveTangent": -0.000070469534,
+            "leaveTangent": -0.000070469614
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "time": 0,
+            "value": 3.4,
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 15500,
+            "value": 3.4,
+            "arriveTangent": -0.00007949589,
+            "leaveTangent": -0.000079702324
+          },
+          {
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "time": 50000,
+            "value": 2.38,
+            "arriveTangent": -0.0000023104765,
+            "leaveTangent": -0.0000023104787
+          }
+        ]
+      }
+    },
+    "notes": "Next-generation military ammunition with excellent ballistic performance. Modern cartridge design for advanced weapon systems.",
+    "tips": "Excellent all-around ammunition for modern assault rifles. High damage and good long-range performance make it versatile for most situations."
+  }
+]
