@@ -37,7 +37,8 @@
         "verticalRecoilControl": 0.306,
         "horizontalRecoilControl": 0.351
       },
-      "damageRangeCurve": "RifleDOD"
+      "damageRangeCurve": "RifleDOD",
+      "caliber": "5.45x39"
     },
     "locations": [
       {
@@ -95,7 +96,8 @@
         "verticalRecoilControl": 0.326,
         "horizontalRecoilControl": 0.374
       },
-      "damageRangeCurve": "RifleDOD"
+      "damageRangeCurve": "RifleDOD",
+      "caliber": "5.45x39"
     },
     "notes": "Modernized AK-74 with folding polymer stock and side-mounted rail for optics. Improved ergonomics over the standard model.",
     "tips": "Better handling and attachment options than standard AK-74. Slightly heavier but more versatile."
@@ -138,7 +140,8 @@
         "verticalRecoilControl": 0.34,
         "horizontalRecoilControl": 0.39
       },
-      "damageRangeCurve": "RifleDOD"
+      "damageRangeCurve": "RifleDOD",
+      "caliber": "5.45x39"
     },
     "notes": "Factory configuration with standard furniture and side rail mount. Reliable platform for scope mounting.",
     "tips": "Excellent base for customization with optics. Maintains classic AK reliability with modern scope compatibility."
@@ -174,7 +177,8 @@
         "horizontalRecoilControl": 0.258
       },
       "damageRangeCurve": "RifleDOD",
-      "firingPower": 0.62
+      "firingPower": 0.62,
+      "caliber": "5.45x39"
     },
     "notes": "Tactical modification with lightweight furniture and enhanced ergonomics. Significantly improved handling characteristics.",
     "tips": "Premium variant with excellent ergonomics and reduced weight. Perfect for fast-paced tactical operations."
@@ -218,11 +222,12 @@
         "horizontalRecoilControl": 0.38
       },
       "firingPower": 0.45,
-      "muzzleVelocity": 85500.0,
+      "muzzleVelocity": 85500,
       "bulletDropFactor": 1.15,
       "hitDamage": 32,
       "headDamageScale": 1.4,
-      "damageRangeCurve": "BR_DOD_74U"
+      "damageRangeCurve": "BR_DOD_74U",
+      "caliber": "5.45x39"
     },
     "notes": "Shortened barrel AK-74 variant designed for paratroopers and vehicle crews. Folding stock provides compact storage.",
     "tips": "Excellent mobility and handling for CQB. Reduced barrel length affects accuracy at longer ranges."
@@ -266,11 +271,12 @@
         "horizontalRecoilControl": 0.313
       },
       "firingPower": 0.45,
-      "muzzleVelocity": 85500.0,
+      "muzzleVelocity": 85500,
       "bulletDropFactor": 1.15,
       "hitDamage": 32,
       "headDamageScale": 1.4,
-      "damageRangeCurve": "BR_DOD_74U"
+      "damageRangeCurve": "BR_DOD_74U",
+      "caliber": "5.45x39"
     },
     "notes": "Zero-Tolerance tactical configuration with improved ergonomics and refined recoil characteristics. Enhanced for special operations use.",
     "tips": "Superior handling and recoil control compared to standard AKS-74U. Faster ADS speed makes it ideal for aggressive playstyles."
@@ -314,7 +320,8 @@
         "horizontalRecoilControl": 0.42
       },
       "firingPower": 0.45,
-      "damageRangeCurve": "BR_DOD_Rfile_GY"
+      "damageRangeCurve": "BR_DOD_Rfile_GY",
+      "caliber": "7.62x39"
     },
     "notes": "Classic 7.62x39mm assault rifle with proven reliability. Heavier hitting than 5.45mm variants but with increased recoil.",
     "tips": "Excellent stopping power for medium range engagements. Higher recoil requires better recoil management than AK-74 series."
@@ -360,9 +367,10 @@
       "firingPower": 0.45,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 71500.0,
+      "muzzleVelocity": 71500,
       "hitDamage": 33,
-      "headDamageScale": 1.6
+      "headDamageScale": 1.6,
+      "caliber": "7.62x39"
     },
     "notes": "Standard AKMN with traditional wooden furniture and side rail mount. Reliable platform for optics mounting.",
     "tips": "Classic AKM with scope mounting capability. Maintains traditional aesthetics while allowing modern optics."
@@ -374,9 +382,9 @@
     "category": "weapons",
     "subcategory": "7.62x39mm",
     "images": {
-      "icon": "/images/items/weapons/SM_AKMN_Dong_full_Merge.webp.webp",
-      "thumbnail": "/images/items/weapons/SM_AKMN_Dong_full_Merge.webp.webp",
-      "fullsize": "/images/items/weapons/SM_AKMN_Dong_full_Merge.webp.webp"
+      "icon": "/images/items/weapons/SM_AKMN_Dong_full_Merge.webp",
+      "thumbnail": "/images/items/weapons/SM_AKMN_Dong_full_Merge.webp",
+      "fullsize": "/images/items/weapons/SM_AKMN_Dong_full_Merge.webp"
     },
     "stats": {
       "rarity": "Uncommon",
@@ -407,9 +415,10 @@
       "firingPower": 0.45,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 71500.0,
+      "muzzleVelocity": 71500,
       "hitDamage": 33,
-      "headDamageScale": 1.6
+      "headDamageScale": 1.6,
+      "caliber": "7.62x39"
     },
     "notes": "Enhanced AKMN variant with improved furniture and slightly better recoil management through design refinements.",
     "tips": "Marginally better handling than standard AKMN. Good balance of classic reliability with minor performance improvements."
@@ -456,9 +465,10 @@
       "firingPower": 0.1,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 71500.0,
+      "muzzleVelocity": 71500,
       "hitDamage": 33,
-      "headDamageScale": 1.6
+      "headDamageScale": 1.6,
+      "caliber": "7.62x39"
     },
     "notes": "Dong-style foregrip. Reduced weight comes at the cost of necessary parts.",
     "tips": "Significantly lighter than standard AKM variants but harder to control. The weight reduction aids mobility but increases felt recoil."
@@ -503,9 +513,10 @@
       "firingPower": 0.7,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 71500.0,
+      "muzzleVelocity": 71500,
       "hitDamage": 33,
-      "headDamageScale": 1.6
+      "headDamageScale": 1.6,
+      "caliber": "7.62x39"
     },
     "notes": "Premium tactical configuration with modern furniture and advanced recoil mitigation systems. Significantly improved controllability.",
     "tips": "Top-tier AKM variant with excellent recoil control. Higher price is justified by superior handling characteristics and tactical features."
@@ -551,9 +562,10 @@
       "firingPower": 0.2,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 71500.0,
+      "muzzleVelocity": 71500,
       "hitDamage": 33,
-      "headDamageScale": 1.6
+      "headDamageScale": 1.6,
+      "caliber": "5.56x45"
     },
     "notes": "Compact AR platform with pistol classification. Short barrel reduces velocity but maximizes maneuverability in tight spaces.",
     "tips": "Excellent for CQB with fast handling. Higher MOA means reduced accuracy at range compared to rifle-length AR platforms."
@@ -598,7 +610,8 @@
       },
       "firingPower": 0.25,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "bulletDropFactor": 1.2
+      "bulletDropFactor": 1.2,
+      "caliber": "5.56x45"
     },
     "notes": "Special operations variant with lightweight construction and enhanced ergonomics. Optimized for rapid deployment scenarios.",
     "tips": "Premium handling characteristics with excellent ergonomics. Higher fire rate makes it effective for aggressive tactics."
@@ -642,7 +655,8 @@
         "horizontalRecoilControl": 0.375
       },
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "bulletDropFactor": 1.2
+      "bulletDropFactor": 1.2,
+      "caliber": "5.56x45"
     },
     "notes": "Purpose-built for close quarters battle with optimized barrel length and tactical rail systems. Heavier due to additional accessories.",
     "tips": "Better accuracy than shorter variants while maintaining good CQB performance. Weight penalty from accessories affects mobility."
@@ -687,7 +701,8 @@
       },
       "firingPower": 0.75,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "bulletDropFactor": 1.2
+      "bulletDropFactor": 1.2,
+      "caliber": "5.56x45"
     },
     "notes": "Premium Daniel Defense configuration with exceptional recoil control and accuracy. High-end components throughout.",
     "tips": "Superior recoil control makes this ideal for sustained fire. Excellent balance of accuracy and controllability."
@@ -731,7 +746,8 @@
         "horizontalRecoilControl": 0.355
       },
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "bulletDropFactor": 1.2
+      "bulletDropFactor": 1.2,
+      "caliber": "5.56x45"
     },
     "notes": "Standard military configuration with proven reliability and consistent performance. Base platform for customization.",
     "tips": "Reliable baseline M4A1 with good all-around performance. Moderate ergonomics but excellent upgrade potential."
@@ -777,7 +793,8 @@
       },
       "firingPower": 0.4,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "bulletDropFactor": 1.2
+      "bulletDropFactor": 1.2,
+      "caliber": "5.56x45"
     },
     "notes": "Precision configuration with heavier barrel and enhanced accuracy features. Optimized for designated marksman roles.",
     "tips": "Lower fire rate and heavier weight improve accuracy but reduce mobility. Best suited for medium to long range engagements."
@@ -822,7 +839,8 @@
         "horizontalRecoilControl": 0.325
       },
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "firingPower": 0.8
+      "firingPower": 0.8,
+      "caliber": "5.56x45"
     },
     "notes": "Premium AR-platform rifle with piston-driven gas system for enhanced reliability. Excellent build quality and accuracy.",
     "tips": "Superior recoil control and reliability compared to direct impingement AR rifles. Higher fire rate makes it effective for rapid engagements."
@@ -867,7 +885,8 @@
       },
       "firingPower": 0.64,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "bulletDropFactor": 1.2
+      "bulletDropFactor": 1.2,
+      "caliber": "5.56x45"
     },
     "notes": "Full-length military rifle with 20-inch barrel providing excellent ballistic performance. Classic fixed stock configuration.",
     "tips": "Outstanding accuracy with low MOA makes this ideal for medium to long range engagements. Lower ergonomics due to fixed stock design."
@@ -913,7 +932,8 @@
       "firingPower": 0.64,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 95000.0
+      "muzzleVelocity": 95000,
+      "caliber": "5.56x45"
     },
     "notes": "Improved M16A2 with enhanced furniture and ergonomics. Lighter weight and better handling while maintaining accuracy.",
     "tips": "Better balanced than standard M16A2 with improved ergonomics and reduced weight. Maintains excellent accuracy characteristics."
@@ -960,7 +980,8 @@
         "horizontalRecoilControl": 0.24
       },
       "firingPower": 0.23,
-      "damageRangeCurve": "BR_DOD_Pistol_GY"
+      "damageRangeCurve": "BR_DOD_Pistol_GY",
+      "caliber": "9x19"
     },
     "notes": "Select-fire pistol with compensated barrel ports. Extremely high rate of fire makes it effective for close-range suppression.",
     "tips": "Very fast handling but challenging recoil control. High MOA means it's only effective at close range. Burst fire recommended."
@@ -1010,8 +1031,9 @@
       "firingPower": 0.23,
       "damageRangeCurve": "BR_DOD_Pistol_GY",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 32000.0,
-      "hitDamage": 35
+      "muzzleVelocity": 32000,
+      "hitDamage": 35,
+      "caliber": ".45 ACP"
     },
     "notes": "Legendary .45 ACP pistol with over a century of service. Single-stack magazine limits capacity but provides manageable grip.",
     "tips": "Higher penetration than 9mm pistols but limited magazine capacity. Excellent for backup weapon or stealth operations."
@@ -1060,9 +1082,10 @@
       "firingPower": 0.25,
       "damageRangeCurve": "BR_DOD_Pistol_GY",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 38000.0,
+      "muzzleVelocity": 38000,
       "hitDamage": 30,
-      "headDamageScale": 1.4
+      "headDamageScale": 1.4,
+      "caliber": "9x19"
     },
     "notes": "Standard NATO service pistol with 15-round capacity. Open-slide design and reliable feeding mechanism.",
     "tips": "Best accuracy among 9mm pistols with excellent ergonomics. High capacity magazine makes it ideal for extended engagements."
@@ -1108,7 +1131,8 @@
         "horizontalRecoilControl": 0.22
       },
       "firingPower": 0.2,
-      "damageRangeCurve": "ShotgunDOD"
+      "damageRangeCurve": "ShotgunDOD",
+      "caliber": "9x19"
     },
     "notes": "Modern striker-fired design with modular frame system. Consistent trigger pull and reliable feeding.",
     "tips": "Slightly lower fire rate than other pistols but good overall balance. Affordable option with decent performance characteristics."
@@ -1151,7 +1175,8 @@
         "horizontalRecoilControl": 0.365
       },
       "damageRangeCurve": "AUGDOD",
-      "hitDamage": 29
+      "hitDamage": 29,
+      "caliber": "5.56x45"
     },
     "notes": "Classic bullpup design with integrated 1.5x optic. Balanced weight distribution and compact profile for urban operations.",
     "tips": "Excellent accuracy with built-in optic. Bullpup design provides full barrel length in compact package but limits customization."
@@ -1194,7 +1219,8 @@
         "horizontalRecoilControl": 0.338
       },
       "damageRangeCurve": "AUGDOD",
-      "hitDamage": 29
+      "hitDamage": 29,
+      "caliber": "5.56x45"
     },
     "notes": "CQB-optimized variant with shorter barrel and rail system. Enhanced ergonomics for close quarters engagements.",
     "tips": "Improved handling and ergonomics over A1. Shorter barrel reduces accuracy but increases maneuverability in tight spaces."
@@ -1237,7 +1263,8 @@
         "horizontalRecoilControl": 0.288
       },
       "damageRangeCurve": "AUGDOD",
-      "hitDamage": 29
+      "hitDamage": 29,
+      "caliber": "5.56x45"
     },
     "notes": "Modernized AUG with full rail interface system. Excellent platform for optics and accessories while maintaining bullpup advantages.",
     "tips": "Best recoil control in AUG family with extensive customization options. Ideal for users who want modern attachments on bullpup platform."
@@ -1280,7 +1307,8 @@
         "horizontalRecoilControl": 0.365
       },
       "damageRangeCurve": "AUGDOD",
-      "hitDamage": 29
+      "hitDamage": 29,
+      "caliber": "5.56x45"
     },
     "notes": "Standard Austrian military configuration with traditional furniture and integrated optic. Proven battlefield reliability.",
     "tips": "Similar to A1 but with military-grade components. Excellent accuracy and reliability, ideal for general-purpose use."
@@ -1324,7 +1352,8 @@
       },
       "firingPower": 0.4,
       "damageRangeCurve": "AUGDOD",
-      "hitDamage": 29
+      "hitDamage": 29,
+      "caliber": "9x19"
     },
     "notes": "Unique 9mm conversion of the AUG platform. Excellent for suppressed operations and reduced penetration scenarios.",
     "tips": "Outstanding recoil control and ergonomics. Lower penetration but excellent for situations requiring reduced overpenetration risk."
@@ -1344,7 +1373,7 @@
       "rarity": "Legendary",
       "price": 65000,
       "weight": 4.3,
-      "penetration": 2.0,
+      "penetration": 2,
       "fireRate": 600,
       "MOA": 1.9,
       "ADSSpeed": 0.7,
@@ -1373,7 +1402,8 @@
       "firingPower": 0.65,
       "damageRangeCurve": "BR_DOD_DMR_GY",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 87000.0
+      "muzzleVelocity": 87000,
+      "caliber": "7.62x51"
     },
     "notes": "Precision-oriented SCAR variant with extended barrel and enhanced accuracy features. Optimized for designated marksman role.",
     "tips": "Excellent accuracy and penetration for long-range engagements. Slower ADS and heavier weight limit mobility but provide superior ballistic performance."
@@ -1393,7 +1423,7 @@
       "rarity": "Epic",
       "price": 55000,
       "weight": 3.85,
-      "penetration": 2.0,
+      "penetration": 2,
       "fireRate": 600,
       "MOA": 2.6,
       "ADSSpeed": 0.85,
@@ -1421,7 +1451,8 @@
       },
       "damageRangeCurve": "BR_DOD_DMR_GY",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 87000.0
+      "muzzleVelocity": 87000,
+      "caliber": "7.62x51"
     },
     "notes": "Standard SCAR-H configuration with proven reliability and modularity. Excellent balance of power and handling.",
     "tips": "Good all-around battle rifle with high penetration. Better mobility than SSR variant while maintaining excellent stopping power."
@@ -1441,7 +1472,7 @@
       "rarity": "Rare",
       "price": 55000,
       "weight": 3.85,
-      "penetration": 2.0,
+      "penetration": 2,
       "fireRate": 600,
       "MOA": 2.6,
       "ADSSpeed": 0.85,
@@ -1469,7 +1500,8 @@
       },
       "damageRangeCurve": "BR_DOD_DMR_GY",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 87000.0
+      "muzzleVelocity": 87000,
+      "caliber": "7.62x51"
     },
     "notes": "FDE finish variant optimized for desert and arid environments. Identical performance to black variant with different aesthetics.",
     "tips": "Same excellent performance as black SCAR-17 with slightly higher shift momentum. Choice between variants is primarily aesthetic."
@@ -1495,17 +1527,17 @@
       "ADSSpeed": 0.83,
       "ergonomics": 0.47,
       "recoilParameters": {
-        "shiftMomentum": 43.0,
-        "pitchBaseMomentum": 27.0,
-        "yawBaseMomentum": 17.0,
-        "shiftStiffness": 206.0,
-        "pitchStiffness": 810.0,
-        "yawStiffness": 555.0,
-        "rollStiffness": 800.0,
+        "shiftMomentum": 43,
+        "pitchBaseMomentum": 27,
+        "yawBaseMomentum": 17,
+        "shiftStiffness": 206,
+        "pitchStiffness": 810,
+        "yawStiffness": 555,
+        "rollStiffness": 800,
         "pitchDamping": 2.78,
         "yawDamping": 2.4,
         "rollDamping": 1.17,
-        "pitchMass": 2.0,
+        "pitchMass": 2,
         "yawMass": 1.4,
         "rollMass": 0.5,
         "oneHandedADSMultiplier": 0.1,
@@ -1514,9 +1546,10 @@
       },
       "damageRangeCurve": "BR_DOD_Rfile_GY",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 71500.0,
+      "muzzleVelocity": 71500,
       "hitDamage": 33,
-      "headDamageScale": 1.6
+      "headDamageScale": 1.6,
+      "caliber": "5.56x45"
     },
     "notes": "5.56x45mm SCAR",
     "tips": ""
@@ -1563,7 +1596,8 @@
         "verticalRecoilControl": 0.66
       },
       "damageRangeCurve": "none",
-      "hitDamage": 12
+      "hitDamage": 12,
+      "caliber": "12GA"
     },
     "notes": "Military and law enforcement pump-action shotgun. Single-shot manual cycling but devastating stopping power at close range.",
     "tips": "Extremely high damage per shot but slow rate of fire. Effective range limited but unmatched close-quarters lethality."
@@ -1611,7 +1645,8 @@
         "horizontalRecoilControl": 0.44
       },
       "damageRangeCurve": "none",
-      "hitDamage": 12
+      "hitDamage": 12,
+      "caliber": "12GA"
     },
     "notes": "Classic pump-action design with external hammer. Historical significance and proven reliability in combat.",
     "tips": "Higher recoil than modern shotguns but excellent stopping power. External hammer design requires careful handling."
@@ -1660,9 +1695,10 @@
       "firingPower": 0.3,
       "damageRangeCurve": "BR_S686DOD",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 53600.0,
+      "muzzleVelocity": 53600,
       "hitDamage": 22,
-      "headDamageScale": 1.1
+      "headDamageScale": 1.1,
+      "caliber": "12GA"
     },
     "notes": "Historic automatic shotgun with inertia operation. Early innovation in self-loading shotgun technology.",
     "tips": "Automatic fire provides faster follow-up shots than pump-action. Historical rarity but excellent performance characteristics."
@@ -1710,9 +1746,10 @@
       "firingPower": 0.45,
       "damageRangeCurve": "BR_O12DOD",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 42600.0,
+      "muzzleVelocity": 42600,
       "hitDamage": 11,
-      "headDamageScale": 1.1
+      "headDamageScale": 1.1,
+      "caliber": "12GA"
     },
     "notes": "Fully automatic shotgun with devastating close-range firepower. Unique among shotguns for sustained automatic fire capability.",
     "tips": "Exceptional close-range area denial weapon. High recoil but unmatched sustained firepower for room clearing operations."
@@ -1763,9 +1800,10 @@
       "firingPower": 0.3,
       "damageRangeCurve": "Sako85DOD",
       "bulletDropFactor": 1.1,
-      "muzzleVelocity": 76000.0,
+      "muzzleVelocity": 76000,
       "hitDamage": 128,
-      "headDamageScale": 1.8
+      "headDamageScale": 1.8,
+      "caliber": "7.62x54R"
     },
     "notes": "Legendary Russian rifle with over a century of service. Excellent accuracy and stopping power with traditional bolt-action reliability.",
     "tips": "Outstanding accuracy and penetration for the price. Poor ergonomics but unmatched long-range performance per dollar."
@@ -1796,9 +1834,10 @@
       "firingPower": 0.4,
       "damageRangeCurve": "Sako85DOD",
       "bulletDropFactor": 1.1,
-      "muzzleVelocity": 76000.0,
+      "muzzleVelocity": 76000,
       "hitDamage": 128,
-      "headDamageScale": 1.8
+      "headDamageScale": 1.8,
+      "caliber": "7.62x54R"
     },
     "notes": "Refined Mosin variant with improved sights and slightly better accuracy. Lighter weight improves handling characteristics.",
     "tips": "Can use scope"
@@ -1829,9 +1868,10 @@
       "firingPower": 0.38,
       "damageRangeCurve": "Sako85DOD",
       "bulletDropFactor": 1.1,
-      "muzzleVelocity": 76000.0,
+      "muzzleVelocity": 76000,
       "hitDamage": 128,
-      "headDamageScale": 1.8
+      "headDamageScale": 1.8,
+      "caliber": "7.62x54R"
     },
     "notes": "Shortened carbine variant with improved mobility. Reduced barrel length affects accuracy but enhances maneuverability.",
     "tips": "Best ergonomics in Mosin family with significantly improved handling. Accuracy penalty but much more practical for mobile operations."
@@ -1842,7 +1882,6 @@
     "description": "Drastically shortened Mosin variant. Extreme modification sacrifices accuracy for concealability.",
     "category": "weapons",
     "subcategory": "Pistol",
-    "caliber": "7.62x54mmR",
     "images": {
       "icon": "/images/items/weapons/Icon_WF_Mosin_OBREZ.webp",
       "thumbnail": "/images/items/weapons/Icon_WF_Mosin_OBREZ.webp",
@@ -1864,9 +1903,10 @@
       "firingPower": 0.05,
       "damageRangeCurve": "Sako85DOD",
       "bulletDropFactor": 1.1,
-      "muzzleVelocity": 76000.0,
+      "muzzleVelocity": 76000,
       "hitDamage": 128,
-      "headDamageScale": 1.8
+      "headDamageScale": 1.8,
+      "caliber": "7.62x54R"
     },
     "notes": "Extreme modification with drastically shortened barrel and stock. Concealable but with severe accuracy penalties.",
     "tips": "Excellent ergonomics and lightest weight but poor accuracy. Unique niche as concealable high-power weapon."
@@ -1877,7 +1917,6 @@
     "description": "Modern military sniper rifle with precision barrel and advanced accuracy features for long-range precision shooting.",
     "category": "weapons",
     "subcategory": "BoltAction",
-    "caliber": "7.62x51mm",
     "images": {
       "icon": "/images/items/weapons/Icon_gun_m40a5.webp",
       "thumbnail": "/images/items/weapons/Icon_gun_m40a5.webp",
@@ -1887,7 +1926,7 @@
       "rarity": "Epic",
       "price": 75000,
       "weight": 4.2,
-      "penetration": 2.0,
+      "penetration": 2,
       "fireRate": 1000,
       "MOA": 0.53,
       "ADSSpeed": 0.8,
@@ -1918,8 +1957,9 @@
       "firingPower": 0.75,
       "damageRangeCurve": "none",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 85000.0,
-      "hitDamage": 104
+      "muzzleVelocity": 85000,
+      "hitDamage": 104,
+      "caliber": "7.62x51"
     },
     "notes": "State-of-the-art military sniper rifle with exceptional accuracy. Premium components throughout for maximum precision.",
     "tips": "Best-in-class accuracy with outstanding MOA. Highest penetration among sniper rifles makes it effective against all targets."
@@ -1930,7 +1970,6 @@
     "description": "Soviet semi-automatic carbine chambered in 7.62x39mm. Reliable gas-operated action with integrated bayonet.",
     "category": "weapons",
     "subcategory": "Rifle",
-    "caliber": "7.62x39mm",
     "images": {
       "icon": "/images/items/weapons/Icon_gun_sks.webp",
       "thumbnail": "/images/items/weapons/Icon_gun_sks.webp",
@@ -1968,9 +2007,10 @@
       },
       "damageRangeCurve": "none",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 80000.0,
+      "muzzleVelocity": 80000,
       "hitDamage": 64,
-      "headDamageScale": 1.8
+      "headDamageScale": 1.8,
+      "caliber": "7.62x54R"
     },
     "notes": "Classic Soviet carbine bridging bolt-action and assault rifle eras. Gas-operated semi-automatic with traditional wooden stock.",
     "tips": "Excellent medium-range performance with good accuracy. Higher recoil than modern rifles but reliable stopping power."
@@ -2019,9 +2059,10 @@
       "firingPower": 0.4,
       "damageRangeCurve": "none",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 80000.0,
+      "muzzleVelocity": 80000,
       "hitDamage": 64,
-      "headDamageScale": 1.8
+      "headDamageScale": 1.8,
+      "caliber": "7.62x54R"
     },
     "notes": "Advanced WWII-era semi-automatic rifle. Innovative gas system and excellent accuracy for its time period.",
     "tips": "Better accuracy and ergonomics than SKS with more powerful cartridge. Higher recoil but excellent long-range performance."
@@ -2069,9 +2110,10 @@
       "firingPower": 0.48,
       "damageRangeCurve": "BR_DOD_LMG_GY",
       "bulletDropFactor": 1.55,
-      "muzzleVelocity": 86800.0,
+      "muzzleVelocity": 86800,
       "hitDamage": 30,
-      "headDamageScale": 1.3
+      "headDamageScale": 1.3,
+      "caliber": "7.62x54R"
     },
     "notes": "Heavy machine gun designed for sustained fire support. Air-cooled barrel allows continuous operation without overheating concerns.",
     "tips": "Devastating firepower but requires setup time. Extremely slow ADS makes it unsuitable for mobile combat. Excellent for defensive positions and suppressive fire."
@@ -2114,7 +2156,8 @@
         "recoilRecoveryCoefficient": 4,
         "verticalRecoilControl": 0.189,
         "horizontalRecoilControl": 0.255
-      }
+      },
+      "caliber": "9x19"
     },
     "notes": "Legendary 9mm SMG with roller-delayed blowback action. Standard for police and military CQB operations worldwide.",
     "tips": "Excellent recoil control and ergonomics for rapid fire. Limited range but outstanding in close quarters engagements."
@@ -2158,7 +2201,8 @@
         "recoilRecoveryCoefficient": 4,
         "verticalRecoilControl": 0.196,
         "horizontalRecoilControl": 0.245
-      }
+      },
+      "caliber": "9x19"
     },
     "notes": "Modern polymer SMG with excellent ergonomics and high fire rate. Popular choice for tactical teams and special operations.",
     "tips": "Higher fire rate than MP5 with modern features. Better accuracy and lighter weight make it excellent for mobile operations."
@@ -2199,7 +2243,8 @@
         "oneHandedADSMultiplier": 0.1,
         "verticalRecoilControl": 0.216,
         "horizontalRecoilControl": 0.238
-      }
+      },
+      "caliber": ".45 ACP"
     },
     "notes": "Lightweight SMG using .45 ACP for enhanced stopping power. Polymer construction keeps weight down despite larger cartridge.",
     "tips": "Higher penetration than 9mm SMGs with good accuracy. Slower fire rate aids control but reduces suppressive capability."
@@ -2241,7 +2286,8 @@
         "oneHandedADSMultiplier": 0.1,
         "verticalRecoilControl": 0.256,
         "horizontalRecoilControl": 0.306
-      }
+      },
+      "caliber": "9x19"
     },
     "notes": "Ultra-compact SMG with exceptional mobility. Highest fire rate in class makes it devastating at point-blank range.",
     "tips": "Lightest SMG with excellent handling. Very high fire rate requires careful ammunition management but provides overwhelming firepower."
@@ -2283,7 +2329,8 @@
         "oneHandedADSMultiplier": 0.1,
         "verticalRecoilControl": 0.205,
         "horizontalRecoilControl": 0.245
-      }
+      },
+      "caliber": "9x19"
     },
     "notes": "Improved MP9 with enhanced recoil control and ergonomics. Better handling characteristics while maintaining compact size.",
     "tips": "Superior ergonomics and recoil control over standard MP9. Reduced recoil momentum makes it more controllable in sustained fire."
@@ -2325,7 +2372,8 @@
         "oneHandedADSMultiplier": 0.1,
         "verticalRecoilControl": 0.185,
         "horizontalRecoilControl": 0.22
-      }
+      },
+      "caliber": "9x19"
     },
     "notes": "Top-tier MP9 variant with maximum recoil control and ergonomics. Optimized for tactical operations and suppressed use.",
     "tips": "Best recoil control in MP9 family with outstanding ergonomics. Premium performance justifies higher cost for specialized operations."
@@ -2367,7 +2415,8 @@
         "oneHandedADSMultiplier": 0.1,
         "verticalRecoilControl": 0.246,
         "horizontalRecoilControl": 0.28
-      }
+      },
+      "caliber": ".45 ACP"
     },
     "notes": "Historical WWII submachine gun with simple, reliable construction. Slow fire rate but proven battlefield reliability.",
     "tips": "Lower fire rate aids control but reduces firepower. Heavier than modern SMGs but very reliable and affordable."
@@ -2409,7 +2458,8 @@
         "oneHandedADSMultiplier": 0.1,
         "verticalRecoilControl": 0.19,
         "horizontalRecoilControl": 0.235
-      }
+      },
+      "caliber": ".45 ACP"
     },
     "notes": "Legendary 'Tommy Gun' , unfortunately without distinctive drum magazine capability.",
     "tips": "Heaviest SMG but good firepower. Poor ergonomics offset by historical significance and solid performance."
@@ -2451,7 +2501,8 @@
         "oneHandedADSMultiplier": 0.1,
         "verticalRecoilControl": 0.203,
         "horizontalRecoilControl": 0.224
-      }
+      },
+      "caliber": "9x19"
     },
     "notes": "Compact PDW designed for close protection and vehicle crews. Excellent mobility with better accuracy than traditional SMGs.",
     "tips": "Bridge between SMGs and rifles with better range capability. Lower MOA than most SMGs makes it effective at medium range."
@@ -2493,7 +2544,8 @@
         "oneHandedADSMultiplier": 0.1,
         "verticalRecoilControl": 0.295,
         "horizontalRecoilControl": 0.278
-      }
+      },
+      "caliber": "5.45x39"
     },
     "notes": "Modern Ukrainian bullpup rifle based on AK action. Combines traditional reliability with compact bullpup advantages.",
     "tips": "Excellent ergonomics for a bullpup design. Good accuracy and recoil control while maintaining compact profile."
@@ -2535,7 +2587,8 @@
         "oneHandedADSMultiplier": 0.1,
         "verticalRecoilControl": 0.33,
         "horizontalRecoilControl": 0.36
-      }
+      },
+      "caliber": "7.62x39"
     },
     "notes": "7.62x39mm variant offering higher stopping power. Same excellent ergonomics with increased recoil from larger cartridge.",
     "tips": "Higher penetration than 5.45mm variant but with increased recoil. Choose based on engagement range and armor penetration needs."
@@ -2555,7 +2608,7 @@
       "rarity": "Rare",
       "price": 58000,
       "weight": 4.3,
-      "penetration": 2.0,
+      "penetration": 2,
       "fireRate": 750,
       "MOA": 1.63,
       "ADSSpeed": 0.8,
@@ -2577,7 +2630,8 @@
         "oneHandedADSMultiplier": 0.1,
         "verticalRecoilControl": 0.388,
         "horizontalRecoilControl": 0.233
-      }
+      },
+      "caliber": "7.62x51"
     },
     "notes": "Large-frame AR-10 style rifle with excellent accuracy and stopping power. Modern ergonomics with battle rifle capabilities.",
     "tips": "Outstanding accuracy and penetration for long-range engagements. Heavier than 5.56mm ARs but superior ballistic performance."
@@ -2597,7 +2651,7 @@
       "rarity": "Epic",
       "price": 68000,
       "weight": 3.6,
-      "penetration": 2.0,
+      "penetration": 2,
       "fireRate": 750,
       "MOA": 1.63,
       "ADSSpeed": 0.8,
@@ -2619,7 +2673,8 @@
         "oneHandedADSMultiplier": 0.1,
         "verticalRecoilControl": 0.35,
         "horizontalRecoilControl": 0.31
-      }
+      },
+      "caliber": "7.62x51"
     },
     "notes": "Lightweight variant with premium materials and enhanced ergonomics. Improved handling while maintaining full power.",
     "tips": "Significantly better ergonomics and lighter weight make this more practical for mobile operations. Premium price reflects advanced construction."
@@ -2660,7 +2715,8 @@
         "rollMass": 0.5,
         "oneHandedADSMultiplier": 0.1,
         "horizontalRecoilControl": 0.413333
-      }
+      },
+      "caliber": "7.62x51"
     },
     "notes": "Legendary battle rifle adopted by over 90 countries. Gas-operated action with adjustable gas regulator for reliability.",
     "tips": "High penetration with excellent accuracy. Poor ergonomics typical of 1950s design but proven battlefield effectiveness."
@@ -2705,7 +2761,8 @@
         "oneHandedADSMultiplier": 0.1,
         "verticalRecoilControl": 0.302,
         "horizontalRecoilControl": 0.321
-      }
+      },
+      "caliber": "6.8x51"
     },
     "notes": "Next-generation rifle with 6.8x51mm cartridge and advanced recoil mitigation. Represents the future of infantry weapons.",
     "tips": "Excellent recoil control for the power level. New cartridge offers good penetration with manageable recoil through advanced design."
@@ -2751,9 +2808,10 @@
       "firingPower": 0.5,
       "damageRangeCurve": "BR_DOD_Rfile",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 80000.0,
+      "muzzleVelocity": 80000,
       "hitDamage": 37,
-      "headDamageScale": 1.6
+      "headDamageScale": 1.6,
+      "caliber": "7.62x51"
     },
     "notes": "Classic German battle rifle with delayed blowback system. Heavy but reliable for long-range engagements.",
     "tips": "Excellent for medium to long range combat. The heavy weight helps with recoil control but affects mobility."
@@ -2801,9 +2859,10 @@
       "firingPower": 0.43,
       "damageRangeCurve": "BR_DOD_Rfile",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 80000.0,
+      "muzzleVelocity": 80000,
       "hitDamage": 37,
-      "headDamageScale": 1.6
+      "headDamageScale": 1.6,
+      "caliber": "7.62x51"
     },
     "notes": "Shortened G3 variant designed for close-quarters combat. Higher mobility but reduced accuracy at range.",
     "tips": "Better ergonomics than the full-size G3 but with increased muzzle blast and reduced long-range effectiveness."
@@ -2850,9 +2909,10 @@
       "firingPower": 0.43,
       "damageRangeCurve": "BR_DOD_Rfile",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 80000.0,
+      "muzzleVelocity": 80000,
       "hitDamage": 37,
-      "headDamageScale": 1.6
+      "headDamageScale": 1.6,
+      "caliber": "7.62x51"
     },
     "notes": "Most compact G3 variant with exceptional mobility but significant muzzle flash and blast.",
     "tips": "Excellent for CQB operations. The light weight allows for quick handling but expect heavy recoil and flash."
@@ -2899,9 +2959,10 @@
       "firingPower": 0.43,
       "damageRangeCurve": "BR_DOD_Rfile",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 80000.0,
+      "muzzleVelocity": 80000,
       "hitDamage": 37,
-      "headDamageScale": 1.6
+      "headDamageScale": 1.6,
+      "caliber": "7.62x51"
     },
     "notes": "Enhanced HK51 variant with improved recoil control and tactical accessories. Premium build quality.",
     "tips": "Better recoil management than standard HK51 variants. Ideal for operators who need compact power with control."
@@ -2947,9 +3008,10 @@
       "firingPower": 0.5,
       "damageRangeCurve": "BR_DOD_Rfile",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 80000.0,
+      "muzzleVelocity": 80000,
       "hitDamage": 37,
-      "headDamageScale": 1.6
+      "headDamageScale": 1.6,
+      "caliber": "7.62x51"
     },
     "notes": "Classic wooden-stocked variant with traditional aesthetics. Heavier than modern polymer versions but well-balanced.",
     "tips": "The wooden stock provides good stability for precision shooting but adds weight. Great for long-range work."
@@ -2996,9 +3058,10 @@
       "firingPower": 0.73,
       "damageRangeCurve": "BR_DOD_Rfile",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 80000.0,
+      "muzzleVelocity": 80000,
       "hitDamage": 37,
-      "headDamageScale": 1.6
+      "headDamageScale": 1.6,
+      "caliber": "7.62x51"
     },
     "notes": "Elite precision sniper rifle with exceptional accuracy. Heavy and slow to handle but unmatched for long-range precision.",
     "tips": "Ultimate precision weapon for long-range engagements. The weight and slow handling make it unsuitable for mobile combat."
@@ -3043,9 +3106,10 @@
       "firingPower": 0.5,
       "damageRangeCurve": "BR_DOD_Rfile",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 80000.0,
+      "muzzleVelocity": 80000,
       "hitDamage": 37,
-      "headDamageScale": 1.6
+      "headDamageScale": 1.6,
+      "caliber": "7.62x51"
     },
     "notes": "Swedish military designation for the G3SG1 sniper rifle. Features improved optics integration and reliability.",
     "tips": "Well-balanced sniper variant with good ergonomics. Lighter than the PSG-1 while maintaining precision capabilities."
@@ -3064,7 +3128,7 @@
     "stats": {
       "rarity": "Epic",
       "price": 85000,
-      "weight": 4.0,
+      "weight": 4,
       "penetration": 1,
       "fireRate": 600,
       "ADSSpeed": 0.67,
@@ -3091,9 +3155,10 @@
       "firingPower": 0.62,
       "damageRangeCurve": "BR_DOD_Rfile",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 80000.0,
+      "muzzleVelocity": 80000,
       "hitDamage": 37,
-      "headDamageScale": 1.6
+      "headDamageScale": 1.6,
+      "caliber": "7.62x51"
     },
     "notes": "Modern precision rifle system with adjustable stock and improved recoil management. Optimized for tactical operations.",
     "tips": "Excellent balance of precision and handling. The PRS stock system allows for better shooter adaptation and comfort."
@@ -3138,9 +3203,10 @@
       "firingPower": 0.5,
       "damageRangeCurve": "BR_DOD_Rfile",
       "bulletDropFactor": 1.2,
-      "muzzleVelocity": 80000.0,
+      "muzzleVelocity": 80000,
       "hitDamage": 37,
-      "headDamageScale": 1.6
+      "headDamageScale": 1.6,
+      "caliber": "7.62x51"
     },
     "notes": "Features premium Spuhr optics mounting system for maximum stability and repeatability. Professional-grade precision rifle.",
     "tips": "Top-tier precision variant with excellent optics mounting. The Spuhr system ensures scope zero retention under heavy use."
