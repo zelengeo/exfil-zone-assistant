@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ShieldIcon, DollarSign, Info } from 'lucide-react';
+import { ShieldIcon, DollarSign, Info, Zap, Target, Crosshair } from 'lucide-react';
 import { Item, getRarityColorClass, getRarityBorderClass, getCategoryById, formatPrice } from '@/types/items';
 import { ItemImage } from './ItemImage';
 
@@ -21,31 +21,8 @@ const getCategoryIcon = (categoryId: string) => {
                     <rect x="4" y="8" width="16" height="8" rx="2"></rect>
                 </svg>
             );
-        case 'medicine':
-            return (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                    <path d="M8 21h8a2 2 0 0 0 2-2v-2H6v2a2 2 0 0 0 2 2Z"></path>
-                    <path d="M12 11V3"></path>
-                    <path d="M9 6h6"></path>
-                    <path d="M8 14h8"></path>
-                </svg>
-            );
-        case 'food':
-            return (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                    <path d="M7 12a5 5 0 0 1 5-5c.91 0 1.76.25 2.5.67A5 5 0 0 1 17 12v7H7v-7Z"></path>
-                    <path d="M16 6.05a3 3 0 0 0-5.17-2.13"></path>
-                    <path d="M12 2a2 2 0 0 0-2 2"></path>
-                </svg>
-            );
-        case 'gear':
+        case 'armor':
             return <ShieldIcon className="w-5 h-5" />;
-        case 'keys':
-            return (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                    <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
-                </svg>
-            );
         default:
             return <Info className="w-5 h-5" />;
     }
@@ -56,83 +33,114 @@ const renderCategoryStats = (item: Item) => {
     switch (item.category) {
         case 'weapons':
             return (
-                <div className="flex items-center gap-2 text-sm">
-                    <span className="text-olive-400 font-medium">DMG:</span>
-                    <span className="text-tan-100 font-mono">{item.stats.damage}</span>
-                    <span className="text-olive-400 font-medium ml-2">PEN:</span>
-                    <span className="text-tan-100 font-mono">{item.stats.penetration}</span>
+                <div className="space-y-1">
+                    <div className="flex items-center justify-between text-sm">
+                        <span className="text-olive-400 font-medium">Fire Rate:</span>
+                        <span className="text-tan-100 font-mono">{item.stats.fireRate || 'N/A'} RPM</span>
+                    </div>
+                    {item.stats.ergonomics && (
+                        <div className="flex items-center justify-between text-sm">
+                            <span className="text-olive-400 font-medium">Ergonomics:</span>
+                            <span className="text-tan-100 font-mono">{(item.stats.ergonomics * 100).toFixed(0)}%</span>
+                        </div>
+                    )}
+                    {item.stats.MOA && (
+                        <div className="flex items-center justify-between text-sm">
+                            <span className="text-olive-400 font-medium">Accuracy:</span>
+                            <span className="text-tan-100 font-mono">{item.stats.MOA.toFixed(1)} MOA</span>
+                        </div>
+                    )}
                 </div>
             );
+
         case 'ammo':
             return (
-                <div className="flex items-center gap-2 text-sm">
-                    <span className="text-olive-400 font-medium">DMG:</span>
-                    <span className="text-tan-100 font-mono">{item.stats.damage}</span>
-                    <span className="text-olive-400 font-medium ml-2">PEN:</span>
-                    <span className="text-tan-100 font-mono">{item.stats.penetration}</span>
-                </div>
-            );
-        case 'medicine':
-            return (
-                <div className="flex items-center gap-2 text-sm">
-                    {item.stats.healAmount && (
-                        <>
-                            <span className="text-olive-400 font-medium">HEAL:</span>
-                            <span className="text-tan-100 font-mono">{item.stats.healAmount}</span>
-                        </>
-                    )}
-                    {item.stats.useTime && (
-                        <>
-                            <span className="text-olive-400 font-medium ml-2">TIME:</span>
-                            <span className="text-tan-100 font-mono">{item.stats.useTime}s</span>
-                        </>
+                <div className="space-y-1">
+                    <div className="flex items-center justify-between text-sm">
+                        <span className="text-olive-400 font-medium">Damage:</span>
+                        <span className="text-tan-100 font-mono">{item.stats.damage || 'N/A'}</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                        <span className="text-olive-400 font-medium">Penetration:</span>
+                        <span className="text-tan-100 font-mono">{item.stats.penetration || 'N/A'}</span>
+                    </div>
+                    {item.stats.muzzleVelocity && (
+                        <div className="flex items-center justify-between text-sm">
+                            <span className="text-olive-400 font-medium">Velocity:</span>
+                            <span className="text-tan-100 font-mono">{Math.round(item.stats.muzzleVelocity / 100)} m/s</span>
+                        </div>
                     )}
                 </div>
             );
-        case 'food':
+
+        case 'armor':
             return (
-                <div className="flex items-center gap-2 text-sm">
-                    {item.stats.energyValue && (
-                        <>
-                            <span className="text-olive-400 font-medium">ENERGY:</span>
-                            <span className="text-tan-100 font-mono">+{item.stats.energyValue}</span>
-                        </>
-                    )}
-                    {item.stats.hydrationValue && (
-                        <>
-                            <span className="text-olive-400 font-medium ml-2">WATER:</span>
-                            <span className="text-tan-100 font-mono">+{item.stats.hydrationValue}</span>
-                        </>
-                    )}
-                </div>
-            );
-        case 'gear':
-            return (
-                <div className="flex items-center gap-2 text-sm">
+                <div className="space-y-1">
                     {item.stats.armorClass && (
-                        <>
-                            <span className="text-olive-400 font-medium">CLASS:</span>
-                            <span className="text-tan-100 font-mono">{item.stats.armorClass}</span>
-                        </>
+                        <div className="flex items-center justify-between text-sm">
+                            <span className="text-olive-400 font-medium">Armor Class:</span>
+                            <span className="text-tan-100 font-mono">Class {item.stats.armorClass}</span>
+                        </div>
                     )}
-                    {item.stats.durability && (
-                        <>
-                            <span className="text-olive-400 font-medium ml-2">DUR:</span>
-                            <span className="text-tan-100 font-mono">{item.stats.durability}</span>
-                        </>
+                    {item.stats.maxDurability && (
+                        <div className="flex items-center justify-between text-sm">
+                            <span className="text-olive-400 font-medium">Durability:</span>
+                            <span className="text-tan-100 font-mono">{item.stats.maxDurability}</span>
+                        </div>
+                    )}
+                    {item.stats.bluntDamageScalar && (
+                        <div className="flex items-center justify-between text-sm">
+                            <span className="text-olive-400 font-medium">Blunt Dmg:</span>
+                            <span className="text-tan-100 font-mono">{(item.stats.bluntDamageScalar * 100).toFixed(0)}%</span>
+                        </div>
                     )}
                 </div>
             );
+
         default:
             return (
                 <div className="flex items-center gap-2 text-sm">
-                    <span className="text-olive-400 font-medium">SIZE:</span>
-                    <span className="text-tan-100 font-mono">{item.stats.size}</span>
-                    <span className="text-olive-400 font-medium ml-2">SLOTS:</span>
-                    <span className="text-tan-100 font-mono">{item.stats.safeSlots}</span>
+                    <span className="text-olive-400 font-medium">Weight:</span>
+                    <span className="text-tan-100 font-mono">{item.stats.weight.toFixed(2)} kg</span>
                 </div>
             );
     }
+};
+
+// Function to get performance indicator for items
+//TODO rework - probably handmade values are needed here
+const getPerformanceIndicator = (item: Item) => {
+    switch (item.category) {
+        case 'weapons':
+            // Base performance on recoil control - lower recoil = better control
+            const verticalRecoil = item.stats.verticalRecoil || 0;
+            const horizontalRecoil = item.stats.horizontalRecoil || 0;
+
+            // Calculate average recoil control (higher values = better control)
+            const avgRecoilControl = (verticalRecoil + horizontalRecoil) / 2;
+
+            if (avgRecoilControl <=0.25) return { icon: <Target size={14} />, label: 'Low Recoil', color: 'text-green-400' };
+            if (avgRecoilControl <= 0.35) return { icon: <Crosshair size={14} />, label: 'Manageable', color: 'text-yellow-400' };
+            if (avgRecoilControl > 0.35) return { icon: <Zap size={14} />, label: 'High Recoil', color: 'text-red-400' };
+            break;
+
+        case 'ammo':
+            // High damage = better performance
+            const damage = item.stats.damage || 0;
+            if (damage >= 70) return { icon: <Zap size={14} />, label: 'High DMG', color: 'text-red-400' };
+            if (damage >= 50) return { icon: <Target size={14} />, label: 'Good DMG', color: 'text-yellow-400' };
+            if (damage > 0) return { icon: <Crosshair size={14} />, label: 'Low DMG', color: 'text-blue-400' };
+            break;
+
+        case 'armor':
+            // High armor class = better protection
+            const armorClass = item.stats.armorClass || 0;
+            if (armorClass >= 5) return { icon: <ShieldIcon size={14} />, label: 'Heavy', color: 'text-red-400' };
+            if (armorClass >= 3) return { icon: <ShieldIcon size={14} />, label: 'Medium', color: 'text-yellow-400' };
+            if (armorClass > 0) return { icon: <ShieldIcon size={14} />, label: 'Light', color: 'text-blue-400' };
+            break;
+    }
+    return null;
 };
 
 interface ItemCardProps {
@@ -143,14 +151,12 @@ const ItemCard: React.FC<ItemCardProps> = ({ item }) => {
     const category = getCategoryById(item.category);
     const rarityColorClass = getRarityColorClass(item.stats.rarity);
     const rarityBorderClass = getRarityBorderClass(item.stats.rarity);
+    const performanceIndicator = getPerformanceIndicator(item);
 
     return (
         <Link
             href={`/items/${item.id}`}
-            className={`
-        military-card rounded-sm overflow-hidden block transition-transform hover:translate-y-[-2px] 
-        border border-military-700 hover:border-olive-600 hover:shadow-lg
-      `}
+            className="military-card rounded-sm overflow-hidden block transition-all duration-200 hover:translate-y-[-2px] border border-military-700 hover:border-olive-600 hover:shadow-lg group"
         >
             {/* Item image and rarity badge */}
             <div className="relative aspect-square bg-military-900 border-b border-military-700 overflow-hidden">
@@ -163,50 +169,62 @@ const ItemCard: React.FC<ItemCardProps> = ({ item }) => {
                 />
 
                 {/* Rarity tag */}
-                <div className={`absolute top-0 right-0 px-2 py-0.5 text-xs ${rarityColorClass} border-l border-b ${rarityBorderClass}`}>
+                <div className={`absolute top-0 right-0 px-2 py-0.5 text-xs font-medium ${rarityColorClass} border-l border-b ${rarityBorderClass} bg-military-900/90`}>
                     {item.stats.rarity}
                 </div>
 
                 {/* Category icon */}
-                <div className="absolute bottom-2 left-2 w-8 h-8 rounded-full flex items-center justify-center bg-military-800 border border-military-700">
+                <div className="absolute bottom-2 left-2 w-8 h-8 rounded-sm flex items-center justify-center bg-military-800/90 border border-military-700">
                     <div className="text-olive-400">
                         {getCategoryIcon(item.category)}
                     </div>
                 </div>
+
+                {/* Performance indicator */}
+                {performanceIndicator && (
+                    <div className={`absolute bottom-2 right-2 px-2 py-1 rounded-sm bg-military-800/90 border border-military-600 flex items-center gap-1 ${performanceIndicator.color}`}>
+                        {performanceIndicator.icon}
+                        <span className="text-xs font-medium">{performanceIndicator.label}</span>
+                    </div>
+                )}
             </div>
 
             {/* Item details */}
-            <div className="p-3">
-                <div className="flex justify-between items-start mb-1">
-                    <h3 className="font-medium text-tan-100 leading-tight">
+            <div className="p-4">
+                {/* Item name and subcategory */}
+                <div className="mb-3">
+                    <h3 className="font-bold text-tan-100 leading-tight mb-1 group-hover:text-olive-300 transition-colors">
                         {item.name}
                     </h3>
-                </div>
-
-                <div className="text-xs text-tan-300 mb-2">
-                    {category?.name} {item.subcategory && `• ${item.subcategory}`}
+                    <div className="text-xs text-tan-400 flex items-center gap-2">
+                        <span>{category?.name}</span>
+                        {item.subcategory && (
+                            <>
+                                <span>•</span>
+                                <span className="text-olive-500 font-medium">{item.subcategory}</span>
+                            </>
+                        )}
+                    </div>
                 </div>
 
                 {/* Category-specific stats */}
-                {renderCategoryStats(item)}
+                <div className="mb-3">
+                    {renderCategoryStats(item)}
+                </div>
 
-                {/* Price */}
-                <div className="mt-2 flex items-center justify-between border-t border-military-700 pt-2">
-                    <div className="flex items-center gap-1 text-sm">
+                {/* Price and additional info */}
+                <div className="flex items-center justify-between border-t border-military-700 pt-3">
+                    <div className="flex items-center gap-1">
                         <DollarSign size={14} className="text-olive-500" />
-                        <span className="text-tan-100 font-mono">{formatPrice(item.stats.price)}</span>
+                        <span className="text-tan-100 font-mono text-sm font-medium">
+                            {formatPrice(item.stats.price)}
+                        </span>
                     </div>
 
-                    {/* Crafting indicator */}
-                    {item.craftingRecipes && item.craftingRecipes.length > 0 && (
-                        <div className="w-5 h-5 flex items-center justify-center bg-olive-700 rounded-full" title="Can be crafted">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3 text-tan-100">
-                                <path d="M17 15l-5-5-5 5"></path>
-                                <path d="M12 10V2"></path>
-                                <path d="M22 16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v7Z"></path>
-                            </svg>
-                        </div>
-                    )}
+                    {/* Weight indicator */}
+                    <div className="text-xs text-tan-400">
+                        {item.stats.weight.toFixed(1)} kg
+                    </div>
                 </div>
             </div>
         </Link>

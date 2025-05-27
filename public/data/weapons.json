@@ -190,9 +190,9 @@
     "category": "weapons",
     "subcategory": "5.45x39mm",
     "images": {
-      "icon": "/images/items/weapons/Icon_gun_aks74u.webp",
-      "thumbnail": "/images/items/weapons/Icon_gun_aks74u.webp",
-      "fullsize": "/images/items/weapons/Icon_gun_aks74u.webp"
+      "icon": "/images/items/weapons/Icon_gun_aks74u2.webp",
+      "thumbnail": "/images/items/weapons/Icon_gun_aks74u2.webp",
+      "fullsize": "/images/items/weapons/Icon_gun_aks74u2.webp"
     },
     "stats": {
       "rarity": "Uncommon",
@@ -239,9 +239,9 @@
     "category": "weapons",
     "subcategory": "5.45x39mm",
     "images": {
-      "icon": "/images/items/weapons/Icon_gun_aks74u2.webp",
-      "thumbnail": "/images/items/weapons/Icon_gun_aks74u2.webp",
-      "fullsize": "/images/items/weapons/Icon_gun_aks74u2.webp"
+      "icon": "/images/items/weapons/Icon_gun_aks74u.webp",
+      "thumbnail": "/images/items/weapons/Icon_gun_aks74u.webp",
+      "fullsize": "/images/items/weapons/Icon_gun_aks74u.webp"
     },
     "stats": {
       "rarity": "Epic",

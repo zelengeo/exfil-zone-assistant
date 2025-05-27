@@ -172,7 +172,7 @@ export async function fetchItemsData(): Promise<Item[]> {
         // Cache the results
         itemsCache = allItems;
 
-        console.log(`✅ Loaded ${allItems.length} items from ${DATA_FILES.length} data files`);
+        console.log(`✅ Loaded ${allItems.length} items from ${DATA_FILES.length} data files`, allItems );
         return allItems;
     } catch (error) {
         console.error('Error fetching items data:', error);

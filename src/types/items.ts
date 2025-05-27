@@ -246,7 +246,7 @@ export function getCategoryIcon(categoryId: string): string {
 
 // Helper to format price with currency
 export function formatPrice(price: number): string {
-    return price.toLocaleString() + ' ₽';
+    return price.toLocaleString() + ' EZD';
 }
 
 // Helper to format weight with unit
