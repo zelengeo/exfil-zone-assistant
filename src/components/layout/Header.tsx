@@ -21,16 +21,19 @@ const Header: React.FC = () => {
                     <Link href="/items" className="text-lg hover:text-olive-500 transition-colors">
                         Items
                     </Link>
-                    <Link href="/hideout" className="text-lg hover:text-olive-500 transition-colors">
+                    <Link href="/combat-sim" className="text-lg hover:text-olive-500 transition-colors">
+                        Combat Sim
+                    </Link>
+                    {/*<Link href="/hideout" className="text-lg hover:text-olive-500 transition-colors">
                         Hideout
                     </Link>
-                    <Link href="/maps" className="text-lg hover:text-olive-500 transition-colors">
+                    <Link href="/maps"  aria-disabled className="text-lg hover:text-olive-500 transition-colors">
                         Maps
                     </Link>
-                    <Link href="/quests" className="text-lg hover:text-olive-500 transition-colors">
+                    <Link href="/quests" aria-disabled className="text-lg hover:text-olive-500 transition-colors">
                         Quests
-                    </Link>
-                    <Link href="/guides" className="text-lg hover:text-olive-500 transition-colors">
+                    </Link>*/}
+                    <Link href="/guides" aria-disabled className="text-lg hover:text-olive-500 transition-colors">
                         Guides
                     </Link>
                 </nav>
@@ -66,7 +69,7 @@ const Header: React.FC = () => {
                         >
                             Items
                         </Link>
-                        <Link
+                       {/* <Link
                             href="/hideout"
                             className="text-xl py-2 px-4 hover:bg-military-700 rounded-sm transition-all border border-transparent hover:border-olive-700"
                             onClick={() => setIsMenuOpen(false)}
@@ -86,7 +89,7 @@ const Header: React.FC = () => {
                             onClick={() => setIsMenuOpen(false)}
                         >
                             Quests
-                        </Link>
+                        </Link>*/}
                         <Link
                             href="/guides"
                             className="text-xl py-2 px-4 hover:bg-military-700 rounded-sm transition-all border border-transparent hover:border-olive-700"
