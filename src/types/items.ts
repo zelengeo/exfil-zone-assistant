@@ -1,3 +1,22 @@
+
+// Protective zone definition for armor coverage
+interface ProtectiveZone {
+    bodyPart: string;
+    armorClass: number;
+    bluntDamageScalar: number;
+    protectionAngle: number;
+}
+
+// Curve point for penetration calculations
+interface CurvePoint {
+    interpMode: 'cubic' | 'linear';
+    tangentMode: 'user' | 'auto';
+    time: number;
+    value: number;
+    arriveTangent: number;
+    leaveTangent: number;
+}
+
 export interface Item {
     id: string;
     name: string;
@@ -58,6 +77,9 @@ export interface Item {
         maxDurability?: number;
         durabilityDamageScalar?: number;
         bluntDamageScalar?: number;
+        protectiveData?: ProtectiveZone[];
+        penetrationChanceCurve?: CurvePoint[];
+        penetrationDamageScalarCurve?: CurvePoint[];
 
 
         //FOLLOWING IS SUBJECT OF CHANGE:

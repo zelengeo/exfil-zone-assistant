@@ -10,8 +10,6 @@ import {
     DefenderSetup,
     ZoneCalculation,
     AttackerSummary,
-    DisplayMode,
-    SortBy,
     areWeaponAmmoCompatible
 } from '../utils/types';
 import {

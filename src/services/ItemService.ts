@@ -18,6 +18,8 @@ const DATA_FILES = [
     // 'task-items.json'
 ];
 
+
+
 /**
  * Transform raw item data to match our Item interface
  */
@@ -71,6 +73,15 @@ function transformItemData(rawItem: any): Item {
             baseItem.stats.protectionGearBluntDamageScale = rawItem.stats.protectionGearBluntDamageScale;
             baseItem.stats.damageAtRange = rawItem.stats.damageAtRange;
             baseItem.stats.penetrationAtRange = rawItem.stats.penetrationAtRange;
+        }
+
+        if (rawItem.category === 'gear' && rawItem.subcategory === 'Body Armor') {
+            baseItem.stats.armorClass = rawItem.stats.armorClass;
+            baseItem.stats.maxDurability = rawItem.stats.maxDurability;
+            baseItem.stats.bluntDamageScalar = rawItem.stats.bluntDamageScalar;
+            baseItem.stats.protectiveData = rawItem.stats.protectiveData;
+            baseItem.stats.penetrationChanceCurve = rawItem.stats.penetrationChanceCurve;
+            baseItem.stats.penetrationDamageScalarCurve = rawItem.stats.penetrationDamageScalarCurve;
         }
 
         // Medical stats

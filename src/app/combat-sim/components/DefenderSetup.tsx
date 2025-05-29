@@ -88,8 +88,8 @@ export default function DefenderSetup({ defender, onUpdate }: DefenderSetupProps
     // Format durability percentage
     const formatDurability = (durability: number) => {
         if (durability >= 80) return 'text-green-400';
-        if (durability >= 50) return 'text-yellow-400';
-        if (durability >= 30) return 'text-orange-400';
+        if (durability >= 60) return 'text-yellow-400';
+        if (durability >= 40) return 'text-orange-400';
         return 'text-red-400';
     };
 
@@ -177,10 +177,8 @@ export default function DefenderSetup({ defender, onUpdate }: DefenderSetupProps
                                   Class {armor.stats.armorClass}
                                 </span>
                                                                 <span>Durability: {armor.stats.maxDurability}</span>
+                                                                <span>Price: {armor.stats.maxDurability} EZD</span>
                                                             </div>
-                                                        </div>
-                                                        <div className="text-tan-300 text-xs">
-                                                            ${armor.stats.price.toLocaleString()}
                                                         </div>
                                                     </div>
                                                 </button>
@@ -316,7 +314,7 @@ export default function DefenderSetup({ defender, onUpdate }: DefenderSetupProps
                                                             </div>
                                                         </div>
                                                         <div className="text-tan-300 text-xs">
-                                                            ${helmet.stats.price.toLocaleString()}
+                                                            {helmet.stats.price.toLocaleString()} EZD
                                                         </div>
                                                     </div>
                                                 </button>

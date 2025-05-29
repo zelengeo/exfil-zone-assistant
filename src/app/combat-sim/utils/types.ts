@@ -184,9 +184,7 @@ export function isAmmunition(item: Item): item is Ammunition {
 }
 
 export function isArmor(item: Item): item is Armor {
-    return (item.category === 'gear' || item.category === 'armor') &&
-        typeof item.stats.armorClass === 'number' &&
-        typeof item.stats.maxDurability === 'number';
+    return (item.category === 'gear' || item.category === 'armor') && item.subcategory === "Body Armor";
 }
 
 // Check if weapon and ammo are compatible

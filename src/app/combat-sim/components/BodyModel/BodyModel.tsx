@@ -42,7 +42,7 @@ export default function BodyModel({
         // Check if zone is protected by body armor
         if (zone.defaultProtection === 'armor' && defender.bodyArmor) {
             // Check if this specific zone is in the armor's protective data
-            const protectiveZone = defender.bodyArmor.protectiveData?.find(
+            const protectiveZone = defender.bodyArmor.stats.protectiveData?.find(
                 pz => pz.bodyPart === zone.bodyPart || pz.bodyPart === zone.id
             );
             return protectiveZone?.armorClass || defender.bodyArmor.stats.armorClass;

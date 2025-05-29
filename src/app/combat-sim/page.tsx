@@ -1,11 +1,8 @@
 'use client';
 
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import Layout from '@/components/layout/Layout';
 import {
-    CombatSimulation,
-    AttackerSetup as AttackerSetupType,
-    DefenderSetup as DefenderSetupType,
     DisplayMode,
     SortBy,
     ATTACKER_COLORS,
@@ -14,7 +11,9 @@ import {
     RANGE_PRESETS,
     areWeaponAmmoCompatible
 } from './utils/types';
-import { Plus, Calculator, Target, DollarSign, Clock } from 'lucide-react';
+import {formatTTK, formatSTK, formatCTK} from './utils/combat-calculations'
+import {useCombatSimulation} from "@/app/combat-sim/hooks/useCombatSimulation";
+import {Plus, Calculator, Target, DollarSign, Clock, Loader2} from 'lucide-react';
 
 // Component imports
 import AttackerSetup from './components/AttackerSetup';
@@ -22,81 +21,30 @@ import DefenderSetup from './components/DefenderSetup';
 import BodyModel from './components/BodyModel/BodyModel';
 
 export default function CombatSimulatorPage() {
-    // Initialize combat simulation state
-    const [simulation, setSimulation] = useState<CombatSimulation>({
-        attackers: [
-            {
-                id: '1',
-                weapon: null,
-                ammo: null,
-                color: ATTACKER_COLORS[0]
-            }
-        ],
-        defender: {
-            bodyArmor: null,
-            bodyArmorDurability: 100,
-            helmet: null,
-            helmetDurability: 100
-        },
-        range: 50,
-        displayMode: 'ttk',
-        sortBy: 'ttk'
-    });
-
-    // Add new attacker (max 4)
-    const addAttacker = useCallback(() => {
-        if (simulation.attackers.length >= 4) return;
-
-        const newAttacker: AttackerSetupType = {
-            id: Date.now().toString(),
-            weapon: null,
-            ammo: null,
-            color: ATTACKER_COLORS[simulation.attackers.length]
-        };
-
-        setSimulation(prev => ({
-            ...prev,
-            attackers: [...prev.attackers, newAttacker]
-        }));
-    }, [simulation.attackers.length]);
-
-    // Remove attacker
-    const removeAttacker = useCallback((attackerId: string) => {
-        setSimulation(prev => ({
-            ...prev,
-            attackers: prev.attackers.filter(a => a.id !== attackerId)
-        }));
-    }, []);
-
-    // Update attacker setup
-    const updateAttacker = useCallback((attackerId: string, updates: Partial<AttackerSetupType>) => {
-        setSimulation(prev => ({
-            ...prev,
-            attackers: prev.attackers.map(a =>
-                a.id === attackerId ? { ...a, ...updates } : a
-            )
-        }));
-    }, []);
-
-    // Update defender setup
-    const updateDefender = useCallback((updates: Partial<DefenderSetupType>) => {
-        setSimulation(prev => ({
-            ...prev,
-            defender: { ...prev.defender, ...updates }
-        }));
-    }, []);
-
-    // Update simulation settings
-    const updateSettings = useCallback((updates: Partial<CombatSimulation>) => {
-        setSimulation(prev => ({ ...prev, ...updates }));
-    }, []);
+    const {
+        simulation,
+        updateSimulation,
+        addAttacker,
+        updateAttacker,
+        removeAttacker,
+        validAttackers,
+        selectAttacker,
+        selectedAttackerId,
+        attackerSummaries,
+        isCalculating,
+        updateDefender,
+        zoneCalculations,
+    } = useCombatSimulation();
 
     // Get display mode icon
     const getDisplayModeIcon = (mode: DisplayMode) => {
         switch (mode) {
-            case 'ttk': return <Clock size={16} />;
-            case 'stk': return <Target size={16} />;
-            case 'ctk': return <DollarSign size={16} />;
+            case 'ttk':
+                return <Clock size={16}/>;
+            case 'stk':
+                return <Target size={16}/>;
+            case 'ctk':
+                return <DollarSign size={16}/>;
         }
     };
 
@@ -112,7 +60,7 @@ export default function CombatSimulatorPage() {
                 <div className="mb-8">
                     <div className="inline-block px-3 py-1 border border-olive-500 bg-military-800/80 mb-3">
                         <h2 className="text-olive-400 military-stencil flex items-center gap-2">
-                            <Calculator size={20} />
+                            <Calculator size={20}/>
                             COMBAT LAB
                         </h2>
                     </div>
@@ -120,7 +68,8 @@ export default function CombatSimulatorPage() {
                         COMBAT SIMULATOR
                     </h1>
                     <p className="text-tan-300 max-w-3xl">
-                        Analyze weapon effectiveness against armored targets. Compare multiple loadouts and find optimal engagement strategies.
+                        Analyze weapon effectiveness against armored targets. Compare multiple loadouts and find optimal
+                        engagement strategies.
                     </p>
                 </div>
 
@@ -134,7 +83,7 @@ export default function CombatSimulatorPage() {
                                 {(Object.keys(DISPLAY_MODE_LABELS) as DisplayMode[]).map(mode => (
                                     <button
                                         key={mode}
-                                        onClick={() => updateSettings({ displayMode: mode })}
+                                        onClick={() => updateSimulation({displayMode: mode})}
                                         className={`
                       px-3 py-2 rounded-sm transition-all flex items-center gap-2
                       ${simulation.displayMode === mode
@@ -159,7 +108,7 @@ export default function CombatSimulatorPage() {
                                 max={500}
                                 step={10}
                                 value={simulation.range}
-                                onChange={(e) => updateSettings({ range: parseInt(e.target.value) })}
+                                onChange={(e) => updateSimulation({range: parseInt(e.target.value)})}
                                 className="flex-grow h-2 bg-military-700 rounded-sm appearance-none cursor-pointer
                   [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4
                   [&::-webkit-slider-thumb]:bg-olive-500 [&::-webkit-slider-thumb]:rounded-sm
@@ -174,7 +123,7 @@ export default function CombatSimulatorPage() {
                             {RANGE_PRESETS.map(preset => (
                                 <button
                                     key={preset.name}
-                                    onClick={() => updateSettings({ range: preset.value })}
+                                    onClick={() => updateSimulation({range: preset.value})}
                                     className={`
                     px-2 py-1 text-xs rounded-sm transition-colors
                     ${simulation.range === preset.value
@@ -193,7 +142,7 @@ export default function CombatSimulatorPage() {
                             <span className="text-tan-300 text-sm font-medium">Sort:</span>
                             <select
                                 value={simulation.sortBy}
-                                onChange={(e) => updateSettings({ sortBy: e.target.value as SortBy })}
+                                onChange={(e) => updateSimulation({sortBy: e.target.value as any})}
                                 className="bg-military-800 text-tan-100 px-3 py-2 rounded-sm border border-military-700
                   focus:border-olive-500 focus:outline-none"
                             >
@@ -217,7 +166,7 @@ export default function CombatSimulatorPage() {
                                     className="flex items-center gap-1 px-3 py-2 bg-olive-600 hover:bg-olive-500
                     text-tan-100 rounded-sm transition-colors border border-olive-700"
                                 >
-                                    <Plus size={16} />
+                                    <Plus size={16}/>
                                     Add
                                 </button>
                             )}
@@ -239,6 +188,29 @@ export default function CombatSimulatorPage() {
                     <div className="lg:col-span-6">
                         <div className="military-box p-6 rounded-sm">
                             <h3 className="text-xl font-bold text-olive-400 mb-4 text-center">TARGET ANALYSIS</h3>
+
+                            {/* Attacker selector tabs */}
+                            {hasValidSetups && (
+                                <div className="flex justify-center gap-2 mb-4">
+                                    {validAttackers.map((attacker, index) => (
+                                        <button
+                                            key={attacker.id}
+                                            onClick={() => selectAttacker(attacker.id)}
+                                            className={`
+                        px-3 py-1 rounded-sm transition-all flex items-center gap-2 text-sm
+                        ${selectedAttackerId === attacker.id
+                                                ? 'bg-olive-600 text-tan-100 shadow-md'
+                                                : 'bg-military-700 text-tan-300 hover:bg-military-600'}
+                      `}
+                                        >
+                                            <div
+                                                className={`w-3 h-3 rounded-sm ${attacker.color.class.replace('text-', 'bg-')}`}/>
+                                            <span>Attacker {index + 1}</span>
+                                        </button>
+                                    ))}
+                                </div>
+                            )}
+
                             <BodyModel
                                 defender={simulation.defender}
                                 displayMode={simulation.displayMode}
@@ -246,6 +218,14 @@ export default function CombatSimulatorPage() {
                                 // zoneCalculations={zoneCalculations}
                                 // selectedAttackerId={selectedAttackerId}
                             />
+
+                            {/* Calculation indicator */}
+                            {isCalculating && (
+                                <div className="mt-4 flex items-center justify-center gap-2 text-tan-400">
+                                    <Loader2 size={16} className="animate-spin"/>
+                                    <span className="text-sm">Calculating...</span>
+                                </div>
+                            )}
                         </div>
                     </div>
 
@@ -262,34 +242,100 @@ export default function CombatSimulatorPage() {
                 {hasValidSetups && (
                     <div className="mt-8">
                         <h3 className="text-xl font-bold text-olive-400 mb-4">ANALYSIS RESULTS</h3>
-                        {/* Placeholder for ResultsPanel component */}
                         <div className="military-box p-6 rounded-sm">
-                            <div className="text-center">
-                                <p className="text-tan-400 mb-4">
-                                    Combat calculations will appear here once implemented
-                                </p>
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                                    {simulation.attackers.map((attacker, index) => {
-                                        const isValid = attacker.weapon && attacker.ammo &&
-                                            areWeaponAmmoCompatible(attacker.weapon, attacker.ammo);
+                            {/* Summary Cards */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                                {attackerSummaries.map((summary, index) => {
+                                    const attacker = simulation.attackers.find(a => a.id === summary.attackerId);
+                                    if (!attacker) return null;
 
-                                        if (!isValid) return null;
+                                    return (
+                                        <div key={summary.attackerId} className="military-card p-4 rounded-sm">
+                                            <div className="flex items-center gap-2 mb-3">
+                                                <div
+                                                    className={`w-3 h-3 rounded-sm ${attacker.color.class.replace('text-', 'bg-')}`}/>
+                                                <span className="font-bold text-sm">Attacker {index + 1}</span>
+                                            </div>
 
-                                        return (
-                                            <div key={attacker.id} className="military-card p-4 rounded-sm">
-                                                <div className="flex items-center gap-2 mb-2">
-                                                    <div className={`w-3 h-3 rounded-sm ${attacker.color.class.replace('text-', 'bg-')}`} />
-                                                    <span className="font-medium text-sm">Attacker {index + 1}</span>
+                                            <div className="space-y-2 text-xs">
+                                                <div>
+                                                    <span className="text-tan-400">Weapon:</span>
+                                                    <p className="text-tan-100">{attacker.weapon?.name}</p>
                                                 </div>
-                                                <div className="text-xs text-tan-400">
-                                                    <p>{attacker.weapon!.name}</p>
-                                                    <p>{attacker.ammo!.name}</p>
+                                                <div>
+                                                    <span className="text-tan-400">Ammo:</span>
+                                                    <p className="text-tan-100">{attacker.ammo?.name}</p>
+                                                </div>
+                                                <div className="border-t border-military-700 pt-2">
+                                                    <div className="flex justify-between">
+                                                        <span className="text-tan-400">Best TTK:</span>
+                                                        <span className="text-green-400 font-mono">
+                              {formatTTK(summary.bestZone.ttk)}
+                            </span>
+                                                    </div>
+                                                    <div className="flex justify-between">
+                                                        <span className="text-tan-400">Avg TTK:</span>
+                                                        <span className="text-tan-100 font-mono">
+                              {formatTTK(summary.averageTTK)}
+                            </span>
+                                                    </div>
+                                                    <div className="flex justify-between">
+                                                        <span className="text-tan-400">Viable Zones:</span>
+                                                        <span className="text-tan-100">
+                              {summary.viableZones}/13
+                            </span>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        );
-                                    })}
-                                </div>
+                                        </div>
+                                    );
+                                })}
                             </div>
+
+                            {/* Zone Details Table */}
+                            {selectedAttackerId && zoneCalculations[selectedAttackerId] && (
+                                <div className="mt-6">
+                                    <h4 className="text-lg font-bold text-olive-400 mb-3">Zone Analysis</h4>
+                                    <div className="overflow-x-auto">
+                                        <table className="w-full text-sm">
+                                            <thead>
+                                            <tr className="border-b border-military-700">
+                                                <th className="text-left py-2 px-3 text-tan-300">Zone</th>
+                                                <th className="text-center py-2 px-3 text-tan-300">Armor</th>
+                                                <th className="text-center py-2 px-3 text-tan-300">TTK</th>
+                                                <th className="text-center py-2 px-3 text-tan-300">STK</th>
+                                                <th className="text-center py-2 px-3 text-tan-300">CTK</th>
+                                                <th className="text-center py-2 px-3 text-tan-300">Pen %</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {zoneCalculations[selectedAttackerId].slice(0, 5).map((calc) => (
+                                                <tr key={calc.zoneId} className="border-b border-military-800">
+                                                    <td className="py-2 px-3 text-tan-100">{calc.zoneId}</td>
+                                                    <td className="text-center py-2 px-3">
+                              <span className={calc.armorClass > 0 ? 'text-olive-400' : 'text-tan-400'}>
+                                {calc.armorClass > 0 ? `Class ${calc.armorClass}` : 'None'}
+                              </span>
+                                                    </td>
+                                                    <td className="text-center py-2 px-3 font-mono text-tan-100">
+                                                        {formatTTK(calc.ttk)}
+                                                    </td>
+                                                    <td className="text-center py-2 px-3 font-mono text-tan-100">
+                                                        {formatSTK(calc.shotsToKill)}
+                                                    </td>
+                                                    <td className="text-center py-2 px-3 font-mono text-tan-100">
+                                                        {formatCTK(calc.costToKill)}
+                                                    </td>
+                                                    <td className="text-center py-2 px-3 font-mono text-tan-100">
+                                                        {(calc.penetrationChance * 100).toFixed(0)}%
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </div>
                 )}
