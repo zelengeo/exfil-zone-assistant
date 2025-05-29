@@ -56,9 +56,9 @@ export function useCombatSimulation(): UseCombatSimulationReturn {
             helmet: null,
             helmetDurability: 100
         },
-        range: 50,
-        displayMode: 'ttk',
-        sortBy: 'ttk'
+        range: 60,
+        displayMode: 'stk',
+        sortBy: 'stk'
     });
 
     // Calculation results

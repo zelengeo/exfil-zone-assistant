@@ -105,7 +105,7 @@ export default function CombatSimulatorPage() {
                             <input
                                 type="range"
                                 min={0}
-                                max={500}
+                                max={600}
                                 step={10}
                                 value={simulation.range}
                                 onChange={(e) => updateSimulation({range: parseInt(e.target.value)})}
@@ -309,7 +309,7 @@ export default function CombatSimulatorPage() {
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            {zoneCalculations[selectedAttackerId].slice(0, 5).map((calc) => (
+                                            {zoneCalculations[selectedAttackerId].map((calc) => (
                                                 <tr key={calc.zoneId} className="border-b border-military-800">
                                                     <td className="py-2 px-3 text-tan-100">{calc.zoneId}</td>
                                                     <td className="text-center py-2 px-3">

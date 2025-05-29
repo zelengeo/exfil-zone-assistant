@@ -80,6 +80,8 @@ export const BODY_PARTS: Record<string, BodyPart> = {
     }
 };
 
+export const BODY_HP: number = Object.values(BODY_PARTS).reduce((total, part) => total + part.hp, 0);
+
 /**
  * Armor zones that can be protected by equipment
  * These map to visual areas on the body model and match armor protectiveData

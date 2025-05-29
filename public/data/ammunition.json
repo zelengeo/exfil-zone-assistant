@@ -23,16 +23,16 @@
       "protectionGearBluntDamageScale": 0.905,
       "caliber": "5.56x45",
       "damageAtRange": {
-        "0m": 39,
-        "100m": 38.7,
-        "300m": 35.8,
-        "500m": 28.08
+        "60m": 39,
+        "120m": 39,
+        "240m": 32.7,
+        "480m": 28.8
       },
       "penetrationAtRange": {
-        "0m": 5.8,
-        "100m": 5.7,
-        "300m": 5.2,
-        "500m": 4.176
+        "60m": 5.8,
+        "120m": 5.8,
+        "240m": 4.91,
+        "480m": 4.29
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -116,16 +116,16 @@
       "protectionGearBluntDamageScale": 0.715,
       "caliber": "5.56x45",
       "damageAtRange": {
-        "0m": 47,
-        "100m": 46.5,
-        "300m": 41.2,
-        "500m": 30.55
+        "60m": 47,
+        "120m": 47,
+        "240m": 36.6,
+        "480m": 30.9
       },
       "penetrationAtRange": {
-        "0m": 4.6,
-        "100m": 4.5,
-        "300m": 3.8,
-        "500m": 2.99
+        "60m": 4.6,
+        "120m": 4.6,
+        "240m": 3.59,
+        "480m": 3.03
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -209,16 +209,16 @@
       "protectionGearBluntDamageScale": 0.268,
       "caliber": "5.56x45",
       "damageAtRange": {
-        "0m": 52,
-        "100m": 51.6,
-        "300m": 45.2,
-        "500m": 36.4
+        "60m": 52,
+        "120m": 52,
+        "240m": 41.2,
+        "480m": 36.4
       },
       "penetrationAtRange": {
-        "0m": 3.6,
-        "100m": 3.55,
-        "300m": 3.1,
-        "500m": 2.52
+        "60m": 3.6,
+        "120m": 3.6,
+        "240m": 2.83,
+        "480m": 2.52
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -302,16 +302,16 @@
       "protectionGearBluntDamageScale": 0.16,
       "caliber": "5.56x45",
       "damageAtRange": {
-        "0m": 58,
-        "100m": 57.5,
-        "300m": 50.2,
-        "500m": 40.6
+        "60m": 58,
+        "120m": 58,
+        "240m": 45.8,
+        "480m": 40.6
       },
       "penetrationAtRange": {
-        "0m": 2.4,
-        "100m": 2.35,
-        "300m": 2.0,
-        "500m": 1.68
+        "60m": 2.4,
+        "120m": 2.4,
+        "240m": 1.87,
+        "480m": 1.68
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -382,7 +382,7 @@
       "thumbnail": "/images/items/ammo/556X45_MK255.webp",
       "fullsize": "/images/items/ammo/556X45_MK255.webp"
     },
-    "stats":     {
+    "stats": {
       "rarity": "Common",
       "price": 95,
       "weight": 0.012,
@@ -395,16 +395,16 @@
       "protectionGearBluntDamageScale": 0.1,
       "caliber": "5.56x45",
       "damageAtRange": {
-        "0m": 73,
-        "100m": 72.2,
-        "300m": 62.1,
-        "500m": 48.91
+        "60m": 73,
+        "120m": 73,
+        "240m": 65.6,
+        "480m": 48.9
       },
       "penetrationAtRange": {
-        "0m": 1.2,
-        "100m": 1.18,
-        "300m": 0.98,
-        "500m": 0.804
+        "60m": 1.2,
+        "120m": 1.2,
+        "240m": 1.08,
+        "480m": 0.8
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -488,16 +488,16 @@
       "protectionGearBluntDamageScale": 0.82,
       "caliber": "7.62x39",
       "damageAtRange": {
-        "0m": 52,
-        "100m": 51.8,
-        "300m": 49.2,
-        "500m": 40.56
+        "60m": 52,
+        "120m": 52,
+        "240m": 48.6,
+        "480m": 41.2
       },
       "penetrationAtRange": {
-        "0m": 5.8,
-        "100m": 5.75,
-        "300m": 5.3,
-        "500m": 4.524
+        "60m": 5.8,
+        "120m": 5.8,
+        "240m": 5.42,
+        "480m": 4.67
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -581,16 +581,16 @@
       "protectionGearBluntDamageScale": 0.498,
       "caliber": "7.62x39",
       "damageAtRange": {
-        "0m": 57,
-        "100m": 56.2,
-        "300m": 48.5,
-        "500m": 39.33
+        "60m": 57,
+        "120m": 57,
+        "240m": 45,
+        "480m": 39.3
       },
       "penetrationAtRange": {
-        "0m": 4.6,
-        "100m": 4.45,
-        "300m": 3.8,
-        "500m": 3.105
+        "60m": 4.6,
+        "120m": 4.6,
+        "240m": 3.6,
+        "480m": 3.11
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -674,16 +674,16 @@
       "protectionGearBluntDamageScale": 0.16,
       "caliber": "7.62x39",
       "damageAtRange": {
-        "0m": 62,
-        "100m": 61.2,
-        "300m": 54.8,
-        "500m": 44.64
+        "60m": 62,
+        "120m": 62,
+        "240m": 53,
+        "480m": 44.6
       },
       "penetrationAtRange": {
-        "0m": 2.6,
-        "100m": 2.55,
-        "300m": 2.2,
-        "500m": 1.872
+        "60m": 2.6,
+        "120m": 2.6,
+        "240m": 2.17,
+        "480m": 1.87
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -767,16 +767,16 @@
       "protectionGearBluntDamageScale": 0.211,
       "caliber": "7.62x39",
       "damageAtRange": {
-        "0m": 64,
-        "100m": 63.2,
-        "300m": 56.8,
-        "500m": 46.08
+        "60m": 64,
+        "120m": 64,
+        "240m": 52.9,
+        "480m": 46.1
       },
       "penetrationAtRange": {
-        "0m": 3.3,
-        "100m": 3.25,
-        "300m": 2.9,
-        "500m": 2.232
+        "60m": 3.3,
+        "120m": 3.3,
+        "240m": 2.72,
+        "480m": 2.23
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -860,16 +860,16 @@
       "protectionGearBluntDamageScale": 0.12,
       "caliber": "7.62x39",
       "damageAtRange": {
-        "0m": 72,
-        "100m": 71.2,
-        "300m": 62.5,
-        "500m": 49.68
+        "60m": 72,
+        "120m": 72,
+        "240m": 66,
+        "480m": 49.7
       },
       "penetrationAtRange": {
-        "0m": 1.8,
-        "100m": 1.75,
-        "300m": 1.5,
-        "500m": 1.242
+        "60m": 1.8,
+        "120m": 1.8,
+        "240m": 1.65,
+        "480m": 1.24
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -953,16 +953,16 @@
       "protectionGearBluntDamageScale": 0.8475,
       "caliber": "7.62x51",
       "damageAtRange": {
-        "0m": 69,
-        "100m": 68.5,
-        "300m": 64.2,
-        "500m": 55.2
+        "60m": 69,
+        "120m": 69,
+        "240m": 66,
+        "480m": 58
       },
       "penetrationAtRange": {
-        "0m": 6.8,
-        "100m": 6.75,
-        "300m": 6.3,
-        "500m": 5.44
+        "60m": 6.8,
+        "120m": 6.8,
+        "240m": 6.21,
+        "480m": 5.59
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -1046,16 +1046,16 @@
       "protectionGearBluntDamageScale": 0.494,
       "caliber": "7.62x51",
       "damageAtRange": {
-        "0m": 72,
-        "100m": 71.2,
-        "300m": 63.5,
-        "500m": 50.4
+        "60m": 72,
+        "120m": 72,
+        "240m": 61.6,
+        "480m": 51
       },
       "penetrationAtRange": {
-        "0m": 5.3,
-        "100m": 5.2,
-        "300m": 4.6,
-        "500m": 3.71
+        "60m": 5.3,
+        "120m": 5.3,
+        "240m": 4.64,
+        "480m": 3.78
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -1139,16 +1139,16 @@
       "protectionGearBluntDamageScale": 0.249,
       "caliber": "7.62x51",
       "damageAtRange": {
-        "0m": 79,
-        "100m": 78.5,
-        "300m": 72.8,
-        "500m": 59.25
+        "60m": 79,
+        "120m": 79,
+        "240m": 71.8,
+        "480m": 59.5
       },
       "penetrationAtRange": {
-        "0m": 4.4,
-        "100m": 4.35,
-        "300m": 3.9,
-        "500m": 3.3
+        "60m": 4.4,
+        "120m": 4.4,
+        "240m": 3.9,
+        "480m": 3.31
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -1232,16 +1232,16 @@
       "protectionGearBluntDamageScale": 0.1615,
       "caliber": "7.62x51",
       "damageAtRange": {
-        "0m": 82,
-        "100m": 81.2,
-        "300m": 74.5,
-        "500m": 61.5
+        "60m": 82,
+        "120m": 82,
+        "240m": 74.9,
+        "480m": 62
       },
       "penetrationAtRange": {
-        "0m": 3.6,
-        "100m": 3.55,
-        "300m": 3.2,
-        "500m": 2.7
+        "60m": 3.6,
+        "120m": 3.6,
+        "240m": 3.29,
+        "480m": 2.72
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -1325,16 +1325,16 @@
       "protectionGearBluntDamageScale": 0.13,
       "caliber": "7.62x51",
       "damageAtRange": {
-        "0m": 89,
-        "100m": 88.2,
-        "300m": 79.5,
-        "500m": 62.3
+        "60m": 89,
+        "120m": 89,
+        "240m": 83.3,
+        "480m": 63.9
       },
       "penetrationAtRange": {
-        "0m": 2.7,
-        "100m": 2.65,
-        "300m": 2.4,
-        "500m": 2.1
+        "60m": 2.7,
+        "120m": 2.7,
+        "240m": 2.57,
+        "480m": 2.14
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -1418,16 +1418,16 @@
       "protectionGearBluntDamageScale": 0.498,
       "caliber": "9x19",
       "damageAtRange": {
-        "0m": 53,
-        "100m": 51.8,
-        "300m": 38.2,
-        "500m": 22.79
+        "60m": 53,
+        "120m": 44,
+        "240m": 31.4,
+        "480m": 22.8
       },
       "penetrationAtRange": {
-        "0m": 3.7,
-        "100m": 3.55,
-        "300m": 2.5,
-        "500m": 1.591
+        "60m": 3.7,
+        "120m": 3.13,
+        "240m": 2.21,
+        "480m": 1.59
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -1511,16 +1511,16 @@
       "protectionGearBluntDamageScale": 0.154,
       "caliber": "9x19",
       "damageAtRange": {
-        "0m": 55,
-        "100m": 52.8,
-        "300m": 35.2,
-        "500m": 22
+        "60m": 55,
+        "120m": 40.9,
+        "240m": 28,
+        "480m": 22
       },
       "penetrationAtRange": {
-        "0m": 2.2,
-        "100m": 2.1,
-        "300m": 1.5,
-        "500m": 0.88
+        "60m": 2.2,
+        "120m": 1.55,
+        "240m": 0.99,
+        "480m": 0.88
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -1604,16 +1604,16 @@
       "protectionGearBluntDamageScale": 0.085,
       "caliber": "9x19",
       "damageAtRange": {
-        "0m": 58,
-        "100m": 55.2,
-        "300m": 38.5,
-        "500m": 26.1
+        "60m": 58,
+        "120m": 46.3,
+        "240m": 32.3,
+        "480m": 26.1
       },
       "penetrationAtRange": {
-        "0m": 1.6,
-        "100m": 1.52,
-        "300m": 1.1,
-        "500m": 0.72
+        "60m": 1.6,
+        "120m": 1.27,
+        "240m": 0.88,
+        "480m": 0.72
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -1697,16 +1697,16 @@
       "protectionGearBluntDamageScale": 0.06,
       "caliber": "9x19",
       "damageAtRange": {
-        "0m": 65,
-        "100m": 62.5,
-        "300m": 48.2,
-        "500m": 29.25
+        "60m": 65,
+        "120m": 49.2,
+        "240m": 31.2,
+        "480m": 29.3
       },
       "penetrationAtRange": {
-        "0m": 0.9,
-        "100m": 0.88,
-        "300m": 0.75,
-        "500m": 0.68
+        "60m": 0.9,
+        "120m": 0.85,
+        "240m": 0.74,
+        "480m": 0.68
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -1790,16 +1790,16 @@
       "protectionGearBluntDamageScale": 0.84,
       "caliber": "5.45x39",
       "damageAtRange": {
-        "0m": 45,
-        "100m": 44.6,
-        "300m": 41.2,
-        "500m": 32.4
+        "60m": 45,
+        "120m": 45,
+        "240m": 37.2,
+        "480m": 32.6
       },
       "penetrationAtRange": {
-        "0m": 5.6,
-        "100m": 5.5,
-        "300m": 4.9,
-        "500m": 4.032
+        "60m": 5.6,
+        "120m": 5.6,
+        "240m": 4.6,
+        "480m": 4.05
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -1883,16 +1883,16 @@
       "protectionGearBluntDamageScale": 0.57,
       "caliber": "5.45x39",
       "damageAtRange": {
-        "0m": 51,
-        "100m": 50.5,
-        "300m": 46.2,
-        "500m": 33.15
+        "60m": 51,
+        "120m": 51,
+        "240m": 38.6,
+        "480m": 33.2
       },
       "penetrationAtRange": {
-        "0m": 4.5,
-        "100m": 4.4,
-        "300m": 3.8,
-        "500m": 2.795
+        "60m": 4.5,
+        "120m": 4.5,
+        "240m": 3.27,
+        "480m": 2.8
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -1976,16 +1976,16 @@
       "protectionGearBluntDamageScale": 0.274,
       "caliber": "5.45x39",
       "damageAtRange": {
-        "0m": 53,
-        "100m": 52.5,
-        "300m": 47.8,
-        "500m": 37.1
+        "60m": 53,
+        "120m": 53,
+        "240m": 41.7,
+        "480m": 37.1
       },
       "penetrationAtRange": {
-        "0m": 3.6,
-        "100m": 3.55,
-        "300m": 3.1,
-        "500m": 2.52
+        "60m": 3.6,
+        "120m": 3.6,
+        "240m": 2.85,
+        "480m": 2.52
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -2069,16 +2069,16 @@
       "protectionGearBluntDamageScale": 0.145,
       "caliber": "5.45x39",
       "damageAtRange": {
-        "0m": 55,
-        "100m": 54.5,
-        "300m": 49.8,
-        "500m": 38.5
+        "60m": 55,
+        "120m": 55,
+        "240m": 42.7,
+        "480m": 38.5
       },
       "penetrationAtRange": {
-        "0m": 2.4,
-        "100m": 2.35,
-        "300m": 2.0,
-        "500m": 1.68
+        "60m": 2.4,
+        "120m": 2.4,
+        "240m": 1.85,
+        "480m": 1.68
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -2162,16 +2162,16 @@
       "protectionGearBluntDamageScale": 0.09,
       "caliber": "5.45x39",
       "damageAtRange": {
-        "0m": 70,
-        "100m": 69.2,
-        "300m": 61.5,
-        "500m": 46.9
+        "60m": 70,
+        "120m": 70,
+        "240m": 60.8,
+        "480m": 46.9
       },
       "penetrationAtRange": {
-        "0m": 1.3,
-        "100m": 1.25,
-        "300m": 1.1,
-        "500m": 0.871
+        "60m": 1.3,
+        "120m": 1.3,
+        "240m": 1.13,
+        "480m": 0.87
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -2255,16 +2255,16 @@
       "protectionGearBluntDamageScale": 0.492,
       "caliber": ".45 ACP",
       "damageAtRange": {
-        "0m": 63,
-        "100m": 60.8,
-        "300m": 45.2,
-        "500m": 27.09
+        "60m": 63,
+        "120m": 49.1,
+        "240m": 31.6,
+        "480m": 27.1
       },
       "penetrationAtRange": {
-        "0m": 3.6,
-        "100m": 3.45,
-        "300m": 2.4,
-        "500m": 1.548
+        "60m": 3.6,
+        "120m": 2.91,
+        "240m": 1.82,
+        "480m": 1.55
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -2348,16 +2348,16 @@
       "protectionGearBluntDamageScale": 0.196,
       "caliber": ".45 ACP",
       "damageAtRange": {
-        "0m": 68,
-        "100m": 65.2,
-        "300m": 48.5,
-        "500m": 27.2
+        "60m": 61.5,
+        "120m": 37,
+        "240m": 29.4,
+        "480m": 27.2
       },
       "penetrationAtRange": {
-        "0m": 2.6,
-        "100m": 2.48,
-        "300m": 1.85,
-        "500m": 1.04
+        "60m": 2.37,
+        "120m": 1.46,
+        "240m": 1.07,
+        "480m": 1.04
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -2441,16 +2441,16 @@
       "protectionGearBluntDamageScale": 0.105,
       "caliber": ".45 ACP",
       "damageAtRange": {
-        "0m": 75,
-        "100m": 72.5,
-        "300m": 58.2,
-        "500m": 33.75
+        "60m": 75,
+        "120m": 52.6,
+        "240m": 37.9,
+        "480m": 33.8
       },
       "penetrationAtRange": {
-        "0m": 1.8,
-        "100m": 1.75,
-        "300m": 1.35,
-        "500m": 0.81
+        "60m": 1.8,
+        "120m": 1.31,
+        "240m": 0.9,
+        "480m": 0.81
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -2534,16 +2534,16 @@
       "protectionGearBluntDamageScale": 0.196,
       "caliber": ".45 ACP",
       "damageAtRange": {
-        "0m": 68,
-        "100m": 65.2,
-        "300m": 48.5,
-        "500m": 27.2
+        "60m": 61.5,
+        "120m": 37,
+        "240m": 29.4,
+        "480m": 27.2
       },
       "penetrationAtRange": {
-        "0m": 2.6,
-        "100m": 2.48,
-        "300m": 1.85,
-        "500m": 1.04
+        "60m": 2.37,
+        "120m": 1.46,
+        "240m": 1.07,
+        "480m": 1.04
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -2627,16 +2627,16 @@
       "protectionGearBluntDamageScale": 0.3045,
       "caliber": "12GA",
       "damageAtRange": {
-        "0m": 120,
-        "100m": 118.5,
-        "300m": 95.2,
-        "500m": 48
+        "60m": 120,
+        "120m": 106.8,
+        "240m": 71.5,
+        "480m": 48
       },
       "penetrationAtRange": {
-        "0m": 3.8,
-        "100m": 3.75,
-        "300m": 2.9,
-        "500m": 1.52
+        "60m": 3.8,
+        "120m": 2.96,
+        "240m": 1.75,
+        "480m": 1.52
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -2720,16 +2720,16 @@
       "protectionGearBluntDamageScale": 0.27,
       "caliber": "12GA",
       "damageAtRange": {
-        "0m": 18,
-        "100m": 17.2,
-        "300m": 12.8,
-        "500m": 6.3
+        "60m": 14.1,
+        "120m": 8.4,
+        "240m": 6.3,
+        "480m": 6.3
       },
       "penetrationAtRange": {
-        "0m": 3.8,
-        "100m": 3.65,
-        "300m": 2.8,
-        "500m": 1.52
+        "60m": 3.35,
+        "120m": 2.31,
+        "240m": 1.52,
+        "480m": 1.52
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -2813,16 +2813,16 @@
       "protectionGearBluntDamageScale": 0.01,
       "caliber": "12GA",
       "damageAtRange": {
-        "0m": 30,
-        "100m": 28.5,
-        "300m": 18.2,
-        "500m": 7.5
+        "60m": 24.5,
+        "120m": 11.7,
+        "240m": 8.1,
+        "480m": 7.5
       },
       "penetrationAtRange": {
-        "0m": 1.2,
-        "100m": 1.15,
-        "300m": 0.8,
-        "500m": 0.3
+        "60m": 1.07,
+        "120m": 0.68,
+        "240m": 0.33,
+        "480m": 0.3
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -2906,16 +2906,16 @@
       "protectionGearBluntDamageScale": 0.03,
       "caliber": "12GA",
       "damageAtRange": {
-        "0m": 165,
-        "100m": 162.5,
-        "300m": 125.8,
-        "500m": 49.5
+        "60m": 162.6,
+        "120m": 134.4,
+        "240m": 77.8,
+        "480m": 49.5
       },
       "penetrationAtRange": {
-        "0m": 1.1,
-        "100m": 1.08,
-        "300m": 0.85,
-        "500m": 0.33
+        "60m": 1.06,
+        "120m": 0.66,
+        "240m": 0.38,
+        "480m": 0.33
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -2999,16 +2999,16 @@
       "protectionGearBluntDamageScale": 0.8225,
       "caliber": "7.62x54R",
       "damageAtRange": {
-        "0m": 72,
-        "100m": 71.5,
-        "300m": 67.8,
-        "500m": 57.6
+        "60m": 72,
+        "120m": 72,
+        "240m": 70.3,
+        "480m": 57.9
       },
       "penetrationAtRange": {
-        "0m": 6.2,
-        "100m": 6.15,
-        "300m": 5.7,
-        "500m": 4.96
+        "60m": 6.2,
+        "120m": 6.2,
+        "240m": 6.05,
+        "480m": 5.03
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -3092,16 +3092,16 @@
       "protectionGearBluntDamageScale": 0.469,
       "caliber": "7.62x54R",
       "damageAtRange": {
-        "0m": 81,
-        "100m": 80.2,
-        "300m": 72.5,
-        "500m": 52.65
+        "60m": 81,
+        "120m": 81,
+        "240m": 76.7,
+        "480m": 56.3
       },
       "penetrationAtRange": {
-        "0m": 4.7,
-        "100m": 4.6,
-        "300m": 4.0,
-        "500m": 2.86
+        "60m": 4.7,
+        "120m": 4.7,
+        "240m": 4.41,
+        "480m": 3.02
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -3185,16 +3185,16 @@
       "protectionGearBluntDamageScale": 0.231,
       "caliber": "7.62x54R",
       "damageAtRange": {
-        "0m": 84,
-        "100m": 83.2,
-        "300m": 76.8,
-        "500m": 58.8
+        "60m": 84,
+        "120m": 84,
+        "240m": 71.9,
+        "480m": 58.9
       },
       "penetrationAtRange": {
-        "0m": 3.9,
-        "100m": 3.85,
-        "300m": 3.4,
-        "500m": 2.38
+        "60m": 3.9,
+        "120m": 3.9,
+        "240m": 3.36,
+        "480m": 2.39
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -3278,16 +3278,16 @@
       "protectionGearBluntDamageScale": 0.1435,
       "caliber": "7.62x54R",
       "damageAtRange": {
-        "0m": 86,
-        "100m": 85.2,
-        "300m": 78.5,
-        "500m": 60.2
+        "60m": 86,
+        "120m": 86,
+        "240m": 77.1,
+        "480m": 60.6
       },
       "penetrationAtRange": {
-        "0m": 3.2,
-        "100m": 3.15,
-        "300m": 2.8,
-        "500m": 2.24
+        "60m": 3.2,
+        "120m": 3.2,
+        "240m": 2.86,
+        "480m": 2.25
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -3371,16 +3371,16 @@
       "protectionGearBluntDamageScale": 0.105,
       "caliber": "7.62x54R",
       "damageAtRange": {
-        "0m": 105,
-        "100m": 104.2,
-        "300m": 92.8,
-        "500m": 73.5
+        "60m": 105,
+        "120m": 105,
+        "240m": 101.5,
+        "480m": 80.5
       },
       "penetrationAtRange": {
-        "0m": 3.2,
-        "100m": 3.15,
-        "300m": 2.8,
-        "500m": 2.24
+        "60m": 3.2,
+        "120m": 3.2,
+        "240m": 3.09,
+        "480m": 2.45
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -3464,16 +3464,16 @@
       "protectionGearBluntDamageScale": 0.63,
       "caliber": "6.8x51",
       "damageAtRange": {
-        "0m": 73,
-        "100m": 72.5,
-        "300m": 67.8,
-        "500m": 47.45
+        "60m": 73,
+        "120m": 73,
+        "240m": 60.4,
+        "480m": 49.2
       },
       "penetrationAtRange": {
-        "0m": 4.8,
-        "100m": 4.75,
-        "300m": 4.2,
-        "500m": 2.925
+        "60m": 4.8,
+        "120m": 4.8,
+        "240m": 4.04,
+        "480m": 3.05
       },
       "ballisticCurves": {
         "damageOverDistance": [
@@ -3557,16 +3557,16 @@
       "protectionGearBluntDamageScale": 0.4,
       "caliber": "6.8x51",
       "damageAtRange": {
-        "0m": 80,
-        "100m": 79.5,
-        "300m": 74.2,
-        "500m": 56
+        "60m": 80,
+        "120m": 80,
+        "240m": 66.9,
+        "480m": 56.1
       },
       "penetrationAtRange": {
-        "0m": 3.4,
-        "100m": 3.35,
-        "300m": 3.0,
-        "500m": 2.38
+        "60m": 3.4,
+        "120m": 3.4,
+        "240m": 2.86,
+        "480m": 2.39
       },
       "ballisticCurves": {
         "damageOverDistance": [

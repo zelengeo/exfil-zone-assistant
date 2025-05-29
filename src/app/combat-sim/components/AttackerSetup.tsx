@@ -207,7 +207,7 @@ export default function AttackerSetup({
                     <div className="mt-1 text-xs text-tan-400 flex gap-3">
                         <span>Fire Rate: {formatFireRate(attacker.weapon.stats.fireRate)}</span>
                         {attacker.weapon.stats.ergonomics && (
-                            <span>Ergo: {(attacker.weapon.stats.ergonomics * 100).toFixed(0)}%</span>
+                            <span>Ergo: {(attacker.weapon.stats.ergonomics * 100).toFixed(0)}</span>
                         )}
                     </div>
                 )}

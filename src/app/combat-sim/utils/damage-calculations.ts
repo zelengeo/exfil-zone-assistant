@@ -2,6 +2,8 @@
  * Effective Damage Calculation for Combat Simulator
  * Handles armor durability, penetration mechanics, and blunt damage
  */
+import {BODY_HP, BodyPart} from "@/app/combat-sim/utils/body-zones";
+import {BallisticCurvePoint, RANGE_PRESETS, RANGE_VALUES} from "@/app/combat-sim/utils/types";
 
 interface DamageCalculationResult {
     penetrationChance: number;
@@ -27,6 +29,24 @@ interface AmmoProperties {
     bluntDamageScale: number;
     protectionGearPenetratedDamageScale: number;
     protectionGearBluntDamageScale: number;
+    damageAtRange: {
+        '60m': number;
+        '120m': number;
+        '240m': number;
+        '480m': number;
+    };
+    penetrationAtRange: {
+        '60m': number;
+        '120m': number;
+        '240m': number;
+        '480m': number;
+    };
+
+    // Full ballistic curves from game data
+    ballisticCurves: {
+        damageOverDistance?: BallisticCurvePoint[];
+        penetrationPowerOverDistance?: BallisticCurvePoint[];
+    };
 }
 
 interface PenetrationCurvePoint {
@@ -181,9 +201,15 @@ function getPenetrationDamageScalar(
  */
 function applyRangeFalloff(
     baseDamage: number,
-    ammo: AmmoProperties & { ballisticCurves?: any },
+    ammo: AmmoProperties,
     range: number
 ): number {
+    if (RANGE_VALUES.includes(range)) {
+        if (range === 0) return baseDamage;
+        // @ts-expect-error - range is value 60, 120, 240, or 480
+        return ammo.damageAtRange[range+'m'];
+    }
+
     // Convert range from meters to distance units used in curves (appears to be in cm based on the data)
     const rangeInCurveUnits = range * 100; // Convert meters to centimeters
 
@@ -242,9 +268,15 @@ function applyRangeFalloff(
  */
 function applyRangePenetrationFalloff(
     basePenetration: number,
-    ammo: AmmoProperties & { ballisticCurves?: any },
+    ammo: AmmoProperties,
     range: number
 ): number {
+    if (RANGE_VALUES.includes(range)) {
+        if (range === 0) return basePenetration;
+        // @ts-expect-error - range is value 60, 120, 240, or 480
+        return ammo.penetrationAtRange[range+'m'];
+    }
+
     // Convert range from meters to distance units used in curves
     const rangeInCurveUnits = range * 100;
 
@@ -348,10 +380,12 @@ function interpolateCurve(curve: PenetrationCurvePoint[], x: number): number {
  * Calculate shots to kill considering both penetrating and blunt damage
  */
 function calculateShotsToKill(
-    targetHP: number,
+    bodyPart: BodyPart,
     damageResult: DamageCalculationResult
 ): number {
     if (damageResult.totalDamage <= 0) return Infinity;
+
+    const targetHP = bodyPart.isVital ? bodyPart.hp : BODY_HP;
 
     // For expected shots (statistical average)
     return Math.ceil(targetHP / damageResult.totalDamage);

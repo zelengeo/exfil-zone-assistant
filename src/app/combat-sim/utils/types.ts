@@ -1,5 +1,6 @@
 /**
- * Type definitions for Combat Simulator
+ * Improved Type definitions for Combat Simulator
+ * Aligns with actual game data structure
  */
 
 import { Item } from '@/types/items';
@@ -16,81 +17,136 @@ export const ATTACKER_COLORS = {
     3: { name: 'Yellow', hex: '#F59E0B', class: 'text-yellow-500' }
 } as const;
 
-// Weapon type based on Item but with required weapon stats
+// Interpolation modes for curves
+export type InterpolationMode = 'cubic' | 'linear';
+export type TangentMode = 'user' | 'auto';
+
+// Ballistic curve point with all properties from game data
+export interface BallisticCurvePoint {
+    interpMode: InterpolationMode;
+    tangentMode: TangentMode;
+    time: number;
+    value: number;
+    arriveTangent: number;
+    leaveTangent: number;
+}
+
+// Weapon type with complete stats from game data
 export interface Weapon extends Item {
     category: 'weapons';
     stats: Item['stats'] & {
+        // Required weapon stats
         fireRate: number;
-        ergonomics?: number;
+        caliber: string;
+
+        // Recoil parameters
+        recoilParameters?: {
+            shiftMomentum: number;
+            pitchBaseMomentum: number;
+            yawBaseMomentum: number;
+            rollBaseMomentum?: number;
+            shiftStiffness: number;
+            pitchStiffness: number;
+            yawStiffness: number;
+            rollStiffness: number;
+            shiftDamping?: number;
+            pitchDamping: number;
+            yawDamping: number;
+            rollDamping: number;
+            shiftMass?: number;
+            pitchMass: number;
+            yawMass: number;
+            rollMass: number;
+            oneHandedADSMultiplier?: number;
+            verticalRecoilControl: number;
+            horizontalRecoilControl: number;
+        };
+
+        // Other weapon properties
         MOA?: number;
-        verticalRecoil?: number;
-        horizontalRecoil?: number;
+        ADSSpeed?: number;
+        ergonomics?: number;
+        //Needs investigation - In game UI shows some power values, but not sure what they are
+        firingPower?: number;
+        //PROBABLY LEFTOVER DATA FROM OTHER MODE/GAME cuz these values are AMMO-related
+        damageRangeCurve?: string;
+        bulletDropFactor?: number;
+        muzzleVelocity?: number;
+        hitDamage?: number;
+        headDamageScale?: number;
     };
 }
 
-// Ammunition type based on Item but with required ammo stats
+// Complete ammunition type with ballistic curves
 export interface Ammunition extends Item {
     category: 'ammo';
     stats: Item['stats'] & {
+        // Required ammo stats
         damage: number;
         penetration: number;
-        muzzleVelocity?: number;
-        bluntDamageScale?: number;
-        protectionGearPenetratedDamageScale?: number;
-        protectionGearBluntDamageScale?: number;
         caliber: string;
-        ballisticCurves?: {
-            damageOverDistance?: Array<{
-                interpMode: 'linear' | 'cubic';
-                tangentMode: 'auto' | 'user';
-                time: number;
-                value: number;
-                arriveTangent?: number;
-                leaveTangent?: number;
-            }>;
-            penetrationPowerOverDistance?: Array<{
-                interpMode: 'linear' | 'cubic';
-                tangentMode: 'auto' | 'user';
-                time: number;
-                value: number;
-                arriveTangent?: number;
-                leaveTangent?: number;
-            }>;
+
+        // Damage modifiers
+        bluntDamageScale: number;
+        bleedingChance: number;
+        protectionGearPenetratedDamageScale: number;
+        protectionGearBluntDamageScale: number;
+
+        // Ballistics
+        muzzleVelocity?: number;
+        bulletDropFactor?: number;
+
+        //precalculated values (cache)
+        damageAtRange: {
+            '60m': number;
+            '120m': number;
+            '240m': number;
+            '480m': number;
+        };
+        penetrationAtRange: {
+            '60m': number;
+            '120m': number;
+            '240m': number;
+            '480m': number;
+        };
+
+        // Full ballistic curves from game data
+        ballisticCurves: {
+            damageOverDistance?: BallisticCurvePoint[];
+            penetrationPowerOverDistance?: BallisticCurvePoint[];
         };
     };
 }
 
-// Armor type based on Item but with required armor stats
-export interface Armor extends Item {
-    category: 'gear' | 'armor';
-    stats: Item['stats'] & {
-        armorClass: number;
-        maxDurability: number;
-        durabilityDamageScalar?: number;
-        bluntDamageScalar?: number;
-    };
-    // Protection data from the actual armor items
-    protectiveData?: ProtectiveZone[];
-    penetrationChanceCurve?: CurvePoint[];
-    penetrationDamageScalarCurve?: CurvePoint[];
-}
-
-// Protective zone definition from armor data
+// Protective zone from armor data
 export interface ProtectiveZone {
-    bodyPart: string;
+    bodyPart: string; // bodypart.id e.g., "spine_03", "pelvis", "UpperArm_L"
     armorClass: number;
     bluntDamageScalar: number;
-    protectionAngle: number;
+    protectionAngle: number; // not used in simulation yet
 }
 
-// Curve point for penetration calculations
-export interface CurvePoint {
-    interpMode?: string;
-    tangentMode?: string;
-    time: number;
-    value: number;
-    arriveTangent?: number;
-    leaveTangent?: number;
+// Complete armor type with all curves
+export interface Armor extends Item {
+    category: 'gear';
+    subcategory: 'Body Armor' | 'Helmets';
+    stats: Item['stats'] & {
+        // Required armor stats
+        armorClass: number;
+        maxDurability: number;
+
+        // Damage scalars
+        durabilityDamageScalar?: number;
+        bluntDamageScalar?: number;
+
+        // Protection zones
+        protectiveData?: ProtectiveZone[];
+
+        // Penetration curves from game data
+        penetrationChanceCurve?: BallisticCurvePoint[];
+        penetrationDamageScalarCurve?: BallisticCurvePoint[];
+        antiPenetrationDurabilityScalarCurve?: BallisticCurvePoint[];
+    };
 }
 
 // Attacker setup configuration
@@ -118,7 +174,18 @@ export interface CombatSimulation {
     sortBy: SortBy;
 }
 
-// Calculation result for a specific zone
+// Detailed damage calculation result
+export interface DamageCalculationResult {
+    penetrationChance: number;
+    penetratingDamage: number;
+    bluntDamage: number;
+    totalDamage: number;
+    isPenetrating: boolean;
+    fragmentationChance?: number;
+    bleedDamage?: number;
+}
+
+// Zone-specific calculation result
 export interface ZoneCalculation {
     zoneId: string;
     bodyPartId: string;
@@ -130,6 +197,8 @@ export interface ZoneCalculation {
     bluntDamage: number;
     isProtected: boolean;
     armorClass: number;
+    fragmentationDamage?: number;
+    bleedDamagePerSecond?: number;
 }
 
 // Summary statistics for an attacker
@@ -145,7 +214,7 @@ export interface AttackerSummary {
     };
     averageTTK: number;
     totalCost: number;
-    viableZones: number; // Count of zones that can be killed in reasonable time
+    viableZones: number;
 }
 
 // Range preset for quick selection
@@ -155,31 +224,21 @@ export interface RangePreset {
     description: string;
 }
 
+export const  RANGE_VALUES = [0, 60, 120, 240, 480];
+
 export const RANGE_PRESETS: RangePreset[] = [
-    { name: 'CQB', value: 10, description: 'Close quarters combat' },
-    { name: 'Short', value: 50, description: 'Short range engagement' },
-    { name: 'Medium', value: 150, description: 'Medium range combat' },
-    { name: 'Long', value: 300, description: 'Long range engagement' },
-    { name: 'Sniper', value: 500, description: 'Extreme range sniping' }
+    { name: 'CQB', value: RANGE_VALUES[0], description: 'Close quarters combat' },
+    { name: 'Short', value: RANGE_VALUES[1], description: 'Short range engagement' },
+    { name: 'Medium', value: RANGE_VALUES[2], description: 'Medium range combat' },
+    { name: 'Long', value: RANGE_VALUES[3], description: 'Long range engagement' },
+    { name: 'Sniper', value: RANGE_VALUES[4], description: 'Extreme range sniping' }
 ];
 
-// Filter options for weapon/ammo selection
-export interface WeaponFilter {
-    caliber?: string;
-    minFireRate?: number;
-    maxFireRate?: number;
-}
-
-export interface AmmoFilter {
-    caliber?: string;
-    minDamage?: number;
-    minPenetration?: number;
-}
-
-// Validation helpers
+// Type guards with improved checks
 export function isWeapon(item: Item): item is Weapon {
     return item.category === 'weapons' &&
-        typeof item.stats.fireRate === 'number';
+        typeof item.stats.fireRate === 'number' &&
+        typeof item.stats.caliber === 'string';
 }
 
 export function isAmmunition(item: Item): item is Ammunition {
@@ -190,18 +249,28 @@ export function isAmmunition(item: Item): item is Ammunition {
 }
 
 export function isArmor(item: Item): item is Armor {
-    return (item.category === 'gear' || item.category === 'armor') && item.subcategory === "Body Armor";
+    return (item.category === 'gear') &&
+        (item.subcategory === 'Body Armor' || item.subcategory === 'Helmets') &&
+        typeof item.stats.armorClass === 'number' &&
+        typeof item.stats.maxDurability === 'number';
 }
 
 // Check if weapon and ammo are compatible
 export function areWeaponAmmoCompatible(weapon: Weapon | null, ammo: Ammunition | null): boolean {
     if (!weapon || !ammo) return false;
+    return weapon.stats.caliber === ammo.stats.caliber;
+}
 
-    // Extract caliber from weapon subcategory or stats
-    const weaponCaliber = weapon.stats.caliber;
-    const ammoCaliber = ammo.stats.caliber;
+// Helper to check if armor has ballistic curves
+export function hasBallisticCurves(armor: Armor): boolean {
+    return !!(armor.stats.penetrationChanceCurve &&
+        armor.stats.penetrationChanceCurve.length > 0);
+}
 
-    return weaponCaliber === ammoCaliber;
+// Helper to check if ammo has ballistic curves
+export function hasAmmoCurves(ammo: Ammunition): boolean {
+    return !!(ammo.stats.ballisticCurves?.damageOverDistance &&
+        ammo.stats.ballisticCurves.damageOverDistance.length > 0);
 }
 
 // Display mode labels

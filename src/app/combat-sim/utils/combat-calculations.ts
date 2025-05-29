@@ -80,7 +80,8 @@ function calculateAttackerZones(
             protectionGearPenetratedDamageScale: ammo.stats.protectionGearPenetratedDamageScale || 1,
             protectionGearBluntDamageScale: ammo.stats.protectionGearBluntDamageScale || 1,
             damageAtRange: ammo.stats.damageAtRange,
-            penetrationAtRange: ammo.stats.penetrationAtRange
+            penetrationAtRange: ammo.stats.penetrationAtRange,
+            ballisticCurves: ammo.stats.ballisticCurves,
         };
 
         // Convert armor to required format if present
@@ -90,20 +91,19 @@ function calculateAttackerZones(
             currentDurability: getArmorDurability(zoneId, defender),
             durabilityDamageScalar: armor.stats.durabilityDamageScalar || 0.5,
             bluntDamageScalar: armor.stats.bluntDamageScalar || 0.2,
-            penetrationChanceCurve: armor.penetrationChanceCurve,
-            penetrationDamageScalarCurve: armor.penetrationDamageScalarCurve
+            penetrationChanceCurve: armor.stats.penetrationChanceCurve,
+            penetrationDamageScalarCurve: armor.stats.penetrationDamageScalarCurve
         } : null;
 
         // Calculate damage for this zone
         const damageResult = calculateEffectiveDamage(ammoProps, armorProps, range);
 
         // Calculate shots to kill
-        const shotsToKill = calculateShotsToKill(bodyPart.hp, damageResult);
+        const shotsToKill = calculateShotsToKill(bodyPart, damageResult);
 
         // Calculate time to kill
-        const fireRate = weapon.stats.fireRate || 600;
-        const adsTime = 0.3; // Assume 300ms ADS time
-        const ttk = calculateTimeToKill(shotsToKill, fireRate, adsTime);
+        const fireRate = weapon.stats.fireRate || 600; //TODO cover bolt actions and pump shotguns, TODO wtf is this 600 fallback - defaults should be global
+        const ttk = calculateTimeToKill(shotsToKill, fireRate);
 
         // Calculate cost to kill
         const costToKill = shotsToKill * ammo.stats.price;
@@ -190,13 +190,12 @@ function getArmorDurability(zoneId: string, defender: DefenderSetup): number {
  */
 function calculateTimeToKill(
     shotsToKill: number,
-    fireRate: number,
-    adsTime: number
+    fireRate: number
 ): number {
     if (shotsToKill === Infinity) return Infinity;
 
     const timeBetweenShots = 60 / fireRate;
-    return adsTime + (shotsToKill - 1) * timeBetweenShots;
+    return (shotsToKill - 1) * timeBetweenShots;
 }
 
 /**
