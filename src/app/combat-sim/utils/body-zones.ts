@@ -82,7 +82,7 @@ export const BODY_PARTS: Record<string, BodyPart> = {
 
 /**
  * Armor zones that can be protected by equipment
- * These map to visual areas on the body model
+ * These map to visual areas on the body model and match armor protectiveData
  */
 export const ARMOR_ZONES: Record<string, ArmorZone> = {
     // Head zones (protected by helmet)
@@ -104,36 +104,52 @@ export const ARMOR_ZONES: Record<string, ArmorZone> = {
         id: 'head_chin',
         name: 'Head (Chin)',
         bodyPart: 'head',
-        defaultProtection: 'helmet', // face armor
+        defaultProtection: 'helmet', // face shield, OP helmet
         displayPosition: { x: 42, y: 14, width: 16, height: 4 }
     },
 
-    // Torso zones (protected by body armor)
-    chest: {
-        id: 'chest',
-        name: 'Chest',
+    // Chest zones (spine_01, spine_02 protect chest)
+    spine_01: {
+        id: 'spine_01',
+        name: 'Upper Chest',
         bodyPart: 'chest',
         defaultProtection: 'armor',
-        displayPosition: { x: 35, y: 25, width: 30, height: 20 }
+        displayPosition: { x: 35, y: 25, width: 30, height: 10 }
     },
-    stomach: {
-        id: 'stomach',
-        name: 'Stomach',
+    spine_02: {
+        id: 'spine_02',
+        name: 'Lower Chest',
+        bodyPart: 'chest',
+        defaultProtection: 'armor',
+        displayPosition: { x: 35, y: 35, width: 30, height: 10 }
+    },
+
+    // Stomach zones (spine_03, pelvis protect stomach)
+    spine_03: {
+        id: 'spine_03',
+        name: 'Upper Stomach',
         bodyPart: 'stomach',
         defaultProtection: 'armor',
-        displayPosition: { x: 35, y: 45, width: 30, height: 15 }
+        displayPosition: { x: 35, y: 45, width: 30, height: 8 }
+    },
+    pelvis: {
+        id: 'pelvis',
+        name: 'Pelvis',
+        bodyPart: 'stomach',
+        defaultProtection: 'armor',
+        displayPosition: { x: 35, y: 53, width: 30, height: 7 }
     },
 
     // Arm zones
-    arm_upper_l: {
-        id: 'arm_upper_l',
+    UpperArm_L: {
+        id: 'UpperArm_L',
         name: 'Left Upper Arm',
         bodyPart: 'left_arm',
         defaultProtection: 'armor', // some armors protect upper arms
         displayPosition: { x: 20, y: 25, width: 12, height: 15 }
     },
-    arm_upper_r: {
-        id: 'arm_upper_r',
+    UpperArm_R: {
+        id: 'UpperArm_R',
         name: 'Right Upper Arm',
         bodyPart: 'right_arm',
         defaultProtection: 'armor', // some armors protect upper arms
@@ -155,15 +171,15 @@ export const ARMOR_ZONES: Record<string, ArmorZone> = {
     },
 
     // Leg zones
-    leg_thigh_l: {
-        id: 'leg_thigh_l',
+    Thigh_L: {
+        id: 'Thigh_L',
         name: 'Left Thigh',
         bodyPart: 'left_leg',
         defaultProtection: 'armor', // some armors protect thighs
         displayPosition: { x: 35, y: 60, width: 12, height: 15 }
     },
-    leg_thigh_r: {
-        id: 'leg_thigh_r',
+    Thigh_R: {
+        id: 'Thigh_R',
         name: 'Right Thigh',
         bodyPart: 'right_leg',
         defaultProtection: 'armor', // some armors protect thighs
@@ -184,7 +200,6 @@ export const ARMOR_ZONES: Record<string, ArmorZone> = {
         displayPosition: { x: 55, y: 75, width: 10, height: 20 }
     }
 };
-
 /**
  * Get all armor zones for a specific body part
  */

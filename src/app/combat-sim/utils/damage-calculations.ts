@@ -46,7 +46,7 @@ function calculateEffectiveDamage(
     armor: ArmorProperties | null,
     range: number
 ): DamageCalculationResult {
-    // Apply range falloff to base damage
+    // Apply range falloff to base damage and penetration
     const rangeDamage = applyRangeFalloff(ammo.damage, ammo, range);
     const rangePenetration = applyRangePenetrationFalloff(ammo.penetration, ammo, range);
 
@@ -73,12 +73,9 @@ function calculateEffectiveDamage(
         armor.penetrationChanceCurve
     );
 
-    // Calculate damage based on penetration
+    // Calculate penetrating damage
     let penetratingDamage = 0;
-    let bluntDamage = 0;
-
     if (penetrationChance > 0) {
-        // Calculate penetrating damage with armor reduction
         const penetrationDamageScalar = getPenetrationDamageScalar(
             rangePenetration,
             armor.armorClass,
@@ -92,6 +89,7 @@ function calculateEffectiveDamage(
 
     // Calculate blunt damage (always applies when armor stops the bullet)
     const bluntChance = 1 - penetrationChance;
+    let bluntDamage = 0;
     if (bluntChance > 0) {
         bluntDamage = rangeDamage *
             armor.bluntDamageScalar *
@@ -100,10 +98,7 @@ function calculateEffectiveDamage(
             bluntChance;
     }
 
-    // Determine if this shot would penetrate (for single shot calculation)
-    const isPenetrating = Math.random() < penetrationChance;
-
-    // For expected damage calculation (average over many shots)
+    // Calculate expected total damage (statistical average)
     const totalDamage = (penetratingDamage * penetrationChance) + bluntDamage;
 
     return {
@@ -111,10 +106,9 @@ function calculateEffectiveDamage(
         penetratingDamage,
         bluntDamage,
         totalDamage,
-        isPenetrating
+        isPenetrating: Math.random() < penetrationChance
     };
 }
-
 /**
  * Calculate armor effectiveness based on durability
  * At 0% durability, armor loses its ability to deflect bullets
@@ -183,57 +177,141 @@ function getPenetrationDamageScalar(
 }
 
 /**
- * Apply damage falloff based on range
+ * Apply damage falloff based on range using ammo's ballistic curves
  */
 function applyRangeFalloff(
     baseDamage: number,
-    ammo: AmmoProperties & { damageAtRange?: any },
+    ammo: AmmoProperties & { ballisticCurves?: any },
     range: number
 ): number {
-    // If we have specific range data, use it
-    if (ammo.damageAtRange) {
-        if (range <= 0) return ammo.damageAtRange['0m'] || baseDamage;
-        if (range <= 100) {
-            return interpolateRange(0, ammo.damageAtRange['0m'], 100, ammo.damageAtRange['100m'], range);
+    // Convert range from meters to distance units used in curves (appears to be in cm based on the data)
+    const rangeInCurveUnits = range * 100; // Convert meters to centimeters
+
+    // If we have ballistic curve data, use it
+    if (ammo.ballisticCurves?.damageOverDistance) {
+        const curve = ammo.ballisticCurves.damageOverDistance;
+
+        // Find the appropriate curve segment for interpolation
+        for (let i = 0; i < curve.length - 1; i++) {
+            const currentPoint = curve[i];
+            const nextPoint = curve[i + 1];
+
+            if (rangeInCurveUnits >= currentPoint.time && rangeInCurveUnits <= nextPoint.time) {
+                // Interpolate between the two points
+                if (currentPoint.interpMode === 'linear') {
+                    return interpolateRange(
+                        currentPoint.time,
+                        currentPoint.value,
+                        nextPoint.time,
+                        nextPoint.value,
+                        rangeInCurveUnits
+                    );
+                } else if (currentPoint.interpMode === 'cubic') {
+                    // For cubic interpolation, use Hermite interpolation with tangents
+                    return interpolateCubicHermite(
+                        currentPoint.time,
+                        currentPoint.value,
+                        currentPoint.leaveTangent || 0,
+                        nextPoint.time,
+                        nextPoint.value,
+                        nextPoint.arriveTangent || 0,
+                        rangeInCurveUnits
+                    );
+                }
+            }
         }
-        if (range <= 300) {
-            return interpolateRange(100, ammo.damageAtRange['100m'], 300, ammo.damageAtRange['300m'], range);
+
+        // If range is beyond curve data, use the last point's value
+        if (rangeInCurveUnits >= curve[curve.length - 1].time) {
+            return curve[curve.length - 1].value;
         }
-        if (range <= 500) {
-            return interpolateRange(300, ammo.damageAtRange['300m'], 500, ammo.damageAtRange['500m'], range);
+
+        // If range is before curve data, use the first point's value
+        if (rangeInCurveUnits <= curve[0].time) {
+            return curve[0].value;
         }
     }
 
-    // Default falloff formula
-    const falloffFactor = 1 - (range / 1000) * 0.3; // 30% reduction at 1000m
-    return baseDamage * Math.max(falloffFactor, 0.5); // Minimum 50% damage
+    // Default falloff formula if no curve data
+    const falloffFactor = Math.max(1 - (range / 1000) * 0.3, 0.5);
+    return baseDamage * falloffFactor;
 }
 
 /**
- * Apply penetration falloff based on range
+ * Apply penetration falloff based on range using ammo's ballistic curves
  */
 function applyRangePenetrationFalloff(
     basePenetration: number,
-    ammo: AmmoProperties & { penetrationAtRange?: any },
+    ammo: AmmoProperties & { ballisticCurves?: any },
     range: number
 ): number {
-    // If we have specific range data, use it
-    if (ammo.penetrationAtRange) {
-        if (range <= 0) return ammo.penetrationAtRange['0m'] || basePenetration;
-        if (range <= 100) {
-            return interpolateRange(0, ammo.penetrationAtRange['0m'], 100, ammo.penetrationAtRange['100m'], range);
+    // Convert range from meters to distance units used in curves
+    const rangeInCurveUnits = range * 100;
+
+    // If we have ballistic curve data for penetration, use it
+    if (ammo.ballisticCurves?.penetrationPowerOverDistance) {
+        const curve = ammo.ballisticCurves.penetrationPowerOverDistance;
+
+        // Find the appropriate curve segment for interpolation
+        for (let i = 0; i < curve.length - 1; i++) {
+            const currentPoint = curve[i];
+            const nextPoint = curve[i + 1];
+
+            if (rangeInCurveUnits >= currentPoint.time && rangeInCurveUnits <= nextPoint.time) {
+                if (currentPoint.interpMode === 'linear') {
+                    return interpolateRange(
+                        currentPoint.time,
+                        currentPoint.value,
+                        nextPoint.time,
+                        nextPoint.value,
+                        rangeInCurveUnits
+                    );
+                } else if (currentPoint.interpMode === 'cubic') {
+                    return interpolateCubicHermite(
+                        currentPoint.time,
+                        currentPoint.value,
+                        currentPoint.leaveTangent || 0,
+                        nextPoint.time,
+                        nextPoint.value,
+                        nextPoint.arriveTangent || 0,
+                        rangeInCurveUnits
+                    );
+                }
+            }
         }
-        if (range <= 300) {
-            return interpolateRange(100, ammo.penetrationAtRange['100m'], 300, ammo.penetrationAtRange['300m'], range);
+
+        // Handle out-of-range cases
+        if (rangeInCurveUnits >= curve[curve.length - 1].time) {
+            return curve[curve.length - 1].value;
         }
-        if (range <= 500) {
-            return interpolateRange(300, ammo.penetrationAtRange['300m'], 500, ammo.penetrationAtRange['500m'], range);
+        if (rangeInCurveUnits <= curve[0].time) {
+            return curve[0].value;
         }
     }
 
-    // Default falloff formula
-    const falloffFactor = 1 - (range / 1500) * 0.25; // 25% reduction at 1500m
-    return basePenetration * Math.max(falloffFactor, 0.6); // Minimum 60% penetration
+    // Default falloff formula if no curve data
+    const falloffFactor = Math.max(1 - (range / 1500) * 0.25, 0.6);
+    return basePenetration * falloffFactor;
+}
+
+/**
+ * Cubic Hermite interpolation for smooth curves
+ */
+function interpolateCubicHermite(
+    x0: number, y0: number, m0: number,
+    x1: number, y1: number, m1: number,
+    x: number
+): number {
+    const t = (x - x0) / (x1 - x0);
+    const t2 = t * t;
+    const t3 = t2 * t;
+
+    const h00 = 2 * t3 - 3 * t2 + 1;
+    const h10 = t3 - 2 * t2 + t;
+    const h01 = -2 * t3 + 3 * t2;
+    const h11 = t3 - t2;
+
+    return h00 * y0 + h10 * (x1 - x0) * m0 + h01 * y1 + h11 * (x1 - x0) * m1;
 }
 
 /**

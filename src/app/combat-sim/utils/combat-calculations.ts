@@ -71,7 +71,6 @@ function calculateAttackerZones(
 
         // Determine armor protecting this zone
         const armor = getZoneArmor(zoneId, defender);
-        const armorClass = armor?.stats.armorClass || 0;
 
         // Convert ammo to required format
         const ammoProps: AmmoProperties = {
@@ -86,7 +85,7 @@ function calculateAttackerZones(
 
         // Convert armor to required format if present
         const armorProps: ArmorProperties | null = armor ? {
-            armorClass: armor.stats.armorClass,
+            armorClass: getZoneArmorClass(zoneId, armor),
             maxDurability: armor.stats.maxDurability,
             currentDurability: getArmorDurability(zoneId, defender),
             durabilityDamageScalar: armor.stats.durabilityDamageScalar || 0.5,
@@ -118,14 +117,29 @@ function calculateAttackerZones(
             penetrationChance: damageResult.penetrationChance,
             effectiveDamage: damageResult.totalDamage,
             bluntDamage: damageResult.bluntDamage,
-            isProtected: armorClass > 0,
-            armorClass
+            isProtected: armorProps !== null,
+            armorClass: armorProps?.armorClass || 0
         });
     });
 
     return calculations;
 }
 
+/**
+ * Get armor class for a specific zone from the armor item
+ */
+function getZoneArmorClass(zoneId: string, armor: Armor): number {
+    // Check if armor has specific protection data for this zone
+    if (armor.stats.protectiveData) {
+        const protection = armor.stats.protectiveData.find(pd => pd.bodyPart === zoneId);
+        if (protection) {
+            return protection.armorClass;
+        }
+    }
+
+    // Fall back to armor's base armor class
+    return armor.stats.armorClass;
+}
 /**
  * Get armor protecting a specific zone
  */
@@ -140,16 +154,15 @@ function getZoneArmor(zoneId: string, defender: DefenderSetup): Armor | null {
 
     // Check if zone is protected by body armor
     if (isZoneProtectedBy(zoneId, 'armor')) {
-        // Check if body armor actually protects this specific zone
         if (defender.bodyArmor) {
-            // If armor has specific protective data, check if this zone is covered
-            if (defender.bodyArmor.protectiveData) {
-                const protectsZone = defender.bodyArmor.protectiveData.some((pd: ProtectiveZone) =>
-                    pd.bodyPart === zone.bodyPart || pd.bodyPart === zoneId
+            // Check if body armor actually protects this specific zone
+            if (defender.bodyArmor.stats.protectiveData) {
+                const protectsZone = defender.bodyArmor.stats.protectiveData.some((pd: ProtectiveZone) =>
+                    pd.bodyPart === zoneId // Direct match with zone ID (spine_01, spine_02, etc.)
                 );
                 if (protectsZone) return defender.bodyArmor;
             } else {
-                // If no specific data, assume armor protects its default zones
+                // If no specific data, assume armor protects default zones
                 return defender.bodyArmor;
             }
         }
@@ -157,7 +170,6 @@ function getZoneArmor(zoneId: string, defender: DefenderSetup): Armor | null {
 
     return null;
 }
-
 /**
  * Get current durability for armor protecting a zone
  */

@@ -39,17 +39,23 @@ export interface Ammunition extends Item {
         protectionGearPenetratedDamageScale?: number;
         protectionGearBluntDamageScale?: number;
         caliber: string;
-        damageAtRange?: {
-            '0m': number;
-            '100m': number;
-            '300m': number;
-            '500m': number;
-        };
-        penetrationAtRange?: {
-            '0m': number;
-            '100m': number;
-            '300m': number;
-            '500m': number;
+        ballisticCurves?: {
+            damageOverDistance?: Array<{
+                interpMode: 'linear' | 'cubic';
+                tangentMode: 'auto' | 'user';
+                time: number;
+                value: number;
+                arriveTangent?: number;
+                leaveTangent?: number;
+            }>;
+            penetrationPowerOverDistance?: Array<{
+                interpMode: 'linear' | 'cubic';
+                tangentMode: 'auto' | 'user';
+                time: number;
+                value: number;
+                arriveTangent?: number;
+                leaveTangent?: number;
+            }>;
         };
     };
 }
