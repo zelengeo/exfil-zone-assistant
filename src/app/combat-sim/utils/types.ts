@@ -80,42 +80,14 @@ export interface Weapon extends Item {
 // Complete ammunition type with ballistic curves
 export interface Ammunition extends Item {
     category: 'ammo';
-    stats: Item['stats'] & {
-        // Required ammo stats
-        damage: number;
-        penetration: number;
-        caliber: string;
+    stats: Item['stats'] & AmmoProperties;
+}
 
-        // Damage modifiers
-        bluntDamageScale: number;
-        bleedingChance: number;
-        protectionGearPenetratedDamageScale: number;
-        protectionGearBluntDamageScale: number;
-
-        // Ballistics
-        muzzleVelocity?: number;
-        bulletDropFactor?: number;
-
-        //precalculated values (cache)
-        damageAtRange: {
-            '60m': number;
-            '120m': number;
-            '240m': number;
-            '480m': number;
-        };
-        penetrationAtRange: {
-            '60m': number;
-            '120m': number;
-            '240m': number;
-            '480m': number;
-        };
-
-        // Full ballistic curves from game data
-        ballisticCurves: {
-            damageOverDistance?: BallisticCurvePoint[];
-            penetrationPowerOverDistance?: BallisticCurvePoint[];
-        };
-    };
+// Complete armor type with all curves
+export interface Armor extends Item {
+    category: 'gear';
+    subcategory: 'Body Armor' | 'Helmets';
+    stats: Item['stats'] & ArmorProperties;
 }
 
 // Protective zone from armor data
@@ -126,28 +98,6 @@ export interface ProtectiveZone {
     protectionAngle: number; // not used in simulation yet
 }
 
-// Complete armor type with all curves
-export interface Armor extends Item {
-    category: 'gear';
-    subcategory: 'Body Armor' | 'Helmets';
-    stats: Item['stats'] & {
-        // Required armor stats
-        armorClass: number;
-        maxDurability: number;
-
-        // Damage scalars
-        durabilityDamageScalar?: number;
-        bluntDamageScalar?: number;
-
-        // Protection zones
-        protectiveData?: ProtectiveZone[];
-
-        // Penetration curves from game data
-        penetrationChanceCurve?: BallisticCurvePoint[];
-        penetrationDamageScalarCurve?: BallisticCurvePoint[];
-        antiPenetrationDurabilityScalarCurve?: BallisticCurvePoint[];
-    };
-}
 
 // Attacker setup configuration
 export interface AttackerSetup {
@@ -163,6 +113,78 @@ export interface DefenderSetup {
     bodyArmorDurability: number; // 0-100%
     helmet: Armor | null;
     helmetDurability: number; // 0-100%
+}
+
+export interface AmmoProperties {
+    // Required ammo stats
+    damage: number;
+    penetration: number;
+    caliber: string;
+
+    // Damage modifiers
+    bluntDamageScale: number;
+    bleedingChance: number;
+    protectionGearPenetratedDamageScale: number;
+    protectionGearBluntDamageScale: number;
+
+    // Ballistics
+    muzzleVelocity?: number;
+    bulletDropFactor?: number;
+
+    //precalculated values (cache)
+    damageAtRange: {
+        '60m': number;
+        '120m': number;
+        '240m': number;
+        '480m': number;
+    };
+    penetrationAtRange: {
+        '60m': number;
+        '120m': number;
+        '240m': number;
+        '480m': number;
+    };
+
+    // Full ballistic curves from game data
+    ballisticCurves: {
+        damageOverDistance: BallisticCurvePoint[];
+        penetrationPowerOverDistance: BallisticCurvePoint[];
+    };
+}
+
+export interface ArmorProperties {
+    // Required armor stats
+    armorClass: number;
+    maxDurability: number;
+
+    // Value for correct simulation of a damaged armor
+    currentDurability: number;
+
+    // Damage scalars
+    durabilityDamageScalar: number;
+    bluntDamageScalar: number;
+
+    // Protection zones
+    protectiveData: ProtectiveZone[];
+
+    // Penetration curves from game data
+    penetrationChanceCurve: BallisticCurvePoint[];
+    penetrationDamageScalarCurve: BallisticCurvePoint[];
+    antiPenetrationDurabilityScalarCurve: BallisticCurvePoint[];
+}
+
+export interface ShotResult {
+    isPenetrating: boolean;
+    damageToBodyPart: number;
+    damageToArmor: number;
+    penetrationChance: number;
+}
+
+export interface CombatSimulationResult {
+    shotsToKill: number;
+    finalArmorDurability: number;
+    totalDamageDealt: number;
+    shots: ShotResult[];
 }
 
 // Combat simulation state
@@ -186,11 +208,10 @@ export interface DamageCalculationResult {
 }
 
 // Zone-specific calculation result
-export interface ZoneCalculation {
+export interface ZoneCalculation extends CombatSimulationResult{
     zoneId: string;
     bodyPartId: string;
     ttk: number;
-    shotsToKill: number;
     costToKill: number;
     penetrationChance: number;
     effectiveDamage: number;

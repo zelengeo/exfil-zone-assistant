@@ -10,7 +10,7 @@ import {
     AttackerSummary,
     Weapon,
     Ammunition,
-    Armor
+    Armor, AmmoProperties, ArmorProperties,
 } from './types';
 import {
     ARMOR_ZONES,
@@ -20,9 +20,7 @@ import {
 } from './body-zones';
 import {
     calculateEffectiveDamage,
-    calculateShotsToKill,
-    type ArmorProperties,
-    type AmmoProperties
+    simulateCombat
 } from './damage-calculations';
 import {ProtectiveZone} from "@/app/combat-sim/utils/types";
 
@@ -65,6 +63,7 @@ function calculateAttackerZones(
     const calculations: ZoneCalculation[] = [];
 
     // Process each armor zone
+    //TODO optimize simulation trigger - for example no point to rerun sim for unarmored limbs
     Object.entries(ARMOR_ZONES).forEach(([zoneId, zone]) => {
         const bodyPart = getBodyPartForArmorZone(zoneId);
         if (!bodyPart) return;
@@ -72,10 +71,14 @@ function calculateAttackerZones(
         // Determine armor protecting this zone
         const armor = getZoneArmor(zoneId, defender);
 
+        //TODO REVISIT FALLBACK VALUES
+
         // Convert ammo to required format
         const ammoProps: AmmoProperties = {
             damage: ammo.stats.damage,
             penetration: ammo.stats.penetration,
+            caliber: ammo.stats.caliber,
+            bleedingChance: ammo.stats.bleedingChance,
             bluntDamageScale: ammo.stats.bluntDamageScale || 0.1,
             protectionGearPenetratedDamageScale: ammo.stats.protectionGearPenetratedDamageScale || 1,
             protectionGearBluntDamageScale: ammo.stats.protectionGearBluntDamageScale || 1,
@@ -91,15 +94,21 @@ function calculateAttackerZones(
             currentDurability: getArmorDurability(zoneId, defender),
             durabilityDamageScalar: armor.stats.durabilityDamageScalar || 0.5,
             bluntDamageScalar: armor.stats.bluntDamageScalar || 0.2,
+            protectiveData: armor.stats.protectiveData,
             penetrationChanceCurve: armor.stats.penetrationChanceCurve,
-            penetrationDamageScalarCurve: armor.stats.penetrationDamageScalarCurve
+            penetrationDamageScalarCurve: armor.stats.penetrationDamageScalarCurve,
+            antiPenetrationDurabilityScalarCurve: armor.stats.antiPenetrationDurabilityScalarCurve
         } : null;
 
         // Calculate damage for this zone
         const damageResult = calculateEffectiveDamage(ammoProps, armorProps, range);
 
         // Calculate shots to kill
-        const shotsToKill = calculateShotsToKill(bodyPart, damageResult);
+        const combatResult = simulateCombat(ammoProps, armorProps, bodyPart.hp, bodyPart.isVital, range);
+        //FIXME remove log
+        console.log(`Combat simulation`, combatResult);
+
+        const shotsToKill = combatResult.shotsToKill;
 
         // Calculate time to kill
         const fireRate = weapon.stats.fireRate || 600; //TODO cover bolt actions and pump shotguns, TODO wtf is this 600 fallback - defaults should be global
@@ -112,13 +121,14 @@ function calculateAttackerZones(
             zoneId,
             bodyPartId: bodyPart.id,
             ttk,
-            shotsToKill,
             costToKill,
+            //TODO remove/improve these 3 values
             penetrationChance: damageResult.penetrationChance,
             effectiveDamage: damageResult.totalDamage,
             bluntDamage: damageResult.bluntDamage,
             isProtected: armorProps !== null,
-            armorClass: armorProps?.armorClass || 0
+            armorClass: armorProps?.armorClass || 0,
+            ...combatResult,
         });
     });
 
@@ -140,6 +150,7 @@ function getZoneArmorClass(zoneId: string, armor: Armor): number {
     // Fall back to armor's base armor class
     return armor.stats.armorClass;
 }
+
 /**
  * Get armor protecting a specific zone
  */
@@ -170,6 +181,7 @@ function getZoneArmor(zoneId: string, defender: DefenderSetup): Armor | null {
 
     return null;
 }
+
 /**
  * Get current durability for armor protecting a zone
  */
