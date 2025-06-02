@@ -213,13 +213,13 @@ export interface ZoneCalculation extends CombatSimulationResult{
     bodyPartId: string;
     ttk: number;
     costToKill: number;
-    penetrationChance: number;
-    effectiveDamage: number;
-    bluntDamage: number;
     isProtected: boolean;
     armorClass: number;
     fragmentationDamage?: number;
     bleedDamagePerSecond?: number;
+    // Statistical data for probability distribution
+    averagePenetrationChance?: number;
+    stkDistribution?: { shots: number; probability: number }[];
 }
 
 // Summary statistics for an attacker

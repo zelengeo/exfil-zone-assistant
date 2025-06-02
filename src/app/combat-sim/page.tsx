@@ -20,6 +20,9 @@ import AttackerSetup from './components/AttackerSetup';
 import DefenderSetup from './components/DefenderSetup';
 import BodyModel from './components/BodyModel/BodyModel';
 
+// Import test helper for console access
+import './utils/combat-test-helper';
+
 export default function CombatSimulatorPage() {
     const {
         simulation,

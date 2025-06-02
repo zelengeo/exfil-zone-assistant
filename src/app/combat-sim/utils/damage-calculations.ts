@@ -14,6 +14,7 @@ import {
 
 /**
  * Simulate combat shot-by-shot with armor degradation
+ * Uses deterministic approach - average expected damage per shot
  */
 function simulateCombat(
     ammo: AmmoProperties,
@@ -23,11 +24,10 @@ function simulateCombat(
     range: number
 ): CombatSimulationResult {
     const shots: ShotResult[] = [];
-    let currentBodyPartHP = isVital ? bodyPartHP : BODY_HP; // For non-vital parts, we need to track total body HP
-    let currentArmorDurability = armor?.currentDurability || 0; //FIXME consider maxDurability instead of 0
+    let currentBodyPartHP = isVital ? bodyPartHP : BODY_HP;
+    let currentArmorDurability = armor?.currentDurability || 0;
     let totalDamageDealt = 0;
     let shotsToKill = 0;
-
 
     while (currentBodyPartHP > 0 && shotsToKill < 100) { // Safety limit
         shotsToKill++;
@@ -47,12 +47,14 @@ function simulateCombat(
 
         // Apply damage to armor durability
         if (armor && currentArmorDurability > 0) {
-            currentArmorDurability = Math.max(0, currentArmorDurability - shotResult.damageToArmor);
+            // Ensure we don't go below 0
+            const actualArmorDamage = Math.min(currentArmorDurability, shotResult.damageToArmor);
+            currentArmorDurability = Math.max(0, currentArmorDurability - actualArmorDamage);
         }
 
         // Check if dead
         if (currentBodyPartHP <= 0) {
-            break; // Vital part destroyed = death
+            break;
         }
     }
 
@@ -65,9 +67,9 @@ function simulateCombat(
 }
 
 /**
- * Calculate damage for a single shot
+ * Calculate damage for a single shot - deterministic approach
  */
-function calculateShotDamage(
+function calculateShotDamageDeterministicPrototype(
     ammo: AmmoProperties,
     armor: ArmorProperties | null,
     currentArmorDurability: number,
@@ -78,8 +80,7 @@ function calculateShotDamage(
     const rangePenetration = applyRangePenetrationFalloff(ammo.penetration, ammo, range);
 
     // If no armor, full damage applies
-    //TODO RETEST INGAME IF 0 DURABILITY CAN BE NOT PENNED AND AFFECTS DAMAGE
-    if (!armor || currentArmorDurability <= 0) {
+    if (!armor) {
         return {
             isPenetrating: true,
             damageToBodyPart: rangeDamage,
@@ -90,13 +91,102 @@ function calculateShotDamage(
 
     // Calculate armor effectiveness based on current durability
     const durabilityPercent = currentArmorDurability / armor.maxDurability;
+
+    // Get armor effectiveness from the antiPenetrationDurabilityScalarCurve
     const armorEffectiveness = getArmorEffectivenessFromDurability(
         durabilityPercent,
         armor.antiPenetrationDurabilityScalarCurve
     );
 
-    // Calculate penetration chance with degraded armor
+    // Calculate effective armor class
     const effectiveArmorClass = armor.armorClass * armorEffectiveness;
+
+    // Calculate penetration chance
+    const penetrationChance = calculatePenetrationChance(
+        rangePenetration,
+        effectiveArmorClass,
+        armor.penetrationChanceCurve
+    );
+
+    // For deterministic simulation, use expected damage based on penetration chance
+    let damageToBodyPart = 0;
+    let damageToArmor = 0;
+
+    // Calculate penetrating damage
+    const penetrationDamageScalar = getPenetrationDamageScalar(
+        rangePenetration,
+        effectiveArmorClass,
+        armor.penetrationDamageScalarCurve
+    );
+
+    // Important: Even at 0 durability, armor still applies penetration damage reduction
+    const penetratingDamage = rangeDamage * penetrationDamageScalar;
+
+    // Calculate blunt damage
+    const bluntDamage = rangeDamage * ammo.bluntDamageScale * armor.bluntDamageScalar;
+
+    // Expected damage is weighted average based on penetration chance
+    damageToBodyPart = (penetratingDamage * penetrationChance) + (bluntDamage * (1 - penetrationChance));
+
+    // Armor damage calculation based on game observations
+    if (currentArmorDurability > 0) {
+        // When not penetrating, armor takes significant damage
+        const nonPenArmorDamage = rangeDamage * ammo.protectionGearBluntDamageScale * armor.durabilityDamageScalar;
+
+        // When penetrating, armor takes less damage
+        const penArmorDamage = rangePenetration * ammo.protectionGearPenetratedDamageScale * armor.durabilityDamageScalar;
+
+        // Expected armor damage
+        damageToArmor = (penArmorDamage * penetrationChance) + (nonPenArmorDamage * (1 - penetrationChance));
+    }
+
+    // For display purposes, determine if this shot would penetrate based on chance
+    const isPenetrating = penetrationChance > 0.5;
+
+    return {
+        isPenetrating,
+        damageToBodyPart,
+        damageToArmor,
+        penetrationChance
+    };
+}
+
+/**
+ * Calculate damage for a single shot
+ */
+function calculateShotDamageOrig(
+    ammo: AmmoProperties,
+    armor: ArmorProperties | null,
+    currentArmorDurability: number,
+    range: number
+): ShotResult {
+    // Apply range falloff to base damage and penetration
+    const rangeDamage = applyRangeFalloff(ammo.damage, ammo, range);
+    const rangePenetration = applyRangePenetrationFalloff(ammo.penetration, ammo, range);
+
+    // If no armor, full damage applies
+    if (!armor) {
+        return {
+            isPenetrating: true,
+            damageToBodyPart: rangeDamage,
+            damageToArmor: 0,
+            penetrationChance: 1
+        };
+    }
+
+    // Calculate armor effectiveness based on current durability
+    const durabilityPercent = currentArmorDurability / armor.maxDurability;
+
+    // Get armor effectiveness from the antiPenetrationDurabilityScalarCurve
+    const armorEffectiveness = getArmorEffectivenessFromDurability(
+        durabilityPercent,
+        armor.antiPenetrationDurabilityScalarCurve
+    );
+
+    // Calculate effective armor class
+    const effectiveArmorClass = armor.armorClass * armorEffectiveness;
+
+    // Calculate penetration chance
     const penetrationChance = calculatePenetrationChance(
         rangePenetration,
         effectiveArmorClass,
@@ -104,7 +194,7 @@ function calculateShotDamage(
     );
 
     // Determine if this shot penetrates (random roll).
-    //TODO consider reworking this part, I want simulation result always be the same, probably add some flag that will indicate accumulating pen probabilities'
+    //FIXME temp approach to stabilize damage mechanics
     const isPenetrating = Math.random() < penetrationChance;
 
     let damageToBodyPart = 0;
@@ -118,11 +208,12 @@ function calculateShotDamage(
             armor.penetrationDamageScalarCurve
         );
 
-        damageToBodyPart = rangeDamage * penetrationDamageScalar
+        damageToBodyPart = rangeDamage * penetrationDamageScalar  //almost 2 times less then in game
 
 
         // Armor takes durability damage on penetration
-        damageToArmor = rangePenetration * ammo.protectionGearPenetratedDamageScale;
+        damageToArmor = rangePenetration * ammo.protectionGearPenetratedDamageScale; // almost 10 times less then in game
+
         //TODO revisit - why durabilityDamageScalar is not used here?
         // damageToArmor = calculateArmorDurabilityDamage(
         //     rangePenetration,
@@ -131,11 +222,11 @@ function calculateShotDamage(
         // );
     } else {
         // Non-penetrating shot (blunt damage)
-        damageToBodyPart = rangeDamage * ammo.bluntDamageScale * armor.bluntDamageScalar;
+        damageToBodyPart = rangeDamage * ammo.bluntDamageScale * armor.bluntDamageScalar; //Seems correct
 
 
         // Armor takes durability damage when stopping bullet
-        damageToArmor = rangeDamage * ammo.protectionGearBluntDamageScale * armor.bluntDamageScalar;
+        damageToArmor = rangeDamage * ammo.protectionGearBluntDamageScale * armor.bluntDamageScalar; // 30% less then ingame
 
         // // Armor takes durability damage when stopping bullet
         // damageToArmor = calculateArmorDurabilityDamage(
@@ -153,40 +244,164 @@ function calculateShotDamage(
     };
 }
 
+function calculateShotDamage(
+    ammo: AmmoProperties,
+    armor: ArmorProperties | null,
+    currentArmorDurability: number,
+    range: number
+): ShotResult {
+    // Apply range falloff to base damage and penetration
+    const rangeDamage = applyRangeFalloff(ammo.damage, ammo, range);
+    const rangePenetration = applyRangePenetrationFalloff(ammo.penetration, ammo, range);
+
+    // If no armor, full damage applies
+    if (!armor) {
+        return {
+            isPenetrating: true,
+            damageToBodyPart: rangeDamage,
+            damageToArmor: 0,
+            penetrationChance: 1
+        };
+    }
+
+    // Calculate armor effectiveness based on current durability
+    const durabilityPercent = currentArmorDurability / armor.maxDurability;
+    const armorEffectiveness = getArmorEffectivenessFromDurability(
+        durabilityPercent,
+        armor.antiPenetrationDurabilityScalarCurve
+    );
+
+    // Calculate effective armor class
+    const effectiveArmorClass = armor.armorClass // * armorEffectiveness;
+
+    // Calculate penetration chance
+    const penetrationChance = calculatePenetrationChance(
+        rangePenetration,
+        effectiveArmorClass,
+        armor.penetrationChanceCurve
+    );
+
+    // Determine if this shot penetrates
+    const isPenetrating = true; //Math.random() < penetrationChance;
+
+    let damageToBodyPart = 0;
+    let damageToArmor = 0;
+
+    if (isPenetrating) {
+        // For penetrationDamageScalarCurve, try using armor class directly
+        const penetrationDamageScalar = getPenetrationDamageScalarFixed(
+            effectiveArmorClass,  // Use armor class, not ratio
+            armor.penetrationDamageScalarCurve
+        );
+
+        damageToBodyPart = rangeDamage * penetrationDamageScalar;
+
+        // Armor damage for penetrating shots - use damage, not penetration
+        damageToArmor = rangeDamage * ammo.protectionGearPenetratedDamageScale * armor.durabilityDamageScalar;
+
+    } else {
+        // Non-penetrating shot (blunt damage)
+        damageToBodyPart = rangeDamage * ammo.bluntDamageScale * armor.bluntDamageScalar;
+
+        // Armor damage for non-penetrating shots
+        damageToArmor = rangeDamage * ammo.protectionGearBluntDamageScale * armor.durabilityDamageScalar;
+    }
+
+    return {
+        isPenetrating,
+        damageToBodyPart,
+        damageToArmor,
+        penetrationChance
+    };
+}
+
+// New function for penetration damage scalar
+function getPenetrationDamageScalarFixed(
+    armorClass: number,
+    penetrationDamageScalarCurve?: BallisticCurvePoint[]
+): number {
+    if (penetrationDamageScalarCurve && penetrationDamageScalarCurve.length > 0) {
+        // The curve x-axis appears to be armor class based on the -1 to 2 range
+        // Map armor class (0-6) to curve range (-1 to 2)
+        const normalizedValue = (armorClass - 3) / 2; // Maps AC 0-6 to -1.5 to 1.5
+        return interpolateBallisticCurve(penetrationDamageScalarCurve, normalizedValue);
+    }
+
+    // Default fallback
+    return 0.75;
+}
+
 /**
  * Get armor effectiveness from antiPenetrationDurabilityScalarCurve
+ * This determines how much the armor class is reduced based on durability
  */
 function getArmorEffectivenessFromDurability(
     durabilityPercent: number,
     curve?: BallisticCurvePoint[]
 ): number {
     if (!curve || curve.length === 0) {
-        // Default: linear degradation from 1.0 to 0.3
-        return 0.3 + (0.7 * durabilityPercent);
+        // Default: linear degradation
+        // At 100% durability: 1.0 effectiveness
+        // At 0% durability: 0.0 effectiveness (armor class becomes 0)
+        return durabilityPercent;
     }
 
     // Use the curve to determine effectiveness
-    // The curve maps durability (0-1) to effectiveness scalar (0-1)
     return interpolateBallisticCurve(curve, durabilityPercent);
 }
 
 /**
- * Calculate armor durability damage
+ * Calculate penetration chance using armor curves
  */
-//TODO revisit - seems like nonsense
-function calculateArmorDurabilityDamage(
+function calculatePenetrationChance(
     penetrationPower: number,
     effectiveArmorClass: number,
-    durabilityDamageScalar: number
+    penetrationCurve?: BallisticCurvePoint[]
 ): number {
-    // Base durability damage is related to the penetration power
-    // Higher penetration = more durability damage
+    if (effectiveArmorClass <= 0) {
+        // 0 armor class means almost guaranteed penetration
+        return 0.98; // Not 100% as game shows rare non-pens even at 0 durability
+    }
+
+    if (penetrationCurve && penetrationCurve.length > 0) {
+        // The curve x-axis represents penetration/armor ratio
+        const ratio = penetrationPower / effectiveArmorClass;
+        return interpolateBallisticCurve(penetrationCurve, ratio);
+    }
+
+    // Fallback formula if no curve data
     const penetrationRatio = penetrationPower / effectiveArmorClass;
 
-    // Base damage scaled by armor's durability damage scalar
-    const baseDurabilityDamage = 1 + (penetrationRatio * 2); // 1-3 base damage
+    if (penetrationRatio >= 2) return 0.95;
+    if (penetrationRatio >= 1.5) return 0.85;
+    if (penetrationRatio >= 1.2) return 0.70;
+    if (penetrationRatio >= 1) return 0.50;
+    if (penetrationRatio >= 0.8) return 0.30;
+    if (penetrationRatio >= 0.6) return 0.15;
+    if (penetrationRatio >= 0.4) return 0.05;
+    return 0.02;
+}
 
-    return baseDurabilityDamage * durabilityDamageScalar;
+/**
+ * Get penetration damage scalar from curve
+ */
+function getPenetrationDamageScalar(
+    penetrationPower: number,
+    armorClass: number,
+    penetrationDamageScalarCurve?: BallisticCurvePoint[]
+): number {
+    if (penetrationDamageScalarCurve && penetrationDamageScalarCurve.length > 0) {
+        // The curve x-axis often represents the penetration/armor ratio
+        const ratio = armorClass > 0 ? penetrationPower / armorClass : 2;
+        return interpolateBallisticCurve(penetrationDamageScalarCurve, ratio);
+    }
+
+    // Default: higher penetration = less damage reduction
+    const ratio = armorClass > 0 ? penetrationPower / armorClass : 2;
+    if (ratio >= 2) return 0.95;
+    if (ratio >= 1.5) return 0.85;
+    if (ratio >= 1) return 0.75;
+    return 0.65;
 }
 
 /**
@@ -226,139 +441,22 @@ function interpolateBallisticCurve(
 
 /**
  * Calculate effective damage after armor interaction
- * @param ammo - Ammunition properties
- * @param armor - Armor properties (null if unarmored)
- * @param range - Distance to target in meters
- * @returns Detailed damage calculation results
+ * This is the legacy function for backward compatibility
  */
 function calculateEffectiveDamage(
     ammo: AmmoProperties,
     armor: ArmorProperties | null,
     range: number
 ): DamageCalculationResult {
-    // For backward compatibility, return average expected damage
-    // This is used for heat maps and quick comparisons
-
-    if (!armor) {
-        const rangeDamage = applyRangeFalloff(ammo.damage, ammo, range);
-        return {
-            penetrationChance: 1,
-            penetratingDamage: rangeDamage,
-            bluntDamage: 0, //TODO test if blunt is not applied on penetration
-            totalDamage: rangeDamage,
-            isPenetrating: true
-        };
-    }
-
-    // Calculate average based on current armor durability
-    const durabilityPercent = armor.currentDurability / armor.maxDurability;
-    const armorEffectiveness = getArmorEffectivenessFromDurability(
-        durabilityPercent,
-        armor.antiPenetrationDurabilityScalarCurve
-    );
-
-    const effectiveArmorClass = armor.armorClass * armorEffectiveness;
-    const rangeDamage = applyRangeFalloff(ammo.damage, ammo, range);
-    const rangePenetration = applyRangePenetrationFalloff(ammo.penetration, ammo, range);
-
-    const penetrationChance = calculatePenetrationChance(
-        rangePenetration,
-        effectiveArmorClass,
-        armor.penetrationChanceCurve
-    );
-
-    const penetrationDamageScalar = getPenetrationDamageScalar(
-        rangePenetration,
-        effectiveArmorClass,
-        armor.penetrationDamageScalarCurve
-    );
-
-    const penetratingDamage = rangeDamage *
-        penetrationDamageScalar *
-        ammo.protectionGearPenetratedDamageScale;
-
-    const bluntDamage = rangeDamage *
-        armor.bluntDamageScalar *
-        ammo.bluntDamageScale *
-        ammo.protectionGearBluntDamageScale;
-
-    // Average expected damage
-    const totalDamage = (penetratingDamage * penetrationChance) +
-        (bluntDamage * (1 - penetrationChance));
+    const shotResult = calculateShotDamage(ammo, armor, armor?.currentDurability || 0, range);
 
     return {
-        penetrationChance,
-        penetratingDamage,
-        bluntDamage,
-        totalDamage,
-        isPenetrating: penetrationChance > 0.5
+        penetrationChance: shotResult.penetrationChance,
+        penetratingDamage: shotResult.isPenetrating ? shotResult.damageToBodyPart : 0,
+        bluntDamage: !shotResult.isPenetrating ? shotResult.damageToBodyPart : 0,
+        totalDamage: shotResult.damageToBodyPart,
+        isPenetrating: shotResult.isPenetrating
     };
-}
-
-/**
- * Calculate armor effectiveness based on durability
- * At 0% durability, armor loses its ability to deflect bullets
- * but still provides some penetration reduction
- */
-function calculateArmorEffectiveness(
-    durabilityPercent: number,
-    armorClass: number
-): number {
-    // At 0% durability, armor retains 20-30% effectiveness based on class
-    const minEffectiveness = 0.2 + (armorClass * 0.02);
-
-    // Linear degradation from 100% to minimum
-    return minEffectiveness + (1 - minEffectiveness) * durabilityPercent;
-}
-
-/**
- * Calculate penetration chance using armor curves or default formula
- */
-function calculatePenetrationChance(
-    penetrationPower: number,
-    effectiveArmorClass: number,
-    penetrationCurve?: BallisticCurvePoint[]
-): number {
-    if (penetrationCurve && penetrationCurve.length > 0) {
-        // Use custom penetration curve from armor data
-        return interpolateCurve(penetrationCurve, penetrationPower / effectiveArmorClass);
-    }
-
-    //TODO REVISIT FALLBACK VALUES
-    console.warn('Penetration chance curve not found for armor, using default formula.')
-
-    // Default penetration formula
-    const penetrationRatio = penetrationPower / effectiveArmorClass;
-
-    if (penetrationRatio >= 2) return 0.95; // Almost guaranteed penetration
-    if (penetrationRatio >= 1.5) return 0.85;
-    if (penetrationRatio >= 1.2) return 0.70;
-    if (penetrationRatio >= 1) return 0.50;
-    if (penetrationRatio >= 0.8) return 0.30;
-    if (penetrationRatio >= 0.6) return 0.15;
-    if (penetrationRatio >= 0.4) return 0.05;
-    return 0.02; // Minimal chance
-}
-
-/**
- * Get penetration damage scalar from curve or default
- */
-function getPenetrationDamageScalar(
-    penetrationPower: number,
-    armorClass: number,
-    penetrationDamageScalarCurve?: BallisticCurvePoint[]
-): number {
-    if (penetrationDamageScalarCurve && penetrationDamageScalarCurve.length > 0) {
-        const ratio = penetrationPower / armorClass;
-        return interpolateCurve(penetrationDamageScalarCurve, ratio);
-    }
-
-    // Default: higher penetration = less damage reduction
-    const ratio = penetrationPower / armorClass;
-    if (ratio >= 2) return 0.95;
-    if (ratio >= 1.5) return 0.85;
-    if (ratio >= 1) return 0.75;
-    return 0.65;
 }
 
 /**
@@ -372,55 +470,16 @@ function applyRangeFalloff(
     if (RANGE_VALUES.includes(range)) {
         if (range === 0) return baseDamage;
         // @ts-expect-error - range is value 60, 120, 240, or 480
-        return ammo.damageAtRange[range + 'm'];
+        return ammo.damageAtRange[range + 'm'] || baseDamage;
     }
 
-    // Convert range from meters to distance units used in curves (appears to be in cm based on the data)
-    const rangeInCurveUnits = range * 100; // Convert meters to centimeters
+    // Convert range from meters to distance units used in curves (appears to be in cm)
+    const rangeInCurveUnits = range * 100;
 
     // If we have ballistic curve data, use it
     if (ammo.ballisticCurves?.damageOverDistance) {
-        const curve = ammo.ballisticCurves.damageOverDistance;
-
-        // Find the appropriate curve segment for interpolation
-        for (let i = 0; i < curve.length - 1; i++) {
-            const currentPoint = curve[i];
-            const nextPoint = curve[i + 1];
-
-            if (rangeInCurveUnits >= currentPoint.time && rangeInCurveUnits <= nextPoint.time) {
-                // Interpolate between the two points
-                if (currentPoint.interpMode === 'linear') {
-                    return interpolateRange(
-                        currentPoint.time,
-                        currentPoint.value,
-                        nextPoint.time,
-                        nextPoint.value,
-                        rangeInCurveUnits
-                    );
-                } else if (currentPoint.interpMode === 'cubic') {
-                    // For cubic interpolation, use Hermite interpolation with tangents
-                    return interpolateCubicHermite(
-                        currentPoint.time,
-                        currentPoint.value,
-                        currentPoint.leaveTangent || 0,
-                        nextPoint.time,
-                        nextPoint.value,
-                        nextPoint.arriveTangent || 0,
-                        rangeInCurveUnits
-                    );
-                }
-            }
-        }
-
-        // If range is beyond curve data, use the last point's value
-        if (rangeInCurveUnits >= curve[curve.length - 1].time) {
-            return curve[curve.length - 1].value;
-        }
-
-        // If range is before curve data, use the first point's value
-        if (rangeInCurveUnits <= curve[0].time) {
-            return curve[0].value;
-        }
+        const damage = interpolateBallisticCurve(ammo.ballisticCurves.damageOverDistance, rangeInCurveUnits);
+        return damage;
     }
 
     // Default falloff formula if no curve data
@@ -439,7 +498,7 @@ function applyRangePenetrationFalloff(
     if (RANGE_VALUES.includes(range)) {
         if (range === 0) return basePenetration;
         // @ts-expect-error - range is value 60, 120, 240, or 480
-        return ammo.penetrationAtRange[range + 'm'];
+        return ammo.penetrationAtRange[range + 'm'] || basePenetration;
     }
 
     // Convert range from meters to distance units used in curves
@@ -447,43 +506,7 @@ function applyRangePenetrationFalloff(
 
     // If we have ballistic curve data for penetration, use it
     if (ammo.ballisticCurves?.penetrationPowerOverDistance) {
-        const curve = ammo.ballisticCurves.penetrationPowerOverDistance;
-
-        // Find the appropriate curve segment for interpolation
-        for (let i = 0; i < curve.length - 1; i++) {
-            const currentPoint = curve[i];
-            const nextPoint = curve[i + 1];
-
-            if (rangeInCurveUnits >= currentPoint.time && rangeInCurveUnits <= nextPoint.time) {
-                if (currentPoint.interpMode === 'linear') {
-                    return interpolateRange(
-                        currentPoint.time,
-                        currentPoint.value,
-                        nextPoint.time,
-                        nextPoint.value,
-                        rangeInCurveUnits
-                    );
-                } else if (currentPoint.interpMode === 'cubic') {
-                    return interpolateCubicHermite(
-                        currentPoint.time,
-                        currentPoint.value,
-                        currentPoint.leaveTangent || 0,
-                        nextPoint.time,
-                        nextPoint.value,
-                        nextPoint.arriveTangent || 0,
-                        rangeInCurveUnits
-                    );
-                }
-            }
-        }
-
-        // Handle out-of-range cases
-        if (rangeInCurveUnits >= curve[curve.length - 1].time) {
-            return curve[curve.length - 1].value;
-        }
-        if (rangeInCurveUnits <= curve[0].time) {
-            return curve[0].value;
-        }
+        return interpolateBallisticCurve(ammo.ballisticCurves.penetrationPowerOverDistance, rangeInCurveUnits);
     }
 
     // Default falloff formula if no curve data
@@ -511,37 +534,8 @@ function interpolateCubicHermite(
     return h00 * y0 + h10 * (x1 - x0) * m0 + h01 * y1 + h11 * (x1 - x0) * m1;
 }
 
-/**
- * Linear interpolation helper
- */
-function interpolateRange(x1: number, y1: number, x2: number, y2: number, x: number): number {
-    return y1 + ((x - x1) / (x2 - x1)) * (y2 - y1);
-}
-
-/**
- * Interpolate value from curve points
- */
-function interpolateCurve(curve: BallisticCurvePoint[], x: number): number {
-    if (curve.length === 0) return 0;
-    if (x <= curve[0].time) return curve[0].value;
-    if (x >= curve[curve.length - 1].time) return curve[curve.length - 1].value;
-
-    for (let i = 0; i < curve.length - 1; i++) {
-        if (x >= curve[i].time && x <= curve[i + 1].time) {
-            return interpolateRange(
-                curve[i].time,
-                curve[i].value,
-                curve[i + 1].time,
-                curve[i + 1].value,
-                x
-            );
-        }
-    }
-
-    return curve[curve.length - 1].value;
-}
-
 export {
     calculateEffectiveDamage,
-    simulateCombat
+    simulateCombat,
+    calculateShotDamage
 };

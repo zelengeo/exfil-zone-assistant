@@ -228,20 +228,6 @@ export function isZoneProtectedBy(armorZoneId: string, protectionType: 'armor' |
 }
 
 /**
- * Calculate total body HP (sum of all parts)
- */
-export function getTotalBodyHP(): number {
-    return Object.values(BODY_PARTS).reduce((total, part) => total + part.hp, 0);
-}
-
-/**
- * Get vital body parts (death on 0 HP)
- */
-export function getVitalBodyParts(): BodyPart[] {
-    return Object.values(BODY_PARTS).filter(part => part.isVital);
-}
-
-/**
  * Colors for armor classes (following rarity scheme)
  */
 export const ARMOR_CLASS_COLORS = {

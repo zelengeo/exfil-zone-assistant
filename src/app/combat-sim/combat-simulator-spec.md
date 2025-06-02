@@ -196,6 +196,146 @@ interface ZoneCalculation {
 ## Core Calculations
 
 ### Damage Calculation
+Ammunition Parameters
+Core Stats
+
+damage: Base damage dealt to health
+penetration: Armor penetration power (typically 1-7 range)
+caliber: String identifier for weapon compatibility (e.g., "5.56x45")
+muzzleVelocity: Initial bullet velocity (affects range calculations)
+
+Damage Modifiers
+
+bluntDamageScale: Multiplier for blunt damage when bullet doesn't penetrate (typically 0.08-0.15)
+bleedingChance: Probability of causing bleed effect (0-1)
+protectionGearPenetratedDamageScale: Multiplier for armor durability damage when penetrating
+
+Default assumed: 0.5
+But test shows it might be ~1.9 for high-pen ammo!
+
+
+protectionGearBluntDamageScale: Multiplier for armor durability damage when NOT penetrating
+
+Typically 0.8-0.9
+Higher values = more armor damage on non-pen
+
+
+
+Range Data
+
+damageAtRange: Pre-calculated damage values at specific distances
+typescript{
+'60m': number,
+'120m': number,
+'240m': number,
+'480m': number
+}
+
+penetrationAtRange: Pre-calculated penetration values at distances
+
+Ballistic Curves
+
+ballisticCurves.damageOverDistance: Array of curve points for damage falloff
+ballisticCurves.penetrationPowerOverDistance: Array of curve points for penetration falloff
+
+X-axis: Distance in centimeters (100cm = 1m)
+Y-axis: Damage/Penetration value
+
+
+
+Armor Parameters
+Core Stats
+
+armorClass: Base protection level (2-6)
+maxDurability: Maximum durability points
+price: Cost in game currency
+weight: Weight in kg
+
+Damage Scalars
+
+durabilityDamageScalar: Multiplier for incoming durability damage
+
+Lower = armor lasts longer
+Typically 0.25-0.7
+
+
+bluntDamageScalar: Multiplier for blunt damage to health
+
+Lower = better blunt protection
+Typically 0.6-0.9
+
+
+
+Protection Zones
+
+protectiveData: Array of zones this armor protects
+typescript{
+bodyPart: string,      // "spine_01", "pelvis", "UpperArm_L", etc.
+armorClass: number,    // Can differ from base armor class
+bluntDamageScalar: number,  // Zone-specific blunt protection
+protectionAngle: number     // Coverage angle (not used yet)
+}
+
+
+Penetration Curves
+
+penetrationChanceCurve: Determines chance of penetration
+
+X-axis: Appears to be penetration/armor ratio (0-2 range typically)
+Y-axis: Penetration chance (0-1)
+Example points: time: 0, value: 0.95 → time: 1, value: 0.05
+
+
+penetrationDamageScalarCurve: Damage reduction when penetrating
+
+X-axis: UNCLEAR - could be:
+
+Penetration/armor ratio
+Direct armor class
+Something else
+
+
+Y-axis: Damage multiplier (0-1)
+Typical range: time -1 to 2, values 0.3 to 1.0
+
+
+antiPenetrationDurabilityScalarCurve: Armor effectiveness at different durability levels
+
+X-axis: Durability percentage (0-1)
+Y-axis: Armor class effectiveness multiplier (0-1)
+At 0% durability, armor class becomes ~0
+
+
+
+Key Findings from Testing
+
+Armor damage formula seems to be:
+
+Penetrating: bulletDamage * ammo.protectionGearPenetratedDamageScale * armor.durabilityDamageScalar
+Non-penetrating: bulletDamage * ammo.protectionGearBluntDamageScale * armor.durabilityDamageScalar
+
+
+Body damage formula:
+
+Penetrating: bulletDamage * penetrationDamageScalar
+Non-penetrating: bulletDamage * ammo.bluntDamageScale * armor.bluntDamageScalar
+
+
+Issues identified:
+
+protectionGearPenetratedDamageScale in ammo data might be wrong (should be ~1.9 for high-pen ammo?)
+Penetration damage scalar curve interpretation is unclear
+High-pen ammo seems to do MORE damage to armor than base bullet damage
+
+
+
+Unknown/Unclear Parameters
+
+How exactly does the penetrationDamageScalarCurve x-axis work?
+Why do some high-pen rounds have armor damage > bullet damage?
+What role does protectionAngle play in calculations?
+How do different interpolation modes (cubic vs linear) affect curves?
+
 ```typescript
 function calculateEffectiveDamage(
   baseDamage: number,

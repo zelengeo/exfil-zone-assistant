@@ -14,7 +14,6 @@ import {
 } from './types';
 import {
     ARMOR_ZONES,
-    BODY_PARTS,
     getBodyPartForArmorZone,
     isZoneProtectedBy
 } from './body-zones';
@@ -38,14 +37,12 @@ export function calculateCombatResults(
     attackers.forEach(attacker => {
         if (!attacker.weapon || !attacker.ammo) return;
 
-        const zoneCalcs = calculateAttackerZones(
+        results[attacker.id] = calculateAttackerZones(
             attacker.weapon,
             attacker.ammo,
             defender,
             range
         );
-
-        results[attacker.id] = zoneCalcs;
     });
 
     return results;
@@ -63,7 +60,6 @@ function calculateAttackerZones(
     const calculations: ZoneCalculation[] = [];
 
     // Process each armor zone
-    //TODO optimize simulation trigger - for example no point to rerun sim for unarmored limbs
     Object.entries(ARMOR_ZONES).forEach(([zoneId, zone]) => {
         const bodyPart = getBodyPartForArmorZone(zoneId);
         if (!bodyPart) return;
@@ -78,10 +74,10 @@ function calculateAttackerZones(
             damage: ammo.stats.damage,
             penetration: ammo.stats.penetration,
             caliber: ammo.stats.caliber,
-            bleedingChance: ammo.stats.bleedingChance,
+            bleedingChance: ammo.stats.bleedingChance || 0,
             bluntDamageScale: ammo.stats.bluntDamageScale || 0.1,
-            protectionGearPenetratedDamageScale: ammo.stats.protectionGearPenetratedDamageScale || 1,
-            protectionGearBluntDamageScale: ammo.stats.protectionGearBluntDamageScale || 1,
+            protectionGearPenetratedDamageScale: ammo.stats.protectionGearPenetratedDamageScale || 0.5,
+            protectionGearBluntDamageScale: ammo.stats.protectionGearBluntDamageScale || 0.9,
             damageAtRange: ammo.stats.damageAtRange,
             penetrationAtRange: ammo.stats.penetrationAtRange,
             ballisticCurves: ammo.stats.ballisticCurves,
@@ -89,24 +85,19 @@ function calculateAttackerZones(
 
         // Convert armor to required format if present
         const armorProps: ArmorProperties | null = armor ? {
-            armorClass: getZoneArmorClass(zoneId, armor),
+            ...getZoneArmorClassAndBluntScalar(zoneId, armor),
             maxDurability: armor.stats.maxDurability,
             currentDurability: getArmorDurability(zoneId, defender),
-            durabilityDamageScalar: armor.stats.durabilityDamageScalar || 0.5,
-            bluntDamageScalar: armor.stats.bluntDamageScalar || 0.2,
+            // More accurate default values based on armor data
+            durabilityDamageScalar: armor.stats.durabilityDamageScalar || 0.7,
             protectiveData: armor.stats.protectiveData,
             penetrationChanceCurve: armor.stats.penetrationChanceCurve,
             penetrationDamageScalarCurve: armor.stats.penetrationDamageScalarCurve,
             antiPenetrationDurabilityScalarCurve: armor.stats.antiPenetrationDurabilityScalarCurve
         } : null;
 
-        // Calculate damage for this zone
-        const damageResult = calculateEffectiveDamage(ammoProps, armorProps, range);
-
         // Calculate shots to kill
         const combatResult = simulateCombat(ammoProps, armorProps, bodyPart.hp, bodyPart.isVital, range);
-        //FIXME remove log
-        console.log(`Combat simulation`, combatResult);
 
         const shotsToKill = combatResult.shotsToKill;
 
@@ -117,20 +108,21 @@ function calculateAttackerZones(
         // Calculate cost to kill
         const costToKill = shotsToKill * ammo.stats.price;
 
+        //TODO randomness of penetration is missing here
         calculations.push({
             zoneId,
             bodyPartId: bodyPart.id,
             ttk,
             costToKill,
-            //TODO remove/improve these 3 values
-            penetrationChance: damageResult.penetrationChance,
-            effectiveDamage: damageResult.totalDamage,
-            bluntDamage: damageResult.bluntDamage,
             isProtected: armorProps !== null,
             armorClass: armorProps?.armorClass || 0,
             ...combatResult,
         });
     });
+
+    //FIXME remove log
+    console.log(`Calculations`, calculations);
+
 
     return calculations;
 }
@@ -138,17 +130,20 @@ function calculateAttackerZones(
 /**
  * Get armor class for a specific zone from the armor item
  */
-function getZoneArmorClass(zoneId: string, armor: Armor): number {
+function getZoneArmorClassAndBluntScalar(zoneId: string, armor: Armor): {
+    armorClass: number,
+    bluntDamageScalar: number
+} {
     // Check if armor has specific protection data for this zone
     if (armor.stats.protectiveData) {
         const protection = armor.stats.protectiveData.find(pd => pd.bodyPart === zoneId);
         if (protection) {
-            return protection.armorClass;
+            return {armorClass: protection.armorClass, bluntDamageScalar: protection.bluntDamageScalar};
         }
     }
 
     // Fall back to armor's base armor class
-    return armor.stats.armorClass;
+    return {armorClass: armor.stats.armorClass, bluntDamageScalar: armor.stats.bluntDamageScalar};
 }
 
 /**
