@@ -2,7 +2,7 @@
   {
     "id": "armor-6b17",
     "name": "6B17 Body Armor",
-    "description": "Russian military body armor vest providing Class 4 protection with ceramic plates. Offers excellent protection against rifle rounds while maintaining reasonable mobility.",
+    "description": "Russian military body armor vest providing Class 4 protection with ceramic plates. Good budget choice",
     "category": "gear",
     "subcategory": "Body Armor",
     "images": {
@@ -40,6 +40,140 @@
         {
           "bodyPart": "pelvis",
           "armorClass": 4,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 75
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.92,
+          "arriveTangent": -4.856966,
+          "leaveTangent": -4.856977
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.12,
+          "arriveTangent": -0.463078,
+          "leaveTangent": -0.463078
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.03,
+          "arriveTangent": -0.035238,
+          "leaveTangent": -0.035238
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": -0.001887
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.75,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.4,
+          "value": 0.6,
+          "arriveTangent": -0.438411,
+          "leaveTangent": -0.43841
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 2,
+          "value": 0.3,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.65,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Military-grade protection with ceramic trauma plates. Effective against most rifle calibers.",
+    "tips": "Balance the excellent protection against the mobility penalty. Best used when expecting heavy combat or holding defensive positions."
+  },{
+    "id": "armor-6b17-upgrade",
+    "name": "6B17 Upgraded Body Armor",
+    "description": "Russian military body armor vest providing Class 5 protection with ceramic plates. Offers excellent protection against rifle rounds while maintaining reasonable mobility.",
+    "category": "gear",
+    "subcategory": "Body Armor",
+    "images": {
+      "icon": "/images/items/armor/Icon_SKM_Vest_013_01_Ck.webp",
+      "thumbnail": "/images/items/armor/Icon_SKM_Vest_013_01_Ck.webp",
+      "fullsize": "/images/items/armor/Icon_SKM_Vest_013_01_Ck.webp"
+    },
+    "stats": {
+      "rarity": "Epic",
+      "price": 85000,
+      "weight": 7.2,
+      "armorClass": 5,
+      "maxDurability": 105,
+      "durabilityDamageScalar": 0.32,
+      "bluntDamageScalar": 0.7,
+      "protectiveData": [
+        {
+          "bodyPart": "spine_03",
+          "armorClass": 5,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 80
+        },
+        {
+          "bodyPart": "spine_02",
+          "armorClass": 5,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 80
+        },
+        {
+          "bodyPart": "spine_01",
+          "armorClass": 5,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 90
+        },
+        {
+          "bodyPart": "pelvis",
+          "armorClass": 5,
           "bluntDamageScalar": 0.7,
           "protectionAngle": 75
         }

@@ -2,14 +2,12 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { X, ChevronDown, AlertCircle } from 'lucide-react';
 import {
     AttackerSetup as AttackerSetupType,
-    Weapon,
-    Ammunition,
     isWeapon,
     isAmmunition,
     areWeaponAmmoCompatible
 } from '../utils/types';
 import { fetchItemsData } from '@/services/ItemService';
-import { Item } from '@/types/items';
+import {Ammunition, Item, Weapon} from '@/types/items';
 
 interface AttackerSetupProps {
     attacker: AttackerSetupType;

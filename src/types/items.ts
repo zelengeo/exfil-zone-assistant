@@ -1,22 +1,4 @@
 
-// Protective zone definition for armor coverage
-interface ProtectiveZone {
-    bodyPart: string;
-    armorClass: number;
-    bluntDamageScalar: number;
-    protectionAngle: number;
-}
-
-// Curve point for penetration calculations
-interface CurvePoint {
-    interpMode: 'cubic' | 'linear';
-    tangentMode: 'user' | 'auto';
-    time: number;
-    value: number;
-    arriveTangent: number;
-    leaveTangent: number;
-}
-
 export interface Item {
     id: string;
     name: string;
@@ -33,98 +15,153 @@ export interface Item {
         rarity: ItemRarity;
         price: number;
         weight: number;
-
-        // Weapon-specific stats
-        fireRate?: number;
-        MOA?: number;
-        verticalRecoil?: number;
-        horizontalRecoil?: number;
-        ADSSpeed?: number;
-        ergonomics?: number;
-        // EXTRA PARAMS in several configs - not sure if they are really used, cuz these params are provided by ammo
-        // penetration?: number;
-        // accuracy?: number;
-        // effectiveRange?: number;
-        // damage?: number;
-        // muzzleVelocity?: number;
-        // headDamageScale?: number;
-        // firingPower?: number;
-
-        // Ammunition-specific stats
-        damage?: number;
-        penetration?: number;
-        muzzleVelocity?: number;
-        bleedingChance?: number;
-        bluntDamageScale?: number;
-        protectionGearPenetratedDamageScale?: number;
-        protectionGearBluntDamageScale?: number;
-        caliber?: string;
-        "damageAtRange"?: {
-            "0m": number;
-            "100m": number;
-            "300m": number;
-            "500m": number;
-        }
-        "penetrationAtRange"?: {
-            "0m": number;
-            "100m": number;
-            "300m": number;
-            "500m": number;
-        }
-
-        // Armor/helmet-specific stats
-        armorClass?: number;
-        maxDurability?: number;
-        durabilityDamageScalar?: number;
-        bluntDamageScalar?: number;
-        protectiveData?: ProtectiveZone[];
-        penetrationChanceCurve?: CurvePoint[];
-        penetrationDamageScalarCurve?: CurvePoint[];
-
-
-        //FOLLOWING IS SUBJECT OF CHANGE:
-        // Medical-specific stats
-        healAmount?: number;
-        useTime?: number;
-        duration?: number;
-
-        // Food-specific stats
-        energyValue?: number;
-        hydrationValue?: number;
-
-        // Key-specific stats
-        uses?: number;
-
-        // Attachment-specific stats
-        recoilReduction?: number;
-        accuracyBonus?: number;
-        ergoBonus?: number;
-
-        // Container-specific stats
-        capacity?: number;
-        slots?: string; // e.g., "4x4"
     };
-    // locations?: {
-    //     map: string;
-    //     spots: {
-    //         x: number;
-    //         y: number;
-    //         description: string;
-    //     }[];
-    // }[];
-    // relatedQuests?: string[]; // Quest IDs
-    // craftingRecipes?: {
-    //     inputs: {
-    //         itemId: string;
-    //         quantity: number;
-    //     }[];
-    //     output: {
-    //         quantity: number;
-    //     };
-    // }[];
+
     notes?: string;
     tips?: string;
 }
+
+// Interpolation modes for curves
+export type InterpolationMode = 'cubic' | 'linear';
+export type TangentMode = 'user' | 'auto';
+
+// Ballistic curve point with all properties from game data
+export interface CurvePoint {
+    interpMode: InterpolationMode;
+    tangentMode: TangentMode;
+    time: number;
+    value: number;
+    arriveTangent: number;
+    leaveTangent: number;
+}
+
+// Weapon type with complete stats from game data
+export interface Weapon extends Item {
+    category: 'weapons';
+    stats: Item['stats'] & {
+        // Required weapon stats
+        fireRate: number;
+        caliber: string;
+
+        // Recoil parameters
+        recoilParameters?: {
+            shiftMomentum: number;
+            pitchBaseMomentum: number;
+            yawBaseMomentum: number;
+            rollBaseMomentum?: number;
+            shiftStiffness: number;
+            pitchStiffness: number;
+            yawStiffness: number;
+            rollStiffness: number;
+            shiftDamping?: number;
+            pitchDamping: number;
+            yawDamping: number;
+            rollDamping: number;
+            shiftMass?: number;
+            pitchMass: number;
+            yawMass: number;
+            rollMass: number;
+            oneHandedADSMultiplier?: number;
+            verticalRecoilControl: number;
+            horizontalRecoilControl: number;
+        };
+
+        // Other weapon properties
+        MOA?: number;
+        ADSSpeed?: number;
+        ergonomics?: number;
+        //Needs investigation - In game UI shows some power values, but not sure what they are
+        firingPower?: number;
+        //PROBABLY LEFTOVER DATA FROM OTHER MODE/GAME cuz these values are AMMO-related
+        damageRangeCurve?: string;
+        bulletDropFactor?: number;
+        muzzleVelocity?: number;
+        hitDamage?: number;
+        headDamageScale?: number;
+    };
+}
+
+// Complete ammunition type with ballistic curves
+export interface Ammunition extends Item {
+    category: 'ammo';
+    stats: Item['stats'] & AmmoProperties;
+}
+
+// Complete armor type with all curves
+export interface Armor extends Item {
+    category: 'gear';
+    subcategory: 'Body Armor' | 'Helmets'; //TODO split
+    stats: Item['stats'] & ArmorProperties;
+}
+
+export type AnyItem = Weapon | Armor | Ammunition;
+
+// Protective zone from armor data
+export interface ProtectiveZone {
+    bodyPart: string; // bodypart.id e.g., "spine_03", "pelvis", "UpperArm_L"
+    armorClass: number;
+    bluntDamageScalar: number;
+    protectionAngle: number; // not used in simulation yet
+}
+
+export interface AmmoProperties {
+    // Required ammo stats
+    damage: number;
+    penetration: number;
+    caliber: string;
+
+    // Damage modifiers
+    bluntDamageScale: number;
+    bleedingChance: number;
+    protectionGearPenetratedDamageScale: number;
+    protectionGearBluntDamageScale: number;
+
+    // Ballistics
+    muzzleVelocity?: number;
+    bulletDropFactor?: number;
+
+    //precalculated values (cache)
+    damageAtRange: {
+        '60m': number;
+        '120m': number;
+        '240m': number;
+        '480m': number;
+    };
+    penetrationAtRange: {
+        '60m': number;
+        '120m': number;
+        '240m': number;
+        '480m': number;
+    };
+
+    // Full ballistic curves from game data
+    ballisticCurves: {
+        damageOverDistance: CurvePoint[];
+        penetrationPowerOverDistance: CurvePoint[];
+    };
+}
+
+export interface ArmorProperties {
+    // Required armor stats
+    armorClass: number;
+    maxDurability: number;
+
+    // Value for correct simulation of a damaged armor
+    currentDurability: number;
+
+    // Damage scalars
+    durabilityDamageScalar: number;
+    bluntDamageScalar: number;
+
+    // Protection zones
+    protectiveData: ProtectiveZone[];
+
+    // Penetration curves from game data
+    penetrationChanceCurve: CurvePoint[];
+    penetrationDamageScalarCurve: CurvePoint[];
+    antiPenetrationDurabilityScalarCurve: CurvePoint[];
+}
+
 export interface ItemCategory {
     id: string;
     name: string;

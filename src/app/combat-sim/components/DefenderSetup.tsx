@@ -2,11 +2,10 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { ChevronDown, Shield, HardHat, Info } from 'lucide-react';
 import {
     DefenderSetup as DefenderSetupType,
-    Armor,
     isArmor
 } from '../utils/types';
 import { fetchItemsData } from '@/services/ItemService';
-import { Item } from '@/types/items';
+import {Armor, Item} from '@/types/items';
 import { getArmorClassColor } from '../utils/body-zones';
 
 interface DefenderSetupProps {
@@ -51,17 +50,14 @@ export default function DefenderSetup({ defender, onUpdate }: DefenderSetupProps
     // Separate body armors and helmets
     const bodyArmors = useMemo(() =>
             armors.filter(armor =>
-                armor.subcategory === 'Body Armor' ||
-                armor.category === 'armor' ||
-                (armor.category === 'gear' && !armor.name.toLowerCase().includes('helmet'))
+                armor.subcategory === 'Body Armor'
             ),
         [armors]
     );
 
     const helmets = useMemo(() =>
             armors.filter(armor =>
-                armor.subcategory === 'Helmets' ||
-                armor.name.toLowerCase().includes('helmet')
+                armor.subcategory === 'Helmets'
             ),
         [armors]
     );

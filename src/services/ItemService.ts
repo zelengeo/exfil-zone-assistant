@@ -56,9 +56,9 @@ function transformItemData(rawItem: any): Item {
             baseItem.stats.caliber = rawItem.stats.caliber;
             baseItem.stats.fireRate = rawItem.stats.fireRate;
             baseItem.stats.ergonomics = rawItem.stats.ergonomics;
+            baseItem.stats.ADSSpeed = rawItem.stats.ADSSpeed;
             baseItem.stats.MOA = rawItem.stats.MOA;
-            baseItem.stats.verticalRecoil = rawItem.stats.recoilParameters.verticalRecoilControl;
-            baseItem.stats.horizontalRecoil = rawItem.stats.recoilParameters.horizontalRecoilControl;
+            baseItem.stats.recoilParameters = rawItem.stats.recoilParameters;
             // baseItem.stats.penetration = rawItem.stats.penetration || 1;
         }
 
@@ -68,11 +68,13 @@ function transformItemData(rawItem: any): Item {
             baseItem.stats.damage = rawItem.stats.damage;
             baseItem.stats.penetration = rawItem.stats.penetration;
             baseItem.stats.muzzleVelocity = rawItem.stats.muzzleVelocity;
+            baseItem.stats.bleedingChance = rawItem.stats.bleedingChance;
             baseItem.stats.bluntDamageScale = rawItem.stats.bluntDamageScale;
             baseItem.stats.protectionGearPenetratedDamageScale = rawItem.stats.protectionGearPenetratedDamageScale;
             baseItem.stats.protectionGearBluntDamageScale = rawItem.stats.protectionGearBluntDamageScale;
             baseItem.stats.damageAtRange = rawItem.stats.damageAtRange;
             baseItem.stats.penetrationAtRange = rawItem.stats.penetrationAtRange;
+            baseItem.stats.ballisticCurves = rawItem.stats.ballisticCurves;
         }
 
         if (rawItem.category === 'gear' && rawItem.subcategory === 'Body Armor') {

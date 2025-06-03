@@ -8,9 +8,6 @@ import {
     DefenderSetup,
     ZoneCalculation,
     AttackerSummary,
-    Weapon,
-    Ammunition,
-    Armor, AmmoProperties, ArmorProperties,
 } from './types';
 import {
     ARMOR_ZONES,
@@ -18,10 +15,9 @@ import {
     isZoneProtectedBy
 } from './body-zones';
 import {
-    calculateEffectiveDamage,
     simulateCombat
 } from './damage-calculations';
-import {ProtectiveZone} from "@/app/combat-sim/utils/types";
+import {AmmoProperties, Ammunition, Armor, ArmorProperties, ProtectiveZone, Weapon} from '@/types/items';
 
 /**
  * Calculate combat results for all attackers against defender

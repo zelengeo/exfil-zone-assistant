@@ -1,0 +1,215 @@
+import React from 'react';
+import { BallisticCurvePoint } from '@/app/combat-sim/utils/types';
+
+interface BallisticCurveChartProps {
+    title: string;
+    curves: {
+        name: string;
+        data: BallisticCurvePoint[];
+        color: string;
+    }[];
+    xLabel?: string;
+    yLabel?: string;
+    height?: number;
+}
+
+export default function BallisticCurveChart({
+                                                title,
+                                                curves,
+                                                xLabel = 'Distance',
+                                                yLabel = 'Value',
+                                                height = 300
+                                            }: BallisticCurveChartProps) {
+    // Find the min/max values for scaling
+    let minX = Infinity, maxX = -Infinity;
+    let minY = Infinity, maxY = -Infinity;
+
+    curves.forEach(curve => {
+        curve.data.forEach(point => {
+            minX = Math.min(minX, point.time);
+            maxX = Math.max(maxX, point.time);
+            minY = Math.min(minY, point.value);
+            maxY = Math.max(maxY, point.value);
+        });
+    });
+
+    // Add some padding
+    const xPadding = (maxX - minX) * 0.1 || 1;
+    const yPadding = (maxY - minY) * 0.1 || 0.1;
+    minX -= xPadding;
+    maxX += xPadding;
+    minY -= yPadding;
+    maxY += yPadding;
+
+    // SVG dimensions
+    const width = 600;
+    const padding = { top: 20, right: 20, bottom: 50, left: 60 };
+    const chartWidth = width - padding.left - padding.right;
+    const chartHeight = height - padding.top - padding.bottom;
+
+    // Scale functions
+    const scaleX = (x: number) => ((x - minX) / (maxX - minX)) * chartWidth;
+    const scaleY = (y: number) => chartHeight - ((y - minY) / (maxY - minY)) * chartHeight;
+
+    // Generate path for cubic interpolation
+    const generatePath = (points: BallisticCurvePoint[]) => {
+        if (points.length === 0) return '';
+
+        let path = `M ${scaleX(points[0].time)} ${scaleY(points[0].value)}`;
+
+        for (let i = 0; i < points.length - 1; i++) {
+            const p0 = points[i];
+            const p1 = points[i + 1];
+
+            if (p0.interpMode === 'linear') {
+                path += ` L ${scaleX(p1.time)} ${scaleY(p1.value)}`;
+            } else {
+                // Cubic bezier approximation
+                const dx = (p1.time - p0.time) / 3;
+                const c1x = scaleX(p0.time + dx);
+                const c1y = scaleY(p0.value + p0.leaveTangent * dx);
+                const c2x = scaleX(p1.time - dx);
+                const c2y = scaleY(p1.value - p1.arriveTangent * dx);
+
+                path += ` C ${c1x} ${c1y}, ${c2x} ${c2y}, ${scaleX(p1.time)} ${scaleY(p1.value)}`;
+            }
+        }
+
+        return path;
+    };
+
+    // Generate grid lines
+    const xGridLines = [];
+    const yGridLines = [];
+    const xTicks = 5;
+    const yTicks = 5;
+
+    for (let i = 0; i <= xTicks; i++) {
+        const x = (i / xTicks) * chartWidth;
+        const value = minX + (i / xTicks) * (maxX - minX);
+        xGridLines.push({ x, value });
+    }
+
+    for (let i = 0; i <= yTicks; i++) {
+        const y = (i / yTicks) * chartHeight;
+        const value = minY + ((yTicks - i) / yTicks) * (maxY - minY);
+        yGridLines.push({ y, value });
+    }
+
+    return (
+        <div className="military-card p-4 rounded-sm">
+            <h4 className="text-lg font-bold text-olive-400 mb-4">{title}</h4>
+            <div className="overflow-x-auto">
+                <svg width={width} height={height} className="bg-military-900 rounded">
+                    <g transform={`translate(${padding.left}, ${padding.top})`}>
+                        {/* Grid lines */}
+                        {xGridLines.map((line, i) => (
+                            <g key={`x-${i}`}>
+                                <line
+                                    x1={line.x}
+                                    y1={0}
+                                    x2={line.x}
+                                    y2={chartHeight}
+                                    stroke="#454d28"
+                                    strokeOpacity="0.3"
+                                />
+                                <text
+                                    x={line.x}
+                                    y={chartHeight + 20}
+                                    textAnchor="middle"
+                                    fill="#e7d1a9"
+                                    fontSize="12"
+                                >
+                                    {line.value.toFixed(1)}
+                                </text>
+                            </g>
+                        ))}
+
+                        {yGridLines.map((line, i) => (
+                            <g key={`y-${i}`}>
+                                <line
+                                    x1={0}
+                                    y1={line.y}
+                                    x2={chartWidth}
+                                    y2={line.y}
+                                    stroke="#454d28"
+                                    strokeOpacity="0.3"
+                                />
+                                <text
+                                    x={-10}
+                                    y={line.y + 4}
+                                    textAnchor="end"
+                                    fill="#e7d1a9"
+                                    fontSize="12"
+                                >
+                                    {line.value.toFixed(2)}
+                                </text>
+                            </g>
+                        ))}
+
+                        {/* Axes */}
+                        <line x1={0} y1={chartHeight} x2={chartWidth} y2={chartHeight} stroke="#9ba85e" strokeWidth="2" />
+                        <line x1={0} y1={0} x2={0} y2={chartHeight} stroke="#9ba85e" strokeWidth="2" />
+
+                        {/* Curves */}
+                        {curves.map((curve, i) => (
+                            <g key={i}>
+                                <path
+                                    d={generatePath(curve.data)}
+                                    fill="none"
+                                    stroke={curve.color}
+                                    strokeWidth="2"
+                                />
+                                {/* Data points */}
+                                {curve.data.map((point, j) => (
+                                    <circle
+                                        key={j}
+                                        cx={scaleX(point.time)}
+                                        cy={scaleY(point.value)}
+                                        r="3"
+                                        fill={curve.color}
+                                    />
+                                ))}
+                            </g>
+                        ))}
+
+                        {/* Labels */}
+                        <text
+                            x={chartWidth / 2}
+                            y={chartHeight + 40}
+                            textAnchor="middle"
+                            fill="#e7d1a9"
+                            fontSize="14"
+                        >
+                            {xLabel}
+                        </text>
+                        <text
+                            x={-chartHeight / 2}
+                            y={-40}
+                            textAnchor="middle"
+                            fill="#e7d1a9"
+                            fontSize="14"
+                            transform="rotate(-90)"
+                        >
+                            {yLabel}
+                        </text>
+                    </g>
+
+                    {/* Legend */}
+                    {curves.length > 1 && (
+                        <g transform={`translate(${width - 150}, 20)`}>
+                            {curves.map((curve, i) => (
+                                <g key={i} transform={`translate(0, ${i * 20})`}>
+                                    <line x1={0} y1={0} x2={20} y2={0} stroke={curve.color} strokeWidth="2" />
+                                    <text x={25} y={4} fill="#e7d1a9" fontSize="12">
+                                        {curve.name}
+                                    </text>
+                                </g>
+                            ))}
+                        </g>
+                    )}
+                </svg>
+            </div>
+        </div>
+    );
+}

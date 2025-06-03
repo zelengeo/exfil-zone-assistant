@@ -1,8 +1,9 @@
 'use client';
 
 import React, {useState, useEffect, useMemo} from 'react';
+import Link from 'next/link';
 import Layout from '@/components/layout/Layout';
-import {AlertTriangle, CheckCircle, XCircle, Upload, Download, Play, RefreshCw} from 'lucide-react';
+import {AlertTriangle, CheckCircle, XCircle, Shield, ShieldOff, Download, Play, RefreshCw} from 'lucide-react';
 import {SingleShotTestCase, TestRunResult, TestSummary} from '../utils/test-types';
 import {fetchItemsData} from '@/services/ItemService';
 import {isWeapon, isAmmunition, isArmor} from '../utils/types';
@@ -402,11 +403,26 @@ export default function CombatSimDebugPage() {
                                         className="border-b border-military-800 hover:bg-military-800/50">
                                         <td className="py-2 px-3">
                                             <div className="flex items-center gap-1 flex-wrap">
-                                                <span className={`font-medium ${getRarityColorClass(result.weapon.stats.rarity)}`}>{result.weapon.name}</span>
+                                                <Link
+                                                    href={`/items/${result.weapon.id}`}
+                                                    className={`font-medium ${getRarityColorClass(result.weapon.stats.rarity)}`}
+                                                >
+                                                    {result.weapon.name}
+                                                </Link>
                                                 <span className="text-tan-400">+</span>
-                                                <span className={`font-medium ${getRarityColorClass(result.ammo.stats.rarity)}`}>{result.ammo.name}</span>
+                                                <Link
+                                                    href={`/items/${result.ammo.id}`}
+                                                    className={`font-medium ${getRarityColorClass(result.ammo.stats.rarity)}`}
+                                                >
+                                                    {result.ammo.name}
+                                                </Link>
                                                 <span className="text-tan-400">vs</span>
-                                                <span className={`font-medium ${getRarityColorClass(result.armor.stats.rarity)}`}>{result.armor.name}</span>
+                                                <Link
+                                                    href={`/items/${result.armor.id}`}
+                                                    className={`font-medium ${getRarityColorClass(result.armor.stats.rarity)}`}
+                                                >
+                                                    {result.armor.name}
+                                                </Link>
                                                 <span className="text-tan-400 text-xs">({result.testCase.armor.currentDurability??result.armor.stats.maxDurability})</span>
                                             </div>
                                             {result.testCase.description && (
@@ -423,9 +439,9 @@ export default function CombatSimDebugPage() {
                                         </td>
                                         <td className="text-center py-2 px-3">
                                             {result.testCase.isPenetration ? (
-                                                <CheckCircle size={16} className="text-green-400 mx-auto"/>
+                                                <ShieldOff size={16} className="text-red-400 mx-auto"/>
                                             ) : (
-                                                <XCircle size={16} className="text-red-400 mx-auto"/>
+                                                <Shield size={16} className="text-green-400 mx-auto"/>
                                             )}
                                         </td>
                                         <td className="text-center py-2 px-3 font-mono text-tan-100">
