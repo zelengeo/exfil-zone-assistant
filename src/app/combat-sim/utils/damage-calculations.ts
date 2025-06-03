@@ -11,6 +11,7 @@ import {
     DamageCalculationResult,
     RANGE_VALUES, ShotResult
 } from "@/app/combat-sim/utils/types";
+import {bool} from "sharp";
 
 /**
  * Simulate combat shot-by-shot with armor degradation
@@ -247,8 +248,9 @@ function calculateShotDamageOrig(
 function calculateShotDamage(
     ammo: AmmoProperties,
     armor: ArmorProperties | null,
-    currentArmorDurability: number,
-    range: number
+    currentArmorDurability: number | null,
+    range: number,
+    overridePenentrationChance: boolean | null,
 ): ShotResult {
     // Apply range falloff to base damage and penetration
     const rangeDamage = applyRangeFalloff(ammo.damage, ammo, range);
@@ -265,7 +267,9 @@ function calculateShotDamage(
     }
 
     // Calculate armor effectiveness based on current durability
-    const durabilityPercent = currentArmorDurability / armor.maxDurability;
+    const durabilityPercent = currentArmorDurability == null ? 1 : currentArmorDurability / armor.maxDurability;
+
+    //FIXME seems this is not the case, durability affects pen chance
     const armorEffectiveness = getArmorEffectivenessFromDurability(
         durabilityPercent,
         armor.antiPenetrationDurabilityScalarCurve
@@ -282,29 +286,29 @@ function calculateShotDamage(
     );
 
     // Determine if this shot penetrates
-    const isPenetrating = true; //Math.random() < penetrationChance;
+    const isPenetrating = overridePenentrationChance ?? (Math.random() < penetrationChance);
 
     let damageToBodyPart = 0;
     let damageToArmor = 0;
 
     if (isPenetrating) {
         // For penetrationDamageScalarCurve, try using armor class directly
-        const penetrationDamageScalar = getPenetrationDamageScalarFixed(
-            effectiveArmorClass,  // Use armor class, not ratio
-            armor.penetrationDamageScalarCurve
-        );
+        const penetrationDamageScalar = getPenetrationDamageScalar(armor.penetrationDamageScalarCurve);
 
         damageToBodyPart = rangeDamage * penetrationDamageScalar;
 
-        // Armor damage for penetrating shots - use damage, not penetration
-        damageToArmor = rangeDamage * ammo.protectionGearPenetratedDamageScale * armor.durabilityDamageScalar;
+        // Armor damage for penetrating shots
+        damageToArmor = damageToBodyPart * ammo.protectionGearPenetratedDamageScale * (1 + armor.durabilityDamageScalar)//Measured damage is less by x ~ 5% (rounded measured data...)
+
+        // * armor.durabilityDamageScalar;  not sure what this scalar does
 
     } else {
         // Non-penetrating shot (blunt damage)
         damageToBodyPart = rangeDamage * ammo.bluntDamageScale * armor.bluntDamageScalar;
 
         // Armor damage for non-penetrating shots
-        damageToArmor = rangeDamage * ammo.protectionGearBluntDamageScale * armor.durabilityDamageScalar;
+        damageToArmor = rangeDamage * ammo.protectionGearBluntDamageScale * (1 + armor.durabilityDamageScalar)
+        // * armor.durabilityDamageScalar;  not sure what this scalar does
     }
 
     return {
@@ -313,22 +317,6 @@ function calculateShotDamage(
         damageToArmor,
         penetrationChance
     };
-}
-
-// New function for penetration damage scalar
-function getPenetrationDamageScalarFixed(
-    armorClass: number,
-    penetrationDamageScalarCurve?: BallisticCurvePoint[]
-): number {
-    if (penetrationDamageScalarCurve && penetrationDamageScalarCurve.length > 0) {
-        // The curve x-axis appears to be armor class based on the -1 to 2 range
-        // Map armor class (0-6) to curve range (-1 to 2)
-        const normalizedValue = (armorClass - 3) / 2; // Maps AC 0-6 to -1.5 to 1.5
-        return interpolateBallisticCurve(penetrationDamageScalarCurve, normalizedValue);
-    }
-
-    // Default fallback
-    return 0.75;
 }
 
 /**
@@ -386,22 +374,13 @@ function calculatePenetrationChance(
  * Get penetration damage scalar from curve
  */
 function getPenetrationDamageScalar(
-    penetrationPower: number,
-    armorClass: number,
-    penetrationDamageScalarCurve?: BallisticCurvePoint[]
+    penetrationDamageScalarCurve: BallisticCurvePoint[]
 ): number {
-    if (penetrationDamageScalarCurve && penetrationDamageScalarCurve.length > 0) {
-        // The curve x-axis often represents the penetration/armor ratio
-        const ratio = armorClass > 0 ? penetrationPower / armorClass : 2;
-        return interpolateBallisticCurve(penetrationDamageScalarCurve, ratio);
-    }
-
-    // Default: higher penetration = less damage reduction
-    const ratio = armorClass > 0 ? penetrationPower / armorClass : 2;
-    if (ratio >= 2) return 0.95;
-    if (ratio >= 1.5) return 0.85;
-    if (ratio >= 1) return 0.75;
-    return 0.65;
+    //FIXME
+    return penetrationDamageScalarCurve[1].value
+    //I was not able to find ingame cases when this Curve effect occurred, in both overpen/underpen(0 durability) it was always very close to second element of this curve.
+    //Measured damage is less by x < 10% (rounded measured data...)
+    //return interpolateBallisticCurve(penetrationDamageScalarCurve, ratio);
 }
 
 /**

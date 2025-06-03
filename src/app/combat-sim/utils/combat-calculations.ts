@@ -89,7 +89,7 @@ function calculateAttackerZones(
             maxDurability: armor.stats.maxDurability,
             currentDurability: getArmorDurability(zoneId, defender),
             // More accurate default values based on armor data
-            durabilityDamageScalar: armor.stats.durabilityDamageScalar || 0.7,
+            durabilityDamageScalar: armor.stats.durabilityDamageScalar,
             protectiveData: armor.stats.protectiveData,
             penetrationChanceCurve: armor.stats.penetrationChanceCurve,
             penetrationDamageScalarCurve: armor.stats.penetrationDamageScalarCurve,

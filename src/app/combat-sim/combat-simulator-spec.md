@@ -1,502 +1,268 @@
-# Combat Simulator Specification
+# Combat Simulator Specification v2
 
 ## Overview
-The Combat Simulator is an interactive tool that allows players to analyze weapon effectiveness against armored opponents in various combat scenarios. Users can compare multiple weapon/ammo combinations and visualize damage output across different body zones.
+The Combat Simulator analyzes weapon effectiveness against armored targets using datamined game parameters. The system models penetration mechanics, armor degradation, and damage calculations based on real game data.
 
-## Route
-`/combat-simulator`
+## Current Implementation Status
 
-## Core Features
+### Working Features
+- Multi-attacker comparison (up to 4 loadouts)
+- Interactive body model with armor zones
+- Range-based damage/penetration falloff
+- Basic TTK/STK/CTK calculations
+- Armor degradation simulation
 
-### 1. Multi-Attacker Comparison
-- Support up to 4 different weapon + ammo combinations
-- Each setup has unique color coding (Blue, Red, Green, Yellow)
-- Real-time comparison of effectiveness
+### Known Issues
+1. **Penetration Damage Scalar Curve Interpretation**
+   - X-axis interpretation unclear (ratio vs armor class)
+   - Current implementation uses normalized armor class mapping
+   - In-game results don't match calculations
 
-### 2. Interactive Body Model
-- 2D standing figure (front view)
-- Clickable/hoverable zones
-- Visual armor representation with rarity-based colors
-- Dynamic value overlays based on selected display mode
+2. **Armor Damage Calculations**
+   - `protectionGearPenetratedDamageScale` values seem incorrect
+   - High-pen ammo does more armor damage than expected, however in context of STK computing it is neglectable
+   - Durability damage scalar application inconsistent
 
-### 3. Range-Based Calculations
-- Adjustable engagement distance (0-500m)
-- Real-time damage falloff calculations
-- Penetration power adjustments
-
-### 4. Multiple Display Modes
-- **TTK (Time to Kill)**: Shows time in seconds
-- **STK (Shots to Kill)**: Shows number of shots required
-- **CTK (Cost to Kill)**: Shows ammunition cost
+3. **Deterministic vs Probabilistic**
+   - Currently using deterministic average damage
+   - Missing probability distribution for STK
 
 ## Data Structure
 
-### Body Part System
+### Ammunition Parameters
 ```typescript
-// Actual body parts with HP (damage zones)
-interface BodyPart {
-  id: string;
-  name: string;
-  hp: number;
-  isVital: boolean;
-  armorZones: string[]; // References to armor zones that protect this part
-}
+interface AmmoProperties {
+   // Core stats
+   damage: number;                    // Base damage to health
+   penetration: number;               // Armor penetration power (1-7 range)
+   caliber: string;                   // Weapon compatibility
 
-// Armor protection zones (what armor pieces cover)
-interface ArmorZone {
-  id: string;
-  name: string;
-  bodyPart: string; // Which body part this zone belongs to
-  defaultProtection: 'armor' | 'helmet' | 'none';
+   // Damage modifiers
+   bluntDamageScale: number;          // 0.08-0.15 typical
+   bleedingChance: number;            // 0-1 probability
+
+   // Armor interaction scalars
+   protectionGearPenetratedDamageScale: number;  // Issue: should be ~1.9 for high-pen?
+   protectionGearBluntDamageScale: number;       // 0.8-0.9 typical
+
+   // Range data
+   damageAtRange: {
+      '60m': number,
+      '120m': number,
+      '240m': number,
+      '480m': number
+   };
+   // Penetration data
+   penetrationAtRange: {
+      '60m': number,
+      '120m': number,
+      '240m': number,
+      '480m': number
+   };
+
+   // Ballistic curves (x-axis in cm, y-axis damage/pen)
+   ballisticCurves: {
+      damageOverDistance: BallisticCurvePoint[];
+      penetrationPowerOverDistance: BallisticCurvePoint[];
+   };
 }
 ```
 
-### Body Parts Configuration
+### Armor Parameters
 ```typescript
+interface ArmorProperties {
+   // Core stats
+   armorClass: number;               // 2-6 protection level
+   maxDurability: number;            // Maximum durability points
+   currentDurability: number;        // Current state
+
+   // Damage modifiers
+   durabilityDamageScalar: number;   // 0.25-0.7 (lower = lasts longer)
+   bluntDamageScalar: number;        // 0.6-0.9 (lower = better protection)
+
+   // Zone-specific protection
+   protectiveData: Array<{
+      bodyPart: string;              // "spine_01", "pelvis", etc.
+      armorClass: number;            // Can differ from base
+      bluntDamageScalar: number;     // Zone-specific
+      protectionAngle: number;       // Not implemented yet
+   }>;
+
+   // Penetration curves
+   penetrationChanceCurve: BallisticCurvePoint[];         // X: pen/armor ratio, Y: chance
+   penetrationDamageScalarCurve: BallisticCurvePoint[];   // X: unclear, Y: damage mult
+   antiPenetrationDurabilityScalarCurve: BallisticCurvePoint[]; // X: durability %, Y: effectiveness
+}
+```
+
+## Damage Calculation Algorithm
+
+### Current Implementation
+```typescript
+// 1. Apply range modifiers
+rangeDamage = interpolate(ammo.ballisticCurves.damageOverDistance, range)
+rangePenetration = interpolate(ammo.ballisticCurves.penetrationPowerOverDistance, range)
+
+// 2. Calculate armor effectiveness
+durabilityPercent = currentDurability / maxDurability
+armorEffectiveness = interpolate(armor.antiPenetrationDurabilityScalarCurve, durabilityPercent)
+effectiveArmorClass = armor.armorClass * armorEffectiveness
+
+// 3. Penetration chance
+penetrationChance = interpolate(armor.penetrationChanceCurve, rangePenetration / effectiveArmorClass)
+
+// 4. Damage calculation
+if (penetrating) {
+   // Issue: How to interpret penetrationDamageScalarCurve x-axis?
+   damageScalar = interpolate(armor.penetrationDamageScalarCurve, ???)
+   bodyDamage = rangeDamage * damageScalar
+   armorDamage = rangeDamage * ammo.protectionGearPenetratedDamageScale * armor.durabilityDamageScalar
+} else {
+   bodyDamage = rangeDamage * ammo.bluntDamageScale * armor.bluntDamageScalar
+   armorDamage = rangeDamage * ammo.protectionGearBluntDamageScale * armor.durabilityDamageScalar
+}
+```
+
+### Proposed Fixes
+
+#### 1. Penetration Damage Scalar Curve
+```typescript
+// Option A: Use penetration difference, in game data does not agree - overpen still falls under second element of curve value. 
+const penDifference = rangePenetration - effectiveArmorClass;
+damageScalar = interpolate(curve, penDifference);
+
+// Option B: Use armor class directly, but can't see how it can work - curve distribution is from -1 to 2
+const normalizedValue = (armorClass - 3) / 2; // Maps AC 0-6 to -1.5 to 1.5
+damageScalar = interpolate(curve, normalizedValue);
+
+// Option C: Use raw armor class - -1 armor class - what is it
+damageScalar = interpolate(curve, armorClass);
+```
+
+#### 2. Armor Damage Formula
+```typescript
+// Current observation from testing:
+// Penetrating shots: ~10x less armor damage than expected
+// Non-penetrating: ~30% less than expected
+
+// Proposed adjustment factors:
+const PEN_ARMOR_DAMAGE_MULT = 10;    // Multiply penetrating armor damage
+const NONPEN_ARMOR_DAMAGE_MULT = 1.3; // Multiply non-pen armor damage
+
+if (penetrating) {
+   armorDamage = rangeDamage * ammo.protectionGearPenetratedDamageScale *
+           armor.durabilityDamageScalar * PEN_ARMOR_DAMAGE_MULT;
+} else {
+   armorDamage = rangeDamage * ammo.protectionGearBluntDamageScale *
+           armor.durabilityDamageScalar * NONPEN_ARMOR_DAMAGE_MULT;
+}
+```
+
+## Body Zone System
+
+### Zone Mapping
+```typescript
+// Game data uses these zone IDs in armor.protectiveData:
+const ARMOR_ZONE_MAPPING = {
+   // Chest protection
+   "spine_01": "Upper Chest",     // Upper chest area
+   "spine_02": "Lower Chest",     // Lower chest area
+
+   // Stomach protection  
+   "spine_03": "Upper Stomach",   // Upper stomach area
+   "pelvis": "Pelvis",           // Lower stomach/pelvis
+
+   // Limb protection (some armors)
+   "UpperArm_L": "Left Upper Arm",
+   "UpperArm_R": "Right Upper Arm",
+   "Thigh_L": "Left Thigh",
+   "Thigh_R": "Right Thigh"
+};
+
+// Body parts (actual HP pools)
 const BODY_PARTS = {
-  head: { 
-    hp: 35, 
-    vital: true,
-    armorZones: ['head_top', 'head_eyes', 'head_chin']
-  },
-  chest: { 
-    hp: 85, 
-    vital: true,
-    armorZones: ['chest']
-  },
-  stomach: { 
-    hp: 70, 
-    vital: false,
-    armorZones: ['stomach']
-  },
-  left_arm: { 
-    hp: 60, 
-    vital: false,
-    armorZones: ['arm_upper_l', 'arm_lower_l']
-  },
-  right_arm: { 
-    hp: 60, 
-    vital: false,
-    armorZones: ['arm_upper_r', 'arm_lower_r']
-  },
-  left_leg: { 
-    hp: 65, 
-    vital: false,
-    armorZones: ['leg_thigh_l', 'leg_lower_l']
-  },
-  right_leg: { 
-    hp: 65, 
-    vital: false,
-    armorZones: ['leg_thigh_r', 'leg_lower_r']
-  }
-};
-
-const ARMOR_ZONES = {
-  // Head zones (protected by helmet)
-  head_top: { bodyPart: 'head', defaultProtection: 'helmet' },
-  head_eyes: { bodyPart: 'head', defaultProtection: 'helmet' }, // face shield
-  head_chin: { bodyPart: 'head', defaultProtection: 'helmet' }, // face armor
-  
-  // Torso zones (protected by body armor)
-  chest: { bodyPart: 'chest', defaultProtection: 'armor' },
-  stomach: { bodyPart: 'stomach', defaultProtection: 'armor' },
-  
-  // Arm zones
-  arm_upper_l: { bodyPart: 'left_arm', defaultProtection: 'armor' }, // some armors
-  arm_upper_r: { bodyPart: 'right_arm', defaultProtection: 'armor' }, // some armors
-  arm_lower_l: { bodyPart: 'left_arm', defaultProtection: 'none' },
-  arm_lower_r: { bodyPart: 'right_arm', defaultProtection: 'none' },
-  
-  // Leg zones
-  leg_thigh_l: { bodyPart: 'left_leg', defaultProtection: 'armor' }, // some armors
-  leg_thigh_r: { bodyPart: 'right_leg', defaultProtection: 'armor' }, // some armors
-  leg_lower_l: { bodyPart: 'left_leg', defaultProtection: 'none' },
-  leg_lower_r: { bodyPart: 'right_leg', defaultProtection: 'none' }
+   head: { hp: 35, vital: true },
+   chest: { hp: 85, vital: true },    // Protected by spine_01, spine_02
+   stomach: { hp: 70, vital: false },  // Protected by spine_03, pelvis
+   left_arm: { hp: 60, vital: false },
+   right_arm: { hp: 60, vital: false },
+   left_leg: { hp: 65, vital: false },
+   right_leg: { hp: 65, vital: false }
 };
 ```
 
-### Combat Simulation Interfaces
-```typescript
-interface CombatSimulation {
-  attackers: AttackerSetup[];
-  defender: DefenderSetup;
-  range: number;
-  displayMode: 'ttk' | 'stk' | 'ctk';
-  sortBy: 'ttk' | 'damage' | 'cost';
-}
+## Testing & Validation
 
-interface AttackerSetup {
-  id: string;
-  weapon: Weapon;
-  ammo: Ammunition;
-  color: string; // For UI display
-}
+### Test Helper Usage
+```javascript
+// Console command for testing single shot damage
+testShotDamage('armor-6b17', 'spine_01', 'ammo-556x45-m995')
 
-interface DefenderSetup {
-  bodyArmor: Armor | null;
-  bodyArmorDurability: number; // 0-100%
-  helmet: Armor | null;
-  helmetDurability: number; // 0-100%
-}
-
-interface ZoneCalculation {
-  zoneId: string;
-  ttk: number;
-  shotsToKill: number;
-  costToKill: number;
-  penetrationChance: number;
-  effectiveDamage: number;
-}
+// Expected output format:
+// - Penetration rate
+// - Average damage to body (pen/non-pen)
+// - Average damage to armor (pen/non-pen)
+// - Debug curve values
 ```
 
-## UI Layout
+### Validation Checklist
+1. [ ] M995 vs Class 4 armor penetration rate matches in-game
+2. [ ] Armor durability loss per shot matches in-game
+3. [ ] TTK calculations align with game experience
+4. [ ] Range falloff curves produce expected results
+5. [ ] Zone-specific armor class is properly applied
 
-### Component Structure
+## Implementation Priorities
+
+### Phase 1: Fix Core Calculations
+1. Determine correct `penetrationDamageScalarCurve` interpretation
+2. Adjust armor damage multipliers to match game
+3. Implement probabilistic shot distribution
+
+### Phase 2: Add Missing Features
+1. Protection angle implementation
+2. Fragmentation chance calculations
+3. Bleed damage over time
+4. Ricochet probability
+
+### Phase 3: UI Improvements
+1. Probability distribution visualization
+2. Armor degradation timeline
+3. Shot-by-shot breakdown view
+4. Confidence intervals for STK
+
+## Data Collection Needs
+
+### Priority Testing
+1. **Penetration Damage Scalar**: Test multiple ammo/armor combinations to determine x-axis
+2. **Armor Damage Values**: Verify actual durability loss per shot in-game
+3. **Edge Cases**: Test 0% durability behavior, overpenetration scenarios
+
+### Recording Template
 ```
-[Combat Simulator Page]
-├── Control Panel (Top)
-│   ├── Display Mode Toggle
-│   ├── Range Slider
-│   ├── Sort Options
-│   └── Add Attacker Button
-│
-├── Main Content Area
-│   ├── Attacker Panel (Left)
-│   │   └── AttackerSetup × 4
-│   │
-│   ├── Body Model (Center)
-│   │   ├── 2D Figure
-│   │   └── Zone Overlays
-│   │
-│   └── Defender Panel (Right)
-│       ├── Armor Selection
-│       └── Durability Sliders
-│
-└── Results Section (Bottom)
-    ├── Summary Cards
-    └── Detailed Graphs
-```
-
-### Visual Design
-
-#### Armor Class Color Scheme
-- **Unarmored**: Base tan (`bg-tan-200`)
-- **Class 2 (Common)**: Gray (`bg-gray-700`, `text-gray-400`)
-- **Class 3 (Uncommon)**: Green (`bg-olive-800`, `text-olive-400`)
-- **Class 4 (Rare)**: Blue (`bg-blue-900`, `text-blue-400`)
-- **Class 5 (Epic)**: Purple (`bg-purple-900`, `text-purple-400`)
-- **Class 6 (Legendary)**: Yellow (`bg-yellow-900`, `text-yellow-400`)
-
-#### Body Model Zones
-- Clear zone boundaries with hover effects
-- Armor class color fills with opacity
-- Value overlays (TTK/STK/CTK) displayed on hover
-- Hit probability indicators
-
-## Core Calculations
-
-### Damage Calculation
-Ammunition Parameters
-Core Stats
-
-damage: Base damage dealt to health
-penetration: Armor penetration power (typically 1-7 range)
-caliber: String identifier for weapon compatibility (e.g., "5.56x45")
-muzzleVelocity: Initial bullet velocity (affects range calculations)
-
-Damage Modifiers
-
-bluntDamageScale: Multiplier for blunt damage when bullet doesn't penetrate (typically 0.08-0.15)
-bleedingChance: Probability of causing bleed effect (0-1)
-protectionGearPenetratedDamageScale: Multiplier for armor durability damage when penetrating
-
-Default assumed: 0.5
-But test shows it might be ~1.9 for high-pen ammo!
-
-
-protectionGearBluntDamageScale: Multiplier for armor durability damage when NOT penetrating
-
-Typically 0.8-0.9
-Higher values = more armor damage on non-pen
-
-
-
-Range Data
-
-damageAtRange: Pre-calculated damage values at specific distances
-typescript{
-'60m': number,
-'120m': number,
-'240m': number,
-'480m': number
-}
-
-penetrationAtRange: Pre-calculated penetration values at distances
-
-Ballistic Curves
-
-ballisticCurves.damageOverDistance: Array of curve points for damage falloff
-ballisticCurves.penetrationPowerOverDistance: Array of curve points for penetration falloff
-
-X-axis: Distance in centimeters (100cm = 1m)
-Y-axis: Damage/Penetration value
-
-
-
-Armor Parameters
-Core Stats
-
-armorClass: Base protection level (2-6)
-maxDurability: Maximum durability points
-price: Cost in game currency
-weight: Weight in kg
-
-Damage Scalars
-
-durabilityDamageScalar: Multiplier for incoming durability damage
-
-Lower = armor lasts longer
-Typically 0.25-0.7
-
-
-bluntDamageScalar: Multiplier for blunt damage to health
-
-Lower = better blunt protection
-Typically 0.6-0.9
-
-
-
-Protection Zones
-
-protectiveData: Array of zones this armor protects
-typescript{
-bodyPart: string,      // "spine_01", "pelvis", "UpperArm_L", etc.
-armorClass: number,    // Can differ from base armor class
-bluntDamageScalar: number,  // Zone-specific blunt protection
-protectionAngle: number     // Coverage angle (not used yet)
-}
-
-
-Penetration Curves
-
-penetrationChanceCurve: Determines chance of penetration
-
-X-axis: Appears to be penetration/armor ratio (0-2 range typically)
-Y-axis: Penetration chance (0-1)
-Example points: time: 0, value: 0.95 → time: 1, value: 0.05
-
-
-penetrationDamageScalarCurve: Damage reduction when penetrating
-
-X-axis: UNCLEAR - could be:
-
-Penetration/armor ratio
-Direct armor class
-Something else
-
-
-Y-axis: Damage multiplier (0-1)
-Typical range: time -1 to 2, values 0.3 to 1.0
-
-
-antiPenetrationDurabilityScalarCurve: Armor effectiveness at different durability levels
-
-X-axis: Durability percentage (0-1)
-Y-axis: Armor class effectiveness multiplier (0-1)
-At 0% durability, armor class becomes ~0
-
-
-
-Key Findings from Testing
-
-Armor damage formula seems to be:
-
-Penetrating: bulletDamage * ammo.protectionGearPenetratedDamageScale * armor.durabilityDamageScalar
-Non-penetrating: bulletDamage * ammo.protectionGearBluntDamageScale * armor.durabilityDamageScalar
-
-
-Body damage formula:
-
-Penetrating: bulletDamage * penetrationDamageScalar
-Non-penetrating: bulletDamage * ammo.bluntDamageScale * armor.bluntDamageScalar
-
-
-Issues identified:
-
-protectionGearPenetratedDamageScale in ammo data might be wrong (should be ~1.9 for high-pen ammo?)
-Penetration damage scalar curve interpretation is unclear
-High-pen ammo seems to do MORE damage to armor than base bullet damage
-
-
-
-Unknown/Unclear Parameters
-
-How exactly does the penetrationDamageScalarCurve x-axis work?
-Why do some high-pen rounds have armor damage > bullet damage?
-What role does protectionAngle play in calculations?
-How do different interpolation modes (cubic vs linear) affect curves?
-
-```typescript
-function calculateEffectiveDamage(
-  baseDamage: number,
-  penetrationPower: number,
-  armorClass: number,
-  armorDurability: number,
-  range: number
-): {
-  damage: number;
-  penetrationChance: number;
-} {
-  // Apply range modifier
-  const rangeDamage = applyRangeFalloff(baseDamage, range);
-  
-  // Calculate penetration chance based on armor
-  const penetrationChance = calculatePenetrationChance(
-    penetrationPower, 
-    armorClass, 
-    armorDurability
-  );
-  
-  // Calculate damage reduction
-  const damageReduction = calculateArmorReduction(
-    armorClass, 
-    penetrationChance
-  );
-  
-  return {
-    damage: rangeDamage * (1 - damageReduction),
-    penetrationChance
-  };
-}
+Test: [Ammo] vs [Armor] at [Range]m
+- Shots to kill: X
+- Armor durability after shot 1: Y%
+- Damage dealt (if visible): Z
+- Penetration indicator: Yes/No
 ```
 
-### Time to Kill (TTK)
-```typescript
-function calculateTTK(
-  stk: number, //ShotsToKill
-  fireRate: number
-): number {
-  return (stk - 1) * 60 / fireRate; //Ads is not applicable in VR, range - probably redundant too
-}
-```
+## Known Limitations
 
-### Damage Overflow
-When a non-vital body part reaches 0 HP, excess damage is distributed:
-```typescript
-function calculateOverflowDamage(
-  targetPart: BodyPart,
-  damage: number,
-  currentHP: number
-): DamageDistribution {
-  if (currentHP <= 0 && !targetPart.isVital) {
-    // Distribute excess damage to all other parts
-    const overflow = damage;
-    const remainingParts = 6; // All parts except the destroyed one
-    
-    return {
-      distributed: overflow / remainingParts,
-      perPart: overflow / remainingParts
-    };
-  }
-  
-  return { distributed: 0, perPart: 0 };
-}
-```
-
-## Implementation Plan
-
-### Phase 1: Foundation (Days 1-3)
-1. Create route structure `/combat-simulator`
-2. Implement basic layout components
-3. Create 2D body model with armor zones
-4. Set up state management for simulation
-
-### Phase 2: Core Features (Days 4-7)
-1. Weapon/Ammo/Armor selectors with data integration
-2. Damage calculation engine
-3. TTK/STK/CTK calculators
-4. Range-based modifications
-
-### Phase 3: Visualization (Days 8-10)
-1. Body model zone coloring and interactions
-2. Display mode overlays
-3. Multi-attacker comparison views
-4. Summary statistics cards
-
-### Phase 4: Polish & Optimization (Days 11-14)
-1. Performance optimizations
-2. Responsive design adjustments
-3. Loading states and error handling
-4. User experience refinements
-
-## File Structure
-```
-src/app/combat-simulator/
-├── page.tsx
-├── components/
-│   ├── ControlPanel.tsx
-│   ├── AttackerSetup.tsx
-│   ├── DefenderSetup.tsx
-│   ├── BodyModel/
-│   │   ├── BodyModel.tsx
-│   │   ├── BodyZone.tsx
-│   │   └── ZoneOverlay.tsx
-│   ├── ResultsPanel/
-│   │   ├── SummaryCards.tsx
-│   │   └── DamageGraphs.tsx
-│   └── Selectors/
-│       ├── WeaponSelector.tsx
-│       ├── AmmoSelector.tsx
-│       └── ArmorSelector.tsx
-├── utils/
-│   ├── combat-calculations.ts
-│   ├── body-zones.ts
-│   ├── damage-formulas.ts
-│   └── constants.ts
-├── hooks/
-│   ├── useCombatSimulation.ts
-│   └── useBodyZones.ts
-└── types/
-    └── combat-simulator.ts
-```
+1. **Bolt Action/Pump Weapons**: Fire rate calculation needs adjustment
+2. **Burst Fire**: Not modeled in current system
+3. **Damage Overflow**: Simplified distribution model
+4. **Environmental Factors**: No cover/angle calculations
 
 ## Future Enhancements
 
-### Post-MVP Features
-1. **TTK Approximations**
-   - Skill-based shooting patterns
-   - Statistical hit distribution
-   - Engagement range presets
+### Statistical Modeling
+- Monte Carlo simulation for STK distribution
+- Confidence intervals
+- Hit probability based on weapon accuracy
 
-2. **Advanced Mechanics**
-   - Bleeding damage over time
-   - Fragmentation calculations
-   - Ricochet probability
-
-3. **Additional Visualizations**
-   - Recoil pattern comparison
-   - Bullet trajectory paths
-   - Armor degradation curves
-
-4. **Export/Share Features**
-   - Save loadout comparisons
-   - Share simulation results
-   - Generate comparison images
-
-## Performance Considerations
-- Debounce range slider updates
-- Memoize expensive calculations
-- Lazy load graph components
-- Optimize body model rendering
-
-## Accessibility
-- Keyboard navigation for all controls
-- Screen reader support for zone values
-- High contrast mode support
-- Clear visual indicators beyond color
-
-## VR Browser Optimization
-- Large touch targets (minimum 48px)
-- Clear visual feedback
-- Simplified interactions
-- Performance-first rendering
+### Advanced Mechanics
+- Armor coverage gaps
+- Plate hitboxes
+- Ricochet angles
+- Material penetration

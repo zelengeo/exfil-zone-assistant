@@ -1,0 +1,237 @@
+{
+  "singleShotTestCases": [
+    {
+      "id": "test-001",
+      "description": "Extreme armor damage unsupported by ammo data",
+      "weapon": "weapon-hk51k",
+      "ammo": "ammo-762x51-apv2",
+      "armor": {
+        "id": "armor-raid-explorer-sd",
+        "currentDurability": 105
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 93,
+        "bodyDamage": 61
+      }
+    },
+    {
+      "id": "test-002",
+      "weapon": "weapon-hk51k",
+      "ammo": "ammo-762x51-apv2",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 130
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 66,
+        "bodyDamage": 51
+      }
+    },
+    {
+      "id": "test-003",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-rampage-od"
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 26,
+        "bodyDamage": 34
+      }
+    },
+    {
+      "id": "test-004",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-rampage-od"
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 26,
+        "bodyDamage": 33
+      }
+    },
+    {
+      "id": "test-005",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-rampage-od"
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 32,
+        "bodyDamage": 3
+      }
+    },
+    {
+      "id": "test-006",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-police-vest"
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 32.5,
+        "bodyDamage": 38
+      }
+    },
+    {
+      "id": "test-007",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-police-vest"
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 32,
+        "bodyDamage": 39
+      }
+    },
+    {
+      "id": "test-008",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv"
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 26
+      }
+    },
+    {
+      "id": "test-009",
+      "weapon": "weapon-hk51k",
+      "ammo": "ammo-762x51-fmj",
+      "armor": {
+        "id": "armor-sudden-attack"
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 18,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-010",
+      "weapon": "weapon-hk51k",
+      "ammo": "ammo-762x51-fmj",
+      "armor": {
+        "id": "armor-raid-explorer-sd"
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 32,
+        "bodyDamage": 73
+      }
+    },
+    {
+      "id": "test-011",
+      "weapon": "weapon-hk51k",
+      "ammo": "ammo-762x51-fmj",
+      "armor": {
+        "id": "armor-press-vest"
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 38,
+        "bodyDamage": 80
+      }
+    },
+    {
+      "id": "test-012",
+      "weapon": "weapon-hk51k",
+      "ammo": "ammo-762x51-fmj",
+      "armor": {
+        "id": "armor-press-vest"
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 28,
+        "bodyDamage": 4
+      }
+    },
+    {
+      "id": "test-013",
+      "weapon": "weapon-hk51k",
+      "ammo": "ammo-762x51-fmj",
+      "armor": {
+        "id": "armor-sudden-attack"
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 25,
+        "bodyDamage": 73
+      }
+    },
+    {
+      "id": "test-014",
+      "weapon": "weapon-hk51k",
+      "ammo": "ammo-762x51-fmj",
+      "armor": {
+        "id": "armor-raid-explorer-sd"
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 18,
+        "bodyDamage": 3
+      }
+    },
+    {
+      "id": "test-015",
+      "weapon": "weapon-hk51k",
+      "ammo": "ammo-762x51-fmj",
+      "armor": {
+        "id": "armor-raid-explorer-sd"
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 25,
+        "bodyDamage": 73
+      }
+    },
+    {
+      "id": "test-016",
+      "weapon": "weapon-scorpion-evo3",
+      "description": "Depleted armor - undefined armor damage in game sim",
+      "ammo": "ammo-9x19-pso",
+      "armor": {
+        "id": "armor-wdcs-swat",
+        "currentDurability": 0
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 42
+      }
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2025-06-02",
+    "gameVersion": "1.0.0",
+    "notes": "Initial test data from manual in-game testing"
+  }
+}

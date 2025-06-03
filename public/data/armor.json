@@ -611,9 +611,9 @@
     "category": "gear",
     "subcategory": "Body Armor",
     "images": {
-      "icon": "/images/items/armor/Icon_vest_lv3.webp",
-      "thumbnail": "/images/items/armor/Icon_vest_lv3.webp",
-      "fullsize": "/images/items/armor/Icon_vest_lv3.webp"
+      "icon": "/images/items/armor/Icon_vest_lv5-imtv.webp",
+      "thumbnail": "/images/items/armor/Icon_vest_lv5-imtv.webp",
+      "fullsize": "/images/items/armor/Icon_vest_lv5-imtv.webp"
     },
     "stats": {
       "rarity": "Epic",
@@ -714,9 +714,9 @@
     "category": "gear",
     "subcategory": "Body Armor",
     "images": {
-      "icon": "/images/items/armor/Icon_vest_lv5-imtv.webp",
-      "thumbnail": "/images/items/armor/Icon_vest_lv5-imtv.webp",
-      "fullsize": "/images/items/armor/Icon_vest_lv5-imtv.webp"
+      "icon": "/images/items/armor/WarfareTecVest_IOTVGEN3.webp",
+      "thumbnail": "/images/items/armor/WarfareTecVest_IOTVGEN3.webp",
+      "fullsize": "/images/items/armor/WarfareTecVest_IOTVGEN3.webp"
     },
     "stats": {
       "rarity": "Epic",

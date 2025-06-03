@@ -7,6 +7,8 @@ import { fetchItemsData } from '@/services/ItemService';
 import { calculateShotDamage } from './damage-calculations';
 import { AmmoProperties, ArmorProperties, isArmor, isAmmunition } from './types';
 
+
+//TODO remove
 /**
  * Test single shot damage calculation
  * Usage from console: testShotDamage('armor-6b17', 'spine_01', 'ammo-556x45-m995')
@@ -47,7 +49,7 @@ export async function testShotDamage(
         // Get zone-specific armor data
         const zoneProtection = armor.stats.protectiveData?.find(pd => pd.bodyPart === armorZoneId);
         const zoneArmorClass = zoneProtection?.armorClass || armor.stats.armorClass;
-        const zoneBluntScalar = zoneProtection?.bluntDamageScalar || armor.stats.bluntDamageScalar || 0.7;
+        const zoneBluntScalar = zoneProtection?.bluntDamageScalar || armor.stats.bluntDamageScalar;
 
         console.log(`\nZone Protection:`);
         console.log(`- Armor Class: ${zoneArmorClass}`);
@@ -71,7 +73,7 @@ export async function testShotDamage(
             armorClass: zoneArmorClass,
             maxDurability: armor.stats.maxDurability,
             currentDurability: armor.stats.maxDurability, // Full durability for first shot
-            durabilityDamageScalar: armor.stats.durabilityDamageScalar || 0.7,
+            durabilityDamageScalar: armor.stats.durabilityDamageScalar,
             bluntDamageScalar: zoneBluntScalar,
             protectiveData: armor.stats.protectiveData || [],
             penetrationChanceCurve: armor.stats.penetrationChanceCurve,

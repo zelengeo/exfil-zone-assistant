@@ -79,6 +79,7 @@ function transformItemData(rawItem: any): Item {
             baseItem.stats.armorClass = rawItem.stats.armorClass;
             baseItem.stats.maxDurability = rawItem.stats.maxDurability;
             baseItem.stats.bluntDamageScalar = rawItem.stats.bluntDamageScalar;
+            baseItem.stats.durabilityDamageScalar = rawItem.stats.durabilityDamageScalar;
             baseItem.stats.protectiveData = rawItem.stats.protectiveData;
             baseItem.stats.penetrationChanceCurve = rawItem.stats.penetrationChanceCurve;
             baseItem.stats.penetrationDamageScalarCurve = rawItem.stats.penetrationDamageScalarCurve;
