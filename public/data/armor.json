@@ -275,9 +275,9 @@
     "category": "gear",
     "subcategory": "Body Armor",
     "images": {
-      "icon": "/images/items/armor/Icon_SKM_Vest_013_01_Ck.webp",
-      "thumbnail": "/images/items/armor/Icon_SKM_Vest_013_01_Ck.webp",
-      "fullsize": "/images/items/armor/Icon_SKM_Vest_013_01_Ck.webp"
+      "icon": "/images/items/armor/Icon_vest_lv6.webp",
+      "thumbnail": "/images/items/armor/Icon_vest_lv6.webp",
+      "fullsize": "/images/items/armor/Icon_vest_lv6.webp"
     },
     "stats": {
       "rarity": "Epic",
@@ -410,9 +410,9 @@
     "category": "gear",
     "subcategory": "Body Armor",
     "images": {
-      "icon": "/images/items/armor/Icon_SKM_Vest_015_Hcj.webp",
-      "thumbnail": "/images/items/armor/Icon_SKM_Vest_015_Hcj.webp",
-      "fullsize": "/images/items/armor/Icon_SKM_Vest_015_Hcj.webp"
+      "icon": "/images/items/armor/Icon_vest_lv1-sudden.webp",
+      "thumbnail": "/images/items/armor/Icon_vest_lv1-sudden.webp",
+      "fullsize": "/images/items/armor/Icon_vest_lv1-sudden.webp"
     },
     "stats": {
       "rarity": "Common",
@@ -539,9 +539,9 @@
     "category": "gear",
     "subcategory": "Body Armor",
     "images": {
-      "icon": "/images/items/armor/Icon_vest_lv6.webp",
-      "thumbnail": "/images/items/armor/Icon_vest_lv6.webp",
-      "fullsize": "/images/items/armor/Icon_vest_lv6.webp"
+      "icon": "/images/items/armor/Icon_vest_lv7.webp",
+      "thumbnail": "/images/items/armor/Icon_vest_lv7.webp",
+      "fullsize": "/images/items/armor/Icon_vest_lv7.webp"
     },
     "stats": {
       "rarity": "Epic",
@@ -630,7 +630,34 @@
           "arriveTangent": 0,
           "leaveTangent": 0
         }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.65,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
       ]
+
     },
     "notes": "High-performance armor with excellent protection-to-weight ratio.",
     "tips": "Premium choice for experienced operators who need reliable protection without excessive bulk."
@@ -642,9 +669,9 @@
     "category": "gear",
     "subcategory": "Body Armor",
     "images": {
-      "icon": "/images/items/armor/Icon_vest_lv7.webp",
-      "thumbnail": "/images/items/armor/Icon_vest_lv7.webp",
-      "fullsize": "/images/items/armor/Icon_vest_lv7.webp"
+      "icon": "/images/items/armor/Icon_vest_lv3.webp",
+      "thumbnail": "/images/items/armor/Icon_vest_lv3.webp",
+      "fullsize": "/images/items/armor/Icon_vest_lv3.webp"
     },
     "stats": {
       "rarity": "Rare",
@@ -733,7 +760,34 @@
           "arriveTangent": -0.043284934,
           "leaveTangent": -0.043284975
         }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.65,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
       ]
+
     },
     "notes": "Reliable protection with enhanced durability for extended operations.",
     "tips": "Excellent choice for long missions where equipment reliability is paramount."
@@ -836,7 +890,34 @@
           "arriveTangent": 0,
           "leaveTangent": 0
         }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.65,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
       ]
+
     },
     "notes": "Modular tactical vest with excellent protection and customization options.",
     "tips": "Heavy but reliable armor for sustained combat operations."
@@ -957,7 +1038,34 @@
           "arriveTangent": 0,
           "leaveTangent": 0
         }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.65,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
       ]
+
     },
     "notes": "Military-grade full body protection including arm guards and pelvis protection.",
     "tips": "Ultimate protection for extreme combat situations. The weight penalty is significant but the protection is unmatched."
@@ -1060,7 +1168,34 @@
           "arriveTangent": 0,
           "leaveTangent": 0
         }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.65,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
       ]
+
     },
     "notes": "Lightweight plate carrier optimized for mobility without sacrificing essential protection.",
     "tips": "Perfect for fast-paced operations where speed and agility are more important than maximum protection."
@@ -1292,7 +1427,34 @@
           "arriveTangent": 0,
           "leaveTangent": 0
         }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.65,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
       ]
+
     },
     "notes": "Basic protection for non-combatant personnel in dangerous areas.",
     "tips": "Minimal protection but clearly identifies the wearer as press. Not suitable for combat operations."
@@ -1524,7 +1686,34 @@
           "arriveTangent": 0,
           "leaveTangent": 0
         }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.65,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
       ]
+
     },
     "notes": "Desert camouflage tactical vest with moderate protection and mobility.",
     "tips": "Ideal for operations in sandy or desert environments where concealment is important."
@@ -1627,7 +1816,34 @@
           "arriveTangent": 0,
           "leaveTangent": 0
         }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.65,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
       ]
+
     },
     "notes": "High-performance tactical vest with excellent durability and protection.",
     "tips": "Great for sustained combat operations where reliable protection is essential."
@@ -1730,7 +1946,34 @@
           "arriveTangent": 0,
           "leaveTangent": 0
         }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.65,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
       ]
+
     },
     "notes": "Woodland camouflage version with identical protection to standard Rampage vest.",
     "tips": "Perfect for forest and jungle operations where green/brown camouflage is advantageous."
@@ -2151,7 +2394,34 @@
           "arriveTangent": 0,
           "leaveTangent": 0
         }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.65,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
       ]
+
     },
     "notes": "Entry-level protection for security personnel and civilian use.",
     "tips": "Basic protection suitable for low-threat environments. Prioritizes comfort and affordability over protection."
@@ -2254,7 +2524,34 @@
           "arriveTangent": 0,
           "leaveTangent": 0
         }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.65,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
       ]
+
     },
     "notes": "Flexible ballistic vest effective against pistol rounds and light rifle fire.",
     "tips": "Good balance of protection and comfort for extended wear. Suitable for patrol and general security work."
@@ -2651,6 +2948,32 @@
           "arriveTangent": 0,
           "leaveTangent": 0
         }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.65,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
       ]
     },
     "notes": "Ultra-lightweight armor designed for hit-and-run tactics and stealth operations.",
@@ -2668,7 +2991,7 @@
       "fullsize": "/images/items/armor/Icon_event_xmas_boss.webp"
     },
     "stats": {
-      "rarity": "Rare",
+      "rarity": "Epic",
       "price": 95000,
       "weight": 5.3,
       "armorClass": 5,
@@ -2754,7 +3077,34 @@
           "arriveTangent": 0,
           "leaveTangent": 0
         }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.65,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
       ]
+
     },
     "notes": "Festive limited edition armor with enhanced protection rating. The bells are surprisingly tactical.",
     "tips": "Special holiday armor with better protection than standard Rampage. Collectors item with practical benefits."
@@ -2771,7 +3121,7 @@
       "fullsize": "/images/items/armor/WarfareTecVest_Rampage_skull.webp"
     },
     "stats": {
-      "rarity": "Rare",
+      "rarity": "Epic",
       "price": 85000,
       "weight": 5.3,
       "armorClass": 5,
@@ -2856,6 +3206,32 @@
           "value": 0.3,
           "arriveTangent": 0,
           "leaveTangent": 0
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.65,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
         }
       ]
     },

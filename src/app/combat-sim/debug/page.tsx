@@ -10,6 +10,7 @@ import {isWeapon, isAmmunition, isArmor} from '../utils/types';
 import {calculateShotDamage} from '../utils/damage-calculations';
 import testData from '@/../public/data/combat-sim-test-data.json';
 import {getRarityColorClass} from "@/types/items";
+import "../utils/combat-test-helper"
 
 export default function CombatSimDebugPage() {
     const [testCases, setTestCases] = useState<SingleShotTestCase[]>([]);
@@ -20,6 +21,8 @@ export default function CombatSimDebugPage() {
     const [summary, setSummary] = useState<TestSummary | null>(null);
     const [filterPenetrating, setFilterPenetrating] = useState<'all' | 'penetrating' | 'non-penetrating'>('all');
     const [filterStatus, setFilterStatus] = useState<'all' | 'passed' | 'failed'>('all');
+    const [filterArmor, setFilterArmor] = useState<string>('all');
+    const [filterAmmo, setFilterAmmo] = useState<string>('all');
 
     const filteredResults = useMemo(() => {
         return testResults.filter(result => {
@@ -31,9 +34,26 @@ export default function CombatSimDebugPage() {
             if (filterStatus === 'passed' && !result.passed) return false;
             if (filterStatus === 'failed' && result.passed) return false;
 
+            // Filter by armor
+            if (filterArmor !== 'all' && result.testCase.armor.id !== filterArmor) return false;
+
+            // Filter by ammo
+            if (filterAmmo !== 'all' && result.testCase.ammo !== filterAmmo) return false;
+
             return true;
         });
-    }, [testResults, filterPenetrating, filterStatus,]);
+    }, [testResults, filterPenetrating, filterStatus, filterArmor, filterAmmo]);
+
+    // Get unique armor and ammo types for filter dropdowns
+    const uniqueArmors = useMemo(() =>
+            [...new Set(testCases.map(tc => tc.armor.id))].sort(),
+        [testCases]
+    );
+
+    const uniqueAmmos = useMemo(() =>
+            [...new Set(testCases.map(tc => tc.ammo))].sort(),
+        [testCases]
+    );
 
     // Load items and test data
     useEffect(() => {
@@ -92,7 +112,7 @@ export default function CombatSimDebugPage() {
         const bodyDamageDeviationPercent = (bodyDamageDeviation / testCase.gameResults.bodyDamage) * 100;
 
         // Calculate overall accuracy (inverse of average deviation)
-        const avgDeviationPercent = testCase.gameResults.armorDamage == null ? bodyDamageDeviationPercent : (Math.abs(armorDamageDeviationPercent) + Math.abs(bodyDamageDeviationPercent)) / 2;
+        const avgDeviationPercent = testCase.gameResults.armorDamage == null ? Math.abs(bodyDamageDeviationPercent) : (Math.abs(armorDamageDeviationPercent) + Math.abs(bodyDamageDeviationPercent)) / 2;
         const accuracy = Math.max(0, 100 - avgDeviationPercent);
 
         // Consider test passed if accuracy > 80%
@@ -369,6 +389,42 @@ export default function CombatSimDebugPage() {
                                 </select>
                             </div>
 
+                            {/* Armor Filter */}
+                            <div className="flex items-center gap-2">
+                                <label className="text-tan-300 text-sm">Armor:</label>
+                                <select
+                                    value={filterArmor}
+                                    onChange={(e) => setFilterArmor(e.target.value)}
+                                    className="bg-military-800 text-tan-100 px-3 py-1 rounded-sm border border-military-700
+            focus:border-olive-500 focus:outline-none text-sm"
+                                >
+                                    <option value="all">All Armors</option>
+                                    {uniqueArmors.map(armorId => (
+                                        <option key={armorId} value={armorId}>
+                                            {items.find(item => item.id === armorId)?.name || armorId}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            {/* Ammo Filter */}
+                            <div className="flex items-center gap-2">
+                                <label className="text-tan-300 text-sm">Ammo:</label>
+                                <select
+                                    value={filterAmmo}
+                                    onChange={(e) => setFilterAmmo(e.target.value)}
+                                    className="bg-military-800 text-tan-100 px-3 py-1 rounded-sm border border-military-700
+            focus:border-olive-500 focus:outline-none text-sm"
+                                >
+                                    <option value="all">All Ammo</option>
+                                    {uniqueAmmos.map(ammoId => (
+                                        <option key={ammoId} value={ammoId}>
+                                            {items.find(item => item.id === ammoId)?.name || ammoId}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+
                             {/* Results count */}
                             <div className="ml-auto text-tan-400 text-sm">
                                 Showing {filteredResults.length} of {testResults.length} results
@@ -462,7 +518,7 @@ export default function CombatSimDebugPage() {
                                             {result.simulatedResults.bodyDamage.toFixed(1)}
                                         </td>
                                         <td className="text-center py-2 px-3 font-mono">
-                        <span className={getAccuracyColor(100 - result.deviation.bodyDamage.percentage)}>
+                        <span className={getAccuracyColor(100 - Math.abs(result.deviation.bodyDamage.percentage))}>
                           {result.deviation.bodyDamage.percentage.toFixed(1)}%
                         </span>
                                         </td>

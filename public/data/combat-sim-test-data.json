@@ -2,7 +2,6 @@
   "singleShotTestCases": [
     {
       "id": "test-001",
-      "description": "Extreme armor damage unsupported by ammo data",
       "weapon": "weapon-hk51k",
       "ammo": "ammo-762x51-apv2",
       "armor": {
@@ -873,10 +872,616 @@
         "armorDamage": 25,
         "bodyDamage": 45
       }
+    },
+    {
+      "id": "test-060",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 150
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 24,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-061",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 126
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 31,
+        "bodyDamage": 20
+      }
+    },
+    {
+      "id": "test-062",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 95
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 24,
+        "bodyDamage": 3
+      }
+    },
+    {
+      "id": "test-063",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 71
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 31,
+        "bodyDamage": 30
+      }
+    },
+    {
+      "id": "test-064",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 40
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 30,
+        "bodyDamage": 31
+      }
+    },
+    {
+      "id": "test-065",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 10
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 31
+      }
+    },
+    {
+      "id": "test-066",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 0
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 31
+      }
+    },
+    {
+      "id": "test-067",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv1",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 130
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 34.75,
+        "bodyDamage": 38
+      }
+    },
+    {
+      "id": "test-068",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv1",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 95
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 34.75,
+        "bodyDamage": 38
+      }
+    },
+    {
+      "id": "test-069",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv1",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 60
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 34.75,
+        "bodyDamage": 38
+      }
+    },
+    {
+      "id": "test-070",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv1",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 26
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 38
+      }
+    },
+    {
+      "id": "test-071",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv1",
+      "armor": {
+        "id": "armor-6b17-upgrade",
+        "currentDurability": 105
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 35,
+        "bodyDamage": 28
+      }
+    },
+    {
+      "id": "test-072",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv1",
+      "armor": {
+        "id": "armor-6b17-upgrade",
+        "currentDurability": 70
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 30,
+        "bodyDamage": 3
+      }
+    },
+    {
+      "id": "test-073",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv1",
+      "armor": {
+        "id": "armor-6b17-upgrade",
+        "currentDurability": 40
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 35,
+        "bodyDamage": 39
+      }
+    },
+    {
+      "id": "test-074",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv1",
+      "armor": {
+        "id": "armor-6b17-upgrade",
+        "currentDurability": 5
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 38
+      }
+    },
+    {
+      "id": "test-075",
+      "description": "Full ammo damage - possibly penetration without armor hit",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv1",
+      "armor": {
+        "id": "armor-6b17-upgrade",
+        "currentDurability": 0
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 51
+      }
+    },
+    {
+      "id": "test-076",
+      "description": "Full ammo damage - possibly penetration without armor hit",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv1",
+      "armor": {
+        "id": "armor-6b17-upgrade",
+        "currentDurability": 0
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 51
+      }
+    },
+    {
+      "id": "test-077",
+      "description": "No idea why damage inconsistent, stomach hit is 47 too so mb its the armor zone",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv1",
+      "armor": {
+        "id": "armor-6b17-upgrade",
+        "currentDurability": 0
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 38
+      }
+    },
+    {
+      "id": "test-078",
+      "description": "Weirdly during this shot series I got 4 pens through the armor",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-tracer",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 130
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 14,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-079",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-tracer",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 116
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 14,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-080",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-tracer",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 102
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 20,
+        "bodyDamage": 33
+      }
+    },
+    {
+      "id": "test-081",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-tracer",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 82
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 13,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-082",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-tracer",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 69
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 14,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-083",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-tracer",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 55
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 20,
+        "bodyDamage": 40
+      }
+    },
+    {
+      "id": "test-084",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-tracer",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 35
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 20,
+        "bodyDamage": 39.5
+      }
+    },
+    {
+      "id": "test-085",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-tracer",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 15
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 39.5
+      }
+    },
+    {
+      "id": "test-086",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv2",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 130
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 42,
+        "bodyDamage": 34
+      }
+    },
+    {
+      "id": "test-087",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv2",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 88
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 42,
+        "bodyDamage": 34
+      }
+    },
+    {
+      "id": "test-088",
+      "weapon": "weapon-aks74u-zt",
+      "ammo": "ammo-545x39-apv2",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 46
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 42,
+        "bodyDamage": 34
+      }
+    },
+    {
+      "id": "test-089",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv2",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 130
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 37,
+        "bodyDamage": 28
+      }
+    },
+    {
+      "id": "test-090",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv2",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 93
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 37,
+        "bodyDamage": 28
+      }
+    },
+    {
+      "id": "test-091",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv2",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 56
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 34,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-092",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv2",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 22
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 28
+      }
+    },
+    {
+      "id": "test-093",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv2",
+      "armor": {
+        "id": "armor-rampage-od",
+        "currentDurability": 0
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 28
+      }
+    },
+    {
+      "id": "test-094",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv2",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 150
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 30,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-095",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv2",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 120
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 32,
+        "bodyDamage": 22
+      }
+    },
+    {
+      "id": "test-096",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv2",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 88
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 33,
+        "bodyDamage": 22
+      }
+    },
+    {
+      "id": "test-097",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv2",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 55
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 32,
+        "bodyDamage": 22
+      }
+    },
+    {
+      "id": "test-098",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv2",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 23
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 22
+      }
+    },
+    {
+      "id": "test-099",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv2",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 0
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 23
+      }
+    },
+    {
+      "id": "test-100",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv2",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 0
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 22
+      }
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-06-03",
+    "lastUpdated": "2025-06-04",
     "gameVersion": "1.3.7.0",
     "notes": "Test data from manual in-game testing"
   }

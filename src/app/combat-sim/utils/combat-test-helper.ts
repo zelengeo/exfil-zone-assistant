@@ -5,10 +5,10 @@
 
 import { fetchItemsData } from '@/services/ItemService';
 import { calculateShotDamage } from './damage-calculations';
-import { AmmoProperties, ArmorProperties, isArmor, isAmmunition } from './types';
+import { isArmor, isAmmunition } from './types';
 
 
-//TODO remove
+
 /**
  * Test single shot damage calculation
  * Usage from console: testShotDamage('armor-6b17', 'spine_01', 'ammo-556x45-m995')
@@ -16,10 +16,11 @@ import { AmmoProperties, ArmorProperties, isArmor, isAmmunition } from './types'
 export async function testShotDamage(
     armorId: string,
     armorZoneId: string,
-    ammoId: string
+    ammoId: string,
+    armorDurability: number,
 ) {
     console.log('=== SHOT DAMAGE TEST ===');
-    console.log(`Armor: ${armorId}`);
+    console.log(`Armor: ${armorId} (${armorDurability??"full"})`);
     console.log(`Zone: ${armorZoneId}`);
     console.log(`Ammo: ${ammoId}`);
     console.log('Range: 0m (CQB)');
@@ -72,7 +73,7 @@ export async function testShotDamage(
         const armorProps: ArmorProperties = {
             armorClass: zoneArmorClass,
             maxDurability: armor.stats.maxDurability,
-            currentDurability: armor.stats.maxDurability, // Full durability for first shot
+            currentDurability: armorDurability ?? armor.stats.maxDurability, // Full durability for first shot
             durabilityDamageScalar: armor.stats.durabilityDamageScalar,
             bluntDamageScalar: zoneBluntScalar,
             protectiveData: armor.stats.protectiveData || [],
@@ -105,7 +106,7 @@ export async function testShotDamage(
             const result = calculateShotDamage(
                 ammoProps,
                 armorProps,
-                armor.stats.maxDurability, // Full durability
+                armorDurability ?? armor.stats.maxDurability, // Full durability
                 0 // CQB range
             );
 

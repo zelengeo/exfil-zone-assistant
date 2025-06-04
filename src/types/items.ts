@@ -35,6 +35,28 @@ export interface CurvePoint {
     leaveTangent: number;
 }
 
+export interface RecoilParameters {
+    shiftMomentum: number;
+    pitchBaseMomentum: number;
+    yawBaseMomentum: number;
+    rollBaseMomentum?: number;
+    shiftStiffness: number;
+    pitchStiffness: number;
+    yawStiffness: number;
+    rollStiffness: number;
+    shiftDamping?: number;
+    pitchDamping: number;
+    yawDamping: number;
+    rollDamping: number;
+    shiftMass?: number;
+    pitchMass: number;
+    yawMass: number;
+    rollMass: number;
+    oneHandedADSMultiplier?: number;
+    verticalRecoilControl: number;
+    horizontalRecoilControl: number;
+}
+
 // Weapon type with complete stats from game data
 export interface Weapon extends Item {
     category: 'weapons';
@@ -44,27 +66,7 @@ export interface Weapon extends Item {
         caliber: string;
 
         // Recoil parameters
-        recoilParameters?: {
-            shiftMomentum: number;
-            pitchBaseMomentum: number;
-            yawBaseMomentum: number;
-            rollBaseMomentum?: number;
-            shiftStiffness: number;
-            pitchStiffness: number;
-            yawStiffness: number;
-            rollStiffness: number;
-            shiftDamping?: number;
-            pitchDamping: number;
-            yawDamping: number;
-            rollDamping: number;
-            shiftMass?: number;
-            pitchMass: number;
-            yawMass: number;
-            rollMass: number;
-            oneHandedADSMultiplier?: number;
-            verticalRecoilControl: number;
-            horizontalRecoilControl: number;
-        };
+        recoilParameters?: RecoilParameters;
 
         // Other weapon properties
         MOA?: number;

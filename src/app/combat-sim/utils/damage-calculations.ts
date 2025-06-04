@@ -198,7 +198,7 @@ function calculateShotDamage(
 
     if (isPenetrating) {
         // For penetrationDamageScalarCurve, try using armor class directly
-        const penetrationDamageScalar = getPenetrationDamageScalar(armor.penetrationDamageScalarCurve);
+        const penetrationDamageScalar = getPenetrationDamageScalar(armor.penetrationDamageScalarCurve, currentArmorDurability, armor.maxDurability, rangePenetration, effectiveArmorClass);
 
         damageToBodyPart = rangeDamage * penetrationDamageScalar;
 
@@ -279,13 +279,62 @@ function calculatePenetrationChance(
  * Get penetration damage scalar from curve
  */
 function getPenetrationDamageScalar(
-    penetrationDamageScalarCurve: CurvePoint[]
+    penetrationDamageScalarCurve: CurvePoint[],
+    currentDurability: number,
+    maxDurability: number,
+    penetrationPower: number,
+    effectiveArmorClass: number
 ): number {
     //FIXME
     return penetrationDamageScalarCurve[1].value
+
     //I was not able to find ingame cases when this Curve effect occurred, in both overpen/underpen(0 durability) it was always very close to second element of this curve.
     //Measured damage is less by x < 10% (rounded measured data...)
     //return interpolateBallisticCurve(penetrationDamageScalarCurve, ratio);
+
+    //FIXME REMOVE - logaritmic approach
+    /*const durabilityPercent = currentDurability / maxDurability;
+    const penetrationRatio = penetrationPower / effectiveArmorClass;
+
+    // Calculate penetration effectiveness considering durability
+    // When armor is fresh, penetration is less effective
+    const penetrationEffectiveness = penetrationRatio * (2 - durabilityPercent);
+
+    // Apply logarithmic transformation
+    // log(1) = 0, which maps to the second curve point
+    // Values < 1 go negative (toward first point)
+    // Values > 1 go positive (toward later points)
+    const logEffectiveness = Math.log10(penetrationEffectiveness);
+
+    // Clamp to curve range [-1, 2]
+    const curveX = Math.max(-1, Math.min(2, logEffectiveness));
+
+    return interpolateBallisticCurve(penetrationDamageScalarCurve, curveX);*/
+
+    //FIXME REMOVE - handpicked sweetspot
+    /*// Calculate durability percentage (1 = full, 0 = broken)
+    const durabilityPercent = currentDurability / maxDurability;
+
+    // Calculate penetration ratio
+    const penetrationRatio = penetrationPower / effectiveArmorClass;
+
+    // When armor is at high durability AND penetration is marginal,
+    // use a modified interpolation approach
+    if (durabilityPercent > 0.5 && penetrationRatio < 1.5) {
+        // For high durability with marginal penetration,
+        // interpolate between curve points based on durability
+        // This maps high durability to lower damage scalars
+
+        // Map durability 100%-50% to curve x-axis 0 to 0.4
+        const curveX = (1 - durabilityPercent) * 0.8; // 0 to 0.4 range
+
+
+        return interpolateBallisticCurve(penetrationDamageScalarCurve, curveX);
+    } else {
+        // For low durability or high penetration, use the standard scalar
+        // This typically gives us the second curve point value (0.72)
+        return penetrationDamageScalarCurve[1].value;
+    }*/
 }
 
 /**
