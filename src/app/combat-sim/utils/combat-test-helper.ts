@@ -18,6 +18,8 @@ export async function testShotDamage(
     armorZoneId: string,
     ammoId: string,
     armorDurability: number,
+    range: number = 0,
+    overridePenentrationChance: boolean | null,
 ) {
     console.log('=== SHOT DAMAGE TEST ===');
     console.log(`Armor: ${armorId} (${armorDurability??"full"})`);
@@ -107,7 +109,8 @@ export async function testShotDamage(
                 ammoProps,
                 armorProps,
                 armorDurability ?? armor.stats.maxDurability, // Full durability
-                0 // CQB range
+                range,
+                overridePenentrationChance,
             );
 
             if (result.isPenetrating) {

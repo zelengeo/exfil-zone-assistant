@@ -174,14 +174,13 @@ function calculateShotDamage(
     // Calculate armor effectiveness based on current durability
     const durabilityPercent = currentArmorDurability == null ? 1 : currentArmorDurability / armor.maxDurability;
 
-    //FIXME seems this is not the case, durability affects pen chance
     const armorEffectiveness = getArmorEffectivenessFromDurability(
         durabilityPercent,
         armor.antiPenetrationDurabilityScalarCurve
     );
 
     // Calculate effective armor class
-    const effectiveArmorClass = armor.armorClass // * armorEffectiveness;
+    const effectiveArmorClass = armor.armorClass * armorEffectiveness;
 
     // Calculate penetration chance
     const penetrationChance = calculatePenetrationChance(
@@ -198,7 +197,7 @@ function calculateShotDamage(
 
     if (isPenetrating) {
         // For penetrationDamageScalarCurve, try using armor class directly
-        const penetrationDamageScalar = getPenetrationDamageScalar(armor.penetrationDamageScalarCurve, currentArmorDurability, armor.maxDurability, rangePenetration, effectiveArmorClass);
+        const penetrationDamageScalar = getPenetrationDamageScalar(armor.penetrationDamageScalarCurve, rangePenetration, effectiveArmorClass);
 
         damageToBodyPart = rangeDamage * penetrationDamageScalar;
 
@@ -239,8 +238,8 @@ function getArmorEffectivenessFromDurability(
         return durabilityPercent;
     }
 
-    // Use the curve to determine effectiveness
-    return interpolateBallisticCurve(curve, durabilityPercent);
+    // Use the curve to determine effectiveness. It seems curve uses missing durability percent
+    return interpolateBallisticCurve(curve, 1 - durabilityPercent);
 }
 
 /**
@@ -280,17 +279,32 @@ function calculatePenetrationChance(
  */
 function getPenetrationDamageScalar(
     penetrationDamageScalarCurve: CurvePoint[],
-    currentDurability: number,
-    maxDurability: number,
     penetrationPower: number,
     effectiveArmorClass: number
 ): number {
-    //FIXME
-    return penetrationDamageScalarCurve[1].value
+    // //FIXME
+    // return penetrationDamageScalarCurve[1].value
 
     //I was not able to find ingame cases when this Curve effect occurred, in both overpen/underpen(0 durability) it was always very close to second element of this curve.
     //Measured damage is less by x < 10% (rounded measured data...)
     //return interpolateBallisticCurve(penetrationDamageScalarCurve, ratio);
+
+
+    // Step 3: Calculate penetration difference (not ratio)
+    // This could be what the curve x-axis represents
+    const penetrationDifference = Math.max(0, effectiveArmorClass - penetrationPower);
+
+    // Step 4: Interpolate the damage scalar
+    // The curve seems centered around 0, where:
+    // x < 0: penetration barely beats armor (reduced damage)
+    // x = 0: penetration equals effective armor
+    // x > 0: penetration exceeds armor (better damage)
+    const damageScalar = interpolateBallisticCurve(
+        penetrationDamageScalarCurve,
+        penetrationDifference
+    );
+
+    return damageScalar;
 
     //FIXME REMOVE - logaritmic approach
     /*const durabilityPercent = currentDurability / maxDurability;

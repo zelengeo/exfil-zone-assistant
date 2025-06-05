@@ -85,6 +85,7 @@ function transformItemData(rawItem: any): Item {
             baseItem.stats.protectiveData = rawItem.stats.protectiveData;
             baseItem.stats.penetrationChanceCurve = rawItem.stats.penetrationChanceCurve;
             baseItem.stats.penetrationDamageScalarCurve = rawItem.stats.penetrationDamageScalarCurve;
+            baseItem.stats.antiPenetrationDurabilityScalarCurve = rawItem.stats.antiPenetrationDurabilityScalarCurve;
         }
 
         // Medical stats

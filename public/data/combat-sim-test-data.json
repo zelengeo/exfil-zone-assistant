@@ -829,7 +829,7 @@
       }
     },
     {
-      "id": "test-57",
+      "id": "test-057",
       "weapon": "weapon-aks74u-zt",
       "ammo": "ammo-545x39-tracer",
       "armor": {
@@ -844,7 +844,7 @@
       }
     },
     {
-      "id": "test-58",
+      "id": "test-058",
       "weapon": "weapon-aks74u-zt",
       "ammo": "ammo-545x39-tracer",
       "armor": {
@@ -859,7 +859,7 @@
       }
     },
     {
-      "id": "test-59",
+      "id": "test-059",
       "weapon": "weapon-aks74u-zt",
       "ammo": "ammo-545x39-tracer",
       "armor": {
@@ -1477,6 +1477,200 @@
       "isPenetration": true,
       "gameResults": {
         "bodyDamage": 22
+      }
+    },
+    {
+      "id": "test-101",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-tracer",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 150
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 6.09,
+        "bodyDamage": 0.82
+      }
+    },
+    {
+      "id": "test-102",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-tracer",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 144
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 6.09,
+        "bodyDamage": 0.82
+      }
+    },
+    {
+      "id": "test-103",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-tracer",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 138
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 6.09,
+        "bodyDamage": 0
+      }
+    },
+    {
+      "id": "test-104",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-tracer",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 132
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 6.09,
+        "bodyDamage": 0.82
+      }
+    },
+    {
+      "id": "test-105",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-tracer",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 125
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 6.09,
+        "bodyDamage": 0.82
+      }
+    },
+    {
+      "id": "test-106",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-tracer",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 119
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 6.09,
+        "bodyDamage": 0.82
+      }
+    },
+    {
+      "id": "test-107",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-tracer",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 113
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 6.09,
+        "bodyDamage": 0.82
+      }
+    },
+    {
+      "id": "test-108",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-tracer",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 107
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 6.09,
+        "bodyDamage": 0.82
+      }
+    },
+    {
+      "id": "test-109",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-tracer",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 101
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 6.09,
+        "bodyDamage": 0.82
+      }
+    },
+    {
+      "id": "test-110",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-tracer",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 95
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 6.09,
+        "bodyDamage": 0.82
+      }
+    },
+    {
+      "id": "test-111",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-tracer",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 89
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 6.09,
+        "bodyDamage": 0.82
+      }
+    },
+    {
+      "id": "test-112",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-tracer",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 0
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 42
+      }
+    },
+    {
+      "id": "test-113",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-tracer",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 119
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 7,
+        "bodyDamage": 21
       }
     }
   ],
