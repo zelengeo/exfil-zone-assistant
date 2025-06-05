@@ -196,22 +196,19 @@ function calculateShotDamage(
     let damageToArmor = 0;
 
     if (isPenetrating) {
-        // For penetrationDamageScalarCurve, try using armor class directly
+        //It is possible that first damageTo armor is computed and then depleted armor value is used for the scalar...
         const penetrationDamageScalar = getPenetrationDamageScalar(armor.penetrationDamageScalarCurve, rangePenetration, effectiveArmorClass);
 
         damageToBodyPart = rangeDamage * penetrationDamageScalar;
 
         // Armor damage for penetrating shots
-        damageToArmor = damageToBodyPart * ammo.protectionGearPenetratedDamageScale * (1 + armor.durabilityDamageScalar)//Measured damage is less by x ~ 5% (rounded measured data...)
-
-        // * armor.durabilityDamageScalar;  not sure what this scalar does
-
+        damageToArmor = rangeDamage * ammo.protectionGearPenetratedDamageScale * armor.durabilityDamageScalar * 3//Measured damage deviates by <2% (rounded measured data...), so it seems correct...
     } else {
         // Non-penetrating shot (blunt damage)
         damageToBodyPart = rangeDamage * ammo.bluntDamageScale * armor.bluntDamageScalar;
 
         // Armor damage for non-penetrating shots
-        damageToArmor = rangeDamage * ammo.protectionGearBluntDamageScale * (1 + armor.durabilityDamageScalar)
+        damageToArmor = rangeDamage * ammo.protectionGearBluntDamageScale * armor.durabilityDamageScalar * 3
         // * armor.durabilityDamageScalar;  not sure what this scalar does
     }
 
