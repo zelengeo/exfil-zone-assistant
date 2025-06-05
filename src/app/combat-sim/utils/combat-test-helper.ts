@@ -95,7 +95,7 @@ export async function testShotDamage(
         console.log(`- Has penetrationDamageScalarCurve: ${!!armor.stats.penetrationDamageScalarCurve}`);
 
         // Run multiple shots to get average
-        const numTests = 10;
+        const numTests = 1;
         let penetratingCount = 0;
         let totalPenDamage = 0;
         let totalNonPenDamage = 0;

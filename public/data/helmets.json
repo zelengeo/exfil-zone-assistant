@@ -1,0 +1,3090 @@
+[
+  {
+    "id": "helmet-beanie",
+    "name": "Tactical Beanie",
+    "description": "Lightweight tactical beanie providing minimal protection while maintaining maximum mobility and stealth profile.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_Beanie.webp",
+      "thumbnail": "/images/items/gear/Icon_Beanie.webp",
+      "fullsize": "/images/items/gear/Icon_Beanie.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 2500,
+      "weight": 0.05,
+      "armorClass": 4.5,
+      "maxDurability": 1,
+      "soundMix": "default",
+      "durabilityDamageScalar": 0.3,
+      "bluntDamageScalar": 1.0,
+      "protectiveData": [
+        {
+          "bodyPart": "head-top",
+          "armorClass": 4.5,
+          "bluntDamageScalar": 1.0,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -1.2,
+          "leaveTangent": -1.2
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.21676205,
+          "leaveTangent": -0.21676254
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Minimal protection headwear designed for stealth operations where concealment is more important than armor.",
+    "tips": "Use when you need to maintain a low profile. The minimal weight won't slow you down, but don't expect much protection."
+  },
+  {
+    "id": "helmet-op-fast-snowing",
+    "name": "OP Fast \"Snowing\"",
+    "description": "Special edition OP Fast helmet with winter camouflage pattern. High-quality tactical protection with seasonal aesthetics.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_event_xmas_boss_head2.webp",
+      "thumbnail": "/images/items/gear/Icon_event_xmas_boss_head2.webp",
+      "fullsize": "/images/items/gear/Icon_event_xmas_boss_head2.webp"
+    },
+    "stats": {
+      "rarity": "Rare",
+      "price": 58000,
+      "weight": 1.6,
+      "armorClass": 4,
+      "maxDurability": 63,
+      "durabilityDamageScalar": 0.37,
+      "bluntDamageScalar": 0.7,
+      "protectiveData": [
+        {
+          "bodyPart": "head-top",
+          "armorClass": 4,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.93,
+          "arriveTangent": -4.670561,
+          "leaveTangent": -4.670564
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.1,
+          "arriveTangent": -0.487481,
+          "leaveTangent": -0.487481
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.02,
+          "arriveTangent": -0.083746,
+          "leaveTangent": -0.083745
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": -0.001887
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.8,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ],
+      "soundMix": "Helmet_Delta"
+    },
+    "notes": "Limited edition winter-themed OP Fast helmet. Same protection as standard model with unique winter camouflage pattern.",
+    "tips": "Solid Class 4 protection with good durability. The winter pattern makes it perfect for snow environments while maintaining tactical effectiveness."
+  },
+  {
+    "id": "helmet-op-fast-reindeer",
+    "name": "OP Fast \"Reindeer\"",
+    "description": "Special edition OP Fast helmet with festive reindeer pattern. Combines tactical protection with holiday spirit.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_event_xmas_boss_head3.webp",
+      "thumbnail": "/images/items/gear/Icon_event_xmas_boss_head3.webp",
+      "fullsize": "/images/items/gear/Icon_event_xmas_boss_head3.webp"
+    },
+    "stats": {
+      "rarity": "Rare",
+      "price": 62000,
+      "weight": 1.7,
+      "armorClass": 4,
+      "maxDurability": 63,
+      "durabilityDamageScalar": 0.37,
+      "bluntDamageScalar": 0.7,
+      "protectiveData": [
+        {
+          "bodyPart": "head-top",
+          "armorClass": 4,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.93,
+          "arriveTangent": -4.670561,
+          "leaveTangent": -4.670564
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.1,
+          "arriveTangent": -0.487481,
+          "leaveTangent": -0.487481
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.02,
+          "arriveTangent": -0.083746,
+          "leaveTangent": -0.083745
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": -0.001887
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.8,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ],
+      "soundMix": "Helmet_Delta"
+    },
+    "notes": "Festive edition OP Fast helmet with unique reindeer pattern. Slightly heavier than the standard model but offers the same protection.",
+    "tips": "Shows your holiday spirit while maintaining serious protection. The extra weight is minimal and doesn't significantly impact mobility."
+  },
+  {
+    "id": "helmet-delta",
+    "name": "Delta Helmet",
+    "description": "High-quality tactical helmet providing excellent protection for operators in hostile environments. Features advanced materials and ergonomic design.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_helmet_4_5.webp",
+      "thumbnail": "/images/items/gear/Icon_helmet_4_5.webp",
+      "fullsize": "/images/items/gear/Icon_helmet_4_5.webp"
+    },
+    "stats": {
+      "rarity": "Rare",
+      "price": 55000,
+      "weight": 1.6,
+      "armorClass": 4,
+      "maxDurability": 63,
+      "durabilityDamageScalar": 0.37,
+      "bluntDamageScalar": 0.7,
+      "protectiveData": [
+        {
+          "bodyPart": "head-top",
+          "armorClass": 4,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.93,
+          "arriveTangent": -4.670561,
+          "leaveTangent": -4.670564
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.1,
+          "arriveTangent": -0.487481,
+          "leaveTangent": -0.487481
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.02,
+          "arriveTangent": -0.083746,
+          "leaveTangent": -0.083745
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": -0.001887
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.8,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ],
+      "soundMix": "Helmet_Delta"
+    },
+    "notes": "Tactical helmet designed for special operations. Provides reliable head protection while maintaining good mobility.",
+    "tips": "Excellent balance of protection and weight. The Class 4 armor rating stops most rifle rounds while keeping head movement agile."
+  },
+  {
+    "id": "helmet-delta-le",
+    "name": "Delta Helmet LE",
+    "description": "Law enforcement variant of the Delta helmet with enhanced durability and improved damage resistance for extended operations.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_helmet_4_5.webp",
+      "thumbnail": "/images/items/gear/Icon_helmet_4_5.webp",
+      "fullsize": "/images/items/gear/Icon_helmet_4_5.webp"
+    },
+    "stats": {
+      "rarity": "Rare",
+      "price": 62000,
+      "weight": 1.6,
+      "armorClass": 4,
+      "maxDurability": 68,
+      "durabilityDamageScalar": 0.35,
+      "bluntDamageScalar": 0.7,
+      "protectiveData": [
+        {
+          "bodyPart": "head-top",
+          "armorClass": 4,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.93,
+          "arriveTangent": -4.670561,
+          "leaveTangent": -4.670564
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.1,
+          "arriveTangent": -0.487481,
+          "leaveTangent": -0.487481
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.02,
+          "arriveTangent": -0.083746,
+          "leaveTangent": -0.083745
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": -0.001887
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.8,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ],
+      "soundMix": "Helmet_Delta"
+    },
+    "notes": "Enhanced version of the Delta helmet with improved materials and construction for law enforcement applications.",
+    "tips": "Superior durability compared to the standard Delta. Takes less damage per hit, making it ideal for extended engagements."
+  },
+  {
+    "id": "helmet-op-highprotection",
+    "name": "OP HighProtection",
+    "description": "Advanced tactical helmet with superior protection and integrated systems. Designed for high-threat environments.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_helmet_5.webp",
+      "thumbnail": "/images/items/gear/Icon_helmet_5.webp",
+      "fullsize": "/images/items/gear/Icon_helmet_5.webp"
+    },
+    "stats": {
+      "rarity": "Epic",
+      "price": 125000,
+      "weight": 2.8,
+      "armorClass": 5,
+      "maxDurability": 95,
+      "durabilityDamageScalar": 0.37,
+      "bluntDamageScalar": 0.7,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 5,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 90
+        },
+        {
+          "bodyPart": "head_chin",
+          "armorClass": 5,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 70
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.92,
+          "arriveTangent": -4.670561,
+          "leaveTangent": -4.670564
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.1,
+          "arriveTangent": -0.487481,
+          "leaveTangent": -0.487481
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.02,
+          "arriveTangent": -0.083746,
+          "leaveTangent": -0.083745
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": -0.001887
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.75,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ],
+      "soundMix": "default"
+    },
+    "notes": "High-end tactical helmet offering Class 5 protection with excellent coverage. Heavy but provides superior defense against high-penetration rounds.",
+    "tips": "Ideal for players facing heavily armed opponents. The weight penalty is significant but the protection is worth it for dangerous engagements."
+  },
+  {
+    "id": "helmet-safety-first",
+    "name": "Safety First",
+    "description": "Basic industrial safety helmet repurposed for combat use. Lightweight but offers minimal protection.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_helmet_0_7.webp",
+      "thumbnail": "/images/items/gear/Icon_helmet_0_7.webp",
+      "fullsize": "/images/items/gear/Icon_helmet_0_7.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 8500,
+      "weight": 0.3,
+      "armorClass": 1,
+      "maxDurability": 59,
+      "soundMix": "default",
+      "durabilityDamageScalar": 0.9,
+      "bluntDamageScalar": 0.9,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 1,
+          "bluntDamageScalar": 0.9,
+          "protectionAngle": 70
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.98,
+          "arriveTangent": -3.509459,
+          "leaveTangent": -3.509458
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.25,
+          "arriveTangent": -0.775365,
+          "leaveTangent": -0.775366
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.06,
+          "arriveTangent": -0.164347,
+          "leaveTangent": -0.164348
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.95,
+          "arriveTangent": -0.21676205,
+          "leaveTangent": -0.21676254
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 2,
+          "value": 0.65,
+          "arriveTangent": -0.13567513,
+          "leaveTangent": -0.13567509
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Entry-level head protection that's better than nothing. Very lightweight and cheap, making it suitable for budget builds.",
+    "tips": "Good starter helmet for new players. Won't stop much but provides basic protection against low-caliber rounds and debris."
+  },
+  {
+    "id": "helmet-lightweight",
+    "name": "Lightweight Helmet",
+    "description": "Streamlined tactical helmet balancing protection and mobility. Popular choice for fast-moving operators.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_helmet_3.webp",
+      "thumbnail": "/images/items/gear/Icon_helmet_3.webp",
+      "fullsize": "/images/items/gear/Icon_helmet_3.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 24000,
+      "weight": 0.9,
+      "armorClass": 2,
+      "soundMix": "default",
+      "maxDurability": 42,
+      "durabilityDamageScalar": 0.33,
+      "bluntDamageScalar": 0.8,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 2,
+          "bluntDamageScalar": 0.8,
+          "protectionAngle": 80
+        },
+        {
+          "bodyPart": "head_eyes",
+          "armorClass": 2,
+          "bluntDamageScalar": 0.8,
+          "protectionAngle": 60
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.95,
+          "arriveTangent": -3.509459,
+          "leaveTangent": -3.509458
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.25,
+          "arriveTangent": -0.775365,
+          "leaveTangent": -0.775366
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.06,
+          "arriveTangent": -0.164347,
+          "leaveTangent": -0.164348
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.9,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 2,
+          "value": 0.65,
+          "arriveTangent": -0.06396112,
+          "leaveTangent": -0.06396114
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Well-balanced helmet offering decent protection without significant mobility penalties. Good all-around choice.",
+    "tips": "Excellent for players who prioritize movement speed while still wanting reasonable head protection. Works well for most mid-tier encounters."
+  },
+  {
+    "id": "helmet-parachute-training-black",
+    "name": "Black Parachute Training Helmet",
+    "description": "Military training helmet in tactical black finish. Lightweight design originally for paratrooper training.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_Helmet_004_2_Hyq.webp",
+      "thumbnail": "/images/items/gear/Icon_Helmet_004_2_Hyq.webp",
+      "fullsize": "/images/items/gear/Icon_Helmet_004_2_Hyq.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 21000,
+      "weight": 0.8,
+      "armorClass": 2,
+      "soundMix": "default",
+      "maxDurability": 35,
+      "durabilityDamageScalar": 0.33,
+      "bluntDamageScalar": 0.8,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 2,
+          "bluntDamageScalar": 0.8,
+          "protectionAngle": 75
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.95,
+          "arriveTangent": -3.5094585,
+          "leaveTangent": -3.509458
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.25,
+          "arriveTangent": -0.775365,
+          "leaveTangent": -0.775366
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.06,
+          "arriveTangent": -0.164347,
+          "leaveTangent": -0.164348
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.9,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 2,
+          "value": 0.65,
+          "arriveTangent": -0.06396112,
+          "leaveTangent": -0.06396114
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Training helmet adapted for combat use. Low durability but very lightweight and affordable.",
+    "tips": "Good budget option for players who want minimal weight penalty. The black finish provides better camouflage in urban environments."
+  },
+  {
+    "id": "helmet-swat",
+    "name": "SWAT Helmet",
+    "description": "Heavy-duty tactical helmet used by special weapons and tactics units. Features enhanced protection and communication systems.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_helmet_4.webp",
+      "thumbnail": "/images/items/gear/Icon_helmet_4.webp",
+      "fullsize": "/images/items/gear/Icon_helmet_4.webp"
+    },
+    "stats": {
+      "rarity": "Rare",
+      "price": 68000,
+      "weight": 2.4,
+      "armorClass": 3,
+      "soundMix": "OPSWAT",
+      "maxDurability": 55,
+      "durabilityDamageScalar": 0.37,
+      "bluntDamageScalar": 0.7,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 3,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 85
+        },
+        {
+          "bodyPart": "head_eyes",
+          "armorClass": 3,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 75
+        },
+        {
+          "bodyPart": "head_chin",
+          "armorClass": 3,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 60
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.93,
+          "arriveTangent": -4.670561,
+          "leaveTangent": -4.670564
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.12,
+          "arriveTangent": -0.487481,
+          "leaveTangent": -0.487481
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.04,
+          "arriveTangent": -0.083746,
+          "leaveTangent": -0.083745
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": -0.001887
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.85,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 2,
+          "value": 0.65,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Professional-grade tactical helmet with comprehensive face protection. Heavy but offers excellent protection against rifle rounds.",
+    "tips": "Solid mid-tier choice for serious operators. The extra weight is offset by significantly improved survivability in firefights."
+  },
+  {
+    "id": "helmet-rsp",
+    "name": "EVIRS Helmet",
+    "description": "High-end tactical helmet with advanced ballistic protection. Features integrated communication systems and night vision mounting capabilities.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_helmet_5_5.webp",
+      "thumbnail": "/images/items/gear/Icon_helmet_5_5.webp",
+      "fullsize": "/images/items/gear/Icon_helmet_5_5.webp"
+    },
+    "stats": {
+      "rarity": "Epic",
+      "price": 85000,
+      "weight": 2.3,
+      "armorClass": 5,
+      "soundMix": "OPSWAT",
+      "maxDurability": 65,
+      "durabilityDamageScalar": 0.28,
+      "bluntDamageScalar": 0.7,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 5,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.91,
+          "arriveTangent": -5.08752,
+          "leaveTangent": -5.087521
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.08,
+          "arriveTangent": -0.487481,
+          "leaveTangent": -0.487481
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.02,
+          "arriveTangent": -0.083746,
+          "leaveTangent": -0.083745
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": -0.001887
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.8,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Premium tactical helmet offering Class 5 protection with excellent durability. Designed for high-threat environments.",
+    "tips": "High-end helmet with excellent protection but significant weight penalty. Best used by experienced operators who can manage the mobility trade-off."
+  },
+  {
+    "id": "helmet-rsp-ne",
+    "name": "EVIRS Helmet NE",
+    "description": "Night-enhanced variant of the EVIRS helmet with integrated night vision systems and improved communication equipment.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_helmet_5_5N.webp",
+      "thumbnail": "/images/items/gear/Icon_helmet_5_5N.webp",
+      "fullsize": "/images/items/gear/Icon_helmet_5_5N.webp"
+    },
+    "stats": {
+      "rarity": "Epic",
+      "price": 95000,
+      "weight": 2.5,
+      "armorClass": 5,
+      "soundMix": "OPSWAT",
+      "maxDurability": 65,
+      "durabilityDamageScalar": 0.28,
+      "bluntDamageScalar": 0.7,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 5,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.91,
+          "arriveTangent": -5.08752,
+          "leaveTangent": -5.087521
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.08,
+          "arriveTangent": -0.487481,
+          "leaveTangent": -0.487481
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.02,
+          "arriveTangent": -0.083746,
+          "leaveTangent": -0.083745
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": -0.001887
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.8,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Enhanced EVIRS variant with integrated night vision capabilities. Slightly heavier due to additional electronics.",
+    "tips": "Premium night operations helmet. The integrated NV systems justify the extra weight for night missions."
+  },
+  {
+    "id": "helmet-rsp-black",
+    "name": "Black EVIRS Helmet",
+    "description": "Tactical black variant of the EVIRS helmet system. Same protection as the standard model with a low-visibility finish.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_Helmet_006_2_Zty.webp",
+      "thumbnail": "/images/items/gear/Icon_Helmet_006_2_Zty.webp",
+      "fullsize": "/images/items/gear/Icon_Helmet_006_2_Zty.webp"
+    },
+    "stats": {
+      "rarity": "Epic",
+      "price": 87000,
+      "weight": 2.3,
+      "armorClass": 5,
+      "maxDurability": 65,
+      "soundMix": "OPSWAT",
+      "durabilityDamageScalar": 0.28,
+      "bluntDamageScalar": 0.7,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 5,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.91,
+          "arriveTangent": -5.08752,
+          "leaveTangent": -5.087521
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.08,
+          "arriveTangent": -0.487481,
+          "leaveTangent": -0.487481
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.02,
+          "arriveTangent": -0.083746,
+          "leaveTangent": -0.083745
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": -0.001887
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.8,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Low-visibility black variant of the premium EVIRS helmet system. Popular among special operations units.",
+    "tips": "Same excellent protection as the standard EVIRS with better concealment. Ideal for urban operations."
+  },
+  {
+    "id": "helmet-skull-face",
+    "name": "Skull Face Ops Helmet",
+    "description": "Intimidating tactical helmet with skull face design. Lightweight construction with moderate protection for psychological warfare operations.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/WarfareHelmet_SkullFaceBoss.webp",
+      "thumbnail": "/images/items/gear/WarfareHelmet_SkullFaceBoss.webp",
+      "fullsize": "/images/items/gear/WarfareHelmet_SkullFaceBoss.webp"
+    },
+    "stats": {
+      "rarity": "Epic",
+      "price": 45000,
+      "weight": 1.1,
+      "armorClass": 4,
+      "soundMix": "default",
+      "maxDurability": 63,
+      "durabilityDamageScalar": 0.37,
+      "bluntDamageScalar": 0.7,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 4,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 85
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.93,
+          "arriveTangent": -2.307605,
+          "leaveTangent": -2.307607
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.25,
+          "arriveTangent": -0.669775,
+          "leaveTangent": -0.669775
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 1,
+          "value": 0.02,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": -0.001887
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.8,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Unique skull-faced helmet designed for psychological operations. Lighter than most Class 4 helmets.",
+    "tips": "Good protection-to-weight ratio for a Class 4 helmet. The distinctive appearance can be intimidating to enemies."
+  },
+  {
+    "id": "helmet-tsh4m",
+    "name": "Tsh-4M Helmet",
+    "description": "Soviet-era tank crew helmet adapted for infantry use. Basic protection with excellent sound dampening properties.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_SM_Helmet_019_Zm.webp",
+      "thumbnail": "/images/items/gear/Icon_SM_Helmet_019_Zm.webp",
+      "fullsize": "/images/items/gear/Icon_SM_Helmet_019_Zm.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 8500,
+      "weight": 1.5,
+      "armorClass": 1,
+      "maxDurability": 104,
+      "soundMix": "MuffledGeneral",
+      "durabilityDamageScalar": 0.7,
+      "bluntDamageScalar": 0.9,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 1,
+          "bluntDamageScalar": 0.9,
+          "protectionAngle": 80
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.98,
+          "arriveTangent": -3.509459,
+          "leaveTangent": -3.509458
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.25,
+          "arriveTangent": -0.775365,
+          "leaveTangent": -0.775366
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.06,
+          "arriveTangent": -0.164347,
+          "leaveTangent": -0.164348
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.95,
+          "arriveTangent": -0.216762,
+          "leaveTangent": -0.216763
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 2,
+          "value": 0.65,
+          "arriveTangent": -0.135675,
+          "leaveTangent": -0.135675
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Repurposed Soviet tank crew helmet. High durability compensates for minimal protection level.",
+    "tips": "Very affordable basic protection. The high durability makes it last longer than other low-tier helmets."
+  },
+  {
+    "id": "helmet-m1",
+    "name": "M1 Helmet",
+    "description": "Classic World War II era American infantry helmet. Proven design with moderate protection and historical significance.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_Helmet_010_Hyq.webp",
+      "thumbnail": "/images/items/gear/Icon_Helmet_010_Hyq.webp",
+      "fullsize": "/images/items/gear/Icon_Helmet_010_Hyq.webp"
+    },
+    "stats": {
+      "rarity": "Uncommon",
+      "price": 15000,
+      "weight": 1.4,
+      "armorClass": 3,
+      "maxDurability": 45,
+      "soundMix": "default",
+      "durabilityDamageScalar": 0.55,
+      "bluntDamageScalar": 0.9,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 3,
+          "bluntDamageScalar": 0.9,
+          "protectionAngle": 85
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.95,
+          "arriveTangent": -4.401213,
+          "leaveTangent": -4.401215
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.15,
+          "arriveTangent": -0.487481,
+          "leaveTangent": -0.487481
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.06,
+          "arriveTangent": -0.083746,
+          "leaveTangent": -0.083745
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": -0.001887
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.85,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Classic WWII-era design that's stood the test of time. Reliable mid-tier protection at an affordable price.",
+    "tips": "Good balance of protection, weight, and cost. A solid choice for players who want Class 3 protection without breaking the bank."
+  },
+  {
+    "id": "helmet-warrior",
+    "name": "Warrior Full Face Helmet",
+    "description": "Full-face protection helmet with integrated visor. Excellent coverage and durability with moderate weight penalty.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_Helmet_013_Hyq.webp",
+      "thumbnail": "/images/items/gear/Icon_Helmet_013_Hyq.webp",
+      "fullsize": "/images/items/gear/Icon_Helmet_013_Hyq.webp"
+    },
+    "stats": {
+      "rarity": "Uncommon",
+      "price": 28000,
+      "weight": 0.9,
+      "soundMix": "MuffledGeneral",
+      "armorClass": 4,
+      "maxDurability": 75,
+      "durabilityDamageScalar": 0.45,
+      "bluntDamageScalar": 0.9,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 4,
+          "bluntDamageScalar": 0.9,
+          "protectionAngle": 90
+        },
+        {
+          "bodyPart": "head_eyes",
+          "armorClass": 4,
+          "bluntDamageScalar": 0.9,
+          "protectionAngle": 85
+        },
+        {
+          "bodyPart": "head_chin",
+          "armorClass": 4,
+          "bluntDamageScalar": 0.9,
+          "protectionAngle": 80
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.94,
+          "arriveTangent": -4.6705613,
+          "leaveTangent": -4.670564
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.12,
+          "arriveTangent": -0.487481,
+          "leaveTangent": -0.487481
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.02,
+          "arriveTangent": -0.083746,
+          "leaveTangent": -0.083745
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": -0.001887
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.85,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Full face protection helmet with excellent coverage. Surprisingly lightweight for the level of protection offered.",
+    "tips": "Excellent all-around helmet with full facial protection. The comprehensive coverage makes it ideal for close-quarters combat."
+  },
+  {
+    "id": "helmet-6b47",
+    "name": "6B47 Helmet",
+    "description": "Russian military combat helmet providing reliable protection for infantry operations. Standard issue for modern Russian forces with proven battlefield effectiveness.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_WarfareHelmet_6B47.webp",
+      "thumbnail": "/images/items/gear/Icon_WarfareHelmet_6B47.webp",
+      "fullsize": "/images/items/gear/Icon_WarfareHelmet_6B47.webp"
+    },
+    "stats": {
+      "rarity": "Uncommon",
+      "price": 28500,
+      "weight": 1.4,
+      "armorClass": 3,
+      "maxDurability": 47,
+      "soundMix": "default",
+      "bluntDamageScalar": 0.9,
+      "durabilityDamageScalar": 0.45,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 3,
+          "bluntDamageScalar": 0.9,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.94,
+          "arriveTangent": -4.401213,
+          "leaveTangent": -4.401215
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.15,
+          "arriveTangent": -0.487481,
+          "leaveTangent": -0.487481
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.05,
+          "arriveTangent": -0.083746,
+          "leaveTangent": -0.083745
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": -0.001887
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.85,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Standard military helmet with good protection against small arms fire.",
+    "tips": "Affordable Class 3 protection that works well against most pistol rounds and low-penetration rifle ammunition."
+  },
+  {
+    "id": "helmet-ach-green",
+    "name": "ACH Helmet (Green)",
+    "description": "Advanced Combat Helmet in woodland green camouflage. Modern military design with enhanced ballistic protection and compatibility with tactical accessories.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/SM_Helmet_012_Zty.webp",
+      "thumbnail": "/images/items/gear/SM_Helmet_012_Zty.webp",
+      "fullsize": "/images/items/gear/SM_Helmet_012_Zty.webp"
+    },
+    "stats": {
+      "rarity": "Epic",
+      "price": 65000,
+      "weight": 2.3,
+      "armorClass": 4,
+      "canAttach": [
+        "'ACHFaceShield'"
+      ],
+      "soundMix": "MuffledGeneral",
+      "maxDurability": 65,
+      "bluntDamageScalar": 0.7,
+      "durabilityDamageScalar": 0.28,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 4,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.91,
+          "arriveTangent": -4.670561,
+          "leaveTangent": -4.670564
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.1,
+          "arriveTangent": -0.487481,
+          "leaveTangent": -0.487481
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.02,
+          "arriveTangent": -0.083746,
+          "leaveTangent": -0.083745
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": -0.001887
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.75,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Advanced military helmet with face shield compatibility and superior ballistic protection.",
+    "tips": "Excellent protection against rifle rounds. Can mount face shields for additional protection."
+  },
+  {
+    "id": "helmet-ach-black",
+    "name": "ACH Helmet (Black)",
+    "description": "Advanced Combat Helmet in tactical black finish. Identical protection to the green variant with a different color scheme for urban operations.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/SM_Helmet_012_Zty__2png.webp",
+      "thumbnail": "/images/items/gear/SM_Helmet_012_Zty__2png.webp",
+      "fullsize": "/images/items/gear/SM_Helmet_012_Zty__2png.webp"
+    },
+    "stats": {
+      "rarity": "Epic",
+      "price": 65000,
+      "weight": 2.3,
+      "armorClass": 4,
+      "canAttach": [
+        "'ACHFaceShield_C'"
+      ],
+      "soundMix": "MuffledGeneral'",
+      "maxDurability": 65,
+      "bluntDamageScalar": 0.7,
+      "durabilityDamageScalar": 0.28,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 4,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.91,
+          "arriveTangent": -4.670561,
+          "leaveTangent": -4.670564
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.1,
+          "arriveTangent": -0.487481,
+          "leaveTangent": -0.487481
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.02,
+          "arriveTangent": -0.083746,
+          "leaveTangent": -0.083745
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": -0.001887
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.75,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Advanced military helmet with face shield compatibility and superior ballistic protection.",
+    "tips": "Excellent protection against rifle rounds. Can mount face shields for additional protection."
+  },
+  {
+    "id": "helmet-bike",
+    "name": "Motorcycle Helmet",
+    "description": "Civilian motorcycle helmet repurposed for combat use. Offers basic protection and is lightweight, making it popular among scavengers and new operators.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_helmet_1.webp",
+      "thumbnail": "/images/items/gear/Icon_helmet_1.webp",
+      "fullsize": "/images/items/gear/Icon_helmet_1.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 8500,
+      "weight": 1.5,
+      "armorClass": 2,
+      "maxDurability": 42,
+      "soundMix": "MuffledGeneral",
+      "bluntDamageScalar": 0.9,
+      "durabilityDamageScalar": 0.7,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 2,
+          "bluntDamageScalar": 0.9,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.98,
+          "arriveTangent": -3.509459,
+          "leaveTangent": -3.509458
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.25,
+          "arriveTangent": -0.775365,
+          "leaveTangent": -0.775366
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.06,
+          "arriveTangent": -0.164347,
+          "leaveTangent": -0.164348
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.95,
+          "arriveTangent": -0.216762,
+          "leaveTangent": -0.216763
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 2,
+          "value": 0.65,
+          "arriveTangent": -0.135675,
+          "leaveTangent": -0.135675
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Civilian helmet providing basic protection. Good for new operators on a budget.",
+    "tips": "Affordable starter helmet. Protects against pistol rounds and shrapnel but vulnerable to rifle fire."
+  },
+  {
+    "id": "helmet-kiver-m",
+    "name": "Kiver-M Helmet",
+    "description": "Russian special forces helmet with integrated face shield mount. Popular among law enforcement and military units for urban operations.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/SM_Helmet_011_Zty.webp",
+      "thumbnail": "/images/items/gear/SM_Helmet_011_Zty.webp",
+      "fullsize": "/images/items/gear/SM_Helmet_011_Zty.webp"
+    },
+    "stats": {
+      "rarity": "Uncommon",
+      "price": 35000,
+      "weight": 2.4,
+      "armorClass": 3,
+      "canAttach": [
+        "'Kiver-MFaceShield_C'"
+      ],
+      "soundMix": "MuffledGeneral",
+      "maxDurability": 55,
+      "bluntDamageScalar": 0.7,
+      "durabilityDamageScalar": 0.45,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 3,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.94,
+          "arriveTangent": -4.670561,
+          "leaveTangent": -4.670564
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.12,
+          "arriveTangent": -0.487481,
+          "leaveTangent": -0.487481
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.04,
+          "arriveTangent": -0.083746,
+          "leaveTangent": -0.083745
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": -0.001887
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.77,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Special forces helmet with good protection and face shield compatibility.",
+    "tips": "Solid Class 3 protection with better blunt damage reduction than the 6B47. Compatible with face shields."
+  },
+  {
+    "id": "helmet-lh250",
+    "name": "LH250 Pilot Helmet",
+    "description": "Lightweight pilot helmet designed for aviation use. Offers basic protection while maintaining excellent visibility and comfort for extended operations.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_SM_Helmet_018_Zty.webp",
+      "thumbnail": "/images/items/gear/Icon_SM_Helmet_018_Zty.webp",
+      "fullsize": "/images/items/gear/Icon_SM_Helmet_018_Zty.webp"
+    },
+    "stats": {
+      "rarity": "Uncommon",
+      "price": 15000,
+      "weight": 0.75,
+      "armorClass": 2,
+      "canAttach": [
+        "'LH250google_C'",
+        "'LH250mask_C'"
+      ],
+      "subcategory": "Helmet",
+      "soundMix": "default",
+      "maxDurability": 47,
+      "bluntDamageScalar": 0.9,
+      "durabilityDamageScalar": 0.45,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 2,
+          "bluntDamageScalar": 0.9,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.94,
+          "arriveTangent": -4.401213,
+          "leaveTangent": -4.401215
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.15,
+          "arriveTangent": -0.487481,
+          "leaveTangent": -0.487481
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.05,
+          "arriveTangent": -0.083746,
+          "leaveTangent": -0.083745
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": -0.001887
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.85,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Lightweight aviation helmet with minimal protection but excellent mobility.",
+    "tips": "Very light weight makes this ideal for long missions where mobility is key. Can mount specialized pilot equipment."
+  },
+  {
+    "id": "helmet-rys-t",
+    "name": "RYS-T Heavy Helmet",
+    "description": "Ultra-heavy tactical helmet providing maximum ballistic protection. Used by elite special forces units for high-threat environments where protection is paramount.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_RYS_T.webp",
+      "thumbnail": "/images/items/gear/Icon_RYS_T.webp",
+      "fullsize": "/images/items/gear/Icon_RYS_T.webp"
+    },
+    "stats": {
+      "rarity": "Legendary",
+      "price": 185000,
+      "weight": 4.4,
+      "armorClass": 6,
+      "canAttach": [
+        "'RYS-TFaceShield_C'",
+        "'RYS-TFaceShield_bonecrusher_C'"
+      ],
+      "soundMix": "MuffledGeneral",
+      "maxDurability": 77,
+      "bluntDamageScalar": 0.65,
+      "durabilityDamageScalar": 0.42,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 6,
+          "bluntDamageScalar": 0.65,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.93,
+          "arriveTangent": -4.670561,
+          "leaveTangent": -4.670564
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.09,
+          "arriveTangent": -0.487481,
+          "leaveTangent": -0.487481
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.02,
+          "arriveTangent": -0.083746,
+          "leaveTangent": -0.083745
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.37964964,
+          "leaveTangent": -0.37964988
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.6,
+          "arriveTangent": -0.14467373,
+          "leaveTangent": -0.14467414
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": -0.012679071,
+          "leaveTangent": -0.012679075
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Maximum protection helmet capable of stopping high-caliber rifle rounds. Extremely heavy but nearly impenetrable.",
+    "tips": "The ultimate in head protection. Can stop armor-piercing rounds but the weight significantly impacts mobility and stamina."
+  },
+  {
+    "id": "helmet-rys-t-bonecrusher",
+    "name": "RYS-T Heavy Helmet (Bonecrusher)",
+    "description": "Ultra-heavy tactical helmet with custom Bonecrusher paint scheme. Identical protection to the standard RYS-T with a distinctive skull-themed finish for intimidation factor.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_WarfareHelmet_RYS_T_bonecrusher.webp",
+      "thumbnail": "/images/items/gear/Icon_WarfareHelmet_RYS_T_bonecrusher.webp",
+      "fullsize": "/images/items/gear/Icon_WarfareHelmet_RYS_T_bonecrusher.webp"
+    },
+    "stats": {
+      "rarity": "Legendary",
+      "price": 185000,
+      "weight": 4.4,
+      "armorClass": 6,
+      "maxDurability": 77,
+      "canAttach": [
+        "'RYS-TFaceShield_C'",
+        "'RYS-TFaceShield_bonecrusher_C'"
+      ],
+      "soundMix": "MuffledGeneral",
+      "bluntDamageScalar": 0.65,
+      "durabilityDamageScalar": 0.42,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 6,
+          "bluntDamageScalar": 0.65,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.93,
+          "arriveTangent": -4.670561,
+          "leaveTangent": -4.670564
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.09,
+          "arriveTangent": -0.487481,
+          "leaveTangent": -0.487481
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.02,
+          "arriveTangent": -0.083746,
+          "leaveTangent": -0.083745
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.37964964,
+          "leaveTangent": -0.37964988
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.6,
+          "arriveTangent": -0.14467373,
+          "leaveTangent": -0.14467414
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": -0.012679071,
+          "leaveTangent": -0.012679075
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Maximum protection helmet with intimidating skull design. Same protection as standard RYS-T.",
+    "tips": "Identical performance to the standard RYS-T but with a distinctive appearance that may make you a priority target."
+  },
+  {
+    "id": "helmet-beanie-black",
+    "name": "Black Beret",
+    "description": "Military-style black beret offering minimal protection. Worn more for identification and morale than actual ballistic defense.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_Helmet_016_Hcj.webp",
+      "thumbnail": "/images/items/gear/Icon_Helmet_016_Hcj.webp",
+      "fullsize": "/images/items/gear/Icon_Helmet_016_Hcj.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 500,
+      "weight": 0.05,
+      "armorClass": 1,
+      "soundMix": "default",
+      "maxDurability": 1,
+      "bluntDamageScalar": 1.0,
+      "durabilityDamageScalar": 0.3,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 1,
+          "bluntDamageScalar": 1.0,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -1.2,
+          "leaveTangent": -1.2
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.21676205,
+          "leaveTangent": -0.21676254
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Symbolic military headwear with virtually no ballistic protection.",
+    "tips": "Extremely lightweight but offers almost no protection. Better than nothing for identification purposes."
+  },
+  {
+    "id": "helmet-beanie-camo",
+    "name": "Camouflage Beret",
+    "description": "Military-style camouflage beret offering minimal protection. Provides basic concealment and unit identification in field operations.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_Helmet_017_Hcj.webp",
+      "thumbnail": "/images/items/gear/Icon_Helmet_017_Hcj.webp",
+      "fullsize": "/images/items/gear/Icon_Helmet_017_Hcj.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 500,
+      "weight": 0.05,
+      "armorClass": 1,
+      "maxDurability": 1,
+      "soundMix": "default",
+      "bluntDamageScalar": 1.0,
+      "durabilityDamageScalar": 0.3,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 1,
+          "bluntDamageScalar": 1.0,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -1.2,
+          "leaveTangent": -1.2
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.21676205,
+          "leaveTangent": -0.21676254
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Camouflage beret with minimal protection but better concealment than the black variant.",
+    "tips": "Virtually no protection but the camo pattern may help with concealment in woodland environments."
+  },
+  {
+    "id": "helmet-cap-green",
+    "name": "Green Military Cap",
+    "description": "Standard issue military field cap in olive drab green. Provides minimal protection while offering sun protection and unit identification.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/Icon_Helmet_015_Hcj.webp",
+      "thumbnail": "/images/items/gear/Icon_Helmet_015_Hcj.webp",
+      "fullsize": "/images/items/gear/Icon_Helmet_015_Hcj.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 500,
+      "weight": 0.05,
+      "armorClass": 1,
+      "maxDurability": 1,
+      "soundMix": "default",
+      "bluntDamageScalar": 1.0,
+      "durabilityDamageScalar": 0.3,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 1,
+          "bluntDamageScalar": 1.0,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -1.2,
+          "leaveTangent": -1.2
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.21676205,
+          "leaveTangent": -0.21676254
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Basic military field cap with minimal ballistic protection.",
+    "tips": "Lightweight headwear that provides sun protection and basic concealment but no meaningful ballistic defense."
+  },
+  {
+    "id": "helmet-red-beret",
+    "name": "Red Beret",
+    "description": "Distinguished military red beret traditionally worn by elite airborne units. Offers minimal protection but significant morale and identification value.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/gear/WarfareHelmet_Redberet.webp",
+      "thumbnail": "/images/items/gear/WarfareHelmet_Redberet.webp",
+      "fullsize": "/images/items/gear/WarfareHelmet_Redberet.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 750,
+      "weight": 0.05,
+      "armorClass": 1.6,
+      "maxDurability": 1,
+      "soundMix": "default",
+      "bluntDamageScalar": 1.0,
+      "durabilityDamageScalar": 0.3,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 1.6,
+          "bluntDamageScalar": 1.0,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -1.2,
+          "leaveTangent": -1.2
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.21676205,
+          "leaveTangent": -0.21676254
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Elite unit beret with slightly better protection than standard berets.",
+    "tips": "Symbol of elite airborne units. Marginally better protection than other berets but still primarily ceremonial."
+  }
+]

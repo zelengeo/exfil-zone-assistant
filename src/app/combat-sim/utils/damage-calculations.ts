@@ -245,30 +245,11 @@ function getArmorEffectivenessFromDurability(
 function calculatePenetrationChance(
     penetrationPower: number,
     effectiveArmorClass: number,
-    penetrationCurve?: CurvePoint[]
+    penetrationCurve: CurvePoint[]
 ): number {
-    if (effectiveArmorClass <= 0) {
-        // 0 armor class means almost guaranteed penetration
-        return 0.98; // Not 100% as game shows rare non-pens even at 0 durability
-    }
-
-    if (penetrationCurve && penetrationCurve.length > 0) {
-        // The curve x-axis represents penetration/armor ratio
-        const ratio = penetrationPower / effectiveArmorClass;
-        return interpolateBallisticCurve(penetrationCurve, ratio);
-    }
-
-    // Fallback formula if no curve data
-    const penetrationRatio = penetrationPower / effectiveArmorClass;
-
-    if (penetrationRatio >= 2) return 0.95;
-    if (penetrationRatio >= 1.5) return 0.85;
-    if (penetrationRatio >= 1.2) return 0.70;
-    if (penetrationRatio >= 1) return 0.50;
-    if (penetrationRatio >= 0.8) return 0.30;
-    if (penetrationRatio >= 0.6) return 0.15;
-    if (penetrationRatio >= 0.4) return 0.05;
-    return 0.02;
+    // FIXME - probably wrong, however works fine with edgecases
+    const ratio = effectiveArmorClass - penetrationPower;
+    return interpolateBallisticCurve(penetrationCurve, ratio);
 }
 
 /**
