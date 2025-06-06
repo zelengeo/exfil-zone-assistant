@@ -3,7 +3,7 @@
  * Aligns with actual game data structure
  */
 
-import {Ammunition, AnyItem, Armor, Item, Weapon} from "@/types/items";
+import {Ammunition, AnyItem, Armor, BodyArmor, Helmet, Item, Weapon} from "@/types/items";
 
 // Display modes for the simulator
 export type DisplayMode = 'ttk' | 'stk' | 'ctk';
@@ -131,6 +131,16 @@ export function isAmmunition(item: Item): item is Ammunition {
 export function isArmor(item: Item): item is Armor {
     return (item.category === 'gear') &&
         (item.subcategory === 'Body Armor' || item.subcategory === 'Helmets')
+}
+
+export function isBodyArmor(item: Item): item is BodyArmor {
+    return (item.category === 'gear') &&
+        (item.subcategory === 'Body Armor' || item.subcategory === 'Helmets')
+}
+
+export function isHelmet(item: Item): item is Helmet {
+    return (item.category === 'gear') &&
+        item.subcategory === 'Helmets'
 }
 
 // Check if weapon and ammo are compatible

@@ -32,15 +32,20 @@ export default function BodyModel({
         const zone = ARMOR_ZONES[zoneId];
         if (!zone) return 0;
 
+        //TODO probably rework head display - or it might be useful when they rework mask logic
         if (zone.defaultProtection === 'helmet' && defender.helmet) {
-            return defender.helmet.stats.armorClass;
+            const protectiveZone = defender.helmet.stats.protectiveData?.find(
+                pz => pz.bodyPart === zone.bodyPart || pz.bodyPart === zone.id
+            );
+
+            return protectiveZone?.armorClass || 0
         }
 
         if (zone.defaultProtection === 'armor' && defender.bodyArmor) {
             const protectiveZone = defender.bodyArmor.stats.protectiveData?.find(
                 pz => pz.bodyPart === zone.bodyPart || pz.bodyPart === zone.id
             );
-            return protectiveZone?.armorClass || defender.bodyArmor.stats.armorClass;
+            return protectiveZone?.armorClass || 0;
         }
 
         return 0;
@@ -130,210 +135,129 @@ export default function BodyModel({
 
     return (
         <div className="relative">
-            {/* Human Body SVG */}
-            <svg
-                viewBox="0 0 300 500"
-                className="w-full h-full"
-                style={{ maxHeight: '600px' }}
-            >
-                {/* Background gradient */}
-                <defs>
-                    <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stopColor="#2a2f1f" />
-                        <stop offset="100%" stopColor="#1a1c18" />
-                    </radialGradient>
+            {/* Body Image Container */}
+            <div className="relative mx-auto" style={{ maxWidth: '300px', aspectRatio: '300/650' }}>
+                {/* Background Image */}
+                <img
+                    src="/images/Img_BodyPartsMain.webp"
+                    alt="Body Parts"
+                    className="absolute inset-0 size-150 object-contain"
+                />
 
-                    {/* Armor patterns */}
-                    <pattern id="armorPattern" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
-                        <rect width="4" height="4" fill="none" stroke="#454d28" strokeWidth="0.5" opacity="0.3" />
-                    </pattern>
-                </defs>
+                {/* Interactive Zones Overlay */}
+                <div className="absolute inset-0">
+                    {Object.entries(ARMOR_ZONES).map(([zoneId, zone]) => {
+                        const armorClass = getZoneArmorClass(zoneId);
+                        const armorColor = getArmorClassColor(armorClass);
+                        const isHovered = hoveredZone === zoneId;
+                        const isSelected = selectedZone === zoneId;
+                        const displayValue = getZoneDisplayValue(zoneId);
+                        const valueColor = getValueColor(zoneId);
 
-                <rect width="300" height="500" fill="url(#bgGradient)" />
-
-                {/* Grid overlay for tactical feel */}
-                <g opacity="0.1">
-                    {[...Array(30)].map((_, i) => (
-                        <line key={`v${i}`} x1={i * 10} y1="0" x2={i * 10} y2="500" stroke="#454d28" strokeWidth="0.5" />
-                    ))}
-                    {[...Array(50)].map((_, i) => (
-                        <line key={`h${i}`} x1="0" y1={i * 10} x2="300" y2={i * 10} stroke="#454d28" strokeWidth="0.5" />
-                    ))}
-                </g>
-
-                {/* Body outline - more detailed */}
-                <g className="body-outline" stroke="#5c6534" strokeWidth="2" fill="none" opacity="0.8">
-                    {/* Head */}
-                    <ellipse cx="150" cy="50" rx="35" ry="40" />
-
-                    {/* Neck */}
-                    <path d="M 150 90 L 150 110" strokeWidth="3" />
-
-                    {/* Shoulders */}
-                    <path d="M 100 115 Q 150 110 200 115" />
-
-                    {/* Torso */}
-                    <path d="M 100 115 L 95 200 L 100 280 L 150 290 L 200 280 L 205 200 L 200 115"
-                          fill="#2a2f1f" fillOpacity="0.3" />
-
-                    {/* Arms */}
-                    <path d="M 100 115 L 70 140 L 50 200 L 45 260" strokeWidth="3" />
-                    <path d="M 200 115 L 230 140 L 250 200 L 255 260" strokeWidth="3" />
-
-                    {/* Hands */}
-                    <circle cx="45" cy="270" r="8" fill="#2a2f1f" fillOpacity="0.5" />
-                    <circle cx="255" cy="270" r="8" fill="#2a2f1f" fillOpacity="0.5" />
-
-                    {/* Legs */}
-                    <path d="M 120 280 L 110 350 L 105 450" strokeWidth="3" />
-                    <path d="M 180 280 L 190 350 L 195 450" strokeWidth="3" />
-
-                    {/* Feet */}
-                    <ellipse cx="105" cy="465" rx="15" ry="8" fill="#2a2f1f" fillOpacity="0.5" />
-                    <ellipse cx="195" cy="465" rx="15" ry="8" fill="#2a2f1f" fillOpacity="0.5" />
-                </g>
-
-                {/* Armor Zones with values */}
-                {Object.entries(ARMOR_ZONES).map(([zoneId, zone]) => {
-                    const armorClass = getZoneArmorClass(zoneId);
-                    const armorColor = getArmorClassColor(armorClass);
-                    const isHovered = hoveredZone === zoneId;
-                    const isSelected = selectedZone === zoneId;
-                    const displayValue = getZoneDisplayValue(zoneId);
-                    const valueColor = getValueColor(zoneId);
-
-                    // Convert percentage positions to SVG coordinates
-                    const x = (zone.displayPosition.x / 100) * 300;
-                    const y = (zone.displayPosition.y / 100) * 500;
-                    const width = (zone.displayPosition.width / 100) * 300;
-                    const height = (zone.displayPosition.height / 100) * 500;
-
-                    return (
-                        <g key={zoneId}>
-                            {/* Zone background */}
-                            <rect
-                                x={x}
-                                y={y}
-                                width={width}
-                                height={height}
-                                fill={armorClass > 0 ? armorColor.hex : '#e7d1a9'}
-                                fillOpacity={isHovered || isSelected ? 0.4 : 0.2}
-                                stroke={isHovered || isSelected ? '#9ba85e' : armorColor.hex}
-                                strokeWidth={isHovered || isSelected ? 2 : 1}
-                                strokeOpacity={0.8}
-                                rx="2"
-                                className="cursor-pointer transition-all"
+                        return (
+                            <div
+                                key={zoneId}
+                                className={`absolute cursor-pointer transition-all ${
+                                    isHovered || isSelected ? 'z-20' : 'z-10'
+                                }`}
+                                style={{
+                                    left: `${zone.displayPosition.x}%`,
+                                    top: `${zone.displayPosition.y}%`,
+                                    width: `${zone.displayPosition.width}%`,
+                                    height: `${zone.displayPosition.height}%`
+                                }}
                                 onMouseEnter={() => setHoveredZone(zoneId)}
                                 onMouseLeave={() => setHoveredZone(null)}
                                 onClick={() => setSelectedZone(zoneId === selectedZone ? null : zoneId)}
-                            />
-
-                            {/* Armor pattern overlay */}
-                            {armorClass > 0 && (
-                                <rect
-                                    x={x}
-                                    y={y}
-                                    width={width}
-                                    height={height}
-                                    fill="url(#armorPattern)"
-                                    opacity={0.5}
-                                    pointerEvents="none"
+                            >
+                                {/* Zone Background with Armor Indication */}
+                                <div
+                                    className={`absolute inset-0 rounded-sm transition-all ${
+                                        armorClass > 0
+                                            ? `${armorColor.bg} ${isHovered || isSelected ? 'opacity-50' : 'opacity-25'}`
+                                            : `bg-transparent ${isHovered || isSelected ? 'bg-red-500 opacity-20' : ''}`
+                                    } ${
+                                        isHovered || isSelected
+                                            ? `ring-2 ${armorClass > 0 ? armorColor.border : 'ring-red-500'}`
+                                            : ''
+                                    }`}
                                 />
-                            )}
 
-                            {/* Display value badge */}
-                            {selectedAttackerId && displayValue !== '--' && (
-                                <g pointerEvents="none">
-                                    {/* Badge background */}
-                                    <rect
-                                        x={x + width / 2 - 20}
-                                        y={y + height / 2 - 10}
-                                        width="40"
-                                        height="20"
-                                        fill="#1a1c18"
-                                        fillOpacity="0.9"
-                                        stroke={valueColor.replace('text-', '#').replace('-400', '').replace('-500', '')}
-                                        strokeWidth="1"
-                                        rx="2"
-                                    />
-                                    {/* Value text */}
-                                    <text
-                                        x={x + width / 2}
-                                        y={y + height / 2 + 4}
-                                        textAnchor="middle"
-                                        className={`font-bold text-sm ${valueColor}`}
-                                        fill="currentColor"
-                                    >
-                                        {displayValue}
-                                    </text>
-                                </g>
-                            )}
+                                {/* Display Value Badge */}
+                                {selectedAttackerId && displayValue !== '--' && (
+                                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                        <div className={`px-2 py-1 rounded-sm bg-military-900/90 border ${
+                                            valueColor.replace('text-', 'border-').replace('-400', '-600').replace('-500', '-700')
+                                        }`}>
+                                            <span className={`font-bold text-sm ${valueColor}`}>
+                                                {displayValue}
+                                            </span>
+                                        </div>
+                                    </div>
+                                )}
 
-                            {/* Armor class indicator */}
-                            {armorClass > 0 && !selectedAttackerId && (
-                                <text
-                                    x={x + width / 2}
-                                    y={y + height / 2 + 4}
-                                    textAnchor="middle"
-                                    className="text-xs font-medium"
-                                    fill="#9ba85e"
-                                    opacity="0.8"
-                                    pointerEvents="none"
-                                >
-                                    C{armorClass}
-                                </text>
-                            )}
-                        </g>
-                    );
-                })}
+                                {/* Armor Class Indicator (when no attacker selected) */}
+                                {!selectedAttackerId && armorClass > 0 && (
+                                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                        <span className={`text-sm font-bold ${armorColor.text} drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]`}>
+                                            AC {armorClass}
+                                        </span>
+                                    </div>
+                                )}
+                            </div>
+                        );
+                    })}
+                </div>
 
-                {/* Hover tooltip */}
+                {/* Hover Tooltip */}
                 {hoveredZone && (
-                    <g className="pointer-events-none">
-                        <rect
-                            x="10"
-                            y="10"
-                            width="280"
-                            height="120"
-                            fill="#1a1c18"
-                            fillOpacity="0.95"
-                            stroke="#9ba85e"
-                            strokeWidth="1"
-                            rx="4"
-                        />
-
-                        {(() => {
-                            const tooltip = getTooltipContent(hoveredZone);
-                            return (
-                                <>
-                                    <text x="20" y="30" fill="#9ba85e" fontSize="14" fontWeight="bold">
-                                        {tooltip.zoneName}
-                                    </text>
-                                    <text x="20" y="50" fill="#e7d1a9" fontSize="12">
-                                        Body Part: {tooltip.bodyPartName} ({tooltip.hp} HP)
-                                    </text>
-                                    <text x="20" y="68" fill="#e7d1a9" fontSize="12">
-                                        {tooltip.isVital && (
-                                            <tspan fill="#ef4444">Vital • </tspan>
-                                        )}
-                                        Armor Class: {tooltip.armorClass}
-                                    </text>
-                                    {selectedAttackerId && (
-                                        <>
-                                            <text x="20" y="90" fill="#e7d1a9" fontSize="12">
-                                                Pen Chance: {(tooltip.penetrationChance * 100).toFixed(0)}%
-                                            </text>
-                                            <text x="20" y="108" fill="#e7d1a9" fontSize="12">
-                                                Avg Damage: {tooltip.effectiveDamage.toFixed(1)}
-                                            </text>
-                                        </>
-                                    )}
-                                </>
-                            );
-                        })()}
-                    </g>
+                    <div className="absolute top-2 left-2 right-2 z-30 pointer-events-none">
+                        <div className="military-card p-3 rounded-sm bg-military-900/95 border border-olive-600">
+                            {(() => {
+                                const tooltip = getTooltipContent(hoveredZone);
+                                return (
+                                    <>
+                                        <h4 className="text-olive-400 font-bold mb-2">{tooltip.zoneName}</h4>
+                                        <div className="space-y-1 text-xs">
+                                            <div className="flex justify-between">
+                                                <span className="text-tan-400">Body Part:</span>
+                                                <span className="text-tan-100">
+                                                    {tooltip.bodyPartName} ({tooltip.hp} HP)
+                                                    {tooltip.isVital && (
+                                                        <span className="text-red-400 ml-1">• Vital</span>
+                                                    )}
+                                                </span>
+                                            </div>
+                                            <div className="flex justify-between">
+                                                <span className="text-tan-400">Armor Class:</span>
+                                                <span className={getArmorClassColor(tooltip.armorClass).text}>
+                                                    {tooltip.armorClass > 0 ? `Class ${tooltip.armorClass}` : 'None'}
+                                                </span>
+                                            </div>
+                                            {selectedAttackerId && tooltip.penetrationChance > 0 && (
+                                                <>
+                                                    <div className="flex justify-between">
+                                                        <span className="text-tan-400">Pen Chance:</span>
+                                                        <span className="text-tan-100">
+                                                            {(tooltip.penetrationChance * 100).toFixed(0)}%
+                                                        </span>
+                                                    </div>
+                                                    <div className="flex justify-between">
+                                                        <span className="text-tan-400">Avg Damage:</span>
+                                                        <span className="text-tan-100">
+                                                            {tooltip.effectiveDamage.toFixed(1)}
+                                                        </span>
+                                                    </div>
+                                                </>
+                                            )}
+                                        </div>
+                                    </>
+                                );
+                            })()}
+                        </div>
+                    </div>
                 )}
-            </svg>
+            </div>
 
             {/* Legend */}
             <div className="mt-4 space-y-2">
@@ -341,7 +265,7 @@ export default function BodyModel({
                 <div className="flex flex-wrap items-center justify-center gap-3 text-xs">
                     <span className="text-tan-400 font-medium">Protection:</span>
                     <div className="flex items-center gap-2">
-                        <div className="w-4 h-4 bg-tan-200 rounded-sm border border-tan-400"></div>
+                        <div className="w-4 h-4 bg-red-500/30 rounded-sm border border-red-600"></div>
                         <span className="text-tan-400">None</span>
                     </div>
                     {[2, 3, 4, 5, 6].map(armorClass => {

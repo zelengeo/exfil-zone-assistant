@@ -8,6 +8,7 @@ const DATA_FILES = [
     'weapons.json',
     'ammunition.json',
     'armor.json',
+    'helmets.json',
     // 'medical.json',
     // 'food.json',
     // 'attachments.json',
@@ -86,6 +87,19 @@ function transformItemData(rawItem: any): Item {
             baseItem.stats.penetrationChanceCurve = rawItem.stats.penetrationChanceCurve;
             baseItem.stats.penetrationDamageScalarCurve = rawItem.stats.penetrationDamageScalarCurve;
             baseItem.stats.antiPenetrationDurabilityScalarCurve = rawItem.stats.antiPenetrationDurabilityScalarCurve;
+        }
+
+        if (rawItem.category === 'gear' && rawItem.subcategory === 'Helmets') {
+            baseItem.stats.armorClass = rawItem.stats.armorClass;
+            baseItem.stats.maxDurability = rawItem.stats.maxDurability;
+            baseItem.stats.bluntDamageScalar = rawItem.stats.bluntDamageScalar;
+            baseItem.stats.durabilityDamageScalar = rawItem.stats.durabilityDamageScalar;
+            baseItem.stats.protectiveData = rawItem.stats.protectiveData;
+            baseItem.stats.penetrationChanceCurve = rawItem.stats.penetrationChanceCurve;
+            baseItem.stats.penetrationDamageScalarCurve = rawItem.stats.penetrationDamageScalarCurve;
+            baseItem.stats.antiPenetrationDurabilityScalarCurve = rawItem.stats.antiPenetrationDurabilityScalarCurve;
+            baseItem.stats.soundMix = rawItem.stats.soundMix;
+            baseItem.stats.canAttach = rawItem.stats.canAttach;
         }
 
         // Medical stats

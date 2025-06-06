@@ -92,11 +92,20 @@ export interface Ammunition extends Item {
 // Complete armor type with all curves
 export interface Armor extends Item {
     category: 'gear';
-    subcategory: 'Body Armor' | 'Helmets'; //TODO split
+    subcategory: 'Body Armor' | 'Helmets';
     stats: Item['stats'] & ArmorProperties;
 }
 
-export type AnyItem = Weapon | Armor | Ammunition;
+export interface BodyArmor extends Armor {
+    subcategory: 'Body Armor';
+}
+
+export interface Helmet extends Armor {
+    subcategory: 'Helmets';
+    stats: Item['stats'] & HelmetProperties;
+}
+
+export type AnyItem = Weapon | Armor | Ammunition | BodyArmor | Helmet;
 
 // Protective zone from armor data
 export interface ProtectiveZone {
@@ -162,6 +171,12 @@ export interface ArmorProperties {
     penetrationChanceCurve: CurvePoint[];
     penetrationDamageScalarCurve: CurvePoint[];
     antiPenetrationDurabilityScalarCurve: CurvePoint[];
+}
+
+export type helmetSoundMix = 'default' | 'Delta' | "OPSWAT" | "MuffledGeneral";
+export interface HelmetProperties extends ArmorProperties {
+    soundMix: helmetSoundMix;
+
 }
 
 export interface ItemCategory {

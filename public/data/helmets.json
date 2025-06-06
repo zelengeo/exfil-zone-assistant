@@ -182,7 +182,7 @@
           "leaveTangent": -5.025785
         }
       ],
-      "soundMix": "Helmet_Delta"
+      "soundMix": "Delta"
     },
     "notes": "Limited edition winter-themed OP Fast helmet. Same protection as standard model with unique winter camouflage pattern.",
     "tips": "Solid Class 4 protection with good durability. The winter pattern makes it perfect for snow environments while maintaining tactical effectiveness."
@@ -292,7 +292,7 @@
           "leaveTangent": -5.025785
         }
       ],
-      "soundMix": "Helmet_Delta"
+      "soundMix": "Delta"
     },
     "notes": "Festive edition OP Fast helmet with unique reindeer pattern. Slightly heavier than the standard model but offers the same protection.",
     "tips": "Shows your holiday spirit while maintaining serious protection. The extra weight is minimal and doesn't significantly impact mobility."
@@ -402,7 +402,7 @@
           "leaveTangent": -5.025785
         }
       ],
-      "soundMix": "Helmet_Delta"
+      "soundMix": "Delta"
     },
     "notes": "Tactical helmet designed for special operations. Provides reliable head protection while maintaining good mobility.",
     "tips": "Excellent balance of protection and weight. The Class 4 armor rating stops most rifle rounds while keeping head movement agile."
@@ -512,7 +512,7 @@
           "leaveTangent": -5.025785
         }
       ],
-      "soundMix": "Helmet_Delta"
+      "soundMix": "Delta"
     },
     "notes": "Enhanced version of the Delta helmet with improved materials and construction for law enforcement applications.",
     "tips": "Superior durability compared to the standard Delta. Takes less damage per hit, making it ideal for extended engagements."
@@ -2452,7 +2452,7 @@
         "'LH250google_C'",
         "'LH250mask_C'"
       ],
-      "subcategory": "Helmet",
+      "subcategory": "Helmets",
       "soundMix": "default",
       "maxDurability": 47,
       "bluntDamageScalar": 0.9,
