@@ -27,9 +27,9 @@ export interface AttackerSetup {
 
 // Defender setup configuration
 export interface DefenderSetup {
-    bodyArmor: Armor | null;
+    bodyArmor: BodyArmor | null;
     bodyArmorDurability: number; // 0-100%
-    helmet: Armor | null;
+    helmet: Helmet | null;
     helmetDurability: number; // 0-100%
 }
 

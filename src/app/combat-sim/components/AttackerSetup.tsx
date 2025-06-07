@@ -1,5 +1,7 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { X, ChevronDown, AlertCircle } from 'lucide-react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { X, ChevronDown, AlertCircle, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
 import {
     AttackerSetup as AttackerSetupType,
     isWeapon,
@@ -7,7 +9,7 @@ import {
     areWeaponAmmoCompatible
 } from '../utils/types';
 import { fetchItemsData } from '@/services/ItemService';
-import {Ammunition, Item, Weapon} from '@/types/items';
+import {Ammunition, getRarityColorClass, Item, Weapon} from '@/types/items';
 
 interface AttackerSetupProps {
     attacker: AttackerSetupType;
@@ -26,11 +28,14 @@ export default function AttackerSetup({
                                       }: AttackerSetupProps) {
     const [items, setItems] = useState<Item[]>([]);
     const [loading, setLoading] = useState(true);
-    //TODO - onClick close dropdowns
     const [weaponSearchOpen, setWeaponSearchOpen] = useState(false);
     const [ammoSearchOpen, setAmmoSearchOpen] = useState(false);
     const [weaponSearch, setWeaponSearch] = useState('');
     const [ammoSearch, setAmmoSearch] = useState('');
+
+    // Refs for dropdown containers
+    const weaponDropdownRef = useRef<HTMLDivElement>(null);
+    const ammoDropdownRef = useRef<HTMLDivElement>(null);
 
     // Load items data
     useEffect(() => {
@@ -45,6 +50,23 @@ export default function AttackerSetup({
             }
         };
         loadItems();
+    }, []);
+
+    // Handle clicking outside dropdowns
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (weaponDropdownRef.current && !weaponDropdownRef.current.contains(event.target as Node)) {
+                setWeaponSearchOpen(false);
+            }
+            if (ammoDropdownRef.current && !ammoDropdownRef.current.contains(event.target as Node)) {
+                setAmmoSearchOpen(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
     }, []);
 
     // Filter weapons and ammo
@@ -133,21 +155,46 @@ export default function AttackerSetup({
             </div>
 
             {/* Weapon Selection */}
-            <div className="mb-3">
-                <label className="block text-tan-300 text-xs font-medium mb-1">Weapon</label>
+            <div className="mb-3" ref={weaponDropdownRef}>
+                <label className="block text-tan-300 text-xs font-medium mb-1">
+                    Weapon
+                    {attacker.weapon && (
+                        <Link
+                            href={`/items/${attacker.weapon.id}`}
+                            className="ml-2 inline-flex items-center gap-1 text-olive-400 hover:text-olive-300"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <span className="text-xs">View</span>
+                            <ExternalLink size={10} />
+                        </Link>
+                    )}
+                </label>
                 <div className="relative">
                     <button
                         onClick={() => {
                             setWeaponSearchOpen(!weaponSearchOpen);
                             setAmmoSearchOpen(false);
                         }}
-                        className="w-full px-3 py-2 bg-military-800 border border-military-700 rounded-sm text-left
-              hover:border-olive-600 transition-colors flex items-center justify-between"
+                        className="w-full px-2 py-2 bg-military-800 border border-military-700 rounded-sm text-left
+              hover:border-olive-600 transition-colors flex items-center justify-between gap-2"
                     >
-            <span className={attacker.weapon ? 'text-tan-100' : 'text-tan-400'}>
-              {attacker.weapon ? attacker.weapon.name : 'Select weapon...'}
-            </span>
-                        <ChevronDown size={16} className="text-olive-400" />
+                        <div className="flex items-center gap-2 flex-1 min-w-0">
+                            {attacker.weapon && (
+                                <div className="w-22 h-10 relative flex-shrink-0 bg-military-700 rounded-sm p-0.5">
+                                    <Image
+                                        src={attacker.weapon.images.icon}
+                                        alt={attacker.weapon.name}
+                                        fill
+                                        className="object-contain"
+                                        sizes="76px"
+                                    />
+                                </div>
+                            )}
+                            <span className={`truncate ${attacker.weapon ? getRarityColorClass(attacker.weapon.stats.rarity) : 'text-tan-400'}`}>
+                                {attacker.weapon ? attacker.weapon.name : 'Select weapon...'}
+                            </span>
+                        </div>
+                        <ChevronDown size={16} className="text-olive-400 flex-shrink-0" />
                     </button>
 
                     {/* Weapon Dropdown */}
@@ -170,23 +217,28 @@ export default function AttackerSetup({
                                         <button
                                             key={weapon.id}
                                             onClick={() => {
-                                                onUpdate({ weapon: weapon as Weapon });
+                                                onUpdate({ weapon: weapon as Weapon, ammo: undefined });
                                                 setWeaponSearchOpen(false);
                                                 setWeaponSearch('');
-                                                // Clear ammo if incompatible
-                                                if (attacker.ammo && !areWeaponAmmoCompatible(weapon as Weapon, attacker.ammo)) {
-                                                    onUpdate({ weapon: weapon as Weapon, ammo: null });
-                                                }
                                             }}
-                                            className="w-full px-3 py-2 text-left hover:bg-military-700 transition-colors
-                        flex items-center justify-between text-sm"
+                                            className="w-full px-2 py-2 text-left hover:bg-military-700 transition-colors text-sm"
                                         >
-                                            <div>
-                                                <div className="text-tan-100">{weapon.name}</div>
-                                                <div className="text-tan-400 text-xs">{weapon.subcategory}</div>
-                                            </div>
-                                            <div className="text-tan-300 text-xs">
-                                                {formatFireRate(weapon.stats.fireRate)}
+                                            <div className="flex items-center gap-2 flex-1 min-w-0">
+                                                <div className="w-22 h-10 relative flex-shrink-0 bg-military-700 rounded-sm p-0.5">
+                                                    <Image
+                                                        src={weapon.images.icon}
+                                                        alt={weapon.name}
+                                                        fill
+                                                        className="object-contain"
+                                                        sizes="76px"
+                                                    />
+                                                </div>
+                                                <div className="min-w-0">
+                                                    <div className={`${getRarityColorClass(weapon.stats.rarity)} truncate`}>{weapon.name}</div>
+                                                    <div className="text-tan-400 text-xs">
+                                                        {weapon.stats.caliber} • {formatFireRate(weapon.stats.fireRate)}
+                                                    </div>
+                                                </div>
                                             </div>
                                         </button>
                                     ))
@@ -203,22 +255,25 @@ export default function AttackerSetup({
                 {/* Weapon Stats */}
                 {attacker.weapon && (
                     <div className="mt-1 text-xs text-tan-400 flex gap-3">
+                        <span>Caliber: {attacker.weapon.stats.caliber}</span>
                         <span>Fire Rate: {formatFireRate(attacker.weapon.stats.fireRate)}</span>
-                        {attacker.weapon.stats.ergonomics && (
-                            <span>Ergo: {(attacker.weapon.stats.ergonomics * 100).toFixed(0)}</span>
-                        )}
                     </div>
                 )}
             </div>
 
             {/* Ammo Selection */}
-            <div className="mb-3">
+            <div className="mb-3" ref={ammoDropdownRef}>
                 <label className="block text-tan-300 text-xs font-medium mb-1">
                     Ammunition
-                    {attacker.weapon && (
-                        <span className="text-olive-400 ml-1">
-              ({attacker.weapon.subcategory || attacker.weapon.stats.caliber})
-            </span>
+                    {attacker.ammo && (
+                        <Link
+                            href={`/items/${attacker.ammo.id}`}
+                            className="ml-2 inline-flex items-center gap-1 text-olive-400 hover:text-olive-300"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <span className="text-xs">View</span>
+                            <ExternalLink size={10} />
+                        </Link>
                     )}
                 </label>
                 <div className="relative">
@@ -227,20 +282,33 @@ export default function AttackerSetup({
                             setAmmoSearchOpen(!ammoSearchOpen);
                             setWeaponSearchOpen(false);
                         }}
-                        className={`w-full px-3 py-2 bg-military-800 border rounded-sm text-left 
-              transition-colors flex items-center justify-between
-              ${!attacker.weapon
-                            ? 'border-military-700 opacity-50 cursor-not-allowed'
-                            : hasIncompatibleAmmo
-                                ? 'border-red-600 hover:border-red-500'
-                                : 'border-military-700 hover:border-olive-600'
+                        className={`w-full px-3 py-2 bg-military-800 border rounded-sm text-left
+              transition-colors flex items-center justify-between gap-2 ${
+                            !attacker.weapon
+                                ? 'border-military-700 opacity-50 cursor-not-allowed'
+                                : hasIncompatibleAmmo
+                                    ? 'border-red-600 hover:border-red-500'
+                                    : 'border-military-700 hover:border-olive-600'
                         }`}
                         disabled={!attacker.weapon}
                     >
-            <span className={attacker.ammo ? 'text-tan-100' : 'text-tan-400'}>
-              {attacker.ammo ? attacker.ammo.name : 'Select ammo...'}
-            </span>
-                        <ChevronDown size={16} className="text-olive-400" />
+                        <div className="flex items-center gap-2 flex-1 min-w-0">
+                            {attacker.ammo && (
+                                <div className="w-10 h-10 relative flex-shrink-0 bg-military-700 rounded-sm p-0.5">
+                                    <Image
+                                        src={attacker.ammo.images.icon}
+                                        alt={attacker.ammo.name}
+                                        fill
+                                        className="object-contain"
+                                        sizes="40px"
+                                    />
+                                </div>
+                            )}
+                            <span className={`truncate ${attacker.ammo ? getRarityColorClass(attacker.ammo.stats.rarity) : 'text-tan-400'}`}>
+                                {attacker.ammo ? attacker.ammo.name : 'Select ammo...'}
+                            </span>
+                        </div>
+                        <ChevronDown size={16} className="text-olive-400 flex-shrink-0" />
                     </button>
 
                     {/* Ammo Dropdown */}
@@ -269,16 +337,27 @@ export default function AttackerSetup({
                                             }}
                                             className="w-full px-3 py-2 text-left hover:bg-military-700 transition-colors text-sm"
                                         >
-                                            <div className="flex items-center justify-between">
-                                                <div>
-                                                    <div className="text-tan-100">{ammo.name}</div>
-                                                    <div className="text-tan-400 text-xs flex gap-3">
-                                                        <span>DMG: {ammo.stats.damage}</span>
-                                                        <span>PEN: {ammo.stats.penetration}</span>
-                                                        <span> {ammo.stats.price} EZD</span>
+                                                <div className="flex items-center gap-2 flex-1 min-w-0">
+                                                    <div className="w-10 h-10 relative flex-shrink-0 bg-military-700 rounded-sm p-0.5">
+                                                        <Image
+                                                            src={ammo.images.icon}
+                                                            alt={ammo.name}
+                                                            fill
+                                                            className="object-contain"
+                                                            sizes="40px"
+                                                        />
+                                                    </div>
+                                                    <div className="min-w-0">
+                                                        <div className={`${getRarityColorClass(ammo.stats.rarity)} truncate`}>{ammo.name}</div>
+                                                        <div className="text-tan-400 text-xs flex gap-3">
+                                                            <span>DMG: {ammo.stats.damage}</span>
+                                                            <span>PEN: {ammo.stats.penetration}</span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                                <div className="text-olive-400 text-sm font-medium flex-shrink-0">
+                                                    {ammo.stats.price} EZD
+                                                </div>
                                         </button>
                                     ))
                                 ) : (
@@ -308,26 +387,6 @@ export default function AttackerSetup({
                     </div>
                 )}
             </div>
-
-            {/* Setup Summary - useless for now*/}
-            {/*{isValidSetup && (
-                <div className="mt-3 pt-3 border-t border-military-700">
-                    <div className="text-xs text-tan-300">
-                        <div className="flex justify-between mb-1">
-                            <span>Total Setup:</span>
-                            <span className="text-tan-100">
-                ${(attacker.weapon!.stats.price + attacker.ammo!.stats.price).toLocaleString()}
-              </span>
-                        </div>
-                        <div className="flex justify-between">
-                            <span>Caliber:</span>
-                            <span className="text-olive-400">
-                {attacker.ammo!.stats.caliber || attacker.ammo!.subcategory}
-              </span>
-                        </div>
-                    </div>
-                </div>
-            )}*/}
         </div>
     );
 }

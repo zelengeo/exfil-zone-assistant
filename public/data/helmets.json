@@ -6,15 +6,15 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_Beanie.webp",
-      "thumbnail": "/images/items/gear/Icon_Beanie.webp",
-      "fullsize": "/images/items/gear/Icon_Beanie.webp"
+      "icon": "/images/items/helmets/Icon_Beanie.webp",
+      "thumbnail": "/images/items/helmets/Icon_Beanie.webp",
+      "fullsize": "/images/items/helmets/Icon_Beanie.webp"
     },
     "stats": {
       "rarity": "Common",
       "price": 2500,
       "weight": 0.05,
-      "armorClass": 4.5,
+      "armorClass": 1,
       "maxDurability": 1,
       "soundMix": "default",
       "durabilityDamageScalar": 0.3,
@@ -22,7 +22,7 @@
       "protectiveData": [
         {
           "bodyPart": "head-top",
-          "armorClass": 4.5,
+          "armorClass": 1,
           "bluntDamageScalar": 1.0,
           "protectionAngle": 90
         }
@@ -84,9 +84,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_event_xmas_boss_head2.webp",
-      "thumbnail": "/images/items/gear/Icon_event_xmas_boss_head2.webp",
-      "fullsize": "/images/items/gear/Icon_event_xmas_boss_head2.webp"
+      "icon": "/images/items/helmets/Icon_event_xmas_boss_head2.webp",
+      "thumbnail": "/images/items/helmets/Icon_event_xmas_boss_head2.webp",
+      "fullsize": "/images/items/helmets/Icon_event_xmas_boss_head2.webp"
     },
     "stats": {
       "rarity": "Rare",
@@ -194,9 +194,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_event_xmas_boss_head3.webp",
-      "thumbnail": "/images/items/gear/Icon_event_xmas_boss_head3.webp",
-      "fullsize": "/images/items/gear/Icon_event_xmas_boss_head3.webp"
+      "icon": "/images/items/helmets/Icon_event_xmas_boss_head3.webp",
+      "thumbnail": "/images/items/helmets/Icon_event_xmas_boss_head3.webp",
+      "fullsize": "/images/items/helmets/Icon_event_xmas_boss_head3.webp"
     },
     "stats": {
       "rarity": "Rare",
@@ -304,9 +304,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_helmet_4_5.webp",
-      "thumbnail": "/images/items/gear/Icon_helmet_4_5.webp",
-      "fullsize": "/images/items/gear/Icon_helmet_4_5.webp"
+      "icon": "/images/items/helmets/Icon_helmet_4_5.webp",
+      "thumbnail": "/images/items/helmets/Icon_helmet_4_5.webp",
+      "fullsize": "/images/items/helmets/Icon_helmet_4_5.webp"
     },
     "stats": {
       "rarity": "Rare",
@@ -414,9 +414,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_helmet_4_5.webp",
-      "thumbnail": "/images/items/gear/Icon_helmet_4_5.webp",
-      "fullsize": "/images/items/gear/Icon_helmet_4_5.webp"
+      "icon": "/images/items/helmets/Icon_helmet_4_5.webp",
+      "thumbnail": "/images/items/helmets/Icon_helmet_4_5.webp",
+      "fullsize": "/images/items/helmets/Icon_helmet_4_5.webp"
     },
     "stats": {
       "rarity": "Rare",
@@ -524,9 +524,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_helmet_5.webp",
-      "thumbnail": "/images/items/gear/Icon_helmet_5.webp",
-      "fullsize": "/images/items/gear/Icon_helmet_5.webp"
+      "icon": "/images/items/helmets/Icon_helmet_5.webp",
+      "thumbnail": "/images/items/helmets/Icon_helmet_5.webp",
+      "fullsize": "/images/items/helmets/Icon_helmet_5.webp"
     },
     "stats": {
       "rarity": "Epic",
@@ -640,9 +640,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_helmet_0_7.webp",
-      "thumbnail": "/images/items/gear/Icon_helmet_0_7.webp",
-      "fullsize": "/images/items/gear/Icon_helmet_0_7.webp"
+      "icon": "/images/items/helmets/Icon_helmet_0_7.webp",
+      "thumbnail": "/images/items/helmets/Icon_helmet_0_7.webp",
+      "fullsize": "/images/items/helmets/Icon_helmet_0_7.webp"
     },
     "stats": {
       "rarity": "Common",
@@ -750,9 +750,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_helmet_3.webp",
-      "thumbnail": "/images/items/gear/Icon_helmet_3.webp",
-      "fullsize": "/images/items/gear/Icon_helmet_3.webp"
+      "icon": "/images/items/helmets/Icon_helmet_3.webp",
+      "thumbnail": "/images/items/helmets/Icon_helmet_3.webp",
+      "fullsize": "/images/items/helmets/Icon_helmet_3.webp"
     },
     "stats": {
       "rarity": "Common",
@@ -866,9 +866,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_Helmet_004_2_Hyq.webp",
-      "thumbnail": "/images/items/gear/Icon_Helmet_004_2_Hyq.webp",
-      "fullsize": "/images/items/gear/Icon_Helmet_004_2_Hyq.webp"
+      "icon": "/images/items/helmets/Icon_Helmet_004_2_Hyq.webp",
+      "thumbnail": "/images/items/helmets/Icon_Helmet_004_2_Hyq.webp",
+      "fullsize": "/images/items/helmets/Icon_Helmet_004_2_Hyq.webp"
     },
     "stats": {
       "rarity": "Common",
@@ -976,9 +976,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_helmet_4.webp",
-      "thumbnail": "/images/items/gear/Icon_helmet_4.webp",
-      "fullsize": "/images/items/gear/Icon_helmet_4.webp"
+      "icon": "/images/items/helmets/Icon_helmet_4.webp",
+      "thumbnail": "/images/items/helmets/Icon_helmet_4.webp",
+      "fullsize": "/images/items/helmets/Icon_helmet_4.webp"
     },
     "stats": {
       "rarity": "Rare",
@@ -1098,9 +1098,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_helmet_5_5.webp",
-      "thumbnail": "/images/items/gear/Icon_helmet_5_5.webp",
-      "fullsize": "/images/items/gear/Icon_helmet_5_5.webp"
+      "icon": "/images/items/helmets/Icon_helmet_5_5.webp",
+      "thumbnail": "/images/items/helmets/Icon_helmet_5_5.webp",
+      "fullsize": "/images/items/helmets/Icon_helmet_5_5.webp"
     },
     "stats": {
       "rarity": "Epic",
@@ -1208,9 +1208,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_helmet_5_5N.webp",
-      "thumbnail": "/images/items/gear/Icon_helmet_5_5N.webp",
-      "fullsize": "/images/items/gear/Icon_helmet_5_5N.webp"
+      "icon": "/images/items/helmets/Icon_helmet_5_5N.webp",
+      "thumbnail": "/images/items/helmets/Icon_helmet_5_5N.webp",
+      "fullsize": "/images/items/helmets/Icon_helmet_5_5N.webp"
     },
     "stats": {
       "rarity": "Epic",
@@ -1318,9 +1318,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_Helmet_006_2_Zty.webp",
-      "thumbnail": "/images/items/gear/Icon_Helmet_006_2_Zty.webp",
-      "fullsize": "/images/items/gear/Icon_Helmet_006_2_Zty.webp"
+      "icon": "/images/items/helmets/Icon_Helmet_006_2_Zty.webp",
+      "thumbnail": "/images/items/helmets/Icon_Helmet_006_2_Zty.webp",
+      "fullsize": "/images/items/helmets/Icon_Helmet_006_2_Zty.webp"
     },
     "stats": {
       "rarity": "Epic",
@@ -1428,9 +1428,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/WarfareHelmet_SkullFaceBoss.webp",
-      "thumbnail": "/images/items/gear/WarfareHelmet_SkullFaceBoss.webp",
-      "fullsize": "/images/items/gear/WarfareHelmet_SkullFaceBoss.webp"
+      "icon": "/images/items/helmets/WarfareHelmet_SkullFaceBoss.webp",
+      "thumbnail": "/images/items/helmets/WarfareHelmet_SkullFaceBoss.webp",
+      "fullsize": "/images/items/helmets/WarfareHelmet_SkullFaceBoss.webp"
     },
     "stats": {
       "rarity": "Epic",
@@ -1538,9 +1538,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_SM_Helmet_019_Zm.webp",
-      "thumbnail": "/images/items/gear/Icon_SM_Helmet_019_Zm.webp",
-      "fullsize": "/images/items/gear/Icon_SM_Helmet_019_Zm.webp"
+      "icon": "/images/items/helmets/Icon_SM_Helmet_019_Zm.webp",
+      "thumbnail": "/images/items/helmets/Icon_SM_Helmet_019_Zm.webp",
+      "fullsize": "/images/items/helmets/Icon_SM_Helmet_019_Zm.webp"
     },
     "stats": {
       "rarity": "Common",
@@ -1648,9 +1648,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_Helmet_010_Hyq.webp",
-      "thumbnail": "/images/items/gear/Icon_Helmet_010_Hyq.webp",
-      "fullsize": "/images/items/gear/Icon_Helmet_010_Hyq.webp"
+      "icon": "/images/items/helmets/Icon_Helmet_010_Hyq.webp",
+      "thumbnail": "/images/items/helmets/Icon_Helmet_010_Hyq.webp",
+      "fullsize": "/images/items/helmets/Icon_Helmet_010_Hyq.webp"
     },
     "stats": {
       "rarity": "Uncommon",
@@ -1758,9 +1758,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_Helmet_013_Hyq.webp",
-      "thumbnail": "/images/items/gear/Icon_Helmet_013_Hyq.webp",
-      "fullsize": "/images/items/gear/Icon_Helmet_013_Hyq.webp"
+      "icon": "/images/items/helmets/Icon_Helmet_013_Hyq.webp",
+      "thumbnail": "/images/items/helmets/Icon_Helmet_013_Hyq.webp",
+      "fullsize": "/images/items/helmets/Icon_Helmet_013_Hyq.webp"
     },
     "stats": {
       "rarity": "Uncommon",
@@ -1880,9 +1880,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_WarfareHelmet_6B47.webp",
-      "thumbnail": "/images/items/gear/Icon_WarfareHelmet_6B47.webp",
-      "fullsize": "/images/items/gear/Icon_WarfareHelmet_6B47.webp"
+      "icon": "/images/items/helmets/Icon_WarfareHelmet_6B47.webp",
+      "thumbnail": "/images/items/helmets/Icon_WarfareHelmet_6B47.webp",
+      "fullsize": "/images/items/helmets/Icon_WarfareHelmet_6B47.webp"
     },
     "stats": {
       "rarity": "Uncommon",
@@ -1990,9 +1990,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/SM_Helmet_012_Zty.webp",
-      "thumbnail": "/images/items/gear/SM_Helmet_012_Zty.webp",
-      "fullsize": "/images/items/gear/SM_Helmet_012_Zty.webp"
+      "icon": "/images/items/helmets/SM_Helmet_012_Zty.webp",
+      "thumbnail": "/images/items/helmets/SM_Helmet_012_Zty.webp",
+      "fullsize": "/images/items/helmets/SM_Helmet_012_Zty.webp"
     },
     "stats": {
       "rarity": "Epic",
@@ -2103,9 +2103,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/SM_Helmet_012_Zty__2png.webp",
-      "thumbnail": "/images/items/gear/SM_Helmet_012_Zty__2png.webp",
-      "fullsize": "/images/items/gear/SM_Helmet_012_Zty__2png.webp"
+      "icon": "/images/items/helmets/SM_Helmet_012_Zty__2png.webp",
+      "thumbnail": "/images/items/helmets/SM_Helmet_012_Zty__2png.webp",
+      "fullsize": "/images/items/helmets/SM_Helmet_012_Zty__2png.webp"
     },
     "stats": {
       "rarity": "Epic",
@@ -2216,9 +2216,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_helmet_1.webp",
-      "thumbnail": "/images/items/gear/Icon_helmet_1.webp",
-      "fullsize": "/images/items/gear/Icon_helmet_1.webp"
+      "icon": "/images/items/helmets/Icon_helmet_1.webp",
+      "thumbnail": "/images/items/helmets/Icon_helmet_1.webp",
+      "fullsize": "/images/items/helmets/Icon_helmet_1.webp"
     },
     "stats": {
       "rarity": "Common",
@@ -2326,9 +2326,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/SM_Helmet_011_Zty.webp",
-      "thumbnail": "/images/items/gear/SM_Helmet_011_Zty.webp",
-      "fullsize": "/images/items/gear/SM_Helmet_011_Zty.webp"
+      "icon": "/images/items/helmets/SM_Helmet_011_Zty.webp",
+      "thumbnail": "/images/items/helmets/SM_Helmet_011_Zty.webp",
+      "fullsize": "/images/items/helmets/SM_Helmet_011_Zty.webp"
     },
     "stats": {
       "rarity": "Uncommon",
@@ -2439,9 +2439,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_SM_Helmet_018_Zty.webp",
-      "thumbnail": "/images/items/gear/Icon_SM_Helmet_018_Zty.webp",
-      "fullsize": "/images/items/gear/Icon_SM_Helmet_018_Zty.webp"
+      "icon": "/images/items/helmets/Icon_SM_Helmet_018_Zty.webp",
+      "thumbnail": "/images/items/helmets/Icon_SM_Helmet_018_Zty.webp",
+      "fullsize": "/images/items/helmets/Icon_SM_Helmet_018_Zty.webp"
     },
     "stats": {
       "rarity": "Uncommon",
@@ -2554,9 +2554,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_RYS_T.webp",
-      "thumbnail": "/images/items/gear/Icon_RYS_T.webp",
-      "fullsize": "/images/items/gear/Icon_RYS_T.webp"
+      "icon": "/images/items/helmets/Icon_RYS_T.webp",
+      "thumbnail": "/images/items/helmets/Icon_RYS_T.webp",
+      "fullsize": "/images/items/helmets/Icon_RYS_T.webp"
     },
     "stats": {
       "rarity": "Legendary",
@@ -2668,9 +2668,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_WarfareHelmet_RYS_T_bonecrusher.webp",
-      "thumbnail": "/images/items/gear/Icon_WarfareHelmet_RYS_T_bonecrusher.webp",
-      "fullsize": "/images/items/gear/Icon_WarfareHelmet_RYS_T_bonecrusher.webp"
+      "icon": "/images/items/helmets/Icon_WarfareHelmet_RYS_T_bonecrusher.webp",
+      "thumbnail": "/images/items/helmets/Icon_WarfareHelmet_RYS_T_bonecrusher.webp",
+      "fullsize": "/images/items/helmets/Icon_WarfareHelmet_RYS_T_bonecrusher.webp"
     },
     "stats": {
       "rarity": "Legendary",
@@ -2782,9 +2782,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_Helmet_016_Hcj.webp",
-      "thumbnail": "/images/items/gear/Icon_Helmet_016_Hcj.webp",
-      "fullsize": "/images/items/gear/Icon_Helmet_016_Hcj.webp"
+      "icon": "/images/items/helmets/Icon_Helmet_016_Hcj.webp",
+      "thumbnail": "/images/items/helmets/Icon_Helmet_016_Hcj.webp",
+      "fullsize": "/images/items/helmets/Icon_Helmet_016_Hcj.webp"
     },
     "stats": {
       "rarity": "Common",
@@ -2860,9 +2860,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_Helmet_017_Hcj.webp",
-      "thumbnail": "/images/items/gear/Icon_Helmet_017_Hcj.webp",
-      "fullsize": "/images/items/gear/Icon_Helmet_017_Hcj.webp"
+      "icon": "/images/items/helmets/Icon_Helmet_017_Hcj.webp",
+      "thumbnail": "/images/items/helmets/Icon_Helmet_017_Hcj.webp",
+      "fullsize": "/images/items/helmets/Icon_Helmet_017_Hcj.webp"
     },
     "stats": {
       "rarity": "Common",
@@ -2938,9 +2938,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/Icon_Helmet_015_Hcj.webp",
-      "thumbnail": "/images/items/gear/Icon_Helmet_015_Hcj.webp",
-      "fullsize": "/images/items/gear/Icon_Helmet_015_Hcj.webp"
+      "icon": "/images/items/helmets/Icon_Helmet_015_Hcj.webp",
+      "thumbnail": "/images/items/helmets/Icon_Helmet_015_Hcj.webp",
+      "fullsize": "/images/items/helmets/Icon_Helmet_015_Hcj.webp"
     },
     "stats": {
       "rarity": "Common",
@@ -3016,9 +3016,9 @@
     "category": "gear",
     "subcategory": "Helmets",
     "images": {
-      "icon": "/images/items/gear/WarfareHelmet_Redberet.webp",
-      "thumbnail": "/images/items/gear/WarfareHelmet_Redberet.webp",
-      "fullsize": "/images/items/gear/WarfareHelmet_Redberet.webp"
+      "icon": "/images/items/helmets/WarfareHelmet_Redberet.webp",
+      "thumbnail": "/images/items/helmets/WarfareHelmet_Redberet.webp",
+      "fullsize": "/images/items/helmets/WarfareHelmet_Redberet.webp"
     },
     "stats": {
       "rarity": "Common",

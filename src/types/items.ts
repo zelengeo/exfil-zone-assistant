@@ -176,7 +176,7 @@ export interface ArmorProperties {
 export type helmetSoundMix = 'default' | 'Delta' | "OPSWAT" | "MuffledGeneral";
 export interface HelmetProperties extends ArmorProperties {
     soundMix: helmetSoundMix;
-
+    "canAttach"?: string[],
 }
 
 export interface ItemCategory {
