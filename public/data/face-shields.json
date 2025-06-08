@@ -1,0 +1,765 @@
+[
+  {
+    "id": "mask-ach-faceshield",
+    "name": "ACH FaceShield",
+    "description": "Advanced Combat Helmet face shield providing superior facial protection. High-quality protective visor designed for combat operations.",
+    "category": "gear",
+    "subcategory": "Face Shields",
+    "images": {
+      "icon": "/images/items/helmets/SM_Helmet_012_2_Zty.webp",
+      "thumbnail": "/images/items/helmets/SM_Helmet_012_2_Zty.webp",
+      "fullsize": "/images/items/helmets/SM_Helmet_012_2_Zty.webp"
+    },
+    "stats": {
+      "rarity": "Rare",
+      "price": 35000,
+      "weight": 1.5,
+      "armorClass": 4,
+      "maxDurability": 55,
+      "durabilityDamageScalar": 0.7,
+      "bluntDamageScalar": 0.7,
+      "protectiveData": [
+        {
+          "bodyPart": "head",
+          "armorClass": 4,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 180
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.95,
+          "arriveTangent": -5.7641554,
+          "leaveTangent": -5.7641544
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.09,
+          "arriveTangent": -0.29457605,
+          "leaveTangent": -0.29457545
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 1,
+          "value": 0.04,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.37965,
+          "leaveTangent": -0.37965
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.6,
+          "arriveTangent": -0.144674,
+          "leaveTangent": -0.144674
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": -0.012679,
+          "leaveTangent": -0.012679
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Military-grade face shield designed for ACH helmets. Provides excellent protection against ballistic threats while maintaining visibility.",
+    "tips": "Solid Class 4 protection for face area. Good durability and reliable performance in combat situations. Pairs well with ACH helmet systems."
+  },
+  {
+    "id": "mask-kiver-faceshield",
+    "name": "Kiver-M FaceShield",
+    "description": "Kiver-M helmet face shield offering dependable facial protection. Lightweight yet effective shield designed for tactical operations.",
+    "category": "gear",
+    "subcategory": "Face Shields",
+    "images": {
+      "icon": "/images/items/helmets/SM_Helmet_011_2_Zty.webp",
+      "thumbnail": "/images/items/helmets/SM_Helmet_011_2_Zty.webp",
+      "fullsize": "/images/items/helmets/SM_Helmet_011_2_Zty.webp"
+    },
+    "stats": {
+      "rarity": "Rare",
+      "price": 28000,
+      "weight": 1.2,
+      "armorClass": 3,
+      "maxDurability": 45,
+      "durabilityDamageScalar": 0.7,
+      "bluntDamageScalar": 0.7,
+      "protectiveData": [
+        {
+          "bodyPart": "head",
+          "armorClass": 3,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 180
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.95,
+          "arriveTangent": -5.000621,
+          "leaveTangent": -5.0006285
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.11,
+          "arriveTangent": -0.25925827,
+          "leaveTangent": -0.2592578
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 1,
+          "value": 0.04,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.37965,
+          "leaveTangent": -0.37965
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.6,
+          "arriveTangent": -0.144674,
+          "leaveTangent": -0.144674
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": -0.012679,
+          "leaveTangent": -0.012679
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Russian-designed face shield for Kiver helmet systems. Lighter than ACH variant with good protection for its class.",
+    "tips": "Class 3 protection with excellent mobility. Lower weight makes it ideal for extended operations where every gram counts."
+  },
+  {
+    "id": "mask-lh250-goggle",
+    "name": "LH250 Goggle",
+    "description": "Lightweight tactical goggle providing basic eye protection. Compact design optimized for mobility and comfort during extended operations.",
+    "category": "gear",
+    "subcategory": "Eye Protection",
+    "images": {
+      "icon": "/images/items/helmets/Icon_LH250google.webp",
+      "thumbnail": "/images/items/helmets/Icon_LH250google.webp",
+      "fullsize": "/images/items/helmets/Icon_LH250google.webp"
+    },
+    "stats": {
+      "rarity": "Rare",
+      "price": 15000,
+      "weight": 0.6,
+      "armorClass": 1,
+      "maxDurability": 15,
+      "durabilityDamageScalar": 0.7,
+      "bluntDamageScalar": 0.7,
+      "protectiveData": [
+        {
+          "bodyPart": "head",
+          "armorClass": 1,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 120
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.95,
+          "arriveTangent": -5.1194234,
+          "leaveTangent": -5.119432
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.11,
+          "arriveTangent": -0.48523435,
+          "leaveTangent": -0.4852341
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 1,
+          "value": 0.04,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.37965,
+          "leaveTangent": -0.37965
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.6,
+          "arriveTangent": -0.144674,
+          "leaveTangent": -0.144674
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": -0.012679,
+          "leaveTangent": -0.012679
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Ultra-lightweight eye protection for tactical operations. Minimal armor class but excellent mobility characteristics.",
+    "tips": "Perfect for light operations where weight matters more than protection. Very low durability means it won't last long under fire."
+  },
+  {
+    "id": "mask-lh250-mask",
+    "name": "LH250 Mask",
+    "description": "Tactical face mask providing lightweight protection for nose and mouth areas. Designed for comfort during extended wear.",
+    "category": "gear",
+    "subcategory": "Face Shields",
+    "images": {
+      "icon": "/images/items/helmets/Icon_LH250mask.webp",
+      "thumbnail": "/images/items/helmets/Icon_LH250mask.webp",
+      "fullsize": "/images/items/helmets/Icon_LH250mask.webp"
+    },
+    "stats": {
+      "rarity": "Rare",
+      "price": 18000,
+      "weight": 0.8,
+      "armorClass": 1,
+      "maxDurability": 30,
+      "durabilityDamageScalar": 0.7,
+      "bluntDamageScalar": 0.7,
+      "protectiveData": [
+        {
+          "bodyPart": "head",
+          "armorClass": 1,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 150
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.95,
+          "arriveTangent": -4.5072236,
+          "leaveTangent": -4.5072317
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.11,
+          "arriveTangent": -0.669775,
+          "leaveTangent": -0.669775
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 1,
+          "value": 0.04,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.37965,
+          "leaveTangent": -0.37965
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.6,
+          "arriveTangent": -0.144674,
+          "leaveTangent": -0.144674
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": -0.012679,
+          "leaveTangent": -0.012679
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Basic tactical mask offering minimal protection with maximum comfort. Double the durability of the goggle variant.",
+    "tips": "Entry-level face protection that won't slow you down. Better durability than the goggle but still quite fragile. Good for stealth operations."
+  },
+  {
+    "id": "mask-ryst-faceshield",
+    "name": "RYS-T FaceShield",
+    "description": "Premium tactical face shield with advanced ballistic protection. Top-tier defensive equipment designed for high-threat environments.",
+    "category": "gear",
+    "subcategory": "Face Shields",
+    "images": {
+      "icon": "/images/items/helmets/SM_Helmet_007_02_Yyp.webp",
+      "thumbnail": "/images/items/helmets/SM_Helmet_007_02_Yyp.webp",
+      "fullsize": "/images/items/helmets/SM_Helmet_007_02_Yyp.webp"
+    },
+    "stats": {
+      "rarity": "Epic",
+      "price": 65000,
+      "weight": 1.3,
+      "armorClass": 5,
+      "maxDurability": 75,
+      "durabilityDamageScalar": 0.55,
+      "bluntDamageScalar": 0.7,
+      "protectiveData": [
+        {
+          "bodyPart": "head",
+          "armorClass": 5,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 180
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.97,
+          "arriveTangent": -3.6377645,
+          "leaveTangent": -3.637767
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.07,
+          "arriveTangent": -0.669775,
+          "leaveTangent": -0.669775
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 1,
+          "value": 0.02,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.37965,
+          "leaveTangent": -0.37965
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.6,
+          "arriveTangent": -0.144674,
+          "leaveTangent": -0.144674
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": -0.012679,
+          "leaveTangent": -0.012679
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Elite-tier face protection with exceptional ballistic resistance. Superior durability damage scalar makes it last longer under fire.",
+    "tips": "Top-tier Class 5 protection with excellent durability. Premium choice for high-risk operations where face protection is critical."
+  },
+  {
+    "id": "mask-ryst-faceshield-bonecrusher",
+    "name": "RYS-T FaceShield Bonecrusher",
+    "description": "Special edition RYS-T face shield with unique Bonecrusher styling. Same exceptional protection with distinctive tactical aesthetics.",
+    "category": "gear",
+    "subcategory": "Face Shields",
+    "images": {
+      "icon": "/images/items/helmets/Icon_RYS-TFaceShield_bonecrusher.webp",
+      "thumbnail": "/images/items/helmets/Icon_RYS-TFaceShield_bonecrusher.webp",
+      "fullsize": "/images/items/helmets/Icon_RYS-TFaceShield_bonecrusher.webp"
+    },
+    "stats": {
+      "rarity": "Epic",
+      "price": 75000,
+      "weight": 1.3,
+      "armorClass": 5,
+      "maxDurability": 75,
+      "durabilityDamageScalar": 0.55,
+      "bluntDamageScalar": 0.7,
+      "protectiveData": [
+        {
+          "bodyPart": "head",
+          "armorClass": 5,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 180
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.97,
+          "arriveTangent": -3.637764,
+          "leaveTangent": -3.637767
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.07,
+          "arriveTangent": -0.669775,
+          "leaveTangent": -0.669775
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 1,
+          "value": 0.02,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.37965,
+          "leaveTangent": -0.37965
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.6,
+          "arriveTangent": -0.144674,
+          "leaveTangent": -0.144674
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": -0.012679,
+          "leaveTangent": -0.012679
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Limited edition variant of the RYS-T face shield with special Bonecrusher design. Identical performance with collectible appeal.",
+    "tips": "Same excellent Class 5 protection as standard RYS-T but with unique styling. Premium price for the special edition aesthetics."
+  },
+  {
+    "id": "mask-warfare-faceshield",
+    "name": "Warfare Face Shield",
+    "description": "Standard military face shield designed for general combat operations. Reliable protection with balanced performance characteristics.",
+    "category": "gear",
+    "subcategory": "Face Shields",
+    "images": {
+      "icon": "/images/items/helmets/Icon_warfare_mask.webp",
+      "thumbnail": "/images/items/helmets/Icon_warfare_mask.webp",
+      "fullsize": "/images/items/helmets/Icon_warfare_mask.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 22000,
+      "weight": 0.9,
+      "armorClass": 4,
+      "maxDurability": 50,
+      "durabilityDamageScalar": 0.6,
+      "bluntDamageScalar": 0.7,
+      "protectiveData": [
+        {
+          "bodyPart": "head",
+          "armorClass": 4,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 180
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.95,
+          "arriveTangent": -2.307605,
+          "leaveTangent": -2.307607
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.25,
+          "arriveTangent": -0.669775,
+          "leaveTangent": -0.669775
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 1,
+          "value": 0.02,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.37965,
+          "leaveTangent": -0.37965
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.6,
+          "arriveTangent": -0.144674,
+          "leaveTangent": -0.144674
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": -0.012679,
+          "leaveTangent": -0.012679
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Standard issue face protection used across military operations. Good balance of protection, weight, and cost-effectiveness.",
+    "tips": "Solid Class 4 protection at an affordable price. Lighter than ACH variant with good durability characteristics. Excellent value for money."
+  }
+]

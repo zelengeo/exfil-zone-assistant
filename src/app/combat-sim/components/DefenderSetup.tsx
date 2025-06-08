@@ -1,13 +1,13 @@
 import React, {useState, useEffect, useMemo, useRef} from 'react';
-import {ChevronDown, Shield, HardHat, Info, ExternalLink} from 'lucide-react';
+import {ChevronDown, Shield, HardHat, Info, ExternalLink, X} from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
     DefenderSetup as DefenderSetupType,
-    isArmor, isBodyArmor, isHelmet
+    isArmor, isBodyArmor, isFaceShield, isHelmet
 } from '../utils/types';
 import {fetchItemsData} from '@/services/ItemService';
-import {Armor, getRarityColorClass, Item} from '@/types/items';
+import {Armor, FaceShield, getRarityColorClass, Item} from '@/types/items';
 import {getArmorClassColor} from '../utils/body-zones';
 
 interface DefenderSetupProps {
@@ -78,6 +78,17 @@ export default function DefenderSetup({defender, onUpdate}: DefenderSetupProps) 
 
     const helmets = useMemo(() =>
             armors.filter(isHelmet),
+        [armors]
+    );
+
+    const faceShieldsMap: Map<string, FaceShield> = useMemo(() =>
+        armors.reduce((map, element) => {
+            if (isFaceShield(element)) {
+                map.set(element.id, element);
+            }
+            return map;
+        }, new Map()),
+
         [armors]
     );
 
@@ -405,6 +416,56 @@ export default function DefenderSetup({defender, onUpdate}: DefenderSetupProps) 
                 {/* Helmet Stats */}
                 {defender.helmet && (
                     <div className="mt-2 space-y-2">
+                        {/* Face Shield Section - Only show if helmet has canAttach options */}
+                        {defender.helmet.stats.canAttach && defender.helmet.stats.canAttach.length > 0 && (
+                            <div className="military-card p-4 rounded-sm">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <Shield size={16} className="text-olive-400" />
+                                    <h4 className="font-medium text-tan-300 text-sm">Face Shield</h4>
+                                </div>
+
+                                <div className="grid grid-cols-3 gap-2">
+                                    {/* Available face shields */}
+                                    {defender.helmet.stats.canAttach.map((shieldId) => {
+                                        const shield = faceShieldsMap.get(shieldId);
+                                        if (!shield) return null;
+                                        const shieldName = shield.name;
+                                        const isSelected = defender.faceShield && defender.faceShield.id === shield.id;
+
+                                        return (
+                                            <button
+                                                key={shieldId}
+                                                onClick={() => onUpdate({ faceShield: shield })}
+                                                className={`relative p-2 rounded-sm border-2 transition-all ${
+                                                    isSelected
+                                                        ? 'border-olive-500 bg-military-800'
+                                                        : 'border-military-700 bg-military-900 hover:border-military-600'
+                                                }`}
+                                            >
+                                                <div className="w-10 h-10 relative mx-auto bg-military-700 rounded-sm p-0.5">
+                                                    <Image
+                                                        src={shield.images.icon}
+                                                        alt={shieldName}
+                                                        fill
+                                                        className="object-contain"
+                                                        sizes="40px"
+                                                    />
+                                                </div>
+                                                <div className="text-xs text-center mt-1 text-tan-300 truncate">
+                                                    {shieldName}
+                                                </div>
+                                                {isSelected && (
+                                                    <div className="absolute top-1 right-1">
+                                                        <div className="w-2 h-2 bg-olive-400 rounded-full"></div>
+                                                    </div>
+                                                )}
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        )}
+
                         <div className="text-xs text-tan-400 flex gap-3">
                             <span className={getArmorClassColor(defender.helmet.stats.armorClass).text}>
                                 Class {defender.helmet.stats.armorClass}

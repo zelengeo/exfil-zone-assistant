@@ -2000,7 +2000,7 @@
       "weight": 2.3,
       "armorClass": 4,
       "canAttach": [
-        "'ACHFaceShield'"
+        "mask-ach-faceshield"
       ],
       "soundMix": "MuffledGeneral",
       "maxDurability": 65,
@@ -2113,7 +2113,7 @@
       "weight": 2.3,
       "armorClass": 4,
       "canAttach": [
-        "'ACHFaceShield_C'"
+        "mask-ach-faceshield"
       ],
       "soundMix": "MuffledGeneral'",
       "maxDurability": 65,
@@ -2336,7 +2336,7 @@
       "weight": 2.4,
       "armorClass": 3,
       "canAttach": [
-        "'Kiver-MFaceShield_C'"
+        "mask-kiver-faceshield"
       ],
       "soundMix": "MuffledGeneral",
       "maxDurability": 55,
@@ -2449,8 +2449,8 @@
       "weight": 0.75,
       "armorClass": 2,
       "canAttach": [
-        "'LH250google_C'",
-        "'LH250mask_C'"
+        "mask-lh250-goggle",
+        "mask-lh250-mask"
       ],
       "subcategory": "Helmets",
       "soundMix": "default",
@@ -2564,8 +2564,8 @@
       "weight": 4.4,
       "armorClass": 6,
       "canAttach": [
-        "'RYS-TFaceShield_C'",
-        "'RYS-TFaceShield_bonecrusher_C'"
+        "mask-ryst-faceshield",
+        "mask-ryst-faceshield-bonecrusher"
       ],
       "soundMix": "MuffledGeneral",
       "maxDurability": 77,
@@ -2679,8 +2679,8 @@
       "armorClass": 6,
       "maxDurability": 77,
       "canAttach": [
-        "'RYS-TFaceShield_C'",
-        "'RYS-TFaceShield_bonecrusher_C'"
+        "mask-ryst-faceshield",
+        "mask-ryst-faceshield-bonecrusher"
       ],
       "soundMix": "MuffledGeneral",
       "bluntDamageScalar": 0.65,

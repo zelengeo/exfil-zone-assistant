@@ -92,7 +92,7 @@ export interface Ammunition extends Item {
 // Complete armor type with all curves
 export interface Armor extends Item {
     category: 'gear';
-    subcategory: 'Body Armor' | 'Helmets';
+    subcategory: 'Body Armor' | 'Helmets' | "Face Shields";
     stats: Item['stats'] & ArmorProperties;
 }
 
@@ -103,6 +103,10 @@ export interface BodyArmor extends Armor {
 export interface Helmet extends Armor {
     subcategory: 'Helmets';
     stats: Item['stats'] & HelmetProperties;
+}
+
+export interface FaceShield extends Armor {
+    subcategory: 'Face Shields';
 }
 
 export type AnyItem = Weapon | Armor | Ammunition | BodyArmor | Helmet;

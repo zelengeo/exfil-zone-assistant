@@ -3,7 +3,7 @@
  * Aligns with actual game data structure
  */
 
-import {Ammunition, AnyItem, Armor, BodyArmor, Helmet, Item, Weapon} from "@/types/items";
+import {Ammunition, AnyItem, Armor, BodyArmor, FaceShield, Helmet, Item, Weapon} from "@/types/items";
 
 // Display modes for the simulator
 export type DisplayMode = 'ttk' | 'stk' | 'ctk';
@@ -31,6 +31,7 @@ export interface DefenderSetup {
     bodyArmorDurability: number; // 0-100%
     helmet: Helmet | null;
     helmetDurability: number; // 0-100%
+    faceShield: FaceShield | null;
 }
 
 export interface ShotResult {
@@ -130,17 +131,22 @@ export function isAmmunition(item: Item): item is Ammunition {
 
 export function isArmor(item: Item): item is Armor {
     return (item.category === 'gear') &&
-        (item.subcategory === 'Body Armor' || item.subcategory === 'Helmets')
+        (item.subcategory === 'Body Armor' || item.subcategory === 'Helmets' || item.subcategory === 'Face Shields')
 }
 
 export function isBodyArmor(item: Item): item is BodyArmor {
     return (item.category === 'gear') &&
-        (item.subcategory === 'Body Armor' || item.subcategory === 'Helmets')
+        (item.subcategory === 'Body Armor')
 }
 
 export function isHelmet(item: Item): item is Helmet {
     return (item.category === 'gear') &&
         item.subcategory === 'Helmets'
+}
+
+export function isFaceShield(item: Item): item is FaceShield {
+    return (item.category === 'gear') &&
+        item.subcategory === 'Face Shields'
 }
 
 // Check if weapon and ammo are compatible

@@ -9,6 +9,7 @@ const DATA_FILES = [
     'ammunition.json',
     'armor.json',
     'helmets.json',
+    'face-shields.json'
     // 'medical.json',
     // 'food.json',
     // 'attachments.json',
