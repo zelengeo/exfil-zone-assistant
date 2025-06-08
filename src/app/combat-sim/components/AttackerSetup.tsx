@@ -335,7 +335,7 @@ export default function AttackerSetup({
                                                 setAmmoSearchOpen(false);
                                                 setAmmoSearch('');
                                             }}
-                                            className="w-full px-3 py-2 text-left hover:bg-military-700 transition-colors text-sm"
+                                            className="w-full px-2 py-2 text-left hover:bg-military-700 transition-colors text-sm"
                                         >
                                                 <div className="flex items-center gap-2 flex-1 min-w-0">
                                                     <div className="w-10 h-10 relative flex-shrink-0 bg-military-700 rounded-sm p-0.5">
@@ -354,9 +354,6 @@ export default function AttackerSetup({
                                                             <span>PEN: {ammo.stats.penetration}</span>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div className="text-olive-400 text-sm font-medium flex-shrink-0">
-                                                    {ammo.stats.price} EZD
                                                 </div>
                                         </button>
                                     ))

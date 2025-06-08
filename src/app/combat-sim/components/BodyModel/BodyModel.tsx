@@ -38,6 +38,11 @@ export default function BodyModel({
                 pz => pz.bodyPart === zone.bodyPart || pz.bodyPart === zone.id
             );
 
+            if (!protectiveZone && defender.faceShield) {
+                //Currently, it seems, FaceShield acts as extension to the helmet so, else we would'we get faceShield class
+                return defender.helmet.stats.armorClass
+            };
+
             return protectiveZone?.armorClass || 0
         }
 

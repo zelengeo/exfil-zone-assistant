@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useMemo, useRef} from 'react';
-import {ChevronDown, Shield, HardHat, Info, ExternalLink, X} from 'lucide-react';
+import {ChevronDown, Shield, HardHat, Info, ExternalLink, X, Eye} from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -418,47 +418,37 @@ export default function DefenderSetup({defender, onUpdate}: DefenderSetupProps) 
                     <div className="mt-2 space-y-2">
                         {/* Face Shield Section - Only show if helmet has canAttach options */}
                         {defender.helmet.stats.canAttach && defender.helmet.stats.canAttach.length > 0 && (
-                            <div className="military-card p-4 rounded-sm">
-                                <div className="flex items-center gap-2 mb-3">
-                                    <Shield size={16} className="text-olive-400" />
-                                    <h4 className="font-medium text-tan-300 text-sm">Face Shield</h4>
-                                </div>
-
-                                <div className="grid grid-cols-3 gap-2">
+                            <div>
+                                <label className="block text-tan-300 text-xs font-medium mb-1">
+                                    Face Shield
+                                </label>
+                                <div className="flex items-center gap-2 overflow-x-auto">
                                     {/* Available face shields */}
                                     {defender.helmet.stats.canAttach.map((shieldId) => {
                                         const shield = faceShieldsMap.get(shieldId);
                                         if (!shield) return null;
-                                        const shieldName = shield.name;
                                         const isSelected = defender.faceShield && defender.faceShield.id === shield.id;
 
                                         return (
                                             <button
                                                 key={shieldId}
-                                                onClick={() => onUpdate({ faceShield: shield })}
-                                                className={`relative p-2 rounded-sm border-2 transition-all ${
+                                                onClick={() => onUpdate({ faceShield: isSelected ? null : shield})}
+                                                className={`flex-shrink-0 rounded-sm p-0 transition-all ${
                                                     isSelected
-                                                        ? 'border-olive-500 bg-military-800'
-                                                        : 'border-military-700 bg-military-900 hover:border-military-600'
+                                                        ? 'bg-olive-600/20 border-2 border-olive-500 shadow-md'
+                                                        : 'bg-military-900 border-2 border-military-700 hover:border-military-600 hover:bg-military-800'
                                                 }`}
+                                                title={shield.name}
                                             >
-                                                <div className="w-10 h-10 relative mx-auto bg-military-700 rounded-sm p-0.5">
+                                                <div className="w-10 h-10 relative bg-military-700/50 rounded-sm overflow-hidden">
                                                     <Image
                                                         src={shield.images.icon}
-                                                        alt={shieldName}
+                                                        alt={shield.name}
                                                         fill
                                                         className="object-contain"
                                                         sizes="40px"
                                                     />
                                                 </div>
-                                                <div className="text-xs text-center mt-1 text-tan-300 truncate">
-                                                    {shieldName}
-                                                </div>
-                                                {isSelected && (
-                                                    <div className="absolute top-1 right-1">
-                                                        <div className="w-2 h-2 bg-olive-400 rounded-full"></div>
-                                                    </div>
-                                                )}
                                             </button>
                                         );
                                     })}
@@ -473,6 +463,8 @@ export default function DefenderSetup({defender, onUpdate}: DefenderSetupProps) 
                             <span>Max Durability: {defender.helmet.stats.maxDurability}</span>
                             <span>Price: {defender.helmet.stats.price} EZD</span>
                         </div>
+
+
 
                         {/* Durability Slider */}
                         <div>
