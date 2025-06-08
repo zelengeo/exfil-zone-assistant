@@ -2256,9 +2256,9 @@
     "category": "weapons",
     "subcategory": "9x19mm",
     "images": {
-      "icon": "/images/items/weapons/Icon_gun_mp5.webp",
-      "thumbnail": "/images/items/weapons/Icon_gun_mp5.webp",
-      "fullsize": "/images/items/weapons/Icon_gun_mp5.webp"
+      "icon": "/images/items/weapons/Icon_SM_MERGED_WF_MP5A27.webp",
+      "thumbnail": "/images/items/weapons/Icon_SM_MERGED_WF_MP5A27.webp",
+      "fullsize": "/images/items/weapons/Icon_SM_MERGED_WF_MP5A27.webp"
     },
     "stats": {
       "rarity": "Rare",
@@ -2299,9 +2299,9 @@
     "category": "weapons",
     "subcategory": "9x19mm",
     "images": {
-      "icon": "/images/items/weapons/Icon_gun_mp5.webp",
-      "thumbnail": "/images/items/weapons/Icon_gun_mp5.webp",
-      "fullsize": "/images/items/weapons/Icon_gun_mp5.webp"
+      "icon": "/images/items/weapons/Icon_SM_MERGED_WF_MP5A25.webp",
+      "thumbnail": "/images/items/weapons/Icon_SM_MERGED_WF_MP5A25.webp",
+      "fullsize": "/images/items/weapons/Icon_SM_MERGED_WF_MP5A25.webp"
     },
     "stats": {
       "rarity": "Rare",
@@ -2342,9 +2342,9 @@
     "category": "weapons",
     "subcategory": "9x19mm",
     "images": {
-      "icon": "/images/items/weapons/Icon_gun_mp5.webp",
-      "thumbnail": "/images/items/weapons/Icon_gun_mp5.webp",
-      "fullsize": "/images/items/weapons/Icon_gun_mp5.webp"
+      "icon": "/images/items/weapons/Icon_SM_MERGED_WF_MP5A26.webp",
+      "thumbnail": "/images/items/weapons/Icon_SM_MERGED_WF_MP5A26.webp",
+      "fullsize": "/images/items/weapons/Icon_SM_MERGED_WF_MP5A26.webp"
     },
     "stats": {
       "rarity": "Epic",

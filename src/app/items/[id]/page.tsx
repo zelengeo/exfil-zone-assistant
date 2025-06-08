@@ -3,7 +3,7 @@
 import React, {useState, useEffect} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import {ChevronLeft, Crosshair, Shield, Timer, Info, ZoomIn} from 'lucide-react';
+import {ChevronLeft, Crosshair, Shield, Timer, Info, Gavel, ShieldMinus, BowArrow, ShieldX} from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import ItemLocations from '@/components/items/ItemLocations';
 import RelatedItems from '@/components/items/RelatedItems';
@@ -18,7 +18,7 @@ import {
     getCategoryById, AnyItem
 } from '@/types/items';
 import {getItemById} from "@/services/ItemService";
-import {isAnyItem} from "@/app/combat-sim/utils/types";
+import {isAnyItem, isArmor} from "@/app/combat-sim/utils/types";
 
 // Component for displaying item images with zoom functionality
 const ItemImageDisplay: React.FC<{
@@ -28,7 +28,6 @@ const ItemImageDisplay: React.FC<{
 }> = ({src, alt, className = ''}) => {
     const [imageError, setImageError] = useState(false);
     const [imageLoading, setImageLoading] = useState(true);
-    const [isZoomed, setIsZoomed] = useState(false);
 
     const handleImageError = () => {
         setImageError(true);
@@ -37,10 +36,6 @@ const ItemImageDisplay: React.FC<{
 
     const handleImageLoad = () => {
         setImageLoading(false);
-    };
-
-    const toggleZoom = () => {
-        setIsZoomed(!isZoomed);
     };
 
     if (imageError) {
@@ -67,10 +62,7 @@ const ItemImageDisplay: React.FC<{
 
             {/* Image */}
             <div
-                className={`relative w-full h-full cursor-pointer transition-transform duration-200 ${
-                    isZoomed ? 'scale-150 z-20' : 'hover:scale-105'
-                }`}
-                onClick={toggleZoom}
+                className={`relative w-full h-full cursor-pointer transition-transform duration-200 hover:scale-105`}
             >
                 <Image
                     src={src}
@@ -83,23 +75,6 @@ const ItemImageDisplay: React.FC<{
                     priority
                 />
             </div>
-
-            {/* Zoom indicator */}
-            {!imageLoading && !isZoomed && (
-                <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="bg-military-800/80 border border-military-700 rounded-sm p-1">
-                        <ZoomIn size={16} className="text-olive-400"/>
-                    </div>
-                </div>
-            )}
-
-            {/* Zoom overlay background */}
-            {isZoomed && (
-                <div
-                    className="fixed inset-0 bg-military-950/80 z-10"
-                    onClick={toggleZoom}
-                />
-            )}
         </div>
     );
 };
@@ -150,7 +125,7 @@ const renderCategorySpecificStats = (item: AnyItem) => {
                             <span className="text-tan-100 font-mono">{item.stats.damage}</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <Shield size={18} className="text-olive-400" />
+                            <ShieldX size={18} className="text-olive-400" />
                             <span className="text-tan-300">Penetration:</span>
                             <span className="text-tan-100 font-mono">{item.stats.penetration}</span>
                         </div>
@@ -220,82 +195,30 @@ const renderCategorySpecificStats = (item: AnyItem) => {
                     )}
                 </>
             );
-        case 'medicine':
-            return (
-                <div className="grid grid-cols-2 gap-4">
-                    {item.stats.healAmount && (
-                        <div className="flex items-center gap-2">
-                            <Info size={18} className="text-olive-400"/>
-                            <span className="text-tan-300">Heal Amount:</span>
-                            <span className="text-tan-100 font-mono">{item.stats.healAmount}</span>
-                        </div>
-                    )}
-                    {item.stats.useTime && (
-                        <div className="flex items-center gap-2">
-                            <Timer size={18} className="text-olive-400"/>
-                            <span className="text-tan-300">Use Time:</span>
-                            <span className="text-tan-100 font-mono">{item.stats.useTime}s</span>
-                        </div>
-                    )}
-                    {item.stats.duration && (
-                        <div className="flex items-center gap-2">
-                            <Timer size={18} className="text-olive-400"/>
-                            <span className="text-tan-300">Duration:</span>
-                            <span className="text-tan-100 font-mono">{item.stats.duration}s</span>
-                        </div>
-                    )}
-                </div>
-            );
-        case 'food':
-            return (
-                <div className="grid grid-cols-2 gap-4">
-                    {item.stats.energyValue && (
-                        <div className="flex items-center gap-2">
-                            <Info size={18} className="text-olive-400"/>
-                            <span className="text-tan-300">Energy:</span>
-                            <span className="text-tan-100 font-mono">+{item.stats.energyValue}</span>
-                        </div>
-                    )}
-                    {item.stats.hydrationValue && (
-                        <div className="flex items-center gap-2">
-                            <Info size={18} className="text-olive-400"/>
-                            <span className="text-tan-300">Hydration:</span>
-                            <span className="text-tan-100 font-mono">+{item.stats.hydrationValue}</span>
-                        </div>
-                    )}
-                    {item.stats.useTime && (
-                        <div className="flex items-center gap-2">
-                            <Timer size={18} className="text-olive-400"/>
-                            <span className="text-tan-300">Use Time:</span>
-                            <span className="text-tan-100 font-mono">{item.stats.useTime}s</span>
-                        </div>
-                    )}
-                </div>
-            );
         case 'gear':
-            if (item.subcategory === 'Body Armor' || item.subcategory === 'Helmets') {
+            if (isArmor(item)) {
                 return (
                     <>
                         <div className="grid grid-cols-2 gap-4 mb-6">
                             <div className="flex items-center gap-2">
-                                <Shield size={18} className="text-olive-400" />
-                                <span className="text-tan-300">Armor Class:</span>
-                                <span className="text-tan-100 font-mono">{item.stats.armorClass}</span>
+                                <BowArrow size={18} className="text-olive-400" />
+                                <span className="text-tan-300">Penetration Damage</span>
+                                <span className="text-tan-100 font-mono">{(item.stats.penetrationDamageScalarCurve[1].value * 100).toFixed(0)}%</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <Info size={18} className="text-olive-400" />
+                                <Shield size={18} className="text-olive-400" />
                                 <span className="text-tan-300">Max Durability:</span>
                                 <span className="text-tan-100 font-mono">{item.stats.maxDurability}</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <Info size={18} className="text-olive-400" />
-                                <span className="text-tan-300">Durability Damage:</span>
-                                <span className="text-tan-100 font-mono">{(item.stats.durabilityDamageScalar * 100).toFixed(0)}%</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Info size={18} className="text-olive-400" />
+                                <Gavel size={18} className="text-olive-400" />
                                 <span className="text-tan-300">Blunt Damage:</span>
                                 <span className="text-tan-100 font-mono">{(item.stats.bluntDamageScalar * 100).toFixed(0)}%</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <ShieldMinus size={18} className="text-olive-400" />
+                                <span className="text-tan-300">Durability Damage:</span>
+                                <span className="text-tan-100 font-mono">{(item.stats.durabilityDamageScalar * 300).toFixed(0)}%</span>
                             </div>
                         </div>
 
@@ -316,7 +239,7 @@ const renderCategorySpecificStats = (item: AnyItem) => {
                                     data: item.stats.penetrationChanceCurve,
                                     color: '#ef4444'
                                 }]}
-                                xLabel="Penetration/Armor Ratio"
+                                xLabel="Penetration - Armor Class"
                                 yLabel="Chance"
                                 height={250}
                             />
@@ -331,7 +254,7 @@ const renderCategorySpecificStats = (item: AnyItem) => {
                                         data: item.stats.penetrationDamageScalarCurve,
                                         color: '#9ba85e'
                                     }]}
-                                    xLabel="Penetration Difference"
+                                    xLabel="Armor Class - Penetration"
                                     yLabel="Damage Scalar"
                                     height={250}
                                 />
@@ -357,7 +280,6 @@ const renderCategorySpecificStats = (item: AnyItem) => {
                 );
             }
 
-            default:
             return null;
     }
 };
@@ -499,14 +421,6 @@ export default function ItemDetail({params}: PageProps) {
                             <div className="flex justify-between items-center mb-4">
                                 <span className="text-tan-300">Weight:</span>
                                 <span className="text-tan-100 font-mono">{formatWeight(item.stats.weight)}</span>
-                            </div>
-                            <div className="flex justify-between items-center mb-4">
-                                <span className="text-tan-300">Size:</span>
-                                <span className="text-tan-100 font-mono">{item.stats.size}</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                                <span className="text-tan-300">Safe Slots:</span>
-                                <span className="text-tan-100 font-mono">{item.stats.safeSlots}</span>
                             </div>
                         </div>
                     </div>
