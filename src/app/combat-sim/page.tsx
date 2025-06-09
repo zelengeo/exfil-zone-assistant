@@ -4,10 +4,8 @@ import React from 'react';
 import Layout from '@/components/layout/Layout';
 import {
     DisplayMode,
-    SortBy,
     ATTACKER_COLORS,
     DISPLAY_MODE_LABELS,
-    SORT_BY_LABELS,
     RANGE_PRESETS,
     areWeaponAmmoCompatible
 } from './utils/types';
@@ -211,8 +209,8 @@ export default function CombatSimulatorPage() {
                             )}
 
                             <BodyModel
-                                defender={simulation.defender}
-                                displayMode={simulation.displayMode}
+                                simulation={simulation}
+                                validAttackers={validAttackers}
                                 zoneCalculations={zoneCalculations}
                                 selectedAttackerId={selectedAttackerId || undefined}
                             />

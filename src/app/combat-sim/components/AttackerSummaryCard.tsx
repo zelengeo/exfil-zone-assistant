@@ -75,14 +75,13 @@ export default function AttackerSummaryCard({
 
     const getLimbValue = () => {
         // Limb zones - typically unarmored
-        const limbZones = ['UpperArm_L', 'UpperArm_R', 'arm_lower_l', 'arm_lower_r',
-            'Thigh_L', 'Thigh_R', 'leg_lower_l', 'leg_lower_r'];
-        const limbCalcs = zoneCalculations.filter(c => limbZones.includes(c.zoneId));
+        const limbZones = ['arm_lower_l', 'arm_lower_r', 'leg_lower_l', 'leg_lower_r'];
+        const limbCalc = zoneCalculations.find(c => limbZones.includes(c.zoneId));
 
-        if (limbCalcs.length === 0) return '--';
+        if (!limbCalc) return '--';
 
         // All limbs typically have same values when unarmored, so just use first
-        const calc = limbCalcs[0];
+        const calc = limbCalc;
 
         switch (displayMode) {
             case 'ttk':

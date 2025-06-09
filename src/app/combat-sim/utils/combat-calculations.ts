@@ -148,7 +148,17 @@ function getZoneArmor(zoneId: string, defender: DefenderSetup): Armor | null {
 
     // Check if zone is protected by helmet
     if (isZoneProtectedBy(zoneId, 'helmet')) {
-        return defender.helmet;
+        if (defender.helmet) {
+            // Check if body armor actually protects this specific zone
+            if (defender.helmet.stats.protectiveData) {
+                const protectsZone = defender.helmet.stats.protectiveData.some((pd: ProtectiveZone) =>
+                    pd.bodyPart === zoneId // Direct match with zone ID (head_top etc.)
+                ) || (defender.faceShield && defender.helmet.stats.canAttach?.includes(defender.faceShield.id));
+
+                if (protectsZone) return defender.helmet;
+            }
+        }
+        return null;
     }
 
     // Check if zone is protected by body armor
@@ -279,7 +289,7 @@ export function getTTKColor(ttk: number): string {
  */
 export function formatTTK(ttk: number): string {
     if (ttk === Infinity) return '∞';
-    return `${ttk.toFixed(1)}s`;
+    return `${ttk.toFixed(2)}s`;
 }
 
 /**
