@@ -2,6 +2,7 @@
  * Body Zones Configuration for Combat Simulator
  * Defines body parts (with HP) and armor zones (protection areas)
  */
+import {DefenderSetup} from "@/app/combat-sim/utils/types";
 
 export interface BodyPart {
     id: string;
@@ -268,6 +269,35 @@ export const ARMOR_CLASS_COLORS = {
         hex: '#92400E'
     }
 };
+
+export function getZoneArmorClass (zoneId: string, defender: DefenderSetup): number {
+    const zone = ARMOR_ZONES[zoneId];
+    if (!zone) return 0;
+
+    //TODO probably rework head display - or it might be useful when they rework mask logic
+    if (zone.defaultProtection === 'helmet' && defender.helmet) {
+        const protectiveZone = defender.helmet.stats.protectiveData?.find(
+            pz => pz.bodyPart === zone.bodyPart || pz.bodyPart === zone.id
+        );
+
+        if (!protectiveZone && defender.faceShield) {
+            //Currently, it seems, FaceShield acts as extension to the helmet so, else we would'we get faceShield class
+            return defender.helmet.stats.armorClass
+        }
+
+        return protectiveZone?.armorClass || 0
+    }
+
+    if (zone.defaultProtection === 'armor' && defender.bodyArmor) {
+        const protectiveZone = defender.bodyArmor.stats.protectiveData?.find(
+            pz => pz.bodyPart === zone.bodyPart || pz.bodyPart === zone.id
+        );
+        return protectiveZone?.armorClass || 0;
+    }
+
+    return 0;
+}
+
 
 /**
  * Get color classes for a specific armor class

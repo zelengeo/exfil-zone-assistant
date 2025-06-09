@@ -4,7 +4,7 @@ import {Shield, Heart, Info} from 'lucide-react';
 import {
     ARMOR_ZONES,
     getArmorClassColor,
-    getBodyPartForArmorZone
+    getBodyPartForArmorZone, getZoneArmorClass
 } from '../../utils/body-zones';
 import {
     ATTACKER_COLORS, AttackerSetup,
@@ -32,33 +32,6 @@ export default function BodyModel({
     const [selectedZone, setSelectedZone] = useState<string | null>(null);
 
     // Get armor class for a specific zone
-    const getZoneArmorClass = (zoneId: string): number => {
-        const zone = ARMOR_ZONES[zoneId];
-        if (!zone) return 0;
-
-        //TODO probably rework head display - or it might be useful when they rework mask logic
-        if (zone.defaultProtection === 'helmet' && defender.helmet) {
-            const protectiveZone = defender.helmet.stats.protectiveData?.find(
-                pz => pz.bodyPart === zone.bodyPart || pz.bodyPart === zone.id
-            );
-
-            if (!protectiveZone && defender.faceShield) {
-                //Currently, it seems, FaceShield acts as extension to the helmet so, else we would'we get faceShield class
-                return defender.helmet.stats.armorClass
-            }
-
-            return protectiveZone?.armorClass || 0
-        }
-
-        if (zone.defaultProtection === 'armor' && defender.bodyArmor) {
-            const protectiveZone = defender.bodyArmor.stats.protectiveData?.find(
-                pz => pz.bodyPart === zone.bodyPart || pz.bodyPart === zone.id
-            );
-            return protectiveZone?.armorClass || 0;
-        }
-
-        return 0;
-    };
 
     const getZonePenetrationDamageReduction = (zoneId: string): string => {
         const zone = ARMOR_ZONES[zoneId];
@@ -181,7 +154,7 @@ export default function BodyModel({
     const getTooltipContent = (zoneId: string) => {
         const zone = ARMOR_ZONES[zoneId];
         const bodyPart = getBodyPartForArmorZone(zoneId);
-        const armorClass = getZoneArmorClass(zoneId);
+        const armorClass = getZoneArmorClass(zoneId, defender);
         // TODO there is a second part of tooltip which data is computed on the go - move it here
 
         return {
@@ -209,7 +182,7 @@ export default function BodyModel({
                 {/* Interactive Zones Overlay */}
                 <div className="absolute inset-0">
                     {Object.entries(ARMOR_ZONES).map(([zoneId, zone]) => {
-                        const armorClass = getZoneArmorClass(zoneId);
+                        const armorClass = getZoneArmorClass(zoneId, defender);
                         const armorColor = getArmorClassColor(armorClass);
                         const isHovered = hoveredZone === zoneId;
                         const isSelected = selectedZone === zoneId;
@@ -429,9 +402,9 @@ export default function BodyModel({
 
                         <div>
                             <span className="text-tan-400">Protection:</span>
-                            <p className={`font-medium ${getArmorClassColor(getZoneArmorClass(selectedZone)).text}`}>
-                                {getZoneArmorClass(selectedZone) > 0
-                                    ? `Class ${getZoneArmorClass(selectedZone)}`
+                            <p className={`font-medium ${getArmorClassColor(getZoneArmorClass(selectedZone, defender)).text}`}>
+                                {getZoneArmorClass(selectedZone, defender) > 0
+                                    ? `Class ${getZoneArmorClass(selectedZone, defender)}`
                                     : 'Unarmored'}
                             </p>
                         </div>
@@ -472,7 +445,7 @@ export default function BodyModel({
                                                     ? 'text-tan-100'
                                                     : 'text-tan-400'
                                             }`}>
-                                    {(calc.shots[0].penetrationChance*100).toFixed(2)}%
+                                    {(calc.shots[0].penetrationChance * 100).toFixed(2)}%
                                 </span>
                                         </div>
                                     );
@@ -518,16 +491,16 @@ export default function BodyModel({
                                 const zoneGroups: Record<string, { zones: string[], armorClass: number }> = {};
 
                                 // Add head (always show)
-                                const headClass = getZoneArmorClass('head_top');
+                                const headClass = getZoneArmorClass('head_top', defender);
                                 zoneGroups['Head'] = {zones: ['head_top'], armorClass: headClass};
 
                                 // Add chest zones
-                                const chestClass = getZoneArmorClass('spine_01');
+                                const chestClass = getZoneArmorClass('spine_01', defender);
                                 zoneGroups['Chest'] = {zones: ['spine_01', 'spine_02'], armorClass: chestClass};
 
                                 // Add stomach zones
-                                const stomachClass = getZoneArmorClass('spine_03');
-                                const pelvisClass = getZoneArmorClass('pelvis');
+                                const stomachClass = getZoneArmorClass('spine_03', defender);
+                                const pelvisClass = getZoneArmorClass('pelvis', defender);
                                 if (stomachClass === pelvisClass) {
                                     zoneGroups['Stomach'] = {zones: ['spine_03', 'pelvis'], armorClass: stomachClass};
                                 } else {
@@ -538,7 +511,7 @@ export default function BodyModel({
                                 }
 
                                 // Add thigh protection if exists
-                                const upperArmsClass = getZoneArmorClass('UpperArm_L');
+                                const upperArmsClass = getZoneArmorClass('UpperArm_L', defender);
                                 if (upperArmsClass > 0) {
                                     zoneGroups['UpperArms'] = {
                                         zones: ['UpperArm_L', 'UpperArm_R'],
@@ -547,7 +520,7 @@ export default function BodyModel({
                                 }
 
                                 // Add thigh protection if exists
-                                const thighClass = getZoneArmorClass('Thigh_L');
+                                const thighClass = getZoneArmorClass('Thigh_L', defender);
                                 if (thighClass > 0) {
                                     zoneGroups['Thighs'] = {zones: ['Thigh_L', 'Thigh_R'], armorClass: thighClass};
                                 }

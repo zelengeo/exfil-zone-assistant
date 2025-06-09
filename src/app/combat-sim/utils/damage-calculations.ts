@@ -5,7 +5,7 @@
 import {BODY_HP,} from "@/app/combat-sim/utils/body-zones";
 import {
     CombatSimulationResult,
-    RANGE_VALUES, ShotResult
+    RANGE_VALUES, ShotResult, ShotResultWithLeftovers
 } from "@/app/combat-sim/utils/types";
 import {AmmoProperties, ArmorProperties, CurvePoint} from "@/types/items";
 
@@ -20,7 +20,7 @@ function simulateCombat(
     isVital: boolean = false,
     range: number
 ): CombatSimulationResult {
-    const shots: ShotResult[] = [];
+    const shots: ShotResultWithLeftovers[] = [];
     let currentBodyPartHP = isVital ? bodyPartHP : BODY_HP;
     let currentArmorDurability = armor?.currentDurability || 0;
     let totalDamageDealt = 0;
@@ -38,8 +38,6 @@ function simulateCombat(
             false
         );
 
-        shots.push(shotResult);
-
         // Apply damage to body part
         currentBodyPartHP -= shotResult.damageToBodyPart;
         totalDamageDealt += shotResult.damageToBodyPart;
@@ -50,6 +48,8 @@ function simulateCombat(
             const actualArmorDamage = Math.min(currentArmorDurability, shotResult.damageToArmor);
             currentArmorDurability = Math.max(0, currentArmorDurability - actualArmorDamage);
         }
+
+        shots.push(extendShotResult(shotResult, currentArmorDurability, currentBodyPartHP))
 
         // Check if dead
         if (currentBodyPartHP <= 0) {
@@ -301,6 +301,10 @@ function interpolateCubicHermite(
     const h11 = t3 - t2;
 
     return h00 * y0 + h10 * (x1 - x0) * m0 + h01 * y1 + h11 * (x1 - x0) * m1;
+}
+
+function extendShotResult(shotResult: ShotResult, armorDurabilityLeft: number, hpLeft: number): ShotResultWithLeftovers {
+    return { ...shotResult, remainingArmorDurability: armorDurabilityLeft, remainingHp: hpLeft };
 }
 
 export {

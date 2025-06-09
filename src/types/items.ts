@@ -71,7 +71,7 @@ export interface Weapon extends Item {
         // Other weapon properties
         MOA?: number;
         ADSSpeed?: number;
-        ergonomics?: number;
+        ergonomics: number;
         //Needs investigation - In game UI shows some power values, but not sure what they are
         firingPower?: number;
         //PROBABLY LEFTOVER DATA FROM OTHER MODE/GAME cuz these values are AMMO-related
@@ -132,7 +132,7 @@ export interface AmmoProperties {
     protectionGearBluntDamageScale: number;
 
     // Ballistics
-    muzzleVelocity?: number;
+    muzzleVelocity: number;
     bulletDropFactor?: number;
 
     //precalculated values (cache)

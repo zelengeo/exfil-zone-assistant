@@ -46,11 +46,16 @@ export interface ShotResult {
     penetrationChance: number;
 }
 
+export interface ShotResultWithLeftovers extends ShotResult{
+    remainingArmorDurability: number;
+    remainingHp: number;
+}
+
 export interface CombatSimulationResult {
     shotsToKill: number;
     finalArmorDurability: number;
     totalDamageDealt: number;
-    shots: ShotResult[];
+    shots: ShotResultWithLeftovers[];
 }
 
 // Combat simulation state

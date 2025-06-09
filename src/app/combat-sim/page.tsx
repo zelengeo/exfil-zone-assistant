@@ -4,14 +4,12 @@ import React from 'react';
 import Layout from '@/components/layout/Layout';
 import {
     DisplayMode,
-    ATTACKER_COLORS,
     DISPLAY_MODE_LABELS,
     RANGE_PRESETS,
     areWeaponAmmoCompatible
 } from './utils/types';
-import {formatTTK, formatSTK, formatCTK} from './utils/combat-calculations'
 import {useCombatSimulation} from "@/app/combat-sim/hooks/useCombatSimulation";
-import {Plus, Calculator, Target, DollarSign, Clock, Loader2} from 'lucide-react';
+import {Plus, Target, DollarSign, Clock, Loader2,} from 'lucide-react';
 
 // Component imports
 import AttackerSetup from './components/AttackerSetup';
@@ -21,6 +19,7 @@ import BodyModel from './components/BodyModel/BodyModel';
 // Import test helper for console access
 import './utils/combat-test-helper';
 import AttackerSummaryCard from "@/app/combat-sim/components/AttackerSummaryCard";
+import CombatSummary from "@/app/combat-sim/components/CombatSummary";
 
 export default function CombatSimulatorPage() {
     const {
@@ -32,7 +31,6 @@ export default function CombatSimulatorPage() {
         validAttackers,
         selectAttacker,
         selectedAttackerId,
-        attackerSummaries,
         isCalculating,
         updateDefender,
         zoneCalculations,
@@ -60,12 +58,6 @@ export default function CombatSimulatorPage() {
             <div className="container mx-auto px-4 py-8">
                 {/* Page Header */}
                 <div className="mb-8">
-                    <div className="inline-block px-3 py-1 border border-olive-500 bg-military-800/80 mb-3">
-                        <h2 className="text-olive-400 military-stencil flex items-center gap-2">
-                            <Calculator size={20}/>
-                            COMBAT LAB
-                        </h2>
-                    </div>
                     <h1 className="text-3xl md:text-4xl font-bold text-tan-100 mb-2 military-stencil">
                         COMBAT SIMULATOR
                     </h1>
@@ -236,104 +228,8 @@ export default function CombatSimulatorPage() {
 
                 {/* Results Section */}
                 {hasValidSetups && (
-                    <div className="mt-8">
-                        <h3 className="text-xl font-bold text-olive-400 mb-4">ANALYSIS RESULTS</h3>
-                        <div className="military-box p-6 rounded-sm">
-                            {/* Summary Cards */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                                {attackerSummaries.map((summary, index) => {
-                                    const attacker = simulation.attackers.find(a => a.id === summary.attackerId);
-                                    if (!attacker) return null;
-
-                                    return (
-                                        <div key={summary.attackerId} className="military-card p-4 rounded-sm">
-                                            <div className="flex items-center gap-2 mb-3">
-                                                <div
-                                                    className={`w-3 h-3 rounded-sm ${ATTACKER_COLORS[attacker.id].class.replace('text-', 'bg-')}`}/>
-                                                <span className="font-bold text-sm">Attacker {index + 1}</span>
-                                            </div>
-
-                                            <div className="space-y-2 text-xs">
-                                                <div>
-                                                    <span className="text-tan-400">Weapon:</span>
-                                                    <p className="text-tan-100">{attacker.weapon?.name}</p>
-                                                </div>
-                                                <div>
-                                                    <span className="text-tan-400">Ammo:</span>
-                                                    <p className="text-tan-100">{attacker.ammo?.name}</p>
-                                                </div>
-                                                <div className="border-t border-military-700 pt-2">
-                                                    <div className="flex justify-between">
-                                                        <span className="text-tan-400">Best TTK:</span>
-                                                        <span className="text-green-400 font-mono">
-                              {formatTTK(summary.bestZone.ttk)}
-                            </span>
-                                                    </div>
-                                                    <div className="flex justify-between">
-                                                        <span className="text-tan-400">Avg TTK:</span>
-                                                        <span className="text-tan-100 font-mono">
-                              {formatTTK(summary.averageTTK)}
-                            </span>
-                                                    </div>
-                                                    <div className="flex justify-between">
-                                                        <span className="text-tan-400">Viable Zones:</span>
-                                                        <span className="text-tan-100">
-                              {summary.viableZones}/13
-                            </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-
-                            {/* Zone Details Table */}
-                            {selectedAttackerId && zoneCalculations[selectedAttackerId] && (
-                                <div className="mt-6">
-                                    <h4 className="text-lg font-bold text-olive-400 mb-3">Zone Analysis</h4>
-                                    <div className="overflow-x-auto">
-                                        <table className="w-full text-sm">
-                                            <thead>
-                                            <tr className="border-b border-military-700">
-                                                <th className="text-left py-2 px-3 text-tan-300">Zone</th>
-                                                <th className="text-center py-2 px-3 text-tan-300">Armor</th>
-                                                <th className="text-center py-2 px-3 text-tan-300">TTK</th>
-                                                <th className="text-center py-2 px-3 text-tan-300">STK</th>
-                                                <th className="text-center py-2 px-3 text-tan-300">CTK</th>
-                                                <th className="text-center py-2 px-3 text-tan-300">Pen %</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            {zoneCalculations[selectedAttackerId].map((calc) => (
-                                                <tr key={calc.zoneId} className="border-b border-military-800">
-                                                    <td className="py-2 px-3 text-tan-100">{calc.zoneId}</td>
-                                                    <td className="text-center py-2 px-3">
-                              <span className={calc.armorClass > 0 ? 'text-olive-400' : 'text-tan-400'}>
-                                {calc.armorClass > 0 ? `Class ${calc.armorClass}` : 'None'}
-                              </span>
-                                                    </td>
-                                                    <td className="text-center py-2 px-3 font-mono text-tan-100">
-                                                        {formatTTK(calc.ttk)}
-                                                    </td>
-                                                    <td className="text-center py-2 px-3 font-mono text-tan-100">
-                                                        {formatSTK(calc.shotsToKill)}
-                                                    </td>
-                                                    <td className="text-center py-2 px-3 font-mono text-tan-100">
-                                                        {formatCTK(calc.costToKill)}
-                                                    </td>
-                                                    <td className="text-center py-2 px-3 font-mono text-tan-100">
-                                                        {(calc.penetrationChance * 100).toFixed(0)}%
-                                                    </td>
-                                                </tr>
-                                            ))}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                    </div>
+                    <CombatSummary simulation={simulation} zoneCalculations={zoneCalculations}
+                                   validAttackers={validAttackers}/>
                 )}
             </div>
         </Layout>
