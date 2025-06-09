@@ -1,21 +1,24 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { Search } from 'lucide-react';
+import React, {useState, useEffect} from 'react';
+import {Search} from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import ItemCard from '@/components/items/ItemCard';
 import FilterSidebar from '@/components/items/FilterSidebar';
-import {ItemCategory, itemCategories, Item} from '@/types/items';
+import {itemCategories, Item, getCategoryById} from '@/types/items';
 import {fetchItemsData} from "@/services/ItemService";
+import {useSearchParams} from "next/navigation";
 
 export default function ItemsPage() {
+
     const [items, setItems] = useState<Item[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const searchParams = useSearchParams();
+    const categoryId = searchParams.get('category') || '';
+    const subcategoryId = searchParams.get('subcategory') || '';
     const [filteredItems, setFilteredItems] = useState<Item[]>([]);
     const [searchQuery, setSearchQuery] = useState('');
-    const [selectedCategory, setSelectedCategory] = useState<ItemCategory | null>(null);
-    const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     // Fetch data on component mount
@@ -26,7 +29,11 @@ export default function ItemsPage() {
                 setLoading(true);
                 const itemsData = await fetchItemsData();
                 setItems(itemsData);
-                setFilteredItems(itemsData);
+                let filteredItems = itemsData;
+                if (categoryId) {
+                    filteredItems = filteredItems.filter((item) => item.category === categoryId && (!subcategoryId || item.subcategory === subcategoryId));
+                }
+                setFilteredItems(filteredItems);
                 setError(null);
             } catch (error) {
                 console.error('Failed to load items:', error);
@@ -53,17 +60,17 @@ export default function ItemsPage() {
         }
 
         // Apply category filter
-        if (selectedCategory) {
-            result = result.filter(item => item.category === selectedCategory.id);
+        if (categoryId) {
+            result = result.filter(item => item.category === categoryId);
 
             // Apply subcategory filter if applicable
-            if (selectedSubcategory) {
-                result = result.filter(item => item.subcategory === selectedSubcategory);
+            if (subcategoryId) {
+                result = result.filter(item => item.subcategory === subcategoryId);
             }
         }
 
         setFilteredItems(result);
-    }, [items, searchQuery, selectedCategory, selectedSubcategory]);
+    }, [items, searchQuery, categoryId, subcategoryId]);
 
 
     // Show loading state
@@ -73,7 +80,8 @@ export default function ItemsPage() {
                 <div className="container mx-auto px-4 py-8">
                     <div className="flex items-center justify-center min-h-96">
                         <div className="military-box p-8 rounded-sm text-center">
-                            <div className="animate-spin w-12 h-12 border-4 border-olive-600 border-t-transparent rounded-full mx-auto mb-4"></div>
+                            <div
+                                className="animate-spin w-12 h-12 border-4 border-olive-600 border-t-transparent rounded-full mx-auto mb-4"></div>
                             <h2 className="text-xl font-bold text-olive-400 mb-2">Loading Items Database</h2>
                             <p className="text-tan-300">Retrieving tactical equipment data...</p>
                         </div>
@@ -105,13 +113,28 @@ export default function ItemsPage() {
         );
     }
 
-    const handleCategoryChange = (category: ItemCategory | null) => {
-        setSelectedCategory(category);
-        setSelectedSubcategory(null); // Reset subcategory when category changes
+
+    const handleCategoryChange = (newCategory: string | null, newSubcategory?: string | null) => {
+        const params = new URLSearchParams();
+
+        if (newCategory) {
+            params.set('category', newCategory);
+        }
+
+        if (newSubcategory) {
+            params.set('subcategory', newSubcategory);
+        }
+
+        window.history.pushState(null, '', `?${params.toString()}`);
     };
 
-    const handleSubcategoryChange = (subcategory: string | null) => {
-        setSelectedSubcategory(subcategory);
+    const handleSubcategoryChange = (newSubcategory: string | null) => {
+        const params = new URLSearchParams();
+
+        if (newSubcategory) {
+            params.set('subcategory', newSubcategory);
+        }
+        window.history.pushState(null, '', `?${params.toString()}`);
     };
 
     const toggleSidebar = () => {
@@ -123,12 +146,10 @@ export default function ItemsPage() {
             <div className="container mx-auto px-4 py-8">
                 {/* Page Header */}
                 <div className="mb-8">
-                    <div className="inline-block px-3 py-1 border border-olive-500 bg-military-800/80 mb-3">
-                        <h2 className="text-olive-400 military-stencil">DATABASE</h2>
-                    </div>
                     <h1 className="text-3xl md:text-4xl font-bold text-tan-100 mb-2 military-stencil">ITEMS</h1>
                     <p className="text-tan-300 max-w-3xl">
-                        Browse all in-game items, their stats, and locations. Use the filters to find exactly what you need for your next raid.
+                        Browse all in-game items, their stats, and locations. Use the filters to find exactly what you
+                        need for your next raid.
                     </p>
                 </div>
 
@@ -137,7 +158,7 @@ export default function ItemsPage() {
                     {/* Search Bar */}
                     <div className="relative flex-grow max-w-md">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <Search size={20} className="text-olive-400" />
+                            <Search size={20} className="text-olive-400"/>
                         </div>
                         <input
                             type="text"
@@ -158,11 +179,11 @@ export default function ItemsPage() {
 
                     {/* Filter summary - desktop only */}
                     <div className="hidden md:flex items-center text-tan-300">
-                        {selectedCategory ? (
+                        {categoryId && getCategoryById(categoryId) ? (
                             <span>
-                Category: <span className="text-olive-400">{selectedCategory.name}</span>
-                                {selectedSubcategory && (
-                                    <> | Subcategory: <span className="text-olive-400">{selectedSubcategory}</span></>
+                Category: <span className="text-olive-400">{getCategoryById(categoryId)?.name}</span>
+                                {subcategoryId && getCategoryById(categoryId)?.subcategories.includes(subcategoryId) && (
+                                    <> | Subcategory: <span className="text-olive-400">{subcategoryId}</span></>
                                 )}
               </span>
                         ) : (
@@ -181,8 +202,8 @@ export default function ItemsPage() {
                     {/* Filter Sidebar - Mobile (Conditional) & Desktop */}
                     <FilterSidebar
                         categories={itemCategories}
-                        selectedCategory={selectedCategory}
-                        selectedSubcategory={selectedSubcategory}
+                        selectedCategory={categoryId}
+                        selectedSubcategory={subcategoryId}
                         onCategoryChange={handleCategoryChange}
                         onSubcategoryChange={handleSubcategoryChange}
                         isOpen={isSidebarOpen}
@@ -194,7 +215,7 @@ export default function ItemsPage() {
                         {filteredItems.length > 0 ? (
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                                 {filteredItems.map((item) => (
-                                    <ItemCard key={item.id} item={item} />
+                                    <ItemCard key={item.id} item={item}/>
                                 ))}
                             </div>
                         ) : (

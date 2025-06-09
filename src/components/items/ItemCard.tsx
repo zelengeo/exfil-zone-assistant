@@ -1,37 +1,23 @@
 import React from 'react';
 import Link from 'next/link';
-import { ShieldIcon, DollarSign, Info, Zap, Target, Crosshair } from 'lucide-react';
-import { Item, getRarityColorClass, getRarityBorderClass, getCategoryById, formatPrice } from '@/types/items';
-import { ItemImage } from './ItemImage';
+import {ShieldIcon, DollarSign, Info, Zap, Crosshair} from 'lucide-react';
+import {
+    Item,
+    getRarityColorClass,
+    getRarityBorderClass,
+    getCategoryById,
+    formatPrice,
+    FIRE_MODE_CONFIG
+} from '@/types/items';
+import {ItemImage} from './ItemImage';
+import {isAmmunition, isArmor, isWeapon} from "@/app/combat-sim/utils/types";
 
-// Helper function to render icon based on category
-const getCategoryIcon = (categoryId: string) => {
-    switch (categoryId) {
-        case 'weapons':
-            return (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                    <path d="M2 12h19l3 3M7 12l-1 8"></path>
-                    <path d="M22 2h-5l-1 2.5L11 8h-3"></path>
-                </svg>
-            );
-        case 'ammo':
-            return (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                    <rect x="9" y="2" width="6" height="20" rx="2"></rect>
-                    <rect x="4" y="8" width="16" height="8" rx="2"></rect>
-                </svg>
-            );
-        case 'armor':
-            return <ShieldIcon className="w-5 h-5" />;
-        default:
-            return <Info className="w-5 h-5" />;
-    }
-};
 
 // Function to render specific stats based on category
 const renderCategoryStats = (item: Item) => {
     switch (item.category) {
         case 'weapons':
+            if (!isWeapon(item)) break;
             return (
                 <div className="space-y-1">
                     <div className="flex items-center justify-between text-sm">
@@ -54,6 +40,7 @@ const renderCategoryStats = (item: Item) => {
             );
 
         case 'ammo':
+            if (!isAmmunition(item)) break;
             return (
                 <div className="space-y-1">
                     <div className="flex items-center justify-between text-sm">
@@ -67,13 +54,15 @@ const renderCategoryStats = (item: Item) => {
                     {item.stats.muzzleVelocity && (
                         <div className="flex items-center justify-between text-sm">
                             <span className="text-olive-400 font-medium">Velocity:</span>
-                            <span className="text-tan-100 font-mono">{Math.round(item.stats.muzzleVelocity / 100)} m/s</span>
+                            <span
+                                className="text-tan-100 font-mono">{Math.round(item.stats.muzzleVelocity / 100)} m/s</span>
                         </div>
                     )}
                 </div>
             );
 
-        case 'armor':
+        case "gear":
+            if (!isArmor(item)) break;
             return (
                 <div className="space-y-1">
                     {item.stats.armorClass && (
@@ -91,7 +80,8 @@ const renderCategoryStats = (item: Item) => {
                     {item.stats.bluntDamageScalar && (
                         <div className="flex items-center justify-between text-sm">
                             <span className="text-olive-400 font-medium">Blunt Dmg:</span>
-                            <span className="text-tan-100 font-mono">{(item.stats.bluntDamageScalar * 100).toFixed(0)}%</span>
+                            <span
+                                className="text-tan-100 font-mono">{(item.stats.bluntDamageScalar * 100).toFixed(0)}%</span>
                         </div>
                     )}
                 </div>
@@ -112,32 +102,53 @@ const renderCategoryStats = (item: Item) => {
 const getPerformanceIndicator = (item: Item) => {
     switch (item.category) {
         case 'weapons':
+            if (!isWeapon(item)) break;
+
+            if (item.stats.fireMode !== "fullAuto") return {
+                icon: <Info size={14}/>,
+                label: FIRE_MODE_CONFIG[item.stats.fireMode],
+                color: 'text-yellow-400'
+            }
+
+
+            if (item.stats.MOA && item.stats.MOA > 5) return {
+                icon: <Crosshair size={14}/>,
+                label: 'Low Accuracy',
+                color: 'text-red-400'
+            }
+
+
             // Base performance on recoil control - lower recoil = better control
-            const verticalRecoil = item.stats.verticalRecoil || 0;
-            const horizontalRecoil = item.stats.horizontalRecoil || 0;
+            if (item.stats.recoilParameters?.verticalRecoilControl && item.stats.recoilParameters.horizontalRecoilControl && ((item.stats.recoilParameters.verticalRecoilControl + item.stats.recoilParameters.horizontalRecoilControl) / 2) < 0.25) {
+                return {
+                    icon: <Crosshair size={14}/>,
+                        label: 'Low Recoil',
+                    color: 'text-green-400'
+                }
+            }
 
-            // Calculate average recoil control (higher values = better control)
-            const avgRecoilControl = (verticalRecoil + horizontalRecoil) / 2;
+            if (item.stats.fireRate > 840) return {
+                icon: <Zap size={14}/>,
+                label: 'High Fire Rate',
+                color: 'text-green-400'
+            }
 
-            if (avgRecoilControl <=0.25) return { icon: <Target size={14} />, label: 'Low Recoil', color: 'text-green-400' };
-            if (avgRecoilControl <= 0.35) return { icon: <Crosshair size={14} />, label: 'Manageable', color: 'text-yellow-400' };
-            if (avgRecoilControl > 0.35) return { icon: <Zap size={14} />, label: 'High Recoil', color: 'text-red-400' };
             break;
 
         case 'ammo':
+            if (!isAmmunition(item)) break;
             // High damage = better performance
-            const damage = item.stats.damage || 0;
-            if (damage >= 70) return { icon: <Zap size={14} />, label: 'High DMG', color: 'text-red-400' };
-            if (damage >= 50) return { icon: <Target size={14} />, label: 'Good DMG', color: 'text-yellow-400' };
-            if (damage > 0) return { icon: <Crosshair size={14} />, label: 'Low DMG', color: 'text-blue-400' };
+            const penetration = item.stats.penetration || 0;
+            if (penetration >= 6) return {icon: <Zap size={14}/>, label: 'Pen everything', color: 'text-green-400'};
             break;
 
-        case 'armor':
+        case 'gear':
+            if (!isArmor(item)) break;
             // High armor class = better protection
             const armorClass = item.stats.armorClass || 0;
-            if (armorClass >= 5) return { icon: <ShieldIcon size={14} />, label: 'Heavy', color: 'text-red-400' };
-            if (armorClass >= 3) return { icon: <ShieldIcon size={14} />, label: 'Medium', color: 'text-yellow-400' };
-            if (armorClass > 0) return { icon: <ShieldIcon size={14} />, label: 'Light', color: 'text-blue-400' };
+            if (armorClass >= 6) return {icon: <ShieldIcon size={14}/>, label: 'Good', color: 'text-green-400'};
+            if (armorClass >= 4) return {icon: <ShieldIcon size={14}/>, label: 'Viable', color: 'text-yellow-400'};
+            if (armorClass > 0) return {icon: <ShieldIcon size={14}/>, label: 'Useless', color: 'text-grey-400'};
             break;
     }
     return null;
@@ -147,7 +158,7 @@ interface ItemCardProps {
     item: Item;
 }
 
-const ItemCard: React.FC<ItemCardProps> = ({ item }) => {
+const ItemCard: React.FC<ItemCardProps> = ({item}) => {
     const category = getCategoryById(item.category);
     const rarityColorClass = getRarityColorClass(item.stats.rarity);
     const rarityBorderClass = getRarityBorderClass(item.stats.rarity);
@@ -169,20 +180,15 @@ const ItemCard: React.FC<ItemCardProps> = ({ item }) => {
                 />
 
                 {/* Rarity tag */}
-                <div className={`absolute top-0 right-0 px-2 py-0.5 text-xs font-medium ${rarityColorClass} border-l border-b ${rarityBorderClass} bg-military-900/90`}>
+                <div
+                    className={`absolute top-0 right-0 px-2 py-0.5 text-xs font-medium ${rarityColorClass} border-l border-b ${rarityBorderClass} bg-military-900/90`}>
                     {item.stats.rarity}
-                </div>
-
-                {/* Category icon */}
-                <div className="absolute bottom-2 left-2 w-8 h-8 rounded-sm flex items-center justify-center bg-military-800/90 border border-military-700">
-                    <div className="text-olive-400">
-                        {getCategoryIcon(item.category)}
-                    </div>
                 </div>
 
                 {/* Performance indicator */}
                 {performanceIndicator && (
-                    <div className={`absolute bottom-2 right-2 px-2 py-1 rounded-sm bg-military-800/90 border border-military-600 flex items-center gap-1 ${performanceIndicator.color}`}>
+                    <div
+                        className={`absolute bottom-2 right-2 px-2 py-1 rounded-sm bg-military-800/90 border border-military-600 flex items-center gap-1 ${performanceIndicator.color}`}>
                         {performanceIndicator.icon}
                         <span className="text-xs font-medium">{performanceIndicator.label}</span>
                     </div>
@@ -215,7 +221,7 @@ const ItemCard: React.FC<ItemCardProps> = ({ item }) => {
                 {/* Price and additional info */}
                 <div className="flex items-center justify-between border-t border-military-700 pt-3">
                     <div className="flex items-center gap-1">
-                        <DollarSign size={14} className="text-olive-500" />
+                        <DollarSign size={14} className="text-olive-500"/>
                         <span className="text-tan-100 font-mono text-sm font-medium">
                             {formatPrice(item.stats.price)}
                         </span>

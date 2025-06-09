@@ -1,23 +1,18 @@
 import React from 'react';
-import { X, ChevronRight, ChevronDown } from 'lucide-react';
+import {X, ChevronRight, ChevronDown, Swords, Fence, Shield} from 'lucide-react';
 import { ItemCategory } from '@/types/items';
+import {useRouter} from "next/navigation";
 
 // Icon mapper for categories
 const getCategoryIcon = (categoryId: string) => {
     switch (categoryId) {
         case 'weapons':
             return (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                    <path d="M2 12h19l3 3M7 12l-1 8"></path>
-                    <path d="M22 2h-5l-1 2.5L11 8h-3"></path>
-                </svg>
+                <Swords size={20}/>
             );
         case 'ammo':
             return (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                    <rect x="9" y="2" width="6" height="20" rx="2"></rect>
-                    <rect x="4" y="8" width="16" height="8" rx="2"></rect>
-                </svg>
+                <Fence size={20}/>
             );
         case 'medicine':
             return (
@@ -38,10 +33,7 @@ const getCategoryIcon = (categoryId: string) => {
             );
         case 'gear':
             return (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
-                    <circle cx="12" cy="12" r="3"></circle>
-                </svg>
+                <Shield size={20}/>
             );
         case 'junk':
             return (
@@ -85,11 +77,9 @@ const getCategoryIcon = (categoryId: string) => {
 };
 
 interface FilterSidebarProps {
-    categories: ItemCategory[];
-    selectedCategory: ItemCategory | null;
-    selectedSubcategory: string | null;
-    onCategoryChange: (category: ItemCategory | null) => void;
-    onSubcategoryChange: (subcategory: string | null) => void;
+    categories: Record<string, ItemCategory>;
+    selectedCategory: string;
+    selectedSubcategory: string;
     isOpen: boolean;
     onClose: () => void;
 }
@@ -98,11 +88,10 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
                                                          categories,
                                                          selectedCategory,
                                                          selectedSubcategory,
-                                                         onCategoryChange,
-                                                         onSubcategoryChange,
                                                          isOpen,
                                                          onClose,
                                                      }) => {
+    const router = useRouter();
     // Track which categories have their subcategories expanded
     const [expandedCategories, setExpandedCategories] = React.useState<{[key: string]: boolean}>({});
 
@@ -119,10 +108,27 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
         if (selectedCategory) {
             setExpandedCategories(prev => ({
                 ...prev,
-                [selectedCategory.id]: true
+                [selectedCategory]: true
             }));
         }
     }, [selectedCategory]);
+
+    const handleCategoryClick = (categoryId: string) => {
+        if (categoryId === selectedCategory && !selectedSubcategory) {
+            // Clear filter if clicking the same category
+            router.push('/items');
+        } else {
+            router.push(`/items?category=${categoryId}`);
+        }
+    };
+
+    const handleSubcategoryClick = (categoryId: string, subcategory: string) => {
+        router.push(`/items?category=${categoryId}&subcategory=${encodeURIComponent(subcategory)}`);
+    };
+
+    const clearFilters = () => {
+        router.push('/items');
+    };
 
     // Mobile sidebar
     const mobileSidebar = (
@@ -155,8 +161,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
                     <div className="mb-6">
                         <button
                             onClick={() => {
-                                onCategoryChange(null);
-                                onSubcategoryChange(null);
+                                clearFilters()
                                 onClose();
                             }}
                             className={`
@@ -169,12 +174,11 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
                             All Items
                         </button>
 
-                        {categories.map(category => (
+                        {Object.values(categories).map(category => (
                             <div key={category.id} className="mb-2">
                                 <button
                                     onClick={() => {
-                                        onCategoryChange(category);
-                                        onSubcategoryChange(null);
+                                        handleCategoryClick(category.id);
                                         if (!category.subcategories || category.subcategories.length === 0) {
                                             onClose();
                                         }
@@ -182,7 +186,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
                                     }}
                                     className={`
                     w-full py-3 px-4 rounded-sm text-left font-medium text-lg flex items-center justify-between
-                    ${selectedCategory?.id === category.id && !selectedSubcategory
+                    ${selectedCategory === category.id && !selectedSubcategory
                                         ? 'bg-olive-600 text-tan-100 shadow-md'
                                         : 'bg-military-700 text-tan-300 hover:bg-military-600 hover:text-tan-100'}
                   `}
@@ -214,13 +218,12 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
                                                 <button
                                                     key={subcategory}
                                                     onClick={() => {
-                                                        onCategoryChange(category);
-                                                        onSubcategoryChange(subcategory);
+                                                        handleSubcategoryClick(category.id, subcategory);
                                                         onClose();
                                                     }}
                                                     className={`
                           w-full py-2 px-4 rounded-sm text-left flex items-center gap-3
-                          ${selectedCategory?.id === category.id && selectedSubcategory === subcategory
+                          ${selectedCategory === category.id && selectedSubcategory === subcategory
                                                         ? 'bg-olive-700 text-tan-100'
                                                         : 'hover:bg-military-700 text-tan-300 hover:text-tan-100'}
                         `}
@@ -238,8 +241,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
                     {/* Reset filters button */}
                     <button
                         onClick={() => {
-                            onCategoryChange(null);
-                            onSubcategoryChange(null);
+                            clearFilters()
                             onClose();
                         }}
                         className="w-full py-3 border border-olive-700 rounded-sm text-tan-300 hover:bg-military-700 hover:text-tan-100"
@@ -259,8 +261,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
 
                 <button
                     onClick={() => {
-                        onCategoryChange(null);
-                        onSubcategoryChange(null);
+                        clearFilters()
                     }}
                     className={`
             w-full py-2 px-3 rounded-sm text-left mb-2 font-medium
@@ -272,17 +273,16 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
                     All Items
                 </button>
 
-                {categories.map(category => (
+                {Object.values(categories).map(category => (
                     <div key={category.id} className="mb-2">
                         <button
                             onClick={() => {
-                                onCategoryChange(category);
-                                onSubcategoryChange(null);
+                                handleCategoryClick(category.id);
                                 toggleCategoryExpanded(category.id);
                             }}
                             className={`
                 w-full py-2 px-3 rounded-sm text-left font-medium flex items-center justify-between
-                ${selectedCategory?.id === category.id && !selectedSubcategory
+                ${selectedCategory === category.id && !selectedSubcategory
                                 ? 'bg-olive-600 text-tan-100 shadow-md'
                                 : 'bg-military-700 text-tan-300 hover:bg-military-600 hover:text-tan-100'}
               `}
@@ -314,12 +314,11 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
                                         <button
                                             key={subcategory}
                                             onClick={() => {
-                                                onCategoryChange(category);
-                                                onSubcategoryChange(subcategory);
+                                                handleSubcategoryClick(category.id, subcategory);
                                             }}
                                             className={`
                       w-full py-1.5 px-3 rounded-sm text-left flex items-center gap-2 text-sm
-                      ${selectedCategory?.id === category.id && selectedSubcategory === subcategory
+                      ${selectedCategory === category.id && selectedSubcategory === subcategory
                                                 ? 'bg-olive-700 text-tan-100'
                                                 : 'hover:bg-military-700 text-tan-300 hover:text-tan-100'}
                     `}
@@ -341,8 +340,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
                 {/* Reset filters button */}
                 <button
                     onClick={() => {
-                        onCategoryChange(null);
-                        onSubcategoryChange(null);
+                        clearFilters()
                     }}
                     className="w-full py-2 border border-olive-700 rounded-sm text-tan-300 hover:bg-military-700 hover:text-tan-100"
                 >

@@ -3,19 +3,30 @@
 import React, {useState, useEffect} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import {ChevronLeft, Crosshair, Shield, Timer, Info, Gavel, ShieldMinus, BowArrow, ShieldX} from 'lucide-react';
+import {
+    ChevronLeft,
+    Crosshair,
+    Shield,
+    Timer,
+    Info,
+    Gavel,
+    ShieldMinus,
+    BowArrow,
+    ShieldX,
+    Snail,
+    Zap
+} from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import ItemLocations from '@/components/items/ItemLocations';
 import RelatedItems from '@/components/items/RelatedItems';
 import BallisticCurveChart from '@/components/items/BallisticCurveChart';
 import ArmorZonesDisplay from '@/components/items/ArmorZonesDisplay';
-import WeaponRecoilDisplay from '@/components/items/WeaponRecoilDisplay';
 import {
     formatPrice,
     formatWeight,
     getRarityColorClass,
     getRarityBorderClass,
-    getCategoryById, AnyItem
+    getCategoryById, AnyItem, FIRE_MODE_CONFIG
 } from '@/types/items';
 import {getItemById} from "@/services/ItemService";
 import {isAnyItem, isArmor} from "@/app/combat-sim/utils/types";
@@ -87,12 +98,12 @@ const renderCategorySpecificStats = (item: AnyItem) => {
                 <>
                     <div className="grid grid-cols-2 gap-4">
                         <div className="flex items-center gap-2">
-                            <Crosshair size={18} className="text-olive-400"/>
+                            <Zap size={18} className="text-olive-400"/>
                             <span className="text-tan-300">Fire Rate:</span>
                             <span className="text-tan-100 font-mono">{item.stats.fireRate} rpm</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <Info size={18} className="text-olive-400"/>
+                            <Crosshair size={18} className="text-olive-400"/>
                             <span className="text-tan-300">MOA:</span>
                             <span className="text-tan-100 font-mono">{item.stats.MOA?.toFixed(2) || 'N/A'}</span>
                         </div>
@@ -106,13 +117,23 @@ const renderCategorySpecificStats = (item: AnyItem) => {
                             <span className="text-tan-300">Ergonomics:</span>
                             <span className="text-tan-100 font-mono">{(item.stats.ergonomics * 100).toFixed(0)}%</span>
                         </div>
+                        <div className="flex items-center gap-2">
+                            <Info size={18} className="text-olive-400"/>
+                            <span className="text-tan-300">Fire Mode:</span>
+                            <span className="text-tan-100 font-mono">{FIRE_MODE_CONFIG[item.stats.fireMode]}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Snail size={18} className="text-olive-400"/>
+                            <span className="text-tan-300">ADS speed:</span>
+                            <span className="text-tan-100 font-mono">{(item.stats.ADSSpeed * 100).toFixed(0)}%</span>
+                        </div>
                     </div>
-                    {item.stats.recoilParameters && (
+                    {/*{item.stats.recoilParameters && (
                         <WeaponRecoilDisplay
                             recoilParameters={item.stats.recoilParameters}
                             className="mt-6"
                         />
-                    )}
+                    )}*/}
                 </>
             );
         case 'ammo':
@@ -467,12 +488,6 @@ export default function ItemDetail({params}: PageProps) {
                                 <h2 className="text-2xl font-bold text-olive-400 mb-4">Description</h2>
                                 <p className="text-tan-200 mb-6 leading-relaxed">{item.description}</p>
 
-                                {item.notes && (
-                                    <>
-                                        <h2 className="text-2xl font-bold text-olive-400 mb-4">Notes</h2>
-                                        <p className="text-tan-200 mb-6 leading-relaxed">{item.notes}</p>
-                                    </>
-                                )}
 
                                 <h2 className="text-2xl font-bold text-olive-400 mb-4">Specifications</h2>
                                 <div className="mb-6">

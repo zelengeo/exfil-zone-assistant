@@ -1,4 +1,5 @@
 import {Item, RARITY_CONFIG} from '@/types/items';
+import {isAmmunition, isBodyArmor, isFaceShield, isHelmet, isWeapon} from "@/app/combat-sim/utils/types";
 
 // Cache for the items data
 let itemsCache: Item[] | null = null;
@@ -55,17 +56,20 @@ function transformItemData(rawItem: any): Item {
     if (rawItem.stats) {
         // Weapons stats
         if (rawItem.category === 'weapons') {
+            if (!isWeapon(baseItem)) return baseItem;
             baseItem.stats.caliber = rawItem.stats.caliber;
             baseItem.stats.fireRate = rawItem.stats.fireRate;
             baseItem.stats.ergonomics = rawItem.stats.ergonomics;
             baseItem.stats.ADSSpeed = rawItem.stats.ADSSpeed;
             baseItem.stats.MOA = rawItem.stats.MOA;
+            baseItem.stats.fireMode = rawItem.stats.fireMode;
             baseItem.stats.recoilParameters = rawItem.stats.recoilParameters;
             // baseItem.stats.penetration = rawItem.stats.penetration || 1;
         }
 
         // Ammo stats
         if (rawItem.category === 'ammo') {
+            if (!isAmmunition(baseItem)) return baseItem;
             baseItem.stats.caliber = rawItem.stats.caliber;
             baseItem.stats.damage = rawItem.stats.damage;
             baseItem.stats.penetration = rawItem.stats.penetration;
@@ -80,6 +84,7 @@ function transformItemData(rawItem: any): Item {
         }
 
         if (rawItem.category === 'gear' && rawItem.subcategory === 'Body Armor') {
+            if (!isBodyArmor(baseItem)) return baseItem;
             baseItem.stats.armorClass = rawItem.stats.armorClass;
             baseItem.stats.maxDurability = rawItem.stats.maxDurability;
             baseItem.stats.bluntDamageScalar = rawItem.stats.bluntDamageScalar;
@@ -91,6 +96,7 @@ function transformItemData(rawItem: any): Item {
         }
 
         if (rawItem.category === 'gear' && rawItem.subcategory === 'Helmets') {
+            if (!isHelmet(baseItem)) return baseItem;
             baseItem.stats.armorClass = rawItem.stats.armorClass;
             baseItem.stats.maxDurability = rawItem.stats.maxDurability;
             baseItem.stats.bluntDamageScalar = rawItem.stats.bluntDamageScalar;
@@ -101,6 +107,17 @@ function transformItemData(rawItem: any): Item {
             baseItem.stats.antiPenetrationDurabilityScalarCurve = rawItem.stats.antiPenetrationDurabilityScalarCurve;
             baseItem.stats.soundMix = rawItem.stats.soundMix;
             baseItem.stats.canAttach = rawItem.stats.canAttach;
+        }
+        if (rawItem.category === 'gear' && rawItem.subcategory === 'Face Shields') {
+            if (!isFaceShield(baseItem)) return baseItem;
+            baseItem.stats.armorClass = rawItem.stats.armorClass;
+            baseItem.stats.maxDurability = rawItem.stats.maxDurability;
+            baseItem.stats.bluntDamageScalar = rawItem.stats.bluntDamageScalar;
+            baseItem.stats.durabilityDamageScalar = rawItem.stats.durabilityDamageScalar;
+            baseItem.stats.protectiveData = rawItem.stats.protectiveData;
+            baseItem.stats.penetrationChanceCurve = rawItem.stats.penetrationChanceCurve;
+            baseItem.stats.penetrationDamageScalarCurve = rawItem.stats.penetrationDamageScalarCurve;
+            baseItem.stats.antiPenetrationDurabilityScalarCurve = rawItem.stats.antiPenetrationDurabilityScalarCurve;
         }
 
         // Medical stats

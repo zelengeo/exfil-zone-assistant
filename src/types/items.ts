@@ -1,4 +1,3 @@
-
 export interface Item {
     id: string;
     name: string;
@@ -57,6 +56,8 @@ export interface RecoilParameters {
     horizontalRecoilControl: number;
 }
 
+export type FireMode = "semiAuto" | "fullAuto" | "pumpAction" | "boltAction" | "burstFire"
+
 // Weapon type with complete stats from game data
 export interface Weapon extends Item {
     category: 'weapons';
@@ -70,8 +71,9 @@ export interface Weapon extends Item {
 
         // Other weapon properties
         MOA?: number;
-        ADSSpeed?: number;
+        ADSSpeed: number;
         ergonomics: number;
+        fireMode: FireMode;
         //Needs investigation - In game UI shows some power values, but not sure what they are
         firingPower?: number;
         //PROBABLY LEFTOVER DATA FROM OTHER MODE/GAME cuz these values are AMMO-related
@@ -178,6 +180,7 @@ export interface ArmorProperties {
 }
 
 export type helmetSoundMix = 'default' | 'Delta' | "OPSWAT" | "MuffledGeneral";
+
 export interface HelmetProperties extends ArmorProperties {
     soundMix: helmetSoundMix;
     "canAttach"?: string[],
@@ -188,12 +191,13 @@ export interface ItemCategory {
     name: string;
     description: string;
     icon: string;
-    subcategories?: string[];
+    subcategories: string[];
 }
 
 // Define item categories
-export const itemCategories: ItemCategory[] = [
-    {
+export const itemCategories: Record<string, ItemCategory> = {
+
+    'weapons': {
         id: 'weapons',
         name: 'Weapons',
         description: 'Firearms and melee weapons for combat',
@@ -209,107 +213,104 @@ export const itemCategories: ItemCategory[] = [
             '6.8x51mm'
         ]
     },
-    {
+    'ammo': {
         id: 'ammo',
-        name: 'Ammunition',
-        description: 'Various ammunition types for firearms',
-        icon: 'bullet',
-        subcategories: [
-            '5.56x45mm',
-            '7.62x39mm',
-            '7.62x51mm',
-            '7.62x54mmR',
-            '9x19mm',
-            '.45 ACP',
-            '12 Gauge',
-            '6.8x51mm'
-        ]
-    },
-    {
-        id: 'armor',
-        name: 'Body Armor',
-        description: 'Body armor for combat',
-        icon: 'shield',
-        subcategories: [
-            "Armor class 2",
-            "Armor class 3",
-            "Armor class 4",
-            "Armor class 5",
-            "Armor class 6",
-        ]
-    },
-    //TODO - update config after data extraction
-    {
-        id: 'medicine',
-        name: 'Medicine',
-        description: 'Medical supplies for healing and enhancing performance',
-        icon: 'medicine',
-        subcategories: [
-            'Bandages',
-            'Medkits',
-            'Stims',
-            'Painkillers'
-        ]
-    },
-    {
-        id: 'food',
-        name: 'Food & Drink',
-        description: 'Consumables for sustenance and hydration',
-        icon: 'food'
-    },
-    {
-        id: 'junk',
-        name: 'Junk',
-        description: 'Miscellaneous items that can be used for crafting or trading',
-        icon: 'box',
-        subcategories: [
-            'High Value',
-            'Buildables',
-            'Combustibles',
-            'Intel',
-            'Electronic',
-            'Tools',
-            'Household',
-            'Power',
-            'Misc'
-        ]
-    },
-    {
-        id: 'gear',
-        name: 'Gear',
-        description: 'Armor, backpacks, and tactical equipment',
-        icon: 'shield',
-        subcategories: [
-            'Helmets',
-            'Body Armor',
-            'Tactical Rigs',
-            'Backpacks'
-        ]
-    },
-    {
-        id: 'attachments',
-        name: 'Attachments',
-        description: 'Weapon modifications and attachments',
-        icon: 'scope',
-        subcategories: [
-            'Sights',
-            'Barrels',
-            'Magazines',
-            'Muzzle Devices',
-            'Grips'
-        ]
-    },
-    {
-        id: 'keys',
-        name: 'Keys & Access Cards',
-        description: 'Items used to open locked doors and containers',
-        icon: 'key'
+        name:
+            'Ammunition',
+        description:
+            'Various ammunition types for firearms',
+        icon:
+            'bullet',
+        subcategories:
+            [
+                '5.56x45mm',
+                '7.62x39mm',
+                '7.62x51mm',
+                '7.62x54mmR',
+                '9x19mm',
+                '.45 ACP',
+                '12 Gauge',
+                '6.8x51mm'
+            ]
     }
-];
+    ,
+    'gear': {
+        id: 'gear',
+        name:
+            'Gear',
+        description:
+            'Armor, backpacks, and tactical equipment',
+        icon:
+            'shield',
+        subcategories:
+            [
+                'Helmets',
+                'Body Armor',
+                'Face Shields',
+            ]
+    }
+
+//TODO - update config after data extraction
+// {
+//     id: 'medicine',
+//     name: 'Medicine',
+//     description: 'Medical supplies for healing and enhancing performance',
+//     icon: 'medicine',
+//     subcategories: [
+//         'Bandages',
+//         'Medkits',
+//         'Stims',
+//         'Painkillers'
+//     ]
+// },
+// {
+//     id: 'food',
+//     name: 'Food & Drink',
+//     description: 'Consumables for sustenance and hydration',
+//     icon: 'food'
+// },
+// {
+//     id: 'junk',
+//     name: 'Junk',
+//     description: 'Miscellaneous items that can be used for crafting or trading',
+//     icon: 'box',
+//     subcategories: [
+//         'High Value',
+//         'Buildables',
+//         'Combustibles',
+//         'Intel',
+//         'Electronic',
+//         'Tools',
+//         'Household',
+//         'Power',
+//         'Misc'
+//     ]
+// },
+// {
+//     id: 'attachments',
+//     name: 'Attachments',
+//     description: 'Weapon modifications and attachments',
+//     icon: 'scope',
+//     subcategories: [
+//         'Sights',
+//         'Barrels',
+//         'Magazines',
+//         'Muzzle Devices',
+//         'Grips'
+//     ]
+// },
+// {
+//     id: 'keys',
+//     name: 'Keys & Access Cards',
+//     description: 'Items used to open locked doors and containers',
+//     icon: 'key'
+// }
+
+};
 
 // Helper function to get category by ID
 export function getCategoryById(id: string): ItemCategory | undefined {
-    return itemCategories.find(category => category.id === id);
+    return itemCategories[id];
 }
 
 // Helper function to get subcategories for a category
@@ -414,6 +415,14 @@ export const RARITY_CONFIG: Record<ItemRarity, RarityConfig> = {
     }
 };
 
+export const FIRE_MODE_CONFIG: Record<FireMode, string> = {
+    fullAuto: "Full Auto",
+    semiAuto: "Semi Auto",
+    burstFire: "Burst Fire",
+    pumpAction: "Pump Action",
+    boltAction: "Bolt Action",
+}
+
 // Helper functions for rarity
 export function getRarityConfig(rarity: ItemRarity): RarityConfig {
     return RARITY_CONFIG[rarity];
@@ -434,6 +443,7 @@ export function getRarityBorderClass(rarity: ItemRarity): string {
 export function isValidRarity(rarity: string): rarity is ItemRarity {
     return rarity in RARITY_CONFIG;
 }
+
 
 // Get all rarities in order (Common to Legendary)
 export function getAllRarities(): ItemRarity[] {
