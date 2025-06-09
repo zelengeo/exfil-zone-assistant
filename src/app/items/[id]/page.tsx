@@ -270,7 +270,7 @@ const renderCategorySpecificStats = (item: AnyItem) => {
                                         data: item.stats.antiPenetrationDurabilityScalarCurve,
                                         color: '#60a5fa'
                                     }]}
-                                    xLabel="Durability %"
+                                    xLabel="Missing Durability %"
                                     yLabel="Effectiveness"
                                     height={250}
                                 />

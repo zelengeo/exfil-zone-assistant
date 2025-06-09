@@ -22,6 +22,7 @@ import BodyModel from './components/BodyModel/BodyModel';
 
 // Import test helper for console access
 import './utils/combat-test-helper';
+import AttackerSummaryCard from "@/app/combat-sim/components/AttackerSummaryCard";
 
 export default function CombatSimulatorPage() {
     const {
@@ -140,8 +141,8 @@ export default function CombatSimulatorPage() {
                             ))}
                         </div>
 
-                        {/* Sort Options */}
-                        <div className="flex items-center gap-2">
+                        {/* FIXME Sort Options */}
+                        {/*<div className="flex items-center gap-2">
                             <span className="text-tan-300 text-sm font-medium">Sort:</span>
                             <select
                                 value={simulation.sortBy}
@@ -153,7 +154,7 @@ export default function CombatSimulatorPage() {
                                     <option key={sort} value={sort}>{SORT_BY_LABELS[sort]}</option>
                                 ))}
                             </select>
-                        </div>
+                        </div>*/}
                     </div>
                 </div>
 
@@ -196,20 +197,15 @@ export default function CombatSimulatorPage() {
                             {hasValidSetups && (
                                 <div className="flex justify-center gap-2 mb-4">
                                     {validAttackers.map((attacker, index) => (
-                                        <button
+                                        <AttackerSummaryCard
                                             key={attacker.id}
-                                            onClick={() => selectAttacker(attacker.id)}
-                                            className={`
-                        px-3 py-1 rounded-sm transition-all flex items-center gap-2 text-sm
-                        ${selectedAttackerId === attacker.id
-                                                ? 'bg-olive-600 text-tan-100 shadow-md'
-                                                : 'bg-military-700 text-tan-300 hover:bg-military-600'}
-                      `}
-                                        >
-                                            <div
-                                                className={`w-3 h-3 rounded-sm ${attacker.color.class.replace('text-', 'bg-')}`}/>
-                                            <span>Attacker {index + 1}</span>
-                                        </button>
+                                            attacker={attacker}
+                                            index={index}
+                                            isSelected={selectedAttackerId === attacker.id}
+                                            displayMode={simulation.displayMode}
+                                            zoneCalculations={zoneCalculations[attacker.id]}
+                                            onSelect={() => selectAttacker(attacker.id)}
+                                        />
                                     ))}
                                 </div>
                             )}
@@ -217,9 +213,8 @@ export default function CombatSimulatorPage() {
                             <BodyModel
                                 defender={simulation.defender}
                                 displayMode={simulation.displayMode}
-                                // TODO: Add zone calculations when calculation engine is implemented
-                                // zoneCalculations={zoneCalculations}
-                                // selectedAttackerId={selectedAttackerId}
+                                zoneCalculations={zoneCalculations}
+                                selectedAttackerId={selectedAttackerId || undefined}
                             />
 
                             {/* Calculation indicator */}
@@ -256,7 +251,7 @@ export default function CombatSimulatorPage() {
                                         <div key={summary.attackerId} className="military-card p-4 rounded-sm">
                                             <div className="flex items-center gap-2 mb-3">
                                                 <div
-                                                    className={`w-3 h-3 rounded-sm ${attacker.color.class.replace('text-', 'bg-')}`}/>
+                                                    className={`w-3 h-3 rounded-sm ${ATTACKER_COLORS[attacker.id].class.replace('text-', 'bg-')}`}/>
                                                 <span className="font-bold text-sm">Attacker {index + 1}</span>
                                             </div>
 

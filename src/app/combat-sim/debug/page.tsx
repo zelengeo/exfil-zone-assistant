@@ -71,6 +71,12 @@ export default function CombatSimDebugPage() {
         loadData();
     }, []);
 
+    useEffect(() => {
+        calculateSummary(filteredResults)
+    }, [filteredResults]);
+
+
+
     // Run single test
     const  runSingleTest = (testCase: SingleShotTestCase): TestRunResult => {
         // Find items

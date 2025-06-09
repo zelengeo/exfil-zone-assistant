@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { X, ChevronDown, AlertCircle, ExternalLink } from 'lucide-react';
+import React, {useState, useEffect, useMemo, useRef} from 'react';
+import {X, ChevronDown, AlertCircle, ExternalLink} from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
     AttackerSetup as AttackerSetupType,
     isWeapon,
     isAmmunition,
-    areWeaponAmmoCompatible
+    areWeaponAmmoCompatible, ATTACKER_COLORS
 } from '../utils/types';
-import { fetchItemsData } from '@/services/ItemService';
+import {fetchItemsData} from '@/services/ItemService';
 import {Ammunition, getRarityColorClass, Item, Weapon} from '@/types/items';
 
 interface AttackerSetupProps {
@@ -21,7 +21,6 @@ interface AttackerSetupProps {
 
 export default function AttackerSetup({
                                           attacker,
-                                          index,
                                           onUpdate,
                                           onRemove,
                                           canRemove
@@ -136,20 +135,24 @@ export default function AttackerSetup({
     }
 
     return (
-        <div className={`military-card p-4 rounded-sm border-2 ${attacker.color.class.replace('text-', 'border-')}`}>
+        <div
+            className={`military-card p-4 rounded-sm border-2 ${ATTACKER_COLORS[attacker.id].class.replace('text-', 'border-')}`}>
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-2">
-                    <div className={`w-4 h-4 rounded-sm ${attacker.color.class.replace('text-', 'bg-')}`} />
-                    <span className="font-bold text-tan-100">Attacker {index + 1}</span>
-                </div>
+                <h3 className="text-lg font-bold text-tan-100 flex items-center gap-2">
+                    <div
+                        className="w-3 h-3 rounded-full"
+                        style={{backgroundColor: ATTACKER_COLORS[attacker.id].hex}}
+                    />
+                    {ATTACKER_COLORS[attacker.id].name} Setup
+                </h3>
                 {canRemove && (
                     <button
                         onClick={onRemove}
                         className="text-red-400 hover:text-red-300 p-1 rounded-sm hover:bg-military-700 transition-colors"
                         title="Remove attacker"
                     >
-                        <X size={16} />
+                        <X size={16}/>
                     </button>
                 )}
             </div>
@@ -165,7 +168,7 @@ export default function AttackerSetup({
                             onClick={(e) => e.stopPropagation()}
                         >
                             <span className="text-xs">View</span>
-                            <ExternalLink size={10} />
+                            <ExternalLink size={10}/>
                         </Link>
                     )}
                 </label>
@@ -190,16 +193,18 @@ export default function AttackerSetup({
                                     />
                                 </div>
                             )}
-                            <span className={`truncate ${attacker.weapon ? getRarityColorClass(attacker.weapon.stats.rarity) : 'text-tan-400'}`}>
+                            <span
+                                className={`truncate ${attacker.weapon ? getRarityColorClass(attacker.weapon.stats.rarity) : 'text-tan-400'}`}>
                                 {attacker.weapon ? attacker.weapon.name : 'Select weapon...'}
                             </span>
                         </div>
-                        <ChevronDown size={16} className="text-olive-400 flex-shrink-0" />
+                        <ChevronDown size={16} className="text-olive-400 flex-shrink-0"/>
                     </button>
 
                     {/* Weapon Dropdown */}
                     {weaponSearchOpen && (
-                        <div className="absolute z-10 w-full mt-1 bg-military-800 border border-military-700 rounded-sm shadow-lg">
+                        <div
+                            className="absolute z-10 w-full mt-1 bg-military-800 border border-military-700 rounded-sm shadow-lg">
                             <div className="p-2 border-b border-military-700">
                                 <input
                                     type="text"
@@ -217,14 +222,15 @@ export default function AttackerSetup({
                                         <button
                                             key={weapon.id}
                                             onClick={() => {
-                                                onUpdate({ weapon: weapon as Weapon, ammo: undefined });
+                                                onUpdate({weapon: weapon as Weapon, ammo: undefined});
                                                 setWeaponSearchOpen(false);
                                                 setWeaponSearch('');
                                             }}
                                             className="w-full px-2 py-2 text-left hover:bg-military-700 transition-colors text-sm"
                                         >
                                             <div className="flex items-center gap-2 flex-1 min-w-0">
-                                                <div className="w-22 h-10 relative flex-shrink-0 bg-military-700 rounded-sm p-0.5">
+                                                <div
+                                                    className="w-22 h-10 relative flex-shrink-0 bg-military-700 rounded-sm p-0.5">
                                                     <Image
                                                         src={weapon.images.icon}
                                                         alt={weapon.name}
@@ -234,7 +240,8 @@ export default function AttackerSetup({
                                                     />
                                                 </div>
                                                 <div className="min-w-0">
-                                                    <div className={`${getRarityColorClass(weapon.stats.rarity)} truncate`}>{weapon.name}</div>
+                                                    <div
+                                                        className={`${getRarityColorClass(weapon.stats.rarity)} truncate`}>{weapon.name}</div>
                                                     <div className="text-tan-400 text-xs">
                                                         {weapon.stats.caliber} • {formatFireRate(weapon.stats.fireRate)}
                                                     </div>
@@ -272,7 +279,7 @@ export default function AttackerSetup({
                             onClick={(e) => e.stopPropagation()}
                         >
                             <span className="text-xs">View</span>
-                            <ExternalLink size={10} />
+                            <ExternalLink size={10}/>
                         </Link>
                     )}
                 </label>
@@ -304,16 +311,18 @@ export default function AttackerSetup({
                                     />
                                 </div>
                             )}
-                            <span className={`truncate ${attacker.ammo ? getRarityColorClass(attacker.ammo.stats.rarity) : 'text-tan-400'}`}>
+                            <span
+                                className={`truncate ${attacker.ammo ? getRarityColorClass(attacker.ammo.stats.rarity) : 'text-tan-400'}`}>
                                 {attacker.ammo ? attacker.ammo.name : 'Select ammo...'}
                             </span>
                         </div>
-                        <ChevronDown size={16} className="text-olive-400 flex-shrink-0" />
+                        <ChevronDown size={16} className="text-olive-400 flex-shrink-0"/>
                     </button>
 
                     {/* Ammo Dropdown */}
                     {ammoSearchOpen && attacker.weapon && (
-                        <div className="absolute z-10 w-full mt-1 bg-military-800 border border-military-700 rounded-sm shadow-lg">
+                        <div
+                            className="absolute z-10 w-full mt-1 bg-military-800 border border-military-700 rounded-sm shadow-lg">
                             <div className="p-2 border-b border-military-700">
                                 <input
                                     type="text"
@@ -331,30 +340,32 @@ export default function AttackerSetup({
                                         <button
                                             key={ammo.id}
                                             onClick={() => {
-                                                onUpdate({ ammo: ammo as Ammunition });
+                                                onUpdate({ammo: ammo as Ammunition});
                                                 setAmmoSearchOpen(false);
                                                 setAmmoSearch('');
                                             }}
                                             className="w-full px-2 py-2 text-left hover:bg-military-700 transition-colors text-sm"
                                         >
-                                                <div className="flex items-center gap-2 flex-1 min-w-0">
-                                                    <div className="w-10 h-10 relative flex-shrink-0 bg-military-700 rounded-sm p-0.5">
-                                                        <Image
-                                                            src={ammo.images.icon}
-                                                            alt={ammo.name}
-                                                            fill
-                                                            className="object-contain"
-                                                            sizes="40px"
-                                                        />
-                                                    </div>
-                                                    <div className="min-w-0">
-                                                        <div className={`${getRarityColorClass(ammo.stats.rarity)} truncate`}>{ammo.name}</div>
-                                                        <div className="text-tan-400 text-xs flex gap-3">
-                                                            <span>DMG: {ammo.stats.damage}</span>
-                                                            <span>PEN: {ammo.stats.penetration}</span>
-                                                        </div>
+                                            <div className="flex items-center gap-2 flex-1 min-w-0">
+                                                <div
+                                                    className="w-10 h-10 relative flex-shrink-0 bg-military-700 rounded-sm p-0.5">
+                                                    <Image
+                                                        src={ammo.images.icon}
+                                                        alt={ammo.name}
+                                                        fill
+                                                        className="object-contain"
+                                                        sizes="40px"
+                                                    />
+                                                </div>
+                                                <div className="min-w-0">
+                                                    <div
+                                                        className={`${getRarityColorClass(ammo.stats.rarity)} truncate`}>{ammo.name}</div>
+                                                    <div className="text-tan-400 text-xs flex gap-3">
+                                                        <span>DMG: {ammo.stats.damage}</span>
+                                                        <span>PEN: {ammo.stats.penetration}</span>
                                                     </div>
                                                 </div>
+                                            </div>
                                         </button>
                                     ))
                                 ) : (
@@ -379,7 +390,7 @@ export default function AttackerSetup({
                 {/* Incompatibility Warning */}
                 {hasIncompatibleAmmo && (
                     <div className="mt-1 flex items-center gap-1 text-xs text-red-400">
-                        <AlertCircle size={12} />
+                        <AlertCircle size={12}/>
                         <span>Incompatible with {attacker.weapon?.name || "undefined"}</span>
                     </div>
                 )}

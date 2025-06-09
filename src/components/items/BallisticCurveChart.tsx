@@ -1,11 +1,11 @@
 import React from 'react';
-import { BallisticCurvePoint } from '@/app/combat-sim/utils/types';
+import {CurvePoint} from "@/types/items";
 
 interface BallisticCurveChartProps {
     title: string;
     curves: {
         name: string;
-        data: BallisticCurvePoint[];
+        data: CurvePoint[];
         color: string;
     }[];
     xLabel?: string;
@@ -52,7 +52,7 @@ export default function BallisticCurveChart({
     const scaleY = (y: number) => chartHeight - ((y - minY) / (maxY - minY)) * chartHeight;
 
     // Generate path for cubic interpolation
-    const generatePath = (points: BallisticCurvePoint[]) => {
+    const generatePath = (points: CurvePoint[]) => {
         if (points.length === 0) return '';
 
         let path = `M ${scaleX(points[0].time)} ${scaleY(points[0].value)}`;

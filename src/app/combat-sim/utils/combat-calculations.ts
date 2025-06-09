@@ -56,7 +56,8 @@ function calculateAttackerZones(
     const calculations: ZoneCalculation[] = [];
 
     // Process each armor zone
-    Object.entries(ARMOR_ZONES).forEach(([zoneId, zone]) => {
+    Object.keys(ARMOR_ZONES).forEach((zoneId) => {
+        //TODO optimization - cache bodyParts simulation runs
         const bodyPart = getBodyPartForArmorZone(zoneId);
         if (!bodyPart) return;
 
@@ -115,10 +116,6 @@ function calculateAttackerZones(
             ...combatResult,
         });
     });
-
-    //FIXME remove log
-    console.log(`Calculations`, calculations);
-
 
     return calculations;
 }
@@ -249,16 +246,16 @@ export function calculateAttackerSummary(
  */
 export function sortZoneCalculations(
     calculations: ZoneCalculation[],
-    sortBy: 'ttk' | 'damage' | 'cost'
+    sortBy: 'ttk' | 'stk' | 'ctk'
 ): ZoneCalculation[] {
     const sorted = [...calculations];
 
     switch (sortBy) {
         case 'ttk':
             return sorted.sort((a, b) => a.ttk - b.ttk);
-        case 'damage':
-            return sorted.sort((a, b) => b.effectiveDamage - a.effectiveDamage);
-        case 'cost':
+        case 'stk':
+            return sorted.sort((a, b) => b.shotsToKill - a.shotsToKill);
+        case 'ctk':
             return sorted.sort((a, b) => a.costToKill - b.costToKill);
         default:
             return sorted;

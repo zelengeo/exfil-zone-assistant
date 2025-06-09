@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Shield, Heart } from 'lucide-react';
 import {
     ARMOR_ZONES,
@@ -41,7 +42,7 @@ export default function BodyModel({
             if (!protectiveZone && defender.faceShield) {
                 //Currently, it seems, FaceShield acts as extension to the helmet so, else we would'we get faceShield class
                 return defender.helmet.stats.armorClass
-            };
+            }
 
             return protectiveZone?.armorClass || 0
         }
@@ -91,18 +92,18 @@ export default function BodyModel({
             case 'ttk':
                 value = calc.ttk;
                 if (value === Infinity) return 'text-red-500';
-                if (value < 1) return 'text-green-400';
-                if (value < 2) return 'text-lime-400';
-                if (value < 3) return 'text-yellow-400';
-                if (value < 5) return 'text-orange-400';
+                if (value < 0.5) return 'text-green-400';
+                if (value < 1) return 'text-lime-400';
+                if (value < 2) return 'text-yellow-400';
+                if (value < 3) return 'text-orange-400';
                 return 'text-red-400';
             case 'stk':
                 value = calc.shotsToKill;
                 if (value === Infinity) return 'text-red-500';
-                if (value <= 3) return 'text-green-400';
-                if (value <= 5) return 'text-lime-400';
-                if (value <= 8) return 'text-yellow-400';
-                if (value <= 12) return 'text-orange-400';
+                if (value <= 1) return 'text-green-400';
+                if (value <= 2) return 'text-lime-400';
+                if (value <= 6) return 'text-yellow-400';
+                if (value <= 10) return 'text-orange-400';
                 return 'text-red-400';
             case 'ctk':
                 value = calc.costToKill;
@@ -143,10 +144,12 @@ export default function BodyModel({
             {/* Body Image Container */}
             <div className="relative mx-auto" style={{ maxWidth: '300px', aspectRatio: '300/650' }}>
                 {/* Background Image */}
-                <img
+                <Image
                     src="/images/Img_BodyPartsMain.webp"
                     alt="Body Parts"
                     className="absolute inset-0 size-150 object-contain"
+                    width={300}
+                    height={650}
                 />
 
                 {/* Interactive Zones Overlay */}
@@ -191,13 +194,9 @@ export default function BodyModel({
                                 {/* Display Value Badge */}
                                 {selectedAttackerId && displayValue !== '--' && (
                                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                        <div className={`px-2 py-1 rounded-sm bg-military-900/90 border ${
-                                            valueColor.replace('text-', 'border-').replace('-400', '-600').replace('-500', '-700')
-                                        }`}>
-                                            <span className={`font-bold text-sm ${valueColor}`}>
-                                                {displayValue}
-                                            </span>
-                                        </div>
+                                        <span className={`font-bold text-sm ${valueColor} drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]`}>
+                                            {displayValue}
+                                        </span>
                                     </div>
                                 )}
 

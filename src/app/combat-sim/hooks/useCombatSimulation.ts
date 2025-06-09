@@ -10,7 +10,7 @@ import {
     DefenderSetup,
     ZoneCalculation,
     AttackerSummary,
-    areWeaponAmmoCompatible
+    areWeaponAmmoCompatible, ATTACKER_COLORS
 } from '../utils/types';
 import {
     calculateCombatResults,
@@ -44,17 +44,17 @@ export function useCombatSimulation(): UseCombatSimulationReturn {
     const [simulation, setSimulation] = useState<CombatSimulation>({
         attackers: [
             {
-                id: '1',
+                id: '0',
                 weapon: null,
                 ammo: null,
-                color: { name: 'Blue', hex: '#3B82F6', class: 'text-blue-500' }
             }
         ],
         defender: {
             bodyArmor: null,
             bodyArmorDurability: 100,
             helmet: null,
-            helmetDurability: 100
+            helmetDurability: 100,
+            faceShield: null
         },
         range: 60,
         displayMode: 'stk',
@@ -143,26 +143,20 @@ export function useCombatSimulation(): UseCombatSimulationReturn {
     const addAttacker = useCallback(() => {
         if (simulation.attackers.length >= 4) return;
 
-        const colorIndex = simulation.attackers.length;
-        const colors = [
-            { name: 'Blue', hex: '#3B82F6', class: 'text-blue-500' },
-            { name: 'Red', hex: '#EF4444', class: 'text-red-500' },
-            { name: 'Green', hex: '#10B981', class: 'text-green-500' },
-            { name: 'Yellow', hex: '#F59E0B', class: 'text-yellow-500' }
-        ];
+        const colorIndex = Object.keys(ATTACKER_COLORS).find((index)=>simulation.attackers.every(attacker =>attacker.id !== index))
 
         const newAttacker: AttackerSetup = {
-            id: Date.now().toString(),
+            // @ts-expect-error colorIndex is never undefined because of if (simulation.attackers.length >= 4) return;
+            id: colorIndex,
             weapon: null,
-            ammo: null,
-            color: colors[colorIndex]
+            ammo: null
         };
 
         setSimulation(prev => ({
             ...prev,
             attackers: [...prev.attackers, newAttacker]
         }));
-    }, [simulation.attackers.length]);
+    }, [simulation.attackers]);
 
     const removeAttacker = useCallback((attackerId: string) => {
         setSimulation(prev => ({

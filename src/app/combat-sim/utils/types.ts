@@ -7,14 +7,20 @@ import {Ammunition, AnyItem, Armor, BodyArmor, FaceShield, Helmet, Item, Weapon}
 
 // Display modes for the simulator
 export type DisplayMode = 'ttk' | 'stk' | 'ctk';
-export type SortBy = 'ttk' | 'damage' | 'cost';
+export type SortBy = 'ttk' | 'stk' | 'ctk';
 
 // Attacker colors for visual distinction
-export const ATTACKER_COLORS = {
-    0: { name: 'Blue', hex: '#3B82F6', class: 'text-blue-500' },
-    1: { name: 'Red', hex: '#EF4444', class: 'text-red-500' },
-    2: { name: 'Green', hex: '#10B981', class: 'text-green-500' },
-    3: { name: 'Yellow', hex: '#F59E0B', class: 'text-yellow-500' }
+export const ATTACKER_COLORS: {
+    [key: string]: {
+        name: string;
+        hex: string;
+        class: string;
+    };
+} = {
+    "0": {name: 'Alpha', hex: '#00D9FF', class: 'text-cyan-400'},      // Cyan
+    "1": {name: 'Bravo', hex: '#FF6B6B', class: 'text-rose-400'},     // Rose
+    "2": {name: 'Charlie', hex: '#4ECDC4', class: 'text-teal-400'},   // Teal
+    "3": {name: 'Delta', hex: '#FFE66D', class: 'text-amber-300'}      // Amber
 } as const;
 
 // Attacker setup configuration
@@ -22,7 +28,6 @@ export interface AttackerSetup {
     id: string;
     weapon: Weapon | null;
     ammo: Ammunition | null;
-    color: typeof ATTACKER_COLORS[keyof typeof ATTACKER_COLORS];
 }
 
 // Defender setup configuration
@@ -69,7 +74,7 @@ export interface DamageCalculationResult {
 }
 
 // Zone-specific calculation result
-export interface ZoneCalculation extends CombatSimulationResult{
+export interface ZoneCalculation extends CombatSimulationResult {
     zoneId: string;
     bodyPartId: string;
     ttk: number;
@@ -106,14 +111,14 @@ export interface RangePreset {
     description: string;
 }
 
-export const  RANGE_VALUES = [0, 60, 120, 240, 480];
+export const RANGE_VALUES = [0, 60, 120, 240, 480];
 
 export const RANGE_PRESETS: RangePreset[] = [
-    { name: 'CQB', value: RANGE_VALUES[0], description: 'Close quarters combat' },
-    { name: 'Short', value: RANGE_VALUES[1], description: 'Short range engagement' },
-    { name: 'Medium', value: RANGE_VALUES[2], description: 'Medium range combat' },
-    { name: 'Long', value: RANGE_VALUES[3], description: 'Long range engagement' },
-    { name: 'Sniper', value: RANGE_VALUES[4], description: 'Extreme range sniping' }
+    {name: 'CQB', value: RANGE_VALUES[0], description: 'Close quarters combat'},
+    {name: 'Short', value: RANGE_VALUES[1], description: 'Short range engagement'},
+    {name: 'Medium', value: RANGE_VALUES[2], description: 'Medium range combat'},
+    {name: 'Long', value: RANGE_VALUES[3], description: 'Long range engagement'},
+    {name: 'Sniper', value: RANGE_VALUES[4], description: 'Extreme range sniping'}
 ];
 
 // Type guards with improved checks
