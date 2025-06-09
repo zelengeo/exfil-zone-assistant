@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Image from 'next/image';
 import {Shield} from 'lucide-react';
 import {ARMOR_ZONES, getArmorClassColor} from '@/app/combat-sim/utils/body-zones';
 import {ProtectiveZone} from "@/types/items";
@@ -65,10 +66,12 @@ export default function ArmorZonesDisplay({protectiveData, className = ''}: Armo
                     <h4 className="text-tan-300 font-medium mb-3 text-center">Coverage Map</h4>
                     <div className="relative mx-auto" style={{maxWidth: '300px', aspectRatio: '300/650'}}>
                         {/* Background Image */}
-                        <img
+                        <Image
                             src="/images/Img_BodyPartsMain.webp"
                             alt="Body Parts"
                             className="absolute inset-0 size-full object-contain"
+                            width={300}
+                            height={650}
                         />
 
                         {/* Interactive Zones Overlay */}
