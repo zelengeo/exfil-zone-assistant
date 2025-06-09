@@ -109,10 +109,6 @@ export default function AttackerSetup({
         );
     }, [compatibleAmmo, ammunitions, ammoSearch, attacker.weapon]);
 
-    // Check if current setup is valid
-    const isValidSetup = attacker.weapon && attacker.ammo &&
-        areWeaponAmmoCompatible(attacker.weapon, attacker.ammo);
-
     const hasIncompatibleAmmo = attacker.weapon && attacker.ammo &&
         !areWeaponAmmoCompatible(attacker.weapon, attacker.ammo);
 

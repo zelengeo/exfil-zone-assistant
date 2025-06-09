@@ -70,7 +70,7 @@ function calculateShotDamage(
     armor: ArmorProperties | null,
     currentArmorDurability: number | null,
     range: number,
-    overridePenetrationChance: boolean | null,
+    overridePenetrationChance: boolean | null = null,
     applyRandom: boolean = false,
 ): ShotResult {
     // Apply range falloff to base damage and penetration

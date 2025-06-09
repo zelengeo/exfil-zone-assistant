@@ -1,7 +1,7 @@
 /**
  * Test Types for Combat Simulator Debug/Testing
  */
-import {Ammunition, Armor, Weapon} from "@/app/combat-sim/utils/types";
+import {Ammunition, Armor, Weapon} from "@/types/items";
 
 export interface SingleShotTestCase {
     id: string;
@@ -66,19 +66,17 @@ export interface TestRunResult {
     accuracy: number; // Overall accuracy percentage
 }
 
+export interface DeviationValue {
+    averageArmorDamageDeviation: number;
+    averageBodyDamageDeviation: number;
+    testCount: number;
+}
+
 export interface TestSummary {
     totalTests: number;
     passedTests: number;
     failedTests: number;
     averageAccuracy: number;
-    deviationByArmor: Record<string, {
-        averageArmorDamageDeviation: number;
-        averageBodyDamageDeviation: number;
-        testCount: number;
-    }>;
-    deviationByAmmo: Record<string, {
-        averageArmorDamageDeviation: number;
-        averageBodyDamageDeviation: number;
-        testCount: number;
-    }>;
+    deviationByArmor: Record<string, DeviationValue>;
+    deviationByAmmo: Record<string, DeviationValue>;
 }

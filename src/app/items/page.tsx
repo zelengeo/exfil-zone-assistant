@@ -22,18 +22,13 @@ export default function ItemsPage() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     // Fetch data on component mount
-    // Fetch data on component mount
     useEffect(() => {
         const loadItems = async () => {
             try {
                 setLoading(true);
                 const itemsData = await fetchItemsData();
                 setItems(itemsData);
-                let filteredItems = itemsData;
-                if (categoryId) {
-                    filteredItems = filteredItems.filter((item) => item.category === categoryId && (!subcategoryId || item.subcategory === subcategoryId));
-                }
-                setFilteredItems(filteredItems);
+                setFilteredItems(itemsData);
                 setError(null);
             } catch (error) {
                 console.error('Failed to load items:', error);
@@ -113,30 +108,6 @@ export default function ItemsPage() {
         );
     }
 
-
-    const handleCategoryChange = (newCategory: string | null, newSubcategory?: string | null) => {
-        const params = new URLSearchParams();
-
-        if (newCategory) {
-            params.set('category', newCategory);
-        }
-
-        if (newSubcategory) {
-            params.set('subcategory', newSubcategory);
-        }
-
-        window.history.pushState(null, '', `?${params.toString()}`);
-    };
-
-    const handleSubcategoryChange = (newSubcategory: string | null) => {
-        const params = new URLSearchParams();
-
-        if (newSubcategory) {
-            params.set('subcategory', newSubcategory);
-        }
-        window.history.pushState(null, '', `?${params.toString()}`);
-    };
-
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
@@ -204,8 +175,6 @@ export default function ItemsPage() {
                         categories={itemCategories}
                         selectedCategory={categoryId}
                         selectedSubcategory={subcategoryId}
-                        onCategoryChange={handleCategoryChange}
-                        onSubcategoryChange={handleSubcategoryChange}
                         isOpen={isSidebarOpen}
                         onClose={() => setIsSidebarOpen(false)}
                     />

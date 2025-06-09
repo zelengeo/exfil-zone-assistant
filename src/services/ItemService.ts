@@ -26,7 +26,7 @@ const DATA_FILES = [
 /**
  * Transform raw item data to match our Item interface
  */
-function transformItemData(rawItem: any): Item {
+function transformItemData(rawItem: Item): Item {
     // Handle different data structures from various files
     const baseItem: Item = {
         id: rawItem.id,
@@ -56,7 +56,7 @@ function transformItemData(rawItem: any): Item {
     if (rawItem.stats) {
         // Weapons stats
         if (rawItem.category === 'weapons') {
-            if (!isWeapon(baseItem)) return baseItem;
+            if (!isWeapon(rawItem) || !isWeapon(baseItem)) return baseItem;
             baseItem.stats.caliber = rawItem.stats.caliber;
             baseItem.stats.fireRate = rawItem.stats.fireRate;
             baseItem.stats.ergonomics = rawItem.stats.ergonomics;
@@ -69,7 +69,7 @@ function transformItemData(rawItem: any): Item {
 
         // Ammo stats
         if (rawItem.category === 'ammo') {
-            if (!isAmmunition(baseItem)) return baseItem;
+            if (!isAmmunition(rawItem) || !isAmmunition(baseItem)) return baseItem;
             baseItem.stats.caliber = rawItem.stats.caliber;
             baseItem.stats.damage = rawItem.stats.damage;
             baseItem.stats.penetration = rawItem.stats.penetration;
@@ -84,7 +84,7 @@ function transformItemData(rawItem: any): Item {
         }
 
         if (rawItem.category === 'gear' && rawItem.subcategory === 'Body Armor') {
-            if (!isBodyArmor(baseItem)) return baseItem;
+            if (!isBodyArmor(rawItem) || !isBodyArmor(baseItem)) return baseItem;
             baseItem.stats.armorClass = rawItem.stats.armorClass;
             baseItem.stats.maxDurability = rawItem.stats.maxDurability;
             baseItem.stats.bluntDamageScalar = rawItem.stats.bluntDamageScalar;
@@ -96,7 +96,7 @@ function transformItemData(rawItem: any): Item {
         }
 
         if (rawItem.category === 'gear' && rawItem.subcategory === 'Helmets') {
-            if (!isHelmet(baseItem)) return baseItem;
+            if (!isHelmet(rawItem) || !isHelmet(baseItem)) return baseItem;
             baseItem.stats.armorClass = rawItem.stats.armorClass;
             baseItem.stats.maxDurability = rawItem.stats.maxDurability;
             baseItem.stats.bluntDamageScalar = rawItem.stats.bluntDamageScalar;
@@ -109,7 +109,7 @@ function transformItemData(rawItem: any): Item {
             baseItem.stats.canAttach = rawItem.stats.canAttach;
         }
         if (rawItem.category === 'gear' && rawItem.subcategory === 'Face Shields') {
-            if (!isFaceShield(baseItem)) return baseItem;
+            if (!isFaceShield(rawItem) || !isFaceShield(baseItem)) return baseItem;
             baseItem.stats.armorClass = rawItem.stats.armorClass;
             baseItem.stats.maxDurability = rawItem.stats.maxDurability;
             baseItem.stats.bluntDamageScalar = rawItem.stats.bluntDamageScalar;
@@ -121,18 +121,18 @@ function transformItemData(rawItem: any): Item {
         }
 
         // Medical stats
-        if (rawItem.category === 'medicine') {
-            baseItem.stats.healAmount = rawItem.stats.healAmount;
-            baseItem.stats.useTime = rawItem.stats.useTime;
-            baseItem.stats.duration = rawItem.stats.duration;
-        }
+        // if (rawItem.category === 'medicine') {
+        //     baseItem.stats.healAmount = rawItem.stats.healAmount;
+        //     baseItem.stats.useTime = rawItem.stats.useTime;
+        //     baseItem.stats.duration = rawItem.stats.duration;
+        // }
 
         // Food stats
-        if (rawItem.category === 'food') {
-            baseItem.stats.energyValue = rawItem.stats.energyValue;
-            baseItem.stats.hydrationValue = rawItem.stats.hydrationValue;
-            baseItem.stats.useTime = rawItem.stats.useTime;
-        }
+        // if (rawItem.category === 'food') {
+        //     baseItem.stats.energyValue = rawItem.stats.energyValue;
+        //     baseItem.stats.hydrationValue = rawItem.stats.hydrationValue;
+        //     baseItem.stats.useTime = rawItem.stats.useTime;
+        // }
 
         // Other Gear stats
         // if (rawItem.category === 'gear') {
@@ -144,9 +144,9 @@ function transformItemData(rawItem: any): Item {
         // }
 
         // Key stats
-        if (rawItem.category === 'keys') {
-            baseItem.stats.uses = rawItem.stats.uses;
-        }
+        // if (rawItem.category === 'keys') {
+        //     baseItem.stats.uses = rawItem.stats.uses;
+        // }
     }
 
     // Add optional fields
@@ -183,7 +183,7 @@ export async function fetchItemsData(): Promise<Item[]> {
                 const data = await response.json();
 
                 // Handle different file structures
-                let items: any[] = [];
+                let items: Item[] = [];
 
                 if (Array.isArray(data)) {
                     // Direct array of items

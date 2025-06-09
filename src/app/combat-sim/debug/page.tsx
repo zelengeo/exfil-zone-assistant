@@ -4,23 +4,31 @@ import React, {useState, useEffect, useMemo} from 'react';
 import Link from 'next/link';
 import Layout from '@/components/layout/Layout';
 import {AlertTriangle, CheckCircle, XCircle, Shield, ShieldOff, Download, Play, RefreshCw} from 'lucide-react';
-import {SingleShotTestCase, TestRunResult, TestSummary} from '../utils/test-types';
+import {DeviationValue, SingleShotTestCase, TestRunResult, TestSummary} from '../utils/test-types';
 import {fetchItemsData} from '@/services/ItemService';
 import {isWeapon, isAmmunition, isArmor} from '../utils/types';
 import {calculateShotDamage} from '../utils/damage-calculations';
 import testData from '@/../public/data/combat-sim-test-data.json';
-import {getRarityColorClass} from "@/types/items";
+import {getRarityColorClass, Item} from "@/types/items";
 import "../utils/combat-test-helper"
+
+type PenetratingFilter = 'all' | 'penetrating' | 'non-penetrating';
+type StatusFilter = 'all' | 'passed' | 'failed';
+interface DeviationComputationValue {
+    armorDamageDeviations: number[],
+    bodyDamageDeviations: number[],
+    testCount: number
+}
 
 export default function CombatSimDebugPage() {
     const [testCases, setTestCases] = useState<SingleShotTestCase[]>([]);
     const [testResults, setTestResults] = useState<TestRunResult[]>([]);
     const [isRunning, setIsRunning] = useState(false);
-    const [items, setItems] = useState<any[]>([]);
+    const [items, setItems] = useState<Item[]>([]);
     const [loading, setLoading] = useState(true);
     const [summary, setSummary] = useState<TestSummary | null>(null);
-    const [filterPenetrating, setFilterPenetrating] = useState<'all' | 'penetrating' | 'non-penetrating'>('all');
-    const [filterStatus, setFilterStatus] = useState<'all' | 'passed' | 'failed'>('all');
+    const [filterPenetrating, setFilterPenetrating] = useState<PenetratingFilter>('all');
+    const [filterStatus, setFilterStatus] = useState<StatusFilter>('all');
     const [filterArmor, setFilterArmor] = useState<string>('all');
     const [filterAmmo, setFilterAmmo] = useState<string>('all');
 
@@ -84,7 +92,7 @@ export default function CombatSimDebugPage() {
         const ammo = items.find(item => item.id === testCase.ammo && isAmmunition(item));
         const armor = items.find(item => item.id === testCase.armor.id && isArmor(item));
 
-        if (!weapon || !ammo || !armor) {
+        if (!weapon || !isWeapon(weapon)|| !ammo || !isAmmunition(ammo) || !armor || !isArmor(armor)) {
             console.error('Missing items for test:', testCase.id);
             return {
                 testCase,
@@ -170,41 +178,44 @@ export default function CombatSimDebugPage() {
         const averageAccuracy = results.reduce((sum, r) => sum + r.accuracy, 0) / totalTests;
 
         // Group by armor
-        const deviationByArmor: Record<string, any> = {};
-        const deviationByAmmo: Record<string, any> = {};
+        const deviationStackByArmor: Record<string, DeviationComputationValue> = {};
+        const deviationStackByAmmo: Record<string, DeviationComputationValue> = {};
 
         results.forEach(result => {
             const armorId = result.testCase.armor.id;
             const ammoId = result.testCase.ammo;
 
             // Armor grouping
-            if (!deviationByArmor[armorId]) {
-                deviationByArmor[armorId] = {
+            if (!deviationStackByArmor[armorId]) {
+                deviationStackByArmor[armorId] = {
                     armorDamageDeviations: [],
                     bodyDamageDeviations: [],
                     testCount: 0
                 };
             }
-            deviationByArmor[armorId].armorDamageDeviations.push(result.deviation.armorDamage.percentage);
-            deviationByArmor[armorId].bodyDamageDeviations.push(result.deviation.bodyDamage.percentage);
-            deviationByArmor[armorId].testCount++;
+            deviationStackByArmor[armorId].armorDamageDeviations.push(result.deviation.armorDamage.percentage);
+            deviationStackByArmor[armorId].bodyDamageDeviations.push(result.deviation.bodyDamage.percentage);
+            deviationStackByArmor[armorId].testCount++;
 
             // Ammo grouping
-            if (!deviationByAmmo[ammoId]) {
-                deviationByAmmo[ammoId] = {
+            if (!deviationStackByAmmo[ammoId]) {
+                deviationStackByAmmo[ammoId] = {
                     armorDamageDeviations: [],
                     bodyDamageDeviations: [],
                     testCount: 0
                 };
             }
-            deviationByAmmo[ammoId].armorDamageDeviations.push(result.deviation.armorDamage.percentage);
-            deviationByAmmo[ammoId].bodyDamageDeviations.push(result.deviation.bodyDamage.percentage);
-            deviationByAmmo[ammoId].testCount++;
+            deviationStackByAmmo[ammoId].armorDamageDeviations.push(result.deviation.armorDamage.percentage);
+            deviationStackByAmmo[ammoId].bodyDamageDeviations.push(result.deviation.bodyDamage.percentage);
+            deviationStackByAmmo[ammoId].testCount++;
         });
 
+        const deviationByArmor: Record<string, DeviationValue> = {};
+        const deviationByAmmo: Record<string, DeviationValue> = {};
+
         // Calculate averages
-        Object.keys(deviationByArmor).forEach(armorId => {
-            const data = deviationByArmor[armorId];
+        Object.keys(deviationStackByArmor).forEach(armorId => {
+            const data = deviationStackByArmor[armorId];
             deviationByArmor[armorId] = {
                 averageArmorDamageDeviation: data.armorDamageDeviations.reduce((a: number, b: number) => a + b, 0) / data.testCount,
                 averageBodyDamageDeviation: data.bodyDamageDeviations.reduce((a: number, b: number) => a + b, 0) / data.testCount,
@@ -212,8 +223,8 @@ export default function CombatSimDebugPage() {
             };
         });
 
-        Object.keys(deviationByAmmo).forEach(ammoId => {
-            const data = deviationByAmmo[ammoId];
+        Object.keys(deviationStackByAmmo).forEach(ammoId => {
+            const data = deviationStackByAmmo[ammoId];
             deviationByAmmo[ammoId] = {
                 averageArmorDamageDeviation: data.armorDamageDeviations.reduce((a: number, b: number) => a + b, 0) / data.testCount,
                 averageBodyDamageDeviation: data.bodyDamageDeviations.reduce((a: number, b: number) => a + b, 0) / data.testCount,
@@ -370,7 +381,7 @@ export default function CombatSimDebugPage() {
                                 <label className="text-tan-300 text-sm">Penetration:</label>
                                 <select
                                     value={filterPenetrating}
-                                    onChange={(e) => setFilterPenetrating(e.target.value as any)}
+                                    onChange={(e) => setFilterPenetrating(e.target.value as PenetratingFilter)}
                                     className="bg-military-800 text-tan-100 px-3 py-1 rounded-sm border border-military-700
             focus:border-olive-500 focus:outline-none text-sm"
                                 >
@@ -385,7 +396,7 @@ export default function CombatSimDebugPage() {
                                 <label className="text-tan-300 text-sm">Status:</label>
                                 <select
                                     value={filterStatus}
-                                    onChange={(e) => setFilterStatus(e.target.value as any)}
+                                    onChange={(e) => setFilterStatus(e.target.value as StatusFilter)}
                                     className="bg-military-800 text-tan-100 px-3 py-1 rounded-sm border border-military-700
             focus:border-olive-500 focus:outline-none text-sm"
                                 >

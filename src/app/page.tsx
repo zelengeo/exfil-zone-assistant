@@ -83,7 +83,7 @@ export default function Home() {
                       href="/guides/beginners"
                       className="bg-olive-600 hover:bg-olive-500 text-tan-100 px-6 py-3 rounded-sm font-medium text-lg transition-colors flex items-center gap-2 border border-olive-500"
                   >
-                    Beginner's Guide <ArrowRight size={20} />
+                    Beginner&apos;s Guide <ArrowRight size={20} />
                   </Link>
                   <Link
                       href="/items"

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { ZoomIn, ZoomOut, X } from 'lucide-react';
+import { ZoomIn, X } from 'lucide-react';
 import { Item } from '@/types/items';
 
 interface ItemImageProps {

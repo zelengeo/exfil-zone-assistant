@@ -6,6 +6,7 @@
 import { fetchItemsData } from '@/services/ItemService';
 import { calculateShotDamage } from './damage-calculations';
 import { isArmor, isAmmunition } from './types';
+import {AmmoProperties, ArmorProperties} from "@/types/items";
 
 
 
@@ -34,14 +35,14 @@ export async function testShotDamage(
 
         // Find armor
         const armor = items.find(item => item.id === armorId && isArmor(item));
-        if (!armor) {
+        if (!armor || !isArmor(armor)) {
             console.error(`Armor not found: ${armorId}`);
             return;
         }
 
         // Find ammo
         const ammo = items.find(item => item.id === ammoId && isAmmunition(item));
-        if (!ammo) {
+        if (!ammo || !isAmmunition(ammo)) {
             console.error(`Ammo not found: ${ammoId}`);
             return;
         }
@@ -63,6 +64,7 @@ export async function testShotDamage(
             damage: ammo.stats.damage,
             penetration: ammo.stats.penetration,
             caliber: ammo.stats.caliber,
+            muzzleVelocity: ammo.stats.muzzleVelocity,
             bleedingChance: ammo.stats.bleedingChance || 0,
             bluntDamageScale: ammo.stats.bluntDamageScale || 0.1,
             protectionGearPenetratedDamageScale: ammo.stats.protectionGearPenetratedDamageScale || 0.5,
@@ -175,5 +177,6 @@ export async function testShotDamage(
 
 // Make it available globally for console access
 if (typeof window !== 'undefined') {
-    (window as any).testShotDamage = testShotDamage;
+    // @ts-expect-error - unknown
+    (window as unknown).testShotDamage = testShotDamage;
 }

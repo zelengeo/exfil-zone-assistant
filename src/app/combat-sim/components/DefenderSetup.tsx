@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useMemo, useRef} from 'react';
-import {ChevronDown, Shield, HardHat, Info, ExternalLink, X, Eye} from 'lucide-react';
+import {ChevronDown, Shield, HardHat, Info, ExternalLink} from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
