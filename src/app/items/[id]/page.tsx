@@ -14,7 +14,7 @@ import {
     BowArrow,
     ShieldX,
     Snail,
-    Zap
+    Zap, Volume2
 } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import ItemLocations from '@/components/items/ItemLocations';
@@ -29,7 +29,7 @@ import {
     getCategoryById, AnyItem, FIRE_MODE_CONFIG, Item
 } from '@/types/items';
 import {getItemById} from "@/services/ItemService";
-import {isAnyItem, isArmor} from "@/app/combat-sim/utils/types";
+import {isAnyItem, isArmor, isHelmet} from "@/app/combat-sim/utils/types";
 
 // Component for displaying item images with zoom functionality
 const ItemImageDisplay: React.FC<{
@@ -100,32 +100,32 @@ const renderCategorySpecificStats = (item: AnyItem) => {
                         <div className="flex items-center gap-2">
                             <Zap size={18} className="text-olive-400"/>
                             <span className="text-tan-300">Fire Rate:</span>
-                            <span className="text-tan-100 font-mono">{item.stats.fireRate} rpm</span>
+                            <span className="text-tan-100">{item.stats.fireRate} rpm</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <Crosshair size={18} className="text-olive-400"/>
                             <span className="text-tan-300">MOA:</span>
-                            <span className="text-tan-100 font-mono">{item.stats.MOA?.toFixed(2) || 'N/A'}</span>
+                            <span className="text-tan-100">{item.stats.MOA?.toFixed(2) || 'N/A'}</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <Shield size={18} className="text-olive-400"/>
                             <span className="text-tan-300">Caliber:</span>
-                            <span className="text-tan-100 font-mono">{item.stats.caliber}</span>
+                            <span className="text-tan-100">{item.stats.caliber}</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <Timer size={18} className="text-olive-400"/>
                             <span className="text-tan-300">Ergonomics:</span>
-                            <span className="text-tan-100 font-mono">{(item.stats.ergonomics * 100).toFixed(0)}%</span>
+                            <span className="text-tan-100">{(item.stats.ergonomics * 100).toFixed(0)}%</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <Info size={18} className="text-olive-400"/>
                             <span className="text-tan-300">Fire Mode:</span>
-                            <span className="text-tan-100 font-mono">{FIRE_MODE_CONFIG[item.stats.fireMode]}</span>
+                            <span className="text-tan-100">{FIRE_MODE_CONFIG[item.stats.fireMode]}</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <Snail size={18} className="text-olive-400"/>
                             <span className="text-tan-300">ADS speed:</span>
-                            <span className="text-tan-100 font-mono">{(item.stats.ADSSpeed * 100).toFixed(0)}%</span>
+                            <span className="text-tan-100">{(item.stats.ADSSpeed * 100).toFixed(0)}%</span>
                         </div>
                     </div>
                     {/*{item.stats.recoilParameters && (
@@ -143,22 +143,22 @@ const renderCategorySpecificStats = (item: AnyItem) => {
                         <div className="flex items-center gap-2">
                             <Crosshair size={18} className="text-olive-400" />
                             <span className="text-tan-300">Damage:</span>
-                            <span className="text-tan-100 font-mono">{item.stats.damage}</span>
+                            <span className="text-tan-100">{item.stats.damage}</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <ShieldX size={18} className="text-olive-400" />
                             <span className="text-tan-300">Penetration:</span>
-                            <span className="text-tan-100 font-mono">{item.stats.penetration}</span>
+                            <span className="text-tan-100">{item.stats.penetration}</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <Info size={18} className="text-olive-400" />
                             <span className="text-tan-300">Velocity:</span>
-                            <span className="text-tan-100 font-mono">{item.stats.muzzleVelocity/100} m/s</span>
+                            <span className="text-tan-100">{item.stats.muzzleVelocity/100} m/s</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <Info size={18} className="text-olive-400" />
                             <span className="text-tan-300">Caliber:</span>
-                            <span className="text-tan-100 font-mono">{item.stats.caliber}</span>
+                            <span className="text-tan-100">{item.stats.caliber}</span>
                         </div>
                     </div>
 
@@ -224,23 +224,30 @@ const renderCategorySpecificStats = (item: AnyItem) => {
                             <div className="flex items-center gap-2">
                                 <BowArrow size={18} className="text-olive-400" />
                                 <span className="text-tan-300">Penetration Damage</span>
-                                <span className="text-tan-100 font-mono">{(item.stats.penetrationDamageScalarCurve[1].value * 100).toFixed(0)}%</span>
+                                <span className="text-tan-100">{(item.stats.penetrationDamageScalarCurve[1].value * 100).toFixed(0)}%</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <Shield size={18} className="text-olive-400" />
                                 <span className="text-tan-300">Max Durability:</span>
-                                <span className="text-tan-100 font-mono">{item.stats.maxDurability}</span>
+                                <span className="text-tan-100">{item.stats.maxDurability}</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <Gavel size={18} className="text-olive-400" />
                                 <span className="text-tan-300">Blunt Damage:</span>
-                                <span className="text-tan-100 font-mono">{(item.stats.bluntDamageScalar * 100).toFixed(0)}%</span>
+                                <span className="text-tan-100">{(item.stats.bluntDamageScalar * 100).toFixed(0)}%</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <ShieldMinus size={18} className="text-olive-400" />
                                 <span className="text-tan-300">Durability Damage:</span>
-                                <span className="text-tan-100 font-mono">{(item.stats.durabilityDamageScalar * 300).toFixed(0)}%</span>
+                                <span className="text-tan-100">{(item.stats.durabilityDamageScalar * 300).toFixed(0)}%</span>
                             </div>
+                            {isHelmet(item) && (
+                                <div className="flex items-center gap-2">
+                                    <Volume2 size={18} className="text-olive-400" />
+                                    <span className="text-tan-300">Sound Dampening:</span>
+                                    <span className="text-tan-100">{item.stats.soundMix === "default" ? "None" : (item.stats.soundMix === "OPSWAT" || item.stats.soundMix === "Delta") ? "Weak" : "Strong"}</span>
+                                </div>
+                            )}
                         </div>
 
                         {/* Protection zones */}

@@ -1,7 +1,7 @@
 [
   {
     "id": "weapon-ak74",
-    "name": "AK-74",
+    "name": "AK-74 Mod.T",
     "description": "Soviet assault rifle chambered in 5.45x39mm. Reliable and widely used standard infantry weapon.",
     "category": "weapons",
     "subcategory": "5.45x39mm",
@@ -12,7 +12,7 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 28000,
+      "price": 58000,
       "weight": 3.25,
       "penetration": 1.5,
       "fireRate": 650,
@@ -72,7 +72,7 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 32000,
+      "price": 36050,
       "weight": 3.4,
       "penetration": 1.5,
       "fireRate": 650,
@@ -116,8 +116,8 @@
       "fullsize": "/images/items/weapons/Icon_gun_ak74n.webp"
     },
     "stats": {
-      "rarity": "Common",
-      "price": 30000,
+      "rarity": "Uncommon",
+      "price": 32640,
       "weight": 3.45,
       "penetration": 1.5,
       "fireRate": 650,
@@ -161,8 +161,8 @@
       "fullsize": "/images/items/weapons/Icon_gun_ak74nmod1.webp"
     },
     "stats": {
-      "rarity": "Rare",
-      "price": 42000,
+      "rarity": "Epic",
+      "price": 85850,
       "weight": 2.9,
       "penetration": 1.5,
       "fireRate": 650,
@@ -199,8 +199,8 @@
       "fullsize": "/images/items/weapons/Icon_gun_aks74u2.webp"
     },
     "stats": {
-      "rarity": "Uncommon",
-      "price": 25000,
+      "rarity": "Common",
+      "price": 29000,
       "weight": 2.7,
       "penetration": 0.9,
       "fireRate": 650,
@@ -250,7 +250,7 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 32000,
+      "price": 69150,
       "weight": 2.7,
       "penetration": 0.9,
       "fireRate": 650,
@@ -300,7 +300,7 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 30000,
+      "price": 22000,
       "weight": 3.8,
       "penetration": 1.1,
       "fireRate": 600,
@@ -346,8 +346,8 @@
       "fullsize": "/images/items/weapons/SM_AKMN_Body_Merge.webp"
     },
     "stats": {
-      "rarity": "Common",
-      "price": 32000,
+      "rarity": "Uncommon",
+      "price": 26730,
       "weight": 3.45,
       "penetration": 1.1,
       "fireRate": 600,
@@ -397,7 +397,7 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 34000,
+      "price": 31620,
       "weight": 3.46,
       "penetration": 1.1,
       "fireRate": 600,
@@ -436,7 +436,7 @@
   {
     "id": "weapon-akmn-glp",
     "name": "AKMN-GLP",
-    "description": "omanian AKMN version but Lacking parts.",
+    "description": "Romanian AKMN version but Lacking parts.",
     "category": "weapons",
     "subcategory": "7.62x39mm",
     "images": {
@@ -445,8 +445,8 @@
       "fullsize": "/images/items/weapons/SM_AKMN_Dong_ufp_Merge.webp"
     },
     "stats": {
-      "rarity": "Rare",
-      "price": 38000,
+      "rarity": "Common",
+      "price": 26000,
       "weight": 2.9,
       "penetration": 1.1,
       "fireRate": 600,
@@ -486,7 +486,7 @@
   },
   {
     "id": "weapon-akmn-xm",
-    "name": "AKMN-XM",
+    "name": "MX-AKM",
     "description": "Tactical AKMN variant with modern furniture and significantly improved recoil control systems.",
     "category": "weapons",
     "subcategory": "7.62x39mm",
@@ -497,7 +497,7 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 48000,
+      "price": 92920,
       "weight": 3.35,
       "penetration": 1.1,
       "fireRate": 600,
@@ -1361,8 +1361,8 @@
       "fullsize": "/images/items/weapons/Icon_SM_MERGED_WF_AUG_para_2.webp"
     },
     "stats": {
-      "rarity": "Epic",
-      "price": 48000,
+      "rarity": "Rare",
+      "price": 45080,
       "weight": 3.05,
       "penetration": 0.4,
       "fireRate": 710,
@@ -1609,7 +1609,7 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 18000,
+      "price": 24000,
       "weight": 3.2,
       "penetration": 0.2,
       "fireRate": 120,
@@ -1657,8 +1657,8 @@
       "fullsize": "/images/items/weapons/Icon_gun_m1897.webp"
     },
     "stats": {
-      "rarity": "Uncommon",
-      "price": 22000,
+      "rarity": "Common",
+      "price": 16160,
       "weight": 3.65,
       "penetration": 0.2,
       "fireRate": 120,
@@ -1707,8 +1707,8 @@
       "fullsize": "/images/items/weapons/Icon_gun_sjogren.webp"
     },
     "stats": {
-      "rarity": "Rare",
-      "price": 28000,
+      "rarity": "Common",
+      "price": 18540,
       "weight": 3.6,
       "penetration": 0.2,
       "fireRate": 1000,
@@ -1760,8 +1760,8 @@
       "fullsize": "/images/items/weapons/Icon_gun_flame12.webp"
     },
     "stats": {
-      "rarity": "Epic",
-      "price": 45000,
+      "rarity": "Rare",
+      "price": 4200,
       "weight": 4.05,
       "penetration": 0.2,
       "fireRate": 1000,
@@ -1813,7 +1813,7 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 15000,
+      "price": 23000,
       "weight": 4.2,
       "penetration": 1.5,
       "fireRate": 1000,
@@ -1868,7 +1868,7 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 18000,
+      "price": 31040,
       "weight": 3.8,
       "penetration": 1.5,
       "fireRate": 1000,
@@ -1903,8 +1903,8 @@
       "fullsize": "/images/items/weapons/Icon_WF_Mosin_M38.webp"
     },
     "stats": {
-      "rarity": "Uncommon",
-      "price": 20000,
+      "rarity": "Common",
+      "price": 26190,
       "weight": 3.3,
       "penetration": 1.5,
       "fireRate": 1000,
@@ -2031,7 +2031,7 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 25000,
+      "price": 20370,
       "weight": 3.85,
       "penetration": 1.1,
       "fireRate": 720,
@@ -2083,7 +2083,7 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 32000,
+      "price": 55080,
       "weight": 3.85,
       "penetration": 1.1,
       "fireRate": 720,
@@ -2136,7 +2136,7 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 85000,
+      "price": 208000,
       "weight": 8.7,
       "penetration": 1.5,
       "fireRate": 600,
@@ -2281,7 +2281,7 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 25000,
+      "price": 33950,
       "weight": 2.2,
       "penetration": 0.4,
       "fireRate": 650,
@@ -2456,8 +2456,8 @@
       "fullsize": "/images/items/weapons/Icon_gun_M3A1.webp"
     },
     "stats": {
-      "rarity": "Uncommon",
-      "price": 18000,
+      "rarity": "Common",
+      "price": 16830,
       "weight": 3.15,
       "penetration": 0.4,
       "fireRate": 450,
@@ -2500,8 +2500,8 @@
       "fullsize": "/images/items/weapons/Icon_gun_m1928.webp"
     },
     "stats": {
-      "rarity": "Rare",
-      "price": 35000,
+      "rarity": "Common",
+      "price": 18430,
       "weight": 4.9,
       "penetration": 0.4,
       "fireRate": 800,
@@ -2588,8 +2588,8 @@
       "fullsize": "/images/items/weapons/Icon_gun_malyuk545.webp"
     },
     "stats": {
-      "rarity": "Rare",
-      "price": 42000,
+      "rarity": "Epic",
+      "price": 76440,
       "weight": 3.8,
       "penetration": 1.2,
       "fireRate": 650,
@@ -2632,8 +2632,8 @@
       "fullsize": "/images/items/weapons/Icon_gun_malyuk762.webp"
     },
     "stats": {
-      "rarity": "Rare",
-      "price": 45000,
+      "rarity": "Epic",
+      "price": 76000,
       "weight": 3.8,
       "penetration": 1.1,
       "fireRate": 650,
@@ -2764,8 +2764,8 @@
       "fullsize": "/images/items/weapons/Icon_gun_fal.webp"
     },
     "stats": {
-      "rarity": "Rare",
-      "price": 52000,
+      "rarity": "Common",
+      "price": 23760,
       "weight": 4.25,
       "penetration": 1,
       "fireRate": 650,
@@ -2855,7 +2855,7 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 42000,
+      "price": 26730,
       "weight": 4.4,
       "penetration": 1,
       "fireRate": 600,
@@ -3060,8 +3060,8 @@
       "fullsize": "/images/items/weapons/Icon_SM_MERGED_WF_G3series_HK91_wood.webp"
     },
     "stats": {
-      "rarity": "Uncommon",
-      "price": 38000,
+      "rarity": "Common",
+      "price": 18810,
       "weight": 4.6,
       "penetration": 1,
       "ADSSpeed": 0.5,
@@ -3163,7 +3163,7 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 75000,
+      "price": 55000,
       "weight": 4.2,
       "penetration": 1,
       "fireRate": 600,
@@ -3213,8 +3213,8 @@
       "fullsize": "/images/items/weapons/Icon_SM_MERGED_WF_G3SG1_Prs.webp"
     },
     "stats": {
-      "rarity": "Epic",
-      "price": 85000,
+      "rarity": "Legendary",
+      "price": 94090,
       "weight": 4,
       "penetration": 1,
       "fireRate": 600,
@@ -3265,7 +3265,7 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 90000,
+      "price": 83420,
       "weight": 3.9,
       "penetration": 1,
       "fireRate": 600,

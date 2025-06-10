@@ -80,16 +80,16 @@ export default function Home() {
                 </div>
                 <div className="flex flex-wrap gap-4">
                   <Link
-                      href="/guides/beginners"
+                      href="/guides/combat-sim-usage"
                       className="bg-olive-600 hover:bg-olive-500 text-tan-100 px-6 py-3 rounded-sm font-medium text-lg transition-colors flex items-center gap-2 border border-olive-500"
                   >
                     Beginner&apos;s Guide <ArrowRight size={20} />
                   </Link>
                   <Link
-                      href="/items"
+                      href="/combat-sim"
                       className="bg-military-700 hover:bg-military-600 text-tan-100 px-6 py-3 rounded-sm font-medium text-lg transition-colors border border-olive-700"
                   >
-                    Browse Items
+                    Combat Simulator
                   </Link>
                 </div>
               </div>
@@ -106,10 +106,10 @@ export default function Home() {
                 Welcome to the world of Exfil Zone, an immersive VR extraction shooter that combines tactical gameplay with resource management and survival elements.
               </p>
               <p className="text-lg text-tan-200 mb-6">
-                As a mercenary in a post-apocalyptic world, your mission is to enter restricted zones, gather valuable resources, complete objectives, and successfully extract before time runs out or hostile forces eliminate you.
+                As a mercenary, your mission is to enter restricted zones, gather valuable resources, complete objectives, and successfully extract before time runs out or hostile forces eliminate you.
               </p>
               <p className="text-lg text-tan-200">
-                Use this assistant to master game mechanics, locate key resources, upgrade your hideout, and outperform other players with strategic knowledge.
+                Use this assistant to master game mechanics, and outperform other players with strategic knowledge.
               </p>
             </div>
           </div>
@@ -270,14 +270,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Combat Timer */}
-                <div className="mt-8 military-box rounded-sm p-6">
-                  <h3 className="text-lg font-bold mb-3 text-olive-400 uppercase">RAID TIMER</h3>
-                  <div className="bg-military-950 border border-olive-800 p-4 flex justify-center items-center">
-                    <div className="font-mono text-3xl ammo-count text-olive-400">32:15</div>
-                  </div>
-                  <p className="mt-3 text-tan-300 text-sm">Average raid duration: 35 minutes</p>
-                </div>
               </div>
             </div>
           </div>
@@ -295,17 +287,17 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                  href="/guides/beginners"
+                  href="/guides/combat-sim-usage"
                   className="bg-military-900 hover:bg-military-800 text-tan-100 px-6 py-3 rounded-sm font-medium text-lg transition-colors border border-olive-700"
               >
                 Start with Basics
               </Link>
-              <Link
+              {/*<Link
                   href="/hideout/calculator"
                   className="bg-tan-100 hover:bg-tan-200 text-military-900 px-6 py-3 rounded-sm font-medium text-lg transition-colors border border-olive-700"
               >
                 Hideout Calculator
-              </Link>
+              </Link>*/}
             </div>
 
             <div className="mt-12 inline-block">

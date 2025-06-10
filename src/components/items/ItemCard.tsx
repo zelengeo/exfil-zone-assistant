@@ -148,7 +148,7 @@ const getPerformanceIndicator = (item: Item) => {
             const armorClass = item.stats.armorClass || 0;
             if (armorClass >= 6) return {icon: <ShieldIcon size={14}/>, label: 'Good', color: 'text-green-400'};
             if (armorClass >= 4) return {icon: <ShieldIcon size={14}/>, label: 'Viable', color: 'text-yellow-400'};
-            if (armorClass > 0) return {icon: <ShieldIcon size={14}/>, label: 'Useless', color: 'text-grey-400'};
+            if (armorClass >= 0) return {icon: <ShieldIcon size={14}/>, label: 'Useless', color: 'text-grey-400'};
             break;
     }
     return null;
@@ -229,7 +229,7 @@ const ItemCard: React.FC<ItemCardProps> = ({item}) => {
 
                     {/* Weight indicator */}
                     <div className="text-xs text-tan-400">
-                        {item.stats.weight.toFixed(1)} kg
+                        {item.stats.weight.toFixed(2)} kg
                     </div>
                 </div>
             </div>

@@ -73,8 +73,8 @@ function calculateShotDamage(
     overridePenetrationChance: boolean | null = null,
     applyRandom: boolean = false,
 ): ShotResult {
-    // Apply range falloff to base damage and penetration
-    const rangeDamage = applyRangeFalloff(ammo.damage, ammo, range);
+    // Apply range falloff to base damage and penetration.//FIXME DAMAGE manipulation is to handle buckshot
+    const rangeDamage = applyRangeFalloff((ammo.pellets || 1) * ammo.damage, ammo, range);
     const rangePenetration = applyRangePenetrationFalloff(ammo.penetration, ammo, range);
 
     // If no armor, full damage applies

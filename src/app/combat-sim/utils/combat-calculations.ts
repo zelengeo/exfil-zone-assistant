@@ -71,6 +71,7 @@ function calculateAttackerZones(
             damage: ammo.stats.damage,
             penetration: ammo.stats.penetration,
             caliber: ammo.stats.caliber,
+            pellets: ammo.stats.pellets,
             muzzleVelocity: ammo.stats.muzzleVelocity,
             bleedingChance: ammo.stats.bleedingChance || 0,
             bluntDamageScale: ammo.stats.bluntDamageScale || 0.1,

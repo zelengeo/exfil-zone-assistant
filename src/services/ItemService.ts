@@ -73,6 +73,7 @@ function transformItemData(rawItem: Item): Item {
             baseItem.stats.caliber = rawItem.stats.caliber;
             baseItem.stats.damage = rawItem.stats.damage;
             baseItem.stats.penetration = rawItem.stats.penetration;
+            baseItem.stats.pellets = rawItem.stats.pellets;
             baseItem.stats.muzzleVelocity = rawItem.stats.muzzleVelocity;
             baseItem.stats.bleedingChance = rawItem.stats.bleedingChance;
             baseItem.stats.bluntDamageScale = rawItem.stats.bluntDamageScale;

@@ -12,7 +12,7 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 85000,
+      "price": 29485,
       "weight": 7.2,
       "armorClass": 4,
       "maxDurability": 90,
@@ -146,7 +146,7 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 85000,
+      "price": 53225,
       "weight": 7.2,
       "armorClass": 5,
       "maxDurability": 105,
@@ -266,7 +266,7 @@
       ]
     },
     "notes": "Military-grade protection with ceramic trauma plates. Effective against most rifle calibers.",
-    "tips": "Balance the excellent protection against the mobility penalty. Best used when expecting heavy combat or holding defensive positions."
+    "tips": "The only AC5 armor at LVL3 trader. You will get used to it"
   },
   {
     "id": "armor-apex-bk",
@@ -281,7 +281,7 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 120000,
+      "price": 77284,
       "weight": 7.2,
       "armorClass": 5,
       "maxDurability": 105,
@@ -545,7 +545,7 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 145000,
+      "price": 77284,
       "weight": 5.5,
       "armorClass": 5,
       "maxDurability": 90,
@@ -675,7 +675,7 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 75000,
+      "price": 41546,
       "weight": 4.9,
       "armorClass": 4,
       "maxDurability": 130,
@@ -805,7 +805,7 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 165000,
+      "price": 78830,
       "weight": 8.8,
       "armorClass": 5,
       "maxDurability": 150,
@@ -934,8 +934,8 @@
       "fullsize": "/images/items/armor/WarfareTecVest_IOTVGEN3.webp"
     },
     "stats": {
-      "rarity": "Epic",
-      "price": 195000,
+      "rarity": "Legendary",
+      "price": 205000,
       "weight": 9.3,
       "armorClass": 6,
       "maxDurability": 200,
@@ -1083,7 +1083,7 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 55000,
+      "price": 41966,
       "weight": 2.8,
       "armorClass": 4,
       "maxDurability": 75,
@@ -1202,7 +1202,7 @@
   },
   {
     "id": "armor-police-vest",
-    "name": "Police Soft Armor",
+    "name": "Police PACA Armor",
     "description": "Standard police issue soft body armor vest. Designed for patrol duty with protection against common threats while maintaining comfort during extended wear.",
     "category": "gear",
     "subcategory": "Body Armor",
@@ -1213,7 +1213,7 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 42000,
+      "price": 14084,
       "weight": 4.7,
       "armorClass": 3,
       "maxDurability": 120,
@@ -1342,7 +1342,7 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 28000,
+      "price": 6435,
       "weight": 3.9,
       "armorClass": 2,
       "maxDurability": 95,
@@ -1472,7 +1472,7 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 48000,
+      "price": 20444,
       "weight": 3.3,
       "armorClass": 3,
       "maxDurability": 105,
@@ -1601,7 +1601,7 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 48000,
+      "price": 19451,
       "weight": 3.3,
       "armorClass": 3,
       "maxDurability": 105,
@@ -1731,7 +1731,7 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 78000,
+      "price": 42805,
       "weight": 5.3,
       "armorClass": 4,
       "maxDurability": 130,
@@ -1861,7 +1861,7 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 78000,
+      "price": 42805,
       "weight": 5.3,
       "armorClass": 4,
       "maxDurability": 130,
@@ -1990,8 +1990,8 @@
       "fullsize": "/images/items/armor/WarfareTecVest_SDprotecter.webp"
     },
     "stats": {
-      "rarity": "Epic",
-      "price": 285000,
+      "rarity": "Ultimate",
+      "price": 245000,
       "weight": 14.0,
       "armorClass": 6,
       "maxDurability": 275,
@@ -2149,8 +2149,8 @@
       "fullsize": "/images/items/armor/WarfareTecVest_SDprotecter_Black.webp"
     },
     "stats": {
-      "rarity": "Epic",
-      "price": 285000,
+      "rarity": "Ultimate",
+      "price": 245000,
       "weight": 14.0,
       "armorClass": 6,
       "maxDurability": 275,
@@ -2298,7 +2298,7 @@
   },
   {
     "id": "armor-security-vest",
-    "name": "Security Soft Armor",
+    "name": "Security PACA Armor",
     "description": "Basic security guard vest with minimal ballistic protection. Designed for civilian security applications with comfort prioritized over protection.",
     "category": "gear",
     "subcategory": "Body Armor",
@@ -2309,7 +2309,7 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 25000,
+      "price": 6371,
       "weight": 3.9,
       "armorClass": 2,
       "maxDurability": 95,
@@ -2439,7 +2439,7 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 38000,
+      "price": 20444,
       "weight": 4.2,
       "armorClass": 3,
       "maxDurability": 120,
@@ -2569,7 +2569,7 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 175000,
+      "price": 205000,
       "weight": 7.5,
       "armorClass": 6,
       "maxDurability": 160,
@@ -2716,7 +2716,7 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 225000,
+      "price": 205000,
       "weight": 8.2,
       "armorClass": 6,
       "maxDurability": 160,
@@ -2863,7 +2863,7 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 32000,
+      "price": 9251,
       "weight": 2.6,
       "armorClass": 2,
       "maxDurability": 70,
@@ -2992,7 +2992,7 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 95000,
+      "price": 63700,
       "weight": 5.3,
       "armorClass": 5,
       "maxDurability": 130,
@@ -3122,7 +3122,7 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 85000,
+      "price": 63700,
       "weight": 5.3,
       "armorClass": 5,
       "maxDurability": 130,

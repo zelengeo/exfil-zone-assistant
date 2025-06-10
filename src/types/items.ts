@@ -125,6 +125,7 @@ export interface AmmoProperties {
     // Required ammo stats
     damage: number;
     penetration: number;
+    pellets?: number;
     caliber: string;
 
     // Damage modifiers

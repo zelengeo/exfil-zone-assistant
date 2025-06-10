@@ -11,7 +11,7 @@ interface ArmorZonesDisplayProps {
 
 export default function ArmorZonesDisplay({protectiveData, className = ''}: ArmorZonesDisplayProps) {
     const [selectedZone, setSelectedZone] = useState<string | null>(null);
-
+    
     // Get protection data for a specific zone
     const getZoneProtection = (zoneId: string): ProtectiveZone | null => {
         const zone = ARMOR_ZONES[zoneId];
@@ -37,21 +37,6 @@ export default function ArmorZonesDisplay({protectiveData, className = ''}: Armo
         acc[category].push(zone);
         return acc;
     }, {} as Record<string, ProtectiveZone[]>);
-
-    // Human-readable zone names
-    const getZoneName = (bodyPart: string) => {
-        const names: Record<string, string> = {
-            'spine_01': 'Upper Chest',
-            'spine_02': 'Lower Chest',
-            'spine_03': 'Upper Stomach',
-            'pelvis': 'Pelvis',
-            'UpperArm_L': 'Left Upper Arm',
-            'UpperArm_R': 'Right Upper Arm',
-            'Thigh_L': 'Left Thigh',
-            'Thigh_R': 'Right Thigh'
-        };
-        return names[bodyPart] || bodyPart;
-    };
 
     return (
         <div className={`military-box p-6 rounded-sm ${className}`}>
@@ -148,7 +133,7 @@ export default function ArmorZonesDisplay({protectiveData, className = ''}: Armo
                                         >
                                             <div className="flex items-center justify-between mb-2">
                                                 <span className="text-tan-100 font-medium">
-                                                    {getZoneName(zone.bodyPart)}
+                                                    {ARMOR_ZONES[zone.bodyPart].name}
                                                 </span>
                                                 <span className={`${color.text} font-medium`}>
                                                     Class {zone.armorClass}

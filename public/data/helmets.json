@@ -21,7 +21,7 @@
       "bluntDamageScalar": 1.0,
       "protectiveData": [
         {
-          "bodyPart": "head-top",
+          "bodyPart": "head_top",
           "armorClass": 1,
           "bluntDamageScalar": 1.0,
           "protectionAngle": 90
@@ -98,7 +98,7 @@
       "bluntDamageScalar": 0.7,
       "protectiveData": [
         {
-          "bodyPart": "head-top",
+          "bodyPart": "head_top",
           "armorClass": 4,
           "bluntDamageScalar": 0.7,
           "protectionAngle": 90
@@ -208,7 +208,7 @@
       "bluntDamageScalar": 0.7,
       "protectiveData": [
         {
-          "bodyPart": "head-top",
+          "bodyPart": "head_top",
           "armorClass": 4,
           "bluntDamageScalar": 0.7,
           "protectionAngle": 90
@@ -318,7 +318,7 @@
       "bluntDamageScalar": 0.7,
       "protectiveData": [
         {
-          "bodyPart": "head-top",
+          "bodyPart": "head_top",
           "armorClass": 4,
           "bluntDamageScalar": 0.7,
           "protectionAngle": 90
@@ -428,7 +428,7 @@
       "bluntDamageScalar": 0.7,
       "protectiveData": [
         {
-          "bodyPart": "head-top",
+          "bodyPart": "head_top",
           "armorClass": 4,
           "bluntDamageScalar": 0.7,
           "protectionAngle": 90
@@ -529,8 +529,8 @@
       "fullsize": "/images/items/helmets/Icon_helmet_5.webp"
     },
     "stats": {
-      "rarity": "Epic",
-      "price": 125000,
+      "rarity": "Rare",
+      "price": 82325,
       "weight": 2.8,
       "armorClass": 5,
       "maxDurability": 95,
@@ -631,7 +631,7 @@
       "soundMix": "default"
     },
     "notes": "High-end tactical helmet offering Class 5 protection with excellent coverage. Heavy but provides superior defense against high-penetration rounds.",
-    "tips": "Ideal for players facing heavily armed opponents. The weight penalty is significant but the protection is worth it for dangerous engagements."
+    "tips": "The only helmet with jaw protection - one of the few meta helmet options."
   },
   {
     "id": "helmet-safety-first",
@@ -1104,7 +1104,7 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 85000,
+      "price": 65860,
       "weight": 2.3,
       "armorClass": 5,
       "soundMix": "OPSWAT",
@@ -1214,7 +1214,7 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 95000,
+      "price": 67304,
       "weight": 2.5,
       "armorClass": 5,
       "soundMix": "OPSWAT",
@@ -1324,7 +1324,7 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 87000,
+      "price": 78057,
       "weight": 2.3,
       "armorClass": 5,
       "maxDurability": 65,
@@ -1763,8 +1763,8 @@
       "fullsize": "/images/items/helmets/Icon_Helmet_013_Hyq.webp"
     },
     "stats": {
-      "rarity": "Uncommon",
-      "price": 28000,
+      "rarity": "Rare",
+      "price": 43790,
       "weight": 0.9,
       "soundMix": "MuffledGeneral",
       "armorClass": 4,
@@ -1995,8 +1995,8 @@
       "fullsize": "/images/items/helmets/SM_Helmet_012_Zty.webp"
     },
     "stats": {
-      "rarity": "Epic",
-      "price": 65000,
+      "rarity": "Rare",
+      "price": 43352,
       "weight": 2.3,
       "armorClass": 4,
       "canAttach": [
@@ -2560,7 +2560,7 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 185000,
+      "price": 102198,
       "weight": 4.4,
       "armorClass": 6,
       "canAttach": [
@@ -2674,7 +2674,7 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 185000,
+      "price": 102198,
       "weight": 4.4,
       "armorClass": 6,
       "maxDurability": 77,
