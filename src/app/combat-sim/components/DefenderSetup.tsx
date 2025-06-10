@@ -280,9 +280,9 @@ export default function DefenderSetup({defender, onUpdate}: DefenderSetupProps) 
                                 value={defender.bodyArmorDurability}
                                 onChange={(e) => onUpdate({bodyArmorDurability: Number(e.target.value)})}
                                 className="w-full h-2 bg-military-700 rounded-sm appearance-none cursor-pointer
-                                [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4
+                                [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-8
                                 [&::-webkit-slider-thumb]:bg-olive-500 [&::-webkit-slider-thumb]:rounded-sm
-                                [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4
+                                [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-8
                                 [&::-moz-range-thumb]:bg-olive-500 [&::-moz-range-thumb]:rounded-sm [&::-moz-range-thumb]:border-0"
                             />
                             <div className="flex justify-between text-xs text-tan-400">
@@ -481,9 +481,9 @@ export default function DefenderSetup({defender, onUpdate}: DefenderSetupProps) 
                                 value={defender.helmetDurability}
                                 onChange={(e) => onUpdate({helmetDurability: Number(e.target.value)})}
                                 className="w-full h-2 bg-military-700 rounded-sm appearance-none cursor-pointer
-                                [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4
+                                [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-8
                                 [&::-webkit-slider-thumb]:bg-olive-500 [&::-webkit-slider-thumb]:rounded-sm
-                                [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4
+                                [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-8
                                 [&::-moz-range-thumb]:bg-olive-500 [&::-moz-range-thumb]:rounded-sm [&::-moz-range-thumb]:border-0"
                             />
                             <div className="flex justify-between text-xs text-tan-400">

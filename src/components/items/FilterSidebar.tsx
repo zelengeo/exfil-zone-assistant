@@ -239,7 +239,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
                     </div>
 
                     {/* Reset filters button */}
-                    <button
+                    {/*<button
                         onClick={() => {
                             clearFilters()
                             onClose();
@@ -247,7 +247,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
                         className="w-full py-3 border border-olive-700 rounded-sm text-tan-300 hover:bg-military-700 hover:text-tan-100"
                     >
                         Reset Filters
-                    </button>
+                    </button>*/}
                 </div>
             </div>
         </div>
@@ -334,10 +334,10 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
             </div>
 
             {/* Additional filter options could go here */}
-            <div className="military-box p-4 rounded-sm">
+            {/*<div className="military-box p-4 rounded-sm">
                 <h2 className="text-xl font-bold text-tan-100 mb-4 border-b border-military-700 pb-2">Options</h2>
 
-                {/* Reset filters button */}
+                 {//Reset filters button}
                 <button
                     onClick={() => {
                         clearFilters()
@@ -346,7 +346,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
                 >
                     Reset Filters
                 </button>
-            </div>
+            </div>*/}
         </div>
     );
 

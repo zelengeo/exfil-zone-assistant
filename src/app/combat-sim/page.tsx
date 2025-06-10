@@ -104,9 +104,9 @@ export default function CombatSimulatorPage() {
                                 value={simulation.range}
                                 onChange={(e) => updateSimulation({range: parseInt(e.target.value)})}
                                 className="flex-grow h-2 bg-military-700 rounded-sm appearance-none cursor-pointer
-                  [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-4
+                  [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-8
                   [&::-webkit-slider-thumb]:bg-olive-500 [&::-webkit-slider-thumb]:rounded-sm
-                  [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-4
+                  [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-8
                   [&::-moz-range-thumb]:bg-olive-500 [&::-moz-range-thumb]:rounded-sm [&::-moz-range-thumb]:border-0"
                             />
                             <span className="text-tan-100 font-mono min-w-[60px]">{simulation.range}m</span>
