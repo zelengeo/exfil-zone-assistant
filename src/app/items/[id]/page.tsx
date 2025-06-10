@@ -26,7 +26,7 @@ import {
     formatWeight,
     getRarityColorClass,
     getRarityBorderClass,
-    getCategoryById, AnyItem, FIRE_MODE_CONFIG
+    getCategoryById, AnyItem, FIRE_MODE_CONFIG, Item
 } from '@/types/items';
 import {getItemById} from "@/services/ItemService";
 import {isAnyItem, isArmor} from "@/app/combat-sim/utils/types";
@@ -314,7 +314,7 @@ interface PageProps {
 export default function ItemDetail({params}: PageProps) {
     const {id} = React.use(params);
     const [activeTab, setActiveTab] = useState('stats');
-    const [item, setItem] = useState<AnyItem | null>(null);
+    const [item, setItem] = useState<Item | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {

@@ -8,6 +8,11 @@ interface RelatedItemsProps {
     className?: string;
 }
 
+interface CraftingRecipe {
+    inputs: { itemId: string, quantity: number }[],
+    output: { quantity: number },
+}
+
 /**
  * Placeholder component for displaying related items, quests, and hideout upgrades
  * Will be expanded when Quest and Hideout routes are implemented
@@ -15,9 +20,13 @@ interface RelatedItemsProps {
 const RelatedItems: React.FC<RelatedItemsProps> = ({ item, className = '' }) => {
     const [activeTab, setActiveTab] = useState('crafting');
 
-    // Check if the item has related data and get counts
-    const craftingCount = item.craftingRecipes ? item.craftingRecipes.length : 0;
-    const questsCount = item.relatedQuests ? item.relatedQuests.length : 0;
+    // TODO will be reworked
+    // const craftingCount = item.craftingRecipes ? item.craftingRecipes.length : 0;
+    // const questsCount = item.relatedQuests ? item.relatedQuests.length : 0;
+    const craftingRecipes: CraftingRecipe[]= [];
+    const relatedQuests: string[]= [];
+    const craftingCount = 0;
+    const questsCount = 0;
     // We'll assume hideout upgrades will be added later
     const hideoutCount = 0;
 
@@ -64,7 +73,7 @@ const RelatedItems: React.FC<RelatedItemsProps> = ({ item, className = '' }) => 
 
                     {craftingCount > 0 ? (
                         <div className="space-y-6">
-                            {item.craftingRecipes!.map((recipe, index) => (
+                            {craftingRecipes.map((recipe, index) => (
                                 <div key={index} className="military-card p-4 rounded-sm">
                                     <h3 className="text-xl font-bold text-tan-100 mb-3 flex items-center gap-2">
                                         <Hammer size={20} className="text-olive-400" />
@@ -119,7 +128,7 @@ const RelatedItems: React.FC<RelatedItemsProps> = ({ item, className = '' }) => 
 
                     {questsCount > 0 ? (
                         <div className="space-y-4">
-                            {item.relatedQuests!.map((questId, index) => (
+                            {relatedQuests.map((questId, index) => (
                                 <div key={index} className="military-card p-4 rounded-sm flex items-center">
                                     <div className="w-10 h-10 bg-military-800 rounded-sm flex items-center justify-center mr-4">
                                         <FileText size={20} className="text-olive-400" />

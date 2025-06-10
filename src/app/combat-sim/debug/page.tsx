@@ -14,6 +14,7 @@ import "../utils/combat-test-helper"
 
 type PenetratingFilter = 'all' | 'penetrating' | 'non-penetrating';
 type StatusFilter = 'all' | 'passed' | 'failed';
+
 interface DeviationComputationValue {
     armorDamageDeviations: number[],
     bodyDamageDeviations: number[],
@@ -84,15 +85,14 @@ export default function CombatSimDebugPage() {
     }, [filteredResults]);
 
 
-
     // Run single test
-    const  runSingleTest = (testCase: SingleShotTestCase): TestRunResult => {
+    const runSingleTest = (testCase: SingleShotTestCase): TestRunResult => {
         // Find items
         const weapon = items.find(item => item.id === testCase.weapon && isWeapon(item));
         const ammo = items.find(item => item.id === testCase.ammo && isAmmunition(item));
         const armor = items.find(item => item.id === testCase.armor.id && isArmor(item));
 
-        if (!weapon || !isWeapon(weapon)|| !ammo || !isAmmunition(ammo) || !armor || !isArmor(armor)) {
+        if (!weapon || !isWeapon(weapon) || !ammo || !isAmmunition(ammo) || !armor || !isArmor(armor)) {
             console.error('Missing items for test:', testCase.id);
             return {
                 testCase,
@@ -477,29 +477,36 @@ export default function CombatSimDebugPage() {
                                         <td className="py-2 px-3">
                                             <div className="flex items-center gap-1 flex-wrap">
                                                 <Link
-                                                    href={`/items/${result.weapon.id}`}
-                                                    className={`font-medium ${getRarityColorClass(result.weapon.stats.rarity)}`}
+                                                    href={result.weapon?.id ? `/items/${result.weapon.id}` : '/items?category=weapons'}
+                                                    className={`font-medium ${getRarityColorClass(result.weapon?.stats.rarity  || "Common")}`}
                                                 >
-                                                    {result.weapon.name}
+                                                    {result.weapon?.name  || "N/A"}
                                                 </Link>
                                                 <span className="text-tan-400">+</span>
                                                 <Link
-                                                    href={`/items/${result.ammo.id}`}
-                                                    className={`font-medium ${getRarityColorClass(result.ammo.stats.rarity)}`}
+                                                    href={result.ammo?.id ? `/items/${result.ammo.id}` : `/items?category=ammo`}
+                                                    className={`font-medium ${getRarityColorClass(result.ammo?.stats.rarity || "Common")}`}
                                                 >
-                                                    {result.ammo.name}
+                                                    {result.ammo?.name || "N/A"}
                                                 </Link>
                                                 <span className="text-tan-400">vs</span>
-                                                <Link
-                                                    href={`/items/${result.armor.id}`}
-                                                    className={`font-medium ${getRarityColorClass(result.armor.stats.rarity)}`}
-                                                >
-                                                    {result.armor.name}
-                                                </Link>
-                                                <span className="text-tan-400 text-xs">({result.testCase.armor.currentDurability??result.armor.stats.maxDurability})</span>
+                                                {result.armor ?
+                                                    (<><Link
+                                                        href={`/items/${result.armor.id}`}
+                                                        className={`font-medium ${getRarityColorClass(result.armor.stats.rarity)}`}
+                                                    >
+                                                        {result.armor.name}
+                                                    </Link>
+                                                        <span
+                                                            className="text-tan-400 text-xs">({result.testCase.armor.currentDurability ?? result.armor.stats.maxDurability})</span>
+                                                    </>)
+                                                    :
+                                                    <span className=" font-medium text-tan-400">Unprotected</span>
+                                                }
                                             </div>
                                             {result.testCase.description && (
-                                                <div className="text-xs text-tan-400 mt-1">{result.testCase.description}</div>
+                                                <div
+                                                    className="text-xs text-tan-400 mt-1">{result.testCase.description}</div>
                                             )}
                                             <div className="text-xs text-tan-500">{result.testCase.id}</div>
                                         </td>

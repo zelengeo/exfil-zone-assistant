@@ -8,13 +8,25 @@ interface ItemLocationsProps {
     className?: string;
 }
 
+//TODO will be reworked
+interface ItemLocation {
+    map: string;
+    spots: {
+        x: number;
+        y: number;
+        description: string;
+    }[]
+}
+
 /**
  * Placeholder component for displaying item spawn locations
  * Will be expanded when Map route is implemented
  */
 const ItemLocations: React.FC<ItemLocationsProps> = ({ item, className = '' }) => {
     // Check if the item has locations data
-    const hasLocations = item.locations && item.locations.length > 0;
+    // const hasLocations = item.locations && item.locations.length > 0;
+    const locations: ItemLocation[] = [];
+    const hasLocations = false
 
     return (
         <div className={`military-box p-6 rounded-sm ${className}`}>
@@ -22,7 +34,7 @@ const ItemLocations: React.FC<ItemLocationsProps> = ({ item, className = '' }) =
 
             {hasLocations ? (
                 <div className="space-y-6">
-                    {item.locations!.map((location, index) => (
+                    {locations.map((location, index) => (
                         <div key={index} className="military-card p-4 rounded-sm">
                             <h3 className="text-xl font-bold text-tan-100 mb-3 flex items-center gap-2">
                                 <MapPin size={20} className="text-olive-400" />
