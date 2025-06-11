@@ -12,7 +12,7 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 2500,
+      "price": 9000,
       "weight": 0.05,
       "armorClass": 1,
       "maxDurability": 1,
@@ -2788,7 +2788,7 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 500,
+      "price": 11500,
       "weight": 0.05,
       "armorClass": 1,
       "soundMix": "default",
@@ -2866,7 +2866,7 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 500,
+      "price": 11500,
       "weight": 0.05,
       "armorClass": 1,
       "maxDurability": 1,
@@ -2944,7 +2944,7 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 500,
+      "price": 11500,
       "weight": 0.05,
       "armorClass": 1,
       "maxDurability": 1,
@@ -3022,7 +3022,7 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 750,
+      "price": 12750,
       "weight": 0.05,
       "armorClass": 1.6,
       "maxDurability": 1,
