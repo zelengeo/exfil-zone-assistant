@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: 'Exfil Zone Assistant',
     images: [
       {
-        url: 'https://exfilzone.com/og-image.jpg',
+        url: 'https://www.exfil-zone-assistant.app/og-image.jpg',
         width: 1200,
         height: 630,
       }
