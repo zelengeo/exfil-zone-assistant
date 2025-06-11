@@ -186,5 +186,5 @@ If you find this tool helpful:
 <div align="center">
   Made with ❤️ for VR Gamers
 
-[Discord](https://discord.gg/2FCDZK6C25) • [X](https://x.com/pogapwnz) • [Website](https://exfil-zone.vercel.app)
+[Discord](https://discord.gg/2FCDZK6C25) • [X](https://x.com/pogapwnz) • [Website](https://exfil-zone.app)
 </div>

@@ -292,7 +292,7 @@ export default function AppRoadmapGuide() {
                 <h2 className="text-xl font-bold text-purple-300 mb-3">Open Source Project</h2>
                 <p className="text-purple-200 mb-4">
                     Exfil Zone Assistant is <strong>open source</strong>! Our GitHub repository is public, and we welcome
-                    contributions from the community. Whether it's fixing bugs, adding features, or improving documentation,
+                    contributions from the community. Whether it&#39;s fixing bugs, adding features, or improving documentation,
                     your help makes this project better for everyone.
                 </p>
                 <div className="grid md:grid-cols-3 gap-4 mb-4">
