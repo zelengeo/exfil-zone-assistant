@@ -310,7 +310,7 @@ export default function AppRoadmapGuide() {
                     </div>
                 </div>
                 <a
-                    href={process.env.NEXT_PUBLIC_GITHUB_REPO_URL}
+                    href={"https://github.com/zelengeo/exfil-zone-assistant"}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-4 py-2 bg-purple-800 hover:bg-purple-700

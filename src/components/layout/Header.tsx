@@ -34,7 +34,7 @@ const Header: React.FC = () => {
 
                 {/* CTA Button (Desktop only) + Mobile Menu */}
                 <div className="flex items-center gap-4">
-                    <a href={process.env.NEXT_PUBLIC_KOFI_URL}
+                    <a href={"https://ko-fi.com/J3J41GATK0"}
                        className="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-olive-600 hover:bg-olive-500 text-military-900 font-medium rounded-sm transition-colors"
                        target="_blank"
                        rel="noopener noreferrer">
@@ -85,7 +85,7 @@ const Header: React.FC = () => {
 
                         {/* KoFi CTA in mobile menu */}
                         <a
-                            href={process.env.NEXT_PUBLIC_KOFI_URL}
+                            href={"https://ko-fi.com/J3J41GATK0"}
                             className="flex items-center justify-center gap-2 mt-2 py-3 px-4 bg-olive-600 hover:bg-olive-500 text-military-900 font-medium rounded-sm transition-colors"
                             target="_blank"
                             rel="noopener noreferrer"

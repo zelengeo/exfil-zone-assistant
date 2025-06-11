@@ -32,21 +32,21 @@ const Footer: React.FC = () => {
                     {/* Social Links */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <div className="flex gap-4">
-                            <a href={process.env.NEXT_PUBLIC_GITHUB_REPO_URL}
+                            <a href={"https://github.com/zelengeo/exfil-zone-assistant"}
                                className="p-2 rounded-sm hover:bg-military-800 transition-colors border border-transparent hover:border-olive-700"
                                target="_blank"
                                rel="noopener noreferrer"
                                aria-label="GitHub">
                                 <SiGithub size={20} />
                             </a>
-                            <a href={process.env.NEXT_PUBLIC_X_URL}
+                            <a href={"https://x.com/pogapwnz"}
                                className="p-2 rounded-sm hover:bg-military-800 transition-colors border border-transparent hover:border-olive-700"
                                target="_blank"
                                rel="noopener noreferrer"
                                aria-label="X (Twitter)">
                                 <SiX size={20} />
                             </a>
-                            <a href={process.env.NEXT_PUBLIC_DISCORD_INVITE_URL}
+                            <a href={"https://discord.gg/2FCDZK6C25"}
                                className="p-2 rounded-sm hover:bg-military-800 transition-colors border border-transparent hover:border-olive-700"
                                target="_blank"
                                rel="noopener noreferrer"
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
                         </div>
 
                         {/* Ko-fi Button */}
-                        <a href={process.env.NEXT_PUBLIC_KOFI_URL}
+                        <a href={"https://ko-fi.com/J3J41GATK0"}
                            className="inline-flex items-center gap-2 px-4 py-2 bg-olive-600 hover:bg-olive-500 text-military-900 font-medium rounded-sm transition-colors"
                            target="_blank"
                            rel="noopener noreferrer">
