@@ -1,11 +1,10 @@
 'use client'
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Menu, Search, X } from 'lucide-react';
+import {Coffee, FileText, Menu, Package, Target, X} from 'lucide-react';
 
 const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isSearchOpen, setIsSearchOpen] = useState(false);
 
     return (
         <header className="bg-military-900 text-tan-100 py-4 px-6 sticky top-0 z-50 shadow-lg border-b border-olive-900">
@@ -18,35 +17,30 @@ const Header: React.FC = () => {
 
                 {/* Desktop Navigation - Hidden on mobile */}
                 <nav className="hidden md:flex items-center gap-8">
-                    <Link href="/items" className="text-lg hover:text-olive-500 transition-colors">
-                        Items
+
+                    <Link href="/items" className="flex items-center gap-2 text-lg hover:text-olive-500 transition-colors group">
+                        <Package size={20} className="text-olive-600 group-hover:text-olive-500" />
+                        <span>Items</span>
                     </Link>
-                    <Link href="/combat-sim" className="text-lg hover:text-olive-500 transition-colors">
-                        Combat Sim
+                    <Link href="/combat-sim" className="flex items-center gap-2 text-lg hover:text-olive-500 transition-colors group">
+                        <Target size={20} className="text-olive-600 group-hover:text-olive-500" />
+                        <span>Combat Sim</span>
                     </Link>
-                    {/*<Link href="/hideout" className="text-lg hover:text-olive-500 transition-colors">
-                        Hideout
-                    </Link>
-                    <Link href="/maps"  aria-disabled className="text-lg hover:text-olive-500 transition-colors">
-                        Maps
-                    </Link>
-                    <Link href="/quests" aria-disabled className="text-lg hover:text-olive-500 transition-colors">
-                        Quests
-                    </Link>*/}
-                    <Link href="/guides" aria-disabled className="text-lg hover:text-olive-500 transition-colors">
-                        Guides
+                    <Link href="/guides" aria-disabled className="flex items-center gap-2 text-lg hover:text-olive-500 transition-colors group">
+                        <FileText size={20} className="text-olive-600 group-hover:text-olive-500" />
+                        <span>Guides</span>
                     </Link>
                 </nav>
 
-                {/* Search and Mobile Menu Buttons */}
+                {/* CTA Button (Desktop only) + Mobile Menu */}
                 <div className="flex items-center gap-4">
-                    <button
-                        onClick={() => setIsSearchOpen(!isSearchOpen)}
-                        className="p-2 hover:bg-military-800 rounded-sm transition-colors border border-transparent hover:border-olive-700"
-                        aria-label="Search"
-                    >
-                        <Search size={24} className="text-olive-400" />
-                    </button>
+                    <a href={process.env.NEXT_PUBLIC_KOFI_URL}
+                       className="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-olive-600 hover:bg-olive-500 text-military-900 font-medium rounded-sm transition-colors"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <Coffee size={24}/>
+                        Buy me a coffee
+                    </a>
 
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -58,69 +52,52 @@ const Header: React.FC = () => {
                 </div>
             </div>
 
+
+
             {/* Mobile Menu - Shown when isMenuOpen is true */}
             {isMenuOpen && (
                 <div className="md:hidden mt-4 py-4 px-4 bg-military-800 rounded-sm border border-olive-800">
                     <nav className="flex flex-col gap-4">
                         <Link
                             href="/items"
-                            className="text-xl py-2 px-4 hover:bg-military-700 rounded-sm transition-all border border-transparent hover:border-olive-700"
+                            className="flex items-center gap-3 text-xl py-2 px-4 hover:bg-military-700 rounded-sm transition-all border border-transparent hover:border-olive-700"
                             onClick={() => setIsMenuOpen(false)}
                         >
-                            Items
-                        </Link>
-                       {/* <Link
-                            href="/hideout"
-                            className="text-xl py-2 px-4 hover:bg-military-700 rounded-sm transition-all border border-transparent hover:border-olive-700"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Hideout
+                            <Package size={24} className="text-olive-600" />
+                            <span>Items Database</span>
                         </Link>
                         <Link
-                            href="/maps"
-                            className="text-xl py-2 px-4 hover:bg-military-700 rounded-sm transition-all border border-transparent hover:border-olive-700"
+                            href="/combat-sim"
+                            className="flex items-center gap-3 text-xl py-2 px-4 hover:bg-military-700 rounded-sm transition-all border border-transparent hover:border-olive-700"
                             onClick={() => setIsMenuOpen(false)}
                         >
-                            Maps
+                            <Target size={24} className="text-olive-600" />
+                            <span>Combat Simulator</span>
                         </Link>
-                        <Link
-                            href="/quests"
-                            className="text-xl py-2 px-4 hover:bg-military-700 rounded-sm transition-all border border-transparent hover:border-olive-700"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Quests
-                        </Link>*/}
                         <Link
                             href="/guides"
-                            className="text-xl py-2 px-4 hover:bg-military-700 rounded-sm transition-all border border-transparent hover:border-olive-700"
+                            className="flex items-center gap-3 text-xl py-2 px-4 hover:bg-military-700 rounded-sm transition-all border border-transparent hover:border-olive-700"
                             onClick={() => setIsMenuOpen(false)}
                         >
-                            Guides
+                            <FileText size={24} className="text-olive-600" />
+                            <span>Guides</span>
                         </Link>
+
+                        {/* KoFi CTA in mobile menu */}
+                        <a
+                            href={process.env.NEXT_PUBLIC_KOFI_URL}
+                            className="flex items-center justify-center gap-2 mt-2 py-3 px-4 bg-olive-600 hover:bg-olive-500 text-military-900 font-medium rounded-sm transition-colors"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            <Coffee size={24}/>
+                            Buy me a coffee
+                        </a>
                     </nav>
                 </div>
             )}
 
-            {/* Search Bar - Shown when isSearchOpen is true */}
-            {isSearchOpen && (
-                <div className="mt-4 px-4 py-3 bg-military-800 rounded-sm border border-olive-800">
-                    <div className="flex items-center gap-2">
-                        <Search size={20} className="text-olive-400" />
-                        <input
-                            type="text"
-                            placeholder="Search items, maps, guides..."
-                            className="w-full bg-transparent border-none outline-none text-lg placeholder-military-400"
-                            autoFocus
-                        />
-                        <button
-                            onClick={() => setIsSearchOpen(false)}
-                            className="p-1 hover:bg-military-700 rounded-sm transition-colors"
-                        >
-                            <X size={20} className="text-olive-400" />
-                        </button>
-                    </div>
-                </div>
-            )}
         </header>
     );
 };
