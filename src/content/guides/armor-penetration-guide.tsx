@@ -48,7 +48,7 @@ export default function ArmorPenetrationGuide() {
                             </p>
                             <ul className="mt-2 space-y-1 text-sm">
                                 <li>→ Target <strong>unarmored limbs</strong></li>
-                                <li>→ Avoid chest/head shots</li>
+                                <li>→ Avoid shots to the armor</li>
                                 <li>→ More shots needed</li>
                             </ul>
                         </div>
@@ -83,7 +83,7 @@ export default function ArmorPenetrationGuide() {
                         <h3 className="font-semibold text-olive-400 mb-3">Base Penetration Chance</h3>
                         <div className="space-y-3">
                             <p className="text-sm">
-                                Each armor piece has a <code className="text-olive-400 bg-military-900 px-1 py-0.5 rounded">penetrationChanceCurve</code> that
+                                Each armor piece has a <code className="text-olive-400 bg-military-900 px-1 py-0.5 rounded">Penetration Chance Curve</code> that
                                 determines penetration probability:
                             </p>
                             <div className="grid grid-cols-3 gap-4 text-center">
@@ -93,7 +93,7 @@ export default function ArmorPenetrationGuide() {
                                     <p className="text-xs text-tan-500">(Low pen ammo)</p>
                                 </div>
                                 <div>
-                                    <p className="text-2xl font-bold text-yellow-400">~50%</p>
+                                    <p className="text-2xl font-bold text-yellow-400">~30%</p>
                                     <p className="text-xs text-tan-400">Equal values</p>
                                     <p className="text-xs text-tan-500">(Pen ≈ Armor)</p>
                                 </div>
@@ -179,7 +179,7 @@ export default function ArmorPenetrationGuide() {
                                         When ammo penetration <strong>barely exceeds</strong> armor class:
                                     </p>
                                     <p className="text-lg font-semibold text-yellow-400 mt-2">
-                                        Damage reduction &gt Listed value
+                                        Damage reduction &gt; Listed value
                                     </p>
                                     <p className="text-xs text-tan-500 mt-1">
                                         (Can be 40%+ even if armor shows 20%)
@@ -286,21 +286,20 @@ export default function ArmorPenetrationGuide() {
                             <li className="flex items-start gap-2">
                                 <ArrowRight size={14} className="text-green-400 mt-0.5 flex-shrink-0" />
                                 <span>
-                  <strong>M995 vs Fresh Class 6:</strong> High penetration chance (~85%), minimal damage reduction, 
-                  aim center mass for quick kills.
+                  <strong>M993 vs Fresh Class 6:</strong> High penetration chance (~90%), minimal damage reduction,
+                  aim vital zones for quick kills.
                 </span>
                             </li>
                             <li className="flex items-start gap-2">
                                 <ArrowRight size={14} className="text-green-400 mt-0.5 flex-shrink-0" />
                                 <span>
-                  <strong>M855 vs Class 5:</strong> Low penetration chance (~10%), high damage reduction if it penetrates, 
-                  better to aim for legs.
+                  <strong>SP vs Class 4:</strong> Low penetration chance (8%), low armor damage, aim for unprotected areas.
                 </span>
                             </li>
                             <li className="flex items-start gap-2">
                                 <ArrowRight size={14} className="text-green-400 mt-0.5 flex-shrink-0" />
                                 <span>
-                  <strong>Any ammo vs 0% durability armor:</strong> Even pistol rounds can penetrate, but there&#39;s still 
+                  <strong>Any ammo vs 0% durability armor:</strong> Even buckshot rounds can penetrate, but there&#39;s still
                   an 8% chance to bounce!
                 </span>
                             </li>
@@ -328,7 +327,7 @@ export default function ArmorPenetrationGuide() {
                             <span className="text-olive-300 font-bold text-sm">1</span>
                         </div>
                         <p className="text-tan-200">
-                            Penetration chance ranges from ~8% to ~92% based on ammo vs armor matchup
+                            Penetration chance ranges from ~2% to ~92% based on ammo vs armor matchup
                         </p>
                     </li>
                     <li className="flex items-start gap-3">

@@ -819,7 +819,7 @@
   },
   {
     "id": "weapon-hk416",
-    "name": "HK416",
+    "name": "RC416",
     "description": "German-designed rifle based on AR-15 platform. Best rate of fire in the class.",
     "category": "weapons",
     "subcategory": "5.56x45mm",
