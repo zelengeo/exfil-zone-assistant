@@ -1,5 +1,5 @@
-import { useSearchParams, useRouter, usePathname } from 'next/navigation';
-import { useCallback } from 'react';
+import {useSearchParams, useRouter, usePathname} from 'next/navigation';
+import {useCallback} from 'react';
 import {
     CombatSimulation,
     AttackerSetup,
@@ -9,16 +9,15 @@ import {
     areWeaponAmmoCompatible, isBodyArmor, isHelmet, isFaceShield, isDisplayMode
 } from '../utils/types';
 import {useFetchItems} from "@/hooks/useFetchItems";
-import {BodyArmor, FaceShield, Helmet} from "@/types/items";
 
 // interface UrlParamConfig {
-    // Attackers: a1w=weaponId&a1a=ammoId&a2w=weaponId&a2a=ammoId...
-    // Defender: da=armor&dh=helmet&df=faceShield&dad=armorDurability&dhd=helmetDurability
-    // Settings: r=range&d=displayMode&s=sortBy
+// Attackers: a1w=weaponId&a1a=ammoId&a2w=weaponId&a2a=ammoId...
+// Defender: da=armor&dh=helmet&df=faceShield&dad=armorDurability&dhd=helmetDurability
+// Settings: r=range&d=displayMode&s=sortBy
 // }
 
 export function useCombatSimUrlParams() {
-    const { items } = useFetchItems();
+    const {getItemById} = useFetchItems();
     const searchParams = useSearchParams();
     const router = useRouter();
     const pathname = usePathname();
@@ -30,17 +29,20 @@ export function useCombatSimUrlParams() {
 
         // Parse attackers
         const attackers: AttackerSetup[] = [];
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i <= 3; i++) {
             const weaponId = params.get(`a${i}w`);
             const ammoId = params.get(`a${i}a`);
 
-            const attacker = {
-                id: String(i),
-                weapon: weaponId ? items.find(item => (item.id === weaponId) && isWeapon(item)) : null,
-                ammo: ammoId ? items.find(item => (item.id === ammoId) && isAmmunition(item)) : null
-            } as AttackerSetup;
+            if (weaponId) {
+                const weapon = getItemById(weaponId);
+                const ammo = ammoId && getItemById(ammoId);
 
-            if (areWeaponAmmoCompatible(attacker.weapon, attacker.ammo)) attackers.push(attacker);
+                if (weapon && isWeapon(weapon) && ammo && isAmmunition(ammo) && areWeaponAmmoCompatible(weapon, ammo)) attackers.push({
+                    id: String(i),
+                    weapon,
+                    ammo
+                } as AttackerSetup)
+            }
 
         }
 
@@ -51,31 +53,39 @@ export function useCombatSimUrlParams() {
         // Parse defender armor
         const defenderParams: Partial<DefenderSetup> = {};
         const armorId = params.get(`da`);
-        defenderParams.bodyArmor = armorId ? items.find(item => (item.id === armorId) && isBodyArmor(item)) as BodyArmor : null;
-        if (defenderParams.bodyArmor && params.get(`dad`)){
-            // @ts-expect-error params.get(`dad`) is not null
-            const durability = parseInt(params.get(`dad`));
-            defenderParams.bodyArmorDurability = durability < 0 ? 0 : durability > 100 ? 100 : durability;
-        }
-
-        const helmetId = params.get(`dh`);
-        defenderParams.helmet = helmetId ? items.find(item => (item.id === helmetId) && isHelmet(item)) as Helmet : null;
-        if (defenderParams.helmet && params.get(`dhd`)){
-            // @ts-expect-error params.get(`dhd`) is not null
-            const durability = parseInt(params.get(`dhd`));
-            defenderParams.helmetDurability = durability < 0 ? 0 : durability > 100 ? 100 : durability;
-        }
-
-        const faceShieldId = params.get(`df`);
-        if (defenderParams.helmet && faceShieldId) {
-            const faceShield = faceShieldId ? items.find(item => (item.id === faceShieldId) && isFaceShield(item)) as FaceShield : null;
-            if (faceShield && defenderParams.helmet.stats.canAttach?.includes(faceShield.id)) {
-                defenderParams.faceShield = faceShield;
+        if (armorId) {
+            const armor = getItemById(armorId);
+            if (armor && isBodyArmor(armor)) {
+                defenderParams.bodyArmor = armor;
+                if (params.get(`dad`)) {
+                    // @ts-expect-error params.get(`dad`) is not null
+                    const durability = parseInt(params.get(`dad`));
+                    defenderParams.bodyArmorDurability = durability < 0 ? 0 : durability > 100 ? 100 : durability;
+                }
             }
         }
 
 
+        const helmetId = params.get(`dh`);
+        if (helmetId) {
+            const helmet = getItemById(helmetId);
+            if (helmet && isHelmet(helmet)) {
+                defenderParams.helmet = helmet;
+                if (params.get(`dhd`)) {
+                    // @ts-expect-error params.get(`dhd`) is not null
+                    const durability = parseInt(params.get(`dhd`));
+                    defenderParams.helmetDurability = durability < 0 ? 0 : durability > 100 ? 100 : durability;
+                }
 
+                const faceShieldId = params.get(`df`);
+                if (faceShieldId) {
+                    const faceShield = getItemById(faceShieldId);
+                    if (faceShield && isFaceShield(faceShield) && defenderParams.helmet.stats.canAttach?.includes(faceShield.id)) {
+                        defenderParams.faceShield = faceShield;
+                    }
+                }
+            }
+        }
 
 
         if (Object.keys(defenderParams).length > 0) {
@@ -100,7 +110,7 @@ export function useCombatSimUrlParams() {
         // }
 
         return result;
-    }, [searchParams, items]);
+    }, [searchParams, getItemById]);
 
     // Update URL with current simulation state
     const updateUrlParams = useCallback((simulation: CombatSimulation) => {
@@ -108,16 +118,15 @@ export function useCombatSimUrlParams() {
 
         // Update URL without navigation
         const newUrl = `${pathname}?${params.toString()}`;
-        router.replace(newUrl, { scroll: false });
+        router.push(newUrl, {scroll: false});
     }, [router, pathname]);
 
     // Generate shareable link
     const getShareableLink = useCallback((simulation: CombatSimulation): string => {
         const params = buildUrlParams(simulation);
 
-        const baseUrl = typeof window !== 'undefined'
-            ? `${window.location.origin}${pathname}`
-            : '';
+        const baseUrl = `${window.location.origin}${pathname}`
+
 
         return `${baseUrl}?${params.toString()}`;
     }, [pathname]);
@@ -129,17 +138,16 @@ export function useCombatSimUrlParams() {
     };
 }
 
-function buildUrlParams( simulation: CombatSimulation) {
+function buildUrlParams(simulation: CombatSimulation) {
     const params = new URLSearchParams();
 
     // Add attackers
     simulation.attackers.forEach((attacker, index) => {
-        const num = index + 1;
         if (attacker.weapon) {
-            params.set(`a${num}w`, attacker.weapon.id);
+            params.set(`a${index}w`, attacker.weapon.id);
         }
         if (attacker.ammo) {
-            params.set(`a${num}a`, attacker.ammo.id);
+            params.set(`a${index}a`, attacker.ammo.id);
         }
     });
 

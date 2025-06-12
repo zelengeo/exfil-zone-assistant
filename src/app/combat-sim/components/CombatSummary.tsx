@@ -1,5 +1,5 @@
 import React from 'react';
-import {Shield, Heart, Calculator, ChevronDown, ChevronUp} from 'lucide-react';
+import {Shield, Heart, Calculator, PanelLeftOpen, PanelLeftClose} from 'lucide-react';
 import {
     ARMOR_ZONES,
     getArmorClassColor,
@@ -113,7 +113,7 @@ export default function CombatSummary({zoneCalculations, simulation, validAttack
         >
             <Calculator size={20}/>
             STATS FOR NERDS
-            {showDetailedAnalysis ? <ChevronDown size={20}/> : <ChevronUp size={20}/>}
+            {showDetailedAnalysis ? <PanelLeftClose size={20}/> : <PanelLeftOpen size={20}/>}
         </button>
         { showDetailedAnalysis &&
         <div className="military-box p-6 rounded-sm">

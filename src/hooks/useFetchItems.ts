@@ -3,6 +3,7 @@ import { Item } from '@/types/items';
 
 // In-memory cache to avoid redundant fetches
 let itemsCache: Item[] | null = null;
+let itemsMap: Record<string, Item> | null = null;
 let fetchPromise: Promise<Item[]> | null = null;
 let fetchError: Error | null = null; // To store and re-throw errors
 
@@ -19,6 +20,7 @@ function getItemsAsync(): Promise<Item[]> {
         fetchPromise = fetchItemsData()
             .then(data => {
                 itemsCache = data;
+                itemsMap = data.reduce((map, item: Item) => {map[item.id] = item; return map;}, {} as Record<string, Item>)
                 fetchPromise = null; // Clear promise on success
                 fetchError = null;
                 return data;
@@ -32,9 +34,14 @@ function getItemsAsync(): Promise<Item[]> {
     return fetchPromise;
 }
 
-export function useFetchItems(): { items: Item[] } {
+function getItemById(id: string): Item | undefined {
+        return itemsMap?.[id];
+
+}
+
+export function useFetchItems(): { items: Item[], getItemById: (id: string) => Item | undefined } {
     if (itemsCache) {
-        return { items: itemsCache };
+        return { items: itemsCache, getItemById };
     }
 
     if (fetchError) {

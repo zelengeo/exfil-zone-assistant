@@ -106,9 +106,7 @@ export default function CombatSimulatorContent() {
 
                         {/* Share Button - aligned to the right */}
                         {hasValidSetups && (
-                            <ShareButton
-                                getShareLink={() => getShareableLink(simulation)}
-                            />
+                            <ShareButton getShareLink={()=>getShareableLink(simulation)}/>
                         )}
 
                         {/* Range Presets */}
@@ -151,19 +149,8 @@ export default function CombatSimulatorContent() {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
                     {/* Attacker Panel (Left) */}
                     <div className="lg:col-span-3 space-y-4">
-                        <div className="flex items-center justify-between mb-4">
-                            <h3 className="text-xl font-bold text-olive-400">ATTACKERS</h3>
-                            {simulation.attackers.length < 4 && (
-                                <button
-                                    onClick={addAttacker}
-                                    className="flex items-center gap-1 px-3 py-2 bg-olive-600 hover:bg-olive-500
-                    text-tan-100 rounded-sm transition-colors border border-olive-700"
-                                >
-                                    <Plus size={16}/>
-                                    Add
-                                </button>
-                            )}
-                        </div>
+                        <h3 className="text-xl font-bold text-olive-400">ATTACKERS</h3>
+
 
                         {/* AttackerSetup components */}
                         {simulation.attackers.map((attacker, index) => (
@@ -176,6 +163,21 @@ export default function CombatSimulatorContent() {
                                 canRemove={simulation.attackers.length > 1}
                             />
                         ))}
+
+                        {/* Add attacker button */}
+                        {simulation.attackers.length < 4 && (
+                            <button
+                                onClick={addAttacker}
+                                className="w-full mt-4 flex items-center justify-center gap-2 px-4 py-3
+                       bg-olive-600 hover:bg-olive-500 text-tan-100 rounded-sm
+                       transition-colors border border-olive-700 font-bold "
+                                title="Add a new attacker setup"
+                            >
+                                <Plus size={20}/>
+                                <span>Add New Attacker</span>
+                            </button>
+                        )}
+
                     </div>
 
                     <div className="lg:col-span-6">
