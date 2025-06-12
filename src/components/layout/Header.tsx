@@ -39,7 +39,6 @@ const Header: React.FC = () => {
                        target="_blank"
                        rel="noopener noreferrer">
                         <Coffee size={24}/>
-                        Buy me a coffee
                     </a>
 
                     <button

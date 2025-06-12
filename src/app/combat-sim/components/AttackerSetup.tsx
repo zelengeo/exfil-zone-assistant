@@ -1,15 +1,15 @@
 import React, {useState, useEffect, useMemo, useRef} from 'react';
-import {X, ChevronDown, AlertCircle, ExternalLink} from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import {X, ChevronDown, AlertCircle, ExternalLink, Loader2, CircleAlert} from 'lucide-react';
+import {useFetchItems} from "@/hooks/useFetchItems";
 import {
     AttackerSetup as AttackerSetupType,
     isWeapon,
     isAmmunition,
     areWeaponAmmoCompatible, ATTACKER_COLORS
 } from '../utils/types';
-import {fetchItemsData} from '@/services/ItemService';
-import {Ammunition, getRarityColorClass, Item, Weapon} from '@/types/items';
+import {Ammunition, getRarityColorClass, Weapon} from '@/types/items';
 
 interface AttackerSetupProps {
     attacker: AttackerSetupType;
@@ -25,8 +25,7 @@ export default function AttackerSetup({
                                           onRemove,
                                           canRemove
                                       }: AttackerSetupProps) {
-    const [items, setItems] = useState<Item[]>([]);
-    const [loading, setLoading] = useState(true);
+    const { items, loading, error } = useFetchItems();
     const [weaponSearchOpen, setWeaponSearchOpen] = useState(false);
     const [ammoSearchOpen, setAmmoSearchOpen] = useState(false);
     const [weaponSearch, setWeaponSearch] = useState('');
@@ -35,21 +34,6 @@ export default function AttackerSetup({
     // Refs for dropdown containers
     const weaponDropdownRef = useRef<HTMLDivElement>(null);
     const ammoDropdownRef = useRef<HTMLDivElement>(null);
-
-    // Load items data
-    useEffect(() => {
-        const loadItems = async () => {
-            try {
-                const data = await fetchItemsData();
-                setItems(data);
-            } catch (error) {
-                console.error('Failed to load items:', error);
-            } finally {
-                setLoading(false);
-            }
-        };
-        loadItems();
-    }, []);
 
     // Handle clicking outside dropdowns
     useEffect(() => {
@@ -118,13 +102,25 @@ export default function AttackerSetup({
         return `${fireRate} RPM`;
     };
 
+    // Show loading state
     if (loading) {
         return (
-            <div className="military-card p-4 rounded-sm">
-                <div className="animate-pulse">
-                    <div className="h-4 bg-military-700 rounded w-1/3 mb-3"></div>
-                    <div className="h-10 bg-military-700 rounded mb-2"></div>
-                    <div className="h-10 bg-military-700 rounded"></div>
+            <div className="military-box rounded-sm p-4">
+                <div className="flex items-center justify-center py-8">
+                    <Loader2 size={24} className="animate-spin text-olive-600" />
+                    <span className="ml-2 text-tan-300">Loading items...</span>
+                </div>
+            </div>
+        );
+    }
+
+    // Show error state
+    if (error) {
+        return (
+            <div className="military-box rounded-sm p-4">
+                <div className="flex items-center justify-center py-8">
+                    <CircleAlert size={24} className="text-red-400" onClick={() => window.location.reload()} />
+                    <span className="ml-2 text-red-400">{error}</span>
                 </div>
             </div>
         );

@@ -109,7 +109,7 @@ export const guidesConfig: GuideMetadata[] = [
         difficulty: 'advanced',
         readTime: '8 min',
         author: 'pogapwnz',
-        publishedAt: '2024-02-01',
+        publishedAt: '2025-06-10',
         featured: true,
         contentType: 'component'
     },
