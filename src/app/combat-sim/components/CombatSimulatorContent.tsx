@@ -105,9 +105,8 @@ export default function CombatSimulatorContent() {
                         </div>
 
                         {/* Share Button - aligned to the right */}
-                        {hasValidSetups && (
-                            <ShareButton getShareLink={()=>getShareableLink(simulation)}/>
-                        )}
+                        <ShareButton getShareLink={()=>getShareableLink(simulation)}/>
+
 
                         {/* Range Presets */}
                         {/*<div className="flex gap-1">
@@ -186,7 +185,7 @@ export default function CombatSimulatorContent() {
 
                             {/* Attacker selector tabs */}
                             {hasValidSetups && (
-                                <div className="flex justify-center gap-2 mb-4">
+                                <div className="flex flex-col sm:flex-row sm:justify-center gap-2 mb-4">
                                     {validAttackers.map((attacker, index) => (
                                         <AttackerSummaryCard
                                             key={attacker.id}

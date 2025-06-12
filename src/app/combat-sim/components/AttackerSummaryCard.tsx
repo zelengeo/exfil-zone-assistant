@@ -33,7 +33,7 @@ export default function AttackerSummaryCard({
             `}
         >
             {/* Stats Grid - Desktop */}
-            <div className="flex flex-col gap-2">
+            <div className="max-sm:hidden flex flex-col grow gap-2">
                 {/* Header */}
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -54,19 +54,19 @@ export default function AttackerSummaryCard({
                     <>
                         <div className="grid grid-cols-3 gap-1 text-xs">
                             <div className="text-center">
-                                <div className="text-xs text-tan-400">Head</div>
+                                <div className="text-tan-400">Head</div>
                                 <div className="font-mono font-bold text-tan-100">
                                     {getHeadValue(zoneCalculations, displayMode)}
                                 </div>
                             </div>
                             <div className="text-center">
-                                <div className="text-xs text-tan-400">Chest</div>
+                                <div className="text-tan-400">Chest</div>
                                 <div className="font-mono font-bold text-tan-100">
                                     {getChestValue(zoneCalculations, displayMode)}
                                 </div>
                             </div>
                             <div className="text-center">
-                                <div className="text-xs text-tan-400">Limbs</div>
+                                <div className="text-tan-400">Limbs</div>
                                 <div className="font-mono font-bold text-tan-100">
                                     {getLimbValue(zoneCalculations, displayMode)}
                                 </div>
@@ -75,6 +75,42 @@ export default function AttackerSummaryCard({
                     </>
                 ) : (
                     <div className="text-center text-tan-400 text-sm py-2">
+                        No weapon configured
+                    </div>
+                )}
+            </div>
+            <div className="sm:hidden flex flex-row justify-start gap-2"> {/* Added sm:flex-row to maintain desktop layout */}
+                {/* Header (Left on Mobile */}
+                <div className="flex items-center gap-2 w-1/3"> {/* Added sm:w-1/3 */}
+                    {/*Color indicator badge*/}
+                    <div
+                        className="w-1 h-8 rounded-full"
+                        style={{backgroundColor: ATTACKER_COLORS[attacker.id].hex}}
+                    />
+                    {hasValidSetup && (
+                        <span className="text-xs text-tan-400">
+                                {attacker.ammo?.name.replace(attacker.ammo?.subcategory, "")}
+                        </span>
+                    )}
+                </div>
+
+                {hasValidSetup ? (
+                    <div className="flex flex-col  gap-1 text-xs"> {/* Added sm:flex-grow */}
+                        {/* Headers for Head/Chest/Limbs */}
+                        <div className="grid grid-cols-3 gap-1 text-center text-tan-400">
+                            <div>Head</div>
+                            <div>Chest</div>
+                            <div>Limbs</div>
+                        </div>
+                        {/* Values for Head/Chest/Limbs */}
+                        <div className="grid grid-cols-3 gap-1 text-center font-mono font-bold text-tan-100">
+                            <div>{getHeadValue(zoneCalculations, displayMode)}</div>
+                            <div>{getChestValue(zoneCalculations, displayMode)}</div>
+                            <div>{getLimbValue(zoneCalculations, displayMode)}</div>
+                        </div>
+                    </div>
+                ) : (
+                    <div className="text-center text-tan-400 text-sm py-2 sm:py-0 flex items-center justify-center">
                         No weapon configured
                     </div>
                 )}

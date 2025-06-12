@@ -307,5 +307,23 @@ export function formatSTK(stk: number): string {
  */
 export function formatCTK(ctk: number): string {
     if (ctk === Infinity) return '∞';
+    if (ctk < 1000) {
+        return `$${ctk}`;
+    } else if (ctk < 100000) {
+        // For numbers like 8000, 9500, format as $8k, $9.5k
+        const thousands = ctk / 1000;
+        if (thousands % 1 === 0) { // Check if it's a whole number of thousands
+            return `$${thousands}k`;
+        } else {
+            const formatted = `$${thousands.toFixed(1)}k`;
+            // Ensure it doesn't exceed 6 symbols (e.g., $9.9k is 5 symbols)
+            if (formatted.length <= 6) {
+                return formatted;
+            } else {
+                // Fallback for cases like $9.99k, which might exceed 6 if rounded up
+                return `$${Math.round(thousands)}k`; // e.g., $10k
+            }
+        }
+    }
     return `$${ctk.toLocaleString()}`;
 }

@@ -125,8 +125,9 @@ export function useCombatSimUrlParams() {
     const getShareableLink = useCallback((simulation: CombatSimulation): string => {
         const params = buildUrlParams(simulation);
 
-        const baseUrl = `${window.location.origin}${pathname}`
-
+        const baseUrl = typeof window !== 'undefined'
+            ? `${window.location.origin}${pathname}`
+            : '';
 
         return `${baseUrl}?${params.toString()}`;
     }, [pathname]);
