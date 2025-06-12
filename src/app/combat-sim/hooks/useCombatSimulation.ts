@@ -3,7 +3,7 @@
  * Manages combat simulation state and calculations
  */
 
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import {useState, useEffect, useMemo, useCallback, useRef} from 'react';
 import {
     CombatSimulation,
     AttackerSetup,
@@ -17,6 +17,7 @@ import {
     calculateAttackerSummary,
     sortZoneCalculations
 } from '../utils/combat-calculations';
+import {useCombatSimUrlParams} from './useCombatSimParams';
 
 interface UseCombatSimulationReturn {
     // State
@@ -40,25 +41,39 @@ interface UseCombatSimulationReturn {
 }
 
 export function useCombatSimulation(): UseCombatSimulationReturn {
+    // Add URL params hook
+    const {parseUrlParams, updateUrlParams} = useCombatSimUrlParams();
+    const isInitialMount = useRef(true);
+    const isUpdatingFromUrl = useRef(false);
     // Initialize simulation state
-    const [simulation, setSimulation] = useState<CombatSimulation>({
-        attackers: [
-            {
-                id: '0',
-                weapon: null,
-                ammo: null,
-            }
-        ],
-        defender: {
-            bodyArmor: null,
-            bodyArmorDurability: 100,
-            helmet: null,
-            helmetDurability: 100,
-            faceShield: null
-        },
-        range: 60,
-        displayMode: 'stk',
-        sortBy: 'stk'
+    const [simulation, setSimulation] = useState<CombatSimulation>(() => {
+        const defaultState: CombatSimulation = {
+            attackers: [
+                {
+                    id: '0',
+                    weapon: null,
+                    ammo: null,
+                }
+            ],
+            defender: {
+                bodyArmor: null,
+                bodyArmorDurability: 100,
+                helmet: null,
+                helmetDurability: 100,
+                faceShield: null
+            },
+            range: 0,
+            displayMode: 'stk',
+            sortBy: "ttk"
+        }
+
+        const parsedParams = parseUrlParams();
+        return {
+            ...defaultState,
+            ...parsedParams,
+            attackers: parsedParams.attackers?.length ? parsedParams.attackers : defaultState.attackers,
+            defender: { ...defaultState.defender, ...parsedParams.defender }
+        };
     });
 
     // Calculation results
@@ -78,6 +93,44 @@ export function useCombatSimulation(): UseCombatSimulationReturn {
     );
 
     const hasValidSetups = validAttackers.length > 0;
+
+    // Sync URL when simulation changes (but not on initial mount or when updating from URL)
+    useEffect(() => {
+        if (isInitialMount.current) {
+            isInitialMount.current = false;
+            return;
+        }
+
+        if (isUpdatingFromUrl.current) {
+            isUpdatingFromUrl.current = false;
+            return;
+        }
+
+        // Debounce URL updates to avoid too many history entries
+        const timeoutId = setTimeout(() => {
+            updateUrlParams(simulation);
+        }, 500);
+
+        return () => clearTimeout(timeoutId);
+    }, [simulation, updateUrlParams]);
+
+    // Listen for browser back/forward navigation
+    useEffect(() => {
+        const handlePopState = () => {
+            isUpdatingFromUrl.current = true;
+            const urlParams = parseUrlParams();
+
+            setSimulation(prev => ({
+                ...prev,
+                ...urlParams,
+                attackers: urlParams.attackers?.length ? urlParams.attackers : prev.attackers,
+                defender: { ...prev.defender, ...urlParams.defender }
+            }));
+        };
+
+        window.addEventListener('popstate', handlePopState);
+        return () => window.removeEventListener('popstate', handlePopState);
+    }, [parseUrlParams]);
 
     // Auto-select first valid attacker if none selected
     useEffect(() => {
@@ -137,13 +190,13 @@ export function useCombatSimulation(): UseCombatSimulationReturn {
 
     // Action handlers
     const updateSimulation = useCallback((updates: Partial<CombatSimulation>) => {
-        setSimulation(prev => ({ ...prev, ...updates }));
+        setSimulation(prev => ({...prev, ...updates}));
     }, []);
 
     const addAttacker = useCallback(() => {
         if (simulation.attackers.length >= 4) return;
 
-        const colorIndex = Object.keys(ATTACKER_COLORS).find((index)=>simulation.attackers.every(attacker =>attacker.id !== index))
+        const colorIndex = Object.keys(ATTACKER_COLORS).find((index) => simulation.attackers.every(attacker => attacker.id !== index))
 
         const newAttacker: AttackerSetup = {
             // @ts-expect-error colorIndex is never undefined because of if (simulation.attackers.length >= 4) return;
@@ -169,7 +222,7 @@ export function useCombatSimulation(): UseCombatSimulationReturn {
         setSimulation(prev => ({
             ...prev,
             attackers: prev.attackers.map(a =>
-                a.id === attackerId ? { ...a, ...updates } : a
+                a.id === attackerId ? {...a, ...updates} : a
             )
         }));
     }, []);
@@ -177,7 +230,7 @@ export function useCombatSimulation(): UseCombatSimulationReturn {
     const updateDefender = useCallback((updates: Partial<DefenderSetup>) => {
         setSimulation(prev => ({
             ...prev,
-            defender: { ...prev.defender, ...updates }
+            defender: {...prev.defender, ...updates}
         }));
     }, []);
 

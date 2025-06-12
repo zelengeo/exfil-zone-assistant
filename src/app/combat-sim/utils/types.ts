@@ -7,6 +7,10 @@ import {Ammunition, AnyItem, Armor, BodyArmor, FaceShield, Helmet, Item, Weapon}
 
 // Display modes for the simulator
 export type DisplayMode = 'ttk' | 'stk' | 'ctk';
+export function isDisplayMode(mode: string | null): mode is DisplayMode {
+    return !!mode && ['ttk', 'stk', 'ctk'].includes(mode)
+}
+
 export type SortBy = 'ttk' | 'stk' | 'ctk';
 
 // Attacker colors for visual distinction
@@ -175,6 +179,6 @@ export const DISPLAY_MODE_LABELS = {
 // Sort options labels
 export const SORT_BY_LABELS = {
     ttk: 'Fastest TTK',
-    damage: 'Highest Damage',
-    cost: 'Cost Efficiency'
+    stk: 'Highest Damage',
+    ctk: 'Cost Efficiency'
 } as const;

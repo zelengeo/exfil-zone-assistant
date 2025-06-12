@@ -20,6 +20,8 @@ import BodyModel from './components/BodyModel/BodyModel';
 import './utils/combat-test-helper';
 import AttackerSummaryCard from "@/app/combat-sim/components/AttackerSummaryCard";
 import CombatSummary from "@/app/combat-sim/components/CombatSummary";
+import {useCombatSimUrlParams} from "@/app/combat-sim/hooks/useCombatSimParams";
+import ShareButton from "@/app/combat-sim/components/ShareButton";
 
 export default function CombatSimulatorPage() {
     const {
@@ -36,17 +38,8 @@ export default function CombatSimulatorPage() {
         zoneCalculations,
     } = useCombatSimulation();
 
-    // Get display mode icon
-    const getDisplayModeIcon = (mode: DisplayMode) => {
-        switch (mode) {
-            case 'ttk':
-                return <Clock size={16}/>;
-            case 'stk':
-                return <Target size={16}/>;
-            case 'ctk':
-                return <DollarSign size={16}/>;
-        }
-    };
+    const { getShareableLink } = useCombatSimUrlParams();
+
 
     // Check if we have valid setups to show results
     const hasValidSetups = simulation.attackers.some(attacker =>
@@ -66,6 +59,14 @@ export default function CombatSimulatorPage() {
                         engagement strategies.
                     </p>
                 </div>
+
+                {/* Share Button - only show when there's a valid setup */}
+                {hasValidSetups && (
+                    <ShareButton
+                        getShareLink={() => getShareableLink(simulation)}
+                        className="shrink-0"
+                    />
+                )}
 
                 {/* Control Panel */}
                 <div className="military-box p-4 rounded-sm mb-6">
@@ -136,7 +137,7 @@ export default function CombatSimulatorPage() {
                             <span className="text-tan-300 text-sm font-medium">Sort:</span>
                             <select
                                 value={simulation.sortBy}
-                                onChange={(e) => updateSimulation({sortBy: e.target.value as any})}
+                                onChange={(e) => updateSimulation({sortBy: e.target.value as sortBy})}
                                 className="bg-military-800 text-tan-100 px-3 py-2 rounded-sm border border-military-700
                   focus:border-olive-500 focus:outline-none"
                             >
@@ -235,3 +236,14 @@ export default function CombatSimulatorPage() {
         </Layout>
     );
 }
+
+const getDisplayModeIcon = (mode: DisplayMode) => {
+    switch (mode) {
+        case 'ttk':
+            return <Clock size={16}/>;
+        case 'stk':
+            return <Target size={16}/>;
+        case 'ctk':
+            return <DollarSign size={16}/>;
+    }
+};
