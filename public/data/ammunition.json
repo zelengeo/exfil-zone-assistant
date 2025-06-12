@@ -2979,7 +2979,7 @@
   },
   {
     "id": "ammo-762x54r-apv2",
-    "name": "7.62x54R SNB",
+    "name": "7.62x54mmR SNB",
     "description": "Advanced Armor Piercing ammunition with tungsten carbide core. Maximum penetration available for the venerable 7.62x54R cartridge.",
     "category": "ammo",
     "subcategory": "7.62x54mmR",
@@ -3072,7 +3072,7 @@
   },
   {
     "id": "ammo-762x54r-apv1",
-    "name": "7.62x54R PS",
+    "name": "7.62x54mmR PS",
     "description": "Armor Piercing ammunition with hardened steel core. High penetration capabilities against body armor with good damage retention.",
     "category": "ammo",
     "subcategory": "7.62x54mmR",
@@ -3165,7 +3165,7 @@
   },
   {
     "id": "ammo-762x54r-tracer",
-    "name": "7.62x54R LPS Tracer",
+    "name": "7.62x54mmR LPS Tracer",
     "description": "Tracer ammunition with visible trajectory and moderate armor penetration. Excellent for long-range target correction and marking.",
     "category": "ammo",
     "subcategory": "7.62x54mmR",
@@ -3258,7 +3258,7 @@
   },
   {
     "id": "ammo-762x54r-fmj",
-    "name": "7.62x54R FMJ",
+    "name": "7.62x54mmR FMJ",
     "description": "Standard Full Metal Jacket military ammunition. Reliable performance with excellent damage and moderate penetration for general use.",
     "category": "ammo",
     "subcategory": "7.62x54mmR",
@@ -3351,7 +3351,7 @@
   },
   {
     "id": "ammo-762x54r-hp",
-    "name": "7.62x54R HP",
+    "name": "7.62x54mmR HP",
     "description": "Hollow Point ammunition designed for maximum expansion and tissue damage. Devastating against unarmored targets at long range.",
     "category": "ammo",
     "subcategory": "7.62x54mmR",

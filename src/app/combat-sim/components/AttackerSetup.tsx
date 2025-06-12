@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useMemo, useRef} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import {X, ChevronDown, AlertCircle, ExternalLink, Loader2, CircleAlert} from 'lucide-react';
+import {X, ChevronDown, AlertCircle, ExternalLink} from 'lucide-react';
 import {useFetchItems} from "@/hooks/useFetchItems";
 import {
     AttackerSetup as AttackerSetupType,
@@ -25,7 +25,7 @@ export default function AttackerSetup({
                                           onRemove,
                                           canRemove
                                       }: AttackerSetupProps) {
-    const { items, loading, error } = useFetchItems();
+    const { items } = useFetchItems();
     const [weaponSearchOpen, setWeaponSearchOpen] = useState(false);
     const [ammoSearchOpen, setAmmoSearchOpen] = useState(false);
     const [weaponSearch, setWeaponSearch] = useState('');
@@ -101,30 +101,6 @@ export default function AttackerSetup({
         if (!fireRate) return 'N/A';
         return `${fireRate} RPM`;
     };
-
-    // Show loading state
-    if (loading) {
-        return (
-            <div className="military-box rounded-sm p-4">
-                <div className="flex items-center justify-center py-8">
-                    <Loader2 size={24} className="animate-spin text-olive-600" />
-                    <span className="ml-2 text-tan-300">Loading items...</span>
-                </div>
-            </div>
-        );
-    }
-
-    // Show error state
-    if (error) {
-        return (
-            <div className="military-box rounded-sm p-4">
-                <div className="flex items-center justify-center py-8">
-                    <CircleAlert size={24} className="text-red-400" onClick={() => window.location.reload()} />
-                    <span className="ml-2 text-red-400">{error}</span>
-                </div>
-            </div>
-        );
-    }
 
     return (
         <div

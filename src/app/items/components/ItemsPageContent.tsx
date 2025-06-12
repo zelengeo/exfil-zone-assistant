@@ -6,40 +6,18 @@ import Layout from '@/components/layout/Layout';
 import ItemCard from '@/components/items/ItemCard';
 import FilterSidebar from '@/components/items/FilterSidebar';
 import {itemCategories, Item, getCategoryById} from '@/types/items';
-import {fetchItemsData} from "@/services/ItemService";
 import {useSearchParams} from "next/navigation";
+import {useFetchItems} from "@/hooks/useFetchItems";
 
 export default function ItemsPageContent() {
 
-    const [items, setItems] = useState<Item[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
+    const {items} = useFetchItems();
     const searchParams = useSearchParams();
     const categoryId = searchParams.get('category') || '';
     const subcategoryId = searchParams.get('subcategory') || '';
     const [filteredItems, setFilteredItems] = useState<Item[]>([]);
     const [searchQuery, setSearchQuery] = useState('');
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-    // Fetch data on component mount
-    useEffect(() => {
-        const loadItems = async () => {
-            try {
-                setLoading(true);
-                const itemsData = await fetchItemsData();
-                setItems(itemsData);
-                setFilteredItems(itemsData);
-                setError(null);
-            } catch (error) {
-                console.error('Failed to load items:', error);
-                setError('Failed to load items. Please try again.');
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        loadItems();
-    }, []);
 
     // Apply filters whenever search or category selection changes
     useEffect(() => {
@@ -67,53 +45,12 @@ export default function ItemsPageContent() {
         setFilteredItems(result);
     }, [items, searchQuery, categoryId, subcategoryId]);
 
-
-    // Show loading state
-    if (loading) {
-        return (
-            <Layout title="Items Database | Exfil Zone">
-                <div className="container mx-auto px-4 py-8">
-                    <div className="flex items-center justify-center min-h-96">
-                        <div className="military-box p-8 rounded-sm text-center">
-                            <div
-                                className="animate-spin w-12 h-12 border-4 border-olive-600 border-t-transparent rounded-full mx-auto mb-4"></div>
-                            <h2 className="text-xl font-bold text-olive-400 mb-2">Loading Items Database</h2>
-                            <p className="text-tan-300">Retrieving tactical equipment data...</p>
-                        </div>
-                    </div>
-                </div>
-            </Layout>
-        );
-    }
-
-    // Show error state
-    if (error) {
-        return (
-            <Layout title="Items Database | Exfil Zone">
-                <div className="container mx-auto px-4 py-8">
-                    <div className="flex items-center justify-center min-h-96">
-                        <div className="military-box p-8 rounded-sm text-center border-l-4 border-red-600">
-                            <h2 className="text-xl font-bold text-red-400 mb-2">Error Loading Data</h2>
-                            <p className="text-tan-300 mb-4">{error}</p>
-                            <button
-                                onClick={() => window.location.reload()}
-                                className="bg-olive-600 hover:bg-olive-500 text-tan-100 px-4 py-2 rounded-sm"
-                            >
-                                Retry
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </Layout>
-        );
-    }
-
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
     return (
-        <Layout title="Items Database | Exfil Zone">
+        <Layout title="Items Database | Exfil Zone Assistant">
             <div className="container mx-auto px-4 py-8">
                 {/* Page Header */}
                 <div className="mb-8">

@@ -343,7 +343,7 @@ export default function ItemDetail({params}: PageProps) {
     // Show loading state
     if (loading) {
         return (
-            <Layout title="Items Database | Exfil Zone">
+            <Layout title="Items Database | Exfil Zone Assistant">
                 <div className="container mx-auto px-4 py-8">
                     <div className="flex items-center justify-center min-h-96">
                         <div className="military-box p-8 rounded-sm text-center">
@@ -361,7 +361,7 @@ export default function ItemDetail({params}: PageProps) {
     // Show error state
     if (!item) {
         return (
-            <Layout title="Items Database | Exfil Zone">
+            <Layout title="Items Database | Exfil Zone Assistant">
                 <div className="container mx-auto px-4 py-8">
                     <div className="flex items-center justify-center min-h-96">
                         <div className="military-box p-8 rounded-sm text-center border-l-4 border-red-600">

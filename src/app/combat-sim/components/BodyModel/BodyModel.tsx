@@ -142,10 +142,10 @@ export default function BodyModel({
             case 'ctk':
                 value = calc.costToKill;
                 if (value === Infinity) return 'text-red-500';
-                if (value < 100) return 'text-green-400';
-                if (value < 300) return 'text-lime-400';
-                if (value < 1000) return 'text-yellow-400';
-                if (value < 2000) return 'text-orange-400';
+                if (value < 500) return 'text-green-400';
+                if (value < 1000) return 'text-lime-400';
+                if (value < 2000) return 'text-yellow-400';
+                if (value < 4000) return 'text-orange-400';
                 return 'text-red-400';
         }
     };

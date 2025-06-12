@@ -43,6 +43,7 @@ interface UseCombatSimulationReturn {
 export function useCombatSimulation(): UseCombatSimulationReturn {
     // Add URL params hook
     const {parseUrlParams, updateUrlParams} = useCombatSimUrlParams();
+
     const isInitialMount = useRef(true);
     const isUpdatingFromUrl = useRef(false);
     // Initialize simulation state
