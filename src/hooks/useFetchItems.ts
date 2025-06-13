@@ -1,15 +1,15 @@
-import { fetchItemsData } from '@/services/ItemService';
+import {fetchItemsData, ItemCache} from '@/services/ItemService';
 import { Item } from '@/types/items';
 
 // In-memory cache to avoid redundant fetches
 let itemsCache: Item[] | null = null;
-let itemsMap: Record<string, Item> | null = null;
-let fetchPromise: Promise<Item[]> | null = null;
+let itemsMap: Map<string, Item> | null = null;
+let fetchPromise: Promise<ItemCache> | null = null;
 let fetchError: Error | null = null; // To store and re-throw errors
 
-function getItemsAsync(): Promise<Item[]> {
+function getItemsAsync(): Promise<ItemCache> {
     if (itemsCache) {
-        return Promise.resolve(itemsCache);
+        return Promise.resolve({items: itemsCache, itemMap: itemsMap!});
     }
 
     if (fetchError) {
@@ -19,8 +19,8 @@ function getItemsAsync(): Promise<Item[]> {
     if (!fetchPromise) {
         fetchPromise = fetchItemsData()
             .then(data => {
-                itemsCache = data;
-                itemsMap = data.reduce((map, item: Item) => {map[item.id] = item; return map;}, {} as Record<string, Item>)
+                itemsCache = data.items;
+                itemsMap = data.itemMap;
                 fetchPromise = null; // Clear promise on success
                 fetchError = null;
                 return data;
@@ -35,7 +35,7 @@ function getItemsAsync(): Promise<Item[]> {
 }
 
 function getItemById(id: string): Item | undefined {
-        return itemsMap?.[id];
+        return itemsMap?.get(id);
 
 }
 
@@ -50,11 +50,4 @@ export function useFetchItems(): { items: Item[], getItemById: (id: string) => I
 
     // If items are not in cache and no error, throw the promise
     throw getItemsAsync();
-}
-
-// Optional: Export a function to clear the cache if needed
-export function clearItemsCache() {
-    itemsCache = null;
-    fetchPromise = null;
-    fetchError = null;
 }

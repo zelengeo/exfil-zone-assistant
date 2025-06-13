@@ -3,6 +3,14 @@ import {isAmmunition, isBodyArmor, isFaceShield, isHelmet, isWeapon} from "@/app
 
 // Cache for the items data
 let itemsCache: Item[] | null = null;
+let itemsMapCache: Map<string, Item> | null = null;
+let cacheTimestamp: number | null = null;
+let fetchPromise: Promise<Item[]> | null = null;
+
+export interface ItemCache {
+    items: Item[];
+    itemMap: Map<string, Item>;
+}
 
 // List of data files to fetch
 const DATA_FILES = [
@@ -11,17 +19,24 @@ const DATA_FILES = [
     'armor.json',
     'helmets.json',
     'face-shields.json'
-    // 'medical.json',
-    // 'food.json',
-    // 'attachments.json',
-    // 'keys.json',
-    // 'misc.json',
-    // 'magazines.json',
-    // 'throwables.json',
-    // 'task-items.json'
 ];
 
+// Import all data files statically
+// This approach works both in dev and build time
+const dataImports = {
+    'weapons.json': () => import('@/public/data/weapons.json'),
+    'ammunition.json': () => import('@/public/data/ammunition.json'),
+    'armor.json': () => import('@/public/data/armor.json'),
+    'helmets.json': () => import('@/public/data/helmets.json'),
+    'face-shields.json': () => import('@/public/data/face-shields.json'),
+};
 
+/**
+ * Check if cache is still valid
+ */
+function isCacheValid(): boolean {
+    return Boolean(itemsCache && itemsMapCache && cacheTimestamp);
+}
 
 /**
  * Transform raw item data to match our Item interface
@@ -44,8 +59,6 @@ function transformItemData(rawItem: Item): Item {
             rarity: rawItem.stats?.rarity || RARITY_CONFIG.Common.name,
             price: rawItem.stats?.price || 0,
             weight: rawItem.stats?.weight || 0,
-            // size: rawItem.stats?.size || '1x1',
-            // safeSlots: rawItem.stats?.safeSlots || 1,
         },
 
         notes: rawItem.notes,
@@ -64,7 +77,6 @@ function transformItemData(rawItem: Item): Item {
             baseItem.stats.MOA = rawItem.stats.MOA;
             baseItem.stats.fireMode = rawItem.stats.fireMode;
             baseItem.stats.recoilParameters = rawItem.stats.recoilParameters;
-            // baseItem.stats.penetration = rawItem.stats.penetration || 1;
         }
 
         // Ammo stats
@@ -120,40 +132,8 @@ function transformItemData(rawItem: Item): Item {
             baseItem.stats.penetrationDamageScalarCurve = rawItem.stats.penetrationDamageScalarCurve;
             baseItem.stats.antiPenetrationDurabilityScalarCurve = rawItem.stats.antiPenetrationDurabilityScalarCurve;
         }
-
-        // Medical stats
-        // if (rawItem.category === 'medicine') {
-        //     baseItem.stats.healAmount = rawItem.stats.healAmount;
-        //     baseItem.stats.useTime = rawItem.stats.useTime;
-        //     baseItem.stats.duration = rawItem.stats.duration;
-        // }
-
-        // Food stats
-        // if (rawItem.category === 'food') {
-        //     baseItem.stats.energyValue = rawItem.stats.energyValue;
-        //     baseItem.stats.hydrationValue = rawItem.stats.hydrationValue;
-        //     baseItem.stats.useTime = rawItem.stats.useTime;
-        // }
-
-        // Other Gear stats
-        // if (rawItem.category === 'gear') {
-        //     baseItem.stats.armorClass = rawItem.stats.armorClass;
-        //     baseItem.stats.durability = rawItem.stats.maxDurability;
-        //     baseItem.stats.repairability = rawItem.stats.repairability;
-        //     baseItem.stats.ergoPenalty = rawItem.stats.ergoPenalty;
-        //     baseItem.stats.turnPenalty = rawItem.stats.turnPenalty;
-        // }
-
-        // Key stats
-        // if (rawItem.category === 'keys') {
-        //     baseItem.stats.uses = rawItem.stats.uses;
-        // }
     }
 
-    // Add optional fields
-    // if (rawItem.locations) baseItem.locations = rawItem.locations;
-    // if (rawItem.relatedQuests) baseItem.relatedQuests = rawItem.relatedQuests;
-    // if (rawItem.craftingRecipes) baseItem.craftingRecipes = rawItem.craftingRecipes;
     if (rawItem.notes) baseItem.notes = rawItem.notes;
     if (rawItem.tips) baseItem.tips = rawItem.tips;
 
@@ -161,70 +141,132 @@ function transformItemData(rawItem: Item): Item {
 }
 
 /**
- * Fetch and parse items data from multiple JSON files
+ * Load data using Node.js fs module (for build time)
  */
-export async function fetchItemsData(): Promise<Item[]> {
-    // Return cached data if available
-    if (itemsCache) {
-        return itemsCache;
+async function loadDataServerSide(): Promise<Item[]> {
+    const allItems: Item[] = [];
+
+    const importPromises = DATA_FILES.map(async (filename) => {
+        try {
+            const importFn = dataImports[filename as keyof typeof dataImports];
+            if (!importFn) {
+                console.warn(`No import function for ${filename}`);
+                return [];
+            }
+
+            const importedData = await importFn();
+            const data = importedData.default || importedData;
+
+            // Handle different file structures
+            let items: Item[] = [];
+
+            if (Array.isArray(data)) {
+                items = data as Item[];
+            }
+            return items.map(transformItemData).filter(item => item.id && item.name);
+        } catch (error) {
+            console.warn(`Error importing ${filename}:`, error);
+            return [];
+        }
+    });
+
+    const results = await Promise.all(importPromises);
+    results.forEach(items => {
+        if (Array.isArray(items)) {
+            allItems.push(...items);
+        }
+    });
+
+    return allItems;
+}
+
+/**
+ * Core data fetching logic
+ */
+async function fetchDataInternal(): Promise<Item[]> {
+    const allItems: Item[] = [];
+
+    // Check if we're in a browser environment
+    if (typeof window === 'undefined') {
+        // Server-side: use fs to read files
+        return await loadDataServerSide();
+    }
+
+    // Client-side: use fetch
+    const fetchPromises = DATA_FILES.map(async (filename) => {
+        try {
+            const response = await fetch(`/data/${filename}`);
+            if (!response.ok) {
+                console.warn(`Failed to fetch ${filename}: ${response.statusText}`);
+                return [];
+            }
+
+            const data = await response.json();
+
+            let items: Item[] = [];
+
+            if (Array.isArray(data)) {
+                items = data;
+            }
+
+            return items.map(transformItemData).filter(item => item.id && item.name);
+        } catch (error) {
+            console.warn(`Error fetching ${filename}:`, error);
+            return [];
+        }
+    });
+
+    const results = await Promise.all(fetchPromises);
+    results.forEach(items => {
+        if (Array.isArray(items)) {
+            allItems.push(...items);
+        }
+    });
+
+    return allItems;
+}
+
+/**
+ * Fetch and parse items data from multiple JSON files
+ * This is the main export that handles caching and deduplication
+ */
+export async function fetchItemsData(): Promise<ItemCache> {
+    // Return cached data if valid
+    if (isCacheValid()) {
+        return {items: itemsCache!, itemMap: itemsMapCache!};
+    }
+
+    if (fetchPromise) {
+        const data = await fetchPromise;
+        return {
+            items: data, itemMap: data.reduce((map, item: Item) => {
+                map.set(item.id, item);
+                return map;
+            }, new Map as Map<string, Item>)
+        };
     }
 
     try {
-        const allItems: Item[] = [];
+        // Start the fetch
+        fetchPromise = fetchDataInternal();
+        const data = await fetchPromise;
 
-        // Fetch all data files concurrently
-        const fetchPromises = DATA_FILES.map(async (filename) => {
-            try {
-                const response = await fetch(`/data/${filename}`);
-                if (!response.ok) {
-                    console.warn(`Failed to fetch ${filename}: ${response.statusText}`);
-                    return [];
-                }
+        // Update cache
+        itemsCache = data;
+        itemsMapCache = data.reduce((map, item: Item) => {
+            map.set(item.id, item);
+            return map;
+        }, new Map as Map<string, Item>)
+        cacheTimestamp = Date.now();
 
-                const data = await response.json();
-
-                // Handle different file structures
-                let items: Item[] = [];
-
-                if (Array.isArray(data)) {
-                    // Direct array of items
-                    items = data;
-                } else if (typeof data === 'object') {
-                    // Object with category keys containing arrays
-                    const categoryKey = Object.keys(data)[0];
-                    if (Array.isArray(data[categoryKey])) {
-                        items = data[categoryKey];
-                    } else {
-                        // Flat object structure, convert to array
-                        items = Object.values(data);
-                    }
-                }
-
-                // Transform each item to match our interface
-                return items.map(transformItemData).filter(item => item.id && item.name);
-            } catch (error) {
-                console.warn(`Error fetching ${filename}:`, error);
-                return [];
-            }
-        });
-
-        const results = await Promise.all(fetchPromises);
-
-        // Flatten all results into a single array
-        results.forEach(items => {
-            if (Array.isArray(items)) {
-                allItems.push(...items);
-            }
-        });
-
-        // Cache the results
-        itemsCache = allItems;
-
-        console.log(`✅ Loaded ${allItems.length} items from ${DATA_FILES.length} data files`, allItems );
-        return allItems;
+        console.log(`✅ Loaded ${data.length} items from ${DATA_FILES.length} data files`);
+        return {items: data, itemMap: itemsMapCache};
     } catch (error) {
         console.error('Error fetching items data:', error);
         throw error;
+    } finally {
+        // Clear the fetch promise
+        fetchPromise = null;
     }
 }
 
@@ -232,8 +274,8 @@ export async function fetchItemsData(): Promise<Item[]> {
  * Get a single item by ID
  */
 export async function getItemById(id: string): Promise<Item | undefined> {
-    const items = await fetchItemsData();
-    return items.find(item => item.id === id);
+    const itemCache = await fetchItemsData();
+    return itemCache.itemMap.get(id);
 }
 
 /**
@@ -241,7 +283,7 @@ export async function getItemById(id: string): Promise<Item | undefined> {
  */
 export async function getItemsByCategory(categoryId: string): Promise<Item[]> {
     const items = await fetchItemsData();
-    return items.filter(item => item.category === categoryId);
+    return items.items.filter(item => item.category === categoryId);
 }
 
 /**
@@ -249,7 +291,7 @@ export async function getItemsByCategory(categoryId: string): Promise<Item[]> {
  */
 export async function getItemsByCategoryAndSubcategory(categoryId: string, subcategory: string): Promise<Item[]> {
     const items = await fetchItemsData();
-    return items.filter(item => item.category === categoryId && item.subcategory === subcategory);
+    return items.items.filter(item => item.category === categoryId && item.subcategory === subcategory);
 }
 
 /**
@@ -259,7 +301,7 @@ export async function searchItems(query: string): Promise<Item[]> {
     const items = await fetchItemsData();
     const normalizedQuery = query.toLowerCase().trim();
 
-    return items.filter(item =>
+    return items.items.filter(item =>
         item.name.toLowerCase().includes(normalizedQuery) ||
         item.description.toLowerCase().includes(normalizedQuery)
     );
@@ -270,6 +312,20 @@ export async function searchItems(query: string): Promise<Item[]> {
  */
 export function clearItemsCache(): void {
     itemsCache = null;
+    itemsMapCache = null;
+    cacheTimestamp = null;
+    fetchPromise = null;
+}
+
+/**
+ * Get cache status (useful for debugging)
+ */
+export function getCacheStatus(): { cached: boolean; timestamp: number | null; itemCount: number } {
+    return {
+        cached: isCacheValid(),
+        timestamp: cacheTimestamp,
+        itemCount: itemsCache?.length || 0
+    };
 }
 
 /**
@@ -277,7 +333,7 @@ export function clearItemsCache(): void {
  */
 export async function getItemCategories(): Promise<string[]> {
     const items = await fetchItemsData();
-    const categories = new Set(items.map(item => item.category));
+    const categories = new Set(items.items.map(item => item.category));
     return Array.from(categories);
 }
 
@@ -287,7 +343,7 @@ export async function getItemCategories(): Promise<string[]> {
 export async function getSubcategoriesForCategory(categoryId: string): Promise<string[]> {
     const items = await fetchItemsData();
     const subcategories = new Set(
-        items
+        items.items
             .filter(item => item.category === categoryId && item.subcategory)
             .map(item => item.subcategory)
     );
