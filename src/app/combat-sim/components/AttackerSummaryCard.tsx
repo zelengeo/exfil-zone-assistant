@@ -25,7 +25,8 @@ export default function AttackerSummaryCard({
         <button
             onClick={onSelect}
             className={`
-                w-full p-2 sm:p-3 rounded-sm transition-all
+                w-full p-2 sm:p-3 rounded-sm transition-all sm:w-56
+                max-sm:flex max-sm:justify-between
                 ${isSelected
                 ? `military-box-highlight border-2 ${ATTACKER_COLORS[attacker.id].class} bg-military-800/60`
                 : 'military-box hover:bg-military-800/40 border-2 border-transparent'
@@ -79,9 +80,10 @@ export default function AttackerSummaryCard({
                     </div>
                 )}
             </div>
-            <div className="sm:hidden flex flex-row justify-start gap-2"> {/* Added sm:flex-row to maintain desktop layout */}
+            {/* Stats Grid - Mobile */}
+            <div className="sm:hidden flex flex-row justify-start gap-2 w-full">
                 {/* Header (Left on Mobile */}
-                <div className="flex items-center gap-2 w-1/3"> {/* Added sm:w-1/3 */}
+                <div className="flex items-center gap-2 w-1/3">
                     {/*Color indicator badge*/}
                     <div
                         className="w-1 h-8 rounded-full"

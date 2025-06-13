@@ -174,7 +174,7 @@ export default function BodyModel({
                 <Image
                     src="/images/Img_BodyPartsMain.webp"
                     alt="Body Parts"
-                    className="absolute inset-0 size-150 object-contain"
+                    className="absolute"
                     width={300}
                     height={650}
                 />
