@@ -7,7 +7,7 @@ import Layout from '@/components/layout/Layout';
 // Loading component for Suspense fallback
 function ItemsLoading() {
     return (
-        <Layout title="Items Database | Exfil Zone Assistant">
+        <Layout title="Items Database">
             <div className="container mx-auto px-4 py-8">
                 <div className="flex items-center justify-center min-h-96">
                     <div className="military-box p-8 rounded-sm text-center">

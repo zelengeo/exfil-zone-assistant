@@ -31,7 +31,7 @@ export async function testShotDamage(
 
     try {
         // Load items data
-        const items = await fetchItemsData();
+        const {items} = await fetchItemsData();
 
         // Find armor
         const armor = items.find(item => item.id === armorId && isArmor(item));

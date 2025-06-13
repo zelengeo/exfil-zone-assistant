@@ -151,7 +151,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
     const relatedGuides = getRelatedGuides(guide.slug, 3);
 
     return (
-        <Layout title={`${guide.title} | Exfil Zone`}>
+        <Layout title={`${guide.title}`}>
             <div className="container mx-auto px-4 py-8 max-w-4xl">
                 {/* Breadcrumb */}
                 <div className="flex items-center gap-2 mb-6 text-tan-300">

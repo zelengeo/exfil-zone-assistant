@@ -68,8 +68,8 @@ export default function CombatSimDebugPage() {
     useEffect(() => {
         const loadData = async () => {
             try {
-                const itemsData = await fetchItemsData();
-                setItems(itemsData);
+                const {items} = await fetchItemsData();
+                setItems(items);
                 setTestCases(testData.singleShotTestCases);
             } catch (error) {
                 console.error('Failed to load data:', error);
@@ -268,7 +268,7 @@ export default function CombatSimDebugPage() {
 
     if (loading) {
         return (
-            <Layout title="Combat Sim Debug | Exfil Zone">
+            <Layout title="Combat Sim Debug">
                 <div className="container mx-auto px-4 py-8">
                     <div className="flex items-center justify-center min-h-96">
                         <div
@@ -280,7 +280,7 @@ export default function CombatSimDebugPage() {
     }
 
     return (
-        <Layout title="Combat Sim Debug | Exfil Zone">
+        <Layout title="Combat Sim Debug">
             <div className="container mx-auto px-4 py-8">
                 {/* Header */}
                 <div className="mb-8">
