@@ -67,7 +67,7 @@ export interface Weapon extends Item {
         caliber: string;
 
         // Recoil parameters
-        recoilParameters?: RecoilParameters;
+        recoilParameters: RecoilParameters;
 
         // Other weapon properties
         MOA?: number;

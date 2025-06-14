@@ -58,7 +58,7 @@
       "quest-003"
     ],
     "notes": "The standard AK-74 offers excellent reliability and manageable recoil for 5.45x39mm ammunition. Features traditional wooden furniture and iron sights.",
-    "tips": "Great starter rifle with good damage output and moderate recoil. Suitable for medium-range engagements."
+    "tips": "Excellent starter weapon that drops from bots and features attachment rails. Best suited for low-to-medium range engagements."
   },
   {
     "id": "weapon-ak74m",
@@ -104,7 +104,7 @@
       "caliber": "5.45x39"
     },
     "notes": "Modernized AK-74 with folding polymer stock and side-mounted rail for optics. Improved ergonomics over the standard model.",
-    "tips": "Better handling and attachment options than standard AK-74. Slightly heavier but more versatile."
+    "tips": "Automatic. Adequate starter weapon - use it until you upgrade from bot loot."
   },
   {
     "id": "weapon-ak74n-factory",
@@ -150,7 +150,7 @@
       "caliber": "5.45x39"
     },
     "notes": "Factory configuration with standard furniture and side rail mount. Reliable platform for scope mounting.",
-    "tips": "Excellent base for customization with optics. Maintains classic AK reliability with modern scope compatibility."
+    "tips": "Automatic. Adequate starter weapon - use it until you upgrade from bot loot."
   },
   {
     "id": "weapon-ak74n-mod1",
@@ -188,7 +188,7 @@
       "caliber": "5.45x39"
     },
     "notes": "Tactical modification with lightweight furniture and enhanced ergonomics. Significantly improved handling characteristics.",
-    "tips": "Premium variant with excellent ergonomics and reduced weight. Perfect for fast-paced tactical operations."
+    "tips": "Premium variant with excellent ergonomics and reduced weight. Top-tier AK74, but outclassed by NATO caliber weapons."
   },
   {
     "id": "weapon-aks74u",
@@ -238,7 +238,7 @@
       "caliber": "5.45x39"
     },
     "notes": "Shortened barrel AK-74 variant designed for paratroopers and vehicle crews. Folding stock provides compact storage.",
-    "tips": "Excellent mobility and handling for CQB. Reduced barrel length affects accuracy at longer ranges."
+    "tips": "Automatic. Adequate starter weapon - use it until you upgrade from bot loot. There will be a mission requiring it, so keep one."
   },
   {
     "id": "weapon-aks74u-zt",
@@ -288,7 +288,7 @@
       "caliber": "5.45x39"
     },
     "notes": "Zero-Tolerance tactical configuration with improved ergonomics and refined recoil characteristics. Enhanced for special operations use.",
-    "tips": "Superior handling and recoil control compared to standard AKS-74U. Faster ADS speed makes it ideal for aggressive playstyles."
+    "tips": "Superior handling and recoil control compared to standard AKS-74U. Viable, but outclassed."
   },
   {
     "id": "weapon-akm",
@@ -335,7 +335,7 @@
       "caliber": "7.62x39"
     },
     "notes": "Classic 7.62x39mm assault rifle with proven reliability. Heavier hitting than 5.45mm variants but with increased recoil.",
-    "tips": "Excellent stopping power for medium range engagements. Higher recoil requires better recoil management than AK-74 series."
+    "tips": "Automatic. Adequate starter weapon - use it until you upgrade from bot loot."
   },
   {
     "id": "weapon-akmn",
@@ -385,7 +385,7 @@
       "caliber": "7.62x39"
     },
     "notes": "Standard AKMN with traditional wooden furniture and side rail mount. Reliable platform for optics mounting.",
-    "tips": "Classic AKM with scope mounting capability. Maintains traditional aesthetics while allowing modern optics."
+    "tips": "Automatic. Adequate starter weapon - use it until you upgrade from bot loot."
   },
   {
     "id": "weapon-akmn-g",
@@ -423,7 +423,8 @@
         "yawMass": 1.6,
         "rollMass": 0.5,
         "oneHandedADSMultiplier": 0.1,
-        "verticalRecoilControl": 0.365
+        "verticalRecoilControl": 0.365,
+        "horizontalRecoilControl": 0.38
       },
       "firingPower": 0.45,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
@@ -434,7 +435,7 @@
       "caliber": "7.62x39"
     },
     "notes": "Enhanced AKMN variant with improved furniture and slightly better recoil management through design refinements.",
-    "tips": "Marginally better handling than standard AKMN. Good balance of classic reliability with minor performance improvements."
+    "tips": "Marginally better handling than standard AKMN. Adequate starter weapon - use it until you upgrade."
   },
   {
     "id": "weapon-akmn-glp",
@@ -485,7 +486,7 @@
       "caliber": "7.62x39"
     },
     "notes": "Dong-style foregrip. Reduced weight comes at the cost of necessary parts.",
-    "tips": "Significantly lighter than standard AKM variants but harder to control. The weight reduction aids mobility but increases felt recoil."
+    "tips": "Significantly lighter than standard AKM variants but harder to control. Adequate starter weapon - use it until you upgrade from bot loot."
   },
   {
     "id": "weapon-akmn-xm",
@@ -534,7 +535,7 @@
       "caliber": "7.62x39"
     },
     "notes": "Premium tactical configuration with modern furniture and advanced recoil mitigation systems. Significantly improved controllability.",
-    "tips": "Top-tier AKM variant with excellent recoil control. Higher price is justified by superior handling characteristics and tactical features."
+    "tips": "Top-tier AKM variant with excellent recoil control. Higher price is justified by superior handling and tactical features. Main advantages: cheap ammo and 75-round drum magazine."
   },
   {
     "id": "weapon-ar15-pistol",
@@ -584,7 +585,7 @@
       "caliber": "5.56x45"
     },
     "notes": "Compact AR platform with pistol classification. Short barrel reduces velocity but maximizes maneuverability in tight spaces.",
-    "tips": "Excellent for CQB with fast handling. Higher MOA means reduced accuracy at range compared to rifle-length AR platforms."
+    "tips": "Better than being unarmed. You'll need it for an upcoming mission anyway."
   },
   {
     "id": "weapon-m4a1-agent",
@@ -631,7 +632,7 @@
       "caliber": "5.56x45"
     },
     "notes": "Special operations variant with lightweight construction and enhanced ergonomics. Optimized for rapid deployment scenarios.",
-    "tips": "Premium handling characteristics with excellent ergonomics. Higher fire rate makes it effective for aggressive tactics."
+    "tips": "Better than being unarmed."
   },
   {
     "id": "weapon-m4a1-cqbr",
@@ -678,7 +679,7 @@
       "caliber": "5.56x45"
     },
     "notes": "Purpose-built for close quarters battle with optimized barrel length and tactical rail systems. Heavier due to additional accessories.",
-    "tips": "Better accuracy than shorter variants while maintaining good CQB performance. Weight penalty from accessories affects mobility."
+    "tips": "One of the best starter weapons with full attachment rail system for grips, optics, and accessories."
   },
   {
     "id": "weapon-m4a1-dd",
@@ -725,7 +726,7 @@
       "caliber": "5.56x45"
     },
     "notes": "Premium Daniel Defense configuration with exceptional recoil control and accuracy. High-end components throughout.",
-    "tips": "Superior recoil control makes this ideal for sustained fire. Excellent balance of accuracy and controllability."
+    "tips": "Top of the M4 line. Superior recoil control makes this ideal for sustained fire. Excellent balance of accuracy, controllability and firepower."
   },
   {
     "id": "weapon-m4a1-factory",
@@ -772,7 +773,7 @@
       "caliber": "5.56x45"
     },
     "notes": "Standard military configuration with proven reliability and consistent performance. Base platform for customization.",
-    "tips": "Reliable baseline M4A1 with good all-around performance. Moderate ergonomics but excellent upgrade potential."
+    "tips": "Reliable baseline M4A1 with good all-around performance. Adequate starter weapon - use it until you upgrade from bot loot."
   },
   {
     "id": "weapon-m4a1-hunter",
@@ -820,7 +821,7 @@
       "caliber": "5.56x45"
     },
     "notes": "Precision configuration with heavier barrel and enhanced accuracy features. Optimized for designated marksman roles.",
-    "tips": "Lower fire rate and heavier weight improve accuracy but reduce mobility. Best suited for medium to long range engagements."
+    "tips": "Better than being unarmed. You'll need it for an upcoming mission anyway."
   },
   {
     "id": "weapon-hk416",
@@ -868,7 +869,7 @@
       "caliber": "5.56x45"
     },
     "notes": "Premium AR-platform rifle with piston-driven gas system for enhanced reliability. Excellent build quality and accuracy.",
-    "tips": "Superior recoil control and reliability compared to direct impingement AR rifles. Higher fire rate makes it effective for rapid engagements."
+    "tips": "Excellent fire rate with good handling and recoil control. One of the best mid-game weapons available."
   },
   {
     "id": "weapon-m16a2",
@@ -1648,7 +1649,8 @@
         "oneHandedMultiplier": 0.01,
         "oneHandedADSMultiplier": 0.03,
         "recoilRecoveryCoefficient": 2,
-        "verticalRecoilControl": 0.66
+        "verticalRecoilControl": 0.66,
+        "horizontalRecoilControl": 0.4
       },
       "firingPower": 0.5,
       "damageRangeCurve": "none",
@@ -2816,6 +2818,7 @@
         "yawMass": 1.9,
         "rollMass": 0.5,
         "oneHandedADSMultiplier": 0.1,
+        "VerticalRecoilControl": 0.42796,
         "horizontalRecoilControl": 0.413333
       },
       "firingPower": 0.35,
@@ -2909,6 +2912,7 @@
         "yawMass": 1.9,
         "rollMass": 0.5,
         "oneHandedADSMultiplier": 0.1,
+        "verticalRecoilControl": 0.40725,
         "horizontalRecoilControl": 0.393333
       },
       "firingPower": 0.5,

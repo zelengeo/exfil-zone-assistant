@@ -14,11 +14,9 @@ import {
     BowArrow,
     ShieldX,
     Snail,
-    Zap, Volume2
+    Zap, Volume2, HelpCircle, ChevronsUpDown, ChevronsLeftRight
 } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
-import ItemLocations from '@/components/items/ItemLocations';
-import RelatedItems from '@/components/items/RelatedItems';
 import BallisticCurveChart from '@/components/items/BallisticCurveChart';
 import ArmorZonesDisplay from '@/components/items/ArmorZonesDisplay';
 import {
@@ -127,6 +125,30 @@ const renderCategorySpecificStats = (item: AnyItem) => {
                             <span className="text-tan-300">ADS speed:</span>
                             <span className="text-tan-100">{(item.stats.ADSSpeed * 100).toFixed(0)}%</span>
                         </div>
+                        <div className="flex items-center gap-2">
+                            <ChevronsUpDown size={18} className="text-olive-400"/>
+                            <span className="text-tan-400">Vertical Recoil:</span>
+                            <span className="text-tan-100 font-mono">
+                                        {(item.stats.recoilParameters.verticalRecoilControl * 100).toFixed(0)}%
+                                    </span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <ChevronsLeftRight size={18} className="text-olive-400"/>
+                            <span className="text-tan-400">Horizontal Recoil:</span>
+                            <span className="text-tan-100 font-mono">
+                                        {(item.stats.recoilParameters.horizontalRecoilControl * 100).toFixed(0)}%
+                                    </span>
+                        </div>
+                        {/* Fire Power with tooltip */}
+                        <div className="flex items-center gap-2 relative group  cursor-help">
+                            <HelpCircle size={18} className="text-olive-400 hover:text-olive-300"/>
+                            <div
+                                className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-military-800 border border-military-600 rounded-sm text-xs text-tan-200 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                                The more - the better. Ammo penetration power is affected by <span className="text-olive-400">firing power - 0.5</span>.
+                            </div>
+                            <span className="text-tan-400">Fire Power:</span>
+                            <span className="text-tan-100 font-mono">{item.stats.firingPower}</span>
+                        </div>
                     </div>
                     {/*{item.stats.recoilParameters && (
                         <WeaponRecoilDisplay
@@ -141,22 +163,22 @@ const renderCategorySpecificStats = (item: AnyItem) => {
                 <>
                     <div className="grid grid-cols-2 gap-4 mb-6">
                         <div className="flex items-center gap-2">
-                            <Crosshair size={18} className="text-olive-400" />
+                            <Crosshair size={18} className="text-olive-400"/>
                             <span className="text-tan-300">Damage:</span>
                             <span className="text-tan-100">{item.stats.damage}</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <ShieldX size={18} className="text-olive-400" />
+                            <ShieldX size={18} className="text-olive-400"/>
                             <span className="text-tan-300">Penetration:</span>
                             <span className="text-tan-100">{item.stats.penetration}</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <Info size={18} className="text-olive-400" />
+                            <Info size={18} className="text-olive-400"/>
                             <span className="text-tan-300">Velocity:</span>
-                            <span className="text-tan-100">{item.stats.muzzleVelocity/100} m/s</span>
+                            <span className="text-tan-100">{item.stats.muzzleVelocity / 100} m/s</span>
                         </div>
                         <div className="flex items-center gap-2">
-                            <Info size={18} className="text-olive-400" />
+                            <Info size={18} className="text-olive-400"/>
                             <span className="text-tan-300">Caliber:</span>
                             <span className="text-tan-100">{item.stats.caliber}</span>
                         </div>
@@ -168,19 +190,23 @@ const renderCategorySpecificStats = (item: AnyItem) => {
                         <div className="grid grid-cols-2 gap-3 text-sm">
                             <div>
                                 <span className="text-tan-400">Blunt Damage Scale:</span>
-                                <span className="text-tan-100 ml-2">{(item.stats.bluntDamageScale * 100).toFixed(0)}%</span>
+                                <span
+                                    className="text-tan-100 ml-2">{(item.stats.bluntDamageScale * 100).toFixed(0)}%</span>
                             </div>
                             <div>
                                 <span className="text-tan-400">Bleeding Chance:</span>
-                                <span className="text-tan-100 ml-2">{(item.stats.bleedingChance * 100).toFixed(0)}%</span>
+                                <span
+                                    className="text-tan-100 ml-2">{(item.stats.bleedingChance * 100).toFixed(0)}%</span>
                             </div>
                             <div>
                                 <span className="text-tan-400">Armor Pen Damage:</span>
-                                <span className="text-tan-100 ml-2">{(item.stats.protectionGearPenetratedDamageScale * 100).toFixed(0)}%</span>
+                                <span
+                                    className="text-tan-100 ml-2">{(item.stats.protectionGearPenetratedDamageScale * 100).toFixed(0)}%</span>
                             </div>
                             <div>
                                 <span className="text-tan-400">Armor Blunt Damage:</span>
-                                <span className="text-tan-100 ml-2">{(item.stats.protectionGearBluntDamageScale * 100).toFixed(0)}%</span>
+                                <span
+                                    className="text-tan-100 ml-2">{(item.stats.protectionGearBluntDamageScale * 100).toFixed(0)}%</span>
                             </div>
                         </div>
                     </div>
@@ -222,30 +248,33 @@ const renderCategorySpecificStats = (item: AnyItem) => {
                     <>
                         <div className="grid grid-cols-2 gap-4 mb-6">
                             <div className="flex items-center gap-2">
-                                <BowArrow size={18} className="text-olive-400" />
+                                <BowArrow size={18} className="text-olive-400"/>
                                 <span className="text-tan-300">Penetration Damage</span>
-                                <span className="text-tan-100">{(item.stats.penetrationDamageScalarCurve[1].value * 100).toFixed(0)}%</span>
+                                <span
+                                    className="text-tan-100">{(item.stats.penetrationDamageScalarCurve[1].value * 100).toFixed(0)}%</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <Shield size={18} className="text-olive-400" />
+                                <Shield size={18} className="text-olive-400"/>
                                 <span className="text-tan-300">Max Durability:</span>
                                 <span className="text-tan-100">{item.stats.maxDurability}</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <Gavel size={18} className="text-olive-400" />
+                                <Gavel size={18} className="text-olive-400"/>
                                 <span className="text-tan-300">Blunt Damage:</span>
                                 <span className="text-tan-100">{(item.stats.bluntDamageScalar * 100).toFixed(0)}%</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <ShieldMinus size={18} className="text-olive-400" />
+                                <ShieldMinus size={18} className="text-olive-400"/>
                                 <span className="text-tan-300">Durability Damage:</span>
-                                <span className="text-tan-100">{(item.stats.durabilityDamageScalar * 300).toFixed(0)}%</span>
+                                <span
+                                    className="text-tan-100">{(item.stats.durabilityDamageScalar * 300).toFixed(0)}%</span>
                             </div>
                             {isHelmet(item) && (
                                 <div className="flex items-center gap-2">
-                                    <Volume2 size={18} className="text-olive-400" />
+                                    <Volume2 size={18} className="text-olive-400"/>
                                     <span className="text-tan-300">Sound Dampening:</span>
-                                    <span className="text-tan-100">{item.stats.soundMix === "default" ? "None" : (item.stats.soundMix === "OPSWAT" || item.stats.soundMix === "Delta") ? "Weak" : "Strong"}</span>
+                                    <span
+                                        className="text-tan-100">{item.stats.soundMix === "default" ? "None" : (item.stats.soundMix === "OPSWAT" || item.stats.soundMix === "Delta") ? "Weak" : "Strong"}</span>
                                 </div>
                             )}
                         </div>
@@ -320,7 +349,6 @@ interface PageProps {
 
 export default function ItemDetail({params}: PageProps) {
     const {id} = React.use(params);
-    const [activeTab, setActiveTab] = useState('stats');
     const [item, setItem] = useState<Item | null>(null);
     const [loading, setLoading] = useState(true);
 
@@ -455,72 +483,25 @@ export default function ItemDetail({params}: PageProps) {
 
                     {/* Right column - Item details */}
                     <div className="md:col-span-2">
-                        {/* Tab navigation */}
-                        <div className="flex border-b border-military-700 mb-6">
-                            <button
-                                className={`px-4 py-3 font-medium text-lg ${
-                                    activeTab === 'stats'
-                                        ? 'text-olive-400 border-b-2 border-olive-500'
-                                        : 'text-tan-300 hover:text-tan-100 transition-colors'
-                                }`}
-                                onClick={() => setActiveTab('stats')}
-                            >
-                                Stats & Info
-                            </button>
-                            <button
-                                className={`px-4 py-3 font-medium text-lg ${
-                                    activeTab === 'locations'
-                                        ? 'text-olive-400 border-b-2 border-olive-500'
-                                        : 'text-tan-300 hover:text-tan-100 transition-colors'
-                                }`}
-                                onClick={() => setActiveTab('locations')}
-                            >
-                                Locations
-                            </button>
-                            <button
-                                className={`px-4 py-3 font-medium text-lg ${
-                                    activeTab === 'related'
-                                        ? 'text-olive-400 border-b-2 border-olive-500'
-                                        : 'text-tan-300 hover:text-tan-100 transition-colors'
-                                }`}
-                                onClick={() => setActiveTab('related')}
-                            >
-                                Related
-                            </button>
-                        </div>
-
-                        {/* Tab content */}
-                        {activeTab === 'stats' && (
-                            <div className="military-box p-6 rounded-sm">
-                                <h2 className="text-2xl font-bold text-olive-400 mb-4">Description</h2>
-                                <p className="text-tan-200 mb-6 leading-relaxed">{item.description}</p>
+                        <div className="military-box p-6 rounded-sm">
+                            <h2 className="text-2xl font-bold text-olive-400 mb-4">Description</h2>
+                            <p className="text-tan-200 mb-6 leading-relaxed">{item.description}</p>
 
 
-                                <h2 className="text-2xl font-bold text-olive-400 mb-4">Specifications</h2>
-                                <div className="mb-6">
-                                    {isAnyItem(item) && renderCategorySpecificStats(item)}
-                                </div>
-
-                                {item.tips && (
-                                    <>
-                                        <h2 className="text-2xl font-bold text-olive-400 mb-4">Tactical Tips</h2>
-                                        <div className="military-card p-4 rounded-sm border-l-4 border-olive-600">
-                                            <p className="text-tan-200 leading-relaxed">{item.tips}</p>
-                                        </div>
-                                    </>
-                                )}
+                            <h2 className="text-2xl font-bold text-olive-400 mb-4">Specifications</h2>
+                            <div className="mb-6">
+                                {isAnyItem(item) && renderCategorySpecificStats(item)}
                             </div>
-                        )}
 
-                        {/* Use ItemLocations component for Locations tab */}
-                        {activeTab === 'locations' && (
-                            <ItemLocations item={item}/>
-                        )}
-
-                        {/* Use RelatedItems component for Related tab */}
-                        {activeTab === 'related' && (
-                            <RelatedItems item={item}/>
-                        )}
+                            {item.tips && (
+                                <>
+                                    <h2 className="text-2xl font-bold text-olive-400 mb-4">Tactical Tips</h2>
+                                    <div className="military-card p-4 rounded-sm border-l-4 border-olive-600">
+                                        <p className="text-tan-200 leading-relaxed">{item.tips}</p>
+                                    </div>
+                                </>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
