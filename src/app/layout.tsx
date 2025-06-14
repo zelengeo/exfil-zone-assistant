@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     default: 'Exfil Zone Assistant',
     template: '%s | Exfil Zone Assistant'
   },
-  description: 'Combat simulations, wiki and guides for Contractors Showdown ExfilZone. Find items, maps, quests, and hideout upgrades.',
-  keywords: ['Contractors wiki', 'ExfilZone wiki'],
+  description: 'Combat simulations, weapon database, and guides for Contractors Showdown ExfilZone. Your ultimate tactical companion.',
+  keywords: ['Contractors guides', 'ExfilZone guides'],
   authors: [{ name: 'pogapwnz' }],
   creator: 'pogapwnz',
   publisher: 'Exfil Zone Assistant',

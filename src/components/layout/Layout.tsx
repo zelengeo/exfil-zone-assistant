@@ -56,6 +56,9 @@ const Layout: React.FC<LayoutProps> = ({
                 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
                 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
                 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+                <meta name="msapplication-TileImage" content="/logo-144x144.png" />
+                <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+                <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
                 <link rel="manifest" href="/site.webmanifest" />
 
                 {/* Open Graph Tags */}
@@ -89,19 +92,23 @@ const Layout: React.FC<LayoutProps> = ({
                             "@type": "WebSite",
                             "name": "Exfil Zone Assistant",
                             "description": description,
-                            "url": currentUrl,
-                            "potentialAction": {
-                                "@type": "SearchAction",
-                                "target": {
-                                    "@type": "EntryPoint",
-                                    "urlTemplate": `${currentUrl}/items?search={search_term_string}`
-                                },
-                                "query-input": "required name=search_term_string"
+                            "url": "https://www.exfil-zone-assistant.app",
+                            "inLanguage": "en",
+                            "publisher": {
+                                "@type": "Person",
+                                "name": "pogapwnz",
+                                "logo": {
+                                    "@type": "ImageObject",
+                                    "url": "https://www.exfil-zone-assistant.app/android-chrome-512x512.png",
+                                    "width": 512,
+                                    "height": 512
+                                }
                             },
-                            "about": {
-                                "@type": "VideoGame",
-                                "name": "Contractors Showdown",
-                                "genre": "VR Extraction Shooter"
+                            "isPartOf": {
+                                "@type": "WebApplication",
+                                "name": "Exfil Zone Assistant",
+                                "applicationCategory": "GameApplication",
+                                "operatingSystem": "Web"
                             }
                         })
                     }}
