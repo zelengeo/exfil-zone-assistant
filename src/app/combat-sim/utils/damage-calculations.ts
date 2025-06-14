@@ -294,7 +294,7 @@ function applyFirePowerDamage(
     firePower: number
 ): number {
     //FIXME - it kinda works, but seems to be wrong. Low firepower have defuff, high - buff. 5 - is handpicked value'
-    return (1 - (0.5 - firePower)/5) * baseDamage;
+    return (1 - (0.5 - firePower)/4.5) * baseDamage;
 }
 
 /**
