@@ -38,6 +38,7 @@
         "verticalRecoilControl": 0.306,
         "horizontalRecoilControl": 0.351
       },
+      "firingPower": 0.5,
       "damageRangeCurve": "RifleDOD",
       "caliber": "5.45x39"
     },
@@ -98,6 +99,7 @@
         "verticalRecoilControl": 0.326,
         "horizontalRecoilControl": 0.374
       },
+      "firingPower": 0.5,
       "damageRangeCurve": "RifleDOD",
       "caliber": "5.45x39"
     },
@@ -143,6 +145,7 @@
         "verticalRecoilControl": 0.34,
         "horizontalRecoilControl": 0.39
       },
+      "firingPower": 0.5,
       "damageRangeCurve": "RifleDOD",
       "caliber": "5.45x39"
     },
@@ -669,6 +672,7 @@
         "verticalRecoilControl": 0.34,
         "horizontalRecoilControl": 0.375
       },
+      "firingPower": 0.5,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
       "bulletDropFactor": 1.2,
       "caliber": "5.56x45"
@@ -762,6 +766,7 @@
         "verticalRecoilControl": 0.33,
         "horizontalRecoilControl": 0.355
       },
+      "firingPower": 0.5,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
       "bulletDropFactor": 1.2,
       "caliber": "5.56x45"
@@ -1204,6 +1209,7 @@
         "verticalRecoilControl": 0.327,
         "horizontalRecoilControl": 0.365
       },
+      "firingPower": 0.5,
       "damageRangeCurve": "AUGDOD",
       "hitDamage": 29,
       "caliber": "5.56x45"
@@ -1250,6 +1256,7 @@
         "verticalRecoilControl": 0.305,
         "horizontalRecoilControl": 0.338
       },
+      "firingPower": 0.5,
       "damageRangeCurve": "AUGDOD",
       "hitDamage": 29,
       "caliber": "5.56x45"
@@ -1296,6 +1303,7 @@
         "verticalRecoilControl": 0.295,
         "horizontalRecoilControl": 0.288
       },
+      "firingPower": 0.5,
       "damageRangeCurve": "AUGDOD",
       "hitDamage": 29,
       "caliber": "5.56x45"
@@ -1342,6 +1350,7 @@
         "verticalRecoilControl": 0.327,
         "horizontalRecoilControl": 0.365
       },
+      "firingPower": 0.5,
       "damageRangeCurve": "AUGDOD",
       "hitDamage": 29,
       "caliber": "5.56x45"
@@ -1489,6 +1498,7 @@
         "verticalRecoilControl": 0.372,
         "horizontalRecoilControl": 0.351
       },
+      "firingPower": 0.5,
       "damageRangeCurve": "BR_DOD_DMR_GY",
       "bulletDropFactor": 1.2,
       "muzzleVelocity": 87000,
@@ -1539,6 +1549,7 @@
         "verticalRecoilControl": 0.372,
         "horizontalRecoilControl": 0.351
       },
+      "firingPower": 0.5,
       "damageRangeCurve": "BR_DOD_DMR_GY",
       "bulletDropFactor": 1.2,
       "muzzleVelocity": 87000,
@@ -1586,6 +1597,7 @@
         "verticalRecoilControl": 0.265,
         "horizontalRecoilControl": 0.275
       },
+      "firingPower": 0.5,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
       "bulletDropFactor": 1.2,
       "muzzleVelocity": 71500,
@@ -1638,6 +1650,7 @@
         "recoilRecoveryCoefficient": 2,
         "verticalRecoilControl": 0.66
       },
+      "firingPower": 0.5,
       "damageRangeCurve": "none",
       "hitDamage": 12,
       "caliber": "12GA"
@@ -1688,6 +1701,7 @@
         "verticalRecoilControl": 0.75,
         "horizontalRecoilControl": 0.44
       },
+      "firingPower": 0.35,
       "damageRangeCurve": "none",
       "hitDamage": 12,
       "caliber": "12GA"
@@ -2060,6 +2074,7 @@
         "verticalRecoilControl": 0.42,
         "horizontalRecoilControl": 0.45
       },
+      "firingPower": 0.5,
       "damageRangeCurve": "none",
       "bulletDropFactor": 1.2,
       "muzzleVelocity": 80000,
@@ -2216,6 +2231,7 @@
         "verticalRecoilControl": 0.189,
         "horizontalRecoilControl": 0.255
       },
+      "firingPower": 0.45,
       "caliber": "9x19"
     },
     "notes": "Legendary 9mm SMG with roller-delayed blowback action. Standard for police and military CQB operations worldwide.",
@@ -2263,6 +2279,7 @@
         "verticalRecoilControl": 0.196,
         "horizontalRecoilControl": 0.245
       },
+      "firingPower": 0.43,
       "caliber": "9x19"
     },
     "notes": "Modern polymer SMG with excellent ergonomics and high fire rate. Popular choice for tactical teams and special operations.",
@@ -2307,6 +2324,7 @@
         "verticalRecoilControl": 0.216,
         "horizontalRecoilControl": 0.238
       },
+      "firingPower": 0.47,
       "caliber": ".45 ACP"
     },
     "notes": "Lightweight SMG using .45 ACP for enhanced stopping power. Polymer construction keeps weight down despite larger cartridge.",
@@ -2351,6 +2369,7 @@
         "verticalRecoilControl": 0.256,
         "horizontalRecoilControl": 0.306
       },
+      "firingPower": 0.35,
       "caliber": "9x19"
     },
     "notes": "Ultra-compact SMG with exceptional mobility. Highest fire rate in class makes it devastating at point-blank range.",
@@ -2395,6 +2414,7 @@
         "verticalRecoilControl": 0.205,
         "horizontalRecoilControl": 0.245
       },
+      "firingPower": 0.38,
       "caliber": "9x19"
     },
     "notes": "Improved MP9 with enhanced recoil control and ergonomics. Better handling characteristics while maintaining compact size.",
@@ -2439,6 +2459,7 @@
         "verticalRecoilControl": 0.185,
         "horizontalRecoilControl": 0.22
       },
+      "firingPower": 0.42,
       "caliber": "9x19"
     },
     "notes": "Top-tier MP9 variant with maximum recoil control and ergonomics. Optimized for tactical operations and suppressed use.",
@@ -2483,6 +2504,7 @@
         "verticalRecoilControl": 0.246,
         "horizontalRecoilControl": 0.28
       },
+      "firingPower": 0.3,
       "caliber": ".45 ACP"
     },
     "notes": "Historical WWII submachine gun with simple, reliable construction. Slow fire rate but proven battlefield reliability.",
@@ -2527,6 +2549,7 @@
         "verticalRecoilControl": 0.19,
         "horizontalRecoilControl": 0.235
       },
+      "firingPower": 0.5,
       "caliber": ".45 ACP"
     },
     "notes": "Legendary 'Tommy Gun' , unfortunately without distinctive drum magazine capability.",
@@ -2571,6 +2594,7 @@
         "verticalRecoilControl": 0.203,
         "horizontalRecoilControl": 0.224
       },
+      "firingPower": 0.7,
       "caliber": "9x19"
     },
     "notes": "Compact PDW designed for close protection and vehicle crews. Excellent mobility with better accuracy than traditional SMGs.",
@@ -2615,6 +2639,7 @@
         "verticalRecoilControl": 0.295,
         "horizontalRecoilControl": 0.278
       },
+      "firingPower": 0.5,
       "caliber": "5.45x39"
     },
     "notes": "Modern Ukrainian bullpup rifle based on AK action. Combines traditional reliability with compact bullpup advantages.",
@@ -2659,6 +2684,7 @@
         "verticalRecoilControl": 0.33,
         "horizontalRecoilControl": 0.36
       },
+      "firingPower": 0.5,
       "caliber": "7.62x39"
     },
     "notes": "7.62x39mm variant offering higher stopping power. Same excellent ergonomics with increased recoil from larger cartridge.",
@@ -2703,6 +2729,7 @@
         "verticalRecoilControl": 0.388,
         "horizontalRecoilControl": 0.233
       },
+      "firingPower": 0.63,
       "caliber": "7.62x51"
     },
     "notes": "Large-frame AR-10 style rifle with excellent accuracy and stopping power. Modern ergonomics with battle rifle capabilities.",
@@ -2747,6 +2774,7 @@
         "verticalRecoilControl": 0.35,
         "horizontalRecoilControl": 0.31
       },
+      "firingPower": 0.63,
       "caliber": "7.62x51"
     },
     "notes": "Lightweight variant with premium materials and enhanced ergonomics. Improved handling while maintaining full power.",
@@ -2790,6 +2818,7 @@
         "oneHandedADSMultiplier": 0.1,
         "horizontalRecoilControl": 0.413333
       },
+      "firingPower": 0.35,
       "caliber": "7.62x51"
     },
     "notes": "Legendary battle rifle adopted by over 90 countries. Gas-operated action with adjustable gas regulator for reliability.",
@@ -2837,6 +2866,7 @@
         "verticalRecoilControl": 0.302,
         "horizontalRecoilControl": 0.321
       },
+      "firingPower": 0.5,
       "caliber": "6.8x51"
     },
     "notes": "Next-generation rifle with 6.8x51mm cartridge and advanced recoil mitigation. Represents the future of infantry weapons.",

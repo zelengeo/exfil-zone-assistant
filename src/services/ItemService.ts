@@ -76,6 +76,7 @@ function transformItemData(rawItem: Item): Item {
             baseItem.stats.ADSSpeed = rawItem.stats.ADSSpeed;
             baseItem.stats.MOA = rawItem.stats.MOA;
             baseItem.stats.fireMode = rawItem.stats.fireMode;
+            baseItem.stats.firingPower = rawItem.stats.firingPower;
             baseItem.stats.recoilParameters = rawItem.stats.recoilParameters;
         }
 
@@ -259,7 +260,7 @@ export async function fetchItemsData(): Promise<ItemCache> {
         }, new Map as Map<string, Item>)
         cacheTimestamp = Date.now();
 
-        console.log(`✅ Loaded ${data.length} items from ${DATA_FILES.length} data files`);
+        console.log(`✅ Loaded ${data.length} items from ${DATA_FILES.length} data files`, data);
         return {items: data, itemMap: itemsMapCache};
     } catch (error) {
         console.error('Error fetching items data:', error);

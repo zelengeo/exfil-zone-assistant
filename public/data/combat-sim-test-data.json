@@ -1672,10 +1672,1325 @@
         "armorDamage": 7,
         "bodyDamage": 21
       }
+    },
+    {
+      "id": "test-114",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 150
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 19
+      }
+    },
+    {
+      "id": "test-115",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 127
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 28,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-116",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 99
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 26,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-117",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 73
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 29
+      }
+    },
+    {
+      "id": "test-118",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 50
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 28
+      }
+    },
+    {
+      "id": "test-119",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 27
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 28
+      }
+    },
+    {
+      "id": "test-120",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 4
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-121",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 0
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 28
+      }
+    },
+    {
+      "id": "test-122",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 0
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 29
+      }
+    },
+    {
+      "id": "test-123",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 150
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 27.6,
+        "bodyDamage": 2.3
+      }
+    },
+    {
+      "id": "test-124",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 122
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 27.6,
+        "bodyDamage": 2.3
+      }
+    },
+    {
+      "id": "test-125",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 94
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 27.6,
+        "bodyDamage": 2.3
+      }
+    },
+    {
+      "id": "test-126",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 67
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 28
+      }
+    },
+    {
+      "id": "test-127",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 44
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 22,
+        "bodyDamage": 28
+      }
+    },
+    {
+      "id": "test-128",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 22
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 28.3
+      }
+    },
+    {
+      "id": "test-129",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 0
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 28.3
+      }
+    },
+    {
+      "id": "test-130",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 150
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 28,
+        "bodyDamage": 2.3
+      }
+    },
+    {
+      "id": "test-131",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 122
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 28,
+        "bodyDamage": 2.3
+      }
+    },
+    {
+      "id": "test-132",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 94
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 24
+      }
+    },
+    {
+      "id": "test-133",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 71
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 28
+      }
+    },
+    {
+      "id": "test-134",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 48
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 28
+      }
+    },
+    {
+      "id": "test-135",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 25
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 22,
+        "bodyDamage": 28
+      }
+    },
+    {
+      "id": "test-136",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 3
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 28
+      }
+    },
+    {
+      "id": "test-137",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 0
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 28
+      }
+    },
+    {
+      "id": "test-138",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 150
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 28,
+        "bodyDamage": 2.3
+      }
+    },
+    {
+      "id": "test-139",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 122
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 28,
+        "bodyDamage": 3.3
+      }
+    },
+    {
+      "id": "test-140",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 94
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 27,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-141",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 67
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 28
+      }
+    },
+    {
+      "id": "test-142",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 44
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 22,
+        "bodyDamage": 28
+      }
+    },
+    {
+      "id": "test-143",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 22
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 28
+      }
+    },
+    {
+      "id": "test-144",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 150
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 28,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-145",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 122
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 28
+      }
+    },
+    {
+      "id": "test-146",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 99
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 29
+      }
+    },
+    {
+      "id": "test-147",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 76
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 22,
+        "bodyDamage": 29
+      }
+    },
+    {
+      "id": "test-148",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 54
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 30
+      }
+    },
+    {
+      "id": "test-149",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 31
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 30
+      }
+    },
+    {
+      "id": "test-150",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 8
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-150_0",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 0
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 30
+      }
+    },
+    {
+      "id": "test-151",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 150
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 26
+      }
+    },
+    {
+      "id": "test-152",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 127
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 28,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-153",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 99
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 30
+      }
+    },
+    {
+      "id": "test-154",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 76
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 22,
+        "bodyDamage": 30
+      }
+    },
+    {
+      "id": "test-155",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 54
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 29.5
+      }
+    },
+    {
+      "id": "test-156",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 31
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 29.5
+      }
+    },
+    {
+      "id": "test-157",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 8
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 29.5
+      }
+    },
+    {
+      "id": "test-158",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 0
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 29.5
+      }
+    },
+    {
+      "id": "test-159",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 150
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 25,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-160",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 125
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 22,
+        "bodyDamage": 27
+      }
+    },
+    {
+      "id": "test-161",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 103
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 30
+      }
+    },
+    {
+      "id": "test-162",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 80
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 29
+      }
+    },
+    {
+      "id": "test-163",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 57
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 29.5
+      }
+    },
+    {
+      "id": "test-164",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 34
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 22,
+        "bodyDamage": 29.5
+      }
+    },
+    {
+      "id": "test-165",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 12
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 29.5
+      }
+    },
+    {
+      "id": "test-166",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 150
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 25
+      }
+    },
+    {
+      "id": "test-167",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 127
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 22,
+        "bodyDamage": 27
+      }
+    },
+    {
+      "id": "test-168",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 105
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 29
+      }
+    },
+    {
+      "id": "test-169",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 82
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 30
+      }
+    },
+    {
+      "id": "test-170",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 59
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 22,
+        "bodyDamage": 30
+      }
+    },
+    {
+      "id": "test-171",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 36
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 22,
+        "bodyDamage": 29
+      }
+    },
+    {
+      "id": "test-172",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 14
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 30
+      }
+    },
+    {
+      "id": "test-173",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 0
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 29
+      }
+    },
+    {
+      "id": "test-174",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 150
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 24
+      }
+    },
+    {
+      "id": "test-175",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 150
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 28,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-176",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 122
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 28,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-177",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 94
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 29,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-178",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 65
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 22,
+        "bodyDamage": 27
+      }
+    },
+    {
+      "id": "test-179",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 43
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 27
+      }
+    },
+    {
+      "id": "test-180",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 20
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 27
+      }
+    },
+    {
+      "id": "test-181",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 150
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 28,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-182",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 122
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 28,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-183",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 94
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 18
+      }
+    },
+    {
+      "id": "test-184",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 71
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 25,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-185",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 46
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 27
+      }
+    },
+    {
+      "id": "test-186",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 23
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 22,
+        "bodyDamage": 27
+      }
+    },
+    {
+      "id": "test-187",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 1
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 27
+      }
+    },
+    {
+      "id": "test-188",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 150
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 28,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-189",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 122
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 28,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-190",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 94
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 29,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-191",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 65
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 22,
+        "bodyDamage": 26
+      }
+    },
+    {
+      "id": "test-192",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 43
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 27
+      }
+    },
+    {
+      "id": "test-193",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 20
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 26.6
+      }
+    },
+    {
+      "id": "test-194",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 0
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 26.6
+      }
+    },
+    {
+      "id": "test-195",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 0
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 26.6
+      }
+    },
+    {
+      "id": "test-196",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 150
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 28,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-197",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 122
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 28,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-198",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 94
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 18
+      }
+    },
+    {
+      "id": "test-199",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 71
+      },
+      "range": 0,
+      "isPenetration": false,
+      "gameResults": {
+        "armorDamage": 25,
+        "bodyDamage": 2
+      }
+    },
+    {
+      "id": "test-200",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 46
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 23,
+        "bodyDamage": 27
+      }
+    },
+    {
+      "id": "test-201",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv1",
+      "armor": {
+        "id": "armor-imtv",
+        "currentDurability": 23
+      },
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "armorDamage": 22,
+        "bodyDamage": 27
+      }
     }
   ],
   "metadata": {
-    "lastUpdated": "2025-06-04",
+    "lastUpdated": "2025-06-14",
     "gameVersion": "1.3.7.0",
     "notes": "Test data from manual in-game testing"
   }
