@@ -5,7 +5,7 @@
 
 import { fetchItemsData } from '@/services/ItemService';
 import { calculateShotDamage } from './damage-calculations';
-import { isArmor, isAmmunition } from './types';
+import {isArmor, isAmmunition, isWeapon} from './types';
 import {AmmoProperties, ArmorProperties} from "@/types/items";
 
 
@@ -19,6 +19,7 @@ export async function testShotDamage(
     armorZoneId: string,
     ammoId: string,
     armorDurability: number,
+    weaponId: string,
     range: number = 0,
     overridePenentrationChance: boolean | null,
 ) {
@@ -31,24 +32,32 @@ export async function testShotDamage(
 
     try {
         // Load items data
-        const {items} = await fetchItemsData();
+        const {itemMap} = await fetchItemsData();
 
         // Find armor
-        const armor = items.find(item => item.id === armorId && isArmor(item));
+        const armor = itemMap.get(armorId);
         if (!armor || !isArmor(armor)) {
             console.error(`Armor not found: ${armorId}`);
             return;
         }
 
         // Find ammo
-        const ammo = items.find(item => item.id === ammoId && isAmmunition(item));
+        const ammo = itemMap.get(ammoId);
         if (!ammo || !isAmmunition(ammo)) {
             console.error(`Ammo not found: ${ammoId}`);
             return;
         }
 
+        // Find ammo
+        const weapon = itemMap.get(weaponId);
+        if (!weapon || !isWeapon(weapon)) {
+            console.error(`Weapon not found: ${weaponId}`);
+            return;
+        }
+
         console.log(`Armor: ${armor.name} (Class ${armor.stats.armorClass})`);
         console.log(`Ammo: ${ammo.name} (Damage: ${ammo.stats.damage}, Pen: ${ammo.stats.penetration})`);
+        console.log(`Weapon: ${weapon.name} (Firing Power: ${weapon.stats.firingPower})`);
 
         // Get zone-specific armor data
         const zoneProtection = armor.stats.protectiveData?.find(pd => pd.bodyPart === armorZoneId);
@@ -111,6 +120,7 @@ export async function testShotDamage(
                 ammoProps,
                 armorProps,
                 armorDurability ?? armor.stats.maxDurability, // Full durability
+                weapon.stats.firingPower,
                 range,
                 overridePenentrationChance,
             );

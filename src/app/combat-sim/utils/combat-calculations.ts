@@ -96,7 +96,7 @@ function calculateAttackerZones(
         } : null;
 
         // Calculate shots to kill
-        const combatResult = simulateCombat(ammoProps, armorProps, bodyPart.hp, bodyPart.isVital, range);
+        const combatResult = simulateCombat(ammoProps, armorProps, weapon.stats.firingPower, bodyPart.hp, bodyPart.isVital, range);
 
         const shotsToKill = combatResult.shotsToKill;
 

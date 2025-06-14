@@ -1095,36 +1095,6 @@
       }
     },
     {
-      "id": "test-075",
-      "description": "Full ammo damage - possibly penetration without armor hit",
-      "weapon": "weapon-aks74u-zt",
-      "ammo": "ammo-545x39-apv1",
-      "armor": {
-        "id": "armor-6b17-upgrade",
-        "currentDurability": 0
-      },
-      "range": 0,
-      "isPenetration": true,
-      "gameResults": {
-        "bodyDamage": 51
-      }
-    },
-    {
-      "id": "test-076",
-      "description": "Full ammo damage - possibly penetration without armor hit",
-      "weapon": "weapon-aks74u-zt",
-      "ammo": "ammo-545x39-apv1",
-      "armor": {
-        "id": "armor-6b17-upgrade",
-        "currentDurability": 0
-      },
-      "range": 0,
-      "isPenetration": true,
-      "gameResults": {
-        "bodyDamage": 51
-      }
-    },
-    {
       "id": "test-077",
       "description": "No idea why damage inconsistent, stomach hit is 47 too so mb its the armor zone",
       "weapon": "weapon-aks74u-zt",
@@ -2986,6 +2956,66 @@
       "gameResults": {
         "armorDamage": 22,
         "bodyDamage": 27
+      }
+    },
+    {
+      "id": "test-202",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-apv2",
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 37
+      }
+    },
+    {
+      "id": "test-203",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-apv2",
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 39
+      }
+    },
+    {
+      "id": "test-204",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-apv2",
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 41
+      }
+    },
+    {
+      "id": "test-205",
+      "weapon": "weapon-m4a1-agent",
+      "ammo": "ammo-556x45-tracer",
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 69
+      }
+    },
+    {
+      "id": "test-206",
+      "weapon": "weapon-hk416",
+      "ammo": "ammo-556x45-tracer",
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 73
+      }
+    },
+    {
+      "id": "test-207",
+      "weapon": "weapon-m4a1-dd",
+      "ammo": "ammo-556x45-tracer",
+      "range": 0,
+      "isPenetration": true,
+      "gameResults": {
+        "bodyDamage": 77
       }
     }
   ],

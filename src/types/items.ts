@@ -74,8 +74,7 @@ export interface Weapon extends Item {
         ADSSpeed: number;
         ergonomics: number;
         fireMode: FireMode;
-        //Needs investigation - In game UI shows some power values, but not sure what they are
-        firingPower?: number;
+        firingPower: number;
         //PROBABLY LEFTOVER DATA FROM OTHER MODE/GAME cuz these values are AMMO-related
         damageRangeCurve?: string;
         bulletDropFactor?: number;

@@ -864,7 +864,7 @@
         "horizontalRecoilControl": 0.325
       },
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "firingPower": 0.8,
+      "firingPower": 0.5,
       "caliber": "5.56x45"
     },
     "notes": "Premium AR-platform rifle with piston-driven gas system for enhanced reliability. Excellent build quality and accuracy.",

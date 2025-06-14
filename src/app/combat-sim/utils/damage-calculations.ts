@@ -16,6 +16,7 @@ import {AmmoProperties, ArmorProperties, CurvePoint} from "@/types/items";
 function simulateCombat(
     ammo: AmmoProperties,
     armor: ArmorProperties | null,
+    weaponFiringPower: number,
     bodyPartHP: number,
     isVital: boolean = false,
     range: number
@@ -33,6 +34,7 @@ function simulateCombat(
             ammo,
             armor,
             currentArmorDurability,
+            weaponFiringPower,
             range,
             null,
             false
@@ -69,13 +71,14 @@ function calculateShotDamage(
     ammo: AmmoProperties,
     armor: ArmorProperties | null,
     currentArmorDurability: number | null,
+    weaponFiringPower: number,
     range: number,
     overridePenetrationChance: boolean | null = null,
     applyRandom: boolean = false,
 ): ShotResult {
     // Apply range falloff to base damage and penetration.//FIXME DAMAGE manipulation is to handle buckshot
-    const rangeDamage = applyRangeFalloff((ammo.pellets || 1) * ammo.damage, ammo, range);
-    const rangePenetration = applyRangePenetrationFalloff(ammo.penetration, ammo, range);
+    const rangeDamage = applyFirePowerDamage(applyRangeFalloff((ammo.pellets || 1) * ammo.damage, ammo, range), weaponFiringPower);
+    const rangePenetration = applyFirePowerPenetration(applyRangePenetrationFalloff(ammo.penetration, ammo, range), weaponFiringPower);
 
     // If no armor, full damage applies
     if (!armor) {
@@ -248,7 +251,7 @@ function applyRangeFalloff(
 
     // If we have ballistic curve data, use it
     if (ammo.ballisticCurves?.damageOverDistance) {
-        return  interpolateBallisticCurve(ammo.ballisticCurves.damageOverDistance, rangeInCurveUnits);
+        return interpolateBallisticCurve(ammo.ballisticCurves.damageOverDistance, rangeInCurveUnits);
     }
 
     // Default falloff formula if no curve data
@@ -284,6 +287,27 @@ function applyRangePenetrationFalloff(
 }
 
 /**
+ * Apply penetration correction based on weapons firingPower stat
+ */
+function applyFirePowerDamage(
+    baseDamage: number,
+    firePower: number
+): number {
+    //FIXME - it kinda works, but seems to be wrong. Low firepower have defuff, high - buff. 5 - is handpicked value'
+    return (1 - (0.5 - firePower)/5) * baseDamage;
+}
+
+/**
+ * Apply penetration correction based on weapons firingPower stat
+ */
+function applyFirePowerPenetration(
+    basePenetration: number,
+    firePower: number
+): number {
+    return (firePower - 0.5) + basePenetration;
+}
+
+/**
  * Cubic Hermite interpolation for smooth curves
  */
 function interpolateCubicHermite(
@@ -304,7 +328,7 @@ function interpolateCubicHermite(
 }
 
 function extendShotResult(shotResult: ShotResult, armorDurabilityLeft: number, hpLeft: number): ShotResultWithLeftovers {
-    return { ...shotResult, remainingArmorDurability: armorDurabilityLeft, remainingHp: hpLeft };
+    return {...shotResult, remainingArmorDurability: armorDurabilityLeft, remainingHp: hpLeft};
 }
 
 export {

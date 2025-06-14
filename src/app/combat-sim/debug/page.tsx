@@ -21,6 +21,8 @@ interface DeviationComputationValue {
     testCount: number
 }
 
+const UNARMORED = 'Unarmored';
+
 export default function CombatSimDebugPage() {
     const [testCases, setTestCases] = useState<SingleShotTestCase[]>([]);
     const [testResults, setTestResults] = useState<TestRunResult[]>([]);
@@ -44,7 +46,7 @@ export default function CombatSimDebugPage() {
             if (filterStatus === 'failed' && result.passed) return false;
 
             // Filter by armor
-            if (filterArmor !== 'all' && result.testCase.armor.id !== filterArmor) return false;
+            if (filterArmor !== 'all' && (filterArmor === UNARMORED ? !!result.testCase.armor : result.testCase.armor?.id !== filterArmor)) return false;
 
             // Filter by ammo
             if (filterAmmo !== 'all' && result.testCase.ammo !== filterAmmo) return false;
@@ -52,10 +54,14 @@ export default function CombatSimDebugPage() {
             return true;
         });
     }, [testResults, filterPenetrating, filterStatus, filterArmor, filterAmmo]);
+    
+    //FIXME remove log
+    console.log(`Filtered`, {filteredResults, testResults} );
+    
 
     // Get unique armor and ammo types for filter dropdowns
     const uniqueArmors = useMemo(() =>
-            [...new Set(testCases.map(tc => tc.armor.id))].sort(),
+            [...new Set(testCases.map(tc => tc.armor?.id || UNARMORED))].sort(),
         [testCases]
     );
 
@@ -90,9 +96,10 @@ export default function CombatSimDebugPage() {
         // Find items
         const weapon = items.find(item => item.id === testCase.weapon && isWeapon(item));
         const ammo = items.find(item => item.id === testCase.ammo && isAmmunition(item));
-        const armor = items.find(item => item.id === testCase.armor.id && isArmor(item));
+        // @ts-expect-error testCase.armor can be null
+        const armor = testCase.armor && items.find(item => item.id === testCase.armor.id && isArmor(item));
 
-        if (!weapon || !isWeapon(weapon) || !ammo || !isAmmunition(ammo) || !armor || !isArmor(armor)) {
+        if (!weapon || !isWeapon(weapon) || !ammo || !isAmmunition(ammo) || (armor && !isArmor(armor))) {
             console.error('Missing items for test:', testCase.id);
             return {
                 testCase,
@@ -107,13 +114,15 @@ export default function CombatSimDebugPage() {
         }
 
 
-        const currentDurability = testCase.armor.currentDurability ?? armor.stats.maxDurability;
+        // @ts-expect-error armor can be undefined
+        const currentDurability = testCase.armor ? testCase.armor.currentDurability ?? armor.stats.maxDurability : 0;
 
         // Run simulation
         const shotResult = calculateShotDamage(
             ammo.stats,
-            armor.stats,
+            armor ? armor.stats : null,
             currentDurability,
+            weapon.stats.firingPower,
             testCase.range,
             testCase.isPenetration
         );
@@ -182,7 +191,7 @@ export default function CombatSimDebugPage() {
         const deviationStackByAmmo: Record<string, DeviationComputationValue> = {};
 
         results.forEach(result => {
-            const armorId = result.testCase.armor.id;
+            const armorId = result.testCase.armor?.id || UNARMORED;
             const ammoId = result.testCase.ammo;
 
             // Armor grouping
@@ -498,7 +507,7 @@ export default function CombatSimDebugPage() {
                                                         {result.armor.name}
                                                     </Link>
                                                         <span
-                                                            className="text-tan-400 text-xs">({result.testCase.armor.currentDurability ?? result.armor.stats.maxDurability})</span>
+                                                            className="text-tan-400 text-xs">({result.testCase.armor ? result.testCase.armor.currentDurability ?? result.armor.stats.maxDurability : UNARMORED})</span>
                                                     </>)
                                                     :
                                                     <span className=" font-medium text-tan-400">Unprotected</span>

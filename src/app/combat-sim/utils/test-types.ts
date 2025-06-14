@@ -8,7 +8,7 @@ export interface SingleShotTestCase {
     description?: string;
     weapon: string; // weapon ID
     ammo: string; // ammo ID
-    armor: {
+    armor?: {
         id: string;
         currentDurability?: number; // percentage 0-100
     };
