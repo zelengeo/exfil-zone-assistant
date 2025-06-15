@@ -141,6 +141,49 @@ export default function ArmorPenetrationGuide() {
                 </div>
             </section>
 
+            {/* Weapon Firing Power Impact */}
+            <section className="military-box p-6 rounded-sm">
+                <div className="flex items-start gap-3 mb-4">
+                    <div className="p-2 bg-military-700 rounded-sm border border-olive-700">
+                        <Zap size={20} className="text-olive-400" />
+                    </div>
+                    <h2 className="text-2xl font-bold text-tan-100">Weapon Impact To Penetration Chance</h2>
+                </div>
+
+                <div className="space-y-4 text-tan-200">
+                    <p>
+                        Your weapon&#39;s <strong>Firing Power</strong> stat directly affects ammunition penetration effectiveness.
+                        This hidden modifier can make the difference between penetrating armor or bouncing off.
+                    </p>
+
+                    {/* Firing Power Formula */}
+                    <div className="bg-military-800 border border-military-600 rounded-sm p-5">
+                        <h3 className="font-semibold text-olive-400 mb-3">Penetration Power Calculation</h3>
+                        <div className="space-y-3">
+                            <div className="bg-military-900 p-4 rounded-sm">
+                                <p className="text-sm font-medium text-tan-300 mb-3">The Formula:</p>
+                                <div className="flex items-center gap-3 justify-center py-2 text-lg">
+                                    <span className="text-tan-400">Ammo Penetration</span>
+                                    <span className="text-tan-500">+</span>
+                                    <span className="text-olive-400 font-mono">(0.5 - Firing Power)</span>
+                                    <span className="text-tan-500">=</span>
+                                    <span className="text-yellow-400 font-semibold">Effective Penetration</span>
+                                </div>
+                            </div>
+
+                            <div className="text-sm text-tan-300">
+                                <p className="mb-2">This means:</p>
+                                <ul className="space-y-1 ml-4">
+                                    <li>• Weapons with <strong className="text-gray-200">low</strong> firing power <span className="text-red-400">reduce</span> ammo penetration</li>
+                                    <li>• Weapons with <strong className="text-purple-400">high</strong> firing power <span className="text-green-400">improve</span> ammo penetration</li>
+                                    <li>• The modifier ranges from <code className="text-yellow-400 bg-military-900 px-1 py-0.5 rounded">0.05</code> (worst) to <code className="text-yellow-400 bg-military-900 px-1 py-0.5 rounded">0.75</code> (best)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Damage Calculation - Penetration */}
             <section className="military-box p-6 rounded-sm">
                 <div className="flex items-start gap-3 mb-4">

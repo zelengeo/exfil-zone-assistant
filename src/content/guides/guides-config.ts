@@ -62,36 +62,12 @@ export const guideTags: GuideTag[] = [
 
 // All guides configuration
 export const guidesConfig: GuideMetadata[] = [
-    // Getting Started
-    {
-        slug: 'combat-sim-usage',
-        title: 'How to Use Combat Sim',
-        description: 'Learn how to use our Combat Simulator effectively and understand simulation accuracy',
-        tags: ['getting-started', 'essential'],
-        difficulty: 'beginner',
-        readTime: '5 min',
-        author: 'pogapwnz',
-        publishedAt: '2025-06-10',
-        featured: true,
-        contentType: 'component'
-    },
-    // {
-    //     slug: 'first-raid-checklist',
-    //     title: 'Your First Raid Checklist',
-    //     description: 'Essential preparation steps before entering your first raid',
-    //     tags: ['getting-started', 'gameplay'],
-    //     difficulty: 'beginner',
-    //     readTime: '7 min',
-    //     publishedAt: '2024-01-16',
-    //     contentType: 'markdown'
-    // },
-
     //APP state and plans
     {
         slug: 'app-roadmap',
         title: 'Current Features & Dev Roadmap',
         description: 'Discover what\'s available now, what\'s coming soon, and help shape the future of Exfil Zone Assistant',
-        tags: ['getting-started', 'essential'],
+        tags: ['getting-started'],
         difficulty: 'beginner',
         readTime: '3 min',
         author: 'pogapwnz',
@@ -102,12 +78,36 @@ export const guidesConfig: GuideMetadata[] = [
 
     // Gameplay Mechanics
     {
+        slug: 'survival-damage-mechanics',
+        title: 'Survival & Damage Mechanics',
+        description: 'Essential guide to body zones, health management, bleeding, and staying alive in Exfil Zone',
+        tags: ['getting-started', 'gameplay'],
+        difficulty: 'beginner',
+        readTime: '10 min',
+        author: 'pogapwnz',
+        publishedAt: '2025-06-15',
+        featured: true,
+        contentType: 'component'
+    },
+    {
         slug: 'armor-penetration-guide',
         title: 'Penetration Mechanics Explained',
         description: 'Master the complex mechanics of armor penetration, damage reduction, and when to aim for armor vs limbs',
         tags: ['combat', 'equipment', 'strategy'],
         difficulty: 'advanced',
         readTime: '8 min',
+        author: 'pogapwnz',
+        publishedAt: '2025-06-10',
+        featured: true,
+        contentType: 'component'
+    },
+    {
+        slug: 'combat-sim-usage',
+        title: 'How to Use Combat Sim',
+        description: 'Learn how to use our Combat Simulator effectively and understand simulation accuracy',
+        tags: ['getting-started', 'strategy'],
+        difficulty: 'beginner',
+        readTime: '5 min',
         author: 'pogapwnz',
         publishedAt: '2025-06-10',
         featured: true,
