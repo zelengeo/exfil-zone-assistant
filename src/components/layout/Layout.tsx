@@ -99,7 +99,7 @@ const Layout: React.FC<LayoutProps> = ({
                                 "name": "pogapwnz",
                                 "logo": {
                                     "@type": "ImageObject",
-                                    "url": "https://www.exfil-zone-assistant.app/android-chrome-512x512.png",
+                                    "url": "https://www.exfil-zone-assistant.app/logo-google-512x512.png",
                                     "width": 512,
                                     "height": 512
                                 }
