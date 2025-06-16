@@ -12,7 +12,7 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 800,
+      "price": 724,
       "weight": 0.05,
       "canHealDeepWound": false
     },
@@ -32,7 +32,7 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 2000,
+      "price": 1584,
       "weight": 0.05,
       "canHealDeepWound": true
     },
@@ -52,7 +52,7 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 5000,
+      "price": 4378,
       "weight": 0.05,
       "canHealDeepWound": true
     },
@@ -72,7 +72,7 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 4000,
+      "price": 3692,
       "weight": 0.38,
       "hpPercentage": 0.5,
       "useTime": 8,
@@ -95,7 +95,7 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 20000,
+      "price": 11883,
       "weight": 0.38,
       "hpPercentage": 0.25,
       "useTime": 7,
@@ -118,7 +118,7 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 50000,
+      "price": 48771,
       "weight": 0.38,
       "hpPercentage": 0.1,
       "useTime": 6,
@@ -141,7 +141,7 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 800,
+      "price": 4121,
       "weight": 0.08,
       "usesCount": 3,
       "effectTime": 120.0,
@@ -167,7 +167,7 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 2000,
+      "price": 9110,
       "weight": 0.08,
       "usesCount": 6,
       "effectTime": 150.0,
@@ -193,7 +193,7 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 5000,
+      "price": 19262,
       "weight": 0.08,
       "usesCount": 6,
       "effectTime": 150.0,
@@ -219,7 +219,7 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 1000,
+      "price": 4826,
       "weight": 0.03,
       "capacity": 100.0,
       "cureSpeed": 10.0,
@@ -241,7 +241,7 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 2000,
+      "price": 10252,
       "weight": 0.03,
       "capacity": 200.0,
       "cureSpeed": 15.0,
@@ -263,7 +263,7 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 20000,
+      "price": 22333,
       "weight": 0.03,
       "capacity": 300.0,
       "cureSpeed": 20.0,
@@ -285,7 +285,7 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 50000,
+      "price": 51371,
       "weight": 0.03,
       "capacity": 600.0,
       "cureSpeed": 25.0,
@@ -307,7 +307,7 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 50000,
+      "price": 57809,
       "weight": 0.03,
       "useTime": 3.0,
       "effectTime": 120.0,
@@ -329,7 +329,7 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 50000,
+      "price": 46935,
       "weight": 0.03,
       "useTime": 3.0,
       "effectTime": 120.0,
@@ -351,7 +351,7 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 50000,
+      "price": 157851,
       "weight": 0.03,
       "useTime": 3.0,
       "effectTime": 600.0,
@@ -373,7 +373,7 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 50000,
+      "price": 159430,
       "weight": 0.03,
       "useTime": 3.0,
       "effectTime": 240.0,
@@ -395,7 +395,7 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 50000,
+      "price": 45363,
       "weight": 0.03,
       "useTime": 3.0,
       "effectTime": 120.0

@@ -3,7 +3,7 @@ import {
     isAmmunition,
     isBandage,
     isBodyArmor,
-    isFaceShield,
+    isFaceShield, isGrenade,
     isHelmet, isLimbRestore, isMedicine,
     isPainkiller, isStim, isSyringe,
     isWeapon
@@ -24,6 +24,7 @@ export interface ItemCache {
 const DATA_FILES = [
     'weapons.json',
     'ammunition.json',
+    'grenades.json',
     'armor.json',
     'helmets.json',
     'face-shields.json',
@@ -35,6 +36,7 @@ const DATA_FILES = [
 const dataImports = {
     'weapons.json': () => import('@/public/data/weapons.json'),
     'ammunition.json': () => import('@/public/data/ammunition.json'),
+    'grenades.json': () => import('@/public/data/grenades.json'),
     'armor.json': () => import('@/public/data/armor.json'),
     'helmets.json': () => import('@/public/data/helmets.json'),
     'face-shields.json': () => import('@/public/data/face-shields.json'),
@@ -105,6 +107,21 @@ function transformItemData(rawItem: Item): Item {
             baseItem.stats.damageAtRange = rawItem.stats.damageAtRange;
             baseItem.stats.penetrationAtRange = rawItem.stats.penetrationAtRange;
             baseItem.stats.ballisticCurves = rawItem.stats.ballisticCurves;
+        }
+
+        // Add this section in the transformItemData function after face shields handling
+        if (rawItem.category === 'grenades') {
+            if (!isGrenade(rawItem) || !isGrenade(baseItem)) return baseItem;
+            baseItem.stats.fuseTime = rawItem.stats.fuseTime;
+            baseItem.stats.radius = rawItem.stats.radius;
+            baseItem.stats.effectTime = rawItem.stats.effectTime;
+            baseItem.stats.bluntDamageScale = rawItem.stats.bluntDamageScale;
+            baseItem.stats.bleedingChance = rawItem.stats.bleedingChance;
+            baseItem.stats.protectionGearPenetratedDurabilityDamageScale = rawItem.stats.protectionGearPenetratedDurabilityDamageScale;
+            baseItem.stats.protectionGearBluntDurabilityDamageScale = rawItem.stats.protectionGearBluntDurabilityDamageScale;
+            baseItem.stats.applyChanceCurve = rawItem.stats.applyChanceCurve;
+            baseItem.stats.damageOverDistance = rawItem.stats.damageOverDistance;
+            baseItem.stats.penetrationPowerOverDistance = rawItem.stats.penetrationPowerOverDistance;
         }
 
         if (rawItem.category === 'gear' && rawItem.subcategory === 'Body Armor') {

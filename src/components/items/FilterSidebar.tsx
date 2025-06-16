@@ -1,5 +1,5 @@
 import React from 'react';
-import {X, ChevronRight, ChevronDown, Swords, Fence, Shield, BriefcaseMedical} from 'lucide-react';
+import {X, ChevronRight, ChevronDown, Swords, Fence, Shield, BriefcaseMedical, Bomb} from 'lucide-react';
 import { ItemCategory } from '@/types/items';
 import {useRouter} from "next/navigation";
 
@@ -17,6 +17,10 @@ const getCategoryIcon = (categoryId: string) => {
         case 'medicine':
             return (
                 <BriefcaseMedical size={20}/>
+            );
+        case 'grenades':
+            return (
+                <Bomb size={20}/>
             );
         case 'food':
             return (

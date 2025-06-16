@@ -90,6 +90,12 @@ export interface Ammunition extends Item {
     stats: Item['stats'] & AmmoProperties;
 }
 
+export interface Grenade extends Item {
+    category: 'grenades';
+    stats: Item['stats'] & GrenadeProperties;
+}
+
+
 // Complete armor type with all curves
 export interface Armor extends Item {
     category: 'gear';
@@ -161,7 +167,7 @@ export interface Syringe extends Medicine {
     }
 }
 
-export type AnyItem = Weapon | Armor | Ammunition | BodyArmor | Helmet | FaceShield | Medicine;
+export type AnyItem = Weapon | Armor | Ammunition | BodyArmor | Helmet | FaceShield | Medicine | Grenade;
 
 // Protective zone from armor data
 export interface ProtectiveZone {
@@ -207,6 +213,19 @@ export interface AmmoProperties {
         damageOverDistance: CurvePoint[];
         penetrationPowerOverDistance: CurvePoint[];
     };
+}
+
+export interface GrenadeProperties {
+    "fuseTime": number | null;
+    "radius": number;
+    "bluntDamageScale": number;
+    "bleedingChance": number;
+    "effectTime": number;
+    "protectionGearPenetratedDurabilityDamageScale": number;
+    "protectionGearBluntDurabilityDamageScale": number;
+    applyChanceCurve: CurvePoint[];
+    damageOverDistance: CurvePoint[];
+    penetrationPowerOverDistance: CurvePoint[];
 }
 
 export interface ArmorProperties {
@@ -283,6 +302,17 @@ export const itemCategories: Record<string, ItemCategory> = {
                 '12 Gauge',
                 '6.8x51mm'
             ]
+    },
+
+    'grenades': {
+        id: 'grenades',
+        name: 'Grenades',
+        description: 'Grenades and explosive devices',
+        icon: 'bomb',
+        subcategories: [
+            'Fragmentation',
+            'Utility',
+        ]
     }
     ,
     'gear': {

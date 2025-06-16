@@ -5,37 +5,26 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {
     ChevronLeft,
-    Crosshair,
-    Shield,
-    Timer,
-    Info,
-    Gavel,
-    ShieldMinus,
-    BowArrow,
-    ShieldX,
-    Snail,
-    Zap, Volume2, HelpCircle, ChevronsUpDown, ChevronsLeftRight, Bandage, Hash, Cross, Bone, Gauge
 } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
-import BallisticCurveChart from '@/components/items/BallisticCurveChart';
-import ArmorZonesDisplay from '@/components/items/ArmorZonesDisplay';
+import WeaponSpecificStats from "@/app/items/[id]/components/WeaponSpecificStats";
+import AmmunitionSpecificStats from "@/app/items/[id]/components/AmmunitionSpecificStats";
 import {
     formatPrice,
     formatWeight,
     getRarityColorClass,
     getRarityBorderClass,
-    getCategoryById, AnyItem, FIRE_MODE_CONFIG, Item
+    getCategoryById, AnyItem, Item,
 } from '@/types/items';
 import {getItemById} from "@/services/ItemService";
 import {
+    isAmmunition,
     isAnyItem,
-    isArmor,
-    isBandage,
-    isHelmet,
-    isLimbRestore,
-    isPainkiller, isStim,
-    isSyringe
+    isArmor, isGrenade, isMedicine, isWeapon
 } from "@/app/combat-sim/utils/types";
+import GrenadeSpecificStats from "@/app/items/[id]/components/GrenadeSpecificStats";
+import MedicineSpecificStats from "@/app/items/[id]/components/MedicineSpecificStats";
+import ArmorSpecificStats from "@/app/items/[id]/components/ArmorSpecificStats";
 
 // Component for displaying item images with zoom functionality
 const ItemImageDisplay: React.FC<{
@@ -98,399 +87,22 @@ const ItemImageDisplay: React.FC<{
 
 // Helper to render stats based on item category
 const renderCategorySpecificStats = (item: AnyItem) => {
-    //FIXME remove log
-    console.log(`render Item`, item);
-
     switch (item.category) {
         case 'weapons':
-            return (
-                <>
-                    <div className="grid grid-cols-2 gap-4">
-                        <div className="flex items-center gap-2">
-                            <Zap size={18} className="text-olive-400"/>
-                            <span className="text-tan-300">Fire Rate:</span>
-                            <span className="text-tan-100">{item.stats.fireRate} rpm</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <Crosshair size={18} className="text-olive-400"/>
-                            <span className="text-tan-300">MOA:</span>
-                            <span className="text-tan-100">{item.stats.MOA?.toFixed(2) || 'N/A'}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <Shield size={18} className="text-olive-400"/>
-                            <span className="text-tan-300">Caliber:</span>
-                            <span className="text-tan-100">{item.stats.caliber}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <Timer size={18} className="text-olive-400"/>
-                            <span className="text-tan-300">Ergonomics:</span>
-                            <span className="text-tan-100">{(item.stats.ergonomics * 100).toFixed(0)}%</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <Info size={18} className="text-olive-400"/>
-                            <span className="text-tan-300">Fire Mode:</span>
-                            <span className="text-tan-100">{FIRE_MODE_CONFIG[item.stats.fireMode]}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <Snail size={18} className="text-olive-400"/>
-                            <span className="text-tan-300">ADS speed:</span>
-                            <span className="text-tan-100">{(item.stats.ADSSpeed * 100).toFixed(0)}%</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <ChevronsUpDown size={18} className="text-olive-400"/>
-                            <span className="text-tan-400">Vertical Recoil:</span>
-                            <span className="text-tan-100 font-mono">
-                                        {(item.stats.recoilParameters.verticalRecoilControl * 100).toFixed(0)}%
-                                    </span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <ChevronsLeftRight size={18} className="text-olive-400"/>
-                            <span className="text-tan-400">Horizontal Recoil:</span>
-                            <span className="text-tan-100 font-mono">
-                                        {(item.stats.recoilParameters.horizontalRecoilControl * 100).toFixed(0)}%
-                                    </span>
-                        </div>
-                        {/* Fire Power with tooltip */}
-                        <div className="flex items-center gap-2 relative group  cursor-help">
-                            <HelpCircle size={18} className="text-olive-400 hover:text-olive-300"/>
-                            <div
-                                className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-military-800 border border-military-600 rounded-sm text-xs text-tan-200 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none">
-                                The more - the better. Ammo penetration power is affected by <span
-                                className="text-olive-400">firing power - 0.5</span>.
-                            </div>
-                            <span className="text-tan-400">Fire Power:</span>
-                            <span className="text-tan-100 font-mono">{item.stats.firingPower}</span>
-                        </div>
-                    </div>
-                    {/*{item.stats.recoilParameters && (
-                        <WeaponRecoilDisplay
-                            recoilParameters={item.stats.recoilParameters}
-                            className="mt-6"
-                        />
-                    )}*/}
-                </>
-            );
+            if (isWeapon(item)) return <WeaponSpecificStats item={item}/>;
+            break;
         case 'ammo':
-            return (
-                <>
-                    <div className="grid grid-cols-2 gap-4 mb-6">
-                        <div className="flex items-center gap-2">
-                            <Crosshair size={18} className="text-olive-400"/>
-                            <span className="text-tan-300">Damage:</span>
-                            <span className="text-tan-100">{item.stats.damage}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <ShieldX size={18} className="text-olive-400"/>
-                            <span className="text-tan-300">Penetration:</span>
-                            <span className="text-tan-100">{item.stats.penetration}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <Info size={18} className="text-olive-400"/>
-                            <span className="text-tan-300">Velocity:</span>
-                            <span className="text-tan-100">{item.stats.muzzleVelocity / 100} m/s</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <Info size={18} className="text-olive-400"/>
-                            <span className="text-tan-300">Caliber:</span>
-                            <span className="text-tan-100">{item.stats.caliber}</span>
-                        </div>
-                    </div>
-
-                    {/* Damage modifiers */}
-                    <div className="military-card p-4 rounded-sm mb-6">
-                        <h4 className="text-lg font-bold text-olive-400 mb-3">Damage Modifiers</h4>
-                        <div className="grid grid-cols-2 gap-3 text-sm">
-                            <div>
-                                <span className="text-tan-400">Blunt Damage Scale:</span>
-                                <span
-                                    className="text-tan-100 ml-2">{(item.stats.bluntDamageScale * 100).toFixed(0)}%</span>
-                            </div>
-                            <div>
-                                <span className="text-tan-400">Bleeding Chance:</span>
-                                <span
-                                    className="text-tan-100 ml-2">{(item.stats.bleedingChance * 100).toFixed(0)}%</span>
-                            </div>
-                            <div>
-                                <span className="text-tan-400">Armor Pen Damage:</span>
-                                <span
-                                    className="text-tan-100 ml-2">{(item.stats.protectionGearPenetratedDamageScale * 100).toFixed(0)}%</span>
-                            </div>
-                            <div>
-                                <span className="text-tan-400">Armor Blunt Damage:</span>
-                                <span
-                                    className="text-tan-100 ml-2">{(item.stats.protectionGearBluntDamageScale * 100).toFixed(0)}%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Ballistic curves */}
-                    {item.stats.ballisticCurves && (
-                        <>
-                            <BallisticCurveChart
-                                title="Damage Over Distance"
-                                curves={[{
-                                    name: 'Damage',
-                                    data: item.stats.ballisticCurves.damageOverDistance,
-                                    color: '#ef4444'
-                                }]}
-                                xLabel="Distance (cm)"
-                                yLabel="Damage"
-                                height={250}
-                            />
-                            <div className="mt-4">
-                                <BallisticCurveChart
-                                    title="Penetration Over Distance"
-                                    curves={[{
-                                        name: 'Penetration',
-                                        data: item.stats.ballisticCurves.penetrationPowerOverDistance,
-                                        color: '#9ba85e'
-                                    }]}
-                                    xLabel="Distance (cm)"
-                                    yLabel="Penetration Power"
-                                    height={250}
-                                />
-                            </div>
-                        </>
-                    )}
-                </>
-            );
+            if (isAmmunition(item)) return <AmmunitionSpecificStats item={item}/>;
+            break;
+        case "grenades":
+            if (isGrenade(item)) return <GrenadeSpecificStats item={item}/>;
+            break
         case 'gear':
-            if (isArmor(item)) {
-                return (
-                    <>
-                        <div className="grid grid-cols-2 gap-4 mb-6">
-                            <div className="flex items-center gap-2">
-                                <BowArrow size={18} className="text-olive-400"/>
-                                <span className="text-tan-300">Penetration Damage</span>
-                                <span
-                                    className="text-tan-100">{(item.stats.penetrationDamageScalarCurve[1].value * 100).toFixed(0)}%</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Shield size={18} className="text-olive-400"/>
-                                <span className="text-tan-300">Max Durability:</span>
-                                <span className="text-tan-100">{item.stats.maxDurability}</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Gavel size={18} className="text-olive-400"/>
-                                <span className="text-tan-300">Blunt Damage:</span>
-                                <span className="text-tan-100">{(item.stats.bluntDamageScalar * 100).toFixed(0)}%</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <ShieldMinus size={18} className="text-olive-400"/>
-                                <span className="text-tan-300">Durability Damage:</span>
-                                <span
-                                    className="text-tan-100">{(item.stats.durabilityDamageScalar * 300).toFixed(0)}%</span>
-                            </div>
-                            {isHelmet(item) && (
-                                <div className="flex items-center gap-2">
-                                    <Volume2 size={18} className="text-olive-400"/>
-                                    <span className="text-tan-300">Sound Dampening:</span>
-                                    <span
-                                        className="text-tan-100">{item.stats.soundMix === "default" ? "None" : (item.stats.soundMix === "OPSWAT" || item.stats.soundMix === "Delta") ? "Weak" : "Strong"}</span>
-                                </div>
-                            )}
-                        </div>
-
-                        {/* Protection zones */}
-                        {item.stats.protectiveData && item.stats.protectiveData.length > 0 && (
-                            <ArmorZonesDisplay
-                                protectiveData={item.stats.protectiveData}
-                                className="mb-6"
-                            />
-                        )}
-
-                        {/* Penetration curves */}
-                        {item.stats.penetrationChanceCurve && (
-                            <BallisticCurveChart
-                                title="Penetration Chance Curve"
-                                curves={[{
-                                    name: 'Penetration Chance',
-                                    data: item.stats.penetrationChanceCurve,
-                                    color: '#ef4444'
-                                }]}
-                                xLabel="Penetration - Armor Class"
-                                yLabel="Chance"
-                                height={250}
-                            />
-                        )}
-
-                        {item.stats.penetrationDamageScalarCurve && (
-                            <div className="mt-4">
-                                <BallisticCurveChart
-                                    title="Penetration Damage Scalar"
-                                    curves={[{
-                                        name: 'Damage Multiplier',
-                                        data: item.stats.penetrationDamageScalarCurve,
-                                        color: '#9ba85e'
-                                    }]}
-                                    xLabel="Armor Class - Penetration"
-                                    yLabel="Damage Scalar"
-                                    height={250}
-                                />
-                            </div>
-                        )}
-
-                        {item.stats.antiPenetrationDurabilityScalarCurve && (
-                            <div className="mt-4">
-                                <BallisticCurveChart
-                                    title="Durability Effectiveness"
-                                    curves={[{
-                                        name: 'Armor Effectiveness',
-                                        data: item.stats.antiPenetrationDurabilityScalarCurve,
-                                        color: '#60a5fa'
-                                    }]}
-                                    xLabel="Missing Durability %"
-                                    yLabel="Effectiveness"
-                                    height={250}
-                                />
-                            </div>
-                        )}
-                    </>
-                );
-            }
+            if (isArmor(item)) return <ArmorSpecificStats item={item}/>
             break;
         case 'medicine':
-            return (
-                <>
-                    {/* Bandages */}
-                    {isBandage(item) && (
-                        <div className="grid grid-cols-2 gap-4 mb-6">
-                            <div className="flex items-center gap-2">
-                                <Bandage size={18} className="text-olive-400"/>
-                                <span className="text-tan-400">Heals Deep Wound:</span>
-                                <span className={`${item.stats.canHealDeepWound ? 'text-green-400' : 'text-red-400'}`}>
-                                    {item.stats.canHealDeepWound ? 'Yes' : 'No'}</span>
-                            </div>
-                        </div>
-                    )}
-
-                    {/* Limb Restorers */}
-                    {isLimbRestore(item) && (
-                        <>
-                            <div className="grid grid-cols-2 gap-4 mb-6">
-                                <div className="flex items-center gap-2">
-                                    <Cross size={18} className="text-olive-400"/>
-                                    <span className="text-tan-400">Max HP Penalty:</span>
-                                    <span
-                                        className="text-tan-100">{(item.stats.hpPercentage * 100).toFixed(0)}%</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <Timer size={18} className="text-olive-400"/>
-                                    <span className="text-tan-400">Use Time:</span>
-                                    <span className="text-tan-100">{item.stats.useTime}s</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <Hash size={18} className="text-olive-400"/>
-                                    <span className="text-tan-400">Uses Count:</span>
-                                    <span className="text-tan-100">{item.stats.usesCount}</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <Bone size={18} className="text-olive-400"/>
-                                    <span className="text-tan-400">HP after restore:</span>
-                                    <span className="text-tan-100">{item.stats.brokenHP}</span>
-                                </div>
-                            </div>
-                        </>
-                    )}
-
-                    {/* Painkillers */}
-                    {isPainkiller(item) && (
-                        <>
-                            <div className="grid grid-cols-2 gap-4 mb-6">
-                                <div className="flex items-center gap-2">
-                                    <Timer size={18} className="text-olive-400"/>
-                                    <span className="text-tan-400">Duration:</span>
-                                    <span className="text-tan-100">{item.stats.effectTime}s</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <Hash size={18} className="text-olive-400"/>
-                                    <span className="text-tan-400">Uses Count:</span>
-                                    <span className="text-tan-100">{item.stats.usesCount}</span>
-                                </div>
-                            </div>
-                            <div className="military-card p-4 rounded-sm">
-                                <h4 className="text-olive-400 font-medium mb-3">Side Effects</h4>
-                                <div className="space-y-2">
-                                    <div className="flex justify-between">
-                                        <span className="text-tan-400">Energy Cost:</span>
-                                        <span className="text-red-400">{(item.stats.energyFactor)}/s</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span className="text-tan-400">Hydration Effect:</span>
-                                        <span className="text-red-400">{(item.stats.hydraFactor)}/s</span>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <span className="text-tan-400">Side Effect Duration:</span>
-                                        <span className="text-yellow-400">{item.stats.sideEffectTime}s</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </>
-                    )}
-
-                    {/* Syringes */}
-                    {isSyringe(item) && (
-                        <>
-                            <div className="grid grid-cols-2 gap-4 mb-6">
-                                <div className="flex items-center gap-2">
-                                    <Cross size={18} className="text-olive-400"/>
-                                    <span className="text-tan-400">Total Healing:</span>
-                                    <span className="text-tan-100">{item.stats.capacity} HP</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <Gauge size={18} className="text-olive-400"/>
-                                    <span className="text-tan-400">Healing Speed:</span>
-                                    <span className="text-tan-100">{item.stats.cureSpeed} HP/s</span>
-                                </div>
-                            </div>
-                            <div className="military-card p-4 rounded-sm">
-                                <h4 className="text-olive-400 font-medium mb-3">Additional Effects</h4>
-                                <div className="flex p-4 justify-between">
-                                    <span className="text-tan-400">Reduce Bleeding:</span>
-                                    <span
-                                        className={`${item.stats.canReduceBleeding ? 'text-green-400' : 'text-red-400'}`}>
-                                    {item.stats.canReduceBleeding ? 'Yes' : 'No'}
-                                </span>
-                                </div>
-                            </div>
-                        </>
-                    )}
-
-                    {/* Stims */}
-                    {isStim(item) && (
-                        <>
-                            <div className="grid grid-cols-2 gap-4 mb-6">
-                                <div className="flex items-center gap-2">
-                                    <Gauge size={18} className="text-olive-400"/>
-                                    <span className="text-tan-400">Use Time:</span>
-                                    <span className="text-tan-100">{item.stats.useTime}s</span>
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <Timer size={18} className="text-olive-400"/>
-                                    <span className="text-tan-400">Effect Duration:</span>
-                                    <span className="text-tan-100">{item.stats.effectTime}s</span>
-                                </div>
-                            </div>
-
-                            <div className="military-card p-4 rounded-sm">
-                                <h4 className="text-olive-400 font-medium mb-3">Usage Notes</h4>
-                                <div className="space-y-2 text-sm">
-                                    <p className="text-tan-300">
-                                        High-performance combat stimulants with specialized effects. Use strategically
-                                        before combat or specific activities.
-                                    </p>
-                                    <div className="bg-yellow-900/20 border border-yellow-700/50 rounded-sm p-2 mt-2">
-                                        <p className="text-yellow-200 text-xs">
-                                            <strong>Warning:</strong> Some stimulants may have side effects like
-                                            increased hunger/thirst consumption.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </>
-                    )}
-                </>
-            );
+            if (isMedicine(item)) return <MedicineSpecificStats item={item}/>
+            break;
         default:
             return null;
     }

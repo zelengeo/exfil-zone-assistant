@@ -293,8 +293,9 @@ function applyFirePowerDamage(
     baseDamage: number,
     firePower: number
 ): number {
-    //FIXME - it kinda works, but seems to be wrong. Low firepower have defuff, high - buff. 5 - is handpicked value'
-    return (1 - (0.5 - firePower)/4.5) * baseDamage;
+    //FIXME - it kinda works, but seems to be wrong. Low firepower have debuff, high - buff. 4.479 - is handpicked value'
+    // (0.9 + 0.2 * firePower) was mentioned as THE formula but test case 556AP x Warrior x (RC/DD) is failed. Probably I have some mistake at armor damage reduction part.
+    return (1 - (0.5 - firePower)/4.479) * baseDamage;
 }
 
 /**

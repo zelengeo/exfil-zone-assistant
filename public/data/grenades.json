@@ -1,0 +1,1206 @@
+[
+  {
+    "id": "grenade-m7290-flash",
+    "name": "M7290 Flash Grenade",
+    "description": "Standard issue flash-bang grenade designed to disorient enemies with intense light and sound",
+    "category": "grenades",
+    "subcategory": "Utility",
+    "images": {
+      "icon": "/images/items/grenades/Icon_grenade_01.webp",
+      "thumbnail": "/images/items/grenades/Icon_grenade_01.webp",
+      "fullsize": "/images/items/grenades/Icon_grenade_01.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "price": 850,
+      "weight": 0.41,
+      "radius": 20,
+      "effectTime": 5,
+      "fuseTime": 1.5,
+      "bluntDamageScale": 0.02,
+      "bleedingChance": 0,
+      "protectionGearPenetratedDurabilityDamageScale": 0.05,
+      "protectionGearBluntDurabilityDamageScale": 0.03,
+      "applyChanceCurve": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -0.000078831334,
+          "value": 1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 299,
+          "value": 1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 300,
+          "value": 0,
+          "arriveTangent": -0.00002996532,
+          "leaveTangent": -0.000029951652
+        }
+      ],
+      "damageOverDistance": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -0.000079,
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "penetrationPowerOverDistance": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 0,
+          "value": 0.1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 700,
+          "value": 0.1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ]
+    },
+    "notes": "Non-lethal tactical grenade used for room clearing and crowd control",
+    "tips": "Best used in confined spaces. Effect diminishes with distance and line of sight"
+  },
+  {
+    "id": "grenade-f1-frag",
+    "name": "F1 Fragmentation Grenade",
+    "description": "Soviet-era defensive fragmentation grenade with thick cast iron body",
+    "category": "grenades",
+    "subcategory": "Fragmentation",
+    "images": {
+      "icon": "/images/items/grenades/WF_FragmentGrenade_F1.webp",
+      "thumbnail": "/images/items/grenades/WF_FragmentGrenade_F1.webp",
+      "fullsize": "/images/items/grenades/WF_FragmentGrenade_F1.webp"
+    },
+    "stats": {
+      "rarity": "Rare",
+      "price": 24000,
+      "weight": 0.5,
+      "radius": 3,
+      "fuseTime": 3.5,
+      "bluntDamageScale": 0.02,
+      "bleedingChance": 0.35,
+      "protectionGearPenetratedDurabilityDamageScale": 0.05,
+      "protectionGearBluntDurabilityDamageScale": 0.03,
+      "applyChanceCurve": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -0.000079,
+          "value": 1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 300,
+          "value": 1,
+          "arriveTangent": -0.000008,
+          "leaveTangent": -0.000008
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 700,
+          "value": 0.65,
+          "arriveTangent": -0.0017718063,
+          "leaveTangent": -0.0017718058
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 1199,
+          "value": 0.25,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "break",
+          "time": 1200,
+          "value": 0.11,
+          "arriveTangent": -0.000862,
+          "leaveTangent": -0.000069
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 3000,
+          "value": 0,
+          "arriveTangent": 0.000012,
+          "leaveTangent": 0.000012
+        }
+      ],
+      "damageOverDistance": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -0.000079,
+          "value": 110,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 300,
+          "value": 110,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 700,
+          "value": 35,
+          "arriveTangent": -0.12728545,
+          "leaveTangent": -0.1272588
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 999,
+          "value": 15,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1500,
+          "value": 10,
+          "arriveTangent": -0.007894487,
+          "leaveTangent": -0.007892362
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 5000,
+          "value": 0,
+          "arriveTangent": -0.0028571428,
+          "leaveTangent": -0.0028571428
+        }
+      ],
+      "penetrationPowerOverDistance": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 0,
+          "value": 10,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 300,
+          "value": 10,
+          "arriveTangent": -0.026371729,
+          "leaveTangent": -0.026371285
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 1201,
+          "value": 1.5,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 3000,
+          "value": 0.35,
+          "arriveTangent": -0.000639244,
+          "leaveTangent": -0.000639244
+        }
+      ]
+    },
+    "notes": "Heavy defensive grenade with excellent fragmentation pattern",
+    "tips": "High fragment count makes it deadly in confined spaces. Longer fuse time than modern grenades"
+  },
+  {
+    "id": "grenade-m67-frag",
+    "name": "M67 Fragmentation Grenade",
+    "description": "Standard NATO fragmentation grenade with reliable fuze mechanism",
+    "category": "grenades",
+    "subcategory": "Fragmentation",
+    "images": {
+      "icon": "/images/items/grenades/Icon_grenade_02.webp",
+      "thumbnail": "/images/items/grenades/Icon_grenade_02.webp",
+      "fullsize": "/images/items/grenades/Icon_grenade_02.webp"
+    },
+    "stats": {
+      "rarity": "Rare",
+      "price": 25740,
+      "weight": 0.4,
+      "radius": 4,
+      "fuseTime": 5,
+      "bluntDamageScale": 0.02,
+      "bleedingChance": 0.4,
+      "protectionGearPenetratedDurabilityDamageScale": 0.05,
+      "protectionGearBluntDurabilityDamageScale": 0.03,
+      "applyChanceCurve": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -0.000079,
+          "value": 1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 400,
+          "value": 1,
+          "arriveTangent": -0.00004584015,
+          "leaveTangent": -0.00004586356
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 800,
+          "value": 0.65,
+          "arriveTangent": -0.002217674,
+          "leaveTangent": -0.0022176763
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 1099,
+          "value": 0.3,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "break",
+          "time": 1100,
+          "value": 0.1,
+          "arriveTangent": -0.000862,
+          "leaveTangent": -0.000069
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 3000,
+          "value": 0,
+          "arriveTangent": 0.000012,
+          "leaveTangent": 0.000012
+        }
+      ],
+      "damageOverDistance": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -0.000079,
+          "value": 120,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 400,
+          "value": 120,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 800,
+          "value": 35,
+          "arriveTangent": -0.12728545,
+          "leaveTangent": -0.1272588
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 1099,
+          "value": 20,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1600,
+          "value": 15,
+          "arriveTangent": -0.007894487,
+          "leaveTangent": -0.007892362
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 5000,
+          "value": 0,
+          "arriveTangent": -0.004411765,
+          "leaveTangent": -0.004411765
+        }
+      ],
+      "penetrationPowerOverDistance": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 0,
+          "value": 10,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 400,
+          "value": 10,
+          "arriveTangent": -0.03432192,
+          "leaveTangent": -0.03432061
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 1101,
+          "value": 1.2,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 3000,
+          "value": 0.35,
+          "arriveTangent": -0.00044760402,
+          "leaveTangent": -0.00044760402
+        }
+      ]
+    },
+    "notes": "Modern fragmentation grenade with optimized explosive composition",
+    "tips": "Higher damage and bleeding chance than Soviet grenades. Standard NATO issue"
+  },
+  {
+    "id": "grenade-rgd5-frag",
+    "name": "RGD-5 Fragmentation Grenade",
+    "description": "Lightweight offensive fragmentation grenade with thin steel body",
+    "category": "grenades",
+    "subcategory": "Fragmentation",
+    "images": {
+      "icon": "/images/items/grenades/WF_FragmentGrenade_RDG5.webp",
+      "thumbnail": "/images/items/grenades/WF_FragmentGrenade_RDG5.webp",
+      "fullsize": "/images/items/grenades/WF_FragmentGrenade_RDG5.webp"
+    },
+    "stats": {
+      "rarity": "Rare",
+      "price": 24000,
+      "weight": 0.31,
+      "radius": 3,
+      "fuseTime": 3.5,
+      "bluntDamageScale": 0.02,
+      "bleedingChance": 0.4,
+      "protectionGearPenetratedDurabilityDamageScale": 0.05,
+      "protectionGearBluntDurabilityDamageScale": 0.03,
+      "applyChanceCurve": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -0.000079,
+          "value": 1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 300,
+          "value": 1,
+          "arriveTangent": -0.0000064754804,
+          "leaveTangent": -0.000006475918
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 700,
+          "value": 0.65,
+          "arriveTangent": -0.0020301237,
+          "leaveTangent": -0.0020303584
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 999,
+          "value": 0.2,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "break",
+          "time": 1000,
+          "value": 0.085,
+          "arriveTangent": -0.000862,
+          "leaveTangent": -0.000069
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 3000,
+          "value": 0,
+          "arriveTangent": 0.000012,
+          "leaveTangent": 0.000012
+        }
+      ],
+      "damageOverDistance": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -0.000079,
+          "value": 125,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 300,
+          "value": 125,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 700,
+          "value": 35,
+          "arriveTangent": -0.05674783,
+          "leaveTangent": -0.05673781
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 1099,
+          "value": 23,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1600,
+          "value": 17,
+          "arriveTangent": -0.007894487,
+          "leaveTangent": -0.007892362
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 5000,
+          "value": 0,
+          "arriveTangent": -0.005,
+          "leaveTangent": -0.005
+        }
+      ],
+      "penetrationPowerOverDistance": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 0,
+          "value": 10,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 200,
+          "value": 10,
+          "arriveTangent": -0.027131386,
+          "leaveTangent": -0.02713138
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 1001,
+          "value": 1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 3000,
+          "value": 0.25,
+          "arriveTangent": -0.0003751876,
+          "leaveTangent": -0.0003751876
+        }
+      ]
+    },
+    "notes": "Light offensive grenade designed for advancing troops",
+    "tips": "Decent"
+  },
+  {
+    "id": "grenade-rgn-frag",
+    "name": "RGN Fragmentation Grenade",
+    "description": "Impact-fuzed fragmentation grenade that detonates on contact",
+    "category": "grenades",
+    "subcategory": "Fragmentation",
+    "images": {
+      "icon": "/images/items/grenades/WF_FragmentGrenade_RGN.webp",
+      "thumbnail": "/images/items/grenades/WF_FragmentGrenade_RGN.webp",
+      "fullsize": "/images/items/grenades/WF_FragmentGrenade_RGN.webp"
+    },
+    "stats": {
+      "rarity": "Epic",
+      "price": 55080,
+      "weight": 0.31,
+      "radius": 2,
+      "fuseTime": null,
+      "bluntDamageScale": 0.02,
+      "bleedingChance": 0.35,
+      "protectionGearPenetratedDurabilityDamageScale": 0.05,
+      "protectionGearBluntDurabilityDamageScale": 0.03,
+      "applyChanceCurve": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -0.000079,
+          "value": 1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 200,
+          "value": 1,
+          "arriveTangent": 0.0000063772254,
+          "leaveTangent": 0.0000063774437
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 500,
+          "value": 0.65,
+          "arriveTangent": -0.0007994875,
+          "leaveTangent": -0.0007994874
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1300,
+          "value": 0.3,
+          "arriveTangent": -0.00022821283,
+          "leaveTangent": -0.00022791354
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "break",
+          "time": 1301,
+          "value": 0.065,
+          "arriveTangent": -0.00007161067,
+          "leaveTangent": -0.00006863665
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 3000,
+          "value": 0,
+          "arriveTangent": 0.00001205921,
+          "leaveTangent": 0.000012015666
+        }
+      ],
+      "damageOverDistance": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -0.000079,
+          "value": 103,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 200,
+          "value": 103,
+          "arriveTangent": -0.26840138,
+          "leaveTangent": -0.2684337
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 500,
+          "value": 35,
+          "arriveTangent": -0.05840234,
+          "leaveTangent": -0.05839686
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1500,
+          "value": 8,
+          "arriveTangent": -0.007894,
+          "leaveTangent": -0.007892
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 5000,
+          "value": 0,
+          "arriveTangent": -0.0022857143,
+          "leaveTangent": -0.0022857143
+        }
+      ],
+      "penetrationPowerOverDistance": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 0,
+          "value": 10,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 200,
+          "value": 10,
+          "arriveTangent": -0.022239394,
+          "leaveTangent": -0.022238875
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1301,
+          "value": 1,
+          "arriveTangent": -0.0007574309,
+          "leaveTangent": -0.0007556667
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 3000,
+          "value": 0.35,
+          "arriveTangent": -0.00038257797,
+          "leaveTangent": -0.00038257797
+        }
+      ]
+    },
+    "notes": "Unique impact-fuzed grenade that explodes immediately on contact",
+    "tips": "No cooking time - explodes on impact. Dangerous to use in close quarters"
+  },
+  {
+    "id": "grenade-rgo-frag",
+    "name": "RGO Fragmentation Grenade",
+    "description": "Impact fuzed fragmentation grenade",
+    "category": "grenades",
+    "subcategory": "Fragmentation",
+    "images": {
+      "icon": "/images/items/grenades/WF_FragmentGrenade_RGO.webp",
+      "thumbnail": "/images/items/grenades/WF_FragmentGrenade_RGO.webp",
+      "fullsize": "/images/items/grenades/WF_FragmentGrenade_RGO.webp"
+    },
+    "stats": {
+      "rarity": "Epic",
+      "price": 53000,
+      "weight": 0.53,
+      "radius": 2,
+      "type": "fragmentation",
+      "fuseTime": null,
+      "bluntDamageScale": 0.02,
+      "bleedingChance": 0.35,
+      "protectionGearPenetratedDurabilityDamageScale": 0.05,
+      "protectionGearBluntDurabilityDamageScale": 0.03,
+      "applyChanceCurve": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -0.000079,
+          "value": 1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 200,
+          "value": 1,
+          "arriveTangent": -0.00005930539,
+          "leaveTangent": -0.00005932259
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 700,
+          "value": 0.65,
+          "arriveTangent": -0.001054647,
+          "leaveTangent": -0.0010546462
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1200,
+          "value": 0.3,
+          "arriveTangent": -0.00031166503,
+          "leaveTangent": -0.00031152283
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1201,
+          "value": 0.075,
+          "arriveTangent": -0.000134,
+          "leaveTangent": -0.000134
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 3000,
+          "value": 0,
+          "arriveTangent": -0.00003,
+          "leaveTangent": -0.00003
+        }
+      ],
+      "damageOverDistance": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -0.000079,
+          "value": 107,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 200,
+          "value": 107,
+          "arriveTangent": -0.27810588,
+          "leaveTangent": -0.2780991
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 700,
+          "value": 35,
+          "arriveTangent": -0.076246694,
+          "leaveTangent": -0.076249175
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1500,
+          "value": 9,
+          "arriveTangent": -0.007894,
+          "leaveTangent": -0.007892
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 5000,
+          "value": 0,
+          "arriveTangent": -0.0025714287,
+          "leaveTangent": -0.0025714287
+        }
+      ],
+      "penetrationPowerOverDistance": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 0,
+          "value": 10,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 200,
+          "value": 10,
+          "arriveTangent": -0.025902864,
+          "leaveTangent": -0.025907667
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 1201,
+          "value": 1.5,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 3000,
+          "value": 0.35,
+          "arriveTangent": -0.000639244,
+          "leaveTangent": -0.000639244
+        }
+      ]
+    },
+    "notes": "Advanced grenade with both impact and timed fuzing mechanisms",
+    "tips": "No cooking time - explodes on impact. Dangerous to use in close quarters"
+  },
+  {
+    "id": "grenade-vod17-frag",
+    "name": "VOD-17 Fragmentation Grenade",
+    "description": "Compact, cheap, high-explosive fragmentation grenade.",
+    "category": "grenades",
+    "subcategory": "Fragmentation",
+    "images": {
+      "icon": "/images/items/grenades/WF_FragmentGrenade_VOG17.webp",
+      "thumbnail": "/images/items/grenades/WF_FragmentGrenade_VOG17.webp",
+      "fullsize": "/images/items/grenades/WF_FragmentGrenade_VOG17.webp"
+    },
+    "stats": {
+      "rarity": "Uncommon",
+      "price": 10000,
+      "weight": 0.28,
+      "radius": 2,
+      "fuseTime": 3.0,
+      "bluntDamageScale": 0.02,
+      "bleedingChance": 0.4,
+      "protectionGearPenetratedDurabilityDamageScale": 0.05,
+      "protectionGearBluntDurabilityDamageScale": 0.03,
+      "applyChanceCurve": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -0.000079,
+          "value": 1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 200,
+          "value": 1,
+          "arriveTangent": -0.000008,
+          "leaveTangent": -0.000008
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 600,
+          "value": 0.65,
+          "arriveTangent": -0.0019842356,
+          "leaveTangent": -0.0019842356
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 899,
+          "value": 0.3,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "break",
+          "time": 900,
+          "value": 0.15,
+          "arriveTangent": -0.00009240347,
+          "leaveTangent": -0.000069
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 3000,
+          "value": 0,
+          "arriveTangent": 0.000012,
+          "leaveTangent": 0.000012
+        }
+      ],
+      "damageOverDistance": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -0.000079,
+          "value": 110,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 200,
+          "value": 110,
+          "arriveTangent": -0.22433962,
+          "leaveTangent": -0.2243595
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 600,
+          "value": 35,
+          "arriveTangent": -0.12728545,
+          "leaveTangent": -0.1272588
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 899,
+          "value": 12,
+          "arriveTangent": -0.015518114,
+          "leaveTangent": -0.015519815
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1600,
+          "value": 8,
+          "arriveTangent": -0.0064695776,
+          "leaveTangent": -0.006473278
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 5000,
+          "value": 0,
+          "arriveTangent": -0.002352941,
+          "leaveTangent": -0.002352941
+        }
+      ],
+      "penetrationPowerOverDistance": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 0,
+          "value": 10,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 200,
+          "value": 10,
+          "arriveTangent": -0.030520774,
+          "leaveTangent": -0.030522766
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 901,
+          "value": 1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 3000,
+          "value": 0.25,
+          "arriveTangent": -0.000357313,
+          "leaveTangent": -0.000357313
+        }
+      ]
+    },
+    "notes": "High-performance explosive with superior blast characteristics",
+    "tips": "Usable fragmentation grenade, very compact."
+  },
+  {
+    "id": "grenade-vod25-frag",
+    "name": "VOD-25 Fragmentation Grenade",
+    "description": "Compact high-explosive fragmentation grenade with short fuze.",
+    "category": "grenades",
+    "subcategory": "Fragmentation",
+    "images": {
+      "icon": "/images/items/grenades/WF_FragmentGrenade_VOG25.webp",
+      "thumbnail": "/images/items/grenades/WF_FragmentGrenade_VOG25.webp",
+      "fullsize": "/images/items/grenades/WF_FragmentGrenade_VOG25.webp"
+    },
+    "stats": {
+      "rarity": "Uncommon",
+      "price": 10100,
+      "weight": 0.25,
+      "radius": 2,
+      "fuseTime": 2,
+      "bluntDamageScale": 0.02,
+      "bleedingChance": 0.35,
+      "protectionGearPenetratedDurabilityDamageScale": 0.05,
+      "protectionGearBluntDurabilityDamageScale": 0.03,
+      "applyChanceCurve": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -0.000079,
+          "value": 1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 200,
+          "value": 1,
+          "arriveTangent": -0.00080888777,
+          "leaveTangent": -0.0008087735
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 500,
+          "value": 0.65,
+          "arriveTangent": -0.0026730665,
+          "leaveTangent": -0.0026730844
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 699,
+          "value": 0.2,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "break",
+          "time": 700,
+          "value": 0.06,
+          "arriveTangent": -0.00006629204,
+          "leaveTangent": -0.000069
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 3000,
+          "value": 0,
+          "arriveTangent": 0.000012,
+          "leaveTangent": 0.000012
+        }
+      ],
+      "damageOverDistance": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -0.000079,
+          "value": 85,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 200,
+          "value": 85,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 700,
+          "value": 35,
+          "arriveTangent": -0.12728545,
+          "leaveTangent": -0.1272588
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 1099,
+          "value": 12,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1600,
+          "value": 8,
+          "arriveTangent": -0.007894487,
+          "leaveTangent": -0.007892362
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 5000,
+          "value": 0,
+          "arriveTangent": -0.002352941,
+          "leaveTangent": -0.002352941
+        }
+      ],
+      "penetrationPowerOverDistance": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 0,
+          "value": 10,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 200,
+          "value": 10,
+          "arriveTangent": -0.042902958,
+          "leaveTangent": -0.042898204
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 701,
+          "value": 1.5,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 3000,
+          "value": 0.25,
+          "arriveTangent": -0.0005437147,
+          "leaveTangent": -0.0005437147
+        }
+      ]
+    },
+    "notes": "Lightweight special operations grenade with fast fuze timing",
+    "tips": "Shorter fuse time makes it harder for enemies to escape blast radius"
+  },
+  {
+    "id": "grenade-m18-smoke",
+    "name": "M18 Smoke Grenade",
+    "description": "Standard issue smoke grenade that creates dense concealment cloud for tactical movement",
+    "category": "grenades",
+    "subcategory": "Utility",
+    "images": {
+      "icon": "/images/items/grenades/Icon_grenade_03.webp",
+      "thumbnail": "/images/items/grenades/Icon_grenade_03.webp",
+      "fullsize": "/images/items/grenades/Icon_grenade_03.webp"
+    },
+    "stats": {
+      "rarity": "Uncommon",
+      "price": 7760,
+      "weight": 0.53,
+      "effectTime": 25,
+      "radius": 10,
+      "fuseTime": 1,
+      "bluntDamageScale": 0.0,
+      "bleedingChance": 0.0,
+      "protectionGearPenetratedDurabilityDamageScale": 0.0,
+      "protectionGearBluntDurabilityDamageScale": 0.0
+    },
+    "notes": "Non-lethal tactical grenade used for concealment and area denial",
+    "tips": "Provides excellent visual cover for movement. Can be held and rethrown while smoking."
+  }
+]

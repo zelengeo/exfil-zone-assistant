@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import {ShieldIcon, DollarSign, Info, Zap, Crosshair} from 'lucide-react';
+import {ShieldIcon, DollarSign, Info, Zap, Crosshair, Cross} from 'lucide-react';
 import {
     Item,
     getRarityColorClass,
@@ -13,7 +13,7 @@ import {ItemImage} from './ItemImage';
 import {
     isAmmunition,
     isArmor,
-    isBandage,
+    isBandage, isGrenade,
     isLimbRestore,
     isMedicine,
     isPainkiller, isStim, isSyringe,
@@ -66,6 +66,27 @@ const renderCategoryStats = (item: Item) => {
                                 className="text-tan-100 font-mono">{Math.round(item.stats.muzzleVelocity / 100)} m/s</span>
                         </div>
                     )}
+                </div>
+            );
+
+        case 'grenades':
+            if (!isGrenade(item)) break;
+            return (
+                <div className="space-y-1">
+                    {item.stats.fuseTime !== null && (
+                        <div className="flex items-center justify-between text-sm">
+                            <span className="text-olive-400 font-medium">Fuse Time:</span>
+                            <span className="text-tan-100 font-mono">
+                        {item.stats.fuseTime === 0 ? 'Impact' : `${item.stats.fuseTime}s`}
+                    </span>
+                        </div>
+                    )}
+                    <div className="flex items-center justify-between text-sm">
+                        <span className="text-olive-400 font-medium">Effective radius:</span>
+                        <span className="text-tan-100 font-mono">
+                    {(item.stats.radius)}m
+                </span>
+                    </div>
                 </div>
             );
 
@@ -217,6 +238,24 @@ const getPerformanceIndicator = (item: Item) => {
             if (penetration >= 6) return {icon: <Zap size={14}/>, label: 'Pen everything', color: 'text-green-400'};
             break;
 
+        case 'grenades':
+            if (!isGrenade(item)) break;
+
+            // Impact grenades
+            if (item.stats.fuseTime === 0) return {
+                icon: <Zap size={14}/>,
+                label: 'Impact',
+                color: 'text-red-400'
+            };
+
+            // Flash/Smoke grenades (no bleeding)
+            if (item.subcategory === "Utility") return {
+                icon: <Info size={14}/>,
+                label: 'Non-Lethal',
+                color: 'text-blue-400'
+            };
+            break;
+
         case 'gear':
             if (!isArmor(item)) break;
             // High armor class = better protection
@@ -225,6 +264,14 @@ const getPerformanceIndicator = (item: Item) => {
             if (armorClass >= 4) return {icon: <ShieldIcon size={14}/>, label: 'Viable', color: 'text-yellow-400'};
             if (armorClass >= 0) return {icon: <ShieldIcon size={14}/>, label: 'Poor', color: 'text-grey-400'};
             break;
+
+        case 'medicine':
+            if (!isMedicine(item)) break;
+            // High armor class = better protection
+            if (isBandage(item) && item.stats.canHealDeepWound) return {
+                icon: <Cross size={14}/>, label: 'Deep Wound', color: 'text-green-400'
+            };
+
     }
     return null;
 };
