@@ -10,7 +10,15 @@ import {
     FIRE_MODE_CONFIG
 } from '@/types/items';
 import {ItemImage} from './ItemImage';
-import {isAmmunition, isArmor, isWeapon} from "@/app/combat-sim/utils/types";
+import {
+    isAmmunition,
+    isArmor,
+    isBandage,
+    isLimbRestore,
+    isMedicine,
+    isPainkiller, isStim, isSyringe,
+    isWeapon
+} from "@/app/combat-sim/utils/types";
 
 
 // Function to render specific stats based on category
@@ -86,6 +94,73 @@ const renderCategoryStats = (item: Item) => {
                     )}
                 </div>
             );
+        case 'medicine':
+            if (!isMedicine(item)) break;
+            return (
+                <div className="space-y-1">
+                    {/* Bandages */}
+                    {isBandage(item) && (
+                        <div className="flex items-center justify-between text-sm">
+                            <span className="text-olive-400 font-medium">Type:</span>
+                            <span className="text-tan-100 font-mono">Bleeding Control</span>
+                        </div>
+                    )}
+
+                    {/* Limb Restorers */}
+                    {isLimbRestore(item) && (
+                        <>
+                            <div className="flex items-center justify-between text-sm">
+                                <span className="text-olive-400 font-medium">Max HP penalty:</span>
+                                <span
+                                    className="text-tan-100 font-mono">{(item.stats.hpPercentage * 100).toFixed(0)}%</span>
+                            </div>
+                        </>
+                    )}
+
+                    {/* Painkillers */}
+                    {isPainkiller(item) && (
+                        <>
+                            <div className="flex items-center justify-between text-sm">
+                                <span className="text-olive-400 font-medium">Duration:</span>
+                                <span className="text-tan-100 font-mono">{item.stats.effectTime}s</span>
+                            </div>
+                            <div className="flex items-center justify-between text-sm">
+                                <span className="text-olive-400 font-medium">Uses:</span>
+                                <span className="text-tan-100 font-mono">{item.stats.usesCount}</span>
+                            </div>
+                        </>
+                    )}
+
+                    {/* Syringes */}
+                    {isSyringe(item) && (
+                        <>
+                            <div className="flex items-center justify-between text-sm">
+                                <span className="text-olive-400 font-medium">Healing:</span>
+                                <span className="text-tan-100 font-mono">{item.stats.capacity} HP</span>
+                            </div>
+                            <div className="flex items-center justify-between text-sm">
+                                <span className="text-olive-400 font-medium">Speed:</span>
+                                <span className="text-tan-100 font-mono">{item.stats.cureSpeed} HP/s</span>
+                            </div>
+                        </>
+                    )}
+
+                    {/* Stims */}
+                    {isStim(item) && (
+                        <>
+                            <div className="flex items-center justify-between text-sm">
+                                <span className="text-olive-400 font-medium">Duration:</span>
+                                <span className="text-tan-100 font-mono">{item.stats.effectTime}s</span>
+                            </div>
+                            <div className="flex items-center justify-between text-sm">
+                                <span className="text-olive-400 font-medium">Use time:</span>
+                                <span className="text-tan-100 font-mono">{item.stats.useTime}s</span>
+                            </div>
+                        </>
+                    )}
+                </div>
+            );
+
 
         default:
             return (
@@ -122,7 +197,7 @@ const getPerformanceIndicator = (item: Item) => {
             if (item.stats.recoilParameters?.verticalRecoilControl && item.stats.recoilParameters.horizontalRecoilControl && ((item.stats.recoilParameters.verticalRecoilControl + item.stats.recoilParameters.horizontalRecoilControl) / 2) < 0.25) {
                 return {
                     icon: <Crosshair size={14}/>,
-                        label: 'Low Recoil',
+                    label: 'Low Recoil',
                     color: 'text-green-400'
                 }
             }

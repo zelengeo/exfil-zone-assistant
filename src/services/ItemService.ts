@@ -1,5 +1,13 @@
 import {Item, RARITY_CONFIG} from '@/types/items';
-import {isAmmunition, isBodyArmor, isFaceShield, isHelmet, isWeapon} from "@/app/combat-sim/utils/types";
+import {
+    isAmmunition,
+    isBandage,
+    isBodyArmor,
+    isFaceShield,
+    isHelmet, isLimbRestore, isMedicine,
+    isPainkiller, isStim, isSyringe,
+    isWeapon
+} from "@/app/combat-sim/utils/types";
 
 // Cache for the items data
 let itemsCache: Item[] | null = null;
@@ -18,7 +26,8 @@ const DATA_FILES = [
     'ammunition.json',
     'armor.json',
     'helmets.json',
-    'face-shields.json'
+    'face-shields.json',
+    'medical.json'
 ];
 
 // Import all data files statically
@@ -29,6 +38,7 @@ const dataImports = {
     'armor.json': () => import('@/public/data/armor.json'),
     'helmets.json': () => import('@/public/data/helmets.json'),
     'face-shields.json': () => import('@/public/data/face-shields.json'),
+    'medical.json': () => import('@/public/data/medical.json'),
 };
 
 /**
@@ -132,6 +142,35 @@ function transformItemData(rawItem: Item): Item {
             baseItem.stats.penetrationChanceCurve = rawItem.stats.penetrationChanceCurve;
             baseItem.stats.penetrationDamageScalarCurve = rawItem.stats.penetrationDamageScalarCurve;
             baseItem.stats.antiPenetrationDurabilityScalarCurve = rawItem.stats.antiPenetrationDurabilityScalarCurve;
+        }
+
+        if (isMedicine(rawItem)) {
+            if (isBandage(rawItem)) {
+                if (!isBandage(baseItem)) return baseItem;
+                baseItem.stats.canHealDeepWound = rawItem.stats.canHealDeepWound;
+            } else if (isPainkiller(rawItem)) {
+                if (!isPainkiller(baseItem)) return baseItem;
+                baseItem.stats.usesCount = rawItem.stats.usesCount;
+                baseItem.stats.effectTime = rawItem.stats.effectTime;
+                baseItem.stats.energyFactor = rawItem.stats.energyFactor;
+                baseItem.stats.hydraFactor = rawItem.stats.hydraFactor;
+                baseItem.stats.sideEffectTime = rawItem.stats.sideEffectTime;
+            } else if (isSyringe(rawItem)) {
+                if (!isSyringe(baseItem)) return baseItem;
+                baseItem.stats.capacity = rawItem.stats.capacity;
+                baseItem.stats.cureSpeed = rawItem.stats.cureSpeed;
+                baseItem.stats.canReduceBleeding = rawItem.stats.canReduceBleeding;
+            } else if (isStim(rawItem)) {
+                if (!isStim(baseItem)) return baseItem;
+                baseItem.stats.effectTime = rawItem.stats.effectTime;
+                baseItem.stats.useTime = rawItem.stats.useTime;
+            } else if (isLimbRestore(rawItem)) {
+                if (!isLimbRestore(baseItem)) return baseItem;
+                baseItem.stats.hpPercentage = rawItem.stats.hpPercentage;
+                baseItem.stats.useTime = rawItem.stats.useTime;
+                baseItem.stats.usesCount = rawItem.stats.usesCount;
+                baseItem.stats.brokenHP = rawItem.stats.brokenHP;
+            }
         }
     }
 

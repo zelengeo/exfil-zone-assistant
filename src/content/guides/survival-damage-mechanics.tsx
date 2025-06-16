@@ -63,10 +63,11 @@ export default function SurvivalDamageGuide() {
                         {/* Visual representation */}
                         <div className="flex justify-center items-center">
                             <div className="relative" style={{maxWidth: '250px'}}>
-                                <img
+                                <Image
                                     src="/images/Img_BodyPartsMain.webp"
                                     alt="Body Zones"
-                                    className="w-full h-auto"
+                                    width={250}
+                                    height={500}
                                 />
                                 {/* Optional: You could add HP overlays on the image if desired */}
                             </div>
@@ -167,21 +168,21 @@ export default function SurvivalDamageGuide() {
                                 <h3 className="font-semibold text-tan-100">Light Bleeding</h3>
                             </div>
                             <ul className="space-y-2 text-sm">
-                                <li className="text-red-400">• -1 HP per second</li>
+                                <li className="text-red-400">• -0.5 HP per second</li>
                                 <li>• Fixed with any bandage</li>
                                 <li>• Common occurrence from most hits</li>
                                 <li>• Causes heavy breathing sounds</li>
                             </ul>
                         </div>
 
-                        {/* Heavy Bleeding */}
+                        {/* Deep Wound */}
                         <div className="bg-military-800 border border-red-600/50 rounded-sm p-4">
                             <div className="flex items-center gap-3 mb-3">
-                                <Image src="/images/icon_bleed2.webp" alt="Heavy Bleeding" width={24} height={24} />
-                                <h3 className="font-semibold text-red-400">Heavy Bleeding</h3>
+                                <Image src="/images/icon_bleed2.webp" alt="Deep Wound" width={24} height={24} />
+                                <h3 className="font-semibold text-red-400">Deep Wound</h3>
                             </div>
                             <ul className="space-y-2 text-sm">
-                                <li className="text-red-400 font-semibold">• -3 HP per second</li>
+                                <li className="text-red-400 font-semibold">• -2 HP per second</li>
                                 <li>• Requires uncommon+ bandages</li>
                                 <li>• Less common than light bleeding</li>
                                 <li>• Often stacks on existing bleeds</li>
@@ -214,8 +215,9 @@ export default function SurvivalDamageGuide() {
                     {/* Painkillers */}
                     <div className="bg-military-800 border border-military-600 rounded-sm p-4">
                         <div className="flex items-center gap-3 mb-3">
-                            {}
-                            <Image src="/images/items/medical/Icon_WarfarePainkillerLv1_cropped.webp" alt="Painkillers" width={48} height={48} />
+                            <Link href="/items?category=medicine&subcategory=Painkillers">
+                                <Image src="/images/items/medical/Icon_WarfarePainkillerLv1_cropped.webp" alt="Painkillers" width={48} height={48} />
+                            </Link>
                             <div>
                                 <h3 className="font-semibold text-olive-400">Painkillers</h3>
                                 <p className="text-sm text-tan-400">Temporary symptom relief</p>
@@ -236,18 +238,34 @@ export default function SurvivalDamageGuide() {
 
                     {/* Suture Kit */}
                     <div className="bg-military-800 border border-military-600 rounded-sm p-4">
-                        <h3 className="font-semibold text-olive-400 mb-2">Suture Kit</h3>
+                        <div className="flex items-center gap-3 mb-3">
+                            <Link href="/items?category=medicine&subcategory=Suturing%20Tools">
+                                <Image src="/images/items/medical/icon_suturingdevice.webp" alt="Suture Instrument" width={48} height={48} />
+                            </Link>
+                            <div>
+                                <h3 className="font-semibold text-olive-400">Suture Instrument</h3>
+                                <p className="text-sm text-tan-400">Blacked out limb fix</p>
+                            </div>
+                        </div>
                         <ul className="space-y-1 text-sm">
                             <li>• Repairs blacked-out limbs to 1 HP</li>
                             <li>• Reduces maximum HP of the limb</li>
-                            <li>• Essential for long raids</li>
+                            <li>• Essential</li>
                             <li className="text-yellow-400">⚠ Takes time to use - find cover!</li>
                         </ul>
                     </div>
 
                     {/* Bandages */}
                     <div className="bg-military-800 border border-military-600 rounded-sm p-4">
-                        <h3 className="font-semibold text-olive-400 mb-2">Bandages</h3>
+                        <div className="flex items-center gap-3 mb-3">
+                            <Link href={"/items?category=medicine&subcategory=Bandages"}>
+                                <Image src="/images/items/medical/icon_Gauze_cropped.webp" alt="Bandage" width={48} height={48} />
+                            </Link>
+                            <div>
+                                <h3 className="font-semibold text-olive-400">Bandages</h3>
+                                <p className="text-sm text-tan-400">Crucial for survival</p>
+                            </div>
+                        </div>
                         <div className="space-y-2 text-sm">
                             <p><strong>Common:</strong> Stops light bleeding only</p>
                             <p><strong>Uncommon+:</strong> Stops both light and heavy bleeding</p>

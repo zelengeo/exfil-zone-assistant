@@ -3,7 +3,18 @@
  * Aligns with actual game data structure
  */
 
-import {Ammunition, AnyItem, Armor, BodyArmor, FaceShield, Helmet, Item, Weapon} from "@/types/items";
+import {
+    Ammunition,
+    AnyItem,
+    Armor,
+    Bandage,
+    BodyArmor,
+    FaceShield,
+    Helmet,
+    Item, LimbRestore,
+    Medicine, Painkiller, Stim, Syringe,
+    Weapon
+} from "@/types/items";
 
 // Display modes for the simulator
 export type DisplayMode = 'ttk' | 'stk' | 'ctk';
@@ -132,7 +143,7 @@ export const RANGE_PRESETS: RangePreset[] = [
 
 // Type guards with improved checks
 export function isAnyItem(item: Item): item is AnyItem {
-    return isWeapon(item) || isAmmunition(item) || isArmor(item);
+    return isWeapon(item) || isAmmunition(item) || isArmor(item) || isMedicine(item)
 }
 
 export function isWeapon(item: Item): item is Weapon {
@@ -143,30 +154,60 @@ export function isAmmunition(item: Item): item is Ammunition {
     return item.category === 'ammo'
 }
 
-export function isArmor(item: Item): item is Armor {
-    return (item.category === 'gear') &&
-        (item.subcategory === 'Body Armor' || item.subcategory === 'Helmets' || item.subcategory === 'Face Shields')
-}
-
-export function isBodyArmor(item: Item): item is BodyArmor {
-    return (item.category === 'gear') &&
-        (item.subcategory === 'Body Armor')
-}
-
-export function isHelmet(item: Item): item is Helmet {
-    return (item.category === 'gear') &&
-        item.subcategory === 'Helmets'
-}
-
-export function isFaceShield(item: Item): item is FaceShield {
-    return (item.category === 'gear') &&
-        item.subcategory === 'Face Shields'
-}
-
 // Check if weapon and ammo are compatible
 export function areWeaponAmmoCompatible(weapon: Weapon | null, ammo: Ammunition | null): boolean {
     if (!weapon || !ammo) return false;
     return weapon.stats.caliber === ammo.stats.caliber;
+}
+
+export function isArmor(item: Item): item is Armor {
+    return (item.category === 'gear') &&
+    (item.subcategory === 'Body Armor' || item.subcategory === 'Helmets' || item.subcategory === 'Face Shields')
+}
+
+export function isBodyArmor(item: Item): item is BodyArmor {
+    return (item.category === 'gear') &&
+    (item.subcategory === 'Body Armor')
+}
+
+export function isHelmet(item: Item): item is Helmet {
+    return (item.category === 'gear') &&
+    item.subcategory === 'Helmets'
+}
+
+export function isFaceShield(item: Item): item is FaceShield {
+    return (item.category === 'gear') &&
+    item.subcategory === 'Face Shields'
+}
+
+
+export function isMedicine(item: Item): item is Medicine {
+    return (item.category === 'medicine')
+}
+
+export function isBandage(item: Item): item is Bandage {
+    return (item.category === 'medicine') &&
+    item.subcategory === 'Bandages'
+}
+
+export function isStim(item: Item): item is Stim {
+    return (item.category === 'medicine') &&
+    item.subcategory === 'Stims'
+}
+
+export function isSyringe(item: Item): item is Syringe {
+    return (item.category === 'medicine') &&
+    item.subcategory === 'Syringes'
+}
+
+export function isLimbRestore(item: Item): item is LimbRestore {
+    return (item.category === 'medicine') &&
+    item.subcategory === 'Suturing Tools'
+}
+
+export function isPainkiller(item: Item): item is Painkiller {
+    return (item.category === 'medicine') &&
+    item.subcategory === 'Painkillers'
 }
 
 // Display mode labels

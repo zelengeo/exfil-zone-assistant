@@ -1,5 +1,5 @@
 import React from 'react';
-import {X, ChevronRight, ChevronDown, Swords, Fence, Shield} from 'lucide-react';
+import {X, ChevronRight, ChevronDown, Swords, Fence, Shield, BriefcaseMedical} from 'lucide-react';
 import { ItemCategory } from '@/types/items';
 import {useRouter} from "next/navigation";
 
@@ -16,12 +16,7 @@ const getCategoryIcon = (categoryId: string) => {
             );
         case 'medicine':
             return (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                    <path d="M8 21h8a2 2 0 0 0 2-2v-2H6v2a2 2 0 0 0 2 2Z"></path>
-                    <path d="M12 11V3"></path>
-                    <path d="M9 6h6"></path>
-                    <path d="M8 14h8"></path>
-                </svg>
+                <BriefcaseMedical size={20}/>
             );
         case 'food':
             return (

@@ -110,7 +110,58 @@ export interface FaceShield extends Armor {
     subcategory: 'Face Shields';
 }
 
-export type AnyItem = Weapon | Armor | Ammunition | BodyArmor | Helmet;
+export interface Medicine extends Item {
+    category: 'medicine';
+    subcategory: 'Bandages' | 'Suturing Tools' | "Painkillers" | "Syringes" | "Stims";
+    stats: Item['stats'];
+}
+
+export interface Bandage extends Medicine {
+    subcategory: 'Bandages';
+    stats: Item['stats'] & {
+        canHealDeepWound: boolean
+    }
+}
+
+export interface LimbRestore extends Medicine {
+    subcategory: 'Suturing Tools';
+    stats: Item['stats'] & {
+        hpPercentage: number,
+        useTime: number,
+        usesCount: number,
+        brokenHP: number
+    }
+}
+
+export interface Painkiller extends Medicine {
+    subcategory: 'Painkillers';
+    stats: Item['stats'] & {
+        usesCount: number,
+        effectTime: number,
+        energyFactor: number,
+        hydraFactor: number,
+        sideEffectTime: number,
+    }
+}
+
+export interface Stim extends Medicine {
+    subcategory: 'Stims';
+    stats: Item['stats'] & {
+        useTime: number,
+        effectTime: number,
+    }
+}
+
+export interface Syringe extends Medicine {
+    subcategory: 'Syringes';
+    stats: Item['stats'] & {
+        capacity: number,
+        cureSpeed: number,
+        canReduceBleeding: boolean,
+    }
+}
+
+export type AnyItem = Weapon | Armor | Ammunition | BodyArmor | Helmet | FaceShield | Medicine;
 
 // Protective zone from armor data
 export interface ProtectiveZone {
@@ -248,21 +299,21 @@ export const itemCategories: Record<string, ItemCategory> = {
                 'Body Armor',
                 'Face Shields',
             ]
-    }
-
-//TODO - update config after data extraction
-// {
-//     id: 'medicine',
-//     name: 'Medicine',
-//     description: 'Medical supplies for healing and enhancing performance',
-//     icon: 'medicine',
-//     subcategories: [
-//         'Bandages',
-//         'Medkits',
-//         'Stims',
-//         'Painkillers'
-//     ]
-// },
+    },
+    medicine: {
+        id: 'medicine',
+        name: 'Medicine',
+        description: 'Medical supplies for healing and enhancing performance',
+        icon: 'medicine',
+        subcategories: [
+            'Bandages',
+            'Suturing Tools',
+            'Syringes',
+            'Stims',
+            'Painkillers'
+        ]
+    },
+    //TODO - update config after data extraction
 // {
 //     id: 'food',
 //     name: 'Food & Drink',
