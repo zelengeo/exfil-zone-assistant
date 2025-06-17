@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, {useState, useRef, useEffect, useCallback} from 'react';
 import {CurvePoint} from "@/types/items";
 
 interface BallisticCurveChartProps {
@@ -13,7 +13,7 @@ interface BallisticCurveChartProps {
     yLabel?: string;
     yLabelModifier?: number;
     height?: number;
-    width?: number;
+    maxWidth?: number;
 }
 
 interface TooltipData {
@@ -32,10 +32,41 @@ export default function BallisticCurveChart({
                                                 yLabel = 'Value',
                                                 yLabelModifier = 1,
                                                 height = 300,
-                                                width = 600,
+                                                maxWidth = 1200,
                                             }: BallisticCurveChartProps) {
     const [tooltip, setTooltip] = useState<TooltipData | null>(null);
+    const [containerWidth, setContainerWidth] = useState(600);
+    const containerRef = useRef<HTMLDivElement>(null);
     const svgRef = useRef<SVGSVGElement>(null);
+
+
+    // Responsive resize handling
+    const handleResize = useCallback(() => {
+        if (containerRef.current) {
+            const rect = containerRef.current.getBoundingClientRect();
+            const newWidth = Math.max(300, Math.min(maxWidth, rect.width - 32)); // Min 300px, max 800px, with padding
+            setContainerWidth(newWidth);
+        }
+    }, [maxWidth]);
+
+    useEffect(() => {
+        // Initial size calculation
+        handleResize();
+
+        // Set up resize observer
+        const resizeObserver = new ResizeObserver(handleResize);
+        if (containerRef.current) {
+            resizeObserver.observe(containerRef.current);
+        }
+
+        // Fallback for window resize
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            resizeObserver.disconnect();
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [handleResize]);
 
     // Find the min/max values for scaling
     let minX = Infinity, maxX = -Infinity;
@@ -59,9 +90,15 @@ export default function BallisticCurveChart({
     maxY += yPadding;
 
     // SVG dimensions
-    const padding = { top: 20, right: 20, bottom: 50, left: 60 };
-    const chartWidth = width - padding.left - padding.right;
-    const chartHeight = height - padding.top - padding.bottom;
+    const responsivePadding = {
+        top: 20,
+        right: containerWidth < 400 ? 10 : 20,
+        bottom: containerWidth < 400 ? 40 : 50,
+        left: containerWidth < 400 ? 40 : 60
+    };
+
+    const chartWidth = containerWidth - responsivePadding.left - responsivePadding.right;
+    const chartHeight = height - responsivePadding.top - responsivePadding.bottom;
 
     // Scale functions
     const scaleX = (x: number) => ((x - minX) / (maxX - minX)) * chartWidth;
@@ -101,8 +138,8 @@ export default function BallisticCurveChart({
         if (!svgRef.current) return;
 
         const rect = svgRef.current.getBoundingClientRect();
-        const mouseX = event.clientX - rect.left - padding.left;
-        const mouseY = event.clientY - rect.top - padding.top;
+        const mouseX = event.clientX - rect.left - responsivePadding.left;
+        const mouseY = event.clientY - rect.top - responsivePadding.top;
 
         // Check if mouse is within chart area
         if (mouseX < 0 || mouseX > chartWidth || mouseY < 0 || mouseY > chartHeight) {
@@ -154,28 +191,29 @@ export default function BallisticCurveChart({
     for (let i = 0; i <= xTicks; i++) {
         const x = (i / xTicks) * chartWidth;
         const value = minX + (i / xTicks) * (maxX - minX);
-        xGridLines.push({ x, value });
+        xGridLines.push({x, value});
     }
 
     for (let i = 0; i <= yTicks; i++) {
         const y = (i / yTicks) * chartHeight;
         const value = minY + ((yTicks - i) / yTicks) * (maxY - minY);
-        yGridLines.push({ y, value });
+        yGridLines.push({y, value});
     }
 
     return (
         <div className="military-card p-4 rounded-sm relative">
             <h4 className="text-lg font-bold text-olive-400 mb-4">{title}</h4>
-            <div className="overflow-x-auto">
+            <div ref={containerRef} className="w-full">
+                <div className="overflow-x-auto">
                     <svg
                         ref={svgRef}
-                        width={width}
+                        width={containerWidth}
                         height={height}
                         className="bg-military-900 rounded cursor-crosshair"
                         onMouseMove={handleMouseMove}
                         onMouseLeave={handleMouseLeave}
                     >
-                        <g transform={`translate(${padding.left}, ${padding.top})`}>
+                        <g transform={`translate(${responsivePadding.left}, ${responsivePadding.top})`}>
                             {/* Grid lines */}
                             {xGridLines.map((line, i) => (
                                 <g key={`x-${i}`}>
@@ -222,8 +260,9 @@ export default function BallisticCurveChart({
                             ))}
 
                             {/* Axes */}
-                            <line x1={0} y1={chartHeight} x2={chartWidth} y2={chartHeight} stroke="#9ba85e" strokeWidth="2" />
-                            <line x1={0} y1={0} x2={0} y2={chartHeight} stroke="#9ba85e" strokeWidth="2" />
+                            <line x1={0} y1={chartHeight} x2={chartWidth} y2={chartHeight} stroke="#9ba85e"
+                                  strokeWidth="2"/>
+                            <line x1={0} y1={0} x2={0} y2={chartHeight} stroke="#9ba85e" strokeWidth="2"/>
 
                             {/* Curves */}
                             {curves.map((curve, i) => (
@@ -287,10 +326,10 @@ export default function BallisticCurveChart({
 
                         {/* Legend */}
                         {curves.length > 1 && (
-                            <g transform={`translate(${width - 150}, 20)`}>
+                            <g transform={`translate(${containerWidth - 150}, 20)`}>
                                 {curves.map((curve, i) => (
                                     <g key={i} transform={`translate(0, ${i * 20})`}>
-                                        <line x1={0} y1={0} x2={20} y2={0} stroke={curve.color} strokeWidth="2" />
+                                        <line x1={0} y1={0} x2={20} y2={0} stroke={curve.color} strokeWidth="2"/>
                                         <text x={25} y={4} fill="#e7d1a9" fontSize="12">
                                             {curve.name}
                                         </text>
@@ -299,14 +338,15 @@ export default function BallisticCurveChart({
                             </g>
                         )}
                     </svg>
+                </div>
             </div>
             {/* Tooltip */}
             {tooltip && (
                 <div
                     className="absolute pointer-events-none z-20 bg-military-800 border border-military-600 rounded-sm p-3 shadow-lg min-w-32"
                     style={{
-                        left: padding.left + tooltip.x,
-                        top: padding.top + tooltip.y - 20,
+                        left: responsivePadding.left + tooltip.x,
+                        top: responsivePadding.top + tooltip.y - 20,
                         transform: tooltip.x > chartWidth - 120 ? 'translateX(-100%) translateX(-20px)' : 'none'
                     }}
                 >
@@ -319,7 +359,7 @@ export default function BallisticCurveChart({
                             <span className="text-tan-400">{yLabel}:</span>
                             <span
                                 className="font-mono font-semibold"
-                                style={{ color: tooltip.color }}
+                                style={{color: tooltip.color}}
                             >
                                         {tooltip.value.toFixed(2)}
                                     </span>
