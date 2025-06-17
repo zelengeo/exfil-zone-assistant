@@ -87,6 +87,7 @@ export const guidesConfig: GuideMetadata[] = [
         author: 'pogapwnz',
         publishedAt: '2025-06-15',
         featured: true,
+        ogImageUrl: '/og/og-image-survival-damage.jpg',
         contentType: 'component'
     },
     {

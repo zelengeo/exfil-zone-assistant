@@ -86,7 +86,7 @@ export default function GuidesPageContent() {
 
     const hasActiveFilters = searchQuery || selectedTag || selectedDifficulty;
     return (
-        <Layout title="Guides">
+        <Layout>
             <div className="container mx-auto px-4 py-8">
                 {/* Page Header */}
                 <div className="mb-8">

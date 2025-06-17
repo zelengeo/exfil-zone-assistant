@@ -46,7 +46,7 @@ export default function CombatSimulatorContent() {
     );
 
     return (
-        <Layout title="Combat Simulator">
+        <Layout>
             <div className="container mx-auto px-4 py-8">
                 {/* Page Header */}
                 <div className="mb-8">

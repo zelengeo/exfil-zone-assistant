@@ -29,12 +29,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     if (!guide) {
         return {
-            title: 'Guide Not Found | Exfil Zone',
+            title: 'Guide Not Found',
         };
     }
 
+    const url = `https://www.exfil-zone-assistant.app/guides/${slug}`;
+
     return {
-        title: `${guide.title} | Exfil Zone`,
+        title: `${guide.title} | Exfil Zone Assistant`,
         description: guide.description,
         openGraph: {
             title: guide.title,
@@ -44,6 +46,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
             modifiedTime: guide.updatedAt,
             authors: guide.author ? [guide.author] : undefined,
             tags: guide.tags,
+            url: url,
+            images: [
+                {
+                    url: guide.ogImageUrl || '/og-image.jpg',
+                    width: 1200,
+                    height: 630,
+                }
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: guide.title,
+            description: guide.description,
         },
     };
 }
@@ -151,7 +166,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
     const relatedGuides = getRelatedGuides(guide.slug, 3);
 
     return (
-        <Layout title={`${guide.title}`}>
+        <Layout>
             <div className="container mx-auto px-4 py-8 max-w-4xl">
                 {/* Breadcrumb */}
                 <div className="flex items-center gap-2 mb-6 text-tan-300">

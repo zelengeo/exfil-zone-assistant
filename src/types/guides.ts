@@ -9,6 +9,7 @@ export interface GuideMetadata {
     publishedAt: string;
     updatedAt?: string;
     featured?: boolean;
+    ogImageUrl?: string;
     contentType: 'component' | 'markdown';
     // For component-based guides, we'll dynamically import
     // For markdown, we'll read from file system

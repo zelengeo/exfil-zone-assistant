@@ -4,12 +4,6 @@ import Footer from './Footer';
 
 interface LayoutProps {
     children: React.ReactNode;
-    title?: string;
-    description?: string;
-    keywords?: string;
-    canonicalUrl?: string;
-    ogImage?: string;
-    noIndex?: boolean;
 }
 
 const Layout: React.FC<LayoutProps> = ({

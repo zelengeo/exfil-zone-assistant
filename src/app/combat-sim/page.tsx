@@ -1,13 +1,31 @@
-'use client'
-
 import { Suspense } from 'react';
+import { Metadata } from 'next';
 import CombatSimulatorContent from './components/CombatSimulatorContent';
 import Layout from '@/components/layout/Layout';
+
+export const metadata: Metadata = {
+    title: 'Combat Simulator',
+    description: 'Test weapon damage, TTK calculations, and combat scenarios for Contractors Showdown Exfil Zone. Compare weapons and optimize your loadout.',
+    keywords: ['combat simulator', 'weapon damage', 'TTK calculator', 'Contractors Showdown', 'loadout optimizer'],
+    openGraph: {
+        title: 'Combat Simulator | Exfil Zone Assistant',
+        description: 'Test weapon damage, TTK calculations, and combat scenarios. Compare weapons and optimize your loadout.',
+        type: 'website',
+        images: [
+            {
+                url: '/og/og-image-combat-sim.jpg',
+                width: 1200,
+                height: 630,
+                alt: 'Exfil Zone Assistant - VR Tactical Companion',
+            },
+        ]
+    },
+};
 
 // Loading component for Suspense fallback
 function ItemsLoading() {
     return (
-        <Layout title="Combat Simulator">
+        <Layout>
             <div className="container mx-auto px-4 py-8">
                 <div className="flex items-center justify-center min-h-96">
                     <div className="military-box p-8 rounded-sm text-center">

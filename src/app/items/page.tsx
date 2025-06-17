@@ -1,13 +1,24 @@
-'use client'
-
 import { Suspense } from 'react';
 import ItemsPageContent from './components/ItemsPageContent';
 import Layout from '@/components/layout/Layout';
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Item Database',
+    description: 'Complete weapon and equipment database for Contractors Showdown Exfil Zone. Stats, attachments, and detailed information for all items.',
+    keywords: ['item wiki', 'weapon database', 'equipment guide', 'weapon stats', 'attachments', 'Contractors items'],
+    openGraph: {
+        title: 'Item Database - Exfil Zone Assistant',
+        description: 'Complete weapon and equipment database with stats, attachments, and detailed information.',
+        type: 'website',
+    },
+};
+
 // Loading component for Suspense fallback
 function ItemsLoading() {
     return (
-        <Layout title="Items Database">
+        <Layout>
             <div className="container mx-auto px-4 py-8">
                 <div className="flex items-center justify-center min-h-96">
                     <div className="military-box p-8 rounded-sm text-center">
