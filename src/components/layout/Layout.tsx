@@ -82,37 +82,6 @@ const Layout: React.FC<LayoutProps> = ({
                 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
                 <meta name="theme-color" content="#1a1c18" />
                 <meta name="msapplication-TileColor" content="#1a1c18" />
-
-                {/* Structured Data for Gaming Website */}
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify({
-                            "@context": "https://schema.org",
-                            "@type": "WebSite",
-                            "name": "Exfil Zone Assistant",
-                            "description": description,
-                            "url": "https://www.exfil-zone-assistant.app",
-                            "inLanguage": "en",
-                            "publisher": {
-                                "@type": "Person",
-                                "name": "pogapwnz",
-                                "logo": {
-                                    "@type": "ImageObject",
-                                    "url": "https://www.exfil-zone-assistant.app/logo-google-512x512.png",
-                                    "width": 512,
-                                    "height": 512
-                                }
-                            },
-                            "isPartOf": {
-                                "@type": "WebApplication",
-                                "name": "Exfil Zone Assistant",
-                                "applicationCategory": "GameApplication",
-                                "operatingSystem": "Web"
-                            }
-                        })
-                    }}
-                />
             </Head>
 
             <div className="flex flex-col min-h-screen bg-military-900 text-tan-100 relative">
