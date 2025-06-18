@@ -24,7 +24,7 @@ const AttachmentSpecificStats: React.FC<AttachmentSpecificStatsProps> = ({ item 
                     <Snail size={18} className="text-olive-400"/>
                     <span className="text-tan-300">ADS Speed Modifier:</span>
                     <span className="text-tan-100">
-                        {item.stats.ADSSpeedModifier > 0 ? `+${item.stats.ADSSpeedModifier}` : item.stats.ADSSpeedModifier}%
+                        {item.stats.ADSSpeedModifier > 0 ? `+${item.stats.ADSSpeedModifier}` : item.stats.ADSSpeedModifier}
                     </span>
                 </div>
             )}
@@ -33,7 +33,7 @@ const AttachmentSpecificStats: React.FC<AttachmentSpecificStatsProps> = ({ item 
                     <Timer size={18} className="text-olive-400"/>
                     <span className="text-tan-300">Ergonomics Modifier:</span>
                     <span className="text-tan-100">
-                        {item.stats.ergonomicsModifier > 0 ? `+${item.stats.ergonomicsModifier}` : item.stats.ergonomicsModifier}%
+                        {item.stats.ergonomicsModifier > 0 ? `+${item.stats.ergonomicsModifier}` : item.stats.ergonomicsModifier}
                     </span>
                 </div>
             )}
