@@ -1,10 +1,10 @@
 import {Item, RARITY_CONFIG} from '@/types/items';
 import {
-    isAmmunition,
+    isAmmunition, isAttachment,
     isBandage,
     isBodyArmor,
     isFaceShield, isGrenade,
-    isHelmet, isLimbRestore, isMedicine,
+    isHelmet, isLimbRestore, isMagazine, isMedicine,
     isPainkiller, isStim, isSyringe,
     isWeapon
 } from "@/app/combat-sim/utils/types";
@@ -24,6 +24,7 @@ export interface ItemCache {
 const DATA_FILES = [
     'weapons.json',
     'ammunition.json',
+    `magazines.json`,
     'grenades.json',
     'armor.json',
     'helmets.json',
@@ -36,6 +37,7 @@ const DATA_FILES = [
 const dataImports = {
     'weapons.json': () => import('@/public/data/weapons.json'),
     'ammunition.json': () => import('@/public/data/ammunition.json'),
+    'magazines.json': () => import('@/public/data/magazines.json'),
     'grenades.json': () => import('@/public/data/grenades.json'),
     'armor.json': () => import('@/public/data/armor.json'),
     'helmets.json': () => import('@/public/data/helmets.json'),
@@ -109,7 +111,6 @@ function transformItemData(rawItem: Item): Item {
             baseItem.stats.ballisticCurves = rawItem.stats.ballisticCurves;
         }
 
-        // Add this section in the transformItemData function after face shields handling
         if (rawItem.category === 'grenades') {
             if (!isGrenade(rawItem) || !isGrenade(baseItem)) return baseItem;
             baseItem.stats.fuseTime = rawItem.stats.fuseTime;
@@ -122,6 +123,19 @@ function transformItemData(rawItem: Item): Item {
             baseItem.stats.applyChanceCurve = rawItem.stats.applyChanceCurve;
             baseItem.stats.damageOverDistance = rawItem.stats.damageOverDistance;
             baseItem.stats.penetrationPowerOverDistance = rawItem.stats.penetrationPowerOverDistance;
+        }
+
+        if (rawItem.category === 'attachments') {
+            // Ensure attachment stats are properly mapped
+            if (!isAttachment(rawItem) || !isAttachment(baseItem)) return baseItem; {
+                if (isMagazine(rawItem) && isMagazine(baseItem)) {
+                    baseItem.stats.capacity = rawItem.stats.capacity;
+                    baseItem.stats.caliber = rawItem.stats.caliber;
+                    baseItem.stats.ergonomicsModifier = rawItem.stats.ergonomicsModifier;
+                    baseItem.stats.ADSSpeedModifier = rawItem.stats.ADSSpeedModifier;
+                    baseItem.stats.compatibleWeapons = rawItem.stats.compatibleWeapons;
+                }
+            }
         }
 
         if (rawItem.category === 'gear' && rawItem.subcategory === 'Body Armor') {

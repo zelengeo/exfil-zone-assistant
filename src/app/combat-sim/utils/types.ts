@@ -6,12 +6,12 @@
 import {
     Ammunition,
     AnyItem,
-    Armor,
+    Armor, Attachment,
     Bandage,
     BodyArmor,
     FaceShield, Grenade,
     Helmet,
-    Item, LimbRestore,
+    Item, LimbRestore, Magazine,
     Medicine, Painkiller, Stim, Syringe,
     Weapon
 } from "@/types/items";
@@ -143,7 +143,7 @@ export const RANGE_PRESETS: RangePreset[] = [
 
 // Type guards with improved checks
 export function isAnyItem(item: Item): item is AnyItem {
-    return isWeapon(item) || isAmmunition(item) || isGrenade(item) || isArmor(item) || isMedicine(item)
+    return isWeapon(item) || isAmmunition(item) || isGrenade(item) || isArmor(item) || isMedicine(item) || isAttachment(item);
 }
 
 export function isWeapon(item: Item): item is Weapon {
@@ -158,6 +158,14 @@ export function isAmmunition(item: Item): item is Ammunition {
 export function areWeaponAmmoCompatible(weapon: Weapon | null, ammo: Ammunition | null): boolean {
     if (!weapon || !ammo) return false;
     return weapon.stats.caliber === ammo.stats.caliber;
+}
+
+export function isAttachment(item: Item): item is Attachment {
+    return item.category === 'attachments'
+}
+
+export function isMagazine(item: Item): item is Magazine {
+    return isAttachment(item) && item.subcategory === 'Magazines'
 }
 
 export function isGrenade(item: Item): item is Grenade {

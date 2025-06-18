@@ -56,7 +56,7 @@ export default function ItemsPageContent() {
                 <div className="mb-8">
                     <h1 className="text-3xl md:text-4xl font-bold text-tan-100 mb-2 military-stencil">ITEMS</h1>
                     <p className="text-tan-300 max-w-3xl">
-                        Browse all in-game items, their stats, and locations. Use the filters to find exactly what you
+                        Browse all in-game items, their stats, including the hidden ones. Use the filters to find exactly what you
                         need for your next raid.
                     </p>
                 </div>

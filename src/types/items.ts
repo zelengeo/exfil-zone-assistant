@@ -57,6 +57,18 @@ export interface RecoilParameters {
 }
 
 export type FireMode = "semiAuto" | "fullAuto" | "pumpAction" | "boltAction" | "burstFire"
+export const CALIBERS = [
+    '.45 ACP',
+    '12GA',
+    '5.45x39',
+    '5.56x45',
+    '6.8x51',
+    '7.62x39',
+    '7.62x51',
+    '7.62x54R',
+    '9x19'
+] as const;
+export type Caliber = typeof CALIBERS[number];
 
 // Weapon type with complete stats from game data
 export interface Weapon extends Item {
@@ -64,7 +76,7 @@ export interface Weapon extends Item {
     stats: Item['stats'] & {
         // Required weapon stats
         fireRate: number;
-        caliber: string;
+        caliber: Caliber
 
         // Recoil parameters
         recoilParameters: RecoilParameters;
@@ -95,6 +107,17 @@ export interface Grenade extends Item {
     stats: Item['stats'] & GrenadeProperties;
 }
 
+export interface Attachment extends Item {
+    category: 'attachments';
+    subcategory: 'Magazines'; //| "Sights" | "Muzzle Devices" | "Grips" | "Tactical";
+    stats: Item['stats'];
+}
+
+export interface Magazine extends Attachment {
+    category: 'attachments';
+    subcategory: 'Magazines';
+    stats: Item['stats'] & MagazineProperties;
+}
 
 // Complete armor type with all curves
 export interface Armor extends Item {
@@ -167,7 +190,7 @@ export interface Syringe extends Medicine {
     }
 }
 
-export type AnyItem = Weapon | Armor | Ammunition | BodyArmor | Helmet | FaceShield | Medicine | Grenade;
+export type AnyItem = Weapon | Armor | Ammunition | BodyArmor | Helmet | FaceShield | Medicine | Grenade | Attachment;
 
 // Protective zone from armor data
 export interface ProtectiveZone {
@@ -182,7 +205,7 @@ export interface AmmoProperties {
     damage: number;
     penetration: number;
     pellets?: number;
-    caliber: string;
+    caliber: Caliber
 
     // Damage modifiers
     bluntDamageScale: number;
@@ -213,6 +236,15 @@ export interface AmmoProperties {
         damageOverDistance: CurvePoint[];
         penetrationPowerOverDistance: CurvePoint[];
     };
+}
+
+export interface MagazineProperties {
+    // Magazine properties
+    capacity: number;
+    caliber: Caliber;
+    ADSSpeedModifier?: number;
+    ergonomicsModifier?: number;
+    compatibleWeapons: string[];
 }
 
 export interface GrenadeProperties {
@@ -303,8 +335,21 @@ export const itemCategories: Record<string, ItemCategory> = {
                 '6.8x51mm'
             ]
     },
+    attachments: {
+        id: 'attachments',
+        name: 'Attachments',
+        description: 'Weapon attachments',
+        icon: 'scope',
+        subcategories: [
+            'Magazines',
+            // 'Sights',
+            // 'Muzzle Devices',
+            // 'Grips',
+            // 'Tactical',
+        ]
+    },
 
-    'grenades': {
+    grenades: {
         id: 'grenades',
         name: 'Grenades',
         description: 'Grenades and explosive devices',

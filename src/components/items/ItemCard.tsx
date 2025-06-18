@@ -12,9 +12,9 @@ import {
 import {ItemImage} from './ItemImage';
 import {
     isAmmunition,
-    isArmor,
+    isArmor, isAttachment,
     isBandage, isGrenade,
-    isLimbRestore,
+    isLimbRestore, isMagazine,
     isMedicine,
     isPainkiller, isStim, isSyringe,
     isWeapon
@@ -68,6 +68,22 @@ const renderCategoryStats = (item: Item) => {
                     )}
                 </div>
             );
+
+        case 'attachments':
+            if (!isAttachment(item)) break;
+            if (isMagazine(item)) return (
+                <div className="space-y-1">
+                    <div className="flex items-center justify-between text-sm">
+                        <span className="text-olive-400 font-medium">Caliber:</span>
+                        <span className="text-tan-100 font-mono">{(item.stats.caliber)}</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                        <span className="text-olive-400 font-medium">Capacity:</span>
+                        <span className="text-tan-100 font-mono">{item.stats.capacity}</span>
+                    </div>
+                </div>
+            );
+            break;
 
         case 'grenades':
             if (!isGrenade(item)) break;
