@@ -1404,7 +1404,7 @@
       "price": 0,
       "weight": 0.13,
       "rarity": "Rare",
-      "magnification": 4,
+      "magnification": 1,
       "zeroedDistanceValue": 2000,
       "attachmentData": {},
       "attachmentModifier": {
@@ -1431,7 +1431,7 @@
       "price": 0,
       "weight": 0.14,
       "rarity": "Rare",
-      "magnification": 4,
+      "magnification": 1,
       "zeroedDistanceValue": 2500,
       "attachmentData": {
         "recoilPitchInfluent": -0.08,
@@ -1461,7 +1461,7 @@
       "price": 0,
       "weight": 0.14,
       "rarity": "Rare",
-      "magnification": 4,
+      "magnification": 1,
       "zeroedDistanceValue": 2500,
       "attachmentData": {},
       "attachmentModifier": {
@@ -1488,7 +1488,7 @@
       "price": 0,
       "weight": 0.12,
       "rarity": "Uncommon",
-      "magnification": 4,
+      "magnification": 1,
       "zeroedDistanceValue": 2000,
       "attachmentData": {},
       "attachmentModifier": {
@@ -1515,7 +1515,7 @@
       "price": 0,
       "weight": 0.14,
       "rarity": "Epic",
-      "magnification": 4,
+      "magnification": 1,
       "zeroedDistanceValue": 2000,
       "attachmentData": {},
       "attachmentModifier": {
@@ -1542,7 +1542,7 @@
       "price": 0,
       "weight": 0.12,
       "rarity": "Rare",
-      "magnification": 4,
+      "magnification": 1,
       "zeroedDistanceValue": 2000,
       "attachmentData": {},
       "attachmentModifier": {
@@ -1569,7 +1569,7 @@
       "price": 0,
       "weight": 0.08,
       "rarity": "Rare",
-      "magnification": 4,
+      "magnification": 1,
       "zeroedDistanceValue": 2500,
       "attachmentData": {},
       "attachmentModifier": {
@@ -1596,7 +1596,7 @@
       "price": 0,
       "weight": 0.14,
       "rarity": "Epic",
-      "magnification": 4,
+      "magnification": 1,
       "zeroedDistanceValue": 2500,
       "attachmentData": {},
       "attachmentModifier": {
@@ -1623,7 +1623,7 @@
       "price": 0,
       "weight": 0.14,
       "rarity": "Epic",
-      "magnification": 4,
+      "magnification": 1,
       "zeroedDistanceValue": 2500,
       "attachmentData": {},
       "attachmentModifier": {
@@ -1651,7 +1651,7 @@
       "price": 0,
       "weight": 0.1,
       "rarity": "Uncommon",
-      "magnification": 4,
+      "magnification": 1,
       "zeroedDistanceValue": 2500,
       "attachmentData": {},
       "attachmentModifier": {
