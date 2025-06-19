@@ -1,2 +1,2939 @@
-{
-}
+[
+  {
+    "id": "muzzle_slr_c",
+    "name": "CLR BK",
+    "description": "Balanced compensator offering moderate recoil reduction with minimal ergonomics penalty",
+    "category": "attachments",
+    "subcategory": "Compensators",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_com_clrbk.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_com_clrbk.webp",
+      "fullsize": "/images/items/attachments/Icon_at_com_clrbk.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.065,
+      "rarity": "Uncommon",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.03,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.12,
+        "horizontalRecoilModifier": -0.12
+      }
+    },
+    "tips": "Good all-around choice for mid-tier builds when you want consistent recoil control"
+  },
+  {
+    "id": "muzzle_slr_hiheat_c",
+    "name": "CLR HiHeat",
+    "description": "High-performance compensator with superior recoil reduction at the cost of ergonomics",
+    "category": "attachments",
+    "subcategory": "Compensators",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_06.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_06.webp",
+      "fullsize": "/images/items/attachments/Icon_at_06.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.065,
+      "rarity": "Epic",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.03,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.145,
+        "horizontalRecoilModifier": -0.145
+      }
+    },
+    "tips": "Best-in-class recoil control for high-end builds, worth the ergonomics trade-off"
+  },
+  {
+    "id": "muzzle_aug_adaptor_c",
+    "name": "Aug 5.56x45 adpator",
+    "description": "Specialized adapter for AUG rifles to enable 5.56x45 muzzle device compatibility",
+    "category": "attachments",
+    "subcategory": "Compensators",
+    "images": {
+      "icon": "/images/items/attachments/Icon_SM_Bpart_Aug_RATworx558.webp",
+      "thumbnail": "/images/items/attachments/Icon_SM_Bpart_Aug_RATworx558.webp",
+      "fullsize": "/images/items/attachments/Icon_SM_Bpart_Aug_RATworx558.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.05,
+      "rarity": "Uncommon",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "ADSSpeedModifier": 0,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchStiffnessModifer": 0
+      }
+    },
+    "tips": "Required adapter for AUG builds - enables access to other compensators and muzzle devices"
+  },
+  {
+    "id": "muzzle_cookiecutter_c",
+    "name": "COOKI",
+    "description": "Premium compensator offering maximum recoil reduction with significant ergonomics penalty",
+    "category": "attachments",
+    "subcategory": "Compensators",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_com_cooki.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_com_cooki.webp",
+      "fullsize": "/images/items/attachments/Icon_at_com_cooki.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.098,
+      "rarity": "Legendary",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.08,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.165,
+        "horizontalRecoilModifier": -0.165
+      }
+    },
+    "tips": "Legendary tier - use when recoil control is absolutely critical and you can manage the ergo hit"
+  },
+  {
+    "id": "muzzle_dmr_c",
+    "name": "DMR Compensator",
+    "description": "Heavy-duty compensator designed for designated marksman rifles and precision shooting",
+    "category": "attachments",
+    "subcategory": "Compensators",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_com_snipercom.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_com_snipercom.webp",
+      "fullsize": "/images/items/attachments/Icon_at_com_snipercom.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.1,
+      "rarity": "Uncommon",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.05,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.08,
+        "horizontalRecoilModifier": -0.08
+      }
+    },
+    "tips": "Ideal for single-shot and semi-auto builds where weight penalty is acceptable"
+  },
+  {
+    "id": "muzzle_dtk1_c",
+    "name": "ATK1",
+    "description": "Entry-level compensator with asymmetric recoil reduction favoring vertical control",
+    "category": "attachments",
+    "subcategory": "Compensators",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_01.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_01.webp",
+      "fullsize": "/images/items/attachments/Icon_at_01.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.075,
+      "rarity": "Uncommon",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.03,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.11,
+        "horizontalRecoilModifier": -0.09
+      }
+    },
+    "tips": "Budget-friendly option that prioritizes vertical recoil over horizontal - good for spray patterns"
+  },
+  {
+    "id": "muzzle_dtk2_c",
+    "name": "ATK2",
+    "description": "Lightweight compensator offering balanced recoil reduction with minimal weight penalty",
+    "category": "attachments",
+    "subcategory": "Compensators",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_com_atk2.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_com_atk2.webp",
+      "fullsize": "/images/items/attachments/Icon_at_com_atk2.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.034,
+      "rarity": "Uncommon",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.01,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.1,
+        "horizontalRecoilModifier": -0.085
+      }
+    },
+    "tips": "Excellent choice for mobile builds where weight matters - solid performance with low penalties"
+  },
+  {
+    "id": "muzzle_innovations_c",
+    "name": "Sugar Lump",
+    "description": "Advanced compensator with excellent recoil control and no ergonomics penalty",
+    "category": "attachments",
+    "subcategory": "Compensators",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_com_sugarlump.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_com_sugarlump.webp",
+      "fullsize": "/images/items/attachments/Icon_at_com_sugarlump.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.042,
+      "rarity": "Rare",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "ADSSpeedModifier": 0,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.12,
+        "horizontalRecoilModifier": -0.1
+      }
+    },
+    "tips": "Rare find with no downsides - prioritize acquiring this for versatile builds"
+  },
+  {
+    "id": "muzzle_rifle_default_c",
+    "name": "Rifle Compensator",
+    "description": "Standard rifle compensator providing basic recoil reduction for general use",
+    "category": "attachments",
+    "subcategory": "Compensators",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_com_riflecom.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_com_riflecom.webp",
+      "fullsize": "/images/items/attachments/Icon_at_com_riflecom.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.045,
+      "rarity": "Uncommon",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.04,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.08,
+        "horizontalRecoilModifier": -0.08
+      }
+    },
+    "tips": "Reliable baseline option when other compensators aren't available or budget is tight"
+  },
+  {
+    "id": "muzzle_vp09_c",
+    "name": "Viper09",
+    "description": "High-tier compensator with exceptional recoil control but affects headshot damage and ADS speed",
+    "category": "attachments",
+    "subcategory": "Compensators",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_com_viper9.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_com_viper9.webp",
+      "fullsize": "/images/items/attachments/Icon_at_com_viper9.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.043,
+      "rarity": "Rare",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.022,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.16,
+        "horizontalRecoilModifier": -0.14,
+        "headDamageScaleModifier": -0.02,
+        "ADSSpeedModifier": -0.01
+      }
+    },
+    "tips": "Best raw recoil reduction but consider the headshot damage penalty for your playstyle"
+  },
+  {
+    "id": "supressor_defaultsuppressor",
+    "name": "Rifle Suppressor",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Suppressors",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_riflesuppressor.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_riflesuppressor.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_riflesuppressor.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.48,
+      "rarity": "Uncommon",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "bulletVelocityModifier": 0,
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.25,
+        "shotGunBulletSpreadModifer": 0,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.05,
+        "horizontalRecoilModifier": -0.05
+      }
+    },
+    "template": "supressor_suppressor_base",
+    "tips": ""
+  },
+  {
+    "id": "supressor_kacprs_bk",
+    "name": "Quicker BK",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Suppressors",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_quickerbk.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_quickerbk.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_quickerbk.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.42,
+      "rarity": "Rare",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "bulletVelocityModifier": 0,
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.13,
+        "shotGunBulletSpreadModifer": 0,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.07,
+        "horizontalRecoilModifier": -0.07
+      }
+    },
+    "template": "supressor_suppressor_base",
+    "tips": ""
+  },
+  {
+    "id": "supressor_kacprs_sand",
+    "name": "Quicker SD",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Suppressors",
+    "images": {
+      "icon": "/images/items/attachments/ICON_at_scoperail_quickersd.webp",
+      "thumbnail": "/images/items/attachments/ICON_at_scoperail_quickersd.webp",
+      "fullsize": "/images/items/attachments/ICON_at_scoperail_quickersd.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.42,
+      "rarity": "Rare",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "bulletVelocityModifier": 0,
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.13,
+        "shotGunBulletSpreadModifer": 0,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.07,
+        "horizontalRecoilModifier": -0.07
+      }
+    },
+    "template": "supressor_suppressor_base",
+    "tips": ""
+  },
+  {
+    "id": "supressor_m4sd",
+    "name": "ARSD",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Suppressors",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_08.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_08.webp",
+      "fullsize": "/images/items/attachments/Icon_at_08.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.53,
+      "rarity": "Uncommon",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "bulletVelocityModifier": 0,
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.22,
+        "shotGunBulletSpreadModifer": 0,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.065,
+        "horizontalRecoilModifier": -0.065
+      }
+    },
+    "template": "supressor_suppressor_base",
+    "tips": ""
+  },
+  {
+    "id": "supressor_osprey9",
+    "name": "Pelican 9",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Suppressors",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_pelican9.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_pelican9.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_pelican9.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.37,
+      "rarity": "Epic",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "bulletVelocityModifier": 0,
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.12,
+        "shotGunBulletSpreadModifer": 0,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.075,
+        "horizontalRecoilModifier": -0.075
+      }
+    },
+    "template": "supressor_suppressor_base",
+    "tips": ""
+  },
+  {
+    "id": "supressor_pistolsuppressor",
+    "name": "Pistol Suppressor",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Suppressors",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_pistolsuppressor.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_pistolsuppressor.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_pistolsuppressor.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.32,
+      "rarity": "Uncommon",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "bulletVelocityModifier": 0,
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.15,
+        "shotGunBulletSpreadModifer": 0,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.045,
+        "horizontalRecoilModifier": -0.045
+      }
+    },
+    "template": "supressor_suppressor_base",
+    "tips": ""
+  },
+  {
+    "id": "supressor_qdl",
+    "name": "Suppressor",
+    "description": "Unique QDL suppressor with damage bonuses but complex handling modifications",
+    "category": "attachments",
+    "subcategory": "Suppressors",
+    "images": {
+      "icon": "/images/items/attachments/QDL.webp",
+      "thumbnail": "/images/items/attachments/QDL.webp",
+      "fullsize": "/images/items/attachments/QDL.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.75,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "gunHitDamageModifier": 0.08,
+        "headDamageScaleModifier": 0.04,
+        "bulletVelocityModifier": 0.038,
+        "ADSSpeedModifier": -0.05,
+        "ergonomicsModifier": -0.1,
+        "shotGunBulletSpreadModifer": -0.15,
+        "damageDropModifer": 0.015,
+        "shiftMomentumModifer": 0.035,
+        "shiftStiffnessModifer": -0.032,
+        "yawMomentumModifer": 0.07,
+        "rollMomentumModifer": 0.15,
+        "rollStiffnessModifer": -0.05,
+        "pitchMomentumModifer": 0.1,
+        "pitchStiffnessModifer": -0.05,
+        "verticalRecoilModifier": -0.01,
+        "horizontalRecoilModifier": -0.02
+      }
+    },
+    "template": "supressor_br_suppressor_ground",
+    "tips": "Was not found in the ExfilZone AFAIK"
+  },
+  {
+    "id": "supressor_s_hybrid46_grey",
+    "name": "Mistrey46 GY",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Suppressors",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_mistrey46gy.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_mistrey46gy.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_mistrey46gy.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.51,
+      "rarity": "Epic",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "bulletVelocityModifier": 0,
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.33,
+        "shotGunBulletSpreadModifer": 0,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.09,
+        "horizontalRecoilModifier": -0.09
+      }
+    },
+    "template": "supressor_suppressor_base",
+    "tips": ""
+  },
+  {
+    "id": "supressor_s_hybrid46_sand",
+    "name": "Mistrey46 SD",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Suppressors",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_mistrey46sd.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_mistrey46sd.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_mistrey46sd.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "bulletVelocityModifier": 0,
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.33,
+        "shotGunBulletSpreadModifer": 0,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.09,
+        "horizontalRecoilModifier": -0.09
+      }
+    },
+    "template": "supressor_s_hybrid46_grey",
+    "tips": ""
+  },
+  {
+    "id": "supressor_s_tbeast_normal",
+    "name": "Sleipnir",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Suppressors",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_07.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_07.webp",
+      "fullsize": "/images/items/attachments/Icon_at_07.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.49,
+      "rarity": "Rare",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "bulletVelocityModifier": 0,
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.2,
+        "shotGunBulletSpreadModifer": 0,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.08,
+        "horizontalRecoilModifier": -0.08
+      }
+    },
+    "template": "supressor_suppressor_base",
+    "tips": ""
+  },
+  {
+    "id": "supressor_s_tbeast_u_bk",
+    "name": "Sleipnir BK Cover ",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Suppressors",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_sleipnirbkcover.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_sleipnirbkcover.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_sleipnirbkcover.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.495,
+      "rarity": "Legendary",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "bulletVelocityModifier": 0,
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.21,
+        "shotGunBulletSpreadModifer": 0,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.11,
+        "horizontalRecoilModifier": -0.11
+      }
+    },
+    "template": "supressor_suppressor_base",
+    "tips": ""
+  },
+  {
+    "id": "supressor_s_tbeast_uamo",
+    "name": "Sleipnir MC Cover ",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Suppressors",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_sleipnirmccover.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_sleipnirmccover.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_sleipnirmccover.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "bulletVelocityModifier": 0,
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.21,
+        "shotGunBulletSpreadModifer": 0,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.11,
+        "horizontalRecoilModifier": -0.11
+      }
+    },
+    "template": "supressor_s_tbeast_u_bk",
+    "tips": ""
+  },
+  {
+    "id": "supressor_s_tbeast_ub",
+    "name": "Sleipnir SD Cover ",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Suppressors",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_sleipnirsdcover.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_sleipnirsdcover.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_sleipnirsdcover.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "bulletVelocityModifier": 0,
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.21,
+        "shotGunBulletSpreadModifer": 0,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.11,
+        "horizontalRecoilModifier": -0.11
+      }
+    },
+    "template": "supressor_s_tbeast_u_bk",
+    "tips": ""
+  },
+  {
+    "id": "supressor_mp9_suppressor",
+    "name": "Mistrey46 SD",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Suppressors",
+    "images": {
+      "icon": "/images/items/attachments/WF_MP9_Suppressor.webp",
+      "thumbnail": "/images/items/attachments/WF_MP9_Suppressor.webp",
+      "fullsize": "/images/items/attachments/WF_MP9_Suppressor.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.32,
+      "rarity": "Epic",
+      "attachmentModifier": {
+        "headDamageScaleModifier": 0,
+        "bulletVelocityModifier": 0,
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.32,
+        "shotGunBulletSpreadModifer": 0,
+        "damageDropModifer": 0,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.055,
+        "horizontalRecoilModifier": -0.055
+      }
+    },
+    "template": "supressor_suppressor_base",
+    "tips": ""
+  },
+  {
+    "id": "tactical_flashlight_h200",
+    "name": "H200 FlashLight",
+    "description": "H200 tactical flashlight providing 15m illumination with moderate ergonomics penalty",
+    "category": "attachments",
+    "subcategory": "Tactical",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_flashlight_h200.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_flashlight_h200.webp",
+      "fullsize": "/images/items/attachments/Icon_at_flashlight_h200.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.12,
+      "rarity": "Uncommon",
+      "traceDistance": 1500,
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.08,
+        "verticalRecoilModifier": 0.02,
+        "horizontalRecoilModifier": 0.02
+      }
+    },
+    "template": "tactical_bp_flashlight",
+    "tips": "Standard flashlight choice - good illumination range but adds recoil penalty for visibility benefit"
+  },
+  {
+    "id": "tactical_laser_mawl1",
+    "name": "Laser",
+    "description": "Category: AttachmentAttaches to: Rifles,SMGs,Snipers.",
+    "category": "attachments",
+    "subcategory": "Tactical",
+    "images": {
+      "icon": "/images/items/attachments/Icon_MELC1Laser.webp",
+      "thumbnail": "/images/items/attachments/Icon_MELC1Laser.webp",
+      "fullsize": "/images/items/attachments/Icon_MELC1Laser.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.104,
+      "rarity": "Epic",
+      "traceDistance": 5000,
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.06,
+        "rollMomentumModifer": 0,
+        "pitchMomentumModifer": 0,
+        "horizontalRecoilModifier": 0.01
+      }
+    },
+    "template": "tactical_laser_base",
+    "tips": "Best pure laser option - longest range with lowest penalties, ideal for precision shooting"
+  },
+  {
+    "id": "tactical_laser_mx400",
+    "name": "Laser",
+    "description": "Combined laser-flashlight unit offering 30m range with moderate penalties",
+    "category": "attachments",
+    "subcategory": "Tactical",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_light_mx400-flashlight.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_light_mx400-flashlight.webp",
+      "fullsize": "/images/items/attachments/Icon_at_light_mx400-flashlight.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.09,
+      "rarity": "Rare",
+      "traceDistance": 3000,
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.07,
+        "verticalRecoilModifier": 0.015,
+        "horizontalRecoilModifier": 0.015
+      }
+    },
+    "template": "tactical_bp_flashlightwithlaser",
+    "tips": "Versatile combo unit - shorter range than pure lasers but provides both functions in one package"
+  },
+  {
+    "id": "tactical_laser_peq",
+    "name": "Laser",
+    "description": "Category: AttachmentAttaches to: Rifles,SMGs,Snipers.",
+    "category": "attachments",
+    "subcategory": "Tactical",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_09.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_09.webp",
+      "fullsize": "/images/items/attachments/Icon_at_09.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.125,
+      "rarity": "Rare",
+      "traceDistance": 5000,
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "rollMomentumModifer": 0,
+        "pitchMomentumModifer": 0,
+        "verticalRecoilModifier": 0.03,
+        "horizontalRecoilModifier": 0.03
+      }
+    },
+    "template": "tactical_laser_base",
+    "tips": "Powerful but penalizing - highest recoil penalty makes it less ideal for rapid fire scenarios"
+  },
+  {
+    "id": "tactical_laser_pistol",
+    "name": "Laser",
+    "description": "Compact pistol laser with 5000m range and minimal weight penalty",
+    "category": "attachments",
+    "subcategory": "Tactical",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_10.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_10.webp",
+      "fullsize": "/images/items/attachments/Icon_at_10.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.06,
+      "rarity": "Uncommon",
+      "traceDistance": 5000,
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.03,
+        "rollMomentumModifer": 0,
+        "pitchMomentumModifer": 0,
+        "horizontalRecoilModifier": 0.01
+      }
+    },
+    "template": "tactical_laser_base",
+    "tips": "Best tactical option overall - lightest weight with minimal penalties, excellent for all builds"
+  },
+  {
+    "id": "tactical_laser_vario_bkshort",
+    "name": "Laser",
+    "description": "Black Vario laser with 5000m range and balanced ergonomics-to-recoil trade-off",
+    "category": "attachments",
+    "subcategory": "Tactical",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_laser_faliro.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_laser_faliro.webp",
+      "fullsize": "/images/items/attachments/Icon_at_laser_faliro.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.128,
+      "rarity": "Epic",
+      "traceDistance": 5000,
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.06,
+        "rollMomentumModifer": 0,
+        "pitchMomentumModifer": 0,
+        "verticalRecoilModifier": 0.02,
+        "horizontalRecoilModifier": 0.02
+      }
+    },
+    "template": "tactical_laser_base",
+    "tips": "Premium laser choice - epic tier performance with reasonable penalties for most applications"
+  },
+  {
+    "id": "tactical_laser_vario_fdelong",
+    "name": "Laser",
+    "description": "Type:Laser.Attaches to: Rifles,SMGs,Snipers.",
+    "category": "attachments",
+    "subcategory": "Tactical",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_laser_falirofde.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_laser_falirofde.webp",
+      "fullsize": "/images/items/attachments/Icon_at_laser_falirofde.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.128,
+      "rarity": "Epic",
+      "traceDistance": 5000,
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.06,
+        "rollMomentumModifer": 0,
+        "pitchMomentumModifer": 0,
+        "verticalRecoilModifier": 0.02,
+        "horizontalRecoilModifier": 0.02
+      }
+    },
+    "template": "tactical_laser_base",
+    "tips": "Same stats as black Vario - choose based on camouflage needs and aesthetic preference"
+  },
+  {
+    "id": "scope_acog",
+    "name": "ACOG",
+    "description": "Classic 4x ACOG scope with moderate weight and significant ergonomics penalty",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_4x_acog.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_4x_acog.webp",
+      "fullsize": "/images/items/attachments/Icon_at_4x_acog.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.49,
+      "rarity": "Rare",
+      "magnification": 4,
+      "zeroedDistanceValue": 10000,
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.19,
+        "verticalRecoilModifier": 0.04,
+        "horizontalRecoilModifier": 0.02
+      }
+    },
+    "template": "scope_br_zomboyvrzoomsight",
+    "tips": "Reliable mid-range optic - higher recoil penalty but proven performance for most rifles"
+  },
+  {
+    "id": "scope_bravo4",
+    "name": "Beta4",
+    "description": "Legendary Beta4 scope offering best ergonomics with minimal recoil increase and stability bonus",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_4x_beta4.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_4x_beta4.webp",
+      "fullsize": "/images/items/attachments/Icon_at_4x_beta4.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.68,
+      "rarity": "Legendary",
+      "magnification": 4,
+      "zeroedDistanceValue": 10000,
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.12,
+        "yawStiffnessModifer": 0.015,
+        "verticalRecoilModifier": 0.01,
+        "horizontalRecoilModifier": 0.01
+      }
+    },
+    "template": "scope_br_zomboyvrzoomsight",
+    "tips": "Premium 4x option - legendary rarity justified by superior handling and yaw stability"
+  },
+  {
+    "id": "scope_devo",
+    "name": "Levo",
+    "description": "Ultra-lightweight Levo scope with excellent ergonomics and minimal penalties",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_WF_Devo.webp",
+      "thumbnail": "/images/items/attachments/Icon_WF_Devo.webp",
+      "fullsize": "/images/items/attachments/Icon_WF_Devo.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.296,
+      "rarity": "Legendary",
+      "magnification": 4,
+      "zeroedDistanceValue": 10000,
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.1,
+        "verticalRecoilModifier": 0.01,
+        "horizontalRecoilModifier": 0.01
+      }
+    },
+    "template": "scope_br_zomboyvrzoomsight",
+    "tips": "Best mobility 4x scope - lightest weight makes it ideal for aggressive playstyles"
+  },
+  {
+    "id": "scope_hamrsight_4x",
+    "name": "HRMA",
+    "description": "HRMA scope providing balanced performance with moderate weight and ergonomics penalty",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_14.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_14.webp",
+      "fullsize": "/images/items/attachments/Icon_at_14.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.58,
+      "rarity": "Epic",
+      "magnification": 4,
+      "zeroedDistanceValue": 10000,
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.16,
+        "verticalRecoilModifier": 0.03,
+        "horizontalRecoilModifier": 0.015
+      }
+    },
+    "template": "scope_br_zomboyvrzoomsight",
+    "tips": "Good all-around 4x choice - solid middle ground between weight, ergo penalty, and performance"
+  },
+  {
+    "id": "scope_mosinpu",
+    "name": "Mosin PU 3.5X scope",
+    "description": "Mosin-exclusive 3.5x PU scope with heavy ergonomics penalty and recoil increase",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scope_SniperPU.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scope_SniperPU.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scope_SniperPU.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.7,
+      "rarity": "Rare",
+      "magnification": 4,
+      "zeroedDistanceValue": 10000,
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.23,
+        "verticalRecoilModifier": 0.03,
+        "horizontalRecoilModifier": 0.015
+      }
+    },
+    "template": "scope_br_zomboyvrzoomsight",
+    "tips": "Only compatible with Mosin 91/30 - authentic historical optic with significant handling drawbacks"
+  },
+  {
+    "id": "scope_psgscope",
+    "name": "ScepterDR BK",
+    "description": "Heavy-duty ScepterDR scope with substantial weight and highest ergonomics penalty",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_SM_PSG_Rail_Scope.webp",
+      "thumbnail": "/images/items/attachments/Icon_SM_PSG_Rail_Scope.webp",
+      "fullsize": "/images/items/attachments/Icon_SM_PSG_Rail_Scope.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.9,
+      "rarity": "Epic",
+      "magnification": 4,
+      "zeroedDistanceValue": 10000,
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.26,
+        "verticalRecoilModifier": 0.015,
+        "horizontalRecoilModifier": 0.015
+      }
+    },
+    "template": "scope_br_zomboyvrzoomsight",
+    "tips": "Heaviest 4x option - only choose when maximum durability is needed over mobility"
+  },
+  {
+    "id": "scope_spector_bk",
+    "name": "ScepterDR BK",
+    "description": "Black ScepterDR scope offering balanced performance with moderate ergonomics penalty",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_4x_scepterdrbk.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_4x_scepterdrbk.webp",
+      "fullsize": "/images/items/attachments/Icon_at_4x_scepterdrbk.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.65,
+      "rarity": "Epic",
+      "magnification": 4,
+      "zeroedDistanceValue": 10000,
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.16,
+        "verticalRecoilModifier": 0.015,
+        "horizontalRecoilModifier": 0.015
+      }
+    },
+    "template": "scope_br_zomboyvrzoomsight",
+    "tips": "Solid tactical choice - good balance of features without extreme penalties in any area"
+  },
+  {
+    "id": "scope_spector_fde",
+    "name": "ScepterDR FDE",
+    "description": "FDE ScepterDR scope providing identical performance to black variant with tactical styling",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_4x_scepterdrfde.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_4x_scepterdrfde.webp",
+      "fullsize": "/images/items/attachments/Icon_at_4x_scepterdrfde.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.65,
+      "rarity": "Epic",
+      "magnification": 4,
+      "zeroedDistanceValue": 10000,
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.16,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "rollMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": 0.015,
+        "horizontalRecoilModifier": 0.015
+      }
+    },
+    "template": "scope_br_spector_bk",
+    "tips": "Same stats as black version - choose based on aesthetic preference for your build"
+  },
+  {
+    "id": "scope_svtpu",
+    "name": "SVT PU 3.5X scope",
+    "description": "SVT-40 exclusive 3.5x PU scope with heavy ergonomics penalty and recoil increase",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_WF_SvtPU.webp",
+      "thumbnail": "/images/items/attachments/Icon_WF_SvtPU.webp",
+      "fullsize": "/images/items/attachments/Icon_WF_SvtPU.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.7,
+      "rarity": "Rare",
+      "magnification": 4,
+      "zeroedDistanceValue": 10000,
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.23,
+        "verticalRecoilModifier": 0.03,
+        "horizontalRecoilModifier": 0.015
+      }
+    },
+    "template": "scope_br_zomboyvrzoomsight",
+    "tips": "Only compatible with SVT-40 - historical authenticity comes with significant handling penalties"
+  },
+  {
+    "id": "scope_falconzf",
+    "name": "scope_falconzf",
+    "description": "G3 family exclusive 8x scope with heavy ergonomics penalty but no recoil impact",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_SM_G3_Scope.webp",
+      "thumbnail": "/images/items/attachments/Icon_SM_G3_Scope.webp",
+      "fullsize": "/images/items/attachments/Icon_SM_G3_Scope.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.85,
+      "rarity": "Rare",
+      "magnification": 8,
+      "zeroedDistanceValue": 30000,
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.26,
+        "shiftMomentumModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0
+      },
+      "template": "BR_PowerScope_Ground"
+    },
+    "tips": "Only usable on G3 rifles - high magnification for long-range but expect significant handling loss"
+  },
+  {
+    "id": "scope_mark3scope",
+    "name": "Hunter3",
+    "description": "Hunter3 8x scope with moderate ergonomics penalty and slight recoil increase",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_15.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_15.webp",
+      "fullsize": "/images/items/attachments/Icon_at_15.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.84,
+      "rarity": "Epic",
+      "magnification": 8,
+      "zeroedDistanceValue": 30000,
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.21,
+        "verticalRecoilModifier": 0.02,
+        "horizontalRecoilModifier": 0.05
+      },
+      "template": "VariableMagnificationScopeBase"
+    },
+    "tips": "Good balance for long-range shooting - lighter than alternatives but adds small recoil penalty"
+  },
+  {
+    "id": "scope_nighthawk",
+    "name": "LP NightHawk",
+    "description": "8X magnification scope for long range combatsAttaches to:  Sniper Rifles",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_lp_lpnighthawk.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_lp_lpnighthawk.webp",
+      "fullsize": "/images/items/attachments/Icon_at_lp_lpnighthawk.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 1.05,
+      "rarity": "Epic",
+      "magnification": 8,
+      "zeroedDistanceValue": 30000,
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.25,
+        "shiftMomentumModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": 0.015,
+        "horizontalRecoilModifier": 0.015
+      },
+      "template": "BR_PowerScope_Ground"
+    },
+    "tips": "Premium sniper scope - heaviest option but built for extreme range precision shooting"
+  },
+  {
+    "id": "scope_vertex",
+    "name": "VerTac X",
+    "description": "Lightweight 3x-8x VerTac variable scope with minimal ergonomics penalty and slight recoil increase",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_lp_vertacx.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_lp_vertacx.webp",
+      "fullsize": "/images/items/attachments/Icon_at_lp_vertacx.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.78,
+      "rarity": "Epic",
+      "magnification": 8,
+      "zeroedDistanceValue": 30000,
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.16,
+        "verticalRecoilModifier": 0.01,
+        "horizontalRecoilModifier": 0.01
+      },
+      "template": "VariableMagnificationScopeBase"
+    },
+    "tips": "Best mobility option for 8x magnification - lowest weight and ergo penalty in class"
+  },
+  {
+    "id": "scope_aimpointt1sight",
+    "name": "T1 Elevating",
+    "description": "T1 Elevating red dot sight with minimal weight and low ergonomics penalty",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_red_t1.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_red_t1.webp",
+      "fullsize": "/images/items/attachments/Icon_at_red_t1.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.13,
+      "rarity": "Rare",
+      "magnification": 4,
+      "zeroedDistanceValue": 2000,
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.06,
+        "verticalRecoilModifier": 0.011,
+        "horizontalRecoilModifier": 0.011
+      },
+      "template": "WF_ZomboySightAttachmentBP"
+    },
+    "tips": "Lightweight option for close-quarters - good balance of mobility and sight picture"
+  },
+  {
+    "id": "scope_eotechhologramsight",
+    "name": "PiTechS3 BK",
+    "description": "PiTechS3 holographic sight with recoil influence benefits and extended zero range",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_03.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_03.webp",
+      "fullsize": "/images/items/attachments/Icon_at_03.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.14,
+      "rarity": "Rare",
+      "magnification": 4,
+      "zeroedDistanceValue": 2500,
+      "attachmentData": {
+        "recoilPitchInfluent": -0.08,
+        "recoilYawInfluent": -0.05
+      },
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.06,
+        "verticalRecoilModifier": 0.013,
+        "horizontalRecoilModifier": 0.013
+      },
+      "template": "WF_ZomboySightAttachmentBP"
+    },
+    "tips": "Excellent for medium range engagements - recoil influence bonus helps with follow-up shots"
+  },
+  {
+    "id": "scope_eotechhologramsight_fde",
+    "name": "PiTechS3 FDE",
+    "description": "FDE variant of PiTechS3 holographic sight with identical performance characteristics",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_red_fde.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_red_fde.webp",
+      "fullsize": "/images/items/attachments/Icon_at_red_fde.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.14,
+      "rarity": "Rare",
+      "magnification": 4,
+      "zeroedDistanceValue": 2500,
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.06,
+        "verticalRecoilModifier": 0.013,
+        "horizontalRecoilModifier": 0.013
+      },
+      "template": "WF_ZomboySightAttachmentBP"
+    },
+    "tips": "Same stats as black version - choose based on build aesthetics and camouflage needs"
+  },
+  {
+    "id": "scope_kobrasight_bp",
+    "name": "Cobra",
+    "description": "Basic Cobra reflex sight offering entry-level performance with higher penalties",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_17.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_17.webp",
+      "fullsize": "/images/items/attachments/Icon_at_17.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.12,
+      "rarity": "Uncommon",
+      "magnification": 4,
+      "zeroedDistanceValue": 2000,
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.08,
+        "verticalRecoilModifier": 0.014,
+        "horizontalRecoilModifier": 0.014
+      },
+      "template": "WF_ZomboySightAttachmentBP"
+    },
+    "tips": "Budget option for new builds - higher ergo penalty but accessible for early game setups"
+  },
+  {
+    "id": "scope_lcosight",
+    "name": "FLCO",
+    "description": "FLCO sight providing unique recoil reduction benefits with minimal ergonomics penalty",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_05.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_05.webp",
+      "fullsize": "/images/items/attachments/Icon_at_05.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.14,
+      "rarity": "Epic",
+      "magnification": 4,
+      "zeroedDistanceValue": 2000,
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.04,
+        "verticalRecoilModifier": -0.008,
+        "horizontalRecoilModifier": -0.008
+      },
+      "template": "WF_ZomboySightAttachmentBP"
+    },
+    "tips": "Only reflex sight that reduces recoil - premium choice for controlled shooting"
+  },
+  {
+    "id": "scope_ocp7",
+    "name": "Cobra",
+    "description": "Mid-tier Cobra variant offering improved performance over basic model",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_red_ocp7.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_red_ocp7.webp",
+      "fullsize": "/images/items/attachments/Icon_at_red_ocp7.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.12,
+      "rarity": "Rare",
+      "magnification": 4,
+      "zeroedDistanceValue": 2000,
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.07,
+        "verticalRecoilModifier": 0.012,
+        "horizontalRecoilModifier": 0.012
+      },
+      "template": "WF_ZomboySightAttachmentBP"
+    },
+    "tips": "Better than basic Cobra - good stepping stone before upgrading to premium sights"
+  },
+  {
+    "id": "scope_pistolsight_doc_mount",
+    "name": "Toucan2",
+    "description": "Ultra-lightweight Toucan2 sight with minimal penalties across all metrics",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_04.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_04.webp",
+      "fullsize": "/images/items/attachments/Icon_at_04.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.08,
+      "rarity": "Rare",
+      "magnification": 4,
+      "zeroedDistanceValue": 2500,
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.02,
+        "verticalRecoilModifier": 0.003,
+        "horizontalRecoilModifier": 0.003
+      },
+      "template": "WF_ZomboySightAttachmentBP"
+    },
+    "tips": "Best mobility option - lowest weight and penalties make it ideal for aggressive playstyles"
+  },
+  {
+    "id": "scope_romeo8t",
+    "name": "LOMIO8T",
+    "description": "LOMIO8T sight offering recoil reduction benefits with low ergonomics penalty",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_red_lomio8t.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_red_lomio8t.webp",
+      "fullsize": "/images/items/attachments/Icon_at_red_lomio8t.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.14,
+      "rarity": "Epic",
+      "magnification": 4,
+      "zeroedDistanceValue": 2500,
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.04,
+        "verticalRecoilModifier": -0.01,
+        "horizontalRecoilModifier": -0.01
+      },
+      "template": "WF_ZomboySightAttachmentBP"
+    },
+    "tips": "Premium reflex sight - recoil reduction makes it excellent for rapid fire scenarios"
+  },
+  {
+    "id": "scope_srs",
+    "name": "Savior",
+    "description": "Savior sight with unique shift stiffness bonus and slight recoil reduction",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_red_savior.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_red_savior.webp",
+      "fullsize": "/images/items/attachments/Icon_at_red_savior.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.14,
+      "rarity": "Epic",
+      "magnification": 4,
+      "zeroedDistanceValue": 2500,
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.04,
+        "shiftStiffnessModifer": 0.1,
+        "verticalRecoilModifier": -0.005,
+        "horizontalRecoilModifier": -0.005
+      },
+      "template": "WF_ZomboySightAttachmentBP"
+    },
+    "tips": "Specialized for movement shooting - shift stiffness bonus improves accuracy while moving"
+  },
+  {
+    "id": "scope_walther",
+    "name": "Walther Reflex",
+    "description": "Walther Reflex sight with significant ergonomics penalty despite light weight",
+    "category": "attachments",
+    "subcategory": "Sights",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_16.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_16.webp",
+      "fullsize": "/images/items/attachments/Icon_at_16.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.1,
+      "rarity": "Uncommon",
+      "magnification": 4,
+      "zeroedDistanceValue": 2500,
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.1,
+        "verticalRecoilModifier": 0.016,
+        "horizontalRecoilModifier": 0.016
+      },
+      "template": "WF_ZomboySightAttachmentBP"
+    },
+    "tips": "Avoid unless aesthetics matter - poor ergo penalty outweighs weight benefits"
+  },
+  {
+    "id": "grip_afgtrianglegrip",
+    "name": "Triangle Grip",
+    "description": "Improves horizontal recoil control effectively and provides ADS mobility.",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_20.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_20.webp",
+      "fullsize": "/images/items/attachments/Icon_at_20.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.077,
+      "rarity": "Uncommon",
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.1,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.03,
+        "horizontalRecoilModifier": -0.07
+      },
+      "template": "BR_TriangleGripGround"
+    },
+    "tips": "Good starter grip for builds needing horizontal recoil control without major weight penalty"
+  },
+  {
+    "id": "grip_gunfighter_bk",
+    "name": "Triangle Grip",
+    "description": "Type:Triangle Grip.Reduce horizontal Recoil and increase ADS moment speed.Attaches to: SMGs,Rifles,DMRs.",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_grip_gf_BK.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_grip_gf_BK.webp",
+      "fullsize": "/images/items/attachments/Icon_at_grip_gf_BK.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.057,
+      "rarity": "Uncommon",
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.14,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.1,
+        "horizontalRecoilModifier": -0.17
+      },
+      "template": "BR_TriangleGripGround"
+    },
+    "tips": "Outstanding choice for automatic weapons where horizontal control is critical - high ergo bonus"
+  },
+  {
+    "id": "grip_gunfighter_fde",
+    "name": "Vertical Grip",
+    "description": "Vertical grip variant offering excellent all-around recoil control with strong ergonomics",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/IGF_Mod_3_FDE_con.webp",
+      "thumbnail": "/images/items/attachments/IGF_Mod_3_FDE_con.webp",
+      "fullsize": "/images/items/attachments/IGF_Mod_3_FDE_con.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.057,
+      "rarity": "Uncommon",
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.14,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.1,
+        "horizontalRecoilModifier": -0.17
+      },
+      "template": "BR_Gunfighter_BK"
+    },
+    "tips": "Versatile grip that excels in sustained fire situations - great for spray control"
+  },
+  {
+    "id": "grip_gunfighter_olive",
+    "name": "Vertical Grip",
+    "description": "Olive drab vertical grip providing balanced recoil reduction with ergonomic benefits",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_grip_gfolv.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_grip_gfolv.webp",
+      "fullsize": "/images/items/attachments/Icon_at_grip_gfolv.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.057,
+      "rarity": "Uncommon",
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.14,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.1,
+        "horizontalRecoilModifier": -0.17
+      },
+      "template": "BR_Gunfighter_BK"
+    },
+    "tips": "Reliable all-purpose grip for mixed engagement ranges and firing patterns"
+  },
+  {
+    "id": "grip_shift_bk",
+    "name": "Triangle Grip",
+    "description": "Type:Triangle Grip.Reduce horizontal Recoil and increase ADS moment speed.Attaches to: SMGs,Rifles,DMRs.",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_24.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_24.webp",
+      "fullsize": "/images/items/attachments/Icon_at_24.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.084,
+      "rarity": "Rare",
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.12,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.1,
+        "horizontalRecoilModifier": -0.11
+      },
+      "template": "BR_TriangleGripGround"
+    },
+    "tips": "Perfect for semi-auto and controlled burst shooting - balanced stats for precision builds"
+  },
+  {
+    "id": "grip_shift_olive",
+    "name": "Transfer OLV",
+    "description": "Transfer-style grip optimized for weapon handling and moderate recoil control",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_25.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_25.webp",
+      "fullsize": "/images/items/attachments/Icon_at_25.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.084,
+      "rarity": "Rare",
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.12,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.1,
+        "horizontalRecoilModifier": -0.11
+      },
+      "template": "BR_Shift_BK"
+    },
+    "tips": "Good middle-ground option when you need handling improvements without extreme specialization"
+  },
+  {
+    "id": "grip_shift_red",
+    "name": "Transfer Red",
+    "description": "Epic-tier transfer grip with enhanced vertical recoil control while maintaining balance",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_26.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_26.webp",
+      "fullsize": "/images/items/attachments/Icon_at_26.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.084,
+      "rarity": "Epic",
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.12,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.13,
+        "horizontalRecoilModifier": -0.11
+      },
+      "template": "BR_Shift_BK"
+    },
+    "tips": "Premium choice offering the best vertical control in the Transfer series - worth the rarity"
+  },
+  {
+    "id": "grip_shift_sand",
+    "name": "Transfer Sand",
+    "description": "Sand-colored transfer grip providing reliable recoil management for various scenarios",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_27.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_27.webp",
+      "fullsize": "/images/items/attachments/Icon_at_27.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.084,
+      "rarity": "Rare",
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.12,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.1,
+        "horizontalRecoilModifier": -0.11
+      },
+      "template": "BR_Shift_BK"
+    },
+    "tips": "Solid option for desert-themed builds needing consistent performance across engagement types"
+  },
+  {
+    "id": "grip_trigripobra_bk",
+    "name": "Triangle Grip",
+    "description": "Type:Triangle Grip.Reduce horizontal Recoil and increase ADS moment speed.Attaches to: SMGs,Rifles,DMRs.",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_21.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_21.webp",
+      "fullsize": "/images/items/attachments/Icon_at_21.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.065,
+      "rarity": "Rare",
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.13,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.07,
+        "horizontalRecoilModifier": -0.12
+      },
+      "template": "BR_TriangleGripGround"
+    },
+    "tips": "Excellent for weapons with strong horizontal kick - lighter than alternatives with good control"
+  },
+  {
+    "id": "grip_trigripobra_od",
+    "name": "Mamba SD",
+    "description": "Mamba series grip offering superior horizontal control with tactical styling",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_22.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_22.webp",
+      "fullsize": "/images/items/attachments/Icon_at_22.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.065,
+      "rarity": "Rare",
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.13,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "pitchMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.07,
+        "horizontalRecoilModifier": -0.12
+      },
+      "template": "BR_Trigrip_Cobra_BK"
+    },
+    "tips": "High-performance option for competitive builds where horizontal stability is paramount"
+  },
+  {
+    "id": "grip_trigripobra_sand",
+    "name": "Mamba OLV",
+    "description": "Sand-finished Mamba grip providing exceptional horizontal recoil management",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at23.webp",
+      "thumbnail": "/images/items/attachments/Icon_at23.webp",
+      "fullsize": "/images/items/attachments/Icon_at23.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.065,
+      "rarity": "Rare",
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.13,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "pitchMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.07,
+        "horizontalRecoilModifier": -0.12
+      },
+      "template": "BR_Trigrip_Cobra_BK"
+    },
+    "tips": "Top-tier choice for weapons requiring maximum horizontal control - rare but worth seeking"
+  },
+  {
+    "id": "grip_trigrip_se_bk",
+    "name": "Triangle Grip",
+    "description": "Type:Triangle Grip.Reduce horizontal Recoil and increase ADS moment speed.Attaches to: SMGs,Rifles,DMRs.",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_12.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_12.webp",
+      "fullsize": "/images/items/attachments/Icon_at_12.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.089,
+      "rarity": "Epic",
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.17,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.13,
+        "horizontalRecoilModifier": -0.2
+      },
+      "template": "BR_TriangleGripGround"
+    },
+    "tips": "Premium triangle grip - best-in-class for horizontal control with maximum handling benefits"
+  },
+  {
+    "id": "grip_trigrip_se_grey",
+    "name": "STAR5 GY",
+    "description": "Grey STAR5 grip offering elite-level recoil management with superior ergonomics",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_star5gy.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_star5gy.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_star5gy.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.089,
+      "rarity": "Epic",
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.17,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.13,
+        "horizontalRecoilModifier": -0.2
+      },
+      "template": "BR_Trigrip_SE_BK"
+    },
+    "tips": "Epic-tier performance ideal for high-end builds requiring maximum horizontal stability"
+  },
+  {
+    "id": "grip_trigrip_se_olive",
+    "name": "STAR5 OLV",
+    "description": "Olive STAR5 grip providing top-tier horizontal control with excellent handling",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_star5olv.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_star5olv.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_star5olv.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.089,
+      "rarity": "Epic",
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.17,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.13,
+        "horizontalRecoilModifier": -0.2
+      },
+      "template": "BR_Trigrip_SE_BK"
+    },
+    "tips": "Outstanding choice for full-auto weapons - combines best recoil control with handling boost"
+  },
+  {
+    "id": "grip_trigrip_se_sand",
+    "name": "STAR5 SD",
+    "description": "Sand STAR5 grip delivering premium recoil management with tactical aesthetics",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_star5sd.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_star5sd.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_star5sd.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.089,
+      "rarity": "Epic",
+      "attachmentData": {
+        "recoilPitchInfluent": 0,
+        "recoilYawInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.17,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.13,
+        "horizontalRecoilModifier": -0.2
+      },
+      "template": "BR_Trigrip_SE_BK"
+    },
+    "tips": "Elite-level grip perfect for desert operations requiring maximum weapon control"
+  },
+  {
+    "id": "grip_verticalgrip_pk1b25u",
+    "name": "Vertical Grip",
+    "description": "Type:Vertical Grip.Reduce Verical Recoil and incrase vertical Recoil control ability.Attaches to: SMGs,Rifles,DMRs.",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_pk1b25u.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_pk1b25u.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_pk1b25u.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.098,
+      "rarity": "Legendary",
+      "attachmentData": {
+        "recoilPitchInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.13,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.15,
+        "horizontalRecoilModifier": -0.22
+      },
+      "template": "BR_VerticalGrip_Ground"
+    },
+    "tips": "Best overall grip available - legendary tier performance justifies the weight and rarity"
+  },
+  {
+    "id": "grip_verticalgrip_rk1",
+    "name": "Vertical Grip",
+    "description": "Type:Vertical Grip.Reduce Verical Recoil and incrase vertical Recoil control ability.Attaches to: SMGs,Rifles,DMRs.",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_pk1.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_pk1.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_pk1.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.095,
+      "rarity": "Epic",
+      "attachmentData": {
+        "recoilPitchInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.03,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.22,
+        "horizontalRecoilModifier": -0.05
+      },
+      "template": "BR_VerticalGrip_Ground"
+    },
+    "tips": "Unmatched vertical control for high-recoil weapons - sacrifice horizontal for vertical mastery"
+  },
+  {
+    "id": "grip_verticalgrip_rvg_bk",
+    "name": "Vertical Grip",
+    "description": "Type:Vertical Grip.Reduce Verical Recoil and incrase vertical Recoil control ability.Attaches to: SMGs,Rifles,DMRs.",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_WF_VerticalGrip_RVG_BK.webp",
+      "thumbnail": "/images/items/attachments/Icon_WF_VerticalGrip_RVG_BK.webp",
+      "fullsize": "/images/items/attachments/Icon_WF_VerticalGrip_RVG_BK.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.068,
+      "rarity": "Rare",
+      "attachmentData": {
+        "recoilPitchInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.14,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.09,
+        "horizontalRecoilModifier": -0.15
+      },
+      "template": "BR_VerticalGrip_Ground"
+    },
+    "tips": "Reliable vertical grip for most situations - good balance of control and handling"
+  },
+  {
+    "id": "grip_verticalgrip_rvg_olive",
+    "name": "PVG OLV",
+    "description": "Olive RVG grip offering consistent vertical recoil management with handling benefits",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_grip_pvgolv.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_grip_pvgolv.webp",
+      "fullsize": "/images/items/attachments/Icon_at_grip_pvgolv.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.068,
+      "rarity": "Rare",
+      "attachmentData": {
+        "recoilPitchInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.14,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.09,
+        "horizontalRecoilModifier": -0.15
+      },
+      "template": "BR_VerticalGrip_RVG_BK"
+    },
+    "tips": "Dependable choice for builds needing vertical control without extreme weight penalties"
+  },
+  {
+    "id": "grip_verticalgrip_rvg_sand",
+    "name": "PVG SD",
+    "description": "Sand RVG grip delivering reliable vertical control with tactical appearance",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_grip_pvgsd.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_grip_pvgsd.webp",
+      "fullsize": "/images/items/attachments/Icon_at_grip_pvgsd.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.068,
+      "rarity": "Rare",
+      "attachmentData": {
+        "recoilPitchInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.14,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.09,
+        "horizontalRecoilModifier": -0.15
+      },
+      "template": "BR_VerticalGrip_RVG_BK"
+    },
+    "tips": "Solid performer for desert-themed builds requiring consistent vertical recoil management"
+  },
+  {
+    "id": "grip_verticalgrip_sg",
+    "name": "Vertical Grip",
+    "description": "Improves horizontal recoil control effectively and provides ADS mobility.",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_28.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_28.webp",
+      "fullsize": "/images/items/attachments/Icon_at_28.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.072,
+      "rarity": "Uncommon",
+      "attachmentData": {
+        "recoilPitchInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.09,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.11,
+        "horizontalRecoilModifier": -0.07
+      },
+      "template": "BR_VerticalGrip_Ground"
+    },
+    "tips": "Entry-level vertical grip - good starting point for vertical control builds on a budget"
+  },
+  {
+    "id": "grip_verticalgrip_td",
+    "name": "Vertical Grip",
+    "description": "Type:Vertical Grip.Reduce Verical Recoil and incrase vertical Recoil control ability.Attaches to: SMGs,Rifles,DMRs.",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_tangodown.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_tangodown.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_tangodown.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.076,
+      "rarity": "Rare",
+      "attachmentData": {
+        "recoilPitchInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.09,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.16,
+        "horizontalRecoilModifier": -0.09
+      },
+      "template": "BR_VerticalGrip_Ground"
+    },
+    "tips": "Good mid-tier option for vertical control - better than basic grips without extreme cost"
+  },
+  {
+    "id": "grip_verticalgrip_tds_bk",
+    "name": "Vertical Grip",
+    "description": "Type:Vertical Grip.Reduce Verical Recoil and incrase vertical Recoil control ability.Attaches to: SMGs,Rifles,DMRs.",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/TDs_BK.webp",
+      "thumbnail": "/images/items/attachments/TDs_BK.webp",
+      "fullsize": "/images/items/attachments/TDs_BK.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.046,
+      "rarity": "Uncommon",
+      "attachmentData": {
+        "recoilPitchInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.06,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.05,
+        "horizontalRecoilModifier": -0.05
+      },
+      "template": "BR_VerticalGrip_Ground"
+    },
+    "tips": "Lightweight option when you need minimal grip benefits without weight penalty"
+  },
+  {
+    "id": "grip_verticalgrip_tds_olive",
+    "name": "Vertical Grip",
+    "description": "Olive TDs grip providing entry-level vertical control with minimal weight impact",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/TDs_Olive.webp",
+      "thumbnail": "/images/items/attachments/TDs_Olive.webp",
+      "fullsize": "/images/items/attachments/TDs_Olive.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.046,
+      "rarity": "Uncommon",
+      "attachmentData": {
+        "recoilPitchInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.06,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.05,
+        "horizontalRecoilModifier": -0.05
+      },
+      "template": "BR_VerticalGrip_TDs_BK"
+    },
+    "tips": "Basic grip for builds where weight is critical but some control is still needed"
+  },
+  {
+    "id": "grip_verticalgrip_tds_sand",
+    "name": "Vertical Grip",
+    "description": "Sand TDs grip delivering minimal recoil control with ultra-light weight profile",
+    "category": "attachments",
+    "subcategory": "Grips",
+    "images": {
+      "icon": "/images/items/attachments/TDs_Sand.webp",
+      "thumbnail": "/images/items/attachments/TDs_Sand.webp",
+      "fullsize": "/images/items/attachments/TDs_Sand.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.046,
+      "rarity": "Uncommon",
+      "attachmentData": {
+        "recoilPitchInfluent": 0
+      },
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": 0.06,
+        "shiftMomentumModifer": 0,
+        "shiftStiffnessModifer": 0,
+        "yawMomentumModifer": 0,
+        "yawStiffnessModifer": 0,
+        "rollMomentumModifer": 0,
+        "rollStiffnessModifer": 0,
+        "pitchMomentumModifer": 0,
+        "pitchStiffnessModifer": 0,
+        "verticalRecoilModifier": -0.05,
+        "horizontalRecoilModifier": -0.05
+      },
+      "template": "BR_VerticalGrip_TDs_BK"
+    },
+    "tips": "Lightest grip option - use when every gram matters but you still want some improvement"
+  },
+  {
+    "id": "rail_default__ak74ub18_rail",
+    "name": "AK74U Rail adapter",
+    "description": "AK74U-specific rail adapter enabling optic mounting on compact AK platforms",
+    "category": "attachments",
+    "subcategory": "Rails",
+    "images": {
+      "icon": "/images/items/attachments/AK74ub18_Rail.webp",
+      "thumbnail": "/images/items/attachments/AK74ub18_Rail.webp",
+      "fullsize": "/images/items/attachments/AK74ub18_Rail.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.02,
+      "rarity": "Common",
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.01,
+        "rollMomentumModifer": 0,
+        "pitchMomentumModifer": 0
+      },
+      "template": "RailAttachmentBase"
+    },
+    "tips": "Required for AK74U optics - necessary adapter with standard penalties for the platform"
+  },
+  {
+    "id": "rail_default__ak_siderailattachment_01",
+    "name": "AK Side Rail adapter",
+    "description": "Standard AK side rail mount providing traditional Soviet-style optic attachment",
+    "category": "attachments",
+    "subcategory": "Rails",
+    "images": {
+      "icon": "/images/items/attachments/AK_SideRailAttachment_01.webp",
+      "thumbnail": "/images/items/attachments/AK_SideRailAttachment_01.webp",
+      "fullsize": "/images/items/attachments/AK_SideRailAttachment_01.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.027,
+      "rarity": "Common",
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.02,
+        "rollMomentumModifer": 0,
+        "pitchMomentumModifer": 0
+      },
+      "template": "RailAttachmentBase"
+    },
+    "tips": "Classic AK optic mounting - slightly heavier penalty but authentic mounting solution"
+  },
+  {
+    "id": "rail_default__ak_siderailattachment_02",
+    "name": "RSR Rail adapter",
+    "description": "Enhanced RSR rail adapter offering improved AK side mounting capabilities",
+    "category": "attachments",
+    "subcategory": "Rails",
+    "images": {
+      "icon": "/images/items/attachments/AK_SideRailAttachment_02.webp",
+      "thumbnail": "/images/items/attachments/AK_SideRailAttachment_02.webp",
+      "fullsize": "/images/items/attachments/AK_SideRailAttachment_02.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.027,
+      "rarity": "Common",
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.02,
+        "rollMomentumModifer": 0,
+        "pitchMomentumModifer": 0
+      },
+      "template": "RailAttachmentBase"
+    },
+    "tips": "Upgraded AK rail option - same penalties as standard but potentially better compatibility"
+  },
+  {
+    "id": "rail_default__g3_railattachment_topbt3",
+    "name": "RSR Rail adapter",
+    "description": "Heavy-duty G3 top rail mount with significant weight but robust attachment",
+    "category": "attachments",
+    "subcategory": "Rails",
+    "images": {
+      "icon": "/images/items/attachments/Icon_SM_G3_Rail_bt3sidetoprail.webp",
+      "thumbnail": "/images/items/attachments/Icon_SM_G3_Rail_bt3sidetoprail.webp",
+      "fullsize": "/images/items/attachments/Icon_SM_G3_Rail_bt3sidetoprail.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.06,
+      "rarity": "Common",
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.02,
+        "rollMomentumModifer": 0,
+        "pitchMomentumModifer": 0
+      },
+      "template": "RailAttachmentBase"
+    },
+    "tips": "Heaviest G3 rail option - use when maximum stability is needed over mobility"
+  },
+  {
+    "id": "rail_default__g3_railattachment_tophighlever",
+    "name": "RSR Rail adapter",
+    "description": "Lightweight G3 high lever rail mount with no ergonomics penalty",
+    "category": "attachments",
+    "subcategory": "Rails",
+    "images": {
+      "icon": "/images/items/attachments/Icon_SM_G3_Rail_highlever.webp",
+      "thumbnail": "/images/items/attachments/Icon_SM_G3_Rail_highlever.webp",
+      "fullsize": "/images/items/attachments/Icon_SM_G3_Rail_highlever.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.02,
+      "rarity": "Common",
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "rollMomentumModifer": 0,
+        "pitchMomentumModifer": 0
+      },
+      "template": "RailAttachmentBase"
+    },
+    "tips": "Best G3 rail choice - no ergo penalty makes it ideal for maintaining weapon handling"
+  },
+  {
+    "id": "rail_default__g3_railattachment_topmlf",
+    "name": "RSR Rail adapter",
+    "description": "Moderate G3 MLF rail adapter balancing weight and attachment capability",
+    "category": "attachments",
+    "subcategory": "Rails",
+    "images": {
+      "icon": "/images/items/attachments/Icon_SM_G3_Rail_fab.webp",
+      "thumbnail": "/images/items/attachments/Icon_SM_G3_Rail_fab.webp",
+      "fullsize": "/images/items/attachments/Icon_SM_G3_Rail_fab.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.03,
+      "rarity": "Common",
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.01,
+        "rollMomentumModifer": 0,
+        "pitchMomentumModifer": 0
+      },
+      "template": "RailAttachmentBase"
+    },
+    "tips": "Good middle-ground G3 option - reasonable penalties for most G3 builds"
+  },
+  {
+    "id": "rail_default__m16a2_railattachment",
+    "name": "AR15 Handle Rail",
+    "description": "AR15 carry handle rail adapter enabling optic mounting on A2-style uppers",
+    "category": "attachments",
+    "subcategory": "Rails",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_ar15.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_ar15.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_ar15.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.02,
+      "rarity": "Common",
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.01
+      },
+      "template": "RailAttachment_BPBase"
+    },
+    "tips": "Classic AR15 setup - necessary for traditional carry handle configurations"
+  },
+  {
+    "id": "rail_default__mlok_railattachment_l",
+    "name": "MLOK Rail Bottom",
+    "description": "Epic-tier MLOK bottom rail with zero penalties for underbarrel accessories",
+    "category": "attachments",
+    "subcategory": "Rails",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_railbottom.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_railbottom.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_railbottom.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.012,
+      "rarity": "Epic",
+      "attachmentData": {},
+      "attachmentModifier": {},
+      "template": "RailAttachment_BPBase"
+    },
+    "tips": "Premium MLOK rail - no penalties make it perfect for competitive builds"
+  },
+  {
+    "id": "rail_default__mlok_railattachment_s",
+    "name": "MLOK Rail Side",
+    "description": "Ultra-lightweight MLOK side rail with no penalties for lateral mounting",
+    "category": "attachments",
+    "subcategory": "Rails",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_railside.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_railside.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_railside.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.008,
+      "rarity": "Common",
+      "attachmentData": {},
+      "attachmentModifier": {},
+      "template": "RailAttachment_BPBase"
+    },
+    "tips": "Lightest rail option - perfect for side-mounted accessories without any drawbacks"
+  },
+  {
+    "id": "rail_default__mp5_railattachment",
+    "name": "MP5 ScopeRail",
+    "description": "MP5-specific scope rail enabling optic mounting on classic SMG platform",
+    "category": "attachments",
+    "subcategory": "Rails",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_mp5.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_mp5.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_mp5.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.018,
+      "rarity": "Common",
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.02
+      },
+      "template": "RailAttachmentBase"
+    },
+    "tips": "Required for MP5 optics - moderate penalty but necessary for sight upgrades"
+  },
+  {
+    "id": "rail_default__pistol_railattachment",
+    "name": "Pistol TacticalRail",
+    "description": "Pistol tactical rail with highest ergonomics penalty for handgun accessories",
+    "category": "attachments",
+    "subcategory": "Rails",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_pistol.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_pistol.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_pistol.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.032,
+      "rarity": "Common",
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.05,
+        "rollMomentumModifer": 0,
+        "pitchMomentumModifer": 0
+      },
+      "template": "RailAttachmentBase"
+    },
+    "tips": "Significant handling penalty - only use when pistol accessories are absolutely needed"
+  },
+  {
+    "id": "rail_default__pkp_railattachment",
+    "name": "PKP ScopeRail",
+    "description": "Heavy PKP scope rail designed for machine gun optic mounting",
+    "category": "attachments",
+    "subcategory": "Rails",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_pkp.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_pkp.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_pkp.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.055,
+      "rarity": "Rare",
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.03
+      },
+      "template": "RailAttachment_BPBase"
+    },
+    "tips": "Heavy but necessary for PKP optics - moderate penalty for machine gun capability"
+  },
+  {
+    "id": "rail_default__psg_railattachment_top",
+    "name": "RSR Rail adapter",
+    "description": "PSG-specific top rail adapter for precision rifle optic mounting",
+    "category": "attachments",
+    "subcategory": "Rails",
+    "images": {
+      "icon": "/images/items/attachments/Icon_SM_PSG_Rail_Scope_MountRail.webp",
+      "thumbnail": "/images/items/attachments/Icon_SM_PSG_Rail_Scope_MountRail.webp",
+      "fullsize": "/images/items/attachments/Icon_SM_PSG_Rail_Scope_MountRail.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.02,
+      "rarity": "Common",
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.01,
+        "rollMomentumModifer": 0,
+        "pitchMomentumModifer": 0
+      },
+      "template": "RailAttachmentBase"
+    },
+    "tips": "Standard PSG rail - minimal penalty for precision rifle optic compatibility"
+  },
+  {
+    "id": "rail_default__railattachmentbase",
+    "name": "SKS SopeRail",
+    "description": "SKS scope rail with unique momentum modifiers affecting weapon dynamics",
+    "category": "attachments",
+    "subcategory": "Rails",
+    "images": {
+      "icon": "/images/items/attachments/Icon_at_scoperail_sks.webp",
+      "thumbnail": "/images/items/attachments/Icon_at_scoperail_sks.webp",
+      "fullsize": "/images/items/attachments/Icon_at_scoperail_sks.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.1,
+      "rarity": "Uncommon",
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ADSSpeedModifier": -0.01,
+        "rollMomentumModifer": 0.02,
+        "pitchMomentumModifer": -0.01
+      },
+      "template": "RailAttachment_BPBase"
+    },
+    "tips": "Heaviest standard rail - momentum changes affect handling, consider impact on playstyle"
+  },
+  {
+    "id": "rail_default__reverserail_base",
+    "name": "45 degree Rail Adapter",
+    "description": "45-degree rail adapter with no penalties for versatile angled mounting",
+    "category": "attachments",
+    "subcategory": "Rails",
+    "images": {
+      "icon": "/images/items/attachments/45degreeRail.webp",
+      "thumbnail": "/images/items/attachments/45degreeRail.webp",
+      "fullsize": "/images/items/attachments/45degreeRail.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.08,
+      "rarity": "Common",
+      "attachmentData": {},
+      "attachmentModifier": {
+        "ADSSpeedModifier": 0,
+        "ergonomicsModifier": -0.01,
+        "rollMomentumModifer": 0,
+        "pitchMomentumModifer": 0
+      },
+      "template": "RailAttachmentBase"
+    },
+    "tips": "No-penalty angled mounting - excellent choice when you need 45-degree capability"
+  }
+]
+

@@ -5,7 +5,7 @@ import {
     isBodyArmor,
     isFaceShield, isGrenade,
     isHelmet, isLimbRestore, isMagazine, isMedicine,
-    isPainkiller, isStim, isSyringe,
+    isPainkiller, isSight, isStim, isSyringe, isTactical,
     isWeapon
 } from "@/app/combat-sim/utils/types";
 
@@ -25,6 +25,7 @@ const DATA_FILES = [
     'weapons.json',
     'ammunition.json',
     `magazines.json`,
+    'attachments.json',
     'grenades.json',
     'armor.json',
     'helmets.json',
@@ -38,6 +39,7 @@ const dataImports = {
     'weapons.json': () => import('@/public/data/weapons.json'),
     'ammunition.json': () => import('@/public/data/ammunition.json'),
     'magazines.json': () => import('@/public/data/magazines.json'),
+    'attachments.json': () => import('@/public/data/attachments.json'),
     'grenades.json': () => import('@/public/data/grenades.json'),
     'armor.json': () => import('@/public/data/armor.json'),
     'helmets.json': () => import('@/public/data/helmets.json'),
@@ -82,8 +84,8 @@ function transformItemData(rawItem: Item): Item {
     // Add category-specific stats
     if (rawItem.stats) {
         // Weapons stats
-        if (rawItem.category === 'weapons') {
-            if (!isWeapon(rawItem) || !isWeapon(baseItem)) return baseItem;
+        if (isWeapon(rawItem)) {
+            if (!isWeapon(baseItem)) return baseItem;
             baseItem.stats.caliber = rawItem.stats.caliber;
             baseItem.stats.fireRate = rawItem.stats.fireRate;
             baseItem.stats.ergonomics = rawItem.stats.ergonomics;
@@ -95,8 +97,8 @@ function transformItemData(rawItem: Item): Item {
         }
 
         // Ammo stats
-        if (rawItem.category === 'ammo') {
-            if (!isAmmunition(rawItem) || !isAmmunition(baseItem)) return baseItem;
+        if (isAmmunition(rawItem)) {
+            if (!isAmmunition(baseItem)) return baseItem;
             baseItem.stats.caliber = rawItem.stats.caliber;
             baseItem.stats.damage = rawItem.stats.damage;
             baseItem.stats.penetration = rawItem.stats.penetration;
@@ -111,8 +113,8 @@ function transformItemData(rawItem: Item): Item {
             baseItem.stats.ballisticCurves = rawItem.stats.ballisticCurves;
         }
 
-        if (rawItem.category === 'grenades') {
-            if (!isGrenade(rawItem) || !isGrenade(baseItem)) return baseItem;
+        if (isGrenade(rawItem)) {
+            if (!isGrenade(baseItem)) return baseItem;
             baseItem.stats.fuseTime = rawItem.stats.fuseTime;
             baseItem.stats.radius = rawItem.stats.radius;
             baseItem.stats.effectTime = rawItem.stats.effectTime;
@@ -125,21 +127,38 @@ function transformItemData(rawItem: Item): Item {
             baseItem.stats.penetrationPowerOverDistance = rawItem.stats.penetrationPowerOverDistance;
         }
 
-        if (rawItem.category === 'attachments') {
+        if (isAttachment(rawItem)) {
             // Ensure attachment stats are properly mapped
-            if (!isAttachment(rawItem) || !isAttachment(baseItem)) return baseItem; {
-                if (isMagazine(rawItem) && isMagazine(baseItem)) {
-                    baseItem.stats.capacity = rawItem.stats.capacity;
-                    baseItem.stats.caliber = rawItem.stats.caliber;
-                    baseItem.stats.ergonomicsModifier = rawItem.stats.ergonomicsModifier;
-                    baseItem.stats.ADSSpeedModifier = rawItem.stats.ADSSpeedModifier;
-                    baseItem.stats.compatibleWeapons = rawItem.stats.compatibleWeapons;
+            if (!isAttachment(baseItem)) return baseItem;
+            if (isMagazine(rawItem)) {
+                if (!isMagazine(baseItem)) return baseItem;
+                baseItem.stats.capacity = rawItem.stats.capacity;
+                baseItem.stats.caliber = rawItem.stats.caliber;
+                baseItem.stats.ergonomicsModifier = rawItem.stats.ergonomicsModifier;
+                baseItem.stats.ADSSpeedModifier = rawItem.stats.ADSSpeedModifier;
+                baseItem.stats.compatibleWeapons = rawItem.stats.compatibleWeapons;
+            } else {
+                if (isSight(rawItem)) {
+                    if (!isSight(baseItem)) return baseItem;
+                    baseItem.stats.magnification = rawItem.stats.magnification;
+                    baseItem.stats.zeroedDistanceValue = rawItem.stats.zeroedDistanceValue;
+                }
+                if (isTactical(rawItem)) {
+                    if (!isTactical(baseItem)) return baseItem;
+                    baseItem.stats.traceDistance = rawItem.stats.traceDistance;
+                }
+                if (rawItem.stats.attachmentData) {
+                    baseItem.stats.attachmentData = {...rawItem.stats.attachmentData};
+                }
+                if (rawItem.stats.attachmentModifier) {
+                    baseItem.stats.attachmentModifier = {...rawItem.stats.attachmentModifier};
                 }
             }
         }
 
-        if (rawItem.category === 'gear' && rawItem.subcategory === 'Body Armor') {
-            if (!isBodyArmor(rawItem) || !isBodyArmor(baseItem)) return baseItem;
+
+        if (isBodyArmor(rawItem)) {
+            if (!isBodyArmor(baseItem)) return baseItem;
             baseItem.stats.armorClass = rawItem.stats.armorClass;
             baseItem.stats.maxDurability = rawItem.stats.maxDurability;
             baseItem.stats.bluntDamageScalar = rawItem.stats.bluntDamageScalar;
@@ -150,8 +169,8 @@ function transformItemData(rawItem: Item): Item {
             baseItem.stats.antiPenetrationDurabilityScalarCurve = rawItem.stats.antiPenetrationDurabilityScalarCurve;
         }
 
-        if (rawItem.category === 'gear' && rawItem.subcategory === 'Helmets') {
-            if (!isHelmet(rawItem) || !isHelmet(baseItem)) return baseItem;
+        if (isHelmet(rawItem)) {
+            if (!isHelmet(baseItem)) return baseItem;
             baseItem.stats.armorClass = rawItem.stats.armorClass;
             baseItem.stats.maxDurability = rawItem.stats.maxDurability;
             baseItem.stats.bluntDamageScalar = rawItem.stats.bluntDamageScalar;
@@ -163,8 +182,8 @@ function transformItemData(rawItem: Item): Item {
             baseItem.stats.soundMix = rawItem.stats.soundMix;
             baseItem.stats.canAttach = rawItem.stats.canAttach;
         }
-        if (rawItem.category === 'gear' && rawItem.subcategory === 'Face Shields') {
-            if (!isFaceShield(rawItem) || !isFaceShield(baseItem)) return baseItem;
+        if (isFaceShield(rawItem)) {
+            if (!isFaceShield(baseItem)) return baseItem;
             baseItem.stats.armorClass = rawItem.stats.armorClass;
             baseItem.stats.maxDurability = rawItem.stats.maxDurability;
             baseItem.stats.bluntDamageScalar = rawItem.stats.bluntDamageScalar;
@@ -330,7 +349,7 @@ export async function fetchItemsData(): Promise<ItemCache> {
         }, new Map as Map<string, Item>)
         cacheTimestamp = Date.now();
 
-        console.log(`✅ Loaded ${data.length} items from ${DATA_FILES.length} data files`, data);
+        console.log(`✅ Loaded ${data.length} items from ${DATA_FILES.length} data files`);
         return {items: data, itemMap: itemsMapCache};
     } catch (error) {
         console.error('Error fetching items data:', error);

@@ -13,10 +13,10 @@ import {ItemImage} from './ItemImage';
 import {
     isAmmunition,
     isArmor, isAttachment,
-    isBandage, isGrenade,
+    isBandage, isCompensator, isGrenade, isGrip,
     isLimbRestore, isMagazine,
     isMedicine,
-    isPainkiller, isStim, isSyringe,
+    isPainkiller, isRail, isSight, isStim, isSuppressor, isSyringe, isTactical,
     isWeapon
 } from "@/app/combat-sim/utils/types";
 
@@ -35,7 +35,7 @@ const renderCategoryStats = (item: Item) => {
                     {item.stats.ergonomics && (
                         <div className="flex items-center justify-between text-sm">
                             <span className="text-olive-400 font-medium">Ergonomics:</span>
-                            <span className="text-tan-100 font-mono">{(item.stats.ergonomics * 100).toFixed(0)}%</span>
+                            <span className="text-tan-100 font-mono">{(item.stats.ergonomics)}</span>
                         </div>
                     )}
                     {item.stats.MOA && (
@@ -83,6 +83,48 @@ const renderCategoryStats = (item: Item) => {
                     </div>
                 </div>
             );
+            if (isSight(item)) return (
+                <div className="space-y-1">
+                    <div className="flex items-center justify-between text-sm">
+                        <span className="text-olive-400 font-medium">Magnification:</span>
+                        <span className="text-tan-100 font-mono">{(item.stats.magnification)}</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                        <span className="text-olive-400 font-medium">Ergonomics:</span>
+                        <span className="text-tan-100 font-mono">{(item.stats.attachmentModifier?.ergonomicsModifier || 0)}</span>
+                    </div>
+                </div>
+            )
+            if (isTactical(item)) return (
+                <div className="space-y-1">
+                    <div className="flex items-center justify-between text-sm">
+                        <span className="text-olive-400 font-medium">Range:</span>
+                        <span className="text-tan-100 font-mono">{item.stats.traceDistance/100}m</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                        <span className="text-olive-400 font-medium">Ergonomics:</span>
+                        <span className="text-tan-100 font-mono">{(item.stats.attachmentModifier?.ergonomicsModifier || 0)}</span>
+                    </div>
+                </div>
+            )
+            if (isSuppressor(item) || isCompensator(item) || isGrip(item)) return (
+                <div className="space-y-1">
+                    <div className="flex items-center justify-between text-sm">
+                        <span className="text-olive-400 font-medium">Vertical recoil:</span>
+                        <span className="text-tan-100 font-mono">{item.stats.attachmentModifier?.verticalRecoilModifier || 0}</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm">
+                        <span className="text-olive-400 font-medium">Horizontal recoil:</span>
+                        <span className="text-tan-100 font-mono">{item.stats.attachmentModifier?.verticalRecoilModifier || 0}</span>
+                    </div>
+                </div>
+            )
+            if (isRail(item)) return (<div className="space-y-1">
+                <div className="flex items-center justify-between text-sm">
+                    <span className="text-olive-400 font-medium">Ergonomics:</span>
+                    <span className="text-tan-100 font-mono">{(item.stats.attachmentModifier?.ergonomicsModifier || 0)}</span>
+                </div>
+            </div>)
             break;
 
         case 'grenades':

@@ -2818,7 +2818,7 @@
         "yawMass": 1.9,
         "rollMass": 0.5,
         "oneHandedADSMultiplier": 0.1,
-        "VerticalRecoilControl": 0.42796,
+        "verticalRecoilControl": 0.42796,
         "horizontalRecoilControl": 0.413333
       },
       "firingPower": 0.35,

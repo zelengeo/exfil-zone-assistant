@@ -109,8 +109,35 @@ export interface Grenade extends Item {
 
 export interface Attachment extends Item {
     category: 'attachments';
-    subcategory: 'Magazines'; //| "Sights" | "Muzzle Devices" | "Grips" | "Tactical";
-    stats: Item['stats'];
+    subcategory: 'Magazines'| "Sights" | "Suppressors" | "Grips" | "Compensators" | "Tactical" | "Rails";
+    stats: Item['stats'] & AttachmentProperties;
+}
+
+// Complete attachment type with all curves
+export interface TacticalAttachment extends Attachment {
+    subcategory: 'Tactical';
+    stats: Item['stats'] & TacticalAttachmentProperties;
+}
+
+export interface Sight extends Attachment {
+    subcategory: 'Sights';
+    stats: Item['stats'] & SightProperties;
+}
+
+export interface Suppressor extends Attachment {
+    subcategory: 'Suppressors';
+}
+
+export interface Grip extends Attachment {
+    subcategory: 'Grips';
+}
+
+export interface Compensator extends Attachment {
+    subcategory: 'Compensators';
+}
+
+export interface Rail extends Attachment {
+    subcategory: 'Rails';
 }
 
 export interface Magazine extends Attachment {
@@ -238,6 +265,55 @@ export interface AmmoProperties {
     };
 }
 
+export interface AttachmentProperties {
+    attachmentModifier?: AttachmentModifier;
+    attachmentData?: AttachmentData;
+}
+
+export interface TacticalAttachmentProperties extends AttachmentProperties {
+    traceDistance: number;
+}
+
+export interface SightProperties extends AttachmentProperties {
+    magnification?: number;
+    zeroedDistanceValue?: number;
+}
+
+// Add attachment modifier interface
+export interface AttachmentModifier {
+    // Damage and ballistics
+    headDamageScaleModifier?: number;
+    bulletVelocityModifier?: number;
+    gunHitDamageModifier?: number;
+    damageDropModifer?: number;
+
+    // Aiming and handling
+    ADSSpeedModifier?: number;
+    ergonomicsModifier?: number;
+
+    // Shotgun specific
+    shotGunBulletSpreadModifer?: number;
+
+    // Recoil control
+    verticalRecoilModifier?: number;
+    horizontalRecoilModifier?: number;
+
+    // Movement and stability
+    shiftMomentumModifer?: number;
+    shiftStiffnessModifer?: number;
+    yawMomentumModifer?: number;
+    yawStiffnessModifer?: number;
+    rollMomentumModifer?: number;
+    rollStiffnessModifer?: number;
+    pitchMomentumModifer?: number;
+    pitchStiffnessModifer?: number;
+}
+
+export interface AttachmentData {
+    recoilPitchInfluent?: number;
+    recoilYawInfluent?: number;
+}
+
 export interface MagazineProperties {
     // Magazine properties
     capacity: number;
@@ -342,10 +418,12 @@ export const itemCategories: Record<string, ItemCategory> = {
         icon: 'scope',
         subcategories: [
             'Magazines',
-            // 'Sights',
-            // 'Muzzle Devices',
-            // 'Grips',
-            // 'Tactical',
+            'Sights',
+            'Compensators',
+            'Suppressors',
+            'Grips',
+            'Tactical',
+            'Rails',
         ]
     },
 

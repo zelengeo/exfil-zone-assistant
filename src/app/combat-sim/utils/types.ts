@@ -9,10 +9,10 @@ import {
     Armor, Attachment,
     Bandage,
     BodyArmor,
-    FaceShield, Grenade,
+    FaceShield, Grenade, Grip,
     Helmet,
     Item, LimbRestore, Magazine,
-    Medicine, Painkiller, Stim, Syringe,
+    Medicine, Painkiller, Rail, Sight, Stim, Suppressor, Syringe, TacticalAttachment,
     Weapon
 } from "@/types/items";
 
@@ -166,6 +166,30 @@ export function isAttachment(item: Item): item is Attachment {
 
 export function isMagazine(item: Item): item is Magazine {
     return isAttachment(item) && item.subcategory === 'Magazines'
+}
+
+export function isSight(item: Item): item is Sight {
+    return isAttachment(item) && item.subcategory === 'Sights'
+}
+
+export function isCompensator(item: Item): item is Sight {
+    return isAttachment(item) && item.subcategory === 'Compensators'
+}
+
+export function isSuppressor(item: Item): item is Suppressor {
+    return isAttachment(item) && item.subcategory === 'Suppressors'
+}
+
+export function isGrip(item: Item): item is Grip {
+    return isAttachment(item) && item.subcategory === 'Grips'
+}
+
+export function isTactical(item: Item): item is TacticalAttachment {
+    return isAttachment(item) && item.subcategory === 'Tactical'
+}
+
+export function isRail(item: Item): item is Rail {
+    return isAttachment(item) && item.subcategory === 'Rails'
 }
 
 export function isGrenade(item: Item): item is Grenade {
