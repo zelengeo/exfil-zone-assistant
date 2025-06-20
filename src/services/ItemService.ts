@@ -4,7 +4,7 @@ import {
     isBandage,
     isBodyArmor,
     isFaceShield, isGrenade,
-    isHelmet, isLimbRestore, isMagazine, isMedicine,
+    isHelmet, isLimbRestore, isMagazine, isMedicine, isMisc,
     isPainkiller, isSight, isStim, isSyringe, isTactical,
     isWeapon
 } from "@/app/combat-sim/utils/types";
@@ -30,7 +30,8 @@ const DATA_FILES = [
     'armor.json',
     'helmets.json',
     'face-shields.json',
-    'medical.json'
+    'medical.json',
+    'misc.json',
 ];
 
 // Import all data files statically
@@ -45,6 +46,7 @@ const dataImports = {
     'helmets.json': () => import('@/public/data/helmets.json'),
     'face-shields.json': () => import('@/public/data/face-shields.json'),
     'medical.json': () => import('@/public/data/medical.json'),
+    'misc.json': () => import('@/public/data/misc.json'),
 };
 
 /**
@@ -222,6 +224,17 @@ function transformItemData(rawItem: Item): Item {
                 baseItem.stats.brokenHP = rawItem.stats.brokenHP;
             }
         }
+
+        //
+        // if (isMisc(rawItem)) {
+        //     if (!isMisc(baseItem)) return baseItem;
+        //     if (rawItem.stats.backpackDimensionMultiplier !== undefined) {
+        //         baseItem.stats.backpackDimensionMultiplier = rawItem.stats.backpackDimensionMultiplier;
+        //     }
+        //     if (rawItem.stats.safeContainerBoundScale !== undefined) {
+        //         baseItem.stats.safeContainerBoundScale = rawItem.stats.safeContainerBoundScale;
+        //     }
+        // }
     }
 
     if (rawItem.notes) baseItem.notes = rawItem.notes;

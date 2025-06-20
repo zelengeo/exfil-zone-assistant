@@ -1,336 +1,3022 @@
-{
-  "misc": [
-    {
-      "id": "valuable-gold-ingot",
-      "name": "Gold Ingot",
-      "description": "Pure gold ingot with high market value.",
-      "category": "misc",
-      "subcategory": "High Value",
-      "images": {
-        "icon": "/images/items/misc/Icon_valuable_goldingot.webp",
-        "thumbnail": "/images/items/misc/Icon_valuable_goldingot.webp",
-        "fullsize": "/images/items/misc/Icon_valuable_goldingot.webp"
-      },
-      "stats": {
-        "rarity": "Epic",
-        "price": 85000,
-        "weight": 0.8,
-        "size": "1x1",
-        "safeSlots": 1
-      },
-      "notes": "High-value item for trading.",
-      "tips": "Prioritize extraction when found."
+[
+  {
+    "id": "misc_default__valuableitem_1batterie_2",
+    "name": "Size D battery",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Power",
+    "images": {
+      "icon": "/images/items/misc/valuable_batteries_sizedbattery1.webp",
+      "thumbnail": "/images/items/misc/valuable_batteries_sizedbattery1.webp",
+      "fullsize": "/images/items/misc/valuable_batteries_sizedbattery1.webp"
     },
-    {
-      "id": "valuable-military-hdd",
-      "name": "Military Hard Drive",
-      "description": "Encrypted military hard drive containing sensitive data.",
-      "category": "misc",
-      "subcategory": "Intel",
-      "images": {
-        "icon": "/images/items/misc/Icon_ValuableItem_B_MilitaryHardDrive.webp",
-        "thumbnail": "/images/items/misc/Icon_ValuableItem_B_MilitaryHardDrive.webp",
-        "fullsize": "/images/items/misc/Icon_ValuableItem_B_MilitaryHardDrive.webp"
-      },
-      "stats": {
-        "rarity": "Rare",
-        "price": 45000,
-        "weight": 0.3,
-        "size": "1x1",
-        "safeSlots": 1
-      },
-      "relatedQuests": ["quest-intel-001"],
-      "notes": "Required for intelligence gathering missions.",
-      "tips": "High value to traders and quest givers."
+    "stats": {
+      "price": 0,
+      "weight": 0.03,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
     },
-    {
-      "id": "valuable-cpu",
-      "name": "CPU",
-      "description": "High-performance computer processor.",
-      "category": "misc",
-      "subcategory": "Electronic",
-      "images": {
-        "icon": "/images/items/misc/Icon_valuable_cpu.webp",
-        "thumbnail": "/images/items/misc/Icon_valuable_cpu.webp",
-        "fullsize": "/images/items/misc/Icon_valuable_cpu.webp"
-      },
-      "stats": {
-        "rarity": "Uncommon",
-        "price": 25000,
-        "weight": 0.2,
-        "size": "1x1",
-        "safeSlots": 2
-      },
-      "notes": "Valuable electronic component.",
-      "tips": "Good value-to-weight ratio for traders."
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_badge",
+    "name": "Sheriff's Badge",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_badge.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_badge.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_badge.webp"
     },
-    {
-      "id": "valuable-graphics-card",
-      "name": "Graphics Card",
-      "description": "High-end graphics processing unit.",
-      "category": "misc",
-      "subcategory": "Electronic",
-      "images": {
-        "icon": "/images/items/misc/Icon_valuable_graphiccard.webp",
-        "thumbnail": "/images/items/misc/Icon_valuable_graphiccard.webp",
-        "fullsize": "/images/items/misc/Icon_valuable_graphiccard.webp"
-      },
-      "stats": {
-        "rarity": "Rare",
-        "price": 55000,
-        "weight": 0.8,
-        "size": "2x1",
-        "safeSlots": 1
-      },
-      "notes": "High-value electronic component for cryptocurrency mining.",
-      "tips": "Extremely valuable to certain traders."
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
     },
-    {
-      "id": "valuable-duct-tape",
-      "name": "Duct Tape",
-      "description": "Industrial-grade adhesive tape with multiple uses.",
-      "category": "misc",
-      "subcategory": "Tools",
-      "images": {
-        "icon": "/images/items/misc/Icon_valuable_ducttape.webp",
-        "thumbnail": "/images/items/misc/Icon_valuable_ducttape.webp",
-        "fullsize": "/images/items/misc/Icon_valuable_ducttape.webp"
-      },
-      "stats": {
-        "rarity": "Common",
-        "price": 8000,
-        "weight": 0.3,
-        "size": "1x1",
-        "safeSlots": 3
-      },
-      "craftingRecipes": [
-        {
-          "inputs": [
-            { "itemId": "valuable-duct-tape", "quantity": 1 }
-          ],
-          "output": { "quantity": 1 }
-        }
-      ],
-      "notes": "Essential crafting material for hideout upgrades.",
-      "tips": "Always collect for hideout construction."
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_baseball",
+    "name": "Old Baseball",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_baseball.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_baseball.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_baseball.webp"
     },
-    {
-      "id": "valuable-gunpowder",
-      "name": "Gunpowder",
-      "description": "High-quality gunpowder for ammunition crafting.",
-      "category": "misc",
-      "subcategory": "Combustibles",
-      "images": {
-        "icon": "/images/items/misc/Icon_valuable_gunpowder.webp",
-        "thumbnail": "/images/items/misc/Icon_valuable_gunpowder.webp",
-        "fullsize": "/images/items/misc/Icon_valuable_gunpowder.webp"
-      },
-      "stats": {
-        "rarity": "Uncommon",
-        "price": 15000,
-        "weight": 0.4,
-        "size": "1x1",
-        "safeSlots": 2
-      },
-      "craftingRecipes": [
-        {
-          "inputs": [
-            { "itemId": "valuable-gunpowder", "quantity": 2 }
-          ],
-          "output": { "quantity": 150 }
-        }
-      ],
-      "notes": "Required for ammunition crafting.",
-      "tips": "Essential for self-sufficient ammo production."
+    "stats": {
+      "price": 0,
+      "weight": 0.3,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
     },
-    {
-      "id": "valuable-spark-plug",
-      "name": "Spark Plug",
-      "description": "Automotive spark plug used in various mechanical applications.",
-      "category": "misc",
-      "subcategory": "Tools",
-      "images": {
-        "icon": "/images/items/misc/Icon_valuable_sparkplug.webp",
-        "thumbnail": "/images/items/misc/Icon_valuable_sparkplug.webp",
-        "fullsize": "/images/items/misc/Icon_valuable_sparkplug.webp"
-      },
-      "stats": {
-        "rarity": "Common",
-        "price": 12000,
-        "weight": 0.2,
-        "size": "1x1",
-        "safeSlots": 3
-      },
-      "notes": "Used in hideout generator upgrades.",
-      "tips": "Collect for power-related hideout improvements."
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_1battery",
+    "name": "Size D battery",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Power",
+    "images": {
+      "icon": "/images/items/misc/valuable_batteries_sizedbattery2.webp",
+      "thumbnail": "/images/items/misc/valuable_batteries_sizedbattery2.webp",
+      "fullsize": "/images/items/misc/valuable_batteries_sizedbattery2.webp"
     },
-    {
-      "id": "valuable-batteries",
-      "name": "Batteries",
-      "description": "High-capacity batteries for electronic devices.",
-      "category": "misc",
-      "subcategory": "Power",
-      "images": {
-        "icon": "/images/items/misc/Icon_valuable_batteries.webp",
-        "thumbnail": "/images/items/misc/Icon_valuable_batteries.webp",
-        "fullsize": "/images/items/misc/Icon_valuable_batteries.webp"
-      },
-      "stats": {
-        "rarity": "Common",
-        "price": 6500,
-        "weight": 0.4,
-        "size": "1x1",
-        "safeSlots": 4
-      },
-      "notes": "Power source for various electronic equipment.",
-      "tips": "Needed for flashlights and electronic devices."
+    "stats": {
+      "price": 0,
+      "weight": 0.03,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
     },
-    {
-      "id": "valuable-lighter",
-      "name": "Lighter",
-      "description": "Reliable butane lighter for ignition purposes.",
-      "category": "misc",
-      "subcategory": "Tools",
-      "images": {
-        "icon": "/images/items/misc/Icon_valuable_lighter.webp",
-        "thumbnail": "/images/items/misc/Icon_valuable_lighter.webp",
-        "fullsize": "/images/items/misc/Icon_valuable_lighter.webp"
-      },
-      "stats": {
-        "rarity": "Common",
-        "price": 3500,
-        "weight": 0.05,
-        "size": "1x1",
-        "safeSlots": 5
-      },
-      "notes": "Used for various crafting recipes.",
-      "tips": "Light weight, good for filling extra inventory slots."
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_aladdinlamp",
+    "name": "Aladdin lamp",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/valuable_highvalue_aladdinlamp.webp",
+      "thumbnail": "/images/items/misc/valuable_highvalue_aladdinlamp.webp",
+      "fullsize": "/images/items/misc/valuable_highvalue_aladdinlamp.webp"
     },
-    {
-      "id": "valuable-pliers",
-      "name": "Pliers",
-      "description": "Heavy-duty pliers for mechanical work.",
-      "category": "misc",
-      "subcategory": "Tools",
-      "images": {
-        "icon": "/images/items/misc/Icon_valuable_plier.webp",
-        "thumbnail": "/images/items/misc/Icon_valuable_plier.webp",
-        "fullsize": "/images/items/misc/Icon_valuable_plier.webp"
-      },
-      "stats": {
-        "rarity": "Common",
-        "price": 9500,
-        "weight": 0.3,
-        "size": "1x2",
-        "safeSlots": 2
-      },
-      "notes": "Essential tool for mechanical work and crafting.",
-      "tips": "Required for weapon modification and repair."
+    "stats": {
+      "price": 0,
+      "weight": 1.011,
+      "rarity": "Ultimate",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
     },
-    {
-      "id": "valuable-screwdriver",
-      "name": "Screwdriver",
-      "description": "Multi-purpose screwdriver for mechanical tasks.",
-      "category": "misc",
-      "subcategory": "Tools",
-      "images": {
-        "icon": "/images/items/misc/Icon_valuable_screwdriver.webp",
-        "thumbnail": "/images/items/misc/Icon_valuable_screwdriver.webp",
-        "fullsize": "/images/items/misc/Icon_valuable_screwdriver.webp"
-      },
-      "stats": {
-        "rarity": "Common",
-        "price": 4500,
-        "weight": 0.15,
-        "size": "1x1",
-        "safeSlots": 4
-      },
-      "notes": "Basic tool for equipment maintenance.",
-      "tips": "Always useful for hideout construction."
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_antiquebook",
+    "name": "Antique book",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Intel",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_AntiqueBook.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_AntiqueBook.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_AntiqueBook.webp"
     },
-    {
-      "id": "valuable-wrench",
-      "name": "Wrench",
-      "description": "Adjustable wrench for mechanical repairs.",
-      "category": "misc",
-      "subcategory": "Tools",
-      "images": {
-        "icon": "/images/items/misc/Icon_valuable_wrench.webp",
-        "thumbnail": "/images/items/misc/Icon_valuable_wrench.webp",
-        "fullsize": "/images/items/misc/Icon_valuable_wrench.webp"
-      },
-      "stats": {
-        "rarity": "Common",
-        "price": 7500,
-        "weight": 0.4,
-        "size": "1x2",
-        "safeSlots": 2
-      },
-      "notes": "Heavy-duty tool for construction and repair.",
-      "tips": "Required for advanced hideout upgrades."
+    "stats": {
+      "price": 0,
+      "weight": 0.75,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
     },
-    {
-      "id": "valuable-gas-can",
-      "name": "Gas Can",
-      "description": "Portable fuel container for generators and vehicles.",
-      "category": "misc",
-      "subcategory": "Combustibles",
-      "images": {
-        "icon": "/images/items/misc/Icon_valuable_gascan.webp",
-        "thumbnail": "/images/items/misc/Icon_valuable_gascan.webp",
-        "fullsize": "/images/items/misc/Icon_valuable_gascan.webp"
-      },
-      "stats": {
-        "rarity": "Uncommon",
-        "price": 18000,
-        "weight": 2.5,
-        "size": "2x2",
-        "safeSlots": 0
-      },
-      "notes": "Fuel for generators and power systems.",
-      "tips": "Heavy but valuable for hideout power upgrades."
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_antiqueteaset",
+    "name": "Antique Tea cup",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/valuable_highvalue_antiqueteacup.webp",
+      "thumbnail": "/images/items/misc/valuable_highvalue_antiqueteacup.webp",
+      "fullsize": "/images/items/misc/valuable_highvalue_antiqueteacup.webp"
     },
-    {
-      "id": "valuable-wire-cutter",
-      "name": "Wire Cutter",
-      "description": "Professional wire cutting tool for electrical work.",
-      "category": "misc",
-      "subcategory": "Tools",
-      "images": {
-        "icon": "/images/items/misc/Icon_valuable_wirecutter.webp",
-        "thumbnail": "/images/items/misc/Icon_valuable_wirecutter.webp",
-        "fullsize": "/images/items/misc/Icon_valuable_wirecutter.webp"
-      },
-      "stats": {
-        "rarity": "Uncommon",
-        "price": 11000,
-        "weight": 0.25,
-        "size": "1x1",
-        "safeSlots": 2
-      },
-      "notes": "Specialized tool for electrical installations.",
-      "tips": "Required for advanced electrical work in hideout."
+    "stats": {
+      "price": 0,
+      "weight": 0.1,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
     },
-    {
-      "id": "valuable-measuring-tape",
-      "name": "Measuring Tape",
-      "description": "Precision measuring tape for construction work.",
-      "category": "misc",
-      "subcategory": "Tools",
-      "images": {
-        "icon": "/images/items/misc/Icon_valuable_measuringtape.webp",
-        "thumbnail": "/images/items/misc/Icon_valuable_measuringtape.webp",
-        "fullsize": "/images/items/misc/Icon_valuable_measuringtape.webp"
-      },
-      "stats": {
-        "rarity": "Common",
-        "price": 5500,
-        "weight": 0.2,
-        "size": "1x1",
-        "safeSlots": 3
-      },
-      "notes": "Essential for accurate construction measurements.",
-      "tips": "Needed for precise hideout construction projects."
-    }
-  ]
-}
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_aspire",
+    "name": "Aspirin",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Medicine",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_Aspire.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_Aspire.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_Aspire.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.12,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_asthmamedication",
+    "name": "Asthma medicine",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Medicine",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_AsthmaMedication.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_AsthmaMedication.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_AsthmaMedication.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.25,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_bandaid",
+    "name": "Adhesive bandages",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Medicine",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_BandAid.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_BandAid.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_BandAid.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.1,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_batter_large",
+    "name": "Storage Battery",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Power",
+    "images": {
+      "icon": "/images/items/misc/valuable_batteries_storagebattery2.webp",
+      "thumbnail": "/images/items/misc/valuable_batteries_storagebattery2.webp",
+      "fullsize": "/images/items/misc/valuable_batteries_storagebattery2.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 4.5,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_beardoil",
+    "name": "Beard Oil",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_beardoil.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_beardoil.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_beardoil.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.15,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_bottledglucose",
+    "name": "Bottled glucose",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Medicine",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_BottledGlucose.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_BottledGlucose.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_BottledGlucose.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.8,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_bullstatue",
+    "name": "Bull statue",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_BullStatue.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_BullStatue.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_BullStatue.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 3.8,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_barcleaner",
+    "name": "Household Cleaner",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/icon_houseclean.webp",
+      "thumbnail": "/images/items/misc/icon_houseclean.webp",
+      "fullsize": "/images/items/misc/icon_houseclean.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.65,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_cash",
+    "name": "Cash 25k",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_cash.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_cash.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_cash.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.25,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_cash2",
+    "name": "Cash 50k",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_cash.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_cash.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_cash.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.5,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_cash3",
+    "name": "Cash 75k",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_cash.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_cash.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_cash.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.75,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_bentrifuge",
+    "name": "Centrifuge",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Medicine",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_Centrifuge.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_Centrifuge.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_Centrifuge.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 3.4,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_ceramic_adhesive",
+    "name": "Ceramic adhesive",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Building",
+    "images": {
+      "icon": "/images/items/misc/valuable_building_ceramicadhesive.webp",
+      "thumbnail": "/images/items/misc/valuable_building_ceramicadhesive.webp",
+      "fullsize": "/images/items/misc/valuable_building_ceramicadhesive.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.4,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_civilradio",
+    "name": "Civil radio",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/valuable_electric_civilradio.webp",
+      "thumbnail": "/images/items/misc/valuable_electric_civilradio.webp",
+      "fullsize": "/images/items/misc/valuable_electric_civilradio.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 1,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_blimbingrope",
+    "name": "Climbing rope",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Tools",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_ClimbingRope.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_ClimbingRope.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_ClimbingRope.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.8,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_bomputertextbook",
+    "name": "Computer manual",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Intel",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_ComputerTextbook.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_ComputerTextbook.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_ComputerTextbook.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.5,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_bpu",
+    "name": "CPU",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_cpu.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_cpu.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_cpu.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.1,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_brimsonqueenring",
+    "name": "Ruby ring",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_CrimsonQueenRing.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_CrimsonQueenRing.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_CrimsonQueenRing.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.02,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_dataline",
+    "name": "Data Cord",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_datacord.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_datacord.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_datacord.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.05,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_defibrillator",
+    "name": "Defibrillator",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Medicine",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_defibrillator.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_defibrillator.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_defibrillator.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 4.2,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_deodorant",
+    "name": "Deodorant",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_deodorant.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_deodorant.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_deodorant.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.4,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_digitalsensor",
+    "name": "Digital sensor",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_DigitalSensor.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_DigitalSensor.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_DigitalSensor.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 3.6,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_disinfectingwipes",
+    "name": "Disinfectant wipes",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Medicine",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_DisinfectingWipes.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_DisinfectingWipes.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_DisinfectingWipes.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_electricdrill",
+    "name": "Electric drill",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Tools",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_electricdrill.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_electricdrill.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_electricdrill.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 2,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_flashlight",
+    "name": "Flash light",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/valuable_electric_flashlight.webp",
+      "thumbnail": "/images/items/misc/valuable_electric_flashlight.webp",
+      "fullsize": "/images/items/misc/valuable_electric_flashlight.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.1,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_gamecartridge_a",
+    "name": "'Showdown' Cart",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_A.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_A.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_A.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.05,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_gamecartridge_b",
+    "name": "'Contractors' Cart",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_B.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_B.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_B.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.1,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_gamecartridge",
+    "name": "GrimLord' Cart",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_Cpng.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_Cpng.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_Cpng.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.1,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_gamecartridge_d",
+    "name": "'Exfilzone' Cart",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_D.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_D.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_D.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.1,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_gameconsole",
+    "name": "Game console",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_GameConsole.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_GameConsole.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_GameConsole.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.14,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_gaspipewrench",
+    "name": "Gas pipe pliers",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Tools",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_GasPipeWrench.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_GasPipeWrench.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_GasPipeWrench.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 3.6,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_gastank",
+    "name": "Gas can",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Combustible",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_gascan.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_gascan.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_gascan.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.22,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_gastank_large",
+    "name": "Large gas can",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Combustible",
+    "images": {
+      "icon": "/images/items/misc/valuable_combustible_largegascan.webp",
+      "thumbnail": "/images/items/misc/valuable_combustible_largegascan.webp",
+      "fullsize": "/images/items/misc/valuable_combustible_largegascan.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.5,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_glue_large",
+    "name": "Instant glue",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Building",
+    "images": {
+      "icon": "/images/items/misc/ValuableItem_B_glue_large.webp",
+      "thumbnail": "/images/items/misc/ValuableItem_B_glue_large.webp",
+      "fullsize": "/images/items/misc/ValuableItem_B_glue_large.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.01,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_goldelephant",
+    "name": "Golden elephant",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/valuable_highvalue_goldelephant.webp",
+      "thumbnail": "/images/items/misc/valuable_highvalue_goldelephant.webp",
+      "fullsize": "/images/items/misc/valuable_highvalue_goldelephant.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 6,
+      "rarity": "Ultimate",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_goldenknife",
+    "name": "Golden prize",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_GoldenKnife.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_GoldenKnife.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_GoldenKnife.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 1.6,
+      "rarity": "Legendary",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_goldenlionring",
+    "name": "Nut",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_GoldenLionRing.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_GoldenLionRing.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_GoldenLionRing.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.025,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_goldenprize",
+    "name": "Golden prize",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/valuable_highvalue_goldprize.webp",
+      "thumbnail": "/images/items/misc/valuable_highvalue_goldprize.webp",
+      "fullsize": "/images/items/misc/valuable_highvalue_goldprize.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 3,
+      "rarity": "Legendary",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_gunoil",
+    "name": "Gun Oil",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Combustible",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_gunoil.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_gunoil.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_gunoil.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_harddrive",
+    "name": "Hard drive",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Intel",
+    "images": {
+      "icon": "/images/items/misc/valuable_information_harddrive.webp",
+      "thumbnail": "/images/items/misc/valuable_information_harddrive.webp",
+      "fullsize": "/images/items/misc/valuable_information_harddrive.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.69,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_horrornovel",
+    "name": "Horror novel",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Intel",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_HorrorNovel.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_HorrorNovel.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_HorrorNovel.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.4,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_insulatingtape",
+    "name": "Insulating Tape",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Building",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_ducttape.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_ducttape.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_ducttape.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.02,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_iodophor",
+    "name": "Iodine",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Medicine",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_Iodophor.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_Iodophor.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_Iodophor.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.16,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_ionbattery",
+    "name": "Ion Battery",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Power",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_ionbattery.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_ionbattery.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_ionbattery.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.08,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_lightbulb",
+    "name": "Energy-saving lamp",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_LightBulb.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_LightBulb.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_LightBulb.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.4,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_lighter",
+    "name": "Lighter",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Combustible",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_lighter.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_lighter.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_lighter.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.06,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_magazine",
+    "name": "Magazine",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Intel",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_Magazine.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_Magazine.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_Magazine.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.3,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_marinestoragebattery",
+    "name": "Marine Battery",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Power",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_MarineStorageBattery.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_MarineStorageBattery.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_MarineStorageBattery.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 17.5,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_match",
+    "name": "Matches",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Combustible",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_match.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_match.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_match.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.05,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_medicalkit",
+    "name": "Portable medical kit",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Medicine",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_MedicalKit.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_MedicalKit.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_MedicalKit.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 1.4,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_medicalscissors",
+    "name": "Medical scissors",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Medicine",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_MedicalScissors.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_MedicalScissors.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_MedicalScissors.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.09,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_militaryharddrive",
+    "name": "Hard drive - classified",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_MilitaryHardDrive.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_MilitaryHardDrive.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_MilitaryHardDrive.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 1.2,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_militaryusbdrive",
+    "name": "USB - classified",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_MilitaryUSBdrive.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_MilitaryUSBdrive.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_MilitaryUSBdrive.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.08,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_moldboard",
+    "name": "Moldboard",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Tools",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_moldboard.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_moldboard.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_moldboard.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.1,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_multipurposecleaner",
+    "name": "Gun Oil",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Combustible",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_gunoil.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_gunoil.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_gunoil.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.8,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_nail",
+    "name": "Nails",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Building",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_nail.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_nail.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_nail.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.08,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_newphone",
+    "name": "New Phone",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_newphone.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_newphone.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_newphone.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.21,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_nut",
+    "name": "Nuts",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Building",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_nuts.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_nuts.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_nuts.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.15,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_nut2",
+    "name": "Nut",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Building",
+    "images": {
+      "icon": "/images/items/misc/valuable_building_bignut.webp",
+      "thumbnail": "/images/items/misc/valuable_building_bignut.webp",
+      "fullsize": "/images/items/misc/valuable_building_bignut.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.03,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_oldphone",
+    "name": "Old Phone",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_newphoneIcon_valuable_newphone.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_newphoneIcon_valuable_newphone.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_newphoneIcon_valuable_newphone.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.16,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_oliveoil",
+    "name": "Olive oil",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Combustible",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_OliveOil.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_OliveOil.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_OliveOil.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 1.1,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_opticaldisc",
+    "name": "CD",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Intel",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_OpticalDisc.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_OpticalDisc.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_OpticalDisc.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.03,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_pcfan",
+    "name": "CPU Fan",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_cpufan.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_cpufan.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_cpufan.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.15,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_perfume",
+    "name": "Perfume",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_Perfume.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_Perfume.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_Perfume.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.3,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_pesticide",
+    "name": "Pesticide",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_pesticide.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_pesticide.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_pesticide.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.22,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_piezometer",
+    "name": "Piezometer",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Building",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_piezometer.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_piezometer.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_piezometer.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.4,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_pipeline",
+    "name": "Valve",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Building",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_pipeline.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_pipeline.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_pipeline.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.3,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_plier",
+    "name": "Plier",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Tools",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_plier.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_plier.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_plier.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.16,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_plier_large",
+    "name": "Large plier",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Tools",
+    "images": {
+      "icon": "/images/items/misc/valuable_tools_largeplier.webp",
+      "thumbnail": "/images/items/misc/valuable_tools_largeplier.webp",
+      "fullsize": "/images/items/misc/valuable_tools_largeplier.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.28,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_powerbank",
+    "name": "Power Bank",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Power",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_powerbank.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_powerbank.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_powerbank.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.35,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_radioscanner",
+    "name": "Radio scanner",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/valuable_electric_radioscanner.webp",
+      "thumbnail": "/images/items/misc/valuable_electric_radioscanner.webp",
+      "fullsize": "/images/items/misc/valuable_electric_radioscanner.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 2,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_ram",
+    "name": "RAM",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_ram.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_ram.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_ram.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.08,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_rat_poison",
+    "name": "Rat poison",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/valuable_household_ratpoison.webp",
+      "thumbnail": "/images/items/misc/valuable_household_ratpoison.webp",
+      "fullsize": "/images/items/misc/valuable_household_ratpoison.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_recorder",
+    "name": "Old Phone",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Intel",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_Recorder.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_Recorder.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_Recorder.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.24,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_rustedcleaner",
+    "name": "Rust cleaner",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/valuable_household_rustcleaner.webp",
+      "thumbnail": "/images/items/misc/valuable_household_rustcleaner.webp",
+      "fullsize": "/images/items/misc/valuable_household_rustcleaner.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.22,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_saltcan",
+    "name": "Salt can",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_SaltCan.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_SaltCan.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_SaltCan.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.14,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_screw",
+    "name": "Bolts",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Building",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_bolts.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_bolts.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_bolts.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.1,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_shampoo",
+    "name": "Shampoo",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_shampoo.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_shampoo.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_shampoo.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.28,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_smallshovel",
+    "name": "Small Shovel",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Tools",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_smallshovel.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_smallshovel.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_smallshovel.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.1,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_smokelesspowder",
+    "name": "Smokeless powder",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Combustible",
+    "images": {
+      "icon": "/images/items/misc/valuable_combustible_smokelesspowder.webp",
+      "thumbnail": "/images/items/misc/valuable_combustible_smokelesspowder.webp",
+      "fullsize": "/images/items/misc/valuable_combustible_smokelesspowder.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 1.3,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_soap",
+    "name": "Soap",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_soap.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_soap.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_soap.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.05,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_socket",
+    "name": "Socket",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/valuable_electric_socket.webp",
+      "thumbnail": "/images/items/misc/valuable_electric_socket.webp",
+      "fullsize": "/images/items/misc/valuable_electric_socket.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.4,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_sparkplug",
+    "name": "Spark Plug",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Tools",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_sparkplug.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_sparkplug.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_sparkplug.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.12,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_spraycan",
+    "name": "Spray Can",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Building",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_spraycan.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_spraycan.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_spraycan.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.3,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_stonlion",
+    "name": "Stone lion",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/valuable_highvalue_stonelion.webp",
+      "thumbnail": "/images/items/misc/valuable_highvalue_stonelion.webp",
+      "fullsize": "/images/items/misc/valuable_highvalue_stonelion.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 4.2,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_storagebattery",
+    "name": "Storage Battery",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Power",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_storagebattery.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_storagebattery.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_storagebattery.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 8,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_superglue",
+    "name": "Super Glue",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Building",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_superglue.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_superglue.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_superglue.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.05,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_tapemeasure",
+    "name": "Measuring Tape",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Tools",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_measuringtape.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_measuringtape.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_measuringtape.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.14,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_tapeplayer",
+    "name": "Civil radio",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_TapePlayer.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_TapePlayer.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_TapePlayer.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.6,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_tape_holder",
+    "name": "Tape holder",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Tools",
+    "images": {
+      "icon": "/images/items/misc/valuable_tools_tapeholder.webp",
+      "thumbnail": "/images/items/misc/valuable_tools_tapeholder.webp",
+      "fullsize": "/images/items/misc/valuable_tools_tapeholder.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.1,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_tape_large",
+    "name": "Gas can",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Combustible",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_gascan.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_gascan.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_gascan.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.08,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_tire_sealant",
+    "name": "Tire sealant",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Tools",
+    "images": {
+      "icon": "/images/items/misc/valuable_tools_tiresealant.webp",
+      "thumbnail": "/images/items/misc/valuable_tools_tiresealant.webp",
+      "fullsize": "/images/items/misc/valuable_tools_tiresealant.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.15,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_toiletpaper",
+    "name": "Toilet Paper",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_toiletpaper.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_toiletpaper.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_toiletpaper.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.03,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_toothpaste",
+    "name": "Toothpaste",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_toothpaste.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_toothpaste.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_toothpaste.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.05,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_transformer",
+    "name": "Voltage transformer",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_Transformer.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_Transformer.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_Transformer.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 1.6,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_uvlight",
+    "name": "UV lamp",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Medicine",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_UVlight.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_UVlight.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_UVlight.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.56,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_visionmodule",
+    "name": "Imaging module",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/Icon_ValuableItem_B_VisionModule.webp",
+      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_VisionModule.webp",
+      "fullsize": "/images/items/misc/Icon_ValuableItem_B_VisionModule.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.8,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_washingliquid",
+    "name": "Flash light",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/valuable_electric_flashlight.webp",
+      "thumbnail": "/images/items/misc/valuable_electric_flashlight.webp",
+      "fullsize": "/images/items/misc/valuable_electric_flashlight.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.1,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_wd40",
+    "name": "WD-40",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Combustible",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_wd40.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_wd40.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_wd40.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.18,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_wire",
+    "name": "Wire",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Building",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_wire.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_wire.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_wire.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.1,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_wirecutting",
+    "name": "Wire Cutter",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Tools",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_wirecutter.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_wirecutter.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_wirecutter.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.08,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_b_wrench",
+    "name": "Wrench",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Tools",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_wrench.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_wrench.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_wrench.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.24,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_camera",
+    "name": "Vintage Camera",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_camera.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_camera.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_camera.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 1.7,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_cloth",
+    "name": "Linen Fabrics",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_cloth.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_cloth.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_cloth.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.41,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_copperwire",
+    "name": "Copper Wire",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Building",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_copperwire.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_copperwire.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_copperwire.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.4,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_csdoll_gold",
+    "name": "Game Figurine (hidden)",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_csdollgold.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_csdollgold.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_csdollgold.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.99,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_csdoll_standard",
+    "name": "Game Figurine #1",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_csdollstandard.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_csdollstandard.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_csdollstandard.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.15,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_csdoll_standard_2",
+    "name": "Game Figurine #2",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/valuable_highvalue_contractors_ed-1.webp",
+      "thumbnail": "/images/items/misc/valuable_highvalue_contractors_ed-1.webp",
+      "fullsize": "/images/items/misc/valuable_highvalue_contractors_ed-1.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.15,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_csdoll_standard_3",
+    "name": "Game Figurine #3",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/valuable_highvalue_csdollgold_3.webp",
+      "thumbnail": "/images/items/misc/valuable_highvalue_csdollgold_3.webp",
+      "fullsize": "/images/items/misc/valuable_highvalue_csdollgold_3.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.15,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_csdoll_standard_4",
+    "name": "Game Figurine #4",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/valuable_highvalue_csdollgold_4.webp",
+      "thumbnail": "/images/items/misc/valuable_highvalue_csdollgold_4.webp",
+      "fullsize": "/images/items/misc/valuable_highvalue_csdollgold_4.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.15,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_csdoll_standard_5",
+    "name": "Game Figurine #5",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/valuable_highvalue_csdollgold_5.webp",
+      "thumbnail": "/images/items/misc/valuable_highvalue_csdollgold_5.webp",
+      "fullsize": "/images/items/misc/valuable_highvalue_csdollgold_5.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.15,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_csdoll_standard_6",
+    "name": "Game Figurine #6",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/valuable_highvalue_csdollgold_6.webp",
+      "thumbnail": "/images/items/misc/valuable_highvalue_csdollgold_6.webp",
+      "fullsize": "/images/items/misc/valuable_highvalue_csdollgold_6.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.15,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_csdoll_standard_7",
+    "name": "Game Figurine #7",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/valuable_highvalue_csdollgold_7.webp",
+      "thumbnail": "/images/items/misc/valuable_highvalue_csdollgold_7.webp",
+      "fullsize": "/images/items/misc/valuable_highvalue_csdollgold_7.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.15,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_ducktoy",
+    "name": "Toy Duck",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_ducktoy.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_ducktoy.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_ducktoy.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.45,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_facialcleaner",
+    "name": "Facial Cleanser",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_facialcleanser.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_facialcleanser.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_facialcleanser.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.25,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_floppydisk",
+    "name": "Floppy Disk",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Intel",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_floppydisk.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_floppydisk.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_floppydisk.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_fossil",
+    "name": "Fossil",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_fossil.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_fossil.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_fossil.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 2.4,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_gamedisk",
+    "name": "Game Disc",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_gamedisk.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_gamedisk.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_gamedisk.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.3,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_gamedisk_deluxedition",
+    "name": "Contractors Delux Edition",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/valuable_highvalue_showdown_ed2.webp",
+      "thumbnail": "/images/items/misc/valuable_highvalue_showdown_ed2.webp",
+      "fullsize": "/images/items/misc/valuable_highvalue_showdown_ed2.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.3,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_gamedisk_showdown",
+    "name": "ShowDown",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/valuable_highvalue_showdown_ed.webp",
+      "thumbnail": "/images/items/misc/valuable_highvalue_showdown_ed.webp",
+      "fullsize": "/images/items/misc/valuable_highvalue_showdown_ed.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.3,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_gamedisk_showdown_deluxedition",
+    "name": "ShowDown Delux Edition",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/valuable_highvalue_contractors_ed.webp",
+      "thumbnail": "/images/items/misc/valuable_highvalue_contractors_ed.webp",
+      "fullsize": "/images/items/misc/valuable_highvalue_contractors_ed.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.3,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_goldcup",
+    "name": "Antique Gold Goblet",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_goldcup.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_goldcup.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_goldcup.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 4.2,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_goldingot",
+    "name": "Gold Ingot",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_goldingot.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_goldingot.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_goldingot.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 6.2,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_graphiccard",
+    "name": "Graphic Card",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_graphiccard.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_graphiccard.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_graphiccard.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 2.5,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_gunpowder",
+    "name": "Gunpowder",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Combustible",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_gunpowder.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_gunpowder.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_gunpowder.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 1.2,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_hammer",
+    "name": "Hammer",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Tools",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_hammer.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_hammer.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_hammer.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.3,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_householdleaner",
+    "name": "Household Cleaner",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/icon_houseclean.webp",
+      "thumbnail": "/images/items/misc/icon_houseclean.webp",
+      "fullsize": "/images/items/misc/icon_houseclean.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.7,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_magazine",
+    "name": "Magazine",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/valuable_task_ntg_medicalreport.webp",
+      "thumbnail": "/images/items/misc/valuable_task_ntg_medicalreport.webp",
+      "fullsize": "/images/items/misc/valuable_task_ntg_medicalreport.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.3,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_mouse",
+    "name": "Mouse",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_mouse.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_mouse.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_mouse.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.15,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_mug",
+    "name": "Mug",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_mug.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_mug.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_mug.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.32,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_notebook",
+    "name": "Notebook",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Intel",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_notepad.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_notepad.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_notepad.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.27,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_oilcan",
+    "name": "Oil can",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Combustible",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_oilcan.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_oilcan.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_oilcan.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 3.5,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_pocketwatch",
+    "name": "Pocketwatch",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_pocketwatch.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_pocketwatch.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_pocketwatch.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.15,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_radio",
+    "name": "Portable Radio",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_radio.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_radio.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_radio.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 7,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_remote",
+    "name": "Remote Control",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_remotecontrol.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_remotecontrol.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_remotecontrol.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.25,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_screwdriver",
+    "name": "Screwdriver",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Tools",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_screwdriver.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_screwdriver.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_screwdriver.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_silvercup",
+    "name": "Antique Silver Goblet",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_silvercup.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_silvercup.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_silvercup.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 1.6,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_sunglass",
+    "name": "Sunglasses",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_sunglass.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_sunglass.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_sunglass.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.1,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_toycar",
+    "name": "Toy Car",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_toycar.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_toycar.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_toycar.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_videotape",
+    "name": "Videotape",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Intel",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_tape.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_tape.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_tape.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.28,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_vrheadset",
+    "name": "VR Headset",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_vrheadset.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_vrheadset.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_vrheadset.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_wastechip",
+    "name": "Waste Chip",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_wastechip.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_wastechip.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_wastechip.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.15,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_wooddoll",
+    "name": "Wood Doll",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_wooddoll.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_wooddoll.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_wooddoll.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.25,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_default__valuableitem_wrench",
+    "name": "Samll Wrench",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Tools",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_wrench.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_wrench.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_wrench.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.3,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  }
+]

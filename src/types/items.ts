@@ -217,7 +217,13 @@ export interface Syringe extends Medicine {
     }
 }
 
-export type AnyItem = Weapon | Armor | Ammunition | BodyArmor | Helmet | FaceShield | Medicine | Grenade | Attachment;
+export interface Misc extends Item {
+    category: 'misc';
+    subcategory: 'Household' | 'Intel' | 'Electric' | 'Power' | 'Tools' | 'Combustible' | 'Building' | 'HighValue' | 'Medicine';
+    stats: Item['stats'];
+}
+
+export type AnyItem = Weapon | Armor | Ammunition | BodyArmor | Helmet | FaceShield | Medicine | Grenade | Attachment | Misc;
 
 // Protective zone from armor data
 export interface ProtectiveZone {
@@ -438,7 +444,7 @@ export const itemCategories: Record<string, ItemCategory> = {
         ]
     }
     ,
-    'gear': {
+    gear: {
         id: 'gear',
         name:
             'Gear',
@@ -466,29 +472,30 @@ export const itemCategories: Record<string, ItemCategory> = {
             'Painkillers'
         ]
     },
+    'misc': {
+        id: 'misc',
+        name: 'Miscellaneous',
+        description: 'Various utility items and materials',
+        icon: 'box',
+        subcategories: [
+            'Household',
+            'Intel',
+            'Electric',
+            'Power',
+            'Tools',
+            'Combustible',
+            'Building',
+            'HighValue',
+            'Medicine'
+        ]
+    }
+
     //TODO - update config after data extraction
 // {
 //     id: 'food',
 //     name: 'Food & Drink',
 //     description: 'Consumables for sustenance and hydration',
 //     icon: 'food'
-// },
-// {
-//     id: 'junk',
-//     name: 'Junk',
-//     description: 'Miscellaneous items that can be used for crafting or trading',
-//     icon: 'box',
-//     subcategories: [
-//         'High Value',
-//         'Buildables',
-//         'Combustibles',
-//         'Intel',
-//         'Electronic',
-//         'Tools',
-//         'Household',
-//         'Power',
-//         'Misc'
-//     ]
 // },
 // {
 //     id: 'attachments',

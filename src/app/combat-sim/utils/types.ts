@@ -12,7 +12,7 @@ import {
     FaceShield, Grenade, Grip,
     Helmet,
     Item, LimbRestore, Magazine,
-    Medicine, Painkiller, Rail, Sight, Stim, Suppressor, Syringe, TacticalAttachment,
+    Medicine, Misc, Painkiller, Rail, Sight, Stim, Suppressor, Syringe, TacticalAttachment,
     Weapon
 } from "@/types/items";
 
@@ -244,6 +244,10 @@ export function isLimbRestore(item: Item): item is LimbRestore {
 export function isPainkiller(item: Item): item is Painkiller {
     return (item.category === 'medicine') &&
     item.subcategory === 'Painkillers'
+}
+
+export function isMisc(item: Item): item is Misc {
+    return (item.category === 'misc')
 }
 
 // Display mode labels
