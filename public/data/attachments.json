@@ -308,7 +308,7 @@
   {
     "id": "supressor_defaultsuppressor",
     "name": "Rifle Suppressor",
-    "description": "",
+    "description": "Standard rifle suppressor with significant ergonomics penalty but reliable recoil reduction",
     "category": "attachments",
     "subcategory": "Suppressors",
     "images": {
@@ -338,12 +338,12 @@
       }
     },
     "template": "supressor_suppressor_base",
-    "tips": ""
+    "tips": "Basic suppression option - heavy ergo penalty but provides consistent stealth and recoil benefits"
   },
   {
     "id": "supressor_kacprs_bk",
     "name": "Quicker BK",
-    "description": "",
+    "description": "Quicker BK suppressor offering improved ergonomics with enhanced recoil control",
     "category": "attachments",
     "subcategory": "Suppressors",
     "images": {
@@ -373,12 +373,12 @@
       }
     },
     "template": "supressor_suppressor_base",
-    "tips": ""
+    "tips": "Better than standard rifle suppressor - improved ergo penalty makes it worth the upgrade"
   },
   {
     "id": "supressor_kacprs_sand",
     "name": "Quicker SD",
-    "description": "",
+    "description": "Sand-colored Quicker suppressor with identical performance to black variant",
     "category": "attachments",
     "subcategory": "Suppressors",
     "images": {
@@ -408,12 +408,12 @@
       }
     },
     "template": "supressor_suppressor_base",
-    "tips": ""
+    "tips": "Same stats as BK version - choose based on camouflage needs and aesthetic preference"
   },
   {
     "id": "supressor_m4sd",
     "name": "ARSD",
-    "description": "",
+    "description": "ARSD suppressor with heaviest weight but strong recoil reduction capabilities",
     "category": "attachments",
     "subcategory": "Suppressors",
     "images": {
@@ -443,12 +443,12 @@
       }
     },
     "template": "supressor_suppressor_base",
-    "tips": ""
+    "tips": "Heaviest standard option - only choose when maximum recoil control outweighs mobility"
   },
   {
     "id": "supressor_osprey9",
     "name": "Pelican 9",
-    "description": "",
+    "description": "Pelican 9 suppressor combining lightweight design with excellent recoil control",
     "category": "attachments",
     "subcategory": "Suppressors",
     "images": {
@@ -478,12 +478,12 @@
       }
     },
     "template": "supressor_suppressor_base",
-    "tips": ""
+    "tips": "Best overall suppressor - lightest weight with superior recoil reduction and low ergo penalty"
   },
   {
     "id": "supressor_pistolsuppressor",
     "name": "Pistol Suppressor",
-    "description": "",
+    "description": "Compact pistol suppressor designed for handgun platforms with moderate penalties",
     "category": "attachments",
     "subcategory": "Suppressors",
     "images": {
@@ -513,11 +513,11 @@
       }
     },
     "template": "supressor_suppressor_base",
-    "tips": ""
+    "tips": "Essential for stealth pistol builds - moderate penalties for valuable sound reduction"
   },
   {
     "id": "supressor_qdl",
-    "name": "Suppressor",
+    "name": "QDL Suppressor",
     "description": "Unique QDL suppressor with damage bonuses but complex handling modifications",
     "category": "attachments",
     "subcategory": "Suppressors",
@@ -550,12 +550,12 @@
       }
     },
     "template": "supressor_br_suppressor_ground",
-    "tips": "Was not found in the ExfilZone AFAIK"
+    "tips": "Only suppressor that increases damage - complex stats require careful consideration of trade-offs"
   },
   {
     "id": "supressor_s_hybrid46_grey",
     "name": "Mistrey46 GY",
-    "description": "",
+    "description": "Mistrey46 Grey with highest ergonomics penalty but maximum recoil reduction",
     "category": "attachments",
     "subcategory": "Suppressors",
     "images": {
@@ -585,12 +585,12 @@
       }
     },
     "template": "supressor_suppressor_base",
-    "tips": ""
+    "tips": "Maximum recoil control option - extreme ergo penalty requires specialized builds to manage"
   },
   {
     "id": "supressor_s_hybrid46_sand",
     "name": "Mistrey46 SD",
-    "description": "",
+    "description": "Sand Mistrey46 with zero weight but identical performance to grey variant",
     "category": "attachments",
     "subcategory": "Suppressors",
     "images": {
@@ -620,12 +620,12 @@
       }
     },
     "template": "supressor_s_hybrid46_grey",
-    "tips": ""
+    "tips": "Same recoil benefits as grey but no weight - potential bug or special variant"
   },
   {
     "id": "supressor_s_tbeast_normal",
     "name": "Sleipnir",
-    "description": "",
+    "description": "Standard Sleipnir suppressor offering balanced performance with good recoil control",
     "category": "attachments",
     "subcategory": "Suppressors",
     "images": {
@@ -655,12 +655,12 @@
       }
     },
     "template": "supressor_suppressor_base",
-    "tips": ""
+    "tips": "Solid mid-tier choice - balanced stats make it suitable for most rifle builds"
   },
   {
     "id": "supressor_s_tbeast_u_bk",
     "name": "Sleipnir BK Cover ",
-    "description": "",
+    "description": "Legendary Sleipnir BK Cover with enhanced recoil reduction and tactical appearance",
     "category": "attachments",
     "subcategory": "Suppressors",
     "images": {
@@ -690,12 +690,12 @@
       }
     },
     "template": "supressor_suppressor_base",
-    "tips": ""
+    "tips": "Premium Sleipnir variant - legendary tier justified by superior recoil control"
   },
   {
     "id": "supressor_s_tbeast_uamo",
     "name": "Sleipnir MC Cover ",
-    "description": "",
+    "description": "Multicam Sleipnir Cover with zero weight but legendary-tier performance",
     "category": "attachments",
     "subcategory": "Suppressors",
     "images": {
@@ -705,7 +705,7 @@
     },
     "stats": {
       "price": 0,
-      "weight": 0,
+      "weight": 0.495,
       "rarity": "Common",
       "attachmentModifier": {
         "headDamageScaleModifier": 0,
@@ -725,12 +725,12 @@
       }
     },
     "template": "supressor_s_tbeast_u_bk",
-    "tips": ""
+    "tips": "Premium Sleipnir variant - legendary tier justified by superior recoil control"
   },
   {
     "id": "supressor_s_tbeast_ub",
     "name": "Sleipnir SD Cover ",
-    "description": "",
+    "description": "Sand Sleipnir Cover offering legendary performance without weight penalty",
     "category": "attachments",
     "subcategory": "Suppressors",
     "images": {
@@ -740,7 +740,7 @@
     },
     "stats": {
       "price": 0,
-      "weight": 0,
+      "weight": 0.495,
       "rarity": "Common",
       "attachmentModifier": {
         "headDamageScaleModifier": 0,
@@ -760,12 +760,12 @@
       }
     },
     "template": "supressor_s_tbeast_u_bk",
-    "tips": ""
+    "tips": "Premium Sleipnir variant - legendary tier justified by superior recoil control"
   },
   {
     "id": "supressor_mp9_suppressor",
-    "name": "Mistrey46 SD",
-    "description": "",
+    "name": "MP9 Suppressor",
+    "description": "MP9-specific suppressor with extreme ergonomics penalty but decent recoil control",
     "category": "attachments",
     "subcategory": "Suppressors",
     "images": {
@@ -795,7 +795,7 @@
       }
     },
     "template": "supressor_suppressor_base",
-    "tips": ""
+    "tips": "Highest ergo penalty in class - only use on MP9 builds designed around stealth over handling"
   },
   {
     "id": "tactical_flashlight_h200",
