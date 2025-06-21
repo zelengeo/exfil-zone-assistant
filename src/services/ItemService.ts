@@ -4,7 +4,7 @@ import {
     isBandage,
     isBodyArmor,
     isFaceShield, isGrenade,
-    isHelmet, isLimbRestore, isMagazine, isMedicine, isMisc,
+    isHelmet, isLimbRestore, isMagazine, isMedicine,
     isPainkiller, isSight, isStim, isSyringe, isTactical,
     isWeapon
 } from "@/app/combat-sim/utils/types";

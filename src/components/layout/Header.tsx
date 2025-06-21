@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import Link from 'next/link';
-import {Coffee, FileText, Menu, Package, Target, X} from 'lucide-react';
+import {Coffee, FileText, Menu, Package, Target, Wrench, X} from 'lucide-react';
 
 const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,6 +21,10 @@ const Header: React.FC = () => {
                     <Link href="/items" className="flex items-center gap-2 text-lg hover:text-olive-500 transition-colors group">
                         <Package size={20} className="text-olive-600 group-hover:text-olive-500" />
                         <span>Items</span>
+                    </Link>
+                    <Link href="/hideout-upgrades" className="flex items-center gap-2 text-lg hover:text-olive-500 transition-colors group">
+                        <Wrench size={20} className="text-olive-600 group-hover:text-olive-500" />
+                        <span>Hideout Upgrades</span>
                     </Link>
                     <Link href="/combat-sim" className="flex items-center gap-2 text-lg hover:text-olive-500 transition-colors group">
                         <Target size={20} className="text-olive-600 group-hover:text-olive-500" />
@@ -64,6 +68,14 @@ const Header: React.FC = () => {
                         >
                             <Package size={24} className="text-olive-600" />
                             <span>Items Database</span>
+                        </Link>
+                        <Link
+                            href="/hideout-upgrades"
+                            className="flex items-center gap-3 text-xl py-2 px-4 hover:bg-military-700 rounded-sm transition-all border border-transparent hover:border-olive-700"
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            <Target size={24} className="text-olive-600" />
+                            <span>Hideout Upgrades</span>
                         </Link>
                         <Link
                             href="/combat-sim"

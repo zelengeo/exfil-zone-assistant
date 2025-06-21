@@ -516,43 +516,6 @@
     "tips": "Essential for stealth pistol builds - moderate penalties for valuable sound reduction"
   },
   {
-    "id": "supressor_qdl",
-    "name": "QDL Suppressor",
-    "description": "Unique QDL suppressor with damage bonuses but complex handling modifications",
-    "category": "attachments",
-    "subcategory": "Suppressors",
-    "images": {
-      "icon": "/images/items/attachments/QDL.webp",
-      "thumbnail": "/images/items/attachments/QDL.webp",
-      "fullsize": "/images/items/attachments/QDL.webp"
-    },
-    "stats": {
-      "price": 0,
-      "weight": 0.75,
-      "rarity": "Common",
-      "attachmentModifier": {
-        "gunHitDamageModifier": 0.08,
-        "headDamageScaleModifier": 0.04,
-        "bulletVelocityModifier": 0.038,
-        "ADSSpeedModifier": -0.05,
-        "ergonomicsModifier": -0.1,
-        "shotGunBulletSpreadModifer": -0.15,
-        "damageDropModifer": 0.015,
-        "shiftMomentumModifer": 0.035,
-        "shiftStiffnessModifer": -0.032,
-        "yawMomentumModifer": 0.07,
-        "rollMomentumModifer": 0.15,
-        "rollStiffnessModifer": -0.05,
-        "pitchMomentumModifer": 0.1,
-        "pitchStiffnessModifer": -0.05,
-        "verticalRecoilModifier": -0.01,
-        "horizontalRecoilModifier": -0.02
-      }
-    },
-    "template": "supressor_br_suppressor_ground",
-    "tips": "Only suppressor that increases damage - complex stats require careful consideration of trade-offs"
-  },
-  {
     "id": "supressor_s_hybrid46_grey",
     "name": "Mistrey46 GY",
     "description": "Mistrey46 Grey with highest ergonomics penalty but maximum recoil reduction",

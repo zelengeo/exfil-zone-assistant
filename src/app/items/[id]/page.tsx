@@ -20,7 +20,7 @@ import {getItemById} from "@/services/ItemService";
 import {
     isAmmunition,
     isAnyItem,
-    isArmor, isAttachment, isGrenade, isMedicine, isWeapon
+    isArmor, isAttachment, isGrenade, isMedicine, isMisc, isWeapon
 } from "@/app/combat-sim/utils/types";
 import GrenadeSpecificStats from "@/app/items/[id]/components/GrenadeSpecificStats";
 import MedicineSpecificStats from "@/app/items/[id]/components/MedicineSpecificStats";
@@ -96,7 +96,7 @@ const renderCategorySpecificStats = (item: AnyItem) => {
             if (isAmmunition(item)) return <AmmunitionSpecificStats item={item}/>;
             break;
         case "attachments":
-            if (isAttachment(item)) return <AttachmentSpecificStats item={item} />;
+            if (isAttachment(item)) return <AttachmentSpecificStats item={item}/>;
             break;
         case "grenades":
             if (isGrenade(item)) return <GrenadeSpecificStats item={item}/>;
@@ -256,13 +256,15 @@ export default function ItemDetail({params}: PageProps) {
                     <div className="md:col-span-2">
                         <div className="military-box p-6 rounded-sm">
                             <h2 className="text-2xl font-bold text-olive-400 mb-4">Description</h2>
-                            <p className="text-tan-200 mb-6 leading-relaxed">{item.description}</p>
+                            <p className="text-tan-200 mb-6 leading-relaxed">{item.description || item.name}</p>
 
 
-                            <h2 className="text-2xl font-bold text-olive-400 mb-4">Specifications</h2>
-                            <div className="mb-6">
-                                {isAnyItem(item) && renderCategorySpecificStats(item)}
-                            </div>
+                            {isMisc(item) || (<><h2
+                                className="text-2xl font-bold text-olive-400 mb-4">Specifications</h2>
+                                <div className="mb-6">
+                                    {isAnyItem(item) && renderCategorySpecificStats(item)}
+                                </div>
+                            </>)}
 
                             {item.tips && (
                                 <>
