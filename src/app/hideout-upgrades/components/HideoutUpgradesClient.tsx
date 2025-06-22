@@ -1,21 +1,77 @@
 'use client';
 
-import React, {useState, useMemo} from 'react';
+import React, {useState, useMemo, useEffect} from 'react';
 import {hideoutUpgrades} from '@/data/hideout-upgrades';
 import TotalCostsDisplay from "@/app/hideout-upgrades/components/TotalCostsDisplay";
 import Layout from "@/components/layout/Layout";
 import {useFetchItems} from "@/hooks/useFetchItems";
 import HideoutOverview from "@/app/hideout-upgrades/components/HideoutOverview";
 
+type HideoutUpgradeKey = keyof typeof hideoutUpgrades;
+const isValidHideoutUpgradeKey = (key: string): key is HideoutUpgradeKey => {
+    return key in hideoutUpgrades;
+};
+
+
 const categories = Array.from(Object.values(hideoutUpgrades).reduce((acc, upgrade) => {
     acc.add(upgrade.categoryId);
     return acc;
 }, new Set<string>()))
 
+// Save upgrades
+const saveUpgrades = (upgradedAreas: Set<string>) => {
+    localStorage.setItem('hideout-upgrades', JSON.stringify([...upgradedAreas]));
+};
+
+// Load upgrades
+const loadUpgrades = (): Set<HideoutUpgradeKey> => {
+    if (typeof window === 'undefined') return new Set<HideoutUpgradeKey>(); // Server-side safety
+
+
+    const saved = localStorage.getItem('hideout-upgrades');
+    if (!saved) return new Set<HideoutUpgradeKey>();
+
+    try {
+        const parsedArray = JSON.parse(saved) as string[];
+        // Filter out any invalid keys to ensure type safety
+        const validKeys = parsedArray.filter(isValidHideoutUpgradeKey);
+        return new Set<HideoutUpgradeKey>(validKeys);
+    } catch (error) {
+        console.error('Failed to parse saved hideout upgrades:', error);
+        return new Set<HideoutUpgradeKey>();
+    }
+};
+
 
 export default function HideoutUpgradesClient() {
     const {getItemById} = useFetchItems();
-    const [upgradedAreas, setUpgradedAreas] = useState<Set<string>>(new Set());
+    const [upgradedAreas, setUpgradedAreas] = useState<Set<HideoutUpgradeKey>>(new Set());
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        setUpgradedAreas(loadUpgrades());
+        setIsLoaded(true);
+    }, []);
+
+    const onAreaUpgrade = (upgradeKey: HideoutUpgradeKey, isLevelUp: boolean = true ) => {
+        setUpgradedAreas(prev => {
+            let newState;
+            if (isLevelUp) {
+                newState = new Set([...prev, upgradeKey]);
+            } else {
+                newState = new Set([...prev]);
+                newState.delete(upgradeKey);
+            }
+            saveUpgrades(newState);
+            return newState;
+        })
+    }
+
+    const resetUpgrades = () => {
+        const newState = new Set<HideoutUpgradeKey>();
+        saveUpgrades(newState)
+        setUpgradedAreas(newState)
+    }
 
     // Track current level for each area
     const areaLevels = useMemo(() => {
@@ -37,7 +93,7 @@ export default function HideoutUpgradesClient() {
 
         // Update levels based on upgrades
         upgradedAreas.forEach(upgradeKey => {
-            const upgrade = hideoutUpgrades[upgradeKey as keyof typeof hideoutUpgrades];
+            const upgrade = hideoutUpgrades[upgradeKey as HideoutUpgradeKey];
             if (upgrade) {
                 levels[upgrade.areaId] = Math.max(levels[upgrade.areaId] || 0, upgrade.level);
             }
@@ -61,9 +117,12 @@ export default function HideoutUpgradesClient() {
 
             {/* Hideout Overview Section */}
             <section className="mb-12">
-                <HideoutOverview areaLevels={areaLevels}
-                                 onAreaUpgrade={(areaKey) => setUpgradedAreas(prev => new Set([...prev, areaKey]))}
-                                 getItemById={getItemById}/>
+                <HideoutOverview upgradedAreas={upgradedAreas}
+                                 areaLevels={areaLevels}
+                                 onAreaUpgrade={onAreaUpgrade}
+                                 resetUpgrades={resetUpgrades}
+                                 getItemById={getItemById}
+                                 isLoaded={isLoaded}/>
             </section>
 
             {/* Divider */}
@@ -71,7 +130,7 @@ export default function HideoutUpgradesClient() {
 
             {/* Exchange Cost Summary Section */}
             <section>
-                <TotalCostsDisplay upgradedAreas={upgradedAreas} getItemById={getItemById}/>
+                {isLoaded && <TotalCostsDisplay upgradedAreas={upgradedAreas} getItemById={getItemById}/>}
             </section>
         </div>
     </Layout>

@@ -2,14 +2,22 @@ import React, {useState} from 'react';
 import Image from 'next/image';
 import {areaIcons, hideoutUpgrades, hideoutUpgradesTasks} from '@/data/hideout-upgrades';
 import {Item} from '@/types/items';
-import {X, ArrowUp, DollarSign, CheckCircle} from 'lucide-react';
+import {X, ArrowUp, DollarSign, Undo, RotateCcw} from 'lucide-react';
 
-type UpgradeData = typeof hideoutUpgrades[keyof typeof hideoutUpgrades];
+
+type HideoutUpgradeKey = keyof typeof hideoutUpgrades;
+type UpgradeData = typeof hideoutUpgrades[HideoutUpgradeKey];
+const isValidHideoutUpgradeKey = (key: string): key is HideoutUpgradeKey => {
+    return key in hideoutUpgrades;
+};
 
 interface HideoutOverviewProps {
+    upgradedAreas: Set<HideoutUpgradeKey>;
     areaLevels: Record<string, number>;
     getItemById: (id: string) => Item | undefined;
-    onAreaUpgrade: (areaKey: string) => void;
+    resetUpgrades: () => void;
+    onAreaUpgrade: (upgradeKey: HideoutUpgradeKey, isLevelUp: boolean) => void;
+    isLoaded: boolean;
 }
 
 interface AreaPosition {
@@ -107,11 +115,35 @@ const checkLevelConditions = (areaId: string, level: number | null, areaLevels: 
     return true;
 };
 
+const checkCanUndo = (areaId: string, level: number, upgradedAreas: HideoutOverviewProps["upgradedAreas"]) => {
+    for (const upgrade of upgradedAreas) {
+        const levelConditions = hideoutUpgrades[upgrade].levelConditions;
+
+
+        if (areaId in levelConditions) {
+            const requiredLevel = levelConditions[areaId as keyof typeof levelConditions];
+            if (requiredLevel === level) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+const getAreaUpgradeId = (areaId: string, level: number) => {
+    const upgradeId = `${areaId}Lv${level}`;
+    if (isValidHideoutUpgradeKey(upgradeId)) return upgradeId;
+    return null;
+};
+
 
 export default function HideoutOverview({
+                                            upgradedAreas,
                                             areaLevels,
                                             getItemById,
-                                            onAreaUpgrade
+                                            resetUpgrades,
+                                            onAreaUpgrade,
+                                            isLoaded = true,
                                         }: HideoutOverviewProps) {
     const [selectedCategory, setSelectedCategory] = useState<string>('None');
     const [selectedUpgrade, setSelectedUpgrade] = useState<UpgradeData | null>(null);
@@ -142,10 +174,20 @@ export default function HideoutOverview({
         console.warn(`Area ${areaId} has invalid level`);
     };
 
-    const handleUpgrade = () => {
+    const handleUpgrade = (isLevelUp: boolean = true) => {
         if (selectedUpgrade) {
-            onAreaUpgrade(`${selectedUpgrade.areaId}Lv${selectedUpgrade.level}`);
-            setSelectedUpgrade(null);
+            const upgradeId = getAreaUpgradeId(selectedUpgrade.areaId, selectedUpgrade.level);
+            if (!upgradeId) {
+                console.error(`Invalid upgrade ID: ${selectedUpgrade.areaId}Lv${selectedUpgrade.level}`);
+                setSelectedUpgrade(null);
+                return;
+            }
+            onAreaUpgrade(upgradeId, isLevelUp);
+            if (isLevelUp) {
+                const nextUpgradeId = getAreaUpgradeId(selectedUpgrade.areaId, selectedUpgrade.level+1)
+                if (nextUpgradeId) setSelectedUpgrade(hideoutUpgrades[nextUpgradeId])
+            }
+
         }
     };
 
@@ -170,11 +212,10 @@ export default function HideoutOverview({
                     </div>
 
                     {/* Overlay Areas */}
-                    {areasByCategory[selectedCategory].map((areaId) => {
+                    {isLoaded && areasByCategory[selectedCategory].map((areaId) => {
                         const position = AREA_POSITIONS[areaId] || {top: '50%', left: '50%'};
                         const isCategory = categories.has(areaId) && areaLevels[areaId] === 1;
                         const canUpgrade = !isCategory && checkLevelConditions(areaId, null, areaLevels);
-
 
 
                         const iconConfig = getAreaIconSafe(areaId);
@@ -212,6 +253,20 @@ export default function HideoutOverview({
                             </button>
                         );
                     })}
+                    {isLoaded && upgradedAreas.size > 0 && (<button
+                        onClick={resetUpgrades}
+                        className={`absolute w-22 h-6 rounded-sm transition-all duration-300 hover:scale-110 cursor-pointer bg-red-600/20 border border-red-500 
+                                 text-red-400 hover:bg-red-600/30 hover:text-red-300`}
+                        style={{
+                            top: "97%",
+                            left: "95%",
+                            transform: 'translate(-50%, -50%)'
+                        }}
+                    ><RotateCcw size={16}/>
+                        Reset All
+
+                    </button>)
+                    }
                 </div>
 
                 {/* Upgrade Popover */}
@@ -318,29 +373,21 @@ export default function HideoutOverview({
                             </div>
 
                             {/* Controls */}
-                            <div className="flex gap-3">
-                                {/*<button
-                                    disabled
-                                    className="flex-1 py-3 bg-black/90 border border-military-600 rounded-sm
-                           text-tan-500 font-medium flex items-center justify-center gap-2
-                           opacity-50 cursor-not-allowed"
-                                >
-                                    <Undo size={18}/>
-                                    Undo
-                                </button>*/}
+                            <div className="flex">
                                 {((areaLevels[selectedUpgrade.areaId] || 0) >= selectedUpgrade.level) ? (
                                         <button
-                                            disabled
-                                            className="flex-1 py-3 bg-black/90 border border-military-600 rounded-sm
+                                            disabled={!checkCanUndo(selectedUpgrade.areaId, selectedUpgrade.level, upgradedAreas)}
+                                            className="flex-1 py-3 bg-black/80 border hover:bg-black/95 transition-colors border-military-600 rounded-sm
                            text-tan-500 font-medium flex items-center justify-center gap-2
-                           opacity-50 cursor-not-allowed"
+                           disabled:opacity-50 disabled:cursor-not-allowed"
+                                            onClick={() => handleUpgrade(false)}
                                         >
-                                            <CheckCircle size={18}/>
-                                            Acquired
+                                            <Undo size={18}/>
+                                            Undo
                                         </button>
                                     ) :
                                     (<button
-                                        onClick={handleUpgrade}
+                                        onClick={() => handleUpgrade(true)}
                                         disabled={!checkLevelConditions(selectedUpgrade.areaId, selectedUpgrade.level, areaLevels)}
                                         className="flex-1 py-3 bg-olive-600 rounded-sm text-black font-bold
                            flex items-center justify-center gap-2 hover:bg-olive-500

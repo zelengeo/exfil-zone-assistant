@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 interface TotalCostsDisplayProps {
-    upgradedAreas: Set<string>;
+    upgradedAreas: Set<keyof typeof hideoutUpgrades>;
     getItemById: (id: string) => Item | undefined;
 }
 
@@ -22,7 +22,7 @@ export default function TotalCostsDisplay({upgradedAreas, getItemById}: TotalCos
         let totalPrice = 0;
 
         Object.entries(hideoutUpgrades).forEach(([key, upgrade]) => {
-            if (!upgradedAreas.has(key)) {
+            if (!upgradedAreas.has(key as keyof typeof hideoutUpgrades)) {
                 totalPrice += upgrade.price;
 
                 Object.entries(upgrade.exchange).forEach(([itemId, quantity]) => {
