@@ -1,6 +1,6 @@
-import {useMemo} from 'react';
+import {useMemo, useState} from 'react';
 import {hideoutUpgrades} from '@/data/hideout-upgrades';
-import {DollarSign, Package, ExternalLink} from 'lucide-react';
+import {DollarSign, Package, ExternalLink, X} from 'lucide-react';
 import {Item} from '@/types/items';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -15,7 +15,59 @@ interface ItemWithQuantity {
     item: Item;
 }
 
+function getItemDiv({item, quantity}: ItemWithQuantity, setSelectedItem: (id: string) => void) {
+    return (
+        <div
+            key={item.id}
+            className="bg-black/30 border border-military-600 rounded-sm p-3
+                             hover:border-olive-600 hover:bg-black/50 transition-all duration-200
+                             flex items-center gap-3 group"
+            onClick={() => setSelectedItem(item.id)}
+        >
+            {/* Item Icon */}
+            <Link
+                href={`/items/${item.id}`}
+                target='_blank'
+                className="relative w-12 h-12 flex-shrink-0 bg-black/50 rounded-sm
+                               border border-military-700 hover:border-olive-600 transition-all
+                               overflow-hidden group/icon"
+            >
+                <Image
+                    src={item?.images.icon || '/images/missing-item.png'}
+                    alt={item?.name || item.id}
+                    fill
+                    sizes="full"
+                    className="object-contain p-1 group-hover/icon:scale-110 transition-transform"
+                />
+                <div
+                    className="absolute inset-0 bg-olive-400/0 group-hover/icon:bg-olive-400/10 transition-colors"/>
+                <ExternalLink
+                    size={12}
+                    className="absolute top-1 right-1 text-tan-400 opacity-0 group-hover/icon:opacity-100 transition-opacity"
+                />
+            </Link>
+
+            {/* Item Name */}
+            <div className="flex-grow min-w-0">
+                <p className="text-sm text-tan-300 group-hover:text-tan-100 truncate">
+                    {item?.name || item.id}
+                </p>
+                {item?.subcategory && (
+                    <p className="text-xs text-tan-500">{item?.subcategory}</p>
+                )}
+            </div>
+
+            {/* Quantity */}
+            <span className="text-sm font-bold text-olive-400 min-w-[3rem] text-right
+                                   bg-black/50 px-2 py-1 rounded-sm border border-olive-600/50">
+                      ×{quantity}
+                    </span>
+        </div>
+    )
+}
+
 export default function TotalCostsDisplay({upgradedAreas, getItemById}: TotalCostsDisplayProps) {
+    const [selectedItem, setSelectedItem] = useState<string | null>(null);
     // Calculate total exchange costs
     const totalCosts = useMemo(() => {
         const costs: { [key: string]: number } = {};
@@ -34,18 +86,125 @@ export default function TotalCostsDisplay({upgradedAreas, getItemById}: TotalCos
         return {items: costs, price: totalPrice};
     }, [upgradedAreas]);
 
-    // Sort and prepare items with quantity //TODO decide how to sort
-    const sortedItems = Object.entries(totalCosts.items).map(([itemId, quantity]) => ({
-        quantity,
-        item: getItemById(itemId)
-    })).filter(e => !!e.item) as ItemWithQuantity[];
+
+    const groupedItems = useMemo(() => {
+        const sortedItems = Object.entries(totalCosts.items).map(([itemId, quantity]) => ({
+            quantity,
+            item: getItemById(itemId)
+        })).filter(e => !!e.item && (e.quantity > 0)).sort((a, b) => b.quantity - a.quantity) as ItemWithQuantity[];
+
+        const groups = {
+            high: [] as ItemWithQuantity[],
+            medium: [] as ItemWithQuantity[],
+            low: [] as ItemWithQuantity[],
+            totalLength: sortedItems.length,
+        };
+
+        sortedItems.forEach(item => {
+            if (item.quantity >= 10) {
+                groups.high.push(item);
+            } else if (item.quantity >= 5) {
+                groups.medium.push(item);
+            } else {
+                groups.low.push(item);
+            }
+        })
+        return groups;
+    }, [getItemById, totalCosts]);
+
+
+    const mapItemWithQuantity = (item: ItemWithQuantity) => getItemDiv(item, setSelectedItem);
+
+
+    const getSelectedItemPopover = () => {
+        if (!selectedItem) return null;
+        const item = getItemById(selectedItem);
+        if (!item) return null;
+        const upgradesUsingItem = Object.keys(hideoutUpgrades).reduce((acc, key) => {
+            const typedKey = key as keyof typeof hideoutUpgrades;
+            if (upgradedAreas.has(typedKey)) return acc;
+
+            const upgrade = hideoutUpgrades[typedKey];
+
+            if (selectedItem in upgrade.exchange) {
+                const quantity = (upgrade.exchange as Record<string, number>)[selectedItem];
+                acc.push({
+                    key: typedKey,
+                    quantity
+                });
+            }
+
+            return acc;
+        }, [] as Array<{
+            key: keyof typeof hideoutUpgrades;
+            quantity: number;
+        }>);
+
+
+        return (<div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+                     onClick={() => setSelectedItem(null)}>
+                <div className="bg-military-gradient border-2 border-olive-600 rounded-sm p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto bg-black/80"
+                     onClick={(e) => e.stopPropagation()}>
+
+                    {/* Header */}
+                    <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center gap-3">
+                            <Image
+                                src={item.images.icon}
+                                alt={item.name || selectedItem}
+                                width={40}
+                                height={40}
+                                className="object-contain"
+                            />
+                            <div>
+                                <h3 className="text-xl font-bold text-tan-100">
+                                    {item.name || selectedItem}
+                                </h3>
+                                <p className="text-sm text-tan-400">
+                                    Used in {upgradesUsingItem.length} upgrades
+                                </p>
+                            </div>
+                        </div>
+                        <button
+                            onClick={() => setSelectedItem(null)}
+                            className="text-tan-400 hover:text-tan-100"
+                        >
+                            <X size={24} />
+                        </button>
+                    </div>
+
+                    {/* Upgrades List */}
+                    <div className="space-y-3">
+                        {upgradesUsingItem.map(({ key,quantity }) => (
+                            <div
+                                key={key}
+                                className={`p-4 rounded-sm border bg-green-900/20 border-green-600/50`}
+                            >
+                                <div className="flex items-center justify-between">
+                                    <div>
+                                        <h4 className="font-semibold text-tan-100">
+                                            {hideoutUpgrades[key].upgradeName} - Level {hideoutUpgrades[key].level}
+                                        </h4>
+                                        <p className="text-sm text-tan-400">{hideoutUpgrades[key].areaId}</p>
+                                    </div>
+                                    <div className="text-right">
+                                        <p className="text-lg font-bold text-olive-400">×{quantity}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        )
+    }
 
 
     return (
         <>
             <h2 className="text-2xl font-bold text-tan-100 mb-6 flex items-center gap-2">
                 <Package className="text-olive-400" size={24}/>
-                Total Upgrade Costs
+                Remaining Upgrade Costs
             </h2>
 
 
@@ -55,7 +214,7 @@ export default function TotalCostsDisplay({upgradedAreas, getItemById}: TotalCos
                     <div className="flex items-center gap-2">
                         <DollarSign className="text-olive-400" size={20}/>
                         <h3 className="text-sm font-medium text-tan-300 uppercase tracking-wider">
-                            Total Funds Required
+                            Money Still Needed
                         </h3>
                     </div>
                     <p className="text-2xl font-bold text-olive-400">
@@ -64,62 +223,42 @@ export default function TotalCostsDisplay({upgradedAreas, getItemById}: TotalCos
                 </div>
             </div>
 
-                    {/* Items Section */}
+            {/* Items Section */}
             <div className="military-box rounded-sm p-6">
                 <div className="flex items-center justify-between mb-4">
                     <h3 className="text-lg font-semibold text-tan-200">Required Items</h3>
-                    <span className="text-sm text-tan-400 font-medium">{sortedItems.length} Types</span>
+                    <span className="text-sm text-tan-400 font-medium">{groupedItems.totalLength} Types</span>
                 </div>
 
-                {sortedItems.length > 0 ? (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-                        {sortedItems.map(({item, quantity,}) => (
-                            <div
-                                key={item.id}
-                                className="bg-black/30 border border-military-600 rounded-sm p-3
-                             hover:border-olive-600 hover:bg-black/50 transition-all duration-200
-                             flex items-center gap-3 group"
-                            >
-                                {/* Item Icon */}
-                                <Link
-                                    href={`/items/${item.id}`}
-                                    target='_blank'
-                                    className="relative w-12 h-12 flex-shrink-0 bg-black/50 rounded-sm
-                               border border-military-700 hover:border-olive-600 transition-all
-                               overflow-hidden group/icon"
-                                >
-                                    <Image
-                                        src={item?.images.icon || '/images/missing-item.png'}
-                                        alt={item?.name || item.id}
-                                        fill
-                                        sizes="full"
-                                        className="object-contain p-1 group-hover/icon:scale-110 transition-transform"
-                                    />
-                                    <div
-                                        className="absolute inset-0 bg-olive-400/0 group-hover/icon:bg-olive-400/10 transition-colors"/>
-                                    <ExternalLink
-                                        size={12}
-                                        className="absolute top-1 right-1 text-tan-400 opacity-0 group-hover/icon:opacity-100 transition-opacity"
-                                    />
-                                </Link>
-
-                                {/* Item Name */}
-                                <div className="flex-grow min-w-0">
-                                    <p className="text-sm text-tan-300 group-hover:text-tan-100 truncate">
-                                        {item?.name || item.id}
-                                    </p>
-                                    {item?.subcategory && (
-                                        <p className="text-xs text-tan-500">{item?.subcategory}</p>
-                                    )}
+                {groupedItems.totalLength > 0 ? (
+                    <div className="space-y-4">
+                        {groupedItems.high.length > 0 && (
+                            <div>
+                                <p className="text-xs text-red-400 font-medium mb-2 uppercase">High Quantity (10+)</p>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                                    {groupedItems.high.map(mapItemWithQuantity)}
                                 </div>
-
-                                {/* Quantity */}
-                                <span className="text-sm font-bold text-olive-400 min-w-[3rem] text-right
-                                   bg-black/50 px-2 py-1 rounded-sm border border-olive-600/50">
-                      ×{quantity}
-                    </span>
                             </div>
-                        ))}
+                        )}
+
+                        {groupedItems.medium.length > 0 && (
+                            <div>
+                                <p className="text-xs text-yellow-400 font-medium mb-2 uppercase">Medium Quantity
+                                    (5-9)</p>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                                    {groupedItems.medium.map(mapItemWithQuantity)}
+                                </div>
+                            </div>
+                        )}
+
+                        {groupedItems.low.length > 0 && (
+                            <div>
+                                <p className="text-xs text-olive-400 font-medium mb-2 uppercase">Low Quantity (1-4)</p>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                                    {groupedItems.low.map(mapItemWithQuantity)}
+                                </div>
+                            </div>
+                        )}
                     </div>
                 ) : (
                     <div className="text-center py-12 bg-black/30 border border-olive-600/50 rounded-sm">
@@ -134,6 +273,7 @@ export default function TotalCostsDisplay({upgradedAreas, getItemById}: TotalCos
                     </div>
                 )}
             </div>
+            {selectedItem && getSelectedItemPopover()}
         </>
     );
 }

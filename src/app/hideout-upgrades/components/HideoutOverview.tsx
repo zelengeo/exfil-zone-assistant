@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Image from 'next/image';
 import {areaIcons, hideoutUpgrades, hideoutUpgradesTasks} from '@/data/hideout-upgrades';
 import {Item} from '@/types/items';
-import {X, ArrowUp, DollarSign, Undo, RotateCcw, ChevronLeft, ChevronRight, ChevronDown, ChevronUp} from 'lucide-react';
+import {X, ArrowUp, DollarSign, Undo, RotateCcw, ChevronDown, ChevronUp} from 'lucide-react';
 
 
 type HideoutUpgradeKey = keyof typeof hideoutUpgrades;
