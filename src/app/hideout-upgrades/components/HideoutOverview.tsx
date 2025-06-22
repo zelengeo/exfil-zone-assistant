@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Image from 'next/image';
 import {areaIcons, hideoutUpgrades, hideoutUpgradesTasks} from '@/data/hideout-upgrades';
 import {Item} from '@/types/items';
-import {X, ArrowUp, DollarSign, Undo, RotateCcw} from 'lucide-react';
+import {X, ArrowUp, DollarSign, Undo, RotateCcw, ChevronLeft, ChevronRight, ChevronDown, ChevronUp} from 'lucide-react';
 
 
 type HideoutUpgradeKey = keyof typeof hideoutUpgrades;
@@ -104,6 +104,7 @@ const upgradesByArea: Record<string, Array<UpgradeData>> = Object.values(hideout
 
 const checkLevelConditions = (areaId: string, level: number | null, areaLevels: HideoutOverviewProps["areaLevels"]): boolean => {
     if (level === null) level = areaLevels[areaId] + 1;
+    if (level > areaLevels[areaId] + 1) return false;
     const upgrade = upgradesByArea[areaId]?.find(upgrade => upgrade.level === level);
     if (!upgrade) return false;
     for (const [requiredArea, requiredLevel] of Object.entries(upgrade.levelConditions)) {
@@ -184,7 +185,7 @@ export default function HideoutOverview({
             }
             onAreaUpgrade(upgradeId, isLevelUp);
             if (isLevelUp) {
-                const nextUpgradeId = getAreaUpgradeId(selectedUpgrade.areaId, selectedUpgrade.level+1)
+                const nextUpgradeId = getAreaUpgradeId(selectedUpgrade.areaId, selectedUpgrade.level + 1)
                 if (nextUpgradeId) setSelectedUpgrade(hideoutUpgrades[nextUpgradeId])
             }
 
@@ -291,10 +292,36 @@ export default function HideoutOverview({
                                 </div>
                                 <button
                                     onClick={() => setSelectedUpgrade(null)}
-                                    className="absolute top-4 right-4 text-tan-400 hover:text-tan-100"
+                                    className="absolute min-h-6 min-w-6 h-6 w-6 top-4 right-4 bg-black/20 text-tan-400 hover:text-tan-100 hover:bg-black/60"
                                 >
-                                    <X size={24}/>
+                                    <X size={18}/>
                                 </button>
+                                <div className="absolute bottom-4 right-4 flex flex-col items-center gap-2">
+                                    {<button
+                                        onClick={() => {
+                                            const upgradeId = getAreaUpgradeId(selectedUpgrade.areaId, selectedUpgrade.level + 1)
+                                            if (upgradeId) setSelectedUpgrade(hideoutUpgrades[upgradeId])
+                                        }}
+                                        className="min-h-6 min-w-6 h-6 w-6 bg-black/20 text-tan-400 hover:text-tan-100 hover:bg-black/60
+                  transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                                        disabled={getAreaUpgradeId(selectedUpgrade.areaId, selectedUpgrade.level + 1) === null}
+                                        title="Next Level"
+                                    >
+                                        <ChevronUp size={18}/>
+                                    </button>}
+                                    <button
+                                        onClick={() => {
+                                            const upgradeId = getAreaUpgradeId(selectedUpgrade.areaId, selectedUpgrade.level - 1)
+                                            if (upgradeId) setSelectedUpgrade(hideoutUpgrades[upgradeId])
+                                        }}
+                                        className="min-h-6 min-w-6 h-6 w-6 bg-black/20 text-tan-400 hover:text-tan-100 hover:bg-black/60
+                  transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                                        disabled={getAreaUpgradeId(selectedUpgrade.areaId, selectedUpgrade.level - 1) === null}
+                                        title="Previous Level"
+                                    >
+                                        <ChevronDown size={18}/>
+                                    </button>
+                                </div>
                             </div>
 
                             {/* Description */}
