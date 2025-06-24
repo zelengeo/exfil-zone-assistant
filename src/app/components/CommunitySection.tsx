@@ -1,17 +1,75 @@
-// Create a new file: src/components/home/CommunitySection.tsx
-
 import React from 'react';
 import Image from 'next/image';
 import {Heart, Globe} from 'lucide-react';
-import {SiDiscord, SiGithub, SiTwitch, SiX, SiYoutube} from "@icons-pack/react-simple-icons";
+import {SiDiscord, SiGithub, SiTwitch, SiX, SiYoutube, SiTelegram } from "@icons-pack/react-simple-icons";
+
+const HayaPlaysCard =  (<div key="hayaplays" className="bg-red-800/20 border border-red-800/80 rounded-sm p-6 max-w-sm">
+        <div className="grid grid-rows-2 gap-3 justify-items-start">
+            <div className="flex items-start gap-3">
+                <Image
+                    src="/images/haya-logo-70x70.png"
+                    alt="HayaPlays Logo"
+                    width={40}
+                    height={40}
+                    className="mx-auto rounded-full border-2 border-red-600"
+                />
+                <span className="text-base font-bold text-tan-100">HayaPlays</span>
+            </div>
+
+            <div className="flex items-center gap-2">
+                <a
+                    href="https://www.youtube.com/@HayaGamingtv"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-black/50 rounded-sm text-tan-400 hover:text-red-500
+                        hover:bg-black/70 transition-all"
+                    title="YouTube"
+                >
+                    <SiYoutube size={18}/>
+                </a>
+                <a
+                    href="https://x.com/hayaplays"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-black/50 rounded-sm text-tan-400 hover:text-blue-400
+                    hover:bg-black/70 transition-all"
+                    title="X (Twitter)"
+                >
+                    <SiX size={18}/>
+                </a>
+                <a
+                    href="https://twitch.tv/hayaplays"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-black/50 rounded-sm text-tan-400 hover:text-purple-500
+                hover:bg-black/70 transition-all"
+                    title="Twitch"
+                >
+                    <SiTwitch size={18}/>
+                </a>
+                <a
+                    href={"https://www.youtube.com/watch?v=HlrpOd4YioA"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-red-600 border-2 border-red-500 rounded-sm text-black font-bold transition-all duration-200
+hover:bg-red-500 hover:border-red-400"
+                    title={"Featured"}
+                >
+                    <SiYoutube size={18} />
+                    <span className="text-sm uppercase tracking-wider">WATCH</span>
+                </a>
+            </div>
+        </div>
+    </div>
+)
 
 interface Contributor {
     name: string;
-    role: 'creator' | 'contributor' | 'donator' | 'partner';
+    role: 'creator' | 'contributor' | 'supporter' | 'partner';
     component?: React.ReactNode;
     description?: string;
     link?: string;
-    platform?: 'youtube' | 'twitch' | 'website' | 'github';
+    platform?: 'youtube' | 'twitch' | 'website' | 'github' | 'discord' | 'telegram';
 }
 
 const contributors: Contributor[] = [
@@ -19,73 +77,19 @@ const contributors: Contributor[] = [
         {
             name: 'HayaPlays',
             role: 'creator',
-            component: (<div className="bg-red-800/20 border border-red-800/80 rounded-sm p-6 max-w-sm">
-                <div className="grid grid-rows-2 gap-3 justify-items-start">
-                    <div className="flex items-start gap-3">
-                        <Image
-                            src="/images/haya-logo-70x70.png"
-                            alt="HayaPlays Logo"
-                            width={40}
-                            height={40}
-                            className="mx-auto rounded-full border-2 border-red-600"
-                        />
-                        <span className="text-base font-bold text-tan-100">HayaPlays</span>
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                        <a
-                            href="https://www.youtube.com/@HayaGamingtv"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 bg-black/50 rounded-sm text-tan-400 hover:text-red-500
-                        hover:bg-black/70 transition-all"
-                            title="YouTube"
-                        >
-                            <SiYoutube size={18}/>
-                        </a>
-                        <a
-                            href="https://x.com/hayaplays"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 bg-black/50 rounded-sm text-tan-400 hover:text-blue-400
-                    hover:bg-black/70 transition-all"
-                            title="X (Twitter)"
-                        >
-                            <SiX size={18}/>
-                        </a>
-                        <a
-                            href="https://twitch.tv/hayaplays"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 bg-black/50 rounded-sm text-tan-400 hover:text-purple-500
-                hover:bg-black/70 transition-all"
-                            title="Twitch"
-                        >
-                            <SiTwitch size={18}/>
-                        </a>
-                        <a
-                            href={"https://www.youtube.com/watch?v=HlrpOd4YioA"}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 px-4 py-2 bg-red-600 border-2 border-red-500 rounded-sm text-black font-bold transition-all duration-200
-hover:bg-red-500 hover:border-red-400"
-                            title={"Featured"}
-                        >
-                            <SiYoutube size={18} />
-                            <span className="text-sm uppercase tracking-wider">WATCH</span>
-                        </a>
-                    </div>
-                </div>
-            </div>)
+            component: HayaPlaysCard
         },
-
-
+        {
+            name: 'Genosse aus der UsbSSR',
+            role: 'supporter',
+            description: '3D Artist',
+            link: 'https://t.me/fox_valger_3dsmax',
+            platform: 'telegram'
+        },
         {
             name: 'zaymax',
-            role:
-                'donator',
-        }
-        ,
+            role: 'supporter',
+        },
         {
             name: 'Aboleth',
             role:
@@ -110,6 +114,10 @@ const getPlatformIcon = (platform?: string) => {
             return <SiTwitch size={16}/>;
         case 'github':
             return <SiGithub size={16}/>;
+        case 'discord':
+            return <SiDiscord size={16}/>;
+        case 'telegram':
+            return <SiTelegram size={16}/>;
         default:
             return <Globe size={16}/>;
     }
@@ -117,7 +125,7 @@ const getPlatformIcon = (platform?: string) => {
 
 const getRoleConfig = (role: string) => {
     switch (role) {
-        case 'donator':
+        case 'supporter':
             return {
                 label: 'Supporter',
                 color: 'text-purple-400',
