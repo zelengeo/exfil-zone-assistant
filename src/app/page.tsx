@@ -55,8 +55,11 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Community Section */}
+        <CommunitySection />
+
         {/* Game Overview */}
-        <section className="py-12 bg-military-900 border-y border-olive-900">
+        {/*<section className="py-12 bg-military-900 border-y border-olive-900">
           <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold mb-8 text-center military-stencil text-olive-400">MISSION BRIEFING</h2>
             <div className="max-w-3xl mx-auto military-box p-6">
@@ -71,13 +74,10 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </section>
+        </section>*/}
 
         {/* Navigation Hub */}
         <NavigationSection />
-
-        {/* Community Section */}
-        <CommunitySection />
 
         {/* News and Quick Reference */}
 

@@ -292,7 +292,7 @@ export default function HideoutOverview({
                                 </div>
                                 <button
                                     onClick={() => setSelectedUpgrade(null)}
-                                    className="absolute min-h-6 min-w-6 h-6 w-6 top-4 right-4 bg-black/20 text-tan-400 hover:text-tan-100 hover:bg-black/60"
+                                    className="absolute min-h-6 min-w-6 h-6 w-6 top-4 right-4 bg-black/50 text-tan-400 hover:text-tan-100 hover:bg-black/80"
                                 >
                                     <X size={18}/>
                                 </button>
@@ -302,7 +302,7 @@ export default function HideoutOverview({
                                             const upgradeId = getAreaUpgradeId(selectedUpgrade.areaId, selectedUpgrade.level + 1)
                                             if (upgradeId) setSelectedUpgrade(hideoutUpgrades[upgradeId])
                                         }}
-                                        className="min-h-6 min-w-6 h-6 w-6 bg-black/20 text-tan-400 hover:text-tan-100 hover:bg-black/60
+                                        className="min-h-6 min-w-6 h-6 w-6 bg-black/50 text-tan-400 hover:text-tan-100 hover:bg-black/80
                   transition-all disabled:opacity-30 disabled:cursor-not-allowed"
                                         disabled={getAreaUpgradeId(selectedUpgrade.areaId, selectedUpgrade.level + 1) === null}
                                         title="Next Level"
@@ -314,7 +314,7 @@ export default function HideoutOverview({
                                             const upgradeId = getAreaUpgradeId(selectedUpgrade.areaId, selectedUpgrade.level - 1)
                                             if (upgradeId) setSelectedUpgrade(hideoutUpgrades[upgradeId])
                                         }}
-                                        className="min-h-6 min-w-6 h-6 w-6 bg-black/20 text-tan-400 hover:text-tan-100 hover:bg-black/60
+                                        className="min-h-6 min-w-6 h-6 w-6 bg-black/50 text-tan-400 hover:text-tan-100 hover:bg-black/80
                   transition-all disabled:opacity-30 disabled:cursor-not-allowed"
                                         disabled={getAreaUpgradeId(selectedUpgrade.areaId, selectedUpgrade.level - 1) === null}
                                         title="Previous Level"

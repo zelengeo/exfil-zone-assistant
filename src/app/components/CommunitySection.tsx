@@ -1,32 +1,106 @@
 // Create a new file: src/components/home/CommunitySection.tsx
 
 import React from 'react';
+import Image from 'next/image';
 import {Heart, Globe} from 'lucide-react';
-import {SiDiscord, SiGithub, SiTwitch, SiYoutube} from "@icons-pack/react-simple-icons";
+import {SiDiscord, SiGithub, SiTwitch, SiX, SiYoutube} from "@icons-pack/react-simple-icons";
 
 interface Contributor {
     name: string;
     role: 'creator' | 'contributor' | 'donator' | 'partner';
+    component?: React.ReactNode;
     description?: string;
     link?: string;
     platform?: 'youtube' | 'twitch' | 'website' | 'github';
 }
 
 const contributors: Contributor[] = [
-    // Add your actual contributors here
-    {
-        name: 'zaymax',
-        role: 'donator',
-    },
-    {
-        name: 'Aboleth',
-        role: 'creator',
-        description: 'Deep Dives into VR games.',
-        link: 'https://abolethvr.substack.com/',
-        platform: 'website'
-    },
+        // Add your actual contributors here
+        {
+            name: 'HayaPlays',
+            role: 'creator',
+            component: (<div className="bg-red-800/20 border border-red-800/80 rounded-sm p-6 max-w-sm">
+                <div className="grid grid-rows-2 gap-3 justify-items-start">
+                    <div className="flex items-start gap-3">
+                        <Image
+                            src="/images/haya-logo-70x70.png"
+                            alt="HayaPlays Logo"
+                            width={40}
+                            height={40}
+                            className="mx-auto rounded-full border-2 border-red-600"
+                        />
+                        <span className="text-base font-bold text-tan-100">HayaPlays</span>
+                    </div>
 
-];
+                    <div className="flex items-center gap-2">
+                        <a
+                            href="https://www.youtube.com/@HayaGamingtv"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 bg-black/50 rounded-sm text-tan-400 hover:text-red-500
+                        hover:bg-black/70 transition-all"
+                            title="YouTube"
+                        >
+                            <SiYoutube size={18}/>
+                        </a>
+                        <a
+                            href="https://x.com/hayaplays"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 bg-black/50 rounded-sm text-tan-400 hover:text-blue-400
+                    hover:bg-black/70 transition-all"
+                            title="X (Twitter)"
+                        >
+                            <SiX size={18}/>
+                        </a>
+                        <a
+                            href="https://twitch.tv/hayaplays"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 bg-black/50 rounded-sm text-tan-400 hover:text-purple-500
+                hover:bg-black/70 transition-all"
+                            title="Twitch"
+                        >
+                            <SiTwitch size={18}/>
+                        </a>
+                        <a
+                            href={"https://www.youtube.com/watch?v=HlrpOd4YioA"}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 px-4 py-2 bg-red-600 border-2 border-red-500 rounded-sm text-black font-bold transition-all duration-200
+hover:bg-red-500 hover:border-red-400"
+                            title={"Featured"}
+                        >
+                            <SiYoutube size={18} />
+                            <span className="text-sm uppercase tracking-wider">WATCH</span>
+                        </a>
+                    </div>
+                </div>
+            </div>)
+        },
+
+
+        {
+            name: 'zaymax',
+            role:
+                'donator',
+        }
+        ,
+        {
+            name: 'Aboleth',
+            role:
+                'creator',
+            description:
+                'Deep Dives into VR games.',
+            link:
+                'https://abolethvr.substack.com/',
+            platform:
+                'website'
+        }
+        ,
+
+    ]
+;
 
 const getPlatformIcon = (platform?: string) => {
     switch (platform) {
@@ -98,6 +172,10 @@ export default function CommunitySection() {
                 {/* Contributors Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
                     {contributors.map((contributor, index) => {
+                        if (contributor.component) {
+                            return contributor.component;
+                        }
+
                         const roleConfig = getRoleConfig(contributor.role);
 
                         return (
