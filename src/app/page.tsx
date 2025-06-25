@@ -26,7 +26,7 @@ export default function Home() {
             <div className="container mx-auto px-6">
               <div className="max-w-xl">
                 <div className="inline-block mb-4 px-3 py-1 border border-olive-500 bg-military-800/80">
-                  <h2 className="text-olive-400 military-stencil">TACTICAL VR ASSISTANT</h2>
+                  <h2 className="text-olive-400 military-stencil">VR EXTRACTION ASSISTANT</h2>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-tan-100 mb-4 military-stencil">
                   EXFIL ZONE
