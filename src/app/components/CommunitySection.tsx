@@ -3,6 +3,63 @@ import Image from 'next/image';
 import {Heart, Globe} from 'lucide-react';
 import {SiDiscord, SiGithub, SiTwitch, SiX, SiYoutube, SiTelegram } from "@icons-pack/react-simple-icons";
 
+const getPlatformIcon = (platform?: string) => {
+    switch (platform) {
+        case 'youtube':
+            return <SiYoutube size={16}/>;
+        case 'twitch':
+            return <SiTwitch size={16}/>;
+        case 'github':
+            return <SiGithub size={16}/>;
+        case 'discord':
+            return <SiDiscord size={16}/>;
+        case 'telegram':
+            return <SiTelegram size={16}/>;
+        default:
+            return <Globe size={16}/>;
+    }
+};
+
+const getRoleConfig = (role: string) => {
+    switch (role) {
+        case 'supporter':
+            return {
+                label: 'Supporter',
+                color: 'text-purple-400',
+                borderColor: 'border-purple-700',
+                bgColor: 'bg-purple-900/20'
+            };
+        case 'contributor':
+            return {
+                label: 'Contributor',
+                color: 'text-blue-400',
+                borderColor: 'border-blue-700',
+                bgColor: 'bg-blue-900/20'
+            };
+        case 'creator':
+            return {
+                label: 'Content Creator',
+                color: 'text-green-400',
+                borderColor: 'border-green-700',
+                bgColor: 'bg-green-900/20'
+            };
+        case 'partner':
+            return {
+                label: 'Partner',
+                color: 'text-yellow-400',
+                borderColor: 'border-yellow-700',
+                bgColor: 'bg-yellow-900/20'
+            };
+        default:
+            return {
+                label: role,
+                color: 'text-tan-400',
+                borderColor: 'border-military-700',
+                bgColor: 'bg-military-800'
+            };
+    }
+};
+
 const HayaPlaysCard =  (<div key="hayaplays" className="bg-red-800/20 border border-red-800/80 rounded-sm p-6 max-w-sm">
         <div className="grid grid-rows-2 gap-3 justify-items-start">
             <div className="flex items-start gap-3">
@@ -13,7 +70,10 @@ const HayaPlaysCard =  (<div key="hayaplays" className="bg-red-800/20 border bor
                     height={40}
                     className="mx-auto rounded-full border-2 border-red-600"
                 />
-                <span className="text-base font-bold text-tan-100">HayaPlays</span>
+                <div className="flex flex-col">
+                    <span className="text-base font-bold text-tan-100">HayaPlays</span>
+                    <span className={`text-xs ${getRoleConfig("partner").color}`} >{getRoleConfig("partner").label}</span>
+                </div>
             </div>
 
             <div className="flex items-center gap-2">
@@ -105,63 +165,6 @@ const contributors: Contributor[] = [
 
     ]
 ;
-
-const getPlatformIcon = (platform?: string) => {
-    switch (platform) {
-        case 'youtube':
-            return <SiYoutube size={16}/>;
-        case 'twitch':
-            return <SiTwitch size={16}/>;
-        case 'github':
-            return <SiGithub size={16}/>;
-        case 'discord':
-            return <SiDiscord size={16}/>;
-        case 'telegram':
-            return <SiTelegram size={16}/>;
-        default:
-            return <Globe size={16}/>;
-    }
-};
-
-const getRoleConfig = (role: string) => {
-    switch (role) {
-        case 'supporter':
-            return {
-                label: 'Supporter',
-                color: 'text-purple-400',
-                borderColor: 'border-purple-700',
-                bgColor: 'bg-purple-900/20'
-            };
-        case 'contributor':
-            return {
-                label: 'Contributor',
-                color: 'text-blue-400',
-                borderColor: 'border-blue-700',
-                bgColor: 'bg-blue-900/20'
-            };
-        case 'creator':
-            return {
-                label: 'Content Creator',
-                color: 'text-green-400',
-                borderColor: 'border-green-700',
-                bgColor: 'bg-green-900/20'
-            };
-        case 'partner':
-            return {
-                label: 'Partner',
-                color: 'text-yellow-400',
-                borderColor: 'border-yellow-700',
-                bgColor: 'bg-yellow-900/20'
-            };
-        default:
-            return {
-                label: role,
-                color: 'text-tan-400',
-                borderColor: 'border-military-700',
-                bgColor: 'bg-military-800'
-            };
-    }
-};
 
 export default function CommunitySection() {
     return (
