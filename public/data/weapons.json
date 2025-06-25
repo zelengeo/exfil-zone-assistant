@@ -1948,7 +1948,7 @@
     "name": "Mosin Obrez",
     "description": "Drastically shortened Mosin variant. Extreme modification sacrifices accuracy for concealability.",
     "category": "weapons",
-    "subcategory": "Pistol",
+    "subcategory": "7.62x54mmR",
     "images": {
       "icon": "/images/items/weapons/Icon_WF_Mosin_OBREZ.webp",
       "thumbnail": "/images/items/weapons/Icon_WF_Mosin_OBREZ.webp",
@@ -1985,7 +1985,7 @@
     "name": "M40A5",
     "description": "Modern military sniper rifle with precision barrel and advanced accuracy features for long-range precision shooting.",
     "category": "weapons",
-    "subcategory": "BoltAction",
+    "subcategory": "7.62x51mm",
     "images": {
       "icon": "/images/items/weapons/Icon_gun_m40a5.webp",
       "thumbnail": "/images/items/weapons/Icon_gun_m40a5.webp",
@@ -2039,7 +2039,7 @@
     "name": "SKS",
     "description": "Soviet semi-automatic carbine chambered in 7.62x39mm. Reliable gas-operated action with integrated bayonet.",
     "category": "weapons",
-    "subcategory": "Rifle",
+    "subcategory": "7.62x39mm",
     "images": {
       "icon": "/images/items/weapons/Icon_gun_sks.webp",
       "thumbnail": "/images/items/weapons/Icon_gun_sks.webp",
@@ -2082,7 +2082,7 @@
       "muzzleVelocity": 80000,
       "hitDamage": 64,
       "headDamageScale": 1.8,
-      "caliber": "7.62x54R"
+      "caliber": "7.62x39"
     },
     "notes": "Classic Soviet carbine bridging bolt-action and assault rifle eras. Gas-operated semi-automatic with traditional wooden stock.",
     "tips": "Excellent medium-range performance with good accuracy. Higher recoil than modern rifles but reliable stopping power."

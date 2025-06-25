@@ -224,7 +224,8 @@ export default function HideoutOverview({
                             <button
                                 key={areaId}
                                 onClick={() => handleAreaClick(areaId)}
-                                className={`absolute w-14 h-14 rounded-sm transition-all duration-300 hover:scale-110 cursor-pointer ${!canUpgrade && !isCategory ? 'opacity-70' : ""}`}
+                                className={`absolute  w-8 h-8 sm:w-14 sm:h-14 min-w-8 min-h-8 sm:min-w-14 sm:min-h-14
+ rounded-sm transition-all duration-300 hover:scale-110 cursor-pointer ${!canUpgrade && !isCategory ? 'opacity-70' : ""}`}
                                 style={{
                                     top: position.top,
                                     left: position.left,
@@ -241,13 +242,13 @@ export default function HideoutOverview({
                                         alt={iconConfig?.alt || areaId}
                                         fill
                                         sizes={"full"}
-                                        className="object-contain p-2"
+                                        className="object-contain sm:p-2"
                                     />
                                     {/* Level indicator */}
                                     {!isCategory && (
                                         <div
-                                            className="absolute bottom-0 right-0 bg-black/90 px-1 text-xs text-olive-400 font-bold">
-                                            L{areaLevels[areaId]}
+                                            className="absolute bottom-0 right-0  px-1 text-xs text-olive-400 font-bold">
+                                            {areaLevels[areaId]}
                                         </div>
                                     )}
                                 </div>
@@ -256,16 +257,15 @@ export default function HideoutOverview({
                     })}
                     {isLoaded && upgradedAreas.size > 0 && (<button
                         onClick={resetUpgrades}
-                        className={`absolute w-22 h-6 rounded-sm transition-all duration-300 hover:scale-110 cursor-pointer bg-red-600/20 border border-red-500 
+                        className={`absolute top-[89%] left-[89%] sm:top-[94%] sm:left-[91%] w-8 h-8 min-w-8 min-h-8 sm:min-w-14 sm:min-h-14 sm:w-22 rounded-sm transition-all duration-300 hover:scale-110 cursor-pointer bg-red-600/20 border border-red-500 
                                  text-red-400 hover:bg-red-600/30 hover:text-red-300`}
                         style={{
-                            top: "97%",
-                            left: "95%",
-                            transform: 'translate(-50%, -50%)'
+                            // top: "94%",
+                            // left: "94%",
+                            // transform: 'translate(-50%, -50%)'
                         }}
                     ><RotateCcw size={16}/>
-                        Reset All
-
+                        <span className="max-sm:hidden">Reset All</span>
                     </button>)
                     }
                 </div>
