@@ -1621,7 +1621,7 @@
   },
   {
     "id": "misc_b_recorder",
-    "name": "Old Phone",
+    "name": "Recorder",
     "description": "",
     "category": "misc",
     "subcategory": "Intel",
@@ -2626,9 +2626,9 @@
     "category": "misc",
     "subcategory": "Electric",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_graphiccard.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_graphiccard.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_graphiccard.webp"
+      "icon": "/images/items/misc/Graphics_Card.webp",
+      "thumbnail": "/images/items/misc/Graphics_Card.webp",
+      "fullsize": "/images/items/misc/Graphics_Card.webp"
     },
     "stats": {
       "price": 0,

@@ -164,7 +164,7 @@ export default function SurvivalDamageGuide() {
                         {/* Light Bleeding */}
                         <div className="bg-military-800 border border-military-600 rounded-sm p-4">
                             <div className="flex items-center gap-3 mb-3">
-                                <Image src="/images/icon_bleed1.webp" alt="Light Bleeding" width={24} height={24} />
+                                <Image src="/images/icon_bleed1.webp" unoptimized={true} alt="Light Bleeding" width={24} height={24} />
                                 <h3 className="font-semibold text-tan-100">Light Bleeding</h3>
                             </div>
                             <ul className="space-y-2 text-sm">
@@ -178,7 +178,7 @@ export default function SurvivalDamageGuide() {
                         {/* Deep Wound */}
                         <div className="bg-military-800 border border-red-600/50 rounded-sm p-4">
                             <div className="flex items-center gap-3 mb-3">
-                                <Image src="/images/icon_bleed2.webp" alt="Deep Wound" width={24} height={24} />
+                                <Image src="/images/icon_bleed2.webp" unoptimized={true} alt="Deep Wound" width={24} height={24} />
                                 <h3 className="font-semibold text-red-400">Deep Wound</h3>
                             </div>
                             <ul className="space-y-2 text-sm">
@@ -216,7 +216,7 @@ export default function SurvivalDamageGuide() {
                     <div className="bg-military-800 border border-military-600 rounded-sm p-4">
                         <div className="flex items-center gap-3 mb-3">
                             <Link href="/items?category=medicine&subcategory=Painkillers">
-                                <Image src="/images/items/medical/Icon_WarfarePainkillerLv1_cropped.webp" alt="Painkillers" width={48} height={48} />
+                                <Image src="/images/items/medical/Icon_WarfarePainkillerLv1_cropped.webp" alt="Painkillers" unoptimized={true} width={48} height={48} />
                             </Link>
                             <div>
                                 <h3 className="font-semibold text-olive-400">Painkillers</h3>
@@ -240,7 +240,7 @@ export default function SurvivalDamageGuide() {
                     <div className="bg-military-800 border border-military-600 rounded-sm p-4">
                         <div className="flex items-center gap-3 mb-3">
                             <Link href="/items?category=medicine&subcategory=Suturing%20Tools">
-                                <Image src="/images/items/medical/icon_suturingdevice.webp" alt="Suture Instrument" width={48} height={48} />
+                                <Image src="/images/items/medical/icon_suturingdevice.webp" alt="Suture Instrument" unoptimized={true} width={48} height={48} />
                             </Link>
                             <div>
                                 <h3 className="font-semibold text-olive-400">Suture Instrument</h3>
@@ -259,7 +259,7 @@ export default function SurvivalDamageGuide() {
                     <div className="bg-military-800 border border-military-600 rounded-sm p-4">
                         <div className="flex items-center gap-3 mb-3">
                             <Link href={"/items?category=medicine&subcategory=Bandages"}>
-                                <Image src="/images/items/medical/icon_Gauze_cropped.webp" alt="Bandage" width={48} height={48} />
+                                <Image src="/images/items/medical/icon_Gauze_cropped.webp" alt="Bandage" unoptimized={true} width={48} height={48} />
                             </Link>
                             <div>
                                 <h3 className="font-semibold text-olive-400">Bandages</h3>

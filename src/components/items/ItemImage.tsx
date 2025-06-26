@@ -80,6 +80,7 @@ export const ItemImage: React.FC<ItemImageProps> = ({
                     <Image
                         src={imageSrc}
                         alt={item.name}
+                        unoptimized
                         fill
                         className="object-contain p-1"
                         onError={handleImageError}
@@ -114,6 +115,7 @@ export const ItemImage: React.FC<ItemImageProps> = ({
                         <Image
                             src={item.images.fullsize}
                             alt={item.name}
+                            unoptimized={true}
                             fill
                             className="object-contain"
                             sizes="(max-width: 768px) 100vw, 80vw"
@@ -165,6 +167,7 @@ export const SimpleItemImage: React.FC<{
             <Image
                 src={src}
                 alt={alt}
+                unoptimized={true}
                 fill
                 className="object-contain"
                 onError={() => setImageError(true)}

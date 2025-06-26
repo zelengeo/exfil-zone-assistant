@@ -155,6 +155,7 @@ export default function AttackerSetup({
                                     <Image
                                         src={attacker.weapon.images.icon}
                                         alt={attacker.weapon.name}
+                                        unoptimized={true}
                                         fill
                                         className="object-contain"
                                         sizes="76px"
@@ -202,6 +203,7 @@ export default function AttackerSetup({
                                                     <Image
                                                         src={weapon.images.icon}
                                                         alt={weapon.name}
+                                                        unoptimized={true}
                                                         fill
                                                         className="object-contain"
                                                         sizes="76px"
@@ -273,6 +275,7 @@ export default function AttackerSetup({
                                     <Image
                                         src={attacker.ammo.images.icon}
                                         alt={attacker.ammo.name}
+                                        unoptimized
                                         fill
                                         className="object-contain"
                                         sizes="40px"
@@ -320,6 +323,7 @@ export default function AttackerSetup({
                                                     <Image
                                                         src={ammo.images.icon}
                                                         alt={ammo.name}
+                                                        unoptimized={true}
                                                         fill
                                                         className="object-contain"
                                                         sizes="40px"

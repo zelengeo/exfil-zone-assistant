@@ -66,6 +66,7 @@ const HayaPlaysCard =  (<div key="hayaplays" className="bg-red-800/20 border bor
                 <Image
                     src="/images/haya-logo-70x70.png"
                     alt="HayaPlays Logo"
+                    unoptimized={true}
                     width={40}
                     height={40}
                     className="mx-auto rounded-full border-2 border-red-600"

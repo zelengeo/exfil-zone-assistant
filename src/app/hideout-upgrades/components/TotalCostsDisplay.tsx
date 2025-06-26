@@ -35,6 +35,7 @@ function getItemDiv({item, quantity}: ItemWithQuantity, setSelectedItem: (id: st
                 <Image
                     src={item?.images.icon || '/images/missing-item.png'}
                     alt={item?.name || item.id}
+                    unoptimized={true}
                     fill
                     sizes="full"
                     className="object-contain p-1 group-hover/icon:scale-110 transition-transform"
@@ -152,6 +153,7 @@ export default function TotalCostsDisplay({upgradedAreas, getItemById}: TotalCos
                             <Image
                                 src={item.images.icon}
                                 alt={item.name || selectedItem}
+                                unoptimized={true}
                                 width={40}
                                 height={40}
                                 className="object-contain"

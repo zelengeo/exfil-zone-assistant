@@ -74,6 +74,7 @@ const ItemImageDisplay: React.FC<{
                 <Image
                     src={src}
                     alt={alt}
+                    unoptimized={true}
                     fill
                     className="object-contain p-4"
                     onError={handleImageError}

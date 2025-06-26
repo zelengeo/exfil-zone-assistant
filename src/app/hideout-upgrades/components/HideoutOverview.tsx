@@ -282,6 +282,7 @@ export default function HideoutOverview({
                                 <Image
                                     src={`/images/hideout/${selectedUpgrade.levelUpIcon}.webp`} // Adjust path
                                     alt={selectedUpgrade.upgradeName}
+                                    unoptimized={true}
                                     fill
                                     sizes={"full"}
                                     className="object-cover"
@@ -353,6 +354,7 @@ export default function HideoutOverview({
                                                     <Image
                                                         src={item?.images.icon || '/images/items/unknown.png'}
                                                         alt={item?.name || itemId}
+                                                        unoptimized={true}
                                                         width={40}
                                                         height={40}
                                                         className="object-contain"

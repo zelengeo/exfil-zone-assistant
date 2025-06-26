@@ -135,6 +135,7 @@ export default function DefenderSetup({defender, onUpdate}: DefenderSetupProps) 
                                         <Image
                                             src={defender.bodyArmor.images.icon}
                                             alt={defender.bodyArmor.name}
+                                            unoptimized={true}
                                             fill
                                             className="object-contain"
                                             sizes="40px"
@@ -194,6 +195,7 @@ export default function DefenderSetup({defender, onUpdate}: DefenderSetupProps) 
                                                     <Image
                                                         src={armor.images.icon}
                                                         alt={armor.name}
+                                                        unoptimized={true}
                                                         fill
                                                         className="object-contain"
                                                         sizes="40px"
@@ -296,6 +298,7 @@ export default function DefenderSetup({defender, onUpdate}: DefenderSetupProps) 
                                         <Image
                                             src={defender.helmet.images.icon}
                                             alt={defender.helmet.name}
+                                            unoptimized={true}
                                             fill
                                             className="object-contain"
                                             sizes="40px"
@@ -354,6 +357,7 @@ export default function DefenderSetup({defender, onUpdate}: DefenderSetupProps) 
                                                     <Image
                                                         src={helmet.images.icon}
                                                         alt={helmet.name}
+                                                        unoptimized={true}
                                                         fill
                                                         className="object-contain"
                                                         sizes="40px"
@@ -409,6 +413,7 @@ export default function DefenderSetup({defender, onUpdate}: DefenderSetupProps) 
                                                     <Image
                                                         src={shield.images.icon}
                                                         alt={shield.name}
+                                                        unoptimized={true}
                                                         fill
                                                         className="object-contain"
                                                         sizes="40px"
