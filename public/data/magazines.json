@@ -436,9 +436,9 @@
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_magazine_556x45NATO_Pmag30.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_556x45NATO_Pmag30.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_556x45NATO_Pmag30.webp"
+      "icon": "/images/items/magazines/Icon_magazine_ar15h.webp",
+      "thumbnail": "/images/items/magazines/Icon_magazine_ar15h.webp",
+      "fullsize": "/images/items/magazines/Icon_magazine_ar15h.webp"
     },
     "stats": {
       "price": 8910,

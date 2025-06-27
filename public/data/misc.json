@@ -1240,26 +1240,6 @@
     "tips": ""
   },
   {
-    "id": "misc_b_multipurposecleaner",
-    "name": "Gun Oil",
-    "description": "",
-    "category": "misc",
-    "subcategory": "Combustible",
-    "images": {
-      "icon": "/images/items/misc/Icon_valuable_gunoil.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_gunoil.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_gunoil.webp"
-    },
-    "stats": {
-      "price": 0,
-      "weight": 0.8,
-      "rarity": "Rare",
-      "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
-    },
-    "tips": ""
-  },
-  {
     "id": "misc_b_nail",
     "name": "Nails",
     "description": "",

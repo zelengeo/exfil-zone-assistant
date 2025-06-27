@@ -2609,7 +2609,7 @@
   },
   {
     "id": "rail_default__g3_railattachment_topbt3",
-    "name": "RSR Rail adapter",
+    "name": "BT3 Rail adapter",
     "description": "Heavy-duty G3 top rail mount with significant weight but robust attachment",
     "category": "attachments",
     "subcategory": "Rails",
