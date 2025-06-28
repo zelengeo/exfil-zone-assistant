@@ -91,28 +91,44 @@ export default function MerchantPanel({
     const merchantLevel = 1;
 
     // Collapsed view (different merchant is selected)
-    if (isCollapsed) {
+if (isCollapsed) {
         return (
             <button
                 onClick={() => onMerchantSelect(merchant)}
                 className="w-full p-3 rounded-sm border border-military-600 bg-military-800
-                 text-left transition-all duration-200 hover:border-olive-600
-                 hover:bg-military-700 group"
+              transition-all duration-200 hover:border-olive-600
+               hover:bg-military-700 group"
             >
-                <div className="flex items-center justify-between">
+                <div className="w-full lg:grid lg:grid-cols-5 lg:gap-6 pl-6 pr-6">
                     <div className="flex items-center gap-3">
-                        <div className="w-6 h-6 bg-olive-600/20 rounded-sm flex items-center justify-center">
-                            <User size={14} className="text-olive-400"/>
+                        {/*Merchant icon*/}
+                        <div className="w-6 h-6 rounded-sm overflow-hidden flex-shrink-0">
+                            <Image
+                                src={corps[merchant]?.icon}
+                                alt={corps[merchant]?.name || merchant}
+                                unoptimized={true}
+                                className="w-full h-full object-cover"
+                                width="24"
+                                height="24"
+                            />
                         </div>
-                        <span className="font-medium text-tan-300 group-hover:text-tan-100 transition-colors">
-              {merchant.toUpperCase()}
-            </span>
-                    </div>
-                    <ChevronRight size={16} className="text-tan-400 group-hover:text-olive-400 transition-colors"/>
-                </div>
 
-                <div className="mt-2 text-xs text-tan-400 ml-9">
-                    {counts.active} active
+                        {/* Merchant info */}
+                        <div className="text-left">
+                            <div className="font-medium text-tan-300 group-hover:text-tan-100 transition-colors text-sm">
+                                <span className="text-olive-400">{corps[merchant]?.name}</span>
+                                <span className="ml-1">{corps[merchant]?.merchant}</span>
+                            </div>
+                            <div className="text-xs text-tan-400">
+                                {currentReputation}/600 REP • Level {merchantLevel}
+                            </div>
+                        </div>
+                        <ChevronRight size={16} className="text-tan-400 group-hover:text-olive-400 transition-colors" />
+                    </div>
+
+                    <div className="lg:col-span-4">
+                        {/* TODO 1 active task or Message that 0 tasks are active*/}
+                    </div>
                 </div>
             </button>
         );
@@ -298,7 +314,7 @@ export default function MerchantPanel({
 
                     {/* Merchant Header with inline return button */}
                     <div className="flex items-center justify-between mb-3">
-                        <h2 className="text-left text-xl font-bold">
+                        <h2 className="text-xl font-bold">
                             <span className="text-olive-400">{corps[merchant]?.name || 'CORP'}</span>
                             <span className="text-tan-100 ml-1">{corps[merchant]?.merchant || merchant.toUpperCase()}</span>
                         </h2>
