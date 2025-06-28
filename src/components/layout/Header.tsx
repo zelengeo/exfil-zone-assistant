@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import Link from 'next/link';
-import {Coffee, FileText, Menu, Package, Target, Wrench, X} from 'lucide-react';
+import {Coffee, FileText, Goal, Menu, Package, Target, Wrench, X} from 'lucide-react';
 
 const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,6 +21,10 @@ const Header: React.FC = () => {
                     <Link href="/items" className="flex items-center gap-2 text-lg hover:text-olive-500 transition-colors group">
                         <Package size={20} className="text-olive-600 group-hover:text-olive-500" />
                         <span>Items</span>
+                    </Link>
+                    <Link href="/tasks" className="flex items-center gap-2 text-lg hover:text-olive-500 transition-colors group">
+                        <Goal size={20} className="text-olive-600 group-hover:text-olive-500" />
+                        <span>Tasks</span>
                     </Link>
                     <Link href="/hideout-upgrades" className="flex items-center gap-2 text-lg hover:text-olive-500 transition-colors group">
                         <Wrench size={20} className="text-olive-600 group-hover:text-olive-500" />

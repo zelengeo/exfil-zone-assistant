@@ -64,7 +64,7 @@ const HayaPlaysCard =  (<div key="hayaplays" className="bg-red-800/20 border bor
         <div className="grid grid-rows-2 gap-3 justify-items-start">
             <div className="flex items-start gap-3">
                 <Image
-                    src="/images/haya-logo-70x70.png"
+                    src="/images/community/haya-logo-70x70.webp"
                     alt="HayaPlays Logo"
                     unoptimized={true}
                     width={40}

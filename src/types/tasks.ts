@@ -18,18 +18,25 @@ export interface Task {
     objectives: string[];
     corpId: string;
     type: TaskType[];
-    map: TaskMap | TaskMap[];
+    map: TaskMap[];
     reward: TaskReward[];
     preReward: TaskReward[];
     requiredTasks: string[];
     requiredLevel: number;
     tips: string;
     videoGuides: string[];
-    order?: number;
+    order: number;
 }
 
 export interface TasksDatabase {
     [key: string]: Task;
+}
+
+export type TaskStatus = 'completed' | 'active' | 'locked' ;
+
+export interface UserProgress {
+    tasks: Record<string, TaskStatus>;
+    lastUpdated: string;
 }
 
 
@@ -39,9 +46,4 @@ export interface Corp {
     icon: string;
     merchant: string;
     merchantIcon: string;
-}
-
-// Interface for the entire corps object
-export interface Corps {
-    [key: string]: Corp;
 }

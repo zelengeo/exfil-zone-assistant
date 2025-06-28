@@ -1,37 +1,40 @@
-import {Task, TasksDatabase, Corps} from '@/types/tasks';
+import {Corp, Task, TaskMap, TasksDatabase} from '@/types/tasks';
 
-export const corps: Corps = {
+export const corps: Record<string, Corp> = {
     "ark": {
         name: "ARK",
-        icon: "ark.png", //TODO
+        icon: "/images/tasks/icon_Arkshop1_nobg.webp",
         merchant: "Tommy",
-        merchantIcon: "tommy.png"
+        merchantIcon: "/images/tasks/img_ark1Merchant.webp"
     },
     "ntg": {
         name: "N.T.G",
-        icon: "ntg.png", //TODO
+        icon: "/images/tasks/icon_NTGshop_nobg.webp",
         merchant: "Maggie",
-        merchantIcon: "maggie.png"
+        merchantIcon: "/images/tasks/img_DocMerchant.webp"
     },
     "trupiks": {
         name: "TRUPIK'S",
-        icon: "trupiks.png", //TODO
+        icon: "/images/tasks/icon_TPshop_nobg.webp",
         merchant: "Johnny",
-        merchantIcon: "johnny.png"
+        merchantIcon: "/images/tasks/img_TPMerchant.webp"
     },
     "regiment": {
         name: "REGIMENT",
-        icon: "regiment.png", //TODO
+        icon: "/images/tasks/icon_Regishop_nobg.webp",
         merchant: "Igor",
-        merchantIcon: "igor.png"
+        merchantIcon: "/images/tasks/img_RegiMerchant.webp"
     },
     "forge": {
         name: "BOULDER FORGE",
-        icon: "boulder_forge.png", //TODO
+        icon: "/images/tasks/icon_Arkshop2_nobg.webp",
         merchant: "Maximilian",
-        merchantIcon: "maximilian.png"
+        merchantIcon: "/images/tasks/img_ar2Merchant.webp"
     }
-}
+} as const;
+
+export type CorpId = keyof typeof corps;
+
 
 export const tasksData: TasksDatabase = {
     "ark_1": {
@@ -44,7 +47,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["extract"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -88,7 +91,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["elimination"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -137,7 +140,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["arrive", "submit"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -187,7 +190,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["arrive", "retrieve", "submit"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -235,7 +238,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["elimination"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -286,7 +289,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["arrive", "extract"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -345,7 +348,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["retrieve", "place"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -394,7 +397,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["photo"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -445,7 +448,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["arrive", "elimination"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -494,7 +497,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["arrive", "elimination"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -543,7 +546,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -591,7 +594,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["mark"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -643,7 +646,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["arrive", "submit"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -691,7 +694,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["elimination"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -739,7 +742,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["elimination"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -787,7 +790,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["mark"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -827,7 +830,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["retrieve", "place"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -865,7 +868,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -915,7 +918,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["arrive", "photo"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -963,7 +966,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["elimination"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -1014,7 +1017,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["elimination", "arrive", "submit", "retrieve"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -1061,7 +1064,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["elimination"],
-        "map": "dam",
+        "map": ["dam"],
         "reward": [
             {
                 "type": "money",
@@ -1111,7 +1114,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["arrive", "retrieve", "submit"],
-        "map": "dam",
+        "map": ["dam"],
         "reward": [
             {
                 "type": "money",
@@ -1152,7 +1155,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["arrive", "mark"],
-        "map": "dam",
+        "map": ["dam"],
         "reward": [
             {
                 "type": "money",
@@ -1192,7 +1195,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["arrive", "extract"],
-        "map": "dam",
+        "map": ["dam"],
         "reward": [
             {
                 "type": "money",
@@ -1245,7 +1248,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["arrive", "mark"],
-        "map": "dam",
+        "map": ["dam"],
         "reward": [
             {
                 "type": "money",
@@ -1292,7 +1295,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["elimination"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -1340,7 +1343,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["arrive", "elimination"],
-        "map": "dam",
+        "map": ["dam"],
         "reward": [
             {
                 "type": "money",
@@ -1379,7 +1382,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["arrive"],
-        "map": "metro",
+        "map": ["metro"],
         "reward": [
             {
                 "type": "money",
@@ -1417,7 +1420,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["elimination"],
-        "map": "metro",
+        "map": ["metro"],
         "reward": [
             {
                 "type": "money",
@@ -1465,7 +1468,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["arrive"],
-        "map": "metro",
+        "map": ["metro"],
         "reward": [
             {
                 "type": "money",
@@ -1514,7 +1517,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["extract"],
-        "map": "metro",
+        "map": ["metro"],
         "reward": [
             {
                 "type": "money",
@@ -1561,7 +1564,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["mark"],
-        "map": "metro",
+        "map": ["metro"],
         "reward": [
             {
                 "type": "money",
@@ -1608,7 +1611,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["elimination"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -1656,7 +1659,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ark",
         "type": ["arrive", "elimination"],
-        "map": "metro",
+        "map": ["metro"],
         "reward": [
             {
                 "type": "money",
@@ -1704,7 +1707,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -1750,7 +1753,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["arrive", "retrieve", "submit"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -1798,7 +1801,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -1837,7 +1840,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["arrive"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -1883,7 +1886,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["arrive", "retrieve", "submit"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -1926,7 +1929,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -1967,7 +1970,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["arrive", "place", "retrieve", "submit"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -2012,7 +2015,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["arrive", "photo"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -2059,7 +2062,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["retrieve","submit"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -2108,7 +2111,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["extract"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -2146,7 +2149,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["mark"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -2189,7 +2192,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -2230,7 +2233,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["arrive","retrieve","place"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -2265,7 +2268,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["arrive","extract"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -2304,7 +2307,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -2349,7 +2352,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["arrive", "retrieve", "submit"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -2390,7 +2393,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["arrive", "photo"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -2430,7 +2433,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["arrive", "retrieve", "submit"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -2468,7 +2471,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["mark"],
-        "map": "dam",
+        "map": ["dam"],
         "reward": [
             {
                 "type": "money",
@@ -2507,7 +2510,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -2591,7 +2594,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["mark"],
-        "map": "dam",
+        "map": ["dam"],
         "reward": [
             {
                 "type": "money",
@@ -2635,7 +2638,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["submit"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -2674,7 +2677,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["submit"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -2713,7 +2716,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["submit"],
-        "map": "dam",
+        "map": ["dam"],
         "reward": [
             {
                 "type": "money",
@@ -2754,7 +2757,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["arrive","retrieve","submit"],
-        "map": "dam",
+        "map": ["dam"],
         "reward": [
             {
                 "type": "money",
@@ -2792,7 +2795,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -2831,7 +2834,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["extract"],
-        "map": "dam",
+        "map": ["dam"],
         "reward": [
             {
                 "type": "money",
@@ -2871,7 +2874,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["photo"],
-        "map": "metro",
+        "map": ["metro"],
         "reward": [
             {
                 "type": "money",
@@ -2915,7 +2918,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["submit"],
-        "map": "metro",
+        "map": ["metro"],
         "reward": [
             {
                 "type": "money",
@@ -3000,7 +3003,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["extract","place"],
-        "map": "metro",
+        "map": ["metro"],
         "reward": [
             {
                 "type": "reputation",
@@ -3051,7 +3054,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "ntg",
         "type": ["mark","retrieve","submit"],
-        "map": "metro",
+        "map": ["metro"],
         "reward": [
             {
                 "type": "money",
@@ -3096,7 +3099,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "trupiks",
         "type": ["arrive"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -3129,7 +3132,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "trupiks",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -3162,7 +3165,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "trupiks",
         "type": ["elimination"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -3207,7 +3210,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "trupiks",
         "type": ["arrive", "retrieve", "submit"] ,
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -3252,7 +3255,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "trupiks",
         "type": ["arrive", "retrieve", "submit"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -3285,7 +3288,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "trupiks",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -3320,7 +3323,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "trupiks",
         "type": ["arrive", "retrieve", "submit"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -3355,7 +3358,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "trupiks",
         "type": ["arrive", "retrieve", "submit"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -3390,7 +3393,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "trupiks",
         "type": ["arrive"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -3424,7 +3427,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "trupiks",
         "type": ["retrieve", "submit"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -3458,7 +3461,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "trupiks",
         "type": ["photo"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -3502,7 +3505,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "trupiks",
         "type": ["retrieve", "place"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -3548,7 +3551,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "trupiks",
         "type": ["arrive","mark"],
-        "map": "dam",
+        "map": ["dam"],
         "reward": [
             {
                 "type": "money",
@@ -3588,7 +3591,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "trupiks",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -3638,7 +3641,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "trupiks",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -3688,7 +3691,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "trupiks",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -3738,7 +3741,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "trupiks",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -3771,7 +3774,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["elimination"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -3804,7 +3807,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -3854,7 +3857,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["retrieve", "submit"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -3904,7 +3907,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["arrive","retrieve","submit"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -3953,7 +3956,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -3997,7 +4000,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -4042,7 +4045,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -4090,7 +4093,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["elimination"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -4138,7 +4141,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["elimination"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -4183,7 +4186,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["arrive", "retrieve", "submit"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -4231,7 +4234,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["elimination"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -4276,7 +4279,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["photo"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -4324,7 +4327,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["elimination"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -4362,7 +4365,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["place"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -4411,7 +4414,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -4459,7 +4462,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["elimination"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -4497,7 +4500,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -4547,7 +4550,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["retrieve", "submit"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -4595,7 +4598,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["elimination"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -4639,7 +4642,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -4687,7 +4690,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["elimination"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -4735,7 +4738,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["elimination"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -4787,7 +4790,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["submit", "retrieve", "mark", "extract"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -4837,7 +4840,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["place"],
-        "map": "dam",
+        "map": ["dam"],
         "reward": [
             {
                 "type": "money",
@@ -4887,7 +4890,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["photo"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -4925,7 +4928,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["elimination"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -4983,7 +4986,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["elimination"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -5016,7 +5019,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["elimination"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -5066,8 +5069,8 @@ export const tasksData: TasksDatabase = {
             "Take a photo of the hound at Metro",
         ],
         "corpId": "regiment",
-        "type": "task",
-        "map": "all",
+        "type": ["photo"],
+        "map": ["suburb", "resort", "dam", "metro"],
         "reward": [
             {
                 "type": "money",
@@ -5107,7 +5110,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["retrieve", "submit"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -5155,7 +5158,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["elimination"],
-        "map": "metro",
+        "map": ["metro"],
         "reward": [
             {
                 "type": "money",
@@ -5204,7 +5207,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["retrieve","place"],
-        "map": "metro",
+        "map": ["metro"],
         "reward": [
             {
                 "type": "money",
@@ -5231,7 +5234,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_item": "mag_545x39_30_2",
+                "item_id": "mag_545x39_30_2",
                 "quantity": 1
             }
         ],
@@ -5253,7 +5256,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["arrive", "submit"],
-        "map": "metro",
+        "map": ["metro"],
         "reward": [
             {
                 "type": "money",
@@ -5301,7 +5304,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["elimination"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -5350,7 +5353,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "regiment",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -5400,7 +5403,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["arrive","retrieve","submit"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -5441,7 +5444,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["arrive"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -5490,7 +5493,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["arrive","extract"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -5533,7 +5536,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["submit"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -5571,7 +5574,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["place"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -5617,7 +5620,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["photo"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -5653,7 +5656,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["retrieve","submit"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -5692,7 +5695,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["retrieve","place"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -5735,7 +5738,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -5776,7 +5779,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["retrieve","place"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -5817,7 +5820,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["mark"],
-        "map": "dam",
+        "map": ["dam"],
         "reward": [
             {
                 "type": "money",
@@ -5855,7 +5858,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["elimination"],
-        "map": "resort",
+        "map": ["resort"],
         "reward": [
             {
                 "type": "money",
@@ -5893,7 +5896,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -5931,7 +5934,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -5970,7 +5973,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["retrieve","submit"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -6011,7 +6014,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["mark"],
-        "map": "dam",
+        "map": ["dam"],
         "reward": [
             {
                 "type": "money",
@@ -6052,7 +6055,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["arrive","extract"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -6093,7 +6096,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["arrive"],
-        "map": "dam",
+        "map": ["dam"],
         "reward": [
             {
                 "type": "money",
@@ -6132,7 +6135,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["mark","submit"],
-        "map": "suburb",
+        "map": ["suburb"],
         "reward": [
             {
                 "type": "money",
@@ -6174,7 +6177,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["arrive", "retrieve", "place"],
-        "map": "dam",
+        "map": ["dam"],
         "reward": [
             {
                 "type": "money",
@@ -6212,7 +6215,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -6252,7 +6255,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["arrive","retrieve","submit"],
-        "map": "dam",
+        "map": ["dam"],
         "reward": [
             {
                 "type": "money",
@@ -6290,7 +6293,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -6330,7 +6333,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["arrive","retrieve","submit"],
-        "map": "dam",
+        "map": ["dam"],
         "reward": [
             {
                 "type": "money",
@@ -6372,7 +6375,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -6413,7 +6416,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["submit"],
-        "map": "any",
+        "map": ["any"],
         "reward": [
             {
                 "type": "money",
@@ -6493,7 +6496,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["arrive","retrieve","submit"],
-        "map": "metro",
+        "map": ["metro"],
         "reward": [
             {
                 "type": "money",
@@ -6572,7 +6575,7 @@ export const tasksData: TasksDatabase = {
         ],
         "corpId": "forge",
         "type": ["arrive"],
-        "map": "metro",
+        "map": ["metro"],
         "reward": [
             {
                 "type": "money",
@@ -6600,7 +6603,7 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [],
         "order": 39
     }
-};
+} as const;
 
 // Helper functions for tasks
 export const getTaskById = (id: string): Task | undefined => {
@@ -6612,11 +6615,11 @@ export const getTasksByMerchant = (corpId: string): Task[] => {
 };
 
 export const getAllMerchants = (): string[] => {
-    return [...new Set(Object.values(tasksData).map(task => task.corpId))];
+    return [...Object.keys(corps)];
 };
 
-export const getTasksByMap = (map: string): Task[] => {
-    return Object.values(tasksData).filter(task => task.map === map);
+export const getTasksByMap = (map: TaskMap): Task[] => {
+    return Object.values(tasksData).filter(task => task.map.includes(map));
 };
 
 export const getRequiredTasks = (taskId: string): Task[] => {
