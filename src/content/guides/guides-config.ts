@@ -87,7 +87,7 @@ export const guidesConfig: GuideMetadata[] = [
         author: 'pogapwnz',
         publishedAt: '2025-06-15',
         featured: true,
-        ogImageUrl: '/og/og-image-survival-damage.jpg',
+        ogImageUrl: '/og/og-image-guide-survival.jpg',
         contentType: 'component'
     },
     {
@@ -266,7 +266,7 @@ export function getRelatedGuides(currentSlug: string, limit: number = 3): GuideM
     if (!currentGuide) return [];
 
     // Find guides with overlapping tags
-    const relatedGuides = guidesConfig
+    return guidesConfig
         .filter(guide =>
             guide.slug !== currentSlug &&
             guide.tags.some(tag => currentGuide.tags.includes(tag))
@@ -279,8 +279,6 @@ export function getRelatedGuides(currentSlug: string, limit: number = 3): GuideM
         .sort((a, b) => b.score - a.score)
         .slice(0, limit)
         .map(item => item.guide);
-
-    return relatedGuides;
 }
 
 export function getAllTags(): string[] {

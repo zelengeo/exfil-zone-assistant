@@ -1984,6 +1984,116 @@
     "tips": "Affordable Class 3 protection that works well against most pistol rounds and low-penetration rifle ammunition."
   },
   {
+    "id": "helmet-pasgt",
+    "name": "PASGT Helmet",
+    "description": "Combat helmet providing reliable protection for infantry operations.",
+    "category": "gear",
+    "subcategory": "Helmets",
+    "images": {
+      "icon": "/images/items/helmets/Icon_helmet_3_5.webp",
+      "thumbnail": "/images/items/helmets/Icon_helmet_3_5.webp",
+      "fullsize": "/images/items/helmets/Icon_helmet_3_5.webp"
+    },
+    "stats": {
+      "rarity": "Uncommon",
+      "price": 28500,
+      "weight": 2.2,
+      "armorClass": 3,
+      "maxDurability": 50,
+      "soundMix": "default",
+      "bluntDamageScalar": 0.8,
+      "durabilityDamageScalar": 0.37,
+      "protectiveData": [
+        {
+          "bodyPart": "head_top",
+          "armorClass": 3,
+          "bluntDamageScalar": 0.8,
+          "protectionAngle": 90
+        }
+      ],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.93,
+          "arriveTangent": -4.401213,
+          "leaveTangent": -4.401215
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.15,
+          "arriveTangent": -0.487481,
+          "leaveTangent": -0.487481
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.04,
+          "arriveTangent": -0.083746,
+          "leaveTangent": -0.083745
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.001887,
+          "leaveTangent": -0.001887
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.85,
+          "arriveTangent": -0.279961,
+          "leaveTangent": -0.279962
+        },
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": 2,
+          "value": 0.5,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.75,
+          "value": 0.833333,
+          "arriveTangent": -0.649538,
+          "leaveTangent": -0.649537
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": -5.025785,
+          "leaveTangent": -5.025785
+        }
+      ]
+    },
+    "notes": "Standard military helmet with good protection against small arms fire.",
+    "tips": "Affordable Class 3 protection that works well against most pistol rounds and low-penetration rifle ammunition."
+  },
+  {
     "id": "helmet-ach-green",
     "name": "ACH Helmet (Green)",
     "description": "Advanced Combat Helmet in woodland green camouflage. Modern military design with enhanced ballistic protection and compatibility with tactical accessories.",

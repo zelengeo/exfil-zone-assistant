@@ -18,7 +18,7 @@ export default function ArmorSpecificStats({item}: { item: Armor }) {
                 <BowArrow size={18} className="text-olive-400"/>
                 <span className="text-tan-300">Penetration Damage</span>
                 <span
-                    className="text-tan-100">{(item.stats.penetrationDamageScalarCurve[1].value * 100).toFixed(0)}%</span>
+                    className="text-tan-100">{((item.stats.penetrationDamageScalarCurve[1]?.value || 1) * 100).toFixed(0)}%</span>
             </div>
             <div className="flex items-center gap-2">
                 <Shield size={18} className="text-olive-400"/>
