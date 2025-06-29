@@ -5,15 +5,14 @@ import {
     Target,
     MapPin,
     Map,
-    Zap,
     Award, DollarSign,
     Package
 } from 'lucide-react';
 import Image from 'next/image';
 import {Task, TaskReward, TaskStatus} from '@/types/tasks';
-import {formatReward, getStatusConfig, getTaskTypeIcon, RenderTipsContent} from "@/app/tasks/taskHelpers";
+import {getStatusConfig, getTaskTypeIcon, RenderTipsContent} from "@/app/tasks/taskHelpers";
 import {SiYoutube} from "@icons-pack/react-simple-icons";
-import {corps} from "@/data/tasks";
+import {corps, tasksData} from "@/data/tasks";
 import {Item} from "@/types/items";
 import Link from "next/link";
 
@@ -34,13 +33,15 @@ const renderReward = (reward: TaskReward, index: number, getItemById: TaskCardPr
             <div className={`${isWeaponIcon ? "w-20" : "w-10"} h-10 flex-shrink-0 flex items-center justify-center`}>
 
                 {reward.type === 'money' && (
-                    <div className="w-10 h-10 bg-military-600 border border-yellow-600/50 rounded flex items-center justify-center">
-                        <DollarSign size={16} className="text-yellow-400" />
+                    <div
+                        className="w-10 h-10 bg-military-600 border border-yellow-600/50 rounded flex items-center justify-center">
+                        <DollarSign size={16} className="text-yellow-400"/>
                     </div>
                 )}
 
                 {reward.type === 'experience' && (
-                    <div className="w-10 h-10 bg-military-600 border border-tan-500/50 rounded flex items-center justify-center text-tan-200 font-bold text-xs">
+                    <div
+                        className="w-10 h-10 bg-military-600 border border-tan-500/50 rounded flex items-center justify-center text-tan-200 font-bold text-xs">
                         XP
                     </div>
                 )}
@@ -60,14 +61,14 @@ const renderReward = (reward: TaskReward, index: number, getItemById: TaskCardPr
 
                 {reward.type === 'item' && (
                     <div
-                        className={`${isWeaponIcon ? "w-20" : "w-10"} h-10 rounded bg-military-600`}>
+                        className={`${isWeaponIcon ? "w-20" : "w-10"} h-10 p-0.5 rounded bg-military-600`}>
                         {reward.item_id && getItemById ? (
                             <Link href={`/items/${reward.item_id}`}>
                                 <Image
                                     src={getItemById(reward.item_id)?.images?.icon || '/images/items/default.png'}
                                     alt={reward.item_id}
                                     unoptimized={true}
-                                    className={`w-full h-full ${getItemById(reward.item_id)?.category === "weapon"
+                                    className={`w-full h-full ${isWeaponIcon
                                         ? "object-contain"
                                         : "object-cover"} hover:scale-110 transition-transform cursor-pointer`}
                                     width={40}
@@ -219,8 +220,9 @@ export default function TaskCard({
                             {task.tips && (
                                 <div>
                                     <h5 className="font-medium text-tan-100 mb-2">Tips</h5>
-                                    <div className="bg-military-800 p-3 rounded text-sm text-tan-300 border-l-4 border-olive-600">
-                                        <RenderTipsContent content={task.tips} />
+                                    <div
+                                        className="bg-military-800 p-3 rounded text-sm text-tan-300 border-l-4 border-olive-600">
+                                        <RenderTipsContent content={task.tips}/>
                                     </div>
                                 </div>
                             )}
@@ -269,7 +271,6 @@ export default function TaskCard({
                     )}
 
 
-
                     {/* Rewards */}
                     {task.reward && task.reward.length > 0 && (
                         <div>
@@ -288,14 +289,14 @@ export default function TaskCard({
                         <div>
                             <h5 className="font-medium text-tan-100 mb-2">Prerequisites</h5>
                             <div className="text-sm text-tan-400">
-                                Complete tasks: {task.requiredTasks.join(', ')}
+                                Complete tasks: {task.requiredTasks.map(taskId=>tasksData[taskId].name).join(', ')}
                             </div>
                         </div>
                     )}
 
                     {/* Bottom Row: Maps and Types */}
-                    <div className="grid grid-cols-2 gap-4">
-                        {/* All Maps */}
+                    {/*<div className="grid grid-cols-2 gap-4">
+                         All Maps
                         {task.map.length > 0 && (
                             <div>
                                 <h6 className="text-tan-200 text-sm font-medium mb-2">Maps</h6>
@@ -310,7 +311,7 @@ export default function TaskCard({
                             </div>
                         )}
 
-                        {/* All Types */}
+                         All Types
                         {task.type.length > 0 && (
                             <div>
                                 <h6 className="text-tan-200 text-sm font-medium mb-2">Types</h6>
@@ -324,7 +325,7 @@ export default function TaskCard({
                                 </div>
                             </div>
                         )}
-                    </div>
+                    </div>*/}
                 </div>
             )}
         </div>

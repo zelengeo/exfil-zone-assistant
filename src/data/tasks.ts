@@ -201,8 +201,8 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1807
             },
             {
-                "type": "item",
-                "item_name": "ARK arm",
+                "type": "reputation",
+                "corpId": "ark",
                 "quantity": 10
             },
             {
@@ -1000,7 +1000,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "Any M16A2: [M16A2 ](https://www.exfil-zone-assistant.app/items/weapon-m16a2-lv2) ",
         "videoGuides": [],
         "order": 20
     },
@@ -1050,17 +1050,57 @@ export const tasksData: TasksDatabase = {
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [],
+        "tips": "Use grenades, akimbo, everything you can think of. Good luck.",
+        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=749"}],
         "order": 21
     },
     "ark_22": {
         "id": "ark_22",
+        "name": "Recon 2",
+        "gameId": "task.na.19",
+        "description": "Scavengers have attacked the dock, and I need you to retrieve a secret surveillance device I planted there.\nHead to the dock in the [Dam Area], enter the [office building], and find a camouflaged [baseball] on the 2F shelf—it contains the collected data.\nI've sent you the vault key for the office via email—keep it safe.",
+        "objectives": [
+            "Find the Dock Office",
+            "Find Tommy's Baseball Cam",
+            "Turn in Tommy's Baseball Cam",
+        ],
+        "corpId": "ark",
+        "type": ["reach", "retrieve", "submit"],
+        "map": ["dam"],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
+            },
+            {
+                "type": "reputation",
+                "corpId": "ark",
+                "quantity": 30
+            },
+            {
+                "type": "item",
+                "item_id": "mag_556x45_50",
+                "quantity": 1
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [],
+        "requiredLevel": 0,
+        "tips": "One of the hot spots. Consider getting there closer to the end of a raid.",
+        "videoGuides": [{author: "orbb", url: "https://youtu.be/gqbXu1XbELg"}],
+        "order": 22
+    },
+    "ark_23": {
+        "id": "ark_23",
         "name": "Inviting Troubles",
         "gameId": "task.na.z19",
         "description": "ARK is in a weakened state, and scavengers have attacked the dock in the [Dam Area], even blowing up the transport routes.\nHead to the [Dam Area], eliminate the scavengers, and make sure they understand they messed with the wrong people.",
         "objectives": [
-            "Eliminate 11 scavengers in Dam area"
+            "Eliminate 12 scavengers in Dam area"
         ],
         "corpId": "ark",
         "type": ["eliminate"],
@@ -1098,47 +1138,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [],
-        "order": 22
-    },
-    "ark_23": {
-        "id": "ark_23",
-        "name": "Recon 2",
-        "gameId": "task.na.19",
-        "description": "Scavengers have attacked the dock, and I need you to retrieve a secret surveillance device I planted there.\nHead to the dock in the [Dam Area], enter the [office building], and find a camouflaged [baseball] on the 2F shelf—it contains the collected data.\nI've sent you the vault key for the office via email—keep it safe.",
-        "objectives": [
-            "Find the Dock Office",
-            "Find Tommy's Baseball Cam",
-            "Turn in Tommy's Baseball Cam",
-        ],
-        "corpId": "ark",
-        "type": ["reach", "retrieve", "submit"],
-        "map": ["dam"],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "mag_556x45_50",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [],
-        "requiredLevel": 0,
-        "tips": "",
+        "tips": "Lots of scavengers at Factory",
         "videoGuides": [],
         "order": 23
     },
@@ -1179,8 +1179,8 @@ export const tasksData: TasksDatabase = {
         "preReward": [{type: "item", item_name: "Tracking device", quantity: 2}],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "north side of map, located east of dock & west of clifton, walk on top of both bridges, mark the standalone bridge column in front of both broken bridges. https://ibb.co/pv0k1SN1",
-        "videoGuides": [],
+        "tips": "north side of map, located east of dock & west of clifton, walk on top of both bridges, mark the standalone bridge column in front of both broken bridges.",
+        "videoGuides": [{author: "orbb", url: "https://youtu.be/sKc6B8RQefg"}],
         "order": 24
     },
     "ark_25": {
@@ -1234,7 +1234,7 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [{author: "orbb", url: "https://youtu.be/5uY7-lpuh6Y"}],
         "order": 25
     },
     "ark_26": {
@@ -1244,7 +1244,7 @@ export const tasksData: TasksDatabase = {
         "description": "You should be quite familiar with using trackers by now. Based on our past work together, you're the one I trust for this task.\nFind the [A1 and A2 warehouses] in the [Factory] in the [Dam Area] and mark the [green tanks] in them. They seem to be storing chemical substances in, I need precise data before initiating recovery.",
         "objectives": [
             "Reach Factory A Zone",
-            "Mark the 3 Green Storagetank in Factory A Zone",
+            "Mark the 3 Green Storage tank in Factory A Zone",
         ],
         "corpId": "ark",
         "type": ["reach", "mark"],
@@ -1282,7 +1282,7 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [{author: "orbb", url: "https://youtu.be/mF3yc9qY4ao"}],
         "order": 26
     },
     "ark_27": {
@@ -1328,8 +1328,8 @@ export const tasksData: TasksDatabase = {
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [],
+        "tips": "[AR-15 Pistol](https://www.exfil-zone-assistant.app/items/weapon-ar15-pistol) or [AR-15 Hunter](https://www.exfil-zone-assistant.app/items/weapon-m4a1-hunter)",
+        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=988"}],
         "order": 27
     },
     "ark_28": {
@@ -1366,8 +1366,8 @@ export const tasksData: TasksDatabase = {
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "Caged room bottom of dam, recommend AP ammo to help kill boss",
-        "videoGuides": [],
+        "tips": "Caged room bottom of dam. Boss is relatively easy but POE is hot spot.",
+        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=1044"}],
         "order": 28
     },
     "ark_29": {
@@ -1406,8 +1406,8 @@ export const tasksData: TasksDatabase = {
         "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "hound monument statue located top of stairs east on railway, public washroom behind GPU room in office area, underground med base is circle med room in basement",
-        "videoGuides": [],
+        "tips": "",
+        "videoGuides": [{author: "orbb", url: "https://youtu.be/HdTqbSk3eaY"}],
         "order": 29
     },
     "ark_30": {
@@ -1454,7 +1454,7 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-ust=338"}],
         "order": 30
     },
     "ark_31": {
@@ -1479,31 +1479,31 @@ export const tasksData: TasksDatabase = {
                 "quantity": 15403
             },
             {
-                "type": "item",
-                "item_name": "ARK arm",
+                "type": "reputation",
+                "corpId": "ark",
                 "quantity": 30
             },
             {
                 "type": "item",
-                "item_name": "7.62x51 M61",
+                "item_id": "ammo-762x51-apv1",
                 "quantity": 30
             },
             {
                 "type": "item",
-                "item_name": "G3 HK51 ace rifle",
+                "item_id": "weapon-hk51-ace",
                 "quantity": 1
             },
             {
                 "type": "item",
-                "item_name": "G3 series 30-round mag",
+                "item_id": "mag_762x51_30",
                 "quantity": 1
             }
         ],
         "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "both located main level with train cars, restroom is NW bathroom leading to rock passage to sewer, warehouse room NE has metal shelves with ladder access this room is located under bomb room ",
-        "videoGuides": [],
+        "tips": "",
+        "videoGuides": [{author: "orbb", url: "https://youtu.be/2fEEpOWBYHY"}],
         "order": 31
     },
     "ark_32": {
@@ -1550,8 +1550,8 @@ export const tasksData: TasksDatabase = {
         "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "military base extract is north basement by conference room, has tank in extract room; northern sewer extract only available if spawn first in public washrooms, extraction located in sewer below rock passage, below chamber extract: across from ladder",
-        "videoGuides": [],
+        "tips": "Good luck getting the right extraction point.",
+        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=1164"}],
         "order": 32
     },
     "ark_33": {
@@ -1597,8 +1597,8 @@ export const tasksData: TasksDatabase = {
         "preReward": [{type: "item", item_name: "Tracking device", quantity: 3}, {type: "item", item_name: "Metro entrance card", quantity: 1}],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "NOTE* not 3 different ones, I returned and marked the same one twice. main floor SW by metal stair leading to basement; one south of metal stairs, two north of metal stair on train car, side by side, mark with marking device",
-        "videoGuides": [],
+        "tips": "Don't have to be 3 different ones. You can mark the same BMP in multiple runs.",
+        "videoGuides": [{author: "orbb", url: "https://youtu.be/9t1zLuov-sE"}],
         "order": 33
     },
     "ark_34": {
@@ -1644,8 +1644,8 @@ export const tasksData: TasksDatabase = {
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [],
+        "tips": "Any [AUG](https://www.exfil-zone-assistant.app/items/weapon-aug-a3-ris). ",
+        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=1234"}],
         "order": 34
     },
     "ark_35": {
@@ -1693,8 +1693,8 @@ export const tasksData: TasksDatabase = {
         "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [],
+        "tips": "Boss wearing RYS-T, who loves to kill while you are loading.",
+        "videoGuides": [{author: "orbb", url: "https://youtu.be/4eNHusxBbIU"}],
         "order": 35
     },
     "ntg_1": {
