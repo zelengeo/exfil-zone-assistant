@@ -90,7 +90,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 4 contractors or scavengers"
         ],
         "corpId": "ark",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["any"],
         "reward": [
             {
@@ -139,7 +139,7 @@ export const tasksData: TasksDatabase = {
             "Turn in 6 Intel Items Found In Raid"
         ],
         "corpId": "ark",
-        "type": ["arrive", "submit"],
+        "type": ["reach", "submit"],
         "map": ["suburb"],
         "reward": [
             {
@@ -189,7 +189,7 @@ export const tasksData: TasksDatabase = {
             "Turn in Intel Phone"
         ],
         "corpId": "ark",
-        "type": ["arrive", "retrieve", "submit"],
+        "type": ["reach", "retrieve", "submit"],
         "map": ["suburb"],
         "reward": [
             {
@@ -237,7 +237,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 15 Scavangers in Suburb Area"
         ],
         "corpId": "ark",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["suburb"],
         "reward": [
             {
@@ -288,7 +288,7 @@ export const tasksData: TasksDatabase = {
             "extract from resort"
         ],
         "corpId": "ark",
-        "type": ["arrive", "extract"],
+        "type": ["reach", "extract"],
         "map": ["resort"],
         "reward": [
             {
@@ -447,7 +447,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 6 scavs"
         ],
         "corpId": "ark",
-        "type": ["arrive", "elimination"],
+        "type": ["reach", "eliminate"],
         "map": ["resort"],
         "reward": [
             {
@@ -496,7 +496,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate Iron Wolf in Police Station"
         ],
         "corpId": "ark",
-        "type": ["arrive", "elimination"],
+        "type": ["reach", "eliminate"],
         "map": ["suburb"],
         "reward": [
             {
@@ -645,7 +645,7 @@ export const tasksData: TasksDatabase = {
             "Turn in 3 intel items"
         ],
         "corpId": "ark",
-        "type": ["arrive", "submit"],
+        "type": ["reach", "submit"],
         "map": ["resort"],
         "reward": [
             {
@@ -693,7 +693,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 10 targets with M4A1 series"
         ],
         "corpId": "ark",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["resort"],
         "reward": [
             {
@@ -741,7 +741,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate worker dorm's butcher"
         ],
         "corpId": "ark",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["resort"],
         "reward": [
             {
@@ -917,7 +917,7 @@ export const tasksData: TasksDatabase = {
             "Find the Out-door gear store on the 3F of TRUPIK'S Mall and take a photo."
         ],
         "corpId": "ark",
-        "type": ["arrive", "photo"],
+        "type": ["reach", "photo"],
         "map": ["suburb"],
         "reward": [
             {
@@ -965,7 +965,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 12 targets with: M16A2 Series"
         ],
         "corpId": "ark",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["any"],
         "reward": [
             {
@@ -1016,7 +1016,7 @@ export const tasksData: TasksDatabase = {
             "Turn in ARK Floppydisk"
         ],
         "corpId": "ark",
-        "type": ["elimination", "arrive", "submit", "retrieve"],
+        "type": ["eliminate", "reach", "submit", "retrieve"],
         "map": ["suburb"],
         "reward": [
             {
@@ -1063,7 +1063,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 11 scavengers in Dam area"
         ],
         "corpId": "ark",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["dam"],
         "reward": [
             {
@@ -1113,7 +1113,7 @@ export const tasksData: TasksDatabase = {
             "Turn in Tommy's Baseball Cam",
         ],
         "corpId": "ark",
-        "type": ["arrive", "retrieve", "submit"],
+        "type": ["reach", "retrieve", "submit"],
         "map": ["dam"],
         "reward": [
             {
@@ -1154,7 +1154,7 @@ export const tasksData: TasksDatabase = {
             "Mark West Broken Bridge Pier",
         ],
         "corpId": "ark",
-        "type": ["arrive", "mark"],
+        "type": ["reach", "mark"],
         "map": ["dam"],
         "reward": [
             {
@@ -1194,7 +1194,7 @@ export const tasksData: TasksDatabase = {
             "Successfully extract from Southeast Road"
         ],
         "corpId": "ark",
-        "type": ["arrive", "extract"],
+        "type": ["reach", "extract"],
         "map": ["dam"],
         "reward": [
             {
@@ -1247,7 +1247,7 @@ export const tasksData: TasksDatabase = {
             "Mark the 3 Green Storagetank in Factory A Zone",
         ],
         "corpId": "ark",
-        "type": ["arrive", "mark"],
+        "type": ["reach", "mark"],
         "map": ["dam"],
         "reward": [
             {
@@ -1294,7 +1294,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 10 targets with AR15 series"
         ],
         "corpId": "ark",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["any"],
         "reward": [
             {
@@ -1342,7 +1342,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate Dam BOSS"
         ],
         "corpId": "ark",
-        "type": ["arrive", "elimination"],
+        "type": ["reach", "eliminate"],
         "map": ["dam"],
         "reward": [
             {
@@ -1381,7 +1381,7 @@ export const tasksData: TasksDatabase = {
             "Find the Underground Medical Base's Hall"
         ],
         "corpId": "ark",
-        "type": ["arrive"],
+        "type": ["reach"],
         "map": ["metro"],
         "reward": [
             {
@@ -1419,7 +1419,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 15 scavengers in metro area"
         ],
         "corpId": "ark",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["metro"],
         "reward": [
             {
@@ -1467,7 +1467,7 @@ export const tasksData: TasksDatabase = {
             "Find the Secret Passage in the Warehouse of the Metro"
         ],
         "corpId": "ark",
-        "type": ["arrive"],
+        "type": ["reach"],
         "map": ["metro"],
         "reward": [
             {
@@ -1610,7 +1610,7 @@ export const tasksData: TasksDatabase = {
             "Eliminated 15 targets with AUG series"
         ],
         "corpId": "ark",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["any"],
         "reward": [
             {
@@ -1658,7 +1658,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate Ironclad in Metro area"
         ],
         "corpId": "ark",
-        "type": ["arrive", "elimination"],
+        "type": ["reach", "eliminate"],
         "map": ["metro"],
         "reward": [
             {
@@ -1752,7 +1752,7 @@ export const tasksData: TasksDatabase = {
             "Turn in Maggie's Precious Camera"
         ],
         "corpId": "ntg",
-        "type": ["arrive", "retrieve", "submit"],
+        "type": ["reach", "retrieve", "submit"],
         "map": ["suburb"],
         "reward": [
             {
@@ -1839,7 +1839,7 @@ export const tasksData: TasksDatabase = {
             "Reach the Supply station"
         ],
         "corpId": "ntg",
-        "type": ["arrive"],
+        "type": ["reach"],
         "map": ["suburb"],
         "reward": [
             {
@@ -1885,7 +1885,7 @@ export const tasksData: TasksDatabase = {
             "Turn in Maggie's Radio"
         ],
         "corpId": "ntg",
-        "type": ["arrive", "retrieve", "submit"],
+        "type": ["reach", "retrieve", "submit"],
         "map": ["resort"],
         "reward": [
             {
@@ -1969,7 +1969,7 @@ export const tasksData: TasksDatabase = {
             "Turn in Maggie's USB"
         ],
         "corpId": "ntg",
-        "type": ["arrive", "place", "retrieve", "submit"],
+        "type": ["reach", "place", "retrieve", "submit"],
         "map": ["resort"],
         "reward": [
             {
@@ -2014,7 +2014,7 @@ export const tasksData: TasksDatabase = {
             "Take photo of the second medicine recipe"
         ],
         "corpId": "ntg",
-        "type": ["arrive", "photo"],
+        "type": ["reach", "photo"],
         "map": ["resort"],
         "reward": [
             {
@@ -2232,7 +2232,7 @@ export const tasksData: TasksDatabase = {
             "Place on top of the lighthouse"
         ],
         "corpId": "ntg",
-        "type": ["arrive","retrieve","place"],
+        "type": ["reach","retrieve","place"],
         "map": ["resort"],
         "reward": [
             {
@@ -2267,7 +2267,7 @@ export const tasksData: TasksDatabase = {
             "Extract from suburb area"
         ],
         "corpId": "ntg",
-        "type": ["arrive","extract"],
+        "type": ["reach","extract"],
         "map": ["suburb"],
         "reward": [
             {
@@ -2351,7 +2351,7 @@ export const tasksData: TasksDatabase = {
             "Turn in Maggie's poison"
         ],
         "corpId": "ntg",
-        "type": ["arrive", "retrieve", "submit"],
+        "type": ["reach", "retrieve", "submit"],
         "map": ["suburb"],
         "reward": [
             {
@@ -2392,7 +2392,7 @@ export const tasksData: TasksDatabase = {
             "Take photo of the corpse in Wyeth farm cellar"
         ],
         "corpId": "ntg",
-        "type": ["arrive", "photo"],
+        "type": ["reach", "photo"],
         "map": ["suburb"],
         "reward": [
             {
@@ -2432,7 +2432,7 @@ export const tasksData: TasksDatabase = {
             "Turn in Maggie's medical bag",
         ],
         "corpId": "ntg",
-        "type": ["arrive", "retrieve", "submit"],
+        "type": ["reach", "retrieve", "submit"],
         "map": ["suburb"],
         "reward": [
             {
@@ -2756,7 +2756,7 @@ export const tasksData: TasksDatabase = {
             "Turn in 2 NTG medical reports"
         ],
         "corpId": "ntg",
-        "type": ["arrive","retrieve","submit"],
+        "type": ["reach","retrieve","submit"],
         "map": ["dam"],
         "reward": [
             {
@@ -3098,7 +3098,7 @@ export const tasksData: TasksDatabase = {
             "Reach Hydertown",
         ],
         "corpId": "trupiks",
-        "type": ["arrive"],
+        "type": ["reach"],
         "map": ["suburb"],
         "reward": [
             {
@@ -3164,7 +3164,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate scavengers in the suburb area"
         ],
         "corpId": "trupiks",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["suburb"],
         "reward": [
             {
@@ -3209,7 +3209,7 @@ export const tasksData: TasksDatabase = {
             "Turn in Johnny's drill"
         ],
         "corpId": "trupiks",
-        "type": ["arrive", "retrieve", "submit"] ,
+        "type": ["reach", "retrieve", "submit"] ,
         "map": ["suburb"],
         "reward": [
             {
@@ -3254,7 +3254,7 @@ export const tasksData: TasksDatabase = {
             "Turn in Johnny's FamilyTape"
         ],
         "corpId": "trupiks",
-        "type": ["arrive", "retrieve", "submit"],
+        "type": ["reach", "retrieve", "submit"],
         "map": ["suburb"],
         "reward": [
             {
@@ -3322,7 +3322,7 @@ export const tasksData: TasksDatabase = {
             "Turn in shooting range key"
         ],
         "corpId": "trupiks",
-        "type": ["arrive", "retrieve", "submit"],
+        "type": ["reach", "retrieve", "submit"],
         "map": ["suburb"],
         "reward": [
             {
@@ -3357,7 +3357,7 @@ export const tasksData: TasksDatabase = {
             "Turn in Find Jonny's safebox"
         ],
         "corpId": "trupiks",
-        "type": ["arrive", "retrieve", "submit"],
+        "type": ["reach", "retrieve", "submit"],
         "map": ["suburb"],
         "reward": [
             {
@@ -3392,7 +3392,7 @@ export const tasksData: TasksDatabase = {
             "Reach the canal bridge 3",
         ],
         "corpId": "trupiks",
-        "type": ["arrive"],
+        "type": ["reach"],
         "map": ["suburb"],
         "reward": [
             {
@@ -3550,7 +3550,7 @@ export const tasksData: TasksDatabase = {
             "Mark all 3 tanks next to military camps"
         ],
         "corpId": "trupiks",
-        "type": ["arrive","mark"],
+        "type": ["reach","mark"],
         "map": ["dam"],
         "reward": [
             {
@@ -3773,7 +3773,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 8 targets with: rifle"
         ],
         "corpId": "regiment",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["any"],
         "reward": [
             {
@@ -3906,7 +3906,7 @@ export const tasksData: TasksDatabase = {
             "Turn in Igor's Sunglasses"
         ],
         "corpId": "regiment",
-        "type": ["arrive","retrieve","submit"],
+        "type": ["reach","retrieve","submit"],
         "map": ["resort"],
         "reward": [
             {
@@ -4092,7 +4092,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 8 targets with: SMG"
         ],
         "corpId": "regiment",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["any"],
         "reward": [
             {
@@ -4140,7 +4140,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 5 targets with: pump shotgun"
         ],
         "corpId": "regiment",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["any"],
         "reward": [
             {
@@ -4185,7 +4185,7 @@ export const tasksData: TasksDatabase = {
             "Turn in Igor's notes"
         ],
         "corpId": "regiment",
-        "type": ["arrive", "retrieve", "submit"],
+        "type": ["reach", "retrieve", "submit"],
         "map": ["resort"],
         "reward": [
             {
@@ -4233,7 +4233,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 10 scavs in resort area"
         ],
         "corpId": "regiment",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["resort"],
         "reward": [
             {
@@ -4326,7 +4326,7 @@ export const tasksData: TasksDatabase = {
             "FAL series: Eliminate 8 targets"
         ],
         "corpId": "regiment",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["any"],
         "reward": [
             {
@@ -4461,7 +4461,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 8 targets with: pistol"
         ],
         "corpId": "regiment",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["any"],
         "reward": [
             {
@@ -4597,7 +4597,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 5 targets with: Bolt Action"
         ],
         "corpId": "regiment",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["any"],
         "reward": [
             {
@@ -4689,7 +4689,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 6 targets with Glock 18c pistol"
         ],
         "corpId": "regiment",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["any"],
         "reward": [
             {
@@ -4737,7 +4737,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 8 targets without wearing helmet"
         ],
         "corpId": "regiment",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["any"],
         "reward": [
             {
@@ -4927,7 +4927,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 12 targets with specific assembled G3 rifle"
         ],
         "corpId": "regiment",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["any"],
         "reward": [
             {
@@ -4985,7 +4985,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 16 targets in \"Police Outfit\""
         ],
         "corpId": "regiment",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["any"],
         "reward": [
             {
@@ -5018,7 +5018,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 8 targets with mosin series"
         ],
         "corpId": "regiment",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["any"],
         "reward": [
             {
@@ -5157,7 +5157,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 8 targets with Sjogren series shotgun in metro"
         ],
         "corpId": "regiment",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["metro"],
         "reward": [
             {
@@ -5255,7 +5255,7 @@ export const tasksData: TasksDatabase = {
             "Turn in Malyuk 7.62"
         ],
         "corpId": "regiment",
-        "type": ["arrive", "submit"],
+        "type": ["reach", "submit"],
         "map": ["metro"],
         "reward": [
             {
@@ -5303,7 +5303,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate 33 Contractors or Scavengers"
         ],
         "corpId": "regiment",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["any"],
         "reward": [
             {
@@ -5402,7 +5402,7 @@ export const tasksData: TasksDatabase = {
             "Turn in Golden Goblet"
         ],
         "corpId": "forge",
-        "type": ["arrive","retrieve","submit"],
+        "type": ["reach","retrieve","submit"],
         "map": ["suburb"],
         "reward": [
             {
@@ -5443,7 +5443,7 @@ export const tasksData: TasksDatabase = {
             "Find the The 2 yellow-ish huts"
         ],
         "corpId": "forge",
-        "type": ["arrive"],
+        "type": ["reach"],
         "map": ["suburb"],
         "reward": [
             {
@@ -5492,7 +5492,7 @@ export const tasksData: TasksDatabase = {
             "Successfully extract from suburb"
         ],
         "corpId": "forge",
-        "type": ["arrive","extract"],
+        "type": ["reach","extract"],
         "map": ["suburb"],
         "reward": [
             {
@@ -5857,7 +5857,7 @@ export const tasksData: TasksDatabase = {
             "Eliminate Bank's barricade"
         ],
         "corpId": "forge",
-        "type": ["elimination"],
+        "type": ["eliminate"],
         "map": ["resort"],
         "reward": [
             {
@@ -6054,7 +6054,7 @@ export const tasksData: TasksDatabase = {
             "Successfully extract from Suburb"
         ],
         "corpId": "forge",
-        "type": ["arrive","extract"],
+        "type": ["reach","extract"],
         "map": ["suburb"],
         "reward": [
             {
@@ -6095,7 +6095,7 @@ export const tasksData: TasksDatabase = {
             "Successfully extract from Southwest Road"
         ],
         "corpId": "forge",
-        "type": ["arrive"],
+        "type": ["reach"],
         "map": ["dam"],
         "reward": [
             {
@@ -6176,7 +6176,7 @@ export const tasksData: TasksDatabase = {
             "Place in the dim blue shipping container"
         ],
         "corpId": "forge",
-        "type": ["arrive", "retrieve", "place"],
+        "type": ["reach", "retrieve", "place"],
         "map": ["dam"],
         "reward": [
             {
@@ -6254,7 +6254,7 @@ export const tasksData: TasksDatabase = {
             "Turn in Game Disk"
         ],
         "corpId": "forge",
-        "type": ["arrive","retrieve","submit"],
+        "type": ["reach","retrieve","submit"],
         "map": ["dam"],
         "reward": [
             {
@@ -6332,7 +6332,7 @@ export const tasksData: TasksDatabase = {
             "Turn in Maximilian's Golden Ingots"
         ],
         "corpId": "forge",
-        "type": ["arrive","retrieve","submit"],
+        "type": ["reach","retrieve","submit"],
         "map": ["dam"],
         "reward": [
             {
@@ -6495,7 +6495,7 @@ export const tasksData: TasksDatabase = {
             "Turn in Missile Launcher Case"
         ],
         "corpId": "forge",
-        "type": ["arrive","retrieve","submit"],
+        "type": ["reach","retrieve","submit"],
         "map": ["metro"],
         "reward": [
             {
@@ -6574,7 +6574,7 @@ export const tasksData: TasksDatabase = {
             "Find the sewer area back room"
         ],
         "corpId": "forge",
-        "type": ["arrive"],
+        "type": ["reach"],
         "map": ["metro"],
         "reward": [
             {

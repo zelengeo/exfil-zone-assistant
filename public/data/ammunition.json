@@ -1210,7 +1210,7 @@
   },
   {
     "id": "ammo-762x51-fmj",
-    "name": "7.62x51mm FMG",
+    "name": "7.62x51mm FMJ",
     "description": "Standard NATO Full Metal Jacket ammunition. Reliable military-grade round with excellent damage and moderate penetration.",
     "category": "ammo",
     "subcategory": "7.62x51mm",

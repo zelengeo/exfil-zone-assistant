@@ -6,7 +6,9 @@ export interface TaskReward {
     item_id?: string; // Item rewards
 }
 
-export type TaskType = 'arrive' | 'extract' | 'retrieve' | 'elimination' | 'submit' | 'mark' | 'place' | 'photo';
+export type TaskType = 'reach' | 'extract' | 'retrieve' | 'eliminate' | 'submit' | 'mark' | 'place' | 'photo';
+
+export type TaskVideoGuide = { author: string, url: string }
 
 export type TaskMap = 'suburb' | 'resort' | 'dam' | 'metro' | 'any';
 
@@ -24,7 +26,7 @@ export interface Task {
     requiredTasks: string[];
     requiredLevel: number;
     tips: string;
-    videoGuides: string[];
+    videoGuides: TaskVideoGuide[];
     order: number;
 }
 

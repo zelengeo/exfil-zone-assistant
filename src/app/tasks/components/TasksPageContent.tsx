@@ -6,6 +6,7 @@ import Layout from '@/components/layout/Layout';
 import {tasksData, getAllMerchants, CorpId,} from '@/data/tasks';
 import {Task, UserProgress, TaskStatus, TaskMap, TaskType} from '@/types/tasks';
 import MerchantPanel from "@/app/tasks/components/MerchantPanel";
+import {useFetchItems} from "@/hooks/useFetchItems";
 
 // Types for component state
 interface TasksPageState {
@@ -27,6 +28,7 @@ const STORAGE_KEY = 'exfil-zone-tasks-progress';
 const SEARCH_DEBOUNCE_MS = 300;
 
 export default function TasksPageContent() {
+    const {getItemById} = useFetchItems();
     // State management
     const [state, setState] = useState<TasksPageState>({
         selectedMerchant: null,
@@ -102,7 +104,7 @@ export default function TasksPageContent() {
             return !reqProgress || reqProgress.status !== 'completed';
         });
 
-        return hasUnmetPrerequisites ? 'locked' : 'available';
+        return hasUnmetPrerequisites ? 'locked' : 'active';
     };
 
     // Filter and search tasks
@@ -282,6 +284,7 @@ export default function TasksPageContent() {
                                        onMerchantSelect={selectMerchant}
                                        onTaskStatusChange={updateTaskStatus}
                                        getTaskStatus={getTaskStatus}
+                                       getItemById={getItemById}
 
                         />))}
                 </div>
