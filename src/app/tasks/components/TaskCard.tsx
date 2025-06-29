@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import {Task, TaskReward, TaskStatus} from '@/types/tasks';
-import {formatReward, getStatusConfig, getTaskTypeIcon} from "@/app/tasks/taskHelpers";
+import {formatReward, getStatusConfig, getTaskTypeIcon, RenderTipsContent} from "@/app/tasks/taskHelpers";
 import {SiYoutube} from "@icons-pack/react-simple-icons";
 import {corps} from "@/data/tasks";
 import {Item} from "@/types/items";
@@ -219,9 +219,8 @@ export default function TaskCard({
                             {task.tips && (
                                 <div>
                                     <h5 className="font-medium text-tan-100 mb-2">Tips</h5>
-                                    <div
-                                        className="bg-military-800 p-3 rounded text-sm text-tan-300 border-l-4 border-olive-600">
-                                        {task.tips}
+                                    <div className="bg-military-800 p-3 rounded text-sm text-tan-300 border-l-4 border-olive-600">
+                                        <RenderTipsContent content={task.tips} />
                                     </div>
                                 </div>
                             )}
@@ -231,7 +230,7 @@ export default function TaskCard({
                                 <div>
                                     <h5 className="font-medium text-tan-100 mb-2">Video Guides</h5>
                                     <div className="space-y-2">
-                                        {task.videoGuides.map((url, index) => (
+                                        {task.videoGuides.map(({url}, index) => (
                                             <a
                                                 key={index}
                                                 href={url}

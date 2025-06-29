@@ -77,7 +77,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "Extraction points can be found in menu in Extraction tab or on map on M.I.C.A",
         "videoGuides": [],
         "order": 1
     },
@@ -125,7 +125,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "scavengers can be deadly, try to fight one at a time and use cover",
         "videoGuides": [],
         "order": 2
     },
@@ -174,7 +174,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "Military camp to the north of the Mall, [Intel items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Intel) are often found there",
         "videoGuides": [],
         "order": 3
     },
@@ -224,8 +224,8 @@ export const tasksData: TasksDatabase = {
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [],
+        "tips": "Small room on the second floor of the Office building",
+        "videoGuides": [{ author: "orbb", url:"https://youtu.be/4WsA_31tZKo"}],
         "order": 4
     },
     "ark_5": {
@@ -234,7 +234,7 @@ export const tasksData: TasksDatabase = {
         "gameId": "task.na.z14",
         "description": "I discovered that someone has been deliberately leaking ARK's information. There may be a traitor within us. We've been put in a vulnerable position, and some of our allies have already been ambushed by scavengers.\nFor now, go to the [Suburb area] and [weaken the scavenger] presence. I'll continue the investigation.",
         "objectives": [
-            "Eliminate 15 Scavangers in Suburb Area"
+            "Eliminate 15 Scavengers in Suburb Area"
         ],
         "corpId": "ark",
         "type": ["eliminate"],
@@ -285,7 +285,7 @@ export const tasksData: TasksDatabase = {
             "Reach the shopping street Rua Algasol",
             "Reach victoria golden hotel",
             "Reach east of White sails Hospital",
-            "extract from resort"
+            "Extract from resort"
         ],
         "corpId": "ark",
         "type": ["reach", "extract"],
@@ -333,8 +333,8 @@ export const tasksData: TasksDatabase = {
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [],
+        "tips": "Careful, most of players rush Bank on the start.",
+        "videoGuides": [{author: "orbb", url: "https://youtu.be/9q5RGDIiAMs"}],
         "order": 6
     },
     "ark_7": {
@@ -383,7 +383,7 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [{author: "orbb", url: "https://youtu.be/6MkGTEHSq_o"}],
         "order": 7
     },
     "ark_8": {
@@ -431,8 +431,8 @@ export const tasksData: TasksDatabase = {
         "preReward": [{type: "item", item_name: "Tactical Phone", quantity: 1}],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [],
+        "tips": "Phone does not have to be axtracted.",
+        "videoGuides": [{author: "orbb", url: "https://youtu.be/w_8khHE_o1A"}],
         "order": 8
     },
     "ark_9": {
@@ -442,9 +442,9 @@ export const tasksData: TasksDatabase = {
         "description": "It looks like gang members looted the vault. Seems the [Resort Area] was hit by a robbery right when that incident happened on the island.\nIf we don't intervene, chaos might spiral out of control. Head to the [Fire Station], [East Military Camp], and [Halif Travel Agency], and [eliminate some of the scavengers].",
         "objectives": [
             "Reach the Fire station",
-            "Reach the east military camp",
+            "Reach the East Military camp",
             "Reach the Halif voyage",
-            "Eliminate 6 scavs"
+            "Eliminate 6 scavengers"
         ],
         "corpId": "ark",
         "type": ["reach", "eliminate"],
@@ -483,7 +483,7 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [{author: "orbb", url: "https://youtu.be/AcsdXNUqR1k"}],
         "order": 9
     },
     "ark_10": {
@@ -531,8 +531,8 @@ export const tasksData: TasksDatabase = {
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "Almost Unarmored, wears [Police Vest](armor-police-vest) and [Red Beret](helmet-red-beret), drops [UMP](weapon-ump45) or [MP9](weapon-mp9-t)",
-        "videoGuides": [],
+        "tips": "Almost Unarmored, wears [Police Vest](https://www.exfil-zone-assistant.app/items/armor-police-vest) and [Red Beret](https://www.exfil-zone-assistant.app/items/helmet-red-beret), drops [UMP](https://www.exfil-zone-assistant.app/items/weapon-ump45) or [MP9](https://www.exfil-zone-assistant.app/items/weapon-mp9-t)",
+        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-ust=338"}],
         "order": 10
     },
     "ark_11": {
@@ -541,8 +541,8 @@ export const tasksData: TasksDatabase = {
         "gameId": "task.na.8",
         "description": "We left behind a lot of useful supplies on the island.\nTo locate them, we'll need to craft some trackers.\nIf you can bring me [2 electronic items] and [2 energy items],\nI'll be able to start making them right away.",
         "objectives": [
-            "Turn in 3 electrical devices",
-            "Turn in 2 batteries"
+            "Turn in 3 Electric Items",
+            "Turn in 2 Batteries"
         ],
         "corpId": "ark",
         "type": ["submit"],
@@ -580,7 +580,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "[Electric Item](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Electric), [Power Items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Power)",
         "videoGuides": [],
         "order": 11
     },
@@ -629,7 +629,7 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [{author: "orbb", url: "https://youtu.be/8Z4xxRQxK84"}],
         "order": 12
     },
     "ark_13": {
@@ -680,8 +680,8 @@ export const tasksData: TasksDatabase = {
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [],
+        "tips": "[Intel Items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Intel)",
+        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=438 "}],
         "order": 13
     },
     "ark_14": {
@@ -728,8 +728,8 @@ export const tasksData: TasksDatabase = {
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [],
+        "tips": "Any M4A1: [M4A1 CQBR](https://www.exfil-zone-assistant.app/items/weapon-m4a1-cqbr) ",
+        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=490"}],
         "order": 14
     },
     "ark_15": {
@@ -764,7 +764,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_id": "RC 416 rifle",
+                "item_id": "weapon-hk416",
                 "quantity": 1
             },
             {
@@ -776,8 +776,8 @@ export const tasksData: TasksDatabase = {
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "Unarmored",
-        "videoGuides": [],
+        "tips": "Unarmored, easy target. Does not spawn every game though.",
+        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=531"}],
         "order": 15
     },
     "ark_16": {
@@ -814,8 +814,8 @@ export const tasksData: TasksDatabase = {
         "preReward": [{type: "item", item_name: "Tracking device", quantity: 3}],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [],
+        "tips": "Trucks are all over the map.",
+        "videoGuides": [{author: "orbb", url: "https://youtu.be/TejY5XxbxXs"}],
         "order": 16
     },
     "ark_17": {
@@ -855,7 +855,7 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [{author: "orbb", url: "https://youtu.be/91ZLjp02aDY"}],
         "order": 17
     },
     "ark_18": {
@@ -902,7 +902,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "[Videotape](https://www.exfil-zone-assistant.app/items/misc_videotape) can be often found near the TVs",
         "videoGuides": [],
         "order": 18
     },
@@ -953,7 +953,7 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [{author: "orbb", url: "https://youtu.be/_OUY4xMCIUc"}],
         "order": 19
     },
     "ark_20": {
@@ -5561,7 +5561,7 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [{author: "orbb", url: "https://youtu.be/3yUDq4fJZ-s"}],
         "order": 4
     },
     "forge_5": {

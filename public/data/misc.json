@@ -2080,26 +2080,6 @@
     "tips": ""
   },
   {
-    "id": "misc_b_washingliquid",
-    "name": "Flash light",
-    "description": "",
-    "category": "misc",
-    "subcategory": "Electric",
-    "images": {
-      "icon": "/images/items/misc/valuable_electric_flashlight.webp",
-      "thumbnail": "/images/items/misc/valuable_electric_flashlight.webp",
-      "fullsize": "/images/items/misc/valuable_electric_flashlight.webp"
-    },
-    "stats": {
-      "price": 0,
-      "weight": 0.1,
-      "rarity": "Rare",
-      "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
-    },
-    "tips": ""
-  },
-  {
     "id": "misc_b_wd40",
     "name": "WD-40",
     "description": "",

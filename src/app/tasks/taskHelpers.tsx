@@ -17,6 +17,7 @@ import {
 import {getTasksByMerchant} from "@/data/tasks";
 import React from "react";
 import {Item} from "@/types/items";
+import Link from "next/link";
 
 
 export interface MerchantPanelProps {
@@ -141,4 +142,61 @@ export const getTaskTypeIcon = (type: TaskType) => {
         default:
             return <Target size={12} />;
     }
+};
+
+// Helper function to parse markdown-style links
+export const parseMarkdownLinks = (text: string) => {
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    const parts = [];
+    let lastIndex = 0;
+    let match;
+
+    while ((match = linkRegex.exec(text)) !== null) {
+        // Add text before the link
+        if (match.index > lastIndex) {
+            parts.push(text.slice(lastIndex, match.index));
+        }
+
+        // Add the link
+        parts.push({
+            type: 'link',
+            text: match[1],
+            url: match[2]
+        });
+
+        lastIndex = match.index + match[0].length;
+    }
+
+    // Add remaining text after the last link
+    if (lastIndex < text.length) {
+        parts.push(text.slice(lastIndex));
+    }
+
+    return parts;
+};
+
+// Helper component to render parsed content
+export const RenderTipsContent = ({ content }: { content: string }) => {
+    const parts = parseMarkdownLinks(content);
+
+    return (
+        <>
+            {parts.map((part, index) => {
+                if (typeof part === 'string') {
+                    return <span key={index}>{part}</span>;
+                } else {
+                    return (
+                        <Link
+                            key={index}
+                            target={"_blank"}
+                            href={part.url}
+                            className="text-olive-400 hover:text-olive-300 underline transition-colors"
+                        >
+                            {part.text}
+                        </Link>
+                    );
+                }
+            })}
+        </>
+    );
 };
