@@ -2660,26 +2660,6 @@
     "tips": ""
   },
   {
-    "id": "misc_magazine",
-    "name": "Magazine",
-    "description": "",
-    "category": "misc",
-    "subcategory": "Household",
-    "images": {
-      "icon": "/images/items/misc/valuable_task_ntg_medicalreport.webp",
-      "thumbnail": "/images/items/misc/valuable_task_ntg_medicalreport.webp",
-      "fullsize": "/images/items/misc/valuable_task_ntg_medicalreport.webp"
-    },
-    "stats": {
-      "price": 0,
-      "weight": 0.3,
-      "rarity": "Common",
-      "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
-    },
-    "tips": ""
-  },
-  {
     "id": "misc_mouse",
     "name": "Mouse",
     "description": "",
