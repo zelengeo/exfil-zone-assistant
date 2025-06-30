@@ -46,8 +46,12 @@ export const tasksData: TasksDatabase = {
             "Successfully extract from Suburb Area"
         ],
         "corpId": "ark",
-        "type": ["extract"],
-        "map": ["suburb"],
+        "type": [
+            "extract"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -90,8 +94,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate 4 contractors or scavengers"
         ],
         "corpId": "ark",
-        "type": ["eliminate"],
-        "map": ["any"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -123,7 +131,9 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_1"],
+        "requiredTasks": [
+            "ark_1"
+        ],
         "requiredLevel": 0,
         "tips": "Scavengers can be deadly. Try to fight one at a time and use cover",
         "videoGuides": [],
@@ -139,8 +149,13 @@ export const tasksData: TasksDatabase = {
             "Turn in 6 Intel Items Found In Raid"
         ],
         "corpId": "ark",
-        "type": ["reach", "submit"],
-        "map": ["suburb"],
+        "type": [
+            "reach",
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -172,7 +187,9 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_2"],
+        "requiredTasks": [
+            "ark_2"
+        ],
         "requiredLevel": 0,
         "tips": "The Military Camp is north of the Mall. [Intel items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Intel) are commonly found in that area.",
         "videoGuides": [],
@@ -189,8 +206,14 @@ export const tasksData: TasksDatabase = {
             "Turn in Intel Phone"
         ],
         "corpId": "ark",
-        "type": ["reach", "retrieve", "submit"],
-        "map": ["suburb"],
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -222,10 +245,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_3"],
+        "requiredTasks": [
+            "ark_3"
+        ],
         "requiredLevel": 0,
         "tips": "The phone is in a small room on the second floor of the office building, which is near the motel.",
-        "videoGuides": [{ author: "orbb", url:"https://youtu.be/4WsA_31tZKo"}],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://youtu.be/4WsA_31tZKo"
+            }
+        ],
         "order": 4
     },
     "ark_5": {
@@ -237,8 +267,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate 15 Scavengers in Suburb Area"
         ],
         "corpId": "ark",
-        "type": ["eliminate"],
-        "map": ["suburb"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -270,10 +304,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_3"],
+        "requiredTasks": [
+            "ark_3"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-ust=338"}],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/I5XTDO71-ust=338"
+            }
+        ],
         "order": 5
     },
     "ark_6": {
@@ -288,8 +329,13 @@ export const tasksData: TasksDatabase = {
             "Extract from resort"
         ],
         "corpId": "ark",
-        "type": ["reach", "extract"],
-        "map": ["resort"],
+        "type": [
+            "reach",
+            "extract"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -331,10 +377,18 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_4","ark_5"],
+        "requiredTasks": [
+            "ark_4",
+            "ark_5"
+        ],
         "requiredLevel": 0,
         "tips": "Careful, most of players rush Bank on the start.",
-        "videoGuides": [{author: "orbb", url: "https://youtu.be/9q5RGDIiAMs"}],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://youtu.be/9q5RGDIiAMs"
+            }
+        ],
         "order": 6
     },
     "ark_7": {
@@ -347,8 +401,13 @@ export const tasksData: TasksDatabase = {
             "Place telescope in the seafoam Scoops' Backyard"
         ],
         "corpId": "ark",
-        "type": ["retrieve", "place"],
-        "map": ["resort"],
+        "type": [
+            "retrieve",
+            "place"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -380,10 +439,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_6"],
+        "requiredTasks": [
+            "ark_6"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [{author: "orbb", url: "https://youtu.be/6MkGTEHSq_o"}],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://youtu.be/6MkGTEHSq_o"
+            }
+        ],
         "order": 7
     },
     "ark_8": {
@@ -393,11 +459,15 @@ export const tasksData: TasksDatabase = {
         "description": "The previous violent incident caused all the police forces from the Hyder Police Station to be concentrated here. Although they mean no harm, our identity makes it inconvenient to deal with them openly. Approach the bank carefully, then use [this phone] to take a few photos of the [police cars] in front of and behind the bank. Be sure to use FotoVision+ Phone. [Successfully taken photos will be automatically uploaded] to me.",
         "objectives": [
             "Take photo of a police car (Front of the bank)",
-            "Take photo of a police car (Back of the bank)",
+            "Take photo of a police car (Back of the bank)"
         ],
         "corpId": "ark",
-        "type": ["photo"],
-        "map": ["resort"],
+        "type": [
+            "photo"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -428,11 +498,24 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Tactical Phone", quantity: 1}],
-        "requiredTasks": ["ark_7"],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Tactical Phone",
+                "quantity": 1
+            }
+        ],
+        "requiredTasks": [
+            "ark_7"
+        ],
         "requiredLevel": 0,
         "tips": "Phone does not have to be axtracted.",
-        "videoGuides": [{author: "orbb", url: "https://youtu.be/w_8khHE_o1A"}],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://youtu.be/w_8khHE_o1A"
+            }
+        ],
         "order": 8
     },
     "ark_9": {
@@ -447,8 +530,13 @@ export const tasksData: TasksDatabase = {
             "Eliminate 6 scavengers"
         ],
         "corpId": "ark",
-        "type": ["reach", "eliminate"],
-        "map": ["resort"],
+        "type": [
+            "reach",
+            "eliminate"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -480,10 +568,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_8"],
+        "requiredTasks": [
+            "ark_8"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [{author: "orbb", url: "https://youtu.be/AcsdXNUqR1k"}],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://youtu.be/AcsdXNUqR1k"
+            }
+        ],
         "order": 9
     },
     "ark_10": {
@@ -496,8 +591,13 @@ export const tasksData: TasksDatabase = {
             "Eliminate Iron Wolf in Police Station"
         ],
         "corpId": "ark",
-        "type": ["reach", "eliminate"],
-        "map": ["suburb"],
+        "type": [
+            "reach",
+            "eliminate"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -529,10 +629,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_8"],
+        "requiredTasks": [
+            "ark_8"
+        ],
         "requiredLevel": 0,
         "tips": "Almost Unarmored, wears [Police Vest](https://www.exfil-zone-assistant.app/items/armor-police-vest) and [Red Beret](https://www.exfil-zone-assistant.app/items/helmet-red-beret), drops [UMP](https://www.exfil-zone-assistant.app/items/weapon-ump45) or [MP9](https://www.exfil-zone-assistant.app/items/weapon-mp9-t)",
-        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-ust=338"}],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/I5XTDO71-ust=338"
+            }
+        ],
         "order": 10
     },
     "ark_11": {
@@ -545,8 +652,12 @@ export const tasksData: TasksDatabase = {
             "Turn in 2 Batteries"
         ],
         "corpId": "ark",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -578,7 +689,9 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_9"],
+        "requiredTasks": [
+            "ark_9"
+        ],
         "requiredLevel": 0,
         "tips": "[Electric Item](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Electric), [Power Items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Power)",
         "videoGuides": [],
@@ -593,8 +706,12 @@ export const tasksData: TasksDatabase = {
             "Mark 3 BMPs on resort"
         ],
         "corpId": "ark",
-        "type": ["mark"],
-        "map": ["resort"],
+        "type": [
+            "mark"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -625,11 +742,24 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Tracking device", quantity: 3}],
-        "requiredTasks": ["ark_11"],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Tracking device",
+                "quantity": 3
+            }
+        ],
+        "requiredTasks": [
+            "ark_11"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [{author: "orbb", url: "https://youtu.be/8Z4xxRQxK84"}],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://youtu.be/8Z4xxRQxK84"
+            }
+        ],
         "order": 12
     },
     "ark_13": {
@@ -645,8 +775,13 @@ export const tasksData: TasksDatabase = {
             "Turn in 3 intel items"
         ],
         "corpId": "ark",
-        "type": ["reach", "submit"],
-        "map": ["resort"],
+        "type": [
+            "reach",
+            "submit"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -678,10 +813,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_12"],
+        "requiredTasks": [
+            "ark_12"
+        ],
         "requiredLevel": 0,
         "tips": "[Intel Items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Intel)",
-        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=438 "}],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/I5XTDO71-us?t=438 "
+            }
+        ],
         "order": 13
     },
     "ark_14": {
@@ -693,8 +835,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate 10 targets with M4A1 series"
         ],
         "corpId": "ark",
-        "type": ["eliminate"],
-        "map": ["resort"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -726,10 +872,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_13"],
+        "requiredTasks": [
+            "ark_13"
+        ],
         "requiredLevel": 0,
         "tips": "Any M4A1: [M4A1 CQBR](https://www.exfil-zone-assistant.app/items/weapon-m4a1-cqbr) ",
-        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=490"}],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/I5XTDO71-us?t=490"
+            }
+        ],
         "order": 14
     },
     "ark_15": {
@@ -741,8 +894,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate worker dorm's butcher"
         ],
         "corpId": "ark",
-        "type": ["eliminate"],
-        "map": ["resort"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -774,10 +931,18 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_14", "ark_10"],
+        "requiredTasks": [
+            "ark_14",
+            "ark_10"
+        ],
         "requiredLevel": 0,
         "tips": "Unarmored, easy target. Does not spawn every game though.",
-        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=531"}],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/I5XTDO71-us?t=531"
+            }
+        ],
         "order": 15
     },
     "ark_16": {
@@ -789,8 +954,12 @@ export const tasksData: TasksDatabase = {
             "Mark 3 ARK trucks with marker device"
         ],
         "corpId": "ark",
-        "type": ["mark"],
-        "map": ["suburb"],
+        "type": [
+            "mark"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -811,11 +980,24 @@ export const tasksData: TasksDatabase = {
                 "quantity": 2
             }
         ],
-        "preReward": [{type: "item", item_name: "Tracking device", quantity: 3}],
-        "requiredTasks": ["ark_15"],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Tracking device",
+                "quantity": 3
+            }
+        ],
+        "requiredTasks": [
+            "ark_15"
+        ],
         "requiredLevel": 0,
         "tips": "Trucks are all over the map.",
-        "videoGuides": [{author: "orbb", url: "https://youtu.be/TejY5XxbxXs"}],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://youtu.be/TejY5XxbxXs"
+            }
+        ],
         "order": 16
     },
     "ark_17": {
@@ -829,8 +1011,13 @@ export const tasksData: TasksDatabase = {
             "Place on the warehouse barrel"
         ],
         "corpId": "ark",
-        "type": ["retrieve", "place"],
-        "map": ["suburb"],
+        "type": [
+            "retrieve",
+            "place"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -852,10 +1039,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_16"],
+        "requiredTasks": [
+            "ark_16"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [{author: "orbb", url: "https://youtu.be/91ZLjp02aDY"}],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://youtu.be/91ZLjp02aDY"
+            }
+        ],
         "order": 17
     },
     "ark_18": {
@@ -867,8 +1061,12 @@ export const tasksData: TasksDatabase = {
             "Turn in 3 Videotape"
         ],
         "corpId": "ark",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -900,7 +1098,9 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_16"],
+        "requiredTasks": [
+            "ark_16"
+        ],
         "requiredLevel": 0,
         "tips": "[Videotape](https://www.exfil-zone-assistant.app/items/misc_videotape) can be often found near the TVs",
         "videoGuides": [],
@@ -917,8 +1117,13 @@ export const tasksData: TasksDatabase = {
             "Find the Out-door gear store on the 3F of TRUPIK'S Mall and take a photo."
         ],
         "corpId": "ark",
-        "type": ["reach", "photo"],
-        "map": ["suburb"],
+        "type": [
+            "reach",
+            "photo"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -949,11 +1154,25 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Tactical Phone", quantity: 1}],
-        "requiredTasks": ["ark_17", "ark_18"],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Tactical Phone",
+                "quantity": 1
+            }
+        ],
+        "requiredTasks": [
+            "ark_17",
+            "ark_18"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [{author: "orbb", url: "https://youtu.be/_OUY4xMCIUc"}],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://youtu.be/_OUY4xMCIUc"
+            }
+        ],
         "order": 19
     },
     "ark_20": {
@@ -965,8 +1184,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate 12 targets with: M16A2 Series"
         ],
         "corpId": "ark",
-        "type": ["eliminate"],
-        "map": ["any"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -998,7 +1221,9 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_19"],
+        "requiredTasks": [
+            "ark_19"
+        ],
         "requiredLevel": 0,
         "tips": "Any M16A2: [M16A2 ](https://www.exfil-zone-assistant.app/items/weapon-m16a2-lv2) ",
         "videoGuides": [],
@@ -1016,8 +1241,15 @@ export const tasksData: TasksDatabase = {
             "Turn in ARK Floppydisk"
         ],
         "corpId": "ark",
-        "type": ["eliminate", "reach", "submit", "retrieve"],
-        "map": ["suburb"],
+        "type": [
+            "eliminate",
+            "reach",
+            "submit",
+            "retrieve"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1026,7 +1258,8 @@ export const tasksData: TasksDatabase = {
             {
                 "type": "experience",
                 "quantity": 12719
-            }, {
+            },
+            {
                 "type": "reputation",
                 "corpId": "ark",
                 "quantity": 50
@@ -1048,10 +1281,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_20"],
+        "requiredTasks": [
+            "ark_20"
+        ],
         "requiredLevel": 0,
         "tips": "Use grenades, akimbo, everything you can think of. Good luck.",
-        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=749"}],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/I5XTDO71-us?t=749"
+            }
+        ],
         "order": 21
     },
     "ark_22": {
@@ -1062,11 +1302,17 @@ export const tasksData: TasksDatabase = {
         "objectives": [
             "Find the Dock Office",
             "Find Tommy's Baseball Cam",
-            "Turn in Tommy's Baseball Cam",
+            "Turn in Tommy's Baseball Cam"
         ],
         "corpId": "ark",
-        "type": ["reach", "retrieve", "submit"],
-        "map": ["dam"],
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1088,10 +1334,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_21"],
+        "requiredTasks": [
+            "ark_21"
+        ],
         "requiredLevel": 0,
         "tips": "One of the hot spots. Consider getting there closer to the end of a raid.",
-        "videoGuides": [{author: "orbb", url: "https://youtu.be/gqbXu1XbELg"}],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://youtu.be/gqbXu1XbELg"
+            }
+        ],
         "order": 22
     },
     "ark_23": {
@@ -1103,8 +1356,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate 12 scavengers in Dam area"
         ],
         "corpId": "ark",
-        "type": ["eliminate"],
-        "map": ["dam"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "dam"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1136,10 +1393,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_21"],
+        "requiredTasks": [
+            "ark_21"
+        ],
         "requiredLevel": 0,
         "tips": "Lots of scavengers at Factory",
-        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=857"}],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/I5XTDO71-us?t=857"
+            }
+        ],
         "order": 23
     },
     "ark_24": {
@@ -1151,11 +1415,16 @@ export const tasksData: TasksDatabase = {
             "Reach the East Broken Bridge",
             "Reach the West Broken Bridge",
             "Mark East Broken Bridge Pier",
-            "Mark West Broken Bridge Pier",
+            "Mark West Broken Bridge Pier"
         ],
         "corpId": "ark",
-        "type": ["reach", "mark"],
-        "map": ["dam"],
+        "type": [
+            "reach",
+            "mark"
+        ],
+        "map": [
+            "dam"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1176,11 +1445,25 @@ export const tasksData: TasksDatabase = {
                 "quantity": 2
             }
         ],
-        "preReward": [{type: "item", item_name: "Tracking device", quantity: 2}],
-        "requiredTasks": ["ark_22", "ark_23"],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Tracking device",
+                "quantity": 2
+            }
+        ],
+        "requiredTasks": [
+            "ark_22",
+            "ark_23"
+        ],
         "requiredLevel": 0,
         "tips": "north side of map, located east of dock & west of clifton, walk on top of both bridges, mark the standalone bridge column in front of both broken bridges.",
-        "videoGuides": [{author: "orbb", url: "https://youtu.be/sKc6B8RQefg"}],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://youtu.be/sKc6B8RQefg"
+            }
+        ],
         "order": 24
     },
     "ark_25": {
@@ -1194,8 +1477,13 @@ export const tasksData: TasksDatabase = {
             "Successfully extract from Southeast Road"
         ],
         "corpId": "ark",
-        "type": ["reach", "extract"],
-        "map": ["dam"],
+        "type": [
+            "reach",
+            "extract"
+        ],
+        "map": [
+            "dam"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1204,7 +1492,8 @@ export const tasksData: TasksDatabase = {
             {
                 "type": "experience",
                 "quantity": 15403
-            }, {
+            },
+            {
                 "type": "reputation",
                 "corpId": "ark",
                 "quantity": 30
@@ -1231,10 +1520,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_24"],
+        "requiredTasks": [
+            "ark_24"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [{author: "orbb", url: "https://youtu.be/5uY7-lpuh6Y"}],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://youtu.be/5uY7-lpuh6Y"
+            }
+        ],
         "order": 25
     },
     "ark_26": {
@@ -1244,11 +1540,16 @@ export const tasksData: TasksDatabase = {
         "description": "You should be quite familiar with using trackers by now. Based on our past work together, you're the one I trust for this task.\nFind the [A1 and A2 warehouses] in the [Factory] in the [Dam Area] and mark the [green tanks] in them. They seem to be storing chemical substances in, I need precise data before initiating recovery.",
         "objectives": [
             "Reach Factory A Zone",
-            "Mark the 3 Green Storage tank in Factory A Zone",
+            "Mark the 3 Green Storage tank in Factory A Zone"
         ],
         "corpId": "ark",
-        "type": ["reach", "mark"],
-        "map": ["dam"],
+        "type": [
+            "reach",
+            "mark"
+        ],
+        "map": [
+            "dam"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1257,7 +1558,8 @@ export const tasksData: TasksDatabase = {
             {
                 "type": "experience",
                 "quantity": 15403
-            }, {
+            },
+            {
                 "type": "reputation",
                 "corpId": "ark",
                 "quantity": 30
@@ -1278,11 +1580,24 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Tracking device", quantity: 3}],
-        "requiredTasks": ["ark_25"],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Tracking device",
+                "quantity": 3
+            }
+        ],
+        "requiredTasks": [
+            "ark_25"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [{author: "orbb", url: "https://youtu.be/mF3yc9qY4ao"}],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://youtu.be/mF3yc9qY4ao"
+            }
+        ],
         "order": 26
     },
     "ark_27": {
@@ -1294,8 +1609,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate 10 targets with AR15 series"
         ],
         "corpId": "ark",
-        "type": ["eliminate"],
-        "map": ["any"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1304,7 +1623,8 @@ export const tasksData: TasksDatabase = {
             {
                 "type": "experience",
                 "quantity": 15403
-            }, {
+            },
+            {
                 "type": "reputation",
                 "corpId": "ark",
                 "quantity": 30
@@ -1326,10 +1646,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_26"],
+        "requiredTasks": [
+            "ark_26"
+        ],
         "requiredLevel": 0,
         "tips": "[AR-15 Pistol](https://www.exfil-zone-assistant.app/items/weapon-ar15-pistol) or [AR-15 Hunter](https://www.exfil-zone-assistant.app/items/weapon-m4a1-hunter)",
-        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=988"}],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/I5XTDO71-us?t=988"
+            }
+        ],
         "order": 27
     },
     "ark_28": {
@@ -1342,8 +1669,13 @@ export const tasksData: TasksDatabase = {
             "Eliminate Dam BOSS"
         ],
         "corpId": "ark",
-        "type": ["reach", "eliminate"],
-        "map": ["dam"],
+        "type": [
+            "reach",
+            "eliminate"
+        ],
+        "map": [
+            "dam"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1352,7 +1684,8 @@ export const tasksData: TasksDatabase = {
             {
                 "type": "experience",
                 "quantity": 15403
-            }, {
+            },
+            {
                 "type": "reputation",
                 "corpId": "ark",
                 "quantity": 80
@@ -1364,10 +1697,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_27"],
+        "requiredTasks": [
+            "ark_27"
+        ],
         "requiredLevel": 0,
         "tips": "Caged room bottom of dam. Boss is relatively easy but POE is hot spot.",
-        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=1044"}],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/I5XTDO71-us?t=1044"
+            }
+        ],
         "order": 28
     },
     "ark_29": {
@@ -1381,8 +1721,12 @@ export const tasksData: TasksDatabase = {
             "Find the Underground Medical Base's Hall"
         ],
         "corpId": "ark",
-        "type": ["reach"],
-        "map": ["metro"],
+        "type": [
+            "reach"
+        ],
+        "map": [
+            "metro"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1403,11 +1747,24 @@ export const tasksData: TasksDatabase = {
                 "quantity": 60
             }
         ],
-        "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
-        "requiredTasks": ["ark_28"],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            }
+        ],
+        "requiredTasks": [
+            "ark_28"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [{author: "orbb", url: "https://youtu.be/HdTqbSk3eaY"}],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://youtu.be/HdTqbSk3eaY"
+            }
+        ],
         "order": 29
     },
     "ark_30": {
@@ -1419,8 +1776,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate 15 scavengers in metro area"
         ],
         "corpId": "ark",
-        "type": ["eliminate"],
-        "map": ["metro"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "metro"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1429,7 +1790,8 @@ export const tasksData: TasksDatabase = {
             {
                 "type": "experience",
                 "quantity": 15403
-            }, {
+            },
+            {
                 "type": "reputation",
                 "corpId": "ark",
                 "quantity": 10
@@ -1450,11 +1812,24 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
-        "requiredTasks": ["ark_28"],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            }
+        ],
+        "requiredTasks": [
+            "ark_28"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-ust=338"}],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/I5XTDO71-ust=338"
+            }
+        ],
         "order": 30
     },
     "ark_31": {
@@ -1467,8 +1842,12 @@ export const tasksData: TasksDatabase = {
             "Find the Secret Passage in the Warehouse of the Metro"
         ],
         "corpId": "ark",
-        "type": ["reach"],
-        "map": ["metro"],
+        "type": [
+            "reach"
+        ],
+        "map": [
+            "metro"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1499,11 +1878,24 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
-        "requiredTasks": ["ark_29"],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            }
+        ],
+        "requiredTasks": [
+            "ark_29"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [{author: "orbb", url: "https://youtu.be/2fEEpOWBYHY"}],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://youtu.be/2fEEpOWBYHY"
+            }
+        ],
         "order": 31
     },
     "ark_32": {
@@ -1516,8 +1908,12 @@ export const tasksData: TasksDatabase = {
             "Successfully extract from Northern sewer"
         ],
         "corpId": "ark",
-        "type": ["extract"],
-        "map": ["metro"],
+        "type": [
+            "extract"
+        ],
+        "map": [
+            "metro"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1526,7 +1922,8 @@ export const tasksData: TasksDatabase = {
             {
                 "type": "experience",
                 "quantity": 15403
-            }, {
+            },
+            {
                 "type": "reputation",
                 "corpId": "ark",
                 "quantity": 40
@@ -1547,11 +1944,24 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
-        "requiredTasks": ["ark_31"],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            }
+        ],
+        "requiredTasks": [
+            "ark_31"
+        ],
         "requiredLevel": 0,
         "tips": "Good luck getting the right extraction point.",
-        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=1164"}],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/I5XTDO71-us?t=1164"
+            }
+        ],
         "order": 32
     },
     "ark_33": {
@@ -1563,8 +1973,12 @@ export const tasksData: TasksDatabase = {
             "Mark 3 BMP tanks without the Medical signs"
         ],
         "corpId": "ark",
-        "type": ["mark"],
-        "map": ["metro"],
+        "type": [
+            "mark"
+        ],
+        "map": [
+            "metro"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1573,7 +1987,8 @@ export const tasksData: TasksDatabase = {
             {
                 "type": "experience",
                 "quantity": 15403
-            }, {
+            },
+            {
                 "type": "reputation",
                 "corpId": "ark",
                 "quantity": 40
@@ -1594,11 +2009,29 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Tracking device", quantity: 3}, {type: "item", item_name: "Metro entrance card", quantity: 1}],
-        "requiredTasks": ["ark_32"],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Tracking device",
+                "quantity": 3
+            },
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            }
+        ],
+        "requiredTasks": [
+            "ark_32"
+        ],
         "requiredLevel": 0,
         "tips": "Don't have to be 3 different ones. You can mark the same BMP in multiple runs.",
-        "videoGuides": [{author: "orbb", url: "https://youtu.be/9t1zLuov-sE"}],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://youtu.be/9t1zLuov-sE"
+            }
+        ],
         "order": 33
     },
     "ark_34": {
@@ -1610,8 +2043,12 @@ export const tasksData: TasksDatabase = {
             "Eliminated 15 targets with AUG series"
         ],
         "corpId": "ark",
-        "type": ["eliminate"],
-        "map": ["any"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1620,7 +2057,8 @@ export const tasksData: TasksDatabase = {
             {
                 "type": "experience",
                 "quantity": 15403
-            }, {
+            },
+            {
                 "type": "reputation",
                 "corpId": "ark",
                 "quantity": 40
@@ -1642,10 +2080,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ark_33"],
+        "requiredTasks": [
+            "ark_33"
+        ],
         "requiredLevel": 0,
         "tips": "Any [AUG](https://www.exfil-zone-assistant.app/items/weapon-aug-a3-ris). ",
-        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=1234"}],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/I5XTDO71-us?t=1234"
+            }
+        ],
         "order": 34
     },
     "ark_35": {
@@ -1658,8 +2103,13 @@ export const tasksData: TasksDatabase = {
             "Eliminate Ironclad in Metro area"
         ],
         "corpId": "ark",
-        "type": ["reach", "eliminate"],
-        "map": ["metro"],
+        "type": [
+            "reach",
+            "eliminate"
+        ],
+        "map": [
+            "metro"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1690,11 +2140,24 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
-        "requiredTasks": ["ark_34"],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            }
+        ],
+        "requiredTasks": [
+            "ark_34"
+        ],
         "requiredLevel": 0,
         "tips": "Boss wearing RYS-T, who loves to kill while you are loading.",
-        "videoGuides": [{author: "orbb", url: "https://youtu.be/4eNHusxBbIU"}],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://youtu.be/4eNHusxBbIU"
+            }
+        ],
         "order": 35
     },
     "ntg_1": {
@@ -1706,8 +2169,12 @@ export const tasksData: TasksDatabase = {
             "Turn in 3 household items found in raid"
         ],
         "corpId": "ntg",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1752,8 +2219,14 @@ export const tasksData: TasksDatabase = {
             "Turn in Maggie's Precious Camera"
         ],
         "corpId": "ntg",
-        "type": ["reach", "retrieve", "submit"],
-        "map": ["suburb"],
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1788,7 +2261,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=CAxLmaHZ8Qs"
+            }
+        ],
         "order": 2
     },
     "ntg_3": {
@@ -1800,8 +2278,12 @@ export const tasksData: TasksDatabase = {
             "Turn in energy-saving lamp"
         ],
         "corpId": "ntg",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1839,8 +2321,12 @@ export const tasksData: TasksDatabase = {
             "Reach the Supply station"
         ],
         "corpId": "ntg",
-        "type": ["reach"],
-        "map": ["suburb"],
+        "type": [
+            "reach"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1885,8 +2371,14 @@ export const tasksData: TasksDatabase = {
             "Turn in Maggie's Radio"
         ],
         "corpId": "ntg",
-        "type": ["reach", "retrieve", "submit"],
-        "map": ["resort"],
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1912,11 +2404,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 2
             }
         ],
-        "preReward": [{type: "item", item_name: "Hospital secret room key", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Hospital secret room key",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=0g5dymVNIgo"
+            }
+        ],
         "order": 5
     },
     "ntg_6": {
@@ -1928,8 +2431,12 @@ export const tasksData: TasksDatabase = {
             "Turn in 4 Medical Supplies found in raid"
         ],
         "corpId": "ntg",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1969,8 +2476,15 @@ export const tasksData: TasksDatabase = {
             "Turn in Maggie's USB"
         ],
         "corpId": "ntg",
-        "type": ["reach", "place", "retrieve", "submit"],
-        "map": ["resort"],
+        "type": [
+            "reach",
+            "place",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -1996,11 +2510,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "X-NAX", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "X-NAX",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "modern apartment is labeled crimson luxe, front entrance northwest side, drop of X-NAX med item in box provide from last task or buy, pink* USB located right side of desk by box ",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=bFUfOW56zp0"
+            }
+        ],
         "order": 7
     },
     "ntg_8": {
@@ -2014,8 +2539,13 @@ export const tasksData: TasksDatabase = {
             "Take photo of the second medicine recipe"
         ],
         "corpId": "ntg",
-        "type": ["reach", "photo"],
-        "map": ["resort"],
+        "type": [
+            "reach",
+            "photo"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2041,11 +2571,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 2
             }
         ],
-        "preReward": [{type: "item", item_name : "Tactical Phone", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Tactical Phone",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=mxXxaHsasKw"
+            }
+        ],
         "order": 8
     },
     "ntg_9": {
@@ -2061,8 +2602,13 @@ export const tasksData: TasksDatabase = {
             "Turn in 1 bottle of glucose"
         ],
         "corpId": "ntg",
-        "type": ["retrieve","submit"],
-        "map": ["resort"],
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2110,8 +2656,12 @@ export const tasksData: TasksDatabase = {
             "Extract from North Beach"
         ],
         "corpId": "ntg",
-        "type": ["extract"],
-        "map": ["resort"],
+        "type": [
+            "extract"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2148,8 +2698,12 @@ export const tasksData: TasksDatabase = {
             "Mark 3 Ambulances"
         ],
         "corpId": "ntg",
-        "type": ["mark"],
-        "map": ["resort"],
+        "type": [
+            "mark"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2175,11 +2729,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{ type: "item", item_name : "Tracking device", quantity: 3}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Tracking device",
+                "quantity": 3
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "mark any 3 ambulance on resort with the marking device",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=NIGkh-lpDKw"
+            }
+        ],
         "order": 13
     },
     "ntg_14": {
@@ -2191,8 +2756,12 @@ export const tasksData: TasksDatabase = {
             "Submit 5 coffee drinks"
         ],
         "corpId": "ntg",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2232,8 +2801,14 @@ export const tasksData: TasksDatabase = {
             "Place on top of the lighthouse"
         ],
         "corpId": "ntg",
-        "type": ["reach","retrieve","place"],
-        "map": ["resort"],
+        "type": [
+            "reach",
+            "retrieve",
+            "place"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2263,12 +2838,17 @@ export const tasksData: TasksDatabase = {
         "description": "Those scavengers are messing with NTG's landing. I managed to contact NTG HQ via radio.\nThey don't fully understand what's happening on the island yet, but they've promised to investigate.\nHQ wants us to check the [locked room] on the [2F of a high-rise office building] north of the motel in the [Suburb area].\nI can't fight—please go check it out for me.",
         "objectives": [
             "Reach office building by motel",
-            "Find 2nd floor office lock room" ,
+            "Find 2nd floor office lock room",
             "Extract from suburb area"
         ],
         "corpId": "ntg",
-        "type": ["reach","extract"],
-        "map": ["suburb"],
+        "type": [
+            "reach",
+            "extract"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2293,7 +2873,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=7zqCwM-Kuec"
+            }
+        ],
         "order": 16
     },
     "ntg_17": {
@@ -2306,8 +2891,12 @@ export const tasksData: TasksDatabase = {
             "Turn is 3 insulating tape"
         ],
         "corpId": "ntg",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2351,8 +2940,14 @@ export const tasksData: TasksDatabase = {
             "Turn in Maggie's poison"
         ],
         "corpId": "ntg",
-        "type": ["reach", "retrieve", "submit"],
-        "map": ["suburb"],
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2377,7 +2972,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "room 206 on metal shelf, key required, key can be bought at trader",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=5uUVSGVt8pI"
+            }
+        ],
         "order": 19
     },
     "ntg_20": {
@@ -2392,8 +2992,13 @@ export const tasksData: TasksDatabase = {
             "Take photo of the corpse in Wyeth farm cellar"
         ],
         "corpId": "ntg",
-        "type": ["reach", "photo"],
-        "map": ["suburb"],
+        "type": [
+            "reach",
+            "photo"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2414,11 +3019,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name : "Tactical Phone", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Tactical Phone",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=-IE9eU_ZIJw"
+            }
+        ],
         "order": 20
     },
     "ntg_21": {
@@ -2429,11 +3045,17 @@ export const tasksData: TasksDatabase = {
         "objectives": [
             "Find private clinic",
             "Find Maggie's medical bag",
-            "Turn in Maggie's medical bag",
+            "Turn in Maggie's medical bag"
         ],
         "corpId": "ntg",
-        "type": ["reach", "retrieve", "submit"],
-        "map": ["suburb"],
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2458,20 +3080,29 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=F5OLdAL41Rw"
+            }
+        ],
         "order": 21
     },
     "ntg_22": {
         "id": "ntg_22",
-        "name": "NTG Investigation 2",
+        "name": "NTG's Investigation 2",
         "gameId": "task.doc.17",
         "description": "NTG wants me to investigate the [dock] in the northeast [Dam area].\nJohnny also asked me to keep an eye out for any [Trupiks trucks].\nPlease take the MS2000 tracker and [tag a few containers marked with Trupiks] at the dock. Good luck!",
         "objectives": [
             "Mark 3 TRUPIK's trucks with marker device"
         ],
         "corpId": "ntg",
-        "type": ["mark"],
-        "map": ["dam"],
+        "type": [
+            "mark"
+        ],
+        "map": [
+            "dam"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2492,11 +3123,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 2
             }
         ],
-        "preReward": [{ type: "item", item_name : "Tracking device", quantity: 3}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Tracking device",
+                "quantity": 3
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=n3ycwwPxpDc"
+            }
+        ],
         "order": 22
     },
     "ntg_23": {
@@ -2509,8 +3151,12 @@ export const tasksData: TasksDatabase = {
             "Turn in 2 Civil Radio"
         ],
         "corpId": "ntg",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2549,8 +3195,13 @@ export const tasksData: TasksDatabase = {
             "Place \"X-NAX\" in italian restaurant on Suburb"
         ],
         "corpId": "ntg",
-        "type": ["place"],
-        "map": ["resort", "dam"],
+        "type": [
+            "place"
+        ],
+        "map": [
+            "resort",
+            "dam"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2576,25 +3227,40 @@ export const tasksData: TasksDatabase = {
                 "quantity": 2
             }
         ],
-        "preReward": [{type: "item", item_name: "X-NAX", quantity: 3}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "X-NAX",
+                "quantity": 3
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=3W2xFtE2G8w"
+            }
+        ],
         "order": 25
     },
     "ntg_26": {
         "id": "ntg_26",
-        "name": "NTG Investigation 3",
+        "name": "NTG's Investigation 3",
         "gameId": "task.doc.20",
         "description": "Johnny mentioned an abandoned church near [Clifton], in the [Dam area].\nI think it's perfect as a temporary medical outpost and investigation base.\nPlease head over there and [mark the 2 windmills] beside the church—we'll send the coordinates to NTG.",
         "objectives": [
             "Mark the Windmill #1 in Clifton",
-            "Mark the Windmill #2 in Clifton",
+            "Mark the Windmill #2 in Clifton"
         ],
         "corpId": "ntg",
-        "type": ["mark"],
-        "map": ["dam"],
+        "type": [
+            "mark"
+        ],
+        "map": [
+            "dam"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2624,12 +3290,17 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=LLb0-C95KHw"
+            }
+        ],
         "order": 26
     },
     "ntg_27": {
         "id": "ntg_27",
-        "name": "Key To Safety 1",
+        "name": "Keys To Safety 1",
         "gameId": "task.doc.z19",
         "description": "There are still some locked rooms in the city center of the [Resort Area]—could be supplies inside.\nPlease find and bring me these two: [House Key 1] and [Supermarket Storage Key]. Thanks!",
         "objectives": [
@@ -2637,8 +3308,12 @@ export const tasksData: TasksDatabase = {
             "Turn in hotel 208 Key"
         ],
         "corpId": "ntg",
-        "type": ["submit"],
-        "map": ["suburb"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2668,7 +3343,7 @@ export const tasksData: TasksDatabase = {
     },
     "ntg_29": {
         "id": "ntg_29",
-        "name": "Key To Safety 2",
+        "name": "Keys To Safety 2",
         "gameId": "task.doc.z20",
         "description": "I need to relocate some medical supplies to a safer location.\r\nTo do that, I need the [keys] to [Motel Room 201 and Room 206].\r\nIf you come across them during your operations, please bring them back.",
         "objectives": [
@@ -2676,8 +3351,12 @@ export const tasksData: TasksDatabase = {
             "Turn in motel 201 Key"
         ],
         "corpId": "ntg",
-        "type": ["submit"],
-        "map": ["suburb"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2702,7 +3381,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "might be able to buy from trades for money or trade",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=2df8BKPx6rw"
+            }
+        ],
         "order": 29
     },
     "ntg_31": {
@@ -2715,8 +3399,12 @@ export const tasksData: TasksDatabase = {
             "Turn in West Dam Inlet Key"
         ],
         "corpId": "ntg",
-        "type": ["submit"],
-        "map": ["dam"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2756,8 +3444,14 @@ export const tasksData: TasksDatabase = {
             "Turn in 2 NTG medical reports"
         ],
         "corpId": "ntg",
-        "type": ["reach","retrieve","submit"],
-        "map": ["dam"],
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2782,7 +3476,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=M3-BtDmPK78"
+            }
+        ],
         "order": 33
     },
     "ntg_34": {
@@ -2794,8 +3493,12 @@ export const tasksData: TasksDatabase = {
             "Turn in 3 Storage Battery"
         ],
         "corpId": "ntg",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2833,8 +3536,12 @@ export const tasksData: TasksDatabase = {
             "Successfully extract from the coast under the broken bridge"
         ],
         "corpId": "ntg",
-        "type": ["extract"],
-        "map": ["dam"],
+        "type": [
+            "extract"
+        ],
+        "map": [
+            "dam"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2859,7 +3566,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "Located north on dam in valley between both broken bridges, north of dock office at the end of pier",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=0AkItVBOwi0"
+            }
+        ],
         "order": 35
     },
     "ntg_36": {
@@ -2873,8 +3585,12 @@ export const tasksData: TasksDatabase = {
             "Take photo of bulletin board in the inspection room"
         ],
         "corpId": "ntg",
-        "type": ["photo"],
-        "map": ["metro"],
+        "type": [
+            "photo"
+        ],
+        "map": [
+            "metro"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2900,11 +3616,27 @@ export const tasksData: TasksDatabase = {
                 "quantity": 2
             }
         ],
-        "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}, {type: "item", item_name : "Tactical Phone", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            },
+            {
+                "type": "item",
+                "item_name": "Tactical Phone",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "take photo control console in the bomb room, bulletin located in room below conference room, photo of plants in bed base room",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=5d6THOTrYgA"
+            }
+        ],
         "order": 36
     },
     "ntg_37": {
@@ -2917,8 +3649,12 @@ export const tasksData: TasksDatabase = {
             "Turn in Sewer's room key"
         ],
         "corpId": "ntg",
-        "type": ["submit"],
-        "map": ["metro"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "metro"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2939,11 +3675,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "trade at NTG",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=g-j_4tw4zrw"
+            }
+        ],
         "order": 37
     },
     "ntg_39": {
@@ -2958,8 +3705,15 @@ export const tasksData: TasksDatabase = {
             "Turn in 3 medical reports"
         ],
         "corpId": "ntg",
-        "type": ["retrieve", "submit"],
-        "map": ["dam", "suburb", "metro"],
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam",
+            "suburb",
+            "metro"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -2985,7 +3739,13 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "1st, lower part of dam in the back of crashed semi; 2nd, suburb in mall parking -1F east of escalators in military tent on shelf,3rd metro basement level, in bathroom located at end of hallway by med base(circle), enter bathroom, first sink left",
@@ -3002,8 +3762,13 @@ export const tasksData: TasksDatabase = {
             "place poison in surgery room sink"
         ],
         "corpId": "ntg",
-        "type": ["extract","place"],
-        "map": ["metro"],
+        "type": [
+            "extract",
+            "place"
+        ],
+        "map": [
+            "metro"
+        ],
         "reward": [
             {
                 "type": "reputation",
@@ -3035,7 +3800,18 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 2}, {type: "item", item_name: "Poison", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 2
+            },
+            {
+                "type": "item",
+                "item_name": "Poison",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "West railway on railway west past train cars, east metro is east railway up starts to the right; surgery room sink located at the end of the med base quarantine hallway, poison given as reward of bought(task item)",
@@ -3053,8 +3829,14 @@ export const tasksData: TasksDatabase = {
             "Turn in Maggie's medical bag"
         ],
         "corpId": "ntg",
-        "type": ["mark","retrieve","submit"],
-        "map": ["metro"],
+        "type": [
+            "mark",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "metro"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3080,11 +3862,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 2
             }
         ],
-        "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "mark bodies with marker device; one body located end of hall in bathroom outside med base circle room, one body in med circle room, two bodys located in quarantine hallway off medical room, maggies bag on table is med room  ",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=zhZlEVICwsU"
+            }
+        ],
         "order": 41
     },
     "trupiks_1": {
@@ -3095,11 +3888,15 @@ export const tasksData: TasksDatabase = {
         "objectives": [
             "Reach the warehouses",
             "Reach the power plant",
-            "Reach Hydertown",
+            "Reach Hydertown"
         ],
         "corpId": "trupiks",
-        "type": ["reach"],
-        "map": ["suburb"],
+        "type": [
+            "reach"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3119,7 +3916,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "Power plant is marked on the map, near the western bunker. Warehouses are just east next to the office building.",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=quTZvsysQCQ"
+            }
+        ],
         "order": 1
     },
     "trupiks_2": {
@@ -3131,8 +3933,12 @@ export const tasksData: TasksDatabase = {
             "Turn in combustible items found in raid"
         ],
         "corpId": "trupiks",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3164,8 +3970,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate scavengers in the suburb area"
         ],
         "corpId": "trupiks",
-        "type": ["eliminate"],
-        "map": ["suburb"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3209,8 +4019,14 @@ export const tasksData: TasksDatabase = {
             "Turn in Johnny's drill"
         ],
         "corpId": "trupiks",
-        "type": ["reach", "retrieve", "submit"] ,
-        "map": ["suburb"],
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3240,7 +4056,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=IWDA_Giw4qo"
+            }
+        ],
         "order": 4
     },
     "trupiks_5": {
@@ -3250,12 +4071,17 @@ export const tasksData: TasksDatabase = {
         "description": "[Unlocks Lounge/Book Shelf/Sofa's upgrades]\nYou've really done a great job setting this place up; it reminds me of home... Sorry, I guess I'm just missing my family a bit. Maybe you could do me a favor, and I can help you spruce up the lounge area a bit. Having a nice, comfortable space to rest will really help you in battle.\nCould you check out [Hyder Town] for me? My house is the first one at the east entrance of the town. If you could grab my precious [family videotapes], I'd really appreciate it. Looking forward to hearing from you!",
         "objectives": [
             "Reach Hyder Town",
-            "Find Johnny's FamilyTape" +
-            "Turn in Johnny's FamilyTape"
+            "Find Johnny's FamilyTapeTurn in Johnny's FamilyTape"
         ],
         "corpId": "trupiks",
-        "type": ["reach", "retrieve", "submit"],
-        "map": ["suburb"],
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3275,7 +4101,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=lDhfK8lld7U"
+            }
+        ],
         "order": 5
     },
     "trupiks_6": {
@@ -3287,8 +4118,12 @@ export const tasksData: TasksDatabase = {
             "Turn in 5 electrical items found in raid"
         ],
         "corpId": "trupiks",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3322,8 +4157,14 @@ export const tasksData: TasksDatabase = {
             "Turn in shooting range key"
         ],
         "corpId": "trupiks",
-        "type": ["reach", "retrieve", "submit"],
-        "map": ["suburb"],
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3343,7 +4184,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=0c5zNm33Dx0"
+            }
+        ],
         "order": 7
     },
     "trupiks_8": {
@@ -3357,8 +4203,14 @@ export const tasksData: TasksDatabase = {
             "Turn in Find Jonny's safebox"
         ],
         "corpId": "trupiks",
-        "type": ["reach", "retrieve", "submit"],
-        "map": ["suburb"],
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3389,11 +4241,15 @@ export const tasksData: TasksDatabase = {
         "objectives": [
             "Reach the canal bridge 1",
             "Reach the canal bridge 2",
-            "Reach the canal bridge 3",
+            "Reach the canal bridge 3"
         ],
         "corpId": "trupiks",
-        "type": ["reach"],
-        "map": ["suburb"],
+        "type": [
+            "reach"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3413,7 +4269,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=_gVFJBMxPr8"
+            }
+        ],
         "order": 9
     },
     "trupiks_10": {
@@ -3426,8 +4287,13 @@ export const tasksData: TasksDatabase = {
             "Turn in Johnny's safebox"
         ],
         "corpId": "trupiks",
-        "type": ["retrieve", "submit"],
-        "map": ["resort"],
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3460,8 +4326,12 @@ export const tasksData: TasksDatabase = {
             "take picture of Tv #4 & #5 in red house"
         ],
         "corpId": "trupiks",
-        "type": ["photo"],
-        "map": ["suburb"],
+        "type": [
+            "photo"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3487,11 +4357,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 2
             }
         ],
-        "preReward": [{type: "item", item_name : "Tactical Phone", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Tactical Phone",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "Take Picture of Tv #1, #2, & #3 located in yellow houses on hill by military base; take picture of Tv #4 & #5 in houses behind yellow houses close to bunker extract ",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=DrK25Bnw38g"
+            }
+        ],
         "order": 11
     },
     "trupiks_12": {
@@ -3504,8 +4385,13 @@ export const tasksData: TasksDatabase = {
             "Place in Skate park"
         ],
         "corpId": "trupiks",
-        "type": ["retrieve", "place"],
-        "map": ["resort"],
+        "type": [
+            "retrieve",
+            "place"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3535,7 +4421,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=kAvBXhqCx6c"
+            }
+        ],
         "order": 12
     },
     "trupiks_13": {
@@ -3550,8 +4441,13 @@ export const tasksData: TasksDatabase = {
             "Mark all 3 tanks next to military camps"
         ],
         "corpId": "trupiks",
-        "type": ["reach","mark"],
-        "map": ["dam"],
+        "type": [
+            "reach",
+            "mark"
+        ],
+        "map": [
+            "dam"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3567,11 +4463,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{ type: "item", item_name : "Tracking device", quantity: 3}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Tracking device",
+                "quantity": 3
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=JFgC9jfom3g"
+            }
+        ],
         "order": 13
     },
     "trupiks_14": {
@@ -3587,11 +4494,15 @@ export const tasksData: TasksDatabase = {
             "Turn in 5 Toilet Paper",
             "Turn in 5 Soap",
             "Turn in 5 Beard Oil",
-            "Turn in 5 Toothpaste",
+            "Turn in 5 Toothpaste"
         ],
         "corpId": "trupiks",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3637,11 +4548,15 @@ export const tasksData: TasksDatabase = {
             "Turn in 5 Wire Cutter",
             "Turn in 5 Small Wrench",
             "Turn in 5 Spark Plug",
-            "Turn in 5 Electric Drill",
+            "Turn in 5 Electric Drill"
         ],
         "corpId": "trupiks",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3687,11 +4602,15 @@ export const tasksData: TasksDatabase = {
             "Turn in 5 Computer Manual",
             "Turn in 5 Antiquarian Book",
             "Turn in 5 Tape",
-            "Turn in 5 Floppy Disc",
+            "Turn in 5 Floppy Disc"
         ],
         "corpId": "trupiks",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3737,11 +4656,15 @@ export const tasksData: TasksDatabase = {
             "Turn in 5 Large Gas Can",
             "Turn in 5 WD40",
             "Turn in 5 Smokeless Powder",
-            "Turn in 5 Olive Oil",
+            "Turn in 5 Olive Oil"
         ],
         "corpId": "trupiks",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3773,8 +4696,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate 8 targets with: rifle"
         ],
         "corpId": "regiment",
-        "type": ["eliminate"],
-        "map": ["any"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3806,8 +4733,12 @@ export const tasksData: TasksDatabase = {
             "Submit 2 Beer"
         ],
         "corpId": "regiment",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3856,8 +4787,13 @@ export const tasksData: TasksDatabase = {
             "Turn in 2 GunPowder"
         ],
         "corpId": "regiment",
-        "type": ["retrieve", "submit"],
-        "map": ["suburb"],
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3886,13 +4822,18 @@ export const tasksData: TasksDatabase = {
                 "type": "item",
                 "item_id": "grenade-vod25-frag",
                 "quantity": 1
-            },
+            }
         ],
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=FkiWA6Eb7fo"
+            }
+        ],
         "order": 3
     },
     "regiment_4": {
@@ -3906,8 +4847,14 @@ export const tasksData: TasksDatabase = {
             "Turn in Igor's Sunglasses"
         ],
         "corpId": "regiment",
-        "type": ["reach","retrieve","submit"],
-        "map": ["resort"],
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3942,7 +4889,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "Glasses on front desk. Keep the rewards for the following quests.",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=kFwjed9fWWI"
+            }
+        ],
         "order": 4
     },
     "regiment_5": {
@@ -3955,8 +4907,12 @@ export const tasksData: TasksDatabase = {
             "Turn in M1928 Found In Raid"
         ],
         "corpId": "regiment",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -3999,8 +4955,12 @@ export const tasksData: TasksDatabase = {
             "Turn in AR15 Hunter Found In Raid"
         ],
         "corpId": "regiment",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4044,8 +5004,12 @@ export const tasksData: TasksDatabase = {
             "Turn in RGD-5 Found In Raid"
         ],
         "corpId": "regiment",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4092,8 +5056,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate 8 targets with: SMG"
         ],
         "corpId": "regiment",
-        "type": ["eliminate"],
-        "map": ["any"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4140,8 +5108,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate 5 targets with: pump shotgun"
         ],
         "corpId": "regiment",
-        "type": ["eliminate"],
-        "map": ["any"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4185,8 +5157,14 @@ export const tasksData: TasksDatabase = {
             "Turn in Igor's notes"
         ],
         "corpId": "regiment",
-        "type": ["reach", "retrieve", "submit"],
-        "map": ["resort"],
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4221,7 +5199,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=ZRnKbMybPzo"
+            }
+        ],
         "order": 14
     },
     "regiment_15": {
@@ -4233,8 +5216,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate 10 scavs in resort area"
         ],
         "corpId": "regiment",
-        "type": ["eliminate"],
-        "map": ["resort"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4275,11 +5262,15 @@ export const tasksData: TasksDatabase = {
         "objectives": [
             "Take photo of a clue on the wall (Modern apartment park)",
             "Take photo of a clue on the wall (Halif Voyage backdoor)",
-            "Take photo of a clue on the wall (Beach chair area)",
+            "Take photo of a clue on the wall (Beach chair area)"
         ],
         "corpId": "regiment",
-        "type": ["photo"],
-        "map": ["resort"],
+        "type": [
+            "photo"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4310,11 +5301,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name : "Tactical Phone", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Tactical Phone",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=oAQ9Rl2WTmM"
+            }
+        ],
         "order": 16
     },
     "regiment_17": {
@@ -4326,8 +5328,12 @@ export const tasksData: TasksDatabase = {
             "FAL series: Eliminate 8 targets"
         ],
         "corpId": "regiment",
-        "type": ["eliminate"],
-        "map": ["any"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4364,8 +5370,12 @@ export const tasksData: TasksDatabase = {
             "Place Task Beer at the Old Jay's grave"
         ],
         "corpId": "regiment",
-        "type": ["place"],
-        "map": ["resort"],
+        "type": [
+            "place"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4396,11 +5406,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Task Beer", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Task Beer",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "Bring beer to lighthouse on resort, small grave behind, place beer",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=fmGJ_eR3m2Y"
+            }
+        ],
         "order": 18
     },
     "regiment_19": {
@@ -4413,8 +5434,12 @@ export const tasksData: TasksDatabase = {
             "Turn in 3 size D battery (round)"
         ],
         "corpId": "regiment",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4461,8 +5486,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate 8 targets with: pistol"
         ],
         "corpId": "regiment",
-        "type": ["eliminate"],
-        "map": ["any"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4481,7 +5510,7 @@ export const tasksData: TasksDatabase = {
                 "type": "item",
                 "item_name": "Compact Ration",
                 "quantity": 3
-            },
+            }
         ],
         "preReward": [],
         "requiredTasks": [],
@@ -4499,8 +5528,12 @@ export const tasksData: TasksDatabase = {
             "Submit 5 can of peas"
         ],
         "corpId": "regiment",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4549,8 +5582,13 @@ export const tasksData: TasksDatabase = {
             "Turn in both CDs"
         ],
         "corpId": "regiment",
-        "type": ["retrieve", "submit"],
-        "map": ["resort"],
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4585,7 +5623,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "on toilet in bathroom at skatepark restaurant, also CD on barrel at rua algasol buy store.",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=cNQ5CB60RpU"
+            }
+        ],
         "order": 23
     },
     "regiment_24": {
@@ -4597,8 +5640,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate 5 targets with: Bolt Action"
         ],
         "corpId": "regiment",
-        "type": ["eliminate"],
-        "map": ["any"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4641,8 +5688,12 @@ export const tasksData: TasksDatabase = {
             "Turn in G3 30-round magazine."
         ],
         "corpId": "regiment",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4689,8 +5740,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate 6 targets with Glock 18c pistol"
         ],
         "corpId": "regiment",
-        "type": ["eliminate"],
-        "map": ["any"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4737,8 +5792,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate 8 targets without wearing helmet"
         ],
         "corpId": "regiment",
-        "type": ["eliminate"],
-        "map": ["any"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4789,8 +5848,15 @@ export const tasksData: TasksDatabase = {
             "Successfully extract from Farm Road"
         ],
         "corpId": "regiment",
-        "type": ["submit", "retrieve", "mark", "extract"],
-        "map": ["suburb"],
+        "type": [
+            "submit",
+            "retrieve",
+            "mark",
+            "extract"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4821,11 +5887,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{ type: "item", item_name : "Tracking device", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Tracking device",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "White house in farm area on Suburbs. Mark one of the huge wine barrels in basement on the SW side. Dry wine bottle in kitchen sink on ground level. Both extracts are north of the white farmhouse.",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=tw_SplvvQO8"
+            }
+        ],
         "order": 29
     },
     "regiment_30": {
@@ -4839,8 +5916,12 @@ export const tasksData: TasksDatabase = {
             "Place Beef Can in the small hut beside the Dam road sign"
         ],
         "corpId": "regiment",
-        "type": ["place"],
-        "map": ["dam"],
+        "type": [
+            "place"
+        ],
+        "map": [
+            "dam"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4875,7 +5956,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=CaU7t19ysxY"
+            }
+        ],
         "order": 30
     },
     "regiment_31": {
@@ -4889,8 +5975,12 @@ export const tasksData: TasksDatabase = {
             "Take photo of the tram C (Seaglass St)"
         ],
         "corpId": "regiment",
-        "type": ["photo"],
-        "map": ["resort"],
+        "type": [
+            "photo"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4911,11 +6001,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 2
             }
         ],
-        "preReward": [{type: "item", item_name : "Tactical Phone", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Tactical Phone",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "The tram train cars are located on the road by hotel, two in front of hotel and one located on the road west toward construction.",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=xMd_KozHG30"
+            }
+        ],
         "order": 31
     },
     "regiment_32": {
@@ -4927,8 +6028,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate 12 targets with specific assembled G3 rifle"
         ],
         "corpId": "regiment",
-        "type": ["eliminate"],
-        "map": ["any"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -4969,7 +6074,8 @@ export const tasksData: TasksDatabase = {
                 "type": "item",
                 "item_id": "rail_default__g3_railattachment_topbt3",
                 "quantity": 1
-            }],
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "G3 AK4, install BT3 rail (scope rail), ACOG sight, 10-round mag; you can add to the build but these items need to be install to complete task. ",
@@ -4985,8 +6091,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate 16 targets in \"Police Outfit\""
         ],
         "corpId": "regiment",
-        "type": ["eliminate"],
-        "map": ["any"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5018,8 +6128,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate 8 targets with mosin series"
         ],
         "corpId": "regiment",
-        "type": ["eliminate"],
-        "map": ["any"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5066,11 +6180,18 @@ export const tasksData: TasksDatabase = {
             "Take a photo of the bear at Suburbs",
             "Take a photo of the bull at Resort",
             "Take a photo of the angel at Dam",
-            "Take a photo of the hound at Metro",
+            "Take a photo of the hound at Metro"
         ],
         "corpId": "regiment",
-        "type": ["photo"],
-        "map": ["suburb", "resort", "dam", "metro"],
+        "type": [
+            "photo"
+        ],
+        "map": [
+            "suburb",
+            "resort",
+            "dam",
+            "metro"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5091,11 +6212,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 2
             }
         ],
-        "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "Dam angel located outside church in clifton. Bear located in Hyder town on suburb. Bull located in flea market on resort. Hound on metro top of stairs by east extract",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=JIacdtZ1GGE"
+            }
+        ],
         "order": 35
     },
     "regiment_36": {
@@ -5109,8 +6241,13 @@ export const tasksData: TasksDatabase = {
             "Turn in both CDs"
         ],
         "corpId": "regiment",
-        "type": ["retrieve", "submit"],
-        "map": ["resort"],
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5141,11 +6278,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "might be a typo but requires two run, both CDs can be found in cafeteria, one on the left behind table lower shelf, back room behind door on shelf with food ",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=tVcmvySg7Xc"
+            }
+        ],
         "order": 36
     },
     "regiment_37": {
@@ -5157,8 +6305,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate 8 targets with Sjogren series shotgun in metro"
         ],
         "corpId": "regiment",
-        "type": ["eliminate"],
-        "map": ["metro"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "metro"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5189,7 +6341,13 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
@@ -5206,8 +6364,13 @@ export const tasksData: TasksDatabase = {
             "Place next to the Sewer Hidden Room"
         ],
         "corpId": "regiment",
-        "type": ["retrieve","place"],
-        "map": ["metro"],
+        "type": [
+            "retrieve",
+            "place"
+        ],
+        "map": [
+            "metro"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5238,11 +6401,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "one located on shelf in control room; looks like a purse; one located on barrels in large gate room. pull lever in control room to open gate; one located in the east room of sewer area, place task item west of sewer room, two extracts, climb ladder, cross pipe, place on box outside door; items are heavy and might take two trips up ladder",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=qfRvA2MBmGI"
+            }
+        ],
         "order": 38
     },
     "regiment_39": {
@@ -5255,8 +6429,13 @@ export const tasksData: TasksDatabase = {
             "Turn in Malyuk 7.62"
         ],
         "corpId": "regiment",
-        "type": ["reach", "submit"],
-        "map": ["metro"],
+        "type": [
+            "reach",
+            "submit"
+        ],
+        "map": [
+            "metro"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5287,11 +6466,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "Room located on one of the bottom level north side near extract; officer back room is locked(key not required); malyuk 762 can be bought and handed in",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=zgM6Ab7cfmI"
+            }
+        ],
         "order": 39
     },
     "regiment_40": {
@@ -5303,8 +6493,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate 33 Contractors or Scavengers"
         ],
         "corpId": "regiment",
-        "type": ["eliminate"],
-        "map": ["any"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5352,8 +6546,12 @@ export const tasksData: TasksDatabase = {
             "Turn in 1 Lighter Fluid"
         ],
         "corpId": "regiment",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5393,7 +6591,7 @@ export const tasksData: TasksDatabase = {
     },
     "forge_1": {
         "id": "forge_1",
-        "name": "Secret Stash l",
+        "name": "Secret Stash 1",
         "gameId": "task.gear.1",
         "description": "Hey, newbie. Name's Maximilian.\nMy trade guild deals in only the finest goods—no fluff, no nonsense.\nYou wanna do business with me? Prove you're worth the trouble.\nMy old client's looking for a particular piece of merchandise I've stashed away.\nYou know that [outdoor drive-in theater] south of the motel in the [Suburb area]?\nYeah, looks abandoned, but trust me, I hid something special there.\nCheck [behind the screen]. You'll know it when you see it—it's not something you'll miss.",
         "objectives": [
@@ -5402,8 +6600,14 @@ export const tasksData: TasksDatabase = {
             "Turn in Golden Goblet"
         ],
         "corpId": "forge",
-        "type": ["reach","retrieve","submit"],
-        "map": ["suburb"],
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5429,7 +6633,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "cinema located behind motel, upstairs left on box",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=3mhlLR8_jp0"
+            }
+        ],
         "order": 1
     },
     "forge_2": {
@@ -5443,8 +6652,12 @@ export const tasksData: TasksDatabase = {
             "Find the The 2 yellow-ish huts"
         ],
         "corpId": "forge",
-        "type": ["reach"],
-        "map": ["suburb"],
+        "type": [
+            "reach"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5479,7 +6692,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "located east side of map north of 24 car repair, unloading station north of highway, checkpoint on highway at exfil, yellow huts north of highway past unloading station two yellow houses",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=zk9lVdCpsTg"
+            }
+        ],
         "order": 2
     },
     "forge_3": {
@@ -5492,8 +6710,13 @@ export const tasksData: TasksDatabase = {
             "Successfully extract from suburb"
         ],
         "corpId": "forge",
-        "type": ["reach","extract"],
-        "map": ["suburb"],
+        "type": [
+            "reach",
+            "extract"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5519,11 +6742,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Bunker key", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Bunker key",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "located northwest of office buidling by motel, past construction by wall before farm, look at compass when close, LOCKED extract icon, no key required",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=ONQLQQK3qRI"
+            }
+        ],
         "order": 3
     },
     "forge_4": {
@@ -5535,8 +6769,12 @@ export const tasksData: TasksDatabase = {
             "Turn in 6 notebooks"
         ],
         "corpId": "forge",
-        "type": ["submit"],
-        "map": ["suburb"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5561,7 +6799,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [{author: "orbb", url: "https://youtu.be/3yUDq4fJZ-s"}],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://youtu.be/3yUDq4fJZ-s"
+            }
+        ],
         "order": 4
     },
     "forge_5": {
@@ -5573,8 +6816,12 @@ export const tasksData: TasksDatabase = {
             "Place Max's Phone in the wall fountain"
         ],
         "corpId": "forge",
-        "type": ["place"],
-        "map": ["resort"],
+        "type": [
+            "place"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5600,11 +6847,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Max's Phone", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Max's Phone",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "south of hotel, left through GREEN archway, small fountain on wall, place purple phone provide from task reward or purchase.",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=8un2o6BUoH8"
+            }
+        ],
         "order": 5
     },
     "forge_6": {
@@ -5619,8 +6877,12 @@ export const tasksData: TasksDatabase = {
             "Take photo of a red Hovolt car"
         ],
         "corpId": "forge",
-        "type": ["photo"],
-        "map": ["resort"],
+        "type": [
+            "photo"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5637,11 +6899,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name : "Tactical Phone", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Tactical Phone",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "car dealership located east side by tunnel extract, 3 cars located outside, 1 located inside, use provided camera tablet or buy, stand in front of car, open camera, snap picture, notification on screen when action complete, do for all 4 cars ",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=XVqVAHhgKFI"
+            }
+        ],
         "order": 6
     },
     "forge_7": {
@@ -5655,8 +6928,13 @@ export const tasksData: TasksDatabase = {
             "Turn in both Antique Tea Plates"
         ],
         "corpId": "forge",
-        "type": ["retrieve","submit"],
-        "map": ["resort"],
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5681,7 +6959,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "flea market located middle of map marked on meca device, both plates will be found in wood market booth east and west side ",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=Rsc3sPUjoXI"
+            }
+        ],
         "order": 7
     },
     "forge_8": {
@@ -5694,8 +6977,13 @@ export const tasksData: TasksDatabase = {
             "place money next to fountain in front of Halif Voyage"
         ],
         "corpId": "forge",
-        "type": ["retrieve","place"],
-        "map": ["resort"],
+        "type": [
+            "retrieve",
+            "place"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5725,7 +7013,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "one located on bench at basketball court of \"worker dorms\"; one located back of garbage truck on street by \"waste station\"; drop off box in water fountain, located south side of street between flea market and hovolt.  https://ibb.co/k2zXfNBz . https://ibb.co/5wYbsZQ",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=nGyTYeMvmTE"
+            }
+        ],
         "order": 8
     },
     "forge_9": {
@@ -5737,8 +7030,12 @@ export const tasksData: TasksDatabase = {
             "Turn in 5 Old Phone"
         ],
         "corpId": "forge",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5778,8 +7075,13 @@ export const tasksData: TasksDatabase = {
             "Place in the Hospital overpass"
         ],
         "corpId": "forge",
-        "type": ["retrieve","place"],
-        "map": ["resort"],
+        "type": [
+            "retrieve",
+            "place"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5819,8 +7121,12 @@ export const tasksData: TasksDatabase = {
             "Mark Inlet Tower 4 at Dam"
         ],
         "corpId": "forge",
-        "type": ["mark"],
-        "map": ["dam"],
+        "type": [
+            "mark"
+        ],
+        "map": [
+            "dam"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5841,11 +7147,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{ type: "item", item_name : "Tracking device", quantity: 4}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Tracking device",
+                "quantity": 4
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "located at top of dam, walk across concrete dam, all 4 inlet buildings will need to be marked with marking device",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=XJ_WamWoIds"
+            }
+        ],
         "order": 11
     },
     "forge_12": {
@@ -5857,8 +7174,12 @@ export const tasksData: TasksDatabase = {
             "Eliminate Bank's barricade"
         ],
         "corpId": "forge",
-        "type": ["eliminate"],
-        "map": ["resort"],
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "resort"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5895,8 +7216,12 @@ export const tasksData: TasksDatabase = {
             "Turn in 6 cassette tape"
         ],
         "corpId": "forge",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5933,8 +7258,12 @@ export const tasksData: TasksDatabase = {
             "Turn in 3 cameras"
         ],
         "corpId": "forge",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5972,8 +7301,13 @@ export const tasksData: TasksDatabase = {
             "Turn in Golden Ingots"
         ],
         "corpId": "forge",
-        "type": ["retrieve","submit"],
-        "map": ["suburb"],
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -5998,7 +7332,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "located in parking garage of mall, -1F, center of mall, room below escalator stairs on coffee table",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=KoE9YIrOaGI"
+            }
+        ],
         "order": 15
     },
     "forge_16": {
@@ -6010,11 +7349,15 @@ export const tasksData: TasksDatabase = {
             "Mark First Forklift at The Dock",
             "Mark Second Forklift at The Dock",
             "Mark First Forklift at The Factory",
-            "Mark Second Forklift at The Factory",
+            "Mark Second Forklift at The Factory"
         ],
         "corpId": "forge",
-        "type": ["mark"],
-        "map": ["dam"],
+        "type": [
+            "mark"
+        ],
+        "map": [
+            "dam"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -6035,11 +7378,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{ type: "item", item_name : "Tracking device", quantity: 4}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Tracking device",
+                "quantity": 4
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=VuvURKV4MWk"
+            }
+        ],
         "order": 16
     },
     "forge_17": {
@@ -6054,8 +7408,13 @@ export const tasksData: TasksDatabase = {
             "Successfully extract from Suburb"
         ],
         "corpId": "forge",
-        "type": ["reach","extract"],
-        "map": ["suburb"],
+        "type": [
+            "reach",
+            "extract"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -6080,7 +7439,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "water tower (more of a tank than a tower) 50M north of altibuy in the backyard of the 3 story house, green tent located in front of mall northeast corner by overpass, cabin located north of mall just past overpass before tunnel",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=rrL25q04zaE"
+            }
+        ],
         "order": 17
     },
     "forge_18": {
@@ -6095,8 +7459,12 @@ export const tasksData: TasksDatabase = {
             "Successfully extract from Southwest Road"
         ],
         "corpId": "forge",
-        "type": ["reach"],
-        "map": ["dam"],
+        "type": [
+            "reach"
+        ],
+        "map": [
+            "dam"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -6121,7 +7489,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "west inlet tower located above dam; red firewatcher tower above dam west side; dam power room located below dam in valley, building east; southwest road is behind factory.",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=okHHthr__LY"
+            }
+        ],
         "order": 18
     },
     "forge_19": {
@@ -6134,8 +7507,13 @@ export const tasksData: TasksDatabase = {
             "Turn in 4 combustible items"
         ],
         "corpId": "forge",
-        "type": ["mark","submit"],
-        "map": ["suburb"],
+        "type": [
+            "mark",
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -6160,7 +7538,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "These are *not* barns, they are tall silos - several different ones will work for the task silos 170M west of the Hyder Town police station",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=Yq6b9D90zyY"
+            }
+        ],
         "order": 19
     },
     "forge_20": {
@@ -6176,8 +7559,14 @@ export const tasksData: TasksDatabase = {
             "Place in the dim blue shipping container"
         ],
         "corpId": "forge",
-        "type": ["reach", "retrieve", "place"],
-        "map": ["dam"],
+        "type": [
+            "reach",
+            "retrieve",
+            "place"
+        ],
+        "map": [
+            "dam"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -6202,7 +7591,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=_lT5d6SMhp4"
+            }
+        ],
         "order": 20
     },
     "forge_21": {
@@ -6214,8 +7608,12 @@ export const tasksData: TasksDatabase = {
             "Turn in 1 Gold Ingot"
         ],
         "corpId": "forge",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -6254,8 +7652,14 @@ export const tasksData: TasksDatabase = {
             "Turn in Game Disk"
         ],
         "corpId": "forge",
-        "type": ["reach","retrieve","submit"],
-        "map": ["dam"],
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -6280,7 +7684,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=p2W4kXJUtIA"
+            }
+        ],
         "order": 22
     },
     "forge_23": {
@@ -6292,8 +7701,12 @@ export const tasksData: TasksDatabase = {
             "Hand in 7 figurines"
         ],
         "corpId": "forge",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -6332,8 +7745,14 @@ export const tasksData: TasksDatabase = {
             "Turn in Maximilian's Golden Ingots"
         ],
         "corpId": "forge",
-        "type": ["reach","retrieve","submit"],
-        "map": ["dam"],
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -6358,7 +7777,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "north on dam, before dock and construction, located top-crane, climb ladder, collect 3 gold bars and turn in",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=OC9DuhsBReg"
+            }
+        ],
         "order": 25
     },
     "forge_26": {
@@ -6371,11 +7795,15 @@ export const tasksData: TasksDatabase = {
             "Turn in 'Showdown' Cart",
             "Turn in 'Contractors' Cart",
             "Turn in 'GrimLord' Cart",
-            "Turn in 'Exfilzone' Cart",
+            "Turn in 'Exfilzone' Cart"
         ],
         "corpId": "forge",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -6412,11 +7840,15 @@ export const tasksData: TasksDatabase = {
             "Turn in Contractors Game Disc",
             "Turn in ShowDown Game Disc",
             "Turn in Contractors Game Disc Collector's Edition",
-            "Turn in ShowDown Game Disc Collector's Edition",
+            "Turn in ShowDown Game Disc Collector's Edition"
         ],
         "corpId": "forge",
-        "type": ["submit"],
-        "map": ["any"],
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -6455,8 +7887,14 @@ export const tasksData: TasksDatabase = {
             "Successfully extract from North Metro Exit"
         ],
         "corpId": "forge",
-        "type": ["extract"],
-        "map": ["suburb","dam","metro"],
+        "type": [
+            "extract"
+        ],
+        "map": [
+            "suburb",
+            "dam",
+            "metro"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -6477,11 +7915,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=FUrur2cpdUA"
+            }
+        ],
         "order": 36
     },
     "forge_37": {
@@ -6495,8 +7944,14 @@ export const tasksData: TasksDatabase = {
             "Turn in Missile Launcher Case"
         ],
         "corpId": "forge",
-        "type": ["reach","retrieve","submit"],
-        "map": ["metro"],
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "metro"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -6517,11 +7972,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "east on railway, upstairs left into control room, case on table right, turn in",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=yEf6vs-lZDg"
+            }
+        ],
         "order": 37
     },
     "forge_38": {
@@ -6536,8 +8002,15 @@ export const tasksData: TasksDatabase = {
             "Turn in 3 VR headsets"
         ],
         "corpId": "forge",
-        "type": ["retrieve","submit"],
-        "map": ["suburb","dam","metro"],
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "suburb",
+            "dam",
+            "metro"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -6558,11 +8031,22 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "1st, suburbs farm second floor under desk south side, 2nd, dam military tent above the dam behind east inlet building on tent, parkour required; 3rd, metro hound statue by east extract, located in mouth of hound",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=OCRTBDedB3Q"
+            }
+        ],
         "order": 38
     },
     "forge_39": {
@@ -6574,8 +8058,12 @@ export const tasksData: TasksDatabase = {
             "Find the sewer area back room"
         ],
         "corpId": "forge",
-        "type": ["reach"],
-        "map": ["metro"],
+        "type": [
+            "reach"
+        ],
+        "map": [
+            "metro"
+        ],
         "reward": [
             {
                 "type": "money",
@@ -6596,11 +8084,27 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}, {type: "item", item_name: "Sewer room key", quantity: 1}],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            },
+            {
+                "type": "item",
+                "item_name": "Sewer room key",
+                "quantity": 1
+            }
+        ],
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "sewer back room located on lower level, large sewer room, no key needed",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=Gl_3o8UfEyI"
+            }
+        ],
         "order": 39
     }
 } as const;
