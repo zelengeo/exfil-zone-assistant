@@ -2208,10 +2208,11 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "[Household Items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Household) - very common items.",
-        "videoGuides": [{
-            "author": "radFoxVR",
-            "url": "https://youtu.be/ZOuSedSDlUE"
-        }
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/ZOuSedSDlUE"
+            }
         ],
         "order": 1
     },
@@ -2266,13 +2267,19 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ntg_1"],
+        "requiredTasks": [
+            "ntg_1"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=CAxLmaHZ8Qs"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=43s"
             }
         ],
         "order": 2
@@ -2313,10 +2320,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ntg_2"],
+        "requiredTasks": [
+            "ntg_2"
+        ],
         "requiredLevel": 0,
         "tips": "[Energy-saving lamp](https://www.exfil-zone-assistant.app/items/misc_b_lightbulb)",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=75s"
+            }
+        ],
         "order": 3
     },
     "ntg_4": {
@@ -2361,13 +2375,16 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ntg_3"],
+        "requiredTasks": [
+            "ntg_3"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [{
-            "author": "radFoxVR",
-            "url": "https://youtu.be/ZOuSedSDlUE?t=86"
-        }
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/ZOuSedSDlUE?t=86"
+            }
         ],
         "order": 4
     },
@@ -2423,13 +2440,19 @@ export const tasksData: TasksDatabase = {
                 "quantity": 2
             }
         ],
-        "requiredTasks": ["ntg_1"],
+        "requiredTasks": [
+            "ntg_1"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=0g5dymVNIgo"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=109s"
             }
         ],
         "order": 5
@@ -2470,10 +2493,18 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ntg_4", "ntg_5"],
+        "requiredTasks": [
+            "ntg_4",
+            "ntg_5"
+        ],
         "requiredLevel": 0,
         "tips": "[Medical Supplies](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Medicine) - common, very easy to obtain in Resort Hospital",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=158s"
+            }
+        ],
         "order": 6
     },
     "ntg_7": {
@@ -2529,13 +2560,19 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["ntg_6"],
+        "requiredTasks": [
+            "ntg_6"
+        ],
         "requiredLevel": 0,
         "tips": "Drop the X-NAX in the box at the Modern Apartment reception. Pink USB is there too. ",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=bFUfOW56zp0"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=185s"
             }
         ],
         "order": 7
@@ -2590,13 +2627,19 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["ntg_7"],
+        "requiredTasks": [
+            "ntg_7"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=mxXxaHsasKw"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=215s"
             }
         ],
         "order": 8
@@ -2652,13 +2695,16 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ntg_8"],
+        "requiredTasks": [
+            "ntg_8"
+        ],
         "requiredLevel": 0,
         "tips": "[Medical Items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Medicine) -",
-        "videoGuides": [{
-            "author": "radFoxVR",
-            "url": "https://youtu.be/ZOuSedSDlUE?t=237"
-        }
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/ZOuSedSDlUE?t=237"
+            }
         ],
         "order": 9
     },
@@ -2699,13 +2745,16 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ntg_9"],
+        "requiredTasks": [
+            "ntg_9"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [{
-            "author": "radFoxVR",
-            "url": "https://youtu.be/ZOuSedSDlUE?t=265"
-        }
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/ZOuSedSDlUE?t=265"
+            }
         ],
         "order": 10
     },
@@ -2745,13 +2794,16 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ntg_10"],
+        "requiredTasks": [
+            "ntg_10"
+        ],
         "requiredLevel": 0,
         "tips": "Two Watchtowers are located north and south of Seafoam Scoops (cafeteria near the bank) Signal enhancers are found in both towers. Grab and place both on top of the lighthouse",
-        "videoGuides": [{
-            "author": "radFoxVR",
-            "url": "https://youtu.be/ZOuSedSDlUE?t=295"
-        }
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/ZOuSedSDlUE?t=295"
+            }
         ],
         "order": 11
     },
@@ -2802,13 +2854,19 @@ export const tasksData: TasksDatabase = {
                 "quantity": 3
             }
         ],
-        "requiredTasks": ["ntg_11"],
+        "requiredTasks": [
+            "ntg_11"
+        ],
         "requiredLevel": 0,
         "tips": "There are more ambulances in the area. Mostly between Bank and Hospital. Mark any 3",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=NIGkh-lpDKw"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=335s"
             }
         ],
         "order": 12
@@ -2849,10 +2907,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ntg_12"],
+        "requiredTasks": [
+            "ntg_12"
+        ],
         "requiredLevel": 0,
         "tips": "Not full Coffee Drinks can be submitted too.",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=367s"
+            }
+        ],
         "order": 13
     },
     "ntg_14": {
@@ -2897,10 +2962,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ntg_12"],
+        "requiredTasks": [
+            "ntg_12"
+        ],
         "requiredLevel": 0,
         "tips": "[Insulating Tape](https://www.exfil-zone-assistant.app/items/misc_b_insulatingtape), [Valve](https://www.exfil-zone-assistant.app/items/misc_b_pipeline)",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=356s"
+            }
+        ],
         "order": 14
     },
     "ntg_15": {
@@ -2942,13 +3014,19 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ntg_9"], // probably some ARK requirement
+        "requiredTasks": [
+            "ntg_9"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=7zqCwM-Kuec"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=378s"
             }
         ],
         "order": 15
@@ -2992,18 +3070,31 @@ export const tasksData: TasksDatabase = {
                 "quantity": 2
             }
         ],
-        "preReward": [{type: "item", item_name: "Motel Key 206", quantity: 1}, {
-            type: "item",
-            item_name: "EliteOps Green",
-            quantity: 1
-        }],
-        "requiredTasks": ["ntg_15"],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Motel Key 206",
+                "quantity": 1
+            },
+            {
+                "type": "item",
+                "item_name": "EliteOps Green",
+                "quantity": 1
+            }
+        ],
+        "requiredTasks": [
+            "ntg_15"
+        ],
         "requiredLevel": 0,
         "tips": "The Key can be bought from Maggie.",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=5uUVSGVt8pI"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=407s"
             }
         ],
         "order": 16
@@ -3054,7 +3145,9 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["ntg_16"],
+        "requiredTasks": [
+            "ntg_16"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
@@ -3109,7 +3202,9 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ntg_17"],
+        "requiredTasks": [
+            "ntg_17"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
@@ -3117,6 +3212,10 @@ export const tasksData: TasksDatabase = {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=F5OLdAL41Rw"
             },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=472s"
+            }
         ],
         "order": 18
     },
@@ -3162,13 +3261,19 @@ export const tasksData: TasksDatabase = {
                 "quantity": 3
             }
         ],
-        "requiredTasks": ["ntg_19"],
+        "requiredTasks": [
+            "ntg_19"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=n3ycwwPxpDc"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=488s"
             }
         ],
         "order": 19
@@ -3210,10 +3315,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ntg_19"],
+        "requiredTasks": [
+            "ntg_19"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=515s"
+            }
+        ],
         "order": 20
     },
     "ntg_21": {
@@ -3266,13 +3378,19 @@ export const tasksData: TasksDatabase = {
                 "quantity": 3
             }
         ],
-        "requiredTasks": ["ntg_20"],
+        "requiredTasks": [
+            "ntg_20"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=3W2xFtE2G8w"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=528s"
             }
         ],
         "order": 21
@@ -3314,10 +3432,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ntg_21"],
+        "requiredTasks": [
+            "ntg_21"
+        ],
         "requiredLevel": 0,
         "tips": "Can be bought from Maggie. Used Keys can be submitted.",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=561s"
+            }
+        ],
         "order": 22
     },
     "ntg_23": {
@@ -3357,10 +3482,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ntg_22"],
+        "requiredTasks": [
+            "ntg_22"
+        ],
         "requiredLevel": 0,
         "tips": "Can be bought from Maggie. Used Keys can be submitted.",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=577s"
+            }
+        ],
         "order": 23
     },
     "ntg_24": {
@@ -3400,13 +3532,21 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ntg_23"],
+        "requiredTasks": [
+            "ntg_23"
+        ],
         "requiredLevel": 0,
         "tips": "Used Keys can be submitted.",
-        "videoGuides": [{
-            "author": "orbb",
-            "url": "https://www.youtube.com/watch?v=2df8BKPx6rw"
-        }],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=2df8BKPx6rw"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=592s"
+            }
+        ],
         "order": 24
     },
     "ntg_25": {
@@ -3451,13 +3591,19 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ntg_20"],
+        "requiredTasks": [
+            "ntg_20"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=LLb0-C95KHw"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=613s"
             }
         ],
         "order": 25
@@ -3503,13 +3649,19 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ntg_25"],
+        "requiredTasks": [
+            "ntg_25"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=M3-BtDmPK78"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=640s"
             }
         ],
         "order": 26
@@ -3550,10 +3702,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ntg_26"],
+        "requiredTasks": [
+            "ntg_26"
+        ],
         "requiredLevel": 0,
         "tips": "[Car Battery](https://www.exfil-zone-assistant.app/items/misc_b_storagebattery)",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=666s"
+            }
+        ],
         "order": 27
     },
     "ntg_28": {
@@ -3593,13 +3752,19 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["ntg_27"],
+        "requiredTasks": [
+            "ntg_27"
+        ],
         "requiredLevel": 0,
         "tips": "Located north on dam in valley between both broken bridges, north of dock office at the end of pier",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=0AkItVBOwi0"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=677s"
             }
         ],
         "order": 28
@@ -3655,13 +3820,19 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["ntg_28"],
+        "requiredTasks": [
+            "ntg_28"
+        ],
         "requiredLevel": 0,
         "tips": "Bodies and Bag are on the lowes level. ",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=zhZlEVICwsU"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=712s"
             }
         ],
         "order": 29
@@ -3720,13 +3891,19 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["ntg_28"],
+        "requiredTasks": [
+            "ntg_28"
+        ],
         "requiredLevel": 0,
         "tips": "take photo control console in the bomb room, bulletin located in room below conference room, photo of plants in bed base room",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=5d6THOTrYgA"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=744s"
             }
         ],
         "order": 30
@@ -3774,10 +3951,16 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["ntg_30"],
+        "requiredTasks": [
+            "ntg_30"
+        ],
         "requiredLevel": 0,
         "tips": "Can be bought from Maggie. Used Keys can be submitted.",
         "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=773s"
+            }
         ],
         "order": 31
     },
@@ -3834,13 +4017,21 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["ntg_31"],
+        "requiredTasks": [
+            "ntg_31"
+        ],
         "requiredLevel": 0,
         "tips": "1st, lower part of dam in the back of crashed semi; 2nd, suburb in mall parking -1F east of escalators in military tent on shelf,3rd metro basement level, in bathroom located at end of hallway by med base(circle), enter bathroom, first sink left",
-        "videoGuides": [{
-            "author": "orbb",
-            "url": "https://www.youtube.com/watch?v=g-j_4tw4zrw"
-        }],
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=g-j_4tw4zrw"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=788s"
+            }
+        ],
         "order": 32
     },
     "ntg_33": {
@@ -3903,10 +4094,17 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["ntg_32"],
+        "requiredTasks": [
+            "ntg_32"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=831s"
+            }
+        ],
         "order": 33
     },
     "trupiks_1": {
