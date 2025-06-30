@@ -77,7 +77,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "Extraction points can be found in menu in Extraction tab or on map on M.I.C.A",
+        "tips": "Check the 'Extraction' tab in the menu or use the M.I.C.A. map to find extraction points.",
         "videoGuides": [],
         "order": 1
     },
@@ -123,15 +123,15 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_1"],
         "requiredLevel": 0,
-        "tips": "scavengers can be deadly, try to fight one at a time and use cover",
+        "tips": "Scavengers can be deadly. Try to fight one at a time and use cover",
         "videoGuides": [],
         "order": 2
     },
     "ark_3": {
         "id": "ark_3",
-        "name": "Recon l",
+        "name": "Recon 1",
         "gameId": "task.na.13",
         "description": "The situation on the island is in complete chaos. Gathering some military intel might prove helpful for us.\nHead to the [Suburb area], where [intel items] are often found. Locate the [Northern Military Camp] and collect several intel documents.",
         "objectives": [
@@ -172,9 +172,9 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_2"],
         "requiredLevel": 0,
-        "tips": "Military camp to the north of the Mall, [Intel items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Intel) are often found there",
+        "tips": "The Military Camp is north of the Mall. [Intel items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Intel) are commonly found in that area.",
         "videoGuides": [],
         "order": 3
     },
@@ -222,9 +222,9 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_3"],
         "requiredLevel": 0,
-        "tips": "Small room on the second floor of the Office building",
+        "tips": "The phone is in a small room on the second floor of the office building, which is near the motel.",
         "videoGuides": [{ author: "orbb", url:"https://youtu.be/4WsA_31tZKo"}],
         "order": 4
     },
@@ -270,10 +270,10 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_3"],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-ust=338"}],
         "order": 5
     },
     "ark_6": {
@@ -331,7 +331,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_4","ark_5"],
         "requiredLevel": 0,
         "tips": "Careful, most of players rush Bank on the start.",
         "videoGuides": [{author: "orbb", url: "https://youtu.be/9q5RGDIiAMs"}],
@@ -380,7 +380,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_6"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [{author: "orbb", url: "https://youtu.be/6MkGTEHSq_o"}],
@@ -429,7 +429,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [{type: "item", item_name: "Tactical Phone", quantity: 1}],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_7"],
         "requiredLevel": 0,
         "tips": "Phone does not have to be axtracted.",
         "videoGuides": [{author: "orbb", url: "https://youtu.be/w_8khHE_o1A"}],
@@ -480,7 +480,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_8"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [{author: "orbb", url: "https://youtu.be/AcsdXNUqR1k"}],
@@ -529,7 +529,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_8"],
         "requiredLevel": 0,
         "tips": "Almost Unarmored, wears [Police Vest](https://www.exfil-zone-assistant.app/items/armor-police-vest) and [Red Beret](https://www.exfil-zone-assistant.app/items/helmet-red-beret), drops [UMP](https://www.exfil-zone-assistant.app/items/weapon-ump45) or [MP9](https://www.exfil-zone-assistant.app/items/weapon-mp9-t)",
         "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-ust=338"}],
@@ -578,7 +578,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_9"],
         "requiredLevel": 0,
         "tips": "[Electric Item](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Electric), [Power Items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Power)",
         "videoGuides": [],
@@ -626,7 +626,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [{type: "item", item_name: "Tracking device", quantity: 3}],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_11"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [{author: "orbb", url: "https://youtu.be/8Z4xxRQxK84"}],
@@ -678,7 +678,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_12"],
         "requiredLevel": 0,
         "tips": "[Intel Items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Intel)",
         "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=438 "}],
@@ -726,7 +726,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_13"],
         "requiredLevel": 0,
         "tips": "Any M4A1: [M4A1 CQBR](https://www.exfil-zone-assistant.app/items/weapon-m4a1-cqbr) ",
         "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=490"}],
@@ -774,7 +774,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_14", "ark_10"],
         "requiredLevel": 0,
         "tips": "Unarmored, easy target. Does not spawn every game though.",
         "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=531"}],
@@ -812,7 +812,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [{type: "item", item_name: "Tracking device", quantity: 3}],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_15"],
         "requiredLevel": 0,
         "tips": "Trucks are all over the map.",
         "videoGuides": [{author: "orbb", url: "https://youtu.be/TejY5XxbxXs"}],
@@ -852,7 +852,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_16"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [{author: "orbb", url: "https://youtu.be/91ZLjp02aDY"}],
@@ -900,7 +900,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_16"],
         "requiredLevel": 0,
         "tips": "[Videotape](https://www.exfil-zone-assistant.app/items/misc_videotape) can be often found near the TVs",
         "videoGuides": [],
@@ -950,7 +950,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [{type: "item", item_name: "Tactical Phone", quantity: 1}],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_17", "ark_18"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [{author: "orbb", url: "https://youtu.be/_OUY4xMCIUc"}],
@@ -998,7 +998,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_19"],
         "requiredLevel": 0,
         "tips": "Any M16A2: [M16A2 ](https://www.exfil-zone-assistant.app/items/weapon-m16a2-lv2) ",
         "videoGuides": [],
@@ -1048,7 +1048,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_20"],
         "requiredLevel": 0,
         "tips": "Use grenades, akimbo, everything you can think of. Good luck.",
         "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=749"}],
@@ -1088,7 +1088,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_21"],
         "requiredLevel": 0,
         "tips": "One of the hot spots. Consider getting there closer to the end of a raid.",
         "videoGuides": [{author: "orbb", url: "https://youtu.be/gqbXu1XbELg"}],
@@ -1136,10 +1136,10 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_21"],
         "requiredLevel": 0,
         "tips": "Lots of scavengers at Factory",
-        "videoGuides": [],
+        "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=857"}],
         "order": 23
     },
     "ark_24": {
@@ -1177,7 +1177,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [{type: "item", item_name: "Tracking device", quantity: 2}],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_22", "ark_23"],
         "requiredLevel": 0,
         "tips": "north side of map, located east of dock & west of clifton, walk on top of both bridges, mark the standalone bridge column in front of both broken bridges.",
         "videoGuides": [{author: "orbb", url: "https://youtu.be/sKc6B8RQefg"}],
@@ -1231,7 +1231,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_24"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [{author: "orbb", url: "https://youtu.be/5uY7-lpuh6Y"}],
@@ -1279,7 +1279,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [{type: "item", item_name: "Tracking device", quantity: 3}],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_25"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [{author: "orbb", url: "https://youtu.be/mF3yc9qY4ao"}],
@@ -1326,7 +1326,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_26"],
         "requiredLevel": 0,
         "tips": "[AR-15 Pistol](https://www.exfil-zone-assistant.app/items/weapon-ar15-pistol) or [AR-15 Hunter](https://www.exfil-zone-assistant.app/items/weapon-m4a1-hunter)",
         "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=988"}],
@@ -1364,7 +1364,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_27"],
         "requiredLevel": 0,
         "tips": "Caged room bottom of dam. Boss is relatively easy but POE is hot spot.",
         "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=1044"}],
@@ -1404,7 +1404,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_28"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [{author: "orbb", url: "https://youtu.be/HdTqbSk3eaY"}],
@@ -1451,7 +1451,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_28"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-ust=338"}],
@@ -1500,7 +1500,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_29"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [{author: "orbb", url: "https://youtu.be/2fEEpOWBYHY"}],
@@ -1548,7 +1548,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_31"],
         "requiredLevel": 0,
         "tips": "Good luck getting the right extraction point.",
         "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=1164"}],
@@ -1595,7 +1595,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [{type: "item", item_name: "Tracking device", quantity: 3}, {type: "item", item_name: "Metro entrance card", quantity: 1}],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_32"],
         "requiredLevel": 0,
         "tips": "Don't have to be 3 different ones. You can mark the same BMP in multiple runs.",
         "videoGuides": [{author: "orbb", url: "https://youtu.be/9t1zLuov-sE"}],
@@ -1642,7 +1642,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_33"],
         "requiredLevel": 0,
         "tips": "Any [AUG](https://www.exfil-zone-assistant.app/items/weapon-aug-a3-ris). ",
         "videoGuides": [{author: "radFoxVR", url: "https://youtu.be/I5XTDO71-us?t=1234"}],
@@ -1691,7 +1691,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [{type: "item", item_name: "Metro entrance card", quantity: 1}],
-        "requiredTasks": [],
+        "requiredTasks": ["ark_34"],
         "requiredLevel": 0,
         "tips": "Boss wearing RYS-T, who loves to kill while you are loading.",
         "videoGuides": [{author: "orbb", url: "https://youtu.be/4eNHusxBbIU"}],
