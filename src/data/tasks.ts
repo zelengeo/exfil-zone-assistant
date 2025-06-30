@@ -82,7 +82,11 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "Check the 'Extraction' tab in the menu or use the M.I.C.A. map to find extraction points.",
-        "videoGuides": [],
+        "videoGuides": [{
+            "author": "radFoxVR",
+            "url": "https://youtu.be/I5XTDO71-us"
+        }
+        ],
         "order": 1
     },
     "ark_2": {
@@ -2022,7 +2026,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "requiredTasks": [
-            "ark_32"
+            "ark_32", "ntg_28"
         ],
         "requiredLevel": 0,
         "tips": "Don't have to be 3 different ones. You can mark the same BMP in multiple runs.",
@@ -2203,8 +2207,12 @@ export const tasksData: TasksDatabase = {
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [],
+        "tips": "[Household Items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Household) - very common items.",
+        "videoGuides": [{
+            "author": "radFoxVR",
+            "url": "https://youtu.be/ZOuSedSDlUE"
+        }
+        ],
         "order": 1
     },
     "ntg_2": {
@@ -2258,7 +2266,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_1"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
@@ -2305,9 +2313,9 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_2"],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "[Energy-saving lamp](https://www.exfil-zone-assistant.app/items/misc_b_lightbulb)",
         "videoGuides": [],
         "order": 3
     },
@@ -2353,10 +2361,14 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_3"],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [{
+            "author": "radFoxVR",
+            "url": "https://youtu.be/ZOuSedSDlUE?t=86"
+        }
+        ],
         "order": 4
     },
     "ntg_5": {
@@ -2408,10 +2420,10 @@ export const tasksData: TasksDatabase = {
             {
                 "type": "item",
                 "item_name": "Hospital secret room key",
-                "quantity": 1
+                "quantity": 2
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_1"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
@@ -2458,9 +2470,9 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_4", "ntg_5"],
         "requiredLevel": 0,
-        "tips": "medical scissors, box of bandages, aspirin, etc",
+        "tips": "[Medical Supplies](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Medicine) - common, very easy to obtain in Resort Hospital",
         "videoGuides": [],
         "order": 6
     },
@@ -2517,9 +2529,9 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_6"],
         "requiredLevel": 0,
-        "tips": "modern apartment is labeled crimson luxe, front entrance northwest side, drop of X-NAX med item in box provide from last task or buy, pink* USB located right side of desk by box ",
+        "tips": "Drop the X-NAX in the box at the Modern Apartment reception. Pink USB is there too. ",
         "videoGuides": [
             {
                 "author": "orbb",
@@ -2578,7 +2590,7 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_7"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
@@ -2640,14 +2652,18 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_8"],
         "requiredLevel": 0,
-        "tips": "maggie's herb is a plant, located first floor east wing hospital near entrance on table, all other items can be found around maps, med spawns in hospital",
-        "videoGuides": [],
+        "tips": "[Medical Items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Medicine) -",
+        "videoGuides": [{
+            "author": "radFoxVR",
+            "url": "https://youtu.be/ZOuSedSDlUE?t=237"
+        }
+        ],
         "order": 9
     },
-    "ntg_12": {
-        "id": "ntg_12",
+    "ntg_10": {
+        "id": "ntg_10",
         "name": "Clear the way",
         "gameId": "task.doc.11",
         "description": "Turns out that powerful Eastern remedy was… a laxative!\r\nSorry, I need to stay and look after poor Johnny.\r\nCould you check on the safety extractions in the [Resort Area] for me?\r\nI want to make sure the hospital director can get out safely.",
@@ -2683,14 +2699,64 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_9"],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
-        "order": 12
+        "videoGuides": [{
+            "author": "radFoxVR",
+            "url": "https://youtu.be/ZOuSedSDlUE?t=265"
+        }
+        ],
+        "order": 10
     },
-    "ntg_13": {
-        "id": "ntg_13",
+    "ntg_11": {
+        "id": "ntg_11",
+        "name": "Signal boost",
+        "gameId": "task.doc.12",
+        "description": "There's an old memorial lighthouse on the west side of the Resort Area. It's been inactive for years, but the signal there should be strong.\nI've arranged for a radio to be placed there.\nPlease find [2 watchtowers] near the [ice cream shop].\nEach one should have a [signal enhancer]—take them and install both [on the radio] at the [top of the lighthouse].\nOnce you're done, [extract near the lighthouse].",
+        "objectives": [
+            "Find the 2 signal enhancers",
+            "Reach the Watchtower south of the Seafoam scoops",
+            "Reach the Watchtower north of the Seafoam scoops",
+            "Place on top of the lighthouse"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "reach",
+            "retrieve",
+            "place"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 20000
+            },
+            {
+                "type": "reputation",
+                "corpId": "ntg",
+                "quantity": 40
+            },
+            {
+                "type": "experience",
+                "quantity": 6403
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": ["ntg_10"],
+        "requiredLevel": 0,
+        "tips": "Two Watchtowers are located north and south of Seafoam Scoops (cafeteria near the bank) Signal enhancers are found in both towers. Grab and place both on top of the lighthouse",
+        "videoGuides": [{
+            "author": "radFoxVR",
+            "url": "https://youtu.be/ZOuSedSDlUE?t=295"
+        }
+        ],
+        "order": 11
+    },
+    "ntg_12": {
+        "id": "ntg_12",
         "name": "Where did the ambulances go?",
         "gameId": "task.doc.8",
         "description": "The Resort Area is in chaos. The hospital director also asked us to look for missing ambulances.\nUse the tracker to [mark 3 ambulances] in the [Resort Area].\nWe might find some extra supplies along the way.",
@@ -2736,24 +2802,24 @@ export const tasksData: TasksDatabase = {
                 "quantity": 3
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_11"],
         "requiredLevel": 0,
-        "tips": "mark any 3 ambulance on resort with the marking device",
+        "tips": "There are more ambulances in the area. Mostly between Bank and Hospital. Mark any 3",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=NIGkh-lpDKw"
             }
         ],
-        "order": 13
+        "order": 12
     },
-    "ntg_14": {
-        "id": "ntg_14",
+    "ntg_13": {
+        "id": "ntg_13",
         "name": "Coffee Break",
         "gameId": "task.doc.z9",
         "description": "Oh, it's you. I've been trying to stretch our medical supply a bit longer.\nBy the way… have you seen any [coffee] out there? I could really use some to stay awake during night shifts.\nIt gets especially tough in the dark underground…Ah, forget I said that.\nIf you can find me some, I promise the first cup I brew will be yours!",
         "objectives": [
-            "Submit 5 coffee drinks"
+            "Submit 6 coffee drinks"
         ],
         "corpId": "ntg",
         "type": [
@@ -2778,111 +2844,19 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "odldos backpack",
+                "item_name": "Odldos backpack",
                 "quantity": 1
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_12"],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "Not full Coffee Drinks can be submitted too.",
         "videoGuides": [],
-        "order": 14
+        "order": 13
     },
-    "ntg_15": {
-        "id": "ntg_15",
-        "name": "Signal boost",
-        "gameId": "task.doc.12",
-        "description": "There's an old memorial lighthouse on the west side of the Resort Area. It's been inactive for years, but the signal there should be strong.\nI've arranged for a radio to be placed there.\nPlease find [2 watchtowers] near the [ice cream shop].\nEach one should have a [signal enhancer]—take them and install both [on the radio] at the [top of the lighthouse].\nOnce you're done, [extract near the lighthouse].",
-        "objectives": [
-            "Find the 2 signal enhancers",
-            "Reach the Watchtower south of the Seafoam scoops",
-            "Reach the Watchtower north of the Seafoam scoops",
-            "Place on top of the lighthouse"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "reach",
-            "retrieve",
-            "place"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 20000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 40
-            },
-            {
-                "type": "experience",
-                "quantity": 6403
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [],
-        "requiredLevel": 0,
-        "tips": "two towers located north and south of seafoam scoops, signal enhancer are found in both towers, grab and place both on radio top of lighthouse",
-        "videoGuides": [],
-        "order": 15
-    },
-    "ntg_16": {
-        "id": "ntg_16",
-        "name": "NTG's Investigation 1",
-        "gameId": "task.doc.13",
-        "description": "Those scavengers are messing with NTG's landing. I managed to contact NTG HQ via radio.\nThey don't fully understand what's happening on the island yet, but they've promised to investigate.\nHQ wants us to check the [locked room] on the [2F of a high-rise office building] north of the motel in the [Suburb area].\nI can't fight—please go check it out for me.",
-        "objectives": [
-            "Reach office building by motel",
-            "Find 2nd floor office lock room",
-            "Extract from suburb area"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "reach",
-            "extract"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 20000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 30
-            },
-            {
-                "type": "experience",
-                "quantity": 64030
-            },
-            {
-                "type": "item",
-                "item_id": "med-bandage-lv3",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=7zqCwM-Kuec"
-            }
-        ],
-        "order": 16
-    },
-    "ntg_17": {
-        "id": "ntg_17",
+    "ntg_14": {
+        "id": "ntg_14",
         "name": "When it rains, it pours",
         "gameId": "task.doc.z13",
         "description": "You're just in time—my workspace has been leaking since yesterday.\nThe drainage pipes are broken, and the high humidity is ruining my supplies.\nJohnny offered to fix it, but he's short on parts.\nCould you find [3 valve pipes] and [3 rolls of insulating tape]?",
@@ -2923,14 +2897,64 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_12"],
         "requiredLevel": 0,
-        "tips": "any map, frequent on metro and dam",
+        "tips": "[Insulating Tape](https://www.exfil-zone-assistant.app/items/misc_b_insulatingtape), [Valve](https://www.exfil-zone-assistant.app/items/misc_b_pipeline)",
         "videoGuides": [],
-        "order": 17
+        "order": 14
     },
-    "ntg_19": {
-        "id": "ntg_19",
+    "ntg_15": {
+        "id": "ntg_15",
+        "name": "NTG's Investigation 1",
+        "gameId": "task.doc.13",
+        "description": "Those scavengers are messing with NTG's landing. I managed to contact NTG HQ via radio.\nThey don't fully understand what's happening on the island yet, but they've promised to investigate.\nHQ wants us to check the [locked room] on the [2F of a high-rise office building] north of the motel in the [Suburb area].\nI can't fight—please go check it out for me.",
+        "objectives": [
+            "Reach office building by motel",
+            "Find 2nd floor office lock room",
+            "Extract from suburb area"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "reach",
+            "extract"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 20000
+            },
+            {
+                "type": "reputation",
+                "corpId": "ntg",
+                "quantity": 30
+            },
+            {
+                "type": "experience",
+                "quantity": 64030
+            },
+            {
+                "type": "item",
+                "item_id": "med-bandage-lv3",
+                "quantity": 1
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": ["ntg_9"], // probably some ARK requirement
+        "requiredLevel": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=7zqCwM-Kuec"
+            }
+        ],
+        "order": 15
+    },
+    "ntg_16": {
+        "id": "ntg_16",
         "name": "Final Message",
         "gameId": "task.doc.14",
         "description": "A scholar friend of mine sent a strange message from the [Suburb area].\nPlease go to the [motel], check [room 206], and retrieve [a vial of medicine] mentioned in his note.\nHere's a bag and key—use them to get in.",
@@ -2968,20 +2992,24 @@ export const tasksData: TasksDatabase = {
                 "quantity": 2
             }
         ],
-        "preReward": [],
-        "requiredTasks": [],
+        "preReward": [{type: "item", item_name: "Motel Key 206", quantity: 1}, {
+            type: "item",
+            item_name: "EliteOps Green",
+            quantity: 1
+        }],
+        "requiredTasks": ["ntg_15"],
         "requiredLevel": 0,
-        "tips": "room 206 on metal shelf, key required, key can be bought at trader",
+        "tips": "The Key can be bought from Maggie.",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=5uUVSGVt8pI"
             }
         ],
-        "order": 19
+        "order": 16
     },
-    "ntg_20": {
-        "id": "ntg_20",
+    "ntg_17": {
+        "id": "ntg_17",
         "name": "Rest in Deep",
         "gameId": "task.doc.15",
         "description": "That same scholar went missing.\r\nHe once mentioned looking for research samples near a farm.\r\nThere's a rumor a body was found in the basement at [Wyeth Farm] in [Suburb area].\r\nPlease check the [cellar], and send me a [photo of the body] so I can confirm the identity.",
@@ -3026,19 +3054,23 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_16"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/ZOuSedSDlUE?t=448"
+            },
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=-IE9eU_ZIJw"
             }
         ],
-        "order": 20
+        "order": 17
     },
-    "ntg_21": {
-        "id": "ntg_21",
+    "ntg_18": {
+        "id": "ntg_18",
         "name": "Private Clinic",
         "gameId": "task.doc.16",
         "description": "Hi. HQ is asking for combat-zone medical supplies for analysis.\r\nI once left a [medkit] at Dr. Blue's private clinic in [Palm Hill] in [Suburb area].\r\nIt's tricky to find—it's on the [2F of a detective agency].\r\nPlease retrieve it from the office for me.",
@@ -3077,19 +3109,19 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_17"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=F5OLdAL41Rw"
-            }
+            },
         ],
-        "order": 21
+        "order": 18
     },
-    "ntg_22": {
-        "id": "ntg_22",
+    "ntg_19": {
+        "id": "ntg_19",
         "name": "NTG's Investigation 2",
         "gameId": "task.doc.17",
         "description": "NTG wants me to investigate the [dock] in the northeast [Dam area].\nJohnny also asked me to keep an eye out for any [Trupiks trucks].\nPlease take the MS2000 tracker and [tag a few containers marked with Trupiks] at the dock. Good luck!",
@@ -3130,7 +3162,7 @@ export const tasksData: TasksDatabase = {
                 "quantity": 3
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_19"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
@@ -3139,10 +3171,10 @@ export const tasksData: TasksDatabase = {
                 "url": "https://www.youtube.com/watch?v=n3ycwwPxpDc"
             }
         ],
-        "order": 22
+        "order": 19
     },
-    "ntg_23": {
-        "id": "ntg_23",
+    "ntg_20": {
+        "id": "ntg_20",
         "name": "Gear Upgrade",
         "gameId": "task.doc.18",
         "description": "NTG's investigation is going slow, and we're running out of supplies.\nIf you can find me [2 police radios] and [2 civilian radios], Johnny can upgrade our old radio station.\nThat'll give me a chance to run my own investigation.",
@@ -3178,14 +3210,14 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_19"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 23
+        "order": 20
     },
-    "ntg_25": {
-        "id": "ntg_25",
+    "ntg_21": {
+        "id": "ntg_21",
         "name": "Medical Delivery",
         "gameId": "task.doc.19",
         "description": "Some lone scavengers contacted me asking for meds.\nI don't feel safe delivering them myself, but maybe you can help.\n[Please drop the medicine into the marked boxes] at these spots:\nThe [Italian Restaurant] at the -1F of [Modern apartment] in the [Resort Area],\nThe [tower crane] on the unfinished building rooftop in [Dam area],\nThe [lone cabin] on the [Dam's west side].\nIf you lose the task item, please come back to me to repurchase it.",
@@ -3234,7 +3266,7 @@ export const tasksData: TasksDatabase = {
                 "quantity": 3
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_20"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
@@ -3243,10 +3275,142 @@ export const tasksData: TasksDatabase = {
                 "url": "https://www.youtube.com/watch?v=3W2xFtE2G8w"
             }
         ],
-        "order": 25
+        "order": 21
     },
-    "ntg_26": {
-        "id": "ntg_26",
+    "ntg_22": {
+        "id": "ntg_22",
+        "name": "Keys To Safety 1",
+        "gameId": "task.doc.z19",
+        "description": "There are still some locked rooms in the city center of the [Resort Area]—could be supplies inside.\nPlease find and bring me these two: [House Key 1] and [Supermarket Storage Key]. Thanks!",
+        "objectives": [
+            "Turn in Found In Hospital 2F key",
+            "Turn in hotel 208 Key"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "reputation",
+                "corpId": "ntg",
+                "quantity": 10
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
+            },
+            {
+                "type": "item",
+                "item_name": "Sunset Tunnel key",
+                "quantity": 1
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": ["ntg_21"],
+        "requiredLevel": 0,
+        "tips": "Can be bought from Maggie. Used Keys can be submitted.",
+        "videoGuides": [],
+        "order": 22
+    },
+    "ntg_23": {
+        "id": "ntg_23",
+        "name": "Keys To Safety 2",
+        "gameId": "task.doc.z20",
+        "description": "I need to relocate some medical supplies to a safer location.\r\nTo do that, I need the [keys] to [Motel Room 201 and Room 206].\r\nIf you come across them during your operations, please bring them back.",
+        "objectives": [
+            "Turn in motel 206 Key",
+            "Turn in motel 201 Key"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "reputation",
+                "corpId": "ntg",
+                "quantity": 20
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
+            },
+            {
+                "type": "item",
+                "item_name": "Bearkery Storage key",
+                "quantity": 1
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": ["ntg_22"],
+        "requiredLevel": 0,
+        "tips": "Can be bought from Maggie. Used Keys can be submitted.",
+        "videoGuides": [],
+        "order": 23
+    },
+    "ntg_24": {
+        "id": "ntg_24",
+        "name": "Key To Safety 3",
+        "gameId": "task.doc.z21",
+        "description": "Thanks again! Now I can secure the stash points near the suburb area.\nBut there are two more areas I need to secure in the northern [Dam area:\nthe [East Intake tower] and [West Intake tower].\nPlease locate the keys to these two hidden rooms.\nIt may take a while, but I'll be waiting for your good news.",
+        "objectives": [
+            "Turn in East Dam Inlet Key",
+            "Turn in West Dam Inlet Key"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "reputation",
+                "corpId": "ntg",
+                "quantity": 10
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
+            },
+            {
+                "type": "item",
+                "item_name": "Dock Office key",
+                "quantity": 1
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": ["ntg_23"],
+        "requiredLevel": 0,
+        "tips": "Used Keys can be submitted.",
+        "videoGuides": [{
+            "author": "orbb",
+            "url": "https://www.youtube.com/watch?v=2df8BKPx6rw"
+        }],
+        "order": 24
+    },
+    "ntg_25": {
+        "id": "ntg_25",
         "name": "NTG's Investigation 3",
         "gameId": "task.doc.20",
         "description": "Johnny mentioned an abandoned church near [Clifton], in the [Dam area].\nI think it's perfect as a temporary medical outpost and investigation base.\nPlease head over there and [mark the 2 windmills] beside the church—we'll send the coordinates to NTG.",
@@ -3287,7 +3451,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_20"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
@@ -3296,150 +3460,16 @@ export const tasksData: TasksDatabase = {
                 "url": "https://www.youtube.com/watch?v=LLb0-C95KHw"
             }
         ],
-        "order": 26
+        "order": 25
     },
-    "ntg_27": {
-        "id": "ntg_27",
-        "name": "Keys To Safety 1",
-        "gameId": "task.doc.z19",
-        "description": "There are still some locked rooms in the city center of the [Resort Area]—could be supplies inside.\nPlease find and bring me these two: [House Key 1] and [Supermarket Storage Key]. Thanks!",
-        "objectives": [
-            "Turn in Found In Hospital 2F key",
-            "Turn in hotel 208 Key"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 10
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "item",
-                "item_name": "Sunset Tunnel key",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [],
-        "requiredLevel": 0,
-        "tips": "might be able to buy from trades for money or trade",
-        "videoGuides": [],
-        "order": 27
-    },
-    "ntg_29": {
-        "id": "ntg_29",
-        "name": "Keys To Safety 2",
-        "gameId": "task.doc.z20",
-        "description": "I need to relocate some medical supplies to a safer location.\r\nTo do that, I need the [keys] to [Motel Room 201 and Room 206].\r\nIf you come across them during your operations, please bring them back.",
-        "objectives": [
-            "Turn in motel 206 Key",
-            "Turn in motel 201 Key"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 20
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "item",
-                "item_name": "Bearkery Storage key",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [],
-        "requiredLevel": 0,
-        "tips": "might be able to buy from trades for money or trade",
-        "videoGuides": [
-            {
-                "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=2df8BKPx6rw"
-            }
-        ],
-        "order": 29
-    },
-    "ntg_31": {
-        "id": "ntg_31",
-        "name": "Key To Safety 3",
-        "gameId": "task.doc.z21",
-        "description": "Thanks again! Now I can secure the stash points near the suburb area.\nBut there are two more areas I need to secure in the northern [Dam area:\nthe [East Intake tower] and [West Intake tower].\nPlease locate the keys to these two hidden rooms.\nIt may take a while, but I'll be waiting for your good news.",
-        "objectives": [
-            "Turn in East Dam Inlet Key",
-            "Turn in West Dam Inlet Key"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 10
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "item",
-                "item_name": "Dock Office key",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [],
-        "order": 31
-    },
-    "ntg_33": {
-        "id": "ntg_33",
+    "ntg_26": {
+        "id": "ntg_26",
         "name": "Shadows of the truth 1",
         "gameId": "task.doc.21",
         "description": "I picked up some chatter from NTG through the upgraded radio. They've been hiding investigation progress from me.\nApparently, a staff member once gathered bio-samples in the [Dam area], and left behind [2 medical reports].\nThey might contain clues about the incident.\nPlease search these spots: [East Intake Tower by the Dam] and [Factory Area, Zone C].",
         "objectives": [
-            "Reach the east intel tower",
-            "Reach factory C zone",
+            "Reach the East Inlet towers",
+            "Reach Factory C zone",
             "Find 2 NTG medical reports",
             "Turn in 2 NTG medical reports"
         ],
@@ -3473,7 +3503,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_25"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
@@ -3482,15 +3512,15 @@ export const tasksData: TasksDatabase = {
                 "url": "https://www.youtube.com/watch?v=M3-BtDmPK78"
             }
         ],
-        "order": 33
+        "order": 26
     },
-    "ntg_34": {
-        "id": "ntg_34",
+    "ntg_27": {
+        "id": "ntg_27",
         "name": "Bearing Burdens",
         "gameId": "task.doc.22",
         "description": "The upgraded radio is very powerful, but to ensure that I don't miss any useful information, I have to keep it on at all times, so the power consumption has become a problem.\nI'm sorry to ask, but could you please find me [3 storage batteries]? That way, even at night, I won't miss any crucial contact information. By the way, those batteries are quite large, so remember to bring a bigger backpack.",
         "objectives": [
-            "Turn in 3 Storage Battery"
+            "Turn in 3 Vehicle Battery"
         ],
         "corpId": "ntg",
         "type": [
@@ -3520,14 +3550,14 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_26"],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "[Car Battery](https://www.exfil-zone-assistant.app/items/misc_b_storagebattery)",
         "videoGuides": [],
-        "order": 34
+        "order": 27
     },
-    "ntg_35": {
-        "id": "ntg_35",
+    "ntg_28": {
+        "id": "ntg_28",
         "name": "Path to Escape 1",
         "gameId": "task.doc.23",
         "description": "I think I know what NTG is planning—resource monopoly, medical control, all of it.\nBut I'm not interested. I just want to leave this place.\nTo do that, I need to map out some exit routes.\nPlease scout the [Northern Dock] and [Broken Bridge Coastline] in the Dam area, and try returning safely—just to make sure they're viable.",
@@ -3563,7 +3593,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_27"],
         "requiredLevel": 0,
         "tips": "Located north on dam in valley between both broken bridges, north of dock office at the end of pier",
         "videoGuides": [
@@ -3572,10 +3602,72 @@ export const tasksData: TasksDatabase = {
                 "url": "https://www.youtube.com/watch?v=0AkItVBOwi0"
             }
         ],
-        "order": 35
+        "order": 28
     },
-    "ntg_36": {
-        "id": "ntg_36",
+    "ntg_29": {
+        "id": "ntg_29",
+        "name": "Shrouded in Shadows",
+        "gameId": "task.doc.28",
+        "description": "Everything—you, NTG's delays—it was all part of my plan.\nI've been the one sabotaging their landing.\nNow that I've nearly mapped out the metro facility, it's only a matter of time before I take full control.\nGo to the [Medical Base] and retrieve my [Medical Kit]—it contains evidence that could expose me.\nThen, mark the [4 body bags] inside.\nI want NTG to know loud and clear:\nThey have no place here anymore.",
+        "objectives": [
+            "Mark all 4 body bags",
+            "Find Maggie's medical bag",
+            "Turn in Maggie's medical bag"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "mark",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "metro"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "reputation",
+                "corpId": "ntg",
+                "quantity": 50
+            },
+            {
+                "type": "experience",
+                "quantity": 25672
+            },
+            {
+                "type": "item",
+                "item_name": "G.N.J.Backpack",
+                "quantity": 1
+            },
+            {
+                "type": "item",
+                "item_id": "med-stimul-hc",
+                "quantity": 2
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            }
+        ],
+        "requiredTasks": ["ntg_28"],
+        "requiredLevel": 0,
+        "tips": "Bodies and Bag are on the lowes level. ",
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=zhZlEVICwsU"
+            }
+        ],
+        "order": 29
+    },
+    "ntg_30": {
+        "id": "ntg_30",
         "name": "Return to the dark",
         "gameId": "task.doc.24",
         "description": "You've been to the [Metro area], right? I used to work down there… It’s familiar, but also changed.\nCan you help me check if things are still the same?\nTake photos of the following, then make it back safely:\n[Metro Control Panel] in the Control Room.\n[Green Plants] in the Medical base center.\n[Bulletin Board] in the Inspection Room under the conference room.",
@@ -3628,7 +3720,7 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_28"],
         "requiredLevel": 0,
         "tips": "take photo control console in the bomb room, bulletin located in room below conference room, photo of plants in bed base room",
         "videoGuides": [
@@ -3637,10 +3729,10 @@ export const tasksData: TasksDatabase = {
                 "url": "https://www.youtube.com/watch?v=5d6THOTrYgA"
             }
         ],
-        "order": 36
+        "order": 30
     },
-    "ntg_37": {
-        "id": "ntg_37",
+    "ntg_31": {
+        "id": "ntg_31",
         "name": "Shadows of the truth 2",
         "gameId": "task.doc.25",
         "description": "The underground facility has changed more than I expected.\nI need to know what's inside those locked rooms.\nPlease find me the [keys] to [the Armory] and the [Sewer's Room] in the metro area.",
@@ -3682,19 +3774,15 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_30"],
         "requiredLevel": 0,
-        "tips": "trade at NTG",
+        "tips": "Can be bought from Maggie. Used Keys can be submitted.",
         "videoGuides": [
-            {
-                "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=g-j_4tw4zrw"
-            }
         ],
-        "order": 37
+        "order": 31
     },
-    "ntg_39": {
-        "id": "ntg_39",
+    "ntg_32": {
+        "id": "ntg_32",
         "name": "Death by deception",
         "gameId": "task.doc.26",
         "description": "Maybe you've noticed the bodies in the lower subway levels…\nThey were the NTG research team.\nI did what I had to—kept them from reporting back.\nNow I need you to recover their final [reports] from:\n[Suburb area], a [tent] in B1 Parking Lot of the mall.\n[Dam area], [crashed truck] below the bridge.\n[Metro area], bathroom in the medical Base.",
@@ -3746,14 +3834,17 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_31"],
         "requiredLevel": 0,
         "tips": "1st, lower part of dam in the back of crashed semi; 2nd, suburb in mall parking -1F east of escalators in military tent on shelf,3rd metro basement level, in bathroom located at end of hallway by med base(circle), enter bathroom, first sink left",
-        "videoGuides": [],
-        "order": 39
+        "videoGuides": [{
+            "author": "orbb",
+            "url": "https://www.youtube.com/watch?v=g-j_4tw4zrw"
+        }],
+        "order": 32
     },
-    "ntg_40": {
-        "id": "ntg_40",
+    "ntg_33": {
+        "id": "ntg_33",
         "name": "Path to Escape 2",
         "gameId": "task.doc.27",
         "description": "NTG just reached out again. Seems the team's disappearance finally got their attention.\nWe need to move fast.\nJust like before, find the [easternmost] and [westernmost] exits in the Subway system, and make sure they're safe.\nThen, take this [poison] and place it in the [sink] inside the [Surgery Room] at the deepest level of the [Medical Base].\nIf you lose the task item, please come back to me to repurchase it.",
@@ -3812,73 +3903,11 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["ntg_32"],
         "requiredLevel": 0,
-        "tips": "West railway on railway west past train cars, east metro is east railway up starts to the right; surgery room sink located at the end of the med base quarantine hallway, poison given as reward of bought(task item)",
+        "tips": "",
         "videoGuides": [],
-        "order": 40
-    },
-    "ntg_41": {
-        "id": "ntg_41",
-        "name": "Shrouded in Shadows ",
-        "gameId": "task.doc.28",
-        "description": "Everything—you, NTG's delays—it was all part of my plan.\nI've been the one sabotaging their landing.\nNow that I've nearly mapped out the metro facility, it's only a matter of time before I take full control.\nGo to the [Medical Base] and retrieve my [Medical Kit]—it contains evidence that could expose me.\nThen, mark the [4 body bags] inside.\nI want NTG to know loud and clear:\nThey have no place here anymore.",
-        "objectives": [
-            "Mark all 4 body bags",
-            "Find Maggie's medical bag",
-            "Turn in Maggie's medical bag"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "mark",
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "metro"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 50
-            },
-            {
-                "type": "experience",
-                "quantity": 25672
-            },
-            {
-                "type": "item",
-                "item_name": "G.N.J.Backpack",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "med-stimul-hc",
-                "quantity": 2
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_name": "Metro entrance card",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [],
-        "requiredLevel": 0,
-        "tips": "mark bodies with marker device; one body located end of hall in bathroom outside med base circle room, one body in med circle room, two bodys located in quarantine hallway off medical room, maggies bag on table is med room  ",
-        "videoGuides": [
-            {
-                "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=zhZlEVICwsU"
-            }
-        ],
-        "order": 41
+        "order": 33
     },
     "trupiks_1": {
         "id": "trupiks_1",
