@@ -82,10 +82,11 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "Check the 'Extraction' tab in the menu or use the M.I.C.A. map to find extraction points.",
-        "videoGuides": [{
-            "author": "radFoxVR",
-            "url": "https://youtu.be/I5XTDO71-us"
-        }
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/I5XTDO71-us"
+            }
         ],
         "order": 1
     },
@@ -140,7 +141,12 @@ export const tasksData: TasksDatabase = {
         ],
         "requiredLevel": 0,
         "tips": "Scavengers can be deadly. Try to fight one at a time and use cover",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=34s"
+            }
+        ],
         "order": 2
     },
     "ark_3": {
@@ -196,7 +202,12 @@ export const tasksData: TasksDatabase = {
         ],
         "requiredLevel": 0,
         "tips": "The Military Camp is north of the Mall. [Intel items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Intel) are commonly found in that area.",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=64s"
+            }
+        ],
         "order": 3
     },
     "ark_4": {
@@ -258,6 +269,10 @@ export const tasksData: TasksDatabase = {
             {
                 "author": "orbb",
                 "url": "https://youtu.be/4WsA_31tZKo"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=90s"
             }
         ],
         "order": 4
@@ -391,6 +406,10 @@ export const tasksData: TasksDatabase = {
             {
                 "author": "orbb",
                 "url": "https://youtu.be/9q5RGDIiAMs"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=186s"
             }
         ],
         "order": 6
@@ -452,6 +471,10 @@ export const tasksData: TasksDatabase = {
             {
                 "author": "orbb",
                 "url": "https://youtu.be/6MkGTEHSq_o"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=222s"
             }
         ],
         "order": 7
@@ -518,6 +541,10 @@ export const tasksData: TasksDatabase = {
             {
                 "author": "orbb",
                 "url": "https://youtu.be/w_8khHE_o1A"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=264s"
             }
         ],
         "order": 8
@@ -581,6 +608,10 @@ export const tasksData: TasksDatabase = {
             {
                 "author": "orbb",
                 "url": "https://youtu.be/AcsdXNUqR1k"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=296s"
             }
         ],
         "order": 9
@@ -698,7 +729,12 @@ export const tasksData: TasksDatabase = {
         ],
         "requiredLevel": 0,
         "tips": "[Electric Item](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Electric), [Power Items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Power)",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=385s"
+            }
+        ],
         "order": 11
     },
     "ark_12": {
@@ -762,6 +798,10 @@ export const tasksData: TasksDatabase = {
             {
                 "author": "orbb",
                 "url": "https://youtu.be/8Z4xxRQxK84"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=410s"
             }
         ],
         "order": 12
@@ -1000,6 +1040,10 @@ export const tasksData: TasksDatabase = {
             {
                 "author": "orbb",
                 "url": "https://youtu.be/TejY5XxbxXs"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=566s"
             }
         ],
         "order": 16
@@ -1052,6 +1096,10 @@ export const tasksData: TasksDatabase = {
             {
                 "author": "orbb",
                 "url": "https://youtu.be/91ZLjp02aDY"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=597s"
             }
         ],
         "order": 17
@@ -1107,7 +1155,12 @@ export const tasksData: TasksDatabase = {
         ],
         "requiredLevel": 0,
         "tips": "[Videotape](https://www.exfil-zone-assistant.app/items/misc_videotape) can be often found near the TVs",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=650s"
+            }
+        ],
         "order": 18
     },
     "ark_19": {
@@ -1175,6 +1228,10 @@ export const tasksData: TasksDatabase = {
             {
                 "author": "orbb",
                 "url": "https://youtu.be/_OUY4xMCIUc"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=662s"
             }
         ],
         "order": 19
@@ -1230,7 +1287,12 @@ export const tasksData: TasksDatabase = {
         ],
         "requiredLevel": 0,
         "tips": "Any M16A2: [M16A2 ](https://www.exfil-zone-assistant.app/items/weapon-m16a2-lv2) ",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=704s"
+            }
+        ],
         "order": 20
     },
     "ark_21": {
@@ -1347,6 +1409,10 @@ export const tasksData: TasksDatabase = {
             {
                 "author": "orbb",
                 "url": "https://youtu.be/gqbXu1XbELg"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=829s"
             }
         ],
         "order": 22
@@ -1466,6 +1532,10 @@ export const tasksData: TasksDatabase = {
             {
                 "author": "orbb",
                 "url": "https://youtu.be/sKc6B8RQefg"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=904s"
             }
         ],
         "order": 24
@@ -1533,6 +1603,10 @@ export const tasksData: TasksDatabase = {
             {
                 "author": "orbb",
                 "url": "https://youtu.be/5uY7-lpuh6Y"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=930s"
             }
         ],
         "order": 25
@@ -1600,6 +1674,10 @@ export const tasksData: TasksDatabase = {
             {
                 "author": "orbb",
                 "url": "https://youtu.be/mF3yc9qY4ao"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=961s"
             }
         ],
         "order": 26
@@ -1767,6 +1845,10 @@ export const tasksData: TasksDatabase = {
             {
                 "author": "orbb",
                 "url": "https://youtu.be/HdTqbSk3eaY"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=1070s"
             }
         ],
         "order": 29
@@ -1898,6 +1980,10 @@ export const tasksData: TasksDatabase = {
             {
                 "author": "orbb",
                 "url": "https://youtu.be/2fEEpOWBYHY"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=1138s"
             }
         ],
         "order": 31
@@ -2026,7 +2112,8 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "requiredTasks": [
-            "ark_32", "ntg_28"
+            "ark_32",
+            "ntg_28"
         ],
         "requiredLevel": 0,
         "tips": "Don't have to be 3 different ones. You can mark the same BMP in multiple runs.",
@@ -2034,6 +2121,10 @@ export const tasksData: TasksDatabase = {
             {
                 "author": "orbb",
                 "url": "https://youtu.be/9t1zLuov-sE"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=1202s"
             }
         ],
         "order": 33
@@ -2160,6 +2251,10 @@ export const tasksData: TasksDatabase = {
             {
                 "author": "orbb",
                 "url": "https://youtu.be/4eNHusxBbIU"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=1297s"
             }
         ],
         "order": 35
