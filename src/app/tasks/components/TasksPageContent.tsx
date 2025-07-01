@@ -191,7 +191,6 @@ export default function TasksPageContent() {
                         taskId,
                         status: newStatus,
                         ...(newStatus === 'completed' && {completedAt: new Date().toISOString()}),
-                        ...(newStatus === 'active' && {startedAt: new Date().toISOString()}),
                     },
                 },
                 lastUpdated: new Date().toISOString(),

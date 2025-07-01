@@ -90,8 +90,8 @@ export default function MerchantPanelExpanded({
                                     src={corps[merchant]?.icon}
                                     alt={corps[merchant]?.name || merchant}
                                     unoptimized={true}
-                                    width="16"
-                                    height="16"
+                                    width="32"
+                                    height="32"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
@@ -205,6 +205,7 @@ export default function MerchantPanelExpanded({
                                     key={task.id}
                                     task={task}
                                     status={getTaskStatus(task)}
+                                    userProgress={userProgress}
                                     isAutoExpanded={activeTab === 'active' && (index === 0)} // Auto-expand active tasks
                                     onStatusChange={onTaskStatusChange}
                                     getItemById={getItemById}

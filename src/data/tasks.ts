@@ -536,7 +536,7 @@ export const tasksData: TasksDatabase = {
             "ark_7"
         ],
         "requiredLevel": 0,
-        "tips": "Phone does not have to be axtracted.",
+        "tips": "Phone does not have to be extracted.",
         "videoGuides": [
             {
                 "author": "orbb",

@@ -12,7 +12,7 @@ import {
     Plane,
     Search,
     Send,
-    Target
+    Target, Undo2
 } from "lucide-react";
 import {getTasksByMerchant} from "@/data/tasks";
 import React from "react";
@@ -48,7 +48,8 @@ export const getCurrentTasks = (tasks: Task[], getTaskStatus: MerchantPanelProps
     return tasks.filter(task => getTaskStatus(task) === 'active');
 };
 
-export const getStatusConfig = (status: TaskStatus, onStatusChange: MerchantPanelProps["onTaskStatusChange"], taskId: string) => {
+export const getStatusConfig = (status: TaskStatus, onStatusChange?: MerchantPanelProps["onTaskStatusChange"], taskId?: string) => {
+    const isActionDisabled = !(onStatusChange && taskId)
     switch (status) {
         case 'active':
             return {
@@ -56,14 +57,14 @@ export const getStatusConfig = (status: TaskStatus, onStatusChange: MerchantPane
                 bgColor: 'bg-military-700',
                 icon: <Clock size={16} className="text-green-400"/>,
                 badgeColor: 'bg-green-600',
-                actionButton: (
-                    <button
-                        onClick={() => onStatusChange(taskId, 'completed')}
-                        className="bg-olive-600 hover:bg-olive-700 text-white px-3 py-1 rounded text-sm transition-colors"
-                    >
-                        Mark Complete
-                    </button>
-                )
+                actionButton: <button
+                    onClick={() => !isActionDisabled && onStatusChange(taskId, 'completed')}
+                    disabled={isActionDisabled}
+                    className="ml-auto hover:bg-green-700 disabled:bg-green-600/50 disabled:cursor-not-allowed text-tan-100 px-3 py-1 rounded text-sm transition-colors flex items-center gap-1"
+                >
+                    <CheckCircle size={16} />
+                    Mark Complete
+                </button>
             };
         case 'completed':
             return {
@@ -71,7 +72,14 @@ export const getStatusConfig = (status: TaskStatus, onStatusChange: MerchantPane
                 bgColor: 'bg-military-700/50',
                 icon: <CheckCircle size={16} className="text-olive-400"/>,
                 badgeColor: 'bg-olive-600',
-                actionButton: null
+                actionButton: <button
+                    onClick={() => !isActionDisabled && onStatusChange(taskId, 'active')}
+                    disabled={isActionDisabled}
+                    className="ml-auto bg-military-600 hover:bg-military-500 disabled:bg-military-600/50 disabled:cursor-not-allowed text-tan-300 px-3 py-1 rounded text-sm transition-colors flex items-center gap-1"
+                >
+                    <Undo2 size={16}/>
+                    Undo
+                </button>
             };
         case 'locked':
             return {

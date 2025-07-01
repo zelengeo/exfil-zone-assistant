@@ -3,13 +3,13 @@ import {
     ChevronDown,
     ChevronRight,
     Target,
-    MapPin,
     Map,
+    Flag,
     Award, DollarSign,
-    Package
+    Package, Info,
 } from 'lucide-react';
 import Image from 'next/image';
-import {Task, TaskReward, TaskStatus} from '@/types/tasks';
+import {Task, TaskReward, TaskStatus, UserProgress} from '@/types/tasks';
 import {getStatusConfig, getTaskTypeIcon, RenderTipsContent} from "@/app/tasks/taskHelpers";
 import {SiYoutube} from "@icons-pack/react-simple-icons";
 import {corps, tasksData} from "@/data/tasks";
@@ -19,6 +19,7 @@ import Link from "next/link";
 interface TaskCardProps {
     task: Task;
     status: TaskStatus;
+    userProgress: UserProgress;
     isAutoExpanded?: boolean; // For active tasks that should be expanded by default
     onStatusChange: (taskId: string, newStatus: TaskStatus) => void;
     getItemById: (id: string) => Item | undefined;
@@ -63,7 +64,7 @@ const renderReward = (reward: TaskReward, index: number, getItemById: TaskCardPr
                     <div
                         className={`${isWeaponIcon ? "w-20" : "w-10"} h-10 p-0.5 rounded bg-military-600`}>
                         {reward.item_id && getItemById ? (
-                            <Link href={`/items/${reward.item_id}`}>
+                            <Link href={`/items/${reward.item_id}`} target="_blank" rel="noopener noreferrer">
                                 <Image
                                     src={getItemById(reward.item_id)?.images?.icon || '/images/items/default.png'}
                                     alt={reward.item_id}
@@ -104,6 +105,7 @@ const renderReward = (reward: TaskReward, index: number, getItemById: TaskCardPr
 export default function TaskCard({
                                      task,
                                      status,
+                                     userProgress,
                                      isAutoExpanded = false,
                                      onStatusChange,
                                      getItemById,
@@ -116,7 +118,7 @@ export default function TaskCard({
         <div className={`rounded-sm border ${statusConfig.borderColor} ${statusConfig.bgColor} overflow-hidden`}>
             {/* Task Header - Always Visible */}
             <div
-                className="p-3 cursor-pointer hover:bg-military-600/30 transition-colors" // Reduced padding from p-4 to p-3
+                className="p-3 cursor-pointer hover:bg-military-600/30 transition-colors"
                 onClick={() => setIsExpanded(!isExpanded)}
             >
                 <div className="flex items-center justify-between">
@@ -143,50 +145,37 @@ export default function TaskCard({
                                 <div
                                     className="flex items-center gap-2 ml-auto"> {/* ml-auto pushes badges to the right */}
                                     {/* Map badges */}
-                                    {task.map.slice(0, 1).map(map => (
+                                    {task.map.map(map => (
                                         <span key={map}
                                               className="bg-military-600 text-tan-300 px-2 py-1 rounded text-xs flex items-center gap-1 flex-shrink-0">
                 <Map size={10}/>{map}
               </span>
                                     ))}
-                                    {task.map.length > 1 && (
-                                        <span className="text-tan-400 text-xs">+{task.map.length - 2}</span>
-                                    )}
 
                                     {/* Type badges */}
-                                    {task.type.slice(0, 2).map(type => (
+                                    {task.type.slice(0, 3).map(type => (
                                         <span key={type}
                                               className="bg-olive-600/20 text-olive-400 px-2 py-1 rounded text-xs flex items-center gap-1 flex-shrink-0">
     <span className="text-sm">{getTaskTypeIcon(type)}</span>
                                             {type}
   </span>
-                                    ))} {task.type.length > 2 && (
-                                        <span className="text-tan-400 text-xs">+{task.type.length - 2}</span>
+                                    ))} {task.type.length > 3 && (
+                                        <span className="text-tan-400 text-xs">+{task.type.length - 3}</span>
                                     )}
                                 </div>
                             </div>
 
                             {/* First objective preview - now on separate line */}
-                            <p className="text-tan-300 text-sm truncate">
+                            {isExpanded || (<p className="text-tan-300 text-sm truncate">
                                 {task.objectives[0]}
                                 {task.objectives.length > 1 && (
                                     <span className="text-tan-400 ml-1">
               (+{task.objectives.length - 1} more)
             </span>
                                 )}
-                            </p>
+                            </p>)}
                         </div>
                     </div>
-
-                    {/* Action Button */}
-                    {statusConfig.actionButton && (
-                        <div
-                            className="ml-3 flex-shrink-0"
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            {statusConfig.actionButton}
-                        </div>
-                    )}
                 </div>
             </div>
 
@@ -257,6 +246,108 @@ export default function TaskCard({
                         </div>
                     </div>
 
+                    {/* Prerequisites */}
+                    {(task.requiredLevel || task.requiredTasks.length) ? (<div className="space-y-3">
+                        <div className="flex items-center gap-2">
+                            <h5 className="font-medium text-tan-100 flex items-center gap-2">
+                                <Flag size={16}/>
+                                Prerequisites
+                            </h5>
+
+                            {/* Info Icon with Tooltip */}
+                            <div className="relative group">
+                                <Info size={14} className="text-tan-400 cursor-help"/>
+
+                                {/* Tooltip */}
+                                <div className="absolute left-0 bottom-full mb-2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 z-10">
+                                    <div className="bg-military-800 border border-military-600 rounded p-3 shadow-lg w-64">
+                                        <p className="text-xs text-tan-300 leading-relaxed">
+                                            <span className="text-amber-400 font-medium">Note:</span> Task prerequisites are still being verified.
+                                            If you find any inconsistencies, please report them on our{' '}
+                                            <Link
+                                                href="https://discord.gg/2FCDZK6C25"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-blue-400 hover:text-blue-300 underline"
+                                                onClick={(e) => e.stopPropagation()}
+                                            >
+                                                Discord server
+                                            </Link>.
+                                        </p>
+                                        {/* Tooltip arrow */}
+                                        <div className="absolute top-full left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-military-800"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="grid gap-3">
+                            {/* Level Requirement */}
+                            {task.requiredLevel ? (<div className="bg-military-600/30 rounded p-3">
+                                <div className="text-xs text-tan-400 mb-1">Required Level</div>
+                                <div className="text-sm font-medium text-tan-200">
+                                    <span className="flex items-center gap-2">
+                                        <Target size={14} className="text-amber-400"/>
+                                        Level {task.requiredLevel}
+                                    </span>
+                                </div>
+                            </div>) : null}
+
+                            {/* Required Tasks */}
+                            {task.requiredTasks && task.requiredTasks.length > 0 ? (
+                                <div className="bg-military-600/30 rounded p-3">
+                                    <div className="text-xs text-tan-400 mb-2">Required Tasks</div>
+                                    <div className="space-y-2">
+                                        {task.requiredTasks.map((reqTaskId) => {
+                                            const reqTask = tasksData[reqTaskId];
+                                            if (!reqTask) {
+                                                console.warn(`Required Task ${reqTaskId} from ${task.id} was not found in tasksData`);
+                                                return null;
+                                            }
+
+                                            const reqTaskStatus = userProgress.tasks[reqTaskId] || 'locked';
+                                            const reqStatusConfig = getStatusConfig(reqTaskStatus, onStatusChange, reqTaskId);
+
+                                            return (
+                                                <Link
+                                                    key={reqTaskId}
+                                                    href={`/tasks/${reqTaskId}`}
+                                                    className={`block p-2 rounded border transition-all hover:bg-military-600/50 ${reqStatusConfig.borderColor} ${reqStatusConfig.bgColor}`}
+                                                >
+                                                    <div className="flex items-center gap-2">
+                                                        {reqStatusConfig.icon}
+                                                        <span
+                                                            className="text-sm text-tan-200 flex-1 flex items-center gap-2">
+                                                            {/* Corp Icon */}
+                                                            <Image
+                                                                src={corps[reqTask.corpId]?.icon}
+                                                                alt={corps[reqTask.corpId]?.name || reqTask.corpId}
+                                                                unoptimized={true}
+                                                                className="w-6 h-6 object-contain flex-shrink-0"
+                                                                width={24}
+                                                                height={24}
+                                                            />
+                                                            {/* Task Order and Name */}
+                                                            <span>
+                                                                <span className="text-tan-400">{reqTask.order}:</span> {reqTask.name}
+                                                            </span>
+                                                        </span>
+                                                        <ChevronRight size={14} className="text-tan-400"/>
+                                                    </div>
+                                                </Link>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="bg-military-600/30 rounded p-3">
+                                    <div className="text-xs text-tan-400 mb-1">Required Tasks</div>
+                                    <div className="text-sm text-tan-400">No task prerequisites</div>
+                                </div>
+                            )}
+                        </div>
+                    </div>) : null}
+
                     {/* Pre Rewards */}
                     {task.preReward && task.preReward.length > 0 && (
                         <div>
@@ -280,16 +371,6 @@ export default function TaskCard({
                             </h5>
                             <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
                                 {task.reward.map((reward, index) => renderReward(reward, index, getItemById))}
-                            </div>
-                        </div>
-                    )}
-
-                    {/* Prerequisites */}
-                    {task.requiredTasks && task.requiredTasks.length > 0 && (
-                        <div>
-                            <h5 className="font-medium text-tan-100 mb-2">Prerequisites</h5>
-                            <div className="text-sm text-tan-400">
-                                Complete tasks: {task.requiredTasks.map(taskId=>tasksData[taskId].name).join(', ')}
                             </div>
                         </div>
                     )}
@@ -326,6 +407,14 @@ export default function TaskCard({
                             </div>
                         )}
                     </div>*/}
+                    {/* Action Button */}
+                    {statusConfig.actionButton && (
+                        <div
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            {statusConfig.actionButton}
+                        </div>
+                    )}
                 </div>
             )}
         </div>
