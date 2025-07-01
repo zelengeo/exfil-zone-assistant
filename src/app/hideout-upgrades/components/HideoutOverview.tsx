@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Image from 'next/image';
 import {areaIcons, hideoutUpgrades, hideoutUpgradesTasks} from '@/data/hideout-upgrades';
 import {Item} from '@/types/items';
@@ -148,6 +148,17 @@ export default function HideoutOverview({
                                         }: HideoutOverviewProps) {
     const [selectedCategory, setSelectedCategory] = useState<string>('None');
     const [selectedUpgrade, setSelectedUpgrade] = useState<UpgradeData | null>(null);
+
+    useEffect(() => {
+        const handleEscape = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                setSelectedUpgrade(null);
+            }
+        };
+
+        window.addEventListener('keydown', handleEscape);
+        return () => window.removeEventListener('keydown', handleEscape);
+    }, [setSelectedUpgrade]);
 
     const handleAreaClick = (areaId: string) => {
         // If it's a category, switch to that category
