@@ -2113,7 +2113,6 @@ export const tasksData: TasksDatabase = {
         ],
         "requiredTasks": [
             "ark_32",
-            "ntg_28"
         ],
         "requiredLevel": 0,
         "tips": "Don't have to be 3 different ones. You can mark the same BMP in multiple runs.",
@@ -2243,7 +2242,8 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "requiredTasks": [
-            "ark_34"
+            "ark_34",
+            "ntg_29"
         ],
         "requiredLevel": 0,
         "tips": "Boss wearing RYS-T, who loves to kill while you are loading.",
@@ -5092,7 +5092,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_1"],
         "requiredLevel": 0,
         "tips": "Graveyard on suburb might have a 100% spawn, any food location could have it, sometimes you'll start with one on Scav runs",
         "videoGuides": [],
@@ -5147,7 +5147,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_2"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
@@ -5208,7 +5208,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_3"],
         "requiredLevel": 0,
         "tips": "Glasses on front desk. Keep the rewards for the following quests.",
         "videoGuides": [
@@ -5261,14 +5261,14 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_3"],
         "requiredLevel": 0,
-        "tips": "thompson and beretta pistol, scavs will drop, does not need to be found in raid",
+        "tips": "Does not need to be found in raid. However, popular amongst Scavengers",
         "videoGuides": [],
         "order": 5
     },
-    "regiment_7": {
-        "id": "regiment_7",
+    "regiment_6": {
+        "id": "regiment_6",
         "name": "Firepower Roundup 2",
         "gameId": "task.wp.z4",
         "description": "You're doing pretty well. Haha, the next items I need might be a bit harder to get, so be ready.\r\nI need you to find: an [AKS74U] and [an M4A1].\r\nSame rule, just one of each will do.",
@@ -5309,14 +5309,14 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_5"],
         "requiredLevel": 0,
-        "tips": "scav will drop, kill scavs, does not need to be found in raid",
+        "tips": "Does not need to be found in raid. However, popular amongst Scavengers",
         "videoGuides": [],
-        "order": 7
+        "order": 6
     },
-    "regiment_9": {
-        "id": "regiment_9",
+    "regiment_7": {
+        "id": "regiment_7",
         "name": "Firepower Roundup 3",
         "gameId": "task.wp.z13",
         "description": "I used to be the best pitcher on our baseball team. Even in the army, I could toss grenades farther and more accurate than anyone else.\nBeen feeling the itch again lately...\nCan you find me some grenades to relive the glory days?\nI want: a [Frag Grenade M67], a [Frag Grenade F1], and a [Frag Grenade R5].",
@@ -5363,14 +5363,14 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_6"],
         "requiredLevel": 0,
         "tips": "Do not have to be found in raid. Use rewards from previous task. Look for green crates",
         "videoGuides": [],
-        "order": 9
+        "order": 7
     },
-    "regiment_12": {
-        "id": "regiment_12",
+    "regiment_8": {
+        "id": "regiment_8",
         "name": "Submachine Guns",
         "gameId": "task.wp.5",
         "description": "Life on the island is super boring. Want to join me for some fun? Honestly, the best thing to do is put a few bullet holes in those poor scavengers, hahaha!\nI once made a bet with a buddy on the battlefield— just using submachine guns, to see who could rack up more kills. But you know what? That guy charged out and never came back. I bet he's off slacking somewhere; totally disrespected our bet! You're wondering where he is now? Well, he's right here, this dog tag is all that's left.\nSo, how about you step in and finish that bet for him? Give it a try and [take out a few scavengers with submachine guns]!",
@@ -5415,14 +5415,14 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_7"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 12
+        "order": 8
     },
-    "regiment_13": {
-        "id": "regiment_13",
+    "regiment_9": {
+        "id": "regiment_9",
         "name": "Shotgun Shock",
         "gameId": "task.wp.6",
         "description": "Seeing you so busy makes me a bit nostalgic for the old days. When I first got enlisted, the front lines were still ablaze, and the higher-ups couldn't care less about us new recruits. We went through just minimal of training before being tossed into the battle. There was one time my gun ran out of bullets, and I just picked up some enemy's shotgun and charged right back! Hahaha!\nOh, after all my rambling, are your hands itching for a bit of fun? Grab that [shotgun] and head to the [Suburb area] to give those scavengers a taste of \"shotgun shock!\"",
@@ -5462,14 +5462,14 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_8"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 13
+        "order": 9
     },
-    "regiment_14": {
-        "id": "regiment_14",
+    "regiment_10": {
+        "id": "regiment_10",
         "name": "Treasure in the Sewage",
         "gameId": "task.wp.7",
         "description": "Hear that racket over in the [Resort Area]?\nDamn chaos. But what really worries me—my notes!\nMy most precious treasure, hidden in the [Wastewater Treatment Plant] on the west side.\nYou know, memory's a man's real treasure once the years pile up.\nPlease, go get it back for me!",
@@ -5518,7 +5518,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_8"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
@@ -5527,10 +5527,10 @@ export const tasksData: TasksDatabase = {
                 "url": "https://www.youtube.com/watch?v=ZRnKbMybPzo"
             }
         ],
-        "order": 14
+        "order": 10
     },
-    "regiment_15": {
-        "id": "regiment_15",
+    "regiment_11": {
+        "id": "regiment_11",
         "name": "Long Live friendship 1",
         "gameId": "task.wp.8",
         "description": "I got an old buddy used to live in the [Resort Area]. He loved messing around with rocks and metal.\nNever understood why—can't protect you like a gun can, can it?\nAnyway, I heard the place is crawling with low-life thugs now.\nThey're probably disturbing his rest.\n[Go teach those punks a lesson], will you?",
@@ -5570,14 +5570,14 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_10"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 15
+        "order": 11
     },
-    "regiment_16": {
-        "id": "regiment_16",
+    "regiment_12": {
+        "id": "regiment_12",
         "name": "Long Live friendship 2",
         "gameId": "task.wp.9",
         "description": "That old pal? Folks called him the legendary jeweler, but to me he was just Old Jay.\nHe made the 'Heart of the Blue Sea'—yep, that’s the one stolen from the bank heist.\nAfter he passed away at [White Sail Hospital], he left me a journal.\nIt mentions a few spots I want to check on.\nHelp me out—[take photos] of those places so I can see for myself.",
@@ -5630,7 +5630,7 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_11"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
@@ -5639,10 +5639,10 @@ export const tasksData: TasksDatabase = {
                 "url": "https://www.youtube.com/watch?v=oAQ9Rl2WTmM"
             }
         ],
-        "order": 16
+        "order": 12
     },
-    "regiment_17": {
-        "id": "regiment_17",
+    "regiment_13": {
+        "id": "regiment_13",
         "name": "My Favorite: FAL",
         "gameId": "task.wp.10",
         "description": "Hey, listen up! Do you know what my favorite gun is? That's right, it's the fierce FAL! It's like an old friend, accompanying me through countless crazy moments.\nNow, I want you to take that [FAL] and [take out some pesky scavengers]! Let the bullets unleash their power and take down all the enemies! Don't be afraid; just imagine the fear in their eyes and enjoy the moment!",
@@ -5677,14 +5677,14 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_12"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 17
+        "order": 13
     },
-    "regiment_18": {
-        "id": "regiment_18",
+    "regiment_14": {
+        "id": "regiment_14",
         "name": "One last drink, my friend",
         "gameId": "task.wp.11",
         "description": "You know why those thugs never found the 'Heart of the Blue Sea'?\nBecause Old Jay gave it to me. But that's between us.\nHe always loved that weird-tasting Collector's Beer.\nSo here's what I want you to do—go to his grave next to the lighthouse, and bring this [memorial beer] to him.\nHe deserves one last drink.\nIf you lose the task item, please come back to me to repurchase it.",
@@ -5731,11 +5731,11 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Task Beer",
+                "item_name": "Memorial Beer",
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_13"],
         "requiredLevel": 0,
         "tips": "Bring beer to lighthouse on resort, small grave behind, place beer",
         "videoGuides": [
@@ -5744,10 +5744,10 @@ export const tasksData: TasksDatabase = {
                 "url": "https://www.youtube.com/watch?v=fmGJ_eR3m2Y"
             }
         ],
-        "order": 18
+        "order": 14
     },
-    "regiment_19": {
-        "id": "regiment_19",
+    "regiment_15": {
+        "id": "regiment_15",
         "name": "Reading Habits",
         "gameId": "task.wp.12",
         "description": "You ever be halfway through drooling over the \"World Gourmet Digest\" and BAM—darkness?\nPower's out again. Weird stuff. I oughta go check those damn wires someday.\nAnyway, I need to be prepared next time. Bring me a [flashlight] and a [round battery].\nAt least then I can keep reading my magazine in peace.",
@@ -5793,56 +5793,14 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_14"],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "[Size D Battery](https://www.exfil-zone-assistant.app/items/misc_b_1battery), [Flashlight](https://www.exfil-zone-assistant.app/items/misc_b_flashlight)",
         "videoGuides": [],
-        "order": 19
+        "order": 15
     },
-    "regiment_21": {
-        "id": "regiment_21",
-        "name": "Pistol Glory",
-        "gameId": "task.wp.13",
-        "description": "Story time! There was an old comrade of mine who complained about pistols, saying it was useless. He said it was like a firecracker—makes a noise at most, just to scare off the timid ones. Then once, we got surrounded and couldn't peek out from behind a rock for cover, with only my pistol on my hip.\nHe kept saying we were done for, but I pulled out that little pistol he looked down on and charged out shouting, then I took out all those enemies, hahaha! After that, he took my gun and kept it with him all the time.\nAlright, done with the story! Now it's your turn to make that [pistol] shine!",
-        "objectives": [
-            "Eliminate 8 targets with: pistol"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "eliminate"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 30000
-            },
-            {
-                "type": "experience",
-                "quantity": 7928
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_name": "Compact Ration",
-                "quantity": 3
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [],
-        "order": 21
-    },
-    "regiment_22": {
-        "id": "regiment_22",
+    "regiment_16": {
+        "id": "regiment_16",
         "name": "The Best Can",
         "gameId": "task.wp.z12",
         "description": "Hey, I heard you got some coffee for that little girl? How about helping this old guy out too? We all need to satisfy our cravings after all! \nWhat I want isn't hard to find; it's just some canned food! Go check the [Suburb area] for a certain kind of [pea can]—it's delicious! Bring me [5] of them. I don't know what that producer adds to it, but every time when I eat it, my tongue gets all tingly... What? An allergic reaction? I don't believe that nonsense; it's a treat for the taste buds!",
@@ -5887,14 +5845,56 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_14"],
+        "requiredLevel": 0,
+        "tips": "Can submit half-eaten can.",
+        "videoGuides": [],
+        "order": 16
+    },
+    "regiment_17": {
+        "id": "regiment_17",
+        "name": "Pistol Glory",
+        "gameId": "task.wp.13",
+        "description": "Story time! There was an old comrade of mine who complained about pistols, saying it was useless. He said it was like a firecracker—makes a noise at most, just to scare off the timid ones. Then once, we got surrounded and couldn't peek out from behind a rock for cover, with only my pistol on my hip.\nHe kept saying we were done for, but I pulled out that little pistol he looked down on and charged out shouting, then I took out all those enemies, hahaha! After that, he took my gun and kept it with him all the time.\nAlright, done with the story! Now it's your turn to make that [pistol] shine!",
+        "objectives": [
+            "Eliminate 8 targets with: pistol"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "experience",
+                "quantity": 7928
+            },
+            {
+                "type": "reputation",
+                "corpId": "regiment",
+                "quantity": 10
+            },
+            {
+                "type": "item",
+                "item_name": "Compact Ration",
+                "quantity": 3
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": ["regiment_14"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 22
+        "order": 17
     },
-    "regiment_23": {
-        "id": "regiment_23",
+    "regiment_18": {
+        "id": "regiment_18",
         "name": "Movie Night 1",
         "gameId": "task.wp.14",
         "description": "You know I'm a sucker for thrilling, edge-of-your-seat movies.\r\nBut I've watched my DVDs so many times, even the discs are sick of me.\r\nHead to the [Resort Area], maybe check the [Rua Algasol] and the [little diner] close to the [skate park] .\r\nFind me that shark-themed thriller to spice up movie night!",
@@ -5942,19 +5942,19 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_17"],
         "requiredLevel": 0,
-        "tips": "on toilet in bathroom at skatepark restaurant, also CD on barrel at rua algasol buy store.",
+        "tips": "One on toilet at Skatepark cafe. Second CD on barrel at Rua Algasol.",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=cNQ5CB60RpU"
             }
         ],
-        "order": 23
+        "order": 18
     },
-    "regiment_24": {
-        "id": "regiment_24",
+    "regiment_19": {
+        "id": "regiment_19",
         "name": "Hunter",
         "gameId": "task.wp.15",
         "description": "I've been reading novels, and the author probably has never even handled a gun; what they write is completely unrealistic. Let me share a true story with you: \nBack then, before I went to the battlefield. One time, I went hunting with my Dad. I saw a shadow in the trees across the river and thought it was a bear. I fired without hesitation. Later I found out it was an enemy soldier who had escaped from the battlefield. So, what do you think? Why don't you give it a try and [put down some scavengers with bolt-action rifles]?",
@@ -5994,20 +5994,20 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_18"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 24
+        "order": 19
     },
-    "regiment_25": {
-        "id": "regiment_25",
+    "regiment_20": {
+        "id": "regiment_20",
         "name": "Magazine Recovery",
         "gameId": "task.wp.16",
-        "description": "Turn in 2 AKM metal magazine 30-round; Turn in G3 30-round magazine.",
+        "description": "You know how important recycling is on this forsaken island.\nBut some folks just dump their empty mags like they grow on trees!\nYou're better than that.\nBring me some used [AK magazines and G3 magazines].\nI'll refurb them and maybe make a few bucks on the side.",
         "objectives": [
-            "Turn in 2 AKM metal magazine 30-round",
-            "Turn in G3 30-round magazine."
+            "Turn in 2 AKM metal 30-round magazines",
+            "Turn in 2 G3 30-round magazines."
         ],
         "corpId": "regiment",
         "type": [
@@ -6047,14 +6047,14 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_19"],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "[AKM metal magazine](https://www.exfil-zone-assistant.app/items/mag_762x39_30), [G3 30-round magazine](https://www.exfil-zone-assistant.app/items/mag_762x51_30).",
         "videoGuides": [],
-        "order": 25
+        "order": 20
     },
-    "regiment_27": {
-        "id": "regiment_27",
+    "regiment_21": {
+        "id": "regiment_21",
         "name": "My Favourite: G18",
         "gameId": "task.wp.17",
         "description": "My favorite pistol? G18.\nIt's like my little sidekick—never leaves my side, been through hell and back with me. Those damn scavengers nearby won't stop causing trouble… I can barely sleep!\nIf you ask me, there's no better gun to keep under your pillow than a [G18]. Grab one and give those pests a taste of sweet, compact justice.",
@@ -6099,14 +6099,14 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_20"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 27
+        "order": 21
     },
-    "regiment_28": {
-        "id": "regiment_28",
+    "regiment_22": {
+        "id": "regiment_22",
         "name": "Hair Comes First",
         "gameId": "task.wp.18",
         "description": "Hey, it's you! How's my look today?\r\nBet you won't find a more stylish guy on this rock—haha!\r\nWanna be as slick as me? Rule number one: keep your hair in shape.\r\nStop hiding it under that bulky helmet.\r\n[Take it off], head into the field, and show me how long your style survives in a firefight!",
@@ -6151,14 +6151,14 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_21"],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "Take off your helmet before the safe Scavenger kill, repeat.",
         "videoGuides": [],
-        "order": 28
+        "order": 22
     },
-    "regiment_29": {
-        "id": "regiment_29",
+    "regiment_23": {
+        "id": "regiment_23",
         "name": "Taste of Life 2",
         "gameId": "task.wp.z18",
         "description": "The beer you found last time was good, but I've been craving again recently. I heard that [Wyeth Farmhouse] in the [suburb area] has a lot of good cellar-aged wine! I need you to mark 1 [large wine barrel] in the [basement] and then find me a bottle of [Wyeth's dry red wine] in the house. Finally, make sure to extract from [Farm Road] and [Northwest Windmill] to ensure that both routes can safely bring the wine back.",
@@ -6216,7 +6216,7 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_21"],
         "requiredLevel": 0,
         "tips": "White house in farm area on Suburbs. Mark one of the huge wine barrels in basement on the SW side. Dry wine bottle in kitchen sink on ground level. Both extracts are north of the white farmhouse.",
         "videoGuides": [
@@ -6225,10 +6225,10 @@ export const tasksData: TasksDatabase = {
                 "url": "https://www.youtube.com/watch?v=tw_SplvvQO8"
             }
         ],
-        "order": 29
+        "order": 23
     },
-    "regiment_30": {
-        "id": "regiment_30",
+    "regiment_24": {
+        "id": "regiment_24",
         "name": "Emergency Rations",
         "gameId": "task.wp.19",
         "description": "You know how some animals stash food for a rainy day?\nSmart, if you ask me. I'm picking up the habit myself.\nI need you to stash my favorite canned goods in these spots around the [Dam Area]:\n[On the table] inside the [wooden shack] next to the [eastern yellow water tower],\n[On the TV cabinet] in the [firewatch cabin],\n[On the table] inside the [small hut] beside the [Dam road sign].\nIf you lose the task item, please come back to me to repurchase it.",
@@ -6275,7 +6275,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_22"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
@@ -6284,10 +6284,10 @@ export const tasksData: TasksDatabase = {
                 "url": "https://www.youtube.com/watch?v=CaU7t19ysxY"
             }
         ],
-        "order": 30
+        "order": 24
     },
-    "regiment_31": {
-        "id": "regiment_31",
+    "regiment_25": {
+        "id": "regiment_25",
         "name": "What a Vacation's Meant to Be",
         "gameId": "task.wp.z19",
         "description": "Ah, my legs aren't what they used to be. Can't go soak in the sun and sea breeze like I once did...\nBut you still can, so don't waste it!\nHeard the [Resort Area] has a coastal sightseeing [tram].\nGo [take some photos] along the coastal route— Make sure I get a good view, will ya?",
@@ -6330,7 +6330,7 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_24"],
         "requiredLevel": 0,
         "tips": "The tram train cars are located on the road by hotel, two in front of hotel and one located on the road west toward construction.",
         "videoGuides": [
@@ -6339,10 +6339,10 @@ export const tasksData: TasksDatabase = {
                 "url": "https://www.youtube.com/watch?v=xMd_KozHG30"
             }
         ],
-        "order": 31
+        "order": 25
     },
-    "regiment_32": {
-        "id": "regiment_32",
+    "regiment_26": {
+        "id": "regiment_26",
         "name": "G3 Assembly",
         "gameId": "task.wp.20",
         "description": "Some guns? Just… not right. Not until you add the right touch.\nYou know, a fine weapon and a skilled shooter don't need to spray bullets like a firehose.\nI've sent a [G3 assault rifle AK4], [Rail BT3], [10-round G3 magazine], and [ACOG] to your kiosk.\nPut it together, give it a try. Let's see how it feels in your hands.",
@@ -6398,51 +6398,14 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_24"],
         "requiredLevel": 0,
         "tips": "G3 AK4, install BT3 rail (scope rail), ACOG sight, 10-round mag; you can add to the build but these items need to be install to complete task. ",
         "videoGuides": [],
-        "order": 32
+        "order": 26
     },
-    "regiment_33": {
-        "id": "regiment_33",
-        "name": "Dress the Part",
-        "gameId": "task.wp.z22",
-        "description": "You know, sometimes I think the cops had a cool look—\nstrutting around in armor, acting like they owned the place.\nWhy don't you give it a shot?\nThrow on a [Police PACA Body Armor] and a [Black Beret Hat].\nThen go serve some 'justice' to the bad guys out there. You'll look sharp and get the job done.",
-        "objectives": [
-            "Eliminate 16 targets in \"Police Outfit\""
-        ],
-        "corpId": "regiment",
-        "type": [
-            "eliminate"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 31000
-            },
-            {
-                "type": "experience",
-                "quantity": 3311
-            },
-            {
-                "type": "item",
-                "item_name": "Mag&attachament box",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [],
-        "requiredLevel": 0,
-        "tips": "Dress with \"Police PACA Body Armor\" and \"Black Beret Hat\" and kill 16 targets.",
-        "videoGuides": [],
-        "order": 33
-    },
-    "regiment_34": {
-        "id": "regiment_34",
+    "regiment_27": {
+        "id": "regiment_27",
         "name": "My Favourite: Mosin",
         "gameId": "task.wp.21",
         "description": "Ahh, the Mosin... My old flame.\nThis classic rifle has a soul—every scratch tells a story from the battlefield. When I run my hands across it, I swear I hear echoes of war.\nThink you can match my glory days?\nGrab a [Mosin], find a good spot, sit still… and then—BANG!\nLet that beautiful rifle whisper a deadly lullaby.",
@@ -6487,78 +6450,19 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_26"],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "Try to roleplay WW2 Soviet partisan for better accuracy. Only [Mosin 91-30](https://www.exfil-zone-assistant.app/items/weapon-mosin-91-30) can have a [scope](https://www.exfil-zone-assistant.app/items/scope_mosinpu).",
         "videoGuides": [],
-        "order": 34
+        "order": 27
     },
-    "regiment_35": {
-        "id": "regiment_35",
-        "name": "Forever in a Flash",
-        "gameId": "task.wp.z23",
-        "description": "You know what statues and photos have in common? They both freeze a moment in time. There's something beautifully poetic about that…\r\nGo take pictures of some of the island's statues for me, will you?\r\n[The Brown Bear statue in Hyder Town],\r\n[The Bull statue in the Resort's flea market],\r\n[The Angel statue next to Clifton Church],\r\n[The Hound statue in the Subway Station].",
-        "objectives": [
-            "Take a photo of the bear at Suburbs",
-            "Take a photo of the bull at Resort",
-            "Take a photo of the angel at Dam",
-            "Take a photo of the hound at Metro"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "photo"
-        ],
-        "map": [
-            "suburb",
-            "resort",
-            "dam",
-            "metro"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 28000
-            },
-            {
-                "type": "experience",
-                "quantity": 15403
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "mag_762x51_50",
-                "quantity": 2
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_name": "Metro entrance card",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [],
-        "requiredLevel": 0,
-        "tips": "Dam angel located outside church in clifton. Bear located in Hyder town on suburb. Bull located in flea market on resort. Hound on metro top of stairs by east extract",
-        "videoGuides": [
-            {
-                "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=JIacdtZ1GGE"
-            }
-        ],
-        "order": 35
-    },
-    "regiment_36": {
-        "id": "regiment_36",
+    "regiment_28": {
+        "id": "regiment_28",
         "name": "Movie Night 2",
         "gameId": "task.wp.22",
         "description": "I've watched that shark movie like… five times. Still a thrill!\nBut now I'm hungry for more.\nHead to the [Metro Area] and see if you can dig up any new flicks—\npreferably a [subway-themed] horror film.\nMaybe I'll host a movie night for the crew… Get moving!",
         "objectives": [
-            "Find 2 [Subway Scream]",
+            "Find [Subway Scream]",
             "Find [Subway Scream 2]",
             "Turn in both CDs"
         ],
@@ -6607,24 +6511,120 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_27"],
         "requiredLevel": 0,
-        "tips": "might be a typo but requires two run, both CDs can be found in cafeteria, one on the left behind table lower shelf, back room behind door on shelf with food ",
+        "tips": "Both CDs can be found in kitchen.",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=tVcmvySg7Xc"
             }
         ],
-        "order": 36
+        "order": 28
     },
-    "regiment_37": {
-        "id": "regiment_37",
+    "regiment_29": {
+        "id": "regiment_29",
+        "name": "Dress the Part",
+        "gameId": "task.wp.z22",
+        "description": "You know, sometimes I think the cops had a cool look—\nstrutting around in armor, acting like they owned the place.\nWhy don't you give it a shot?\nThrow on a [Police PACA Body Armor] and a [Black Beret Hat].\nThen go serve some 'justice' to the bad guys out there. You'll look sharp and get the job done.",
+        "objectives": [
+            "Eliminate 16 targets in \"Police Outfit\""
+        ],
+        "corpId": "regiment",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 31000
+            },
+            {
+                "type": "experience",
+                "quantity": 3311
+            },
+            {
+                "type": "item",
+                "item_name": "Mag&attachament box",
+                "quantity": 1
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": ["regiment_27"],
+        "requiredLevel": 0,
+        "tips": "Dress with [Police PACA Body Armor](https://www.exfil-zone-assistant.app/items/armor-police-vest) and [Black Beret](https://www.exfil-zone-assistant.app/items/helmet-beanie-black) and kill 16 targets.",
+        "videoGuides": [],
+        "order": 29
+    },
+    "regiment_30": {
+        "id": "regiment_30",
+        "name": "Forever in a Flash",
+        "gameId": "task.wp.z23",
+        "description": "You know what statues and photos have in common? They both freeze a moment in time. There's something beautifully poetic about that…\r\nGo take pictures of some of the island's statues for me, will you?\r\n[The Brown Bear statue in Hyder Town],\r\n[The Bull statue in the Resort's flea market],\r\n[The Angel statue next to Clifton Church],\r\n[The Hound statue in the Subway Station].",
+        "objectives": [
+            "Take a photo of the bear at Suburbs",
+            "Take a photo of the bull at Resort",
+            "Take a photo of the angel at Dam",
+            "Take a photo of the hound at Metro"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "photo"
+        ],
+        "map": [
+            "suburb",
+            "resort",
+            "dam",
+            "metro"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 28000
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "reputation",
+                "corpId": "regiment",
+                "quantity": 10
+            },
+            {
+                "type": "item",
+                "item_id": "mag_762x51_50",
+                "quantity": 2
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            }
+        ],
+        "requiredTasks": ["regiment_29"],
+        "requiredLevel": 0,
+        "tips": "Dam angel located outside church in clifton. Bear located in Hyder town on suburb. Bull located in flea market on resort. Hound on metro top of stairs by east extract",
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=JIacdtZ1GGE"
+            }
+        ],
+        "order": 30
+    },
+    "regiment_31": {
+        "id": "regiment_31",
         "name": "My Favourite: Sjogren",
         "gameId": "task.wp.23",
         "description": "Last but not least—my beloved Sjogren.\nShe's been my savior in more than one deadly mess.\nWith that boomstick in hand, hesitation simply isn't an option.\nNow it's your turn to feel its power.\nTake the [Sjogren] into the [Metro Area], and teach those scavengers a lesson.\nLet each shot ring out like thunder—let them know fear.",
         "objectives": [
-            "Eliminate 8 targets with Sjogren series shotgun in metro"
+            "Eliminate 12 targets with Sjogren shotgun in Metro"
         ],
         "corpId": "regiment",
         "type": [
@@ -6670,14 +6670,14 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_29"],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "[Sjogren](https://www.exfil-zone-assistant.app/items/weapon-sjogren-inertia)",
         "videoGuides": [],
-        "order": 37
+        "order": 31
     },
-    "regiment_38": {
-        "id": "regiment_38",
+    "regiment_32": {
+        "id": "regiment_32",
         "name": "One-time Delivery",
         "gameId": "task.wp.24",
         "description": "I need you to collect [3 supplycase] from three locations:\n[the Control Room],\n[the Tank Room],\n[the East Room in the Sewer Area].\nThen drop them off by the [wooden crate] just outside [the Sewer Hidden Room].\nNo detours, just in and out—one smooth run.",
@@ -6730,7 +6730,7 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_31"],
         "requiredLevel": 0,
         "tips": "one located on shelf in control room; looks like a purse; one located on barrels in large gate room. pull lever in control room to open gate; one located in the east room of sewer area, place task item west of sewer room, two extracts, climb ladder, cross pipe, place on box outside door; items are heavy and might take two trips up ladder",
         "videoGuides": [
@@ -6739,10 +6739,10 @@ export const tasksData: TasksDatabase = {
                 "url": "https://www.youtube.com/watch?v=qfRvA2MBmGI"
             }
         ],
-        "order": 38
+        "order": 32
     },
-    "regiment_39": {
-        "id": "regiment_39",
+    "regiment_33": {
+        "id": "regiment_33",
         "name": "Into the Lion's Den",
         "gameId": "task.wp.25",
         "description": "Aha! Time to test your nerve, kid.\nHead into the [Metro area], mid-level area.\nThere's a military living zone there—deep inside, right across from the Reception Room and Conference Room, is Commander Boris's quarters.\nNow me and Boris… we go way back. I know the kind of junk he calls treasure—and it's worth the risk.\nYou'll need to figure out a way in and snatch his prized piece: the [Malyuk762].\nBring it back, and I'll know you've got real guts.",
@@ -6795,19 +6795,19 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_32"],
         "requiredLevel": 0,
-        "tips": "Room located on one of the bottom level north side near extract; officer back room is locked(key not required); malyuk 762 can be bought and handed in",
+        "tips": "Room located on one of the bottom level north side near extract; officer back room is locked(key not required); [Malyuk 762](https://www.exfil-zone-assistant.app/items/weapon-malyuk-762) can be bought and handed in",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=zgM6Ab7cfmI"
             }
         ],
-        "order": 39
+        "order": 33
     },
-    "regiment_40": {
-        "id": "regiment_40",
+    "regiment_34": {
+        "id": "regiment_34",
         "name": "War Within Self",
         "gameId": "task.wp.26",
         "description": "Soldier, stand tall and listen. The most fearsome enemies often lurk right beside you, and it could even be your own inner self. Your final challenge is to overcome your fears, hesitation, weakness, and self-doubt.\nForge your will... This time, I'm not joking. All the tasks I've given you before were meant to help you build a strong mindset.\n[No matter what method you use or what weapon you choose, face a large number of enemies and challenge yourself to conquer your own limitations] (you can take down other contractors).",
@@ -6852,14 +6852,14 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_33"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 40
+        "order": 34
     },
-    "regiment_41": {
-        "id": "regiment_41",
+    "regiment_35": {
+        "id": "regiment_35",
         "name": "Intermission",
         "gameId": "task.wp.27",
         "description": "You did awesome, haha! I knew you could pull it off. You're starting to look a lot like I used to!\n...\nCome on, don't just stand there. In times like this, shouldn't we spark one up? No worries, I've got some special stuff stashed away. Just go grab something to light it with! And don't forget the fuel!",
@@ -6905,11 +6905,11 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["regiment_34"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 41
+        "order": 35
     },
     "forge_1": {
         "id": "forge_1",
