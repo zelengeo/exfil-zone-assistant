@@ -300,6 +300,26 @@
     "tips": ""
   },
   {
+    "id": "misc_b_tape",
+    "name": "Tape",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Intel",
+    "images": {
+      "icon": "/images/items/misc/Icon_gun_m92.webp",
+      "thumbnail": "/images/items/misc/Icon_gun_m92.webp",
+      "fullsize": "/images/items/misc/Icon_gun_m92.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.27,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
     "id": "misc_b_cash",
     "name": "Cash 25k",
     "description": "",

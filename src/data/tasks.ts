@@ -3916,10 +3916,11 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "requiredTasks": [
-            "ntg_28"
+            "ntg_28",
+            "regiment_35"
         ],
         "requiredLevel": 0,
-        "tips": "Bodies and Bag are on the lowes level. ",
+        "tips": "Bodies and medical bag are on the lowest level. ",
         "videoGuides": [
             {
                 "author": "orbb",
@@ -4277,7 +4278,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["trupiks_1"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [],
@@ -4324,7 +4325,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["trupiks_2"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [],
@@ -4375,7 +4376,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["trupiks_3"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
@@ -4420,7 +4421,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["trupiks_4"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
@@ -4462,7 +4463,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["trupiks_5"],
         "requiredLevel": 0,
         "tips": "computer components, recommend PC fan or ram",
         "videoGuides": [],
@@ -4503,7 +4504,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["trupiks_6"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
@@ -4549,7 +4550,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["trupiks_7"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [],
@@ -4588,7 +4589,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["trupiks_8", "ark_16"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
@@ -4632,9 +4633,9 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["trupiks_9"],
         "requiredLevel": 0,
-        "tips": "located workers dorm on resort, laundry mat, on countertop",
+        "tips": "Located at the Workers Dormitory. At the laundry mat.",
         "videoGuides": [],
         "order": 10
     },
@@ -4686,7 +4687,7 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["trupiks_10"],
         "requiredLevel": 0,
         "tips": "Take Picture of Tv #1, #2, & #3 located in yellow houses on hill by military base; take picture of Tv #4 & #5 in houses behind yellow houses close to bunker extract ",
         "videoGuides": [
@@ -4740,7 +4741,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["trupiks_11"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
@@ -4792,7 +4793,7 @@ export const tasksData: TasksDatabase = {
                 "quantity": 3
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["trupiks_12"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
@@ -4851,7 +4852,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["trupiks_13"],
         "requiredLevel": 50,
         "tips": "",
         "videoGuides": [],
@@ -4905,7 +4906,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["trupiks_14"],
         "requiredLevel": 50,
         "tips": "",
         "videoGuides": [],
@@ -4959,7 +4960,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["trupiks_15"],
         "requiredLevel": 50,
         "tips": "",
         "videoGuides": [],
@@ -5003,7 +5004,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["trupiks_16"],
         "requiredLevel": 50,
         "tips": "",
         "videoGuides": [],
@@ -7143,9 +7144,9 @@ export const tasksData: TasksDatabase = {
         "gameId": "task.gear.1",
         "description": "Hey, newbie. Name's Maximilian.\nMy trade guild deals in only the finest goods—no fluff, no nonsense.\nYou wanna do business with me? Prove you're worth the trouble.\nMy old client's looking for a particular piece of merchandise I've stashed away.\nYou know that [outdoor drive-in theater] south of the motel in the [Suburb area]?\nYeah, looks abandoned, but trust me, I hid something special there.\nCheck [behind the screen]. You'll know it when you see it—it's not something you'll miss.",
         "objectives": [
-            "Reach outdoor cinema",
-            "Find Golden Goblet",
-            "Turn in Golden Goblet"
+            "Reach the Outdoor drive-in Cinema",
+            "Find Maximillian's Golden Goblet",
+            "Turn in Maximillian's Golden Goblet"
         ],
         "corpId": "forge",
         "type": [
@@ -7180,11 +7181,15 @@ export const tasksData: TasksDatabase = {
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "cinema located behind motel, upstairs left on box",
+        "tips": "Outdoor Cinema located behind motel, upstairs left on box",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=3mhlLR8_jp0"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM"
             }
         ],
         "order": 1
@@ -7237,13 +7242,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_1"],
         "requiredLevel": 0,
-        "tips": "located east side of map north of 24 car repair, unloading station north of highway, checkpoint on highway at exfil, yellow huts north of highway past unloading station two yellow houses",
+        "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=zk9lVdCpsTg"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=68s"
             }
         ],
         "order": 2
@@ -7297,13 +7306,17 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_2"],
         "requiredLevel": 0,
-        "tips": "located northwest of office buidling by motel, past construction by wall before farm, look at compass when close, LOCKED extract icon, no key required",
+        "tips": "Look at M.I.C.A, LOCKED extract icon near the Canal.You don't have to extract from there or open it.",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=ONQLQQK3qRI"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=109s"
             }
         ],
         "order": 3
@@ -7344,13 +7357,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_2"],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "[Notebook](https://www.exfil-zone-assistant.app/items/misc_notebook)",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://youtu.be/3yUDq4fJZ-s"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=141s"
             }
         ],
         "order": 4
@@ -7402,13 +7419,17 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_3","forge_4"],
         "requiredLevel": 0,
-        "tips": "south of hotel, left through GREEN archway, small fountain on wall, place purple phone provide from task reward or purchase.",
+        "tips": "Small fountain on wall in Rua Algasol.",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=8un2o6BUoH8"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=154s"
             }
         ],
         "order": 5
@@ -7454,13 +7475,17 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_5"],
         "requiredLevel": 0,
-        "tips": "car dealership located east side by tunnel extract, 3 cars located outside, 1 located inside, use provided camera tablet or buy, stand in front of car, open camera, snap picture, notification on screen when action complete, do for all 4 cars ",
+        "tips": "Car dealership located east side by tunnel extract. All required cars are nearby.",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=XVqVAHhgKFI"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=190s"
             }
         ],
         "order": 6
@@ -7504,13 +7529,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_6"],
         "requiredLevel": 0,
-        "tips": "flea market located middle of map marked on meca device, both plates will be found in wood market booth east and west side ",
+        "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=Rsc3sPUjoXI"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=214s"
             }
         ],
         "order": 7
@@ -7558,13 +7587,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_6"],
         "requiredLevel": 0,
-        "tips": "one located on bench at basketball court of \"worker dorms\"; one located back of garbage truck on street by \"waste station\"; drop off box in water fountain, located south side of street between flea market and hovolt.  https://ibb.co/k2zXfNBz . https://ibb.co/5wYbsZQ",
+        "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=nGyTYeMvmTE"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=241s"
             }
         ],
         "order": 8
@@ -7605,10 +7638,14 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_7"],
         "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [],
+        "tips": "[Old Phone](https://www.exfil-zone-assistant.app/items/misc_b_oldphone)",
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=276s"
+            }],
         "order": 9
     },
     "forge_10": {
@@ -7619,7 +7656,7 @@ export const tasksData: TasksDatabase = {
         "objectives": [
             "Find Max's diamond rings",
             "Place in the East overpass",
-            "Place in the Weast overpass",
+            "Place in the West overpass",
             "Place in the Hospital overpass"
         ],
         "corpId": "forge",
@@ -7651,10 +7688,14 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_8"],
         "requiredLevel": 0,
-        "tips": "3 rings located underground market north of modern apart, grocery store, on sales desk, box drop off on 2 pedestrian bridges over main road one by dealership east, also west one connecting to buildings north of \"waste station\", one box located east hospital wing 2nd floor bridge. https://ibb.co/XrrSvXWw",
-        "videoGuides": [],
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=286s"
+            }],
         "order": 10
     },
     "forge_11": {
@@ -7702,13 +7743,17 @@ export const tasksData: TasksDatabase = {
                 "quantity": 4
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_9"],
         "requiredLevel": 0,
-        "tips": "located at top of dam, walk across concrete dam, all 4 inlet buildings will need to be marked with marking device",
+        "tips": "Located at top of dam.Mark all 4 concrete Towers with the tracker.",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=XJ_WamWoIds"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=595s"
             }
         ],
         "order": 11
@@ -7719,7 +7764,7 @@ export const tasksData: TasksDatabase = {
         "gameId": "task.gear.10",
         "description": "Remember that delivery payment I mentioned?\nThat damn cop is called [Barricade]. He never intended to hand the goods over. He thought he could play me. Big mistake.\nHead over to the [Silverwave Union Bank] and find him, in the [heaviest armor]. Give him a little… message.\nNobody crosses Maximilian and gets away with it.",
         "objectives": [
-            "Eliminate Bank's barricade"
+            "Eliminate Bank's Barricade"
         ],
         "corpId": "forge",
         "type": [
@@ -7749,10 +7794,14 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_10"],
         "requiredLevel": 0,
-        "tips": "SWAT boss located at bank, shoot him in the head or legs, not yellow helmet boss (Bonecrusher)",
-        "videoGuides": [],
+        "tips": "SWAT boss located at the Bank main entrance.(Not Bonecrusher in yellow helmet)",
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=353s"
+            }],
         "order": 12
     },
     "forge_13": {
@@ -7761,7 +7810,7 @@ export const tasksData: TasksDatabase = {
         "gameId": "task.gear.z10",
         "description": "Alright, we've gathered enough old phones, so I won't waste time with the usual lectures. I've noticed that some residents on this island still use cassette tapes—pretty 'retro,' right?\nBy coincidence, I found a cassette player all the way in the back of the storage room, and it turns out it still works! So now, your task is to find some [tapes] for me. I'd like to hear what interesting information is on them.",
         "objectives": [
-            "Turn in 6 cassette tape"
+            "Turn in 6 Tapes"
         ],
         "corpId": "forge",
         "type": [
@@ -7791,10 +7840,14 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_10"],
         "requiredLevel": 0,
-        "tips": "military camp, mall, dam office building at dock, etc",
-        "videoGuides": [],
+        "tips": "[Tape](https://www.exfil-zone-assistant.app/items/misc_b_tape)",
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=378s"
+            }],
         "order": 13
     },
     "forge_14": {
@@ -7803,7 +7856,7 @@ export const tasksData: TasksDatabase = {
         "gameId": "task.gear.z11",
         "description": "There are so many old things here! Did you find any valuable 'antiques' while you were exploring?\nListen, I recently had a client reach out to me asking for used [cameras]. He says it's a new trend of photography among youngsters.\nIf that's the case, I can't let this opportunity slip by! Can you help me track down a few [cameras]? Who knows, I might be able to cash in on this trend.",
         "objectives": [
-            "Turn in 3 cameras"
+            "Turn in 3 Cameras"
         ],
         "corpId": "forge",
         "type": [
@@ -7833,10 +7886,14 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_13"],
         "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [],
+        "tips": "[Camera](https://www.exfil-zone-assistant.app/items/misc_camera)",
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=391s"
+            }],
         "order": 14
     },
     "forge_15": {
@@ -7877,75 +7934,23 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_14"],
         "requiredLevel": 0,
-        "tips": "located in parking garage of mall, -1F, center of mall, room below escalator stairs on coffee table",
+        "tips": "Located in the center of the Mall on -1F, in the room below escalator stairs.",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=KoE9YIrOaGI"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=406s"
             }
         ],
         "order": 15
     },
     "forge_16": {
         "id": "forge_16",
-        "name": "Cold Hard Cash 2",
-        "gameId": "task.gear.17",
-        "description": "Today, I went to check the warehouse and found out that the gold ingots you brought back are fake! The real ones have been swapped out! I don't know where my real gold ingots are right now, but that traitor left a contact message. The clue mentioned that this guy is disguising himself as a forklift driver. \nGo to the [dam area] and mark the [four forklifts] at the [dock] and the [factory]; I need some clues.",
-        "objectives": [
-            "Mark First Forklift at The Dock",
-            "Mark Second Forklift at The Dock",
-            "Mark First Forklift at The Factory",
-            "Mark Second Forklift at The Factory"
-        ],
-        "corpId": "forge",
-        "type": [
-            "mark"
-        ],
-        "map": [
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 32000
-            },
-            {
-                "type": "reputation",
-                "corpId": "forge",
-                "quantity": 50
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "item",
-                "item_id": "helmet-delta",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_name": "Tracking device",
-                "quantity": 4
-            }
-        ],
-        "requiredTasks": [],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=VuvURKV4MWk"
-            }
-        ],
-        "order": 16
-    },
-    "forge_17": {
-        "id": "forge_17",
         "name": "Better safe than sorry 2",
         "gameId": "task.gear.12",
         "description": "One of the top things in running a business is to always stay alert.\nI have a few hideouts in the [Suburb area] for temporary storage and transfer. I need to ensure they're in good shape. Go take a look around them: [the water tower north of Altibuy], [the green tent north of the TRUPIK mall], and [the small shack] just [north of the mall after crossing the overpass]. Check everything before you make an extraction back.",
@@ -7991,67 +7996,21 @@ export const tasksData: TasksDatabase = {
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=rrL25q04zaE"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=427s"
             }
         ],
-        "order": 17
+        "order": 16
     },
-    "forge_18": {
-        "id": "forge_18",
-        "name": "Better safe than sorry 3",
-        "gameId": "task.gear.19",
-        "description": "The [Dam area] in the north of the island has always been a key route for my cargo transport because it's close to the docks, with plenty of spots for transfers and hiding. But with that convenience and variety of routes, this prime location also attracts pesky flies.\nSo, I'm counting on you, my most trusted partner, to check out these places like you did before: the [control room beneath the dam], the [southwest tower inlet] of the dam, and the [firewatcher's cabin] on the [west side of the dam]. Just make sure everything is in order and extract from [Southwest Road].",
-        "objectives": [
-            "Find the West inlet tower",
-            "Find the Firewatcher's tower",
-            "Find the Dam's Power Room",
-            "Successfully extract from Southwest Road"
-        ],
-        "corpId": "forge",
-        "type": [
-            "reach"
-        ],
-        "map": [
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 32000
-            },
-            {
-                "type": "reputation",
-                "corpId": "forge",
-                "quantity": 50
-            },
-            {
-                "type": "experience",
-                "quantity": 15403
-            },
-            {
-                "type": "item",
-                "item_id": "armor-jpc",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [],
-        "requiredLevel": 0,
-        "tips": "west inlet tower located above dam; red firewatcher tower above dam west side; dam power room located below dam in valley, building east; southwest road is behind factory.",
-        "videoGuides": [
-            {
-                "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=okHHthr__LY"
-            }
-        ],
-        "order": 18
-    },
-    "forge_19": {
-        "id": "forge_19",
+    "forge_17": {
+        "id": "forge_17",
         "name": "Don't Play with Fire",
         "gameId": "task.gear.13",
         "description": "You know I always hide my goods perfectly, but a few of the hiding spots do face the risk of accidental damage.\nI need you to go check on them and leave that new tracker you got there, so I can ensure the safety of my goods in real time. The location is in the [farm], [north part]. There are several [barns]. They're the tall, cylindrical structures. [marking 3 spots] will be enough. Also, for safety, bring back the [flammable items] you can find.",
         "objectives": [
-            "Mark the 3 north barns",
+            "Mark the 4 North Barns",
             "Turn in 4 combustible items"
         ],
         "corpId": "forge",
@@ -8083,19 +8042,23 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_16"],
         "requiredLevel": 0,
-        "tips": "These are *not* barns, they are tall silos - several different ones will work for the task silos 170M west of the Hyder Town police station",
+        "tips": "These are *not* barns, they are tall silos.",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=Yq6b9D90zyY"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=467s"
             }
         ],
-        "order": 19
+        "order": 17
     },
-    "forge_20": {
-        "id": "forge_20",
+    "forge_18": {
+        "id": "forge_18",
         "name": "Secret Stash 2",
         "gameId": "task.gear.14",
         "description": "Have you ever been to the [Dam Area]? I've still got some merchandise stashed near there, and a new client just came knocking.\r\nThey want something flashy—solid gold kind of flashy.\r\nGood thing I've got just the piece:\r\nHead to my [hideout up the hill southeast of the Dam], near an old barber shop and look for a [golden globe].\r\nPlace it on the [wooden crate] hidden in the dark inside a [blue shipping container] on the [west side of the dam's base].",
@@ -8136,20 +8099,24 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_17"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=_lT5d6SMhp4"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=527s"
             }
         ],
-        "order": 20
+        "order": 18
     },
-    "forge_21": {
-        "id": "forge_21",
-        "name": "Cold Hard Cash l",
+    "forge_19": {
+        "id": "forge_19",
+        "name": "Cold Hard Cash 1",
         "gameId": "task.gear.16",
         "description": "Thanks to you, I've been getting a lot more clients lately. But some of these rich folks are getting pretty extravagant. They always want stuff like gold, gems, and all that.\nWith so many new requests, I'm not really stocked up. How about trying your luck and helping me find [a gold ingot]? Don't worry, one bar will last me a while!",
         "objectives": [
@@ -8183,27 +8150,30 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_11"],
         "requiredLevel": 0,
-        "tips": "Locked room PCs (Sunset tunnel in Resort, Datastore in Metro)",
-        "videoGuides": [],
+        "tips": "[Gold Ingot](https://www.exfil-zone-assistant.app/items/misc_goldingot)]",
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=624s"
+            }],
         "order": 21
     },
     "forge_22": {
         "id": "forge_22",
-        "name": "Hack to Play",
-        "gameId": "task.gear.20",
-        "description": "Thanks for checking places for me. While I was sorting through the stuff, I found something special: a super encrypted hard drive. Or in other words, a big business opportunity! \nHowever the encryption is way too tough for my team to handle. I'll have to turn to an old friend I haven't talked to in ages.\nHe's a big-time enthusiastic gamer. If you can get him something special, like a deluxe edition game disc, I think he'll be more willing to help me out.\nTry looking in the [Factory B Area] over in the [Dam area]. There's often leftover cargo there, and you might just find what I'm looking for.",
+        "name": "Cold Hard Cash 2",
+        "gameId": "task.gear.17",
+        "description": "Today, I went to check the warehouse and found out that the gold ingots you brought back are fake! The real ones have been swapped out! I don't know where my real gold ingots are right now, but that traitor left a contact message. The clue mentioned that this guy is disguising himself as a forklift driver. \nGo to the [dam area] and mark the [four forklifts] at the [dock] and the [factory]; I need some clues.",
         "objectives": [
-            "Reach Factory B zone",
-            "Find Game Disk",
-            "Turn in Game Disk"
+            "Mark First Forklift at The Dock",
+            "Mark Second Forklift at The Dock",
+            "Mark First Forklift at The Factory",
+            "Mark Second Forklift at The Factory"
         ],
         "corpId": "forge",
         "type": [
-            "reach",
-            "retrieve",
-            "submit"
+            "mark"
         ],
         "map": [
             "dam"
@@ -8220,33 +8190,47 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "experience",
-                "quantity": 15403
+                "quantity": 12719
             },
             {
                 "type": "item",
-                "item_id": "armor-rampage-od",
+                "item_id": "helmet-delta",
                 "quantity": 1
             }
         ],
-        "preReward": [],
-        "requiredTasks": [],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Tracking device",
+                "quantity": 4
+            }
+        ],
+        "requiredTasks": ["forge_11","forge_18"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=p2W4kXJUtIA"
+                "url": "https://www.youtube.com/watch?v=VuvURKV4MWk"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=657s"
             }
         ],
         "order": 22
     },
     "forge_23": {
         "id": "forge_23",
-        "name": "The Collector",
-        "gameId": "task.gear.z18",
-        "description": "That client is back again. He said the trend has shifted, and now people are collecting figurines.\nI mean, those things don't serve much purpose beyond being decorative, but I have to admit, collecting can be pretty enjoyable. Watching my warehouse fill up gives me an indescribable sense of satisfaction.\nSo, I need you to find me a [complete set of character figurines]. Don't forget to grab the [rare one] too; I've heard it's a [gold-painted] version, and they say it's worth even more.",
+        "name": "HandHeld Hero",
+        "gameId": "task.gear.z17",
+        "description": "Heh, never thought I'd see someone holding onto one of those old-school consoles.\nTakes me back—back when I ruled the neighborhood, all because I had the best game system around.\nAnyway, I want that feeling back.\nGo get me a working [game console] and [4 different game cartridges].\nMake it worth my nostalgia, yeah?",
         "objectives": [
-            "Hand in 7 figurines"
+            "Turn in Game console",
+            "Turn in 'Showdown' Cart",
+            "Turn in 'Contractors' Cart",
+            "Turn in 'GrimLord' Cart",
+            "Turn in 'Exfilzone' Cart"
         ],
         "corpId": "forge",
         "type": [
@@ -8271,16 +8255,74 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_id": "armor-apex-bk",
+                "item_id": "helmet-ach-green",
                 "quantity": 1
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_22"],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=643s"
+            }],
         "order": 23
+    },
+    "forge_24": {
+        "id": "forge_24",
+        "name": "Better safe than sorry 3",
+        "gameId": "task.gear.19",
+        "description": "The [Dam area] in the north of the island has always been a key route for my cargo transport because it's close to the docks, with plenty of spots for transfers and hiding. But with that convenience and variety of routes, this prime location also attracts pesky flies.\nSo, I'm counting on you, my most trusted partner, to check out these places like you did before: the [control room beneath the dam], the [southwest tower inlet] of the dam, and the [firewatcher's cabin] on the [west side of the dam]. Just make sure everything is in order and extract from [Southwest Road].",
+        "objectives": [
+            "Find the West inlet tower",
+            "Find the Firewatcher's tower",
+            "Find the Dam's Power Room",
+            "Successfully extract from Southwest Road"
+        ],
+        "corpId": "forge",
+        "type": [
+            "reach"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 32000
+            },
+            {
+                "type": "reputation",
+                "corpId": "forge",
+                "quantity": 50
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "item",
+                "item_id": "armor-jpc",
+                "quantity": 1
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": ["forge_18"],
+        "requiredLevel": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=okHHthr__LY"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/BO5uihtPyLM?t=754"
+            }
+        ],
+        "order": 24
     },
     "forge_25": {
         "id": "forge_25",
@@ -8322,110 +8364,23 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_18"],
         "requiredLevel": 0,
-        "tips": "north on dam, before dock and construction, located top-crane, climb ladder, collect 3 gold bars and turn in",
+        "tips": "Climb to the top of the crane. Acrophobia is a thing.",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=OC9DuhsBReg"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/BO5uihtPyLM?t=699"
             }
         ],
         "order": 25
     },
     "forge_26": {
         "id": "forge_26",
-        "name": "HandHeld Hero",
-        "gameId": "task.gear.z17",
-        "description": "Heh, never thought I'd see someone holding onto one of those old-school consoles.\nTakes me back—back when I ruled the neighborhood, all because I had the best game system around.\nAnyway, I want that feeling back.\nGo get me a working [game console] and [4 different game cartridges].\nMake it worth my nostalgia, yeah?",
-        "objectives": [
-            "Turn in Game console",
-            "Turn in 'Showdown' Cart",
-            "Turn in 'Contractors' Cart",
-            "Turn in 'GrimLord' Cart",
-            "Turn in 'Exfilzone' Cart"
-        ],
-        "corpId": "forge",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 32000
-            },
-            {
-                "type": "reputation",
-                "corpId": "forge",
-                "quantity": 10
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "item",
-                "item_id": "helmet-ach-green",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [],
-        "order": 26
-    },
-    "forge_31": {
-        "id": "forge_31",
-        "name": "\"Collectors Edition\"",
-        "gameId": "task.gear.z19",
-        "description": "I really want to show you my collection, but I'm just a few items short of perfection. I can't stand seeing those empty spots; they would leave a lingering regret.\nMaybe you can help me complete this last piece of the puzzle: I need [a complete set of the Contractors game discs]. Just so you know, the entire series includes [4 versions]: [the regular editions] of Contractors and Showdown, and [the deluxe editions] of each.",
-        "objectives": [
-            "Turn in Contractors Game Disc",
-            "Turn in ShowDown Game Disc",
-            "Turn in Contractors Game Disc Collector's Edition",
-            "Turn in ShowDown Game Disc Collector's Edition"
-        ],
-        "corpId": "forge",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 32000
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "reputation",
-                "corpId": "forge",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "helmet-rsp",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [],
-        "order": 31
-    },
-    "forge_36": {
-        "id": "forge_36",
         "name": "Business Development",
         "gameId": "task.gear.21",
         "description": "That hacker has a pretty quirky personality; he can lock himself away for days. So while we wait for him, I think you can go and try to make some extractions from various extraction points.\nI know this may sound like it's outside our usual scope of work, but don't worry—this is all part of preparing for what's to come. Make a safe escape from each of these locations: [Outdoor cinema in the Suburb area], [the Bunker in the Dam area], [the big Gate on the 3F (top level) in Metro area].",
@@ -8470,19 +8425,78 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_24"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=FUrur2cpdUA"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=802s"
             }
         ],
-        "order": 36
+        "order": 26
     },
-    "forge_37": {
-        "id": "forge_37",
+    "forge_27": {
+        "id": "forge_27",
+        "name": "Hack to Play",
+        "gameId": "task.gear.20",
+        "description": "Thanks for checking places for me. While I was sorting through the stuff, I found something special: a super encrypted hard drive. Or in other words, a big business opportunity! \nHowever the encryption is way too tough for my team to handle. I'll have to turn to an old friend I haven't talked to in ages.\nHe's a big-time enthusiastic gamer. If you can get him something special, like a deluxe edition game disc, I think he'll be more willing to help me out.\nTry looking in the [Factory B Area] over in the [Dam area]. There's often leftover cargo there, and you might just find what I'm looking for.",
+        "objectives": [
+            "Reach Factory B zone",
+            "Find Game Disk",
+            "Turn in Game Disk"
+        ],
+        "corpId": "forge",
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 32000
+            },
+            {
+                "type": "reputation",
+                "corpId": "forge",
+                "quantity": 50
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "item",
+                "item_id": "armor-rampage-od",
+                "quantity": 1
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": ["forge_22"],
+        "requiredLevel": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=p2W4kXJUtIA"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=859s"
+            }
+        ],
+        "order": 27
+    },
+    "forge_28": {
+        "id": "forge_28",
         "name": "Treasure Beyond Measure",
         "gameId": "task.gear.22",
         "description": "This hacker finished much quicker than I expected. \nThere isn't much data, mostly junk files. However, after his analysis, we uncovered something important: a strange start-up program, a string of passwords, and [a location].\nI'll focus on the program and passwords, while you check those [the control room], see if you can [find a special briefcase].",
@@ -8527,19 +8541,85 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_27"],
         "requiredLevel": 0,
-        "tips": "east on railway, upstairs left into control room, case on table right, turn in",
+        "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=yEf6vs-lZDg"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=887s"
             }
         ],
-        "order": 37
+        "order": 28
     },
-    "forge_38": {
-        "id": "forge_38",
+    "forge_29": {
+        "id": "forge_29",
+        "name": "Perfect Collaboration",
+        "gameId": "task.gear.23",
+        "description": "You're back! So, guess what was that box you bring? First off, the earlier program was a missile-launching program. And this box isn't just any computer; you need to connect the hard drive's program and enter that password to get it running.\nWith this, I might just retire from dealing with cargo, haha. You're the most efficient and trustworthy partner I've worked with. Here's a key to the [locked room] in [Metro area]. Everything in there is yours to take—grab as much as you want. It's my way of showing appreciation for you as my top business partner.",
+        "objectives": [
+            "Find the sewer area back room"
+        ],
+        "corpId": "forge",
+        "type": [
+            "reach"
+        ],
+        "map": [
+            "metro"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 36000
+            },
+            {
+                "type": "experience",
+                "quantity": 25672
+            },
+            {
+                "type": "reputation",
+                "corpId": "forge",
+                "quantity": 50
+            },
+            {
+                "type": "item",
+                "item_id": "armor-imtv",
+                "quantity": 1
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Metro entrance card",
+                "quantity": 1
+            },
+            {
+                "type": "item",
+                "item_name": "Sewer room key",
+                "quantity": 1
+            }
+        ],
+        "requiredTasks": ["forge_28"],
+        "requiredLevel": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "orbb",
+                "url": "https://www.youtube.com/watch?v=Gl_3o8UfEyI"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=913s"
+            }
+        ],
+        "order": 29
+    },
+    "forge_30": {
+        "id": "forge_30",
         "name": "Virtual Realities",
         "gameId": "task.gear.z21",
         "description": "Hey, I've heard there are [3 VR headset prototypes] on this island! I need you to help me find them, as they are special collectibles for some people.\u000bHowever, my information is limited. I only know that the [1st one] is at the [Wyeth Farmhouse] in the [suburb area]; the [other two] are lost in the [dam] and [metro] areas, respectively. I hope you can take some time to keep an eye out for them!",
@@ -8586,75 +8666,113 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": [],
+        "requiredTasks": ["forge_27"],
         "requiredLevel": 0,
-        "tips": "1st, suburbs farm second floor under desk south side, 2nd, dam military tent above the dam behind east inlet building on tent, parkour required; 3rd, metro hound statue by east extract, located in mouth of hound",
+        "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=OCRTBDedB3Q"
+            },{
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=944s"
             }
         ],
-        "order": 38
+        "order": 30
     },
-    "forge_39": {
-        "id": "forge_39",
-        "name": "Perfect Collaboration",
-        "gameId": "task.gear.23",
-        "description": "You're back! So, guess what was that box you bring? First off, the earlier program was a missile-launching program. And this box isn't just any computer; you need to connect the hard drive's program and enter that password to get it running.\nWith this, I might just retire from dealing with cargo, haha. You're the most efficient and trustworthy partner I've worked with. Here's a key to the [locked room] in [Metro area]. Everything in there is yours to take—grab as much as you want. It's my way of showing appreciation for you as my top business partner.",
+    "forge_31": {
+        "id": "forge_31",
+        "name": "The Collector",
+        "gameId": "task.gear.z18",
+        "description": "That client is back again. He said the trend has shifted, and now people are collecting figurines.\nI mean, those things don't serve much purpose beyond being decorative, but I have to admit, collecting can be pretty enjoyable. Watching my warehouse fill up gives me an indescribable sense of satisfaction.\nSo, I need you to find me a [complete set of character figurines]. Don't forget to grab the [rare one] too; I've heard it's a [gold-painted] version, and they say it's worth even more.",
         "objectives": [
-            "Find the sewer area back room"
+            "Hand in 7 figurines"
         ],
         "corpId": "forge",
         "type": [
-            "reach"
+            "submit"
         ],
         "map": [
-            "metro"
+            "any"
         ],
         "reward": [
             {
                 "type": "money",
-                "quantity": 36000
-            },
-            {
-                "type": "experience",
-                "quantity": 25672
+                "quantity": 32000
             },
             {
                 "type": "reputation",
                 "corpId": "forge",
-                "quantity": 50
+                "quantity": 10
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
             },
             {
                 "type": "item",
-                "item_id": "armor-imtv",
+                "item_id": "armor-apex-bk",
                 "quantity": 1
             }
         ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_name": "Metro entrance card",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_name": "Sewer room key",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [],
+        "preReward": [],
+        "requiredTasks": ["forge_23"],
         "requiredLevel": 0,
-        "tips": "sewer back room located on lower level, large sewer room, no key needed",
-        "videoGuides": [
+        "tips": "Reward not worth it. Exchange gold figurine for Endgame equipment in official discord.",
+        "videoGuides": [{
+            "author": "radFoxVR",
+            "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=1016s"
+        }],
+        "order": 31
+    },
+    "forge_32": {
+        "id": "forge_32",
+        "name": "\"Collectors Edition\"",
+        "gameId": "task.gear.z19",
+        "description": "I really want to show you my collection, but I'm just a few items short of perfection. I can't stand seeing those empty spots; they would leave a lingering regret.\nMaybe you can help me complete this last piece of the puzzle: I need [a complete set of the Contractors game discs]. Just so you know, the entire series includes [4 versions]: [the regular editions] of Contractors and Showdown, and [the deluxe editions] of each.",
+        "objectives": [
+            "Turn in Contractors Game Disc",
+            "Turn in ShowDown Game Disc",
+            "Turn in Contractors Game Disc Collector's Edition",
+            "Turn in ShowDown Game Disc Collector's Edition"
+        ],
+        "corpId": "forge",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
             {
-                "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=Gl_3o8UfEyI"
+                "type": "money",
+                "quantity": 32000
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
+            },
+            {
+                "type": "reputation",
+                "corpId": "forge",
+                "quantity": 10
+            },
+            {
+                "type": "item",
+                "item_id": "helmet-rsp",
+                "quantity": 1
             }
         ],
-        "order": 39
-    }
+        "preReward": [],
+        "requiredTasks": ["forge_23"],
+        "requiredLevel": 0,
+        "tips": "Not worth a hassle.",
+        "videoGuides": [{
+            "author": "radFoxVR",
+            "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=1028s"
+        }],
+        "order": 32
+    },
 } as const;
 
 // Helper functions for tasks
