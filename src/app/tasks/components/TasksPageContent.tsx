@@ -280,7 +280,7 @@ export default function TasksPageContent() {
                                        selectedMerchant={state.selectedMerchant}
                                        filteredTasks={filteredTasks}
                                        userProgress={state.userProgress}
-                                       onMerchantSelect={selectMerchant}
+                                       toggleMerchantExpanded={selectMerchant}
                                        onTaskStatusChange={updateTaskStatus}
                                        getTaskStatus={getTaskStatus}
                                        getItemById={getItemById}

@@ -4203,6 +4203,7 @@ export const tasksData: TasksDatabase = {
         ],
         "order": 33
     },
+
     "trupiks_1": {
         "id": "trupiks_1",
         "name": "Secure Support",
@@ -4243,6 +4244,10 @@ export const tasksData: TasksDatabase = {
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=quTZvsysQCQ"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=DIjbTZN_Wxc&t=0s"
             }
         ],
         "order": 1
@@ -4278,10 +4283,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["trupiks_1"],
+        "requiredTasks": [
+            "trupiks_1"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=DIjbTZN_Wxc&t=58s"
+            }
+        ],
         "order": 2
     },
     "trupiks_3": {
@@ -4325,10 +4337,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["trupiks_2"],
+        "requiredTasks": [
+            "trupiks_2"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/DIjbTZN_Wxc?t=101"
+            }
+        ],
         "order": 3
     },
     "trupiks_4": {
@@ -4376,13 +4395,19 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["trupiks_3"],
+        "requiredTasks": [
+            "trupiks_3"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=IWDA_Giw4qo"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/DIjbTZN_Wxc?t=183"
             }
         ],
         "order": 4
@@ -4421,13 +4446,19 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["trupiks_4"],
+        "requiredTasks": [
+            "trupiks_4"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=lDhfK8lld7U"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/DIjbTZN_Wxc?t=206"
             }
         ],
         "order": 5
@@ -4463,10 +4494,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["trupiks_5"],
+        "requiredTasks": [
+            "trupiks_5"
+        ],
         "requiredLevel": 0,
-        "tips": "computer components, recommend PC fan or ram",
-        "videoGuides": [],
+        "tips": "[Electric items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Electric) Recommend PC fan or RAM",
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/DIjbTZN_Wxc?t=226"
+            }
+        ],
         "order": 6
     },
     "trupiks_7": {
@@ -4504,13 +4542,19 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["trupiks_6"],
+        "requiredTasks": [
+            "trupiks_2", "ntg_5"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=0c5zNm33Dx0"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/DIjbTZN_Wxc?t=124"
             }
         ],
         "order": 7
@@ -4550,10 +4594,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["trupiks_7"],
+        "requiredTasks": [
+            "trupiks_2"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/DIjbTZN_Wxc?t=151"
+            }
+        ],
         "order": 8
     },
     "trupiks_9": {
@@ -4589,13 +4640,20 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["trupiks_8", "ark_16"],
+        "requiredTasks": [
+            "trupiks_8",
+            "ark_16"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=_gVFJBMxPr8"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://youtu.be/DIjbTZN_Wxc?t=241"
             }
         ],
         "order": 9
@@ -4633,10 +4691,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["trupiks_9"],
+        "requiredTasks": [
+            "trupiks_9"
+        ],
         "requiredLevel": 0,
         "tips": "Located at the Workers Dormitory. At the laundry mat.",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=DIjbTZN_Wxc&t=292s"
+            }
+        ],
         "order": 10
     },
     "trupiks_11": {
@@ -4687,13 +4752,19 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["trupiks_10"],
+        "requiredTasks": [
+            "trupiks_10"
+        ],
         "requiredLevel": 0,
         "tips": "Take Picture of Tv #1, #2, & #3 located in yellow houses on hill by military base; take picture of Tv #4 & #5 in houses behind yellow houses close to bunker extract ",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=DrK25Bnw38g"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=DIjbTZN_Wxc&t=317s"
             }
         ],
         "order": 11
@@ -4741,13 +4812,19 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["trupiks_11"],
+        "requiredTasks": [
+            "trupiks_11"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=kAvBXhqCx6c"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=DIjbTZN_Wxc&t=360s"
             }
         ],
         "order": 12
@@ -4793,13 +4870,19 @@ export const tasksData: TasksDatabase = {
                 "quantity": 3
             }
         ],
-        "requiredTasks": ["trupiks_12"],
+        "requiredTasks": [
+            "trupiks_12"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=JFgC9jfom3g"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=DIjbTZN_Wxc&t=387s"
             }
         ],
         "order": 13
@@ -4852,10 +4935,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["trupiks_13"],
+        "requiredTasks": [
+            "trupiks_13"
+        ],
         "requiredLevel": 50,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=DIjbTZN_Wxc&t=425s"
+            }
+        ],
         "order": 14
     },
     "trupiks_15": {
@@ -4906,10 +4996,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["trupiks_14"],
+        "requiredTasks": [
+            "trupiks_14"
+        ],
         "requiredLevel": 50,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=DIjbTZN_Wxc&t=450s"
+            }
+        ],
         "order": 15
     },
     "trupiks_16": {
@@ -4960,10 +5057,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["trupiks_15"],
+        "requiredTasks": [
+            "trupiks_15"
+        ],
         "requiredLevel": 50,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=DIjbTZN_Wxc&t=465s"
+            }
+        ],
         "order": 16
     },
     "trupiks_17": {
@@ -5004,10 +5108,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["trupiks_16"],
+        "requiredTasks": [
+            "trupiks_16"
+        ],
         "requiredLevel": 50,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=DIjbTZN_Wxc&t=480s"
+            }
+        ],
         "order": 17
     },
     "regiment_1": {

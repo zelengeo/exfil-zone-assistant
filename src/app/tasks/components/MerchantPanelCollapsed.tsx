@@ -7,7 +7,7 @@ import {getCurrentReputation, getCurrentTasks, getTaskCounts, MerchantPanelProps
 export default function MerchantPanelCollapsed({
                                                    merchant,
                                                    filteredMerchantTasks,
-                                                   onMerchantSelect,
+                                                   toggleMerchantExpanded,
                                                    userProgress,
                                                    onTaskStatusChange,
                                                    getTaskStatus,
@@ -21,7 +21,7 @@ export default function MerchantPanelCollapsed({
     // Collapsed view (different merchant is selected)
     return (
         <button
-            onClick={() => onMerchantSelect(merchant)}
+            onClick={() => toggleMerchantExpanded(merchant)}
             className="w-full p-3 rounded-sm border border-military-600 bg-military-800
               transition-all duration-200 hover:border-olive-600
                hover:bg-military-700 group"

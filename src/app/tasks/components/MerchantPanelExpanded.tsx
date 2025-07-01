@@ -1,11 +1,11 @@
 import React, {useMemo, useState} from 'react';
 import Image from 'next/image';
-import {User, Target, CheckCircle, Lock, ChevronRight, ChevronDown, Undo2} from 'lucide-react';
+import {User, Target, CheckCircle, Lock, ChevronRight, ChevronDown, Undo2, Clock, ChevronUp} from 'lucide-react';
 import {Task, TaskStatus, UserProgress} from '@/types/tasks';
 import {corps, tasksData} from "@/data/tasks";
 import {
     getCurrentReputation,
-    getCurrentTasks,
+    getCurrentTasks, getStatusConfig,
     getTaskCounts,
     MerchantPanelProps
 } from "@/app/tasks/taskHelpers";
@@ -25,7 +25,7 @@ export default function MerchantPanelExpanded({
                                                   merchant,
                                                   filteredMerchantTasks,
                                                   userProgress,
-                                                  onMerchantSelect,
+                                                  toggleMerchantExpanded,
                                                   onTaskStatusChange,
                                                   getTaskStatus,
                                                   getItemById,
@@ -40,7 +40,6 @@ export default function MerchantPanelExpanded({
         merchantLevel
     } = getCurrentReputation(merchant, getTaskStatus, userProgress)
 
-    // Collapsed view (different merchant is selected)
     return (
         <div className="military-card rounded-sm">
             {/* Mobile Header */}
@@ -53,14 +52,6 @@ export default function MerchantPanelExpanded({
                         </div>
                         <h2 className="text-xl font-bold text-tan-100">{merchant.toUpperCase()}</h2>
                     </div>
-
-                    <button
-                        onClick={() => onMerchantSelect('')}
-                        className="flex items-center gap-1 text-tan-400 hover:text-tan-200 transition-colors text-sm"
-                    >
-                        <ChevronDown size={16}/>
-                        Back
-                    </button>
                 </div>
 
                 {/* Mobile Task Count Badges */}
@@ -78,9 +69,19 @@ export default function MerchantPanelExpanded({
             </div>
 
             {/* Desktop Layout */}
-            <div className="hidden lg:grid lg:grid-cols-5 lg:gap-6 p-6">
+            <div className="grid grid-cols-4 lg:grid-cols-5 lg:gap-6 p-6">
+                <div
+                    className="absolute top-0 left-0 right-0 h-12 bg-military-700/50 cursor-pointer hover:bg-military-700 transition-colors flex items-center justify-center group"
+                    onClick={toggleMerchantExpanded}
+                >
+                    <div className="flex items-center gap-2 text-tan-400 group-hover:text-tan-200">
+                        <ChevronUp size={16} />
+                        <span className="text-sm">Click to collapse</span>
+                        <ChevronUp size={16} />
+                    </div>
+                </div>
                 {/* Left Side - Merchant Info */}
-                <div className="lg:col-span-1">
+                <div className="hidden lg:block lg:col-span-1">
                     <div className="space-y-3">
                         {/* Corp Image + Progress Bar */}
                         <div className="flex items-center gap-3">
@@ -109,93 +110,51 @@ export default function MerchantPanelExpanded({
                             </div>
                         </div>
 
-                        {/* Merchant Header with inline return button */}
-                        <div className="flex items-center justify-between mb-3">
-                            <h2 className="text-xl font-bold">
-                                <span className="text-olive-400">{corps[merchant]?.name || 'CORP'}</span>
-                                <span
-                                    className="text-tan-100 ml-1">{corps[merchant]?.merchant || merchant.toUpperCase()}</span>
-                            </h2>
-
-                            <button
-                                onClick={() => onMerchantSelect(null)}
-                                className="flex min-h-6 min-w-6 items-center gap-1 px-3 py-1 bg-military-700 hover:bg-military-600
-             text-tan-400 hover:text-tan-200 transition-colors rounded-sm text-sm flex-shrink-0"
-                            >
-                                <Undo2 size={14}/>
-                                <span className="hidden xl:inline">Back</span>
-                            </button>
-                        </div>
+                        {/* Merchant Header*/}
+                        <h2 className="text-xl font-bold mb-3">
+                            <span className="text-olive-400">{corps[merchant]?.name || 'CORP'}</span>
+                            <span
+                                className="text-tan-100 ml-1">{corps[merchant]?.merchant || merchant.toUpperCase()}</span>
+                        </h2>
 
                         {/* Merchant Image */}
-                        <div className="text-center">
-                            <div className="flex items-center gap-3 mb-3">
-                                <div
-                                    className="relative flex-1 aspect-square rounded-sm overflow-hidden border-2 border-olive-600/30">
-                                    <Image
-                                        src={corps[merchant]?.merchantIcon}
-                                        alt={corps[merchant]?.merchant || merchant}
-                                        unoptimized={true}
-                                        className="w-full h-full object-cover"
-                                        width="128"
-                                        height="128"
-                                    />
-                                    {/* Overlay Badges */}
-                                    <div className="absolute top-2 right-2 space-y-1">
-                                        <div
-                                            className="bg-green-600/60 backdrop-blur-sm text-white px-2 py-1 rounded text-xs font-bold">
-                                            {counts.active} Active
-                                        </div>
-                                        <div
-                                            className="bg-olive-600/60 backdrop-blur-sm text-white px-2 py-1 rounded text-xs font-bold">
-                                            {counts.completed} Done
-                                        </div>
-                                        <div
-                                            className="bg-red-600/60 backdrop-blur-sm text-white px-2 py-1 rounded text-xs font-bold">
-                                            {counts.locked} Locked
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <Image
+                            src={corps[merchant]?.merchantIcon}
+                            alt={corps[merchant]?.merchant || merchant}
+                            unoptimized={true}
+                            className="w-full h-full object-cover"
+                            width="128"
+                            height="128"
+                        />
                     </div>
                 </div>
 
                 {/* Right Side - Tasks */}
-                <div className="lg:col-span-4">
+                <div className="col-span-4">
                     <div className="space-y-6">
                         {/* Task Navigation Tabs */}
-                        <div className="flex items-center gap-2 border-b border-military-600 pb-4">
-                            <button
-                                onClick={() => setActiveTab('active')}
-                                className={`px-4 py-2 rounded-sm transition-colors ${
-                                    activeTab === 'active'
-                                        ? 'bg-green-600 text-white'
-                                        : 'bg-military-700 text-tan-300 hover:bg-military-600'
-                                }`}
-                            >
-                                Active ({counts.active})
-                            </button>
-                            <button
-                                onClick={() => setActiveTab('completed')}
-                                className={`px-4 py-2 rounded-sm transition-colors ${
-                                    activeTab === 'completed'
-                                        ? 'bg-olive-600 text-white'
-                                        : 'bg-military-700 text-tan-300 hover:bg-military-600'
-                                }`}
-                            >
-                                Completed ({counts.completed})
-                            </button>
-                            <button
-                                onClick={() => setActiveTab('locked')}
-                                className={`px-4 py-2 rounded-sm transition-colors ${
-                                    activeTab === 'locked'
-                                        ? 'bg-red-600 text-white'
-                                        : 'bg-military-700 text-tan-300 hover:bg-military-600'
-                                }`}
-                            >
-                                Locked ({counts.locked})
-                            </button>
+                        <div className="border-b border-military-600 mb-6">
+                            <div className="flex gap-1">
+                                {(['active', 'completed', 'locked'] as TaskStatus[]).map((tabStatus) => {
+                                    const config = getStatusConfig(tabStatus);
+                                    const isActive = activeTab === tabStatus;
+                                    const count = counts[tabStatus];
+
+                                    return (
+                                        <button
+                                            key={tabStatus}
+                                            onClick={() => setActiveTab(tabStatus)}
+                                            className={`min-h-8 h-8 p-2 rounded-t-sm text-sm font-medium border-b-2 transition-all ${
+                                                isActive
+                                                    ? `${config.tabBgActive} ${config.tabTextActive} ${config.tabBorderActive}`
+                                                    : `${config.tabTextInactive}`
+                                            }`}
+                                        >
+                                            {config.label}({count})
+                                        </button>
+                                    );
+                                })}
+                            </div>
                         </div>
 
                         {/* Tasks List */}
@@ -224,13 +183,13 @@ export default function MerchantPanelExpanded({
             </div>
 
             {/* Mobile Tasks */}
-            <div className="block lg:hidden p-4">
-                {/* Task content will go here in next iteration */}
+            {/*<div className="block lg:hidden p-4">
+                 Task content will go here in next iteration
                 <div className="text-center py-8 text-tan-400">
                     <Target size={32} className="mx-auto mb-2 opacity-50"/>
                     <p className="text-sm">Task list component coming next</p>
                 </div>
-            </div>
+            </div>*/}
         </div>
     );
 }

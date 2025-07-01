@@ -7,16 +7,13 @@ import {
     Crosshair,
     Flag,
     Lock, MapPin,
-    Navigation,
     Package,
     Plane,
     Search,
-    Send,
     Target, Undo2
 } from "lucide-react";
 import {getTasksByMerchant} from "@/data/tasks";
 import React from "react";
-import {Item} from "@/types/items";
 import Link from "next/link";
 
 
@@ -24,7 +21,7 @@ export interface MerchantPanelProps {
     merchant: string;
     filteredMerchantTasks: Task[];
     userProgress: UserProgress;
-    onMerchantSelect: (merchantId: string | null) => void;
+    toggleMerchantExpanded: () => void;
     onTaskStatusChange: (taskId: string, newStatus: TaskStatus) => void;
     getTaskStatus: (task: Task) => TaskStatus;
 }
@@ -56,7 +53,15 @@ export const getStatusConfig = (status: TaskStatus, onStatusChange?: MerchantPan
                 borderColor: 'border-green-600/50',
                 bgColor: 'bg-military-700',
                 icon: <Clock size={16} className="text-green-400"/>,
-                badgeColor: 'bg-green-600',
+                label: 'Active',
+                badgeColor: 'bg-green-600/40',
+                // Tab styling
+                tabBgActive: 'bg-green-600/20',
+                tabTextActive: 'text-green-400',
+                tabBorderActive: 'border border-green-600/50',
+                tabBgInactive: 'bg-military-700',
+                tabTextInactive: 'text-tan-400 hover:text-tan-200',
+                // ActionButton
                 actionButton: <button
                     onClick={() => !isActionDisabled && onStatusChange(taskId, 'completed')}
                     disabled={isActionDisabled}
@@ -71,7 +76,14 @@ export const getStatusConfig = (status: TaskStatus, onStatusChange?: MerchantPan
                 borderColor: 'border-olive-600/30',
                 bgColor: 'bg-military-700/50',
                 icon: <CheckCircle size={16} className="text-olive-400"/>,
-                badgeColor: 'bg-olive-600',
+                label: 'Completed',
+                badgeColor: 'bg-olive-600/40',
+                // Tab styling
+                tabBgActive: 'bg-olive-600/20',
+                tabTextActive: 'text-olive-400',
+                tabBorderActive: 'border border-olive-600/50',
+                tabTextInactive: 'text-tan-400 hover:text-tan-200',
+                // Action button
                 actionButton: <button
                     onClick={() => !isActionDisabled && onStatusChange(taskId, 'active')}
                     disabled={isActionDisabled}
@@ -86,7 +98,13 @@ export const getStatusConfig = (status: TaskStatus, onStatusChange?: MerchantPan
                 borderColor: 'border-red-600/30',
                 bgColor: 'bg-military-700/30',
                 icon: <Lock size={16} className="text-red-400"/>,
-                badgeColor: 'bg-red-600/50',
+                label: 'Locked',
+                badgeColor: 'bg-red-600/40',
+                // Tab styling
+                tabBgActive: 'bg-red-600/20',
+                tabTextActive: 'text-red-400',
+                tabBorderActive: 'border border-red-600/50',
+                tabTextInactive: 'text-tan-400 hover:text-tan-200',
                 actionButton: null
             };
         default:
@@ -94,7 +112,11 @@ export const getStatusConfig = (status: TaskStatus, onStatusChange?: MerchantPan
                 borderColor: 'border-military-600',
                 bgColor: 'bg-military-700',
                 icon: <Target size={16} className="text-tan-400"/>,
-                badgeColor: 'bg-military-600',
+                label: 'Available',
+                badgeColor: 'bg-military-600/40',
+                tabBgActive: 'bg-military-600',
+                tabTextActive: 'text-tan-200',
+                tabBorderActive: 'border border-military-600',
                 actionButton: null
             };
     }

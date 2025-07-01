@@ -355,7 +355,7 @@ export default function TaskCard({
                                 <Package size={16}/>
                                 Starting Items
                             </h5>
-                            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
                                 {task.preReward.map((reward, index) => renderReward(reward, index, getItemById))}
                             </div>
                         </div>
@@ -369,7 +369,7 @@ export default function TaskCard({
                                 <Award size={16}/>
                                 Rewards
                             </h5>
-                            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
                                 {task.reward.map((reward, index) => renderReward(reward, index, getItemById))}
                             </div>
                         </div>
