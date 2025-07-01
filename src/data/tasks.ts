@@ -5043,7 +5043,12 @@ export const tasksData: TasksDatabase = {
         "requiredTasks": [],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=0s"
+            }
+        ],
         "order": 1
     },
     "regiment_2": {
@@ -5092,10 +5097,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_1"],
+        "requiredTasks": [
+            "regiment_1"
+        ],
         "requiredLevel": 0,
         "tips": "Graveyard on suburb might have a 100% spawn, any food location could have it, sometimes you'll start with one on Scav runs",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=38s"
+            }
+        ],
         "order": 2
     },
     "regiment_3": {
@@ -5147,13 +5159,19 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_2"],
+        "requiredTasks": [
+            "regiment_2"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=FkiWA6Eb7fo"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=54s"
             }
         ],
         "order": 3
@@ -5208,13 +5226,19 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_3"],
+        "requiredTasks": [
+            "regiment_3"
+        ],
         "requiredLevel": 0,
         "tips": "Glasses on front desk. Keep the rewards for the following quests.",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=kFwjed9fWWI"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=96s"
             }
         ],
         "order": 4
@@ -5261,10 +5285,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_3"],
+        "requiredTasks": [
+            "regiment_3"
+        ],
         "requiredLevel": 0,
         "tips": "Does not need to be found in raid. However, popular amongst Scavengers",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=120s"
+            }
+        ],
         "order": 5
     },
     "regiment_6": {
@@ -5309,10 +5340,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_5"],
+        "requiredTasks": [
+            "regiment_5"
+        ],
         "requiredLevel": 0,
         "tips": "Does not need to be found in raid. However, popular amongst Scavengers",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=140s"
+            }
+        ],
         "order": 6
     },
     "regiment_7": {
@@ -5363,10 +5401,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_6"],
+        "requiredTasks": [
+            "regiment_6"
+        ],
         "requiredLevel": 0,
         "tips": "Do not have to be found in raid. Use rewards from previous task. Look for green crates",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=159s"
+            }
+        ],
         "order": 7
     },
     "regiment_8": {
@@ -5415,10 +5460,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_7"],
+        "requiredTasks": [
+            "regiment_7"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=186s"
+            }
+        ],
         "order": 8
     },
     "regiment_9": {
@@ -5462,10 +5514,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_8"],
+        "requiredTasks": [
+            "regiment_8"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=247s"
+            }
+        ],
         "order": 9
     },
     "regiment_10": {
@@ -5518,13 +5577,19 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_8"],
+        "requiredTasks": [
+            "regiment_8"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=ZRnKbMybPzo"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=274s"
             }
         ],
         "order": 10
@@ -5570,10 +5635,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_10"],
+        "requiredTasks": [
+            "regiment_10"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=293s"
+            }
+        ],
         "order": 11
     },
     "regiment_12": {
@@ -5630,13 +5702,19 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["regiment_11"],
+        "requiredTasks": [
+            "regiment_11"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=oAQ9Rl2WTmM"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=342s"
             }
         ],
         "order": 12
@@ -5677,10 +5755,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_12"],
+        "requiredTasks": [
+            "regiment_12"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=369s"
+            }
+        ],
         "order": 13
     },
     "regiment_14": {
@@ -5735,13 +5820,19 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["regiment_13"],
+        "requiredTasks": [
+            "regiment_13"
+        ],
         "requiredLevel": 0,
         "tips": "Bring beer to lighthouse on resort, small grave behind, place beer",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=fmGJ_eR3m2Y"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=420s"
             }
         ],
         "order": 14
@@ -5793,10 +5884,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_14"],
+        "requiredTasks": [
+            "regiment_14"
+        ],
         "requiredLevel": 0,
         "tips": "[Size D Battery](https://www.exfil-zone-assistant.app/items/misc_b_1battery), [Flashlight](https://www.exfil-zone-assistant.app/items/misc_b_flashlight)",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=440s"
+            }
+        ],
         "order": 15
     },
     "regiment_16": {
@@ -5845,10 +5943,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_14"],
+        "requiredTasks": [
+            "regiment_14"
+        ],
         "requiredLevel": 0,
         "tips": "Can submit half-eaten can.",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=452s"
+            }
+        ],
         "order": 16
     },
     "regiment_17": {
@@ -5887,10 +5992,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_14"],
+        "requiredTasks": [
+            "regiment_14"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=465s"
+            }
+        ],
         "order": 17
     },
     "regiment_18": {
@@ -5942,13 +6054,19 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_17"],
+        "requiredTasks": [
+            "regiment_17"
+        ],
         "requiredLevel": 0,
         "tips": "One on toilet at Skatepark cafe. Second CD on barrel at Rua Algasol.",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=cNQ5CB60RpU"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=503s"
             }
         ],
         "order": 18
@@ -5994,10 +6112,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_18"],
+        "requiredTasks": [
+            "regiment_18"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=531s"
+            }
+        ],
         "order": 19
     },
     "regiment_20": {
@@ -6047,10 +6172,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_19"],
+        "requiredTasks": [
+            "regiment_19"
+        ],
         "requiredLevel": 0,
         "tips": "[AKM metal magazine](https://www.exfil-zone-assistant.app/items/mag_762x39_30), [G3 30-round magazine](https://www.exfil-zone-assistant.app/items/mag_762x51_30).",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=610s"
+            }
+        ],
         "order": 20
     },
     "regiment_21": {
@@ -6099,10 +6231,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_20"],
+        "requiredTasks": [
+            "regiment_20"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=653s"
+            }
+        ],
         "order": 21
     },
     "regiment_22": {
@@ -6151,10 +6290,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_21"],
+        "requiredTasks": [
+            "regiment_21"
+        ],
         "requiredLevel": 0,
         "tips": "Take off your helmet before the safe Scavenger kill, repeat.",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=705s"
+            }
+        ],
         "order": 22
     },
     "regiment_23": {
@@ -6216,13 +6362,19 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["regiment_21"],
+        "requiredTasks": [
+            "regiment_21"
+        ],
         "requiredLevel": 0,
         "tips": "White house in farm area on Suburbs. Mark one of the huge wine barrels in basement on the SW side. Dry wine bottle in kitchen sink on ground level. Both extracts are north of the white farmhouse.",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=tw_SplvvQO8"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=749s"
             }
         ],
         "order": 23
@@ -6275,13 +6427,19 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_22"],
+        "requiredTasks": [
+            "regiment_22"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=CaU7t19ysxY"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=786s"
             }
         ],
         "order": 24
@@ -6330,7 +6488,9 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["regiment_24"],
+        "requiredTasks": [
+            "regiment_24"
+        ],
         "requiredLevel": 0,
         "tips": "The tram train cars are located on the road by hotel, two in front of hotel and one located on the road west toward construction.",
         "videoGuides": [
@@ -6398,10 +6558,17 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["regiment_24"],
+        "requiredTasks": [
+            "regiment_24"
+        ],
         "requiredLevel": 0,
         "tips": "G3 AK4, install BT3 rail (scope rail), ACOG sight, 10-round mag; you can add to the build but these items need to be install to complete task. ",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=819s"
+            }
+        ],
         "order": 26
     },
     "regiment_27": {
@@ -6450,10 +6617,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_26"],
+        "requiredTasks": [
+            "regiment_26"
+        ],
         "requiredLevel": 0,
         "tips": "Try to roleplay WW2 Soviet partisan for better accuracy. Only [Mosin 91-30](https://www.exfil-zone-assistant.app/items/weapon-mosin-91-30) can have a [scope](https://www.exfil-zone-assistant.app/items/scope_mosinpu).",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=894s"
+            }
+        ],
         "order": 27
     },
     "regiment_28": {
@@ -6511,13 +6685,19 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["regiment_27"],
+        "requiredTasks": [
+            "regiment_27"
+        ],
         "requiredLevel": 0,
         "tips": "Both CDs can be found in kitchen.",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=tVcmvySg7Xc"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=992s"
             }
         ],
         "order": 28
@@ -6553,10 +6733,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_27"],
+        "requiredTasks": [
+            "regiment_27"
+        ],
         "requiredLevel": 0,
         "tips": "Dress with [Police PACA Body Armor](https://www.exfil-zone-assistant.app/items/armor-police-vest) and [Black Beret](https://www.exfil-zone-assistant.app/items/helmet-beanie-black) and kill 16 targets.",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=1014s"
+            }
+        ],
         "order": 29
     },
     "regiment_30": {
@@ -6607,13 +6794,19 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["regiment_29"],
+        "requiredTasks": [
+            "regiment_29"
+        ],
         "requiredLevel": 0,
         "tips": "Dam angel located outside church in clifton. Bear located in Hyder town on suburb. Bull located in flea market on resort. Hound on metro top of stairs by east extract",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=JIacdtZ1GGE"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=1094s"
             }
         ],
         "order": 30
@@ -6670,10 +6863,17 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["regiment_29"],
+        "requiredTasks": [
+            "regiment_29"
+        ],
         "requiredLevel": 0,
         "tips": "[Sjogren](https://www.exfil-zone-assistant.app/items/weapon-sjogren-inertia)",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=1125s"
+            }
+        ],
         "order": 31
     },
     "regiment_32": {
@@ -6730,13 +6930,19 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["regiment_31"],
+        "requiredTasks": [
+            "regiment_31"
+        ],
         "requiredLevel": 0,
         "tips": "one located on shelf in control room; looks like a purse; one located on barrels in large gate room. pull lever in control room to open gate; one located in the east room of sewer area, place task item west of sewer room, two extracts, climb ladder, cross pipe, place on box outside door; items are heavy and might take two trips up ladder",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=qfRvA2MBmGI"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=1167s"
             }
         ],
         "order": 32
@@ -6795,13 +7001,19 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["regiment_32"],
+        "requiredTasks": [
+            "regiment_32"
+        ],
         "requiredLevel": 0,
         "tips": "Room located on one of the bottom level north side near extract; officer back room is locked(key not required); [Malyuk 762](https://www.exfil-zone-assistant.app/items/weapon-malyuk-762) can be bought and handed in",
         "videoGuides": [
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=zgM6Ab7cfmI"
+            },
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=1241s"
             }
         ],
         "order": 33
@@ -6852,10 +7064,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_33"],
+        "requiredTasks": [
+            "regiment_33"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=1272s"
+            }
+        ],
         "order": 34
     },
     "regiment_35": {
@@ -6905,10 +7124,17 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["regiment_34"],
+        "requiredTasks": [
+            "regiment_34"
+        ],
         "requiredLevel": 0,
         "tips": "",
-        "videoGuides": [],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=1302s"
+            }
+        ],
         "order": 35
     },
     "forge_1": {
