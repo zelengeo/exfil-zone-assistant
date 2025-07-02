@@ -38,7 +38,6 @@ export type TaskStatus = 'completed' | 'active' | 'locked' ;
 
 export interface UserProgress {
     tasks: Record<string, TaskStatus>;
-    lastUpdated: string;
 }
 
 

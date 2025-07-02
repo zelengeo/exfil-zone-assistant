@@ -1,7 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
 import {corps,} from "@/data/tasks";
-import {getCurrentReputation, getCurrentTasks, getTaskCounts, MerchantPanelProps} from "@/app/tasks/taskHelpers";
+import {
+    getCurrentReputation,
+    getActiveTasks,
+    getTaskCounts,
+    MerchantPanelProps,
+    getStatusConfig
+} from "@/app/tasks/taskHelpers";
+import {CheckCircle, ChevronDown, Clock, Lock} from "lucide-react";
+import {TaskStatus} from "@/types/tasks";
 
 
 export default function MerchantPanelCollapsed({
@@ -9,19 +17,24 @@ export default function MerchantPanelCollapsed({
                                                    filteredMerchantTasks,
                                                    toggleMerchantExpanded,
                                                    userProgress,
+                                                   searchQuery,
                                                    onTaskStatusChange,
                                                    getTaskStatus,
                                                }: MerchantPanelProps) {
 
 
     const counts = getTaskCounts(filteredMerchantTasks, getTaskStatus);
-    const currentTasks = getCurrentTasks(filteredMerchantTasks, getTaskStatus);
-    const  {currentReputation, reputationMax ,merchantLevel} = getCurrentReputation(merchant, getTaskStatus, userProgress)
+    const activeTasks = getActiveTasks(filteredMerchantTasks, getTaskStatus);
+    const {
+        currentReputation,
+        reputationMax,
+        merchantLevel
+    } = getCurrentReputation(merchant, getTaskStatus, userProgress)
 
     // Collapsed view (different merchant is selected)
     return (
         <button
-            onClick={() => toggleMerchantExpanded(merchant)}
+            onClick={toggleMerchantExpanded}
             className="w-full p-3 rounded-sm border border-military-600 bg-military-800
               transition-all duration-200 hover:border-olive-600
                hover:bg-military-700 group"
@@ -52,8 +65,51 @@ export default function MerchantPanelCollapsed({
                     </div>
                 </div>
 
-                <div className="lg:col-span-4">
-                    {/* TODO 1 active task or Message that 0 tasks are active*/}
+
+                <div className="lg:col-span-4 flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-3 flex-1">
+                        {/* Status badges - aligned to the left like tabs */}
+                        <div className="flex items-center gap-1">
+                            {(['active', 'completed', 'locked'] as TaskStatus[]).map((tabStatus) => {
+                                const config = getStatusConfig(tabStatus);
+                                const count = counts[tabStatus];
+
+                                return (
+                                    <div key={tabStatus} className={`px-2 py-0.5 rounded-sm text-xs font-medium
+                ${count > 0
+                                        ? `${config.tabBgActive} ${config.tabTextActive} ${config.tabBorderActive}`
+                                        : 'text-tan-600'}`}>
+                                        {config.label} ({count})
+                                    </div>
+                                );
+                            })}
+                        </div>
+
+                        {/* Active task info */}
+                        <div className="flex-1 min-w-0">
+                            {activeTasks.length > 0 ? (
+
+                                <span className="text-sm text-tan-300 truncate">
+                        {activeTasks[0].order}: {activeTasks[0].name}
+                                    {activeTasks.length > 1 && (
+                                        <span className="text-tan-500 ml-1">
+                                (+{activeTasks.length - 1})
+                            </span>
+                                    )}
+                    </span>
+
+                            ) : searchQuery ? null :(
+                                <span className="text-sm text-tan-500 italic">
+                                    No active tasks
+                </span>
+                            )}
+                        </div>
+                    </div>
+
+                    {/* Chevron indicator - aligned to the right for consistency */}
+                    <div className="text-tan-400 flex-shrink-0">
+                        <ChevronDown size={14}/>
+                    </div>
                 </div>
             </div>
         </button>

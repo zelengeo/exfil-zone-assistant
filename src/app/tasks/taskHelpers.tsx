@@ -21,6 +21,7 @@ export interface MerchantPanelProps {
     merchant: string;
     filteredMerchantTasks: Task[];
     userProgress: UserProgress;
+    searchQuery: string;
     toggleMerchantExpanded: () => void;
     onTaskStatusChange: (taskId: string, newStatus: TaskStatus) => void;
     getTaskStatus: (task: Task) => TaskStatus;
@@ -40,8 +41,8 @@ export const getTaskCounts = (tasks: Task[], getTaskStatus: MerchantPanelProps["
     return counts;
 };
 
-// Get current tasks (available + active)
-export const getCurrentTasks = (tasks: Task[], getTaskStatus: MerchantPanelProps["getTaskStatus"]) => {
+// Get active tasks active
+export const getActiveTasks = (tasks: Task[], getTaskStatus: MerchantPanelProps["getTaskStatus"]) => {
     return tasks.filter(task => getTaskStatus(task) === 'active');
 };
 

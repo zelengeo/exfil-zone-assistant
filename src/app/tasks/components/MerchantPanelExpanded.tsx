@@ -1,11 +1,11 @@
-import React, {useMemo, useState} from 'react';
+import React, {useState} from 'react';
 import Image from 'next/image';
-import {User, Target, CheckCircle, Lock, ChevronRight, ChevronDown, Undo2, Clock, ChevronUp} from 'lucide-react';
-import {Task, TaskStatus, UserProgress} from '@/types/tasks';
-import {corps, tasksData} from "@/data/tasks";
+import {User, Target, ChevronUp} from 'lucide-react';
+import {TaskStatus} from '@/types/tasks';
+import {corps,} from "@/data/tasks";
 import {
     getCurrentReputation,
-    getCurrentTasks, getStatusConfig,
+    getStatusConfig,
     getTaskCounts,
     MerchantPanelProps
 } from "@/app/tasks/taskHelpers";
@@ -24,6 +24,7 @@ export interface MerchantPanelExpandedProps extends MerchantPanelProps {
 export default function MerchantPanelExpanded({
                                                   merchant,
                                                   filteredMerchantTasks,
+                                                  searchQuery,
                                                   userProgress,
                                                   toggleMerchantExpanded,
                                                   onTaskStatusChange,
@@ -33,7 +34,6 @@ export default function MerchantPanelExpanded({
     const [activeTab, setActiveTab] = useState<TaskStatus>('active');
 
     const counts = getTaskCounts(filteredMerchantTasks, getTaskStatus);
-    const currentTasks = getCurrentTasks(filteredMerchantTasks, getTaskStatus);
     const {
         currentReputation,
         reputationMax,
@@ -70,16 +70,6 @@ export default function MerchantPanelExpanded({
 
             {/* Desktop Layout */}
             <div className="grid grid-cols-4 lg:grid-cols-5 lg:gap-6 p-6">
-                <div
-                    className="absolute top-0 left-0 right-0 h-12 bg-military-700/50 cursor-pointer hover:bg-military-700 transition-colors flex items-center justify-center group"
-                    onClick={toggleMerchantExpanded}
-                >
-                    <div className="flex items-center gap-2 text-tan-400 group-hover:text-tan-200">
-                        <ChevronUp size={16} />
-                        <span className="text-sm">Click to collapse</span>
-                        <ChevronUp size={16} />
-                    </div>
-                </div>
                 {/* Left Side - Merchant Info */}
                 <div className="hidden lg:block lg:col-span-1">
                     <div className="space-y-3">
@@ -150,10 +140,17 @@ export default function MerchantPanelExpanded({
                                                     : `${config.tabTextInactive}`
                                             }`}
                                         >
-                                            {config.label}({count})
+                                            {config.label} ({count})
                                         </button>
                                     );
                                 })}
+                                <div
+                                    className="ml-auto flex items-center rounded-sm pl-2 pr-2 hover:bg-military-600/30 gap-2 text-tan-400 cursor-pointer"
+                                    onClick={toggleMerchantExpanded}
+                                >
+                                    <span className="text-sm font-medium">Collapse</span>
+                                    <ChevronUp size={14}/>
+                                </div>
                             </div>
                         </div>
 
@@ -174,22 +171,13 @@ export default function MerchantPanelExpanded({
                             {getTasksByStatus(filteredMerchantTasks, getTaskStatus, activeTab).length === 0 && (
                                 <div className="text-center py-12 text-tan-400">
                                     <Target size={48} className="mx-auto mb-3 opacity-50"/>
-                                    <p>No {activeTab} tasks for this merchant</p>
+                                    <p>No {searchQuery ? "filtered " : ""}{activeTab} tasks for this merchant</p>
                                 </div>
                             )}
                         </div>
                     </div>
                 </div>
             </div>
-
-            {/* Mobile Tasks */}
-            {/*<div className="block lg:hidden p-4">
-                 Task content will go here in next iteration
-                <div className="text-center py-8 text-tan-400">
-                    <Target size={32} className="mx-auto mb-2 opacity-50"/>
-                    <p className="text-sm">Task list component coming next</p>
-                </div>
-            </div>*/}
         </div>
     );
 }

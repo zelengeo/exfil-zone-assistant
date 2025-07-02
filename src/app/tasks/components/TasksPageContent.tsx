@@ -10,16 +10,8 @@ import {useFetchItems} from "@/hooks/useFetchItems";
 
 // Types for component state
 interface TasksPageState {
-    selectedMerchant: CorpId | null;
     searchQuery: string;
-    filters: {
-        maps: TaskMap[];
-        types: TaskType[];
-        status: TaskStatus[];
-        merchants: CorpId[];
-    };
     userProgress: UserProgress;
-    expandedTasks: Set<keyof typeof tasksData>;
     isLoading: boolean;
 }
 
@@ -31,19 +23,10 @@ export default function TasksPageContent() {
     const {getItemById} = useFetchItems();
     // State management
     const [state, setState] = useState<TasksPageState>({
-        selectedMerchant: null,
         searchQuery: '',
-        filters: {
-            maps: [],
-            types: [],
-            status: [],
-            merchants: [],
-        },
         userProgress: {
             tasks: {},
-            lastUpdated: new Date().toISOString(),
         },
-        expandedTasks: new Set(),
         isLoading: true,
     });
 
@@ -90,18 +73,16 @@ export default function TasksPageContent() {
         return () => clearTimeout(timer);
     }, [state.searchQuery]);
 
-    // Get all available merchants
-    const merchants = useMemo(() => getAllMerchants(), []);
 
     // Get task status for a given task
     const getTaskStatus = (task: Task): TaskStatus => {
         const progress = state.userProgress.tasks[task.id];
-        if (progress?.status) return progress.status;
+        if (progress) return progress;
 
         // Check if task is locked due to prerequisites
         const hasUnmetPrerequisites = task.requiredTasks.some(reqTaskId => {
-            const reqProgress = state.userProgress.tasks[reqTaskId];
-            return !reqProgress || reqProgress.status !== 'completed';
+            const reqTaskStatus = state.userProgress.tasks[reqTaskId];
+            return !reqTaskStatus || (reqTaskStatus !== 'completed');
         });
 
         return hasUnmetPrerequisites ? 'locked' : 'active';
@@ -122,62 +103,9 @@ export default function TasksPageContent() {
                 if (!matchesName && !matchesObjectives) return false;
             }
 
-            // Merchant filter
-            if (state.filters.merchants.length > 0 &&
-                !state.filters.merchants.includes(task.corpId)) {
-                return false;
-            }
-
-            // Map filter
-            if (state.filters.maps.length > 0) {
-                const isMapFilteredFn = (map: TaskMap) => state.filters.maps.includes(map)
-
-                const hasMatchingMap = Array.isArray(task.map) ? task.map.some(isMapFilteredFn) : isMapFilteredFn(task.map);
-                if (!hasMatchingMap) return false;
-            }
-
-            // Type filter
-            if (state.filters.types.length > 0) {
-                const hasMatchingType = task.type.some(type =>
-                    state.filters.types.includes(type)
-                );
-                if (!hasMatchingType) return false;
-            }
-
-            // Status filter
-            if (state.filters.status.length > 0) {
-                const taskStatus = getTaskStatus(task);
-                if (!state.filters.status.includes(taskStatus)) return false;
-            }
-
             return true;
         }).map(task => task.id);
-    }, [debouncedSearchQuery, state.filters.maps, state.filters.merchants, state.filters.status, state.filters.types]);
-
-    // Get current tasks for multi-merchant view (available + active only)
-    const getCurrentTasks = (merchantTasks: Task[]) => {
-        return merchantTasks.filter(task => {
-            const status = getTaskStatus(task);
-            return status === 'available' || status === 'active';
-        });
-    };
-
-    // Get task counts for a merchant
-    const getTaskCounts = (merchantTasks: Task[]) => {
-        const counts = {
-            available: 0,
-            active: 0,
-            completed: 0,
-            locked: 0,
-        };
-
-        merchantTasks.forEach(task => {
-            const status = getTaskStatus(task);
-            counts[status]++;
-        });
-
-        return counts;
-    };
+    }, [debouncedSearchQuery]);
 
     // Update task status
     const updateTaskStatus = (taskId: string, newStatus: TaskStatus) => {
@@ -187,13 +115,8 @@ export default function TasksPageContent() {
                 ...prev.userProgress,
                 tasks: {
                     ...prev.userProgress.tasks,
-                    [taskId]: {
-                        taskId,
-                        status: newStatus,
-                        ...(newStatus === 'completed' && {completedAt: new Date().toISOString()}),
-                    },
-                },
-                lastUpdated: new Date().toISOString(),
+                    [taskId]: newStatus,
+                }
             },
         }));
     };
@@ -201,15 +124,6 @@ export default function TasksPageContent() {
     // Handle search input
     const handleSearchChange = (query: string) => {
         setState(prev => ({...prev, searchQuery: query}));
-    };
-
-
-    // Select merchant for single view
-    const selectMerchant = (merchantId: string | null) => {
-        setState(prev => ({
-            ...prev,
-            selectedMerchant: merchantId,
-        }));
     };
 
 
@@ -263,7 +177,7 @@ export default function TasksPageContent() {
                             <button
                                 onClick={() => handleSearchChange('')}
                                 className="absolute right-3 top-1/2 transform -translate-y-1/2 text-tan-400
-                         hover:text-tan-200 transition-colors"
+                         hover:text-tan-200 transition-colors border-0"
                             >
                                 ×
                             </button>
@@ -274,17 +188,16 @@ export default function TasksPageContent() {
 
                 {/* Main Content Area */}
                 <div className="grid grid-cols-1 gap-6">
-                    {merchants.map(merchant => (
+                    {getAllMerchants().map(merchant => (
                         <MerchantPanel key={merchant}
                                        merchant={merchant}
-                                       selectedMerchant={state.selectedMerchant}
                                        filteredTasks={filteredTasks}
+                                       searchQuery={state.searchQuery}
                                        userProgress={state.userProgress}
-                                       toggleMerchantExpanded={selectMerchant}
                                        onTaskStatusChange={updateTaskStatus}
                                        getTaskStatus={getTaskStatus}
                                        getItemById={getItemById}
-
+                                       
                         />))}
                 </div>
             </div>

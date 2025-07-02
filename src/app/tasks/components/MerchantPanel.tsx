@@ -5,8 +5,8 @@ import MerchantPanelCollapsed from "@/app/tasks/components/MerchantPanelCollapse
 import MerchantPanelExpanded, {MerchantPanelExpandedProps} from "@/app/tasks/components/MerchantPanelExpanded";
 
 interface MerchantPanelRootProps extends MerchantPanelExpandedProps {
-    selectedMerchant: string | null;
     filteredTasks: (keyof typeof tasksData)[];
+    searchQuery: string
 }
 
 const EXPANDED_MERCHANT_BASE = 'exfil-zone-tasks-expanded-merchant-';
@@ -15,6 +15,7 @@ export default function MerchantPanel({
                                           merchant,
                                           filteredTasks,
                                           userProgress,
+                                          searchQuery,
                                           onTaskStatusChange,
                                           getTaskStatus,
                                           getItemById,
@@ -22,8 +23,8 @@ export default function MerchantPanel({
     // Check if this merchant was the last opened one
     const [isExpanded, setIsExpanded] = useState(() => {
         if (typeof window !== 'undefined') {
-            const lastOpened = localStorage.getItem(EXPANDED_MERCHANT_BASE + merchant);
-            return lastOpened === merchant;
+            const expanded = localStorage.getItem(EXPANDED_MERCHANT_BASE + merchant);
+            return expanded === "expanded";
         }
         return false;
     });
@@ -56,15 +57,16 @@ export default function MerchantPanel({
     // Selected view (detailed single merchant view)
     if (isExpanded) {
         return <MerchantPanelExpanded merchant={merchant} filteredMerchantTasks={merchantTasks}
+                                      searchQuery={searchQuery}
                                       userProgress={userProgress} toggleMerchantExpanded={toggleMerchantExpanded}
                                       onTaskStatusChange={onTaskStatusChange}
                                       getTaskStatus={getTaskStatus} getItemById={getItemById}/>;
     }
 
 
-
     // Collapsed view (different merchant is selected)
     return <MerchantPanelCollapsed merchant={merchant} filteredMerchantTasks={merchantTasks}
+                                   searchQuery={searchQuery}
                                    userProgress={userProgress} toggleMerchantExpanded={toggleMerchantExpanded}
                                    onTaskStatusChange={onTaskStatusChange}
                                    getTaskStatus={getTaskStatus}/>;

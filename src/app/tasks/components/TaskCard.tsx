@@ -311,6 +311,7 @@ export default function TaskCard({
                                             return (
                                                 <Link
                                                     key={reqTaskId}
+                                                    target="_blank"
                                                     href={`/tasks/${reqTaskId}`}
                                                     className={`block p-2 rounded border transition-all hover:bg-military-600/50 ${reqStatusConfig.borderColor} ${reqStatusConfig.bgColor}`}
                                                 >
