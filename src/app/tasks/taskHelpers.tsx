@@ -12,7 +12,7 @@ import {
     Search,
     Target, Undo2
 } from "lucide-react";
-import {getTasksByMerchant} from "@/data/tasks";
+import {corps, getTasksByMerchant} from "@/data/tasks";
 import React from "react";
 import Link from "next/link";
 
@@ -124,7 +124,7 @@ export const getStatusConfig = (status: TaskStatus, onStatusChange?: MerchantPan
 };
 
 
-export const getCurrentReputation = (merchantId: MerchantPanelProps["merchant"], getTaskStatus: MerchantPanelProps["getTaskStatus"], userProgress: MerchantPanelProps["userProgress"]) => {
+export const getCurrentReputation = (merchantId: MerchantPanelProps["merchant"], getTaskStatus: MerchantPanelProps["getTaskStatus"]) => {
     const reputationObject = {currentReputation: 0, reputationMax: 0, merchantLevel: 1}
     getTasksByMerchant(merchantId)
         .forEach((task) => {
@@ -134,23 +134,10 @@ export const getCurrentReputation = (merchantId: MerchantPanelProps["merchant"],
             }
             reputationObject.reputationMax += (repReward?.quantity || 0);
         });
+    reputationObject.merchantLevel = corps[merchantId].levelCap.findLastIndex(value => value <= reputationObject.currentReputation) + 2;
 
     return reputationObject
 }
-
-// Format reward for display
-export const formatReward = (reward: TaskReward) => {
-    switch (reward.type) {
-        case 'money':
-            return `$${reward.quantity.toLocaleString()}`;
-        case 'reputation':
-            return `+${reward.quantity} REP`;
-        case 'item':
-            return `${reward.item_id} x${reward.quantity}`;
-        default:
-            return `${reward.type}: ${reward.quantity}`;
-    }
-};
 
 export const getTaskTypeIcon = (type: TaskType) => {
     switch (type) {

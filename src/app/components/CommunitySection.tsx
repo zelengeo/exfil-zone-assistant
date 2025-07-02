@@ -2,6 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import {Heart, Globe} from 'lucide-react';
 import {SiDiscord, SiGithub, SiTwitch, SiX, SiYoutube, SiTelegram } from "@icons-pack/react-simple-icons";
+import {Contributor} from "@/types/community";
+import {getRoleConfig} from "@/data/community";
 
 const getPlatformIcon = (platform?: string) => {
     switch (platform) {
@@ -17,46 +19,6 @@ const getPlatformIcon = (platform?: string) => {
             return <SiTelegram size={16}/>;
         default:
             return <Globe size={16}/>;
-    }
-};
-
-const getRoleConfig = (role: string) => {
-    switch (role) {
-        case 'supporter':
-            return {
-                label: 'Supporter',
-                color: 'text-purple-400',
-                borderColor: 'border-purple-700',
-                bgColor: 'bg-purple-900/20'
-            };
-        case 'contributor':
-            return {
-                label: 'Contributor',
-                color: 'text-blue-400',
-                borderColor: 'border-blue-700',
-                bgColor: 'bg-blue-900/20'
-            };
-        case 'creator':
-            return {
-                label: 'Content Creator',
-                color: 'text-green-400',
-                borderColor: 'border-green-700',
-                bgColor: 'bg-green-900/20'
-            };
-        case 'partner':
-            return {
-                label: 'Partner',
-                color: 'text-yellow-400',
-                borderColor: 'border-yellow-700',
-                bgColor: 'bg-yellow-900/20'
-            };
-        default:
-            return {
-                label: role,
-                color: 'text-tan-400',
-                borderColor: 'border-military-700',
-                bgColor: 'bg-military-800'
-            };
     }
 };
 
@@ -123,15 +85,6 @@ hover:bg-red-500 hover:border-red-400"
         </div>
     </div>
 )
-
-interface Contributor {
-    name: string;
-    role: 'creator' | 'contributor' | 'supporter' | 'partner';
-    component?: React.ReactNode;
-    description?: string;
-    link?: string;
-    platform?: 'youtube' | 'twitch' | 'website' | 'github' | 'discord' | 'telegram';
-}
 
 const contributors: Contributor[] = [
         // Add your actual contributors here

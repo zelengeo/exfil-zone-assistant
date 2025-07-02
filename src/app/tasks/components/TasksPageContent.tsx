@@ -3,8 +3,8 @@
 import React, {useState, useEffect, useMemo} from 'react';
 import {Search} from 'lucide-react';
 import Layout from '@/components/layout/Layout';
-import {tasksData, getAllMerchants, CorpId,} from '@/data/tasks';
-import {Task, UserProgress, TaskStatus, TaskMap, TaskType} from '@/types/tasks';
+import {tasksData, getAllMerchants} from '@/data/tasks';
+import {Task, UserProgress, TaskStatus} from '@/types/tasks';
 import MerchantPanel from "@/app/tasks/components/MerchantPanel";
 import {useFetchItems} from "@/hooks/useFetchItems";
 
@@ -170,7 +170,7 @@ export default function TasksPageContent() {
                             value={state.searchQuery}
                             onChange={(e) => handleSearchChange(e.target.value)}
                             className="w-full pl-10 pr-4 py-2 bg-military-800 border border-military-600
-                       rounded-sm text-tan-100 placeholder-tan-400 focus:outline-none
+                       rounded-sm text-tan-100 placeholder-tan-400 focus:outline-none text-sm lg:text-md
                        focus:border-olive-600 focus:ring-1 focus:ring-olive-600"
                         />
                         {state.searchQuery && (
@@ -197,7 +197,6 @@ export default function TasksPageContent() {
                                        onTaskStatusChange={updateTaskStatus}
                                        getTaskStatus={getTaskStatus}
                                        getItemById={getItemById}
-                                       
                         />))}
                 </div>
             </div>

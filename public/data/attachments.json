@@ -669,7 +669,7 @@
     "stats": {
       "price": 0,
       "weight": 0.495,
-      "rarity": "Common",
+      "rarity": "Legendary",
       "attachmentModifier": {
         "headDamageScaleModifier": 0,
         "bulletVelocityModifier": 0,
@@ -704,7 +704,7 @@
     "stats": {
       "price": 0,
       "weight": 0.495,
-      "rarity": "Common",
+      "rarity": "Legendary",
       "attachmentModifier": {
         "headDamageScaleModifier": 0,
         "bulletVelocityModifier": 0,

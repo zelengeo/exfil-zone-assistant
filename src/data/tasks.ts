@@ -5,31 +5,36 @@ export const corps: Record<string, Corp> = {
         name: "ARK",
         icon: "/images/tasks/icon_Arkshop1_nobg.webp",
         merchant: "Tommy",
-        merchantIcon: "/images/tasks/img_ark1Merchant.webp"
+        merchantIcon: "/images/tasks/img_ark1Merchant.webp",
+        levelCap: [100, 300, 800]
     },
     "ntg": {
         name: "N.T.G",
         icon: "/images/tasks/icon_NTGshop_nobg.webp",
         merchant: "Maggie",
-        merchantIcon: "/images/tasks/img_DocMerchant.webp"
+        merchantIcon: "/images/tasks/img_DocMerchant.webp",
+        levelCap: [100, 300, 800]
     },
     "trupiks": {
         name: "TRUPIK'S",
         icon: "/images/tasks/icon_TPshop_nobg.webp",
         merchant: "Johnny",
-        merchantIcon: "/images/tasks/img_TPMerchant.webp"
+        merchantIcon: "/images/tasks/img_TPMerchant.webp",
+        levelCap: []
     },
     "regiment": {
         name: "REGIMENT",
         icon: "/images/tasks/icon_Regishop_nobg.webp",
         merchant: "Igor",
-        merchantIcon: "/images/tasks/img_RegiMerchant.webp"
+        merchantIcon: "/images/tasks/img_RegiMerchant.webp",
+        levelCap: [100, 300, 800]
     },
     "forge": {
         name: "BOULDER FORGE",
         icon: "/images/tasks/icon_Arkshop2_nobg.webp",
         merchant: "Maximilian",
-        merchantIcon: "/images/tasks/img_ar2Merchant.webp"
+        merchantIcon: "/images/tasks/img_ar2Merchant.webp",
+        levelCap: [100, 300, 800]
     }
 } as const;
 
@@ -5139,22 +5144,37 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 31000
+                "quantity": 15000
             },
             {
                 "type": "experience",
-                "quantity": 3311
+                "quantity": 1807
+            },
+            {
+                "type": "reputation",
+                "corpId": "regiment",
+                "quantity": 10
             },
             {
                 "type": "item",
-                "item_name": "Mag & Attachment box",
+                "item_id": "weapon-thompson-m1928",
                 "quantity": 1
+            },
+            {
+                "type": "item",
+                "item_id": "mag_45acp_25",
+                "quantity": 1
+            },
+            {
+                "type": "item",
+                "item_id": "ammo-45acp-fmj",
+                "quantity": 30
             }
         ],
         "preReward": [],
         "requiredTasks": [],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "Keep reward [Thompson]https://www.exfil-zone-assistant.app/items/weapon-thompson-m1928 for following tasks.",
         "videoGuides": [
             {
                 "author": "radFoxVR",
@@ -5213,7 +5233,7 @@ export const tasksData: TasksDatabase = {
             "regiment_1"
         ],
         "requiredLevel": 0,
-        "tips": "Graveyard on suburb might have a 100% spawn, any food location could have it, sometimes you'll start with one on Scav runs",
+        "tips": "Graveyard on suburb might be a 100% spawn,but food location could have it. Keep reward [AKS74u](https://www.exfil-zone-assistant.app/items/weapon-aks74u) for following tasks.",
         "videoGuides": [
             {
                 "author": "radFoxVR",
@@ -7530,7 +7550,7 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["forge_3","forge_4"],
+        "requiredTasks": ["forge_3", "forge_4"],
         "requiredLevel": 0,
         "tips": "Small fountain on wall in Rua Algasol.",
         "videoGuides": [
@@ -8316,7 +8336,7 @@ export const tasksData: TasksDatabase = {
                 "quantity": 4
             }
         ],
-        "requiredTasks": ["forge_11","forge_18"],
+        "requiredTasks": ["forge_11", "forge_18"],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
@@ -8784,7 +8804,7 @@ export const tasksData: TasksDatabase = {
             {
                 "author": "orbb",
                 "url": "https://www.youtube.com/watch?v=OCRTBDedB3Q"
-            },{
+            }, {
                 "author": "radFoxVR",
                 "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=944s"
             }

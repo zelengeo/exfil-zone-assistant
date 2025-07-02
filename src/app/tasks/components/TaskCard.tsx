@@ -6,15 +6,16 @@ import {
     Map,
     Flag,
     Award, DollarSign,
-    Package, Info,
+    Package, Info, MapPin,
 } from 'lucide-react';
 import Image from 'next/image';
+import Link from "next/link";
 import {Task, TaskReward, TaskStatus, UserProgress} from '@/types/tasks';
 import {getStatusConfig, getTaskTypeIcon, RenderTipsContent} from "@/app/tasks/taskHelpers";
 import {SiYoutube} from "@icons-pack/react-simple-icons";
 import {corps, tasksData} from "@/data/tasks";
 import {Item} from "@/types/items";
-import Link from "next/link";
+import {community} from "@/data/community";
 
 interface TaskCardProps {
     task: Task;
@@ -48,7 +49,7 @@ const renderReward = (reward: TaskReward, index: number, getItemById: TaskCardPr
                 )}
 
                 {reward.type === 'reputation' && (
-                    <div className="w-10 h-10 rounded overflow-hidden">
+                    <div className="w-10 h-10 rounded bg-military-600">
                         <Image
                             src={(reward.corpId && corps[reward.corpId]?.icon) || '/images/corps/default.png'}
                             alt={reward.corpId || 'reputation'}
@@ -139,11 +140,11 @@ export default function TaskCard({
                                     className={`${statusConfig.badgeColor} text-white px-2 py-1 rounded text-xs font-bold flex-shrink-0`}>
             #{task.order}
           </span>
-                                <h4 className="font-medium text-tan-100 truncate flex-shrink-0">{task.name}</h4>
+                                <h4 className="font-medium text-tan-100 flex-shrink-0">{task.name}</h4>
 
-                                {/* Map and Type badges in same row */}
+                                {/* Map and Type badges in same row, hidden on low width - displayed in expanded then */}
                                 <div
-                                    className="flex items-center gap-2 ml-auto"> {/* ml-auto pushes badges to the right */}
+                                    className="hidden lg:flex items-center gap-2 ml-auto">
                                     {/* Map badges */}
                                     {task.map.map(map => (
                                         <span key={map}
@@ -165,8 +166,7 @@ export default function TaskCard({
                                 </div>
                             </div>
 
-                            {/* First objective preview - now on separate line */}
-                            {isExpanded || (<p className="text-tan-300 text-sm truncate">
+                            {isExpanded || (<p className="text-tan-300 text-sm">
                                 {task.objectives[0]}
                                 {task.objectives.length > 1 && (
                                     <span className="text-tan-400 ml-1">
@@ -221,18 +221,27 @@ export default function TaskCard({
                                 <div>
                                     <h5 className="font-medium text-tan-100 mb-2">Video Guides</h5>
                                     <div className="space-y-2">
-                                        {task.videoGuides.map(({url}, index) => (
-                                            <a
+                                        {task.videoGuides.map(({author, url}, index) => {
+                                            if (!author || !url || !(author in community)) { return null }
+                                            const communityAuthor = community[author as keyof typeof community];
+                                            return <Link
                                                 key={index}
                                                 href={url}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="flex items-center bg-military-800 p-2 rounded text-olive-400 hover:text-olive-300 transition-colors text-sm  gap-2"
                                             >
-                                                <SiYoutube size={14}/>
-                                                Watch Guide {index + 1}
-                                            </a>
-                                        ))}
+                                                <Image
+                                                    src={communityAuthor.logo}
+                                                    alt={communityAuthor.name}
+                                                    unoptimized={true}
+                                                    className={`w-6 h-6 rounded-full cursor-pointer`}
+                                                    width={32}
+                                                    height={32}
+                                                />
+                                                <span className="font-bold">{communityAuthor.name}</span>&#39;s Guide
+                                            </Link>
+                                        })}
                                     </div>
                                 </div>
                             )}
@@ -376,9 +385,8 @@ export default function TaskCard({
                         </div>
                     )}
 
-                    {/* Bottom Row: Maps and Types */}
-                    {/*<div className="grid grid-cols-2 gap-4">
-                         All Maps
+                    {/* Bottom Row: Maps and Types on mobile screen */}
+                    <div className="grid lg:hidden grid-cols-2 gap-4">
                         {task.map.length > 0 && (
                             <div>
                                 <h6 className="text-tan-200 text-sm font-medium mb-2">Maps</h6>
@@ -393,7 +401,6 @@ export default function TaskCard({
                             </div>
                         )}
 
-                         All Types
                         {task.type.length > 0 && (
                             <div>
                                 <h6 className="text-tan-200 text-sm font-medium mb-2">Types</h6>
@@ -407,7 +414,7 @@ export default function TaskCard({
                                 </div>
                             </div>
                         )}
-                    </div>*/}
+                    </div>
                     {/* Action Button */}
                     {statusConfig.actionButton && (
                         <div
