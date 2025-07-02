@@ -12,7 +12,6 @@ import Image from 'next/image';
 import Link from "next/link";
 import {Task, TaskReward, TaskStatus, UserProgress} from '@/types/tasks';
 import {getStatusConfig, getTaskTypeIcon, RenderTipsContent} from "@/app/tasks/taskHelpers";
-import {SiYoutube} from "@icons-pack/react-simple-icons";
 import {corps, tasksData} from "@/data/tasks";
 import {Item} from "@/types/items";
 import {community} from "@/data/community";

@@ -1,4 +1,4 @@
-import {Task, TaskReward, TaskStatus, TaskType, UserProgress} from "@/types/tasks";
+import {Task, TaskStatus, TaskType, UserProgress} from "@/types/tasks";
 import {
     BookUp2,
     Camera,
@@ -17,17 +17,23 @@ import React from "react";
 import Link from "next/link";
 
 
-export interface MerchantPanelProps {
-    merchant: string;
+export interface MerchantPanelSpecificProps extends MerchantPanelBaseProps{
     filteredMerchantTasks: Task[];
+    toggleMerchantExpanded: () => void;
+}
+
+
+export interface MerchantPanelBaseProps {
+    merchant: string;
     userProgress: UserProgress;
     searchQuery: string;
-    toggleMerchantExpanded: () => void;
     onTaskStatusChange: (taskId: string, newStatus: TaskStatus) => void;
     getTaskStatus: (task: Task) => TaskStatus;
 }
 
-export const getTaskCounts = (tasks: Task[], getTaskStatus: MerchantPanelProps["getTaskStatus"]) => {
+
+
+export const getTaskCounts = (tasks: Task[], getTaskStatus: MerchantPanelBaseProps["getTaskStatus"]) => {
     const counts = {
         completed: 0,
         active: 0,
@@ -42,11 +48,11 @@ export const getTaskCounts = (tasks: Task[], getTaskStatus: MerchantPanelProps["
 };
 
 // Get active tasks active
-export const getActiveTasks = (tasks: Task[], getTaskStatus: MerchantPanelProps["getTaskStatus"]) => {
+export const getActiveTasks = (tasks: Task[], getTaskStatus: MerchantPanelBaseProps["getTaskStatus"]) => {
     return tasks.filter(task => getTaskStatus(task) === 'active');
 };
 
-export const getStatusConfig = (status: TaskStatus, onStatusChange?: MerchantPanelProps["onTaskStatusChange"], taskId?: string) => {
+export const getStatusConfig = (status: TaskStatus, onStatusChange?: MerchantPanelBaseProps["onTaskStatusChange"], taskId?: string) => {
     const isActionDisabled = !(onStatusChange && taskId)
     switch (status) {
         case 'active':
@@ -124,7 +130,7 @@ export const getStatusConfig = (status: TaskStatus, onStatusChange?: MerchantPan
 };
 
 
-export const getCurrentReputation = (merchantId: MerchantPanelProps["merchant"], getTaskStatus: MerchantPanelProps["getTaskStatus"]) => {
+export const getCurrentReputation = (merchantId: MerchantPanelBaseProps["merchant"], getTaskStatus: MerchantPanelBaseProps["getTaskStatus"]) => {
     const reputationObject = {currentReputation: 0, reputationMax: 0, merchantLevel: 1}
     getTasksByMerchant(merchantId)
         .forEach((task) => {

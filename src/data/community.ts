@@ -22,6 +22,7 @@ export const community = {
         role: 'creator',
         description: 'I am a full time self-employed plumber/gasfitter. I play a lot of shooters, adventure and puzzle like games; any VR as well.',
         link: 'https://www.twitch.tv/plumberkarl',
+        logo: '/images/logo-placeholder-image.webp',
         platform: 'twitch'
     }
 } as const;

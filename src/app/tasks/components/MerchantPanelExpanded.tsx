@@ -1,22 +1,22 @@
 import React, {useState} from 'react';
 import Image from 'next/image';
-import {User, Target, ChevronUp} from 'lucide-react';
+import {Target, ChevronUp} from 'lucide-react';
 import {TaskStatus} from '@/types/tasks';
 import {corps,} from "@/data/tasks";
 import {
     getCurrentReputation,
     getStatusConfig,
     getTaskCounts,
-    MerchantPanelProps
+    MerchantPanelSpecificProps
 } from "@/app/tasks/taskHelpers";
 import TaskCard from "@/app/tasks/components/TaskCard";
 import {Item} from "@/types/items";
 
-const getTasksByStatus = (tasks: MerchantPanelProps["filteredMerchantTasks"], getTaskStatus: MerchantPanelProps["getTaskStatus"], status: TaskStatus) => {
+const getTasksByStatus = (tasks: MerchantPanelSpecificProps["filteredMerchantTasks"], getTaskStatus: MerchantPanelSpecificProps["getTaskStatus"], status: TaskStatus) => {
     return tasks.filter(task => getTaskStatus(task) === status);
 };
 
-export interface MerchantPanelExpandedProps extends MerchantPanelProps {
+export interface MerchantPanelExpandedProps extends MerchantPanelSpecificProps {
     getItemById: (id: string) => Item | undefined;
 }
 

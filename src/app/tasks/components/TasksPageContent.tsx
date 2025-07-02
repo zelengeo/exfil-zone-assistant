@@ -7,6 +7,7 @@ import {tasksData, getAllMerchants} from '@/data/tasks';
 import {Task, UserProgress, TaskStatus} from '@/types/tasks';
 import MerchantPanel from "@/app/tasks/components/MerchantPanel";
 import {useFetchItems} from "@/hooks/useFetchItems";
+import {community} from "@/data/community";
 
 // Types for component state
 interface TasksPageState {
@@ -198,6 +199,9 @@ export default function TasksPageContent() {
                                        getTaskStatus={getTaskStatus}
                                        getItemById={getItemById}
                         />))}
+                </div>
+                <div className="text-sm text-tan-400 mt-8 p-4 border-t border-military-600">
+                    <p>Some task data sourced by <a href={community.plumberKarl.link} target={"_blank"} className="text-olive-400 hover:text-olive-300">@{community.plumberKarl.name}</a></p>
                 </div>
             </div>
         </Layout>

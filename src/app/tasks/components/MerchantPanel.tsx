@@ -2,11 +2,14 @@ import React, {useCallback, useMemo, useState} from 'react';
 import {Task} from '@/types/tasks';
 import {tasksData} from "@/data/tasks";
 import MerchantPanelCollapsed from "@/app/tasks/components/MerchantPanelCollapsed";
-import MerchantPanelExpanded, {MerchantPanelExpandedProps} from "@/app/tasks/components/MerchantPanelExpanded";
+import MerchantPanelExpanded from "@/app/tasks/components/MerchantPanelExpanded";
+import {MerchantPanelBaseProps} from "@/app/tasks/taskHelpers";
+import {Item} from "@/types/items";
 
-interface MerchantPanelRootProps extends MerchantPanelExpandedProps {
+interface MerchantPanelRootProps extends MerchantPanelBaseProps {
     filteredTasks: (keyof typeof tasksData)[];
-    searchQuery: string
+    searchQuery: string;
+    getItemById: (id: string) => Item | undefined;
 }
 
 const EXPANDED_MERCHANT_BASE = 'exfil-zone-tasks-expanded-merchant-';

@@ -5,7 +5,7 @@ import {
     getCurrentReputation,
     getActiveTasks,
     getTaskCounts,
-    MerchantPanelProps,
+    MerchantPanelSpecificProps,
     getStatusConfig
 } from "@/app/tasks/taskHelpers";
 import {ChevronDown} from "lucide-react";
@@ -16,11 +16,9 @@ export default function MerchantPanelCollapsed({
                                                    merchant,
                                                    filteredMerchantTasks,
                                                    toggleMerchantExpanded,
-                                                   userProgress,
                                                    searchQuery,
-                                                   onTaskStatusChange,
                                                    getTaskStatus,
-                                               }: MerchantPanelProps) {
+                                               }: MerchantPanelSpecificProps) {
 
 
     const counts = getTaskCounts(filteredMerchantTasks, getTaskStatus);
@@ -29,7 +27,7 @@ export default function MerchantPanelCollapsed({
         currentReputation,
         reputationMax,
         merchantLevel
-    } = getCurrentReputation(merchant, getTaskStatus, userProgress)
+    } = getCurrentReputation(merchant, getTaskStatus)
 
     // Collapsed view (different merchant is selected)
     return (
