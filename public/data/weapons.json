@@ -444,9 +444,9 @@
     "category": "weapons",
     "subcategory": "7.62x39mm",
     "images": {
-      "icon": "/images/items/weapons/SM_AKMN_Dong_ufp_Merge.webp",
-      "thumbnail": "/images/items/weapons/SM_AKMN_Dong_ufp_Merge.webp",
-      "fullsize": "/images/items/weapons/SM_AKMN_Dong_ufp_Merge.webp"
+      "icon": "/images/items/weapons/SM_AKMN_Dong_ufp_MERGE.webp",
+      "thumbnail": "/images/items/weapons/SM_AKMN_Dong_ufp_MERGE.webp",
+      "fullsize": "/images/items/weapons/SM_AKMN_Dong_ufp_MERGE.webp"
     },
     "stats": {
       "rarity": "Common",

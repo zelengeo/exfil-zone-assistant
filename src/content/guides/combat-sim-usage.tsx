@@ -8,7 +8,7 @@ export default function CombatSimUsageGuide() {
             {/* Introduction */}
             <section>
                 <p className="text-lg text-tan-200 leading-relaxed">
-                    Welcome to Exfil Zone Assistant ! This guide will help you understand how to use our Combat Simulator effectively
+                    Welcome to ExfilZone Assistant ! This guide will help you understand how to use our Combat Simulator effectively
                     and what to expect from it. Most importantly, we&#39;ll explain why in-game results
                     may sometimes differ from our calculations.
                 </p>
@@ -195,7 +195,7 @@ export default function CombatSimUsageGuide() {
             <section className="bg-green-900/20 border border-green-700/50 rounded-sm p-6">
                 <h2 className="text-xl font-bold text-green-300 mb-3">Ready to Dive In!</h2>
                 <p className="text-green-200 mb-4">
-                    You now understand how to use Exfil Zone Assistant effectively. Remember that our tools provide
+                    You now understand how to use ExfilZone Assistant effectively. Remember that our tools provide
                     valuable insights, but actual gameplay involves many variables. Use this knowledge to make better
                     decisions and improve your game sense!
                 </p>

@@ -2,6 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import {Heart, Globe} from 'lucide-react';
 import {SiDiscord, SiGithub, SiTwitch, SiX, SiYoutube, SiTelegram } from "@icons-pack/react-simple-icons";
+import {Contributor} from "@/types/community";
+import {getRoleConfig} from "@/data/community";
 
 const getPlatformIcon = (platform?: string) => {
     switch (platform) {
@@ -20,51 +22,11 @@ const getPlatformIcon = (platform?: string) => {
     }
 };
 
-const getRoleConfig = (role: string) => {
-    switch (role) {
-        case 'supporter':
-            return {
-                label: 'Supporter',
-                color: 'text-purple-400',
-                borderColor: 'border-purple-700',
-                bgColor: 'bg-purple-900/20'
-            };
-        case 'contributor':
-            return {
-                label: 'Contributor',
-                color: 'text-blue-400',
-                borderColor: 'border-blue-700',
-                bgColor: 'bg-blue-900/20'
-            };
-        case 'creator':
-            return {
-                label: 'Content Creator',
-                color: 'text-green-400',
-                borderColor: 'border-green-700',
-                bgColor: 'bg-green-900/20'
-            };
-        case 'partner':
-            return {
-                label: 'Partner',
-                color: 'text-yellow-400',
-                borderColor: 'border-yellow-700',
-                bgColor: 'bg-yellow-900/20'
-            };
-        default:
-            return {
-                label: role,
-                color: 'text-tan-400',
-                borderColor: 'border-military-700',
-                bgColor: 'bg-military-800'
-            };
-    }
-};
-
 const HayaPlaysCard =  (<div key="hayaplays" className="bg-red-800/20 border border-red-800/80 rounded-sm p-6 max-w-sm">
         <div className="grid grid-rows-2 gap-3 justify-items-start">
             <div className="flex items-start gap-3">
                 <Image
-                    src="/images/haya-logo-70x70.png"
+                    src="/images/community/haya-logo-70x70.webp"
                     alt="HayaPlays Logo"
                     unoptimized={true}
                     width={40}
@@ -124,15 +86,6 @@ hover:bg-red-500 hover:border-red-400"
     </div>
 )
 
-interface Contributor {
-    name: string;
-    role: 'creator' | 'contributor' | 'supporter' | 'partner';
-    component?: React.ReactNode;
-    description?: string;
-    link?: string;
-    platform?: 'youtube' | 'twitch' | 'website' | 'github' | 'discord' | 'telegram';
-}
-
 const contributors: Contributor[] = [
         // Add your actual contributors here
         {
@@ -176,7 +129,7 @@ export default function CommunitySection() {
                         Community & Contributors
                     </h2>
                     <p className="text-lg text-tan-300 max-w-3xl mx-auto">
-                        Exfil Zone Assistant is powered by an amazing community of players, creators, and contributors
+                        ExfilZone Assistant is powered by an amazing community of players, creators, and contributors
                         who help make this resource better for everyone.
                     </p>
                 </div>
@@ -258,7 +211,7 @@ export default function CommunitySection() {
                     <p className="text-tan-300 mb-6 max-w-2xl mx-auto">
                         Whether you&#39;re a content creator, developer, or passionate player, there are many ways to
                         contribute
-                        to the Exfil Zone Assistant project.
+                        to the ExfilZone Assistant project.
                     </p>
 
                     <div className="flex flex-wrap gap-4 justify-center">

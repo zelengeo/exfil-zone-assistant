@@ -6,10 +6,10 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Item Database',
-    description: 'Complete weapon and equipment database for Contractors Showdown Exfil Zone. Stats, attachments, and detailed information for all items.',
+    description: 'Complete weapon and equipment database for Contractors Showdown ExfilZone. Stats, attachments, and detailed information for all items.',
     keywords: ['item wiki', 'weapon database', 'equipment guide', 'weapon stats', 'attachments', 'Contractors items'],
     openGraph: {
-        title: 'Item Database - Exfil Zone Assistant',
+        title: 'Item Database - ExfilZone Assistant',
         description: 'Complete weapon and equipment database with stats, attachments, and detailed information.',
         type: 'website',
     },

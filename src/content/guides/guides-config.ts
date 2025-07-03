@@ -66,7 +66,7 @@ export const guidesConfig: GuideMetadata[] = [
     {
         slug: 'app-roadmap',
         title: 'Current Features & Dev Roadmap',
-        description: 'Discover what\'s available now, what\'s coming soon, and help shape the future of Exfil Zone Assistant',
+        description: 'Discover what\'s available now, what\'s coming soon, and help shape the future of ExfilZone Assistant',
         tags: ['getting-started'],
         difficulty: 'beginner',
         readTime: '3 min',
@@ -80,7 +80,7 @@ export const guidesConfig: GuideMetadata[] = [
     {
         slug: 'survival-damage-mechanics',
         title: 'Survival & Damage Mechanics',
-        description: 'Essential guide to body zones, health management, bleeding, and staying alive in Exfil Zone',
+        description: 'Essential guide to body zones, health management, bleeding, and staying alive in ExfilZone',
         tags: ['getting-started', 'gameplay'],
         difficulty: 'beginner',
         readTime: '10 min',

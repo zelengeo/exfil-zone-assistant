@@ -1,4 +1,4 @@
-# Exfil Zone Assistant 🎮
+# ExfilZone Assistant 🎮
 
 <div align="center">
 

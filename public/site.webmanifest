@@ -1,7 +1,7 @@
 {
-  "name": "Exfil Zone Assistant",
+  "name": "ExfilZone Assistant",
   "short_name": "EZ Assistant",
-  "description": "Your ultimate tactical companion for the best Exfil Zone experience",
+  "description": "Your ultimate tactical companion for the best ExfilZone experience",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#1a1c18",

@@ -26,30 +26,30 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.exfil-zone-assistant.app'),
   title: {
-    default: 'Exfil Zone Assistant',
-    template: '%s | Exfil Zone Assistant'
+    default: 'ExfilZone Assistant',
+    template: '%s | ExfilZone Assistant'
   },
-  description: 'Your ultimate tactical companion for the VR extraction shooter experience. Combat simulator, weapon database, and guides for Contractors Showdown Exfil Zone.',
+  description: 'Your ultimate tactical companion for the VR extraction shooter experience. Combat simulator, weapon database, and guides for Contractors Showdown ExfilZone.',
   keywords: ['VR gaming', 'extraction shooter', 'combat simulator', 'weapon database', 'Contractors Showdown', 'tactical guide', 'Contractors guides', 'ExfilZone guides'],
   authors: [{ name: 'pogapwnz' }],
   creator: 'pogapwnz',
-  publisher: 'Exfil Zone Assistant',
+  publisher: 'ExfilZone Assistant',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: 'Exfil Zone Assistant - companion app for Contractors Showdown ExfilZone',
+    title: 'ExfilZone Assistant - companion app for Contractors Showdown ExfilZone',
     description: 'Your complete guide to the best VR extraction shooter. Combat simulations, weapon database, and tactical guides.',
     url: 'https://www.exfil-zone-assistant.app',
-    siteName: 'Exfil Zone Assistant',
+    siteName: 'ExfilZone Assistant',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Exfil Zone Assistant - VR Tactical Companion',
+        alt: 'ExfilZone Assistant - VR Tactical Companion',
       },
     ],
     locale: 'en_US',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Exfil Zone Assistant - VR Tactical Companion',
+    title: 'ExfilZone Assistant - VR Tactical Companion',
     description: 'Your complete guide to the best VR extraction shooter',
     creator: '@pogapwnz',
     images: ['/og-image.jpg'],

@@ -1,6 +1,6 @@
 # Guide Creation Specification
 
-This document outlines the standards and best practices for creating guides for Exfil Zone Assistant.
+This document outlines the standards and best practices for creating guides for ExfilZone Assistant.
 
 ## Guide Types
 

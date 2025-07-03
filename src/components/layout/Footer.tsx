@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
                     {/* Logo */}
                     <div>
                         <Link href="/" className="inline-flex items-center gap-2">
-                            <span className="font-bold text-xl text-olive-500 military-stencil">EXFIL ZONE</span>
+                            <span className="font-bold text-xl text-olive-500 military-stencil">EXFILZONE</span>
                             <span className="text-lg text-tan-400 military-stencil">ASSISTANT</span>
                         </Link>
                         <p className="mt-2 text-sm max-w-md mx-auto">
@@ -23,6 +23,8 @@ const Footer: React.FC = () => {
                     {/* Quick Links - Horizontal */}
                     <div className="flex flex-wrap justify-center gap-6 text-sm">
                         <Link href="/items" className="hover:text-olive-500 transition-colors">Items</Link>
+                        <span className="text-military-700">•</span>
+                        <Link href="/tasks" className="hover:text-olive-500 transition-colors">Tasks</Link>
                         <span className="text-military-700">•</span>
                         <Link href="/hideout-upgrades" className="hover:text-olive-500 transition-colors">Hideout Upgrades</Link>
                         <span className="text-military-700">•</span>
@@ -72,7 +74,7 @@ const Footer: React.FC = () => {
                     {/* Copyright & Disclaimer */}
                     <div className="text-xs text-tan-400 space-y-1">
                         <p>Unofficial fan-made assistant for Contractors Showdown.</p>
-                        <p>© {currentYear} Exfil Zone Assistant. Game content and materials are trademarks of Caveman Studios.</p>
+                        <p>© {currentYear} ExfilZone Assistant. Game content and materials are trademarks of Caveman Studios.</p>
                     </div>
                 </div>
             </div>
