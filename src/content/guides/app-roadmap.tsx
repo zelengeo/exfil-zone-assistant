@@ -8,7 +8,7 @@ export default function AppRoadmapGuide() {
             {/* Introduction */}
             <section>
                 <p className="text-lg text-tan-200 leading-relaxed">
-                    Exfil Zone Assistant is constantly evolving. This guide shows you what&#39;s currently available,
+                    ExfilZone Assistant is constantly evolving. This guide shows you what&#39;s currently available,
                     what&#39;s coming soon, and our long-term vision. Your feedback shapes our priorities, so let us
                     know what features would help you most!
                 </p>
@@ -291,7 +291,7 @@ export default function AppRoadmapGuide() {
             <section className="bg-purple-900/20 border border-purple-700/50 rounded-sm p-6 mb-6">
                 <h2 className="text-xl font-bold text-purple-300 mb-3">Open Source Project</h2>
                 <p className="text-purple-200 mb-4">
-                    Exfil Zone Assistant is <strong>open source</strong>! Our GitHub repository is public, and we welcome
+                    ExfilZone Assistant is <strong>open source</strong>! Our GitHub repository is public, and we welcome
                     contributions from the community. Whether it&#39;s fixing bugs, adding features, or improving documentation,
                     your help makes this project better for everyone.
                 </p>

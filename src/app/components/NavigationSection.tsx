@@ -40,6 +40,19 @@ export default function NavigationSection() {
                     </div>
                 </Link>
 
+                <Link href="/hideout-upgrades"
+                    className="relative military-card rounded-sm p-8 bg-military-800 border border-military-700 opacity-75">
+                    <div className="flex items-start gap-4">
+                        <div className="bg-military-700 p-3 rounded-sm text-tan-300 border border-military-600">
+                            <House size={32}/>
+                        </div>
+                        <div className="flex-1">
+                            <h3 className="text-xl font-bold mb-2 text-tan-300">Hideout</h3>
+                            <p className="text-tan-300/70">Upgrade your base and track progression</p>
+                        </div>
+                    </div>
+                </Link>
+
                 <Link href="/guides"
                       className="military-card hover:bg-military-700 rounded-sm p-8 transition-all hover:shadow-lg group">
                     <div className="flex items-start gap-4">

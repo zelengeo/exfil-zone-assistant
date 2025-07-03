@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import {corps,} from "@/data/tasks";
+import {corps} from "@/data/tasks";
 import {
     getCurrentReputation,
     getActiveTasks,
@@ -14,20 +14,20 @@ import {TaskStatus} from "@/types/tasks";
 
 export default function MerchantPanelCollapsed({
                                                    merchant,
+                                                   userProgress,
                                                    filteredMerchantTasks,
                                                    toggleMerchantExpanded,
                                                    searchQuery,
-                                                   getTaskStatus,
                                                }: MerchantPanelSpecificProps) {
 
 
-    const counts = getTaskCounts(filteredMerchantTasks, getTaskStatus);
-    const activeTasks = getActiveTasks(filteredMerchantTasks, getTaskStatus);
+    const counts = getTaskCounts(filteredMerchantTasks, userProgress);
+    const activeTasks = getActiveTasks(filteredMerchantTasks, userProgress);
     const {
         currentReputation,
         reputationMax,
         merchantLevel
-    } = getCurrentReputation(merchant, getTaskStatus)
+    } = getCurrentReputation(merchant, userProgress)
 
     // Collapsed view (different merchant is selected)
     return (
@@ -54,7 +54,8 @@ export default function MerchantPanelCollapsed({
 
                     {/* Merchant info */}
                     <div className="text-left text-xs text-tan-400">
-                        <div className="font-medium text-tan-300 group-hover:text-tan-100 transition-colors text-xs sm:text-sm">
+                        <div
+                            className="font-medium text-tan-300 group-hover:text-tan-100 transition-colors text-xs sm:text-sm">
                             <span className="text-olive-400">{corps[merchant]?.name}</span>
                             <span className="ml-1 truncate">{corps[merchant]?.merchant}</span>
                         </div>

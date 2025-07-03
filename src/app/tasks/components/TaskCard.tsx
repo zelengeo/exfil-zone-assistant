@@ -5,13 +5,13 @@ import {
     Target,
     Map,
     Flag,
-    Award, DollarSign,
+    Award,
     Package, Info, MapPin,
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from "next/link";
-import {Task, TaskReward, TaskStatus, UserProgress} from '@/types/tasks';
-import {getStatusConfig, getTaskTypeIcon, RenderTipsContent} from "@/app/tasks/taskHelpers";
+import {Task, TaskStatus, UserProgress} from '@/types/tasks';
+import {getStatusConfig, getTaskTypeIcon, renderReward, RenderTipsContent} from "@/app/tasks/taskHelpers";
 import {corps, tasksData} from "@/data/tasks";
 import {Item} from "@/types/items";
 import {community} from "@/data/community";
@@ -25,83 +25,6 @@ interface TaskCardProps {
     getItemById: (id: string) => Item | undefined;
 }
 
-const renderReward = (reward: TaskReward, index: number, getItemById: TaskCardProps['getItemById']) => {
-    const isWeaponIcon = (reward.type === "item") && reward.item_id && (getItemById(reward.item_id)?.category === "weapons");
-    return (
-        <div key={index}
-             className="bg-military-800 p-3 rounded flex items-center gap-2">
-            {/* Reward Icon/Image */}
-            <div className={`${isWeaponIcon ? "w-20" : "w-10"} h-10 flex-shrink-0 flex items-center justify-center`}>
-
-                {reward.type === 'money' && (
-                    <div
-                        className="w-10 h-10 bg-military-600 border border-yellow-600/50 rounded flex items-center justify-center">
-                        <DollarSign size={16} className="text-yellow-400"/>
-                    </div>
-                )}
-
-                {reward.type === 'experience' && (
-                    <div
-                        className="w-10 h-10 bg-military-600 border border-tan-500/50 rounded flex items-center justify-center text-tan-200 font-bold text-xs">
-                        XP
-                    </div>
-                )}
-
-                {reward.type === 'reputation' && (
-                    <div className="w-10 h-10 rounded bg-military-600">
-                        <Image
-                            src={(reward.corpId && corps[reward.corpId]?.icon) || '/images/corps/default.png'}
-                            alt={reward.corpId || 'reputation'}
-                            unoptimized={true}
-                            className="w-full h-full object-cover"
-                            width={32}
-                            height={32}
-                        />
-                    </div>
-                )}
-
-                {reward.type === 'item' && (
-                    <div
-                        className={`${isWeaponIcon ? "w-20" : "w-10"} h-10 p-0.5 rounded bg-military-600`}>
-                        {reward.item_id && getItemById ? (
-                            <Link href={`/items/${reward.item_id}`} target="_blank" rel="noopener noreferrer">
-                                <Image
-                                    src={getItemById(reward.item_id)?.images?.icon || '/images/items/default.png'}
-                                    alt={reward.item_id}
-                                    unoptimized={true}
-                                    className={`w-full h-full ${isWeaponIcon
-                                        ? "object-contain"
-                                        : "object-cover"} hover:scale-110 transition-transform cursor-pointer`}
-                                    width={40}
-                                    height={40}
-                                />
-                            </Link>
-                        ) : (
-                            <div
-                                className="w-full h-full flex items-center justify-center text-tan-400 text-xs font-bold">
-                                {reward.item_name?.charAt(0) || '?'}
-                            </div>
-                        )}
-                    </div>
-                )}
-            </div>
-
-            {/* Quantity */}
-            <div className="min-w-0 flex-1">
-                <div className="text-olive-400 font-bold text-sm">
-                    {reward.type === 'money' ? `$${reward.quantity.toLocaleString()}` :
-                        reward.type === 'reputation' ? `+${reward.quantity}` :
-                            `×${reward.quantity}`}
-                </div>
-                {reward.type === 'item' && (
-                    <div className="text-tan-400 text-xs truncate">
-                        {(reward.item_id && getItemById(reward.item_id)?.name) || reward.item_name || 'Unknown Item'}
-                    </div>
-                )}
-            </div>
-        </div>
-    )
-}
 export default function TaskCard({
                                      task,
                                      status,
@@ -238,7 +161,7 @@ export default function TaskCard({
                                                     width={32}
                                                     height={32}
                                                 />
-                                                <span className="font-bold">{communityAuthor.name}</span>&#39;s Guide
+                                                <span><span className="font-bold">{communityAuthor.name}</span>&#39;s Guide</span>
                                             </Link>
                                         })}
                                     </div>

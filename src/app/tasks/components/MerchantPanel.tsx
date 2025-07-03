@@ -20,7 +20,6 @@ export default function MerchantPanel({
                                           userProgress,
                                           searchQuery,
                                           onTaskStatusChange,
-                                          getTaskStatus,
                                           getItemById,
                                       }: MerchantPanelRootProps) {
     // Check if this merchant was the last opened one
@@ -63,7 +62,7 @@ export default function MerchantPanel({
                                       searchQuery={searchQuery}
                                       userProgress={userProgress} toggleMerchantExpanded={toggleMerchantExpanded}
                                       onTaskStatusChange={onTaskStatusChange}
-                                      getTaskStatus={getTaskStatus} getItemById={getItemById}/>;
+                                      getItemById={getItemById}/>;
     }
 
 
@@ -72,6 +71,6 @@ export default function MerchantPanel({
                                    searchQuery={searchQuery}
                                    userProgress={userProgress} toggleMerchantExpanded={toggleMerchantExpanded}
                                    onTaskStatusChange={onTaskStatusChange}
-                                   getTaskStatus={getTaskStatus}/>;
+                                   getItemById={getItemById}/>;
 
 }

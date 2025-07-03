@@ -11,7 +11,7 @@ const Header: React.FC = () => {
             <div className="max-w-7xl mx-auto flex justify-between items-center">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2">
-                    <span className="font-bold text-xl md:text-2xl text-olive-500 military-stencil">EXFIL ZONE</span>
+                    <span className="font-bold text-xl md:text-2xl text-olive-500 military-stencil">EXFILZONE</span>
                     <span className="hidden md:inline text-lg text-tan-300 military-stencil">ASSISTANT</span>
                 </Link>
 

@@ -5,8 +5,8 @@ import Layout from '@/components/layout/Layout';
 
 export const metadata: Metadata = {
     title: 'Guides & Tutorials',
-    description: 'Comprehensive guides and tutorials for Contractors Showdown Exfil Zone. Learn gameplay mechanics, strategies, loadouts, and VR-specific tips.',
-    keywords: ['game guides', 'tutorials', 'strategies', 'tips', 'VR guides', 'Exfil Zone tutorials', 'beginner guide'],
+    description: 'Comprehensive guides and tutorials for Contractors Showdown ExfilZone. Learn gameplay mechanics, strategies, loadouts, and VR-specific tips.',
+    keywords: ['game guides', 'tutorials', 'strategies', 'tips', 'VR guides', 'ExfilZone tutorials', 'beginner guide'],
     openGraph: {
         title: 'Guides & Tutorials',
         description: 'Master Contractors Showdown with our comprehensive guides. From beginner basics to advanced strategies.',
@@ -16,13 +16,13 @@ export const metadata: Metadata = {
                 url: '/og/og-image-guides.jpg',
                 width: 1200,
                 height: 630,
-                alt: 'Exfil Zone Guides and Tutorials',
+                alt: 'ExfilZone Guides and Tutorials',
             }
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Guides & Tutorials - Exfil Zone Assistant',
+        title: 'Guides & Tutorials - ExfilZone Assistant',
         description: 'Master ExfilZone with comprehensive guides and strategies.',
     },
     alternates: {

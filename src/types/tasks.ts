@@ -47,5 +47,6 @@ export interface Corp {
     icon: string;
     merchant: string;
     merchantIcon: string;
+    ogImage: string;
     levelCap: number[];
 }

@@ -9,7 +9,7 @@ export default function SurvivalDamageGuide() {
             {/* Introduction */}
             <section>
                 <p className="text-lg text-tan-200 leading-relaxed">
-                    Surviving in Exfil Zone isn&#39;t just about good aim - it&#39;s about understanding how your body takes damage,
+                    Surviving in ExfilZone isn&#39;t just about good aim - it&#39;s about understanding how your body takes damage,
                     managing your health status, and knowing when to fight or flee. This guide covers everything you need to
                     know about staying alive in the zone.
                 </p>

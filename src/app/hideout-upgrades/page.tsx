@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Hideout Upgrades Calculator - Exfil Zone Assistant',
+        title: 'Hideout Upgrades Calculator - ExfilZone Assistant',
         description: 'Plan and calculate your hideout upgrades.',
     },
     alternates: {

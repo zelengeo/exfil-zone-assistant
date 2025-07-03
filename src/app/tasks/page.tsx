@@ -5,30 +5,30 @@ import Layout from '@/components/layout/Layout';
 import TasksPageContent from './components/TasksPageContent';
 
 export const metadata: Metadata = {
-    title: 'Tasks Database',
-    description: 'Complete mission database for Contractors Showdown Exfil Zone. Track your progress, view rewards, requirements, and walkthroughs for all missions.',
+    title: 'Tasks Tracker',
+    description: 'Complete mission database for Contractors Showdown ExfilZone. Track your progress, view rewards, requirements, and walkthroughs for all missions.',
     keywords: [
-        'tasks database',
         'tasks guide',
         'ExfilZone tasks',
         'ExfilZone quests',
+        'ExfilZone missions',
     ],
     openGraph: {
-        title: 'TasksDatabase - Exfil Zone Assistant',
+        title: 'Task Tracker - ExfilZone Assistant',
         description: 'Complete mission database with rewards, requirements, and walkthroughs. Track your mission progress and remaining items.',
         type: 'website',
         images: [
             {
-                url: '/og/og-image-tasks.jpg',
+                url: '/og/og-image-task-manager.jpg',
                 width: 1200,
                 height: 630,
-                alt: 'Tasks Database - Exfil Zone Assistant',
+                alt: 'Tasks Tracker - ExfilZone Assistant',
             }
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Tasks Database - Exfil Zone Assistant',
+        title: 'Tasks Tracker - ExfilZone Assistant',
         description: 'Complete mission database with rewards, requirements, and progress tracking.',
     },
     alternates: {

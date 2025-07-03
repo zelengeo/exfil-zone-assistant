@@ -1,10 +1,10 @@
-import {Task, TaskStatus, TaskType, UserProgress} from "@/types/tasks";
+import {Task, TaskReward, TaskStatus, TaskType, UserProgress} from "@/types/tasks";
 import {
     BookUp2,
     Camera,
     CheckCircle,
     Clock,
-    Crosshair,
+    Crosshair, DollarSign,
     Flag,
     Lock, MapPin,
     Package,
@@ -15,9 +15,11 @@ import {
 import {corps, getTasksByMerchant} from "@/data/tasks";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+import {Item} from "@/types/items";
 
 
-export interface MerchantPanelSpecificProps extends MerchantPanelBaseProps{
+export interface MerchantPanelSpecificProps extends MerchantPanelBaseProps {
     filteredMerchantTasks: Task[];
     toggleMerchantExpanded: () => void;
 }
@@ -28,12 +30,11 @@ export interface MerchantPanelBaseProps {
     userProgress: UserProgress;
     searchQuery: string;
     onTaskStatusChange: (taskId: string, newStatus: TaskStatus) => void;
-    getTaskStatus: (task: Task) => TaskStatus;
+    getItemById: (id: string) => Item | undefined;
 }
 
 
-
-export const getTaskCounts = (tasks: Task[], getTaskStatus: MerchantPanelBaseProps["getTaskStatus"]) => {
+export const getTaskCounts = (tasks: Task[], userProgress: UserProgress) => {
     const counts = {
         completed: 0,
         active: 0,
@@ -41,16 +42,109 @@ export const getTaskCounts = (tasks: Task[], getTaskStatus: MerchantPanelBasePro
     } as Record<TaskStatus, number>;
 
     tasks.forEach(task => {
-        const status = getTaskStatus(task);
+        const status = getTaskStatus(task, userProgress);
         counts[status]++;
     });
     return counts;
 };
 
-// Get active tasks active
-export const getActiveTasks = (tasks: Task[], getTaskStatus: MerchantPanelBaseProps["getTaskStatus"]) => {
-    return tasks.filter(task => getTaskStatus(task) === 'active');
+// Get task status for a given task
+export const getTaskStatus = (task: Task, userProgress: UserProgress): TaskStatus => {
+    const progress = userProgress.tasks[task.id];
+    if (progress) return progress;
+
+    // Check if task is locked due to prerequisites
+    const hasUnmetPrerequisites = task.requiredTasks.some(reqTaskId => {
+        const reqTaskStatus = userProgress.tasks[reqTaskId];
+        return !reqTaskStatus || (reqTaskStatus !== 'completed');
+    });
+
+    return hasUnmetPrerequisites ? 'locked' : 'active';
 };
+
+// Get active tasks active
+export const getActiveTasks = (tasks: Task[], userProgress: UserProgress) => {
+    return tasks.filter(task => getTaskStatus(task, userProgress) === 'active');
+};
+
+export const renderReward = (reward: TaskReward, index: number, getItemById: MerchantPanelBaseProps['getItemById']) => {
+    const isWeaponIcon = (reward.type === "item") && reward.item_id && (getItemById(reward.item_id)?.category === "weapons");
+    return (
+        <div key={index}
+             className="bg-military-800 p-3 rounded flex items-center gap-2">
+            {/* Reward Icon/Image */}
+            <div className={`${isWeaponIcon ? "w-20" : "w-10"} h-10 flex-shrink-0 flex items-center justify-center`}>
+
+                {reward.type === 'money' && (
+                    <div
+                        className="w-10 h-10 bg-military-600 border border-yellow-600/50 rounded flex items-center justify-center">
+                        <DollarSign size={16} className="text-yellow-400"/>
+                    </div>
+                )}
+
+                {reward.type === 'experience' && (
+                    <div
+                        className="w-10 h-10 bg-military-600 border border-tan-500/50 rounded flex items-center justify-center text-tan-200 font-bold text-xs">
+                        XP
+                    </div>
+                )}
+
+                {reward.type === 'reputation' && (
+                    <div className="w-10 h-10 rounded bg-military-600">
+                        <Image
+                            src={(reward.corpId && corps[reward.corpId]?.icon) || '/images/corps/default.png'}
+                            alt={reward.corpId || 'reputation'}
+                            unoptimized={true}
+                            className="w-full h-full object-cover"
+                            width={32}
+                            height={32}
+                        />
+                    </div>
+                )}
+
+                {reward.type === 'item' && (
+                    <div
+                        className={`${isWeaponIcon ? "w-20" : "w-10"} h-10 p-0.5 rounded bg-military-600`}>
+                        {reward.item_id && getItemById ? (
+                            <Link href={`/items/${reward.item_id}`} target="_blank" rel="noopener noreferrer">
+                                <Image
+                                    src={getItemById(reward.item_id)?.images?.icon || '/images/items/default.png'}
+                                    alt={reward.item_id}
+                                    unoptimized={true}
+                                    className={`w-full h-full ${isWeaponIcon
+                                        ? "object-contain"
+                                        : "object-cover"} hover:scale-110 transition-transform cursor-pointer`}
+                                    width={40}
+                                    height={40}
+                                />
+                            </Link>
+                        ) : (
+                            <div
+                                className="w-full h-full flex items-center justify-center text-tan-400 text-xs font-bold">
+                                {reward.item_name?.charAt(0) || '?'}
+                            </div>
+                        )}
+                    </div>
+                )}
+            </div>
+
+            {/* Quantity */}
+            <div className="min-w-0 flex-1">
+                <div className="text-olive-400 font-bold text-sm">
+                    {reward.type === 'money' ? `$${reward.quantity.toLocaleString()}` :
+                        reward.type === 'reputation' ? `+${reward.quantity}` :
+                            `×${reward.quantity}`}
+                </div>
+                {reward.type === 'item' && (
+                    <div className="text-tan-400 text-xs truncate">
+                        {(reward.item_id && getItemById(reward.item_id)?.name) || reward.item_name || 'Unknown Item'}
+                    </div>
+                )}
+            </div>
+        </div>
+    )
+}
+
 
 export const getStatusConfig = (status: TaskStatus, onStatusChange?: MerchantPanelBaseProps["onTaskStatusChange"], taskId?: string) => {
     const isActionDisabled = !(onStatusChange && taskId)
@@ -74,7 +168,7 @@ export const getStatusConfig = (status: TaskStatus, onStatusChange?: MerchantPan
                     disabled={isActionDisabled}
                     className="ml-auto hover:bg-green-700 disabled:bg-green-600/50 disabled:cursor-not-allowed text-tan-100 px-3 py-1 rounded text-sm transition-colors flex items-center gap-1"
                 >
-                    <CheckCircle size={16} />
+                    <CheckCircle size={16}/>
                     Mark Complete
                 </button>
             };
@@ -130,12 +224,12 @@ export const getStatusConfig = (status: TaskStatus, onStatusChange?: MerchantPan
 };
 
 
-export const getCurrentReputation = (merchantId: MerchantPanelBaseProps["merchant"], getTaskStatus: MerchantPanelBaseProps["getTaskStatus"]) => {
+export const getCurrentReputation = (merchantId: MerchantPanelBaseProps["merchant"], userProgress: UserProgress) => {
     const reputationObject = {currentReputation: 0, reputationMax: 0, merchantLevel: 1}
     getTasksByMerchant(merchantId)
         .forEach((task) => {
             const repReward = task.reward.find(r => r.type === 'reputation' && r.corpId === merchantId);
-            if (getTaskStatus(task) === 'completed') {
+            if (getTaskStatus(task, userProgress) === 'completed') {
                 reputationObject.currentReputation += (repReward?.quantity || 0);
             }
             reputationObject.reputationMax += (repReward?.quantity || 0);
@@ -148,28 +242,28 @@ export const getCurrentReputation = (merchantId: MerchantPanelBaseProps["merchan
 export const getTaskTypeIcon = (type: TaskType) => {
     switch (type) {
         case 'reach':
-            return <MapPin size={12} />;
+            return <MapPin size={12}/>;
         case 'extract':
-            return <Plane size={12} />;
+            return <Plane size={12}/>;
         case 'retrieve':
-            return <Search size={12} />;
+            return <Search size={12}/>;
         case 'eliminate':
-            return <Crosshair size={12} />;
+            return <Crosshair size={12}/>;
         case 'submit':
-            return <BookUp2 size={12} />;
+            return <BookUp2 size={12}/>;
         case 'mark':
-            return <Flag size={12} />;
+            return <Flag size={12}/>;
         case 'place':
-            return <Package size={12} />;
+            return <Package size={12}/>;
         case 'photo':
-            return <Camera size={12} />;
+            return <Camera size={12}/>;
         default:
-            return <Target size={12} />;
+            return <Target size={12}/>;
     }
 };
 
 // Helper function to parse markdown-style links
-export const parseMarkdownLinks = (text: string) => {
+export function parseMarkdownLinks(text: string) {
     const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
     const parts = [];
     let lastIndex = 0;
@@ -199,8 +293,16 @@ export const parseMarkdownLinks = (text: string) => {
     return parts;
 };
 
+export function quickHighlight(text: string) {
+    return text.split(/(\[[^\]]+\])/).map((part, index) =>
+        part.match(/\[([^\]]+)\]/)
+            ? <span key={index} className="text-olive-400 hover:text-olive-300 font-bold">{part.slice(1, -1)}</span>
+            : part
+    );
+}
+
 // Helper component to render parsed content
-export const RenderTipsContent = ({ content }: { content: string }) => {
+export const RenderTipsContent = ({content}: { content: string }) => {
     const parts = parseMarkdownLinks(content);
 
     return (

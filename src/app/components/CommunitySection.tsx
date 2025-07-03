@@ -129,7 +129,7 @@ export default function CommunitySection() {
                         Community & Contributors
                     </h2>
                     <p className="text-lg text-tan-300 max-w-3xl mx-auto">
-                        Exfil Zone Assistant is powered by an amazing community of players, creators, and contributors
+                        ExfilZone Assistant is powered by an amazing community of players, creators, and contributors
                         who help make this resource better for everyone.
                     </p>
                 </div>
@@ -211,7 +211,7 @@ export default function CommunitySection() {
                     <p className="text-tan-300 mb-6 max-w-2xl mx-auto">
                         Whether you&#39;re a content creator, developer, or passionate player, there are many ways to
                         contribute
-                        to the Exfil Zone Assistant project.
+                        to the ExfilZone Assistant project.
                     </p>
 
                     <div className="flex flex-wrap gap-4 justify-center">

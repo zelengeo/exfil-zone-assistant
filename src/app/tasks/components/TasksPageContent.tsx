@@ -4,10 +4,11 @@ import React, {useState, useEffect, useMemo} from 'react';
 import {Search} from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import {tasksData, getAllMerchants} from '@/data/tasks';
-import {Task, UserProgress, TaskStatus} from '@/types/tasks';
+import {UserProgress, TaskStatus} from '@/types/tasks';
 import MerchantPanel from "@/app/tasks/components/MerchantPanel";
 import {useFetchItems} from "@/hooks/useFetchItems";
 import {community} from "@/data/community";
+import Link from "next/link";
 
 // Types for component state
 interface TasksPageState {
@@ -73,21 +74,6 @@ export default function TasksPageContent() {
 
         return () => clearTimeout(timer);
     }, [state.searchQuery]);
-
-
-    // Get task status for a given task
-    const getTaskStatus = (task: Task): TaskStatus => {
-        const progress = state.userProgress.tasks[task.id];
-        if (progress) return progress;
-
-        // Check if task is locked due to prerequisites
-        const hasUnmetPrerequisites = task.requiredTasks.some(reqTaskId => {
-            const reqTaskStatus = state.userProgress.tasks[reqTaskId];
-            return !reqTaskStatus || (reqTaskStatus !== 'completed');
-        });
-
-        return hasUnmetPrerequisites ? 'locked' : 'active';
-    };
 
     // Filter and search tasks
     const filteredTasks = useMemo(() => {
@@ -196,12 +182,20 @@ export default function TasksPageContent() {
                                        searchQuery={state.searchQuery}
                                        userProgress={state.userProgress}
                                        onTaskStatusChange={updateTaskStatus}
-                                       getTaskStatus={getTaskStatus}
                                        getItemById={getItemById}
                         />))}
                 </div>
                 <div className="text-sm text-tan-400 mt-8 p-4 border-t border-military-600">
-                    <p>Some task data sourced by <a href={community.plumberKarl.link} target={"_blank"} className="text-olive-400 hover:text-olive-300">@{community.plumberKarl.name}</a></p>
+                    <p>Some task data sourced by <Link href={community.plumberKarl.link} target="_blank"
+                                                       rel="noopener noreferrer" className="text-olive-400 hover:text-olive-300">@{community.plumberKarl.name}</Link>. If you find any inconsistencies, please report them on our{' '}
+                        <Link
+                            href="https://discord.gg/2FCDZK6C25"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-400 hover:text-blue-300 underline"
+                        >
+                            Discord server
+                        </Link>.</p>
                 </div>
             </div>
         </Layout>

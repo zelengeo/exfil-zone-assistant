@@ -6,6 +6,7 @@ export const corps: Record<string, Corp> = {
         icon: "/images/tasks/icon_Arkshop1_nobg.webp",
         merchant: "Tommy",
         merchantIcon: "/images/tasks/img_ark1Merchant.webp",
+        ogImage: "/og/og-image-ark-task.jpg",
         levelCap: [100, 300, 800]
     },
     "ntg": {
@@ -13,6 +14,7 @@ export const corps: Record<string, Corp> = {
         icon: "/images/tasks/icon_NTGshop_nobg.webp",
         merchant: "Maggie",
         merchantIcon: "/images/tasks/img_DocMerchant.webp",
+        ogImage: "/og/og-image-ntg-task.jpg",
         levelCap: [100, 300, 800]
     },
     "trupiks": {
@@ -20,6 +22,7 @@ export const corps: Record<string, Corp> = {
         icon: "/images/tasks/icon_TPshop_nobg.webp",
         merchant: "Johnny",
         merchantIcon: "/images/tasks/img_TPMerchant.webp",
+        ogImage: "/og/og-image-trupik-task.jpg",
         levelCap: []
     },
     "regiment": {
@@ -27,6 +30,7 @@ export const corps: Record<string, Corp> = {
         icon: "/images/tasks/icon_Regishop_nobg.webp",
         merchant: "Igor",
         merchantIcon: "/images/tasks/img_RegiMerchant.webp",
+        ogImage: "/og/og-image-regiment-task.jpg",
         levelCap: [100, 300, 800]
     },
     "forge": {
@@ -34,6 +38,7 @@ export const corps: Record<string, Corp> = {
         icon: "/images/tasks/icon_Arkshop2_nobg.webp",
         merchant: "Maximilian",
         merchantIcon: "/images/tasks/img_ar2Merchant.webp",
+        ogImage: "/og/og-image-forge-task.jpg",
         levelCap: [100, 300, 800]
     }
 } as const;
@@ -336,7 +341,7 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/I5XTDO71-ust=338"
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=124s"
             }
         ],
         "order": 5
@@ -677,7 +682,7 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/I5XTDO71-ust=338"
+                "url": "https://youtu.be/I5XTDO71-us?t=338"
             }
         ],
         "order": 10
@@ -1304,7 +1309,7 @@ export const tasksData: TasksDatabase = {
         "id": "ark_21",
         "name": "The Betrayer",
         "gameId": "task.na.18",
-        "description": "Find the rooftop of TRUPIK mall, Eliminate the betrayer, Find and turn in ARK Floppy Disk",
+        "description": "We've tracked the traitor's latest movements. His code name is [Ravager]. He's conducting a covert operation inside [TRUPIKS Mall] and has hidden a critical data disk on the rooftop.\nThe final moment has arrived—[eliminate the traitor] and his forces at TRUPIKS, [retrieve the disk from the rooftop], and secure it at all costs.",
         "objectives": [
             "Find the Rooftop of TRUPIK'S Mall",
             "Eliminate Ravager at the Mall",
@@ -1918,7 +1923,7 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/I5XTDO71-ust=338"
+                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=1096s"
             }
         ],
         "order": 30
@@ -8168,7 +8173,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "armor-raid-explorer-sd",
+                "item_id": "armor-raid-explorer-sd",
                 "quantity": 1
             }
         ],

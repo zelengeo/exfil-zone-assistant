@@ -29,7 +29,7 @@ export default function Home() {
                   <h2 className="text-olive-400 military-stencil">VR EXTRACTION ASSISTANT</h2>
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-tan-100 mb-4 military-stencil">
-                  EXFIL ZONE
+                  EXFILZONE
                 </h1>
                 <div className="bg-military-900/80 border border-olive-700 p-4 mb-8">
                   <p className="text-xl md:text-2xl text-tan-200">
@@ -64,7 +64,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold mb-8 text-center military-stencil text-olive-400">MISSION BRIEFING</h2>
             <div className="max-w-3xl mx-auto military-box p-6">
               <p className="text-lg text-tan-200 mb-6">
-                Welcome to the world of Exfil Zone, an immersive VR extraction shooter that combines tactical gameplay with resource management and survival elements.
+                Welcome to the world of ExfilZone, an immersive VR extraction shooter that combines tactical gameplay with resource management and survival elements.
               </p>
               <p className="text-lg text-tan-200 mb-6">
                 As a mercenary, your mission is to enter restricted zones, gather valuable resources, complete objectives, and successfully extract before time runs out or hostile forces eliminate you.
