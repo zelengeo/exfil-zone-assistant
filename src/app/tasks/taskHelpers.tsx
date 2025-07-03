@@ -310,7 +310,7 @@ export function parseMarkdownLinks(text: string) {
     }
 
     return parts;
-};
+}
 
 export function quickHighlight(text: string) {
     return text.split(/(\[[^\]]+\])/).map((part, index) =>

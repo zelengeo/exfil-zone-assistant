@@ -41,14 +41,14 @@ export default function NavigationSection() {
                 </Link>
 
                 <Link href="/hideout-upgrades"
-                    className="relative military-card rounded-sm p-8 bg-military-800 border border-military-700 opacity-75">
+                      className="military-card hover:bg-military-700 rounded-sm p-8 transition-all hover:shadow-lg group">
                     <div className="flex items-start gap-4">
-                        <div className="bg-military-700 p-3 rounded-sm text-tan-300 border border-military-600">
+                        <div className="bg-olive-600 p-3 rounded-sm text-military-900 border border-olive-500">
                             <House size={32}/>
                         </div>
-                        <div className="flex-1">
-                            <h3 className="text-xl font-bold mb-2 text-tan-300">Hideout</h3>
-                            <p className="text-tan-300/70">Upgrade your base and track progression</p>
+                        <div>
+                            <h3 className="text-xl font-bold mb-2 group-hover:text-olive-400 transition-colors">Hideout</h3>
+                            <p className="text-tan-300">Upgrade your base and track progression</p>
                         </div>
                     </div>
                 </Link>
@@ -67,39 +67,18 @@ export default function NavigationSection() {
                     </div>
                 </Link>
 
-                <div
-                    className="relative military-card rounded-sm p-8 bg-military-800 border border-military-700 opacity-75">
+                <Link href="/tasks"
+                      className="military-card hover:bg-military-700 rounded-sm p-8 transition-all hover:shadow-lg group">
                     <div className="flex items-start gap-4">
-                        <div className="bg-military-700 p-3 rounded-sm text-tan-300 border border-military-600">
+                        <div className="bg-olive-600 p-3 rounded-sm text-military-900 border border-olive-500">
                             <Briefcase size={32}/>
                         </div>
-                        <div className="flex-1">
-                            <h3 className="text-xl font-bold mb-2 text-tan-300">Quests</h3>
-                            <p className="text-tan-300/70">Mission guides and reward tracking</p>
-                        </div>
-                        <div
-                            className="absolute top-4 right-4 bg-military-700 text-olive-400 px-3 py-1 rounded-sm text-sm font-medium border border-olive-600">
-                            Coming Soon
+                        <div>
+                            <h3 className="text-xl font-bold mb-2 text-tan-300">Tasks</h3>
+                            <p className="text-tan-300/70">Mission guides and progress tracking</p>
                         </div>
                     </div>
-                </div>
-
-                <div
-                    className="relative military-card rounded-sm p-8 bg-military-800 border border-military-700 opacity-75">
-                    <div className="flex items-start gap-4">
-                        <div className="bg-military-700 p-3 rounded-sm text-tan-300 border border-military-600">
-                            <House size={32}/>
-                        </div>
-                        <div className="flex-1">
-                            <h3 className="text-xl font-bold mb-2 text-tan-300">Hideout</h3>
-                            <p className="text-tan-300/70">Upgrade your base and track progression</p>
-                        </div>
-                        <div
-                            className="absolute top-4 right-4 bg-military-700 text-olive-400 px-3 py-1 rounded-sm text-sm font-medium border border-olive-600">
-                            Coming Soon
-                        </div>
-                    </div>
-                </div>
+                </Link>
 
                 <div
                     className="relative military-card rounded-sm p-8 bg-military-800 border border-military-700 opacity-75">
