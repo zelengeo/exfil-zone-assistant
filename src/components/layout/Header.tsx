@@ -74,6 +74,14 @@ const Header: React.FC = () => {
                             <span>Items Database</span>
                         </Link>
                         <Link
+                            href="/tasks"
+                            className="flex items-center gap-3 text-xl py-2 px-4 hover:bg-military-700 rounded-sm transition-all border border-transparent hover:border-olive-700"
+                            onClick={() => setIsMenuOpen(false)}
+                        >
+                            <Goal size={24} className="text-olive-600" />
+                            <span>Tasks</span>
+                        </Link>
+                        <Link
                             href="/hideout-upgrades"
                             className="flex items-center gap-3 text-xl py-2 px-4 hover:bg-military-700 rounded-sm transition-all border border-transparent hover:border-olive-700"
                             onClick={() => setIsMenuOpen(false)}

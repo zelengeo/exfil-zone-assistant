@@ -3,10 +3,11 @@ import { Link2, Check } from 'lucide-react';
 
 interface ShareButtonProps {
     getShareLink: () => string;
+    title:  string;
     className?: string;
 }
 
-export default function ShareButton({ getShareLink, className = '' }: ShareButtonProps) {
+export default function ShareButton({ getShareLink, className = '', title }: ShareButtonProps) {
     const [copied, setCopied] = useState(false);
 
     const handleCopyLink = async () => {
@@ -44,7 +45,7 @@ export default function ShareButton({ getShareLink, className = '' }: ShareButto
             ) : (
                 <>
                     <Link2 size={14} />
-                    <span>Share Setup</span>
+                    <span>{title}</span>
                 </>
             )}
         </button>

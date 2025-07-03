@@ -185,7 +185,7 @@ export const getStatusConfig = (status: TaskStatus, onStatusChange?: MerchantPan
                 actionButton: <button
                     onClick={() => !isActionDisabled && onStatusChange(taskId, 'completed')}
                     disabled={isActionDisabled}
-                    className="ml-auto hover:bg-green-700 disabled:bg-green-600/50 disabled:cursor-not-allowed text-tan-100 px-3 py-1 rounded text-sm transition-colors flex items-center gap-1"
+                    className="hover:bg-green-700 disabled:bg-green-600/50 disabled:cursor-not-allowed text-tan-100 px-3 py-1 rounded text-sm transition-colors flex items-center gap-1"
                 >
                     <CheckCircle size={16}/>
                     Mark Complete
@@ -207,7 +207,7 @@ export const getStatusConfig = (status: TaskStatus, onStatusChange?: MerchantPan
                 actionButton: <button
                     onClick={() => !isActionDisabled && onStatusChange(taskId, 'active')}
                     disabled={isActionDisabled}
-                    className="ml-auto bg-military-600 hover:bg-military-500 disabled:bg-military-600/80 disabled:cursor-not-allowed text-tan-300 px-3 py-1 rounded text-sm transition-colors flex items-center gap-1"
+                    className="bg-military-600 hover:bg-military-500 disabled:bg-military-600/80 disabled:cursor-not-allowed text-tan-300 px-3 py-1 rounded text-sm transition-colors flex items-center gap-1"
                 >
                     <Undo2 size={16}/>
                     Undo

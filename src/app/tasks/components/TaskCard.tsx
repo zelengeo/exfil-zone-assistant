@@ -22,6 +22,7 @@ import {
 import {corps, tasksData} from "@/data/tasks";
 import {Item} from "@/types/items";
 import {community} from "@/data/community";
+import ShareButton from "@/components/ShareButton";
 
 interface TaskCardProps {
     task: Task;
@@ -31,6 +32,14 @@ interface TaskCardProps {
     onStatusChange: (taskId: string, newStatus: TaskStatus) => void;
     getItemById: (id: string) => Item | undefined;
 }
+
+const buildTaskShareUrl = (taskId: string) => {
+    const baseUrl = typeof window !== 'undefined'
+        ? window.location.origin
+        : 'https://exfil-zone-assistant.app';
+
+    return `${baseUrl}/tasks/${taskId}`;
+};
 
 export default function TaskCard({
                                      task,
@@ -355,14 +364,13 @@ export default function TaskCard({
                             </div>
                         )}
                     </div>
-                    {/* Action Button */}
-                    {statusConfig.actionButton && (
-                        <div
-                            onClick={(e) => e.stopPropagation()}
-                        >
-                            {statusConfig.actionButton}
-                        </div>
-                    )}
+
+                    {/* Actions Section  */}
+                    <div className="flex items-center justify-end gap-2 pb-3">
+                            <ShareButton getShareLink={()=>buildTaskShareUrl(task.id)} title={"Share Task"} />
+                            {/* Action Button */}
+                            {statusConfig.actionButton || null}
+                    </div>
                 </div>
             )}
         </div>

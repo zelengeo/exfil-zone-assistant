@@ -20,7 +20,7 @@ import '../utils/combat-test-helper';
 import AttackerSummaryCard from "@/app/combat-sim/components/AttackerSummaryCard";
 import CombatSummary from "@/app/combat-sim/components/CombatSummary";
 import {useCombatSimUrlParams} from "@/app/combat-sim/hooks/useCombatSimParams";
-import ShareButton from "@/app/combat-sim/components/ShareButton";
+import ShareButton from "@/components/ShareButton";
 
 export default function CombatSimulatorContent() {
     const {
@@ -105,42 +105,7 @@ export default function CombatSimulatorContent() {
                         </div>
 
                         {/* Share Button - aligned to the right */}
-                        <ShareButton getShareLink={()=>getShareableLink(simulation)}/>
-
-
-                        {/* Range Presets */}
-                        {/*<div className="flex gap-1">
-                            {RANGE_PRESETS.map(preset => (
-                                <button
-                                    key={preset.name}
-                                    onClick={() => updateSimulation({range: preset.value})}
-                                    className={`
-                    px-2 py-1 text-xs rounded-sm transition-colors
-                    ${simulation.range === preset.value
-                                        ? 'bg-olive-600 text-tan-100'
-                                        : 'bg-military-700 text-tan-400 hover:text-tan-200 hover:bg-military-600'}
-                  `}
-                                    title={preset.description}
-                                >
-                                    {preset.name}
-                                </button>
-                            ))}
-                        </div>*/}
-
-                        {/* FIXME Sort Options */}
-                        {/*<div className="flex items-center gap-2">
-                            <span className="text-tan-300 text-sm font-medium">Sort:</span>
-                            <select
-                                value={simulation.sortBy}
-                                onChange={(e) => updateSimulation({sortBy: e.target.value as sortBy})}
-                                className="bg-military-800 text-tan-100 px-3 py-2 rounded-sm border border-military-700
-                  focus:border-olive-500 focus:outline-none"
-                            >
-                                {(Object.keys(SORT_BY_LABELS) as SortBy[]).map(sort => (
-                                    <option key={sort} value={sort}>{SORT_BY_LABELS[sort]}</option>
-                                ))}
-                            </select>
-                        </div>*/}
+                        <ShareButton getShareLink={()=>getShareableLink(simulation)} title={"Share setup"}/>
                     </div>
                 </div>
 
