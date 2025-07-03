@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.exfil-zone-assistant.app/sitemap.xml
