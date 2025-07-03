@@ -6,12 +6,13 @@ import {
     Map,
     Flag,
     Award,
-    Package, Info, MapPin,
+    Package, Info, MapPin, ExternalLink,
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from "next/link";
 import {Task, TaskStatus, UserProgress} from '@/types/tasks';
 import {
+    checkStatusAction,
     getStatusConfig,
     getTaskTypeIcon,
     getYouTubeUrl,
@@ -41,7 +42,8 @@ export default function TaskCard({
                                  }: TaskCardProps) {
     const [isExpanded, setIsExpanded] = useState(isAutoExpanded);
 
-    const statusConfig = getStatusConfig(status, onStatusChange, task.id);
+    const isStatusActionEnabled = checkStatusAction(status, userProgress, task.id)
+    const statusConfig = getStatusConfig(status, onStatusChange, task.id, !isStatusActionEnabled);
 
     return (
         <div className={`rounded-sm border ${statusConfig.borderColor} ${statusConfig.bgColor} overflow-hidden`}>
@@ -89,8 +91,8 @@ export default function TaskCard({
                                             {type}
   </span>
                                     ))} {task.type.length > 3 && (
-                                        <span className="text-tan-400 text-xs">+{task.type.length - 3}</span>
-                                    )}
+                                    <span className="text-tan-400 text-xs">+{task.type.length - 3}</span>
+                                )}
                                 </div>
                             </div>
 
@@ -149,15 +151,17 @@ export default function TaskCard({
                                 <div>
                                     <h5 className="font-medium text-tan-100 mb-2">Video Guides</h5>
                                     <div className="space-y-2">
-                                        {task.videoGuides.map(({author, ytId, startTs }, index) => {
-                                            if (!author || !ytId || !(author in community)) { return null }
+                                        {task.videoGuides.map(({author, ytId, startTs}, index) => {
+                                            if (!author || !ytId || !(author in community)) {
+                                                return null
+                                            }
                                             const communityAuthor = community[author as keyof typeof community];
                                             return <Link
-                                                key={author+ytId+startTs+index}
+                                                key={author + ytId + startTs + index}
                                                 href={getYouTubeUrl(ytId, startTs)}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="flex items-center bg-military-800 p-2 rounded text-olive-400 hover:text-olive-300 transition-colors text-sm  gap-2"
+                                                className="flex items-center bg-military-800 p-2 rounded text-olive-400 hover:text-olive-300 transition-colors text-sm gap-2"
                                             >
                                                 <Image
                                                     src={communityAuthor.logo}
@@ -167,7 +171,10 @@ export default function TaskCard({
                                                     width={32}
                                                     height={32}
                                                 />
-                                                <span><span className="font-bold">{communityAuthor.name}</span>&#39;s Guide</span>
+                                                <span className="flex-1">
+        <span className="font-bold">{communityAuthor.name}</span>&#39;s Guide
+    </span>
+                                                <ExternalLink size={16} className="text-olive-500"/>
                                             </Link>
                                         })}
                                     </div>
@@ -196,10 +203,13 @@ export default function TaskCard({
                                 <Info size={14} className="text-tan-400 cursor-help"/>
 
                                 {/* Tooltip */}
-                                <div className="absolute left-0 bottom-full mb-2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 z-10">
-                                    <div className="bg-military-800 border border-military-600 rounded p-3 shadow-lg w-64">
+                                <div
+                                    className="absolute left-0 bottom-full mb-2 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-200 z-10">
+                                    <div
+                                        className="bg-military-800 border border-military-600 rounded p-3 shadow-lg w-64">
                                         <p className="text-xs text-tan-300 leading-relaxed">
-                                            <span className="text-amber-400 font-medium">Note:</span> Task prerequisites are still being verified.
+                                            <span className="text-amber-400 font-medium">Note:</span> Task prerequisites
+                                            are still being verified.
                                             If you find any inconsistencies, please report them on our{' '}
                                             <Link
                                                 href="https://discord.gg/2FCDZK6C25"
@@ -212,7 +222,8 @@ export default function TaskCard({
                                             </Link>.
                                         </p>
                                         {/* Tooltip arrow */}
-                                        <div className="absolute top-full left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-military-800"></div>
+                                        <div
+                                            className="absolute top-full left-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-military-800"></div>
                                     </div>
                                 </div>
                             </div>
@@ -267,7 +278,8 @@ export default function TaskCard({
                                                             />
                                                             {/* Task Order and Name */}
                                                             <span>
-                                                                <span className="text-tan-400">{reqTask.order}:</span> {reqTask.name}
+                                                                <span
+                                                                    className="text-tan-400">{reqTask.order}:</span> {reqTask.name}
                                                             </span>
                                                         </span>
                                                         <ChevronRight size={14} className="text-tan-400"/>

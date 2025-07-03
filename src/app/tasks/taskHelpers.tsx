@@ -12,7 +12,7 @@ import {
     Search,
     Target, Undo2
 } from "lucide-react";
-import {corps, getTasksByMerchant} from "@/data/tasks";
+import {corps, getTasksByMerchant, tasksData} from "@/data/tasks";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -145,9 +145,28 @@ export const renderReward = (reward: TaskReward, index: number, getItemById: Mer
     )
 }
 
+export function checkStatusAction(status: TaskStatus, userProgress: UserProgress, taskId: string) {
+    if (!(taskId in tasksData)) return false;
+    switch (status) {
+        case 'active':
+            return tasksData[taskId].requiredTasks.every(reqTaskId=> userProgress.tasks[reqTaskId] === 'completed');
+        case 'completed':
+            return Object.keys(userProgress.tasks).every(progressTaskId => {
+                if (userProgress.tasks[progressTaskId] !== 'completed') return true;
+                return (
+                    !tasksData[progressTaskId].requiredTasks.includes(taskId)
+                )
+            })
+        case 'locked':
+            return false;
+        default:
+            return false;
+    }
+}
 
-export const getStatusConfig = (status: TaskStatus, onStatusChange?: MerchantPanelBaseProps["onTaskStatusChange"], taskId?: string) => {
-    const isActionDisabled = !(onStatusChange && taskId)
+
+export const getStatusConfig = (status: TaskStatus, onStatusChange?: MerchantPanelBaseProps["onTaskStatusChange"], taskId?: string, isDisabled?: boolean) => {
+    const isActionDisabled = isDisabled || !onStatusChange || !taskId
     switch (status) {
         case 'active':
             return {
@@ -188,7 +207,7 @@ export const getStatusConfig = (status: TaskStatus, onStatusChange?: MerchantPan
                 actionButton: <button
                     onClick={() => !isActionDisabled && onStatusChange(taskId, 'active')}
                     disabled={isActionDisabled}
-                    className="ml-auto bg-military-600 hover:bg-military-500 disabled:bg-military-600/50 disabled:cursor-not-allowed text-tan-300 px-3 py-1 rounded text-sm transition-colors flex items-center gap-1"
+                    className="ml-auto bg-military-600 hover:bg-military-500 disabled:bg-military-600/80 disabled:cursor-not-allowed text-tan-300 px-3 py-1 rounded text-sm transition-colors flex items-center gap-1"
                 >
                     <Undo2 size={16}/>
                     Undo
