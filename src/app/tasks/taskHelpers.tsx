@@ -326,3 +326,21 @@ export const RenderTipsContent = ({content}: { content: string }) => {
         </>
     );
 };
+
+// Function to create normal YouTube URL from video ID and optional start time
+export function getYouTubeUrl(videoId: string, startTime?: number): string {
+    let url = `https://www.youtube.com/watch?v=${videoId}`;
+    if (startTime && startTime > 0) {
+        url += `&t=${startTime}s`;
+    }
+    return url;
+}
+
+// Function to create YouTube embed URL from video ID and optional start time
+export function getYouTubeEmbedUrl(videoId: string, startTime?: number): string {
+    let url = `https://www.youtube-nocookie.com/embed/${videoId}`;
+    if (startTime && startTime > 0) {
+        url += `?start=${startTime}`;
+    }
+    return url;
+}

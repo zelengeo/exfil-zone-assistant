@@ -11,7 +11,13 @@ import {
 import Image from 'next/image';
 import Link from "next/link";
 import {Task, TaskStatus, UserProgress} from '@/types/tasks';
-import {getStatusConfig, getTaskTypeIcon, renderReward, RenderTipsContent} from "@/app/tasks/taskHelpers";
+import {
+    getStatusConfig,
+    getTaskTypeIcon,
+    getYouTubeUrl,
+    renderReward,
+    RenderTipsContent
+} from "@/app/tasks/taskHelpers";
 import {corps, tasksData} from "@/data/tasks";
 import {Item} from "@/types/items";
 import {community} from "@/data/community";
@@ -143,12 +149,12 @@ export default function TaskCard({
                                 <div>
                                     <h5 className="font-medium text-tan-100 mb-2">Video Guides</h5>
                                     <div className="space-y-2">
-                                        {task.videoGuides.map(({author, url}, index) => {
-                                            if (!author || !url || !(author in community)) { return null }
+                                        {task.videoGuides.map(({author, ytId, startTs }, index) => {
+                                            if (!author || !ytId || !(author in community)) { return null }
                                             const communityAuthor = community[author as keyof typeof community];
                                             return <Link
-                                                key={index}
-                                                href={url}
+                                                key={author+ytId+startTs+index}
+                                                href={getYouTubeUrl(ytId, startTs)}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="flex items-center bg-military-800 p-2 rounded text-olive-400 hover:text-olive-300 transition-colors text-sm  gap-2"

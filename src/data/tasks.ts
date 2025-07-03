@@ -95,7 +95,7 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/I5XTDO71-us"
+                "ytId": "I5XTDO71-us"
             }
         ],
         "order": 1
@@ -154,7 +154,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=34s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 34
             }
         ],
         "order": 2
@@ -215,7 +216,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=64s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 64
             }
         ],
         "order": 3
@@ -278,11 +280,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://youtu.be/4WsA_31tZKo"
+                "ytId": "4WsA_31tZKo"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=90s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 90
             }
         ],
         "order": 4
@@ -341,7 +344,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=124s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 124
             }
         ],
         "order": 5
@@ -415,11 +419,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://youtu.be/9q5RGDIiAMs"
+                "ytId": "9q5RGDIiAMs"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=186s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 186
             }
         ],
         "order": 6
@@ -480,11 +485,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://youtu.be/6MkGTEHSq_o"
+                "ytId": "6MkGTEHSq_o"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=222s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 222
             }
         ],
         "order": 7
@@ -550,11 +556,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://youtu.be/w_8khHE_o1A"
+                "ytId": "w_8khHE_o1A"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=264s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 264
             }
         ],
         "order": 8
@@ -617,11 +624,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://youtu.be/AcsdXNUqR1k"
+                "ytId": "AcsdXNUqR1k"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=296s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 296
             }
         ],
         "order": 9
@@ -682,7 +690,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/I5XTDO71-us?t=338"
+                "ytId": "I5XTDO71-us",
+                "startTs": 338
             }
         ],
         "order": 10
@@ -742,7 +751,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=385s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 385
             }
         ],
         "order": 11
@@ -807,11 +817,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://youtu.be/8Z4xxRQxK84"
+                "ytId": "8Z4xxRQxK84"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=410s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 410
             }
         ],
         "order": 12
@@ -875,7 +886,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/I5XTDO71-us?t=438 "
+                "ytId": "I5XTDO71-us",
+                "startTs": 438
             }
         ],
         "order": 13
@@ -934,7 +946,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/I5XTDO71-us?t=490"
+                "ytId": "I5XTDO71-us",
+                "startTs": 490
             }
         ],
         "order": 14
@@ -994,7 +1007,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/I5XTDO71-us?t=531"
+                "ytId": "I5XTDO71-us",
+                "startTs": 531
             }
         ],
         "order": 15
@@ -1049,11 +1063,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://youtu.be/TejY5XxbxXs"
+                "ytId": "TejY5XxbxXs"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=566s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 566
             }
         ],
         "order": 16
@@ -1105,11 +1120,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://youtu.be/91ZLjp02aDY"
+                "ytId": "91ZLjp02aDY"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=597s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 597
             }
         ],
         "order": 17
@@ -1168,7 +1184,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=650s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 650
             }
         ],
         "order": 18
@@ -1237,11 +1254,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://youtu.be/_OUY4xMCIUc"
+                "ytId": "_OUY4xMCIUc"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=662s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 662
             }
         ],
         "order": 19
@@ -1300,7 +1318,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=704s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 704
             }
         ],
         "order": 20
@@ -1365,7 +1384,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/I5XTDO71-us?t=749"
+                "ytId": "I5XTDO71-us",
+                "startTs": 749
             }
         ],
         "order": 21
@@ -1418,11 +1438,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://youtu.be/gqbXu1XbELg"
+                "ytId": "gqbXu1XbELg"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=829s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 829
             }
         ],
         "order": 22
@@ -1481,7 +1502,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/I5XTDO71-us?t=857"
+                "ytId": "I5XTDO71-us",
+                "startTs": 857
             }
         ],
         "order": 23
@@ -1541,11 +1563,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://youtu.be/sKc6B8RQefg"
+                "ytId": "sKc6B8RQefg"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=904s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 904
             }
         ],
         "order": 24
@@ -1612,11 +1635,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://youtu.be/5uY7-lpuh6Y"
+                "ytId": "5uY7-lpuh6Y"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=930s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 930
             }
         ],
         "order": 25
@@ -1683,11 +1707,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://youtu.be/mF3yc9qY4ao"
+                "ytId": "mF3yc9qY4ao"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=961s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 961
             }
         ],
         "order": 26
@@ -1746,7 +1771,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/I5XTDO71-us?t=988"
+                "ytId": "I5XTDO71-us",
+                "startTs": 988
             }
         ],
         "order": 27
@@ -1797,7 +1823,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/I5XTDO71-us?t=1044"
+                "ytId": "I5XTDO71-us",
+                "startTs": 1044
             }
         ],
         "order": 28
@@ -1854,11 +1881,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://youtu.be/HdTqbSk3eaY"
+                "ytId": "HdTqbSk3eaY"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=1070s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 1070
             }
         ],
         "order": 29
@@ -1923,7 +1951,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=1096s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 1096
             }
         ],
         "order": 30
@@ -1989,11 +2018,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://youtu.be/2fEEpOWBYHY"
+                "ytId": "2fEEpOWBYHY"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=1138s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 1138
             }
         ],
         "order": 31
@@ -2059,7 +2089,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/I5XTDO71-us?t=1164"
+                "ytId": "I5XTDO71-us",
+                "startTs": 1164
             }
         ],
         "order": 32
@@ -2122,18 +2153,19 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "requiredTasks": [
-            "ark_32",
+            "ark_32"
         ],
         "requiredLevel": 0,
         "tips": "Don't have to be 3 different ones. You can mark the same BMP in multiple runs.",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://youtu.be/9t1zLuov-sE"
+                "ytId": "9t1zLuov-sE"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=1202s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 1202
             }
         ],
         "order": 33
@@ -2192,7 +2224,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/I5XTDO71-us?t=1234"
+                "ytId": "I5XTDO71-us",
+                "startTs": 1234
             }
         ],
         "order": 34
@@ -2260,11 +2293,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://youtu.be/4eNHusxBbIU"
+                "ytId": "4eNHusxBbIU"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=I5XTDO71-us&t=1297s"
+                "ytId": "I5XTDO71-us",
+                "startTs": 1297
             }
         ],
         "order": 35
@@ -2316,7 +2350,7 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/ZOuSedSDlUE"
+                "ytId": "ZOuSedSDlUE"
             }
         ],
         "order": 1
@@ -2380,11 +2414,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=CAxLmaHZ8Qs"
+                "ytId": "CAxLmaHZ8Qs"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=43s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 43
             }
         ],
         "order": 2
@@ -2433,7 +2468,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=75s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 75
             }
         ],
         "order": 3
@@ -2488,7 +2524,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/ZOuSedSDlUE?t=86"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 86
             }
         ],
         "order": 4
@@ -2553,11 +2590,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=0g5dymVNIgo"
+                "ytId": "0g5dymVNIgo"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=109s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 109
             }
         ],
         "order": 5
@@ -2607,7 +2645,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=158s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 158
             }
         ],
         "order": 6
@@ -2673,11 +2712,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=bFUfOW56zp0"
+                "ytId": "bFUfOW56zp0"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=185s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 185
             }
         ],
         "order": 7
@@ -2740,11 +2780,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=mxXxaHsasKw"
+                "ytId": "mxXxaHsasKw"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=215s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 215
             }
         ],
         "order": 8
@@ -2808,7 +2849,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/ZOuSedSDlUE?t=237"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 237
             }
         ],
         "order": 9
@@ -2858,7 +2900,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/ZOuSedSDlUE?t=265"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 265
             }
         ],
         "order": 10
@@ -2907,7 +2950,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/ZOuSedSDlUE?t=295"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 295
             }
         ],
         "order": 11
@@ -2967,11 +3011,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=NIGkh-lpDKw"
+                "ytId": "NIGkh-lpDKw"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=335s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 335
             }
         ],
         "order": 12
@@ -3020,7 +3065,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=367s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 367
             }
         ],
         "order": 13
@@ -3075,7 +3121,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=356s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 356
             }
         ],
         "order": 14
@@ -3127,11 +3174,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=7zqCwM-Kuec"
+                "ytId": "7zqCwM-Kuec"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=378s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 378
             }
         ],
         "order": 15
@@ -3195,11 +3243,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=5uUVSGVt8pI"
+                "ytId": "5uUVSGVt8pI"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=407s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 407
             }
         ],
         "order": 16
@@ -3258,11 +3307,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/ZOuSedSDlUE?t=448"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 448
             },
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=-IE9eU_ZIJw"
+                "ytId": "-IE9eU_ZIJw"
             }
         ],
         "order": 17
@@ -3315,11 +3365,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=F5OLdAL41Rw"
+                "ytId": "F5OLdAL41Rw"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=472s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 472
             }
         ],
         "order": 18
@@ -3374,11 +3425,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=n3ycwwPxpDc"
+                "ytId": "n3ycwwPxpDc"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=488s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 488
             }
         ],
         "order": 19
@@ -3428,7 +3480,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=515s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 515
             }
         ],
         "order": 20
@@ -3491,11 +3544,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=3W2xFtE2G8w"
+                "ytId": "3W2xFtE2G8w"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=528s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 528
             }
         ],
         "order": 21
@@ -3545,7 +3599,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=561s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 561
             }
         ],
         "order": 22
@@ -3595,7 +3650,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=577s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 577
             }
         ],
         "order": 23
@@ -3645,11 +3701,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=2df8BKPx6rw"
+                "ytId": "2df8BKPx6rw"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=592s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 592
             }
         ],
         "order": 24
@@ -3704,11 +3761,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=LLb0-C95KHw"
+                "ytId": "LLb0-C95KHw"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=613s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 613
             }
         ],
         "order": 25
@@ -3762,11 +3820,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=M3-BtDmPK78"
+                "ytId": "M3-BtDmPK78"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=640s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 640
             }
         ],
         "order": 26
@@ -3815,7 +3874,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=666s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 666
             }
         ],
         "order": 27
@@ -3865,11 +3925,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=0AkItVBOwi0"
+                "ytId": "0AkItVBOwi0"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=677s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 677
             }
         ],
         "order": 28
@@ -3934,11 +3995,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=zhZlEVICwsU"
+                "ytId": "zhZlEVICwsU"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=712s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 712
             }
         ],
         "order": 29
@@ -4005,11 +4067,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=5d6THOTrYgA"
+                "ytId": "5d6THOTrYgA"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=744s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 744
             }
         ],
         "order": 30
@@ -4065,7 +4128,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=773s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 773
             }
         ],
         "order": 31
@@ -4131,11 +4195,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=g-j_4tw4zrw"
+                "ytId": "g-j_4tw4zrw"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=788s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 788
             }
         ],
         "order": 32
@@ -4208,12 +4273,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=ZOuSedSDlUE&t=831s"
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 831
             }
         ],
         "order": 33
     },
-
     "trupiks_1": {
         "id": "trupiks_1",
         "name": "Secure Support",
@@ -4253,11 +4318,11 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=quTZvsysQCQ"
+                "ytId": "quTZvsysQCQ"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=DIjbTZN_Wxc&t=0s"
+                "ytId": "DIjbTZN_Wxc"
             }
         ],
         "order": 1
@@ -4301,7 +4366,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=DIjbTZN_Wxc&t=58s"
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 58
             }
         ],
         "order": 2
@@ -4355,7 +4421,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/DIjbTZN_Wxc?t=101"
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 101
             }
         ],
         "order": 3
@@ -4413,11 +4480,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=IWDA_Giw4qo"
+                "ytId": "IWDA_Giw4qo"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/DIjbTZN_Wxc?t=183"
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 183
             }
         ],
         "order": 4
@@ -4464,11 +4532,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=lDhfK8lld7U"
+                "ytId": "lDhfK8lld7U"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/DIjbTZN_Wxc?t=206"
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 206
             }
         ],
         "order": 5
@@ -4512,7 +4581,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/DIjbTZN_Wxc?t=226"
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 226
             }
         ],
         "order": 6
@@ -4553,18 +4623,20 @@ export const tasksData: TasksDatabase = {
         ],
         "preReward": [],
         "requiredTasks": [
-            "trupiks_2", "ntg_5"
+            "trupiks_2",
+            "ntg_5"
         ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=0c5zNm33Dx0"
+                "ytId": "0c5zNm33Dx0"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/DIjbTZN_Wxc?t=124"
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 124
             }
         ],
         "order": 7
@@ -4612,7 +4684,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/DIjbTZN_Wxc?t=151"
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 151
             }
         ],
         "order": 8
@@ -4659,11 +4732,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=_gVFJBMxPr8"
+                "ytId": "_gVFJBMxPr8"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/DIjbTZN_Wxc?t=241"
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 241
             }
         ],
         "order": 9
@@ -4709,7 +4783,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=DIjbTZN_Wxc&t=292s"
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 292
             }
         ],
         "order": 10
@@ -4770,11 +4845,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=DrK25Bnw38g"
+                "ytId": "DrK25Bnw38g"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=DIjbTZN_Wxc&t=317s"
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 317
             }
         ],
         "order": 11
@@ -4830,11 +4906,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=kAvBXhqCx6c"
+                "ytId": "kAvBXhqCx6c"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=DIjbTZN_Wxc&t=360s"
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 360
             }
         ],
         "order": 12
@@ -4888,11 +4965,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=JFgC9jfom3g"
+                "ytId": "JFgC9jfom3g"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=DIjbTZN_Wxc&t=387s"
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 387
             }
         ],
         "order": 13
@@ -4953,7 +5031,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=DIjbTZN_Wxc&t=425s"
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 425
             }
         ],
         "order": 14
@@ -5014,7 +5093,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=DIjbTZN_Wxc&t=450s"
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 450
             }
         ],
         "order": 15
@@ -5075,7 +5155,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=DIjbTZN_Wxc&t=465s"
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 465
             }
         ],
         "order": 16
@@ -5126,7 +5207,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=DIjbTZN_Wxc&t=480s"
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 480
             }
         ],
         "order": 17
@@ -5183,7 +5265,7 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=0s"
+                "ytId": "YEPtvxMzsBY"
             }
         ],
         "order": 1
@@ -5242,7 +5324,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=38s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 38
             }
         ],
         "order": 2
@@ -5304,11 +5387,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=FkiWA6Eb7fo"
+                "ytId": "FkiWA6Eb7fo"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=54s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 54
             }
         ],
         "order": 3
@@ -5371,11 +5455,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=kFwjed9fWWI"
+                "ytId": "kFwjed9fWWI"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=96s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 96
             }
         ],
         "order": 4
@@ -5430,7 +5515,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=120s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 120
             }
         ],
         "order": 5
@@ -5485,7 +5571,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=140s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 140
             }
         ],
         "order": 6
@@ -5546,7 +5633,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=159s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 159
             }
         ],
         "order": 7
@@ -5605,7 +5693,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=186s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 186
             }
         ],
         "order": 8
@@ -5659,7 +5748,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=247s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 247
             }
         ],
         "order": 9
@@ -5722,11 +5812,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=ZRnKbMybPzo"
+                "ytId": "ZRnKbMybPzo"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=274s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 274
             }
         ],
         "order": 10
@@ -5780,7 +5871,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=293s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 293
             }
         ],
         "order": 11
@@ -5847,11 +5939,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=oAQ9Rl2WTmM"
+                "ytId": "oAQ9Rl2WTmM"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=342s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 342
             }
         ],
         "order": 12
@@ -5900,7 +5993,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=369s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 369
             }
         ],
         "order": 13
@@ -5965,11 +6059,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=fmGJ_eR3m2Y"
+                "ytId": "fmGJ_eR3m2Y"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=420s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 420
             }
         ],
         "order": 14
@@ -6029,7 +6124,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=440s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 440
             }
         ],
         "order": 15
@@ -6088,7 +6184,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=452s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 452
             }
         ],
         "order": 16
@@ -6137,7 +6234,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=465s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 465
             }
         ],
         "order": 17
@@ -6199,11 +6297,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=cNQ5CB60RpU"
+                "ytId": "cNQ5CB60RpU"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=503s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 503
             }
         ],
         "order": 18
@@ -6257,7 +6356,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=531s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 531
             }
         ],
         "order": 19
@@ -6317,7 +6417,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=610s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 610
             }
         ],
         "order": 20
@@ -6376,7 +6477,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=653s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 653
             }
         ],
         "order": 21
@@ -6435,7 +6537,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=705s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 705
             }
         ],
         "order": 22
@@ -6507,11 +6610,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=tw_SplvvQO8"
+                "ytId": "tw_SplvvQO8"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=749s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 749
             }
         ],
         "order": 23
@@ -6572,11 +6676,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=CaU7t19ysxY"
+                "ytId": "CaU7t19ysxY"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=786s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 786
             }
         ],
         "order": 24
@@ -6633,7 +6738,7 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=xMd_KozHG30"
+                "ytId": "xMd_KozHG30"
             }
         ],
         "order": 25
@@ -6703,7 +6808,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=819s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 819
             }
         ],
         "order": 26
@@ -6762,7 +6868,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=894s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 894
             }
         ],
         "order": 27
@@ -6830,11 +6937,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=tVcmvySg7Xc"
+                "ytId": "tVcmvySg7Xc"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=992s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 992
             }
         ],
         "order": 28
@@ -6878,7 +6986,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=1014s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 1014
             }
         ],
         "order": 29
@@ -6939,11 +7048,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=JIacdtZ1GGE"
+                "ytId": "JIacdtZ1GGE"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=1094s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 1094
             }
         ],
         "order": 30
@@ -7008,7 +7118,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=1125s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 1125
             }
         ],
         "order": 31
@@ -7075,11 +7186,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=qfRvA2MBmGI"
+                "ytId": "qfRvA2MBmGI"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=1167s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 1167
             }
         ],
         "order": 32
@@ -7146,11 +7258,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=zgM6Ab7cfmI"
+                "ytId": "zgM6Ab7cfmI"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=1241s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 1241
             }
         ],
         "order": 33
@@ -7209,7 +7322,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=1272s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 1272
             }
         ],
         "order": 34
@@ -7269,7 +7383,8 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=YEPtvxMzsBY&t=1302s"
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 1302
             }
         ],
         "order": 35
@@ -7321,11 +7436,11 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=3mhlLR8_jp0"
+                "ytId": "3mhlLR8_jp0"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM"
+                "ytId": "BO5uihtPyLM"
             }
         ],
         "order": 1
@@ -7378,17 +7493,20 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["forge_1"],
+        "requiredTasks": [
+            "forge_1"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=zk9lVdCpsTg"
+                "ytId": "zk9lVdCpsTg"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=68s"
+                "ytId": "BO5uihtPyLM",
+                "startTs": 68
             }
         ],
         "order": 2
@@ -7442,17 +7560,20 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["forge_2"],
+        "requiredTasks": [
+            "forge_2"
+        ],
         "requiredLevel": 0,
         "tips": "Look at M.I.C.A, LOCKED extract icon near the Canal.You don't have to extract from there or open it.",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=ONQLQQK3qRI"
+                "ytId": "ONQLQQK3qRI"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=109s"
+                "ytId": "BO5uihtPyLM",
+                "startTs": 109
             }
         ],
         "order": 3
@@ -7493,17 +7614,20 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["forge_2"],
+        "requiredTasks": [
+            "forge_2"
+        ],
         "requiredLevel": 0,
         "tips": "[Notebook](https://www.exfil-zone-assistant.app/items/misc_notebook)",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://youtu.be/3yUDq4fJZ-s"
+                "ytId": "3yUDq4fJZ-s"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=141s"
+                "ytId": "BO5uihtPyLM",
+                "startTs": 141
             }
         ],
         "order": 4
@@ -7555,17 +7679,21 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["forge_3", "forge_4"],
+        "requiredTasks": [
+            "forge_3",
+            "forge_4"
+        ],
         "requiredLevel": 0,
         "tips": "Small fountain on wall in Rua Algasol.",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=8un2o6BUoH8"
+                "ytId": "8un2o6BUoH8"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=154s"
+                "ytId": "BO5uihtPyLM",
+                "startTs": 154
             }
         ],
         "order": 5
@@ -7611,17 +7739,20 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["forge_5"],
+        "requiredTasks": [
+            "forge_5"
+        ],
         "requiredLevel": 0,
         "tips": "Car dealership located east side by tunnel extract. All required cars are nearby.",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=XVqVAHhgKFI"
+                "ytId": "XVqVAHhgKFI"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=190s"
+                "ytId": "BO5uihtPyLM",
+                "startTs": 190
             }
         ],
         "order": 6
@@ -7665,17 +7796,20 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["forge_6"],
+        "requiredTasks": [
+            "forge_6"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=Rsc3sPUjoXI"
+                "ytId": "Rsc3sPUjoXI"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=214s"
+                "ytId": "BO5uihtPyLM",
+                "startTs": 214
             }
         ],
         "order": 7
@@ -7723,17 +7857,20 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["forge_6"],
+        "requiredTasks": [
+            "forge_6"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=nGyTYeMvmTE"
+                "ytId": "nGyTYeMvmTE"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=241s"
+                "ytId": "BO5uihtPyLM",
+                "startTs": 241
             }
         ],
         "order": 8
@@ -7774,14 +7911,18 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["forge_7"],
+        "requiredTasks": [
+            "forge_7"
+        ],
         "requiredLevel": 0,
         "tips": "[Old Phone](https://www.exfil-zone-assistant.app/items/misc_b_oldphone)",
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=276s"
-            }],
+                "ytId": "BO5uihtPyLM",
+                "startTs": 276
+            }
+        ],
         "order": 9
     },
     "forge_10": {
@@ -7824,14 +7965,18 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["forge_8"],
+        "requiredTasks": [
+            "forge_8"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=286s"
-            }],
+                "ytId": "BO5uihtPyLM",
+                "startTs": 286
+            }
+        ],
         "order": 10
     },
     "forge_11": {
@@ -7879,17 +8024,20 @@ export const tasksData: TasksDatabase = {
                 "quantity": 4
             }
         ],
-        "requiredTasks": ["forge_9"],
+        "requiredTasks": [
+            "forge_9"
+        ],
         "requiredLevel": 0,
         "tips": "Located at top of dam.Mark all 4 concrete Towers with the tracker.",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=XJ_WamWoIds"
+                "ytId": "XJ_WamWoIds"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=595s"
+                "ytId": "BO5uihtPyLM",
+                "startTs": 595
             }
         ],
         "order": 11
@@ -7930,14 +8078,18 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["forge_10"],
+        "requiredTasks": [
+            "forge_10"
+        ],
         "requiredLevel": 0,
         "tips": "SWAT boss located at the Bank main entrance.(Not Bonecrusher in yellow helmet)",
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=353s"
-            }],
+                "ytId": "BO5uihtPyLM",
+                "startTs": 353
+            }
+        ],
         "order": 12
     },
     "forge_13": {
@@ -7976,14 +8128,18 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["forge_10"],
+        "requiredTasks": [
+            "forge_10"
+        ],
         "requiredLevel": 0,
         "tips": "[Tape](https://www.exfil-zone-assistant.app/items/misc_b_tape)",
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=378s"
-            }],
+                "ytId": "BO5uihtPyLM",
+                "startTs": 378
+            }
+        ],
         "order": 13
     },
     "forge_14": {
@@ -8022,14 +8178,18 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["forge_13"],
+        "requiredTasks": [
+            "forge_13"
+        ],
         "requiredLevel": 0,
         "tips": "[Camera](https://www.exfil-zone-assistant.app/items/misc_camera)",
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=391s"
-            }],
+                "ytId": "BO5uihtPyLM",
+                "startTs": 391
+            }
+        ],
         "order": 14
     },
     "forge_15": {
@@ -8070,17 +8230,20 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["forge_14"],
+        "requiredTasks": [
+            "forge_14"
+        ],
         "requiredLevel": 0,
         "tips": "Located in the center of the Mall on -1F, in the room below escalator stairs.",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=KoE9YIrOaGI"
+                "ytId": "KoE9YIrOaGI"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=406s"
+                "ytId": "BO5uihtPyLM",
+                "startTs": 406
             }
         ],
         "order": 15
@@ -8131,11 +8294,12 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=rrL25q04zaE"
+                "ytId": "rrL25q04zaE"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=427s"
+                "ytId": "BO5uihtPyLM",
+                "startTs": 427
             }
         ],
         "order": 16
@@ -8178,17 +8342,20 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["forge_16"],
+        "requiredTasks": [
+            "forge_16"
+        ],
         "requiredLevel": 0,
         "tips": "These are *not* barns, they are tall silos.",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=Yq6b9D90zyY"
+                "ytId": "Yq6b9D90zyY"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=467s"
+                "ytId": "BO5uihtPyLM",
+                "startTs": 467
             }
         ],
         "order": 17
@@ -8235,17 +8402,20 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["forge_17"],
+        "requiredTasks": [
+            "forge_17"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=_lT5d6SMhp4"
+                "ytId": "_lT5d6SMhp4"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=527s"
+                "ytId": "BO5uihtPyLM",
+                "startTs": 527
             }
         ],
         "order": 18
@@ -8286,14 +8456,18 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["forge_11"],
+        "requiredTasks": [
+            "forge_11"
+        ],
         "requiredLevel": 0,
         "tips": "[Gold Ingot](https://www.exfil-zone-assistant.app/items/misc_goldingot)]",
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=624s"
-            }],
+                "ytId": "BO5uihtPyLM",
+                "startTs": 624
+            }
+        ],
         "order": 21
     },
     "forge_22": {
@@ -8341,17 +8515,21 @@ export const tasksData: TasksDatabase = {
                 "quantity": 4
             }
         ],
-        "requiredTasks": ["forge_11", "forge_18"],
+        "requiredTasks": [
+            "forge_11",
+            "forge_18"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=VuvURKV4MWk"
+                "ytId": "VuvURKV4MWk"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=657s"
+                "ytId": "BO5uihtPyLM",
+                "startTs": 657
             }
         ],
         "order": 22
@@ -8396,14 +8574,18 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["forge_22"],
+        "requiredTasks": [
+            "forge_22"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=643s"
-            }],
+                "ytId": "BO5uihtPyLM",
+                "startTs": 643
+            }
+        ],
         "order": 23
     },
     "forge_24": {
@@ -8445,17 +8627,20 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["forge_18"],
+        "requiredTasks": [
+            "forge_18"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=okHHthr__LY"
+                "ytId": "okHHthr__LY"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/BO5uihtPyLM?t=754"
+                "ytId": "BO5uihtPyLM",
+                "startTs": 754
             }
         ],
         "order": 24
@@ -8500,17 +8685,20 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["forge_18"],
+        "requiredTasks": [
+            "forge_18"
+        ],
         "requiredLevel": 0,
         "tips": "Climb to the top of the crane. Acrophobia is a thing.",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=OC9DuhsBReg"
+                "ytId": "OC9DuhsBReg"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://youtu.be/BO5uihtPyLM?t=699"
+                "ytId": "BO5uihtPyLM",
+                "startTs": 699
             }
         ],
         "order": 25
@@ -8561,17 +8749,20 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["forge_24"],
+        "requiredTasks": [
+            "forge_24"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=FUrur2cpdUA"
+                "ytId": "FUrur2cpdUA"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=802s"
+                "ytId": "BO5uihtPyLM",
+                "startTs": 802
             }
         ],
         "order": 26
@@ -8616,17 +8807,20 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["forge_22"],
+        "requiredTasks": [
+            "forge_22"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=p2W4kXJUtIA"
+                "ytId": "p2W4kXJUtIA"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=859s"
+                "ytId": "BO5uihtPyLM",
+                "startTs": 859
             }
         ],
         "order": 27
@@ -8677,17 +8871,20 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["forge_27"],
+        "requiredTasks": [
+            "forge_27"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=yEf6vs-lZDg"
+                "ytId": "yEf6vs-lZDg"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=887s"
+                "ytId": "BO5uihtPyLM",
+                "startTs": 887
             }
         ],
         "order": 28
@@ -8739,17 +8936,20 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["forge_28"],
+        "requiredTasks": [
+            "forge_28"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=Gl_3o8UfEyI"
+                "ytId": "Gl_3o8UfEyI"
             },
             {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=913s"
+                "ytId": "BO5uihtPyLM",
+                "startTs": 913
             }
         ],
         "order": 29
@@ -8802,16 +9002,20 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "requiredTasks": ["forge_27"],
+        "requiredTasks": [
+            "forge_27"
+        ],
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "orbb",
-                "url": "https://www.youtube.com/watch?v=OCRTBDedB3Q"
-            }, {
+                "ytId": "OCRTBDedB3Q"
+            },
+            {
                 "author": "radFoxVR",
-                "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=944s"
+                "ytId": "BO5uihtPyLM",
+                "startTs": 944
             }
         ],
         "order": 30
@@ -8852,13 +9056,18 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["forge_23"],
+        "requiredTasks": [
+            "forge_23"
+        ],
         "requiredLevel": 0,
         "tips": "Reward not worth it. Exchange gold figurine for Endgame equipment in official discord.",
-        "videoGuides": [{
-            "author": "radFoxVR",
-            "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=1016s"
-        }],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "ytId": "BO5uihtPyLM",
+                "startTs": 1016
+            }
+        ],
         "order": 31
     },
     "forge_32": {
@@ -8900,15 +9109,20 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "preReward": [],
-        "requiredTasks": ["forge_23"],
+        "requiredTasks": [
+            "forge_23"
+        ],
         "requiredLevel": 0,
         "tips": "Not worth a hassle.",
-        "videoGuides": [{
-            "author": "radFoxVR",
-            "url": "https://www.youtube.com/watch?v=BO5uihtPyLM&t=1028s"
-        }],
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "ytId": "BO5uihtPyLM",
+                "startTs": 1028
+            }
+        ],
         "order": 32
-    },
+    }
 } as const;
 
 // Helper functions for tasks

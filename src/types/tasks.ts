@@ -8,7 +8,7 @@ export interface TaskReward {
 
 export type TaskType = 'reach' | 'extract' | 'retrieve' | 'eliminate' | 'submit' | 'mark' | 'place' | 'photo';
 
-export type TaskVideoGuide = { author: string, url: string }
+export type TaskVideoGuide = { author: string, ytId: string, startTs?: number, endTs?: number }
 
 export type TaskMap = 'suburb' | 'resort' | 'dam' | 'metro' | 'any';
 

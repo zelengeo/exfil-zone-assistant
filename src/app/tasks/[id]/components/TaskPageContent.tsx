@@ -14,8 +14,16 @@ import Layout from '@/components/layout/Layout';
 import {tasksData, corps} from '@/data/tasks';
 import {UserProgress} from '@/types/tasks';
 import {useFetchItems} from '@/hooks/useFetchItems';
-import {getStatusConfig, getTaskStatus, getTaskTypeIcon, quickHighlight, renderReward} from "@/app/tasks/taskHelpers";
+import {
+    getStatusConfig,
+    getTaskStatus,
+    getTaskTypeIcon,
+    getYouTubeEmbedUrl, getYouTubeUrl,
+    quickHighlight,
+    renderReward
+} from "@/app/tasks/taskHelpers";
 import Image from "next/image";
+import {community} from "@/data/community";
 
 interface TaskPageContentProps {
     taskId: string;
@@ -145,13 +153,39 @@ export default function TaskPageContent({taskId}: TaskPageContentProps) {
                             <h2 className="vr-heading-2 text-tan-100 mb-4">Video Walkthrough</h2>
                             <div className="relative w-full aspect-video bg-military-700 rounded overflow-hidden">
                                 <iframe
-                                    src={`https://www.youtube-nocookie.com/embed/I5XTDO71-us`}
+                                    src={getYouTubeEmbedUrl(task.videoGuides[0].ytId, task.videoGuides[0].startTs )}
                                     title={`${task.name} Video Guide`}
                                     className="absolute inset-0 w-full h-full"
                                     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
                                 />
                             </div>
+                            {task.videoGuides.length > 1 && (
+                                <div className="space-y-2">
+                                    <h3 className="vr-heading-3 text-tan-100 my-2">Other Walkthroughs</h3>
+                                    {task.videoGuides.map(({author, ytId, startTs }, index) => {
+                                        if (index===0 || !author || !ytId || !(author in community)) { return null }
+                                        const communityAuthor = community[author as keyof typeof community];
+                                        return <Link
+                                            key={author+ytId+startTs+index}
+                                            href={getYouTubeUrl(ytId, startTs)}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center bg-military-800 p-2 rounded text-olive-400 hover:text-olive-300 transition-colors text-sm  gap-2"
+                                        >
+                                            <Image
+                                                src={communityAuthor.logo}
+                                                alt={communityAuthor.name}
+                                                unoptimized={true}
+                                                className={`w-6 h-6 rounded-full cursor-pointer`}
+                                                width={32}
+                                                height={32}
+                                            />
+                                            <span><span className="font-bold">{communityAuthor.name}</span>&#39;s Guide</span>
+                                        </Link>
+                                    })}
+                                </div>
+                            )}
                         </section>
                     ) : null}
 
