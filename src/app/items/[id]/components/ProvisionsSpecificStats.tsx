@@ -15,7 +15,7 @@ export default function ProvisionsSpecificStats({item}: { item: Provisions }) {
                 <div className="flex items-center gap-2">
                     <Container size={18} className="text-olive-400"/>
                     <span className="text-tan-400">Capacity:</span>
-                    <span className="text-tan-100">{item.stats.capacity/item.stats.threshold}x{item.stats.threshold}</span>
+                    <span className="text-tan-100">{item.stats.threshold}x{item.stats.capacity/item.stats.threshold}</span>
                 </div>
                 <div className="flex items-center gap-2">
                     <Gauge size={18} className="text-olive-400"/>
