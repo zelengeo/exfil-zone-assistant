@@ -1,6 +1,17 @@
 import React from 'react';
-import {X, ChevronRight, ChevronDown, Swords, Fence, Shield, BriefcaseMedical, Bomb} from 'lucide-react';
-import { ItemCategory } from '@/types/items';
+import {
+    X,
+    ChevronRight,
+    ChevronDown,
+    Swords,
+    Fence,
+    Shield,
+    BriefcaseMedical,
+    Bomb,
+    Apple,
+    Drill, ChevronsUp
+} from 'lucide-react';
+import {ItemCategory} from '@/types/items';
 import {useRouter} from "next/navigation";
 
 // Icon mapper for categories
@@ -22,13 +33,9 @@ const getCategoryIcon = (categoryId: string) => {
             return (
                 <Bomb size={20}/>
             );
-        case 'food':
+        case 'provisions':
             return (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                    <path d="M7 12a5 5 0 0 1 5-5c.91 0 1.76.25 2.5.67A5 5 0 0 1 17 12v7H7v-7Z"></path>
-                    <path d="M16 6.05a3 3 0 0 0-5.17-2.13"></path>
-                    <path d="M12 2a2 2 0 0 0-2 2"></path>
-                </svg>
+                <Apple size={20}/>
             );
         case 'gear':
             return (
@@ -36,37 +43,24 @@ const getCategoryIcon = (categoryId: string) => {
             );
         case 'misc':
             return (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                    <path d="M22 12H2"></path>
-                    <path d="M5 12V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7"></path>
-                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"></path>
-                    <path d="M9 22v-4"></path>
-                    <path d="M15 22v-4"></path>
-                </svg>
+                <Drill size={20}/>
             );
         case 'keys':
             return (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                    <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                    <path
+                        d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
                 </svg>
             );
         case 'attachments':
             return (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                    <circle cx="12" cy="12" r="3"></circle>
-                    <path d="M3 7V5a2 2 0 0 1 2-2h2"></path>
-                    <path d="M17 3h2a2 2 0 0 1 2 2v2"></path>
-                    <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path>
-                    <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path>
-                    <line x1="12" y1="7" x2="12" y2="5"></line>
-                    <line x1="17" y1="12" x2="19" y2="12"></line>
-                    <line x1="12" y1="17" x2="12" y2="19"></line>
-                    <line x1="7" y1="12" x2="5" y2="12"></line>
-                </svg>
+                <ChevronsUp size={20}/>
             );
         default:
             return (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
                     <circle cx="12" cy="12" r="10"></circle>
                     <line x1="12" y1="16" x2="12" y2="12"></line>
                     <line x1="12" y1="8" x2="12.01" y2="8"></line>
@@ -83,7 +77,7 @@ interface FilterSidebarProps {
     onClose: () => void;
 }
 
-const FilterSidebar: React.FC<FilterSidebarProps> = ({
+export const FilterSidebar: React.FC<FilterSidebarProps> = ({
                                                          categories,
                                                          selectedCategory,
                                                          selectedSubcategory,
@@ -92,7 +86,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
                                                      }) => {
     const router = useRouter();
     // Track which categories have their subcategories expanded
-    const [expandedCategories, setExpandedCategories] = React.useState<{[key: string]: boolean}>({});
+    const [expandedCategories, setExpandedCategories] = React.useState<{ [key: string]: boolean }>({});
 
     // Toggle expanded state for a category
     const toggleCategoryExpanded = (categoryId: string) => {
@@ -151,7 +145,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
                         onClick={onClose}
                         className="w-8 h-8 flex items-center justify-center rounded-sm bg-military-700 hover:bg-military-600 text-tan-300"
                     >
-                        <X size={18} />
+                        <X size={18}/>
                     </button>
                 </div>
 
@@ -200,9 +194,9 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
                                     {category.subcategories && category.subcategories.length > 0 && (
                                         <span>
                       {expandedCategories[category.id] ? (
-                          <ChevronDown size={18} className="text-olive-400" />
+                          <ChevronDown size={18} className="text-olive-400"/>
                       ) : (
-                          <ChevronRight size={18} className="text-olive-400" />
+                          <ChevronRight size={18} className="text-olive-400"/>
                       )}
                     </span>
                                     )}
@@ -296,9 +290,9 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({
                             {category.subcategories && category.subcategories.length > 0 && (
                                 <span>
                   {expandedCategories[category.id] ? (
-                      <ChevronDown size={16} className="text-olive-400" />
+                      <ChevronDown size={16} className="text-olive-400"/>
                   ) : (
-                      <ChevronRight size={16} className="text-olive-400" />
+                      <ChevronRight size={16} className="text-olive-400"/>
                   )}
                 </span>
                             )}

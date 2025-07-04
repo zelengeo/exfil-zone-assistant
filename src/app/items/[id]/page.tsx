@@ -20,12 +20,13 @@ import {getItemById} from "@/services/ItemService";
 import {
     isAmmunition,
     isAnyItem,
-    isArmor, isAttachment, isGrenade, isMedicine, isMisc, isWeapon
+    isArmor, isAttachment, isGrenade, isMedicine, isMisc, isProvisions, isWeapon
 } from "@/app/combat-sim/utils/types";
 import GrenadeSpecificStats from "@/app/items/[id]/components/GrenadeSpecificStats";
 import MedicineSpecificStats from "@/app/items/[id]/components/MedicineSpecificStats";
 import ArmorSpecificStats from "@/app/items/[id]/components/ArmorSpecificStats";
 import AttachmentSpecificStats from "@/app/items/[id]/components/AttachmentSpecificStats";
+import ProvisionsSpecificStats from "@/app/items/[id]/components/ProvisionsSpecificStats";
 
 // Component for displaying item images with zoom functionality
 const ItemImageDisplay: React.FC<{
@@ -107,6 +108,9 @@ const renderCategorySpecificStats = (item: AnyItem) => {
             break;
         case 'medicine':
             if (isMedicine(item)) return <MedicineSpecificStats item={item}/>
+            break;
+        case 'provisions':
+            if (isProvisions(item)) return <ProvisionsSpecificStats item={item}/>
             break;
         default:
             return null;

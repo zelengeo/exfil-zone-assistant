@@ -315,8 +315,8 @@ export const tasksData: TasksDatabase = {
                 "quantity": 6403
             },
             {
-                "type": "item",
-                "item_name": "ARK arm",
+                "type": "reputation",
+                "corpId": "ark",
                 "quantity": 10
             },
             {
@@ -1758,7 +1758,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "mag_556x45_30",
+                "item_id": "mag_556x45_30",
                 "quantity": 1
             }
         ],
@@ -2060,7 +2060,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "ammo-556x45-apv2",
+                "item_id": "ammo-556x45-apv2",
                 "quantity": 30
             },
             {
@@ -2126,7 +2126,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "ammo-762x51-apv1",
+                "item_id": "ammo-762x51-apv1",
                 "quantity": 30
             },
             {
@@ -2201,7 +2201,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "ammo-762x51-apv1",
+                "item_id": "ammo-762x51-apv1",
                 "quantity": 30
             },
             {
@@ -2334,7 +2334,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "Energy bar",
+                "item_id": "food_energy_bar",
                 "quantity": 2
             },
             {
@@ -2506,7 +2506,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "chocolate",
+                "item_id": "food_chocolate",
                 "quantity": 2
             },
             {
@@ -2566,7 +2566,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "mineral water",
+                "item_id": "food_mineral_water",
                 "quantity": 2
             },
             {
@@ -2756,7 +2756,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "meat can L",
+                "item_id": "food_meat_can_l",
                 "quantity": 1
             },
             {
@@ -2826,12 +2826,12 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "soda drink",
+                "item_id": "food_soda_drink",
                 "quantity": 1
             },
             {
                 "type": "item",
-                "item_name": "meat can",
+                "item_id": "food_meat_can",
                 "quantity": 1
             },
             {
@@ -2987,7 +2987,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "sausage",
+                "item_id": "food_sausage",
                 "quantity": 2
             },
             {
@@ -3103,12 +3103,12 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "compact ration",
+                "item_id": "food_mre",
                 "quantity": 2
             },
             {
                 "type": "item",
-                "item_name": "Water Bottle",
+                "item_id": "food_water_bottle",
                 "quantity": 2
             }
         ],
@@ -3520,7 +3520,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "Meat can",
+                "item_id": "food_meat_can",
                 "quantity": 2
             },
             {
@@ -6221,7 +6221,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "Compact Ration",
+                "item_id": "food_mre",
                 "quantity": 3
             }
         ],
@@ -6267,9 +6267,10 @@ export const tasksData: TasksDatabase = {
                 "type": "experience",
                 "quantity": 7928
             },
+
             {
-                "type": "item",
-                "item_name": "regiment",
+                "type": "reputation",
+                "corpId": "regiment",
                 "quantity": 10
             },
             {
@@ -7534,8 +7535,8 @@ export const tasksData: TasksDatabase = {
                 "quantity": 15000
             },
             {
-                "type": "item",
-                "item_name": "ARK Gear",
+                "type": "reputation",
+                "corpId": "forge",
                 "quantity": 20
             },
             {
@@ -8215,8 +8216,8 @@ export const tasksData: TasksDatabase = {
                 "quantity": 20000
             },
             {
-                "type": "item",
-                "item_name": "ARK Gear",
+                "type": "reputation",
+                "corpId": "ark",
                 "quantity": 20
             },
             {

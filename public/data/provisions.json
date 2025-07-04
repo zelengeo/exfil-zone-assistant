@@ -1,0 +1,370 @@
+[
+  {
+    "id": "food_soda_drink_l",
+    "name": "Soda Drink L",
+    "description": "",
+    "category": "provisions",
+    "subcategory": "Drinks",
+    "images": {
+      "icon": "/images/items/food/Icon_food_09.webp",
+      "thumbnail": "/images/items/food/Icon_food_09.webp",
+      "fullsize": "/images/items/food/Icon_food_09.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.4,
+      "rarity": "Common",
+      "capacity": 36,
+      "threshold": 3,
+      "consumptionSpeed": 9,
+      "energyFactor": 0.25,
+      "hydraFactor": 1
+    },
+    "tips": ""
+  },
+  {
+    "id": "food_soda_drink",
+    "name": "Soda Drink",
+    "description": "",
+    "category": "provisions",
+    "subcategory": "Drinks",
+    "images": {
+      "icon": "/images/items/food/Icon_food_03.webp",
+      "thumbnail": "/images/items/food/Icon_food_03.webp",
+      "fullsize": "/images/items/food/Icon_food_03.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.33,
+      "rarity": "Common",
+      "capacity": 24,
+      "threshold": 4,
+      "consumptionSpeed": 8,
+      "energyFactor": 0.2,
+      "hydraFactor": 1
+    },
+    "tips": ""
+  },
+  {
+    "id": "food_energy_bar",
+    "name": "Energy bar",
+    "description": "",
+    "category": "provisions",
+    "subcategory": "Food",
+    "images": {
+      "icon": "/images/items/food/Icon_food_01.webp",
+      "thumbnail": "/images/items/food/Icon_food_01.webp",
+      "fullsize": "/images/items/food/Icon_food_01.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.08,
+      "rarity": "Common",
+      "capacity": 30,
+      "threshold": 10,
+      "consumptionSpeed": 2.5,
+      "energyFactor": 1,
+      "hydraFactor": 0
+    },
+    "tips": ""
+  },
+  {
+    "id": "food_chocolate",
+    "name": "Chocolate",
+    "description": "",
+    "category": "provisions",
+    "subcategory": "Food",
+    "images": {
+      "icon": "/images/items/food/Icon_food_10.webp",
+      "thumbnail": "/images/items/food/Icon_food_10.webp",
+      "fullsize": "/images/items/food/Icon_food_10.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.12,
+      "rarity": "Common",
+      "capacity": 42,
+      "threshold": 14,
+      "consumptionSpeed": 7,
+      "energyFactor": 1,
+      "hydraFactor": 0
+    },
+    "tips": ""
+  },
+  {
+    "id": "food_meat_can_l",
+    "name": "Meat can L",
+    "description": "",
+    "category": "provisions",
+    "subcategory": "Food",
+    "images": {
+      "icon": "/images/items/food/Icon_food_11.webp",
+      "thumbnail": "/images/items/food/Icon_food_11.webp",
+      "fullsize": "/images/items/food/Icon_food_11.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.35,
+      "rarity": "Common",
+      "capacity": 60,
+      "threshold": 20,
+      "consumptionSpeed": 10,
+      "energyFactor": 1,
+      "hydraFactor": 0
+    },
+    "tips": ""
+  },
+  {
+    "id": "food_meat_can",
+    "name": "Meat can",
+    "description": "",
+    "category": "provisions",
+    "subcategory": "Food",
+    "images": {
+      "icon": "/images/items/food/Icon_food_12.webp",
+      "thumbnail": "/images/items/food/Icon_food_12.webp",
+      "fullsize": "/images/items/food/Icon_food_12.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.3,
+      "rarity": "Common",
+      "capacity": 54,
+      "threshold": 18,
+      "consumptionSpeed": 9,
+      "energyFactor": 1,
+      "hydraFactor": 0
+    },
+    "tips": ""
+  },
+  {
+    "id": "food_pea_can",
+    "name": "Pea can",
+    "description": "",
+    "category": "provisions",
+    "subcategory": "Food",
+    "images": {
+      "icon": "/images/items/food/Icon_food_13.webp",
+      "thumbnail": "/images/items/food/Icon_food_13.webp",
+      "fullsize": "/images/items/food/Icon_food_13.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.5,
+      "rarity": "Common",
+      "capacity": 45,
+      "threshold": 15,
+      "consumptionSpeed": 7.5,
+      "energyFactor": 1,
+      "hydraFactor": 0
+    },
+    "tips": ""
+  },
+  {
+    "id": "food_sausage",
+    "name": "Sausage",
+    "description": "",
+    "category": "provisions",
+    "subcategory": "Food",
+    "images": {
+      "icon": "/images/items/food/Icon_food_14.webp",
+      "thumbnail": "/images/items/food/Icon_food_14.webp",
+      "fullsize": "/images/items/food/Icon_food_14.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.18,
+      "rarity": "Common",
+      "capacity": 39,
+      "threshold": 13,
+      "consumptionSpeed": 6.5,
+      "energyFactor": 1,
+      "hydraFactor": 0
+    },
+    "tips": ""
+  },
+  {
+    "id": "food_mre",
+    "name": "Compact Ration",
+    "description": "",
+    "category": "provisions",
+    "subcategory": "Food",
+    "images": {
+      "icon": "/images/items/food/Icon_food_02.webp",
+      "thumbnail": "/images/items/food/Icon_food_02.webp",
+      "fullsize": "/images/items/food/Icon_food_02.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.8,
+      "rarity": "Common",
+      "capacity": 120,
+      "threshold": 40,
+      "consumptionSpeed": 10,
+      "energyFactor": 1,
+      "hydraFactor": 0
+    },
+    "tips": ""
+  },
+  {
+    "id": "food_apple",
+    "name": "Apple",
+    "description": "",
+    "category": "provisions",
+    "subcategory": "Food",
+    "images": {
+      "icon": "/images/items/food/Icon_food_05.webp",
+      "thumbnail": "/images/items/food/Icon_food_05.webp",
+      "fullsize": "/images/items/food/Icon_food_05.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Common",
+      "capacity": 10,
+      "threshold": 5,
+      "consumptionSpeed": 2.5,
+      "energyFactor": 1,
+      "hydraFactor": 1
+    },
+    "tips": ""
+  },
+  {
+    "id": "food_ginger_bread",
+    "name": "Ginger Bread",
+    "description": "",
+    "category": "provisions",
+    "subcategory": "Food",
+    "images": {
+      "icon": "/images/items/food/Icon_FOOD_Gingerbread_02.webp",
+      "thumbnail": "/images/items/food/Icon_FOOD_Gingerbread_02.webp",
+      "fullsize": "/images/items/food/Icon_FOOD_Gingerbread_02.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.05,
+      "rarity": "Common",
+      "capacity": 30,
+      "threshold": 30,
+      "consumptionSpeed": 20,
+      "energyFactor": 1,
+      "hydraFactor": 0
+    },
+    "tips": ""
+  },
+  {
+    "id": "food_beer",
+    "name": "Beer",
+    "description": "",
+    "category": "provisions",
+    "subcategory": "Drinks",
+    "images": {
+      "icon": "/images/items/food/Icon_food_06.webp",
+      "thumbnail": "/images/items/food/Icon_food_06.webp",
+      "fullsize": "/images/items/food/Icon_food_06.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.6,
+      "rarity": "Common",
+      "capacity": 50,
+      "threshold": 2,
+      "consumptionSpeed": 10,
+      "energyFactor": 0.1,
+      "hydraFactor": 1
+    },
+    "tips": ""
+  },
+  {
+    "id": "food_coffee",
+    "name": "Coffee",
+    "description": "",
+    "category": "provisions",
+    "subcategory": "Drinks",
+    "images": {
+      "icon": "/images/items/food/Icon_food_07.webp",
+      "thumbnail": "/images/items/food/Icon_food_07.webp",
+      "fullsize": "/images/items/food/Icon_food_07.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.35,
+      "rarity": "Common",
+      "capacity": 40,
+      "threshold": 2,
+      "consumptionSpeed": 10,
+      "energyFactor": 0,
+      "hydraFactor": 1
+    },
+    "tips": ""
+  },
+  {
+    "id": "food_mineral_water",
+    "name": "Mineral Water",
+    "description": "",
+    "category": "provisions",
+    "subcategory": "Drinks",
+    "images": {
+      "icon": "/images/items/food/Icon_food_08.webp",
+      "thumbnail": "/images/items/food/Icon_food_08.webp",
+      "fullsize": "/images/items/food/Icon_food_08.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.5,
+      "rarity": "Common",
+      "capacity": 60,
+      "threshold": 2,
+      "consumptionSpeed": 10,
+      "energyFactor": 0,
+      "hydraFactor": 1
+    },
+    "tips": ""
+  },
+  {
+    "id": "food_water_bottle",
+    "name": "Water Bottle",
+    "description": "",
+    "category": "provisions",
+    "subcategory": "Drinks",
+    "images": {
+      "icon": "/images/items/food/Icon_food_04.webp",
+      "thumbnail": "/images/items/food/Icon_food_04.webp",
+      "fullsize": "/images/items/food/Icon_food_04.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.85,
+      "rarity": "Common",
+      "capacity": 200,
+      "threshold": 2,
+      "consumptionSpeed": 10,
+      "energyFactor": 0,
+      "hydraFactor": 1
+    },
+    "tips": "Can be refilled at Water Collector in Hideout"
+  },
+  {
+    "id": "food_holiday_bottle",
+    "name": "Holiday Bottle",
+    "description": "",
+    "category": "provisions",
+    "subcategory": "Drinks",
+    "images": {
+      "icon": "/images/items/food/Icon_Holiday_Bottle.webp",
+      "thumbnail": "/images/items/food/Icon_Holiday_Bottle.webp",
+      "fullsize": "/images/items/food/Icon_Holiday_Bottle.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.85,
+      "rarity": "Common",
+      "capacity": 220,
+      "threshold": 4,
+      "consumptionSpeed": 10,
+      "energyFactor": 0,
+      "hydraFactor": 1
+    },
+    "tips": "Can be refilled at Water Collector in Hideout"
+  }
+]

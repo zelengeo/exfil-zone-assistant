@@ -5,7 +5,7 @@ import {
     isBodyArmor,
     isFaceShield, isGrenade,
     isHelmet, isLimbRestore, isMagazine, isMedicine,
-    isPainkiller, isSight, isStim, isSyringe, isTactical,
+    isPainkiller, isProvisions, isSight, isStim, isSyringe, isTactical,
     isWeapon
 } from "@/app/combat-sim/utils/types";
 
@@ -31,6 +31,7 @@ const DATA_FILES = [
     'helmets.json',
     'face-shields.json',
     'medical.json',
+    'provisions.json',
     'misc.json',
 ];
 
@@ -46,6 +47,7 @@ const dataImports = {
     'helmets.json': () => import('@/public/data/helmets.json'),
     'face-shields.json': () => import('@/public/data/face-shields.json'),
     'medical.json': () => import('@/public/data/medical.json'),
+    'provisions.json': () => import('@/public/data/provisions.json'),
     'misc.json': () => import('@/public/data/misc.json'),
 };
 
@@ -223,6 +225,16 @@ function transformItemData(rawItem: Item): Item {
                 baseItem.stats.usesCount = rawItem.stats.usesCount;
                 baseItem.stats.brokenHP = rawItem.stats.brokenHP;
             }
+        }
+
+        if (isProvisions(rawItem)) {
+            if (!isProvisions(baseItem)) return baseItem;
+            baseItem.stats.capacity = rawItem.stats.capacity;
+            baseItem.stats.threshold = rawItem.stats.threshold;
+            baseItem.stats.consumptionSpeed = rawItem.stats.consumptionSpeed;
+            baseItem.stats.energyFactor = rawItem.stats.energyFactor;
+            baseItem.stats.hydraFactor = rawItem.stats.hydraFactor;
+
         }
 
         //

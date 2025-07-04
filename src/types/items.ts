@@ -109,7 +109,7 @@ export interface Grenade extends Item {
 
 export interface Attachment extends Item {
     category: 'attachments';
-    subcategory: 'Magazines'| "Sights" | "Suppressors" | "Grips" | "Compensators" | "Tactical" | "Rails";
+    subcategory: 'Magazines' | "Sights" | "Suppressors" | "Grips" | "Compensators" | "Tactical" | "Rails";
     stats: Item['stats'] & AttachmentProperties;
 }
 
@@ -217,13 +217,50 @@ export interface Syringe extends Medicine {
     }
 }
 
+// Properties specific to provisions items
+export interface ProvisionsProperties {
+    capacity: number;           // Maximum volume/amount
+    threshold: number;          // When it's considered "empty"
+    consumptionSpeed: number;   // How fast it's consumed
+    energyFactor: number;       // Energy restoration value
+    hydraFactor: number;        // Hydration restoration value
+}
+
+// Base provisions interface
+export interface Provisions extends Item {
+    category: 'provisions';
+    subcategory: 'Food' | 'Drinks';
+    stats: Item['stats'] & ProvisionsProperties;
+}
+
+// Specific drink interface
+export interface Drink extends Provisions {
+    subcategory: 'Drinks';
+}
+
+// Specific food interface
+export interface Food extends Provisions {
+    subcategory: 'Food';
+}
+
 export interface Misc extends Item {
     category: 'misc';
     subcategory: 'Household' | 'Intel' | 'Electric' | 'Power' | 'Tools' | 'Combustible' | 'Building' | 'HighValue' | 'Medicine';
     stats: Item['stats'];
 }
 
-export type AnyItem = Weapon | Armor | Ammunition | BodyArmor | Helmet | FaceShield | Medicine | Grenade | Attachment | Misc;
+export type AnyItem =
+    Weapon
+    | Armor
+    | Ammunition
+    | BodyArmor
+    | Helmet
+    | FaceShield
+    | Medicine
+    | Provisions
+    | Grenade
+    | Attachment
+    | Misc;
 
 // Protective zone from armor data
 export interface ProtectiveZone {
@@ -472,6 +509,16 @@ export const itemCategories: Record<string, ItemCategory> = {
             'Painkillers'
         ]
     },
+    provisions: {
+        id: 'provisions',
+        name: 'Provisions',
+        description: 'Food and drinks for sustenance and hydration',
+        icon: 'food',
+        subcategories: [
+            'Food',
+            'Drinks',
+        ]
+    },
     'misc': {
         id: 'misc',
         name: 'Miscellaneous',
@@ -489,27 +536,6 @@ export const itemCategories: Record<string, ItemCategory> = {
             'Medicine'
         ]
     }
-
-    //TODO - update config after data extraction
-// {
-//     id: 'food',
-//     name: 'Food & Drink',
-//     description: 'Consumables for sustenance and hydration',
-//     icon: 'food'
-// },
-// {
-//     id: 'attachments',
-//     name: 'Attachments',
-//     description: 'Weapon modifications and attachments',
-//     icon: 'scope',
-//     subcategories: [
-//         'Sights',
-//         'Barrels',
-//         'Magazines',
-//         'Muzzle Devices',
-//         'Grips'
-//     ]
-// },
 // {
 //     id: 'keys',
 //     name: 'Keys & Access Cards',

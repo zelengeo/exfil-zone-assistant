@@ -8,11 +8,11 @@ import {
     AnyItem,
     Armor, Attachment,
     Bandage,
-    BodyArmor,
-    FaceShield, Grenade, Grip,
+    BodyArmor, Drink,
+    FaceShield, Food, Grenade, Grip,
     Helmet,
     Item, LimbRestore, Magazine,
-    Medicine, Misc, Painkiller, Rail, Sight, Stim, Suppressor, Syringe, TacticalAttachment,
+    Medicine, Misc, Painkiller, Provisions, Rail, Sight, Stim, Suppressor, Syringe, TacticalAttachment,
     Weapon
 } from "@/types/items";
 
@@ -143,7 +143,7 @@ export const RANGE_PRESETS: RangePreset[] = [
 
 // Type guards with improved checks
 export function isAnyItem(item: Item): item is AnyItem {
-    return isWeapon(item) || isAmmunition(item) || isGrenade(item) || isArmor(item) || isMedicine(item) || isAttachment(item);
+    return isWeapon(item) || isAmmunition(item) || isGrenade(item) || isArmor(item) || isMedicine(item) || isAttachment(item) || isMisc(item) || isProvisions(item);
 }
 
 export function isWeapon(item: Item): item is Weapon {
@@ -244,6 +244,18 @@ export function isLimbRestore(item: Item): item is LimbRestore {
 export function isPainkiller(item: Item): item is Painkiller {
     return (item.category === 'medicine') &&
     item.subcategory === 'Painkillers'
+}
+
+export function isProvisions(item: Item): item is Provisions {
+    return item.category === 'provisions';
+}
+
+export function isDrink(item: Item): item is Drink {
+    return item.category === 'provisions' && item.subcategory === 'Drinks';
+}
+
+export function isFood(item: Item): item is Food {
+    return item.category === 'provisions' && item.subcategory === 'Food';
 }
 
 export function isMisc(item: Item): item is Misc {
