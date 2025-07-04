@@ -11,7 +11,7 @@
       "fullsize": "/images/items/misc/valuable_batteries_sizedbattery1.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 1200,
       "weight": 0.03,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -31,7 +31,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_badge.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 116025,
       "weight": 0.2,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -71,7 +71,7 @@
       "fullsize": "/images/items/misc/valuable_batteries_sizedbattery2.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 1200,
       "weight": 0.03,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -91,7 +91,7 @@
       "fullsize": "/images/items/misc/valuable_highvalue_aladdinlamp.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 1285200,
       "weight": 1.011,
       "rarity": "Ultimate",
       "backpackDimensionMultiplier": 0.95,
@@ -111,7 +111,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_AntiqueBook.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 46000,
       "weight": 0.75,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -131,7 +131,7 @@
       "fullsize": "/images/items/misc/valuable_highvalue_antiqueteacup.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 132269,
       "weight": 0.1,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -151,7 +151,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_Aspire.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 1000,
       "weight": 0.12,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -211,7 +211,7 @@
       "fullsize": "/images/items/misc/valuable_batteries_storagebattery2.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 98475,
       "weight": 4.5,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -231,7 +231,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_beardoil.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 3000,
       "weight": 0.15,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -271,7 +271,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_BullStatue.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 110000,
       "weight": 3.8,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -291,7 +291,7 @@
       "fullsize": "/images/items/misc/icon_houseclean.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 2910,
       "weight": 0.65,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -311,7 +311,7 @@
       "fullsize": "/images/items/misc/Icon_gun_m92.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 3822,
       "weight": 0.27,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -331,7 +331,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_cash.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 25000,
       "weight": 0.25,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -351,7 +351,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_cash.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 50000,
       "weight": 0.5,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -371,7 +371,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_cash.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 75000,
       "weight": 0.75,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -391,7 +391,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_Centrifuge.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 80000,
       "weight": 3.4,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -411,7 +411,7 @@
       "fullsize": "/images/items/misc/valuable_building_ceramicadhesive.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 4200,
       "weight": 0.4,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -431,7 +431,7 @@
       "fullsize": "/images/items/misc/valuable_electric_civilradio.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 6600,
       "weight": 1,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -451,7 +451,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_ClimbingRope.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 20000,
       "weight": 0.8,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -491,7 +491,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_cpu.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 87750,
       "weight": 0.1,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -511,7 +511,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_CrimsonQueenRing.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 1200000,
       "weight": 0.02,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -531,7 +531,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_datacord.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 1323,
       "weight": 0.05,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -551,7 +551,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_defibrillator.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 521360,
       "weight": 4.2,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -571,7 +571,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_deodorant.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 8820,
       "weight": 0.4,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -591,7 +591,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_DigitalSensor.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 500000,
       "weight": 3.6,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -631,7 +631,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_electricdrill.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 47288,
       "weight": 2,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -651,7 +651,7 @@
       "fullsize": "/images/items/misc/valuable_electric_flashlight.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 1485,
       "weight": 0.1,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -671,7 +671,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_A.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 80000,
       "weight": 0.05,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -691,7 +691,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_B.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 80000,
       "weight": 0.1,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -711,7 +711,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_Cpng.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 80000,
       "weight": 0.1,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -731,7 +731,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_D.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 80000,
       "weight": 0.1,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -751,7 +751,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_GameConsole.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 80000,
       "weight": 0.14,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -791,7 +791,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_gascan.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 1061,
       "weight": 0.22,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -811,7 +811,7 @@
       "fullsize": "/images/items/misc/valuable_combustible_largegascan.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 13999,
       "weight": 0.5,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -831,7 +831,7 @@
       "fullsize": "/images/items/misc/ValuableItem_B_glue_large.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 10710,
       "weight": 0.01,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -851,7 +851,7 @@
       "fullsize": "/images/items/misc/valuable_highvalue_goldelephant.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 1372000,
       "weight": 6,
       "rarity": "Ultimate",
       "backpackDimensionMultiplier": 0.95,
@@ -871,7 +871,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_GoldenKnife.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 300000,
       "weight": 1.6,
       "rarity": "Legendary",
       "backpackDimensionMultiplier": 0.95,
@@ -891,7 +891,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_GoldenLionRing.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 1200000,
       "weight": 0.025,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -911,7 +911,7 @@
       "fullsize": "/images/items/misc/valuable_highvalue_goldprize.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 346290,
       "weight": 3,
       "rarity": "Legendary",
       "backpackDimensionMultiplier": 0.95,
@@ -931,7 +931,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_gunoil.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 12348,
       "weight": 0.2,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -951,7 +951,7 @@
       "fullsize": "/images/items/misc/valuable_information_harddrive.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 11700,
       "weight": 0.69,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -991,7 +991,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_ducttape.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 4200,
       "weight": 0.02,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -1031,7 +1031,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_ionbattery.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 6120,
       "weight": 0.08,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -1051,7 +1051,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_LightBulb.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 4000,
       "weight": 0.4,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -1071,7 +1071,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_lighter.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 848,
       "weight": 0.06,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -1091,7 +1091,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_lighterfluid.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 4200,
       "weight": 0.2,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -1131,7 +1131,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_MarineStorageBattery.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 80000,
       "weight": 17.5,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -1211,7 +1211,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_MilitaryHardDrive.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 346000,
       "weight": 1.2,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -1231,7 +1231,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_MilitaryUSBdrive.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 110000,
       "weight": 0.08,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -1251,7 +1251,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_moldboard.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 743,
       "weight": 0.1,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -1271,7 +1271,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_nail.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 945,
       "weight": 0.08,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -1291,7 +1291,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_newphone.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 18000,
       "weight": 0.21,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -1311,7 +1311,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_nuts.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 1040,
       "weight": 0.15,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -1321,7 +1321,7 @@
   },
   {
     "id": "misc_b_nut2",
-    "name": "Nut",
+    "name": "Big Nut",
     "description": "",
     "category": "misc",
     "subcategory": "Building",
@@ -1331,7 +1331,7 @@
       "fullsize": "/images/items/misc/valuable_building_bignut.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 978,
       "weight": 0.03,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -1351,7 +1351,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_newphoneIcon_valuable_newphone.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 5940,
       "weight": 0.16,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -1371,7 +1371,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_OliveOil.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 48649,
       "weight": 1.1,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -1411,7 +1411,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_cpufan.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 1500,
       "weight": 0.15,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -1431,7 +1431,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_Perfume.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 86000,
       "weight": 0.3,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -1451,7 +1451,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_pesticide.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 9000,
       "weight": 0.22,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -1471,7 +1471,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_piezometer.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 45500,
       "weight": 0.4,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -1491,7 +1491,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_pipeline.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 4242,
       "weight": 0.3,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -1511,7 +1511,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_plier.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 3090,
       "weight": 0.16,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -1531,7 +1531,7 @@
       "fullsize": "/images/items/misc/valuable_tools_largeplier.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 735,
       "weight": 0.28,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -1551,7 +1551,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_powerbank.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 6000,
       "weight": 0.35,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -1571,7 +1571,7 @@
       "fullsize": "/images/items/misc/valuable_electric_radioscanner.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 25425,
       "weight": 2,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -1591,7 +1591,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_ram.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 5400,
       "weight": 0.08,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -1611,7 +1611,7 @@
       "fullsize": "/images/items/misc/valuable_household_ratpoison.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 32175,
       "weight": 0.2,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -1631,7 +1631,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_Recorder.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 20000,
       "weight": 0.24,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -1651,7 +1651,7 @@
       "fullsize": "/images/items/misc/valuable_household_rustcleaner.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 750,
       "weight": 0.22,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -1671,7 +1671,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_SaltCan.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 3000,
       "weight": 0.14,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -1691,7 +1691,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_bolts.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 1071,
       "weight": 0.1,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -1711,7 +1711,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_shampoo.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 8910,
       "weight": 0.28,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -1731,7 +1731,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_smallshovel.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 2970,
       "weight": 0.1,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -1751,7 +1751,7 @@
       "fullsize": "/images/items/misc/valuable_combustible_smokelesspowder.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 45081,
       "weight": 1.3,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -1771,7 +1771,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_soap.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 765,
       "weight": 0.05,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -1791,7 +1791,7 @@
       "fullsize": "/images/items/misc/valuable_electric_socket.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 6060,
       "weight": 0.4,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -1811,7 +1811,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_sparkplug.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 8100,
       "weight": 0.12,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -1831,7 +1831,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_spraycan.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 12726,
       "weight": 0.3,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -1851,7 +1851,7 @@
       "fullsize": "/images/items/misc/valuable_highvalue_stonelion.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 162162,
       "weight": 4.2,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -1871,7 +1871,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_storagebattery.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 98475,
       "weight": 8,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -1891,7 +1891,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_superglue.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 10603,
       "weight": 0.05,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -1911,7 +1911,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_measuringtape.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 750,
       "weight": 0.14,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -1951,7 +1951,7 @@
       "fullsize": "/images/items/misc/valuable_tools_tapeholder.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 863,
       "weight": 0.1,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -1991,7 +1991,7 @@
       "fullsize": "/images/items/misc/valuable_tools_tiresealant.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 743,
       "weight": 0.15,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -2011,7 +2011,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_toiletpaper.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 918,
       "weight": 0.03,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -2031,7 +2031,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_toothpaste.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 675,
       "weight": 0.05,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -2051,7 +2051,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_Transformer.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 63700,
       "weight": 1.6,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -2091,7 +2091,7 @@
       "fullsize": "/images/items/misc/Icon_ValuableItem_B_VisionModule.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 80000,
       "weight": 0.8,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -2111,7 +2111,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_wd40.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 1050,
       "weight": 0.18,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -2131,7 +2131,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_wire.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 1040,
       "weight": 0.1,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -2151,7 +2151,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_wirecutter.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 3090,
       "weight": 0.08,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -2171,7 +2171,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_wrench.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 2940,
       "weight": 0.24,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -2191,7 +2191,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_camera.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 93730,
       "weight": 1.7,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -2231,7 +2231,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_copperwire.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 4326,
       "weight": 0.4,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -2251,7 +2251,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_csdollgold.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 137000,
       "weight": 0.99,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -2271,7 +2271,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_csdollstandard.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 25200,
       "weight": 0.15,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -2291,7 +2291,7 @@
       "fullsize": "/images/items/misc/valuable_highvalue_contractors_ed-1.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 25200,
       "weight": 0.15,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -2311,7 +2311,7 @@
       "fullsize": "/images/items/misc/valuable_highvalue_csdollgold_3.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 25200,
       "weight": 0.15,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -2331,7 +2331,7 @@
       "fullsize": "/images/items/misc/valuable_highvalue_csdollgold_4.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 25200,
       "weight": 0.15,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -2351,7 +2351,7 @@
       "fullsize": "/images/items/misc/valuable_highvalue_csdollgold_5.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 25200,
       "weight": 0.15,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -2371,7 +2371,7 @@
       "fullsize": "/images/items/misc/valuable_highvalue_csdollgold_6.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 25200,
       "weight": 0.15,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -2391,7 +2391,7 @@
       "fullsize": "/images/items/misc/valuable_highvalue_csdollgold_7.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 25200,
       "weight": 0.15,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -2431,7 +2431,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_facialcleanser.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 3000,
       "weight": 0.25,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -2451,7 +2451,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_floppydisk.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 9647,
       "weight": 0.2,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -2471,7 +2471,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_fossil.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 102102,
       "weight": 2.4,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -2491,7 +2491,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_gamedisk.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 93730,
       "weight": 0.3,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -2511,7 +2511,7 @@
       "fullsize": "/images/items/misc/valuable_highvalue_showdown_ed2.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 91000,
       "weight": 0.3,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -2531,7 +2531,7 @@
       "fullsize": "/images/items/misc/valuable_highvalue_showdown_ed.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 109200,
       "weight": 0.3,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -2551,7 +2551,7 @@
       "fullsize": "/images/items/misc/valuable_highvalue_contractors_ed.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 111384,
       "weight": 0.3,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -2571,7 +2571,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_goldcup.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 357000,
       "weight": 4.2,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -2591,7 +2591,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_goldingot.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 367710,
       "weight": 6.2,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -2611,7 +2611,7 @@
       "fullsize": "/images/items/misc/Graphics_Card.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 227500,
       "weight": 2.5,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -2631,7 +2631,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_gunpowder.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 45500,
       "weight": 1.2,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -2651,7 +2651,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_hammer.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 9356,
       "weight": 0.3,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -2671,7 +2671,7 @@
       "fullsize": "/images/items/misc/icon_houseclean.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 2910,
       "weight": 0.7,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -2691,7 +2691,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_mouse.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 1500,
       "weight": 0.15,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -2731,7 +2731,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_notepad.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 975,
       "weight": 0.27,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -2751,7 +2751,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_oilcan.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 4733,
       "weight": 3.5,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -2771,7 +2771,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_pocketwatch.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 336000,
       "weight": 0.15,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -2791,7 +2791,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_radio.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 20952,
       "weight": 7,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -2811,7 +2811,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_remotecontrol.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 1470,
       "weight": 0.25,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
@@ -2831,7 +2831,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_screwdriver.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 758,
       "weight": 0.2,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
@@ -2851,7 +2851,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_silvercup.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 91000,
       "weight": 1.6,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
@@ -2911,7 +2911,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_tape.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 45081,
       "weight": 0.28,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
@@ -2951,11 +2951,12 @@
       "fullsize": "/images/items/misc/Icon_valuable_wastechip.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 5880,
       "weight": 0.15,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
+      "safeContainerBoundScale": 1.005,
+      "name": "Wastechip"
     },
     "tips": ""
   },
@@ -2991,7 +2992,7 @@
       "fullsize": "/images/items/misc/Icon_valuable_wrench.webp"
     },
     "stats": {
-      "price": 0,
+      "price": 743,
       "weight": 0.3,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
