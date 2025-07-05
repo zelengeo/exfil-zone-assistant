@@ -91,6 +91,19 @@ export const guidesConfig: GuideMetadata[] = [
         contentType: 'component'
     },
     {
+        slug: 'ammo-selection-beginners',
+        title: 'Ammunition Selection for Beginners',
+        description: 'Learn which ammo to use, when to target armor vs limbs, and master penetration mechanics for effective combat',
+        tags: ['getting-started', 'combat', 'equipment'],
+        difficulty: 'beginner',
+        readTime: '12 min',
+        author: 'pogapwnz',
+        publishedAt: '2025-07-05',
+        featured: true,
+        ogImageUrl: '/og/og-image-guide-ammo.jpg',
+        contentType: 'component'
+    },
+    {
         slug: 'armor-penetration-guide',
         title: 'Penetration Mechanics Explained',
         description: 'Master the complex mechanics of armor penetration, damage reduction, and when to aim for armor vs limbs',
