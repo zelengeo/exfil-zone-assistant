@@ -481,7 +481,7 @@ export const tasksData: TasksDatabase = {
             "ark_6"
         ],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "[ARK's Telescope](https://www.exfil-zone-assistant.app/items/taskitem_placement_tommy_telescope)",
         "videoGuides": [
             {
                 "author": "orbb",
@@ -1116,7 +1116,7 @@ export const tasksData: TasksDatabase = {
             "ark_16"
         ],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "[Tommy's Surveillance Cam](https://www.exfil-zone-assistant.app/items/taskitem_placement_tommy_surveillancecam)",
         "videoGuides": [
             {
                 "author": "orbb",
@@ -2700,7 +2700,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "X-NAX",
+                "item_id": "taskitem_placement_maggie_medicine",
                 "quantity": 1
             }
         ],
@@ -2708,7 +2708,7 @@ export const tasksData: TasksDatabase = {
             "ntg_6"
         ],
         "requiredLevel": 0,
-        "tips": "Drop the X-NAX in the box at the Modern Apartment reception. Pink USB is there too. ",
+        "tips": "Drop the [X-NAX](https://www.exfil-zone-assistant.app/items/taskitem_placement_maggie_medicine) in the box at the Modern Apartment reception. [Pink USB](https://www.exfil-zone-assistant.app/items/taskitem_placement_maggie_usb) is there too. ",
         "videoGuides": [
             {
                 "author": "orbb",
@@ -2946,7 +2946,7 @@ export const tasksData: TasksDatabase = {
             "ntg_10"
         ],
         "requiredLevel": 0,
-        "tips": "Two Watchtowers are located north and south of Seafoam Scoops (cafeteria near the bank) Signal enhancers are found in both towers. Grab and place both on top of the lighthouse",
+        "tips": "Two Watchtowers are located north and south of Seafoam Scoops (cafeteria near the bank) [Signal enhancers](https://www.exfil-zone-assistant.app/items/taskitem_placement_signalenhancer) are found in both towers. Grab and place both on top of the lighthouse",
         "videoGuides": [
             {
                 "author": "radFoxVR",
@@ -3239,7 +3239,7 @@ export const tasksData: TasksDatabase = {
             "ntg_15"
         ],
         "requiredLevel": 0,
-        "tips": "The Key can be bought from Maggie.",
+        "tips": "[Walkie-Talkie](https://www.exfil-zone-assistant.app/items/taskitem_placement_maggie_poison) The Key can be bought from Maggie.",
         "videoGuides": [
             {
                 "author": "orbb",
@@ -3532,7 +3532,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "X-NAX",
+                "item_id": "taskitem_placement_maggie_medicine",
                 "quantity": 3
             }
         ],
@@ -4902,7 +4902,7 @@ export const tasksData: TasksDatabase = {
             "trupiks_11"
         ],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "[Walkie-Talkie](https://www.exfil-zone-assistant.app/items/taskitem_placement_johnny_walkietalkie)",
         "videoGuides": [
             {
                 "author": "orbb",
@@ -6047,7 +6047,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Memorial Beer",
+                "item_id": "taskitem_placement_igor_memobeer",
                 "quantity": 1
             }
         ],
@@ -6668,7 +6668,13 @@ export const tasksData: TasksDatabase = {
                 "quantity": 1
             }
         ],
-        "preReward": [],
+        "preReward": [
+            {
+                "type": "item",
+                "item_id": "taskitem_placement_igor_foodcan",
+                "quantity": 3
+            }
+        ],
         "requiredTasks": [
             "regiment_22"
         ],
@@ -7183,7 +7189,7 @@ export const tasksData: TasksDatabase = {
             "regiment_31"
         ],
         "requiredLevel": 0,
-        "tips": "one located on shelf in control room; looks like a purse; one located on barrels in large gate room. pull lever in control room to open gate; one located in the east room of sewer area, place task item west of sewer room, two extracts, climb ladder, cross pipe, place on box outside door; items are heavy and might take two trips up ladder",
+        "tips": "[Igor's Supply Case](https://www.exfil-zone-assistant.app/items/taskitem_placement_igor_supplycase). One located on shelf in control room; One located on barrels in large gate room. pull lever in control room to open gate; One located in the east room of sewer area, place task item west of sewer room, two extracts, climb ladder, cross pipe, place on box outside door; items are heavy and might take two trips up ladder",
         "videoGuides": [
             {
                 "author": "orbb",
@@ -7676,7 +7682,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Max's Phone",
+                "item_id": "taskitem_placement_max_oldphone",
                 "quantity": 1
             }
         ],
@@ -7862,7 +7868,7 @@ export const tasksData: TasksDatabase = {
             "forge_6"
         ],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "[Max's Cash](https://www.exfil-zone-assistant.app/items/taskitem_placement_max_cash)",
         "videoGuides": [
             {
                 "author": "orbb",
@@ -7970,7 +7976,7 @@ export const tasksData: TasksDatabase = {
             "forge_8"
         ],
         "requiredLevel": 0,
-        "tips": "",
+        "tips": "[Max's Diamond ring](https://www.exfil-zone-assistant.app/items/taskitem_placement_max_ring)",
         "videoGuides": [
             {
                 "author": "radFoxVR",

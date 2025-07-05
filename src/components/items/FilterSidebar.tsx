@@ -9,7 +9,7 @@ import {
     BriefcaseMedical,
     Bomb,
     Apple,
-    Drill, ChevronsUp
+    Drill, ChevronsUp, BookmarkCheck
 } from 'lucide-react';
 import {ItemCategory} from '@/types/items';
 import {useRouter} from "next/navigation";
@@ -45,6 +45,10 @@ const getCategoryIcon = (categoryId: string) => {
             return (
                 <Drill size={20}/>
             );
+        case 'task-item':
+            return (
+                <BookmarkCheck size={20}/>
+            )
         case 'keys':
             return (
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"

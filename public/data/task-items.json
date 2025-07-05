@@ -1,268 +1,823 @@
-{
-  "taskItems": [
-    {
-      "id": "task-intel-phone",
-      "name": "Intelligence Phone",
-      "description": "Encrypted smartphone containing sensitive intelligence data.",
-      "category": "task-items",
-      "subcategory": "Intelligence",
-      "images": {
-        "icon": "/images/items/task/valuable_task_intelphone.webp",
-        "thumbnail": "/images/items/task/valuable_task_intelphone.webp",
-        "fullsize": "/images/items/task/valuable_task_intelphone.webp"
-      },
-      "stats": {
-        "rarity": "Epic",
-        "price": 45000,
-        "weight": 0.2,
-        "size": "1x1",
-        "safeSlots": 1
-      },
-      "relatedQuests": ["quest-intel-001", "quest-intel-005"],
-      "notes": "Contains classified information required for intelligence missions.",
-      "tips": "High-priority quest item. Store in secure container immediately."
+[
+  {
+    "id": "taskitem_ark_floppydisk",
+    "name": "ARK Floppy Disk",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Tommy",
+    "images": {
+      "icon": "/images/items/task/valuable_task_ark_floppydisk.webp",
+      "thumbnail": "/images/items/task/valuable_task_ark_floppydisk.webp",
+      "fullsize": "/images/items/task/valuable_task_ark_floppydisk.webp"
     },
-    {
-      "id": "task-tracker-device",
-      "name": "Tracking Device",
-      "description": "GPS tracking device used for surveillance operations.",
-      "category": "task-items",
-      "subcategory": "Intelligence",
-      "images": {
-        "icon": "/images/items/task/valuable_task_tracker.webp",
-        "thumbnail": "/images/items/task/valuable_task_tracker.webp",
-        "fullsize": "/images/items/task/valuable_task_tracker.webp"
-      },
-      "stats": {
-        "rarity": "Rare",
-        "price": 25000,
-        "weight": 0.1,
-        "size": "1x1",
-        "safeSlots": 1
-      },
-      "relatedQuests": ["quest-surveillance-003"],
-      "notes": "Used to track enemy movements and positions.",
-      "tips": "Must be planted at specific locations for quest completion."
+    "stats": {
+      "price": 1000,
+      "weight": 0.15,
+      "rarity": "Common",
+      "taskIds": ["ark_21"]
+
     },
-    {
-      "id": "task-maggie-camera",
-      "name": "Maggie's Camera",
-      "description": "Digital camera belonging to photographer Maggie with important photos.",
-      "category": "task-items",
-      "subcategory": "Personal",
-      "images": {
-        "icon": "/images/items/task/valuable_task_maggie_camera.webp",
-        "thumbnail": "/images/items/task/valuable_task_maggie_camera.webp",
-        "fullsize": "/images/items/task/valuable_task_maggie_camera.webp"
-      },
-      "stats": {
-        "rarity": "Rare",
-        "price": 15000,
-        "weight": 0.8,
-        "size": "1x2",
-        "safeSlots": 1
-      },
-      "relatedQuests": ["quest-maggie-001"],
-      "notes": "Contains photographs needed for investigation.",
-      "tips": "Handle with care - quest giver specifically requested this camera."
+    "tips": ""
+  },
+  {
+    "id": "taskitem_baseball",
+    "name": "Tommy's Hidden Camera",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Tommy",
+    "images": {
+      "icon": "/images/items/task/valuable_task_tommy_baseball.webp",
+      "thumbnail": "/images/items/task/valuable_task_tommy_baseball.webp",
+      "fullsize": "/images/items/task/valuable_task_tommy_baseball.webp"
     },
-    {
-      "id": "task-maggie-medical",
-      "name": "Maggie's Medical Supplies",
-      "description": "Special medical supplies requested by field medic Maggie.",
-      "category": "task-items",
-      "subcategory": "Medical",
-      "images": {
-        "icon": "/images/items/task/valuable_task_maggie_medical.webp",
-        "thumbnail": "/images/items/task/valuable_task_maggie_medical.webp",
-        "fullsize": "/images/items/task/valuable_task_maggie_medical.webp"
-      },
-      "stats": {
-        "rarity": "Uncommon",
-        "price": 12000,
-        "weight": 1.2,
-        "size": "2x1",
-        "safeSlots": 1
-      },
-      "relatedQuests": ["quest-maggie-medical-001"],
-      "notes": "Specialized medical equipment for field operations.",
-      "tips": "Maggie pays well for these supplies."
+    "stats": {
+      "price": 1000,
+      "weight": 0.3,
+      "rarity": "Common",
+      "taskIds": ["ark_22"]
+
     },
-    {
-      "id": "task-igor-box",
-      "name": "Igor's Storage Box",
-      "description": "Locked storage container belonging to trader Igor.",
-      "category": "task-items",
-      "subcategory": "Personal",
-      "images": {
-        "icon": "/images/items/task/valuable_task_igor_box.webp",
-        "thumbnail": "/images/items/task/valuable_task_igor_box.webp",
-        "fullsize": "/images/items/task/valuable_task_igor_box.webp"
-      },
-      "stats": {
-        "rarity": "Rare",
-        "price": 35000,
-        "weight": 2.5,
-        "size": "2x2",
-        "safeSlots": 0
-      },
-      "relatedQuests": ["quest-igor-retrieval-001"],
-      "notes": "Contains Igor's personal belongings and trade goods.",
-      "tips": "Heavy but valuable - Igor will pay handsomely for its return."
+    "tips": ""
+  },
+  {
+    "id": "taskitem_electricdrill_blue",
+    "name": "Electric drill",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Johnny",
+    "images": {
+      "icon": "/images/items/task/valuable_task_johnny_drill.webp",
+      "thumbnail": "/images/items/task/valuable_task_johnny_drill.webp",
+      "fullsize": "/images/items/task/valuable_task_johnny_drill.webp"
     },
-    {
-      "id": "task-johnny-drill",
-      "name": "Johnny's Electric Drill",
-      "description": "Professional power drill belonging to contractor Johnny.",
-      "category": "task-items",
-      "subcategory": "Tools",
-      "images": {
-        "icon": "/images/items/task/valuable_task_johnny_drill.webp",
-        "thumbnail": "/images/items/task/valuable_task_johnny_drill.webp",
-        "fullsize": "/images/items/task/valuable_task_johnny_drill.webp"
-      },
-      "stats": {
-        "rarity": "Uncommon",
-        "price": 18000,
-        "weight": 1.8,
-        "size": "2x1",
-        "safeSlots": 0
-      },
-      "relatedQuests": ["quest-johnny-tools-001"],
-      "notes": "High-quality construction tool needed for building projects.",
-      "tips": "Johnny needs this for his construction work."
+    "stats": {
+      "price": 1000,
+      "weight": 1.2,
+      "rarity": "Common",
+      "taskIds": ["trupiks_4"]
+
     },
-    {
-      "id": "task-max-gold-cup",
-      "name": "Max's Golden Cup",
-      "description": "Ornate golden trophy cup belonging to collector Max.",
-      "category": "task-items",
-      "subcategory": "Valuables",
-      "images": {
-        "icon": "/images/items/task/valuable_task_max_goldcup.webp",
-        "thumbnail": "/images/items/task/valuable_task_max_goldcup.webp",
-        "fullsize": "/images/items/task/valuable_task_max_goldcup.webp"
-      },
-      "stats": {
-        "rarity": "Epic",
-        "price": 85000,
-        "weight": 1.2,
-        "size": "2x2",
-        "safeSlots": 0
-      },
-      "relatedQuests": ["quest-max-collection-001"],
-      "notes": "Valuable antique trophy from Max's collection.",
-      "tips": "Extremely valuable - Max will pay premium for rare items."
+    "tips": ""
+  },
+  {
+    "id": "taskitem_familytape",
+    "name": "Family Videotape",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Johnny",
+    "images": {
+      "icon": "/images/items/task/valuable_task_johnny_familytape.webp",
+      "thumbnail": "/images/items/task/valuable_task_johnny_familytape.webp",
+      "fullsize": "/images/items/task/valuable_task_johnny_familytape.webp"
     },
-    {
-      "id": "task-max-phone",
-      "name": "Max's Smartphone",
-      "description": "Expensive smartphone belonging to wealthy collector Max.",
-      "category": "task-items",
-      "subcategory": "Electronics",
-      "images": {
-        "icon": "/images/items/task/valuable_task_max_phone.webp",
-        "thumbnail": "/images/items/task/valuable_task_max_phone.webp",
-        "fullsize": "/images/items/task/valuable_task_max_phone.webp"
-      },
-      "stats": {
-        "rarity": "Rare",
-        "price": 28000,
-        "weight": 0.2,
-        "size": "1x1",
-        "safeSlots": 1
-      },
-      "relatedQuests": ["quest-max-personal-001"],
-      "notes": "High-end smartphone with important contacts.",
-      "tips": "Max values his communication devices highly."
+    "stats": {
+      "price": 1000,
+      "weight": 0.35,
+      "rarity": "Common",
+      "taskIds": ["trupiks_5"]
+
     },
-    {
-      "id": "task-tommy-baseball",
-      "name": "Tommy's Baseball",
-      "description": "Signed baseball with sentimental value to Tommy.",
-      "category": "task-items",
-      "subcategory": "Personal",
-      "images": {
-        "icon": "/images/items/task/valuable_task_tommy_baseball.webp",
-        "thumbnail": "/images/items/task/valuable_task_tommy_baseball.webp",
-        "fullsize": "/images/items/task/valuable_task_tommy_baseball.webp"
-      },
-      "stats": {
-        "rarity": "Uncommon",
-        "price": 8000,
-        "weight": 0.15,
-        "size": "1x1",
-        "safeSlots": 2
-      },
-      "relatedQuests": ["quest-tommy-keepsake-001"],
-      "notes": "Childhood memento with great personal significance.",
-      "tips": "Not valuable to traders but extremely important to Tommy."
+    "tips": ""
+  },
+  {
+    "id": "taskitem_task_gamedisk",
+    "name": "Game Disc",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maximillian",
+    "images": {
+      "icon": "/images/items/task/valuable_task_max_gamedisk.webp",
+      "thumbnail": "/images/items/task/valuable_task_max_gamedisk.webp",
+      "fullsize": "/images/items/task/valuable_task_max_gamedisk.webp"
     },
-    {
-      "id": "task-ark-telescope",
-      "name": "Ark's Telescope",
-      "description": "Professional astronomical telescope belonging to scientist Ark.",
-      "category": "task-items",
-      "subcategory": "Scientific",
-      "images": {
-        "icon": "/images/items/task/valuable_task_ark_telescope.webp",
-        "thumbnail": "/images/items/task/valuable_task_ark_telescope.webp",
-        "fullsize": "/images/items/task/valuable_task_ark_telescope.webp"
-      },
-      "stats": {
-        "rarity": "Rare",
-        "price": 45000,
-        "weight": 3.5,
-        "size": "1x4",
-        "safeSlots": 0
-      },
-      "relatedQuests": ["quest-ark-research-001"],
-      "notes": "Precision scientific instrument for astronomical observations.",
-      "tips": "Fragile equipment - handle with care during transport."
+    "stats": {
+      "price": 1000,
+      "weight": 0.3,
+      "rarity": "Common",
+      "taskIds": ["forge_27"]
     },
-    {
-      "id": "task-ark-floppy",
-      "name": "Ark's Floppy Disk",
-      "description": "Vintage floppy disk containing Ark's research data.",
-      "category": "task-items",
-      "subcategory": "Data",
-      "images": {
-        "icon": "/images/items/task/valuable_task_ark_floppydisk.webp",
-        "thumbnail": "/images/items/task/valuable_task_ark_floppydisk.webp",
-        "fullsize": "/images/items/task/valuable_task_ark_floppydisk.webp"
-      },
-      "stats": {
-        "rarity": "Uncommon",
-        "price": 5000,
-        "weight": 0.05,
-        "size": "1x1",
-        "safeSlots": 3
-      },
-      "relatedQuests": ["quest-ark-data-001"],
-      "notes": "Contains important research data from the 1990s.",
-      "tips": "Outdated storage medium but contains irreplaceable data."
+    "tips": ""
+  },
+  {
+    "id": "taskitem_goldcup",
+    "name": "Gold Cup -Task",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maximillian",
+    "images": {
+      "icon": "/images/items/task/valuable_task_max_goldcup.webp",
+      "thumbnail": "/images/items/task/valuable_task_max_goldcup.webp",
+      "fullsize": "/images/items/task/valuable_task_max_goldcup.webp"
     },
-    {
-      "id": "task-csp-phone",
-      "name": "CSP Communication Device",
-      "description": "Specialized communication device used by CSP operatives.",
-      "category": "task-items",
-      "subcategory": "Military",
-      "images": {
-        "icon": "/images/items/task/CSP_Phone.webp",
-        "thumbnail": "/images/items/task/CSP_Phone.webp",
-        "fullsize": "/images/items/task/CSP_Phone.webp"
-      },
-      "stats": {
-        "rarity": "Epic",
-        "price": 65000,
-        "weight": 0.4,
-        "size": "1x1",
-        "safeSlots": 1
-      },
-      "relatedQuests": ["quest-csp-intel-001"],
-      "notes": "Military-grade encrypted communication device.",
-      "tips": "Highly sought after by intelligence agencies."
-    }
-  ]
-}
+    "stats": {
+      "price": 1000,
+      "weight": 4.2,
+      "rarity": "Common",
+      "taskIds": ["forge_1"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_goldeearth",
+    "name": "Maximilian's Golden Earth -Task",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maximillian",
+    "images": {
+      "icon": "/images/items/task/valuable_task_max_goldenearth.webp",
+      "thumbnail": "/images/items/task/valuable_task_max_goldenearth.webp",
+      "fullsize": "/images/items/task/valuable_task_max_goldenearth.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 4.2,
+      "rarity": "Common",
+      "taskIds": ["forge_18"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_goldingot",
+    "name": "Fake Gold Ingot",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maximillian",
+    "images": {
+      "icon": "/images/items/task/valuable_task_max_goldIngot.webp",
+      "thumbnail": "/images/items/task/valuable_task_max_goldIngot.webp",
+      "fullsize": "/images/items/task/valuable_task_max_goldIngot.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.8,
+      "rarity": "Common",
+      "taskId": ["forge_25", "forge_15"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_gunpowder",
+    "name": "Gunpowder",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Igor",
+    "images": {
+      "icon": "/images/items/task/valuable_task_igor_gunpowder.webp",
+      "thumbnail": "/images/items/task/valuable_task_igor_gunpowder.webp",
+      "fullsize": "/images/items/task/valuable_task_igor_gunpowder.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.8,
+      "rarity": "Common",
+      "taskIds": ["regiment_3"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_sharkdvd1",
+    "name": "\"SHARK\"",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Igor",
+    "images": {
+      "icon": "/images/items/task/valuable_task_Igor_sharkdvd_a.webp",
+      "thumbnail": "/images/items/task/valuable_task_Igor_sharkdvd_a.webp",
+      "fullsize": "/images/items/task/valuable_task_Igor_sharkdvd_a.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.03,
+      "rarity": "Common",
+      "taskIds": ["regiment_18"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_sharkdvd2",
+    "name": "\"SHARK\" Sequel",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Igor",
+    "images": {
+      "icon": "/images/items/task/valuable_task_Igor_sharkdvd_b.webp",
+      "thumbnail": "/images/items/task/valuable_task_Igor_sharkdvd_b.webp",
+      "fullsize": "/images/items/task/valuable_task_Igor_sharkdvd_b.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.03,
+      "rarity": "Common",
+      "taskIds": ["regiment_18"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_subwaydvd1",
+    "name": "\"Subway Scream\"",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Igor",
+    "images": {
+      "icon": "/images/items/task/valuable_task_Igor_subwaydvd_a.webp",
+      "thumbnail": "/images/items/task/valuable_task_Igor_subwaydvd_a.webp",
+      "fullsize": "/images/items/task/valuable_task_Igor_subwaydvd_a.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.03,
+      "rarity": "Common",
+      "taskIds": ["regiment_28"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_subwaydvd2",
+    "name": "\"Subway Scream2\"",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Igor",
+    "images": {
+      "icon": "/images/items/task/valuable_task_Igor_subwaydvd_b.webp",
+      "thumbnail": "/images/items/task/valuable_task_Igor_subwaydvd_b.webp",
+      "fullsize": "/images/items/task/valuable_task_Igor_subwaydvd_b.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.03,
+      "rarity": "Common",
+      "taskIds": ["regiment_28"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_igor_notebook",
+    "name": "Igor's Notebook",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Igor",
+    "images": {
+      "icon": "/images/items/task/valuable_task_igor_trash.webp",
+      "thumbnail": "/images/items/task/valuable_task_igor_trash.webp",
+      "fullsize": "/images/items/task/valuable_task_igor_trash.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.27,
+      "rarity": "Common",
+      "taskIds": ["regiment_10"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_task_igor_sunglass",
+    "name": "Igor's Sunglass",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Igor",
+    "images": {
+      "icon": "/images/items/task/valuable_task_igor_sunglass.webp",
+      "thumbnail": "/images/items/task/valuable_task_igor_sunglass.webp",
+      "fullsize": "/images/items/task/valuable_task_igor_sunglass.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.1,
+      "rarity": "Common",
+      "taskIds": ["regiment_4"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_taskintelphone",
+    "name": "Ark Soldier's Phone",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Tommy",
+    "images": {
+      "icon": "/images/items/task/valuable_task_intelphone.webp",
+      "thumbnail": "/images/items/task/valuable_task_intelphone.webp",
+      "fullsize": "/images/items/task/valuable_task_intelphone.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.21,
+      "rarity": "Common",
+      "taskIds": ["ark_4"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_safecase",
+    "name": "Johnny's Safebox",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Johnny",
+    "images": {
+      "icon": "/images/items/task/valuable_task_johnny_minibox.webp",
+      "thumbnail": "/images/items/task/valuable_task_johnny_minibox.webp",
+      "fullsize": "/images/items/task/valuable_task_johnny_minibox.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 7,
+      "rarity": "Common",
+      "taskId": ["trupiks_8", "trupiks_10"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_maggie_camera",
+    "name": "Maggie's Camera",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maggie",
+    "images": {
+      "icon": "/images/items/task/valuable_task_maggie_camera.webp",
+      "thumbnail": "/images/items/task/valuable_task_maggie_camera.webp",
+      "fullsize": "/images/items/task/valuable_task_maggie_camera.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 1.7,
+      "rarity": "Common",
+      "taskIds": ["ntg_2"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_medherb",
+    "name": "Exotic Herbs",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maggie",
+    "images": {
+      "icon": "/images/items/task/valuable_task_maggie_herbs.webp",
+      "thumbnail": "/images/items/task/valuable_task_maggie_herbs.webp",
+      "fullsize": "/images/items/task/valuable_task_maggie_herbs.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 4.5,
+      "rarity": "Common",
+      "taskIds": ["ntg_9"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_medicalbag",
+    "name": "Maggie's Medical Bag",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maggie",
+    "images": {
+      "icon": "/images/items/task/valuable_task_maggie_medicalbag.webp",
+      "thumbnail": "/images/items/task/valuable_task_maggie_medicalbag.webp",
+      "fullsize": "/images/items/task/valuable_task_maggie_medicalbag.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.2,
+      "rarity": "Common",
+      "taskId": ["ntg_18", "ntg_29"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_task_missilelauncher",
+    "name": "Missile Launcher",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maximillian",
+    "images": {
+      "icon": "/images/items/task/valuable_task_max_missile.webp",
+      "thumbnail": "/images/items/task/valuable_task_max_missile.webp",
+      "fullsize": "/images/items/task/valuable_task_max_missile.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 2.5,
+      "rarity": "Common",
+      "taskIds": ["forge_28"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_task_medicalreport",
+    "name": "NTG Medical Report",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maggie",
+    "images": {
+      "icon": "/images/items/task/valuable_task_ntg_medicalreport.webp",
+      "thumbnail": "/images/items/task/valuable_task_ntg_medicalreport.webp",
+      "fullsize": "/images/items/task/valuable_task_ntg_medicalreport.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.3,
+      "rarity": "Common",
+      "taskId": ["ntg_26", "ntg_32"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_taskitem_plate1",
+    "name": "Antique Tea Plate - Yin",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maximillian",
+    "images": {
+      "icon": "/images/items/task/valuable_task_max_plate1.webp",
+      "thumbnail": "/images/items/task/valuable_task_max_plate1.webp",
+      "fullsize": "/images/items/task/valuable_task_max_plate1.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.3,
+      "rarity": "Common",
+      "taskIds": ["forge_7"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_taskitem_plate2",
+    "name": "Antique Tea Plate - Yang",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maximillian",
+    "images": {
+      "icon": "/images/items/task/valuable_task_max_plate2.webp",
+      "thumbnail": "/images/items/task/valuable_task_max_plate2.webp",
+      "fullsize": "/images/items/task/valuable_task_max_plate2.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.3,
+      "rarity": "Common",
+      "taskIds": ["forge_7"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_taskitembase_policef1key",
+    "name": "Shooting Range Key",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Johnny",
+    "images": {
+      "icon": "/images/items/task/valuable_task_policef1key.webp",
+      "thumbnail": "/images/items/task/valuable_task_policef1key.webp",
+      "fullsize": "/images/items/task/valuable_task_policef1key.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.005,
+      "rarity": "Common",
+      "taskIds": ["trupiks_7"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_radio",
+    "name": "Portable Radio",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maggie",
+    "images": {
+      "icon": "/images/items/task/valuable_task_maggie_radio.webp",
+      "thumbnail": "/images/items/task/valuable_task_maggie_radio.webp",
+      "fullsize": "/images/items/task/valuable_task_maggie_radio.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 7,
+      "rarity": "Common",
+      "taskIds": ["ntg_5"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_task_vrheadset",
+    "name": "VR Headset",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maximillian",
+    "images": {
+      "icon": "/images/items/task/Icon_valuable_vrheadset.webp",
+      "thumbnail": "/images/items/task/Icon_valuable_vrheadset.webp",
+      "fullsize": "/images/items/task/Icon_valuable_vrheadset.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 7,
+      "rarity": "Common",
+      "taskIds": ["forge_30"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_wyethwine",
+    "name": "Wyeth's Dry Red Wine",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Igor",
+    "images": {
+      "icon": "/images/items/task/Icon_food_Wyeth_Wine.webp",
+      "thumbnail": "/images/items/task/Icon_food_Wyeth_Wine.webp",
+      "fullsize": "/images/items/task/Icon_food_Wyeth_Wine.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 1.3,
+      "rarity": "Common",
+      "taskIds": ["regiment_23"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_tracking_device",
+    "name": "MS2000 Tracker",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Universal",
+    "images": {
+      "icon": "/images/items/misc/Icon_valuable_task_tracker.webp",
+      "thumbnail": "/images/items/misc/Icon_valuable_task_tracker.webp",
+      "fullsize": "/images/items/misc/Icon_valuable_task_tracker.webp"
+    },
+    "stats": {
+      "price": 4000,
+      "weight": 0.1,
+      "rarity": "Common",
+      "taskIds": ["ark_12", "ark_16", "ark_24", "ark_26", "ark_33", "ntg_12", "ntg_19", "trupiks_13", "regiment_23", "forge_11", "forge_22"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_photophone",
+    "name": "FotoVision+ Phone",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Universal",
+    "images": {
+      "icon": "/images/items/misc/CSP_Phone.webp",
+      "thumbnail": "/images/items/misc/CSP_Phone.webp",
+      "fullsize": "/images/items/misc/CSP_Phone.webp"
+    },
+    "stats": {
+      "price": 4000,
+      "weight": 0.21,
+      "rarity": "Common",
+      "taskIds": ["ark_8", "ark_19", "ntg_8", "ntg_17", "ntg_30", "trupiks_11", "regiment_12", "regiment_25", "forge_6"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_placement_igor_memobeer",
+    "name": "Beer of Mourning",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Igor",
+    "images": {
+      "icon": "/images/items/task/valuable_task_igor_memobeer.webp",
+      "thumbnail": "/images/items/task/valuable_task_igor_memobeer.webp",
+      "fullsize": "/images/items/task/valuable_task_igor_memobeer.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.8,
+      "rarity": "Common",
+      "taskIds": ["regiment_14"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_placement_igor_foodcan",
+    "name": "Igor's Food can",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Igor",
+    "images": {
+      "icon": "/images/items/task/valuable_task_igor_can.webp",
+      "thumbnail": "/images/items/task/valuable_task_igor_can.webp",
+      "fullsize": "/images/items/task/valuable_task_igor_can.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.8,
+      "rarity": "Common",
+      "taskIds": ["regiment_24"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_placement_igor_supplycase",
+    "name": "Igor's Supply Case",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Igor",
+    "images": {
+      "icon": "/images/items/task/valuable_task_igor_box.webp",
+      "thumbnail": "/images/items/task/valuable_task_igor_box.webp",
+      "fullsize": "/images/items/task/valuable_task_igor_box.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 17.5,
+      "rarity": "Common",
+      "taskIds": ["regiment_32"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_placement_johnny_walkietalkie",
+    "name": "Walkie-Talkie",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Johnny",
+    "images": {
+      "icon": "/images/items/task/valuable_task_johnny_talkie.webp",
+      "thumbnail": "/images/items/task/valuable_task_johnny_talkie.webp",
+      "fullsize": "/images/items/task/valuable_task_johnny_talkie.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.2,
+      "rarity": "Common",
+      "taskIds": ["trupiks_12"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_placement_maggie_medicine",
+    "name": "Maggie's Medicine (X-Nax)",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maggie",
+    "images": {
+      "icon": "/images/items/task/valuable_task_maggie_medical.webp",
+      "thumbnail": "/images/items/task/valuable_task_maggie_medical.webp",
+      "fullsize": "/images/items/task/valuable_task_maggie_medical.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.2,
+      "rarity": "Common",
+      "taskIds": ["ntg_7","ntg_21"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_placement_maggie_poison",
+    "name": "Maggie's Poison",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maggie",
+    "images": {
+      "icon": "/images/items/task/valuable_task_maggie_toxin.webp",
+      "thumbnail": "/images/items/task/valuable_task_maggie_toxin.webp",
+      "fullsize": "/images/items/task/valuable_task_maggie_toxin.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.2,
+      "rarity": "Common",
+      "taskIds": ["ntg_16"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_placement_maggie_usb",
+    "name": "Maggie's USB",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maggie",
+    "images": {
+      "icon": "/images/items/task/valuable_task_maggie_usb.webp",
+      "thumbnail": "/images/items/task/valuable_task_maggie_usb.webp",
+      "fullsize": "/images/items/task/valuable_task_maggie_usb.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.08,
+      "rarity": "Common",
+      "taskIds": ["ntg_7"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_placement_max_cash",
+    "name": "Max's Cash",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maximillian",
+    "images": {
+      "icon": "/images/items/task/valuable_task_max_money.webp",
+      "thumbnail": "/images/items/task/valuable_task_max_money.webp",
+      "fullsize": "/images/items/task/valuable_task_max_money.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.18,
+      "rarity": "Common",
+      "taskIds": ["forge_8"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_placement_max_oldphone",
+    "name": "Max‘s Phone",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maximillian",
+    "images": {
+      "icon": "/images/items/task/valuable_task_max_phone.webp",
+      "thumbnail": "/images/items/task/valuable_task_max_phone.webp",
+      "fullsize": "/images/items/task/valuable_task_max_phone.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.16,
+      "rarity": "Common",
+      "taskIds": ["forge_5"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_placement_max_ring",
+    "name": "Max's Diamond ring",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maximillian",
+    "images": {
+      "icon": "/images/items/task/valuable_task_max_diamondring.webp",
+      "thumbnail": "/images/items/task/valuable_task_max_diamondring.webp",
+      "fullsize": "/images/items/task/valuable_task_max_diamondring.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.2,
+      "rarity": "Common",
+      "taskIds": ["forge_10"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_placement_signalenhancer",
+    "name": "Signal Enhancer",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maggie",
+    "images": {
+      "icon": "/images/items/task/valuable_task_maggie_line.webp",
+      "thumbnail": "/images/items/task/valuable_task_maggie_line.webp",
+      "fullsize": "/images/items/task/valuable_task_maggie_line.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.24,
+      "rarity": "Common",
+      "taskIds": ["ntg_11"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_placement_tommy_surveillancecam",
+    "name": "Tommy's Surveillance Cam",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Tommy",
+    "images": {
+      "icon": "/images/items/task/valuable_task_tommy_camera.webp",
+      "thumbnail": "/images/items/task/valuable_task_tommy_camera.webp",
+      "fullsize": "/images/items/task/valuable_task_tommy_camera.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.8,
+      "rarity": "Common",
+      "taskIds": ["ark_17"]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_placement_tommy_telescope",
+    "name": "ARK's Telescope",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Tommy",
+    "images": {
+      "icon": "/images/items/task/valuable_task_ark_telescope.webp",
+      "thumbnail": "/images/items/task/valuable_task_ark_telescope.webp",
+      "fullsize": "/images/items/task/valuable_task_ark_telescope.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 1,
+      "rarity": "Common",
+      "taskIds": ["ark_7"]
+    },
+    "tips": ""
+  }
+]

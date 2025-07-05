@@ -243,6 +243,18 @@ export interface Food extends Provisions {
     subcategory: 'Food';
 }
 
+export interface TaskItemProperties {
+    taskIds: string[];
+}
+
+export type TaskItemSubcategory = 'Tommy' | 'Maximillian' | 'Maggie' | 'Johnny' | 'Igor' | 'Universal';
+
+export interface TaskItem extends Item {
+    category: 'task-items';
+    subcategory: TaskItemSubcategory;
+    stats: Item['stats'] & TaskItemProperties;
+}
+
 export interface Misc extends Item {
     category: 'misc';
     subcategory: 'Household' | 'Intel' | 'Electric' | 'Power' | 'Tools' | 'Combustible' | 'Building' | 'HighValue' | 'Medicine';
@@ -260,6 +272,7 @@ export type AnyItem =
     | Provisions
     | Grenade
     | Attachment
+    | TaskItem
     | Misc;
 
 // Protective zone from armor data
@@ -517,6 +530,20 @@ export const itemCategories: Record<string, ItemCategory> = {
         subcategories: [
             'Food',
             'Drinks',
+        ]
+    },
+    'task-items': {
+        id: 'task-items',
+        name: 'Task Items',
+        description: 'Special task-related items for various NPCs',
+        icon: 'package',
+        subcategories: [
+            'Tommy',
+            'Maximillian',
+            'Maggie',
+            'Johnny',
+            'Igor',
+            'Universal'
         ]
     },
     'misc': {

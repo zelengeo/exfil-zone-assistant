@@ -12,7 +12,7 @@ import {
     FaceShield, Food, Grenade, Grip,
     Helmet,
     Item, LimbRestore, Magazine,
-    Medicine, Misc, Painkiller, Provisions, Rail, Sight, Stim, Suppressor, Syringe, TacticalAttachment,
+    Medicine, Misc, Painkiller, Provisions, Rail, Sight, Stim, Suppressor, Syringe, TacticalAttachment, TaskItem,
     Weapon
 } from "@/types/items";
 
@@ -143,7 +143,7 @@ export const RANGE_PRESETS: RangePreset[] = [
 
 // Type guards with improved checks
 export function isAnyItem(item: Item): item is AnyItem {
-    return isWeapon(item) || isAmmunition(item) || isGrenade(item) || isArmor(item) || isMedicine(item) || isAttachment(item) || isMisc(item) || isProvisions(item);
+    return isWeapon(item) || isAmmunition(item) || isGrenade(item) || isArmor(item) || isMedicine(item) || isAttachment(item) || isMisc(item) || isProvisions(item) || isTaskItem(item);
 }
 
 export function isWeapon(item: Item): item is Weapon {
@@ -256,6 +256,10 @@ export function isDrink(item: Item): item is Drink {
 
 export function isFood(item: Item): item is Food {
     return item.category === 'provisions' && item.subcategory === 'Food';
+}
+
+export function isTaskItem(item: Item): item is TaskItem {
+    return item.category === 'task-items';
 }
 
 export function isMisc(item: Item): item is Misc {

@@ -4,8 +4,8 @@ import {
     isBandage,
     isBodyArmor,
     isFaceShield, isGrenade,
-    isHelmet, isLimbRestore, isMagazine, isMedicine,
-    isPainkiller, isProvisions, isSight, isStim, isSyringe, isTactical,
+    isHelmet, isLimbRestore, isMagazine, isMedicine, isMisc,
+    isPainkiller, isProvisions, isSight, isStim, isSyringe, isTactical, isTaskItem,
     isWeapon
 } from "@/app/combat-sim/utils/types";
 
@@ -32,6 +32,7 @@ const DATA_FILES = [
     'face-shields.json',
     'medical.json',
     'provisions.json',
+    'task-items.json',
     'misc.json',
 ];
 
@@ -48,6 +49,7 @@ const dataImports = {
     'face-shields.json': () => import('@/public/data/face-shields.json'),
     'medical.json': () => import('@/public/data/medical.json'),
     'provisions.json': () => import('@/public/data/provisions.json'),
+    'task-items.json': () => import('@/public/data/task-items.json'),
     'misc.json': () => import('@/public/data/misc.json'),
 };
 
@@ -237,16 +239,21 @@ function transformItemData(rawItem: Item): Item {
 
         }
 
-        //
-        // if (isMisc(rawItem)) {
-        //     if (!isMisc(baseItem)) return baseItem;
-        //     if (rawItem.stats.backpackDimensionMultiplier !== undefined) {
-        //         baseItem.stats.backpackDimensionMultiplier = rawItem.stats.backpackDimensionMultiplier;
-        //     }
-        //     if (rawItem.stats.safeContainerBoundScale !== undefined) {
-        //         baseItem.stats.safeContainerBoundScale = rawItem.stats.safeContainerBoundScale;
-        //     }
-        // }
+        if (isTaskItem(rawItem)) {
+            if (!isTaskItem(baseItem)) return baseItem;
+            baseItem.stats.taskIds = rawItem.stats.taskIds;
+        }
+
+
+        if (isMisc(rawItem)) {
+            if (!isMisc(baseItem)) return baseItem;
+            // if (rawItem.stats.backpackDimensionMultiplier !== undefined) {
+            //     baseItem.stats.backpackDimensionMultiplier = rawItem.stats.backpackDimensionMultiplier;
+            // }
+            // if (rawItem.stats.safeContainerBoundScale !== undefined) {
+            //     baseItem.stats.safeContainerBoundScale = rawItem.stats.safeContainerBoundScale;
+            // }
+        }
     }
 
     if (rawItem.notes) baseItem.notes = rawItem.notes;

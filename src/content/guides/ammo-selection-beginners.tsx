@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from "next/image";
 import { Target, Zap, Shield, AlertTriangle, Info, ExternalLink } from 'lucide-react';
 
 export default function AmmoSelectionBeginners() {
