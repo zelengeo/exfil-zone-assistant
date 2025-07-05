@@ -94,6 +94,10 @@ const contributors: Contributor[] = [
             component: HayaPlaysCard
         },
         {
+            name: 'Ken Ross',
+            role: 'supporter',
+        },
+        {
             name: 'Genosse aus der UsbSSR',
             role: 'supporter',
             description: '3D Artist',

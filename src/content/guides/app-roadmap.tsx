@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, Circle, Clock, Sparkles, Target, Package, Map, Home, ScrollText, HelpCircle } from 'lucide-react';
+import { CheckCircle, Clock, Sparkles, Target, Package, Map, Home, ScrollText, HelpCircle, Users, Shuffle, Trophy } from 'lucide-react';
 import Link from 'next/link';
 
 export default function AppRoadmapGuide() {
@@ -33,29 +33,22 @@ export default function AppRoadmapGuide() {
                         <p className="text-tan-300 mb-4">
                             Our flagship feature providing detailed damage calculations and TTK analysis.
                         </p>
-                        <ul className="space-y-2 text-sm">
-                            <li className="flex items-start gap-2">
-                                <CheckCircle size={14} className="text-green-500 mt-0.5 flex-shrink-0" />
-                                <span className="text-tan-200">Weapon vs Armor calculations</span>
-                            </li>
-                            <li className="flex items-start gap-2">
-                                <CheckCircle size={14} className="text-green-500 mt-0.5 flex-shrink-0" />
-                                <span className="text-tan-200">Time-to-kill analysis</span>
-                            </li>
-                            <li className="flex items-start gap-2">
-                                <CheckCircle size={14} className="text-green-500 mt-0.5 flex-shrink-0" />
-                                <span className="text-tan-200">Penetration probability</span>
-                            </li>
-                            <li className="flex items-start gap-2">
-                                <CheckCircle size={14} className="text-green-500 mt-0.5 flex-shrink-0" />
-                                <span className="text-tan-200">Range-based damage falloff</span>
-                            </li>
-                        </ul>
-                        <Link
-                            href="/combat-sim"
-                            className="inline-flex items-center gap-1 mt-4 text-sm text-olive-400 hover:text-olive-300 transition-colors"
-                        >
-                            Try it now →
+                        <div className="flex flex-wrap gap-2">
+                            <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                Multi-weapon comparison
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                Body part targeting
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                Range calculations
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                Armor penetration
+                            </span>
+                        </div>
+                        <Link href="/combat-sim" className="inline-block mt-3 text-olive-400 hover:text-olive-300 text-sm">
+                            Try Combat Simulator →
                         </Link>
                     </div>
 
@@ -63,150 +56,228 @@ export default function AppRoadmapGuide() {
                     <div className="bg-military-800 border border-military-600 rounded-sm p-5">
                         <div className="flex items-center gap-3 mb-3">
                             <Package className="text-olive-400" size={24} />
-                            <h3 className="text-lg font-semibold text-tan-100">Item Database (Partial)</h3>
+                            <h3 className="text-lg font-semibold text-tan-100">Comprehensive Item Database</h3>
                         </div>
                         <p className="text-tan-300 mb-4">
-                            Growing database with detailed stats for key combat items.
+                            Extensive database covering weapons, armor, consumables, and tactical equipment.
                         </p>
-                        <ul className="space-y-2 text-sm">
-                            <li className="flex items-start gap-2">
-                                <CheckCircle size={14} className="text-green-500 mt-0.5 flex-shrink-0" />
-                                <span className="text-tan-200">All weapons with hidden stats</span>
-                            </li>
-                            <li className="flex items-start gap-2">
-                                <CheckCircle size={14} className="text-green-500 mt-0.5 flex-shrink-0" />
-                                <span className="text-tan-200">Complete ammunition data</span>
-                            </li>
-                            <li className="flex items-start gap-2">
-                                <CheckCircle size={14} className="text-green-500 mt-0.5 flex-shrink-0" />
-                                <span className="text-tan-200">Body armor & helmets</span>
-                            </li>
-                            <li className="flex items-start gap-2">
-                                <Circle size={14} className="text-tan-500 mt-0.5 flex-shrink-0" />
-                                <span className="text-tan-400">Other items coming soon</span>
-                            </li>
-                        </ul>
-                        <Link
-                            href="/items"
-                            className="inline-flex items-center gap-1 mt-4 text-sm text-olive-400 hover:text-olive-300 transition-colors"
-                        >
-                            Browse items →
+                        <div className="flex flex-wrap gap-2">
+                            <span className="text-xs px-2 py-1 bg-green-700/30 text-green-400 rounded-sm">
+                                ✓ Weapons & Ammo
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-green-700/30 text-green-400 rounded-sm">
+                                ✓ Armor & Gear
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-green-700/30 text-green-400 rounded-sm">
+                                ✓ Provisions
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-green-700/30 text-green-400 rounded-sm">
+                                ✓ Medical Items
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-green-700/30 text-green-400 rounded-sm">
+                                ✓ Task Items
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-green-700/30 text-green-400 rounded-sm">
+                                ✓ Attachments
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-green-700/30 text-green-400 rounded-sm">
+                                ✓ Throwables
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-green-700/30 text-green-400 rounded-sm">
+                                ✓ Misc Items
+                            </span>
+                        </div>
+                        <div className="mt-3 space-y-1">
+                            <p className="text-xs text-yellow-400">Missing: Keys, Safe Containers, Backpacks, Holsters</p>
+                        </div>
+                        <Link href="/items" className="inline-block mt-3 text-olive-400 hover:text-olive-300 text-sm">
+                            Browse Items →
+                        </Link>
+                    </div>
+
+                    {/* Hideout Upgrades */}
+                    <div className="bg-military-800 border border-military-600 rounded-sm p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <Home className="text-olive-400" size={24} />
+                            <h3 className="text-lg font-semibold text-tan-100">Hideout Upgrades Calculator</h3>
+                        </div>
+                        <p className="text-tan-300 mb-4">
+                            Plan your hideout upgrades with detailed cost calculations and requirement tracking.
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                            <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                Upgrade planning
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                Cost calculator
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                Progress tracking
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                Dependency chains
+                            </span>
+                        </div>
+                        <Link href="/hideout-upgrades" className="inline-block mt-3 text-olive-400 hover:text-olive-300 text-sm">
+                            Plan Upgrades →
+                        </Link>
+                    </div>
+
+                    {/* Tasks Database */}
+                    <div className="bg-military-800 border border-military-600 rounded-sm p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <ScrollText className="text-olive-400" size={24} />
+                            <h3 className="text-lg font-semibold text-tan-100">Tasks & Quests Database</h3>
+                        </div>
+                        <p className="text-tan-300 mb-4">
+                            Complete task tracking with objectives, rewards, and community video guides.
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                            <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                Progress tracking
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                Merchant organization
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                Video guides
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                Reward calculator
+                            </span>
+                        </div>
+                        <Link href="/tasks" className="inline-block mt-3 text-olive-400 hover:text-olive-300 text-sm">
+                            View Tasks →
                         </Link>
                     </div>
                 </div>
             </section>
 
-            {/* Coming Soon */}
+
+            {/* In Development */}
             <section className="military-box p-6 rounded-sm">
                 <div className="flex items-start gap-3 mb-6">
                     <div className="p-2 bg-yellow-900/30 rounded-sm border border-yellow-800">
                         <Clock size={20} className="text-yellow-400" />
                     </div>
-                    <h2 className="text-2xl font-bold text-tan-100">Coming Soon</h2>
+                    <h2 className="text-2xl font-bold text-tan-100">In Development</h2>
                 </div>
 
-                <div className="space-y-4">
-                    {/* Recoil System */}
+                <div className="grid md:grid-cols-2 gap-4">
+                    {/* Missing Item Categories */}
+                    <div className="bg-military-800 border-l-4 border-yellow-600 p-4">
+                        <div className="flex items-start justify-between">
+                            <div className="flex-1">
+                                <h3 className="font-semibold text-tan-100 mb-2">Remaining Item Categories</h3>
+                                <p className="text-tan-300 text-sm mb-3">
+                                    Completing the item database with remaining categories and their full functionality.
+                                </p>
+                                <div className="flex flex-wrap gap-2">
+                                    <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                        Keys database
+                                    </span>
+                                    <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                        Safe containers
+                                    </span>
+                                    <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                        Backpacks
+                                    </span>
+                                    <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                        Holsters
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="ml-4 text-yellow-400">
+                                <Clock size={20} />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Weapon Recoil System */}
                     <div className="bg-military-800 border-l-4 border-yellow-600 p-4">
                         <div className="flex items-start justify-between">
                             <div className="flex-1">
                                 <h3 className="font-semibold text-tan-100 mb-2">Weapon Recoil Analysis</h3>
                                 <p className="text-tan-300 text-sm mb-3">
-                                    Visual recoil pattern plots for every weapon, showing spray patterns and control techniques.
+                                    Visual recoil pattern analysis and combat simulator integration for complete weapon evaluation.
                                 </p>
                                 <div className="flex flex-wrap gap-2">
-                  <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
-                    Recoil plots
-                  </span>
                                     <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
-                    Pattern analysis
-                  </span>
+                                        Recoil plots
+                                    </span>
                                     <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
-                    Combat sim integration
-                  </span>
+                                        Pattern analysis
+                                    </span>
+                                    <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                        Combat sim integration
+                                    </span>
                                 </div>
                             </div>
                             <div className="ml-4 text-yellow-400">
-                                <Sparkles size={20} />
+                                <Clock size={20} />
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
 
-                    {/* Weapon Attachments */}
-                    <div className="bg-military-800 border-l-4 border-yellow-600 p-4">
-                        <div className="flex items-start justify-between">
-                            <div className="flex-1">
-                                <h3 className="font-semibold text-tan-100 mb-2">Weapon Attachments System</h3>
-                                <p className="text-tan-300 text-sm mb-3">
-                                    Complete attachment database with hidden stats, compatibility, and a weapon builder tool.
-                                </p>
-                                <div className="flex flex-wrap gap-2">
-                  <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
-                    Hidden stats revealed
-                  </span>
-                                    <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
-                    Mounting system
-                  </span>
-                                    <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
-                    Build optimizer
-                  </span>
-                                </div>
-                            </div>
-                            <div className="ml-4 text-yellow-400">
-                                <Sparkles size={20} />
-                            </div>
+            {/* Community Features */}
+            <section className="military-box p-6 rounded-sm">
+                <div className="flex items-start gap-3 mb-6">
+                    <div className="p-2 bg-blue-900/30 rounded-sm border border-blue-800">
+                        <Users size={20} className="text-blue-400" />
+                    </div>
+                    <h2 className="text-2xl font-bold text-tan-100">Features Suggested by Community</h2>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                    {/* Loadout Builder */}
+                    <div className="bg-military-800 border border-military-600 rounded-sm p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <Shuffle className="text-blue-400" size={24} />
+                            <h3 className="text-lg font-semibold text-tan-100">Loadout Builder</h3>
+                        </div>
+                        <p className="text-tan-300 mb-4">
+                            Create custom loadouts or randomize them for varied gameplay experiences.
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                            <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                Custom builds
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                Random generation
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                Role-based presets
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                Share builds
+                            </span>
                         </div>
                     </div>
 
-                    {/* Throwables */}
-                    <div className="bg-military-800 border-l-4 border-yellow-600 p-4">
-                        <div className="flex items-start justify-between">
-                            <div className="flex-1">
-                                <h3 className="font-semibold text-tan-100 mb-2">Throwable Analysis</h3>
-                                <p className="text-tan-300 text-sm mb-3">
-                                    Grenade damage ranges, flash effectiveness, smoke coverage areas, and throwing mechanics.
-                                </p>
-                                <div className="flex flex-wrap gap-2">
-                  <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
-                    Damage ranges
-                  </span>
-                                    <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
-                    Effect duration
-                  </span>
-                                    <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
-                    Trajectory guides
-                  </span>
-                                </div>
-                            </div>
-                            <div className="ml-4 text-yellow-400">
-                                <Sparkles size={20} />
-                            </div>
+                    {/* Community Challenges */}
+                    <div className="bg-military-800 border border-military-600 rounded-sm p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                            <Trophy className="text-blue-400" size={24} />
+                            <h3 className="text-lg font-semibold text-tan-100">Community Challenges</h3>
                         </div>
-                    </div>
-
-                    {/* Complete Item Database */}
-                    <div className="bg-military-800 border-l-4 border-yellow-600 p-4">
-                        <div className="flex items-start justify-between">
-                            <div className="flex-1">
-                                <h3 className="font-semibold text-tan-100 mb-2">Complete Item Database</h3>
-                                <p className="text-tan-300 text-sm mb-3">
-                                    Every usable item with hidden stats revealed. <span className="italic">Who knows what secrets we&#39;ll uncover? 😉</span>
-                                </p>
-                                <div className="flex flex-wrap gap-2">
-                  <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
-                    Medical items
-                  </span>
-                                    <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
-                    Food & drinks
-                  </span>
-                                    <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
-                    All consumables
-                  </span>
-                                </div>
-                            </div>
-                            <div className="ml-4 text-yellow-400">
-                                <Sparkles size={20} />
-                            </div>
+                        <p className="text-tan-300 mb-4">
+                            Player-driven challenges including bounties on specific players and skill-based contests.
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                            <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                Player bounties
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                Skill challenges
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                Leaderboards
+                            </span>
+                            <span className="text-xs px-2 py-1 bg-military-700 text-tan-400 rounded-sm">
+                                Reward tracking
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -228,72 +299,77 @@ export default function AppRoadmapGuide() {
                 <div className="grid md:grid-cols-2 gap-4">
                     {[
                         {
-                            icon: ScrollText,
-                            title: "Quest Database",
-                            description: "Complete quest walkthroughs, requirements, and optimal completion paths"
-                        },
-                        {
-                            icon: Home,
-                            title: "Hideout Calculator",
-                            description: "Resource planning, upgrade paths, and ROI analysis for hideout investments"
-                        },
-                        {
                             icon: Map,
                             title: "Interactive Maps",
                             description: "Detailed maps with loot spawns, extracts, and tactical positioning"
                         },
                         {
                             icon: Sparkles,
-                            title: "Your Ideas",
-                            description: "We're always open to community suggestions for new features!"
+                            title: "Advanced Analytics",
+                            description: "Player statistics tracking, performance analysis, and improvement suggestions"
+                        },
+                        {
+                            icon: Package,
+                            title: "Inventory Manager",
+                            description: "Virtual stash management and optimization tools"
+                        },
+                        {
+                            icon: Users,
+                            title: "Team Coordination",
+                            description: "Squad planning tools and communication aids for team play"
                         }
-                    ].map((item, index) => (
-                        <div key={index} className="bg-military-800 border border-military-600 rounded-sm p-4 hover:border-blue-700 transition-colors">
+                    ].map((feature, index) => (
+                        <div key={index} className="bg-military-800 border border-military-600 rounded-sm p-4">
                             <div className="flex items-start gap-3">
-                                <item.icon className="text-blue-400 flex-shrink-0" size={20} />
+                                <feature.icon className="text-blue-400 mt-1" size={20} />
                                 <div>
-                                    <h3 className="font-medium text-tan-100 mb-1">{item.title}</h3>
-                                    <p className="text-sm text-tan-300">{item.description}</p>
+                                    <h3 className="font-medium text-tan-100 mb-1">{feature.title}</h3>
+                                    <p className="text-tan-300 text-sm">{feature.description}</p>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
+            </section>
 
-                <div className="bg-blue-900/20 border border-blue-700/50 rounded-sm p-4 mt-6">
-                    <p className="text-blue-200">
-                        <span className="font-semibold">Want to influence our roadmap?</span> Join our Discord community
-                        or use the feedback form to vote on features and suggest new ideas. We build what the community needs most!
-                    </p>
+            {/* Changelog */}
+            <section className="military-box p-6 rounded-sm">
+                <div className="flex items-start gap-3 mb-6">
+                    <div className="p-2 bg-green-900/30 rounded-sm border border-green-800">
+                        <Sparkles size={20} className="text-green-400" />
+                    </div>
+                    <h2 className="text-2xl font-bold text-tan-100">Recent Updates</h2>
+                </div>
+
+                <div className="space-y-4">
+                    <div className="border-l-4 border-green-600 pl-4">
+                        <h3 className="font-semibold text-green-400 mb-2">Major Feature Additions</h3>
+                        <ul className="space-y-1 text-tan-300 text-sm">
+                            <li>• Added comprehensive item database with Provisions, Task Items, Medical supplies</li>
+                            <li>• Implemented Hideout Upgrades calculator with full cost tracking</li>
+                            <li>• Created Tasks database with progress tracking and video guides</li>
+                            <li>• Added Attachments and Throwables to item database</li>
+                            <li>• Introduced Loadout Builder with randomization features</li>
+                            <li>• Launched Community Challenges system with player bounties</li>
+                        </ul>
+                    </div>
+
+                    <div className="border-l-4 border-blue-600 pl-4">
+                        <h3 className="font-semibold text-blue-400 mb-2">Combat Simulator Stable</h3>
+                        <p className="text-tan-300 text-sm">
+                            Combat Simulator remains our most mature feature with ongoing refinements to damage calculations
+                            and armor penetration mechanics. No major changes planned - focus on stability and accuracy.
+                        </p>
+                    </div>
                 </div>
             </section>
 
-            {/* Development Philosophy */}
-            <section className="bg-military-800 border border-olive-700 rounded-sm p-6">
-                <h2 className="text-xl font-bold text-tan-100 mb-4">Our Development Philosophy</h2>
-                <div className="space-y-3 text-tan-200">
-                    <p>
-                        <strong className="text-olive-400">Quality over Quantity:</strong> We&#39;d rather have fewer features
-                        that work perfectly than many half-finished ones.
-                    </p>
-                    <p>
-                        <strong className="text-olive-400">Community Driven:</strong> Your feedback directly shapes what
-                        we build next. The most requested features get priority.
-                    </p>
-                    <p>
-                        <strong className="text-olive-400">Accuracy First:</strong> Every feature is thoroughly tested
-                        against in-game data to ensure reliability.
-                    </p>
-                </div>
-            </section>
-
-            {/* Open Source Contribution */}
-            <section className="bg-purple-900/20 border border-purple-700/50 rounded-sm p-6 mb-6">
-                <h2 className="text-xl font-bold text-purple-300 mb-3">Open Source Project</h2>
+            {/* Community Contribution */}
+            <section className="bg-purple-900/20 border border-purple-700/50 rounded-sm p-6">
+                <h2 className="text-xl font-bold text-purple-300 mb-3">Join the Development</h2>
                 <p className="text-purple-200 mb-4">
-                    ExfilZone Assistant is <strong>open source</strong>! Our GitHub repository is public, and we welcome
-                    contributions from the community. Whether it&#39;s fixing bugs, adding features, or improving documentation,
-                    your help makes this project better for everyone.
+                    Our GitHub repository is public, and we welcome contributions from the community. Whether it&#39;s
+                    fixing bugs, adding features, or improving documentation, your help makes this project better for everyone.
                 </p>
                 <div className="grid md:grid-cols-3 gap-4 mb-4">
                     <div className="bg-purple-900/30 p-4 rounded-sm text-center">
@@ -325,18 +401,77 @@ export default function AppRoadmapGuide() {
 
             {/* Call to Action */}
             <section className="bg-green-900/20 border border-green-700/50 rounded-sm p-6">
+                <h2 className="text-xl font-bold text-green-300 mb-3">Stay Updated & Support Development</h2>
+                <p className="text-green-200 mb-6">
+                    Don&#39;t miss out on new features! Follow our development progress, join the community, and help fuel continued development.
+                </p>
+
+                {/* Support Section */}
+                <div className="bg-green-800/30 border border-green-600/50 rounded-sm p-4 mb-6">
+                    <h3 className="text-lg font-semibold text-green-300 mb-3">💖 Support Development on Ko-fi</h3>
+                    <p className="text-green-200 text-sm mb-4">
+                        Help keep ExfilZone Assistant free and accelerate new feature development. Supporters get exclusive perks!
+                    </p>
+
+                    <div className="grid md:grid-cols-2 gap-4 mb-4">
+                        <div className="bg-green-900/40 p-3 rounded-sm">
+                            <h4 className="font-medium text-green-300 mb-2">✨ Supporter Benefits</h4>
+                            <ul className="text-green-200 text-xs space-y-1">
+                                <li>• Priority feature requests</li>
+                                <li>• Exclusive Discord supporter role</li>
+                                <li>• Behind-the-scenes development updates</li>
+                                <li>• Special mention in community section</li>
+                            </ul>
+                        </div>
+                        <div className="bg-green-900/40 p-3 rounded-sm">
+                            <h4 className="font-medium text-green-300 mb-2">🚀 What Your Support Enables</h4>
+                            <ul className="text-green-200 text-xs space-y-1">
+                                <li>• Faster feature development</li>
+                                <li>• Server costs & hosting</li>
+                                <li>• Data acquisition & processing</li>
+                                <li>• Community tools & integrations</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a
+                        href="https://ko-fi.com/pogapwnz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-600 to-red-600
+                       hover:from-orange-500 hover:to-red-500 text-white rounded-sm transition-all transform hover:scale-105 font-medium"
+                    >
+                        <span>☕</span>
+                        Support on Ko-fi
+                        <span className="text-xs opacity-75">→</span>
+                    </a>
+                </div>
+            </section>
+
+            {/* Call to Action */}
+            <section className="bg-green-900/20 border border-green-700/50 rounded-sm p-6">
                 <h2 className="text-xl font-bold text-green-300 mb-3">Stay Updated</h2>
                 <p className="text-green-200 mb-4">
-                    Don&#39;t miss out on new features! Check back regularly or join our community to get notified
-                    when new tools and content are released.
+                    Don&#39;t miss out on new features! Follow our development progress and join the community.
                 </p>
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-3">
                     <a
-                        href={process.env.DISCORD_LINK}
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-green-800 hover:bg-green-700 
-                     text-green-100 rounded-sm transition-colors font-medium"
+                        href="https://discord.gg/2FCDZK6C25"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-green-800 hover:bg-green-700
+                       text-green-100 rounded-sm transition-colors"
                     >
                         Join Discord
+                    </a>
+                    <a
+                        href="https://x.com/pogapwnz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-green-800 hover:bg-green-700
+                       text-green-100 rounded-sm transition-colors"
+                    >
+                        Follow on X
                     </a>
                 </div>
             </section>
