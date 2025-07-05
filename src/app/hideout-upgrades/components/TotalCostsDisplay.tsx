@@ -1,9 +1,9 @@
 import {useMemo, useState} from 'react';
 import {hideoutUpgrades} from '@/data/hideout-upgrades';
-import {DollarSign, Package, ExternalLink, X} from 'lucide-react';
+import {DollarSign, Package, X} from 'lucide-react';
 import {Item} from '@/types/items';
 import Image from 'next/image';
-import Link from 'next/link';
+import ItemLinkIcon from "@/components/ItemLinkIcon";
 
 interface TotalCostsDisplayProps {
     upgradedAreas: Set<keyof typeof hideoutUpgrades>;
@@ -21,32 +21,21 @@ function getItemDiv({item, quantity}: ItemWithQuantity, setSelectedItem: (id: st
             key={item.id}
             className="bg-black/30 border border-military-600 rounded-sm p-3
                              hover:border-olive-600 hover:bg-black/50 transition-all duration-200
-                             flex items-center gap-3 group"
+                             flex items-center gap-3 group cursor-pointer"
             onClick={() => setSelectedItem(item.id)}
         >
             {/* Item Icon */}
-            <Link
-                href={`/items/${item.id}`}
-                target='_blank'
-                className="relative w-12 h-12 flex-shrink-0 bg-black/50 rounded-sm
-                               border border-military-700 hover:border-olive-600 transition-all
-                               overflow-hidden group/icon"
-            >
+            <div
+                className={"relative w-12 h-12 flex-shrink-0 bg-black/50 rounded-sm border border-military-700 hover:border-olive-600 transition-all overflow-hidden"}>
                 <Image
                     src={item?.images.icon || '/images/missing-item.png'}
                     alt={item?.name || item.id}
                     unoptimized={true}
                     fill
                     sizes="full"
-                    className="object-contain p-1 group-hover/icon:scale-110 transition-transform"
+                    className="object-contain p-1 hover:scale-110 transition-transform"
                 />
-                <div
-                    className="absolute inset-0 bg-olive-400/0 group-hover/icon:bg-olive-400/10 transition-colors"/>
-                <ExternalLink
-                    size={12}
-                    className="absolute top-1 right-1 text-tan-400 opacity-0 group-hover/icon:opacity-100 transition-opacity"
-                />
-            </Link>
+            </div>
 
             {/* Item Name */}
             <div className="flex-grow min-w-0">
@@ -144,20 +133,14 @@ export default function TotalCostsDisplay({upgradedAreas, getItemById}: TotalCos
 
         return (<div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
                      onClick={() => setSelectedItem(null)}>
-                <div className="bg-military-gradient border-2 border-olive-600 rounded-sm p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto bg-black/80"
-                     onClick={(e) => e.stopPropagation()}>
+                <div
+                    className="bg-military-gradient border-2 border-olive-600 rounded-sm p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto bg-black/80"
+                    onClick={(e) => e.stopPropagation()}>
 
                     {/* Header */}
                     <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-3">
-                            <Image
-                                src={item.images.icon}
-                                alt={item.name || selectedItem}
-                                unoptimized={true}
-                                width={40}
-                                height={40}
-                                className="object-contain"
-                            />
+                            <ItemLinkIcon item={item} />
                             <div>
                                 <h3 className="text-xl font-bold text-tan-100">
                                     {item.name || selectedItem}
@@ -171,13 +154,13 @@ export default function TotalCostsDisplay({upgradedAreas, getItemById}: TotalCos
                             onClick={() => setSelectedItem(null)}
                             className="text-tan-400 hover:text-tan-100"
                         >
-                            <X size={24} />
+                            <X size={24}/>
                         </button>
                     </div>
 
                     {/* Upgrades List */}
                     <div className="space-y-3">
-                        {upgradesUsingItem.map(({ key,quantity }) => (
+                        {upgradesUsingItem.map(({key, quantity}) => (
                             <div
                                 key={key}
                                 className={`p-4 rounded-sm border bg-green-900/20 border-green-600/50`}
