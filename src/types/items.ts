@@ -438,13 +438,14 @@ export const itemCategories: Record<string, ItemCategory> = {
         icon: 'gun',
         subcategories: [
             '5.56x45mm',
-            '7.62x39mm',
             '7.62x51mm',
+            '6.8x51mm',
             '7.62x54mmR',
+            '7.62x39mm',
+            '5.45x39mm',
             '9x19mm',
             '.45 ACP',
             '12 Gauge',
-            '6.8x51mm'
         ]
     },
     'ammo': {
@@ -458,13 +459,14 @@ export const itemCategories: Record<string, ItemCategory> = {
         subcategories:
             [
                 '5.56x45mm',
-                '7.62x39mm',
                 '7.62x51mm',
+                '6.8x51mm',
                 '7.62x54mmR',
+                '7.62x39mm',
+                '5.45x39mm',
                 '9x19mm',
                 '.45 ACP',
                 '12 Gauge',
-                '6.8x51mm'
             ]
     },
     attachments: {
