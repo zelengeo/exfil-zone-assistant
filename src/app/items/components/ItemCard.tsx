@@ -115,7 +115,7 @@ const renderCategoryStats = (item: Item) => {
                     </div>
                     <div className="flex items-center justify-between text-sm">
                         <span className="text-olive-400 font-medium">Horizontal recoil:</span>
-                        <span className="text-tan-100 font-mono">{item.stats.attachmentModifier?.verticalRecoilModifier || 0}</span>
+                        <span className="text-tan-100 font-mono">{item.stats.attachmentModifier?.horizontalRecoilModifier || 0}</span>
                     </div>
                 </div>
             )
