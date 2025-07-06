@@ -544,7 +544,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Tactical Phone",
+                "item_id": "taskitem_photophone",
                 "quantity": 1
             }
         ],
@@ -805,7 +805,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Tracking device",
+                "item_id": "taskitem_tracking_device",
                 "quantity": 3
             }
         ],
@@ -1051,7 +1051,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Tracking device",
+                "item_id": "taskitem_tracking_device",
                 "quantity": 3
             }
         ],
@@ -1241,7 +1241,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Tactical Phone",
+                "item_id": "taskitem_photophone",
                 "quantity": 1
             }
         ],
@@ -1550,7 +1550,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Tracking device",
+                "item_id": "taskitem_tracking_device",
                 "quantity": 2
             }
         ],
@@ -1695,7 +1695,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Tracking device",
+                "item_id": "taskitem_tracking_device",
                 "quantity": 3
             }
         ],
@@ -1869,7 +1869,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Metro entrance card",
+                "item_id": "key_metro_entry_ticket",
                 "quantity": 1
             }
         ],
@@ -1939,7 +1939,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Metro entrance card",
+                "item_id": "key_metro_entry_ticket",
                 "quantity": 1
             }
         ],
@@ -2006,7 +2006,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Metro entrance card",
+                "item_id": "key_metro_entry_ticket",
                 "quantity": 1
             }
         ],
@@ -2077,7 +2077,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Metro entrance card",
+                "item_id": "key_metro_entry_ticket",
                 "quantity": 1
             }
         ],
@@ -2143,12 +2143,12 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Tracking device",
+                "item_id": "taskitem_tracking_device",
                 "quantity": 3
             },
             {
                 "type": "item",
-                "item_name": "Metro entrance card",
+                "item_id": "key_metro_entry_ticket",
                 "quantity": 1
             }
         ],
@@ -2280,7 +2280,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Metro entrance card",
+                "item_id": "key_metro_entry_ticket",
                 "quantity": 1
             }
         ],
@@ -2578,7 +2578,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Hospital secret room key",
+                "item_id": "key_hospitalf2",
                 "quantity": 2
             }
         ],
@@ -2768,7 +2768,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Tactical Phone",
+                "item_id": "taskitem_photophone",
                 "quantity": 1
             }
         ],
@@ -2999,7 +2999,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Tracking device",
+                "item_id": "taskitem_tracking_device",
                 "quantity": 3
             }
         ],
@@ -3226,7 +3226,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Motel Key 206",
+                "item_id": "key_motel_206",
                 "quantity": 1
             },
             {
@@ -3295,7 +3295,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Tactical Phone",
+                "item_id": "taskitem_photophone",
                 "quantity": 1
             }
         ],
@@ -3413,7 +3413,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Tracking device",
+                "item_id": "taskitem_tracking_device",
                 "quantity": 3
             }
         ],
@@ -3586,7 +3586,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "Sunset Tunnel key",
+                "item_id": "key_tunnel",
                 "quantity": 1
             }
         ],
@@ -3637,7 +3637,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "Bearkery Storage key",
+                "item_id": "key_beartown_h1",
                 "quantity": 1
             }
         ],
@@ -3688,7 +3688,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "Dock Office key",
+                "item_id": "key_dockhouse",
                 "quantity": 1
             }
         ],
@@ -3982,7 +3982,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Metro entrance card",
+                "item_id": "key_metro_entry_ticket",
                 "quantity": 1
             }
         ],
@@ -4050,12 +4050,12 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Metro entrance card",
+                "item_id": "key_metro_entry_ticket",
                 "quantity": 1
             },
             {
                 "type": "item",
-                "item_name": "Tactical Phone",
+                "item_id": "taskitem_photophone",
                 "quantity": 1
             }
         ],
@@ -4109,14 +4109,14 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "lower sewer exit's Key",
+                "item_id": "key_exitlock_f3_sewer",
                 "quantity": 1
             }
         ],
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Metro entrance card",
+                "item_id": "key_metro_entry_ticket",
                 "quantity": 1
             }
         ],
@@ -4171,7 +4171,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "Factory B zone Key",
+                "item_id": "key_factory_b",
                 "quantity": 1
             },
             {
@@ -4183,7 +4183,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Metro entrance card",
+                "item_id": "key_metro_entry_ticket",
                 "quantity": 1
             }
         ],
@@ -4256,12 +4256,12 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Metro entrance card",
+                "item_id": "key_metro_entry_ticket",
                 "quantity": 2
             },
             {
                 "type": "item",
-                "item_name": "Poison",
+                "item_id": "taskitem_placement_maggie_poison",
                 "quantity": 1
             }
         ],
@@ -4833,7 +4833,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Tactical Phone",
+                "item_id": "taskitem_photophone",
                 "quantity": 1
             }
         ],
@@ -4953,7 +4953,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Tracking device",
+                "item_id": "taskitem_tracking_device",
                 "quantity": 3
             }
         ],
@@ -5927,7 +5927,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Tactical Phone",
+                "item_id": "taskitem_photophone",
                 "quantity": 1
             }
         ],
@@ -6599,7 +6599,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Tracking device",
+                "item_id": "taskitem_tracking_device",
                 "quantity": 1
             }
         ],
@@ -6733,7 +6733,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Tactical Phone",
+                "item_id": "taskitem_photophone",
                 "quantity": 1
             }
         ],
@@ -6932,7 +6932,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Metro entrance card",
+                "item_id": "key_metro_entry_ticket",
                 "quantity": 1
             }
         ],
@@ -7043,7 +7043,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Metro entrance card",
+                "item_id": "key_metro_entry_ticket",
                 "quantity": 1
             }
         ],
@@ -7113,7 +7113,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Metro entrance card",
+                "item_id": "key_metro_entry_ticket",
                 "quantity": 1
             }
         ],
@@ -7181,7 +7181,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Metro entrance card",
+                "item_id": "key_metro_entry_ticket",
                 "quantity": 1
             }
         ],
@@ -7253,7 +7253,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Metro entrance card",
+                "item_id": "key_metro_entry_ticket",
                 "quantity": 1
             }
         ],
@@ -7563,7 +7563,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Bunker key",
+                "item_id": "key_westbunker",
                 "quantity": 1
             }
         ],
@@ -7742,7 +7742,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Tactical Phone",
+                "item_id": "taskitem_photophone",
                 "quantity": 1
             }
         ],
@@ -8027,7 +8027,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Tracking device",
+                "item_id": "taskitem_tracking_device",
                 "quantity": 4
             }
         ],
@@ -8518,7 +8518,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Tracking device",
+                "item_id": "taskitem_tracking_device",
                 "quantity": 4
             }
         ],
@@ -8752,7 +8752,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Metro entrance card",
+                "item_id": "key_metro_entry_ticket",
                 "quantity": 1
             }
         ],
@@ -8874,7 +8874,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Metro entrance card",
+                "item_id": "key_metro_entry_ticket",
                 "quantity": 1
             }
         ],
@@ -8934,12 +8934,12 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Metro entrance card",
+                "item_id": "key_metro_entry_ticket",
                 "quantity": 1
             },
             {
                 "type": "item",
-                "item_name": "Sewer room key",
+                "item_id": "key_f3_factoryroom",
                 "quantity": 1
             }
         ],
@@ -9005,7 +9005,7 @@ export const tasksData: TasksDatabase = {
         "preReward": [
             {
                 "type": "item",
-                "item_name": "Metro entrance card",
+                "item_id": "key_metro_entry_ticket",
                 "quantity": 1
             }
         ],

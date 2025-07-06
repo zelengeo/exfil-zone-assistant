@@ -4,7 +4,7 @@ import {
     isBandage,
     isBodyArmor,
     isFaceShield, isGrenade,
-    isHelmet, isLimbRestore, isMagazine, isMedicine, isMisc,
+    isHelmet, isLimbRestore, isMagazine, isMedicine, isMisc, isKeys,
     isPainkiller, isProvisions, isSight, isStim, isSyringe, isTactical, isTaskItem,
     isWeapon
 } from "@/app/combat-sim/utils/types";
@@ -33,6 +33,7 @@ const DATA_FILES = [
     'medical.json',
     'provisions.json',
     'task-items.json',
+    'keys.json',
     'misc.json',
 ];
 
@@ -50,6 +51,7 @@ const dataImports = {
     'medical.json': () => import('@/public/data/medical.json'),
     'provisions.json': () => import('@/public/data/provisions.json'),
     'task-items.json': () => import('@/public/data/task-items.json'),
+    'keys.json': () => import('@/public/data/keys.json'),
     'misc.json': () => import('@/public/data/misc.json'),
 };
 
@@ -242,6 +244,10 @@ function transformItemData(rawItem: Item): Item {
         if (isTaskItem(rawItem)) {
             if (!isTaskItem(baseItem)) return baseItem;
             baseItem.stats.taskIds = rawItem.stats.taskIds;
+        }
+
+        if (isKeys(rawItem)) {
+            if (!isKeys(baseItem)) return baseItem;
         }
 
 

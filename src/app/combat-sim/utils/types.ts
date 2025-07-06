@@ -11,7 +11,7 @@ import {
     BodyArmor, Drink,
     FaceShield, Food, Grenade, Grip,
     Helmet,
-    Item, LimbRestore, Magazine,
+    Item, Keys, LimbRestore, Magazine,
     Medicine, Misc, Painkiller, Provisions, Rail, Sight, Stim, Suppressor, Syringe, TacticalAttachment, TaskItem,
     Weapon
 } from "@/types/items";
@@ -260,6 +260,10 @@ export function isFood(item: Item): item is Food {
 
 export function isTaskItem(item: Item): item is TaskItem {
     return item.category === 'task-items';
+}
+
+export function isKeys(item: Item): item is Keys {
+    return (item.category === 'keys')
 }
 
 export function isMisc(item: Item): item is Misc {

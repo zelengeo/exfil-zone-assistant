@@ -255,6 +255,12 @@ export interface TaskItem extends Item {
     stats: Item['stats'] & TaskItemProperties;
 }
 
+export interface Keys extends Item {
+    category: 'keys';
+    subcategory: 'Suburb' | 'Office Buildings' | 'Industrial' | 'Residential' | 'Military';
+    stats: Item['stats'];
+}
+
 export interface Misc extends Item {
     category: 'misc';
     subcategory: 'Household' | 'Intel' | 'Electric' | 'Power' | 'Tools' | 'Combustible' | 'Building' | 'HighValue' | 'Medicine';
@@ -273,6 +279,7 @@ export type AnyItem =
     | Grenade
     | Attachment
     | TaskItem
+    | Keys
     | Misc;
 
 // Protective zone from armor data
@@ -548,6 +555,18 @@ export const itemCategories: Record<string, ItemCategory> = {
             'Universal'
         ]
     },
+    'keys': {
+        id: 'keys',
+        name: 'Keys',
+        description: 'Items used to open locked',
+        icon: 'key',
+        subcategories: [
+            'Suburb',
+            'Dam',
+            'Metro',
+            'Resort',
+        ]
+    },
     'misc': {
         id: 'misc',
         name: 'Miscellaneous',
@@ -565,13 +584,6 @@ export const itemCategories: Record<string, ItemCategory> = {
             'Medicine'
         ]
     }
-// {
-//     id: 'keys',
-//     name: 'Keys & Access Cards',
-//     description: 'Items used to open locked doors and containers',
-//     icon: 'key'
-// }
-
 };
 
 // Helper function to get category by ID

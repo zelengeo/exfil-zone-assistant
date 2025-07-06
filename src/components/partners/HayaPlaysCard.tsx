@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import {Star, Users, Play} from 'lucide-react';
+import {Star,} from 'lucide-react';
 import {SiYoutube, SiTwitch, SiX} from "@icons-pack/react-simple-icons";
 
 const HayaPlaysCard = () => (
@@ -38,7 +38,7 @@ const HayaPlaysCard = () => (
                     HayaPlays
                 </h3>
                 <p className="text-sm text-red-400 font-semibold">
-                    Featured Content Partner
+                    Content Partner
                 </p>
             </div>
         </div>
