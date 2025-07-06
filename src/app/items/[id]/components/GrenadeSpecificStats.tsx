@@ -1,6 +1,6 @@
 import React from "react";
 import {Grenade} from "@/types/items";
-import BallisticCurveChart from "@/components/items/BallisticCurveChart";
+import BallisticCurveChart from "@/app/items/components/BallisticCurveChart";
 import {Radius, Timer, TimerReset} from "lucide-react";
 
 

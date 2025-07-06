@@ -21,7 +21,7 @@ import {
 } from "@/app/tasks/taskHelpers";
 import {corps, tasksData} from "@/data/tasks";
 import {Item} from "@/types/items";
-import {community} from "@/data/community";
+import {communityCreatorMap} from "@/data/community";
 import ShareButton from "@/components/ShareButton";
 
 interface TaskCardProps {
@@ -161,10 +161,10 @@ export default function TaskCard({
                                     <h5 className="font-medium text-tan-100 mb-2">Video Guides</h5>
                                     <div className="space-y-2">
                                         {task.videoGuides.map(({author, ytId, startTs}, index) => {
-                                            if (!author || !ytId || !(author in community)) {
+                                            if (!author || !ytId || !(author in communityCreatorMap)) {
                                                 return null
                                             }
-                                            const communityAuthor = community[author as keyof typeof community];
+                                            const communityAuthor = communityCreatorMap[author as keyof typeof communityCreatorMap];
                                             return <Link
                                                 key={author + ytId + startTs + index}
                                                 href={getYouTubeUrl(ytId, startTs)}

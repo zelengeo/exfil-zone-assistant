@@ -1,4 +1,7 @@
-export const community = {
+import { CommunityConfig, PartnerContributor, StandardContributor, ROLE_CONFIGS } from "@/types/community";
+import HayaPlaysCard from "@/components/partners/HayaPlaysCard";
+
+export const communityCreatorMap = {
     orbb: {
         name: 'Orbb',
         role: 'creator',
@@ -10,9 +13,7 @@ export const community = {
     radFoxVR: {
         name: 'RadFox VR',
         role: 'creator',
-        description: 'Hi :3\n' +
-            'I\'m a girl from Russia who loves VR! \n' +
-            'Here on youtube I upload good games, funny moments, tutorials aaand some other stuff.',
+        description: 'Hi :3\nI\'m a girl from Russia who loves VR! \nHere on youtube I upload good games, funny moments, tutorials aaand some other stuff.',
         link: 'https://www.youtube.com/@RadFoxVRuniversity',
         logo: '/images/community/radFoxVR_logo.webp',
         platform: 'youtube'
@@ -22,47 +23,94 @@ export const community = {
         role: 'creator',
         description: 'I am a full time self-employed plumber/gasfitter. I play a lot of shooters, adventure and puzzle like games; any VR as well.',
         link: 'https://www.twitch.tv/plumberkarl',
-        logo: '/images/logo-placeholder-image.webp',
         platform: 'twitch'
+    },
+    'aboleth': {
+        name: 'Aboleth',
+        role: 'creator',
+        description: 'Deep Dives into VR games.',
+        link: 'https://abolethvr.substack.com/',
+        platform: 'website'
     }
 } as const;
 
-export const getRoleConfig = (role: string) => {
-    switch (role) {
-        case 'supporter':
-            return {
-                label: 'Supporter',
-                color: 'text-purple-400',
-                borderColor: 'border-purple-700',
-                bgColor: 'bg-purple-900/20'
-            };
-        case 'contributor':
-            return {
-                label: 'Contributor',
-                color: 'text-blue-400',
-                borderColor: 'border-blue-700',
-                bgColor: 'bg-blue-900/20'
-            };
-        case 'creator':
-            return {
-                label: 'Content Creator',
-                color: 'text-green-400',
-                borderColor: 'border-green-700',
-                bgColor: 'bg-green-900/20'
-            };
-        case 'partner':
-            return {
-                label: 'Partner',
-                color: 'text-yellow-400',
-                borderColor: 'border-yellow-700',
-                bgColor: 'bg-yellow-900/20'
-            };
-        default:
-            return {
-                label: role,
-                color: 'text-tan-400',
-                borderColor: 'border-military-700',
-                bgColor: 'bg-military-800'
-            };
+// Partners - get priority positioning and enhanced features
+const partners: PartnerContributor[] = [
+    {
+        name: 'HayaPlays',
+        role: 'partner',
+        description: 'VR Gaming Content Creator & Community Partner',
+        logo: '/images/community/haya-logo-70x70.webp',
+        link: 'https://twitch.tv/hayaplays',
+        platform: 'twitch',
+        featured: true,
+        highlighted: true,
+        priority: 1,
+        tags: ['VR Content', 'Gaming'],
+        customComponent: HayaPlaysCard
     }
+];
+
+// Content Creators
+const creators: StandardContributor[] = Object.values(communityCreatorMap) as StandardContributor[];
+
+// Contributors (developers, data contributors, etc.)
+const contributors: StandardContributor[] = [
+    // Add technical contributors here
+];
+
+// Supporters (community members, donors, etc.)
+const supporters: StandardContributor[] = [
+    {
+        name: 'Ken Ross',
+        role: 'supporter',
+    },
+    {
+        name: 'Genosse aus der UsbSSR',
+        role: 'supporter',
+        description: '3D Artist',
+        link: 'https://t.me/fox_valger_3dsmax',
+        platform: 'telegram'
+    },
+    {
+        name: 'zaymax',
+        role: 'supporter',
+    }
+];
+
+// Main community configuration
+export const communityConfig: CommunityConfig = {
+    partners,
+    creators,
+    contributors,
+    supporters
+};
+
+// Enhanced role config function
+export const getRoleConfig = (role: string) => {
+    return ROLE_CONFIGS[role] || {
+        label: role,
+        color: 'text-tan-400',
+        borderColor: 'border-military-700',
+        bgColor: 'bg-military-800',
+        priority: 999
+    };
+};
+
+// Helper functions for the new structure
+export const getAllContributorsByRole = () => {
+    return {
+        partners: communityConfig.partners.sort((a, b) => (a.priority || 999) - (b.priority || 999)),
+        creators: communityConfig.creators,
+        contributors: communityConfig.contributors,
+        supporters: communityConfig.supporters
+    };
+};
+
+export const getFeaturedPartners = () => {
+    return communityConfig.partners.filter(partner => partner.featured);
+};
+
+export const getHighlightedContributors = () => {
+    return communityConfig.partners.filter(partner => partner.highlighted);
 };

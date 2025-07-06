@@ -420,7 +420,7 @@ export default function AppRoadmapGuide() {
                                 <li>• Priority feature requests</li>
                                 <li>• Exclusive Discord supporter role</li>
                                 <li>• Behind-the-scenes development updates</li>
-                                <li>• Special mention in community section</li>
+                                <li>• Special mention in the community section</li>
                             </ul>
                         </div>
                         <div className="bg-green-900/40 p-3 rounded-sm">

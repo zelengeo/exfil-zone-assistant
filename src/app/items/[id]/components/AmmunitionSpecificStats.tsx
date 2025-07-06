@@ -5,7 +5,7 @@ import {
     ShieldX,
 } from "lucide-react";
 import {Ammunition} from "@/types/items";
-import BallisticCurveChart from "@/components/items/BallisticCurveChart";
+import BallisticCurveChart from "@/app/items/components/BallisticCurveChart";
 
 
 export default function AmmunitionSpecificStats({item}: { item: Ammunition }) {

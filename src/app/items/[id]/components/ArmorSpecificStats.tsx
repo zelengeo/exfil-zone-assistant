@@ -6,9 +6,9 @@ import {
     Volume2,
 } from "lucide-react";
 import {Armor} from "@/types/items";
-import BallisticCurveChart from "@/components/items/BallisticCurveChart";
+import BallisticCurveChart from "@/app/items/components/BallisticCurveChart";
 import {isHelmet} from "@/app/combat-sim/utils/types";
-import ArmorZonesDisplay from "@/components/items/ArmorZonesDisplay";
+import ArmorZonesDisplay from "@/app/items/components/ArmorZonesDisplay";
 
 
 export default function ArmorSpecificStats({item}: { item: Armor }) {

@@ -7,7 +7,7 @@ import {tasksData, getAllMerchants} from '@/data/tasks';
 import {UserProgress, TaskStatus} from '@/types/tasks';
 import MerchantPanel from "@/app/tasks/components/MerchantPanel";
 import {useFetchItems} from "@/hooks/useFetchItems";
-import {community} from "@/data/community";
+import {communityCreatorMap} from "@/data/community";
 import Link from "next/link";
 
 // Types for component state
@@ -186,8 +186,8 @@ export default function TasksPageContent() {
                         />))}
                 </div>
                 <div className="text-sm text-tan-400 mt-8 p-4 border-t border-military-600">
-                    <p>Some task data sourced by <Link href={community.plumberKarl.link} target="_blank"
-                                                       rel="noopener noreferrer" className="text-olive-400 hover:text-olive-300">@{community.plumberKarl.name}</Link>. If you find any inconsistencies, please report them on our{' '}
+                    <p>Some task data sourced by <Link href={communityCreatorMap.plumberKarl.link} target="_blank"
+                                                       rel="noopener noreferrer" className="text-olive-400 hover:text-olive-300">@{communityCreatorMap.plumberKarl.name}</Link>. If you find any inconsistencies, please report them on our{' '}
                         <Link
                             href="https://discord.gg/2FCDZK6C25"
                             target="_blank"

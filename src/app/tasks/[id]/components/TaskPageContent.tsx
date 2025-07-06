@@ -23,7 +23,7 @@ import {
     renderReward
 } from "@/app/tasks/taskHelpers";
 import Image from "next/image";
-import {community} from "@/data/community";
+import {communityCreatorMap} from "@/data/community";
 
 interface TaskPageContentProps {
     taskId: string;
@@ -164,8 +164,8 @@ export default function TaskPageContent({taskId}: TaskPageContentProps) {
                                 <div className="space-y-2">
                                     <h3 className="vr-heading-3 text-tan-100 my-2">Other Walkthroughs</h3>
                                     {task.videoGuides.map(({author, ytId, startTs }, index) => {
-                                        if (index===0 || !author || !ytId || !(author in community)) { return null }
-                                        const communityAuthor = community[author as keyof typeof community];
+                                        if (index===0 || !author || !ytId || !(author in communityCreatorMap)) { return null }
+                                        const communityAuthor = communityCreatorMap[author as keyof typeof communityCreatorMap];
                                         return <Link
                                             key={author+ytId+startTs+index}
                                             href={getYouTubeUrl(ytId, startTs)}

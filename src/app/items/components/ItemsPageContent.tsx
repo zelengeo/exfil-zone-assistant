@@ -3,8 +3,8 @@
 import React, {useState, useEffect} from 'react';
 import {Search} from 'lucide-react';
 import Layout from '@/components/layout/Layout';
-import ItemCard from '@/components/items/ItemCard';
-import FilterSidebar from '@/components/items/FilterSidebar';
+import ItemCard from '@/app/items/components/ItemCard';
+import FilterSidebar from '@/app/items/components/FilterSidebar';
 import {itemCategories, Item, getCategoryById} from '@/types/items';
 import {useSearchParams} from "next/navigation";
 import {useFetchItems} from "@/hooks/useFetchItems";
