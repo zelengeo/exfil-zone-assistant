@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import {Heart, Globe, Star, Users} from 'lucide-react';
+import {Heart, Globe, Star} from 'lucide-react';
 import {SiDiscord, SiGithub, SiTwitch, SiX, SiYoutube, SiTelegram} from "@icons-pack/react-simple-icons";
 import {getAllContributorsByRole, getRoleConfig} from "@/data/community";
 import {PartnerContributor, StandardContributor} from "@/types/community";
@@ -114,6 +114,7 @@ const PartnerCard = ({partner}: { partner: PartnerContributor }) => {
 
 // Standard Contributor Card Component
 const ContributorCard = ({contributor}: { contributor: StandardContributor }) => {
+    if (!contributor.featured) return null;
     const roleConfig = getRoleConfig(contributor.role);
 
     return (
@@ -293,7 +294,7 @@ export default function CommunitySection() {
                         Join Our Community
                     </h3>
                     <p className="text-tan-300 mb-6 max-w-2xl mx-auto">
-                        Whether you're a content creator, developer, or passionate player, there are many ways to
+                        Whether you&#39;re a content creator, developer, or passionate player, there are many ways to
                         contribute to the ExfilZone Assistant project.
                     </p>
 

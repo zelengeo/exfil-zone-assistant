@@ -8,6 +8,7 @@ export const communityCreatorMap = {
         description: 'Informational and informative content with a focus on VR games!',
         link: 'https://www.youtube.com/@Orbb_',
         logo: '/images/community/orbb_logo.webp',
+        featured: false,
         platform: 'youtube'
     },
     radFoxVR: {
@@ -16,6 +17,7 @@ export const communityCreatorMap = {
         description: 'Hi :3\nI\'m a girl from Russia who loves VR! \nHere on youtube I upload good games, funny moments, tutorials aaand some other stuff.',
         link: 'https://www.youtube.com/@RadFoxVRuniversity',
         logo: '/images/community/radFoxVR_logo.webp',
+        featured: false,
         platform: 'youtube'
     },
     plumberKarl: {
@@ -23,13 +25,17 @@ export const communityCreatorMap = {
         role: 'creator',
         description: 'I am a full time self-employed plumber/gasfitter. I play a lot of shooters, adventure and puzzle like games; any VR as well.',
         link: 'https://www.twitch.tv/plumberkarl',
+        logo: '/images/logo-placeholder-image.webp',
+        featured: false,
         platform: 'twitch'
     },
     'aboleth': {
         name: 'Aboleth',
         role: 'creator',
+        featured: true,
         description: 'Deep Dives into VR games.',
         link: 'https://abolethvr.substack.com/',
+        logo: '/images/community/aboleth_logo.webp',
         platform: 'website'
     }
 } as const;
@@ -64,17 +70,20 @@ const supporters: StandardContributor[] = [
     {
         name: 'Ken Ross',
         role: 'supporter',
+        featured: true,
     },
     {
         name: 'Genosse aus der UsbSSR',
         role: 'supporter',
+        featured: true,
         description: '3D Artist',
         link: 'https://t.me/fox_valger_3dsmax',
-        platform: 'telegram'
+        platform: 'telegram',
     },
     {
         name: 'zaymax',
         role: 'supporter',
+        featured: true,
     }
 ];
 

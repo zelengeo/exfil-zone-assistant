@@ -5,6 +5,7 @@ export interface BaseContributor {
     description?: string;
     logo?: string;
     link?: string;
+    featured?: boolean;            // Show in featured section
     platform?: 'youtube' | 'twitch' | 'website' | 'github' | 'discord' | 'telegram';
 }
 
@@ -16,7 +17,6 @@ export interface PartnerContributor extends BaseContributor {
     role: 'partner';
     // Partners get enhanced options
     highlighted?: boolean;          // Show with special styling
-    featured?: boolean;            // Show in featured section
     customComponent?: React.ComponentType; // Override with custom card
     priority?: number;             // Sort order (lower = higher priority)
     tags?: string[];              // Additional labels like "VR Content", "Tutorial Creator"
