@@ -72,6 +72,7 @@ export const guidesConfig: GuideMetadata[] = [
         readTime: '3 min',
         author: 'pogapwnz',
         publishedAt: '2025-06-10',
+        updatedAt: '2025-07-08',
         featured: false,
         contentType: 'component'
     },

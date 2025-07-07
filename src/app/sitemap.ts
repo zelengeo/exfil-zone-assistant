@@ -16,8 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
 
     const guidePages = guidesConfig.map((guide) => ({
-        url: `${baseUrl}/guide/${guide.slug}`,
-        lastModified,
+        url: `${baseUrl}/guides/${guide.slug}`,
+        lastModified: new Date( guide.updatedAt ?? guide.publishedAt)  ,
         changeFrequency: 'monthly' as const,
         priority: 0.6, // Guides are generally important content
     }));

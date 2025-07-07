@@ -69,7 +69,7 @@ export default function TaskPageContent({taskId}: TaskPageContentProps) {
             <div className="container mx-auto px-4 py-8">
                 {/* Breadcrumb Navigation */}
                 <nav className="flex items-center gap-2 mb-6 text-sm md:text-base text-tan-300">
-                    <Link href="/items" className="flex items-center gap-1 hover:text-olive-400 transition-colors">
+                    <Link href="/tasks" className="flex items-center gap-1 hover:text-olive-400 transition-colors">
                         <ChevronLeft size={16}/>
                         <span>Tasks</span>
                     </Link>
