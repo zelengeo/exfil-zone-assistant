@@ -79,6 +79,19 @@ export const guidesConfig: GuideMetadata[] = [
 
     // Gameplay Mechanics
     {
+        slug: 'when-is-the-wipe',
+        title: 'When is the Next Wipe?',
+        description: 'Everything we know about the wipe schedule.',
+        tags: ['getting-started', 'gameplay'],
+        difficulty: 'beginner',
+        readTime: '3 min',
+        author: 'pogapwnz',
+        publishedAt: '2025-07-08',
+        updatedAt: '2025-07-08',
+        featured: true,
+        contentType: 'component'
+    },
+    {
         slug: 'survival-damage-mechanics',
         title: 'Survival & Damage Mechanics',
         description: 'Essential guide to body zones, health management, bleeding, and staying alive in ExfilZone',
