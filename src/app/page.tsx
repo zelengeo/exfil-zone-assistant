@@ -1,59 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
 import Layout from '../components/layout/Layout';
-import {ArrowRight} from 'lucide-react';
 import NavigationSection from "@/app/components/NavigationSection";
 import CommunitySection from "@/app/components/CommunitySection";
+import HeroSection from "@/app/components/HeroSection";
 
 export default function Home() {
   return (
       <Layout>
         {/* Hero Section */}
-        <section className="relative h-96 md:h-[500px] lg:h-[600px] overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-military-900 via-military-900/90 to-transparent z-10" />
-          <div className="relative h-full w-full bg-military-800">
-            {/* Hero background with CSS pattern instead of image */}
-            <div className="absolute inset-0" style={{
-              backgroundColor: '#373c32',
-              backgroundImage: 'linear-gradient(45deg, #4d5244 25%, transparent 25%, transparent 75%, #4d5244 75%, #4d5244), linear-gradient(45deg, #4d5244 25%, transparent 25%, transparent 75%, #4d5244 75%, #4d5244)',
-              backgroundSize: '60px 60px',
-              backgroundPosition: '0 0, 30px 30px',
-              opacity: 0.3
-            }} />
-          </div>
-
-          <div className="absolute inset-0 z-20 flex items-center">
-            <div className="container mx-auto px-6">
-              <div className="max-w-xl">
-                <div className="inline-block mb-4 px-3 py-1 border border-olive-500 bg-military-800/80">
-                  <h2 className="text-olive-400 military-stencil">VR EXTRACTION ASSISTANT</h2>
-                </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-tan-100 mb-4 military-stencil">
-                  EXFILZONE
-                </h1>
-                <div className="bg-military-900/80 border border-olive-700 p-4 mb-8">
-                  <p className="text-xl md:text-2xl text-tan-200">
-                    Your ultimate tactical companion for the VR extraction shooter experience
-                  </p>
-                </div>
-                <div className="flex flex-wrap gap-4">
-                  <Link
-                      href="/guides/combat-sim-usage"
-                      className="bg-olive-600 hover:bg-olive-500 text-tan-100 px-6 py-3 rounded-sm font-medium text-lg transition-colors flex items-center gap-2 border border-olive-500"
-                  >
-                    Beginner&apos;s Guide <ArrowRight size={20} />
-                  </Link>
-                  <Link
-                      href="/combat-sim"
-                      className="bg-military-700 hover:bg-military-600 text-tan-100 px-6 py-3 rounded-sm font-medium text-lg transition-colors border border-olive-700"
-                  >
-                    Combat Simulator
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <HeroSection />
 
         {/* Community Section */}
         <CommunitySection />
