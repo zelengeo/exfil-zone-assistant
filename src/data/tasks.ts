@@ -3052,7 +3052,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "Odldos backpack",
+                "item_id": "backpack_odldos_black",
                 "quantity": 1
             }
         ],
@@ -3231,7 +3231,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "EliteOps Green",
+                "item_id": "backpack_eliteops_green",
                 "quantity": 1
             }
         ],
@@ -3807,7 +3807,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "elite ops green",
+                "item_id": "backpack_eliteops_green",
                 "quantity": 3
             }
         ],
@@ -3970,7 +3970,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "G.N.J.Backpack",
+                "item_id": "backpack_gnjbackpack",
                 "quantity": 1
             },
             {
@@ -8998,7 +8998,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "HyperTec Storage Bag",
+                "item_id": "backpack_hypertec",
                 "quantity": 1
             }
         ],

@@ -6,7 +6,7 @@ import {
     isFaceShield, isGrenade,
     isHelmet, isLimbRestore, isMagazine, isMedicine, isMisc, isKeys,
     isPainkiller, isProvisions, isSight, isStim, isSyringe, isTactical, isTaskItem,
-    isWeapon
+    isWeapon, isBackpack
 } from "@/app/combat-sim/utils/types";
 
 // Cache for the items data
@@ -30,6 +30,7 @@ const DATA_FILES = [
     'armor.json',
     'helmets.json',
     'face-shields.json',
+    'backpacks.json',
     'medical.json',
     'provisions.json',
     'task-items.json',
@@ -48,6 +49,7 @@ const dataImports = {
     'armor.json': () => import('@/public/data/armor.json'),
     'helmets.json': () => import('@/public/data/helmets.json'),
     'face-shields.json': () => import('@/public/data/face-shields.json'),
+    'backpacks.json': () => import('@/public/data/backpacks.json'),
     'medical.json': () => import('@/public/data/medical.json'),
     'provisions.json': () => import('@/public/data/provisions.json'),
     'task-items.json': () => import('@/public/data/task-items.json'),
@@ -200,6 +202,12 @@ function transformItemData(rawItem: Item): Item {
             baseItem.stats.penetrationChanceCurve = rawItem.stats.penetrationChanceCurve;
             baseItem.stats.penetrationDamageScalarCurve = rawItem.stats.penetrationDamageScalarCurve;
             baseItem.stats.antiPenetrationDurabilityScalarCurve = rawItem.stats.antiPenetrationDurabilityScalarCurve;
+        }
+
+        if (isBackpack(rawItem)) {
+            if (!isBackpack(baseItem)) return baseItem;
+            baseItem.stats.sizes = rawItem.stats.sizes;
+            baseItem.stats.attachmentPoints = rawItem.stats.attachmentPoints;
         }
 
         if (isMedicine(rawItem)) {

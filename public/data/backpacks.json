@@ -1,0 +1,334 @@
+[
+  {
+    "id": "backpack_hypertec",
+    "name": "HyperTec StorageBag",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Backpacks",
+    "images": {
+      "icon": "/images/items/backpacks/Icon_SKM_Backpack_007_01_Jyg.webp",
+      "thumbnail": "/images/items/backpacks/Icon_SKM_Backpack_007_01_Jyg.webp",
+      "fullsize": "/images/items/backpacks/Icon_SKM_Backpack_007_01_Jyg.webp"
+    },
+    "stats": {
+      "price": 200000,
+      "weight": 2.9,
+      "rarity": "Epic",
+      "sizes": "75x27x36",
+      "attachmentPoints": [
+        {
+          "tag": "sides",
+          "types": [
+            "Helmet",
+            "PrimaryGun",
+            "Shotgun",
+            "Vest"
+          ]
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "backpack_gnjbackpack",
+    "name": "G.N.J.Backpack",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Backpacks",
+    "images": {
+      "icon": "/images/items/backpacks/Icon_SKM_Backpack_006_01_Jyg.webp",
+      "thumbnail": "/images/items/backpacks/Icon_SKM_Backpack_006_01_Jyg.webp",
+      "fullsize": "/images/items/backpacks/Icon_SKM_Backpack_006_01_Jyg.webp"
+    },
+    "stats": {
+      "price": 80000,
+      "weight": 2.7,
+      "rarity": "Epic",
+      "sizes": "58x26x36",
+      "attachmentPoints": [
+        {
+          "tag": "back",
+          "types": [
+            "PrimaryGun",
+            "Shotgun"
+          ]
+        },
+        {
+          "tag": "bottom",
+          "types": [
+            "Vest"
+          ]
+        },
+        {
+          "tag": "sides",
+          "types": [
+            "Helmet",
+            "Holster"
+          ]
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "backpack_3drt",
+    "name": "3DRT",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Backpacks",
+    "images": {
+      "icon": "/images/items/backpacks/Icon_backpack_lv1_01.webp",
+      "thumbnail": "/images/items/backpacks/Icon_backpack_lv1_01.webp",
+      "fullsize": "/images/items/backpacks/Icon_backpack_lv1_01.webp"
+    },
+    "stats": {
+      "price": 20000,
+      "weight": 1.1,
+      "rarity": "Uncommon",
+      "sizes": "48x22x30",
+      "attachmentPoints": [
+        {
+          "tag": "sides",
+          "types": [
+            "Helmet",
+            "Holster"
+          ]
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "backpack_eliteops",
+    "name": "Elite Ops",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Backpacks",
+    "images": {
+      "icon": "/images/items/backpacks/Icon_backpack_lv2_green.webp",
+      "thumbnail": "/images/items/backpacks/Icon_backpack_lv2_green.webp",
+      "fullsize": "/images/items/backpacks/Icon_backpack_lv2_green.webp"
+    },
+    "stats": {
+      "price": 40000,
+      "weight": 2,
+      "rarity": "Rare",
+      "sizes": "50x26x36",
+      "attachmentPoints": [
+        {
+          "tag": "back",
+          "types": [
+            "PrimaryGun",
+            "Shotgun"
+          ]
+        },
+        {
+          "tag": "bottom",
+          "types": [
+            "Vest"
+          ]
+        },
+        {
+          "tag": "sides",
+          "types": [
+            "Helmet",
+            "Holster"
+          ]
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "backpack_eliteops_green",
+    "name": "Elite Ops Green",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Backpacks",
+    "images": {
+      "icon": "/images/items/backpacks/Icon_backpack_lv2_01.webp",
+      "thumbnail": "/images/items/backpacks/Icon_backpack_lv2_01.webp",
+      "fullsize": "/images/items/backpacks/Icon_backpack_lv2_01.webp"
+    },
+    "stats": {
+      "price": 40000,
+      "weight": 2,
+      "rarity": "Rare",
+      "sizes": "50x26x36",
+      "attachmentPoints": [
+        {
+          "tag": "back",
+          "types": [
+            "PrimaryGun",
+            "Shotgun"
+          ]
+        },
+        {
+          "tag": "bottom",
+          "types": [
+            "Vest"
+          ]
+        },
+        {
+          "tag": "sides",
+          "types": [
+            "Helmet",
+            "Holster"
+          ]
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "backpack_odldos_black",
+    "name": "Odldos black Backpack",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Backpacks",
+    "images": {
+      "icon": "/images/items/backpacks/Icon_Backpack_010_01_Yyp.webp",
+      "thumbnail": "/images/items/backpacks/Icon_Backpack_010_01_Yyp.webp",
+      "fullsize": "/images/items/backpacks/Icon_Backpack_010_01_Yyp.webp"
+    },
+    "stats": {
+      "price": 20000,
+      "weight": 1.75,
+      "rarity": "Rare",
+      "sizes": "51x20x37",
+      "attachmentPoints": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "backpack_odldos_flower",
+    "name": "Odldos flowers Backpack",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Backpacks",
+    "images": {
+      "icon": "/images/items/backpacks/Icon_Backpack_011_01_Yyp.webp",
+      "thumbnail": "/images/items/backpacks/Icon_Backpack_011_01_Yyp.webp",
+      "fullsize": "/images/items/backpacks/Icon_Backpack_011_01_Yyp.webp"
+    },
+    "stats": {
+      "price": 20000,
+      "weight": 1.8,
+      "rarity": "Rare",
+      "sizes": "56x23x38",
+      "attachmentPoints": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "backpack_robinson",
+    "name": "Robinson BFM Backpack",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Backpacks",
+    "images": {
+      "icon": "/images/items/backpacks/Icon_Backpack_009_01_Yyp.webp",
+      "thumbnail": "/images/items/backpacks/Icon_Backpack_009_01_Yyp.webp",
+      "fullsize": "/images/items/backpacks/Icon_Backpack_009_01_Yyp.webp"
+    },
+    "stats": {
+      "price": 60000,
+      "weight": 2.4,
+      "rarity": "Epic",
+      "sizes": "64x21x40",
+      "attachmentPoints": [
+        {
+          "tag": "back",
+          "types": [
+            "PrimaryGun",
+            "Shotgun"
+          ]
+        },
+        {
+          "tag": "bottom",
+          "types": [
+            "Vest"
+          ]
+        },
+        {
+          "tag": "sides",
+          "types": [
+            "Helmet"
+          ]
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "backpack_rucksack",
+    "name": "Vagrant Rucksack",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Backpacks",
+    "images": {
+      "icon": "/images/items/backpacks/Icon_backpack_rs.webp",
+      "thumbnail": "/images/items/backpacks/Icon_backpack_rs.webp",
+      "fullsize": "/images/items/backpacks/Icon_backpack_rs.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 1.3,
+      "rarity": "Common",
+      "sizes": "33x15x19",
+      "attachmentPoints": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "backpack_sportbag",
+    "name": "Sports Bag",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Backpacks",
+    "images": {
+      "icon": "/images/items/backpacks/Icon_backpack_lv1_sportbag.webp",
+      "thumbnail": "/images/items/backpacks/Icon_backpack_lv1_sportbag.webp",
+      "fullsize": "/images/items/backpacks/Icon_backpack_lv1_sportbag.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 1.2,
+      "rarity": "Common",
+      "sizes": "35x16x21",
+      "attachmentPoints": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "backpack_6sh118",
+    "name": "6sh118",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Backpacks",
+    "images": {
+      "icon": "/images/items/backpacks/Icon_backpack_lv3_01.webp",
+      "thumbnail": "/images/items/backpacks/Icon_backpack_lv3_01.webp",
+      "fullsize": "/images/items/backpacks/Icon_backpack_lv3_01.webp"
+    },
+    "stats": {
+      "price": 300000,
+      "weight": 3.1,
+      "rarity": "Epic",
+      "sizes": "92x33x46",
+      "attachmentPoints": [
+        {
+          "tag": "sides",
+          "types": [
+            "Helmet",
+            "Holster",
+            "PrimaryGun",
+            "Shotgun",
+            "Vest"
+          ]
+        }
+      ]
+    },
+    "tips": ""
+  }
+]

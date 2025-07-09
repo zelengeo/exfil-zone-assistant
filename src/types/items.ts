@@ -147,8 +147,13 @@ export interface Magazine extends Attachment {
 }
 
 // Complete armor type with all curves
-export interface Armor extends Item {
+export interface Gear extends Item {
     category: 'gear';
+    subcategory: 'Body Armor' | 'Helmets' | "Face Shields" | "Backpacks";
+    stats: Item['stats'];
+}
+
+export interface Armor extends Gear {
     subcategory: 'Body Armor' | 'Helmets' | "Face Shields";
     stats: Item['stats'] & ArmorProperties;
 }
@@ -164,6 +169,22 @@ export interface Helmet extends Armor {
 
 export interface FaceShield extends Armor {
     subcategory: 'Face Shields';
+}
+
+export interface AttachmentPoint {
+    tag: string;
+    types: string[];
+}
+
+export interface BackpackProperties {
+    sizes: string;
+    attachmentPoints: AttachmentPoint[];
+}
+
+// Backpack interface
+export interface Backpack extends Gear {
+    subcategory: 'Backpacks';
+    stats: Item['stats'] & BackpackProperties;
 }
 
 export interface Medicine extends Item {
@@ -269,11 +290,13 @@ export interface Misc extends Item {
 
 export type AnyItem =
     Weapon
+    | Gear
     | Armor
     | Ammunition
     | BodyArmor
     | Helmet
     | FaceShield
+    | Backpack
     | Medicine
     | Provisions
     | Grenade
@@ -516,6 +539,7 @@ export const itemCategories: Record<string, ItemCategory> = {
                 'Helmets',
                 'Body Armor',
                 'Face Shields',
+                'Backpacks'
             ]
     },
     medicine: {

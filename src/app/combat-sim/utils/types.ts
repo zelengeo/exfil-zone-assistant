@@ -6,7 +6,7 @@
 import {
     Ammunition,
     AnyItem,
-    Armor, Attachment,
+    Armor, Attachment, Backpack,
     Bandage,
     BodyArmor, Drink,
     FaceShield, Food, Grenade, Grip,
@@ -143,7 +143,7 @@ export const RANGE_PRESETS: RangePreset[] = [
 
 // Type guards with improved checks
 export function isAnyItem(item: Item): item is AnyItem {
-    return isWeapon(item) || isAmmunition(item) || isGrenade(item) || isArmor(item) || isMedicine(item) || isAttachment(item) || isMisc(item) || isProvisions(item) || isTaskItem(item);
+    return isWeapon(item) || isAmmunition(item) || isGrenade(item) || isArmor(item) || isBackpack(item) || isMedicine(item) || isAttachment(item) || isMisc(item) || isProvisions(item) || isTaskItem(item);
 }
 
 export function isWeapon(item: Item): item is Weapon {
@@ -214,6 +214,11 @@ export function isHelmet(item: Item): item is Helmet {
 export function isFaceShield(item: Item): item is FaceShield {
     return (item.category === 'gear') &&
     item.subcategory === 'Face Shields'
+}
+
+export function isBackpack(item: Item): item is Backpack {
+    return (item.category === 'gear') &&
+        item.subcategory === 'Backpacks'
 }
 
 
