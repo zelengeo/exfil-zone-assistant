@@ -3418,7 +3418,7 @@ export const tasksData: TasksDatabase = {
             }
         ],
         "requiredTasks": [
-            "ntg_19"
+            "ntg_18"
         ],
         "requiredLevel": 0,
         "tips": "",
