@@ -14,6 +14,7 @@ export default function AuthError() {
         OAuthSignin: 'Error occurred during OAuth sign in.',
         OAuthCallback: 'Error occurred during OAuth callback.',
         OAuthCreateAccount: 'Could not create OAuth provider user in the database.',
+        OAuthAccountNotLinked: 'An account with this email already exists. Please sign in with your original provider first, then link additional accounts in settings.',
         EmailCreateAccount: 'Could not create email provider user in the database.',
         Callback: 'Error occurred during callback.',
         Default: 'An unexpected error occurred.',

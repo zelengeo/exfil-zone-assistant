@@ -1,25 +1,79 @@
 'use client';
 
-import { signIn } from 'next-auth/react';
 import { useState } from 'react';
+import { signIn } from 'next-auth/react';
 import { useSearchParams } from 'next/navigation';
-import { SiDiscord, SiGoogle } from '@icons-pack/react-simple-icons';
 import Link from "next/link";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import {SiDiscord, SiFacebook, SiGoogle} from '@icons-pack/react-simple-icons';
 
 export default function SignInPage() {
     const searchParams = useSearchParams();
     const callbackUrl = searchParams.get('callbackUrl') || '/';
     const [isLoading, setIsLoading] = useState<string | null>(null);
+    const [error, setError] = useState<Error | null>(null);
 
     const handleSignIn = async (provider: string) => {
         setIsLoading(provider);
         try {
             await signIn(provider, { callbackUrl });
-        } catch (error) {
+        } catch (error: Error) {
             console.error('Sign in error:', error);
+            setError(error.message);
             setIsLoading(null);
         }
     };
+
+    return (
+        <div className="min-h-[80vh] flex items-center justify-center px-4">
+            <Card className="w-full max-w-md">
+                <CardHeader className="text-center">
+                    <CardTitle className="text-2xl">Welcome Back</CardTitle>
+                    <CardDescription>
+                        Sign in to track your contributions and access personalized features
+                    </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                    {error && (
+                        <Alert variant="destructive">
+                            <AlertDescription>{error.message}</AlertDescription>
+                        </Alert>
+                    )}
+
+                    <Button
+                        onClick={() => handleSignIn('google')}
+                        disabled={isLoading !== null}
+                        className="w-full"
+                        variant="outline"
+                    >
+                        <SiGoogle className="mr-2 h-4 w-4" />
+                        Continue with Google
+                    </Button>
+
+                    <Button
+                        onClick={() => handleSignIn('discord')}
+                        disabled={isLoading !== null}
+                        className="w-full bg-[#5865F2] hover:bg-[#4752C4]"
+                    >
+                        <SiDiscord className="mr-2 h-4 w-4" />
+                        Continue with Discord
+                    </Button>
+
+                    <Button
+                        onClick={() => handleSignIn('facebook')}
+                        disabled={isLoading !== null}
+                        className="w-full bg-[#1877F2] hover:bg-[#0C63D4]"
+                    >
+                        <SiFacebook className="mr-2 h-4 w-4" />
+                        Continue with Facebook
+                    </Button>
+                </CardContent>
+            </Card>
+        </div>
+    );
+}
 
     return (
         <div className="min-h-[80vh] flex items-center justify-center px-4">
