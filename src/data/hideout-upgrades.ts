@@ -723,7 +723,7 @@ export const hideoutUpgrades = {
         "price": 320000,
         "exchange": {
             "misc_b_recorder": 2,
-            "misc_b_insulatingtape": 3,
+            "misc_b_tape": 3,
             "misc_videotape": 2,
             "misc_b_powerbank": 3
         },
