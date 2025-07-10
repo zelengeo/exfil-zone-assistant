@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata, Viewport } from "next";
-import { AuthProvider } from '@/components/providers/AuthProvider';
+import { AuthProvider } from '@/app/components/providers/AuthProvider';
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';

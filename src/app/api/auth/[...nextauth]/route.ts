@@ -31,11 +31,6 @@ export const authOptions: NextAuthOptions = {
         DiscordProvider({
             clientId: process.env.DISCORD_CLIENT_ID!,
             clientSecret: process.env.DISCORD_CLIENT_SECRET!,
-            // authorization: {
-            //     params: {
-            //         scope: 'identify email',
-            //     },
-            // },
         }),
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -46,17 +41,24 @@ export const authOptions: NextAuthOptions = {
     adapter: MongoDBAdapter(clientPromise),
 
     callbacks: {
+        async signIn({ user, account, profile }) {
+            console.log("SignIn callback:", { user, account, profile });
+            return true;
+        },
+
+        async redirect({ url, baseUrl }) {
+            console.log("Redirect callback:", { url, baseUrl });
+            // Always redirect to home after sign in
+            return baseUrl;
+        },
+
         async session({ session, user }) {
+            console.log("Session callback:", { session, user });
             if (session?.user) {
                 session.user.id = user.id;
                 // We'll add more fields here after implementing the username generation
             }
             return session;
-        },
-
-        async signIn({ user, account, profile }) {
-            // We'll implement username generation here
-            return true;
         },
     },
 
@@ -65,14 +67,11 @@ export const authOptions: NextAuthOptions = {
         error: '/auth/error',
     },
 
-    session: {
-        strategy: "jwt",
-    },
+    debug: true, // Enable debug mode to see logs
 
     secret: process.env.NEXTAUTH_SECRET,
 };
 
 const handler = NextAuth(authOptions);
-
 
 export { handler as GET, handler as POST };
