@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata, Viewport } from "next";
+import { AuthProvider } from '@/components/providers/AuthProvider';
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -117,9 +118,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
-        <SpeedInsights />
-        <Analytics />
+          <AuthProvider>
+            {children}
+            <SpeedInsights />
+            <Analytics />
+          </AuthProvider>
       </body>
     </html>
   );
