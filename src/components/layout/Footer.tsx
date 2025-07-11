@@ -71,6 +71,16 @@ const Footer: React.FC = () => {
                         </a>
                     </div>
 
+                    {/*TODO - fix style for Legal stuff */}
+                    <div className="flex gap-4 text-sm">
+                        <Link href="/terms" className="hover:text-olive-500 transition-colors">
+                            Terms
+                        </Link>
+                        <Link href="/privacy" className="hover:text-olive-500 transition-colors">
+                            Privacy
+                        </Link>
+                    </div>
+
                     {/* Copyright & Disclaimer */}
                     <div className="text-xs text-tan-400 space-y-1">
                         <p>Unofficial fan-made assistant for Contractors Showdown.</p>

@@ -1,69 +1,103 @@
 'use client';
 
 import { useSession, signIn, signOut } from "next-auth/react";
-import { useState } from "react";
-import { User, LogOut, Settings } from "lucide-react";
+import Link from "next/link";
+import { User, LogOut, Settings, BarChart3, Shield } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export function UserMenu() {
     const { data: session, status } = useSession();
-    const [isOpen, setIsOpen] = useState(false);
+    //FIXME remove log
+    console.log(`Session Data`, session, status);
+
 
     if (status === "loading") {
-        return <div className="w-8 h-8 bg-military-700 rounded-full animate-pulse" />;
+        return <Skeleton className="h-10 w-10 rounded-full" />;
     }
 
     if (!session) {
         return (
-            <button
-                onClick={() => signIn()}
-                className="px-4 py-2 bg-olive-600 hover:bg-olive-500 text-white
-                   rounded-sm transition-colors font-medium"
-            >
+            <Button onClick={() => signIn()} variant="default" size="sm">
                 Sign In
-            </button>
+            </Button>
         );
     }
 
+    const userInitial = session.user?.name?.[0] || session.user?.email?.[0] || "U";
+
     return (
-        <div className="relative">
-            <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="flex items-center gap-2 p-2 rounded-sm hover:bg-military-800
-                   transition-colors"
-            >
-                <div className="w-8 h-8 bg-olive-600 rounded-full flex items-center
-                        justify-center text-white font-bold">
-                    {session.user?.name?.[0] || "U"}
-                </div>
-            </button>
-
-            {isOpen && (
-                <>
-                    <div
-                        className="fixed inset-0 z-40"
-                        onClick={() => setIsOpen(false)}
-                    />
-                    <div className="absolute right-0 mt-2 w-64 bg-military-900 border
-                          border-olive-700 rounded-sm shadow-xl z-50">
-                        <div className="p-4 border-b border-military-700">
-                            <p className="font-medium text-tan-100">{session.user?.name}</p>
-                            <p className="text-sm text-tan-400">{session.user?.email}</p>
-                        </div>
-
-                        <button
-                            onClick={() => {
-                                setIsOpen(false);
-                                signOut();
-                            }}
-                            className="flex items-center gap-3 px-4 py-2 hover:bg-military-800
-                         transition-colors w-full text-left"
-                        >
-                            <LogOut size={16} />
-                            <span>Sign Out</span>
-                        </button>
+        <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="relative h-10 w-10 rounded-full">
+                    <Avatar className="h-10 w-10">
+                        <AvatarImage src={session.user?.image || undefined} alt={session.user?.name || "User"} />
+                        <AvatarFallback className="bg-olive-600 text-white">
+                            {userInitial.toUpperCase()}
+                        </AvatarFallback>
+                    </Avatar>
+                </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="w-56" align="end" forceMount>
+                <DropdownMenuLabel className="font-normal">
+                    <div className="flex flex-col space-y-1">
+                        <p className="text-sm font-medium leading-none">{session.user?.name}</p>
+                        <p className="text-xs leading-none text-muted-foreground">
+                            {session.user?.email}
+                        </p>
                     </div>
-                </>
-            )}
-        </div>
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                    <Link href={`/user/${session.user?.username || session.user?.id}`} className="cursor-pointer">
+                        <User className="mr-2 h-4 w-4" />
+                        <span>Profile</span>
+                    </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                    <Link href="/dashboard" className="cursor-pointer">
+                        <BarChart3 className="mr-2 h-4 w-4" />
+                        <span>Dashboard</span>
+                    </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                    <Link href="/settings" className="cursor-pointer">
+                        <Settings className="mr-2 h-4 w-4" />
+                        <span>Settings</span>
+                    </Link>
+                </DropdownMenuItem>
+                {session.user?.roles?.includes('admin') && (
+                    <>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem asChild>
+                            <Link href="/admin" className="cursor-pointer">
+                                <Shield className="mr-2 h-4 w-4" />
+                                <span>Admin Panel</span>
+                            </Link>
+                        </DropdownMenuItem>
+                    </>
+                )}
+                <DropdownMenuSeparator />
+                <DropdownMenuItem
+                    className="cursor-pointer text-destructive focus:text-destructive"
+                    onSelect={(event) => {
+                        event.preventDefault();
+                        signOut();
+                    }}
+                >
+                    <LogOut className="mr-2 h-4 w-4" />
+                    <span>Sign out</span>
+                </DropdownMenuItem>
+            </DropdownMenuContent>
+        </DropdownMenu>
     );
 }

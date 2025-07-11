@@ -4,7 +4,8 @@ import type { NextAuthOptions } from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
 import GoogleProvider from "next-auth/providers/google";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
-import clientPromise from "@/lib/mongodb";
+import clientPromise, {connectDB} from "@/lib/mongodb";
+import { User } from "@/models/User";
 
 declare module "next-auth" {
     interface Session {
@@ -42,24 +43,65 @@ export const authOptions: NextAuthOptions = {
 
     callbacks: {
         async signIn({ user, account, profile }) {
+            //FIXME REMOVE
             console.log("SignIn callback:", { user, account, profile });
+
+            //TODO what is newUser
+            // if (isNewUser) {
+            //     // Will be handled by creating user in DB
+            //     return true;
+            // }
+
+            // Check if user has username
+            try {
+                await connectDB();
+                const dbUser = await User.findOne({ email: user.email });
+
+                // If no username, they'll be redirected to welcome page
+                return true;
+            } catch (error) {
+                console.error('SignIn callback error:', error);
+                //TODO wtf?
+                return true; // Allow sign in anyway
+            }
             return true;
+        },
+
+        async session({ session, user, token }) {
+            console.log("Session callback:", { session, user });
+            if (session?.user) {
+                // For JWT strategy
+                if (token) {
+                    session.user.id = token.sub!;
+                    // Fetch latest user data
+                    try {
+                        await connectDB();
+                        const dbUser = await User.findById(token.sub);
+                        if (dbUser) {
+                            session.user.username = dbUser.username;
+                            session.user.rank = dbUser.rank;
+                            session.user.roles = dbUser.roles;
+                        }
+                    } catch (error) {
+                        console.error('Session callback error:', error);
+                    }
+                }
+            }
+            return session;
         },
 
         async redirect({ url, baseUrl }) {
             console.log("Redirect callback:", { url, baseUrl });
+            // If user doesn't have username, redirect to welcome
+            if (url === baseUrl || url === `${baseUrl}/`) {
+                return `${baseUrl}/welcome`;
+            }
+            return url;
+            //TODO revision
             // Always redirect to home after sign in
             return baseUrl;
-        },
+        }
 
-        async session({ session, user }) {
-            console.log("Session callback:", { session, user });
-            if (session?.user) {
-                session.user.id = user.id;
-                // We'll add more fields here after implementing the username generation
-            }
-            return session;
-        },
     },
 
     pages: {

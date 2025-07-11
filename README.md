@@ -9,7 +9,7 @@
 
 A comprehensive wiki and combat simulator for VR tactical shooters. Providing accurate damage calculations, item databases, and strategic guides optimized for VR gameplay.
 
-[**View Live Demo**](https://exfil-zone.vercel.app) | [**Report Bug**](https://github.com/your-username/exfil-zone-assistant/issues) | [**Request Feature**](https://github.com/your-username/exfil-zone-assistant/issues)
+[**View Live Demo**](https://exfil-zone-assistant.app) | [**Report Bug**](https://github.com/zelengeo/exfil-zone-assistant/issues) | [**Request Feature**](https://github.com/zelengeo/exfil-zone-assistant/issues)
 
 </div>
 
@@ -49,7 +49,7 @@ A comprehensive wiki and combat simulator for VR tactical shooters. Providing ac
 
 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/exfil-zone-assistant.git
+git clone https://github.com/zelengeo/exfil-zone-assistant.git
 cd exfil-zone-assistant
 ```
 

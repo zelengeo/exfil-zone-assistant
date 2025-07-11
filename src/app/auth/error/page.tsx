@@ -2,48 +2,85 @@
 
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { AlertCircle, Home, RotateCcw } from 'lucide-react';
+import { getAuthErrorMessage } from '@/lib/auth/errors';
 
-export default function AuthError() {
+export default function AuthErrorPage() {
     const searchParams = useSearchParams();
     const error = searchParams.get('error');
+    const message = getAuthErrorMessage(error);
 
-    const errorMessages: Record<string, string> = {
-        Configuration: 'There is a problem with the server configuration.',
-        AccessDenied: 'You do not have permission to sign in.',
-        Verification: 'The verification token has expired or has already been used.',
-        OAuthSignin: 'Error occurred during OAuth sign in.',
-        OAuthCallback: 'Error occurred during OAuth callback.',
-        OAuthCreateAccount: 'Could not create OAuth provider user in the database.',
-        OAuthAccountNotLinked: 'An account with this email already exists. Please sign in with your original provider first, then link additional accounts in settings.',
-        EmailCreateAccount: 'Could not create email provider user in the database.',
-        Callback: 'Error occurred during callback.',
-        Default: 'An unexpected error occurred.',
-    };
-
-    const message = errorMessages[error || 'Default'] || errorMessages.Default;
+    // Determine severity based on error type
+    const isCriticalError = ['Configuration', 'OAuthSignin', 'OAuthCallback', 'OAuthCreateAccount'].includes(error || '');
 
     return (
         <div className="min-h-[80vh] flex items-center justify-center px-4">
-            <div className="max-w-md w-full">
-                <div className="bg-military-800 border border-red-700 rounded-sm p-8">
-                    <h1 className="text-2xl font-bold text-red-400 mb-4">
-                        Authentication Error
-                    </h1>
-                    <p className="text-tan-300 mb-2">
-                        {message}
-                    </p>
-                    <p className="text-sm text-tan-400 mb-6">
-                        Error code: <code className="bg-military-900 px-2 py-1 rounded">{error}</code>
-                    </p>
-                    <Link
-                        href="/auth/signin"
-                        className="inline-block px-4 py-2 bg-olive-600 hover:bg-olive-500
-                     text-white rounded-sm transition-colors"
+            <Card className="w-full max-w-md">
+                <CardHeader className="text-center">
+                    <div className="mx-auto mb-4 w-12 h-12 rounded-full bg-destructive/10 flex items-center justify-center">
+                        <AlertCircle className="w-6 h-6 text-destructive" />
+                    </div>
+                    <CardTitle className="text-2xl">Authentication Error</CardTitle>
+                    <CardDescription>
+                        We encountered a problem signing you in
+                    </CardDescription>
+                </CardHeader>
+
+                <CardContent>
+                    <Alert variant="destructive" className="mb-4">
+                        <AlertCircle className="h-4 w-4" />
+                        <AlertTitle>Error Details</AlertTitle>
+                        <AlertDescription className="mt-2">
+                            {message}
+                        </AlertDescription>
+                    </Alert>
+
+                    {error && (
+                        <div className="rounded-lg bg-muted p-3">
+                            <p className="text-xs text-muted-foreground">
+                                Error code: <code className="font-mono">{error}</code>
+                            </p>
+                        </div>
+                    )}
+                </CardContent>
+
+                <CardFooter className="flex flex-col gap-3">
+                    <Button
+                        asChild
+                        className="w-full"
+                        variant={isCriticalError ? "outline" : "default"}
                     >
-                        Try Again
-                    </Link>
-                </div>
-            </div>
+                        <Link href="/auth/signin">
+                            <RotateCcw className="mr-2 h-4 w-4" />
+                            Try Again
+                        </Link>
+                    </Button>
+
+                    <Button asChild variant="ghost" className="w-full">
+                        <Link href="/">
+                            <Home className="mr-2 h-4 w-4" />
+                            Back to Home
+                        </Link>
+                    </Button>
+
+                    {isCriticalError && (
+                        <p className="text-xs text-center text-muted-foreground mt-2">
+                            If this problem persists, please{' '}
+                            <a
+                                href="https://github.com/zelengeo/issues"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="underline underline-offset-4 hover:text-primary"
+                            >
+                                report an issue
+                            </a>
+                        </p>
+                    )}
+                </CardFooter>
+            </Card>
         </div>
     );
 }
