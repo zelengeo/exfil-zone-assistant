@@ -4,7 +4,7 @@ import { Schema, model, models } from 'mongoose';
 const UserSchema = new Schema({
     // Authentication
     email: { type: String, required: true, unique: true },
-    username: { type: String, required: true, unique: true },
+    username: { type: String, required: true, unique: true, sparse: true },
     name: String,
     image: String, // Avatar URL from OAuth provider
 
@@ -22,7 +22,12 @@ const UserSchema = new Schema({
 
     // Profile
     bio: { type: String, maxLength: 500 },
-    location: String,
+    location: {
+        type: String,
+        enum: ['eu','na'],
+        default: 'na'
+    },
+
     vrHeadset: {
         type: String,
         enum: ['quest2', 'quest3', 'pico4', 'index', 'vive', 'bigscreen', 'other', null],

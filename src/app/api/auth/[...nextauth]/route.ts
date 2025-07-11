@@ -17,12 +17,18 @@ declare module "next-auth" {
             username?: string;
             rank?: string;
             roles?: string[];
+            stats?: {
+                contributionPoints?: number;
+            }
         }
     }
 
     interface User {
         username?: string;
         rank?: string;
+        stats?: {
+            contributionPoints?: number;
+        }
         roles?: string[];
     }
 }
@@ -81,6 +87,11 @@ export const authOptions: NextAuthOptions = {
                             session.user.username = dbUser.username;
                             session.user.rank = dbUser.rank;
                             session.user.roles = dbUser.roles;
+                            if(dbUser.stats) {
+                                session.user.stats = {
+                                    contributionPoints: dbUser.stats.contributionPoints
+                                }
+                            }
                         }
                     } catch (error) {
                         console.error('Session callback error:', error);
@@ -91,12 +102,7 @@ export const authOptions: NextAuthOptions = {
         },
 
         async redirect({ url, baseUrl }) {
-            console.log("Redirect callback:", { url, baseUrl });
-            // If user doesn't have username, redirect to welcome
-            if (url === baseUrl || url === `${baseUrl}/`) {
-                return `${baseUrl}/welcome`;
-            }
-            return url;
+
             //TODO revision
             // Always redirect to home after sign in
             return baseUrl;

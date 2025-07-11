@@ -20,7 +20,7 @@ db.createCollection('verificationtokens');
 
 // Create indexes
 db.users.createIndex({ email: 1 }, { unique: true });
-db.users.createIndex({ username: 1 }, { unique: true });
+db.users.createIndex({ username: 1 }, { unique: true, sparse: true });
 db.sessions.createIndex({ sessionToken: 1 }, { unique: true });
 db.sessions.createIndex({ userId: 1 });
 db.accounts.createIndex({ userId: 1 });
