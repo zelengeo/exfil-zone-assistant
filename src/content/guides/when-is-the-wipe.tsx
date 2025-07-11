@@ -71,6 +71,75 @@ export default function WhenIsTheWipeGuide() {
                 </div>
             </section>
 
+            {/* Upcoming Wipe Announcement Section */}
+            <section className="military-box p-6 rounded-sm">
+                <div className="flex items-start gap-3 mb-4">
+                    <Megaphone className="text-orange-400 mt-1" size={24} />
+                    <h2 className="text-2xl font-bold text-tan-100">Next Wipe Announced!</h2>
+                </div>
+
+                <div className="space-y-4 text-tan-200">
+                    <div className="bg-orange-900/20 border-l-4 border-orange-600 p-4">
+                        <div className="flex items-start gap-3">
+                            <Info className="text-orange-400 mt-1" size={20} />
+                            <div>
+                                <p className="text-orange-200 font-semibold mb-2">
+                                    Official Announcement: July 11th, 2025
+                                </p>
+                                <p className="text-tan-200">
+                                    Caveman Studios has officially announced the next wipe! Based on the typical 3-week announcement window,
+                                    we can expect the wipe to happen around <strong>July 31st, 2025</strong>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="space-y-4">
+                        <h3 className="text-lg font-semibold text-tan-100">What&#39;s Coming:</h3>
+
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div className="bg-military-800 border border-military-600 rounded-sm p-4">
+                                <h4 className="font-semibold text-green-400 mb-2">🔧 Gunsmith System</h4>
+                                <p className="text-sm text-tan-300">
+                                    Build your own weapons! Mix and match components, attachments, and even select custom colors.
+                                    Create truly unique weapons tailored to your playstyle.
+                                </p>
+                            </div>
+
+                            <div className="bg-military-800 border border-military-600 rounded-sm p-4">
+                                <h4 className="font-semibold text-blue-400 mb-2">🗺️ Smuggler&#39;s Tunnel</h4>
+                                <p className="text-sm text-tan-300">
+                                    A brand new map that brings fresh tactical opportunities and strategies.
+                                    Expect a completely different vibe from existing maps.
+                                </p>
+                            </div>
+
+                            <div className="bg-military-800 border border-military-600 rounded-sm p-4">
+                                <h4 className="font-semibold text-purple-400 mb-2">⚡ UE5 Upgrade</h4>
+                                <p className="text-sm text-tan-300">
+                                    Upgraded from UE4 to UE5 for improved lighting, effects, and larger maps.
+                                    This also fixes the bug where items fall through the ground.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="bg-blue-900/20 border border-blue-700/50 rounded-sm p-4">
+                        <p className="text-blue-200 mb-2">
+                            <strong>Source:</strong> Official Caveman Studios announcement
+                        </p>
+                        <a
+                            href="https://www.contractorsvr.com/single-post/situation-report-exfilzone-upcoming-wipe-update-july-update"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-sm text-blue-400 hover:text-blue-300 transition-colors"
+                        >
+                            Read Full Announcement <ExternalLink size={14} />
+                        </a>
+                    </div>
+                </div>
+            </section>
+
             {/* Wipe History Section */}
             <section className="military-box p-6 rounded-sm">
                 <div className="flex items-start gap-3 mb-4">
