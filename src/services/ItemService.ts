@@ -6,7 +6,7 @@ import {
     isFaceShield, isGrenade,
     isHelmet, isLimbRestore, isMagazine, isMedicine, isMisc, isKeys,
     isPainkiller, isProvisions, isSight, isStim, isSyringe, isTactical, isTaskItem,
-    isWeapon, isBackpack
+    isWeapon, isBackpack, isHolster
 } from "@/app/combat-sim/utils/types";
 
 // Cache for the items data
@@ -31,6 +31,7 @@ const DATA_FILES = [
     'helmets.json',
     'face-shields.json',
     'backpacks.json',
+    'holsters.json',
     'medical.json',
     'provisions.json',
     'task-items.json',
@@ -50,6 +51,7 @@ const dataImports = {
     'helmets.json': () => import('@/public/data/helmets.json'),
     'face-shields.json': () => import('@/public/data/face-shields.json'),
     'backpacks.json': () => import('@/public/data/backpacks.json'),
+    'holsters.json': () => import('@/public/data/holsters.json'),
     'medical.json': () => import('@/public/data/medical.json'),
     'provisions.json': () => import('@/public/data/provisions.json'),
     'task-items.json': () => import('@/public/data/task-items.json'),
@@ -208,6 +210,11 @@ function transformItemData(rawItem: Item): Item {
             if (!isBackpack(baseItem)) return baseItem;
             baseItem.stats.sizes = rawItem.stats.sizes;
             baseItem.stats.attachmentPoints = rawItem.stats.attachmentPoints;
+        }
+
+        if (isHolster(rawItem)) {
+            if (!isHolster(baseItem)) return baseItem;
+            baseItem.stats.canAttach = rawItem.stats.canAttach;
         }
 
         if (isMedicine(rawItem)) {

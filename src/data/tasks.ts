@@ -4821,12 +4821,12 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "mag pouch M",
+                "item_id": "holster_magm",
                 "quantity": 2
             },
             {
                 "type": "item",
-                "item_name": "mag pouch s",
+                "item_id": "holster_mags",
                 "quantity": 2
             }
         ],
@@ -4888,12 +4888,12 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "Mag pouch M",
+                "item_id": "holster_magm",
                 "quantity": 3
             },
             {
                 "type": "item",
-                "item_name": "Mag pouch S",
+                "item_id": "holster_mags",
                 "quantity": 3
             }
         ],
@@ -5008,17 +5008,17 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "Mag double pouch",
+                "item_id": "holster_magd",
                 "quantity": 2
             },
             {
                 "type": "item",
-                "item_name": "Mag pouch M",
+                "item_id": "holster_magm",
                 "quantity": 2
             },
             {
                 "type": "item",
-                "item_name": "Mag pouch S",
+                "item_id": "holster_mags",
                 "quantity": 2
             }
         ],
@@ -5070,17 +5070,17 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "Mag double pouch",
+                "item_id": "holster_magd",
                 "quantity": 2
             },
             {
                 "type": "item",
-                "item_name": "Mag pouch M",
+                "item_id": "holster_magm",
                 "quantity": 2
             },
             {
                 "type": "item",
-                "item_name": "Mag pouch S",
+                "item_id": "holster_mags",
                 "quantity": 2
             }
         ],
@@ -5132,17 +5132,17 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "Mag double pouch",
+                "item_id": "holster_magd",
                 "quantity": 3
             },
             {
                 "type": "item",
-                "item_name": "Mag pouch M",
+                "item_id": "holster_magm",
                 "quantity": 3
             },
             {
                 "type": "item",
-                "item_name": "Mag pouch S",
+                "item_id": "holster_mags",
                 "quantity": 3
             }
         ],
@@ -7432,7 +7432,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "Mag Pouch M",
+                "item_id": "holster_magm",
                 "quantity": 1
             }
         ],
@@ -7490,12 +7490,12 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "Mag Pouch M",
+                "item_id": "holster_magm",
                 "quantity": 1
             },
             {
                 "type": "item",
-                "item_name": "Mag Pouch S",
+                "item_id": "holster_mags",
                 "quantity": 1
             }
         ],
@@ -7675,7 +7675,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "Mag Pouch M",
+                "item_id": "holster_magm",
                 "quantity": 1
             }
         ],
@@ -7859,7 +7859,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "Mag Pouch M",
+                "item_id": "holster_magm",
                 "quantity": 2
             }
         ],
@@ -8080,7 +8080,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "water bottle pouch",
+                "item_id": "holster_water",
                 "quantity": 3
             }
         ],
@@ -8130,7 +8130,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "grenade pouch",
+                "item_id": "holster_grenade",
                 "quantity": 3
             }
         ],
@@ -8180,7 +8180,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_name": "Mag double pouch",
+                "item_id": "holster_magd",
                 "quantity": 4
             }
         ],

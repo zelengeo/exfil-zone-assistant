@@ -1,0 +1,146 @@
+[
+  {
+    "id": "holster_556faster",
+    "name": "Faster Mag holster",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Holsters",
+    "images": {
+      "icon": "/images/items/holsters/Icon_vestholster_01.webp",
+      "thumbnail": "/images/items/holsters/Icon_vestholster_01.webp",
+      "fullsize": "/images/items/holsters/Icon_vestholster_01.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.07,
+      "rarity": "Common",
+      "canAttach": [
+        "holster_556faster"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "holster_grenade",
+    "name": "Grenade Holster",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Holsters",
+    "images": {
+      "icon": "/images/items/holsters/Icon_vestholster_02.webp",
+      "thumbnail": "/images/items/holsters/Icon_vestholster_02.webp",
+      "fullsize": "/images/items/holsters/Icon_vestholster_02.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.12,
+      "rarity": "Uncommon",
+      "canAttach": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "holster_magd",
+    "name": "General Pouch",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Holsters",
+    "images": {
+      "icon": "/images/items/holsters/Icon_VestHolster_MagD2.webp",
+      "thumbnail": "/images/items/holsters/Icon_VestHolster_MagD2.webp",
+      "fullsize": "/images/items/holsters/Icon_VestHolster_MagD2.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.14,
+      "rarity": "Uncommon",
+      "canAttach": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "holster_magl",
+    "name": "Mag Pouch Large",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Holsters",
+    "images": {
+      "icon": "/images/items/holsters/Icon_vestholster_05.webp",
+      "thumbnail": "/images/items/holsters/Icon_vestholster_05.webp",
+      "fullsize": "/images/items/holsters/Icon_vestholster_05.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.12,
+      "rarity": "Rare",
+      "canAttach": [
+        "holster_magm",
+        "holster_mags",
+        "holster_magl",
+        "holster_grenade"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "holster_magm",
+    "name": "Mag Pouch Medium",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Holsters",
+    "images": {
+      "icon": "/images/items/holsters/Icon_vestholster_04.webp",
+      "thumbnail": "/images/items/holsters/Icon_vestholster_04.webp",
+      "fullsize": "/images/items/holsters/Icon_vestholster_04.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.1,
+      "rarity": "Uncommon",
+      "canAttach": [
+        "holster_magm",
+        "holster_mags",
+        "holster_grenade"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "holster_mags",
+    "name": "Mag Pouch Small",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Holsters",
+    "images": {
+      "icon": "/images/items/holsters/Icon_vestholster_06.webp",
+      "thumbnail": "/images/items/holsters/Icon_vestholster_06.webp",
+      "fullsize": "/images/items/holsters/Icon_vestholster_06.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.08,
+      "rarity": "Common",
+      "canAttach": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "holster_water",
+    "name": "Water Pouch",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Holsters",
+    "images": {
+      "icon": "/images/items/holsters/VestHolster_Water.webp",
+      "thumbnail": "/images/items/holsters/VestHolster_Water.webp",
+      "fullsize": "/images/items/holsters/VestHolster_Water.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.17,
+      "rarity": "Uncommon",
+      "canAttach": []
+    },
+    "tips": ""
+  }
+]
