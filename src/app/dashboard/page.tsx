@@ -15,9 +15,6 @@ export default async function DashboardPage() {
     await connectDB();
     const user = await User.findById(session.user.id);
 
-    if (!user?.username) {
-        redirect('/auth/welcome');
-    }
 
     return (
         <div className="container mx-auto p-6">

@@ -61,7 +61,7 @@ const UserSchema = new Schema({
     // Permissions
     roles: [{
         type: String,
-        enum: ['user', 'contributor', 'moderator', 'admin'],
+        enum: ['user', 'contributor', 'moderator', 'partner', 'admin'],
     }],
 
     // Preferences

@@ -6,6 +6,7 @@ import GoogleProvider from "next-auth/providers/google";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import clientPromise, {connectDB} from "@/lib/mongodb";
 import { User } from "@/models/User";
+import {ensureUniqueUsername, generateUsername} from "@/lib/auth/username";
 
 declare module "next-auth" {
     interface Session {
@@ -19,17 +20,17 @@ declare module "next-auth" {
             roles?: string[];
             stats?: {
                 contributionPoints?: number;
-            }
+            },
         }
     }
 
     interface User {
         username?: string;
         rank?: string;
+        roles?: string[];
         stats?: {
             contributionPoints?: number;
         }
-        roles?: string[];
     }
 }
 
@@ -47,35 +48,58 @@ export const authOptions: NextAuthOptions = {
 
     adapter: MongoDBAdapter(clientPromise),
 
+    events: {
+        async createUser({ user }) {
+            // This fires AFTER the user is created by the adapter
+            const baseUsername = generateUsername(user);
+            const username = await ensureUniqueUsername(baseUsername);
+
+            // Update the just-created user with custom fields
+            await connectDB();
+            await User.findByIdAndUpdate(user.id, {
+                username: username,
+                rank: 'recruit',
+                stats: {
+                    contributionPoints: 0,
+                    feedbackSubmitted: 0,
+                    bugsReported: 0,
+                    featuresProposed: 0,
+                    dataCorrections: 0,
+                    correctionsAccepted: 0,
+                },
+                roles: ['user'],
+                preferences: {
+                    emailNotifications: true,
+                    publicProfile: true,
+                    showContributions: true,
+                },
+            });
+        }
+    },
+
     callbacks: {
-        async signIn({ user, account, profile }) {
-            //FIXME REMOVE
-            console.log("SignIn callback:", { user, account, profile });
-
-            //TODO what is newUser
-            // if (isNewUser) {
-            //     // Will be handled by creating user in DB
-            //     return true;
-            // }
-
-            // Check if user has username
-            try {
-                await connectDB();
-                const dbUser = await User.findOne({ email: user.email });
-
-                // If no username, they'll be redirected to welcome page
-                return true;
-            } catch (error) {
-                console.error('SignIn callback error:', error);
-                //TODO wtf?
-                return true; // Allow sign in anyway
-            }
+        async signIn() {
             return true;
         },
 
         async session({ session, user, token }) {
             console.log("Session callback:", { session, user });
             if (session?.user) {
+                if (user) {
+                    session.user.id = user.id;
+                    // Fetch additional fields from your User model
+                    const dbUser = await User.findById(user.id);
+                    if (dbUser) {
+                        session.user.username = dbUser.username;
+                        session.user.rank = dbUser.rank;
+                        session.user.roles = dbUser.roles;
+                        if(dbUser.stats) {
+                            session.user.stats = {
+                                contributionPoints: dbUser.stats.contributionPoints,
+                            }
+                        }
+                    }
+                }
                 // For JWT strategy
                 if (token) {
                     session.user.id = token.sub!;
@@ -89,7 +113,7 @@ export const authOptions: NextAuthOptions = {
                             session.user.roles = dbUser.roles;
                             if(dbUser.stats) {
                                 session.user.stats = {
-                                    contributionPoints: dbUser.stats.contributionPoints
+                                    contributionPoints: dbUser.stats.contributionPoints,
                                 }
                             }
                         }
@@ -112,6 +136,7 @@ export const authOptions: NextAuthOptions = {
     pages: {
         signIn: '/auth/signin',
         error: '/auth/error',
+        newUser: '/dashboard'
     },
 
     debug: true, // Enable debug mode to see logs
