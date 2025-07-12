@@ -119,7 +119,7 @@
   button,
   [type='button'],
   [type='submit'] {
-    @apply cursor-pointer min-h-12 min-w-12 flex items-center justify-center;
+    @apply cursor-pointer flex items-center justify-center;
   }
 
   input,

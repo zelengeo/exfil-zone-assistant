@@ -7,30 +7,12 @@ import HeroSection from "@/app/components/HeroSection";
 
 export default function Home() {
   return (
-      <Layout>
+      <Layout fullWidth noPadding>
         {/* Hero Section */}
         <HeroSection />
 
         {/* Community Section */}
         <CommunitySection />
-
-        {/* Game Overview */}
-        {/*<section className="py-12 bg-military-900 border-y border-olive-900">
-          <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold mb-8 text-center military-stencil text-olive-400">MISSION BRIEFING</h2>
-            <div className="max-w-3xl mx-auto military-box p-6">
-              <p className="text-lg text-tan-200 mb-6">
-                Welcome to the world of ExfilZone, an immersive VR extraction shooter that combines tactical gameplay with resource management and survival elements.
-              </p>
-              <p className="text-lg text-tan-200 mb-6">
-                As a mercenary, your mission is to enter restricted zones, gather valuable resources, complete objectives, and successfully extract before time runs out or hostile forces eliminate you.
-              </p>
-              <p className="text-lg text-tan-200">
-                Use this assistant to master game mechanics, and outperform other players with strategic knowledge.
-              </p>
-            </div>
-          </div>
-        </section>*/}
 
         {/* Navigation Hub */}
         <NavigationSection />
