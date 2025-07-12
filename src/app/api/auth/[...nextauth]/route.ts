@@ -102,7 +102,6 @@ export const authOptions: NextAuthOptions = {
         },
 
         async redirect({ url, baseUrl }) {
-
             //TODO revision
             // Always redirect to home after sign in
             return baseUrl;
