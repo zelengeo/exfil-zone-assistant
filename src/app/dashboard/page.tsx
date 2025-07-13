@@ -2,10 +2,13 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
+import Image from "next/image";
 import Layout from '@/components/layout/Layout';
 import { User } from "@/models/User";
 import { Feedback } from "@/models/Feedback";
-import {connectDB} from "@/lib/mongodb";
+import { connectDB } from "@/lib/mongodb";
+import { IUser } from "@/types/user";
+import { IFeedback } from '@/types/feedback';
 import {
     Trophy,
     Bug,
@@ -19,6 +22,7 @@ import {
     Star,
     Clock
 } from "lucide-react";
+import SettingsSection from "@/app/dashboard/SettingsSection";
 
 // Rank configuration
 const rankConfig = {
@@ -38,7 +42,7 @@ export default async function DashboardPage() {
 
     // Connect to DB and fetch user data
     await connectDB();
-    const user = await User.findById(session.user.id).lean();
+    const user = await User.findById(session.user.id).lean<IUser>();
 
     if (!user) {
         redirect('/auth/signin');
@@ -48,7 +52,7 @@ export default async function DashboardPage() {
     const recentFeedback = await Feedback.find({ userId: user._id })
         .sort({ createdAt: -1 })
         .limit(5)
-        .lean();
+        .lean<IFeedback[]>();
 
     // Calculate progress to next rank
     const currentRankConfig = rankConfig[user.rank as keyof typeof rankConfig];
@@ -77,9 +81,11 @@ export default async function DashboardPage() {
                         {/* Avatar */}
                         <div className="flex-shrink-0">
                             {user.image ? (
-                                <img
+                                <Image
                                     src={user.image}
                                     alt={user.name || user.username}
+                                    width={88}
+                                    height={88}
                                     className="w-24 h-24 rounded-sm border-2 border-olive-600"
                                 />
                             ) : (
@@ -248,7 +254,7 @@ export default async function DashboardPage() {
                         </h3>
                         {recentFeedback.length > 0 ? (
                             <div className="space-y-3">
-                                {recentFeedback.map((feedback) => (
+                                {recentFeedback.map((feedback: IFeedback) => (
                                     <div key={feedback._id.toString()} className="border-l-2 border-military-700 pl-4 py-2">
                                         <div className="flex items-center gap-2 mb-1">
                                             {feedback.type === 'bug' && <Bug className="h-4 w-4 text-red-500" />}
@@ -332,6 +338,14 @@ export default async function DashboardPage() {
                         </div>
                     </div>
                 </div>
+                <SettingsSection initialSettings={{
+                    username: user.username,
+                    bio: user.bio,
+                    location: user.location,
+                    vrHeadset: user.vrHeadset,
+                    preferences: user.preferences,
+
+                }} />
             </div>
         </Layout>
     );

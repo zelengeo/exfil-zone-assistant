@@ -14,16 +14,16 @@ import {
     Activity,
     Calendar,
     MapPin,
-    Headphones,
     Award,
     Star,
     Shield,
     TrendingUp,
     Users,
     Edit,
-    EyeOff
+    EyeOff, RectangleGoggles
 } from "lucide-react";
 import {getUserByUsername} from "@/lib/user";
+import {IFeedback} from "@/types/feedback";
 
 // Rank configuration (shared with dashboard)
 const rankConfig = {
@@ -63,7 +63,7 @@ export default async function UserProfilePage({params}: UserProfilePageProps) {
     })
         .sort({createdAt: -1})
         .limit(10)
-        .lean();
+        .lean<IFeedback[]>();
 
     // Calculate member since
     const memberSince = new Date(user.createdAt).toLocaleDateString('en-US', {
@@ -146,7 +146,7 @@ export default async function UserProfilePage({params}: UserProfilePageProps) {
                                 )}
                                 {user.vrHeadset && (
                                     <div className="flex items-center gap-2 text-tan-400">
-                                        <Headphones className="h-4 w-4"/>
+                                        <RectangleGoggles className="h-4 w-4"/>
                                         <span>{user.vrHeadset}</span>
                                     </div>
                                 )}

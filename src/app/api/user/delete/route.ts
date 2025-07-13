@@ -3,8 +3,11 @@ import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { connectDB } from '@/lib/mongodb';
 import { User } from '@/models/User';
 import { Feedback } from '@/models/Feedback';
+import { Account } from '@/models/Account';
+import { Session } from '@/models/Session';
 
-export async function DELETE(request: Request) {
+
+export async function DELETE() {
     try {
         const session = await getServerSession(authOptions);
 
@@ -14,18 +17,23 @@ export async function DELETE(request: Request) {
 
         await connectDB();
 
+
         // Delete user's feedback (or anonymize it)
         await Feedback.updateMany(
             { userId: session.user.id },
             {
                 $set: {
                     userId: null,
-                    isAnonymous: true,
-                    'submittedBy.email': 'deleted',
-                    'submittedBy.discordUsername': 'deleted'
+                    isAnonymous: true
                 }
             }
         );
+
+        // Delete user sessions
+        await Session.deleteMany({ userId: session.user.id });
+
+        // Delete user accounts (OAuth connections)
+        await Account.deleteMany({ userId: session.user.id });
 
         // Delete user account
         await User.findByIdAndDelete(session.user.id);

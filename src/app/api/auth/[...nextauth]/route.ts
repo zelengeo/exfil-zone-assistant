@@ -78,7 +78,7 @@ export const authOptions: NextAuthOptions = {
                 roles: ['user'],
                 // Preferences
                 preferences: {
-                    emailNotifications: true,
+                    emailNotifications: false,
                     publicProfile: true,
                     showContributions: true,
                 },
