@@ -53,12 +53,19 @@ export const authOptions: NextAuthOptions = {
             // This fires AFTER the user is created by the adapter
             const baseUsername = generateUsername(user);
             const username = await ensureUniqueUsername(baseUsername);
+            console.log(`User ${user.id} created with username ${username}`, user);
 
             // Update the just-created user with custom fields
             await connectDB();
             await User.findByIdAndUpdate(user.id, {
                 username: username,
+                // Profile
+                vrHeadset: null,
+                // Gamification
+                level: 1,
                 rank: 'recruit',
+                badges: [],
+                // Contribution Stats
                 stats: {
                     contributionPoints: 0,
                     feedbackSubmitted: 0,
@@ -67,12 +74,17 @@ export const authOptions: NextAuthOptions = {
                     dataCorrections: 0,
                     correctionsAccepted: 0,
                 },
+                // Permissions
                 roles: ['user'],
+                // Preferences
                 preferences: {
                     emailNotifications: true,
                     publicProfile: true,
                     showContributions: true,
                 },
+                // Metadata
+                isActive: true,
+                isBanned: false,
             });
         }
     },

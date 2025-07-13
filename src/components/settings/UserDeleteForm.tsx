@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { useSession, signOut } from 'next-auth/react';
-import {redirect, useRouter} from 'next/navigation';
+import { signOut } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
@@ -33,8 +33,8 @@ export default function UserDeleteForm() {
             });
 
             if (response.ok) {
-                await signOut({ redirect: false });
-                router.push('/account-deleted');
+                await signOut({ redirect: false, callbackUrl: "/" });
+                // router.push('/');
             } else {
                 throw new Error('Failed to delete account');
             }

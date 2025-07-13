@@ -1,7 +1,6 @@
-// src/components/settings/UsernameForm.tsx
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { useSession } from 'next-auth/react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -17,33 +16,55 @@ export function UsernameUpdateForm() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [message, setMessage] = useState<{ type: 'error' | 'success'; text: string } | null>(null);
     const [isAvailable, setIsAvailable] = useState<boolean | null>(null);
+    const debounceTimeout = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
-    const checkUsername = async (value: string) => {
-        if (value === session?.user?.username) {
-            setIsAvailable(null);
-            return;
-        }
+    // Clean up the timeout on component unmount
+    useEffect(() => {
+        return () => {
+            clearTimeout(debounceTimeout.current);
+        };
+    }, []);
 
-        if (value.length < 3) {
-            setIsAvailable(false);
-            setMessage({ type: 'error', text: 'Username must be at least 3 characters' });
-            return;
-        }
-
+    const checkUsername = useCallback(async (value: string) => {
         setIsChecking(true);
+        setMessage(null);
         try {
             const res = await fetch(`/api/user/check-username?username=${value}`);
             const data = await res.json();
             setIsAvailable(data.available);
             if (!data.available) {
                 setMessage({ type: 'error', text: data.message || 'Username not available' });
-            } else {
-                setMessage(null);
             }
-        } catch (err) {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        } catch (_err) {
             setMessage({ type: 'error', text: 'Failed to check username' });
+            setIsAvailable(false);
         } finally {
             setIsChecking(false);
+        }
+    }, []);
+
+    const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, '');
+        setUsername(value);
+        setMessage(null);
+        setIsAvailable(null);
+        clearTimeout(debounceTimeout.current);
+
+        if (value === session?.user?.username) {
+            return;
+        }
+
+        if (value.length > 0 && value.length < 3) {
+            setMessage({ type: 'error', text: 'Username must be at least 3 characters' });
+            setIsAvailable(false);
+            return;
+        }
+
+        if (value.length >= 3) {
+            debounceTimeout.current = setTimeout(() => {
+                checkUsername(value);
+            }, 500); // 500ms debounce delay
         }
     };
 
@@ -63,13 +84,15 @@ export function UsernameUpdateForm() {
             });
 
             if (res.ok) {
-                await update(); // Refresh session
+                // More efficient session update
+                await update({ ...session, user: { ...session?.user, username } });
                 setMessage({ type: 'success', text: 'Username updated successfully!' });
             } else {
                 const data = await res.json();
                 setMessage({ type: 'error', text: data.error || 'Failed to update username' });
             }
-        } catch (err) {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        } catch (_err) {
             setMessage({ type: 'error', text: 'Something went wrong' });
         } finally {
             setIsSubmitting(false);
@@ -92,13 +115,7 @@ export function UsernameUpdateForm() {
                             <Input
                                 id="username"
                                 value={username}
-                                onChange={(e) => {
-                                    const value = e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, '');
-                                    setUsername(value);
-                                    if (value.length >= 3) {
-                                        checkUsername(value);
-                                    }
-                                }}
+                                onChange={handleUsernameChange}
                                 placeholder="your-username"
                                 className="mt-1 pr-10"
                             />
