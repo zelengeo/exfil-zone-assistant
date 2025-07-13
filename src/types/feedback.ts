@@ -1,14 +1,29 @@
 // src/types/feedback.ts
 import { Types } from 'mongoose';
 
-export interface IFeedback {
-    _id: Types.ObjectId;
-    type: 'bug' | 'feature' | 'data_correction';
-    status: 'new' | 'in_review' | 'accepted' | 'rejected' | 'implemented' | 'duplicate';
-    priority: 'low' | 'medium' | 'high' | 'critical';
+export type FeedbackStatus = 'new' | 'in_review' | 'accepted' | 'rejected' | 'implemented' | 'duplicate';
+export type FeedbackPriority = 'low' | 'medium' | 'high' | 'critical';
+export type FeedbackType = 'bug' | 'feature' | 'general' | 'data_correction';
+export type FeedbackCategory = 'items' | 'tasks' | 'hideout' | 'combat-sim' | 'guides' | 'ui' | 'other';
+
+export interface FeedbackRequestBody {
+    type: FeedbackType;
+    priority: FeedbackPriority;
     title: string;
     description: string;
-    category: 'items' | 'tasks' | 'hideout' | 'combat-sim' | 'guides' | 'ui' | 'other';
+    userAgent: string;
+    pageUrl: string;
+    category?: FeedbackCategory;
+}
+
+export interface IFeedback {
+    _id: Types.ObjectId;
+    type: FeedbackType;
+    status: FeedbackStatus;
+    priority: FeedbackPriority;
+    title: string;
+    description: string;
+    category: FeedbackCategory;
     userId?: Types.ObjectId;
     isAnonymous: boolean;
     sessionId?: string;

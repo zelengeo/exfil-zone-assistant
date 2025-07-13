@@ -34,6 +34,15 @@ declare module "next-auth" {
     }
 }
 
+function isAdminEmail(email: string): boolean {
+    const adminEmails = [
+        process.env.ADMIN_EMAIL_1,
+        process.env.ADMIN_EMAIL_2,
+    ].filter(Boolean).map(email => email?.toLowerCase());
+
+    return adminEmails.includes(email.toLowerCase());
+}
+
 export const authOptions: NextAuthOptions = {
     providers: [
         DiscordProvider({
@@ -90,9 +99,48 @@ export const authOptions: NextAuthOptions = {
     },
 
     callbacks: {
-        async signIn() {
+        async signIn({ user, account, profile }) {
+            if (account?.provider === 'discord' || account?.provider === 'google') {
+                try {
+                    await connectDB();
+
+                    const dbUser = await User.findOne({ email: user.email?.toLowerCase() });
+
+                    if (!dbUser) {
+                        // This shouldn't happen if createUser works properly
+                        console.log('User not found during signIn:', user.email);
+                        return true;
+                    }
+
+                    let needsUpdate = false;
+
+                    // Check for admin promotion
+                    if (user.email && isAdminEmail(user.email)) {
+                        if (!dbUser.roles?.includes('admin')) {
+                            dbUser.roles = [...(dbUser.roles || []), 'admin'];
+                            dbUser.rank = 'elite'; // Promote rank
+                            needsUpdate = true;
+                            console.log(`🔐 Auto-promoted ${user.email} to admin`);
+                        }
+                    }
+
+                    // Update last login
+                    dbUser.lastLoginAt = new Date();
+                    needsUpdate = true;
+
+                    if (needsUpdate) {
+                        await dbUser.save();
+                    }
+
+                    return true;
+                } catch (error) {
+                    console.error('Sign in error:', error);
+                    return false;
+                }
+            }
             return true;
         },
+
 
         async session({ session, user, token }) {
             console.log("Session callback:", { session, user });

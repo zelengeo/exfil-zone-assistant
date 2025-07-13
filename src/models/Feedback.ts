@@ -4,7 +4,7 @@ import { Schema, model, models } from 'mongoose';
 const FeedbackSchema = new Schema({
     type: {
         type: String,
-        enum: ['bug', 'feature', 'data_correction'],
+        enum: ['bug', 'feature', 'data_correction', "general"],
         required: true
     },
     status: {

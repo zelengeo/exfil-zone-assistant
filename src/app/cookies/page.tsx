@@ -309,11 +309,7 @@ export default function CookiePolicyPage() {
                             <CardContent className="pt-6">
                                 <p className="text-tan-400 leading-relaxed">
                                     If you have any questions about our use of cookies or this Cookie Policy,
-                                    please contact us through our{' '}
-                                    <a href="/feedback" className="text-olive-500 hover:text-olive-400">
-                                        feedback form
-                                    </a>{' '}
-                                    or visit our{' '}
+                                    please visit our{' '}
                                     <a href="/privacy" className="text-olive-500 hover:text-olive-400">
                                         Privacy Policy
                                     </a>{' '}
