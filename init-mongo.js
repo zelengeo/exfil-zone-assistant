@@ -16,7 +16,7 @@ db.createCollection('users');
 db.createCollection('accounts');
 db.createCollection('sessions');
 db.createCollection('feedback');
-db.createCollection('verificationtokens');
+db.createCollection('verification_tokens');
 
 // Create indexes
 db.users.createIndex({ email: 1 }, { unique: true });
@@ -27,6 +27,6 @@ db.accounts.createIndex({ userId: 1 });
 db.accounts.createIndex({ providerId: 1, providerAccountId: 1 }, { unique: true });
 db.feedback.createIndex({ userId: 1, createdAt: -1 });
 db.feedback.createIndex({ status: 1, priority: 1 });
-db.verificationtokens.createIndex({ identifier: 1, token: 1 }, { unique: true });
+db.verification_tokens.createIndex({ identifier: 1, token: 1 }, { unique: true });
 
 print('Database initialized with collections and indexes');

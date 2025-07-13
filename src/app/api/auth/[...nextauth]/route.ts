@@ -50,13 +50,13 @@ export const authOptions: NextAuthOptions = {
 
     events: {
         async createUser({ user }) {
+            await connectDB();
             // This fires AFTER the user is created by the adapter
             const baseUsername = generateUsername(user);
             const username = await ensureUniqueUsername(baseUsername);
             console.log(`User ${user.id} created with username ${username}`, user);
 
             // Update the just-created user with custom fields
-            await connectDB();
             await User.findByIdAndUpdate(user.id, {
                 username: username,
                 // Profile
