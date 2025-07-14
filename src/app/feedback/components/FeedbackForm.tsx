@@ -10,7 +10,7 @@ import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from '@/c
 import {Card, CardContent} from '@/components/ui/card';
 import {AlertCircle, CheckCircle2, Send} from 'lucide-react';
 import {Alert, AlertDescription} from '@/components/ui/alert';
-import {FeedbackCategory, FeedbackPriority, FeedbackType} from "@/types/feedback";
+import {FeedbackCategory, FeedbackPriority, FeedbackType} from "@/lib/schemas/feedback";
 
 
 interface FeedbackFormData {

@@ -23,7 +23,7 @@ import {
     EyeOff, RectangleGoggles
 } from "lucide-react";
 import {getUserByUsername} from "@/lib/user";
-import {IFeedback} from "@/types/feedback";
+import {IFeedback} from "@/lib/schemas/feedback";
 
 // Rank configuration (shared with dashboard)
 const rankConfig = {

@@ -1,6 +1,6 @@
 import { connectDB } from '@/lib/mongodb';
 import { User } from '@/models/User';
-import {IUser} from "@/types/user";
+import {IUser} from "@/lib/schemas/user";
 
 export async function getUserByUsername(username: string): Promise<IUser | null> {
     try {

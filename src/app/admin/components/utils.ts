@@ -3,7 +3,8 @@ import {getServerSession} from "next-auth";
 import {authOptions} from "@/app/api/auth/[...nextauth]/route";
 import {connectDB} from "@/lib/mongodb";
 import {User} from "@/models/User";
-import {IUser} from "@/types/user";
+import {IUser} from "@/lib/schemas/user";
+import {AuthenticationError, AuthorizationError} from "@/lib/errors";
 
 export const getStatusBadgeVariant = (status: string) => {
     switch (status) {
@@ -36,39 +37,41 @@ export const getTypeIcon = (type: string) => {
             return MessageSquare;
     }
 };
-
-export async function requireAdmin() {
+export async function requireAuth() {
     const session = await getServerSession(authOptions);
 
     if (!session?.user?.id) {
-        throw new Error('Unauthorized');
+        throw new AuthenticationError();
     }
 
+    return session;
+}
+
+export async function requireAdmin() {
+    const session = await requireAuth();
+
     await connectDB();
-    const user = await User.findById(session.user.id);
+    const user = await User.findById(session.user.id).select('roles').lean<IUser>();
 
     if (!user?.roles?.includes('admin')) {
-        throw new Error('Forbidden');
+        throw new AuthorizationError('Admin access required');
     }
 
     return { session, user };
 }
 
 export async function requireAdminOrModerator() {
-    const session = await getServerSession(authOptions);
-    //FIXME remove log
-    console.log(`GetServerSession at utils`, session);
-
-
-    if (!session?.user?.id) {
-        throw new Error('Unauthorized');
-    }
+    const session = await requireAuth();
 
     await connectDB();
-    const user = await User.findById(session.user.id) as IUser;
+    const user = await User.findById(session.user.id).select('roles').lean<IUser>();
 
-    if (!user?.roles?.some((role) => ['admin', 'moderator'].includes(role))) {
-        throw new Error('Forbidden');
+    const hasPermission = user?.roles?.some(role =>
+        ['admin', 'moderator'].includes(role)
+    );
+
+    if (!hasPermission) {
+        throw new AuthorizationError('Moderator access required');
     }
 
     return { session, user };

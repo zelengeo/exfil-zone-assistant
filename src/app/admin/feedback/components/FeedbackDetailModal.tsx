@@ -28,7 +28,7 @@ import {
     ExternalLink
 } from 'lucide-react';
 import { formatDistanceToNow, format } from 'date-fns';
-import {FeedbackPriority, FeedbackStatus} from "@/types/feedback";
+import
 
 interface FeedbackItem {
     _id: string;

@@ -1,5 +1,6 @@
 // models/User.ts
 import { Schema, model, models } from 'mongoose';
+import {vrHeadsetEnum, locationEnum, rankEnum, rolesEnum} from "@/lib/schemas/user";
 
 const UserSchema = new Schema({
     // Authentication
@@ -8,29 +9,28 @@ const UserSchema = new Schema({
     name: String,
     image: String, // Avatar URL from OAuth provider
 
-    // OAuth connections
-    accounts: [{
-        provider: { type: String },
-        providerAccountId: { type: String },
-        type: { type: String },
-        access_token: String,
-        token_type: String,
-        scope: String,
-        id_token: String,
-        session_state: String,
-    }],
+    // // OAuth connections - accounts have separate schema
+    // accounts: [{
+    //     provider: { type: String },
+    //     providerAccountId: { type: String },
+    //     type: { type: String },
+    //     access_token: String,
+    //     token_type: String,
+    //     scope: String,
+    //     id_token: String,
+    //     session_state: String,
+    // }],
 
     // Profile
     bio: { type: String, maxLength: 500 },
     location: {
         type: String,
-        enum: ['eu','na'],
+        enum: locationEnum,
         default: 'na'
     },
-
     vrHeadset: {
         type: String,
-        enum: ['quest2', 'quest3', 'pico4', 'index', 'vive', 'bigscreen', 'other', null],
+        enum: vrHeadsetEnum,
         default: null
     },
 
@@ -48,7 +48,7 @@ const UserSchema = new Schema({
     level: { type: Number, default: 1 },
     rank: {
         type: String,
-        enum: ['recruit', 'soldier', 'specialist', 'veteran', 'elite'],
+        enum: rankEnum,
         default: 'recruit'
     },
     badges: [{
@@ -61,7 +61,7 @@ const UserSchema = new Schema({
     // Permissions
     roles: [{
         type: String,
-        enum: ['user', 'contributor', 'moderator', 'partner', 'admin'],
+        enum: rolesEnum,
     }],
 
     // Preferences

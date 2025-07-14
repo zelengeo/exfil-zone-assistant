@@ -1,171 +1,96 @@
 // src/app/api/user/update/route.ts
-import { NextRequest, NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
-import { connectDB } from '@/lib/mongodb';
-import { User } from '@/models/User';
+import {NextRequest, NextResponse} from 'next/server';
+import {connectDB} from '@/lib/mongodb';
+import {User} from '@/models/User';
+import {withRateLimit} from "@/lib/middleware";
+import {requireAuth} from "@/app/admin/components/utils";
+import {ConflictError, handleError, NotFoundError} from "@/lib/errors";
+import {userUpdateSchema} from "@/lib/schemas/user";
+import {sanitizeUserInput} from "@/lib/utils";
+import {logger} from "@/lib/logger";
+
 
 export async function PATCH(request: NextRequest) {
-    try {
-        // Check authentication
-        const session = await getServerSession(authOptions);
-        if (!session?.user?.id) {
-            return NextResponse.json(
-                { error: 'Unauthorized' },
-                { status: 401 }
-            );
-        }
+    return withRateLimit(
+        request,
+        async () => {
+            try {
+                const session = await requireAuth();
 
-        // Parse request body
-        const body = await request.json();
-        const {
-            username,
-            bio,
-            location,
-            vrHeadset,
-            preferences,
-        } = body;
+                const body = await request.json();
 
-        // Connect to database
-        await connectDB();
+                // Validate input
+                const validatedData = userUpdateSchema.parse(body);
 
-        // Get current user
-        const currentUser = await User.findById(session.user.id);
-        if (!currentUser) {
-            return NextResponse.json(
-                { error: 'User not found' },
-                { status: 404 }
-            );
-        }
+                // Sanitize text inputs
+                const updates: = {};
+                if (validatedData.username) {
+                    updates.username = sanitizeUserInput(validatedData.username);
+                }
+                if (validatedData.bio) {
+                    updates.bio = sanitizeUserInput(validatedData.bio);
+                }
+                if (validatedData.location) {
+                    updates.location = sanitizeUserInput(validatedData.location);
+                }
+                if (validatedData.vrHeadset) {
+                    updates.vrHeadset = validatedData.vrHeadset;
+                }
+                if (validatedData.preferences) {
+                    updates.preferences = validatedData.preferences;
+                }
 
-        // Validate username if it's being changed
-        if (username && username !== currentUser.username) {
-            // Check username format
-            if (!/^[a-zA-Z0-9_-]{3,20}$/.test(username)) {
-                return NextResponse.json(
-                    {
-                        error: 'Invalid username format',
-                        field: 'username',
-                        details: 'Username must be 3-20 characters long and contain only letters, numbers, underscores, and hyphens'
-                    },
-                    { status: 400 }
-                );
+                await connectDB();
+
+                // Check username uniqueness
+                if (updates.username) {
+                    const existingUser = await User.findOne({
+                        username: updates.username,
+                        _id: { $ne: session.user.id }
+                    });
+
+                    if (existingUser) {
+                        throw new ConflictError('Username already taken');
+                    }
+                }
+
+                // Update user
+                const updatedUser = await User.findByIdAndUpdate(
+                    session.user.id,
+                    { $set: updates },
+                    { new: true, runValidators: true }
+                ).select('-password');
+
+                if (!updatedUser) {
+                    throw new NotFoundError('User');
+                }
+
+                logger.info('User profile updated', {
+                    userId: session.user.id,
+                    updatedFields: Object.keys(updates),
+                });
+
+                return NextResponse.json({
+                    success: true,
+                    user: {
+                        id: updatedUser._id,
+                        username: updatedUser.username,
+                        bio: updatedUser.bio,
+                        location: updatedUser.location,
+                        vrHeadset: updatedUser.vrHeadset,
+                        preferences: updatedUser.preferences,
+                    }
+                });
+
+            } catch (error) {
+                logger.error('User update failed', error, {
+                    path: '/api/user/update',
+                    method: 'PATCH',
+                });
+
+                return handleError(error);
             }
-
-            // Check if username is already taken
-            const existingUser = await User.findOne({
-                username: username.toLowerCase(),
-                _id: { $ne: session.user.id }
-            });
-
-            if (existingUser) {
-                return NextResponse.json(
-                    {
-                        error: 'Username already taken',
-                        field: 'username'
-                    },
-                    { status: 400 }
-                );
-            }
-        }
-
-        // Build update object
-        const updateData: any = {};
-
-        // Profile fields
-        if (username !== undefined) updateData.username = username.toLowerCase();
-        if (bio !== undefined) updateData.bio = bio.slice(0, 500); // Enforce max length
-        if (location !== undefined) updateData.location = location;
-        if (vrHeadset !== undefined) updateData.vrHeadset = vrHeadset;
-
-        // Preferences (merge with existing)
-        if (preferences) {
-            updateData.preferences = {
-                ...currentUser.preferences,
-                ...preferences
-            };
-        }
-
-        // Add update timestamp
-        updateData.updatedAt = new Date();
-
-        // Perform update
-        const updatedUser = await User.findByIdAndUpdate(
-            session.user.id,
-            updateData,
-            {
-                new: true, // Return updated document
-                runValidators: true // Run schema validators
-            }
-        );
-
-        if (!updatedUser) {
-            return NextResponse.json(
-                { error: 'Failed to update user' },
-                { status: 500 }
-            );
-        }
-
-        // Return success with updated data
-        return NextResponse.json({
-            success: true,
-            user: {
-                id: updatedUser._id,
-                username: updatedUser.username,
-                bio: updatedUser.bio,
-                location: updatedUser.location,
-                vrHeadset: updatedUser.vrHeadset,
-                preferences: updatedUser.preferences,
-            }
-        });
-
-    } catch (error) {
-        console.error('User update error:', error);
-
-        // Handle mongoose validation errors
-        if (error instanceof Error && error.name === 'ValidationError') {
-            return NextResponse.json(
-                { error: 'Validation failed', details: error.message },
-                { status: 400 }
-            );
-        }
-
-        return NextResponse.json(
-            { error: 'Internal server error' },
-            { status: 500 }
-        );
-    }
-}
-
-// Optional: Add GET endpoint to fetch current user data
-export async function GET() {
-    try {
-        const session = await getServerSession(authOptions);
-        if (!session?.user?.id) {
-            return NextResponse.json(
-                { error: 'Unauthorized' },
-                { status: 401 }
-            );
-        }
-
-        await connectDB();
-        const user = await User.findById(session.user.id).select(
-            'username bio location vrHeadset preferences stats rank level badges'
-        );
-
-        if (!user) {
-            return NextResponse.json(
-                { error: 'User not found' },
-                { status: 404 }
-            );
-        }
-
-        return NextResponse.json({ user });
-    } catch (error) {
-        console.error('User fetch error:', error);
-        return NextResponse.json(
-            { error: 'Internal server error' },
-            { status: 500 }
-        );
-    }
+        },
+        'userUpdate'
+    );
 }

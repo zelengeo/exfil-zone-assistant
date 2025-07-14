@@ -6,6 +6,9 @@ import {Session} from "@/models/Session";
 import {Account} from "@/models/Account";
 import {Feedback} from "@/models/Feedback";
 import {requireAdmin} from "@/app/admin/components/utils";
+import mongoose, {isValidObjectId} from "mongoose";
+import {AuthorizationError, ConflictError, handleError, NotFoundError, ValidationError} from "@/lib/errors";
+import {logger} from "@/lib/logger";
 
 // GET /api/admin/users/[id] - Get single user details
 export async function GET(
@@ -16,32 +19,28 @@ export async function GET(
         await requireAdmin();
         await connectDB();
 
+        // Validate ObjectId format
+        if (!isValidObjectId(params.id)) {
+            throw new ValidationError('Invalid user ID format');
+        }
+
         const user = await User.findById(params.id)
-            .select('-password')
+            // .select('-password')
             .lean();
 
         if (!user) {
-            return Response.json({ error: 'User not found' }, { status: 404 });
+            throw new NotFoundError('User');
         }
 
         return Response.json({ user });
 
     } catch (error) {
-        console.error('Admin get user error:', error);
+        logger.error('Failed to get user', error, {
+            path: `/api/admin/users/${params.id}`,
+            method: 'GET',
+        });
 
-        if (error instanceof Error) {
-            if (error.message === 'Unauthorized') {
-                return Response.json({ error: 'Unauthorized' }, { status: 401 });
-            }
-            if (error.message === 'Forbidden') {
-                return Response.json({ error: 'Forbidden' }, { status: 403 });
-            }
-        }
-
-        return Response.json(
-            { error: 'Failed to get user' },
-            { status: 500 }
-        );
+        return handleError(error);
     }
 }
 
@@ -51,76 +50,75 @@ export async function DELETE(
     { params }: { params: { id: string } }
 ) {
     try {
-        const { user: currentUser } = await requireAdmin();
-        await connectDB();
+        const { session } = await requireAdmin();
 
-        // Prevent self-deletion
-        if (currentUser._id.toString() === params.id) {
-            return Response.json(
-                { error: 'Cannot delete your own account' },
-                { status: 400 }
-            );
+        // Validate ObjectId format
+        if (!isValidObjectId(params.id)) {
+            throw new ValidationError('Invalid user ID format');
         }
 
+        // Prevent self-deletion
+        if (session?.user?.id.toString() === params.id) {
+            throw new ConflictError('Cannot delete your own account');
+        }
+
+        await connectDB();
         const userToDelete = await User.findById(params.id);
 
         if (!userToDelete) {
-            return Response.json({ error: 'User not found' }, { status: 404 });
+            throw new NotFoundError('User');
         }
 
         // Prevent deletion of other admins by non-super-admin
-        if (userToDelete.roles?.includes('admin') && !currentUser.roles?.includes('super-admin')) {
-            return Response.json(
-                { error: 'Cannot delete other admin accounts' },
-                { status: 403 }
-            );
+        if (userToDelete.roles?.includes('admin')) {
+            throw new AuthorizationError('Cannot delete other admin accounts')
         }
 
-        // Delete user's feedback (or anonymize it)
-        await Feedback.updateMany(
-            { userId: params.id },
-            {
-                $set: {
-                    userId: null,
-                    isAnonymous: true
-                }
-            }
-        );
+        // Start transaction
+        const mongooseSession = await mongoose.startSession();
+        mongooseSession.startTransaction();
 
-        // Delete user sessions
-        await Session.deleteMany({ userId: params.id });
+        try {
+            // Anonymize feedback instead of deleting
+            await Feedback.updateMany(
+                { userId: params.id },
+                { $set: { userId: null, isAnonymous: true } },
+                { session: mongooseSession }
+            );
 
-        // Delete user accounts (OAuth connections)
-        await Account.deleteMany({ userId: params.id });
+            // Delete user data
+            await Promise.all([
+                Session.deleteMany({ userId: params.id }, { session: mongooseSession }),
+                Account.deleteMany({ userId: params.id }, { session: mongooseSession }),
+                User.findByIdAndDelete(params.id, { session: mongooseSession }),
+            ]);
 
+            await mongooseSession.commitTransaction();
 
-        // Delete the user
-        await User.findByIdAndDelete(params.id);
+            logger.info('User deleted', {
+                deletedUserId: params.id,
+                deletedBy: session.user.id.toString() ,
+            });
 
-        // Log the deletion
-        console.log(`🗑️ User deleted: ${userToDelete.username} (${userToDelete.email}) by ${currentUser.username}`);
+            return Response.json({
+                success: true,
+                message: 'User account deleted successfully',
+            });
 
-        return Response.json({
-            success: true,
-            message: 'User deleted successfully'
-        });
+        } catch (error) {
+            await mongooseSession.abortTransaction();
+            throw error;
+        } finally {
+            await mongooseSession.endSession();
+        }
 
     } catch (error) {
-        console.error('Admin delete user error:', error);
+        logger.error('Failed to delete user', error, {
+            path: `/api/admin/users/${params.id}`,
+            method: 'DELETE',
+        });
 
-        if (error instanceof Error) {
-            if (error.message === 'Unauthorized') {
-                return Response.json({ error: 'Unauthorized' }, { status: 401 });
-            }
-            if (error.message === 'Forbidden') {
-                return Response.json({ error: 'Forbidden' }, { status: 403 });
-            }
-        }
-
-        return Response.json(
-            { error: 'Failed to delete user' },
-            { status: 500 }
-        );
+        return handleError(error);
     }
 }
 

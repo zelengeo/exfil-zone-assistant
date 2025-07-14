@@ -7,8 +7,8 @@ import Layout from '@/components/layout/Layout';
 import { User } from "@/models/User";
 import { Feedback } from "@/models/Feedback";
 import { connectDB } from "@/lib/mongodb";
-import { IUser } from "@/types/user";
-import { IFeedback } from '@/types/feedback';
+import { IUser } from "@/lib/schemas/user";
+import { IFeedback } from '@/lib/schemas/feedback';
 import {
     Trophy,
     Bug,
