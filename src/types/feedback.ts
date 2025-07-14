@@ -23,6 +23,7 @@ export interface IFeedback {
     priority: FeedbackPriority;
     title: string;
     description: string;
+    adminNotes?: string;
     category: FeedbackCategory;
     userId?: Types.ObjectId;
     isAnonymous: boolean;

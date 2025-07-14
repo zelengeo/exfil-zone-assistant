@@ -1,10 +1,8 @@
 // src/app/api/admin/users/[id]/roles/route.ts
 import { NextRequest } from 'next/server';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { connectDB } from '@/lib/mongodb';
 import { User } from '@/models/User';
-import {IUser} from "@/types/user";
+import {requireAdminOrModerator} from "@/app/admin/components/utils";
 
 // Helper function to validate roles
 const VALID_ROLES = ['user', 'contributor', 'moderator', 'partner', 'admin'];
@@ -23,23 +21,6 @@ function canAssignRole(currentUserRoles: string[], targetRole: string): boolean 
 
     // Can only assign roles below your level (admins can assign admin)
     return currentMaxLevel >= targetLevel;
-}
-
-async function requireAdminOrModerator() {
-    const session = await getServerSession(authOptions);
-
-    if (!session?.user?.id) {
-        throw new Error('Unauthorized');
-    }
-
-    await connectDB();
-    const user = await User.findById(session.user.id) as IUser;
-
-    if (!user?.roles?.some((role) => ['admin', 'moderator'].includes(role))) {
-        throw new Error('Forbidden');
-    }
-
-    return { session, user };
 }
 
 // PATCH /api/admin/users/[id]/roles - Update user roles

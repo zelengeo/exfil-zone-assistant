@@ -20,6 +20,7 @@ const FeedbackSchema = new Schema({
 
     title: { type: String, required: true, maxLength: 200 },
     description: { type: String, required: true, maxLength: 5000 },
+    adminNotes: { type: String, required: true, maxLength: 5000 },
     category: {
         type: String,
         enum: ['items', 'tasks', 'hideout', 'combat-sim', 'guides', 'ui', 'other']

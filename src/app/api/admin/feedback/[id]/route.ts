@@ -1,28 +1,11 @@
 // src/app/api/admin/feedback/[id]/route.ts
 import { NextRequest } from 'next/server';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { connectDB } from '@/lib/mongodb';
 import { Feedback } from '@/models/Feedback';
 import { User } from '@/models/User';
+import {requireAdmin} from "@/app/admin/components/utils";
 
-// Helper function to check admin access
-async function requireAdmin() {
-    const session = await getServerSession(authOptions);
 
-    if (!session?.user?.id) {
-        throw new Error('Unauthorized');
-    }
-
-    await connectDB();
-    const user = await User.findById(session.user.id);
-
-    if (!user?.roles?.includes('admin')) {
-        throw new Error('Forbidden');
-    }
-
-    return { session, user };
-}
 
 // GET /api/admin/feedback/[id] - Get specific feedback item
 export async function GET(
