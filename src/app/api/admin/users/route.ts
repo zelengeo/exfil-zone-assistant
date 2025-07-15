@@ -1,198 +1,179 @@
 // src/app/api/admin/users/route.ts
-import { NextRequest } from 'next/server';
-import { connectDB } from '@/lib/mongodb';
-import { User } from '@/models/User';
-import {requireAdminOrModerator} from "@/app/admin/components/utils";
+import {NextRequest} from 'next/server';
+import {connectDB} from '@/lib/mongodb';
+import {User} from '@/models/User';
+import {requireAdmin, requireAdminOrModerator} from "@/app/admin/components/utils";
+import {withRateLimit} from "@/lib/middleware";
+import {adminStatsRequestSchema, adminUsersQuerySchema} from "@/lib/schemas/user";
+import {logger} from "@/lib/logger";
+import {handleError, ValidationError} from "@/lib/errors";
 
 
 // GET /api/admin/users - Get users list with filtering and pagination
 export async function GET(request: NextRequest) {
-    try {
-        await requireAdminOrModerator();
-        await connectDB();
+    return withRateLimit(
+        request,
+        async () => {
+            try {
+                await requireAdmin();
+                await connectDB();
 
-        // Parse query parameters
-        const searchParams = request.nextUrl.searchParams;
-        const page = parseInt(searchParams.get('page') || '1');
-        const limit = parseInt(searchParams.get('limit') || '10');
-        const search = searchParams.get('search') || '';
-        const role = searchParams.get('role') || '';
-        const sortBy = searchParams.get('sortBy') || 'createdAt';
-        const sortOrder = searchParams.get('sortOrder') || 'desc';
+                // Parse and validate query params
+                const searchParams = Object.fromEntries(
+                    request.nextUrl.searchParams.entries()
+                );
 
-        // Build query
-        const query: any = {};
+                const query = adminUsersQuerySchema.parse(searchParams);
 
-        // Search by username or email
-        if (search) {
-            query.$or = [
-                { username: { $regex: search, $options: 'i' } },
-                { email: { $regex: search, $options: 'i' } }
-            ];
-        }
+                // Build MongoDB query
+                const filter: any = {};
+                if (query.search) {
+                    filter.$or = [
+                        {username: {$regex: query.search, $options: 'i'}},
+                        {email: {$regex: query.search, $options: 'i'}}
+                    ];
+                }
+                if (query.role) filter.roles = query.role;
+                if (query.rank) filter.rank = query.rank;
 
-        // Filter by role
-        if (role && role !== 'all') {
-            query.roles = role;
-        }
+                // Execute query with pagination
+                const sort: any = {};
+                if (query.sortBy) {
+                    sort[query.sortBy] = query.order === 'desc' ? -1 : 1;
+                } else {
+                    sort.createdAt = -1;
+                }
 
-        // Calculate pagination
-        const skip = (page - 1) * limit;
+                const [users, total] = await Promise.all([
+                    User.find(filter)
+                        .sort(sort)
+                        .limit(query.limit)
+                        .skip((query.page - 1) * query.limit)
+                        .select('username email roles rank stats.contributionPoints createdAt lastLoginAt')
+                        .lean(),
+                    User.countDocuments(filter)
+                ]);
 
-        // Build sort object
-        const sort: any = {};
-        sort[sortBy] = sortOrder === 'desc' ? -1 : 1;
+                return Response.json({
+                    users,
+                    pagination: {
+                        page: query.page,
+                        limit: query.limit,
+                        total,
+                        pages: Math.ceil(total / query.limit)
+                    }
+                });
 
-        // Execute queries
-        const [users, totalCount] = await Promise.all([
-            User.find(query)
-                .select('username email roles rank stats.contributionPoints createdAt lastLoginAt profileImage bio')
-                .sort(sort)
-                .skip(skip)
-                .limit(limit)
-                .lean(),
-            User.countDocuments(query)
-        ]);
-
-        // Calculate pagination info
-        const totalPages = Math.ceil(totalCount / limit);
-        const hasNextPage = page < totalPages;
-        const hasPrevPage = page > 1;
-
-        return Response.json({
-            users,
-            pagination: {
-                page,
-                limit,
-                total: totalCount,
-                pages: totalPages,
-                hasNextPage,
-                hasPrevPage
+            } catch (error) {
+                logger.error('Admin users list error:', error, {
+                    path: '/api/admin/users',
+                    method: 'GET',
+                });
+                return handleError(error);
             }
-        });
-
-    } catch (error) {
-        console.error('Admin users GET error:', error);
-
-        if (error instanceof Error) {
-            if (error.message === 'Unauthorized') {
-                return Response.json({ error: 'Unauthorized' }, { status: 401 });
-            }
-            if (error.message === 'Forbidden') {
-                return Response.json({ error: 'Forbidden' }, { status: 403 });
-            }
-        }
-
-        return Response.json(
-            { error: 'Failed to fetch users' },
-            { status: 500 }
-        );
-    }
+        },
+        'admin'
+    );
 }
+
 
 // GET /api/admin/users/stats - Get user statistics
 export async function POST(request: NextRequest) {
-    try {
-        await requireAdminOrModerator();
-        await connectDB();
+    return withRateLimit(
+        request,
+        async () => {
+            try {
+                await requireAdminOrModerator();
+                await connectDB();
 
-        const body = await request.json();
-        const { type } = body;
+                const body = await request.json();
+                const validatedData = adminStatsRequestSchema.parse(body);
 
-        if (type === 'stats') {
-            // Get role distribution and other stats
-            const [
-                totalUsers,
-                activeUsers30d,
-                activeUsers7d,
-                activeUsers1d,
-                newUsers30d,
-                roleDistribution,
-                rankDistribution
-            ] = await Promise.all([
-                User.countDocuments(),
-                User.countDocuments({
-                    lastLoginAt: { $gte: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) }
-                }),
-                User.countDocuments({
-                    lastLoginAt: { $gte: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000) }
-                }),
-                User.countDocuments({
-                    lastLoginAt: { $gte: new Date(Date.now() - 24 * 60 * 60 * 1000) }
-                }),
-                User.countDocuments({
-                    createdAt: { $gte: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) }
-                }),
-                User.aggregate([
-                    { $unwind: '$roles' },
-                    { $group: { _id: '$roles', count: { $sum: 1 } } },
-                    { $sort: { count: -1 } }
-                ]),
-                User.aggregate([
-                    { $group: { _id: '$rank', count: { $sum: 1 } } },
-                    { $sort: { count: -1 } }
-                ])
-            ]);
+                if (validatedData.type === 'stats') {
+                    // Get role distribution and other stats
+                    const [
+                        totalUsers,
+                        activeUsers30d,
+                        activeUsers7d,
+                        activeUsers1d,
+                        newUsers30d,
+                        roleDistribution,
+                        rankDistribution
+                    ] = await Promise.all([
+                        User.countDocuments(),
+                        User.countDocuments({
+                            lastLoginAt: {$gte: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)}
+                        }),
+                        User.countDocuments({
+                            lastLoginAt: {$gte: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)}
+                        }),
+                        User.countDocuments({
+                            lastLoginAt: {$gte: new Date(Date.now() - 24 * 60 * 60 * 1000)}
+                        }),
+                        User.countDocuments({
+                            createdAt: {$gte: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000)}
+                        }),
+                        User.aggregate([
+                            {$unwind: '$roles'},
+                            {$group: {_id: '$roles', count: {$sum: 1}}},
+                            {$sort: {count: -1}}
+                        ]),
+                        User.aggregate([
+                            {$group: {_id: '$rank', count: {$sum: 1}}},
+                            {$sort: {count: -1}}
+                        ])
+                    ]);
 
-            return Response.json({
-                stats: {
-                    totalUsers,
-                    activeUsers: {
-                        last30Days: activeUsers30d,
-                        last7Days: activeUsers7d,
-                        last24Hours: activeUsers1d
-                    },
-                    newUsers30d,
-                    roleDistribution: roleDistribution.reduce((acc, item) => {
-                        acc[item._id] = item.count;
-                        return acc;
-                    }, {}),
-                    rankDistribution: rankDistribution.reduce((acc, item) => {
-                        acc[item._id] = item.count;
-                        return acc;
-                    }, {})
+                    return Response.json({
+                        stats: {
+                            totalUsers,
+                            activeUsers: {
+                                last30Days: activeUsers30d,
+                                last7Days: activeUsers7d,
+                                last24Hours: activeUsers1d
+                            },
+                            newUsers30d,
+                            roleDistribution: roleDistribution.reduce((acc, item) => {
+                                acc[item._id] = item.count;
+                                return acc;
+                            }, {}),
+                            rankDistribution: rankDistribution.reduce((acc, item) => {
+                                acc[item._id] = item.count;
+                                return acc;
+                            }, {})
+                        }
+                    });
                 }
-            });
-        }
 
-        // Search users for autocomplete
-        if (type === 'search') {
-            const { query } = body;
+                // Search users for autocomplete
+                if (validatedData.type === 'search') {
 
-            if (!query || query.length < 2) {
-                return Response.json({ users: [] });
+                    if (!validatedData.query || validatedData.query.length < 2) {
+                        throw new ValidationError('Search query must be at least 2 characters');
+                    }
+
+                    const users = await User.find({
+                        $or: [
+                            {username: {$regex: validatedData.query, $options: 'i'}},
+                            {email: {$regex: validatedData.query, $options: 'i'}}
+                        ]
+                    })
+                        .select('username email roles rank')
+                        .limit(10)
+                        .lean();
+
+                    return Response.json({users});
+                }
+
+                throw new ValidationError('Invalid request type');
+            } catch (error) {
+                logger.error('Admin users action error:', error, {
+                    path: '/api/admin/users',
+                    method: 'POST',
+                });
+                return handleError(error);
             }
-
-            const users = await User.find({
-                $or: [
-                    { username: { $regex: query, $options: 'i' } },
-                    { email: { $regex: query, $options: 'i' } }
-                ]
-            })
-                .select('username email roles rank')
-                .limit(10)
-                .lean();
-
-            return Response.json({ users });
-        }
-
-        return Response.json({ error: 'Invalid request type' }, { status: 400 });
-
-    } catch (error) {
-        console.error('Admin users POST error:', error);
-
-        if (error instanceof Error) {
-            if (error.message === 'Unauthorized') {
-                return Response.json({ error: 'Unauthorized' }, { status: 401 });
-            }
-            if (error.message === 'Forbidden') {
-                return Response.json({ error: 'Forbidden' }, { status: 403 });
-            }
-        }
-
-        return Response.json(
-            { error: 'Failed to process request' },
-            { status: 500 }
-        );
-    }
+        },
+        "admin"
+    )
 }

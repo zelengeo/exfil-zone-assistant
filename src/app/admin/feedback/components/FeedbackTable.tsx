@@ -35,28 +35,8 @@ import {
 } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
 import { FeedbackDetailModal } from './FeedbackDetailModal';
+import {IFeedback} from "@/lib/schemas/feedback";
 
-interface FeedbackItem {
-    _id: string;
-    type: 'bug' | 'feature' | 'data_correction';
-    status: 'new' | 'in_review' | 'accepted' | 'rejected' | 'implemented' | 'duplicate';
-    priority: 'low' | 'medium' | 'high' | 'critical';
-    title: string;
-    description: string;
-    category?: string;
-    userId?: {
-        _id: string;
-        username: string;
-        avatarUrl?: string;
-        email: string;
-    } | null;
-    isAnonymous: boolean;
-    sessionId?: string;
-    pageUrl?: string;
-    userAgent?: string;
-    createdAt: string;
-    updatedAt: string;
-}
 
 interface Pagination {
     page: number;
@@ -68,13 +48,13 @@ interface Pagination {
 }
 
 interface FeedbackTableProps {
-    feedback: FeedbackItem[];
+    feedback: IFeedback[];
     pagination: Pagination;
 }
 
 export function FeedbackTable({ feedback, pagination }: FeedbackTableProps) {
     const router = useRouter();
-    const [selectedFeedback, setSelectedFeedback] = useState<FeedbackItem | null>(null);
+    const [selectedFeedback, setSelectedFeedback] = useState<IFeedback | null>(null);
     const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
 
     const getTypeIcon = (type: string) => {
@@ -138,7 +118,7 @@ export function FeedbackTable({ feedback, pagination }: FeedbackTableProps) {
         }
     };
 
-    const openDetailModal = (feedback: FeedbackItem) => {
+    const openDetailModal = (feedback: IFeedback) => {
         setSelectedFeedback(feedback);
         setIsDetailModalOpen(true);
     };
@@ -168,7 +148,7 @@ export function FeedbackTable({ feedback, pagination }: FeedbackTableProps) {
                     <TableBody>
                         {feedback.map((item) => (
                             <TableRow
-                                key={item._id}
+                                key={item._id.toString()}
                                 className="border-military-600 hover:bg-military-700/50 cursor-pointer"
                                 onClick={() => openDetailModal(item)}
                             >
@@ -199,22 +179,19 @@ export function FeedbackTable({ feedback, pagination }: FeedbackTableProps) {
                                     {getPriorityBadge(item.priority)}
                                 </TableCell>
                                 <TableCell className="py-3">
-                                    {item.isAnonymous ? (
-                                        <span className="text-tan-500 text-sm">Anonymous</span>
-                                    ) : (
-                                        <div className="flex items-center gap-2">
-                                            {item.userId?.avatarUrl && (
-                                                <img
-                                                    src={item.userId.avatarUrl}
-                                                    alt=""
-                                                    className="w-6 h-6 rounded-full"
-                                                />
-                                            )}
-                                            <span className="text-tan-300 text-sm">
-                                                {item.userId?.username || 'Unknown'}
-                                            </span>
-                                        </div>
-                                    )}
+                                    <div className="flex items-center gap-2">
+                                        {   //TODO load users for that
+                                            /*item.userId?.avatarUrl && (
+                                            <img
+                                                src={item.userId.avatarUrl}
+                                                alt=""
+                                                className="w-6 h-6 rounded-full"
+                                            />
+                                        )*/}
+                                        <span className="text-tan-300 text-sm">
+                                            {/*item.userId?.username ||*/'Unknown'}
+                                        </span>
+                                    </div>
                                 </TableCell>
                                 <TableCell className="py-3">
                                     <span className="text-tan-400 text-sm">
@@ -252,7 +229,7 @@ export function FeedbackTable({ feedback, pagination }: FeedbackTableProps) {
                                                 <DropdownMenuItem
                                                     onClick={(e) => {
                                                         e.stopPropagation();
-                                                        handleStatusChange(item._id, 'in_review');
+                                                        handleStatusChange(item._id.toString(), 'in_review');
                                                     }}
                                                     className="text-tan-300 focus:bg-military-700"
                                                 >
@@ -266,7 +243,7 @@ export function FeedbackTable({ feedback, pagination }: FeedbackTableProps) {
                                                     <DropdownMenuItem
                                                         onClick={(e) => {
                                                             e.stopPropagation();
-                                                            handleStatusChange(item._id, 'accepted');
+                                                            handleStatusChange(item._id.toString(), 'accepted');
                                                         }}
                                                         className="text-green-400 focus:bg-military-700"
                                                     >
@@ -276,7 +253,7 @@ export function FeedbackTable({ feedback, pagination }: FeedbackTableProps) {
                                                     <DropdownMenuItem
                                                         onClick={(e) => {
                                                             e.stopPropagation();
-                                                            handleStatusChange(item._id, 'rejected');
+                                                            handleStatusChange(item._id.toString(), 'rejected');
                                                         }}
                                                         className="text-red-400 focus:bg-military-700"
                                                     >
@@ -290,7 +267,7 @@ export function FeedbackTable({ feedback, pagination }: FeedbackTableProps) {
                                                 <DropdownMenuItem
                                                     onClick={(e) => {
                                                         e.stopPropagation();
-                                                        handleStatusChange(item._id, 'implemented');
+                                                        handleStatusChange(item._id.toString(), 'implemented');
                                                     }}
                                                     className="text-blue-400 focus:bg-military-700"
                                                 >

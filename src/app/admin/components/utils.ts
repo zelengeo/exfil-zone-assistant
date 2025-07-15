@@ -4,7 +4,7 @@ import {authOptions} from "@/app/api/auth/[...nextauth]/route";
 import {connectDB} from "@/lib/mongodb";
 import {User} from "@/models/User";
 import {IUser} from "@/lib/schemas/user";
-import {AuthenticationError, AuthorizationError} from "@/lib/errors";
+import {AuthenticationError, AuthorizationError, NotFoundError} from "@/lib/errors";
 
 export const getStatusBadgeVariant = (status: string) => {
     switch (status) {
@@ -51,7 +51,7 @@ export async function requireAdmin() {
     const session = await requireAuth();
 
     await connectDB();
-    const user = await User.findById(session.user.id).select('roles').lean<IUser>();
+    const user = await User.findById(session.user.id).lean<IUser>();
 
     if (!user?.roles?.includes('admin')) {
         throw new AuthorizationError('Admin access required');

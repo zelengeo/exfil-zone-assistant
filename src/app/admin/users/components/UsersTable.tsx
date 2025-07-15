@@ -66,7 +66,6 @@ interface UserData {
     profileImage?: string;
     bio?: string;
     createdAt: string;
-    lastLoginAt?: string;
 }
 
 const ITEMS_PER_PAGE = 10;
@@ -228,7 +227,6 @@ export function UsersTable() {
                     <SelectContent className="bg-military-800 border-military-700">
                         <SelectItem value="createdAt-desc">Newest First</SelectItem>
                         <SelectItem value="createdAt-asc">Oldest First</SelectItem>
-                        <SelectItem value="lastLoginAt-desc">Recently Active</SelectItem>
                         <SelectItem value="username-asc">Username A-Z</SelectItem>
                         <SelectItem value="username-desc">Username Z-A</SelectItem>
                         <SelectItem value="stats.contributionPoints-desc">Most Contributions</SelectItem>
@@ -319,12 +317,6 @@ export function UsersTable() {
                                             <div className="text-tan-300">
                                                 Joined {new Date(user.createdAt).toLocaleDateString()}
                                             </div>
-                                            {user.lastLoginAt && (
-                                                <div className="text-tan-500 flex items-center gap-1">
-                                                    <Clock className="h-3 w-3" />
-                                                    {new Date(user.lastLoginAt).toLocaleDateString()}
-                                                </div>
-                                            )}
                                         </div>
                                     </TableCell>
                                     <TableCell className="text-right">

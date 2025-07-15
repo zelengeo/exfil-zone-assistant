@@ -28,32 +28,11 @@ import {
     ExternalLink
 } from 'lucide-react';
 import { formatDistanceToNow, format } from 'date-fns';
-import
+import {FeedbackPriority, FeedbackStatus, IFeedback} from "@/lib/schemas/feedback";
 
-interface FeedbackItem {
-    _id: string;
-    type: 'bug' | 'feature' | 'data_correction';
-    status: 'new' | 'in_review' | 'accepted' | 'rejected' | 'implemented' | 'duplicate';
-    priority: 'low' | 'medium' | 'high' | 'critical';
-    title: string;
-    description: string;
-    category?: string;
-    userId?: {
-        _id: string;
-        username: string;
-        avatarUrl?: string;
-        email: string;
-    } | null;
-    isAnonymous: boolean;
-    sessionId?: string;
-    pageUrl?: string;
-    userAgent?: string;
-    createdAt: string;
-    updatedAt: string;
-}
 
 interface FeedbackDetailModalProps {
-    feedback: FeedbackItem;
+    feedback: IFeedback;
     isOpen: boolean;
     onClose: () => void;
     onStatusChange: (feedbackId: string, newStatus: string) => Promise<void>;
@@ -129,7 +108,7 @@ export function FeedbackDetailModal({
             }
 
             // Trigger parent component refresh
-            await onStatusChange(feedback._id, selectedStatus);
+            await onStatusChange(feedback._id.toString(), selectedStatus);
             onClose();
         } catch (error) {
             console.error('Error saving changes:', error);
@@ -170,7 +149,7 @@ export function FeedbackDetailModal({
                                     {feedback.title}
                                 </DialogTitle>
                                 <DialogDescription className="text-tan-400 mt-1">
-                                    Feedback ID: {feedback._id}
+                                    Feedback ID: {feedback._id.toString()}
                                 </DialogDescription>
                             </div>
                         </div>
@@ -216,17 +195,8 @@ export function FeedbackDetailModal({
                                 <User className="h-4 w-4" />
                                 Submitted By
                             </h3>
-
-                            {feedback.isAnonymous ? (
-                                <div className="space-y-2">
-                                    <p className="text-tan-400">Anonymous User</p>
-                                    {feedback.sessionId && (
-                                        <p className="text-xs text-tan-500">
-                                            Session: {feedback.sessionId.slice(-8)}
-                                        </p>
-                                    )}
-                                </div>
-                            ) : feedback.userId ? (
+                            {   //FIXME load users
+                                /*feedback.userId ? (
                                 <div className="flex items-center gap-3">
                                     {feedback.userId.avatarUrl && (
                                         <img
@@ -244,9 +214,8 @@ export function FeedbackDetailModal({
                                         </p>
                                     </div>
                                 </div>
-                            ) : (
-                                <p className="text-tan-400">Unknown User</p>
-                            )}
+                            ) */}
+                            <p className="text-tan-400">Unknown User</p>
                         </div>
 
                         <div className="space-y-4">

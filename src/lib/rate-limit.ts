@@ -15,35 +15,31 @@ export interface RateLimitConfig {
 
 // Default configurations for different endpoints
 export const RATE_LIMIT_CONFIGS = {
-    // Anonymous feedback: 5 per hour
-    feedbackAnonymous: {
-        interval: 60 * 60, // 1 hour
-        uniqueTokenPerInterval: 5,
-    },
-    // Authenticated feedback: 20 per hour
+
+    // Authenticated feedback: 30 per hour
     feedbackAuthenticated: {
         interval: 60 * 60,
-        uniqueTokenPerInterval: 20,
+        uniqueTokenPerInterval: 30,
     },
     // User updates: 3 per day
     userUpdate: {
         interval: 60 * 60 * 24,
         uniqueTokenPerInterval: 3,
     },
-    // Auth attempts: 5 per 15 minutes //FIXME REMOVE
+    // Auth attempts: 5 per 15 minutes
     auth: {
         interval: 60 * 15,
         uniqueTokenPerInterval: 5,
     },
-    // Admin actions: 100 per minute
+    // Admin actions: 50 per minute
     admin: {
         interval: 60,
-        uniqueTokenPerInterval: 100,
+        uniqueTokenPerInterval: 50,
     },
-    // General API: 60 per minute
+    // General API: 30 per minute
     api: {
         interval: 60,
-        uniqueTokenPerInterval: 60,
+        uniqueTokenPerInterval: 30,
     },
 } as const;
 

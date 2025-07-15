@@ -6,20 +6,8 @@ const UserSchema = new Schema({
     // Authentication
     email: { type: String, required: true, unique: true },
     username: { type: String, required: true, unique: true, sparse: true },
-    name: String,
-    image: String, // Avatar URL from OAuth provider
-
-    // // OAuth connections - accounts have separate schema
-    // accounts: [{
-    //     provider: { type: String },
-    //     providerAccountId: { type: String },
-    //     type: { type: String },
-    //     access_token: String,
-    //     token_type: String,
-    //     scope: String,
-    //     id_token: String,
-    //     session_state: String,
-    // }],
+    displayName: String,
+    image: String,
 
     // Profile
     bio: { type: String, maxLength: 500 },
@@ -79,6 +67,18 @@ const UserSchema = new Schema({
     isBanned: { type: Boolean, default: false },
     banReason: String,
 });
+
+
+// UserSchema.virtual('displayName').get(function() {
+//     return this.username || this.name || this.email.split('@')[0];
+// });
+//
+// UserSchema.path('email').validate({
+//     validator: function(email: string) {
+//         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+//     },
+//     message: 'Invalid email format'
+// });
 
 // Ensure we don't re-compile the model
 export const User = models.User || model('User', UserSchema);

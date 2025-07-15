@@ -1,4 +1,6 @@
 import { z } from 'zod';
+import {Types} from "mongoose";
+import {feedbackBaseSchema} from "@/lib/schemas/feedback";
 
 export const locationEnum = ['eu', 'na'] as const;
 export const vrHeadsetEnum = ['quest2', 'quest3', 'pico4', 'index', 'vive', 'bigscreen', 'other'] as const;
@@ -11,7 +13,7 @@ export const userBaseSchema = z.object({
     // Authentication
     email: z.email(),
     username: z.string().min(3).max(20).regex(/^[a-z0-9_-]+$/),
-    name: z.string().min(3).max(20).regex(/^[a-zA-Z0-9_-]+$/),
+    displayName: z.string().min(3).max(20).regex(/^[a-zA-Z0-9_-]+$/),
     image: z.url().optional(), // Avatar URL from OAuth provider
 
 
@@ -63,6 +65,13 @@ export const userBaseSchema = z.object({
     banReason: z.string().optional(),
 });
 
+export const userDocumentSchema = userBaseSchema.extend({
+    _id: z.union([
+        z.string(), // When returned from API as string
+        z.instanceof(Types.ObjectId), // When working with Mongoose directly
+    ]),
+});
+
 export const userRoleUpdateSchema = z.object({
     action: z.enum(['add', 'remove']),
     role: z.enum(rolesEnum),
@@ -70,11 +79,26 @@ export const userRoleUpdateSchema = z.object({
 });
 
 export const userUpdateSchema = userBaseSchema.pick({
-    username: true,
+    displayName: true,
     bio: true,
     location: true,
     vrHeadset: true,
     preferences: true,
+});
+
+export const adminUserUpdateSchema = userBaseSchema.pick({
+    displayName: true,
+    email: true,
+    username: true,
+    rank: true,
+    roles: true,
+    bio: true,
+    isBanned: true,
+    banReason: true,
+});
+
+export const userUsernameUpdateSchema = userBaseSchema.pick({
+    username: true,
 });
 
 
@@ -98,6 +122,8 @@ export const adminStatsRequestSchema = z.object({
 
 export type UserRoleUpdateInput = z.infer<typeof userRoleUpdateSchema>;
 export type UserUpdateInput = z.infer<typeof userUpdateSchema>;
+export type AdminUserUpdateInput = z.infer<typeof adminUserUpdateSchema>;
+export type UserUsernameUpdateInput = z.infer<typeof userUsernameUpdateSchema>;
 export type AdminUsersQueryInput = z.infer<typeof adminUsersQuerySchema>;
 export type AdminStatsRequestInput = z.infer<typeof adminStatsRequestSchema>;
 
@@ -106,4 +132,4 @@ export type UserVrHeadset = (typeof vrHeadsetEnum)[number];
 export type UserRank = (typeof rankEnum)[number];
 export type UserRoles = (typeof rolesEnum)[number];
 
-export type IUser = z.infer<typeof userBaseSchema>;
+export type IUser = z.infer<typeof userDocumentSchema>;

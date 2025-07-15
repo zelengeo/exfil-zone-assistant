@@ -1,31 +1,27 @@
 import { ReactNode } from 'react';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { redirect } from 'next/navigation';
-import { connectDB } from '@/lib/mongodb';
-import { User } from '@/models/User';
 import Layout from '@/components/layout/Layout';
 import { AdminSidebar } from './components/AdminSidebar';
+import {requireAdmin} from "@/app/admin/components/utils";
+import {AuthenticationError, AuthorizationError} from "@/lib/errors";
 
 interface AdminLayoutProps {
     children: ReactNode;
 }
 
 export default async function AdminLayout({ children }: AdminLayoutProps) {
-    const session = await getServerSession(authOptions);
-    //FIXME remove log
-    console.log(`GetServerSession at ADMIN LAYOUT`, session);
-
-    if (!session?.user?.id) {
-        redirect('/auth/signin?callbackUrl=/admin');
+    try {
+        await requireAdmin()
+    } catch (error){
+        if (error instanceof AuthenticationError) {
+            redirect('/auth/signin?callbackUrl=/admin');
+        } else if (error instanceof AuthorizationError) {
+            redirect('/');
+        } else {
+            throw error;
+        }
     }
 
-    await connectDB();
-    const user = await User.findById(session.user.id);
-
-    if (!user?.roles?.includes('admin')) {
-        redirect('/');
-    }
 
     return (
         <Layout>

@@ -5,7 +5,7 @@ import {User} from '@/models/User';
 import {withRateLimit} from "@/lib/middleware";
 import {requireAuth} from "@/app/admin/components/utils";
 import {ConflictError, handleError, NotFoundError} from "@/lib/errors";
-import {userUpdateSchema} from "@/lib/schemas/user";
+import {UserUpdateInput, userUpdateSchema} from "@/lib/schemas/user";
 import {sanitizeUserInput} from "@/lib/utils";
 import {logger} from "@/lib/logger";
 
@@ -23,36 +23,15 @@ export async function PATCH(request: NextRequest) {
                 const validatedData = userUpdateSchema.parse(body);
 
                 // Sanitize text inputs
-                const updates: = {};
-                if (validatedData.username) {
-                    updates.username = sanitizeUserInput(validatedData.username);
+                const updates: UserUpdateInput = {...validatedData};
+                if (validatedData.displayName) {
+                    updates.displayName = sanitizeUserInput(validatedData.displayName);
                 }
                 if (validatedData.bio) {
                     updates.bio = sanitizeUserInput(validatedData.bio);
                 }
-                if (validatedData.location) {
-                    updates.location = sanitizeUserInput(validatedData.location);
-                }
-                if (validatedData.vrHeadset) {
-                    updates.vrHeadset = validatedData.vrHeadset;
-                }
-                if (validatedData.preferences) {
-                    updates.preferences = validatedData.preferences;
-                }
 
                 await connectDB();
-
-                // Check username uniqueness
-                if (updates.username) {
-                    const existingUser = await User.findOne({
-                        username: updates.username,
-                        _id: { $ne: session.user.id }
-                    });
-
-                    if (existingUser) {
-                        throw new ConflictError('Username already taken');
-                    }
-                }
 
                 // Update user
                 const updatedUser = await User.findByIdAndUpdate(
@@ -75,6 +54,7 @@ export async function PATCH(request: NextRequest) {
                     user: {
                         id: updatedUser._id,
                         username: updatedUser.username,
+                        displayName: updatedUser.displayName,
                         bio: updatedUser.bio,
                         location: updatedUser.location,
                         vrHeadset: updatedUser.vrHeadset,

@@ -10,19 +10,14 @@ import {withRateLimit} from "@/lib/middleware";
 import {logger} from "@/lib/logger";
 import {handleError} from "@/lib/errors";
 import {sanitizeUserInput} from "@/lib/utils";
-
-// Helper function to generate sessionId for anonymous users
-function generateSessionId(): string {
-    return `session_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`;
-}
+import {requireAuth} from "@/app/admin/components/utils";
 
 export async function POST(request: Request) {
-    await connectDB();
-    const session = await getServerSession(authOptions);
     return withRateLimit(
         request,
         async () => {
             try {
+                await requireAuth();
                 await connectDB();
                 const session = await getServerSession(authOptions);
                 const body = await request.json();
@@ -40,9 +35,7 @@ export async function POST(request: Request) {
                 // Create feedback
                 const feedbackData = {
                     ...sanitizedData,
-                    userId: session?.user?.id || null,
-                    isAnonymous: !session?.user?.id,
-                    sessionId: sanitizedData.sessionId || generateSessionId(),
+                    userId: session?.user?.id,
                     status: 'new',
                     priority: sanitizedData.priority || 'medium',
                     userAgent: request.headers.get('user-agent'),
@@ -86,7 +79,7 @@ export async function POST(request: Request) {
                 return handleError(error);
             }
         },
-        session?.user?.id ? 'feedbackAuthenticated' : 'feedbackAnonymous'
+        'feedbackAuthenticated'
     );
 }
 

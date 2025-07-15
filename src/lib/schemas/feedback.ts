@@ -1,4 +1,5 @@
 import {z} from 'zod';
+import {Types} from "mongoose";
 
 export const typeEnum = ['bug', 'feature', 'data_correction', "general"] as const;
 export const statusEnum = ['new', 'in_review', 'accepted', 'rejected', 'implemented', 'duplicate'] as const;
@@ -17,8 +18,6 @@ export const feedbackBaseSchema = z.object({
     category: z.enum(categoryEnum).optional(),
 
     userId: z.string().optional(), // Will be ObjectId in Mongoose
-    isAnonymous: z.boolean().default(false),
-    sessionId: z.string(),
 
     screenshots: z.array(z.url()).max(5).default([]),
     pageUrl: z.url().optional(),
@@ -27,6 +26,14 @@ export const feedbackBaseSchema = z.object({
     createdAt: z.date().default(() => new Date()),
     updatedAt: z.date().default(() => new Date()),
 });
+
+export const feedbackDocumentSchema = feedbackBaseSchema.extend({
+    _id: z.union([
+        z.string(), // When returned from API as string
+        z.instanceof(Types.ObjectId), // When working with Mongoose directly
+    ]),
+});
+
 
 // ===== VALIDATION SCHEMAS FOR API =====
 export const feedbackSubmitSchema = feedbackBaseSchema.pick({
@@ -38,7 +45,6 @@ export const feedbackSubmitSchema = feedbackBaseSchema.pick({
     pageUrl: true,
     userAgent: true,
     priority: true,
-    sessionId: true,
 });
 
 // Feedback admin schemas
@@ -57,4 +63,4 @@ export type FeedbackStatus = (typeof statusEnum)[number];
 export type FeedbackPriority = (typeof priorityEnum)[number];
 export type FeedbackCategory = (typeof categoryEnum)[number];
 
-export type IFeedback = z.infer<typeof feedbackBaseSchema>;
+export type IFeedback = z.infer<typeof feedbackDocumentSchema>;

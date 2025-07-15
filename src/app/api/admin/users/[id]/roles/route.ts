@@ -2,10 +2,13 @@
 import { NextRequest } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
 import { User } from '@/models/User';
-import {requireAdminOrModerator} from "@/app/admin/components/utils";
+import {requireAdmin, requireAdminOrModerator} from "@/app/admin/components/utils";
+import {withRateLimit} from "@/lib/middleware";
+import {UserRoles, userRoleUpdateSchema} from '@/lib/schemas/user';
+import {AuthorizationError, handleError, NotFoundError} from "@/lib/errors";
+import {logger} from "@/lib/logger";
 
 // Helper function to validate roles
-const VALID_ROLES = ['user', 'contributor', 'moderator', 'partner', 'admin'];
 const ROLE_HIERARCHY: Record<string, number> = {
     'user': 1,
     'contributor': 2,
@@ -28,101 +31,70 @@ export async function PATCH(
     request: NextRequest,
     { params }: { params: { id: string } }
 ) {
-    try {
-        const { user: currentUser } = await requireAdminOrModerator();
-        await connectDB();
+    return withRateLimit(
+        request,
+        async () => {
+            try {
+                const { session } = await requireAdmin();
+                await connectDB();
 
-        const body = await request.json();
-        const { action, role, reason } = body;
+                // Parse and validate request
+                const body = await request.json();
+                const validatedData = userRoleUpdateSchema.parse(body);
 
-        // Validate input
-        if (!['add', 'remove'].includes(action)) {
-            return Response.json({ error: 'Invalid action' }, { status: 400 });
-        }
+                const targetUser = await User.findById(params.id);
+                if (!targetUser) {
+                    throw new NotFoundError('User');
+                }
 
-        if (!VALID_ROLES.includes(role)) {
-            return Response.json({ error: 'Invalid role' }, { status: 400 });
-        }
+                // Prevent self-role modification
+                if (session.user.id === params.id) {
+                    throw new AuthorizationError('Cannot modify your own roles');
+                }
 
-        // Check permissions
-        if (!canAssignRole(currentUser.roles || [], role)) {
-            return Response.json({
-                error: 'Insufficient permissions to assign this role'
-            }, { status: 403 });
-        }
+                // Prevent modification of other admins
+                if (targetUser.roles?.includes('admin')) {
+                    throw new AuthorizationError('Cannot change admin roles from another');
+                }
 
-        // Find target user
-        const targetUser = await User.findById(params.id);
-        if (!targetUser) {
-            return Response.json({ error: 'User not found' }, { status: 404 });
-        }
+                // Apply role change
+                if (validatedData.action === 'add') {
+                    if (!targetUser.roles?.includes(validatedData.role)) {
+                        targetUser.roles.push(validatedData.role);
+                    }
+                } else {
+                    targetUser.roles = targetUser.roles?.filter((r: UserRoles)  => r !== validatedData.role) || ["user"];
+                }
 
-        // Prevent self-demotion from admin
-        if (currentUser._id.toString() === targetUser._id.toString() &&
-            action === 'remove' && role === 'admin') {
-            return Response.json({
-                error: 'Cannot remove admin role from yourself'
-            }, { status: 400 });
-        }
+                await targetUser.save();
 
-        // Update roles
-        let updatedRoles = [...(targetUser.roles || [])];
+                logger.info('User role updated', {
+                    adminId: session.user.id,
+                    targetUserId: params.id,
+                    ...validatedData
+                });
 
-        if (action === 'add' && !updatedRoles.includes(role)) {
-            updatedRoles.push(role);
-        } else if (action === 'remove') {
-            updatedRoles = updatedRoles.filter(r => r !== role);
-        }
+                return Response.json({
+                    success: true,
+                    message: `Role ${validatedData.action}ed successfully`,
+                    user: {
+                        id: targetUser._id,
+                        username: targetUser.username,
+                        roles: targetUser.roles,
+                        rank: targetUser.rank,
+                    }
+                });
 
-        // Ensure user role is always present
-        if (!updatedRoles.includes('user')) {
-            updatedRoles.unshift('user');
-        }
-
-        // Update user
-        targetUser.roles = updatedRoles;
-
-        // Update rank based on highest role
-        const maxLevel = Math.max(...updatedRoles.map(r => ROLE_HIERARCHY[r] || 0));
-        if (maxLevel >= 5) targetUser.rank = 'elite';
-        else if (maxLevel >= 4) targetUser.rank = 'veteran';
-        else if (maxLevel >= 3) targetUser.rank = 'specialist';
-        else if (maxLevel >= 2) targetUser.rank = 'soldier';
-        else targetUser.rank = 'recruit';
-
-        await targetUser.save();
-
-        // Log the role change
-        console.log(`🔐 Role ${action}: ${currentUser.username} ${action}ed ${role} ${action === 'add' ? 'to' : 'from'} ${targetUser.username}${reason ? ` (${reason})` : ''}`);
-
-        return Response.json({
-            success: true,
-            message: `Role ${action}ed successfully`,
-            user: {
-                id: targetUser._id,
-                username: targetUser.username,
-                roles: targetUser.roles,
-                rank: targetUser.rank,
+            } catch (error) {
+                logger.error('Role management error:', error, {
+                    path: `/api/admin/users/${params.id}/roles`,
+                    method: 'PATCH',
+                });
+                return handleError(error);
             }
-        });
-
-    } catch (error) {
-        console.error('Role management error:', error);
-
-        if (error instanceof Error) {
-            if (error.message === 'Unauthorized') {
-                return Response.json({ error: 'Unauthorized' }, { status: 401 });
-            }
-            if (error.message === 'Forbidden') {
-                return Response.json({ error: 'Forbidden' }, { status: 403 });
-            }
-        }
-
-        return Response.json(
-            { error: 'Failed to update user roles' },
-            { status: 500 }
-        );
-    }
+        },
+        'admin'
+    );
 }
 
 // GET /api/admin/users/[id]/roles - Get user roles and permissions
@@ -130,35 +102,31 @@ export async function GET(
     request: NextRequest,
     { params }: { params: { id: string } }
 ) {
-    try {
-        await requireAdminOrModerator();
-        await connectDB();
+    return withRateLimit(
+        request,
+        async () => {
+            try {
+                await requireAdminOrModerator();
+                await connectDB();
 
-        const user = await User.findById(params.id)
-            .select('username email roles rank stats.contributionPoints createdAt lastLoginAt')
-            .lean();
+                const user = await User.findById(params.id)
+                    .select('username roles rank stats.contributionPoints createdAt lastLoginAt')
+                    .lean();
 
-        if (!user) {
-            return Response.json({ error: 'User not found' }, { status: 404 });
-        }
+                if (!user) {
+                    throw new NotFoundError('User');
+                }
 
-        return Response.json({ user });
+                return Response.json({ user });
 
-    } catch (error) {
-        console.error('Get user roles error:', error);
-
-        if (error instanceof Error) {
-            if (error.message === 'Unauthorized') {
-                return Response.json({ error: 'Unauthorized' }, { status: 401 });
+            } catch (error) {
+                logger.error('Get user roles error:', error, {
+                    path: `/api/admin/users/${params.id}/roles`,
+                    method: 'GET',
+                });
+                return handleError(error);
             }
-            if (error.message === 'Forbidden') {
-                return Response.json({ error: 'Forbidden' }, { status: 403 });
-            }
-        }
-
-        return Response.json(
-            { error: 'Failed to get user roles' },
-            { status: 500 }
-        );
-    }
+        },
+        'api'
+    );
 }

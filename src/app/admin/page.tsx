@@ -17,6 +17,7 @@ async function getAdminStats() {
 
     const [
         totalUsers,
+        //TODO count by feedback or other location - last login is useless due to JWT
         activeUsers,
         totalFeedback,
         pendingFeedback,

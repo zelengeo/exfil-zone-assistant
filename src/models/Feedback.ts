@@ -28,8 +28,6 @@ const FeedbackSchema = new Schema({
     },
 
     userId: {type: Schema.Types.ObjectId, ref: 'User'},
-    isAnonymous: {type: Boolean, default: false},
-    sessionId: String,
 
     screenshots: [String],
     pageUrl: String,

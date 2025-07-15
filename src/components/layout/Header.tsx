@@ -295,7 +295,7 @@ const Header: React.FC = () => {
                                                             <Avatar className="h-12 w-12">
                                                                 <AvatarImage
                                                                     src={session.user?.image || undefined}
-                                                                    alt={session.user.username || session.user.name}
+                                                                    alt={session.user.name || session.user.username}
                                                                 />
                                                                 <AvatarFallback className="bg-olive-600 text-white">
                                                                     {(session.user.username?.[0] || session.user.name?.[0] || "U").toUpperCase()}

@@ -1,4 +1,4 @@
-import { ZodError } from 'zod';
+import {z, ZodError} from 'zod';
 import { MongooseError } from 'mongoose';
 
 // Custom error classes
@@ -103,10 +103,7 @@ function sanitizeError(error: any): ErrorResponse {
                 message: 'Validation failed',
                 code: 'VALIDATION_ERROR',
                 statusCode: 400,
-                details: error.errors.map(err => ({
-                    field: err.path.join('.'),
-                    message: err.message,
-                })),
+                details: z.prettifyError(error)
             },
             requestId: isDevelopment ? requestId : undefined,
         };

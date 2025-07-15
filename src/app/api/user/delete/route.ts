@@ -1,20 +1,13 @@
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { connectDB } from '@/lib/mongodb';
 import { User } from '@/models/User';
 import { Feedback } from '@/models/Feedback';
 import { Account } from '@/models/Account';
-import { Session } from '@/models/Session';
+import {requireAuth} from "@/app/admin/components/utils";
 
 
 export async function DELETE() {
     try {
-        const session = await getServerSession(authOptions);
-
-        if (!session?.user?.id) {
-            return new Response('Unauthorized', { status: 401 });
-        }
-
+        const session = await requireAuth()
         await connectDB();
 
 
@@ -24,13 +17,12 @@ export async function DELETE() {
             {
                 $set: {
                     userId: null,
-                    isAnonymous: true
                 }
             }
         );
 
         // Delete user sessions
-        await Session.deleteMany({ userId: session.user.id });
+        // await Session.deleteMany({ userId: session.user.id });
 
         // Delete user accounts (OAuth connections)
         await Account.deleteMany({ userId: session.user.id });

@@ -1,30 +1,35 @@
-import {requireAuth} from "@/app/admin/components/utils";
+// src/app/api/user/route.ts
 import {connectDB} from "@/lib/mongodb";
+import {requireAuth} from "@/app/admin/components/utils";
 import {User} from "@/models/User";
-import {NextResponse} from "next/server";
 import {logger} from "@/lib/logger";
 import {handleError, NotFoundError} from "@/lib/errors";
+import {withRateLimit} from "@/lib/middleware";
 
-export async function GET() {
-    try {
-        const session = await requireAuth()
+export async function GET(request: Request) {
+    return withRateLimit(
+        request,
+        async () => {
+            try {
+                const session = await requireAuth()
+                await connectDB();
+                const user = await User.findById(session.user.id)
+                    .select('name username bio location vrHeadset preferences stats roles rank  badges')
+                    .lean();
 
-        await connectDB();
-        const user = await User.findById(session.user.id).select(
-            'username bio location vrHeadset preferences stats rank level badges'
-        );
+                if (!user) {
+                    throw new NotFoundError('User profile');
+                }
 
-        if (!user) {
-            throw new NotFoundError('User');
-        }
-
-        return NextResponse.json({user});
-    } catch (error) {
-        logger.error('User fetch error:', error, {
-            path: '/api/user',
-            method: 'GET',
-        });
-
-        return handleError(error);
-    }
+                return Response.json({ user });
+            } catch (error) {
+                logger.error('User fetch error:', error, {
+                    path: '/api/user',
+                    method: 'GET',
+                });
+                return handleError(error);
+            }
+        },
+        'api'
+    );
 }

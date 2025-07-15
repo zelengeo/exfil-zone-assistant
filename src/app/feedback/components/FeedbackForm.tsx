@@ -53,12 +53,14 @@ export function FeedbackForm() {
             const data = await response.json();
 
             if (!response.ok) {
-                throw new Error(data.error || 'Failed to submit feedback');
+                throw new Error('Failed to submit feedback.', {cause: data.error});
             }
 
             setIsSubmitted(true);
         } catch (err) {
-            setError(err instanceof Error ? err.message : 'Failed to submit feedback. Please try again.');
+            //FIXME REMOVE tsignore
+            // @ts-expect-error cause is defined - it is AppError and has message or details if it is validation or else
+            setError(err instanceof Error ? `${err.message} ${err.cause ? ` Cause: \n` + (err.cause.details || err.cause.message) : ""}` : 'Failed to submit feedback. Please try again.');
         } finally {
             setIsSubmitting(false);
         }

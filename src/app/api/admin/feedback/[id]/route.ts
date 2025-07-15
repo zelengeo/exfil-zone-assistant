@@ -1,172 +1,139 @@
 // src/app/api/admin/feedback/[id]/route.ts
-import { NextRequest } from 'next/server';
-import { connectDB } from '@/lib/mongodb';
-import { Feedback } from '@/models/Feedback';
-import { User } from '@/models/User';
+import {NextRequest} from 'next/server';
+import {connectDB} from '@/lib/mongodb';
+import {Feedback} from '@/models/Feedback';
+import {User} from '@/models/User';
 import {requireAdmin} from "@/app/admin/components/utils";
-
-
+import {withRateLimit} from "@/lib/middleware";
+import {isValidObjectId} from "mongoose";
+import {handleError, NotFoundError, ValidationError} from '@/lib/errors';
+import {feedbackStatusUpdateSchema, IFeedback} from "@/lib/schemas/feedback";
+import {logger} from "@/lib/logger";
 
 // GET /api/admin/feedback/[id] - Get specific feedback item
 export async function GET(
     request: NextRequest,
-    { params }: { params: { id: string } }
+    {params}: { params: { id: string } }
 ) {
-    try {
-        await requireAdmin();
-        await connectDB();
+    return withRateLimit(
+        request,
+        async () => {
+            try {
+                if (!isValidObjectId(params.id)) {
+                    throw new ValidationError('Invalid feedback ID');
+                }
 
-        const feedback = await Feedback.findById(params.id)
-            .populate('userId', 'username avatarUrl email')
-            .lean();
+                const {session} = await requireAdmin();
 
-        if (!feedback) {
-            return Response.json({ error: 'Feedback not found' }, { status: 404 });
-        }
+                const feedback = await Feedback.findById(params.id)
+                    .populate('userId', 'username')
+                    .lean<IFeedback>();
 
-        return Response.json({ feedback });
+                if (!feedback) {
+                    throw new NotFoundError('Feedback');
+                }
 
-    } catch (error) {
-        console.error('Admin feedback GET error:', error);
+                // Remove sensitive data for anonymous users
+                if (!session?.user?.roles?.includes('admin')) {
+                    delete feedback.reviewerNotes;
+                }
 
-        if (error instanceof Error) {
-            if (error.message === 'Unauthorized') {
-                return Response.json({ error: 'Unauthorized' }, { status: 401 });
+                return Response.json({feedback});
+
+            } catch (error) {
+                logger.error('Get feedback error:', error, {
+                    path: `/api/feedback/${params.id}`,
+                    method: 'GET',
+                });
+                return handleError(error);
             }
-            if (error.message === 'Forbidden') {
-                return Response.json({ error: 'Forbidden' }, { status: 403 });
-            }
-        }
-
-        return Response.json(
-            { error: 'Failed to retrieve feedback' },
-            { status: 500 }
-        );
-    }
+        },
+        'api'
+    );
 }
 
 // PATCH /api/admin/feedback/[id] - Update feedback item
 export async function PATCH(
     request: NextRequest,
-    { params }: { params: { id: string } }
+    {params}: { params: { id: string } }
 ) {
-    try {
-        const { session } = await requireAdmin();
-        await connectDB();
+    return withRateLimit(
+        request,
+        async () => {
+            try {
+                const {session} = await requireAdmin();
 
-        const body = await request.json();
-        const { status, priority, adminNotes, reviewedBy } = body;
+                const body = await request.json();
+                const validatedData = feedbackStatusUpdateSchema.parse(body);
 
-        // Validate status if provided
-        if (status) {
-            const validStatuses = ['new', 'in_review', 'accepted', 'rejected', 'implemented', 'duplicate'];
-            if (!validStatuses.includes(status)) {
-                return Response.json({ error: 'Invalid status' }, { status: 400 });
-            }
-        }
+                const feedback = await Feedback.findByIdAndUpdate(
+                    params.id,
+                    {
+                        $set: {
+                            ...validatedData,
+                            reviewedBy: session.user.id,
+                            reviewedAt: new Date(),
+                            updatedAt: new Date()
+                        }
+                    },
+                    {new: true}
+                ).populate('userId', 'username');
 
-        // Validate priority if provided
-        if (priority) {
-            const validPriorities = ['low', 'medium', 'high', 'critical'];
-            if (!validPriorities.includes(priority)) {
-                return Response.json({ error: 'Invalid priority' }, { status: 400 });
-            }
-        }
-
-        const updateData: any = {
-            updatedAt: new Date(),
-        };
-
-        if (status) updateData.status = status;
-        if (priority) updateData.priority = priority;
-        if (adminNotes !== undefined) updateData.adminNotes = adminNotes;
-
-        // Mark as reviewed
-        if (status && status !== 'new') {
-            updateData.reviewedBy = session.user.id;
-            updateData.reviewedAt = new Date();
-        }
-
-        const feedback = await Feedback.findByIdAndUpdate(
-            params.id,
-            updateData,
-            { new: true }
-        ).populate('userId', 'username avatarUrl email');
-
-        if (!feedback) {
-            return Response.json({ error: 'Feedback not found' }, { status: 404 });
-        }
-
-        // Update user stats if feedback was accepted/implemented
-        if (feedback.userId && ['accepted', 'implemented'].includes(status)) {
-            await User.findByIdAndUpdate(feedback.userId, {
-                $inc: {
-                    'stats.correctionsAccepted': 1,
-                    'stats.contributionPoints': status === 'implemented' ? 10 : 5,
+                if (!feedback) {
+                    throw new NotFoundError('Feedback');
                 }
-            });
-        }
 
-        return Response.json({
-            success: true,
-            feedback,
-            message: 'Feedback updated successfully'
-        });
+                logger.info('Feedback updated', {
+                    feedbackId: params.id,
+                    adminId: session.user.id,
+                    updates: Object.keys(validatedData)
+                });
 
-    } catch (error) {
-        console.error('Admin feedback PATCH error:', error);
+                return Response.json({feedback});
 
-        if (error instanceof Error) {
-            if (error.message === 'Unauthorized') {
-                return Response.json({ error: 'Unauthorized' }, { status: 401 });
+            } catch (error) {
+                logger.error('Update feedback error:', error, {
+                    path: `/api/feedback/${params.id}`,
+                    method: 'PATCH',
+                });
+                return handleError(error);
             }
-            if (error.message === 'Forbidden') {
-                return Response.json({ error: 'Forbidden' }, { status: 403 });
-            }
-        }
-
-        return Response.json(
-            { error: 'Failed to update feedback' },
-            { status: 500 }
-        );
-    }
+        },
+        'admin'
+    );
 }
 
 // DELETE /api/admin/feedback/[id] - Delete feedback item (admin only)
 export async function DELETE(
     request: NextRequest,
-    { params }: { params: { id: string } }
+    {params}: { params: { id: string } }
 ) {
-    try {
-        await requireAdmin();
-        await connectDB();
+    withRateLimit(request, async () => {
+            try {
+                if (!isValidObjectId(params.id)) {
+                    throw new ValidationError('Invalid feedback ID');
+                }
 
-        const feedback = await Feedback.findByIdAndDelete(params.id);
+                await requireAdmin();
 
-        if (!feedback) {
-            return Response.json({ error: 'Feedback not found' }, { status: 404 });
-        }
+                const feedback = await Feedback.findByIdAndDelete(params.id);
 
-        return Response.json({
-            success: true,
-            message: 'Feedback deleted successfully'
-        });
+                if (!feedback) {
+                    throw new NotFoundError('Feedback');
+                }
 
-    } catch (error) {
-        console.error('Admin feedback DELETE error:', error);
+                return Response.json({
+                    success: true,
+                    message: 'Feedback deleted successfully'
+                });
 
-        if (error instanceof Error) {
-            if (error.message === 'Unauthorized') {
-                return Response.json({ error: 'Unauthorized' }, { status: 401 });
+            } catch (error) {
+                logger.error('Admin delete feedback error:', error, {
+                    path: `/api/feedback/${params.id}`,
+                    method: 'DELETE',
+                });
+                return handleError(error);
             }
-            if (error.message === 'Forbidden') {
-                return Response.json({ error: 'Forbidden' }, { status: 403 });
-            }
-        }
-
-        return Response.json(
-            { error: 'Failed to delete feedback' },
-            { status: 500 }
-        );
-    }
+        },
+        'admin')
 }
