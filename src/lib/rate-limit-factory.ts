@@ -1,5 +1,5 @@
 import { kvRateLimiter } from './rate-limit-kv';
-import { kvRateLimiter as fallbackRateLimiter } from './rate-limit-memory';
+import { memoryRateLimiter } from './rate-limit-memory';
 import type { RateLimiter } from './rate-limit';
 
 let rateLimiter: RateLimiter;
@@ -13,7 +13,7 @@ export function getRateLimiter(): RateLimiter {
             rateLimiter = kvRateLimiter;
             console.log('Using Vercel KV for rate limiting');
         } else {
-            rateLimiter = fallbackRateLimiter;
+            rateLimiter = memoryRateLimiter;
             console.log('Using in-memory rate limiting');
         }
     }

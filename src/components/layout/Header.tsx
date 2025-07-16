@@ -112,8 +112,8 @@ const Header: React.FC = () => {
             );
         }
 
-        const userInitial = session.user.username?.[0] || session.user.name?.[0] || "U";
-        const displayName = session.user.username || session.user.name || "User";
+        const userInitial = session.user.displayName?.[0] || session.user.username?.[0] || "U";
+        const displayName = session.user.displayName || session.user.username || "User";
 
         return (
             <DropdownMenu>
@@ -155,9 +155,9 @@ const Header: React.FC = () => {
                                 </AvatarFallback>
                             </Avatar>
                             <div className="space-y-1">
-                                <p className="text-sm font-medium leading-none">{session.user?.name}</p>
+                                <p className="text-sm font-medium leading-none">{session.user?.displayName}</p>
                                 <p className="text-xs leading-none text-muted-foreground">
-                                    @{displayName}
+                                    @{session.user?.username}
                                 </p>
                             </div>
                         </div>
@@ -165,11 +165,6 @@ const Header: React.FC = () => {
                             <Badge variant="secondary" className="bg-olive-700/50 text-olive-300 border-olive-700">
                                 {session.user.rank || 'Recruit'}
                             </Badge>
-                            {session.user.stats?.contributionPoints && (
-                                <Badge variant="outline" className="text-tan-400">
-                                    {session.user.stats?.contributionPoints} pts
-                                </Badge>
-                            )}
                         </div>
                     </DropdownMenuLabel>
                     <DropdownMenuSeparator className="bg-military-700"/>
@@ -295,15 +290,15 @@ const Header: React.FC = () => {
                                                             <Avatar className="h-12 w-12">
                                                                 <AvatarImage
                                                                     src={session.user?.image || undefined}
-                                                                    alt={session.user.name || session.user.username}
+                                                                    alt={session.user.displayName || session.user.username}
                                                                 />
                                                                 <AvatarFallback className="bg-olive-600 text-white">
-                                                                    {(session.user.username?.[0] || session.user.name?.[0] || "U").toUpperCase()}
+                                                                    {(session.user.displayName?.[0] || session.user.username?.[0] || "U").toUpperCase()}
                                                                 </AvatarFallback>
                                                             </Avatar>
                                                             <div>
                                                                 <p className="font-medium text-tan-100">
-                                                                    {session.user.username || session.user.name}
+                                                                    {session.user.displayName || session.user.username}
                                                                 </p>
                                                                 <p className="text-sm text-tan-400">
                                                                     {session.user.rank || 'Recruit'}

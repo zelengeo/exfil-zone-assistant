@@ -21,7 +21,12 @@ const FeedbackSchema = new Schema({
 
     title: {type: String, required: true, maxLength: 200},
     description: {type: String, required: true, maxLength: 5000},
-    reviewerNotes: {type: String, required: true, maxLength: 5000},
+    reviewerNotes: [{
+        note: {type: String, required: true, maxLength: 5000},
+        timestamp: { type: Date, default: Date.now },
+        addedByUserId: {type: Schema.Types.ObjectId, ref: 'User'}
+    }],
+
     category: {
         type: String,
         enum: categoryEnum

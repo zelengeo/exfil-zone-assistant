@@ -53,6 +53,28 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
     const [usernameError, setUsernameError] = useState('');
     const [isChangingUsername, setIsChangingUsername] = useState(false);
 
+    const checkUsernameAvailability = async (username: string): Promise<boolean> => {
+        try {
+            const response = await fetch(`/api/user/check-username?username=${encodeURIComponent(username)}`);
+            const data = await response.json();
+
+            if (!response.ok) {
+                setUsernameError(data.error || 'Failed to check username');
+                return false;
+            }
+
+            if (!data.available) {
+                setUsernameError(data.message || 'Username not available');
+                return false;
+            }
+
+            return true;
+        } catch (_error) {
+            setUsernameError('Failed to check username availability');
+            return false;
+        }
+    };
+
     const handleSave = async () => {
         setLoading(true);
         setSaveStatus('saving');
@@ -83,16 +105,16 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
             // Refresh the page to show updated data
             await refreshSession()
 
-            setTimeout(() => setSaveStatus('idle'), 3000);
+            setTimeout(() => setSaveStatus('idle'), 5000);
         } catch (error) {
             if (error instanceof z.ZodError) {
-                console.error('Input validation error:', error);
-                setErrors(z.flattenError(error).fieldErrors);
-                setSaveStatus('error');
+                console.warn('Input validation error:', error);
+                setErrors({general: z.prettifyError(error)});
+            } else {
+                console.warn('Failed to save settings:', error);
             }
-            console.error('Failed to save settings:', error);
             setSaveStatus('error');
-            setTimeout(() => setSaveStatus('idle'), 3000);
+            setTimeout(() => setSaveStatus('idle'), 5000);
         } finally {
             setLoading(false);
         }
@@ -137,8 +159,14 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
         try {
             const validatedUsername = userUsernameUpdateSchema.shape.username.parse(newUsername);
             setIsChangingUsername(true);
+            if (validatedUsername !== initialSettings.username) {
+                const isUsernameAvailable = await checkUsernameAvailability(validatedUsername);
+                if (!isUsernameAvailable) {
+                    return;
+                }
+            }
             const response = await fetch('/api/user/update-username', {
-                method: 'POST',
+                method: 'PATCH',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({username: validatedUsername}),
             });
@@ -157,8 +185,10 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
             setNewUsername('');
         } catch (error) {
             if (error instanceof z.ZodError) {
+                console.warn('Input validation error:', error);
                 setUsernameError(z.prettifyError(error));
             } else {
+                console.warn('Username update error:', error);
                 setUsernameError('Failed to update username');
             }
         } finally {
@@ -246,7 +276,7 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                                 VR Headset
                             </label>
                             <select
-                                value={settings.vrHeadset || ''}
+                                value={settings.vrHeadset || undefined}
                                 onChange={(e) => setSettings({
                                     ...settings,
                                     vrHeadset: e.target.value as UserSettings["vrHeadset"]

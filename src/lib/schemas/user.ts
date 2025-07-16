@@ -7,6 +7,7 @@ export const rolesEnum = ['user', 'contributor', 'moderator', 'partner', 'admin'
 export const rankEnum = ['recruit', 'soldier', 'specialist', 'veteran', 'elite'] as const;
 
 // ===== USER SCHEMA =====
+const reservedUsernames = ['admin', 'api', 'app', 'auth', 'dashboard', 'settings', 'user', 'users'];
 export const userBaseSchema = z.object({
 
     // Authentication
@@ -14,7 +15,11 @@ export const userBaseSchema = z.object({
     username: z.string()
         .min(3, "Username must be at least 3 characters")
         .max(20, "Username must be at most 20 characters")
-        .regex(/^[a-z0-9_-]+$/, "Username can only contain lowercase letters, numbers, underscores, and hyphens"),
+        .regex(/^[a-z0-9_-]+$/, "Username can only contain lowercase letters, numbers, underscores, and hyphens")
+        .refine(
+            (val) => !reservedUsernames.includes(val),
+            "This username is reserved"
+        ),
 
     displayName: z.string()
         .min(3, "Display Name must be at least 3 characters")
@@ -98,7 +103,18 @@ export const userUpdateSchema = userBaseSchema.pick({
     location: true,
     vrHeadset: true,
     preferences: true,
-});
+}).partial().transform((data) => {
+    // Clean up undefined values
+    const cleaned: Record<string, unknown> = {};
+
+    Object.entries(data).forEach(([key, value]) => {
+        if (value !== undefined) {
+            cleaned[key] = value;
+        }
+    });
+
+    return cleaned;
+})
 
 export const adminUserUpdateSchema = userBaseSchema.pick({
     displayName: true,

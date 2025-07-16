@@ -7,6 +7,7 @@ import {withRateLimit} from "@/lib/middleware";
 import {adminStatsRequestSchema, adminUsersQuerySchema} from "@/lib/schemas/user";
 import {logger} from "@/lib/logger";
 import {handleError, ValidationError} from "@/lib/errors";
+import {sanitizeSearchQuery} from "@/lib/utils";
 
 
 // GET /api/admin/users - Get users list with filtering and pagination
@@ -24,6 +25,9 @@ export async function GET(request: NextRequest) {
                 );
 
                 const query = adminUsersQuerySchema.parse(searchParams);
+                if (query.search) {
+                    query.search = sanitizeSearchQuery(query.search)
+                }
 
                 // Build MongoDB query
                 const filter: any = {};
