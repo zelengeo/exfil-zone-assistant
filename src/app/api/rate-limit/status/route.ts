@@ -1,7 +1,7 @@
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
-import { getRateLimiter } from '@/lib/rate-limit-factory';
-import { getIdentifier, RATE_LIMIT_CONFIGS } from '@/lib/rate-limit';
+import { getRateLimiter } from '@/lib/rate-limit/rate-limit-factory';
+import { getIdentifier, RATE_LIMIT_CONFIGS } from '@/lib/rate-limit/rate-limit';
 import {logger} from "@/lib/logger";
 import {handleError} from "@/lib/errors";
 

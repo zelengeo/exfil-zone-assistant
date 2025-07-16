@@ -64,7 +64,7 @@ export async function requireAdminOrModerator() {
     const session = await requireAuth();
 
     await connectDB();
-    const user = await User.findById(session.user.id).select('roles').lean<IUser>();
+    const user = await User.findById(session.user.id).lean<IUser>();
 
     const hasPermission = user?.roles?.some(role =>
         ['admin', 'moderator'].includes(role)

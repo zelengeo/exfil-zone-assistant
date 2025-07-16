@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
-import { getRateLimiter } from '@/lib/rate-limit-factory';
-import { getIdentifier, RATE_LIMIT_CONFIGS, type RateLimitConfig } from '@/lib/rate-limit';
+import { getRateLimiter } from '@/lib/rate-limit/rate-limit-factory';
+import { getIdentifier, RATE_LIMIT_CONFIGS, type RateLimitConfig } from '@/lib/rate-limit/rate-limit';
 
 export async function withRateLimit(
     request: Request,

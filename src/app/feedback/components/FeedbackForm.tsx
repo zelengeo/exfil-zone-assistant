@@ -158,7 +158,7 @@ export function FeedbackForm() {
                                 Guides
                             </SelectItem>
                             <SelectItem value="ui" className="text-tan-100 focus:bg-military-700">
-                                Ui
+                                UI
                             </SelectItem>
                             <SelectItem value="other" className="text-tan-100 focus:bg-military-700">
                                 Other
