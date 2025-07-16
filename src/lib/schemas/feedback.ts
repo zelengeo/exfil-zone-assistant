@@ -14,10 +14,15 @@ export const feedbackBaseSchema = z.object({
 
     title: z.string().min(3).max(200),
     description: z.string().min(10).max(5000),
-    reviewerNotes: z.string().max(5000).optional(),
+    reviewerNotes: z.object({
+        note: z.string().min(3).max(5000),
+        timestamp: z.date(),
+        addedByUserId: z.string() // Will be ObjectId in Mongoose
+    }),
+
     category: z.enum(categoryEnum).optional(),
 
-    userId: z.string().optional(), // Will be ObjectId in Mongoose
+    userId: z.string().optional(),
 
     screenshots: z.array(z.url()).max(5).default([]),
     pageUrl: z.url().optional(),

@@ -1,8 +1,6 @@
 // src/app/api/admin/feedback/[id]/route.ts
 import {NextRequest} from 'next/server';
-import {connectDB} from '@/lib/mongodb';
 import {Feedback} from '@/models/Feedback';
-import {User} from '@/models/User';
 import {requireAdmin} from "@/app/admin/components/utils";
 import {withRateLimit} from "@/lib/middleware";
 import {isValidObjectId} from "mongoose";
@@ -23,7 +21,7 @@ export async function GET(
                     throw new ValidationError('Invalid feedback ID');
                 }
 
-                const {session} = await requireAdmin();
+                await requireAdmin();
 
                 const feedback = await Feedback.findById(params.id)
                     .populate('userId', 'username')
@@ -31,11 +29,6 @@ export async function GET(
 
                 if (!feedback) {
                     throw new NotFoundError('Feedback');
-                }
-
-                // Remove sensitive data for anonymous users
-                if (!session?.user?.roles?.includes('admin')) {
-                    delete feedback.reviewerNotes;
                 }
 
                 return Response.json({feedback});
@@ -108,7 +101,7 @@ export async function DELETE(
     request: NextRequest,
     {params}: { params: { id: string } }
 ) {
-    withRateLimit(request, async () => {
+    return withRateLimit(request, async () => {
             try {
                 if (!isValidObjectId(params.id)) {
                     throw new ValidationError('Invalid feedback ID');
