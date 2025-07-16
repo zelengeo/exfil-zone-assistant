@@ -119,7 +119,7 @@ export default async function AdminPage() {
                         </CardDescription>
                     </CardHeader>
                     <CardContent className="grid gap-2">
-                        {/*<Link
+                        <Link
                             href="/admin/users"
                             className="flex items-center justify-between p-3 rounded-sm bg-military-800 hover:bg-military-700 transition-colors"
                         >
@@ -128,7 +128,7 @@ export default async function AdminPage() {
                                 <span className="text-sm text-tan-300">Manage Users</span>
                             </div>
                             <span className="text-xs text-tan-500">→</span>
-                        </Link>*/}
+                        </Link>
                         <Link
                             href="/admin/roles"
                             className="flex items-center justify-between p-3 rounded-sm bg-military-800 hover:bg-military-700 transition-colors"

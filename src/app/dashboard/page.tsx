@@ -72,7 +72,7 @@ export default async function DashboardPage() {
                 {/* Header */}
                 <div className="mb-8">
                     <h1 className="text-3xl font-bold text-tan-100 mb-2">Dashboard</h1>
-                    <p className="text-tan-400">Welcome back, {user.username}!</p>
+                    <p className="text-tan-400">Welcome back, {user.displayName}!</p>
                 </div>
 
                 {/* User Profile Card */}
@@ -83,7 +83,7 @@ export default async function DashboardPage() {
                             {user.image ? (
                                 <Image
                                     src={user.image}
-                                    alt={user.name || user.username}
+                                    alt={user.displayName || user.username}
                                     width={88}
                                     height={88}
                                     className="w-24 h-24 rounded-sm border-2 border-olive-600"
@@ -313,38 +313,13 @@ export default async function DashboardPage() {
                         )}
                     </div>
                 </div>
-
-                {/* Account Preferences */}
-                <div className="bg-military-850 border border-military-700 rounded-sm p-6 mt-6">
-                    <h3 className="text-xl font-bold text-tan-100 mb-4">Account Preferences</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div className="flex items-center justify-between p-3 bg-military-800 rounded-sm">
-                            <span className="text-tan-300">Email Notifications</span>
-                            <span className={`text-sm font-medium ${user.preferences.emailNotifications ? 'text-green-400' : 'text-red-400'}`}>
-                {user.preferences.emailNotifications ? 'Enabled' : 'Disabled'}
-              </span>
-                        </div>
-                        <div className="flex items-center justify-between p-3 bg-military-800 rounded-sm">
-                            <span className="text-tan-300">Public Profile</span>
-                            <span className={`text-sm font-medium ${user.preferences.publicProfile ? 'text-green-400' : 'text-red-400'}`}>
-                {user.preferences.publicProfile ? 'Visible' : 'Hidden'}
-              </span>
-                        </div>
-                        <div className="flex items-center justify-between p-3 bg-military-800 rounded-sm">
-                            <span className="text-tan-300">Show Contributions</span>
-                            <span className={`text-sm font-medium ${user.preferences.showContributions ? 'text-green-400' : 'text-red-400'}`}>
-                {user.preferences.showContributions ? 'Public' : 'Private'}
-              </span>
-                        </div>
-                    </div>
-                </div>
-                <SettingsSection initialSettings={{
+                <SettingsSection key={"settings"} initialSettings={{
+                    displayName: user.displayName,
                     username: user.username,
                     bio: user.bio,
                     location: user.location,
                     vrHeadset: user.vrHeadset,
                     preferences: user.preferences,
-
                 }} />
             </div>
         </Layout>

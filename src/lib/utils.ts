@@ -12,3 +12,8 @@ export function sanitizeUserInput(input: string): string {
     ALLOWED_ATTR: ['href']
   });
 }
+// For search queries - prevent NoSQL injection
+export function sanitizeSearchQuery(query: string): string {
+  // Remove special MongoDB operators
+  return query.replace(/[$\{\}]/g, '');
+}

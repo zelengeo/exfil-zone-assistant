@@ -133,7 +133,7 @@ export const authOptions: NextAuthOptions = {
 
                         const newUser = new User({
                             email: user.email?.toLowerCase(),
-                            name: user.name,
+                            displayName: user.name,
                             username: username,
                             image: user.image,
                             vrHeadset: null,
@@ -220,14 +220,27 @@ export const authOptions: NextAuthOptions = {
                 }
             }
 
-            // Handle token refresh
-            if (trigger === "update" && session) {
-                if (session.displayName) token.displayName = session.displayName;
-                if (session.username) token.username = session.username;
-                if (session.image) token.image = session.image;
-                if (session.rank) token.rank = session.rank;
-                if (session.roles) token.roles = session.roles;
-                if (session.isBanned) token.isBanned = session.isBanned;
+            // Handle token refresh - fetch fresh data from DB
+            if (trigger === "update") {
+                await connectDB();
+                const dbUser = await User.findById(token.id)
+                    .select('displayName username image rank roles isBanned')
+                    .lean<IUser>();
+
+                if (dbUser) {
+                    // Update token with fresh data from database
+                    token.displayName = dbUser.displayName;
+                    token.username = dbUser.username;
+                    token.image = dbUser.image;
+                    token.rank = dbUser.rank;
+                    token.roles = dbUser.roles || ["user"];
+                    token.isBanned = dbUser.isBanned;
+                }
+
+                // Merge with session data if provided
+                if (session) {
+                    Object.assign(token, session);
+                }
             }
 
             return token;

@@ -1,6 +1,5 @@
-import { z } from 'zod';
+import {z} from 'zod';
 import {Types} from "mongoose";
-import {feedbackBaseSchema} from "@/lib/schemas/feedback";
 
 export const locationEnum = ['eu', 'na'] as const;
 export const vrHeadsetEnum = ['quest2', 'quest3', 'pico4', 'index', 'vive', 'bigscreen', 'other'] as const;
@@ -12,8 +11,15 @@ export const userBaseSchema = z.object({
 
     // Authentication
     email: z.email(),
-    username: z.string().min(3).max(20).regex(/^[a-z0-9_-]+$/),
-    displayName: z.string().min(3).max(20).regex(/^[a-zA-Z0-9_-]+$/),
+    username: z.string()
+        .min(3, "Username must be at least 3 characters")
+        .max(20, "Username must be at most 20 characters")
+        .regex(/^[a-z0-9_-]+$/, "Username can only contain lowercase letters, numbers, underscores, and hyphens"),
+
+    displayName: z.string()
+        .min(3, "Display Name must be at least 3 characters")
+        .max(20, "Display Name must be at most 20 characters")
+        .regex(/^[a-zA-Z0-9_-]+$/, "Display Name can only contain letters, numbers, underscores, and hyphens"),
     image: z.url().optional(), // Avatar URL from OAuth provider
 
 
@@ -21,7 +27,6 @@ export const userBaseSchema = z.object({
     bio: z.string().max(500).optional(),
     location: z.enum(locationEnum).default("na"),
     vrHeadset: z.enum(vrHeadsetEnum).optional(),
-
 
 
     // Gamification
@@ -78,6 +83,15 @@ export const userRoleUpdateSchema = z.object({
     reason: z.string().max(500).optional(),
 });
 
+export const userSettingsSchema = userBaseSchema.pick({
+    username: true,
+    displayName: true,
+    bio: true,
+    location: true,
+    vrHeadset: true,
+    preferences: true,
+});
+
 export const userUpdateSchema = userBaseSchema.pick({
     displayName: true,
     bio: true,
@@ -118,10 +132,9 @@ export const adminStatsRequestSchema = z.object({
 });
 
 
-
-
 export type UserRoleUpdateInput = z.infer<typeof userRoleUpdateSchema>;
 export type UserUpdateInput = z.infer<typeof userUpdateSchema>;
+export type UserSettings = z.infer<typeof userSettingsSchema>;
 export type AdminUserUpdateInput = z.infer<typeof adminUserUpdateSchema>;
 export type UserUsernameUpdateInput = z.infer<typeof userUsernameUpdateSchema>;
 export type AdminUsersQueryInput = z.infer<typeof adminUsersQuerySchema>;

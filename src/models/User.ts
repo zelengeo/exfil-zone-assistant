@@ -80,5 +80,10 @@ const UserSchema = new Schema({
 //     message: 'Invalid email format'
 // });
 
+UserSchema.index({ email: 1 }, { unique: true });
+UserSchema.index({ username: 1 }, { unique: true });
+// UserSchema.index({ 'stats.contributionPoints': -1 });
+UserSchema.index({ createdAt: -1 });
+
 // Ensure we don't re-compile the model
 export const User = models.User || model('User', UserSchema);

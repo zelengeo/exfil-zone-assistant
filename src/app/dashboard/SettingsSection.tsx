@@ -2,8 +2,8 @@
 'use client';
 
 import {useState} from 'react';
-import {useSession} from 'next-auth/react';
-import {useRouter} from 'next/navigation';
+import {signOut, useSession} from 'next-auth/react';
+import {UserSettings, userUpdateSchema, userUsernameUpdateSchema} from "@/lib/schemas/user";
 import {Switch} from "@/components/ui/switch"
 import {
     Save,
@@ -14,28 +14,33 @@ import {
     User,
     Trash2,
     Globe,
-    Headphones
+    Headphones, Settings
 } from 'lucide-react';
-
-interface UserSettings {
-    username: string;
-    bio?: string;
-    location: string;
-    vrHeadset?: string | null;
-    preferences: {
-        emailNotifications: boolean;
-        publicProfile: boolean;
-        showContributions: boolean;
-    };
-}
+import {SessionRefreshButton} from '@/components/SessionRefreshButton';
+import {Button} from '@/components/ui/button';
+import {toast} from "sonner";
+import {z} from "zod";
+import {useSessionRefresh} from "@/hooks/useSessionRefresh";
 
 interface SettingsSectionProps {
     initialSettings: UserSettings;
 }
 
+const vrHeadsetOptions: { value: UserSettings["vrHeadset"], label: string }[] = [
+    {value: undefined, label: 'Not specified'},
+    {value: 'quest2', label: 'Meta Quest 2'},
+    {value: 'quest3', label: 'Meta Quest 3'},
+    {value: 'pico4', label: 'Pico 4'},
+    {value: 'index', label: 'Valve Index'},
+    {value: 'vive', label: 'HTC Vive'},
+    {value: 'bigscreen', label: 'Bigscreen Beyond'},
+    {value: 'other', label: 'Other'}
+];
+
+
 export default function SettingsSection({initialSettings}: SettingsSectionProps) {
-    const {data: session, update} = useSession();
-    const router = useRouter();
+    const {data: session} = useSession();
+    const { refreshSession } = useSessionRefresh();
 
     const [settings, setSettings] = useState(initialSettings);
     const [loading, setLoading] = useState(false);
@@ -43,17 +48,10 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
     const [deleteConfirmText, setDeleteConfirmText] = useState('');
-
-    const vrHeadsetOptions = [
-        {value: '', label: 'Not specified'},
-        {value: 'quest2', label: 'Meta Quest 2'},
-        {value: 'quest3', label: 'Meta Quest 3'},
-        {value: 'pico4', label: 'Pico 4'},
-        {value: 'index', label: 'Valve Index'},
-        {value: 'vive', label: 'HTC Vive'},
-        {value: 'bigscreen', label: 'Bigscreen Beyond'},
-        {value: 'other', label: 'Other'}
-    ];
+    const [showUsernameChange, setShowUsernameChange] = useState(false);
+    const [newUsername, setNewUsername] = useState('');
+    const [usernameError, setUsernameError] = useState('');
+    const [isChangingUsername, setIsChangingUsername] = useState(false);
 
     const handleSave = async () => {
         setLoading(true);
@@ -61,10 +59,11 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
         setErrors({});
 
         try {
+            const validatedSettings = userUpdateSchema.parse(settings);
             const response = await fetch('/api/user/update', {
                 method: 'PATCH',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(settings),
+                body: JSON.stringify(validatedSettings),
             });
 
             const data = await response.json();
@@ -81,16 +80,16 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
 
             setSaveStatus('saved');
 
-            // Update session if username changed
-            if (settings.username !== initialSettings.username) {
-                await update({username: settings.username});
-            }
-
             // Refresh the page to show updated data
-            router.refresh();
+            await refreshSession()
 
             setTimeout(() => setSaveStatus('idle'), 3000);
         } catch (error) {
+            if (error instanceof z.ZodError) {
+                console.error('Input validation error:', error);
+                setErrors(z.flattenError(error).fieldErrors);
+                setSaveStatus('error');
+            }
             console.error('Failed to save settings:', error);
             setSaveStatus('error');
             setTimeout(() => setSaveStatus('idle'), 3000);
@@ -116,8 +115,14 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                 throw new Error('Failed to delete account');
             }
 
-            // Sign out and redirect
-            window.location.href = '/api/auth/signout';
+            toast.success('Account deleted successfully');
+            // Small delay to show the message
+            setTimeout(() => {
+                signOut({
+                    callbackUrl: '/goodbye',
+                    redirect: true
+                });
+            }, 1000);
         } catch (error) {
             console.error('Failed to delete account:', error);
             setErrors({delete: 'Failed to delete account. Please try again.'});
@@ -126,33 +131,40 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
         }
     };
 
-    const ToggleSwitch = ({
-                              checked,
-                              onChange,
-                              disabled = false
-                          }: {
-        checked: boolean;
-        onChange: (checked: boolean) => void;
-        disabled?: boolean;
-    }) => (
-        <button
-            type="button"
-            onClick={() => onChange(!checked)}
-            disabled={disabled}
-            className={`
-        relative inline-flex h-6 w-11 items-center rounded-full transition-colors
-        ${checked ? 'bg-olive-600' : 'bg-military-700'}
-        ${disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}
-      `}
-        >
-      <span
-          className={`
-          inline-block h-4 w-4 transform rounded-full bg-white transition-transform
-          ${checked ? 'translate-x-6' : 'translate-x-1'}
-        `}
-      />
-        </button>
-    );
+    const handleUsernameChange = async () => {
+        setUsernameError('');
+
+        try {
+            const validatedUsername = userUsernameUpdateSchema.shape.username.parse(newUsername);
+            setIsChangingUsername(true);
+            const response = await fetch('/api/user/update-username', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({username: validatedUsername}),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                setUsernameError(data.error || 'Failed to update username');
+                return;
+            }
+
+            // Success - refresh session
+            toast.success('Username updated successfully');
+            await refreshSession();
+            setShowUsernameChange(false);
+            setNewUsername('');
+        } catch (error) {
+            if (error instanceof z.ZodError) {
+                setUsernameError(z.prettifyError(error));
+            } else {
+                setUsernameError('Failed to update username');
+            }
+        } finally {
+            setIsChangingUsername(false);
+        }
+    };
 
     return (
         <div className="bg-military-850 border border-military-700 rounded-sm p-6 mt-6">
@@ -166,21 +178,21 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                 </h4>
 
                 <div className="space-y-4">
-                    {/* Username */}
+                    {/* Display Name */}
                     <div>
                         <label className="block text-sm font-medium text-tan-300 mb-1">
-                            Username
+                            Display Name
                         </label>
                         <input
                             type="text"
-                            value={settings.username}
-                            onChange={(e) => setSettings({...settings, username: e.target.value})}
+                            value={settings.displayName}
+                            onChange={(e) => setSettings({...settings, displayName: e.target.value})}
                             className="w-full px-3 py-2 bg-military-800 border border-military-600 rounded-sm text-tan-100
                        focus:outline-none focus:border-olive-500 focus:ring-1 focus:ring-olive-500"
-                            placeholder="Enter username"
+                            placeholder="Enter Display Name"
                         />
-                        {errors.username && (
-                            <p className="mt-1 text-sm text-red-400">{errors.username}</p>
+                        {errors.displayName && (
+                            <p className="mt-1 text-sm text-red-400">{errors.displayName}</p>
                         )}
                         <p className="mt-1 text-xs text-tan-500">
                             3-20 characters, letters, numbers, underscores, and hyphens only
@@ -215,7 +227,10 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                             </label>
                             <select
                                 value={settings.location || ''}
-                                onChange={(e) => setSettings({...settings, location: e.target.value})}
+                                onChange={(e) => setSettings({
+                                    ...settings,
+                                    location: e.target.value as UserSettings["location"]
+                                })}
                                 className="w-full px-3 py-2 bg-military-800 border border-military-600 rounded-sm text-tan-100
                          focus:outline-none focus:border-olive-500 focus:ring-1 focus:ring-olive-500"
                             >
@@ -232,12 +247,15 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                             </label>
                             <select
                                 value={settings.vrHeadset || ''}
-                                onChange={(e) => setSettings({...settings, vrHeadset: e.target.value})}
+                                onChange={(e) => setSettings({
+                                    ...settings,
+                                    vrHeadset: e.target.value as UserSettings["vrHeadset"]
+                                })}
                                 className="w-full px-3 py-2 bg-military-800 border border-military-600 rounded-sm text-tan-100
                          focus:outline-none focus:border-olive-500 focus:ring-1 focus:ring-olive-500"
                             >
                                 {vrHeadsetOptions.map(option => (
-                                    <option key={option.value} value={option.value}>
+                                    <option key={option.value || "undefined"} value={option.value}>
                                         {option.label}
                                     </option>
                                 ))}
@@ -335,6 +353,88 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                 )}
             </div>
 
+            {/* Account Management */}
+            <div className="pt-6">
+                <h4 className="text-lg font-medium text-orange-400 mb-4 flex items-center gap-2">
+                    <Settings className="h-5 w-5"/>
+                    Account Management
+                </h4>
+
+                <div className="space-y-3">
+                    {/* Session Refresh */}
+                    <div className="flex items-center justify-between p-4 bg-military-800 rounded-sm">
+                        <div>
+                            <p className="font-medium text-tan-200">Session Refresh</p>
+                            <p className="text-sm text-tan-500">Sync your account with latest server data</p>
+                        </div>
+                        <SessionRefreshButton variant="outline" size="sm"/>
+                    </div>
+
+                    {/* Username Change */}
+                    <div className="p-4 bg-military-800 rounded-sm">
+                        <div className="flex items-center justify-between mb-2">
+                            <div>
+                                <p className="font-medium text-tan-200">Change Username</p>
+                                <p className="text-sm text-tan-500">
+                                    Current: <span
+                                    className="font-mono text-olive-400">@{session?.user?.username}</span>
+                                </p>
+                            </div>
+                            {!showUsernameChange && (
+                                <Button
+                                    variant="outline"
+                                    size="sm"
+                                    onClick={() => setShowUsernameChange(true)}
+                                >
+                                    Change
+                                </Button>
+                            )}
+                        </div>
+
+                        {showUsernameChange && (
+                            <div className="mt-4 p-4 bg-military-900 rounded-sm border border-orange-800/50">
+                                <p className="text-sm text-orange-400 mb-3">
+                                    ⚠️ Username changes are limited. Choose carefully as this affects your profile URL
+                                    and mentions.
+                                </p>
+                                <input
+                                    type="text"
+                                    value={newUsername}
+                                    onChange={(e) => setNewUsername(e.target.value.toLowerCase())}
+                                    className="w-full px-3 py-2 bg-military-800 border border-military-600 rounded-sm text-tan-100
+                                 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 mb-3"
+                                    placeholder="new-username"
+                                />
+                                {usernameError && (
+                                    <p className="text-sm text-red-400 mb-3">{usernameError}</p>
+                                )}
+                                <div className="flex gap-3">
+                                    <Button
+                                        onClick={handleUsernameChange}
+                                        disabled={isChangingUsername}
+                                        variant="default"
+                                        size="sm"
+                                    >
+                                        {isChangingUsername ? 'Updating...' : 'Update Username'}
+                                    </Button>
+                                    <Button
+                                        onClick={() => {
+                                            setShowUsernameChange(false);
+                                            setNewUsername('');
+                                            setUsernameError('');
+                                        }}
+                                        variant="outline"
+                                        size="sm"
+                                    >
+                                        Cancel
+                                    </Button>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </div>
+
             {/* Danger Zone */}
             <div className="pt-6">
                 <h4 className="text-lg font-medium text-red-400 mb-4 flex items-center gap-2">
@@ -343,14 +443,14 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                 </h4>
 
                 {!showDeleteConfirm ? (
-                    <button
+                    <Button
                         onClick={() => setShowDeleteConfirm(true)}
-                        className="px-4 py-2 bg-red-900/20 hover:bg-red-900/30 text-red-400
-                     border border-red-800 rounded-sm transition-colors flex items-center gap-2"
+                        variant="destructive"
+                        className="bg-red-900/20 hover:bg-red-900/30 text-red-400 border-red-800"
                     >
-                        <Trash2 className="h-4 w-4"/>
+                        <Trash2 className="h-4 w-4 mr-2"/>
                         Delete Account
-                    </button>
+                    </Button>
                 ) : (
                     <div className="p-4 bg-red-900/20 border border-red-800 rounded-sm">
                         <p className="text-red-400 mb-3">
@@ -362,31 +462,30 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                             value={deleteConfirmText}
                             onChange={(e) => setDeleteConfirmText(e.target.value)}
                             className="w-full px-3 py-2 bg-military-800 border border-red-800 rounded-sm text-tan-100
-                       focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 mb-3"
+                         focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 mb-3"
                             placeholder="Type your username"
                         />
                         {errors.delete && (
                             <p className="text-sm text-red-400 mb-3">{errors.delete}</p>
                         )}
                         <div className="flex gap-3">
-                            <button
+                            <Button
                                 onClick={handleDeleteAccount}
                                 disabled={loading}
-                                className="px-4 py-2 bg-red-700 hover:bg-red-600 disabled:bg-military-700
-                         text-white rounded-sm transition-colors"
+                                variant="destructive"
                             >
                                 {loading ? 'Deleting...' : 'Delete My Account'}
-                            </button>
-                            <button
+                            </Button>
+                            <Button
                                 onClick={() => {
                                     setShowDeleteConfirm(false);
                                     setDeleteConfirmText('');
                                     setErrors({});
                                 }}
-                                className="px-4 py-2 bg-military-700 hover:bg-military-600 text-tan-200 rounded-sm transition-colors"
+                                variant="outline"
                             >
                                 Cancel
-                            </button>
+                            </Button>
                         </div>
                     </div>
                 )}
