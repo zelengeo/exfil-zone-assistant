@@ -71,7 +71,6 @@ export function ItemCorrectionForm({item, trigger}: ItemCorrectionFormProps) {
         resolver: zodResolver(itemCorrectionSchema),
         defaultValues: {
             entityId: item.id,
-
             proposedData: {
                 name: item.name,
                 description: item.description,

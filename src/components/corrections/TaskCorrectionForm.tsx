@@ -41,12 +41,12 @@ export function TaskCorrectionForm({ task, trigger }: TaskCorrectionFormProps) {
     const [open, setOpen] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
+
     const form = useForm<TaskCorrection>({
         resolver: zodResolver(taskCorrectionSchema),
         defaultValues: {
             entityId: task.id,
-            proposedData: {},
-            reason: "",
+            proposedData: task,
         },
     });
 

@@ -1,11 +1,14 @@
 // src/lib/schemas/dataCorrection.ts
-import { z } from 'zod';
-import { Types } from "mongoose";
+import {z} from 'zod';
+import {Types} from "mongoose";
+import {taskSchema} from "@/lib/schemas/task";
 
 // Entity types that can have corrections
 export const entityTypeEnum = ['item', 'task', 'npc', 'location', 'quest'] as const;
 export const correctionStatusEnum = ['pending', 'approved', 'rejected', 'implemented'] as const;
 export const rarityEnum = ['Common', 'Uncommon', 'Rare', 'Epic', 'Legendary', "Ultimate"] as const;
+export const taskTypesEnum = ['reach', 'extract', 'retrieve', 'eliminate', 'submit', 'mark', 'place', 'photo'] as const;
+export const taskMapsEnum = ['suburb', 'resort', 'dam', 'metro', 'any'] as const;
 
 // Base correction schema
 export const dataCorrectionBaseSchema = z.object({
@@ -58,13 +61,12 @@ export const itemCorrectionSchema = z.object({
 
 export const taskCorrectionSchema = z.object({
     entityId: dataCorrectionBaseSchema.shape.entityId,
-    proposedData: z.object({
-        name: z.string().optional(),
-        description: z.string().optional(),
-        objectives: z.array(z.string()).optional(),
-        reward: z.array(z.any()).optional(),
-        requiredLevel: z.number().optional(),
-    }).refine(data => Object.keys(data).length > 0, {
+    proposedData: taskSchema.omit({
+        id: true,
+        gameId: true,
+        order: true,
+        corpId: true
+    }).partial().refine(data => Object.keys(data).length > 0, {
         message: "At least one field must be provided for correction"
     }),
     reason: dataCorrectionBaseSchema.shape.reason,

@@ -35,16 +35,17 @@ const rankConfig = {
 };
 
 interface UserProfilePageProps {
-    params: {
+    params: Promise<{
         username: string;
-    };
+    }>
 }
 
 export default async function UserProfilePage({params}: UserProfilePageProps) {
+    const { username } = await params;
     const session = await getServerSession(authOptions);
 
 
-    const user = await getUserByUsername(params.username)
+    const user = await getUserByUsername(username)
 
     if (!user) {
         notFound();
@@ -90,7 +91,7 @@ export default async function UserProfilePage({params}: UserProfilePageProps) {
                             {user.image ? (
                                 <Image
                                     src={user.image}
-                                    alt={user.name || user.username}
+                                    alt={user.displayName || user.username}
                                     width={132}
                                     height={132}
                                     className="w-32 h-32 rounded-sm border-2 border-olive-600"
