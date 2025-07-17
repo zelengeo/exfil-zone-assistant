@@ -5,6 +5,7 @@ import { Types } from "mongoose";
 // Entity types that can have corrections
 export const entityTypeEnum = ['item', 'task', 'npc', 'location', 'quest'] as const;
 export const correctionStatusEnum = ['pending', 'approved', 'rejected', 'implemented'] as const;
+export const rarityEnum = ['Common', 'Uncommon', 'Rare', 'Epic', 'Legendary', "Ultimate"] as const;
 
 // Base correction schema
 export const dataCorrectionBaseSchema = z.object({
@@ -15,12 +16,10 @@ export const dataCorrectionBaseSchema = z.object({
     status: z.enum(correctionStatusEnum).default('pending'),
 
     // Proposed changes
-    proposedData: z.record(z.any()),
-
-    // Changes will be computed on-the-fly, not stored
+    proposedData: z.object({}).catchall(z.any()),
 
     // User's explanation
-    reason: z.string().min(10).max(1000),
+    reason: z.string().min(10).max(1000).optional(),
 
     // Review metadata
     reviewedBy: z.string().optional(),
@@ -41,27 +40,24 @@ export const dataCorrectionDocumentSchema = dataCorrectionBaseSchema.extend({
 
 // Submission schemas for different entity types
 export const itemCorrectionSchema = z.object({
-    entityId: z.string(),
+    entityId: dataCorrectionBaseSchema.shape.entityId,
     proposedData: z.object({
         name: z.string().optional(),
         description: z.string().optional(),
         tips: z.string().optional(),
-        stats: z.record(z.any()).optional(),
-    }).refine(data => Object.keys(data).length > 0, {
+        stats: z.object({
+            price: z.number().optional(),
+            weight: z.number().optional(),
+            rarity: z.enum(rarityEnum).optional(),
+        }).catchall(z.any()).optional(), // Allow any structure for stats
+    }).refine(data => Object.keys(data).some(key => data[key as keyof typeof data] !== undefined), {
         message: "At least one field must be provided for correction"
     }),
-    reason: z.string().min(10).max(1000),
+    reason: dataCorrectionBaseSchema.shape.reason,
 });
 
 export const taskCorrectionSchema = z.object({
-    entityId: z.string(),
-    currentData: z.object({
-        name: z.string(),
-        description: z.string(),
-        objectives: z.array(z.string()).optional(),
-        reward: z.array(z.any()).optional(),
-        requiredLevel: z.number().optional(),
-    }),
+    entityId: dataCorrectionBaseSchema.shape.entityId,
     proposedData: z.object({
         name: z.string().optional(),
         description: z.string().optional(),
@@ -71,16 +67,15 @@ export const taskCorrectionSchema = z.object({
     }).refine(data => Object.keys(data).length > 0, {
         message: "At least one field must be provided for correction"
     }),
-    reason: z.string().min(10).max(1000),
+    reason: dataCorrectionBaseSchema.shape.reason,
 });
 
 // API submission schema
 export const dataCorrectionSubmitSchema = z.object({
-    entityType: z.enum(entityTypeEnum),
-    entityId: z.string(),
-    currentData: z.record(z.any()),
-    proposedData: z.record(z.any()),
-    reason: z.string().min(10).max(1000),
+    entityType: dataCorrectionBaseSchema.shape.entityType,
+    entityId: dataCorrectionBaseSchema.shape.entityId,
+    proposedData: z.union([taskCorrectionSchema.shape.proposedData, itemCorrectionSchema.shape.proposedData]),
+    reason: dataCorrectionBaseSchema.shape.reason,
 });
 
 // Admin review schema
@@ -95,5 +90,6 @@ export type CorrectionStatus = (typeof correctionStatusEnum)[number];
 export type DataCorrectionSubmit = z.infer<typeof dataCorrectionSubmitSchema>;
 export type DataCorrectionReview = z.infer<typeof dataCorrectionReviewSchema>;
 export type ItemCorrection = z.infer<typeof itemCorrectionSchema>;
+export type ItemCorrectionProposedData = z.infer<typeof itemCorrectionSchema.shape.proposedData>;
 export type TaskCorrection = z.infer<typeof taskCorrectionSchema>;
 export type IDataCorrection = z.infer<typeof dataCorrectionDocumentSchema>;

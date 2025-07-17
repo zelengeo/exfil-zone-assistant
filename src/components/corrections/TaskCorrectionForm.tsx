@@ -44,13 +44,6 @@ export function TaskCorrectionForm({ task, trigger }: TaskCorrectionFormProps) {
         resolver: zodResolver(taskCorrectionSchema),
         defaultValues: {
             entityId: task.id,
-            currentData: {
-                name: task.name,
-                description: task.description,
-                objectives: task.objectives || [],
-                reward: task.reward || [],
-                requiredLevel: task.requiredLevel,
-            },
             proposedData: {},
             reason: "",
         },
