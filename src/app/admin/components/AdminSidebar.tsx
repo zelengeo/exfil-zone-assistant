@@ -16,13 +16,14 @@ import {
     MessageSquare,
     Home,
     Menu,
-    ChevronLeft, Users
+    ChevronLeft, Users, Braces
 } from 'lucide-react';
 
 const navItems = [
     { href: '/admin', label: 'Overview', icon: Home },
     { href: '/admin/roles', label: 'User Roles', icon: Shield },
     { href: '/admin/feedback', label: 'Feedback', icon: MessageSquare },
+    { href: '/admin/corrections', label: 'Corrections', icon: Braces },
     { href: '/admin/users', label: 'Users', icon: Users },
     // { href: '/admin/content', label: 'Content', icon: FileText },
     // { href: '/admin/analytics', label: 'Analytics', icon: BarChart3 },

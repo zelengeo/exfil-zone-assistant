@@ -42,9 +42,9 @@ export const dataCorrectionDocumentSchema = dataCorrectionBaseSchema.extend({
 export const itemCorrectionSchema = z.object({
     entityId: dataCorrectionBaseSchema.shape.entityId,
     proposedData: z.object({
-        name: z.string().optional(),
-        description: z.string().optional(),
-        tips: z.string().optional(),
+        name: z.string().min(1).max(50).optional(),
+        description: z.string().max(500).optional(),
+        tips: z.string().max(500).optional(),
         stats: z.object({
             price: z.number().optional(),
             weight: z.number().optional(),

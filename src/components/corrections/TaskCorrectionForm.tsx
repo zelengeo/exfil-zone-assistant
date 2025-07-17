@@ -30,6 +30,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Edit2, Plus, Trash2, AlertCircle } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { toast } from "sonner";
+import {useSession} from "next-auth/react";
 
 interface TaskCorrectionFormProps {
     task: Task;
@@ -82,10 +83,8 @@ export function TaskCorrectionForm({ task, trigger }: TaskCorrectionFormProps) {
 
             // Only submit if there are actual changes
             if (Object.keys(changes).length === 0) {
-                toast({
-                    title: "No changes detected",
+                toast.error("No changes detected",{
                     description: "Please modify at least one field before submitting.",
-                    variant: "destructive",
                 });
                 return;
             }
@@ -96,7 +95,6 @@ export function TaskCorrectionForm({ task, trigger }: TaskCorrectionFormProps) {
                 body: JSON.stringify({
                     entityType: "task",
                     entityId: task.id,
-                    currentData: data.currentData,
                     proposedData: data.proposedData,
                     reason: data.reason,
                 }),
@@ -104,8 +102,7 @@ export function TaskCorrectionForm({ task, trigger }: TaskCorrectionFormProps) {
 
             if (!response.ok) throw new Error("Failed to submit correction");
 
-            toast({
-                title: "Correction submitted",
+            toast.success("Correction submitted",{
                 description: "Thank you for helping improve our data!",
             });
 
@@ -113,10 +110,8 @@ export function TaskCorrectionForm({ task, trigger }: TaskCorrectionFormProps) {
             form.reset();
         } catch (error) {
             console.error("Failed to submit correction:", error);
-            toast({
-                title: "Submission failed",
+            toast.error("Submission failed",{
                 description: "Please try again later.",
-                variant: "destructive",
             });
         } finally {
             setIsSubmitting(false);
@@ -144,7 +139,7 @@ export function TaskCorrectionForm({ task, trigger }: TaskCorrectionFormProps) {
                     <DialogHeader>
                         <DialogTitle>Suggest Correction: {task.name}</DialogTitle>
                         <DialogDescription>
-                            Help us improve the accuracy of this task's data. Only fill in the fields you want to change.
+                            Help us improve the accuracy of this task&#39;s data. Only fill in the fields you want to change.
                         </DialogDescription>
                     </DialogHeader>
 
@@ -328,4 +323,16 @@ export function TaskCorrectionForm({ task, trigger }: TaskCorrectionFormProps) {
             </Dialog>
         </>
     );
+}
+
+export function TaskCorrectionFormAuth({ task, trigger }: TaskCorrectionFormProps) {
+    const { data: session } = useSession();
+
+    // No session = no button/trigger rendered at all
+    if (!session) {
+        return null;
+    }
+
+    // Session exists = render the full form component
+    return <TaskCorrectionForm task={task} trigger={trigger} />;
 }

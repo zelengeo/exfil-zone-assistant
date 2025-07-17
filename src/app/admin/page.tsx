@@ -7,8 +7,8 @@ import { Feedback } from '@/models/Feedback';
 import {
     Users,
     MessageSquare,
-    Shield,
-    Activity,
+    Braces,
+    Activity, Shield,
 } from 'lucide-react';
 import Link from "next/link";
 
@@ -21,8 +21,8 @@ async function getAdminStats() {
         activeUsers,
         totalFeedback,
         pendingFeedback,
-        adminCount,
-        moderatorCount
+        totalCorrections,
+        pendingCorrections
     ] = await Promise.all([
         User.countDocuments(),
         User.countDocuments({
@@ -39,8 +39,8 @@ async function getAdminStats() {
         activeUsers,
         totalFeedback,
         pendingFeedback,
-        adminCount,
-        moderatorCount
+        totalCorrections,
+        pendingCorrections
     };
 }
 
@@ -70,11 +70,11 @@ export default async function AdminPage() {
             trend: stats.pendingFeedback > 0 ? 'Needs attention' : 'All reviewed'
         },
         {
-            title: 'Staff Members',
-            value: stats.adminCount + stats.moderatorCount,
-            icon: Shield,
-            description: `${stats.adminCount} admins, ${stats.moderatorCount} mods`,
-            trend: 'Fully staffed'
+            title: 'Corrections',
+            value: stats.totalCorrections,
+            icon: Braces,
+            description: `${stats.pendingCorrections} pending/ ${stats.totalCorrections} total`,
+            trend: stats.pendingCorrections > 0 ? 'Needs attention' : 'All reviewed'
         }
     ];
 

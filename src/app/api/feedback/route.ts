@@ -79,7 +79,7 @@ export async function POST(request: Request) {
                 return handleError(error);
             }
         },
-        'feedbackAuthenticated'
+        'feedbackPostAuthenticated'
     );
 }
 

@@ -26,12 +26,6 @@ const DataCorrectionSchema = new Schema({
         index: true
     },
 
-    // Store current data snapshot
-    currentData: {
-        type: Schema.Types.Mixed,
-        required: true
-    },
-
     // Store proposed changes
     proposedData: {
         type: Schema.Types.Mixed,
@@ -40,7 +34,6 @@ const DataCorrectionSchema = new Schema({
 
     reason: {
         type: String,
-        required: true,
         maxLength: 1000
     },
 

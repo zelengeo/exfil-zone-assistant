@@ -23,6 +23,7 @@ import {corps, tasksData} from "@/data/tasks";
 import {Item} from "@/types/items";
 import {communityCreatorMap} from "@/data/community";
 import ShareButton from "@/components/ShareButton";
+import {TaskCorrectionFormAuth} from "@/components/corrections/TaskCorrectionForm";
 
 interface TaskCardProps {
     task: Task;
@@ -367,6 +368,7 @@ export default function TaskCard({
 
                     {/* Actions Section  */}
                     <div className="flex items-center justify-end gap-2 pb-3">
+                            <TaskCorrectionFormAuth task={task} />
                             <ShareButton getShareLink={()=>buildTaskShareUrl(task.id)} title={"Share Task"} />
                             {/* Action Button */}
                             {statusConfig.actionButton || null}

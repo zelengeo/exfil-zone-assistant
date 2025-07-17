@@ -17,10 +17,17 @@ export interface RateLimitConfig {
 export const RATE_LIMIT_CONFIGS = {
 
     // Authenticated feedback: 30 per hour
-    feedbackAuthenticated: {
+    feedbackPostAuthenticated: {
         interval: 60 * 60,
         uniqueTokenPerInterval: 30,
     },
+
+    // Authenticated feedback load: 30 per hour
+    feedbackGetAuthenticated: {
+        interval: 60 * 60,
+        uniqueTokenPerInterval: 60,
+    },
+
     // User updates: 3 per day
     userUpdate: {
         interval: 60 * 60 * 24,

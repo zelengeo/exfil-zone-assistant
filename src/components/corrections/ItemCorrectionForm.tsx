@@ -34,6 +34,7 @@ import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import {Edit2, AlertCircle} from "lucide-react";
 import {Alert, AlertDescription} from "@/components/ui/alert";
 import {toast} from "sonner";
+import {useSession} from "next-auth/react";
 
 interface ItemCorrectionFormProps {
     item: Item;
@@ -48,12 +49,14 @@ interface StatField {
     step?: string; // Used for 'number' type fields that need a step attribute
 }
 
-const field = (name: string, label: string, type: string = "number", props: Record<string, any> = {}): StatField => ({name, label, type, ...props});
+const field = (name: string, label: string, type: string = "number", props: Record<string, string | string[] | readonly string[]
+> = {}): StatField => ({name, label, type, ...props});
 
 
 // Helper to get nested values from an object
 function getNestedValue(obj: object, path: string) {
     if (!path) return undefined;
+    // @ts-expect-error - its fine
     return path.split('.').reduce((o, k) => (o && o[k] !== undefined) ? o[k] : undefined, obj);
 }
 
@@ -539,4 +542,16 @@ export function ItemCorrectionForm({item, trigger}: ItemCorrectionFormProps) {
             </Dialog>
         </>
     );
+}
+
+export function ItemCorrectionFormAuth({ item, trigger }: ItemCorrectionFormProps) {
+    const { data: session } = useSession();
+
+    // No session = no button/trigger rendered at all
+    if (!session) {
+        return null;
+    }
+
+    // Session exists = render the full form component
+    return <ItemCorrectionForm item={item} trigger={trigger} />;
 }
