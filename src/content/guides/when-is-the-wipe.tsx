@@ -88,7 +88,8 @@ export default function WhenIsTheWipeGuide() {
                                 </p>
                                 <p className="text-tan-200">
                                     Caveman Studios has officially announced the next wipe! Based on the typical 3-week announcement window,
-                                    we can expect the wipe to happen around <strong>July 31st, 2025</strong>.
+                                    we shouldn&#39;t expect the wipe to happen before <strong>July 31st, 2025</strong>.
+                                    However, we can&#39;t be sure until we hear from the developers. Also, there is and Airdrop event announced on July 19th, which is not a pre-wipe event, so it reasonable to expect the wipe late August.
                                 </p>
                             </div>
                         </div>

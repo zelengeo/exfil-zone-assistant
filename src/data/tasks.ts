@@ -4211,8 +4211,8 @@ export const tasksData: TasksDatabase = {
         "gameId": "task.doc.27",
         "description": "NTG just reached out again. Seems the team's disappearance finally got their attention.\nWe need to move fast.\nJust like before, find the [easternmost] and [westernmost] exits in the Subway system, and make sure they're safe.\nThen, take this [poison] and place it in the [sink] inside the [Surgery Room] at the deepest level of the [Medical Base].\nIf you lose the task item, please come back to me to repurchase it.",
         "objectives": [
-            "Successfully extract from coast under the West Railways, & East Metro Exit",
-            "place poison in surgery room sink"
+            "Successfully extract from the West Railways, & East Metro Exit",
+            "Place Maggie's poison in surgery room sink"
         ],
         "corpId": "ntg",
         "type": [
@@ -4271,6 +4271,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "orbb",
+                "ytId": "fkx7rWmeADs",
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "ZOuSedSDlUE",

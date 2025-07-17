@@ -20,7 +20,7 @@ import {
     getTaskTypeIcon,
     getYouTubeEmbedUrl, getYouTubeUrl,
     quickHighlight,
-    renderReward
+    renderReward, RenderTipsContent
 } from "@/app/tasks/taskHelpers";
 import Image from "next/image";
 import {communityCreatorMap} from "@/data/community";
@@ -217,9 +217,9 @@ export default function TaskPageContent({taskId}: TaskPageContentProps) {
                                     <h2 className="vr-heading-2 text-tan-100 mb-4">Tips & Strategies</h2>
                                     <div className="space-y-3">
                                         <div
-                                            className="p-3 bg-military-600/30 rounded border-l-2 border-olive-600"
+                                            className="p-3 bg-military-600/30 rounded border-l-2 border-olive-600 text-tan-200"
                                         >
-                                            <p className="text-tan-200">{task.tips}</p>
+                                            <RenderTipsContent content={task.tips}/>
                                         </div>
                                     </div>
                                 </section>
