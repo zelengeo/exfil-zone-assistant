@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
 import { User } from '@/models/User';
 import { withRateLimit } from '@/lib/middleware';
-import { requireAuth } from '@/app/admin/components/utils';
+import { requireAuth } from '@/lib/auth/utils';
 import { ConflictError, handleError, NotFoundError } from '@/lib/errors';
 import { UserUsernameUpdateInput, userUsernameUpdateSchema } from '@/lib/schemas/user';
 import { sanitizeUserInput } from '@/lib/utils';

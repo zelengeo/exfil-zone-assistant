@@ -86,6 +86,26 @@ export const dataCorrectionReviewSchema = z.object({
     reviewNotes: z.string().max(500).optional(),
 });
 
+// Schemas for populated fields from User model
+export const populatedUserSchema = z.object({
+    username: z.string(),
+    displayName: z.string(),
+    image: z.string().optional(),
+    email: z.email().optional(),
+});
+
+export const populatedReviewerSchema = z.object({
+    username: z.string(),
+    displayName: z.string(),
+});
+
+// Populated data correction schema
+export const populatedDataCorrectionSchema = dataCorrectionDocumentSchema.extend({
+    userId: populatedUserSchema.nullable().optional(),
+    reviewedBy: populatedReviewerSchema.nullable().optional(),
+})
+
+
 // Type exports
 export type EntityType = (typeof entityTypeEnum)[number];
 export type CorrectionStatus = (typeof correctionStatusEnum)[number];
@@ -93,5 +113,7 @@ export type DataCorrectionSubmit = z.infer<typeof dataCorrectionSubmitSchema>;
 export type DataCorrectionReview = z.infer<typeof dataCorrectionReviewSchema>;
 export type ItemCorrection = z.infer<typeof itemCorrectionSchema>;
 export type ItemCorrectionProposedData = z.infer<typeof itemCorrectionSchema.shape.proposedData>;
+export type TaskCorrectionProposedData = z.infer<typeof taskCorrectionSchema.shape.proposedData>;
 export type TaskCorrection = z.infer<typeof taskCorrectionSchema>;
 export type IDataCorrection = z.infer<typeof dataCorrectionDocumentSchema>;
+export type IPopulatedDataCorrection = z.infer<typeof populatedDataCorrectionSchema>;

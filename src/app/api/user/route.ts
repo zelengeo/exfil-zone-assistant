@@ -1,6 +1,6 @@
 // src/app/api/user/route.ts
 import {connectDB} from "@/lib/mongodb";
-import {requireAuth} from "@/app/admin/components/utils";
+import {requireAuth} from "@/lib/auth/utils";
 import {User} from "@/models/User";
 import {logger} from "@/lib/logger";
 import {handleError, NotFoundError} from "@/lib/errors";

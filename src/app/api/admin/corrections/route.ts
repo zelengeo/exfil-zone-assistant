@@ -5,7 +5,7 @@ import { DataCorrection } from '@/models/DataCorrection';
 import { withRateLimit } from '@/lib/middleware';
 import { logger } from '@/lib/logger';
 import { handleError } from '@/lib/errors';
-import { requireAdminOrModerator } from "@/app/admin/components/utils";
+import { requireAdminOrModerator } from "@/lib/auth/utils";
 
 // GET /api/admin/corrections - Get all corrections with filters
 export async function GET(request: NextRequest) {

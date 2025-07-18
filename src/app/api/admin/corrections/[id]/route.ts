@@ -8,7 +8,7 @@ import {withRateLimit} from '@/lib/middleware';
 import {logger} from '@/lib/logger';
 import {NotFoundError, ValidationError, handleError, ConflictError} from '@/lib/errors';
 import {isValidObjectId} from 'mongoose';
-import {requireAdminOrModerator} from "@/app/admin/components/utils";
+import {requireAdminOrModerator} from "@/lib/auth/utils";
 interface IDataCorrectionPopulated extends Omit<IDataCorrection, 'userId' | 'reviewedBy'> {
     userId: {
         username: string;

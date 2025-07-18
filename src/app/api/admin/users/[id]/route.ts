@@ -5,7 +5,7 @@ import {connectDB} from '@/lib/mongodb';
 import {User} from '@/models/User';
 import {Account} from "@/models/Account";
 import {Feedback} from "@/models/Feedback";
-import {requireAdmin} from "@/app/admin/components/utils";
+import {requireAdmin} from "@/lib/auth/utils";
 import {withRateLimit} from "@/lib/middleware";
 import {
     AuthorizationError,

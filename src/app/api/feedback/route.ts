@@ -10,7 +10,7 @@ import {withRateLimit} from "@/lib/middleware";
 import {logger} from "@/lib/logger";
 import {handleError} from "@/lib/errors";
 import {sanitizeUserInput} from "@/lib/utils";
-import {requireAuth} from "@/app/admin/components/utils";
+import {requireAuth} from "@/lib/auth/utils";
 
 export async function POST(request: Request) {
     return withRateLimit(

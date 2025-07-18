@@ -10,7 +10,7 @@ import {
     handleError, AuthorizationError
 } from '@/lib/errors';
 import { isValidObjectId } from 'mongoose';
-import {requireAuth} from "@/app/admin/components/utils";
+import {requireAuth} from "@/lib/auth/utils";
 
 
 // GET /api/corrections/[id] - Get a specific correction

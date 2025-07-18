@@ -5,7 +5,7 @@ import { User } from '@/models/User';
 import { Account } from '@/models/Account';
 import { Feedback } from '@/models/Feedback';
 import { withRateLimit } from '@/lib/middleware';
-import { requireAuth } from '@/app/admin/components/utils';
+import { requireAuth } from '@/lib/auth/utils';
 import { handleError, NotFoundError } from '@/lib/errors';
 import { logger } from '@/lib/logger';
 import mongoose from 'mongoose';

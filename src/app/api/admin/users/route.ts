@@ -2,7 +2,7 @@
 import {NextRequest} from 'next/server';
 import {connectDB} from '@/lib/mongodb';
 import {User} from '@/models/User';
-import {requireAdmin, requireAdminOrModerator} from "@/app/admin/components/utils";
+import {requireAdmin, requireAdminOrModerator} from "@/lib/auth/utils";
 import {withRateLimit} from "@/lib/middleware";
 import {adminStatsRequestSchema, adminUsersQuerySchema} from "@/lib/schemas/user";
 import {logger} from "@/lib/logger";

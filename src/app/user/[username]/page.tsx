@@ -1,4 +1,4 @@
-import {notFound} from 'next/navigation';
+import {notFound, redirect} from 'next/navigation';
 import Image from 'next/image';
 import {getServerSession} from "next-auth";
 import {authOptions} from "@/app/api/auth/[...nextauth]/route";
@@ -42,7 +42,17 @@ interface UserProfilePageProps {
 
 export default async function UserProfilePage({params}: UserProfilePageProps) {
     const { username } = await params;
+
     const session = await getServerSession(authOptions);
+
+    if (!session?.user?.id) {
+        redirect('/unauthorized')
+    }
+
+    if (session.user.isBanned && (session.user.username !== username)) {
+        redirect('/unauthorized/banned')
+    }
+
 
 
     const user = await getUserByUsername(username)

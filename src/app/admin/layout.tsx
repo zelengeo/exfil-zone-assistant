@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { redirect } from 'next/navigation';
 import Layout from '@/components/layout/Layout';
 import { AdminSidebar } from './components/AdminSidebar';
-import {requireAdmin} from "@/app/admin/components/utils";
+import {requireAdmin} from "@/lib/auth/utils";
 import {AuthenticationError, AuthorizationError} from "@/lib/errors";
 
 interface AdminLayoutProps {
@@ -16,7 +16,7 @@ export default async function AdminLayout({ children }: AdminLayoutProps) {
         if (error instanceof AuthenticationError) {
             redirect('/auth/signin?callbackUrl=/admin');
         } else if (error instanceof AuthorizationError) {
-            redirect('/');
+            redirect('/unauthorized');
         } else {
             throw error;
         }

@@ -11,7 +11,7 @@ import {
     TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import {Badge, badgeVariants} from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import {
     Select,
@@ -42,19 +42,20 @@ import {
     RefreshCw,
 } from "lucide-react";
 import { toast } from "sonner";
-import { IDataCorrection, CorrectionStatus } from "@/lib/schemas/dataCorrection";
+import {CorrectionStatus, IPopulatedDataCorrection} from "@/lib/schemas/dataCorrection";
 import { formatDistanceToNow } from "date-fns";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import {VariantProps} from "class-variance-authority";
 
 export default function CorrectionsAdminPage() {
-    const [corrections, setCorrections] = useState<IDataCorrection[]>([]);
+    const [corrections, setCorrections] = useState<IPopulatedDataCorrection[]>([]);
     const [loading, setLoading] = useState(true);
-    const [selectedCorrection, setSelectedCorrection] = useState<IDataCorrection | null>(null);
+    const [selectedCorrection, setSelectedCorrection] = useState<IPopulatedDataCorrection | null>(null);
     const [reviewDialogOpen, setReviewDialogOpen] = useState(false);
     const [reviewNotes, setReviewNotes] = useState("");
     const [filters, setFilters] = useState({
         status: "pending",
-        entityType: "",
+        entityType: "all",
         search: "",
     });
     const [pagination, setPagination] = useState({
@@ -71,11 +72,11 @@ export default function CorrectionsAdminPage() {
             const params = new URLSearchParams({
                 page: pagination.page.toString(),
                 limit: pagination.limit.toString(),
-                ...(filters.status && { status: filters.status }),
-                ...(filters.entityType && { entityType: filters.entityType }),
+                ...(filters.status !== "all" && { status: filters.status }),
+                ...(filters.entityType !== "all" && { entityType: filters.entityType }),
             });
 
-            const response = await fetch(`/api/corrections?${params}`);
+            const response = await fetch(`/api/admin/corrections?${params}`);
             const data = await response.json();
 
             if (response.ok) {
@@ -101,7 +102,7 @@ export default function CorrectionsAdminPage() {
         if (!selectedCorrection) return;
 
         try {
-            const response = await fetch(`/api/corrections/${selectedCorrection._id}`, {
+            const response = await fetch(`/api/admin/corrections/${selectedCorrection._id}`, {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
@@ -117,7 +118,7 @@ export default function CorrectionsAdminPage() {
                 setReviewDialogOpen(false);
                 setSelectedCorrection(null);
                 setReviewNotes("");
-                fetchCorrections();
+                await fetchCorrections();
             } else {
                 throw new Error("Failed to review correction");
             }
@@ -137,17 +138,17 @@ export default function CorrectionsAdminPage() {
                 limit: "1000", // Get all approved corrections
             });
 
-            const response = await fetch(`/api/corrections?${params}`);
+            const response = await fetch(`/api/admin/corrections?${params}`);
             const data = await response.json();
 
             if (response.ok) {
-                const exportData = data.corrections.map((c: IDataCorrection) => ({
+                const exportData = data.corrections.map((c: IPopulatedDataCorrection) => ({
                     id: c._id,
                     entityType: c.entityType,
                     entityId: c.entityId,
                     proposedData: c.proposedData,
                     reason: c.reason,
-                    submittedBy: (c.userId as any)?.displayName || "Anonymous",
+                    submittedBy: c.userId?.username || "Anonymous",
                     submittedAt: c.createdAt,
                 }));
 
@@ -175,7 +176,7 @@ export default function CorrectionsAdminPage() {
 
     // Status badge styling
     const getStatusBadge = (status: CorrectionStatus) => {
-        const variants: Record<CorrectionStatus, { variant: any; label: string }> = {
+        const variants: Record<CorrectionStatus, { variant: VariantProps<typeof badgeVariants>["variant"]; label: string }> = {
             pending: { variant: "outline", label: "Pending" },
             approved: { variant: "default", label: "Approved" },
             rejected: { variant: "destructive", label: "Rejected" },
@@ -187,33 +188,6 @@ export default function CorrectionsAdminPage() {
     };
 
     // Compute changes on-the-fly
-    const computeChanges = (current: any, proposed: any) => {
-        const changes: Array<{ field: string; from: any; to: any }> = [];
-
-        const processObject = (curr: any, prop: any, prefix = '') => {
-            Object.keys(prop).forEach(key => {
-                const fullKey = prefix ? `${prefix}.${key}` : key;
-                const currentValue = curr?.[key];
-                const proposedValue = prop[key];
-
-                if (proposedValue === undefined) return;
-
-                if (Array.isArray(proposedValue)) {
-                    if (JSON.stringify(currentValue) !== JSON.stringify(proposedValue)) {
-                        changes.push({ field: fullKey, from: currentValue, to: proposedValue });
-                    }
-                } else if (typeof proposedValue === 'object' && proposedValue !== null) {
-                    processObject(currentValue || {}, proposedValue, fullKey);
-                } else if (currentValue !== proposedValue) {
-                    changes.push({ field: fullKey, from: currentValue, to: proposedValue });
-                }
-            });
-        };
-
-        processObject(current, proposed);
-        return changes;
-    };
-
     return (
         <div className="container mx-auto py-8">
             <div className="mb-8">
@@ -258,7 +232,7 @@ export default function CorrectionsAdminPage() {
                         <SelectValue placeholder="Filter by status" />
                     </SelectTrigger>
                     <SelectContent>
-                        <SelectItem value="">All Statuses</SelectItem>
+                        <SelectItem value="all">All Statuses</SelectItem>
                         <SelectItem value="pending">Pending</SelectItem>
                         <SelectItem value="approved">Approved</SelectItem>
                         <SelectItem value="rejected">Rejected</SelectItem>
@@ -274,7 +248,7 @@ export default function CorrectionsAdminPage() {
                         <SelectValue placeholder="Filter by type" />
                     </SelectTrigger>
                     <SelectContent>
-                        <SelectItem value="">All Types</SelectItem>
+                        <SelectItem value="all">All Types</SelectItem>
                         <SelectItem value="item">Items</SelectItem>
                         <SelectItem value="task">Tasks</SelectItem>
                         <SelectItem value="npc">NPCs</SelectItem>
@@ -333,7 +307,7 @@ export default function CorrectionsAdminPage() {
                                         {correction.userId ? (
                                             <div className="flex items-center gap-2">
                         <span className="text-sm">
-                          {(correction.userId as any).displayName || "Unknown"}
+                          {correction.userId?.username || "Unknown"}
                         </span>
                                             </div>
                                         ) : (
@@ -438,7 +412,7 @@ export default function CorrectionsAdminPage() {
                                             <p>
                                                 <span className="text-muted-foreground">Submitted by:</span>{" "}
                                                 {selectedCorrection.userId
-                                                    ? (selectedCorrection.userId as any).displayName || "Unknown user"
+                                                    ? selectedCorrection.userId.username || "Unknown user"
                                                     : "Anonymous"}
                                             </p>
                                             <p>
@@ -459,7 +433,7 @@ export default function CorrectionsAdminPage() {
                                                 {selectedCorrection.reviewedBy && (
                                                     <p>
                                                         <span className="text-muted-foreground">Reviewed by:</span>{" "}
-                                                        {(selectedCorrection.reviewedBy as any).displayName || "Unknown"}
+                                                        {selectedCorrection.reviewedBy.username || "Unknown"}
                                                     </p>
                                                 )}
                                                 {selectedCorrection.reviewedAt && (

@@ -1,7 +1,7 @@
 // src/app/api/admin/feedback/[id]/route.ts
 import {NextRequest} from 'next/server';
 import {Feedback} from '@/models/Feedback';
-import {requireAdmin} from "@/app/admin/components/utils";
+import {requireAdmin} from "@/lib/auth/utils";
 import {withRateLimit} from "@/lib/middleware";
 import {isValidObjectId} from "mongoose";
 import {handleError, NotFoundError, ValidationError} from '@/lib/errors';

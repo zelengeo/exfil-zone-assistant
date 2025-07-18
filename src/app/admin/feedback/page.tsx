@@ -7,7 +7,7 @@ import {Badge} from '@/components/ui/badge';
 import {FeedbackTable} from './components/FeedbackTable';
 import {FeedbackFilters} from './components/FeedbackFilters';
 import {ShieldCheck, MessageSquare, Bug, Lightbulb, Database, TrendingUp} from 'lucide-react';
-import {requireAdmin} from "@/app/admin/components/utils";
+import {requireAdmin} from "@/lib/auth/utils";
 
 interface FeedbackStats {
     total: number;
