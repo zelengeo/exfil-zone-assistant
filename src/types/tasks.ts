@@ -6,7 +6,7 @@ export interface TaskReward {
     item_id?: string; // Item rewards
 }
 
-export type TaskType = 'reach' | 'extract' | 'retrieve' | 'eliminate' | 'submit' | 'mark' | 'place' | 'photo';
+export type TaskType = 'reach' | 'extract' | 'retrieve' | 'eliminate' | 'submit' | 'mark' | 'place' | 'photo' | "signal";
 
 export type TaskVideoGuide = { author: string, ytId: string, startTs?: number, endTs?: number }
 

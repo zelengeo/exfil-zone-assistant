@@ -9,7 +9,7 @@ import {
     Lock, MapPin,
     Package,
     Plane,
-    Search,
+    Search, Sparkle,
     Target, Undo2
 } from "lucide-react";
 import {corps, getTasksByMerchant, tasksData} from "@/data/tasks";
@@ -276,6 +276,8 @@ export const getTaskTypeIcon = (type: TaskType) => {
             return <Package size={12}/>;
         case 'photo':
             return <Camera size={12}/>;
+        case 'signal':
+            return <Sparkle size={12}/>;
         default:
             return <Target size={12}/>;
     }

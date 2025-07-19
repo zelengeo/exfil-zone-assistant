@@ -5217,6 +5217,202 @@ export const tasksData: TasksDatabase = {
         ],
         "order": 17
     },
+    "trupiks_18": {
+        "id": "trupiks_18",
+        "name": "Signal Location: Suburbs",
+        "gameId": "task.july.p1",
+        "description": "Wanna try out the latest batch of flare guns? With these, you can call in supply crates at certain special locations.\r\nGo find the specific spot in the [Suburbs]: [Central zone. You'll need elevation and visibility—look for a structure designed to attract crowds, not conceal them.]",
+        "objectives": [
+            "Find the launch site in [Suburbs]"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "reach"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 10000
+            },
+            {
+                "type": "experience",
+                "quantity": 1257
+            },
+            {
+                "type": "item",
+                "item_id": "food_water_bottle",
+                "quantity": 1
+            },
+            {
+                "type": "item",
+                "item_id": "food_meat_can",
+                "quantity": 2
+            },
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_13"
+        ],
+        "requiredLevel": 0,
+        "tips": "Mall roof.",
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "ytId": "ARAiv_2rqhM",
+                "startTs": 10
+            }
+        ],
+        "order": 18
+    },
+    "trupiks_19": {
+        "id": "trupiks_19",
+        "name": "Signal Location: The Resort",
+        "gameId": "task.july.p2",
+        "description": "Have you found the launch site in The Suburbs? Next, try to find the launch site in the [Resort area].\r\n[There's just one way onto the landmass, and no way forward past it. When the water boxes you in, send the signal.]",
+        "objectives": [
+            "Find the launch site in [Resort area]"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "reach"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 10000
+            },
+            {
+                "type": "experience",
+                "quantity": 1257
+            },
+            {
+                "type": "item",
+                "item_id": "med-limb-restorer-lv3",
+                "quantity": 2
+            },
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_18"
+        ],
+        "requiredLevel": 0,
+        "tips": "Fountain over the coast (near the hotel).",
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "ytId": "ARAiv_2rqhM",
+                "startTs": 60
+            }
+        ],
+        "order": 19
+    },
+    "trupiks_20": {
+        "id": "trupiks_20",
+        "name": "Signal Location: The Dam",
+        "gameId": "task.july.p3",
+        "description": "The last location is in the [Dam Area]. I'm pretty sure you'll find the launch site there with ease.\r\n[Northern sector. Highest structure with a clear view of the sky. If you can see the whole dockyard, you're in the right spot.]",
+        "objectives": [
+            "Find the launch site in [Dam area]"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "reach"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 10000
+            },
+            {
+                "type": "experience",
+                "quantity": 1257
+            },
+            {
+                "type": "item",
+                "item_name": "HQ Power Fuel Can L",
+                "quantity": 1
+            },
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_19"
+        ],
+        "requiredLevel": 0,
+        "tips": "Top of the construction building (Over the docks).",
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "ytId": "ARAiv_2rqhM",
+                "startTs": 83
+            }
+        ],
+        "order": 20
+    },
+    "trupiks_21": {
+        "id": "trupiks_21",
+        "name": "Signal Location: The Dam",
+        "gameId": "task.july.p3",
+        "description": "The last location is in the [Dam Area]. I'm pretty sure you'll find the launch site there with ease.\r\n[Northern sector. Highest structure with a clear view of the sky. If you can see the whole dockyard, you're in the right spot.]",
+        "objectives": [
+            "Call in a supply drop in [Suburbs area]'s launch site",
+            "Call in a supply drop in [Resort area]'s launch site",
+            "Call in a supply drop in [Dam area]'s launch site"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "reach",
+            "signal"
+        ],
+        "map": [
+            "suburb",
+            "resort",
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 10000
+            },
+            {
+                "type": "experience",
+                "quantity": 1257
+            },
+            {
+                "type": "item",
+                "item_name": "'Extraction' poster",
+                "quantity": 1
+            },
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "item_name": "Flare gun",
+                "quantity": 3
+            }
+        ],
+        "requiredTasks": [
+            "trupiks_20"
+        ],
+        "requiredLevel": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "radFoxVR",
+                "ytId": "ARAiv_2rqhM",
+                "startTs": 110
+            }
+        ],
+        "order": 21
+    },
     "regiment_1": {
         "id": "regiment_1",
         "name": "A Different Style",
