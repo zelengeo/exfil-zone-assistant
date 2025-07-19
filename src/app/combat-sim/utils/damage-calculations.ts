@@ -2,7 +2,7 @@
  * Effective Damage Calculation for Combat Simulator
  * Handles armor durability, penetration mechanics, and blunt damage
  */
-import {BODY_HP,} from "@/app/combat-sim/utils/body-zones";
+import {BODY_HP, BodyPart,} from "@/app/combat-sim/utils/body-zones";
 import {
     CombatSimulationResult,
     RANGE_VALUES, ShotResult, ShotResultWithLeftovers
@@ -17,17 +17,18 @@ function simulateCombat(
     ammo: AmmoProperties,
     armor: ArmorProperties | null,
     weaponFiringPower: number,
-    bodyPartHP: number,
-    isVital: boolean = false,
-    range: number
+    bodyPart: BodyPart,
+    range: number,
 ): CombatSimulationResult {
     const shots: ShotResultWithLeftovers[] = [];
-    let currentBodyPartHP = isVital ? bodyPartHP : BODY_HP;
+    let currentBodyPartHP = bodyPart.hp;
+    let currentBodyHP = BODY_HP;
     let currentArmorDurability = armor?.currentDurability || 0;
     let totalDamageDealt = 0;
     let shotsToKill = 0;
 
-    while (currentBodyPartHP > 0 && shotsToKill < 100) { // Safety limit
+
+    while ((bodyPart.isVital ? currentBodyPartHP > 0 : currentBodyHP > 0) && shotsToKill < 99) { // Safety limit
         shotsToKill++;
 
         const shotResult = calculateShotDamage(
@@ -35,28 +36,24 @@ function simulateCombat(
             armor,
             currentArmorDurability,
             weaponFiringPower,
+            (currentBodyPartHP > 0) ? 0 : bodyPart.destroyedDamageDebuff,
             range,
             null,
-            false
+            false,
         );
 
         // Apply damage to body part
-        currentBodyPartHP -= shotResult.damageToBodyPart;
+        currentBodyPartHP = Math.max(0, currentBodyPartHP - shotResult.damageToBodyPart);
+        currentBodyHP -= shotResult.damageToBodyPart;
         totalDamageDealt += shotResult.damageToBodyPart;
 
         // Apply damage to armor durability
         if (armor && currentArmorDurability > 0) {
-            // Ensure we don't go below 0
             const actualArmorDamage = Math.min(currentArmorDurability, shotResult.damageToArmor);
             currentArmorDurability = Math.max(0, currentArmorDurability - actualArmorDamage);
         }
 
-        shots.push(extendShotResult(shotResult, currentArmorDurability, currentBodyPartHP))
-
-        // Check if dead
-        if (currentBodyPartHP <= 0) {
-            break;
-        }
+        shots.push(extendShotResult(shotResult, currentArmorDurability, currentBodyHP));
     }
 
     return {
@@ -72,6 +69,7 @@ function calculateShotDamage(
     armor: ArmorProperties | null,
     currentArmorDurability: number | null,
     weaponFiringPower: number,
+    damageDebuff: number = 0,
     range: number,
     overridePenetrationChance: boolean | null = null,
     applyRandom: boolean = false,
@@ -84,7 +82,7 @@ function calculateShotDamage(
     if (!armor) {
         return {
             isPenetrating: true,
-            damageToBodyPart: rangeDamage,
+            damageToBodyPart: (1 - damageDebuff) * rangeDamage,
             damageToArmor: 0,
             penetrationChance: 1
         };
@@ -130,6 +128,9 @@ function calculateShotDamage(
         damageToArmor = rangeDamage * ammo.protectionGearBluntDamageScale * armor.durabilityDamageScalar * 3
         // * armor.durabilityDamageScalar;  not sure what this scalar does
     }
+
+    damageToBodyPart *= (1 - damageDebuff);
+
 
     return {
         isPenetrating,

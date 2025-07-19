@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const url = `https://www.exfil-zone-assistant.app/guides/${slug}`;
 
     return {
-        title: `${guide.title} | ExfilZone Assistant`,
+        title: `${guide.title}`,
         description: guide.description,
         openGraph: {
             title: guide.title,

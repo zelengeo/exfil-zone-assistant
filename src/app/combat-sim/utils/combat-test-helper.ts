@@ -121,6 +121,7 @@ export async function testShotDamage(
                 armorProps,
                 armorDurability ?? armor.stats.maxDurability, // Full durability
                 weapon.stats.firingPower,
+                0,
                 range,
                 overridePenentrationChance,
             );

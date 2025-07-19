@@ -112,7 +112,7 @@ export const guidesConfig: GuideMetadata[] = [
         difficulty: 'beginner',
         readTime: '12 min',
         author: 'pogapwnz',
-        publishedAt: '2025-07-05',
+        publishedAt: '2025-07-19',
         featured: true,
         ogImageUrl: '/og/og-image-guide-ammo.jpg',
         contentType: 'component'

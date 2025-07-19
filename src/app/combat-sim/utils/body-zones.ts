@@ -8,6 +8,7 @@ export interface BodyPart {
     id: string;
     name: string;
     hp: number;
+    destroyedDamageDebuff: number;
     isVital: boolean;
     armorZones: string[]; // References to armor zones that protect this part
 }
@@ -35,6 +36,7 @@ export const BODY_PARTS: Record<string, BodyPart> = {
         name: 'Head',
         hp: 35,
         isVital: true,
+        destroyedDamageDebuff: 0,
         armorZones: ['head_top', 'head_eyes', 'head_chin']
     },
     chest: {
@@ -42,6 +44,7 @@ export const BODY_PARTS: Record<string, BodyPart> = {
         name: 'Chest',
         hp: 85,
         isVital: true,
+        destroyedDamageDebuff: 0,
         armorZones: ['chest']
     },
     stomach: {
@@ -49,6 +52,7 @@ export const BODY_PARTS: Record<string, BodyPart> = {
         name: 'Stomach',
         hp: 70,
         isVital: false,
+        destroyedDamageDebuff: 0,
         armorZones: ['stomach']
     },
     left_arm: {
@@ -56,6 +60,7 @@ export const BODY_PARTS: Record<string, BodyPart> = {
         name: 'Left Arm',
         hp: 60,
         isVital: false,
+        destroyedDamageDebuff: 0.3,
         armorZones: ['arm_upper_l', 'arm_lower_l']
     },
     right_arm: {
@@ -63,6 +68,7 @@ export const BODY_PARTS: Record<string, BodyPart> = {
         name: 'Right Arm',
         hp: 60,
         isVital: false,
+        destroyedDamageDebuff: 0.3,
         armorZones: ['arm_upper_r', 'arm_lower_r']
     },
     left_leg: {
@@ -70,6 +76,7 @@ export const BODY_PARTS: Record<string, BodyPart> = {
         name: 'Left Leg',
         hp: 65,
         isVital: false,
+        destroyedDamageDebuff: 0.3,
         armorZones: ['leg_thigh_l', 'leg_lower_l']
     },
     right_leg: {
@@ -77,6 +84,7 @@ export const BODY_PARTS: Record<string, BodyPart> = {
         name: 'Right Leg',
         hp: 65,
         isVital: false,
+        destroyedDamageDebuff: 0.3,
         armorZones: ['leg_thigh_r', 'leg_lower_r']
     }
 };

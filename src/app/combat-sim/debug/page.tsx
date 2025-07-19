@@ -120,6 +120,7 @@ export default function CombatSimDebugPage() {
             armor ? armor.stats : null,
             currentDurability,
             weapon.stats.firingPower,
+            0,
             testCase.range,
             testCase.isPenetration
         );

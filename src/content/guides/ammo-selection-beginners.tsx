@@ -170,15 +170,15 @@ export default function AmmoSelectionBeginners() {
                                 <div>Stomach shots</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-green-400 font-bold text-lg">9</div>
-                                <div>Leg shots</div>
+                                <div className="text-green-400 font-bold text-lg">12</div>
+                                <div>Limb shots</div>
                             </div>
                         </div>
                     </div>
 
                     <p>
                         Depending on your aim confidence, either go for headshots (fastest kill) or
-                        target legs (more reliable but requires more shots).
+                        target limbs (more reliable but requires more shots).
                     </p>
 
                     <div className="bg-yellow-900/20 border border-yellow-700/50 rounded-sm p-4">
