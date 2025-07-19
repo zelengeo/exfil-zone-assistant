@@ -5359,9 +5359,9 @@ export const tasksData: TasksDatabase = {
     },
     "trupiks_21": {
         "id": "trupiks_21",
-        "name": "Signal Location: The Dam",
+        "name": "Supplies Are Never Too Many",
         "gameId": "task.july.p3",
-        "description": "The last location is in the [Dam Area]. I'm pretty sure you'll find the launch site there with ease.\r\n[Northern sector. Highest structure with a clear view of the sky. If you can see the whole dockyard, you're in the right spot.]",
+        "description": "The flare gun is single-use, and only the fastest can call in the supply crate.\r\nTry racing others and successfully call in a crate at all [3 launch sites] in the [Suburb], [Resort], and [Dam] areas.",
         "objectives": [
             "Call in a supply drop in [Suburbs area]'s launch site",
             "Call in a supply drop in [Resort area]'s launch site",
