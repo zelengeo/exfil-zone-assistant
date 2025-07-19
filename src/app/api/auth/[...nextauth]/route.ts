@@ -275,7 +275,7 @@ export const authOptions: NextAuthOptions = {
         newUser: '/dashboard'
     },
 
-    debug: true, //FIXME Enable debug mode to see logs
+    debug: process.env.NODE_ENV === 'development',
 
     secret: process.env.NEXTAUTH_SECRET,
 };

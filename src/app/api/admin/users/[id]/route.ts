@@ -15,7 +15,7 @@ import {
     ValidationError
 } from "@/lib/errors";
 import {logger} from "@/lib/logger";
-import {AdminUserUpdateInput, adminUserUpdateSchema, userUpdateSchema} from "@/lib/schemas/user";
+import {AdminUserUpdateInput, adminUserUpdateSchema} from "@/lib/schemas/user";
 import { sanitizeUserInput } from '@/lib/utils';
 
 export async function GET(

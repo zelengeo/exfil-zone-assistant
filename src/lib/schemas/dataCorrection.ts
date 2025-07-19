@@ -1,7 +1,12 @@
 // src/lib/schemas/dataCorrection.ts
 import {z} from 'zod';
 import {Types} from "mongoose";
-import {taskSchema} from "@/lib/schemas/task";
+import {
+    taskMapSchema,
+    taskRewardSchema, taskSchema,
+    taskTypeSchema,
+    taskVideoGuideSchema
+} from "@/lib/schemas/task";
 
 // Entity types that can have corrections
 export const entityTypeEnum = ['item', 'task', 'npc', 'location', 'quest'] as const;

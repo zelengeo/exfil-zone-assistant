@@ -74,7 +74,7 @@ export function TaskCorrectionForm({task, trigger}: TaskCorrectionFormProps) {
             const proposedData: TaskCorrectionProposedData = {};
 
             // Iterate over the keys of the proposed data from the form
-            for (const _key  in data.proposedData) {
+            for (const _key in data.proposedData) {
                 const key = _key as keyof TaskCorrectionProposedData;
                 const formValue = data.proposedData[key];
                 const originalValue = task[key];
@@ -85,6 +85,7 @@ export function TaskCorrectionForm({task, trigger}: TaskCorrectionFormProps) {
                 }
 
                 if (!deepEqual(formValue, originalValue)) {
+                    // @ts-expect-error proposedData[key] = data.proposedData[key] - has to be safe. There will be validation later anyway
                     proposedData[key] = formValue;
                 }
             }

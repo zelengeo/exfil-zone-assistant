@@ -73,11 +73,12 @@ async function getFeedbackList(params: {
     const skip = (page - 1) * limit;
 
     // Build filter query
-    const query: any = {};
-    if (filters.status) query.status = filters.status;
-    if (filters.type) query.type = filters.type;
-    if (filters.priority) query.priority = filters.priority;
-    if (filters.userId) query.userId = filters.userId;
+    const query = {
+        ...(filters.status && { status: filters.status }),
+        ...(filters.type && { type: filters.type }),
+        ...(filters.priority && { priority: filters.priority }),
+        ...(filters.userId && { userId: filters.userId }),
+    };
 
     const [feedback, totalCount] = await Promise.all([
         Feedback.find(query)

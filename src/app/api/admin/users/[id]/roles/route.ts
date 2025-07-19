@@ -9,22 +9,22 @@ import {AuthorizationError, handleError, NotFoundError} from "@/lib/errors";
 import {logger} from "@/lib/logger";
 
 // Helper function to validate roles
-const ROLE_HIERARCHY: Record<string, number> = {
-    'user': 1,
-    'contributor': 2,
-    'moderator': 3,
-    'partner': 4,
-    'admin': 5,
-};
+// const ROLE_HIERARCHY: Record<string, number> = {
+//     'user': 1,
+//     'contributor': 2,
+//     'moderator': 3,
+//     'partner': 4,
+//     'admin': 5,
+// };
 
 // Helper to check if user can assign roles
-function canAssignRole(currentUserRoles: string[], targetRole: string): boolean {
-    const currentMaxLevel = Math.max(...currentUserRoles.map(role => ROLE_HIERARCHY[role] || 0));
-    const targetLevel = ROLE_HIERARCHY[targetRole] || 0;
-
-    // Can only assign roles below your level (admins can assign admin)
-    return currentMaxLevel >= targetLevel;
-}
+// function canAssignRole(currentUserRoles: string[], targetRole: string): boolean {
+//     const currentMaxLevel = Math.max(...currentUserRoles.map(role => ROLE_HIERARCHY[role] || 0));
+//     const targetLevel = ROLE_HIERARCHY[targetRole] || 0;
+//
+//     // Can only assign roles below your level (admins can assign admin)
+//     return currentMaxLevel >= targetLevel;
+// }
 
 // PATCH /api/admin/users/[id]/roles - Update user roles
 export async function PATCH(

@@ -108,10 +108,11 @@ export async function GET(request: NextRequest) {
         const priority = searchParams.get('priority');
 
         // Build filter
-        const filter: any = {};
-        if (status) filter.status = status;
-        if (type) filter.type = type;
-        if (priority) filter.priority = priority;
+        const filter = {
+            ...(status && { status }),
+            ...(type && { type }),
+            ...(priority && { priority }),
+        };
 
         // Get feedback with pagination
         const skip = (page - 1) * limit;

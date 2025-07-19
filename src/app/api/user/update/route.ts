@@ -4,7 +4,7 @@ import {connectDB} from '@/lib/mongodb';
 import {User} from '@/models/User';
 import {withRateLimit} from "@/lib/middleware";
 import {requireAuth} from "@/lib/auth/utils";
-import {ConflictError, handleError, NotFoundError} from "@/lib/errors";
+import {handleError, NotFoundError} from "@/lib/errors";
 import {UserUpdateInput, userUpdateSchema} from "@/lib/schemas/user";
 import {sanitizeUserInput} from "@/lib/utils";
 import {logger} from "@/lib/logger";
