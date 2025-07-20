@@ -393,12 +393,7 @@ export default function BodyModel({
                                 {getBodyPartForArmorZone(selectedZone)?.name}
                             </p>
                         </div>
-                        <div>
-                            <span className="text-tan-400">Penetration Damage Reduction:</span>
-                            <p className="text-tan-100 font-medium">
-                                {getZonePenetrationDamageReduction(selectedZone)}
-                            </p>
-                        </div>
+
 
                         <div>
                             <span className="text-tan-400">Protection:</span>
@@ -408,6 +403,29 @@ export default function BodyModel({
                                     : 'Unarmored'}
                             </p>
                         </div>
+
+                        <div>
+                            <span className="text-tan-400">Damage Taken:</span>
+                            <p className="text-tan-100 font-medium">
+                                {ARMOR_ZONES[selectedZone].damageModifier * 100}%
+                            </p>
+                        </div>
+
+                        <div>
+                            <span className="text-tan-400">Penetration Damage Reduction:</span>
+                            <p className="text-tan-100 font-medium">
+                                {getZonePenetrationDamageReduction(selectedZone)}
+                            </p>
+                        </div>
+
+
+                        <div>
+                            <span className="text-tan-400">When Broken:</span>
+                            <p className="text-tan-100 font-medium">
+                                {ARMOR_ZONES[selectedZone].destroyedDamageModifier*100}%
+                            </p>
+                        </div>
+
                         <div>
                             <span className="text-tan-400">Blunt Damage Reduction:</span>
                             <p className="text-tan-100 font-medium">
@@ -510,14 +528,17 @@ export default function BodyModel({
                                     }
                                 }
 
-                                // Add thigh protection if exists
-                                const upperArmsClass = getZoneArmorClass('UpperArm_L', defender);
-                                if (upperArmsClass > 0) {
-                                    zoneGroups['UpperArms'] = {
-                                        zones: ['UpperArm_L', 'UpperArm_R'],
-                                        armorClass: upperArmsClass
-                                    };
-                                }
+
+
+                                zoneGroups['UpperArms'] = {
+                                    zones: ['UpperArm_L', 'UpperArm_R'],
+                                    armorClass: getZoneArmorClass('UpperArm_L', defender)
+                                };
+
+                                zoneGroups['Forearms'] = {zones: ['arm_lower_l', 'arm_lower_r'], armorClass: 0};
+
+                                zoneGroups['Hands'] = {zones: ['hand_l', 'hand_r'], armorClass: 0};
+
 
                                 // Add thigh protection if exists
                                 const thighClass = getZoneArmorClass('Thigh_L', defender);
@@ -526,7 +547,10 @@ export default function BodyModel({
                                 }
 
                                 // Add limbs (unprotected)
-                                zoneGroups['Limbs'] = {zones: ['arm_lower_l', 'leg_lower_l'], armorClass: 0};
+                                zoneGroups['Legs'] = {zones: ['leg_lower_l', 'leg_lower_r'], armorClass: 0};
+                                zoneGroups['Foots'] = {zones: ['foot_l', 'foot_r'], armorClass: 0};
+
+
 
                                 return Object.entries(zoneGroups).map(([groupName, group]) => (
                                     <div key={groupName}

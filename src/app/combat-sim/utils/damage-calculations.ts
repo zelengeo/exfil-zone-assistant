@@ -2,7 +2,7 @@
  * Effective Damage Calculation for Combat Simulator
  * Handles armor durability, penetration mechanics, and blunt damage
  */
-import {BODY_HP, BodyPart,} from "@/app/combat-sim/utils/body-zones";
+import {ARMOR_ZONES, BODY_HP, BodyPart,} from "@/app/combat-sim/utils/body-zones";
 import {
     CombatSimulationResult,
     RANGE_VALUES, ShotResult, ShotResultWithLeftovers
@@ -17,10 +17,12 @@ function simulateCombat(
     ammo: AmmoProperties,
     armor: ArmorProperties | null,
     weaponFiringPower: number,
+    zoneId: keyof typeof ARMOR_ZONES,
     bodyPart: BodyPart,
     range: number,
 ): CombatSimulationResult {
     const shots: ShotResultWithLeftovers[] = [];
+    const armorZone = ARMOR_ZONES[zoneId];
     let currentBodyPartHP = bodyPart.hp;
     let currentBodyHP = BODY_HP;
     let currentArmorDurability = armor?.currentDurability || 0;
@@ -36,7 +38,7 @@ function simulateCombat(
             armor,
             currentArmorDurability,
             weaponFiringPower,
-            (currentBodyPartHP > 0) ? 0 : bodyPart.destroyedDamageDebuff,
+            (currentBodyPartHP > 0) ? armorZone.damageModifier : armorZone.destroyedDamageModifier,
             range,
             null,
             false,
@@ -69,7 +71,7 @@ function calculateShotDamage(
     armor: ArmorProperties | null,
     currentArmorDurability: number | null,
     weaponFiringPower: number,
-    damageDebuff: number = 0,
+    damageModifier: number = 1,
     range: number,
     overridePenetrationChance: boolean | null = null,
     applyRandom: boolean = false,
@@ -82,7 +84,7 @@ function calculateShotDamage(
     if (!armor) {
         return {
             isPenetrating: true,
-            damageToBodyPart: (1 - damageDebuff) * rangeDamage,
+            damageToBodyPart: damageModifier * rangeDamage,
             damageToArmor: 0,
             penetrationChance: 1
         };
@@ -109,27 +111,24 @@ function calculateShotDamage(
     // Determine if this shot penetrates
     const isPenetrating = overridePenetrationChance ?? (applyRandom ? (Math.random() < penetrationChance) : (penetrationChance > 0.5));
 
-    let damageToBodyPart = 0;
-    let damageToArmor = 0;
+    let damageToBodyPart = rangeDamage * damageModifier;
+    let damageToArmor = rangeDamage;
 
     if (isPenetrating) {
         //It is possible that first damageTo armor is computed and then depleted armor value is used for the scalar...
         const penetrationDamageScalar = getPenetrationDamageScalar(armor.penetrationDamageScalarCurve, rangePenetration, effectiveArmorClass);
 
-        damageToBodyPart = rangeDamage * penetrationDamageScalar;
+        damageToBodyPart *= penetrationDamageScalar;
 
         // Armor damage for penetrating shots
-        damageToArmor = rangeDamage * ammo.protectionGearPenetratedDamageScale * armor.durabilityDamageScalar * 3//Measured damage deviates by <2% (rounded measured data...), so it seems correct...
+        damageToArmor *= ammo.protectionGearPenetratedDamageScale * armor.durabilityDamageScalar * 3//Measured damage deviates by <2% (rounded measured data...), so it seems correct...
     } else {
         // Non-penetrating shot (blunt damage)
-        damageToBodyPart = rangeDamage * ammo.bluntDamageScale * armor.bluntDamageScalar;
+        damageToBodyPart *= ammo.bluntDamageScale * armor.bluntDamageScalar;
 
         // Armor damage for non-penetrating shots
-        damageToArmor = rangeDamage * ammo.protectionGearBluntDamageScale * armor.durabilityDamageScalar * 3
-        // * armor.durabilityDamageScalar;  not sure what this scalar does
+        damageToArmor *= ammo.protectionGearBluntDamageScale * armor.durabilityDamageScalar * 3
     }
-
-    damageToBodyPart *= (1 - damageDebuff);
 
 
     return {

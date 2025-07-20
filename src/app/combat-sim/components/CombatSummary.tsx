@@ -42,7 +42,7 @@ export default function CombatSummary({zoneCalculations, simulation, validAttack
     // Chest protection group
     const chestClass = getZoneArmorClass('spine_01', simulation.defender);
     zoneGroups['chest'] = {
-        zones: ['spine_01', 'spine_02'],
+        zones: ['spine_01', /*'spine_02'*/],
         armorClass: chestClass,
         label: 'Chest'
     };
@@ -53,7 +53,7 @@ export default function CombatSummary({zoneCalculations, simulation, validAttack
 
     if (stomachClass === pelvisClass) {
         zoneGroups['stomach'] = {
-            zones: ['spine_03', 'pelvis'],
+            zones: ['spine_03', /*'pelvis'*/],
             armorClass: stomachClass,
             label: 'Stomach'
         };
@@ -72,38 +72,40 @@ export default function CombatSummary({zoneCalculations, simulation, validAttack
         }
     }
 
-    const limbsZones = ['arm_lower_l', 'arm_lower_r', 'leg_lower_l', 'leg_lower_r']
+    zoneGroups['upper_arms'] = {
+        zones: ["UpperArm_L", /*"UpperArm_R"*/],
+        armorClass: getZoneArmorClass('UpperArm_L', simulation.defender),
+        label: 'Upper Arms'
+    };
 
-    // Add unprotected limbs as a single group
-    const leftArmClass = getZoneArmorClass('UpperArm_L', simulation.defender);
-    const rightArmClass = getZoneArmorClass('UpperArm_R', simulation.defender);
-    const leftLegClass = getZoneArmorClass('Thigh_L', simulation.defender);
-    const rightLegClass = getZoneArmorClass('Thigh_R', simulation.defender);
-
-    if (leftArmClass === 0 && rightArmClass === 0) {
-        limbsZones.push("UpperArm_L", "UpperArm_R")
-    } else {
-        zoneGroups['upper_arms'] = {
-            zones: ["UpperArm_L", "UpperArm_R"],
-            armorClass: leftArmClass,
-            label: 'Upper Arms'
-        };
-    }
-
-    if (leftLegClass === 0 && rightLegClass === 0) {
-        limbsZones.push("Thigh_L", "Thigh_R")
-    } else {
-        zoneGroups['thighs'] = {
-            zones: ["Thigh_L", "Thigh_R"],
-            armorClass: leftArmClass,
-            label: 'Thighs'
-        };
-    }
-
-    zoneGroups['limbs'] = {
-        zones: limbsZones,
+    zoneGroups['lower_arms'] = {
+        zones: ["arm_lower_l", /*"arm_lower_r"*/],
         armorClass: 0,
-        label: 'Limbs (Unprotected)'
+        label: 'Forearms'
+    };
+
+    zoneGroups['hands'] = {
+        zones: ["hand_l", /*"hand_r"*/],
+        armorClass: 0,
+        label: 'Hands'
+    };
+
+    zoneGroups['thighs'] = {
+        zones: ["Thigh_L", /*"Thigh_R"*/],
+        armorClass: getZoneArmorClass('Thigh_L', simulation.defender),
+        label: 'Thighs'
+    };
+
+    zoneGroups['lower_legs'] = {
+        zones: ["leg_lower_l", /*"leg_lower_r"*/],
+        armorClass: 0,
+        label: 'Lower Legs'
+    };
+
+    zoneGroups['foots'] = {
+        zones: ["foot_l", /*"foot_r"*/],
+        armorClass: 0,
+        label: 'Foots'
     };
 
     return <div className="mt-8">
@@ -151,17 +153,6 @@ export default function CombatSummary({zoneCalculations, simulation, validAttack
                                     const zone = ARMOR_ZONES[zoneId];
                                     const bodyPart = getBodyPartForArmorZone(zoneId);
                                     if (!zone || !bodyPart) return null;
-
-                                    // For grouped zones (like unprotected limbs), only show first
-                                    if (groupId === 'limbs' && zoneId !== 'arm_lower_l') {
-                                        return null;
-                                    }
-                                    if (groupId === 'upper_arms' && zoneId !== 'UpperArm_L') {
-                                        return null;
-                                    }
-                                    if (groupId === 'thighs' && zoneId !== 'Thigh_L') {
-                                        return null;
-                                    }
 
                                     return (
                                         <div key={zoneId} className="military-card p-4 rounded-sm">

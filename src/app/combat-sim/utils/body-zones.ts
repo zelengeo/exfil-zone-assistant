@@ -8,7 +8,6 @@ export interface BodyPart {
     id: string;
     name: string;
     hp: number;
-    destroyedDamageDebuff: number;
     isVital: boolean;
     armorZones: string[]; // References to armor zones that protect this part
 }
@@ -17,6 +16,8 @@ export interface ArmorZone {
     id: string;
     name: string;
     bodyPart: string; // Which body part this zone belongs to
+    damageModifier: number;
+    destroyedDamageModifier: number,
     defaultProtection: 'armor' | 'helmet' | 'none';
     displayPosition: {
         x: number; // Percentage from left
@@ -36,7 +37,6 @@ export const BODY_PARTS: Record<string, BodyPart> = {
         name: 'Head',
         hp: 35,
         isVital: true,
-        destroyedDamageDebuff: 0,
         armorZones: ['head_top', 'head_eyes', 'head_chin']
     },
     chest: {
@@ -44,7 +44,6 @@ export const BODY_PARTS: Record<string, BodyPart> = {
         name: 'Chest',
         hp: 85,
         isVital: true,
-        destroyedDamageDebuff: 0,
         armorZones: ['chest']
     },
     stomach: {
@@ -52,42 +51,37 @@ export const BODY_PARTS: Record<string, BodyPart> = {
         name: 'Stomach',
         hp: 70,
         isVital: false,
-        destroyedDamageDebuff: 0,
-        armorZones: ['stomach']
+        armorZones: ['stomach', 'pelvis']
     },
     left_arm: {
         id: 'left_arm',
         name: 'Left Arm',
         hp: 60,
         isVital: false,
-        destroyedDamageDebuff: 0.3,
-        armorZones: ['arm_upper_l', 'arm_lower_l']
+        armorZones: ['arm_upper_l', 'arm_lower_l', 'hand_l']
     },
     right_arm: {
         id: 'right_arm',
         name: 'Right Arm',
         hp: 60,
         isVital: false,
-        destroyedDamageDebuff: 0.3,
-        armorZones: ['arm_upper_r', 'arm_lower_r']
+        armorZones: ['arm_upper_r', 'arm_lower_r', 'hand_r']
     },
     left_leg: {
         id: 'left_leg',
         name: 'Left Leg',
         hp: 65,
         isVital: false,
-        destroyedDamageDebuff: 0.3,
-        armorZones: ['leg_thigh_l', 'leg_lower_l']
+        armorZones: ['leg_thigh_l', 'leg_lower_l', 'foot_l']
     },
     right_leg: {
         id: 'right_leg',
         name: 'Right Leg',
         hp: 65,
         isVital: false,
-        destroyedDamageDebuff: 0.3,
-        armorZones: ['leg_thigh_r', 'leg_lower_r']
+        armorZones: ['leg_thigh_r', 'leg_lower_r', 'foot_r']
     }
-};
+} as const;
 
 export const BODY_HP: number = Object.values(BODY_PARTS).reduce((total, part) => total + part.hp, 0);
 
@@ -101,6 +95,8 @@ export const ARMOR_ZONES: Record<string, ArmorZone> = {
         id: 'head_top',
         name: 'Head (Top)',
         bodyPart: 'head',
+        damageModifier: 1,
+        destroyedDamageModifier: 1,
         defaultProtection: 'helmet',
         displayPosition: { x: 40, y: 0, width: 20, height: 5 }
     },
@@ -108,6 +104,8 @@ export const ARMOR_ZONES: Record<string, ArmorZone> = {
         id: 'head_eyes',
         name: 'Head (Eyes)',
         bodyPart: 'head',
+        damageModifier: 1,
+        destroyedDamageModifier: 1,
         defaultProtection: 'helmet', // face shield
         displayPosition: { x: 40, y: 5, width: 20, height: 2 }
     },
@@ -115,6 +113,8 @@ export const ARMOR_ZONES: Record<string, ArmorZone> = {
         id: 'head_chin',
         name: 'Head (Chin)',
         bodyPart: 'head',
+        damageModifier: 1,
+        destroyedDamageModifier: 1,
         defaultProtection: 'helmet', // face shield, OP helmet
         displayPosition: { x: 40, y: 7, width: 20, height: 6 }
     },
@@ -124,6 +124,8 @@ export const ARMOR_ZONES: Record<string, ArmorZone> = {
         id: 'spine_01',
         name: 'Upper Chest',
         bodyPart: 'chest',
+        damageModifier: 1,
+        destroyedDamageModifier: 1,
         defaultProtection: 'armor',
         displayPosition: { x: 33, y: 14, width: 34, height: 9 }
     },
@@ -131,6 +133,8 @@ export const ARMOR_ZONES: Record<string, ArmorZone> = {
         id: 'spine_02',
         name: 'Lower Chest',
         bodyPart: 'chest',
+        damageModifier: 1,
+        destroyedDamageModifier: 1,
         defaultProtection: 'armor',
         displayPosition: { x: 33, y: 23, width: 34, height: 9 }
     },
@@ -140,6 +144,8 @@ export const ARMOR_ZONES: Record<string, ArmorZone> = {
         id: 'spine_03',
         name: 'Upper Stomach',
         bodyPart: 'stomach',
+        damageModifier: 1,
+        destroyedDamageModifier: 1,
         defaultProtection: 'armor',
         displayPosition: { x: 33, y: 32, width: 34, height: 11 }
     },
@@ -147,6 +153,8 @@ export const ARMOR_ZONES: Record<string, ArmorZone> = {
         id: 'pelvis',
         name: 'Pelvis',
         bodyPart: 'stomach',
+        damageModifier: 1,
+        destroyedDamageModifier: 1,
         defaultProtection: 'armor',
         displayPosition: { x: 33, y: 43, width: 34, height: 8 }
     },
@@ -156,6 +164,8 @@ export const ARMOR_ZONES: Record<string, ArmorZone> = {
         id: 'UpperArm_L',
         name: 'Left Upper Arm',
         bodyPart: 'left_arm',
+        damageModifier: 1,
+        destroyedDamageModifier: 0.5,
         defaultProtection: 'armor', // some armors protect upper arms
         displayPosition: { x: 18, y: 15, width: 14, height: 13 }
     },
@@ -163,6 +173,8 @@ export const ARMOR_ZONES: Record<string, ArmorZone> = {
         id: 'UpperArm_R',
         name: 'Right Upper Arm',
         bodyPart: 'right_arm',
+        damageModifier: 1,
+        destroyedDamageModifier: 0.5,
         defaultProtection: 'armor', // some armors protect upper arms
         displayPosition: { x: 68, y: 15, width: 14, height: 13 }
     },
@@ -170,15 +182,37 @@ export const ARMOR_ZONES: Record<string, ArmorZone> = {
         id: 'arm_lower_l',
         name: 'Left Lower Arm',
         bodyPart: 'left_arm',
+        damageModifier: 0.5,
+        destroyedDamageModifier: 0.25,
         defaultProtection: 'none',
-        displayPosition: { x: 18, y: 28, width: 10, height: 28 }
+        displayPosition: { x: 18, y: 28, width: 10, height: 21 }
     },
     arm_lower_r: {
         id: 'arm_lower_r',
         name: 'Right Lower Arm',
         bodyPart: 'right_arm',
+        damageModifier: 0.5,
+        destroyedDamageModifier: 0.25,
         defaultProtection: 'none',
-        displayPosition: { x: 72, y: 28, width: 10, height: 28 }
+        displayPosition: { x: 72, y: 28, width: 10, height: 21 }
+    },
+    hand_l: {
+        id: 'hand_l',
+        name: 'Left Hand',
+        bodyPart: 'left_arm',
+        damageModifier: 1,
+        destroyedDamageModifier: 1,
+        defaultProtection: 'none',
+        displayPosition: { x: 19, y: 49, width: 11, height: 7 }
+    },
+    hand_r: {
+        id: 'hand_r',
+        name: 'Right Hand',
+        bodyPart: 'right_arm',
+        damageModifier: 1,
+        destroyedDamageModifier: 1,
+        defaultProtection: 'none',
+        displayPosition: { x: 71, y: 49, width: 11, height: 7 }
     },
 
     // Leg zones
@@ -186,6 +220,8 @@ export const ARMOR_ZONES: Record<string, ArmorZone> = {
         id: 'Thigh_L',
         name: 'Left Thigh',
         bodyPart: 'left_leg',
+        damageModifier: 1,
+        destroyedDamageModifier: 0.7,
         defaultProtection: 'armor', // some armors protect thighs
         displayPosition: { x: 33, y: 51, width: 15, height: 14 }
     },
@@ -193,6 +229,8 @@ export const ARMOR_ZONES: Record<string, ArmorZone> = {
         id: 'Thigh_R',
         name: 'Right Thigh',
         bodyPart: 'right_leg',
+        damageModifier: 1,
+        destroyedDamageModifier: 0.7,
         defaultProtection: 'armor', // some armors protect thighs
         displayPosition: { x: 52, y: 51, width: 15, height: 14 }
     },
@@ -200,17 +238,39 @@ export const ARMOR_ZONES: Record<string, ArmorZone> = {
         id: 'leg_lower_l',
         name: 'Left Lower Leg',
         bodyPart: 'left_leg',
+        damageModifier: 1,
+        destroyedDamageModifier: 0.7,
         defaultProtection: 'none',
-        displayPosition: { x: 34, y: 65, width: 13, height: 26 }
+        displayPosition: { x: 34, y: 65, width: 13, height: 21 }
     },
     leg_lower_r: {
         id: 'leg_lower_r',
         name: 'Right Lower Leg',
         bodyPart: 'right_leg',
+        damageModifier: 1,
+        destroyedDamageModifier: 0.7,
         defaultProtection: 'none',
-        displayPosition: { x: 53, y: 65, width: 13, height: 26 }
-    }
-};
+        displayPosition: { x: 53, y: 65, width: 13, height: 21 }
+    },
+    foot_l: {
+        id: 'foot_l',
+        name: 'Left Foot',
+        bodyPart: 'left_leg',
+        damageModifier: 0.5,
+        destroyedDamageModifier: 0.7,
+        defaultProtection: 'none',
+        displayPosition: { x: 34, y: 86, width: 13, height: 6 }
+    },
+    foot_r: {
+        id: 'foot_r',
+        name: 'Right Foot',
+        bodyPart: 'right_leg',
+        damageModifier: 0.5,
+        destroyedDamageModifier: 0.7,
+        defaultProtection: 'none',
+        displayPosition: { x: 53, y: 86, width: 13, height: 6 }
+    },
+} as const;
 /**
  * Get all armor zones for a specific body part
  */
