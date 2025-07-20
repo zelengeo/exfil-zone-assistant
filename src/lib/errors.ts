@@ -33,6 +33,22 @@ export class AuthorizationError extends AppError {
     }
 }
 
+
+export class BannedUserError extends AuthorizationError {
+    code = 'USER_BANNED';
+}
+
+
+export class InsufficientPermissionsError extends AuthorizationError {
+    code = 'INSUFFICIENT_PERMISSIONS';
+    constructor(requiredRole?: string) {
+        super(requiredRole
+            ? `${requiredRole} role required`
+            : 'Insufficient permissions'
+        );
+    }
+}
+
 export class NotFoundError extends AppError {
     constructor(resource: string = 'Resource') {
         super(`${resource} not found`, 404, 'NOT_FOUND');

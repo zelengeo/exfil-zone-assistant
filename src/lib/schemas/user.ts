@@ -131,6 +131,12 @@ export const userUsernameUpdateSchema = userBaseSchema.pick({
     username: true,
 });
 
+export const userAuthSchema = userBaseSchema.pick({
+    username: true,
+    roles: true,
+    isBanned: true,
+})
+
 
 export const adminUsersQuerySchema = z.object({
     page: z.string().regex(/^\d+$/).transform(Number).default(1),
@@ -151,6 +157,7 @@ export const adminStatsRequestSchema = z.object({
 export type UserRoleUpdateInput = z.infer<typeof userRoleUpdateSchema>;
 export type UserUpdateInput = z.infer<typeof userUpdateSchema>;
 export type UserSettings = z.infer<typeof userSettingsSchema>;
+export type UserAuth = z.infer<typeof userAuthSchema>;
 export type AdminUserUpdateInput = z.infer<typeof adminUserUpdateSchema>;
 export type UserUsernameUpdateInput = z.infer<typeof userUsernameUpdateSchema>;
 export type AdminUsersQueryInput = z.infer<typeof adminUsersQuerySchema>;

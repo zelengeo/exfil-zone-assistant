@@ -33,5 +33,6 @@ const AccountSchema = new Schema({
 
 // Compound index for provider + providerAccountId (required by NextAuth)
 AccountSchema.index({ provider: 1, providerAccountId: 1 }, { unique: true });
+AccountSchema.index({ userId: 1 }); // For finding all accounts for a user
 
 export const Account = models.Account || model('Account', AccountSchema);

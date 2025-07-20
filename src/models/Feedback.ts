@@ -42,4 +42,20 @@ const FeedbackSchema = new Schema({
     updatedAt: {type: Date, default: Date.now},
 });
 
+// For listing and filtering feedback
+FeedbackSchema.index({ status: 1, priority: -1, createdAt: -1 }); // Admin queue
+FeedbackSchema.index({ type: 1, status: 1, createdAt: -1 }); // Type filtering
+FeedbackSchema.index({ userId: 1, createdAt: -1 }); // User's feedback history
+
+// For admin dashboard stats
+FeedbackSchema.index({ status: 1, type: 1 }); // Stats aggregation
+FeedbackSchema.index({ createdAt: -1 }); // Recent feedback
+FeedbackSchema.index({ reviewedBy: 1, reviewedAt: -1 }); // Admin activity
+
+// Update timestamp on save
+FeedbackSchema.pre('save', function(next) {
+    this.updatedAt = new Date();
+    next();
+});
+
 export const Feedback = models.Feedback || model('Feedback', FeedbackSchema);

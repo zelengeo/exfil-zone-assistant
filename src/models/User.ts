@@ -81,10 +81,13 @@ const UserSchema = new Schema({
 // });
 
 
-// UserSchema.index({ email: 1 }, { unique: true });
-// UserSchema.index({ username: 1 }, { unique: true });
-// UserSchema.index({ 'stats.contributionPoints': -1 });
-UserSchema.index({ createdAt: -1 });
+// For User collection - these would improve query performance:
+UserSchema.index({ _id: 1, isBanned: 1 }); // Compound index for auth checks
+UserSchema.index({ _id: 1, roles: 1 }); // Compound index for role checks
+UserSchema.index({ _id: 1, isBanned: 1, roles: 1 }); // Covering index for complete auth
+UserSchema.index({ 'stats.contributionPoints': -1 }); // For leaderboards
+UserSchema.index({ createdAt: -1 }); // For sorting new users
+
 
 // Ensure we don't re-compile the model
 export const User = models.User || model('User', UserSchema);
