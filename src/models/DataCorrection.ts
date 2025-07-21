@@ -59,13 +59,16 @@ const DataCorrectionSchema = new Schema({
 });
 
 // For finding corrections
-DataCorrectionSchema.index({ entityType: 1, entityId: 1, status: 1 }); // Entity lookups
-DataCorrectionSchema.index({ status: 1, createdAt: -1 }); // Review queue
-DataCorrectionSchema.index({ userId: 1, createdAt: -1 }); // User's corrections
+DataCorrectionSchema.index({ entityType: 1, entityId: 1, status: 1, createdAt: -1  }); // Entity lookups
+DataCorrectionSchema.index({
+    status: 1,
+    createdAt: -1
+}, {
+    partialFilterExpression: { status: 'pending' }
+});
 
-// For admin review
-DataCorrectionSchema.index({ status: 1, priority: -1 }); // Priority queue
-DataCorrectionSchema.index({ reviewedBy: 1, reviewedAt: -1 }); // Reviewer activity
+DataCorrectionSchema.index({ userId: 1, status: 1, createdAt: -1 }); // User history
+DataCorrectionSchema.index({ reviewedBy: 1, reviewedAt: -1 }, { sparse: true });
 
 // Update timestamp on save
 DataCorrectionSchema.pre('save', function(next) {

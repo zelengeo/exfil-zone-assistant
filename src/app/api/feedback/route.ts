@@ -3,6 +3,7 @@ import {NextRequest} from 'next/server';
 import {getServerSession} from 'next-auth';
 import {authOptions} from '@/app/api/auth/[...nextauth]/route';
 import {connectDB} from '@/lib/mongodb';
+import mongoose from "mongoose";
 import {Feedback} from '@/models/Feedback';
 import {User} from '@/models/User';
 import {feedbackSubmitSchema} from "@/lib/schemas/feedback";
@@ -10,16 +11,17 @@ import {withRateLimit} from "@/lib/middleware";
 import {logger} from "@/lib/logger";
 import {handleError} from "@/lib/errors";
 import {sanitizeUserInput} from "@/lib/utils";
-import {requireAuth} from "@/lib/auth/utils";
+import {requireAuthWithUserCheck} from "@/lib/auth/utils";
 
 export async function POST(request: Request) {
     return withRateLimit(
         request,
         async () => {
+            const mongooseSession = await mongoose.startSession();
+
             try {
-                await requireAuth();
+                const { session } = await requireAuthWithUserCheck();
                 await connectDB();
-                const session = await getServerSession(authOptions);
                 const body = await request.json();
 
                 // Validate input with Zod
@@ -32,6 +34,9 @@ export async function POST(request: Request) {
                     description: sanitizeUserInput(validatedData.description),
                 };
 
+                // Start transaction
+                mongooseSession.startTransaction();
+
                 // Create feedback
                 const feedbackData = {
                     ...sanitizedData,
@@ -43,46 +48,57 @@ export async function POST(request: Request) {
                     updatedAt: new Date(),
                 };
 
-                const feedback = await Feedback.create(feedbackData);
+                const feedback = await Feedback.create([feedbackData], { session: mongooseSession });
 
                 // Update user stats if authenticated
                 if (session?.user?.id) {
-                    await User.findByIdAndUpdate(session.user.id, {
-                        $inc: {
-                            'stats.feedbackSubmitted': 1,
-                            [`stats.${validatedData.type}sReported`]: 1,
-                        }
-                    });
+                    await User.findByIdAndUpdate(
+                        session.user.id,
+                        {
+                            $inc: {
+                                'stats.feedbackSubmitted': 1,
+                                [`stats.${validatedData.type}sReported`]: 1,
+                            }
+                        },
+                        { session: mongooseSession }
+                    );
                 }
+
+                // Commit transaction
+                await mongooseSession.commitTransaction();
 
                 // Log successful submission
                 logger.info('Feedback submitted', {
-                    feedbackId: feedback._id.toString(),
-                    type: feedback.type,
+                    feedbackId: feedback[0]._id.toString(),
+                    type: feedback[0].type,
                     userId: session?.user?.id,
-                    isAnonymous: feedback.isAnonymous,
+                    isAnonymous: feedback[0].isAnonymous,
                 });
-
 
                 return Response.json({
                     success: true,
-                    feedbackId: feedback._id,
+                    feedbackId: feedback[0]._id,
                     message: 'Thank you for your feedback!',
                 });
 
             } catch (error) {
+                // Abort transaction on error
+                await mongooseSession.abortTransaction();
+
                 logger.error('Feedback submission failed', error, {
                     path: '/api/feedback/submit',
                     method: 'POST',
                 });
 
                 return handleError(error);
+            } finally {
+                // End session
+                await mongooseSession.endSession();
             }
         },
         'feedbackPostAuthenticated'
     );
 }
-
 // GET endpoint for retrieving feedback (admin only)
 export async function GET(request: NextRequest) {
     try {

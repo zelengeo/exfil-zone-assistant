@@ -43,14 +43,17 @@ const FeedbackSchema = new Schema({
 });
 
 // For listing and filtering feedback
-FeedbackSchema.index({ status: 1, priority: -1, createdAt: -1 }); // Admin queue
-FeedbackSchema.index({ type: 1, status: 1, createdAt: -1 }); // Type filtering
-FeedbackSchema.index({ userId: 1, createdAt: -1 }); // User's feedback history
-
-// For admin dashboard stats
-FeedbackSchema.index({ status: 1, type: 1 }); // Stats aggregation
-FeedbackSchema.index({ createdAt: -1 }); // Recent feedback
-FeedbackSchema.index({ reviewedBy: 1, reviewedAt: -1 }); // Admin activity
+FeedbackSchema.index({ status: 1, priority: -1, createdAt: -1 }); // Keep this
+FeedbackSchema.index({ type: 1, status: 1 }); // Remove createdAt for better selectivity
+FeedbackSchema.index({ userId: 1, type: 1, createdAt: -1 }); // Better for user history by type
+FeedbackSchema.index({ createdAt: -1, status: 1 }); // For recent feedback by status
+FeedbackSchema.index({ reviewedBy: 1, reviewedAt: -1 }, { sparse: true }); // Sparse for null values
+FeedbackSchema.index({
+    category: 1,
+    type: 1,
+    status: 1,
+    priority: -1
+}); // For category-based filtering
 
 // Update timestamp on save
 FeedbackSchema.pre('save', function(next) {

@@ -7,7 +7,7 @@ import {dataCorrectionReviewSchema, IDataCorrection} from '@/lib/schemas/dataCor
 import {withRateLimit} from '@/lib/middleware';
 import {logger} from '@/lib/logger';
 import {NotFoundError, ValidationError, handleError, ConflictError} from '@/lib/errors';
-import {isValidObjectId} from 'mongoose';
+import mongoose, {isValidObjectId} from 'mongoose';
 import {requireAdminOrModerator} from "@/lib/auth/utils";
 interface IDataCorrectionPopulated extends Omit<IDataCorrection, 'userId' | 'reviewedBy'> {
     userId: {
@@ -77,8 +77,10 @@ export async function PATCH(
     {params}: { params: { id: string } }
 ) {
     return withRateLimit(request, async () => {
+        const session = await mongoose.startSession();
+
         try {
-            const { session } = await requireAdminOrModerator();
+            const { session: adminSession } = await requireAdminOrModerator();
 
             if (!isValidObjectId(params.id)) {
                 throw new ValidationError('Invalid correction ID');
@@ -89,7 +91,10 @@ export async function PATCH(
 
             await connectDB();
 
-            const correction = await DataCorrection.findById(params.id);
+            // Start transaction
+            session.startTransaction();
+
+            const correction = await DataCorrection.findById(params.id).session(session);
             if (!correction) {
                 throw new NotFoundError('Correction not found');
             }
@@ -100,13 +105,13 @@ export async function PATCH(
 
             // Update correction
             correction.status = validatedData.status;
-            correction.reviewedBy = session!.user.id;
+            correction.reviewedBy = adminSession!.user.id;
             correction.reviewedAt = new Date();
             if (validatedData.reviewNotes) {
                 correction.reviewNotes = validatedData.reviewNotes;
             }
 
-            await correction.save();
+            await correction.save({ session });
 
             // Update user stats if correction has a userId
             if (correction.userId) {
@@ -120,13 +125,20 @@ export async function PATCH(
                     }
                     : {$inc: {'stats.dataCorrections': 1}};
 
-                await User.findByIdAndUpdate(correction.userId, updateQuery);
+                await User.findByIdAndUpdate(
+                    correction.userId,
+                    updateQuery,
+                    { session }
+                );
             }
+
+            // Commit transaction
+            await session.commitTransaction();
 
             logger.info('Correction reviewed', {
                 correctionId: correction._id,
                 status: validatedData.status,
-                reviewerId: session!.user.id,
+                reviewerId: adminSession!.user.id,
             });
 
             return NextResponse.json({
@@ -137,9 +149,16 @@ export async function PATCH(
                     reviewedAt: correction.reviewedAt,
                 },
             });
+
         } catch (error) {
+            // Abort transaction on error
+            await session.abortTransaction();
+
             logger.error('Failed to review correction', error);
             return handleError(error);
+        } finally {
+            // End session
+            await session.endSession();
         }
     }, 'admin');
 }

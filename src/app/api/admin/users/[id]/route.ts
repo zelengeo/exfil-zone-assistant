@@ -63,78 +63,76 @@ export async function DELETE(
     return withRateLimit(
         request,
         async () => {
+            const mongooseSession = await mongoose.startSession();
+
             try {
                 const {session} = await requireAdmin();
-
-                // Validate ObjectId format
-                if (!isValidObjectId(params.id)) {
-                    throw new ValidationError('Invalid user ID format');
-                }
-
-                // Prevent self-deletion
-                if (session?.user?.id.toString() === params.id) {
-                    throw new ConflictError('Cannot delete your own account');
-                }
-
                 await connectDB();
-                const userToDelete = await User.findById(params.id);
 
-                if (!userToDelete) {
-                    throw new NotFoundError('User');
-                }
-
-                // Prevent deletion of other admins by non-super-admin
-                if (userToDelete.roles?.includes('admin')) {
-                    throw new AuthorizationError('Cannot delete other admin accounts')
+                if (!isValidObjectId(params.id)) {
+                    throw new ValidationError('Invalid user ID');
                 }
 
                 // Start transaction
-                const mongooseSession = await mongoose.startSession();
                 mongooseSession.startTransaction();
 
-                try {
-                    // Anonymize feedback instead of deleting
-                    await Feedback.updateMany(
-                        {userId: params.id},
-                        {$set: {userId: null}},
-                        {session: mongooseSession}
-                    );
-
-                    // Delete user data
-                    await Promise.all([
-                        // Session.deleteMany({ userId: params.id }, { session: mongooseSession }),
-                        Account.deleteMany({userId: params.id}, {session: mongooseSession}),
-                        User.findByIdAndDelete(params.id, {session: mongooseSession}),
-                    ]);
-
-                    await mongooseSession.commitTransaction();
-
-                    logger.info('User deleted', {
-                        deletedUserId: params.id,
-                        deletedBy: session.user.id.toString(),
-                    });
-
-                    return Response.json({
-                        success: true,
-                        message: 'User account deleted successfully',
-                    });
-
-                } catch (error) {
-                    await mongooseSession.abortTransaction();
-                    throw error;
-                } finally {
-                    await mongooseSession.endSession();
+                const user = await User.findById(params.id).session(mongooseSession);
+                if (!user) {
+                    throw new NotFoundError('User');
                 }
 
+                // Prevent deleting yourself
+                if (session.user.id === params.id) {
+                    throw new ConflictError('Cannot delete your own account');
+                }
+
+                // Prevent deleting other admins
+                if (user.roles?.includes('admin')) {
+                    throw new AuthorizationError('Cannot delete admin accounts');
+                }
+
+                // Delete user
+                await User.findByIdAndDelete(params.id).session(mongooseSession);
+
+                // Delete associated accounts
+                await Account.deleteMany({ userId: params.id }).session(mongooseSession);
+
+                // Anonymize feedback instead of deleting
+                await Feedback.updateMany(
+                    { userId: params.id },
+                    {
+                        $unset: { userId: 1 },
+                        $set: { isAnonymous: true }
+                    }
+                ).session(mongooseSession);
+
+                // Commit transaction
+                await mongooseSession.commitTransaction();
+
+                logger.info('User deleted', {
+                    adminId: session.user.id,
+                    deletedUserId: params.id,
+                    username: user.username
+                });
+
+                return Response.json({
+                    success: true,
+                    message: 'User account deleted successfully'
+                });
+
             } catch (error) {
-                logger.error('Failed to delete user', error, {
+                // Abort transaction on error
+                await mongooseSession.abortTransaction();
+
+                logger.error('User deletion error:', error, {
                     path: `/api/admin/users/${params.id}`,
                     method: 'DELETE',
                 });
-
                 return handleError(error);
+            } finally {
+                // End session
+                await mongooseSession.endSession();
             }
-
         },
         'admin'
     );

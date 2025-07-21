@@ -1,11 +1,11 @@
 // src/app/api/admin/feedback/[id]/route.ts
 import {NextRequest} from 'next/server';
-import {Feedback} from '@/models/Feedback';
-import {requireAdmin} from "@/lib/auth/utils";
-import {withRateLimit} from "@/lib/middleware";
 import {isValidObjectId} from "mongoose";
+import {Feedback} from '@/models/Feedback';
+import {feedbackStatusUpdateSchema, IFeedbackWithUsername} from "@/lib/schemas/feedback";
+import {withRateLimit} from "@/lib/middleware";
+import {requireAdmin} from "@/lib/auth/utils";
 import {handleError, NotFoundError, ValidationError} from '@/lib/errors';
-import {feedbackStatusUpdateSchema, IFeedback} from "@/lib/schemas/feedback";
 import {logger} from "@/lib/logger";
 
 // GET /api/admin/feedback/[id] - Get specific feedback item
@@ -25,7 +25,7 @@ export async function GET(
 
                 const feedback = await Feedback.findById(params.id)
                     .populate('userId', 'username')
-                    .lean<IFeedback>();
+                    .lean<IFeedbackWithUsername>();
 
                 if (!feedback) {
                     throw new NotFoundError('Feedback');
@@ -70,7 +70,7 @@ export async function PATCH(
                         }
                     },
                     {new: true}
-                ).populate('userId', 'username');
+                ).populate('userId', 'username').lean<IFeedbackWithUsername>();
 
                 if (!feedback) {
                     throw new NotFoundError('Feedback');

@@ -87,6 +87,18 @@ UserSchema.index({ _id: 1, roles: 1 }); // Compound index for role checks
 UserSchema.index({ _id: 1, isBanned: 1, roles: 1 }); // Covering index for complete auth
 UserSchema.index({ 'stats.contributionPoints': -1 }); // For leaderboards
 UserSchema.index({ createdAt: -1 }); // For sorting new users
+UserSchema.index({ lastLoginAt: -1 }); // For tracking active users
+
+// Add text index for search
+// UserSchema.index({
+//     username: 'text',
+//     displayName: 'text',
+// }, {
+//     weights: {
+//         username: 10,
+//         displayName: 5,
+//     }
+// });
 
 
 // Ensure we don't re-compile the model

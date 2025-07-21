@@ -1,5 +1,6 @@
 import {z} from 'zod';
 import {Types} from "mongoose";
+import {IUser} from "@/lib/schemas/user";
 
 export const typeEnum = ['bug', 'feature', 'data_correction', "general"] as const;
 export const statusEnum = ['new', 'in_review', 'accepted', 'rejected', 'implemented', 'duplicate'] as const;
@@ -69,3 +70,8 @@ export type FeedbackPriority = (typeof priorityEnum)[number];
 export type FeedbackCategory = (typeof categoryEnum)[number];
 
 export type IFeedback = z.infer<typeof feedbackDocumentSchema>;
+export type IFeedbackWithUsername = Omit<IFeedback, 'userId'> & {
+    userId: {
+        username: IUser['username'];
+    };
+};

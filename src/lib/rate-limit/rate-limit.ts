@@ -38,9 +38,9 @@ export const RATE_LIMIT_CONFIGS = {
         interval: 60 * 15,
         uniqueTokenPerInterval: 5,
     },
-    // Admin actions: 50 per minute
+    // Admin actions: 50 per 5min
     admin: {
-        interval: 60,
+        interval: 300,
         uniqueTokenPerInterval: 50,
     },
     // General API: 30 per minute

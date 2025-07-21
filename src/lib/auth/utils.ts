@@ -24,6 +24,23 @@ export async function requireAuth() {
     return session;
 }
 
+export async function requireAuthWithUserCheck() {
+    const session = await requireAuth();
+
+    await connectDB();
+    const user = await User.findById(session.user.id).select('isBanned roles username').lean<UserAuth>();
+
+    if (!user) {
+        throw new NotFoundError('User not found');
+    }
+
+    if (user.isBanned) {
+        throw new BannedUserError();
+    }
+
+    return { session, user };
+}
+
 export async function requireAdmin() {
     const session = await requireAuth();
 
