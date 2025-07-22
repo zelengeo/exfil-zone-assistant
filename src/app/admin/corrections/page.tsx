@@ -42,15 +42,15 @@ import {
     RefreshCw,
 } from "lucide-react";
 import { toast } from "sonner";
-import {CorrectionStatus, IPopulatedDataCorrection} from "@/lib/schemas/dataCorrection";
+import {CorrectionStatus, IDataCorrectionAdminGet} from "@/lib/schemas/dataCorrection";
 import { formatDistanceToNow } from "date-fns";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import {VariantProps} from "class-variance-authority";
 
 export default function CorrectionsAdminPage() {
-    const [corrections, setCorrections] = useState<IPopulatedDataCorrection[]>([]);
+    const [corrections, setCorrections] = useState<IDataCorrectionAdminGet[]>([]);
     const [loading, setLoading] = useState(true);
-    const [selectedCorrection, setSelectedCorrection] = useState<IPopulatedDataCorrection | null>(null);
+    const [selectedCorrection, setSelectedCorrection] = useState<IDataCorrectionAdminGet | null>(null);
     const [reviewDialogOpen, setReviewDialogOpen] = useState(false);
     const [reviewNotes, setReviewNotes] = useState("");
     const [filters, setFilters] = useState({
@@ -81,6 +81,7 @@ export default function CorrectionsAdminPage() {
 
             if (response.ok) {
                 setCorrections(data.corrections);
+                // TODO IDataCorrectionAdminGetRelated
                 setPagination(data.pagination);
             }
         } catch (error) {
@@ -142,7 +143,7 @@ export default function CorrectionsAdminPage() {
             const data = await response.json();
 
             if (response.ok) {
-                const exportData = data.corrections.map((c: IPopulatedDataCorrection) => ({
+                const exportData = data.corrections.map((c: IDataCorrectionAdminGet) => ({
                     id: c._id,
                     entityType: c.entityType,
                     entityId: c.entityId,

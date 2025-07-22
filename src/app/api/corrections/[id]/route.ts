@@ -11,6 +11,7 @@ import {
 } from '@/lib/errors';
 import { isValidObjectId } from 'mongoose';
 import {requireAuth} from "@/lib/auth/utils";
+import {IDataCorrectionGet} from "@/lib/schemas/dataCorrection";
 
 
 // GET /api/corrections/[id] - Get a specific correction
@@ -31,14 +32,14 @@ export async function GET(
                 .findById(params.id)
                 .select('-reviewNotes') // Hide internal review notes
                 .populate('reviewedBy', 'username displayName')
-                .lean();
+                .lean<IDataCorrectionGet>();
 
             if (!correction) {
                 throw new NotFoundError('Correction not found');
             }
 
             // Check ownership
-            if (params.id !== session.user.id) {
+            if (correction.userId !== session.user.id) {
                 throw new AuthorizationError('You can only view your own corrections');
             }
 

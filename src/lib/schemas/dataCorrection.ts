@@ -105,10 +105,22 @@ export const populatedReviewerSchema = z.object({
 });
 
 // Populated data correction schema
-export const populatedDataCorrectionSchema = dataCorrectionDocumentSchema.extend({
+export const dataCorrectionAdminGetSchema = dataCorrectionDocumentSchema.extend({
     userId: populatedUserSchema.nullable().optional(),
     reviewedBy: populatedReviewerSchema.nullable().optional(),
 })
+
+
+export const dataCorrectionAdminGetRelatedSchema = dataCorrectionDocumentSchema.pick({
+    status: true,
+    createdAt: true,
+}).extend({userId: populatedUserSchema.pick({username: true}) })
+
+
+
+export const dataCorrectionGetSchema = dataCorrectionDocumentSchema.extend({
+    reviewedBy: populatedReviewerSchema.nullable().optional(),
+}).omit({reviewNotes: true})
 
 
 // Type exports
@@ -121,4 +133,6 @@ export type ItemCorrectionProposedData = z.infer<typeof itemCorrectionSchema.sha
 export type TaskCorrectionProposedData = z.infer<typeof taskCorrectionSchema.shape.proposedData>;
 export type TaskCorrection = z.infer<typeof taskCorrectionSchema>;
 export type IDataCorrection = z.infer<typeof dataCorrectionDocumentSchema>;
-export type IPopulatedDataCorrection = z.infer<typeof populatedDataCorrectionSchema>;
+export type IDataCorrectionAdminGet = z.infer<typeof dataCorrectionAdminGetSchema>;
+export type IDataCorrectionAdminGetRelated = z.infer<typeof dataCorrectionAdminGetRelatedSchema>;
+export type IDataCorrectionGet = z.infer<typeof dataCorrectionGetSchema>;

@@ -7,7 +7,6 @@ export const statusEnum = ['new', 'in_review', 'accepted', 'rejected', 'implemen
 export const priorityEnum = ['low', 'medium', 'high', 'critical'] as const;
 export const categoryEnum = ['items', 'tasks', 'hideout', 'combat-sim', 'guides', 'ui', 'other'] as const;
 
-// ===== FEEDBACK SCHEMA =====
 export const feedbackBaseSchema = z.object({
     type: z.enum(typeEnum),
     status: z.enum(statusEnum).default('new'),

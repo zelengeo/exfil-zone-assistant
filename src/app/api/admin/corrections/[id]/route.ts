@@ -3,24 +3,12 @@ import {NextRequest, NextResponse} from 'next/server';
 import {connectDB} from '@/lib/mongodb';
 import {DataCorrection} from '@/models/DataCorrection';
 import {User} from '@/models/User';
-import {dataCorrectionReviewSchema, IDataCorrection} from '@/lib/schemas/dataCorrection';
+import {dataCorrectionReviewSchema, IDataCorrectionAdminGet, IDataCorrectionAdminGetRelated} from '@/lib/schemas/dataCorrection';
 import {withRateLimit} from '@/lib/middleware';
 import {logger} from '@/lib/logger';
 import {NotFoundError, ValidationError, handleError, ConflictError} from '@/lib/errors';
 import mongoose, {isValidObjectId} from 'mongoose';
 import {requireAdminOrModerator} from "@/lib/auth/utils";
-interface IDataCorrectionPopulated extends Omit<IDataCorrection, 'userId' | 'reviewedBy'> {
-    userId: {
-        username: string;
-        displayName: string;
-        image: string;
-        email: string;
-    };
-    reviewedBy: {
-        username: string;
-        displayName: string;
-    };
-}
 
 // GET /api/admin/corrections/[id] - Get full correction details
 export async function GET(
@@ -41,7 +29,7 @@ export async function GET(
                 .findById(params.id)
                 .populate('userId', 'username displayName image email')
                 .populate('reviewedBy', 'username displayName')
-                .lean<IDataCorrectionPopulated>();
+                .lean<IDataCorrectionAdminGet>();
 
             if (!correction) {
                 throw new NotFoundError('Correction not found');
@@ -58,7 +46,7 @@ export async function GET(
                 .populate('userId', 'username')
                 .sort({createdAt: -1})
                 .limit(5)
-                .lean();
+                .lean<IDataCorrectionAdminGetRelated>();
 
             return NextResponse.json({
                 correction,
