@@ -7,13 +7,13 @@ import { logger } from '@/lib/logger';
 import {
     NotFoundError,
     ValidationError,
-    handleError, AuthorizationError
+    handleError, AuthorizationError, InsufficientPermissionsError
 } from '@/lib/errors';
 import { isValidObjectId } from 'mongoose';
-import {requireAuth} from "@/lib/auth/utils";
-import {IDataCorrectionGet} from "@/lib/schemas/dataCorrection";
+import {requireAdmin, requireAuth} from "@/lib/auth/utils";
+import {IDataCorrectionApi} from '@/lib/schemas/dataCorrection';
 
-
+type ApiType = IDataCorrectionApi['ById']
 // GET /api/corrections/[id] - Get a specific correction
 export async function GET(
     request: NextRequest,
@@ -32,7 +32,7 @@ export async function GET(
                 .findById(params.id)
                 .select('-reviewNotes') // Hide internal review notes
                 .populate('reviewedBy', 'username displayName')
-                .lean<IDataCorrectionGet>();
+                .lean<ApiType['Get']['Response']['correction']>();
 
             if (!correction) {
                 throw new NotFoundError('Correction not found');
@@ -40,10 +40,18 @@ export async function GET(
 
             // Check ownership
             if (correction.userId !== session.user.id) {
-                throw new AuthorizationError('You can only view your own corrections');
+                try {
+                    await requireAdmin()
+                } catch (e) {
+                    if (e instanceof InsufficientPermissionsError) {
+                        throw new AuthorizationError('You can only view your own corrections');
+                    } else {
+                        throw e;
+                    }
+                }
             }
 
-            return NextResponse.json({ correction });
+            return NextResponse.json<ApiType['Get']['Response']>({ correction });
         } catch (error) {
             logger.error('Failed to fetch correction', error);
             return handleError(error);
@@ -76,7 +84,7 @@ export async function DELETE(
                 deletedBy: session.user.id,
             });
 
-            return NextResponse.json({
+            return NextResponse.json<ApiType["Delete"]["Response"]>({
                 success: true,
                 message: 'Correction deleted successfully',
             });

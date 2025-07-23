@@ -3,13 +3,14 @@ import {NextRequest, NextResponse} from 'next/server';
 import {connectDB} from '@/lib/mongodb';
 import {DataCorrection} from '@/models/DataCorrection';
 import {User} from '@/models/User';
-import {dataCorrectionReviewSchema, IDataCorrectionAdminGet, IDataCorrectionAdminGetRelated} from '@/lib/schemas/dataCorrection';
+import {IDataCorrectionApi, DataCorrectionApi } from '@/lib/schemas/dataCorrection';
 import {withRateLimit} from '@/lib/middleware';
 import {logger} from '@/lib/logger';
 import {NotFoundError, ValidationError, handleError, ConflictError} from '@/lib/errors';
 import mongoose, {isValidObjectId} from 'mongoose';
 import {requireAdminOrModerator} from "@/lib/auth/utils";
 
+type ApiType = IDataCorrectionApi['Admin']['ById']
 // GET /api/admin/corrections/[id] - Get full correction details
 export async function GET(
     request: NextRequest,
@@ -29,7 +30,7 @@ export async function GET(
                 .findById(params.id)
                 .populate('userId', 'username displayName image email')
                 .populate('reviewedBy', 'username displayName')
-                .lean<IDataCorrectionAdminGet>();
+                .lean<ApiType["Get"]["Response"]["correction"]>();
 
             if (!correction) {
                 throw new NotFoundError('Correction not found');
@@ -46,9 +47,9 @@ export async function GET(
                 .populate('userId', 'username')
                 .sort({createdAt: -1})
                 .limit(5)
-                .lean<IDataCorrectionAdminGetRelated>();
+                .lean<ApiType['Get']['Response']['relatedCorrections']>();
 
-            return NextResponse.json({
+            return NextResponse.json<ApiType['Get']['Response']>({
                 correction,
                 relatedCorrections
             });
@@ -75,7 +76,7 @@ export async function PATCH(
             }
 
             const body = await request.json();
-            const validatedData = dataCorrectionReviewSchema.parse(body);
+            const validatedData = DataCorrectionApi.Admin.ById.Patch.Request.parse(body);
 
             await connectDB();
 
@@ -129,7 +130,7 @@ export async function PATCH(
                 reviewerId: adminSession!.user.id,
             });
 
-            return NextResponse.json({
+            return NextResponse.json<ApiType["Patch"]["Response"]>({
                 success: true,
                 correction: {
                     id: correction._id.toString(),
@@ -176,7 +177,7 @@ export async function DELETE(
                 deletedBy: session!.user.id,
             });
 
-            return NextResponse.json({
+            return NextResponse.json<ApiType["Delete"]["Response"]>({
                 success: true,
                 message: 'Correction deleted successfully',
             });

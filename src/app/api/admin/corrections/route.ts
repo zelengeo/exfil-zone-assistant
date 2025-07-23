@@ -6,7 +6,10 @@ import { withRateLimit } from '@/lib/middleware';
 import { logger } from '@/lib/logger';
 import { handleError } from '@/lib/errors';
 import { requireAdminOrModerator } from "@/lib/auth/utils";
+import { IDataCorrectionApi } from '@/lib/schemas/dataCorrection';
 
+
+type ApiType = IDataCorrectionApi["Admin"];
 // GET /api/admin/corrections - Get all corrections with filters
 export async function GET(request: NextRequest) {
     return withRateLimit(request, async () => {
@@ -41,7 +44,7 @@ export async function GET(request: NextRequest) {
                     .sort({ [sortBy]: order === 'desc' ? -1 : 1 })
                     .skip((page - 1) * limit)
                     .limit(limit)
-                    .lean(),
+                    .lean<ApiType["Get"]["Response"]["corrections"]>(),
                 DataCorrection.countDocuments(query),
                 DataCorrection.aggregate([
                     { $match: query },
@@ -63,7 +66,7 @@ export async function GET(request: NextRequest) {
                 }, {} as Record<string, number>)
             };
 
-            return NextResponse.json({
+            return NextResponse.json<ApiType["Get"]["Response"]>({
                 corrections,
                 pagination: {
                     page,

@@ -1,12 +1,7 @@
 // src/lib/schemas/dataCorrection.ts
 import {z} from 'zod';
 import {Types} from "mongoose";
-import {
-    taskMapSchema,
-    taskRewardSchema, taskSchema,
-    taskTypeSchema,
-    taskVideoGuideSchema
-} from "@/lib/schemas/task";
+import { taskSchema } from "@/lib/schemas/task";
 
 // Entity types that can have corrections
 export const entityTypeEnum = ['item', 'task', 'npc', 'location', 'quest'] as const;
@@ -78,7 +73,7 @@ export const taskCorrectionSchema = z.object({
 });
 
 // API submission schema
-export const dataCorrectionSubmitSchema = z.object({
+const dataCorrectionSubmitSchema = z.object({
     entityType: dataCorrectionBaseSchema.shape.entityType,
     entityId: dataCorrectionBaseSchema.shape.entityId,
     proposedData: z.union([taskCorrectionSchema.shape.proposedData, itemCorrectionSchema.shape.proposedData]),
@@ -86,7 +81,7 @@ export const dataCorrectionSubmitSchema = z.object({
 });
 
 // Admin review schema
-export const dataCorrectionReviewSchema = z.object({
+const dataCorrectionReviewSchema = z.object({
     status: z.enum(['approved', 'rejected']),
     reviewNotes: z.string().max(500).optional(),
 });
@@ -122,6 +117,117 @@ export const dataCorrectionGetSchema = dataCorrectionDocumentSchema.extend({
     reviewedBy: populatedReviewerSchema.nullable().optional(),
 }).omit({reviewNotes: true})
 
+
+const paginationSchema = z.object({
+    page: z.number(),
+    limit: z.number(),
+    total: z.number(),
+    pages: z.number(),
+});
+
+const successSchema = z.object({
+    success: z.literal(true),
+    message: z.string(),
+});
+
+// Schemas for /api/admin/corrections
+const adminCorrectionsGetSchema = z.object({
+    corrections: z.array(dataCorrectionAdminGetSchema),
+    pagination: paginationSchema,
+    stats: z.object({
+        total: z.number(),
+        byStatus: z.record(z.string(), z.number()),
+    }),
+});
+
+// Schemas for /api/admin/corrections/[id]
+const adminCorrectionIdGetSchema = z.object({
+    correction: dataCorrectionAdminGetSchema,
+    relatedCorrections: z.array(dataCorrectionAdminGetRelatedSchema),
+});
+
+const adminCorrectionIdPatchSchema = z.object({
+    success: z.literal(true),
+    correction: z.object({
+        id: z.string(),
+        status: z.string(),
+        reviewedAt: z.date(),
+    }),
+});
+
+// Schemas for /api/corrections
+const correctionsGetSchema = z.object({
+    corrections: z.array(dataCorrectionGetSchema),
+    pagination: paginationSchema,
+});
+
+const correctionsPostSchema = z.object({
+    success: z.literal(true),
+    correction: z.object({
+        id: z.string(),
+        status: z.string(),
+    }),
+});
+
+// Schemas for /api/corrections/[id]
+const correctionIdGetSchema = z.object({
+    correction: dataCorrectionGetSchema,
+});
+
+
+// --- Exported API Types ---
+export const DataCorrectionApi = {
+    Admin: {
+        Get: {
+            Response: adminCorrectionsGetSchema,
+        },
+        ById: {
+            Get: { Response: adminCorrectionIdGetSchema },
+            Patch: {
+                Response: adminCorrectionIdPatchSchema,
+                Request: dataCorrectionReviewSchema
+            },
+            Delete: { Response: successSchema },
+        }
+    },
+    Get: {
+        Response: correctionsGetSchema,
+    },
+    Post: {
+        Request: dataCorrectionSubmitSchema,
+        Response: correctionsPostSchema,
+    },
+    ById: {
+        Get: { Response: correctionIdGetSchema },
+        Delete: { Response: successSchema },
+    }
+};
+
+export type IDataCorrectionApi = {
+    Admin: {
+        Get: {
+            Response: z.infer<typeof DataCorrectionApi.Admin.Get.Response>,
+        },
+        ById: {
+            Get: { Response: z.infer<typeof DataCorrectionApi.Admin.ById.Get.Response> };
+            Patch: {
+                Response: z.infer<typeof DataCorrectionApi.Admin.ById.Patch.Response>
+                Request: z.infer<typeof DataCorrectionApi.Admin.ById.Patch.Request>
+            };
+            Delete: { Response: z.infer<typeof DataCorrectionApi.Admin.ById.Delete.Response> };
+        }
+    },
+    Get: {
+        Response: z.infer<typeof DataCorrectionApi.Get.Response>;
+    },
+    Post: {
+        Response: z.infer<typeof DataCorrectionApi.Post.Response>;
+    },
+    ById: {
+        Get: { Response: z.infer<typeof DataCorrectionApi.ById.Get.Response> };
+        Delete: { Response: z.infer<typeof DataCorrectionApi.ById.Delete.Response> };
+    }
+};
 
 // Type exports
 export type EntityType = (typeof entityTypeEnum)[number];

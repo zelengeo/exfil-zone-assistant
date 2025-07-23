@@ -1,27 +1,35 @@
-# compose.yaml
 services:
   mongodb:
     image: mongo:7.0
     container_name: exfilzone-mongodb
     restart: unless-stopped
     ports:
-      - "27017:27017"
+      - "27018:27017"  # Standard binding
     environment:
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: adminpassword
       MONGO_INITDB_DATABASE: exfil-zone-assistant
     volumes:
       - mongodb_data:/data/db
-      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
     networks:
       - exfilzone-network
+    command: mongod --replSet rs0 --bind_ip_all
     healthcheck:
-      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
-      interval: 10s
-      timeout: 5s
-      retries: 5
+      test: |
+        mongosh --quiet --eval "
+        try {
+          var status = rs.status();
+          if (status.ok) exit(0);
+        } catch (e) {
+          rs.initiate({
+            _id: 'rs0',
+            members: [{ _id: 0, host: 'mongodb:27017' }]
+          });
+        }
+        exit(1);"
+      interval: 5s
+      timeout: 10s
+      retries: 30
+      start_period: 10s
 
-  # Optional: MongoDB Express for GUI
   mongo-express:
     image: mongo-express:latest
     container_name: exfilzone-mongo-express
@@ -29,10 +37,9 @@ services:
     ports:
       - "8081:8081"
     environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
-      ME_CONFIG_MONGODB_ADMINPASSWORD: adminpassword
-      ME_CONFIG_MONGODB_URL: mongodb://admin:adminpassword@mongodb:27017/
+      ME_CONFIG_MONGODB_URL: mongodb://mongodb:27018/?replicaSet=rs0
       ME_CONFIG_BASICAUTH: false
+      ME_CONFIG_MONGODB_ENABLE_ADMIN: true
     depends_on:
       mongodb:
         condition: service_healthy
