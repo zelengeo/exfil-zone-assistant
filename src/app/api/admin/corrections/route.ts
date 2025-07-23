@@ -6,7 +6,7 @@ import { withRateLimit } from '@/lib/middleware';
 import { logger } from '@/lib/logger';
 import { handleError } from '@/lib/errors';
 import { requireAdminOrModerator } from "@/lib/auth/utils";
-import { IDataCorrectionApi } from '@/lib/schemas/dataCorrection';
+import {DataCorrectionApi, IDataCorrectionApi} from '@/lib/schemas/dataCorrection';
 
 
 type ApiType = IDataCorrectionApi["Admin"];
@@ -18,21 +18,16 @@ export async function GET(request: NextRequest) {
             await connectDB();
 
             const { searchParams } = new URL(request.url);
-            const entityType = searchParams.get('entityType');
-            const entityId = searchParams.get('entityId');
-            const status = searchParams.get('status');
-            const userId = searchParams.get('userId');
-            const page = parseInt(searchParams.get('page') || '1', 10);
-            const limit = parseInt(searchParams.get('limit') || '20', 10);
-            const sortBy = searchParams.get('sortBy') || 'createdAt';
-            const order = searchParams.get('order') || 'desc';
+            const params = DataCorrectionApi.Admin.Get.Request.parse(
+                Object.fromEntries(searchParams.entries())
+            );
 
 
             const query = {
-                ...(entityType && { entityType }),
-                ...(entityId && { entityId }),
-                ...(status && { status }),
-                ...(userId && { userId })
+                ...(params.entityType && { entityType: params.entityType }),
+                ...(params.entityId && { entityId: params.entityId }),
+                ...(params.status && { status: params.status }),
+                ...(params.userId && { userId: params.userId }),
             };
 
             // Get aggregate stats
@@ -41,9 +36,9 @@ export async function GET(request: NextRequest) {
                     .find(query)
                     .populate('userId', 'username displayName image email')
                     .populate('reviewedBy', 'username displayName')
-                    .sort({ [sortBy]: order === 'desc' ? -1 : 1 })
-                    .skip((page - 1) * limit)
-                    .limit(limit)
+                    .sort({ [params.sortBy]: params.order === 'desc' ? -1 : 1 })
+                    .skip((params.page - 1) * params.limit)
+                    .limit(params.limit)
                     .lean<ApiType["Get"]["Response"]["corrections"]>(),
                 DataCorrection.countDocuments(query),
                 DataCorrection.aggregate([
@@ -69,10 +64,10 @@ export async function GET(request: NextRequest) {
             return NextResponse.json<ApiType["Get"]["Response"]>({
                 corrections,
                 pagination: {
-                    page,
-                    limit,
+                    page: params.page,
+                    limit: params.limit,
                     total,
-                    pages: Math.ceil(total / limit),
+                    pages: Math.ceil(total / params.limit),
                 },
                 stats: formattedStats
             });

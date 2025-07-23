@@ -2,6 +2,7 @@
 import {z} from 'zod';
 import {Types} from "mongoose";
 import { taskSchema } from "@/lib/schemas/task";
+import {paginationSchema, successSchema} from "@/lib/schemas/core";
 
 // Entity types that can have corrections
 export const entityTypeEnum = ['item', 'task', 'npc', 'location', 'quest'] as const;
@@ -118,18 +119,6 @@ export const dataCorrectionGetSchema = dataCorrectionDocumentSchema.extend({
 }).omit({reviewNotes: true})
 
 
-const paginationSchema = z.object({
-    page: z.number(),
-    limit: z.number(),
-    total: z.number(),
-    pages: z.number(),
-});
-
-const successSchema = z.object({
-    success: z.literal(true),
-    message: z.string(),
-});
-
 // Schemas for /api/admin/corrections
 const adminCorrectionsGetSchema = z.object({
     corrections: z.array(dataCorrectionAdminGetSchema),
@@ -174,11 +163,31 @@ const correctionIdGetSchema = z.object({
     correction: dataCorrectionGetSchema,
 });
 
+const adminCorrectionsGetRequestSchema = z.object({
+    entityType: z.enum(entityTypeEnum).optional(),
+    entityId: z.string().optional(),
+    status: z.enum(correctionStatusEnum).optional(),
+    userId: z.string().optional(),
+    page: z.coerce.number().min(1).default(1),
+    limit: z.coerce.number().min(1).max(100).default(20),
+    sortBy: z.enum(['createdAt', 'updatedAt']).default('createdAt'),
+    order: z.enum(['asc', 'desc']).default('desc'),
+});
+
+const correctionsGetRequestSchema = adminCorrectionsGetRequestSchema.pick({
+    page: true,
+    limit: true,
+    status: true,
+    entityType: true,
+})
+
+
 
 // --- Exported API Types ---
 export const DataCorrectionApi = {
     Admin: {
         Get: {
+            Request: adminCorrectionsGetRequestSchema,
             Response: adminCorrectionsGetSchema,
         },
         ById: {
@@ -191,6 +200,7 @@ export const DataCorrectionApi = {
         }
     },
     Get: {
+        Request: correctionsGetRequestSchema,
         Response: correctionsGetSchema,
     },
     Post: {

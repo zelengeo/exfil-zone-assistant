@@ -2,7 +2,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
 import { DataCorrection } from '@/models/DataCorrection';
-import {DataCorrectionApi, dataCorrectionSubmitSchema, IDataCorrectionApi} from '@/lib/schemas/dataCorrection';
+import {DataCorrectionApi, IDataCorrectionApi} from '@/lib/schemas/dataCorrection';
 import { withRateLimit } from '@/lib/middleware';
 import { logger } from '@/lib/logger';
 import {handleError} from '@/lib/errors';
@@ -18,16 +18,16 @@ export async function GET(request: NextRequest) {
             await connectDB();
 
             const { searchParams } = new URL(request.url);
-            const page = parseInt(searchParams.get('page') || '1', 10);
-            const limit = parseInt(searchParams.get('limit') || '10', 10);
-            const status = searchParams.get('status');
-            const entityType = searchParams.get('entityType');
+            const params = DataCorrectionApi.Get.Request.parse(
+                Object.fromEntries(searchParams.entries())
+            );
+
 
             // Build query - always filtered by current user
             const query = {
                 userId: session.user.id,
-                ...(entityType && { entityType }),
-                ...(status && { status }),
+                ...(params.entityType && { entityType: params.entityType }),
+                ...(params.status && { status: params.status }),
             };
 
             // Get total count
@@ -39,17 +39,17 @@ export async function GET(request: NextRequest) {
                 .select('-reviewNotes') // Hide internal review notes
                 .populate('reviewedBy', 'username displayName')
                 .sort({ createdAt: -1 })
-                .skip((page - 1) * limit)
-                .limit(limit)
+                .skip((params.page - 1) * params.limit)
+                .limit(params.limit)
                 .lean<ApiType['Get']['Response']['corrections']>();
 
             return NextResponse.json<ApiType['Get']['Response']>({
                 corrections,
                 pagination: {
-                    page,
-                    limit,
+                    page: params.page,
+                    limit: params.limit,
                     total,
-                    pages: Math.ceil(total / limit),
+                    pages: Math.ceil(total / params.limit),
                 },
             });
         } catch (error) {
