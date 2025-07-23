@@ -28,7 +28,7 @@ const slides: Slide[] = [
         description: "Your ultimate tactical companion for the VR extraction shooter experience",
         backgroundImage: "/images/hero/press_img_1920x1080.webp", // Add your image
         ctaText: "Start Here",
-        ctaLink: "/guides/getting-started",
+        ctaLink: "/guides/combat-sim-usage",
     },
     {
         id: "combat-sim",

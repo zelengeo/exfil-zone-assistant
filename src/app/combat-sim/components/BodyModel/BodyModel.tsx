@@ -485,8 +485,8 @@ export default function BodyModel({
                     </h4>
                     <div className="pt-3 mt-3">
                         {/* Column Headers */}
-                        <div className="grid grid-cols-5 gap-1 mb-2 text-xs">
-                            <div className="text-tan-400">Zone</div>
+                        <div className="grid grid-cols-4 sm:grid-cols-5 gap-1 mb-2 text-xs">
+                            <div className="text-tan-400 hidden sm:block">Zone</div>
                             {validAttackers.map((attacker) => (
                                 <div key={attacker.id} className="text-center">
                                     <div
@@ -550,53 +550,58 @@ export default function BodyModel({
                                 zoneGroups['Legs'] = {zones: ['leg_lower_l', 'leg_lower_r'], armorClass: 0};
                                 zoneGroups['Foots'] = {zones: ['foot_l', 'foot_r'], armorClass: 0};
 
-
-
                                 return Object.entries(zoneGroups).map(([groupName, group]) => (
+                                    // On mobile, this is a flex column. On small screens (sm) and up, it becomes a grid.
                                     <div key={groupName}
-                                         className="grid grid-cols-5 gap-1 items-center py-1 hover:bg-military-800/30 rounded-sm">
-                                        <div className="text-xs text-tan-400">
+                                         className="flex flex-col sm:grid sm:grid-cols-5 gap-1 items-center py-2 px-2 hover:bg-military-800/30 rounded-sm">
+
+                                        {/* Body Zone and Armor Class (Column 1) */}
+                                        <div className="text-sm sm:text-xs text-tan-400 font-bold sm:font-normal self-start sm:self-center">
                                             {groupName}
                                             {group.armorClass > 0 && (
                                                 <span className={`ml-1 ${getArmorClassColor(group.armorClass).text}`}>
-                                AC{group.armorClass}
-                            </span>
+                            AC{group.armorClass}
+                        </span>
                                             )}
                                         </div>
-                                        {validAttackers.map((attacker) => {
-                                            const calculations = zoneCalculations[attacker.id];
-                                            if (!calculations || !attacker.weapon || !attacker.ammo) {
-                                                return <div key={attacker.id}
-                                                            className="text-center text-xs text-tan-500">--</div>;
-                                            }
 
-                                            const calc = calculations.find(c => group.zones.includes(c.zoneId));
-                                            let value = '--';
-                                            if (calc) {
-                                                switch (displayMode) {
-                                                    case 'ttk':
-                                                        value = formatTTK(calc.ttk);
-                                                        break;
-                                                    case 'stk':
-                                                        value = formatSTK(calc.shotsToKill);
-                                                        break;
-                                                    case 'ctk':
-                                                        value = formatCTK(calc.costToKill);
-                                                        break;
+                                        {/* Wrapper for data values. On mobile this is a 4-col grid. On sm+ it dissolves. */}
+                                        <div className="grid grid-cols-4 sm:col-span-4 sm:contents w-full mt-1 sm:mt-0">
+                                            {validAttackers.map((attacker) => {
+                                                const calculations = zoneCalculations[attacker.id];
+                                                if (!calculations || !attacker.weapon || !attacker.ammo) {
+                                                    return <div key={attacker.id}
+                                                                className="text-center text-xs text-tan-500">--</div>;
                                                 }
-                                            }
 
-                                            return (
-                                                <div key={attacker.id}
-                                                     className={`text-center text-xs font-mono font-bold ${
-                                                         attacker.id === selectedAttackerId
-                                                             ? 'text-tan-100'
-                                                             : 'text-tan-400'
-                                                     }`}>
-                                                    {value}
-                                                </div>
-                                            );
-                                        })}
+                                                const calc = calculations.find(c => group.zones.includes(c.zoneId));
+                                                let value = '--';
+                                                if (calc) {
+                                                    switch (displayMode) {
+                                                        case 'ttk':
+                                                            value = formatTTK(calc.ttk);
+                                                            break;
+                                                        case 'stk':
+                                                            value = formatSTK(calc.shotsToKill);
+                                                            break;
+                                                        case 'ctk':
+                                                            value = formatCTK(calc.costToKill);
+                                                            break;
+                                                    }
+                                                }
+
+                                                return (
+                                                    <div key={attacker.id}
+                                                         className={`text-center text-xs font-mono font-bold ${
+                                                             attacker.id === selectedAttackerId
+                                                                 ? 'text-tan-100'
+                                                                 : 'text-tan-400'
+                                                         }`}>
+                                                        {value}
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
                                     </div>
                                 ));
                             })()}
