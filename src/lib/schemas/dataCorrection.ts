@@ -12,6 +12,28 @@ export const taskTypesEnum = ['reach', 'extract', 'retrieve', 'eliminate', 'subm
 export const taskMapsEnum = ['suburb', 'resort', 'dam', 'metro', 'any'] as const;
 
 // Base correction schema
+const taskCorrectionProposedDataSchema = taskSchema.omit({
+        id: true,
+        gameId: true,
+        order: true,
+        corpId: true
+    }).partial().refine(data => Object.keys(data).length > 0, {
+        message: "At least one field must be provided for correction"
+    });
+
+const itemCorrectionProposedDataSchema = z.object({
+    name: z.string().min(1).max(50).optional(),
+    description: z.string().max(500).optional(),
+    tips: z.string().max(500).optional(),
+    stats: z.object({
+        price: z.number().optional(),
+        weight: z.number().optional(),
+        rarity: z.enum(rarityEnum).optional(),
+    }).catchall(z.any()).optional(), // Allow any structure for stats
+}).refine(data => Object.keys(data).some(key => data[key as keyof typeof data] !== undefined), {
+    message: "At least one field must be provided for correction"
+})
+
 export const dataCorrectionBaseSchema = z.object({
     entityType: z.enum(entityTypeEnum),
     entityId: z.string().min(1),
@@ -20,7 +42,10 @@ export const dataCorrectionBaseSchema = z.object({
     status: z.enum(correctionStatusEnum).default('pending'),
 
     // Proposed changes
-    proposedData: z.object({}).catchall(z.any()),
+    proposedData: z.union([
+        itemCorrectionProposedDataSchema,
+        taskCorrectionProposedDataSchema,
+    ]),
 
     // User's explanation
     reason: z.string().min(10).max(1000).optional(),
@@ -43,43 +68,33 @@ export const dataCorrectionDocumentSchema = dataCorrectionBaseSchema.extend({
 });
 
 // Submission schemas for different entity types
-export const itemCorrectionSchema = z.object({
+export const itemCorrectionSubmitSchema = z.object({
     entityId: dataCorrectionBaseSchema.shape.entityId,
-    proposedData: z.object({
-        name: z.string().min(1).max(50).optional(),
-        description: z.string().max(500).optional(),
-        tips: z.string().max(500).optional(),
-        stats: z.object({
-            price: z.number().optional(),
-            weight: z.number().optional(),
-            rarity: z.enum(rarityEnum).optional(),
-        }).catchall(z.any()).optional(), // Allow any structure for stats
-    }).refine(data => Object.keys(data).some(key => data[key as keyof typeof data] !== undefined), {
-        message: "At least one field must be provided for correction"
-    }),
+    proposedData: itemCorrectionProposedDataSchema,
     reason: dataCorrectionBaseSchema.shape.reason,
 });
 
-export const taskCorrectionSchema = z.object({
+export const taskCorrectionSubmitSchema = z.object({
     entityId: dataCorrectionBaseSchema.shape.entityId,
-    proposedData: taskSchema.omit({
-        id: true,
-        gameId: true,
-        order: true,
-        corpId: true
-    }).partial().refine(data => Object.keys(data).length > 0, {
-        message: "At least one field must be provided for correction"
-    }),
+    proposedData: taskCorrectionProposedDataSchema,
     reason: dataCorrectionBaseSchema.shape.reason,
 });
 
 // API submission schema
-const dataCorrectionSubmitSchema = z.object({
-    entityType: dataCorrectionBaseSchema.shape.entityType,
-    entityId: dataCorrectionBaseSchema.shape.entityId,
-    proposedData: z.union([taskCorrectionSchema.shape.proposedData, itemCorrectionSchema.shape.proposedData]),
-    reason: dataCorrectionBaseSchema.shape.reason,
-});
+const dataCorrectionSubmitSchema = z.discriminatedUnion('entityType', [
+        z.object({
+            entityType: z.literal('item'),
+            entityId: dataCorrectionBaseSchema.shape.entityId,
+            proposedData: itemCorrectionProposedDataSchema,
+            reason: dataCorrectionBaseSchema.shape.reason,
+        }),
+        z.object({
+            entityType: z.literal('task'),
+            entityId: dataCorrectionBaseSchema.shape.entityId,
+            proposedData: taskCorrectionProposedDataSchema,
+            reason: dataCorrectionBaseSchema.shape.reason,
+        }),
+    ]);
 
 // Admin review schema
 const dataCorrectionReviewSchema = z.object({
@@ -244,10 +259,6 @@ export type EntityType = (typeof entityTypeEnum)[number];
 export type CorrectionStatus = (typeof correctionStatusEnum)[number];
 export type DataCorrectionSubmit = z.infer<typeof dataCorrectionSubmitSchema>;
 export type DataCorrectionReview = z.infer<typeof dataCorrectionReviewSchema>;
-export type ItemCorrection = z.infer<typeof itemCorrectionSchema>;
-export type ItemCorrectionProposedData = z.infer<typeof itemCorrectionSchema.shape.proposedData>;
-export type TaskCorrectionProposedData = z.infer<typeof taskCorrectionSchema.shape.proposedData>;
-export type TaskCorrection = z.infer<typeof taskCorrectionSchema>;
 export type IDataCorrection = z.infer<typeof dataCorrectionDocumentSchema>;
 export type IDataCorrectionAdminGet = z.infer<typeof dataCorrectionAdminGetSchema>;
 export type IDataCorrectionAdminGetRelated = z.infer<typeof dataCorrectionAdminGetRelatedSchema>;

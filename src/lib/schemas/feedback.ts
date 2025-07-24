@@ -179,10 +179,6 @@ export type IFeedbackApi = {
             Request: z.infer<typeof FeedbackApi.Admin.List.Request>;
             Response: z.infer<typeof FeedbackApi.Admin.List.Response>;
         };
-        Get: {
-            Request: z.infer<typeof FeedbackApi.Admin.List.Request>;
-            Response: z.infer<typeof FeedbackApi.Admin.List.Response>;
-        };
         ById: {
             Get: { Response: z.infer<typeof FeedbackApi.Admin.ById.Get.Response> };
             Patch: {

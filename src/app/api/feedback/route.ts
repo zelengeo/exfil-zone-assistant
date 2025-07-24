@@ -81,7 +81,9 @@ export async function POST(request: NextRequest) {
 
             } catch (error) {
                 // Abort transaction on error
-                await mongooseSession.abortTransaction();
+                if (mongooseSession.inTransaction()) {
+                    await mongooseSession.abortTransaction();
+                }
 
                 logger.error('Feedback submission failed', error, {
                     path: '/api/feedback/submit',
