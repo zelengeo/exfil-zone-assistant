@@ -1,5 +1,6 @@
 import {z, ZodError} from 'zod';
 import { MongooseError } from 'mongoose';
+import {NextResponse} from "next/server";
 
 // Custom error classes
 export class AppError extends Error {
@@ -176,10 +177,10 @@ function sanitizeError(error: any): ErrorResponse {
 }
 
 // Main error handler
-export function handleError(error: any): Response {
+export function handleError(error: any): NextResponse {
     const errorResponse = sanitizeError(error);
 
-    return Response.json(errorResponse, {
+    return NextResponse.json(errorResponse, {
         status: errorResponse.error.statusCode,
     });
 }

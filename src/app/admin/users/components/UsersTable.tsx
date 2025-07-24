@@ -49,10 +49,10 @@ import {
     Eye,
     Edit,
     Trash,
-    Clock,
     Award
 } from 'lucide-react';
 import { toast } from 'sonner';
+import {rolesEnum} from "@/lib/schemas/user";
 
 interface UserData {
     _id: string;
@@ -69,8 +69,6 @@ interface UserData {
 }
 
 const ITEMS_PER_PAGE = 10;
-const RANKS = ['recruit', 'soldier', 'specialist', 'veteran', 'elite'];
-const ROLES = ['user', 'contributor', 'partner', 'moderator', 'admin'];
 
 export function UsersTable() {
     const router = useRouter();
@@ -208,7 +206,7 @@ export function UsersTable() {
                     </SelectTrigger>
                     <SelectContent className="bg-military-800 border-military-700">
                         <SelectItem value="all">All Roles</SelectItem>
-                        {ROLES.map((role) => (
+                        {rolesEnum.map((role) => (
                             <SelectItem key={role} value={role}>
                                 {role.charAt(0).toUpperCase() + role.slice(1)}s
                             </SelectItem>

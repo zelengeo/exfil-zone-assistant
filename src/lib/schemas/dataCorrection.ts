@@ -91,7 +91,7 @@ const dataCorrectionReviewSchema = z.object({
 export const populatedUserSchema = z.object({
     username: z.string(),
     displayName: z.string(),
-    image: z.string().optional(),
+    avatarUrl: z.string().optional(),
     email: z.email().optional(),
 });
 

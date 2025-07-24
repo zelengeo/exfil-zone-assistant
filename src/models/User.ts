@@ -7,7 +7,7 @@ const UserSchema = new Schema({
     email: { type: String, required: true, unique: true },
     username: { type: String, required: true, unique: true, sparse: true },
     displayName: String,
-    image: String,
+    avatarUrl: String,
 
     // Profile
     bio: { type: String, maxLength: 500 },

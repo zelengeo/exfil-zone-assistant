@@ -28,7 +28,7 @@ export async function GET(
 
             const correction = await DataCorrection
                 .findById(params.id)
-                .populate('userId', 'username displayName image email')
+                .populate('userId', 'username displayName avatarUrl email')
                 .populate('reviewedBy', 'username displayName')
                 .lean<ApiType["Get"]["Response"]["correction"]>();
 

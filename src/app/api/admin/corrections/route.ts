@@ -34,7 +34,7 @@ export async function GET(request: NextRequest) {
             const [corrections, total, stats] = await Promise.all([
                 DataCorrection
                     .find(query)
-                    .populate('userId', 'username displayName image email')
+                    .populate('userId', 'username displayName avatarUrl email')
                     .populate('reviewedBy', 'username displayName')
                     .sort({ [params.sortBy]: params.order === 'desc' ? -1 : 1 })
                     .skip((params.page - 1) * params.limit)

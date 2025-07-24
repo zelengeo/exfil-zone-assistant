@@ -1,13 +1,15 @@
 // src/app/api/admin/feedback/[id]/route.ts
-import {NextRequest} from 'next/server';
+import {NextRequest, NextResponse} from 'next/server';
 import {isValidObjectId} from "mongoose";
 import {Feedback} from '@/models/Feedback';
-import {feedbackStatusUpdateSchema, IFeedbackWithUsername} from "@/lib/schemas/feedback";
+import {IFeedbackApi, FeedbackApi} from "@/lib/schemas/feedback";
 import {withRateLimit} from "@/lib/middleware";
 import {requireAdmin} from "@/lib/auth/utils";
 import {handleError, NotFoundError, ValidationError} from '@/lib/errors';
 import {logger} from "@/lib/logger";
 
+
+type ApiType = IFeedbackApi["Admin"]["ById"];
 // GET /api/admin/feedback/[id] - Get specific feedback item
 export async function GET(
     request: NextRequest,
@@ -25,13 +27,13 @@ export async function GET(
 
                 const feedback = await Feedback.findById(params.id)
                     .populate('userId', 'username')
-                    .lean<IFeedbackWithUsername>();
+                    .lean<ApiType["Get"]["Response"]['feedback']>();
 
                 if (!feedback) {
                     throw new NotFoundError('Feedback');
                 }
 
-                return Response.json({feedback});
+                return NextResponse.json<ApiType["Get"]["Response"]>({feedback});
 
             } catch (error) {
                 logger.error('Get feedback error:', error, {
@@ -57,20 +59,31 @@ export async function PATCH(
                 const {session} = await requireAdmin();
 
                 const body = await request.json();
-                const validatedData = feedbackStatusUpdateSchema.parse(body);
+                const validatedData = FeedbackApi.Admin.ById.Patch.Request.parse(body);
 
+                const updateData = {
+                    $set: {
+                        ...(validatedData.status && { status: validatedData.status }),
+                        ...(validatedData.priority && { priority: validatedData.priority }),
+                        updatedAt: new Date(),
+                    },
+                    ...(validatedData.reviewerNotes && {
+                        $push:{
+                            reviewerNotes: {
+                                note: validatedData.reviewerNotes.note,
+                                timestamp: new Date(),
+                                addedByUserId: session.user.id,
+                            }
+                        }
+                    })
+                };
+
+                // Update the feedback
                 const feedback = await Feedback.findByIdAndUpdate(
                     params.id,
-                    {
-                        $set: {
-                            ...validatedData,
-                            reviewedBy: session.user.id,
-                            reviewedAt: new Date(),
-                            updatedAt: new Date()
-                        }
-                    },
-                    {new: true}
-                ).populate('userId', 'username').lean<IFeedbackWithUsername>();
+                    updateData,
+                    { new: true }
+                ).populate('userId', 'username').lean<IFeedbackApi['Admin']['ById']['Patch']['Response']['feedback']>();
 
                 if (!feedback) {
                     throw new NotFoundError('Feedback');
@@ -82,7 +95,7 @@ export async function PATCH(
                     updates: Object.keys(validatedData)
                 });
 
-                return Response.json({feedback});
+                return NextResponse.json<IFeedbackApi['Admin']['ById']['Patch']['Response']>({feedback});
 
             } catch (error) {
                 logger.error('Update feedback error:', error, {
@@ -115,7 +128,7 @@ export async function DELETE(
                     throw new NotFoundError('Feedback');
                 }
 
-                return Response.json({
+                return NextResponse.json<IFeedbackApi['Admin']['ById']['Delete']['Response']>({
                     success: true,
                     message: 'Feedback deleted successfully'
                 });

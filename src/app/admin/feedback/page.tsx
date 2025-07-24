@@ -25,7 +25,7 @@ interface SearchParams {
     userId?: string;
 }
 
-
+//TODO add types
 // Helper function to get feedback stats
 async function getFeedbackStats(): Promise<FeedbackStats> {
     await connectDB();
@@ -61,6 +61,7 @@ async function getFeedbackStats(): Promise<FeedbackStats> {
     };
 }
 
+//TODO add types
 // Helper function to get paginated feedback
 async function getFeedbackList(params: {
     page: number;
@@ -269,6 +270,7 @@ export default async function AdminFeedbackPage({
                 <CardContent className="space-y-6">
                     <FeedbackFilters currentFilters={filters}/>
                     <FeedbackTable
+                        //TODO - find a better way
                         feedback={JSON.parse(JSON.stringify(feedbackData.items))}
                         pagination={feedbackData.pagination}
                     />

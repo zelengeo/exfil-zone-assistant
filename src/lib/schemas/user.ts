@@ -25,7 +25,7 @@ export const userBaseSchema = z.object({
         .min(3, "Display Name must be at least 3 characters")
         .max(20, "Display Name must be at most 20 characters")
         .regex(/^[a-zA-Z0-9_-]+$/, "Display Name can only contain letters, numbers, underscores, and hyphens"),
-    image: z.url().optional(), // Avatar URL from OAuth provider
+    avatarUrl: z.url().optional(), // Avatar URL from OAuth provider
 
 
     // Profile
@@ -152,6 +152,259 @@ export const adminStatsRequestSchema = z.object({
     type: z.enum(['stats', 'search']),
     query: z.string().min(2).optional(),
 });
+
+// Common response schemas
+const paginationSchema = z.object({
+    page: z.number(),
+    limit: z.number(),
+    total: z.number(),
+    pages: z.number(),
+});
+
+const successSchema = z.object({
+    success: z.literal(true),
+    message: z.string(),
+});
+
+// User list item schema (for lists)
+const userListItemSchema = userDocumentSchema.pick({
+    _id: true,
+    username: true,
+    email: true,
+    roles: true,
+    rank: true,
+    createdAt: true,
+    lastLoginAt: true,
+}).extend({
+    stats: z.object({
+        contributionPoints: z.number(),
+    }),
+});
+
+// User profile schema (public view)
+const userProfileSchema = userDocumentSchema.pick({
+    _id: true,
+    username: true,
+    displayName: true,
+    avatarUrl: true,
+    bio: true,
+    location: true,
+    vrHeadset: true,
+    rank: true,
+    badges: true,
+    createdAt: true,
+}).extend({
+    stats: z.object({
+        contributionPoints: z.number(),
+        feedbackSubmitted: z.number(),
+        dataCorrections: z.number(),
+        correctionsAccepted: z.number(),
+    }),
+    preferences: z.object({
+        publicProfile: z.boolean(),
+        showContributions: z.boolean(),
+    }),
+});
+
+// User settings schema (own profile)
+const userSettingsResponseSchema = userDocumentSchema.pick({
+    _id: true,
+    username: true,
+    displayName: true,
+    email: true,
+    avatarUrl: true,
+    bio: true,
+    location: true,
+    vrHeadset: true,
+    rank: true,
+    roles: true,
+    badges: true,
+    stats: true,
+    preferences: true,
+});
+
+
+// Stats schemas
+const userStatsSchema = z.object({
+    totalUsers: z.number(),
+    activeUsers: z.object({
+        "7d": z.number(),
+        "30d": z.number(),
+    }),
+    newUsers30d: z.number(),
+    roleDistribution: z.record(z.string(), z.number()),
+    rankDistribution: z.record(z.string(), z.number()),
+});
+
+// Request schemas
+const userListRequestSchema = z.object({
+    page: z.coerce.number().min(1).default(1),
+    limit: z.coerce.number().min(1).max(100).default(20),
+    search: z.string().optional(),
+    role: z.enum(rolesEnum).optional(),
+    rank: z.enum(rankEnum).optional(),
+    sortBy: z.enum(['createdAt', 'lastLoginAt', 'contributionPoints', 'username']).default('createdAt'),
+    order: z.enum(['asc', 'desc']).default('desc'),
+});
+
+const userSearchRequestSchema = z.object({
+    type: z.literal('search'),
+    query: z.string().min(2),
+});
+
+const userStatsRequestSchema = z.object({
+    type: z.literal('stats'),
+});
+
+// Response schemas
+const userListResponseSchema = z.object({
+    users: z.array(userListItemSchema),
+    pagination: paginationSchema,
+});
+
+const userSearchResponseSchema = z.object({
+    users: z.array(userListItemSchema.pick({
+        _id: true,
+        username: true,
+        email: true,
+        roles: true,
+        rank: true,
+    })),
+});
+
+const userRoleUpdateResponseSchema = z.object({
+    user: z.object({
+        id: z.string(),
+        username: z.string(),
+        roles: z.array(z.enum(rolesEnum)),
+        rank: z.enum(rankEnum),
+    }),
+});
+
+// --- API Contract Definition ---
+export const UserApi = {
+    // Public endpoints
+    Profile: {
+        Get: {
+            Response: z.object({
+                user: userProfileSchema,
+            }),
+        },
+    },
+
+    // Authenticated user endpoints
+    Me: {
+        Get: {
+            Response: z.object({
+                user: userSettingsResponseSchema,
+            }),
+        },
+        Update: {
+            Request: userUpdateSchema,
+            Response: z.object({
+                user: userSettingsResponseSchema,
+            }),
+        },
+        UpdateUsername: {
+            Request: userUsernameUpdateSchema,
+            Response: successSchema.extend({
+                username: z.string(),
+            }),
+        },
+    },
+
+    // Admin endpoints
+    Admin: {
+        List: {
+            Request: userListRequestSchema,
+            Response: userListResponseSchema,
+        },
+        Search: {
+            Request: userSearchRequestSchema,
+            Response: userSearchResponseSchema,
+        },
+        Stats: {
+            Request: userStatsRequestSchema,
+            Response: z.object({
+                stats: userStatsSchema,
+            }),
+        },
+        ById: {
+            Get: {
+                Response: z.object({
+                    user: userDocumentSchema,
+                }),
+            },
+            Update: {
+                Request: adminUserUpdateSchema,
+                Response: z.object({
+                    user: userDocumentSchema,
+                }),
+            },
+            Delete: {
+                Response: successSchema,
+            },
+            Roles: {
+                Get: {
+                    Response: z.object({
+                        user: userListItemSchema,
+                    }),
+                },
+                Update: {
+                    Request: userRoleUpdateSchema,
+                    Response: userRoleUpdateResponseSchema,
+                },
+            },
+        },
+    },
+};
+
+// Type exports
+export type IUserApi = {
+    Profile: {
+        Get: { Response: z.infer<typeof UserApi.Profile.Get.Response> };
+    };
+    Me: {
+        Get: { Response: z.infer<typeof UserApi.Me.Get.Response> };
+        Update: {
+            Request: z.infer<typeof UserApi.Me.Update.Request>;
+            Response: z.infer<typeof UserApi.Me.Update.Response>;
+        };
+        UpdateUsername: {
+            Request: z.infer<typeof UserApi.Me.UpdateUsername.Request>;
+            Response: z.infer<typeof UserApi.Me.UpdateUsername.Response>;
+        };
+    };
+    Admin: {
+        List: {
+            Request: z.infer<typeof UserApi.Admin.List.Request>;
+            Response: z.infer<typeof UserApi.Admin.List.Response>;
+        };
+        Search: {
+            Request: z.infer<typeof UserApi.Admin.Search.Request>;
+            Response: z.infer<typeof UserApi.Admin.Search.Response>;
+        };
+        Stats: {
+            Request: z.infer<typeof UserApi.Admin.Stats.Request>;
+            Response: z.infer<typeof UserApi.Admin.Stats.Response>;
+        };
+        ById: {
+            Get: { Response: z.infer<typeof UserApi.Admin.ById.Get.Response> };
+            Update: {
+                Request: z.infer<typeof UserApi.Admin.ById.Update.Request>;
+                Response: z.infer<typeof UserApi.Admin.ById.Update.Response>;
+            };
+            Delete: { Response: z.infer<typeof UserApi.Admin.ById.Delete.Response> };
+            Roles: {
+                Get: { Response: z.infer<typeof UserApi.Admin.ById.Roles.Get.Response> };
+                Update: {
+                    Request: z.infer<typeof UserApi.Admin.ById.Roles.Update.Request>;
+                    Response: z.infer<typeof UserApi.Admin.ById.Roles.Update.Response>;
+                };
+            };
+        };
+    };
+};
 
 
 export type UserRoleUpdateInput = z.infer<typeof userRoleUpdateSchema>;

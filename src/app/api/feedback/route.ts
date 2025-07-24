@@ -1,31 +1,29 @@
 // src/app/api/feedback/route.ts
-import {NextRequest} from 'next/server';
-import {getServerSession} from 'next-auth';
-import {authOptions} from '@/app/api/auth/[...nextauth]/route';
+import {NextRequest, NextResponse} from 'next/server';
 import {connectDB} from '@/lib/mongodb';
 import mongoose from "mongoose";
 import {Feedback} from '@/models/Feedback';
 import {User} from '@/models/User';
-import {feedbackSubmitSchema} from "@/lib/schemas/feedback";
+import {IFeedbackApi, FeedbackApi} from "@/lib/schemas/feedback";
 import {withRateLimit} from "@/lib/middleware";
 import {logger} from "@/lib/logger";
 import {handleError} from "@/lib/errors";
 import {sanitizeUserInput} from "@/lib/utils";
 import {requireAuthWithUserCheck} from "@/lib/auth/utils";
 
-export async function POST(request: Request) {
+
+type ApiType = IFeedbackApi;
+export async function POST(request: NextRequest) {
     return withRateLimit(
         request,
         async () => {
             const mongooseSession = await mongoose.startSession();
 
             try {
-                const { session } = await requireAuthWithUserCheck();
+                const {session} = await requireAuthWithUserCheck();
                 await connectDB();
                 const body = await request.json();
-
-                // Validate input with Zod
-                const validatedData = feedbackSubmitSchema.parse(body);
+                const validatedData = FeedbackApi["Post"]["Request"].parse(body);
 
                 // Sanitize inputs
                 const sanitizedData = {
@@ -48,7 +46,7 @@ export async function POST(request: Request) {
                     updatedAt: new Date(),
                 };
 
-                const feedback = await Feedback.create([feedbackData], { session: mongooseSession });
+                const feedback = await Feedback.create([feedbackData], {session: mongooseSession})
 
                 // Update user stats if authenticated
                 if (session?.user?.id) {
@@ -60,7 +58,7 @@ export async function POST(request: Request) {
                                 [`stats.${validatedData.type}sReported`]: 1,
                             }
                         },
-                        { session: mongooseSession }
+                        {session: mongooseSession}
                     );
                 }
 
@@ -75,7 +73,7 @@ export async function POST(request: Request) {
                     isAnonymous: feedback[0].isAnonymous,
                 });
 
-                return Response.json({
+                return NextResponse.json<ApiType["Post"]["Response"]>({
                     success: true,
                     feedbackId: feedback[0]._id,
                     message: 'Thank you for your feedback!',
@@ -98,67 +96,4 @@ export async function POST(request: Request) {
         },
         'feedbackPostAuthenticated'
     );
-}
-// GET endpoint for retrieving feedback (admin only)
-export async function GET(request: NextRequest) {
-    try {
-        const session = await getServerSession(authOptions);
-
-        // Check if user is admin
-        if (!session?.user?.id) {
-            return Response.json({error: 'Unauthorized'}, {status: 401});
-        }
-
-        await connectDB();
-
-        const user = await User.findById(session.user.id);
-        if (!user?.roles?.includes('admin')) {
-            return Response.json({error: 'Forbidden'}, {status: 403});
-        }
-
-        const {searchParams} = new URL(request.url);
-        const page = parseInt(searchParams.get('page') || '1');
-        const limit = parseInt(searchParams.get('limit') || '20');
-        const status = searchParams.get('status');
-        const type = searchParams.get('type');
-        const priority = searchParams.get('priority');
-
-        // Build filter
-        const filter = {
-            ...(status && { status }),
-            ...(type && { type }),
-            ...(priority && { priority }),
-        };
-
-        // Get feedback with pagination
-        const skip = (page - 1) * limit;
-        const [feedback, totalCount] = await Promise.all([
-            Feedback.find(filter)
-                .populate('userId', 'username avatarUrl')
-                .sort({createdAt: -1})
-                .skip(skip)
-                .limit(limit)
-                .lean(),
-            Feedback.countDocuments(filter)
-        ]);
-
-        return Response.json({
-            feedback,
-            pagination: {
-                page,
-                limit,
-                totalCount,
-                totalPages: Math.ceil(totalCount / limit),
-                hasNextPage: page * limit < totalCount,
-                hasPrevPage: page > 1,
-            }
-        });
-
-    } catch (error) {
-        console.error('Feedback retrieval error:', error);
-        return Response.json(
-            {error: 'Failed to retrieve feedback'},
-            {status: 500}
-        );
-    }
 }
