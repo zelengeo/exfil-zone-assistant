@@ -2,87 +2,69 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
 import { User } from '@/models/User';
+import { UserApi, IUserApi } from '@/lib/schemas/user';
 import { withRateLimit } from '@/lib/middleware';
-import { requireAuth } from '@/lib/auth/utils';
-import { ConflictError, handleError, NotFoundError } from '@/lib/errors';
-import { UserUsernameUpdateInput, userUsernameUpdateSchema } from '@/lib/schemas/user';
-import { sanitizeUserInput } from '@/lib/utils';
 import { logger } from '@/lib/logger';
+import { ConflictError, handleError, NotFoundError } from '@/lib/errors';
+import { sanitizeUserInput } from '@/lib/utils';
+import { requireAuth } from "@/lib/auth/utils";
 
-// Username update rate limit: 1 per week (604800 seconds)
+type ApiType = IUserApi['UpdateUsername'];
+
+// Username update rate limit: 1 per week
 const USERNAME_UPDATE_RATE_LIMIT = {
     interval: 60 * 60 * 24 * 7, // 1 week
     uniqueTokenPerInterval: 1,
 };
 
 export async function PATCH(request: NextRequest) {
-    return withRateLimit(
-        request,
-        async () => {
-            try {
-                const session = await requireAuth();
+    return withRateLimit(request, async () => {
+        try {
+            const session = await requireAuth();
+            const body = await request.json();
 
-                const body = await request.json();
+            // Validate input
+            const validatedData = UserApi.UpdateUsername.Patch.Request.parse(body);
 
-                // Validate input
-                const validatedData = userUsernameUpdateSchema.parse(body);
+            // Sanitize username
+            const username = sanitizeUserInput(validatedData.username).toLowerCase();
 
-                // Sanitize username input
-                const updates: UserUsernameUpdateInput = {
-                    username: sanitizeUserInput(validatedData.username).toLowerCase(),
-                };
+            await connectDB();
 
-                await connectDB();
+            // Check if username is already taken
+            const existingUser = await User.findOne({
+                username,
+                _id: { $ne: session.user.id }
+            });
 
-                // Check if username is already taken by another user
-                const existingUser = await User.findOne({
-                    username: updates.username,
-                    _id: { $ne: session.user.id }
-                });
-
-                if (existingUser) {
-                    throw new ConflictError('Username already taken');
-                }
-
-
-                // Update user
-                const updatedUser = await User.findByIdAndUpdate(
-                    session.user.id,
-                    {
-                        $set: {
-                            username: updates.username,
-                        }
-                    },
-                    { new: true, runValidators: true }
-                ).select('-password');
-
-                if (!updatedUser) {
-                    throw new NotFoundError('User');
-                }
-
-                logger.info('Username updated', {
-                    userId: session.user.id,
-                    newUsername: updates.username,
-                });
-
-                return NextResponse.json({
-                    success: true,
-                    user: {
-                        id: updatedUser._id,
-                        username: updatedUser.username,
-                        displayName: updatedUser.displayName,
-                    }
-                });
-
-            } catch (error) {
-                logger.error('Username update failed', error, {
-                    path: '/api/user/update-username',
-                    method: 'PATCH',
-                });
-
-                return handleError(error);
+            if (existingUser) {
+                throw new ConflictError('Username already taken');
             }
-        },
-        USERNAME_UPDATE_RATE_LIMIT
-    );
+
+            // Update user
+            const updatedUser = await User.findByIdAndUpdate(
+                session.user.id,
+                { $set: { username } },
+                { new: true, runValidators: true }
+            ).select('username');
+
+            if (!updatedUser) {
+                throw new NotFoundError('User');
+            }
+
+            logger.info('Username updated', {
+                userId: session.user.id,
+                newUsername: username,
+            });
+
+            return NextResponse.json<ApiType['Patch']['Response']>({
+                success: true,
+                message: 'Username updated successfully',
+                username: updatedUser.username,
+            });
+        } catch (error) {
+            logger.error('Failed to update username', error);
+            return handleError(error);
+        }
+    }, USERNAME_UPDATE_RATE_LIMIT);
 }

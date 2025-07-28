@@ -3,7 +3,7 @@
 
 import {useState} from 'react';
 import {signOut, useSession} from 'next-auth/react';
-import {UserSettings, userUpdateSchema, userUsernameUpdateSchema} from "@/lib/schemas/user";
+import {IUserApi, UserApi, UserSettings, userUsernameUpdateSchema} from "@/lib/schemas/user";
 import {Switch} from "@/components/ui/switch"
 import {
     Save,
@@ -21,9 +21,13 @@ import {Button} from '@/components/ui/button';
 import {toast} from "sonner";
 import {z} from "zod";
 import {useSessionRefresh} from "@/hooks/useSessionRefresh";
+import {ApiResponse, ErrorResponse} from "@/lib/schemas/core";
+
+type UserUpdateType = IUserApi['Patch']['Request'];
+type UserUpdateUsernameType = IUserApi['UpdateUsername']['Patch']['Request'];
 
 interface SettingsSectionProps {
-    initialSettings: UserSettings;
+    initialSettings: UserUpdateType & UserUpdateUsernameType;
 }
 
 const vrHeadsetOptions: { value: UserSettings["vrHeadset"], label: string }[] = [
@@ -40,9 +44,9 @@ const vrHeadsetOptions: { value: UserSettings["vrHeadset"], label: string }[] = 
 
 export default function SettingsSection({initialSettings}: SettingsSectionProps) {
     const {data: session} = useSession();
-    const { refreshSession } = useSessionRefresh();
+    const {refreshSession} = useSessionRefresh();
 
-    const [settings, setSettings] = useState(initialSettings);
+    const [settings, setSettings] = useState<UserUpdateType>(initialSettings);
     const [loading, setLoading] = useState(false);
     const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'saved' | 'error'>('idle');
     const [errors, setErrors] = useState<Record<string, string>>({});
@@ -56,19 +60,23 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
     const checkUsernameAvailability = async (username: string): Promise<boolean> => {
         try {
             const response = await fetch(`/api/user/check-username?username=${encodeURIComponent(username)}`);
-            const data = await response.json();
+            const data: ApiResponse<IUserApi['CheckUsername']['Get']['Response']> = await response.json();
 
             if (!response.ok) {
-                setUsernameError(data.error || 'Failed to check username');
+                const errorData = data as ErrorResponse;
+                setUsernameError(errorData.error.message || 'Failed to check username');
                 return false;
             }
 
-            if (!data.available) {
-                setUsernameError(data.message || 'Username not available');
+
+            const successData = data as IUserApi['CheckUsername']['Get']['Response'];
+            if (!successData.available) {
+                setUsernameError(successData.message);
                 return false;
             }
 
             return true;
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (_error) {
             setUsernameError('Failed to check username availability');
             return false;
@@ -81,23 +89,20 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
         setErrors({});
 
         try {
-            const validatedSettings = userUpdateSchema.parse(settings);
+            const validatedSettings = UserApi.Patch.Request.parse(settings);
             const response = await fetch('/api/user/update', {
                 method: 'PATCH',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(validatedSettings),
             });
 
-            const data = await response.json();
+            const data: ApiResponse<IUserApi['Patch']['Response']> = await response.json();
 
             if (!response.ok) {
-                // Handle field-specific errors
-                if (data.field) {
-                    setErrors({[data.field]: data.error});
-                } else {
-                    setErrors({general: data.error || 'Failed to save settings'});
-                }
-                throw new Error(data.error || 'Failed to save settings');
+                const errorData = data as ErrorResponse;
+                setErrors({general: errorData.error.message});
+                setSaveStatus('error');
+                return;
             }
 
             setSaveStatus('saved');
@@ -106,15 +111,14 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
             await refreshSession()
 
             setTimeout(() => setSaveStatus('idle'), 5000);
+            toast.success('Settings saved successfully');
         } catch (error) {
             if (error instanceof z.ZodError) {
-                console.warn('Input validation error:', error);
                 setErrors({general: z.prettifyError(error)});
             } else {
-                console.warn('Failed to save settings:', error);
+                setErrors({general: 'Failed to save settings'});
             }
             setSaveStatus('error');
-            setTimeout(() => setSaveStatus('idle'), 5000);
         } finally {
             setLoading(false);
         }
@@ -128,7 +132,7 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
 
         setLoading(true);
         try {
-            const response = await fetch('/api/user/delete', {
+            const response = await fetch('/api/user', {
                 method: 'DELETE',
                 headers: {'Content-Type': 'application/json'},
             });
@@ -308,10 +312,15 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                             <p className="font-medium text-tan-200">Public Profile</p>
                             <p className="text-sm text-tan-500">Allow others to view your profile and stats</p>
                         </div>
-                        <Switch checked={settings.preferences.publicProfile} onCheckedChange={(checked) => setSettings({
-                            ...settings,
-                            preferences: {...settings.preferences, publicProfile: checked}
-                        })}/>
+                        <Switch checked={settings.preferences?.publicProfile}
+                                onCheckedChange={(checked) => setSettings({
+                                    ...settings,
+                                    preferences: {
+                                        emailNotifications: !!settings.preferences?.emailNotifications,
+                                        showContributions: !!settings.preferences?.showContributions,
+                                        publicProfile: checked
+                                    }
+                                })}/>
                     </div>
 
                     <div className="flex items-center justify-between p-4 bg-military-800 rounded-sm">
@@ -320,13 +329,17 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                             <p className="text-sm text-tan-500">Display accepted contributions on your public
                                 profile</p>
                         </div>
-                        <Switch checked={settings.preferences.showContributions}
+                        <Switch checked={!!settings.preferences?.showContributions}
                                 onCheckedChange={(checked) => setSettings({
                                     ...settings,
-                                    preferences: {...settings.preferences, showContributions: checked}
+                                    preferences: {
+                                        emailNotifications: !!settings.preferences?.emailNotifications,
+                                        showContributions: checked,
+                                        publicProfile: !!settings.preferences?.publicProfile
+                                    }
 
                                 })}
-                                disabled={!settings.preferences.publicProfile}
+                                disabled={!settings.preferences?.publicProfile}
                         />
                     </div>
 
@@ -335,10 +348,14 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                             <p className="font-medium text-tan-200">Email Notifications</p>
                             <p className="text-sm text-tan-500">Receive updates about your contributions</p>
                         </div>
-                        <Switch checked={settings.preferences.emailNotifications}
+                        <Switch checked={!!settings.preferences?.emailNotifications}
                                 onCheckedChange={(checked) => setSettings({
                                     ...settings,
-                                    preferences: {...settings.preferences, emailNotifications: checked}
+                                    preferences: {
+                                        emailNotifications: checked,
+                                        showContributions: !!settings.preferences?.showContributions,
+                                        publicProfile: !!settings.preferences?.publicProfile
+                                    }
 
                                 })}
                                 disabled

@@ -1,5 +1,6 @@
 import {z} from 'zod';
 import {Types} from "mongoose";
+import {paginationSchema, successSchema} from "@/lib/schemas/core";
 
 export const locationEnum = ['eu', 'na'] as const;
 export const vrHeadsetEnum = ['quest2', 'quest3', 'pico4', 'index', 'vive', 'bigscreen', 'other'] as const;
@@ -88,6 +89,16 @@ export const userRoleUpdateSchema = z.object({
     reason: z.string().max(500).optional(),
 });
 
+
+export const userTokenSchema = userBaseSchema.pick({
+    username: true,
+    displayName: true,
+    avatarUrl: true,
+    rank: true,
+    roles: true,
+    isBanned: true,
+});
+
 export const userSettingsSchema = userBaseSchema.pick({
     username: true,
     displayName: true,
@@ -105,11 +116,11 @@ export const userUpdateSchema = userBaseSchema.pick({
     preferences: true,
 }).partial().transform((data) => {
     // Clean up undefined values
-    const cleaned: Record<string, unknown> = {};
+    const cleaned = {...data};
 
     Object.entries(data).forEach(([key, value]) => {
-        if (value !== undefined) {
-            cleaned[key] = value;
+        if (value === undefined) {
+            delete cleaned[key as keyof typeof cleaned];
         }
     });
 
@@ -153,18 +164,6 @@ export const adminStatsRequestSchema = z.object({
     query: z.string().min(2).optional(),
 });
 
-// Common response schemas
-const paginationSchema = z.object({
-    page: z.number(),
-    limit: z.number(),
-    total: z.number(),
-    pages: z.number(),
-});
-
-const successSchema = z.object({
-    success: z.literal(true),
-    message: z.string(),
-});
 
 // User list item schema (for lists)
 const userListItemSchema = userDocumentSchema.pick({
@@ -191,15 +190,11 @@ const userProfileSchema = userDocumentSchema.pick({
     location: true,
     vrHeadset: true,
     rank: true,
+    roles: true,
     badges: true,
+    stats: true,
     createdAt: true,
 }).extend({
-    stats: z.object({
-        contributionPoints: z.number(),
-        feedbackSubmitted: z.number(),
-        dataCorrections: z.number(),
-        correctionsAccepted: z.number(),
-    }),
     preferences: z.object({
         publicProfile: z.boolean(),
         showContributions: z.boolean(),
@@ -207,21 +202,7 @@ const userProfileSchema = userDocumentSchema.pick({
 });
 
 // User settings schema (own profile)
-const userSettingsResponseSchema = userDocumentSchema.pick({
-    _id: true,
-    username: true,
-    displayName: true,
-    email: true,
-    avatarUrl: true,
-    bio: true,
-    location: true,
-    vrHeadset: true,
-    rank: true,
-    roles: true,
-    badges: true,
-    stats: true,
-    preferences: true,
-});
+const userSettingsResponseSchema = userDocumentSchema
 
 
 // Stats schemas
@@ -272,7 +253,7 @@ const userSearchResponseSchema = z.object({
     })),
 });
 
-const userRoleUpdateResponseSchema = z.object({
+const userRoleUpdateResponseSchema = successSchema.extend({
     user: z.object({
         id: z.string(),
         username: z.string(),
@@ -284,7 +265,7 @@ const userRoleUpdateResponseSchema = z.object({
 // --- API Contract Definition ---
 export const UserApi = {
     // Public endpoints
-    Profile: {
+    ByUsername: {
         Get: {
             Response: z.object({
                 user: userProfileSchema,
@@ -293,25 +274,36 @@ export const UserApi = {
     },
 
     // Authenticated user endpoints
-    Me: {
+    Get: {
+        Response: z.object({
+            user: userSettingsResponseSchema,
+        }),
+    },
+    Patch: {
+        Request: userUpdateSchema,
+        Response: z.object({
+            user: userSettingsResponseSchema,
+        }),
+    },
+
+    CheckUsername: {
         Get: {
-            Response: z.object({
-                user: userSettingsResponseSchema,
+            Request: userUsernameUpdateSchema,
+            Response: successSchema.pick({message: true}).extend({
+                available: z.boolean(),
             }),
-        },
-        Update: {
-            Request: userUpdateSchema,
-            Response: z.object({
-                user: userSettingsResponseSchema,
-            }),
-        },
-        UpdateUsername: {
+        }
+    },
+
+    UpdateUsername: {
+        Patch: {
             Request: userUsernameUpdateSchema,
             Response: successSchema.extend({
                 username: z.string(),
             }),
-        },
+        }
     },
+
 
     // Admin endpoints
     Admin: {
@@ -335,9 +327,9 @@ export const UserApi = {
                     user: userDocumentSchema,
                 }),
             },
-            Update: {
+            Patch: {
                 Request: adminUserUpdateSchema,
-                Response: z.object({
+                Response: successSchema.extend({
                     user: userDocumentSchema,
                 }),
             },
@@ -345,12 +337,12 @@ export const UserApi = {
                 Response: successSchema,
             },
             Roles: {
-                Get: {
+                List: {
                     Response: z.object({
                         user: userListItemSchema,
                     }),
                 },
-                Update: {
+                Patch: {
                     Request: userRoleUpdateSchema,
                     Response: userRoleUpdateResponseSchema,
                 },
@@ -361,20 +353,30 @@ export const UserApi = {
 
 // Type exports
 export type IUserApi = {
-    Profile: {
-        Get: { Response: z.infer<typeof UserApi.Profile.Get.Response> };
+    ByUsername: {
+        Get: { Response: z.infer<typeof UserApi.ByUsername.Get.Response> };
     };
-    Me: {
-        Get: { Response: z.infer<typeof UserApi.Me.Get.Response> };
-        Update: {
-            Request: z.infer<typeof UserApi.Me.Update.Request>;
-            Response: z.infer<typeof UserApi.Me.Update.Response>;
-        };
-        UpdateUsername: {
-            Request: z.infer<typeof UserApi.Me.UpdateUsername.Request>;
-            Response: z.infer<typeof UserApi.Me.UpdateUsername.Response>;
-        };
+
+    Get: { Response: z.infer<typeof UserApi.Get.Response> };
+    Patch: {
+        Request: z.infer<typeof UserApi.Patch.Request>;
+        Response: z.infer<typeof UserApi.Patch.Response>;
     };
+
+    CheckUsername: {
+        Get: {
+            Request: z.infer<typeof UserApi.CheckUsername.Get.Request>;
+            Response: z.infer<typeof UserApi.CheckUsername.Get.Response>;
+        }
+    };
+
+    UpdateUsername: {
+        Patch: {
+            Request: z.infer<typeof UserApi.UpdateUsername.Patch.Request>;
+            Response: z.infer<typeof UserApi.UpdateUsername.Patch.Response>;
+        }
+    };
+
     Admin: {
         List: {
             Request: z.infer<typeof UserApi.Admin.List.Request>;
@@ -390,16 +392,16 @@ export type IUserApi = {
         };
         ById: {
             Get: { Response: z.infer<typeof UserApi.Admin.ById.Get.Response> };
-            Update: {
-                Request: z.infer<typeof UserApi.Admin.ById.Update.Request>;
-                Response: z.infer<typeof UserApi.Admin.ById.Update.Response>;
+            Patch: {
+                Request: z.infer<typeof UserApi.Admin.ById.Patch.Request>;
+                Response: z.infer<typeof UserApi.Admin.ById.Patch.Response>;
             };
             Delete: { Response: z.infer<typeof UserApi.Admin.ById.Delete.Response> };
             Roles: {
-                Get: { Response: z.infer<typeof UserApi.Admin.ById.Roles.Get.Response> };
-                Update: {
-                    Request: z.infer<typeof UserApi.Admin.ById.Roles.Update.Request>;
-                    Response: z.infer<typeof UserApi.Admin.ById.Roles.Update.Response>;
+                Get: { Response: z.infer<typeof UserApi.Admin.ById.Roles.List.Response> };
+                Patch: {
+                    Request: z.infer<typeof UserApi.Admin.ById.Roles.Patch.Request>;
+                    Response: z.infer<typeof UserApi.Admin.ById.Roles.Patch.Response>;
                 };
             };
         };
@@ -422,3 +424,4 @@ export type UserRank = (typeof rankEnum)[number];
 export type UserRoles = (typeof rolesEnum)[number];
 
 export type IUser = z.infer<typeof userDocumentSchema>;
+export type IUserToken = z.infer<typeof userTokenSchema>;

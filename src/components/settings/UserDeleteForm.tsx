@@ -28,7 +28,7 @@ export default function UserDeleteForm() {
         setIsDeleting(true);
 
         try {
-            const response = await fetch('/api/user/delete', {
+            const response = await fetch('/api/user', {
                 method: 'DELETE',
             });
 

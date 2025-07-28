@@ -1,8 +1,9 @@
 import { connectDB } from '@/lib/mongodb';
 import { User } from '@/models/User';
-import {IUser} from "@/lib/schemas/user";
+import {IUserApi} from "@/lib/schemas/user";
 
-export async function getUserByUsername(username: string): Promise<IUser | null> {
+type UserType = IUserApi['ByUsername']['Get']['Response']['user'];
+export async function getUserByUsername(username: string): Promise<UserType | null> {
     try {
         await connectDB();
 
@@ -10,12 +11,12 @@ export async function getUserByUsername(username: string): Promise<IUser | null>
             username: username.toLowerCase(),
             isActive: true,
             isBanned: false,
-        }).select('-email'); // Don't expose email on public profiles
+        }).select('-email -lastLoginAt -isActive -isBanned -banReason -preferences.emailNotifications').lean<UserType>();
 
         if (!user) return null;
 
         // Convert to plain object
-        return JSON.parse(JSON.stringify(user));
+        return user;
     } catch (error) {
         console.error('Error fetching user:', error);
         return null;

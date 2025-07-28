@@ -4,9 +4,8 @@ import { connectDB } from '@/lib/mongodb';
 import { User } from '@/models/User';
 import { withRateLimit } from '@/lib/middleware';
 import { handleError} from '@/lib/errors';
-import { sanitizeUserInput } from '@/lib/utils';
 import { logger } from '@/lib/logger';
-import {userUsernameUpdateSchema} from "@/lib/schemas/user";
+import {IUserApi, UserApi} from "@/lib/schemas/user";
 
 // Check username rate limit: 20 per minute
 const CHECK_USERNAME_RATE_LIMIT = {
@@ -14,6 +13,7 @@ const CHECK_USERNAME_RATE_LIMIT = {
     uniqueTokenPerInterval: 20,
 };
 
+type ApiType = IUserApi['CheckUsername'];
 export async function GET(request: NextRequest) {
     return withRateLimit(
         request,
@@ -23,8 +23,7 @@ export async function GET(request: NextRequest) {
                 const username = searchParams.get('username');
 
                 // Sanitize and validate username
-                let validatedUsername = userUsernameUpdateSchema.shape.username.parse(username);
-                validatedUsername = userUsernameUpdateSchema.shape.username.parse(sanitizeUserInput(validatedUsername).toLowerCase());
+                const validatedUsername = UserApi.CheckUsername.Get.Request.parse(username).username as string;
 
                 await connectDB();
 
@@ -35,9 +34,9 @@ export async function GET(request: NextRequest) {
 
                 const isAvailable = !existingUser;
 
-                return NextResponse.json({
+                return NextResponse.json<ApiType['Get']['Response']>({
                     available: isAvailable,
-                    message: isAvailable ? null : 'Username already taken',
+                    message: isAvailable ? 'Username available' : 'Username already taken',
                 });
 
             } catch (error) {

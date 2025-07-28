@@ -1,10 +1,10 @@
 // src/app/api/admin/users/[id]/roles/route.ts
-import { NextRequest } from 'next/server';
+import {NextRequest, NextResponse} from 'next/server';
 import { connectDB } from '@/lib/mongodb';
 import { User } from '@/models/User';
 import {requireAdmin, requireAdminOrModerator} from "@/lib/auth/utils";
 import {withRateLimit} from "@/lib/middleware";
-import {UserRoles, userRoleUpdateSchema} from '@/lib/schemas/user';
+import {IUserApi, UserApi, UserRoles,} from '@/lib/schemas/user';
 import {AuthorizationError, handleError, NotFoundError} from "@/lib/errors";
 import {logger} from "@/lib/logger";
 
@@ -26,6 +26,8 @@ import {logger} from "@/lib/logger";
 //     return currentMaxLevel >= targetLevel;
 // }
 
+type ApiType = IUserApi['Admin']['ById']['Roles']
+
 // PATCH /api/admin/users/[id]/roles - Update user roles
 export async function PATCH(
     request: NextRequest,
@@ -40,7 +42,7 @@ export async function PATCH(
 
                 // Parse and validate request
                 const body = await request.json();
-                const validatedData = userRoleUpdateSchema.parse(body);
+                const validatedData = UserApi.Admin.ById.Roles.Patch.Request.parse(body);
 
                 const targetUser = await User.findById(params.id);
                 if (!targetUser) {
@@ -74,7 +76,7 @@ export async function PATCH(
                     ...validatedData
                 });
 
-                return Response.json({
+                return NextResponse.json<ApiType['Patch']['Response']>({
                     success: true,
                     message: `Role ${validatedData.action}ed successfully`,
                     user: {
@@ -110,14 +112,14 @@ export async function GET(
                 await connectDB();
 
                 const user = await User.findById(params.id)
-                    .select('username roles rank stats.contributionPoints createdAt lastLoginAt')
-                    .lean();
+                    .select(' _id username email roles rank stats.contributionPoints createdAt lastLoginAt')
+                    .lean<ApiType['Get']['Response']['user']>();
 
                 if (!user) {
                     throw new NotFoundError('User');
                 }
 
-                return Response.json({ user });
+                return NextResponse.json<ApiType['Get']['Response']>({ user });
 
             } catch (error) {
                 logger.error('Get user roles error:', error, {

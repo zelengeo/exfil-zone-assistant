@@ -1,5 +1,5 @@
 // src/app/api/admin/users/[id]/route.ts
-import {NextRequest} from 'next/server';
+import {NextRequest, NextResponse} from 'next/server';
 import mongoose, {isValidObjectId} from "mongoose";
 import {connectDB} from '@/lib/mongodb';
 import {User} from '@/models/User';
@@ -15,9 +15,10 @@ import {
     ValidationError
 } from "@/lib/errors";
 import {logger} from "@/lib/logger";
-import {AdminUserUpdateInput, adminUserUpdateSchema} from "@/lib/schemas/user";
+import {AdminUserUpdateInput, adminUserUpdateSchema, IUserApi, UserApi} from "@/lib/schemas/user";
 import { sanitizeUserInput } from '@/lib/utils';
 
+type ApiType = IUserApi['Admin']['ById']
 export async function GET(
     request: NextRequest,
     {params}: { params: { id: string } }
@@ -34,14 +35,13 @@ export async function GET(
                 }
 
                 const user = await User.findById(params.id)
-                    .select('-providers')
-                    .lean();
+                    .lean<ApiType['Get']['Response']['user']>();
 
                 if (!user) {
                     throw new NotFoundError('User');
                 }
 
-                return Response.json({user});
+                return NextResponse.json<ApiType['Get']['Response']>({user});
 
             } catch (error) {
                 logger.error('Failed to get user', error, {
@@ -115,7 +115,7 @@ export async function DELETE(
                     username: user.username
                 });
 
-                return Response.json({
+                return NextResponse.json<ApiType['Delete']['Response']>({
                     success: true,
                     message: 'User account deleted successfully'
                 });
@@ -150,7 +150,7 @@ export async function PATCH(
 
                 const body = await request.json();
                 // Validate input
-                const validatedData = adminUserUpdateSchema.parse(body);
+                const validatedData = UserApi.Admin.ById.Patch.Request.parse(body);
 
 
                 // Sanitize text inputs
@@ -198,7 +198,7 @@ export async function PATCH(
                     params.id,
                     {$set: updates},
                     {new: true}
-                ).select('-password');
+                );//.select('-password');
 
                 if (!updatedUser) {
                     throw new NotFoundError('User');
@@ -209,7 +209,7 @@ export async function PATCH(
                     updatedFields: Object.keys(updates),
                 });
 
-                return Response.json({
+                return NextResponse.json<ApiType['Patch']['Response']>({
                     success: true,
                     user: updatedUser,
                     message: 'User updated successfully'
@@ -217,7 +217,7 @@ export async function PATCH(
 
             } catch (error) {
                 logger.error('Admin update user error:', error, {
-                    path: '/api/admin/user/update',
+                    path: '/api/admin/users',
                     method: 'PATCH',
                 });
                 return handleError(error);

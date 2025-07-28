@@ -32,29 +32,24 @@ import {
 } from '@/components/ui/alert-dialog';
 import { Search, ChevronLeft, ChevronRight } from 'lucide-react';
 import { toast } from "sonner";
+import {IUserApi, rolesEnum, UserApi} from '@/lib/schemas/user';
+import {createSearchParams} from "@/lib/schemas/core";
 
-interface User {
-    _id: string;
-    username: string;
-    email: string;
-    roles: string[];
-    rank: string;
-    createdAt: string;
-}
+const ITEMS_PER_PAGE = 20;
 
-const ROLES = ['user', 'contributor', 'partner', 'moderator', 'admin'];
-const ITEMS_PER_PAGE = 10;
+type UserListItem = IUserApi['Admin']['List']['Response']['users'][0];
+type RoleUpdateRequest = IUserApi['Admin']['ById']['Roles']['Patch']['Request'];
 
 export function UserRolesTable() {
-    const [users, setUsers] = useState<User[]>([]);
+    const [users, setUsers] = useState<UserListItem[]>([]);
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
     const [roleFilter, setRoleFilter] = useState('all');
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
-    const [selectedUser, setSelectedUser] = useState<User | null>(null);
-    const [actionType, setActionType] = useState<'add' | 'remove'>('add');
-    const [selectedRole, setSelectedRole] = useState('');
+    const [selectedUser, setSelectedUser] = useState<UserListItem | null>(null);
+    const [actionType, setActionType] = useState<RoleUpdateRequest['action']>('add');
+    const [selectedRole, setSelectedRole] = useState<RoleUpdateRequest['role'] | ''>('');
     const [isDialogOpen, setIsDialogOpen] = useState(false);
 
     const debouncedSearchTerm = useDebounce(searchTerm, 300);
@@ -62,15 +57,18 @@ export function UserRolesTable() {
     const fetchUsers = useCallback(async () => {
         setLoading(true);
         try {
-            const params = new URLSearchParams({
-                page: currentPage.toString(),
-                limit: ITEMS_PER_PAGE.toString(),
-                ...(debouncedSearchTerm && { search: debouncedSearchTerm }),
-                ...(roleFilter !== 'all' && { role: roleFilter }),
-            });
+            const params = createSearchParams(
+                UserApi.Admin.List.Request,
+                {
+                    page: currentPage,
+                    limit: ITEMS_PER_PAGE,
+                    ...(debouncedSearchTerm && { search: debouncedSearchTerm }),
+                    ...(roleFilter !== 'all' && { role: roleFilter as IUserApi['Admin']['List']['Request']['role'] }),
+                }
+            );
 
             const response = await fetch(`/api/admin/users?${params}`);
-            const data = await response.json();
+            const data: IUserApi['Admin']['List']['Response'] = await response.json();
 
             if (response.ok) {
                 setUsers(data.users);
@@ -86,47 +84,45 @@ export function UserRolesTable() {
         }
     }, [currentPage, debouncedSearchTerm, roleFilter]);
 
-    useEffect(() => {
-        fetchUsers();
-    }, [fetchUsers]);
-
-    const handleRoleAction = (user: User, action: 'add' | 'remove', role: string) => {
-        setSelectedUser(user);
-        setActionType(action);
-        setSelectedRole(role);
-        setIsDialogOpen(true);
-    };
 
     const confirmRoleAction = async () => {
         if (!selectedUser || !selectedRole) return;
 
         try {
+            const requestBody: RoleUpdateRequest = {
+                action: actionType,
+                role: selectedRole as RoleUpdateRequest['role'],
+            };
+
             const response = await fetch(`/api/admin/users/${selectedUser._id}/roles`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    action: actionType,
-                    role: selectedRole,
-                }),
+                body: JSON.stringify(requestBody),
             });
 
-            const data = await response.json();
+            const data: IUserApi['Admin']['ById']['Roles']['Patch']['Response'] = await response.json();
 
             if (response.ok) {
-                toast.success('Success',{
-                    description: data.message,
-                });
+                toast.success(`Role ${actionType}ed successfully for ${data.user.username}`, { description: `Resulted roles are: ${data.user.roles.join(', ')}` });
                 fetchUsers();
             } else {
-                throw new Error(data.error);
+                throw new Error('Failed to update role');
             }
         } catch (error) {
-            toast.error('Error', {
-                description: error instanceof Error ? error.message : 'Failed to update role',
-            });
+            toast.error(error instanceof Error ? error.message : 'Failed to update role');
         } finally {
             setIsDialogOpen(false);
         }
+    };
+    useEffect(() => {
+        fetchUsers();
+    }, [fetchUsers]);
+
+    const handleRoleAction = (user: UserListItem, action: RoleUpdateRequest['action'], role: RoleUpdateRequest['role']) => {
+        setSelectedUser(user);
+        setActionType(action);
+        setSelectedRole(role);
+        setIsDialogOpen(true);
     };
 
     const getRoleColor = (role: string) => {
@@ -158,7 +154,7 @@ export function UserRolesTable() {
                     </SelectTrigger>
                     <SelectContent className="bg-military-800 border-military-700">
                         <SelectItem value="all">All Roles</SelectItem>
-                        {ROLES.map((role) => (
+                        {rolesEnum.map((role) => (
                             <SelectItem key={role} value={role}>
                                 {role.charAt(0).toUpperCase() + role.slice(1)}s
                             </SelectItem>
@@ -193,7 +189,7 @@ export function UserRolesTable() {
                             </TableRow>
                         ) : (
                             users.map((user) => (
-                                <TableRow key={user._id} className="border-military-700 hover:bg-military-800/30">
+                                <TableRow key={user._id.toString()} className="border-military-700 hover:bg-military-800/30">
                                     <TableCell>
                                         <div>
                                             <div className="font-medium text-tan-100">{user.username}</div>
@@ -225,7 +221,7 @@ export function UserRolesTable() {
                                         <Select
                                             onValueChange={(value) => {
                                                 const [action, role] = value.split(':');
-                                                handleRoleAction(user, action as 'add' | 'remove', role);
+                                                handleRoleAction(user, action as RoleUpdateRequest['action'], role as RoleUpdateRequest['role']);
                                             }}
                                         >
                                             <SelectTrigger className="w-[140px] bg-military-800 border-military-700">
@@ -235,7 +231,7 @@ export function UserRolesTable() {
                                                 <SelectItem value="placeholder" disabled>
                                                     Select action
                                                 </SelectItem>
-                                                {ROLES.filter(role => !user.roles.includes(role)).map((role) => (
+                                                {rolesEnum.filter(role => !user.roles.includes(role)).map((role) => (
                                                     <SelectItem key={`add:${role}`} value={`add:${role}`}>
                                                         Add {role}
                                                     </SelectItem>

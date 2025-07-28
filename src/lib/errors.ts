@@ -1,6 +1,7 @@
 import {z, ZodError} from 'zod';
 import { MongooseError } from 'mongoose';
 import {NextResponse} from "next/server";
+import {ErrorResponse} from "@/lib/schemas/core";
 
 // Custom error classes
 export class AppError extends Error {
@@ -17,7 +18,7 @@ export class AppError extends Error {
 }
 
 export class ValidationError extends AppError {
-    constructor(message: string, public details?: any) {
+    constructor(message: string, public details?: string) {
         super(message, 400, 'VALIDATION_ERROR');
     }
 }
@@ -68,16 +69,6 @@ export class RateLimitError extends AppError {
     }
 }
 
-// Error response type
-interface ErrorResponse {
-    error: {
-        message: string;
-        code?: string;
-        statusCode: number;
-        details?: any;
-    };
-    requestId?: string;
-}
 
 // Environment checks
 const isDevelopment = process.env.NODE_ENV === 'development';

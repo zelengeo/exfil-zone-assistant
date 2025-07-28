@@ -80,9 +80,9 @@ export default async function DashboardPage() {
                     <div className="flex flex-col sm:flex-row items-start gap-6">
                         {/* Avatar */}
                         <div className="flex-shrink-0">
-                            {user.image ? (
+                            {user.avatarUrl ? (
                                 <Image
-                                    src={user.image}
+                                    src={user.avatarUrl}
                                     alt={user.displayName || user.username}
                                     width={88}
                                     height={88}

@@ -5,41 +5,41 @@ import DiscordProvider from "next-auth/providers/discord";
 import GoogleProvider from "next-auth/providers/google";
 import {connectDB} from "@/lib/mongodb";
 import { User } from "@/models/User";
-import {IUser} from "@/lib/schemas/user";
+import {IUser, IUserToken} from "@/lib/schemas/user";
 import {ensureUniqueUsername, generateUsername} from "@/lib/auth/username";
 
 declare module "next-auth" {
     interface Session {
         user: {
             id: string;
-            displayName: string;
-            username: string;
-            image?: string;
-            rank: string;
-            roles: string[];
-            isBanned: boolean;
+            displayName: IUserToken['displayName'];
+            username: IUserToken['username'];
+            avatarUrl: IUserToken["avatarUrl"];
+            rank: IUserToken["rank"];
+            roles: IUserToken["roles"];
+            isBanned: IUserToken["isBanned"];
         } & DefaultSession["user"];
     }
 
     interface User {
-        displayName: string;
-        username: string;
-        image?: string;
-        rank: string;
-        roles: string[];
-        isBanned: boolean;
+        displayName: IUserToken['displayName'];
+        username: IUserToken['username'];
+        avatarUrl: IUserToken["avatarUrl"];
+        rank: IUserToken["rank"];
+        roles: IUserToken["roles"];
+        isBanned: IUserToken["isBanned"];
     }
 }
 
 declare module "next-auth/jwt" {
     interface JWT {
         id: string;
-        displayName: string;
-        username: string;
-        image?: string;
-        rank: string;
-        roles: string[];
-        isBanned: boolean;
+        displayName: IUserToken['displayName'];
+        username: IUserToken['username'];
+        avatarUrl: IUserToken["avatarUrl"];
+        rank: IUserToken["rank"];
+        roles: IUserToken["roles"];
+        isBanned: IUserToken["isBanned"];
     }
 }
 
@@ -47,6 +47,7 @@ function isAdminEmail(email: string): boolean {
     const adminEmails = [
         process.env.ADMIN_EMAIL_1,
         process.env.ADMIN_EMAIL_2,
+        process.env.ADMIN_EMAIL_3,
     ].filter(Boolean).map(email => email?.toLowerCase());
 
     return adminEmails.includes(email.toLowerCase());
@@ -206,14 +207,14 @@ export const authOptions: NextAuthOptions = {
                 await connectDB();
                 // user.id is now the MongoDB _id from signIn callback
                 const dbUser = await User.findById(user.id)
-                    .select('displayName username image rank roles isBanned')
-                    .lean<IUser>();
+                    .select('displayName username avatarUrl rank roles isBanned')
+                    .lean<IUserToken>();
 
                 if (dbUser) {
                     token.id = user.id; // MongoDB _id as string
                     token.displayName = dbUser.displayName;
                     token.username = dbUser.username;
-                    token.image = dbUser.image;
+                    token.avatarUrl = dbUser.avatarUrl;
                     token.rank = dbUser.rank;
                     token.roles = dbUser.roles || ["user"];
                     token.isBanned = dbUser.isBanned;
@@ -224,14 +225,14 @@ export const authOptions: NextAuthOptions = {
             if (trigger === "update") {
                 await connectDB();
                 const dbUser = await User.findById(token.id)
-                    .select('displayName username image rank roles isBanned')
+                    .select('displayName username avatarUrl rank roles isBanned')
                     .lean<IUser>();
 
                 if (dbUser) {
                     // Update token with fresh data from database
                     token.displayName = dbUser.displayName;
                     token.username = dbUser.username;
-                    token.image = dbUser.image;
+                    token.avatarUrl = dbUser.avatarUrl;
                     token.rank = dbUser.rank;
                     token.roles = dbUser.roles || ["user"];
                     token.isBanned = dbUser.isBanned;
@@ -250,13 +251,13 @@ export const authOptions: NextAuthOptions = {
         async session({ session, token }) {
             // Pass token data to session without DB queries
             if (session?.user && token) {
-                session.user.id = token.id as string;
-                session.user.username = token.username as string;
-                session.user.displayName = token.displayName as string;
-                session.user.image = token.image as string;
-                session.user.rank = token.rank as string;
-                session.user.roles = token.roles as string[];
-                session.user.isBanned = token.isBanned as boolean;
+                session.user.id = token.id;
+                session.user.username = token.username;
+                session.user.displayName = token.displayName;
+                session.user.avatarUrl = token.avatarUrl;
+                session.user.rank = token.rank;
+                session.user.roles = token.roles;
+                session.user.isBanned = token.isBanned;
             }
             return session;
         },

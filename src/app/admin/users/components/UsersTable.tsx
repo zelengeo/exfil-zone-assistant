@@ -14,7 +14,6 @@ import {
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
     Select,
     SelectContent,
@@ -52,38 +51,29 @@ import {
     Award
 } from 'lucide-react';
 import { toast } from 'sonner';
-import {rolesEnum} from "@/lib/schemas/user";
-
-interface UserData {
-    _id: string;
-    username: string;
-    email: string;
-    roles: string[];
-    rank: string;
-    stats?: {
-        contributionPoints: number;
-    };
-    profileImage?: string;
-    bio?: string;
-    createdAt: string;
-}
+import {IUserApi, rolesEnum, UserApi} from "@/lib/schemas/user";
+import {createSearchParams} from "@/lib/schemas/core";
 
 const ITEMS_PER_PAGE = 10;
 
+type UserApiBase = IUserApi['Admin']['List'];
+type UserListItem = UserApiBase['Response']['users'][0];
+type RoleFilterType = UserApiBase['Request']['role'] | 'all';
+
 export function UsersTable() {
     const router = useRouter();
-    const [users, setUsers] = useState<UserData[]>([]);
+    const [users, setUsers] = useState<UserListItem[]>([]);
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
-    const [roleFilter, setRoleFilter] = useState('all');
-    const [sortBy, setSortBy] = useState('createdAt');
-    const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
+    const [roleFilter, setRoleFilter] = useState<RoleFilterType>('all');
+    const [sortBy, setSortBy] = useState<UserApiBase['Request']['sortBy']>('createdAt');
+    const [sortOrder, setSortOrder] = useState<UserApiBase['Request']['order']>('desc');
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
     const [totalUsers, setTotalUsers] = useState(0);
 
     // Delete confirmation state
-    const [deleteUser, setDeleteUser] = useState<UserData | null>(null);
+    const [deleteUser, setDeleteUser] = useState<UserListItem  | null>(null);
     const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
 
     const debouncedSearchTerm = useDebounce(searchTerm, 300);
@@ -91,17 +81,20 @@ export function UsersTable() {
     const fetchUsers = useCallback(async () => {
         setLoading(true);
         try {
-            const params = new URLSearchParams({
-                page: currentPage.toString(),
-                limit: ITEMS_PER_PAGE.toString(),
-                sortBy,
-                sortOrder,
-                ...(debouncedSearchTerm && { search: debouncedSearchTerm }),
-                ...(roleFilter !== 'all' && { role: roleFilter }),
-            });
+            const params = createSearchParams(
+                UserApi.Admin.List.Request,
+                {
+                    page: currentPage,
+                    limit: ITEMS_PER_PAGE,
+                    sortBy,
+                    order: sortOrder,
+                    ...(debouncedSearchTerm && { search: debouncedSearchTerm }),
+                    ...(roleFilter !== 'all' && { role: roleFilter }),
+                }
+                );
 
             const response = await fetch(`/api/admin/users?${params}`);
-            const data = await response.json();
+            const data: UserApiBase['Response'] = await response.json();
 
             if (response.ok) {
                 setUsers(data.users);
@@ -122,15 +115,15 @@ export function UsersTable() {
         fetchUsers();
     }, [fetchUsers]);
 
-    const handleSort = (field: string) => {
-        if (sortBy === field) {
-            setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
-        } else {
-            setSortBy(field);
-            setSortOrder('desc');
-        }
-        setCurrentPage(1);
-    };
+    // const handleSort = (field: string) => {
+    //     if (sortBy === field) {
+    //         setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+    //     } else {
+    //         setSortBy(field);
+    //         setSortOrder('desc');
+    //     }
+    //     setCurrentPage(1);
+    // };
 
     const handleDeleteUser = async () => {
         if (!deleteUser) return;
@@ -198,7 +191,7 @@ export function UsersTable() {
                     />
                 </div>
                 <Select value={roleFilter} onValueChange={(value) => {
-                    setRoleFilter(value);
+                    setRoleFilter(value as RoleFilterType);
                     setCurrentPage(1);
                 }}>
                     <SelectTrigger className="w-[180px] bg-military-800 border-military-700">
@@ -215,8 +208,8 @@ export function UsersTable() {
                 </Select>
                 <Select value={`${sortBy}-${sortOrder}`} onValueChange={(value) => {
                     const [field, order] = value.split('-');
-                    setSortBy(field);
-                    setSortOrder(order as 'asc' | 'desc');
+                    setSortBy(field as UserApiBase['Request']['sortBy']);
+                    setSortOrder(order as UserApiBase['Request']['order']);
                     setCurrentPage(1);
                 }}>
                     <SelectTrigger className="w-[200px] bg-military-800 border-military-700">
@@ -264,15 +257,9 @@ export function UsersTable() {
                             </TableRow>
                         ) : (
                             users.map((user) => (
-                                <TableRow key={user._id} className="border-military-700 hover:bg-military-800/30">
+                                <TableRow key={user._id.toString()} className="border-military-700 hover:bg-military-800/30">
                                     <TableCell>
                                         <div className="flex items-center gap-3">
-                                            <Avatar className="h-10 w-10 border border-military-700">
-                                                <AvatarImage src={user.profileImage} alt={user.username} />
-                                                <AvatarFallback className="bg-military-800 text-tan-300">
-                                                    {user.username.substring(0, 2).toUpperCase()}
-                                                </AvatarFallback>
-                                            </Avatar>
                                             <div>
                                                 <div className="font-medium text-tan-100">{user.username}</div>
                                                 <div className="text-sm text-tan-500">{user.email}</div>
@@ -415,7 +402,7 @@ export function UsersTable() {
                             Delete User Account
                         </AlertDialogTitle>
                         <AlertDialogDescription className="text-tan-400">
-                            Are you sure you want to delete <strong>{deleteUser?.username}</strong>'s account?
+                            Are you sure you want to delete <strong>{deleteUser?.username}</strong>&#39;s account?
                             This action cannot be undone and will permanently remove all their data.
                         </AlertDialogDescription>
                     </AlertDialogHeader>

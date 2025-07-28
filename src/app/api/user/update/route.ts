@@ -5,11 +5,12 @@ import {User} from '@/models/User';
 import {withRateLimit} from "@/lib/middleware";
 import {requireAuth} from "@/lib/auth/utils";
 import {handleError, NotFoundError} from "@/lib/errors";
-import {UserUpdateInput, userUpdateSchema} from "@/lib/schemas/user";
+import {IUserApi, UserApi} from "@/lib/schemas/user";
 import {sanitizeUserInput} from "@/lib/utils";
 import {logger} from "@/lib/logger";
 
 
+type ApiType = IUserApi['Patch'];
 export async function PATCH(request: NextRequest) {
     return withRateLimit(
         request,
@@ -20,10 +21,10 @@ export async function PATCH(request: NextRequest) {
                 const body = await request.json();
 
                 // Validate input
-                const validatedData = userUpdateSchema.parse(body);
+                const validatedData = UserApi.Patch.Request.parse(body);
 
                 // Sanitize text inputs
-                const updates: UserUpdateInput = {...validatedData};
+                const updates: ApiType['Request'] = {...validatedData};
                 if (validatedData.displayName) {
                     updates.displayName = sanitizeUserInput(validatedData.displayName);
                 }
@@ -37,8 +38,8 @@ export async function PATCH(request: NextRequest) {
                 const updatedUser = await User.findByIdAndUpdate(
                     session.user.id,
                     { $set: updates },
-                    { new: true, runValidators: true }
-                ).select('-password');
+                    { new: true, runValidators: true }          
+                )
 
                 if (!updatedUser) {
                     throw new NotFoundError('User');
