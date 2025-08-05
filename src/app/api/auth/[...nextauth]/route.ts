@@ -5,6 +5,7 @@ import DiscordProvider from "next-auth/providers/discord";
 import GoogleProvider from "next-auth/providers/google";
 import {connectDB} from "@/lib/mongodb";
 import { User } from "@/models/User";
+import { Account } from '@/models/Account';
 import {IUser, IUserToken} from "@/lib/schemas/user";
 import {ensureUniqueUsername, generateUsername} from "@/lib/auth/username";
 
@@ -165,8 +166,53 @@ export const authOptions: NextAuthOptions = {
                         // Update the user object with the MongoDB _id for the JWT
                         user.id = savedUser._id.toString();
 
+                        // Link new OAuth account to existing user
+                        await Account.create({
+                            userId: dbUser._id,
+                            type: account.type,
+                            provider: account.provider,
+                            providerAccountId: account.providerAccountId,
+                            refresh_token: account.refresh_token,
+                            access_token: account.access_token,
+                            expires_at: account.expires_at,
+                            token_type: account.token_type,
+                            scope: account.scope,
+                            id_token: account.id_token,
+                            session_state: account.session_state,
+                        });
+
                         console.log(`✅ Created new user ${user.email} with ID ${user.id}`);
                         return true;
+                    } else {
+                        // User exists - check if this OAuth account is already linked
+                        const existingAccount = await Account.findOne({
+                            provider: account.provider,
+                            providerAccountId: account.providerAccountId,
+                        });
+
+                        if (existingAccount) {
+                            // Account exists - verify it belongs to this user
+                            if (existingAccount.userId.toString() !== dbUser._id.toString()) {
+                                // This OAuth account is linked to a different user!
+                                return false; // Deny sign-in
+                            }
+                            // Account correctly linked - proceed with sign-in
+                        } else {
+                            // Link new OAuth account to existing user
+                            await Account.create({
+                                userId: dbUser._id,
+                                type: account.type,
+                                provider: account.provider,
+                                providerAccountId: account.providerAccountId,
+                                refresh_token: account.refresh_token,
+                                access_token: account.access_token,
+                                expires_at: account.expires_at,
+                                token_type: account.token_type,
+                                scope: account.scope,
+                                id_token: account.id_token,
+                                session_state: account.session_state,
+                            });
+                        }
                     }
 
                     // User exists - update as before
@@ -180,7 +226,6 @@ export const authOptions: NextAuthOptions = {
                             console.log(`🔐 Auto-promoted ${user.email} to admin`);
                         }
                     }
-
 
                     dbUser.lastLoginAt = new Date();
                     needsUpdate = true;
@@ -198,7 +243,9 @@ export const authOptions: NextAuthOptions = {
                     return false;
                 }
             }
-            return true;
+
+            console.error('Unexpected sign-in scenario', { user, account });
+            return false;
         },
 
         async jwt({ token, user, account, trigger, session }) {
