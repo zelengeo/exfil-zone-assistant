@@ -132,7 +132,7 @@ export function FeedbackForm() {
 
                 <div className="space-y-2">
                     <Label htmlFor="category" className="text-tan-200">
-                        Data Category
+                        Category
                     </Label>
                     <Select
                         value={formData.category}

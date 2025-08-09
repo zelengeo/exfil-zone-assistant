@@ -6,9 +6,7 @@ import {Controller, useFieldArray, useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {z} from 'zod';
 import {
-    type TaskCorrection,
-    TaskCorrectionProposedData,
-    taskCorrectionSchema,
+    DataCorrectionApi, IDataCorrectionApi, taskCorrectionSubmitSchema,
     taskMapsEnum,
     taskTypesEnum
 } from "@/lib/schemas/dataCorrection";
@@ -33,17 +31,22 @@ interface TaskCorrectionFormProps {
     trigger?: React.ReactNode;
 }
 
+const dataCorrectionSchema = DataCorrectionApi.Post.Request;
+type TaskCorrection = Extract<IDataCorrectionApi['Post']['Request'], { entityType: "task" }>;
+
 export function TaskCorrectionForm({task, trigger}: TaskCorrectionFormProps) {
     const [open, setOpen] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const form = useForm<TaskCorrection>({
-        resolver: zodResolver(taskCorrectionSchema),
+        resolver: zodResolver(taskCorrectionSubmitSchema),
         defaultValues: {
             entityId: task.id,
+            entityType: "task",
             proposedData: {
                 ...task,
             },
+            reason: ''
         },
     });
 
@@ -71,11 +74,11 @@ export function TaskCorrectionForm({task, trigger}: TaskCorrectionFormProps) {
     const onSubmit = async (data: TaskCorrection) => {
         setIsSubmitting(true);
         try {
-            const proposedData: TaskCorrectionProposedData = {};
+            const proposedData: TaskCorrection['proposedData'] = {};
 
             // Iterate over the keys of the proposed data from the form
             for (const _key in data.proposedData) {
-                const key = _key as keyof TaskCorrectionProposedData;
+                const key = _key as keyof TaskCorrection['proposedData'];
                 const formValue = data.proposedData[key];
                 const originalValue = task[key];
 
@@ -99,8 +102,9 @@ export function TaskCorrectionForm({task, trigger}: TaskCorrectionFormProps) {
                 return;
             }
 
-            const validationResult = taskCorrectionSchema.safeParse({
+            const validationResult = dataCorrectionSchema.safeParse({
                 entityId: task.id,
+                entityType: "task",
                 proposedData,
                 reason: data.reason
             });
@@ -118,8 +122,8 @@ export function TaskCorrectionForm({task, trigger}: TaskCorrectionFormProps) {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify({
-                    entityType: "task",
                     entityId: task.id,
+                    entityType: "task",
                     proposedData: validationResult.data.proposedData,
                     reason: validationResult.data.reason,
                 }),
@@ -209,7 +213,7 @@ export function TaskCorrectionForm({task, trigger}: TaskCorrectionFormProps) {
                                             <div className="flex items-center justify-between">
                                                 <FormLabel>Objectives</FormLabel><Button type="button" variant="outline"
                                                                                          size="sm"
-                                                                                         onClick={() => appendObjective({description: ""})}><Plus
+                                                                                         onClick={() => appendObjective("")}><Plus
                                                 className="h-4 w-4 mr-1"/>Add Objective</Button></div>
                                             <FormDescription>Current
                                                 objectives: {task.objectives?.join(", ") || "None"}</FormDescription>

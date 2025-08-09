@@ -5,8 +5,7 @@ import {useState} from "react";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {
-    itemCorrectionSchema,
-    type ItemCorrection,
+    DataCorrectionApi, IDataCorrectionApi, itemCorrectionSubmitSchema,
     rarityEnum,
 } from "@/lib/schemas/dataCorrection";
 import {Item, CALIBERS} from "@/types/items";
@@ -41,6 +40,9 @@ interface ItemCorrectionFormProps {
     trigger?: React.ReactNode;
 }
 
+// const itemCorrectionSchema = DataCorrectionApi.Post.Request;
+type ItemCorrection = Extract<IDataCorrectionApi['Post']['Request'], { entityType: "item" }>
+
 interface StatField {
     name: string;
     label: string;
@@ -68,9 +70,10 @@ export function ItemCorrectionForm({item, trigger}: ItemCorrectionFormProps) {
     const currentStats = item.stats || {};
 
     const form = useForm<ItemCorrection>({
-        resolver: zodResolver(itemCorrectionSchema),
+        resolver: zodResolver(itemCorrectionSubmitSchema),
         defaultValues: {
             entityId: item.id,
+            entityType: 'item',
             proposedData: {
                 name: item.name,
                 description: item.description,
@@ -543,8 +546,8 @@ export function ItemCorrectionForm({item, trigger}: ItemCorrectionFormProps) {
     );
 }
 
-export function ItemCorrectionFormAuth({ item, trigger }: ItemCorrectionFormProps) {
-    const { data: session } = useSession();
+export function ItemCorrectionFormAuth({item, trigger}: ItemCorrectionFormProps) {
+    const {data: session} = useSession();
 
     // No session = no button/trigger rendered at all
     if (!session) {
@@ -552,5 +555,5 @@ export function ItemCorrectionFormAuth({ item, trigger }: ItemCorrectionFormProp
     }
 
     // Session exists = render the full form component
-    return <ItemCorrectionForm item={item} trigger={trigger} />;
+    return <ItemCorrectionForm item={item} trigger={trigger}/>;
 }

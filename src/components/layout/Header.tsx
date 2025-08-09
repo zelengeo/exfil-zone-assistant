@@ -124,7 +124,7 @@ const Header: React.FC = () => {
                     >
                         <Avatar className="h-8 w-8">
                             <AvatarImage
-                                src={session.user?.image || undefined}
+                                src={session.user?.avatarUrl || undefined}
                                 alt={displayName}
                             />
                             <AvatarFallback className="bg-olive-600 text-white">
@@ -147,7 +147,7 @@ const Header: React.FC = () => {
                         <div className="flex items-center gap-3">
                             <Avatar className="h-10 w-10">
                                 <AvatarImage
-                                    src={session.user?.image || undefined}
+                                    src={session.user?.avatarUrl || undefined}
                                     alt={displayName}
                                 />
                                 <AvatarFallback className="bg-olive-600 text-white">
@@ -289,7 +289,7 @@ const Header: React.FC = () => {
                                                         <div className="flex items-center gap-3">
                                                             <Avatar className="h-12 w-12">
                                                                 <AvatarImage
-                                                                    src={session.user?.image || undefined}
+                                                                    src={session.user?.avatarUrl || undefined}
                                                                     alt={session.user.displayName || session.user.username}
                                                                 />
                                                                 <AvatarFallback className="bg-olive-600 text-white">

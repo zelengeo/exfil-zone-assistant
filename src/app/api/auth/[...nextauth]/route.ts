@@ -137,7 +137,7 @@ export const authOptions: NextAuthOptions = {
                             email: user.email?.toLowerCase(),
                             displayName: user.name,
                             username: username,
-                            image: user.image,
+                            avatarUrl: user.image,
                             vrHeadset: null,
                             level: 1,
                             rank: isAdminEmail(user.email || '') ? 'elite' : 'recruit',
