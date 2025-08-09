@@ -50,14 +50,31 @@ export function TaskCorrectionForm({task, trigger}: TaskCorrectionFormProps) {
         },
     });
 
-    const {fields: objectiveFields, append: appendObjective, remove: removeObjective} = useFieldArray({
-        control: form.control,
-        name: "proposedData.objectives",
-    });
-    const {fields: requiredTasksFields, append: appendRequiredTask, remove: removeRequiredTask} = useFieldArray({
-        control: form.control,
-        name: "proposedData.requiredTasks",
-    });
+    // For string arrays (objectives, requiredTasks), use regular form methods
+    const objectivesField = form.watch("proposedData.objectives") || [];
+    const requiredTasksField = form.watch("proposedData.requiredTasks") || [];
+
+// Functions to handle string arrays
+    const appendObjective = (value: string) => {
+        const current = form.getValues("proposedData.objectives") || [];
+        form.setValue("proposedData.objectives", [...current, value]);
+    };
+
+    const removeObjective = (index: number) => {
+        const current = form.getValues("proposedData.objectives") || [];
+        form.setValue("proposedData.objectives", current.filter((_, i) => i !== index));
+    };
+
+    const appendRequiredTask = (value: string) => {
+        const current = form.getValues("proposedData.requiredTasks") || [];
+        form.setValue("proposedData.requiredTasks", [...current, value]);
+    };
+
+    const removeRequiredTask = (index: number) => {
+        const current = form.getValues("proposedData.requiredTasks") || [];
+        form.setValue("proposedData.requiredTasks", current.filter((_, i) => i !== index));
+    };
+
     const {fields: rewardFields, append: appendReward, remove: removeReward} = useFieldArray({
         control: form.control,
         name: "proposedData.reward",
@@ -162,13 +179,13 @@ export function TaskCorrectionForm({task, trigger}: TaskCorrectionFormProps) {
                     onClick={() => setOpen(true)}
                     className="gap-2"
                 >
-                    <Edit2 className="h-4 w-4"/>
+                    <Edit2 size={16}/>
                     Suggest Edit
                 </Button>
             )}
 
             <Dialog open={open} onOpenChange={setOpen}>
-                <DialogContent className="max-w-4xl max-h-[90vh]">
+                <DialogContent className="sm:max-w-4xl sm:max-h-[90vh] max-h-[98vh]">
                     <DialogHeader>
                         <DialogTitle>Suggest Correction: {task.name}</DialogTitle>
                         <DialogDescription>
@@ -179,15 +196,21 @@ export function TaskCorrectionForm({task, trigger}: TaskCorrectionFormProps) {
 
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                            <ScrollArea className="h-[600px] pr-4">
+                            <ScrollArea className="h-[65vh] pr-2 sm:pr-4">
                                 <Tabs defaultValue="basic" className="w-full">
-                                    <TabsList className="grid w-full grid-cols-6">
-                                        <TabsTrigger value="basic">Basic</TabsTrigger>
-                                        <TabsTrigger value="objectives">Objectives</TabsTrigger>
-                                        <TabsTrigger value="details">Details</TabsTrigger>
-                                        <TabsTrigger value="requirements">Requirements</TabsTrigger>
-                                        <TabsTrigger value="rewards">Rewards</TabsTrigger>
-                                        <TabsTrigger value="guides">Guides</TabsTrigger>
+                                    <TabsList className="grid w-full h-full p-1 grid-cols-3 sm:grid-cols-3 md:grid-cols-6 gap-1">
+                                        <TabsTrigger value="basic"
+                                                     className="text-xs sm:text-sm px-2">Basic</TabsTrigger>
+                                        <TabsTrigger value="objectives"
+                                                     className="text-xs sm:text-sm px-2">Objectives</TabsTrigger>
+                                        <TabsTrigger value="details"
+                                                     className="text-xs sm:text-sm px-2">Details</TabsTrigger>
+                                        <TabsTrigger value="requirements"
+                                                     className="text-xs sm:text-sm px-2">Requirements</TabsTrigger>
+                                        <TabsTrigger value="rewards"
+                                                     className="text-xs sm:text-sm px-2">Rewards</TabsTrigger>
+                                        <TabsTrigger value="guides"
+                                                     className="text-xs sm:text-sm px-2">Guides</TabsTrigger>
                                     </TabsList>
 
                                     <TabsContent value="basic" className="space-y-4 mt-4">
@@ -211,23 +234,43 @@ export function TaskCorrectionForm({task, trigger}: TaskCorrectionFormProps) {
                                         {/* Objectives */}
                                         <div className="space-y-2">
                                             <div className="flex items-center justify-between">
-                                                <FormLabel>Objectives</FormLabel><Button type="button" variant="outline"
-                                                                                         size="sm"
-                                                                                         onClick={() => appendObjective("")}><Plus
-                                                className="h-4 w-4 mr-1"/>Add Objective</Button></div>
-                                            <FormDescription>Current
-                                                objectives: {task.objectives?.join(", ") || "None"}</FormDescription>
-                                            <div className="space-y-2">{objectiveFields.map((field, index) => (
-                                                <FormField key={field.id} control={form.control}
-                                                           name={`proposedData.objectives.${index}`}
-                                                           render={({field: objectiveField}) => (<FormItem>
-                                                               <div className="flex gap-2">
-                                                                   <FormControl><Input {...objectiveField}
-                                                                                       placeholder="Enter objective"/></FormControl><Button
-                                                                   type="button" variant="ghost" size="icon"
-                                                                   onClick={() => removeObjective(index)}><Trash2
-                                                                   className="h-4 w-4"/></Button></div>
-                                                               <FormMessage/></FormItem>)}/>))}</div>
+                                                <FormLabel>Objectives</FormLabel>
+                                                <Button
+                                                    type="button"
+                                                    variant="outline"
+                                                    size="sm"
+                                                    onClick={() => appendObjective("")}
+                                                >
+                                                    <Plus className="h-4 w-4 mr-1"/>
+                                                    Add Objective
+                                                </Button>
+                                            </div>
+                                            <FormDescription>
+                                                Current objectives: {task.objectives?.join(", ") || "None"}
+                                            </FormDescription>
+                                            <div className="space-y-2">
+                                                {objectivesField.map((objective, index) => (
+                                                    <div key={index} className="flex gap-2">
+                                                        <Input
+                                                            value={objective}
+                                                            onChange={(e) => {
+                                                                const current = [...objectivesField];
+                                                                current[index] = e.target.value;
+                                                                form.setValue("proposedData.objectives", current);
+                                                            }}
+                                                            placeholder="Enter objective"
+                                                        />
+                                                        <Button
+                                                            type="button"
+                                                            variant="ghost"
+                                                            size="icon"
+                                                            onClick={() => removeObjective(index)}
+                                                        >
+                                                            <Trash2 className="h-4 w-4"/>
+                                                        </Button>
+                                                    </div>
+                                                ))}
+                                            </div>
                                         </div>
                                     </TabsContent>
 
@@ -240,7 +283,7 @@ export function TaskCorrectionForm({task, trigger}: TaskCorrectionFormProps) {
                                                                name="proposedData.type" render={({field}) => {
                                                         const safeValue = Array.isArray(field.value) ? field.value : [];
                                                         return (<FormItem
-                                                            className="flex flex-row items-start space-x-3 space-y-0"><FormControl><Checkbox
+                                                            className="flex flex-row items-start space-x-0 sm:space-x-3 space-y-0"><FormControl><Checkbox
                                                             checked={safeValue.includes(type)}
                                                             onCheckedChange={(checked) => {
                                                                 return checked ? field.onChange([...safeValue, type]) : field.onChange(safeValue.filter((value) => value !== type));
@@ -255,7 +298,7 @@ export function TaskCorrectionForm({task, trigger}: TaskCorrectionFormProps) {
                                                                render={({field}) => {
                                                                    const safeValue = Array.isArray(field.value) ? field.value : [];
                                                                    return (<FormItem
-                                                                       className="flex flex-row items-start space-x-3 space-y-0"><FormControl><Checkbox
+                                                                       className="flex flex-row items-start space-x-0 sm:space-x-3 space-y-0"><FormControl><Checkbox
                                                                        checked={safeValue.includes(map)}
                                                                        onCheckedChange={(checked) => {
                                                                            return checked ? field.onChange([...safeValue, map]) : field.onChange(safeValue.filter((value) => value !== map));
@@ -286,17 +329,29 @@ export function TaskCorrectionForm({task, trigger}: TaskCorrectionFormProps) {
                                                                          onClick={() => appendRequiredTask("")}><Plus
                                                 className="h-4 w-4 mr-1"/>Add Task</Button></div>
                                             <FormDescription>Current: {task.requiredTasks?.join(", ") || "None"}</FormDescription>
-                                            <div className="space-y-2">{requiredTasksFields.map((field, index) => (
-                                                <FormField key={field.id} control={form.control}
-                                                           name={`proposedData.requiredTasks.${index}`}
-                                                           render={({field: requiredTaskField}) => (<FormItem>
-                                                               <div className="flex gap-2">
-                                                                   <FormControl><Input {...requiredTaskField}
-                                                                                       placeholder="Enter required task ID"/></FormControl><Button
-                                                                   type="button" variant="ghost" size="icon"
-                                                                   onClick={() => removeRequiredTask(index)}><Trash2
-                                                                   className="h-4 w-4"/></Button></div>
-                                                               <FormMessage/></FormItem>)}/>))}</div>
+                                            <div className="space-y-2">
+                                                {requiredTasksField.map((requiredTask, index) => (
+                                                    <div key={index} className="flex gap-2">
+                                                        <Input
+                                                            value={requiredTask}
+                                                            onChange={(e) => {
+                                                                const current = [...requiredTasksField];
+                                                                current[index] = e.target.value;
+                                                                form.setValue("proposedData.requiredTasks", current);
+                                                            }}
+                                                            placeholder="Enter required task ID"
+                                                        />
+                                                        <Button
+                                                            type="button"
+                                                            variant="ghost"
+                                                            size="icon"
+                                                            onClick={() => removeRequiredTask(index)}
+                                                        >
+                                                            <Trash2 className="h-4 w-4"/>
+                                                        </Button>
+                                                    </div>
+                                                ))}
+                                            </div>
                                         </div>
                                     </TabsContent>
 

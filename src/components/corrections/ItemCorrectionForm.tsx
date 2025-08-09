@@ -349,7 +349,7 @@ export function ItemCorrectionForm({item, trigger}: ItemCorrectionFormProps) {
             )}
 
             <Dialog open={open} onOpenChange={setOpen}>
-                <DialogContent className="max-w-2xl max-h-[90vh]">
+                <DialogContent className="sm:max-w-2xl sm:max-h-[90vh] max-h-[98vh]">
                     <DialogHeader>
                         <DialogTitle>Suggest Correction: {item.name}</DialogTitle>
                         <DialogDescription>
@@ -360,7 +360,7 @@ export function ItemCorrectionForm({item, trigger}: ItemCorrectionFormProps) {
 
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                            <ScrollArea className="h-[500px] pr-4">
+                            <ScrollArea className="h-[65vh] pr-2 sm:pr-4">
                                 <Tabs defaultValue="basic" className="w-full">
                                     <TabsList className="grid w-full grid-cols-2">
                                         <TabsTrigger value="basic">Basic Info</TabsTrigger>

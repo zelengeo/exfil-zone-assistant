@@ -125,7 +125,7 @@
   input,
   select,
   textarea {
-    @apply min-h-12 px-4 text-lg;
+    @apply min-h-8 px-4 text-lg;
   }
 }
 
