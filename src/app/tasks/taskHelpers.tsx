@@ -10,13 +10,14 @@ import {
     Package,
     Plane,
     Search,
-    Target, Undo2
+    Target, Undo2, XCircle
 } from "lucide-react";
 import {corps, getTasksByMerchant, tasksData} from "@/data/tasks";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {Item} from "@/types/items";
+import {Button} from "@/components/ui/button";
 
 
 export interface MerchantPanelSpecificProps extends MerchantPanelBaseProps {
@@ -154,7 +155,7 @@ export function checkStatusAction(status: TaskStatus, userProgress: UserProgress
             return Object.keys(userProgress.tasks).every(progressTaskId => {
                 if (userProgress.tasks[progressTaskId] !== 'completed') return true;
                 return (
-                    !tasksData[progressTaskId].requiredTasks.includes(taskId)
+                    !tasksData[progressTaskId]?.requiredTasks.includes(taskId)
                 )
             })
         case 'locked':
@@ -182,14 +183,17 @@ export const getStatusConfig = (status: TaskStatus, onStatusChange?: MerchantPan
                 tabBgInactive: 'bg-military-700',
                 tabTextInactive: 'text-tan-400 hover:text-tan-200',
                 // ActionButton
-                actionButton: <button
+                actionButton: <Button
                     onClick={() => !isActionDisabled && onStatusChange(taskId, 'completed')}
                     disabled={isActionDisabled}
-                    className="hover:bg-green-700 disabled:bg-green-600/50 disabled:cursor-not-allowed text-tan-100 px-3 py-1 rounded text-sm transition-colors flex items-center gap-1"
+                    variant="outline"
+                    size="sm"
+                    className="border-military-600 bg-military-800/50 text-tan-100 hover:bg-green-700/30 hover:border-green-600/50 hover:text-green-400"
                 >
-                    <CheckCircle size={16}/>
-                    Mark Complete
-                </button>
+                    <CheckCircle />
+                    <span className="hidden sm:inline">Mark Complete</span>
+                    <span className="sm:hidden">Complete</span>
+                </Button>,
             };
         case 'completed':
             return {
@@ -204,14 +208,17 @@ export const getStatusConfig = (status: TaskStatus, onStatusChange?: MerchantPan
                 tabBorderActive: 'border border-olive-600/50',
                 tabTextInactive: 'text-tan-400 hover:text-tan-200',
                 // Action button
-                actionButton: <button
+                actionButton: <Button
                     onClick={() => !isActionDisabled && onStatusChange(taskId, 'active')}
                     disabled={isActionDisabled}
-                    className="bg-military-600 hover:bg-military-500 disabled:bg-military-600/80 disabled:cursor-not-allowed text-tan-300 px-3 py-1 rounded text-sm transition-colors flex items-center gap-1"
+                    variant="outline"
+                    size="sm"
+                    className="border-military-600 bg-military-800/50 text-tan-300 hover:bg-red-900/20 hover:border-red-800/50 hover:text-red-400"
                 >
-                    <Undo2 size={16}/>
-                    Undo
-                </button>
+                    <XCircle />
+                    <span className="hidden sm:inline">Mark Incomplete</span>
+                    <span className="sm:hidden">Undo</span>
+                </Button>
             };
         case 'locked':
             return {

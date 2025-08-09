@@ -1,7 +1,7 @@
 // src/components/corrections/TaskCorrectionForm.tsx
 "use client";
 
-import {useState} from "react";
+import React, {useState} from "react";
 import {Controller, useFieldArray, useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {z} from 'zod';
@@ -179,8 +179,9 @@ export function TaskCorrectionForm({task, trigger}: TaskCorrectionFormProps) {
                     onClick={() => setOpen(true)}
                     className="gap-2"
                 >
-                    <Edit2 size={16}/>
-                    Suggest Edit
+                    <Edit2/>
+                    <span className="hidden sm:inline">Suggest Edit</span>
+                    <span className="sm:hidden">Edit</span>
                 </Button>
             )}
 

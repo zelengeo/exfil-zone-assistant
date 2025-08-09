@@ -367,11 +367,25 @@ export default function TaskCard({
                     </div>
 
                     {/* Actions Section  */}
-                    <div className="flex items-center justify-end gap-2 pb-3">
+                    {/*<div className="flex items-center justify-end gap-2 pb-3">
                             <TaskCorrectionFormAuth task={task} />
                             <ShareButton getShareLink={()=>buildTaskShareUrl(task.id)} title={"Share Task"} />
-                            {/* Action Button */}
+                             Action Button
                             {statusConfig.actionButton || null}
+                    </div>*/}
+                    <div className="flex items-center justify-end gap-2 pb-3 flex-wrap sm:flex-nowrap">
+                        {/* Correction Button */}
+                        <TaskCorrectionFormAuth task={task} />
+
+                        {/* Share Button */}
+                        <ShareButton
+                            getShareLink={() => buildTaskShareUrl(task.id)}
+                            title="Share"
+                            size="sm"
+                        />
+
+                        {/* Status Action Button */}
+                        {statusConfig.actionButton || null}
                     </div>
                 </div>
             )}
