@@ -4,10 +4,7 @@
 import React, {useState} from "react";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
-import {
-    DataCorrectionApi, IDataCorrectionApi, itemCorrectionSubmitSchema,
-    rarityEnum,
-} from "@/lib/schemas/dataCorrection";
+import {IDataCorrectionApi, itemCorrectionSubmitSchema,rarityEnum} from "@/lib/schemas/dataCorrection";
 import {Item, CALIBERS} from "@/types/items";
 import {Button} from "@/components/ui/button";
 import {

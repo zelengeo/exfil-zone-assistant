@@ -10,7 +10,8 @@ import {
     Package,
     Plane,
     Search,
-    Target, Undo2, XCircle
+    Target,
+    XCircle
 } from "lucide-react";
 import {corps, getTasksByMerchant, tasksData} from "@/data/tasks";
 import React from "react";
