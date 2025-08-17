@@ -68,7 +68,7 @@ export const authOptions: NextAuthOptions = {
 
     session: {
         strategy: "jwt",  // Keep JWT strategy
-        maxAge: 14 * 24 * 60 * 60, // 14 days
+        maxAge: 30 * 24 * 60 * 60, // 30 days (production standard)
     },
 
     // adapter: MongoDBAdapter(clientPromise),
@@ -123,6 +123,10 @@ export const authOptions: NextAuthOptions = {
         async signIn({ user, account }) {
             if (account?.provider === 'discord' || account?.provider === 'google') {
                 try {
+                    // Rate limiting could be added here for production
+                    // const clientIP = request.headers.get('x-forwarded-for') || 'unknown';
+                    // if (await isRateLimited(clientIP, 'auth_signin')) return false;
+                    
                     await connectDB();
 
                     // CHANGE: Use email to find user, not the OAuth provider ID

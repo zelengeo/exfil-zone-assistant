@@ -1,5 +1,5 @@
 // src/lib/mongodb.ts
-import { MongoClient } from 'mongodb';
+import { MongoClient, ServerApiVersion } from 'mongodb';
 import mongoose from 'mongoose';
 
 if (!process.env.MONGODB_URI) {
@@ -9,6 +9,13 @@ if (!process.env.MONGODB_URI) {
 const uri = process.env.MONGODB_URI;
 
 const mongoClientOptions = {
+    // Server API Version for production stability
+    serverApi: {
+        version: ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true,
+    },
+    
     // Connection Pool Settings
     maxPoolSize: 10,              // Maximum number of connections in the pool
     minPoolSize: 2,               // Minimum number of connections to maintain

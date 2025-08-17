@@ -1,0 +1,19 @@
+project:
+  name: "ExfilZone Assistant"
+  description: "Companion app for `Contractors Showdown: ExfilZone` video game (VR extraction shooter)"
+
+context:
+  include:
+    - "**/*.ts"
+    - "**/*.tsx"
+    - "**/*.md"
+    - "**/CLAUDE.md"
+  exclude:
+    - "node_modules/**"
+    - ".next/**"
+    - "out/**"
+
+rules:
+  - "Read CLAUDE.md files for context"
+  - "Follow TypeScript strict mode"
+  - "Use existing component patterns"

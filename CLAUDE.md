@@ -4,15 +4,15 @@
 **ExfilZone Assistant** - A companion app for Contractors Showdown: ExfilZone videogame, providing comprehensive game information, tools, and guides optimized for VR gameplay.
 
 ## Critical Rules
-1. **Use Tailwind 4.1.7 syntax** - No outdated v3 classes
+1. **Use Tailwind 4+ syntax** - No outdated v3 classes
 2. **Use shadcn UI components** - Follow established component library patterns
 3. **NEVER use TypeScript 'any'** - ESLint rule forbids it, use proper types
+4. **zod schemas are higher priority source of types** - the new types should not be created if they can be inferred from zod schemas
 
 ## Project Artifacts
-- **Central specification**: artifact `exfilzone-assistant-spec`
-- **Tech stack**: React 18, Next.js 15+, Tailwind CSS 4.1.7, shadcn UI
-- **Primary language**: JavaScript (developer preference)
-- **Deployment**: Vercel
+- **Tech stack**: React 18, Next.js 15+, Tailwind CSS 4+, shadcn UI
+- **Primary language**: TypeScript
+- **Deployment**: Vercel, Mongodb Atlas
 
 ## Code Standards
 
@@ -41,8 +41,8 @@ component-name/
 ```
 
 ## Data Structure
-- **Items**: Weapons, ammo, armor, medical supplies, provisions, misc
-- **Tasks**: Quests with objectives, rewards, prerequisites
+- **Items**: Weapons, ammo, armor, medical supplies, provisions, misc, etc.
+- **Tasks**: Quests with objectives, rewards, prerequisites, etc.
 - **Hideout**: Upgrade zones with requirements and benefits
 - **Combat Sim**: Damage calculations, TTK analysis
 - **Guides**: Markdown and component-based tutorials
@@ -51,7 +51,6 @@ component-name/
 1. **VR-First Design**
     - Large touch targets (min 44x44px)
     - High contrast military theme
-    - Minimal animations to prevent motion sickness
     - Clear typography at VR viewing distances
 
 2. **Military Aesthetic**
