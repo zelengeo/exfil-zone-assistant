@@ -25,8 +25,8 @@ const WipeDurationTracker = ({ startDate, endDate }: { startDate: string, endDat
 export default function WhenIsTheWipeGuide() {
     return (
         <div className="space-y-8">
-            {/* Official Information Section */}
-            <section className="military-box p-6 rounded-sm">
+            {/* Official Information Section uncomment when 3rd wipe progresses*/}
+            {/* <section className="military-box p-6 rounded-sm">
                 <div className="flex items-start gap-3 mb-4">
                     <Megaphone className="text-blue-400 mt-1" size={24} />
                     <h2 className="text-2xl font-bold text-tan-100">Official Wipe Announcements</h2>
@@ -69,77 +69,79 @@ export default function WhenIsTheWipeGuide() {
                         Avoid trusting second-hand information or unverified sources.
                     </p>
                 </div>
-            </section>
+            </section>*/}
 
             {/* Upcoming Wipe Announcement Section */}
-            <section className="military-box p-6 rounded-sm">
+            <section className="military-box p-6 rounded-sm border-2 border-green-600 bg-green-900/10">
                 <div className="flex items-start gap-3 mb-4">
-                    <Megaphone className="text-orange-400 mt-1" size={24} />
-                    <h2 className="text-2xl font-bold text-tan-100">Next Wipe Announced!</h2>
+                    <Megaphone className="text-green-400 mt-1 animate-pulse" size={24} />
+                    <h2 className="text-2xl font-bold text-green-400">2nd Wipe Announced!</h2>
                 </div>
 
                 <div className="space-y-4 text-tan-200">
-                    <div className="bg-orange-900/20 border-l-4 border-orange-600 p-4">
-                        <div className="flex items-start gap-3">
-                            <Info className="text-orange-400 mt-1" size={20} />
-                            <div>
-                                <p className="text-orange-200 font-semibold mb-2">
-                                    Official Announcement: July 11th, 2025
-                                </p>
-                                <p className="text-tan-200">
-                                    Caveman Studios has officially announced the next wipe! Based on the typical 3-week announcement window,
-                                    we shouldn&#39;t expect the wipe to happen before <strong>July 31st, 2025</strong>.
-                                    However, we can&#39;t be sure until we hear from the developers. Also, there is and Airdrop event announced on July 19th, which is not a pre-wipe event, so it reasonable to expect the wipe late August.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="space-y-4">
-                        <h3 className="text-lg font-semibold text-tan-100">What&#39;s Coming:</h3>
-
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                            <div className="bg-military-800 border border-military-600 rounded-sm p-4">
-                                <h4 className="font-semibold text-green-400 mb-2">🔧 Gunsmith System</h4>
-                                <p className="text-sm text-tan-300">
-                                    Build your own weapons! Mix and match components, attachments, and even select custom colors.
-                                    Create truly unique weapons tailored to your playstyle.
-                                </p>
-                            </div>
-
-                            <div className="bg-military-800 border border-military-600 rounded-sm p-4">
-                                <h4 className="font-semibold text-blue-400 mb-2">🗺️ Smuggler&#39;s Tunnel</h4>
-                                <p className="text-sm text-tan-300">
-                                    A brand new map that brings fresh tactical opportunities and strategies.
-                                    Expect a completely different vibe from existing maps.
-                                </p>
-                            </div>
-
-                            <div className="bg-military-800 border border-military-600 rounded-sm p-4">
-                                <h4 className="font-semibold text-purple-400 mb-2">⚡ UE5 Upgrade</h4>
-                                <p className="text-sm text-tan-300">
-                                    Upgraded from UE4 to UE5 for improved lighting, effects, and larger maps.
-                                    This also fixes the bug where items fall through the ground.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="bg-blue-900/20 border border-blue-700/50 rounded-sm p-4">
-                        <p className="text-blue-200 mb-2">
-                            <strong>Source:</strong> Official Caveman Studios announcement
+                    <div className="bg-green-900/20 border-l-4 border-green-500 p-4">
+                        <p className="text-xl font-bold text-green-300 mb-2">
+                            Wipe Date: September 4th, 2025
                         </p>
-                        <a
-                            href="https://www.contractorsvr.com/single-post/situation-report-exfilzone-upcoming-wipe-update-july-update"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-sm text-blue-400 hover:text-blue-300 transition-colors"
-                        >
-                            Read Full Announcement <ExternalLink size={14} />
-                        </a>
+                        <p className="text-lg text-tan-200">
+                            Pre-wipe event starts: Weekend of August 23rd, 2025
+                        </p>
                     </div>
-                </div>
-            </section>
+
+                    <div className="space-y-3">
+                        <h3 className="text-lg font-semibold text-olive-400">Major Features Coming:</h3>
+                        <ul className="space-y-2 ml-4">
+                            <li className="flex items-start gap-2">
+                                <span className="text-green-400 mt-1">•</span>
+                                <div>
+                                    <strong className="text-tan-100">Gunsmith System:</strong>
+                                    <span className="text-tan-300"> Revolutionary VR weapon customization with hundreds of unique variants through extensive part combinations</span>
+                                </div>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <span className="text-green-400 mt-1">•</span>
+                                <div>
+                                    <strong className="text-tan-100">New Map - Smuggling Tunnel:</strong>
+                                    <span className="text-tan-300"> Tight corridors and high-stakes loot opportunities</span>
+                                </div>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <span className="text-green-400 mt-1">•</span>
+                                <div>
+                                    <strong className="text-tan-100">50% More Missions:</strong>
+                                    <span className="text-tan-300"> New objectives including photo tasks and loadout-specific challenges</span>
+                                </div>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <span className="text-green-400 mt-1">•</span>
+                                <div>
+                                    <strong className="text-tan-100">Unreal Engine 5 Upgrade:</strong>
+                                    <span className="text-tan-300"> Enhanced graphics and performance</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="flex gap-4 mt-4">
+                        <a
+                        href="https://discord.com/invite/contractorsshowdown"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-sm text-white transition-colors"
+                        >
+                        Join Discord for Updates <ExternalLink size={16} />
+                    </a>
+<a
+                    href="https://x.com/contractorsbr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-military-700 hover:bg-military-600 rounded-sm text-tan-200 transition-colors border border-military-500"
+                    >
+                    Follow on X <ExternalLink size={16} />
+                </a>
+        </div>
+</div>
+</section>
 
             {/* Wipe History Section */}
             <section className="military-box p-6 rounded-sm">
@@ -159,7 +161,7 @@ export default function WhenIsTheWipeGuide() {
                             </div>
                             <div className="bg-military-900 p-3 rounded-sm">
                                 <p className="text-xs text-tan-400">End Date</p>
-                                <p className="font-semibold text-tan-200">TBD</p>
+                                <p className="font-semibold text-tan-200">Expected September 4th, 2025</p>
                             </div>
                             <div className="bg-military-900 p-3 rounded-sm">
                                 <WipeDurationTracker startDate="2025-04-24" />

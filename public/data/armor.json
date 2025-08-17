@@ -282,35 +282,29 @@
     "stats": {
       "rarity": "Epic",
       "price": 77284,
-      "weight": 7.2,
+      "weight": 5.5,
       "armorClass": 5,
-      "maxDurability": 105,
-      "durabilityDamageScalar": 0.32,
-      "bluntDamageScalar": 0.7,
+      "maxDurability": 90,
+      "durabilityDamageScalar": 0.25,
+      "bluntDamageScalar": 0.6,
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 5,
-          "bluntDamageScalar": 0.7,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 80
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 5,
-          "bluntDamageScalar": 0.7,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 80
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 5,
-          "bluntDamageScalar": 0.7,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90
-        },
-        {
-          "bodyPart": "pelvis",
-          "armorClass": 5,
-          "bluntDamageScalar": 0.7,
-          "protectionAngle": 75
         }
       ],
       "penetrationChanceCurve": [
@@ -319,14 +313,14 @@
           "tangentMode": "user",
           "time": 0,
           "value": 0.92,
-          "arriveTangent": -4.856966,
-          "leaveTangent": -4.856977
+          "arriveTangent": -3.813308,
+          "leaveTangent": -3.813313
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.12,
+          "value": 0.15,
           "arriveTangent": -0.463078,
           "leaveTangent": -0.463078
         },
@@ -352,17 +346,17 @@
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0,
-          "value": 0.75,
-          "arriveTangent": -0.279961,
-          "leaveTangent": -0.279962
+          "value": 0.65,
+          "arriveTangent": -0.43970394,
+          "leaveTangent": -0.43970492
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.4,
-          "value": 0.6,
-          "arriveTangent": -0.438411,
-          "leaveTangent": -0.43841
+          "value": 0.5,
+          "arriveTangent": -0.3791538,
+          "leaveTangent": -0.3791529
         },
         {
           "interpMode": "linear",
