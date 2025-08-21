@@ -172,7 +172,7 @@ export const authOptions: NextAuthOptions = {
 
                         // Link new OAuth account to existing user
                         await Account.create({
-                            userId: dbUser._id,
+                            userId: savedUser._id,
                             type: account.type,
                             provider: account.provider,
                             providerAccountId: account.providerAccountId,
