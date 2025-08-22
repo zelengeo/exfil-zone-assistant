@@ -60,23 +60,19 @@ export async function GET(request: NextRequest) {
 }
 
 // POST /api/corrections - Submit a new correction
-// type SanitizableData =
-//     | string
-//     | number
-//     | boolean
-//     | SanitizableData[]
-//     | { [key: string]: SanitizableData };
+type SanitizableValue = string | number | boolean | null | undefined;
+type SanitizableData = SanitizableValue | SanitizableData[] | { [key: string]: SanitizableData };
 
 // Deep sanitize all text fields in proposedData
-const sanitizeProposedData = (data: any): any => {
+const sanitizeProposedData = <T extends SanitizableData>(data: T): T => {
     if (typeof data === 'string') {
-        return sanitizeUserInput(data);
+        return sanitizeUserInput(data) as T;
     } else if (Array.isArray(data)) {
-        return data.map(item => sanitizeProposedData(item));
+        return data.map(item => sanitizeProposedData(item)) as T;
     } else if (typeof data === 'object' && data !== null) {
-        const sanitized: any = {};
+        const sanitized = {} as T;
         Object.keys(data).forEach(key => {
-            sanitized[key] = sanitizeProposedData(data[key]);
+            (sanitized as Record<string, unknown>)[key] = sanitizeProposedData((data as Record<string, unknown>)[key] as SanitizableData);
         });
         return sanitized;
     }

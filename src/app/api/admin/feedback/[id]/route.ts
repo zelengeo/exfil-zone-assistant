@@ -13,19 +13,20 @@ type ApiType = IFeedbackApi["Admin"]["ById"];
 // GET /api/admin/feedback/[id] - Get specific feedback item
 export async function GET(
     request: NextRequest,
-    {params}: { params: { id: string } }
+    {params}: { params: Promise<{ id: string }> }
 ) {
     return withRateLimit(
         request,
         async () => {
+            const { id } = await params;
             try {
-                if (!isValidObjectId(params.id)) {
+                if (!isValidObjectId(id)) {
                     throw new ValidationError('Invalid feedback ID');
                 }
 
                 await requireAdmin();
 
-                const feedback = await Feedback.findById(params.id)
+                const feedback = await Feedback.findById(id)
                     .populate('userId', 'username')
                     .lean<ApiType["Get"]["Response"]['feedback']>();
 
@@ -37,7 +38,7 @@ export async function GET(
 
             } catch (error) {
                 logger.error('Get feedback error:', error, {
-                    path: `/api/feedback/${params.id}`,
+                    path: `/api/feedback/${id}`,
                     method: 'GET',
                 });
                 return handleError(error);
@@ -50,11 +51,12 @@ export async function GET(
 // PATCH /api/admin/feedback/[id] - Update feedback item
 export async function PATCH(
     request: NextRequest,
-    {params}: { params: { id: string } }
+    {params}: { params: Promise<{ id: string }> }
 ) {
     return withRateLimit(
         request,
         async () => {
+            const { id } = await params;
             try {
                 const {session} = await requireAdmin();
 
@@ -80,7 +82,7 @@ export async function PATCH(
 
                 // Update the feedback
                 const feedback = await Feedback.findByIdAndUpdate(
-                    params.id,
+                    id,
                     updateData,
                     { new: true }
                 ).populate('userId', 'username').lean<IFeedbackApi['Admin']['ById']['Patch']['Response']['feedback']>();
@@ -90,7 +92,7 @@ export async function PATCH(
                 }
 
                 logger.info('Feedback updated', {
-                    feedbackId: params.id,
+                    feedbackId: id,
                     adminId: session.user.id,
                     updates: Object.keys(validatedData)
                 });
@@ -99,7 +101,7 @@ export async function PATCH(
 
             } catch (error) {
                 logger.error('Update feedback error:', error, {
-                    path: `/api/feedback/${params.id}`,
+                    path: `/api/feedback/${id}`,
                     method: 'PATCH',
                 });
                 return handleError(error);
@@ -112,17 +114,18 @@ export async function PATCH(
 // DELETE /api/admin/feedback/[id] - Delete feedback item (admin only)
 export async function DELETE(
     request: NextRequest,
-    {params}: { params: { id: string } }
+    {params}: { params: Promise<{ id: string }> }
 ) {
     return withRateLimit(request, async () => {
+            const { id } = await params;
             try {
-                if (!isValidObjectId(params.id)) {
+                if (!isValidObjectId(id)) {
                     throw new ValidationError('Invalid feedback ID');
                 }
 
                 await requireAdmin();
 
-                const feedback = await Feedback.findByIdAndDelete(params.id);
+                const feedback = await Feedback.findByIdAndDelete(id);
 
                 if (!feedback) {
                     throw new NotFoundError('Feedback');
@@ -135,7 +138,7 @@ export async function DELETE(
 
             } catch (error) {
                 logger.error('Admin delete feedback error:', error, {
-                    path: `/api/feedback/${params.id}`,
+                    path: `/api/feedback/${id}`,
                     method: 'DELETE',
                 });
                 return handleError(error);

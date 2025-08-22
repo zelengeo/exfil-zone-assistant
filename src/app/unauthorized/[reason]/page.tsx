@@ -25,12 +25,13 @@ const reasonConfig = {
     },
 } as const;
 
-export default function UnauthorizedReasonPage({
+export default async function UnauthorizedReasonPage({
                                                    params
                                                }: {
-    params: { reason: keyof typeof reasonConfig }
+    params: Promise<{ reason: keyof typeof reasonConfig }>
 }) {
-    const config = reasonConfig[params.reason] || reasonConfig.role;
+    const { reason } = await params;
+    const config = reasonConfig[reason] || reasonConfig.role;
     const Icon = config.icon;
 
     return (

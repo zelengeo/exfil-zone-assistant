@@ -31,11 +31,12 @@ type ApiType = IUserApi['Admin']['ById']['Roles']
 // PATCH /api/admin/users/[id]/roles - Update user roles
 export async function PATCH(
     request: NextRequest,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     return withRateLimit(
         request,
         async () => {
+            const { id } = await params;
             try {
                 const { session } = await requireAdmin();
                 await connectDB();
@@ -44,13 +45,13 @@ export async function PATCH(
                 const body = await request.json();
                 const validatedData = UserApi.Admin.ById.Roles.Patch.Request.parse(body);
 
-                const targetUser = await User.findById(params.id);
+                const targetUser = await User.findById(id);
                 if (!targetUser) {
                     throw new NotFoundError('User');
                 }
 
                 // Prevent self-role modification
-                if (session.user.id === params.id) {
+                if (session.user.id === id) {
                     throw new AuthorizationError('Cannot modify your own roles');
                 }
 
@@ -72,7 +73,7 @@ export async function PATCH(
 
                 logger.info('User role updated', {
                     adminId: session.user.id,
-                    targetUserId: params.id,
+                    targetUserId: id,
                     ...validatedData
                 });
 
@@ -89,7 +90,7 @@ export async function PATCH(
 
             } catch (error) {
                 logger.error('Role management error:', error, {
-                    path: `/api/admin/users/${params.id}/roles`,
+                    path: `/api/admin/users/${id}/roles`,
                     method: 'PATCH',
                 });
                 return handleError(error);
@@ -102,16 +103,17 @@ export async function PATCH(
 // GET /api/admin/users/[id]/roles - Get user roles and permissions
 export async function GET(
     request: NextRequest,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     return withRateLimit(
         request,
         async () => {
+            const { id } = await params;
             try {
                 await requireAdminOrModerator();
                 await connectDB();
 
-                const user = await User.findById(params.id)
+                const user = await User.findById(id)
                     .select(' _id username email roles rank stats.contributionPoints createdAt lastLoginAt')
                     .lean<ApiType['Get']['Response']['user']>();
 
@@ -123,7 +125,7 @@ export async function GET(
 
             } catch (error) {
                 logger.error('Get user roles error:', error, {
-                    path: `/api/admin/users/${params.id}/roles`,
+                    path: `/api/admin/users/${id}/roles`,
                     method: 'GET',
                 });
                 return handleError(error);

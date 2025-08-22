@@ -12,11 +12,12 @@ type ApiType = IUserApi['ByUsername'];
 
 export async function GET(
     request: NextRequest,
-    { params }: { params: { username: string } }
+    { params }: { params: Promise<{ username: string }> }
 ) {
     return withRateLimit(request, async () => {
         try {
-            const username = sanitizeUserInput(params.username).toLowerCase();
+            const { username: rawUsername } = await params;
+            const username = sanitizeUserInput(rawUsername).toLowerCase();
 
             await connectDB();
 
@@ -42,6 +43,7 @@ export async function GET(
                         displayName: user.displayName,
                         avatarUrl: user.avatarUrl,
                         rank: user.rank,
+                        roles: [],
                         badges: [],
                         bio: '',
                         location: user.location,

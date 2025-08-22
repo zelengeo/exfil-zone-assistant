@@ -24,7 +24,7 @@ import {toast} from "sonner";
 import {useSession} from "next-auth/react";
 import {Checkbox} from "@/components/ui/checkbox";
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from "@/components/ui/select";
-import {deepEqual} from "@/lib/utils";
+import equal from "fast-deep-equal/es6";
 
 interface TaskCorrectionFormProps {
     task: Task;
@@ -104,7 +104,7 @@ export function TaskCorrectionForm({task, trigger}: TaskCorrectionFormProps) {
                     continue;
                 }
 
-                if (!deepEqual(formValue, originalValue)) {
+                if (!equal(formValue, originalValue)) {
                     // @ts-expect-error proposedData[key] = data.proposedData[key] - has to be safe. There will be validation later anyway
                     proposedData[key] = formValue;
                 }

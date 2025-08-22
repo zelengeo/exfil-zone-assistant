@@ -112,13 +112,13 @@ export const metadata = {
 export default async function AdminFeedbackPage({
                                                     searchParams
                                                 }: {
-    searchParams: SearchParams;
+    searchParams: Promise<SearchParams>;
 }) {
     // Require admin access
     const params = await searchParams;
     await requireAdmin();
 
-    const page = parseInt(searchParams.page || '1');
+    const page = parseInt(params.page || '1');
     const limit = 20;
 
     const filters = {

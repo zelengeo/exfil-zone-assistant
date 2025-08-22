@@ -14,20 +14,21 @@ type ApiType = IDataCorrectionApi['Admin']['ById']
 // GET /api/admin/corrections/[id] - Get full correction details
 export async function GET(
     request: NextRequest,
-    {params}: { params: { id: string } }
+    {params}: { params: Promise<{ id: string }> }
 ) {
     return withRateLimit(request, async () => {
         try {
             await requireAdminOrModerator();
+            const { id } = await params;
 
-            if (!isValidObjectId(params.id)) {
+            if (!isValidObjectId(id)) {
                 throw new ValidationError('Invalid correction ID');
             }
 
             await connectDB();
 
             const correction = await DataCorrection
-                .findById(params.id)
+                .findById(id)
                 .populate('userId', 'username displayName avatarUrl email')
                 .populate('reviewedBy', 'username displayName')
                 .lean<ApiType["Get"]["Response"]["correction"]>();
@@ -63,15 +64,16 @@ export async function GET(
 // PATCH /api/admin/corrections/[id] - Review a correction
 export async function PATCH(
     request: NextRequest,
-    {params}: { params: { id: string } }
+    {params}: { params: Promise<{ id: string }> }
 ) {
     return withRateLimit(request, async () => {
+        const { id } = await params;
         const session = await mongoose.startSession();
 
         try {
             const { session: adminSession } = await requireAdminOrModerator();
 
-            if (!isValidObjectId(params.id)) {
+            if (!isValidObjectId(id)) {
                 throw new ValidationError('Invalid correction ID');
             }
 
@@ -83,7 +85,7 @@ export async function PATCH(
             // Start transaction
             session.startTransaction();
 
-            const correction = await DataCorrection.findById(params.id).session(session);
+            const correction = await DataCorrection.findById(id).session(session);
             if (!correction) {
                 throw new NotFoundError('Correction not found');
             }
@@ -155,25 +157,26 @@ export async function PATCH(
 // DELETE /api/admin/corrections/[id] - Delete a correction
 export async function DELETE(
     request: NextRequest,
-    {params}: { params: { id: string } }
+    {params}: { params: Promise<{ id: string }> }
 ) {
     return withRateLimit(request, async () => {
+        const { id } = await params;
         try {
             const { session } = await requireAdminOrModerator();
 
-            if (!isValidObjectId(params.id)) {
+            if (!isValidObjectId(id)) {
                 throw new ValidationError('Invalid correction ID');
             }
 
             await connectDB();
 
-            const correction = await DataCorrection.findByIdAndDelete(params.id);
+            const correction = await DataCorrection.findByIdAndDelete(id);
             if (!correction) {
                 throw new NotFoundError('Correction not found');
             }
 
             logger.info('Correction deleted', {
-                correctionId: params.id,
+                correctionId: id,
                 deletedBy: session!.user.id,
             });
 

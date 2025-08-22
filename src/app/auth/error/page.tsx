@@ -1,5 +1,6 @@
 'use client';
 
+import { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -8,7 +9,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { AlertCircle, Home, RotateCcw } from 'lucide-react';
 import { getAuthErrorMessage } from '@/lib/auth/errors';
 
-export default function AuthErrorPage() {
+function AuthErrorContent() {
     const searchParams = useSearchParams();
     const error = searchParams.get('error');
     const message = getAuthErrorMessage(error);
@@ -82,5 +83,27 @@ export default function AuthErrorPage() {
                 </CardFooter>
             </Card>
         </div>
+    );
+}
+
+export default function AuthErrorPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-[80vh] flex items-center justify-center px-4">
+                <Card className="w-full max-w-md">
+                    <CardHeader className="text-center">
+                        <div className="mx-auto mb-4 w-12 h-12 rounded-full bg-destructive/10 flex items-center justify-center">
+                            <AlertCircle className="w-6 h-6 text-destructive" />
+                        </div>
+                        <CardTitle className="text-2xl">Authentication Error</CardTitle>
+                        <CardDescription>
+                            Loading error details...
+                        </CardDescription>
+                    </CardHeader>
+                </Card>
+            </div>
+        }>
+            <AuthErrorContent />
+        </Suspense>
     );
 }

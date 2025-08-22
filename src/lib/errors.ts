@@ -1,5 +1,5 @@
 import {z, ZodError} from 'zod';
-import { MongooseError } from 'mongoose';
+import {MongooseError} from 'mongoose';
 import {NextResponse} from "next/server";
 import {ErrorResponse} from "@/lib/schemas/core";
 
@@ -43,6 +43,7 @@ export class BannedUserError extends AuthorizationError {
 
 export class InsufficientPermissionsError extends AuthorizationError {
     code = 'INSUFFICIENT_PERMISSIONS';
+
     constructor(requiredRole?: string) {
         super(requiredRole
             ? `${requiredRole} role required`
@@ -65,8 +66,21 @@ export class ConflictError extends AppError {
 
 export class RateLimitError extends AppError {
     constructor(retryAfter?: number) {
-        super('Too many requests', 429, 'RATE_LIMIT_ERROR');
+        super(`Too many requests.${retryAfter ? `Retry after ${retryAfter}s.` : ""}`, 429, 'RATE_LIMIT_ERROR');
     }
+}
+
+interface MongoDBDuplicateKeyError extends MongooseError {
+    name: 'MongoError';
+    code: 11000;
+    keyPattern?: Record<string, number>;
+}
+
+interface ErrorDetails {
+    message?: string;
+    code?: string;
+    statusCode?: number;
+    stack?: string;
 }
 
 
@@ -74,8 +88,10 @@ export class RateLimitError extends AppError {
 const isDevelopment = process.env.NODE_ENV === 'development';
 const isTest = process.env.NODE_ENV === 'test';
 
+type KnownError = AppError | ZodError | MongooseError | Error;
+
 // Sanitize error details based on environment
-function sanitizeError(error: any): ErrorResponse {
+function sanitizeError(error: KnownError): ErrorResponse {
     const requestId = crypto.randomUUID();
 
     // Log full error in development
@@ -83,12 +99,16 @@ function sanitizeError(error: any): ErrorResponse {
         console.error(`[${requestId}] Error:`, error);
     } else {
         // In production, log error but don't expose details
-        console.error(`[${requestId}] Error:`, {
+        const errorDetails: ErrorDetails = {
             message: error.message,
-            code: error.code,
-            statusCode: error.statusCode,
             stack: error.stack,
-        });
+        }
+        if (error instanceof AppError) {
+            errorDetails.code = error.code;
+            errorDetails.statusCode = error.statusCode;
+        }
+
+        console.error(`[${requestId}] Error:`, errorDetails);
     }
 
     // Handle known error types
@@ -117,17 +137,19 @@ function sanitizeError(error: any): ErrorResponse {
         };
     }
 
-    // Handle Mongoose errors
+    // Handle Mongoose-specific errors
     if (error instanceof MongooseError) {
         // Duplicate key error
-        if (error.name === 'MongoError' && (error as any).code === 11000) {
-            const field = Object.keys((error as any).keyPattern)[0];
+        const mongoError = error as MongoDBDuplicateKeyError;
+        if (error.name === 'MongoError' && mongoError.code === 11000) {
+            const field = mongoError.keyPattern ? Object.keys(mongoError.keyPattern)[0] : 'field';
             return {
                 error: {
                     message: `${field} already exists`,
                     code: 'DUPLICATE_ERROR',
                     statusCode: 409,
                 },
+                requestId: isDevelopment ? requestId : undefined,
             };
         }
 
@@ -140,6 +162,7 @@ function sanitizeError(error: any): ErrorResponse {
                     statusCode: 400,
                     details: isDevelopment ? error.message : undefined,
                 },
+                requestId: isDevelopment ? requestId : undefined,
             };
         }
 
@@ -158,7 +181,7 @@ function sanitizeError(error: any): ErrorResponse {
     // Generic error response for unknown errors
     return {
         error: {
-            message: 'An unexpected error occurred',
+            message: isDevelopment ? error.message : 'An unexpected error occurred',
             code: 'INTERNAL_ERROR',
             statusCode: 500,
             details: isDevelopment ? error.message : undefined,
@@ -168,8 +191,8 @@ function sanitizeError(error: any): ErrorResponse {
 }
 
 // Main error handler
-export function handleError(error: any): NextResponse {
-    const errorResponse = sanitizeError(error);
+export function handleError(error: unknown): NextResponse {
+    const errorResponse = sanitizeError(error as KnownError);
 
     return NextResponse.json(errorResponse, {
         status: errorResponse.error.statusCode,
@@ -177,7 +200,7 @@ export function handleError(error: any): NextResponse {
 }
 
 // Async wrapper for route handlers
-export function asyncHandler<T extends any[], R>(
+export function asyncHandler<T extends unknown[], R>(
     fn: (...args: T) => Promise<R>
 ): (...args: T) => Promise<R> {
     return async (...args: T): Promise<R> => {

@@ -33,9 +33,13 @@ async function syncIndexes() {
 
             try {
                 // First, ensure the collection exists
-                const collections = await mongoose.connection.db.listCollections({ name: model.collection.name }).toArray();
+                const db = mongoose.connection.db;
+                if (!db) {
+                    throw new Error('Database connection not available');
+                }
+                const collections = await db.listCollections({ name: model.collection.name }).toArray();
                 if (collections.length === 0) {
-                    await mongoose.connection.db.createCollection(model.collection.name);
+                    await db.createCollection(model.collection.name);
                     console.log(`📁 Created collection: ${model.collection.name}`);
                 }
 

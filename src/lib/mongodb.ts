@@ -34,7 +34,7 @@ let clientPromise: Promise<MongoClient>;
 // In production, create a single instance
 if (process.env.NODE_ENV === 'development') {
     // Preserve the client across module reloads in development
-    let globalWithMongo = global as typeof globalThis & {
+    const globalWithMongo = global as typeof globalThis & {
         _mongoClientPromise?: Promise<MongoClient>;
     };
 

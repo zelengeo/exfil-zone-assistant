@@ -1,11 +1,11 @@
 import { User } from '@/models/User';
+import { User as NextAuthUser } from 'next-auth';
 
 export function generateUsername(
-    user: any,
+    user: NextAuthUser,
 ): string {
     // Try different strategies to generate username
     let baseUsername = '';
-    console.log("GENERATING USERNAME", user);
 
     // Strategy 1: Use Discord username if available
     // if (account?.provider === 'discord' && profile?.username) {

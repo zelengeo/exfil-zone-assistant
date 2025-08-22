@@ -17,19 +17,20 @@ type ApiType = IDataCorrectionApi['ById']
 // GET /api/corrections/[id] - Get a specific correction
 export async function GET(
     request: NextRequest,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     return withRateLimit(request, async () => {
+        const { id } = await params;
         try {
             const session = await requireAuth();
 
-            if (!isValidObjectId(params.id)) {
+            if (!isValidObjectId(id)) {
                 throw new ValidationError('Invalid correction ID');
             }
 
             await connectDB();
             const correction = await DataCorrection
-                .findById(params.id)
+                .findById(id)
                 .select('-reviewNotes') // Hide internal review notes
                 .populate('reviewedBy', 'username displayName')
                 .lean<ApiType['Get']['Response']['correction']>();
@@ -62,25 +63,26 @@ export async function GET(
 // DELETE /api/corrections/[id] - Delete a correction (admin only)
 export async function DELETE(
     request: NextRequest,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     return withRateLimit(request, async () => {
+        const { id } = await params;
         try {
             const session = await requireAuth()
 
-            if (!isValidObjectId(params.id)) {
+            if (!isValidObjectId(id)) {
                 throw new ValidationError('Invalid correction ID');
             }
 
             await connectDB();
 
-            const correction = await DataCorrection.findByIdAndDelete(params.id);
+            const correction = await DataCorrection.findByIdAndDelete(id);
             if (!correction) {
                 throw new NotFoundError('Correction not found');
             }
 
             logger.info('Correction deleted', {
-                correctionId: params.id,
+                correctionId: id,
                 deletedBy: session.user.id,
             });
 

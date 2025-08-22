@@ -1,7 +1,7 @@
 // src/app/admin/corrections/page.tsx
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
     Table,
     TableBody,
@@ -42,15 +42,17 @@ import {
     RefreshCw,
 } from "lucide-react";
 import { toast } from "sonner";
-import {CorrectionStatus, IDataCorrectionAdminGet} from "@/lib/schemas/dataCorrection";
+import {CorrectionStatus, IDataCorrectionApi} from "@/lib/schemas/dataCorrection";
 import { formatDistanceToNow } from "date-fns";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import {VariantProps} from "class-variance-authority";
 
+type IDataCorrectionAdminGet = IDataCorrectionApi['Admin']['Get']['Response'];
+
 export default function CorrectionsAdminPage() {
-    const [corrections, setCorrections] = useState<IDataCorrectionAdminGet[]>([]);
+    const [corrections, setCorrections] = useState<IDataCorrectionAdminGet['corrections']>([]);
     const [loading, setLoading] = useState(true);
-    const [selectedCorrection, setSelectedCorrection] = useState<IDataCorrectionAdminGet | null>(null);
+    const [selectedCorrection, setSelectedCorrection] = useState<IDataCorrectionAdminGet['corrections'][number] | null>(null);
     const [reviewDialogOpen, setReviewDialogOpen] = useState(false);
     const [reviewNotes, setReviewNotes] = useState("");
     const [filters, setFilters] = useState({
@@ -58,7 +60,7 @@ export default function CorrectionsAdminPage() {
         entityType: "all",
         search: "",
     });
-    const [pagination, setPagination] = useState({
+    const [pagination, setPagination] = useState<IDataCorrectionAdminGet['pagination']>({
         page: 1,
         limit: 20,
         total: 0,
@@ -66,7 +68,7 @@ export default function CorrectionsAdminPage() {
     });
 
     // Fetch corrections
-    const fetchCorrections = async () => {
+    const fetchCorrections = useCallback(async () => {
         setLoading(true);
         try {
             const params = new URLSearchParams({
@@ -77,11 +79,10 @@ export default function CorrectionsAdminPage() {
             });
 
             const response = await fetch(`/api/admin/corrections?${params}`);
-            const data = await response.json();
+            const data: IDataCorrectionAdminGet = await response.json();
 
             if (response.ok) {
                 setCorrections(data.corrections);
-                // TODO IDataCorrectionAdminGetRelated
                 setPagination(data.pagination);
             }
         } catch (error) {
@@ -92,11 +93,11 @@ export default function CorrectionsAdminPage() {
         } finally {
             setLoading(false);
         }
-    };
+    }, [pagination.page, pagination.limit, filters]);
 
     useEffect(() => {
         fetchCorrections();
-    }, [pagination.page, filters]);
+    }, [fetchCorrections]);
 
     // Handle review submission
     const handleReview = async (status: "approved" | "rejected") => {
@@ -140,10 +141,10 @@ export default function CorrectionsAdminPage() {
             });
 
             const response = await fetch(`/api/admin/corrections?${params}`);
-            const data = await response.json();
+            const data: IDataCorrectionAdminGet = await response.json();
 
             if (response.ok) {
-                const exportData = data.corrections.map((c: IDataCorrectionAdminGet) => ({
+                const exportData = data.corrections.map((c) => ({
                     id: c._id,
                     entityType: c.entityType,
                     entityId: c.entityId,

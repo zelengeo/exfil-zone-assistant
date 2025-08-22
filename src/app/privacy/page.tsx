@@ -1,8 +1,6 @@
 // app/privacy/page.tsx
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
-import {SiDiscord, SiGithub} from "@icons-pack/react-simple-icons";
 import React from "react";
-import Link from "next/link";
 
 export default function PrivacyPolicyPage() {
     return (
@@ -81,7 +79,7 @@ export default function PrivacyPolicyPage() {
                         for the Service to function properly. We do not use tracking or advertising cookies.
                     </p>
 
-                    <h2>8. Children's Privacy</h2>
+                    <h2>8. Children&#39;s Privacy</h2>
                     <p>
                         The Service is not intended for children under 13. We do not knowingly collect
                         information from children under 13.

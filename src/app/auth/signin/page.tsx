@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Link from "next/link";
@@ -11,7 +11,7 @@ import {SiDiscord, SiGoogle, SiMeta} from '@icons-pack/react-simple-icons';
 import { Loader2, Shield, Users, Trophy } from 'lucide-react';
 import { getAuthErrorMessage } from "@/lib/auth/errors";
 
-export default function SignInPage() {
+function SignInContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
     const callbackUrl = searchParams.get('callbackUrl') || '/';
@@ -183,5 +183,32 @@ export default function SignInPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function SignInPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-military-900 flex items-center justify-center px-4 py-12">
+                <div className="absolute inset-0 texture-overlay pointer-events-none opacity-50"></div>
+                <div className="w-full max-w-md relative z-10">
+                    <Card className="bg-military-800/90 backdrop-blur border-olive-700">
+                        <CardHeader className="space-y-1 text-center">
+                            <div className="flex justify-center mb-4">
+                                <div className="w-20 h-20 rounded-full bg-olive-600/20 flex items-center justify-center">
+                                    <Shield className="w-10 h-10 text-olive-500" />
+                                </div>
+                            </div>
+                            <CardTitle className="text-2xl font-bold text-tan-100">Welcome Back, Operator</CardTitle>
+                            <CardDescription className="text-tan-400">
+                                Loading sign in options...
+                            </CardDescription>
+                        </CardHeader>
+                    </Card>
+                </div>
+            </div>
+        }>
+            <SignInContent />
+        </Suspense>
     );
 }

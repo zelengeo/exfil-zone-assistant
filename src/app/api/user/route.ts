@@ -77,6 +77,7 @@ export async function PATCH(request: NextRequest) {
     }, 'userUpdate');
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function DELETE(request: NextRequest) {
     try {
         const session = await requireAuth();

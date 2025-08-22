@@ -15,26 +15,27 @@ import {
     ValidationError
 } from "@/lib/errors";
 import {logger} from "@/lib/logger";
-import {AdminUserUpdateInput, adminUserUpdateSchema, IUserApi, UserApi} from "@/lib/schemas/user";
+import {AdminUserUpdateInput, IUserApi, UserApi} from "@/lib/schemas/user";
 import { sanitizeUserInput } from '@/lib/utils';
 
 type ApiType = IUserApi['Admin']['ById']
 export async function GET(
     request: NextRequest,
-    {params}: { params: { id: string } }
+    {params}: { params: Promise<{ id: string }> }
 ) {
     return withRateLimit(
         request,
         async () => {
+            const { id } = await params;
             try {
                 await requireAdmin();
                 await connectDB();
 
-                if (!isValidObjectId(params.id)) {
+                if (!isValidObjectId(id)) {
                     throw new ValidationError('Invalid user ID format');
                 }
 
-                const user = await User.findById(params.id)
+                const user = await User.findById(id)
                     .lean<ApiType['Get']['Response']['user']>();
 
                 if (!user) {
@@ -45,7 +46,7 @@ export async function GET(
 
             } catch (error) {
                 logger.error('Failed to get user', error, {
-                    path: `/api/admin/users/${params.id}`,
+                    path: `/api/admin/users/${id}`,
                     method: 'GET',
                 });
                 return handleError(error);
@@ -58,31 +59,32 @@ export async function GET(
 // DELETE /api/admin/users/[id] - Delete user account (admin only)
 export async function DELETE(
     request: NextRequest,
-    {params}: { params: { id: string } }
+    {params}: { params: Promise<{ id: string }> }
 ) {
     return withRateLimit(
         request,
         async () => {
+            const { id } = await params;
             const mongooseSession = await mongoose.startSession();
 
             try {
                 const {session} = await requireAdmin();
                 await connectDB();
 
-                if (!isValidObjectId(params.id)) {
+                if (!isValidObjectId(id)) {
                     throw new ValidationError('Invalid user ID');
                 }
 
                 // Start transaction
                 mongooseSession.startTransaction();
 
-                const user = await User.findById(params.id).session(mongooseSession);
+                const user = await User.findById(id).session(mongooseSession);
                 if (!user) {
                     throw new NotFoundError('User');
                 }
 
                 // Prevent deleting yourself
-                if (session.user.id === params.id) {
+                if (session.user.id === id) {
                     throw new ConflictError('Cannot delete your own account');
                 }
 
@@ -92,14 +94,14 @@ export async function DELETE(
                 }
 
                 // Delete user
-                await User.findByIdAndDelete(params.id).session(mongooseSession);
+                await User.findByIdAndDelete(id).session(mongooseSession);
 
                 // Delete associated accounts
-                await Account.deleteMany({ userId: params.id }).session(mongooseSession);
+                await Account.deleteMany({ userId: id }).session(mongooseSession);
 
                 // Anonymize feedback instead of deleting
                 await Feedback.updateMany(
-                    { userId: params.id },
+                    { userId: id },
                     {
                         $unset: { userId: 1 },
                         $set: { isAnonymous: true }
@@ -111,7 +113,7 @@ export async function DELETE(
 
                 logger.info('User deleted', {
                     adminId: session.user.id,
-                    deletedUserId: params.id,
+                    deletedUserId: id,
                     username: user.username
                 });
 
@@ -125,7 +127,7 @@ export async function DELETE(
                 await mongooseSession.abortTransaction();
 
                 logger.error('User deletion error:', error, {
-                    path: `/api/admin/users/${params.id}`,
+                    path: `/api/admin/users/${id}`,
                     method: 'DELETE',
                 });
                 return handleError(error);
@@ -141,9 +143,10 @@ export async function DELETE(
 // PATCH /api/admin/users/[id] - Update user details (admin only)
 export async function PATCH(
     request: NextRequest,
-    {params}: { params: { id: string } }
+    {params}: { params: Promise<{ id: string }> }
 ) {
     return withRateLimit(request, async () => {
+            const { id } = await params;
             try {
                 const {session} = await requireAdmin();
                 await connectDB();
@@ -169,7 +172,7 @@ export async function PATCH(
                     // Check if username is already taken
                     const existingUser = await User.findOne({
                         username: validatedData.username,
-                        _id: {$ne: params.id}
+                        _id: {$ne: id}
                     });
 
                     if (existingUser) {
@@ -183,7 +186,7 @@ export async function PATCH(
                     // Check if email is already taken
                     const existingUser = await User.findOne({
                         email: validatedData.email,
-                        _id: {$ne: params.id}
+                        _id: {$ne: id}
                     });
 
                     if (existingUser) {
@@ -195,7 +198,7 @@ export async function PATCH(
 
                 // Update user
                 const updatedUser = await User.findByIdAndUpdate(
-                    params.id,
+                    id,
                     {$set: updates},
                     {new: true}
                 );//.select('-password');
