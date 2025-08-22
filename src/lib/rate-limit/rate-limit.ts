@@ -22,6 +22,12 @@ export const RATE_LIMIT_CONFIGS = {
         uniqueTokenPerInterval: 30,
     },
 
+    // Unauthenticated feedback: 15 per hour
+    feedbackPostUnauthenticated: {
+        interval: 60 * 60,
+        uniqueTokenPerInterval: 10,
+    },
+
     // Authenticated feedback load: 30 per hour
     feedbackGetAuthenticated: {
         interval: 60 * 60,

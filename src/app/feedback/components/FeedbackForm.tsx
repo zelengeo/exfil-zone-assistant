@@ -21,7 +21,6 @@ interface FeedbackFormData {
     userAgent: string;
     pageUrl: string;
     category?: FeedbackCategory;
-    //TODO connected itemId or taskId will be added
 }
 
 export function FeedbackForm() {
@@ -60,7 +59,7 @@ export function FeedbackForm() {
         } catch (err) {
             //FIXME REMOVE tsignore
             // @ts-expect-error cause is defined - it is AppError and has message or details if it is validation or else
-            setError(err instanceof Error ? `${err.message} ${err.cause ? ` Cause: \n` + (err.cause.details || err.cause.message) : ""}` : 'Failed to submit feedback. Please try again.');
+            setError(err instanceof Error ? `${err.message} ${err.cause ? ` Cause: \n` + (err.cause.details || err.cause.message || err.cause) : ""}` : 'Failed to submit feedback. Please try again.');
         } finally {
             setIsSubmitting(false);
         }
@@ -119,9 +118,6 @@ export function FeedbackForm() {
                             </SelectItem>
                             <SelectItem value="feature" className="text-tan-100 focus:bg-military-700">
                                 Feature Request
-                            </SelectItem>
-                            <SelectItem value="data_correction" className="text-tan-100 focus:bg-military-700">
-                                Data Issue
                             </SelectItem>
                             <SelectItem value="general" className="text-tan-100 focus:bg-military-700">
                                 General Feedback

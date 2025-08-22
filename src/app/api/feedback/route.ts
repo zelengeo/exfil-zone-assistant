@@ -7,23 +7,36 @@ import {User} from '@/models/User';
 import {IFeedbackApi, FeedbackApi} from "@/lib/schemas/feedback";
 import {withRateLimit} from "@/lib/middleware";
 import {logger} from "@/lib/logger";
-import {handleError} from "@/lib/errors";
+import {handleError, AuthenticationError} from "@/lib/errors";
 import {sanitizeUserInput} from "@/lib/utils";
 import {requireAuthWithUserCheck} from "@/lib/auth/utils";
+import {getServerSession} from "next-auth";
+import {authOptions} from "@/app/api/auth/[...nextauth]/route";
 
 
 type ApiType = IFeedbackApi;
 export async function POST(request: NextRequest) {
+    const session = await getServerSession(authOptions);
     return withRateLimit(
         request,
         async () => {
             const mongooseSession = await mongoose.startSession();
 
             try {
-                const {session} = await requireAuthWithUserCheck();
                 await connectDB();
                 const body = await request.json();
                 const validatedData = FeedbackApi["Post"]["Request"].parse(body);
+                
+                // Check authentication requirements based on feedback type
+                if (!session && validatedData.type === 'data_correction') {
+                    throw new AuthenticationError('Authentication required for data corrections');
+                }
+                
+                // If user is logged in, verify they're not banned
+                if (session) {
+                    await requireAuthWithUserCheck();
+                }
+
 
                 // Sanitize inputs
                 const sanitizedData = {
@@ -96,6 +109,6 @@ export async function POST(request: NextRequest) {
                 await mongooseSession.endSession();
             }
         },
-        'feedbackPostAuthenticated'
+        session ? 'feedbackPostAuthenticated' : 'feedbackPostUnauthenticated'
     );
 }
