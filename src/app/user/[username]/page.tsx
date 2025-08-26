@@ -18,8 +18,6 @@ import {
     Star,
     Shield,
     TrendingUp,
-    Users,
-    Edit,
     EyeOff, RectangleGoggles
 } from "lucide-react";
 import {getUserByUsername} from "@/lib/user";
