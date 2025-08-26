@@ -10,13 +10,20 @@ const Toaster = ({ ...props }: ToasterProps) => {
     <Sonner
       theme={theme as ToasterProps["theme"]}
       className="toaster group"
-      style={
-        {
-          "--normal-bg": "var(--popover)",
-          "--normal-text": "var(--popover-foreground)",
-          "--normal-border": "var(--border)",
-        } as React.CSSProperties
-      }
+      toastOptions={{
+          classNames: {
+              toast: "group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",
+              description: "group-[.toast]:text-muted-foreground",
+              actionButton: "group-[.toast]:bg-primary group-[.toast]:text-primary-foreground",
+              cancelButton: "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground",
+              // Custom styles for different toast types
+              //FIXME - remove !important - look for the correct way to do this
+              success: "group-[.toaster]:!bg-olive-600/60 group-[.toaster]:!text-tan-100 group-[.toaster]:!border-olive-500",
+              error: "group-[.toaster]:!bg-destructive/60 group-[.toaster]:!text-destructive-foreground group-[.toaster]:!border-destructive",
+              warning: "group-[.toaster]:!bg-orange-600/60 group-[.toaster]:!text-tan-100 group-[.toaster]:!border-orange-500",
+              info: "group-[.toaster]:!bg-military-700/60 group-[.toaster]:!text-tan-100 group-[.toaster]:!border-military-600",
+          },
+      }}
       {...props}
     />
   )

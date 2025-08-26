@@ -90,6 +90,9 @@ export function TaskCorrectionForm({task, trigger}: TaskCorrectionFormProps) {
 
     const onSubmit = async (data: TaskCorrection) => {
         setIsSubmitting(true);
+        //FIXME remove log
+        console.log(`Here`,  data);
+        
         try {
             const proposedData: TaskCorrection['proposedData'] = {};
 

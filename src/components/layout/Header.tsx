@@ -1,6 +1,6 @@
 'use client';
 
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 import {useSession, signIn, signOut} from "next-auth/react";
@@ -43,44 +43,56 @@ import {
 } from 'lucide-react';
 import {Skeleton} from "@/components/ui/skeleton";
 
+const navigation = [
+    {
+        name: 'Items Database',
+        href: '/items',
+        icon: Package,
+        description: 'Weapons, armor, consumables'
+    },
+    {
+        name: 'Tasks',
+        href: '/tasks',
+        icon: Goal,
+        description: 'Quest guides and objectives'
+    },
+    {
+        name: 'Hideout',
+        href: '/hideout-upgrades',
+        icon: Wrench,
+        description: 'Base upgrade requirements'
+    },
+    {
+        name: 'Combat Simulator',
+        href: '/combat-sim',
+        icon: Target,
+        description: 'Calculate damage and TTK',
+        highlight: true
+    },
+    {
+        name: 'Guides',
+        href: '/guides',
+        icon: FileText,
+        description: 'Tips and strategies'
+    },
+];
+
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname();
     const {data: session, status} = useSession();
 
-    const navigation = [
-        {
-            name: 'Items Database',
-            href: '/items',
-            icon: Package,
-            description: 'Weapons, armor, consumables'
-        },
-        {
-            name: 'Tasks',
-            href: '/tasks',
-            icon: Goal,
-            description: 'Quest guides and objectives'
-        },
-        {
-            name: 'Hideout',
-            href: '/hideout-upgrades',
-            icon: Wrench,
-            description: 'Base upgrade requirements'
-        },
-        {
-            name: 'Combat Simulator',
-            href: '/combat-sim',
-            icon: Target,
-            description: 'Calculate damage and TTK',
-            highlight: true
-        },
-        {
-            name: 'Guides',
-            href: '/guides',
-            icon: FileText,
-            description: 'Tips and strategies'
-        },
-    ];
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [isOpen]);
 
     const userNavigation = [
         {name: 'Profile', href: `/user/${session?.user?.username || session?.user?.id}`, icon: User},
@@ -162,8 +174,11 @@ const Header: React.FC = () => {
                             </div>
                         </div>
                         <div className="flex items-center gap-2 mt-3">
-                            <Badge variant="secondary" className="bg-olive-700/50 text-olive-300 border-olive-700">
+                            <Badge variant="secondary" className="bg-olive-700/50 text-olive-300 border-olive-700 capitalize">
                                 {session.user.rank || 'Recruit'}
+                            </Badge>
+                            <Badge variant="secondary" className="bg-olive-700/50 text-olive-300 border-olive-700 capitalize">
+                                {session.user.roles[session.user.roles.length - 1]}
                             </Badge>
                         </div>
                     </DropdownMenuLabel>
@@ -181,12 +196,6 @@ const Header: React.FC = () => {
                         <Link href="/dashboard" className="cursor-pointer">
                             <BarChart3 className="mr-2 h-4 w-4"/>
                             <span>Dashboard</span>
-                        </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                        <Link href="/settings" className="cursor-pointer">
-                            <Settings className="mr-2 h-4 w-4"/>
-                            <span>Settings</span>
                         </Link>
                     </DropdownMenuItem>
                     {session.user?.roles?.includes('admin') && (
@@ -279,7 +288,7 @@ const Header: React.FC = () => {
                                     </SheetTitle>
                                 </SheetHeader>
 
-                                <ScrollArea className="h-[calc(100vh-5rem)] pb-4">
+                                <ScrollArea className="h-[calc(100dvh-5rem)] pb-[env(safe-area-inset-bottom)] pb-4">
                                     <div className="px-6 py-4">
                                         {/* User section in mobile menu */}
                                         {status !== "loading" && (
@@ -300,7 +309,7 @@ const Header: React.FC = () => {
                                                                 <p className="font-medium text-tan-100">
                                                                     {session.user.displayName || session.user.username}
                                                                 </p>
-                                                                <p className="text-sm text-tan-400">
+                                                                <p className="text-sm text-tan-400 capitalize">
                                                                     {session.user.rank || 'Recruit'}
                                                                 </p>
                                                             </div>

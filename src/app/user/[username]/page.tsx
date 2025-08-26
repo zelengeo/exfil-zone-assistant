@@ -166,31 +166,14 @@ export default async function UserProfilePage({params}: UserProfilePageProps) {
                             {/* Action Buttons */}
                             <div className="flex gap-3 mt-4">
                                 {isOwnProfile ? (
-                                    <>
-                                        <Link
-                                            href="/dashboard"
-                                            className="px-4 py-2 bg-olive-600 hover:bg-olive-500 text-white rounded-sm transition-colors flex items-center gap-2"
-                                        >
-                                            <Activity className="h-4 w-4"/>
-                                            View Dashboard
-                                        </Link>
-                                        <Link
-                                            href="/settings/account"
-                                            className="px-4 py-2 bg-military-700 hover:bg-military-600 text-tan-200 rounded-sm transition-colors flex items-center gap-2"
-                                        >
-                                            <Edit className="h-4 w-4"/>
-                                            Edit Profile
-                                        </Link>
-                                    </>
-                                ) : (
-                                    <button
-                                        disabled
-                                        className="px-4 py-2 bg-military-700 text-tan-500 rounded-sm cursor-not-allowed flex items-center gap-2"
+                                    <Link
+                                        href="/dashboard"
+                                        className="px-4 py-2 bg-olive-600 hover:bg-olive-500 text-white rounded-sm transition-colors flex items-center gap-2"
                                     >
-                                        <Users className="h-4 w-4"/>
-                                        Follow (Coming Soon)
-                                    </button>
-                                )}
+                                        <Activity className="h-4 w-4"/>
+                                        View Dashboard
+                                    </Link>
+                                ) : null }
                             </div>
                         </div>
                     </div>

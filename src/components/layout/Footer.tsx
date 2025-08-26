@@ -171,7 +171,7 @@ const Footer: React.FC = () => {
 
                         {/* Ko-fi supporter badge */}
                         <div className="flex items-center gap-2">
-                            <span className="text-xs text-tan-500">Built with 🍺 by </span>
+                            <span className="text-xs text-tan-500">Built with ☕ by </span>
                             <a
                                 href="https://x.com/pogapwnz"
                                 target="_blank"

@@ -23,7 +23,7 @@ export async function GET(request: NextRequest) {
                 const username = searchParams.get('username');
 
                 // Sanitize and validate username
-                const validatedUsername = UserApi.CheckUsername.Get.Request.parse(username).username as string;
+                const validatedUsername = UserApi.CheckUsername.Get.Request.parse({username}).username as string;
 
                 await connectDB();
 
