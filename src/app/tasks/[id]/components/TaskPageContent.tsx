@@ -204,7 +204,7 @@ export default function TaskPageContent({taskId}: TaskPageContentProps) {
                                     {task.objectives.map((objective, index) => (
                                         <div
                                             key={index}
-                                            className="flex items-start gap-3 p-3 bg-military-600/30 rounded"
+                                            className="flex items-center gap-3 p-3 bg-military-600/30 rounded"
                                         >
                                             <span className="text-tan-500 font-mono text-sm mt-0.5">
                                                 {(index + 1).toString().padStart(2, '0')}

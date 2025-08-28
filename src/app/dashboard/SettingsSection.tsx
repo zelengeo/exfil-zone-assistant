@@ -22,6 +22,7 @@ import {toast} from "sonner";
 import {z} from "zod";
 import {useSessionRefresh} from "@/hooks/useSessionRefresh";
 import {ApiResponse, ErrorResponse} from "@/lib/schemas/core";
+import {sanitizeUserInput} from "@/lib/utils";
 
 type UserUpdateType = IUserApi['Patch']['Request'];
 type UserUpdateUsernameType = IUserApi['UpdateUsername']['Patch']['Request'];
@@ -161,7 +162,7 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
         setUsernameError('');
 
         try {
-            const validatedUsername = userUsernameUpdateSchema.shape.username.parse(newUsername);
+            const validatedUsername = userUsernameUpdateSchema.shape.username.parse(sanitizeUserInput(newUsername));
             setIsChangingUsername(true);
             if (validatedUsername !== initialSettings.username) {
                 const isUsernameAvailable = await checkUsernameAvailability(validatedUsername);
