@@ -67,7 +67,7 @@ const navigation = [
         href: '/combat-sim',
         icon: Target,
         description: 'Calculate damage and TTK',
-        highlight: true
+        highlight: false
     },
     {
         name: 'Guides',
