@@ -1,15 +1,103 @@
+/* app/globals.css */
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 @config "../../tailwind.config.js";
+
 @layer base {
+  /* Military theme as default */
+  :root {
+    --radius: 0.125rem; /* Sharp corners for military feel */
+
+    /* Your military colors in HSL format */
+    --background: 102 8% 10%; /* military-900 */
+    --foreground: 30 13% 82%; /* tan-100 */
+
+    --card: 96 6% 13%; /* military-800 */
+    --card-foreground: 30 13% 82%; /* tan-100 */
+
+    --popover: 96 6% 13%;
+    --popover-foreground: 30 13% 82%;
+
+    --primary: 81 33% 36%; /* olive-600 */
+    --primary-foreground: 30 13% 82%;
+
+    --secondary: 102 6% 16%; /* military-700 */
+    --secondary-foreground: 30 13% 82%;
+
+    --muted: 102 6% 20%; /* slightly lighter military */
+    --muted-foreground: 32 12% 65%; /* tan-400 */
+
+    --accent: 81 33% 36%; /* olive-600 */
+    --accent-foreground: 30 13% 82%;
+
+    --destructive: 0 62% 51%; /* red for errors */
+    --destructive-foreground: 30 13% 82%;
+
+    --border: 102 6% 25%; /* military-600 */
+    --input: 102 6% 25%;
+    --ring: 81 33% 36%; /* olive-600 for focus rings */
+
+    /* Chart colors in military theme */
+    --chart-1: 81 33% 36%; /* olive variations */
+    --chart-2: 81 33% 46%;
+    --chart-3: 81 33% 26%;
+    --chart-4: 32 12% 65%; /* tan variations */
+    --chart-5: 30 13% 72%;
+  }
+
+  /* Keep the same for dark mode since military theme is dark */
+  .dark {
+    --background: 102 8% 10%;
+    --foreground: 30 13% 82%;
+
+    --card: 96 6% 13%;
+    --card-foreground: 30 13% 82%;
+
+    --popover: 96 6% 13%;
+    --popover-foreground: 30 13% 82%;
+
+    --primary: 81 33% 36%;
+    --primary-foreground: 30 13% 82%;
+
+    --secondary: 102 6% 16%;
+    --secondary-foreground: 30 13% 82%;
+
+    --muted: 102 6% 20%;
+    --muted-foreground: 32 12% 65%;
+
+    --accent: 81 33% 36%;
+    --accent-foreground: 30 13% 82%;
+
+    --destructive: 0 62% 51%;
+    --destructive-foreground: 30 13% 82%;
+
+    --border: 102 6% 25%;
+    --input: 102 6% 25%;
+    --ring: 81 33% 36%;
+
+    --chart-1: 81 33% 36%;
+    --chart-2: 81 33% 46%;
+    --chart-3: 81 33% 26%;
+    --chart-4: 32 12% 65%;
+    --chart-5: 30 13% 72%;
+  }
+
+  /* Apply base styles */
+  * {
+    @apply border-border outline-ring/50;
+  }
+
   html {
     @apply text-tan-100 bg-military-900;
     scroll-behavior: smooth;
   }
 
   body {
-    @apply font-sans text-base antialiased;
-    /* Replace image background with CSS pattern */
+    @apply font-sans text-base antialiased bg-background text-foreground;
+    /* Military pattern background */
     background-image:
             radial-gradient(rgba(77, 82, 68, 0.1) 2px, transparent 2px),
             radial-gradient(rgba(77, 82, 68, 0.1) 2px, transparent 2px);
@@ -18,7 +106,7 @@
     background-blend-mode: overlay;
   }
 
-  /* Improved readability for VR */
+  /* Typography */
   p {
     @apply leading-relaxed;
   }
@@ -27,17 +115,17 @@
     @apply font-bold tracking-tight;
   }
 
-  /* Military-style form controls for VR */
+  /* Form controls */
   button,
   [type='button'],
   [type='submit'] {
-    @apply cursor-pointer min-h-12 min-w-12 flex items-center justify-center border border-olive-600;
+    @apply cursor-pointer flex items-center justify-center;
   }
 
   input,
   select,
   textarea {
-    @apply min-h-12 px-4 text-lg bg-military-800 border border-olive-700 focus:border-olive-500;
+    @apply min-h-8 px-4 text-lg;
   }
 }
 
@@ -97,7 +185,7 @@
   }
 }
 
-/* Custom scrollbar for better VR navigation */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 16px;
 }
@@ -128,7 +216,6 @@
   bottom: 0;
   pointer-events: none;
   opacity: 0.05;
-  /* CSS-based camo pattern */
   background-image:
           linear-gradient(45deg, rgba(121, 131, 69, 0.3) 25%, transparent 25%),
           linear-gradient(-45deg, rgba(121, 131, 69, 0.3) 25%, transparent 25%),
@@ -136,11 +223,6 @@
           linear-gradient(-45deg, transparent 75%, rgba(121, 131, 69, 0.3) 75%);
   background-size: 60px 60px;
   background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
-}
-
-/* Diagonal clip effect */
-.clip-diagonal {
-  clip-path: polygon(0 0, 100% 100%, 100% 0, 0% 100%);
 }
 
 /* Military-style dividers */
@@ -176,9 +258,32 @@
   to { opacity: 1; }
 }
 
-/* Ensure correct rendering in VR browsers */
+/* VR browser optimization */
 @media (min-resolution: 2dppx) {
   html {
     @apply text-lg;
   }
+}
+
+/* Map Tailwind CSS variables to color variables */
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
 }

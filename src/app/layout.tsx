@@ -1,9 +1,11 @@
 import React from "react";
 import type { Metadata, Viewport } from "next";
+import { AuthProvider } from '@/app/components/providers/AuthProvider';
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import "./globals.css";
+import CookieConsentBanner from "@/components/CookieConsentBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -117,9 +119,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
-        <SpeedInsights />
-        <Analytics />
+          <AuthProvider>
+            {children}
+            <SpeedInsights />
+            <Analytics />
+            <CookieConsentBanner />
+          </AuthProvider>
       </body>
     </html>
   );

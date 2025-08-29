@@ -30,6 +30,7 @@ import ProvisionsSpecificStats from "@/app/items/[id]/components/ProvisionsSpeci
 import TaskItemsSpecificStats from "@/app/items/[id]/components/TaskItemsSpecificStats";
 import BackpackSpecificStats from "@/app/items/[id]/components/BackpackSpecificStats";
 import HolsterSpecificStats from "@/app/items/[id]/components/HolsterSpecificStats";
+import {ItemCorrectionFormAuth} from "@/components/corrections/ItemCorrectionForm";
 
 // Component for displaying item images with zoom functionality
 const ItemImageDisplay: React.FC<{
@@ -232,6 +233,7 @@ export default function ItemDetail({params}: PageProps) {
                                 <span>{item.subcategory}</span>
                             </>
                         )}
+                        <ItemCorrectionFormAuth item={item} />
                     </div>
                 </div>
 

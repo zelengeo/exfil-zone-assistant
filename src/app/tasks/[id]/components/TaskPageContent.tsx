@@ -24,6 +24,7 @@ import {
 } from "@/app/tasks/taskHelpers";
 import Image from "next/image";
 import {communityCreatorMap} from "@/data/community";
+import {TaskCorrectionFormAuth} from "@/components/corrections/TaskCorrectionForm";
 
 interface TaskPageContentProps {
     taskId: string;
@@ -86,10 +87,13 @@ export default function TaskPageContent({taskId}: TaskPageContentProps) {
 
                 {/* Header */}
                 <div className={`mb-8 border-l-4 pl-4 ${config.borderColor}`}>
-                    <div className="inline-block px-2 py-0.5 bg-military-800/80 mb-1">
-            <span className={`text-xs md:text-sm ${config.tabTextActive}`}>
-              {config.label}
-            </span>
+                    <div className="flex items-center gap-1 lg:gap-2  mb-1">
+                        <div className="inline-block p-1 rounded-sm bg-military-800/80">
+                            <span className={`text-xs md:text-sm ${config.tabTextActive}`}>
+                              {config.label}
+                            </span>
+                        </div>
+                        <TaskCorrectionFormAuth task={task} />
                     </div>
                     <div className="flex items-center gap-1 lg:gap-2 mb-1">
                         <Image
@@ -200,7 +204,7 @@ export default function TaskPageContent({taskId}: TaskPageContentProps) {
                                     {task.objectives.map((objective, index) => (
                                         <div
                                             key={index}
-                                            className="flex items-start gap-3 p-3 bg-military-600/30 rounded"
+                                            className="flex items-center gap-3 p-3 bg-military-600/30 rounded"
                                         >
                                             <span className="text-tan-500 font-mono text-sm mt-0.5">
                                                 {(index + 1).toString().padStart(2, '0')}
@@ -310,6 +314,7 @@ export default function TaskPageContent({taskId}: TaskPageContentProps) {
                                                         className={`inline-flex items-center gap-1 px-2 py-1 bg-military-600 rounded text-xs`}
                                                     >
                                                             {getTaskTypeIcon(type)}
+                                                            <span className="capitalize">{type}</span>
                                                         </span>))
                                                 }
                                             </div>

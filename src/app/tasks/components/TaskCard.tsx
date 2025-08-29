@@ -23,6 +23,7 @@ import {corps, tasksData} from "@/data/tasks";
 import {Item} from "@/types/items";
 import {communityCreatorMap} from "@/data/community";
 import ShareButton from "@/components/ShareButton";
+import {TaskCorrectionFormAuth} from "@/components/corrections/TaskCorrectionForm";
 
 interface TaskCardProps {
     task: Task;
@@ -131,7 +132,7 @@ export default function TaskCard({
                             </h5>
                             <div className="space-y-2">
                                 {task.objectives.map((objective, index) => (
-                                    <div key={index} className="flex items-start gap-2 text-tan-300 text-sm">
+                                    <div key={index} className="flex  items-center gap-2 text-tan-300 text-sm">
                                         <div
                                             className="w-5 h-5 rounded-full bg-military-600 flex items-center justify-center text-xs text-tan-400 mt-0.5 flex-shrink-0">
                                             {index + 1}
@@ -366,10 +367,19 @@ export default function TaskCard({
                     </div>
 
                     {/* Actions Section  */}
-                    <div className="flex items-center justify-end gap-2 pb-3">
-                            <ShareButton getShareLink={()=>buildTaskShareUrl(task.id)} title={"Share Task"} />
-                            {/* Action Button */}
-                            {statusConfig.actionButton || null}
+                    <div className="flex items-center justify-end gap-2 pb-3 flex-wrap sm:flex-nowrap">
+                        {/* Correction Button */}
+                        <TaskCorrectionFormAuth task={task} />
+
+                        {/* Share Button */}
+                        <ShareButton
+                            getShareLink={() => buildTaskShareUrl(task.id)}
+                            title="Share"
+                            size="sm"
+                        />
+
+                        {/* Status Action Button */}
+                        {statusConfig.actionButton || null}
                     </div>
                 </div>
             )}
