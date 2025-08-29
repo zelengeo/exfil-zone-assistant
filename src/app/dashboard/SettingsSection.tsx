@@ -270,8 +270,10 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                          focus:outline-none focus:border-olive-500 focus:ring-1 focus:ring-olive-500"
                             >
                                 <option value="">Not specified</option>
-                                <option value="na">NA - North America</option>
                                 <option value="eu">EU - Europe</option>
+                                <option value="us_west">US West</option>
+                                <option value="us_east">US East</option>
+                                <option value="apj">APJ - Asia Pacific</option>
                             </select>
                         </div>
 

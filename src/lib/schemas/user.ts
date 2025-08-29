@@ -2,7 +2,7 @@ import {z} from 'zod';
 import {Types} from "mongoose";
 import {paginationSchema, successSchema} from "@/lib/schemas/core";
 
-export const locationEnum = ['eu', 'na'] as const;
+export const locationEnum = ['eu', 'us_west', "us_east", "apj"] as const;
 export const vrHeadsetEnum = ['quest2', 'quest3', 'pico4', 'index', 'vive', 'bigscreen', 'other'] as const;
 export const rolesEnum = ['user', 'contributor', 'moderator', 'partner', 'admin'] as const;
 export const rankEnum = ['recruit', 'soldier', 'specialist', 'veteran', 'elite'] as const;
@@ -31,7 +31,7 @@ export const userBaseSchema = z.object({
 
     // Profile
     bio: z.string().max(500).optional(),
-    location: z.enum(locationEnum).default("na"),
+    location: z.enum(locationEnum).default("us_west"),
     vrHeadset: z.enum(vrHeadsetEnum).optional(),
 
 
