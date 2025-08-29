@@ -36,12 +36,10 @@ import {
     Shield,
     User,
     LogOut,
-    Settings,
     BarChart3,
     MessageCircle,
     ChevronRight
 } from 'lucide-react';
-import {Skeleton} from "@/components/ui/skeleton";
 
 const navigation = [
     {
@@ -97,7 +95,6 @@ const Header: React.FC = () => {
     const userNavigation = [
         {name: 'Profile', href: `/user/${session?.user?.username || session?.user?.id}`, icon: User},
         {name: 'Dashboard', href: '/dashboard', icon: BarChart3},
-        {name: 'Settings', href: '/settings', icon: Settings},
     ];
 
     const isActiveRoute = (href: string) => pathname === href;
@@ -105,11 +102,45 @@ const Header: React.FC = () => {
     // Desktop user menu component
     const DesktopUserMenu = () => {
         if (status === "loading") {
-            return (<div className="flex items-center gap-4">
-                <Skeleton className="hidden md:block h-10 w-32 rounded-sm"/>
-                <Skeleton className="md:hidden h-10 w-10 rounded-sm"/>
-            </div>)
+            return (
+                <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-3 px-3 py-2 rounded-sm border border-military-600/50 bg-military-800/30">
+                        {/* Animated shield icon */}
+                        <div className="relative h-6 w-7 flex items-center justify-center">
+                            <Shield className="h-5 w-5 text-olive-500/60 animate-pulse" />
+                            <div className="absolute inset-0 rounded-full border border-olive-600/30 animate-ping [animation-duration:2s]" />
+                        </div>
+
+                        {/* Loading bars */}
+                        <div className="hidden md:flex flex-col gap-1.5 justify-center">
+                            <div
+                                className="h-2 w-12 bg-olive-600/30 rounded-sm animate-pulse"
+                                style={{
+                                    animationDelay: `100ms`,
+                                    animationDuration: '1s'
+                                }}
+                            />
+                            <div className="flex gap-1">
+                                {[...Array(3)].map((_, i) => (
+                                    <div
+                                        key={i}
+                                        className="h-1.5 w-2 bg-military-500/40 rounded-sm animate-pulse"
+                                        style={{
+                                            animationDelay: `${i * 120 + 200}ms`,
+                                            animationDuration: '1.2s'
+                                        }}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Status indicator */}
+                        <div className="w-2 h-2 bg-olive-400 rounded-full animate-pulse [animation-duration:0.8s]" />
+                    </div>
+                </div>
+            );
         }
+
 
         if (!session) {
             return (
@@ -143,7 +174,7 @@ const Header: React.FC = () => {
                                 {userInitial.toUpperCase()}
                             </AvatarFallback>
                         </Avatar>
-                        <div className="text-left">
+                        <div className="text-left  pb-0.5">
                             <p className="text-sm font-medium text-tan-100">{displayName}</p>
                             <p className="text-xs text-olive-500 capitalize">
                                 {session.user.rank || 'Recruit'}

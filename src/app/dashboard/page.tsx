@@ -121,8 +121,8 @@ export default async function DashboardPage() {
                                 </div>
                                 <div>
                                     <p className="text-tan-500">Status</p>
-                                    <p className={`font-medium ${user.isActive ? 'text-green-400' : 'text-red-400'}`}>
-                                        {user.isActive ? 'Active' : 'Inactive'}
+                                    <p className={`font-medium ${user.isBanned ? 'text-red-400' : user.isActive ? 'text-green-400' :  'text-yellow-400'}`}>
+                                        {user.isBanned ? 'Banned' : user.isActive ? 'Active' : 'Inactive'}
                                     </p>
                                 </div>
                             </div>

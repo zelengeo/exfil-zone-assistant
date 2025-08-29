@@ -55,6 +55,7 @@ export default async function UserProfilePage({params}: UserProfilePageProps) {
 
     const user = await getUserByUsername(username)
 
+    // TODO not found user should have different fallback.
     if (!user) {
         notFound();
     }

@@ -9,8 +9,8 @@ export async function getUserByUsername(username: string): Promise<UserType | nu
 
         const user = await User.findOne({
             username: username.toLowerCase(),
-            isActive: true,
-            isBanned: false,
+            // isActive: true,
+            // isBanned: false,
         }).select('-email -lastLoginAt -isActive -isBanned -banReason -preferences.emailNotifications').lean<UserType>();
 
         if (!user) return null;
