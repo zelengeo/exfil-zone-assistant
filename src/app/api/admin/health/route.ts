@@ -51,6 +51,8 @@ interface HealthCheckResult {
     };
 }
 
+const mongoMaxPoolSize = 10;
+
 async function checkDatabaseHealth() {
     try {
         // Ensure connection
@@ -82,24 +84,37 @@ async function checkDatabaseHealth() {
         // Get connection stats
         let connections;
         try {
-            const stats = await db.stats();
-            // Get the current connections from serverStatus if available
-            const serverStatus = await db.admin().serverStatus();
+            // Only use safe, non-admin operations
+            const collections = await db.listCollections().toArray();
 
             connections = {
-                current: serverStatus.connections?.current || 0,
-                available: serverStatus.connections?.available || 0,
-                poolSize: serverStatus.connections?.totalCreated || 0,
+                current: mongoose.connections.length,
+                available: mongoMaxPoolSize - mongoose.connections.length,
+                poolSize: mongoMaxPoolSize,
                 stats: {
-                    collections: stats.collections || 0,
-                    dataSize: Math.round((stats.dataSize || 0) / 1024 / 1024), // MB
-                    storageSize: Math.round((stats.storageSize || 0) / 1024 / 1024), // MB
-                    indexes: stats.indexes || 0,
+                    collections: collections.length,
+                    dataSize: 0,
+                    storageSize: 0,
+                    indexes: 0,
                 }
             };
-        } catch (statsError) {
-            // Stats might not be available in all MongoDB configurations
-            logger.error('Could not fetch connection stats:', statsError);
+
+            // Try db.stats() - this usually works with readWrite role
+            try {
+                const stats = await db.stats();
+                connections.stats = {
+                    collections: stats.collections || collections.length,
+                    dataSize: Math.round((stats.dataSize || 0) / 1024 / 1024),
+                    storageSize: Math.round((stats.storageSize || 0) / 1024 / 1024),
+                    indexes: stats.indexes || 0,
+                };
+            } catch {
+                // db.stats() might also be restricted, that's OK
+                logger.debug('db.stats() not available - using basic metrics');
+            }
+        } catch (error) {
+            logger.warn(`Could not fetch database info:${error instanceof Error ? ` ${error.message}` : error}`, );
+            connections = undefined; // Will be omitted from response
         }
         return {
             status: 'connected' as const,
