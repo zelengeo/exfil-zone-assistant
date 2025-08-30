@@ -28,8 +28,8 @@ const UserSchema = new Schema({
     bio: { type: String, maxLength: 500 },
     location: {
         type: String,
-        enum: ['na', 'eu', 'asia', 'oceania', 'sa', 'africa'],
-        default: 'na'
+        enum: ['us_west', 'eu', 'us_east', 'apj'],
+        default: 'us_west'
     },
     vrHeadset: {
         type: String,

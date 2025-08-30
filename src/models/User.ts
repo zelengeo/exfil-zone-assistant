@@ -14,7 +14,7 @@ const UserSchema = new Schema({
     location: {
         type: String,
         enum: locationEnum,
-        default: 'na'
+        default: 'us_west'
     },
     vrHeadset: {
         type: String,
