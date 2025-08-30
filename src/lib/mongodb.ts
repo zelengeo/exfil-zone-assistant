@@ -51,13 +51,14 @@ if (process.env.NODE_ENV === 'development') {
 
 // Mongoose uses its own connection pool, separate from MongoClient
 const mongooseOptions = {
-    // Connection Pool (Mongoose uses the same underlying driver)
-    maxPoolSize: 10,              // Should match expected concurrent operations
-    minPoolSize: 2,               // Maintain minimum connections for fast queries
+    // Connection Pool - CRITICAL FOR VERCEL
+    maxPoolSize: 1,
+    minPoolSize: 0,
 
     // Timeout Settings
-    serverSelectionTimeoutMS: 5000,
-    socketTimeoutMS: 0,
+    serverSelectionTimeoutMS: 10000,  // Increase from 5000 to 10000
+    connectTimeoutMS: 10000,
+    socketTimeoutMS: 45000,           // Change from 0 to 45000
 
     // Mongoose-specific Options
     bufferCommands: false,
@@ -107,16 +108,6 @@ export async function connectDB() {
             console.log('Mongoose disconnected');
             isConnecting = false;
         });
-
-        // In production, implement reconnection logic
-        if (process.env.NODE_ENV === 'production') {
-            mongoose.connection.on('disconnected', () => {
-                console.log('Mongoose disconnected. Attempting to reconnect...');
-                setTimeout(() => {
-                    mongoose.connect(uri, mongooseOptions).catch(console.error);
-                }, 5000);
-            });
-        }
 
         // Connect to MongoDB
         await mongoose.connect(uri, mongooseOptions);
