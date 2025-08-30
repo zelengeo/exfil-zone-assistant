@@ -13,7 +13,6 @@ import {
     Target,
     XCircle,
     Sparkle,
-    Undo2
 } from "lucide-react";
 import {corps, getTasksByMerchant, tasksData} from "@/data/tasks";
 import React from "react";

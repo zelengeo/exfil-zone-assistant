@@ -18,7 +18,8 @@ export const taskTypeSchema = z.enum([
     'submit',
     'mark',
     'place',
-    'photo'
+    'photo',
+    "signal"
 ]);
 
 // Task video guide schema

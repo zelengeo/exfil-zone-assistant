@@ -38,7 +38,7 @@ export function TaskCorrectionForm({task, trigger}: TaskCorrectionFormProps) {
     const [open, setOpen] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const form = useForm<TaskCorrection>({
+    const form = useForm({
         resolver: zodResolver(taskCorrectionSubmitSchema),
         defaultValues: {
             entityId: task.id,
@@ -90,9 +90,6 @@ export function TaskCorrectionForm({task, trigger}: TaskCorrectionFormProps) {
 
     const onSubmit = async (data: TaskCorrection) => {
         setIsSubmitting(true);
-        //FIXME remove log
-        console.log(`Here`,  data);
-        
         try {
             const proposedData: TaskCorrection['proposedData'] = {};
 
