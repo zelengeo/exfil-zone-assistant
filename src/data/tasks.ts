@@ -5604,6 +5604,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Keep reward [Thompson]https://www.exfil-zone-assistant.app/items/weapon-thompson-m1928 for following tasks.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "LJ4d0WSx1Kk"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY"
             }
@@ -5662,6 +5666,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Graveyard on suburb might be a 100% spawn,but food location could have it. Keep reward [AKS74u](https://www.exfil-zone-assistant.app/items/weapon-aks74u) for following tasks.",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "ZWw5-ei868g"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
@@ -5725,6 +5733,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "3rS2fUfEi3o"
+            },
             {
                 "author": "orbb",
                 "ytId": "FkiWA6Eb7fo"
@@ -5794,6 +5806,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Glasses on front desk. Keep the rewards for the following quests.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "hM-2vjelmn8"
+            },
+            {
                 "author": "orbb",
                 "ytId": "kFwjed9fWWI"
             },
@@ -5854,6 +5870,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Does not need to be found in raid. However, popular amongst Scavengers",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "74JvskSUQqA"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
                 "startTs": 120
@@ -5909,6 +5929,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Does not need to be found in raid. However, popular amongst Scavengers",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "z5cZUpI2FD4"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
@@ -5972,6 +5996,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Do not have to be found in raid. Use rewards from previous task. Look for green crates",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "1RnIQMVzQSw"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
                 "startTs": 159
@@ -6032,6 +6060,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "x6OfU5ufssU"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
                 "startTs": 186
@@ -6086,6 +6118,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "CxVhy_jSNPY"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
@@ -6151,6 +6187,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "S1GprlYcPsI"
+            },
+            {
                 "author": "orbb",
                 "ytId": "ZRnKbMybPzo"
             },
@@ -6209,6 +6249,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "wE-rSY_zl2c"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
@@ -6278,6 +6322,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "_7scXRp08Hg"
+            },
+            {
                 "author": "orbb",
                 "ytId": "oAQ9Rl2WTmM"
             },
@@ -6331,6 +6379,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "AVBESHutaDA"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
@@ -6398,6 +6450,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Bring beer to lighthouse on resort, small grave behind, place beer",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "g5pxrf7Qm_s"
+            },
+            {
                 "author": "orbb",
                 "ytId": "fmGJ_eR3m2Y"
             },
@@ -6463,6 +6519,10 @@ export const tasksData: TasksDatabase = {
         "tips": "[Size D Battery](https://www.exfil-zone-assistant.app/items/misc_b_1battery), [Flashlight](https://www.exfil-zone-assistant.app/items/misc_b_flashlight)",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "lq5gbS1uohg"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
                 "startTs": 440
@@ -6523,6 +6583,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Can submit half-eaten can.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "hYVVofQYJ2I"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
                 "startTs": 452
@@ -6572,6 +6636,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "QlyJuqdDRQI"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
@@ -6636,6 +6704,10 @@ export const tasksData: TasksDatabase = {
         "tips": "One on toilet at Skatepark cafe. Second CD on barrel at Rua Algasol.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "PXbAP1j56eI"
+            },
+            {
                 "author": "orbb",
                 "ytId": "cNQ5CB60RpU"
             },
@@ -6694,6 +6766,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "WHuBQ9Te0C0"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
@@ -6756,6 +6832,10 @@ export const tasksData: TasksDatabase = {
         "tips": "[AKM metal magazine](https://www.exfil-zone-assistant.app/items/mag_762x39_30), [G3 30-round magazine](https://www.exfil-zone-assistant.app/items/mag_762x51_30).",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "IJSCSR36CrI"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
                 "startTs": 610
@@ -6816,6 +6896,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "bKzmk2Sd1_A"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
                 "startTs": 653
@@ -6875,6 +6959,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Take off your helmet before the safe Scavenger kill, repeat.",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "fPER_FH7Aw4"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
@@ -6949,6 +7037,10 @@ export const tasksData: TasksDatabase = {
         "tips": "White house in farm area on Suburbs. Mark one of the huge wine barrels in basement on the SW side. Dry wine bottle in kitchen sink on ground level. Both extracts are north of the white farmhouse.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "8jXo9LaZmuU"
+            },
+            {
                 "author": "orbb",
                 "ytId": "tw_SplvvQO8"
             },
@@ -7021,6 +7113,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "ekMFDy4kc0w"
+            },
+            {
                 "author": "orbb",
                 "ytId": "CaU7t19ysxY"
             },
@@ -7082,6 +7178,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "The tram train cars are located on the road by hotel, two in front of hotel and one located on the road west toward construction.",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "EjvHz2SbegQ"
+            },
             {
                 "author": "orbb",
                 "ytId": "xMd_KozHG30"
@@ -7153,6 +7253,10 @@ export const tasksData: TasksDatabase = {
         "tips": "G3 AK4, install BT3 rail (scope rail), ACOG sight, 10-round mag; you can add to the build but these items need to be install to complete task. ",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "vPttVllmYQQ"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
                 "startTs": 819
@@ -7212,6 +7316,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Try to roleplay WW2 Soviet partisan for better accuracy. Only [Mosin 91-30](https://www.exfil-zone-assistant.app/items/weapon-mosin-91-30) can have a [scope](https://www.exfil-zone-assistant.app/items/scope_mosinpu).",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "c-oA5Mwd0_E"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
@@ -7282,6 +7390,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Both CDs can be found in kitchen.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "faXDU1mwj-0"
+            },
+            {
                 "author": "orbb",
                 "ytId": "tVcmvySg7Xc"
             },
@@ -7330,6 +7442,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Dress with [Police PACA Body Armor](https://www.exfil-zone-assistant.app/items/armor-police-vest) and [Black Beret](https://www.exfil-zone-assistant.app/items/helmet-beanie-black) and kill 16 targets.",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "ng-d0GwVA64"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
@@ -7392,6 +7508,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Dam angel located outside church in clifton. Bear located in Hyder town on suburb. Bull located in flea market on resort. Hound on metro top of stairs by east extract",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "stF3gVmw1tM"
+            },
             {
                 "author": "orbb",
                 "ytId": "JIacdtZ1GGE"
@@ -7463,6 +7583,10 @@ export const tasksData: TasksDatabase = {
         "tips": "[Sjogren](https://www.exfil-zone-assistant.app/items/weapon-sjogren-inertia)",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "y92XkaY4ZOs"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
                 "startTs": 1125
@@ -7530,6 +7654,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "[Igor's Supply Case](https://www.exfil-zone-assistant.app/items/taskitem_placement_igor_supplycase). One located on shelf in control room; One located on barrels in large gate room. pull lever in control room to open gate; One located in the east room of sewer area, place task item west of sewer room, two extracts, climb ladder, cross pipe, place on box outside door; items are heavy and might take two trips up ladder",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "Hj_tdUpEZVY"
+            },
             {
                 "author": "orbb",
                 "ytId": "qfRvA2MBmGI"
@@ -7603,6 +7731,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Room located on one of the bottom level north side near extract; officer back room is locked(key not required); [Malyuk 762](https://www.exfil-zone-assistant.app/items/weapon-malyuk-762) can be bought and handed in",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "oFe1Onfi6rc"
+            },
+            {
                 "author": "orbb",
                 "ytId": "zgM6Ab7cfmI"
             },
@@ -7667,6 +7799,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "o29YJdDw1fs"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
                 "startTs": 1272
@@ -7727,6 +7863,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "vK0wnfTx2_Y"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "YEPtvxMzsBY",
