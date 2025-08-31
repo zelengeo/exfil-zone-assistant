@@ -7921,6 +7921,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Outdoor Cinema located behind motel, upstairs left on box",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "ne67lQWHgUE"
+            },
+            {
                 "author": "orbb",
                 "ytId": "3mhlLR8_jp0"
             },
@@ -7985,6 +7989,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "_X2LD3qDowY"
+            },
             {
                 "author": "orbb",
                 "ytId": "zk9lVdCpsTg"
@@ -8053,6 +8061,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Look at M.I.C.A, LOCKED extract icon near the Canal.You don't have to extract from there or open it.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "ONGlh-jfQlQ"
+            },
+            {
                 "author": "orbb",
                 "ytId": "ONQLQQK3qRI"
             },
@@ -8106,6 +8118,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "[Notebook](https://www.exfil-zone-assistant.app/items/misc_notebook)",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "jHoG4FRS47k"
+            },
             {
                 "author": "orbb",
                 "ytId": "3yUDq4fJZ-s"
@@ -8173,6 +8189,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Small fountain on wall in Rua Algasol.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "ojHsAVaiLPE"
+            },
+            {
                 "author": "orbb",
                 "ytId": "8un2o6BUoH8"
             },
@@ -8232,6 +8252,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Car dealership located east side by tunnel extract. All required cars are nearby.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "AXEVE_bEJK0"
+            },
+            {
                 "author": "orbb",
                 "ytId": "XVqVAHhgKFI"
             },
@@ -8288,6 +8312,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "l1N7_xwWR1w"
+            },
             {
                 "author": "orbb",
                 "ytId": "Rsc3sPUjoXI"
@@ -8350,6 +8378,10 @@ export const tasksData: TasksDatabase = {
         "tips": "[Max's Cash](https://www.exfil-zone-assistant.app/items/taskitem_placement_max_cash)",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "ho4Q5Dg93Js"
+            },
+            {
                 "author": "orbb",
                 "ytId": "nGyTYeMvmTE"
             },
@@ -8403,6 +8435,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "[Old Phone](https://www.exfil-zone-assistant.app/items/misc_b_oldphone)",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "2D_jJgmPcRc"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "BO5uihtPyLM",
@@ -8458,6 +8494,10 @@ export const tasksData: TasksDatabase = {
         "tips": "[Max's Diamond ring](https://www.exfil-zone-assistant.app/items/taskitem_placement_max_ring)",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "vrx-_rTWR4Y"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "BO5uihtPyLM",
                 "startTs": 286
@@ -8467,7 +8507,7 @@ export const tasksData: TasksDatabase = {
     },
     "forge_11": {
         "id": "forge_11",
-        "name": "Seeing is Believing ",
+        "name": "Seeing is Believing",
         "gameId": "task.gear.15",
         "description": "I've heard some whispers that there are plenty of good supplies near the tower inlet by the dam, but it's a dangerous area, and not many people have gone there. It's likely that those supplies have been left over from before the incident.\nI'm not one to take wild guesses, so we should confirm the source of any intel. If the rumors are true, I'll send my guys over to clean those places out. So, how about you scout it out for me, buddy? Use a tracker to [mark all the tower inlets][around the dam].",
         "objectives": [
@@ -8516,6 +8556,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Located at top of dam.Mark all 4 concrete Towers with the tracker.",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "ViKeovqpdco"
+            },
             {
                 "author": "orbb",
                 "ytId": "XJ_WamWoIds"
@@ -8571,6 +8615,10 @@ export const tasksData: TasksDatabase = {
         "tips": "SWAT boss located at the Bank main entrance.(Not Bonecrusher in yellow helmet)",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "IqXpiTJIIBU"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "BO5uihtPyLM",
                 "startTs": 353
@@ -8621,6 +8669,10 @@ export const tasksData: TasksDatabase = {
         "tips": "[Tape](https://www.exfil-zone-assistant.app/items/misc_b_tape)",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "nC2k-wBIU6k"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "BO5uihtPyLM",
                 "startTs": 378
@@ -8670,6 +8722,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "[Camera](https://www.exfil-zone-assistant.app/items/misc_camera)",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "FD9FA0PsFU0"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "BO5uihtPyLM",
@@ -8722,6 +8778,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Located in the center of the Mall on -1F, in the room below escalator stairs.",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "diP48Y1DWF8"
+            },
             {
                 "author": "orbb",
                 "ytId": "KoE9YIrOaGI"
@@ -8779,6 +8839,10 @@ export const tasksData: TasksDatabase = {
         "tips": "water tower (more of a tank than a tower) 50M north of altibuy in the backyard of the 3 story house, green tent located in front of mall northeast corner by overpass, cabin located north of mall just past overpass before tunnel",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "6fwy6vogZ2A"
+            },
+            {
                 "author": "orbb",
                 "ytId": "rrL25q04zaE"
             },
@@ -8834,6 +8898,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "These are *not* barns, they are tall silos.",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "KVF1oaD3r9E"
+            },
             {
                 "author": "orbb",
                 "ytId": "Yq6b9D90zyY"
@@ -8895,6 +8963,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "p1kEjvCaS5c"
+            },
+            {
                 "author": "orbb",
                 "ytId": "_lT5d6SMhp4"
             },
@@ -8948,6 +9020,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "[Gold Ingot](https://www.exfil-zone-assistant.app/items/misc_goldingot)]",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "VquEUm6y5jY"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "BO5uihtPyLM",
@@ -9009,6 +9085,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "GWm8GgszaR4"
+            },
+            {
                 "author": "orbb",
                 "ytId": "VuvURKV4MWk"
             },
@@ -9067,6 +9147,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "L98cI61MGHA"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "BO5uihtPyLM",
                 "startTs": 643
@@ -9119,6 +9203,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "25kCMmsdQeY"
+            },
             {
                 "author": "orbb",
                 "ytId": "okHHthr__LY"
@@ -9177,6 +9265,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Climb to the top of the crane. Acrophobia is a thing.",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "c-J7YeSm0e0"
+            },
             {
                 "author": "orbb",
                 "ytId": "OC9DuhsBReg"
@@ -9242,6 +9334,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "owGloA_Ccgg"
+            },
+            {
                 "author": "orbb",
                 "ytId": "FUrur2cpdUA"
             },
@@ -9299,6 +9395,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "qP2i6afqkCc"
+            },
             {
                 "author": "orbb",
                 "ytId": "p2W4kXJUtIA"
@@ -9364,6 +9464,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "yVQPG5eGVAQ"
+            },
+            {
                 "author": "orbb",
                 "ytId": "yEf6vs-lZDg"
             },
@@ -9428,6 +9532,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "RgQT3Xioohs"
+            },
             {
                 "author": "orbb",
                 "ytId": "Gl_3o8UfEyI"
@@ -9495,6 +9603,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "91XCL2Z6FT0"
+            },
+            {
                 "author": "orbb",
                 "ytId": "OCRTBDedB3Q"
             },
@@ -9549,6 +9661,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Reward not worth it. Exchange gold figurine for Endgame equipment in official discord.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "383lGK564T0"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "BO5uihtPyLM",
                 "startTs": 1016
@@ -9601,6 +9717,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Not worth a hassle.",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "vRhiIYSbB0g"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "BO5uihtPyLM",
