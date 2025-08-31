@@ -94,6 +94,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Check the 'Extraction' tab in the menu or use the M.I.C.A. map to find extraction points.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "5VVIFJgpw5o"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "I5XTDO71-us"
             }
@@ -152,6 +156,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Scavengers can be deadly. Try to fight one at a time and use cover",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "0eyeE4PVzxc"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "I5XTDO71-us",
@@ -214,6 +222,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "The Military Camp is north of the Mall. [Intel items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Intel) are commonly found in that area.",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "496lrFHgUAY"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "I5XTDO71-us",
@@ -279,6 +291,10 @@ export const tasksData: TasksDatabase = {
         "tips": "The phone is in a small room on the second floor of the office building, which is near the motel.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "1Gr-M1Npa_s"
+            },
+            {
                 "author": "orbb",
                 "ytId": "4WsA_31tZKo"
             },
@@ -342,6 +358,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "POkmMo8OcSI"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "I5XTDO71-us",
@@ -418,6 +438,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Careful, most of players rush Bank on the start.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "rCmvH338-6c"
+            },
+            {
                 "author": "orbb",
                 "ytId": "9q5RGDIiAMs"
             },
@@ -483,6 +507,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "[ARK's Telescope](https://www.exfil-zone-assistant.app/items/taskitem_placement_tommy_telescope)",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "_9ZPTZ3bDTQ"
+            },
             {
                 "author": "orbb",
                 "ytId": "6MkGTEHSq_o"
@@ -555,6 +583,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Phone does not have to be extracted.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "Mrcsxs3rILU"
+            },
+            {
                 "author": "orbb",
                 "ytId": "w_8khHE_o1A"
             },
@@ -623,6 +655,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "FTnEhNWRFZc"
+            },
+            {
                 "author": "orbb",
                 "ytId": "AcsdXNUqR1k"
             },
@@ -689,6 +725,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Almost Unarmored, wears [Police Vest](https://www.exfil-zone-assistant.app/items/armor-police-vest) and [Red Beret](https://www.exfil-zone-assistant.app/items/helmet-red-beret), drops [UMP](https://www.exfil-zone-assistant.app/items/weapon-ump45) or [MP9](https://www.exfil-zone-assistant.app/items/weapon-mp9-t)",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "lB4FdOsCCs0"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "I5XTDO71-us",
                 "startTs": 338
@@ -749,6 +789,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "[Electric Item](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Electric), [Power Items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Power)",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "GJ1DmyX0Fzk"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "I5XTDO71-us",
@@ -815,6 +859,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "PvTTxtwWXrE"
+            },
             {
                 "author": "orbb",
                 "ytId": "8Z4xxRQxK84"
@@ -885,6 +933,10 @@ export const tasksData: TasksDatabase = {
         "tips": "[Intel Items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Intel)",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "5AkwDc3BnZU"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "I5XTDO71-us",
                 "startTs": 438
@@ -944,6 +996,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Any M4A1: [M4A1 CQBR](https://www.exfil-zone-assistant.app/items/weapon-m4a1-cqbr) ",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "ioJZdbT7FQo"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "I5XTDO71-us",
@@ -1006,6 +1062,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Unarmored, easy target. Does not spawn every game though.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "96s9RzJyCF4"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "I5XTDO71-us",
                 "startTs": 531
@@ -1061,6 +1121,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Trucks are all over the map.",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "kg2KfkJ55bc"
+            },
             {
                 "author": "orbb",
                 "ytId": "TejY5XxbxXs"
@@ -1118,6 +1182,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "[Tommy's Surveillance Cam](https://www.exfil-zone-assistant.app/items/taskitem_placement_tommy_surveillancecam)",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "PhLXzQaolk4"
+            },
             {
                 "author": "orbb",
                 "ytId": "91ZLjp02aDY"
@@ -1182,6 +1250,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "[Videotape](https://www.exfil-zone-assistant.app/items/misc_videotape) can be often found near the TVs",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "kKCUx_m_-TY"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "I5XTDO71-us",
@@ -1253,6 +1325,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "ZnhHANaSG6w"
+            },
+            {
                 "author": "orbb",
                 "ytId": "_OUY4xMCIUc"
             },
@@ -1316,6 +1392,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Any M16A2: [M16A2 ](https://www.exfil-zone-assistant.app/items/weapon-m16a2-lv2) ",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "t2JLqtiZSHk"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "I5XTDO71-us",
@@ -1383,6 +1463,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Use grenades, akimbo, everything you can think of. Good luck.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "qwXU1i0t5uM"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "I5XTDO71-us",
                 "startTs": 749
@@ -1392,64 +1476,6 @@ export const tasksData: TasksDatabase = {
     },
     "ark_22": {
         "id": "ark_22",
-        "name": "Recon 2",
-        "gameId": "task.na.19",
-        "description": "Scavengers have attacked the dock, and I need you to retrieve a secret surveillance device I planted there.\nHead to the dock in the [Dam Area], enter the [office building], and find a camouflaged [baseball] on the 2F shelf—it contains the collected data.\nI've sent you the vault key for the office via email—keep it safe.",
-        "objectives": [
-            "Find the Dock Office",
-            "Find Tommy's Baseball Cam",
-            "Turn in Tommy's Baseball Cam"
-        ],
-        "corpId": "ark",
-        "type": [
-            "reach",
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "mag_556x45_50",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ark_21"
-        ],
-        "requiredLevel": 0,
-        "tips": "One of the hot spots. Consider getting there closer to the end of a raid.",
-        "videoGuides": [
-            {
-                "author": "orbb",
-                "ytId": "gqbXu1XbELg"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 829
-            }
-        ],
-        "order": 22
-    },
-    "ark_23": {
-        "id": "ark_23",
         "name": "Inviting Troubles",
         "gameId": "task.na.z19",
         "description": "ARK is in a weakened state, and scavengers have attacked the dock in the [Dam Area], even blowing up the transport routes.\nHead to the [Dam Area], eliminate the scavengers, and make sure they understand they messed with the wrong people.",
@@ -1501,9 +1527,75 @@ export const tasksData: TasksDatabase = {
         "tips": "Lots of scavengers at Factory",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "JIUcTtK-lv4"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "I5XTDO71-us",
                 "startTs": 857
+            }
+        ],
+        "order": 22
+    },
+    "ark_23": {
+        "id": "ark_23",
+        "name": "Recon 2",
+        "gameId": "task.na.19",
+        "description": "Scavengers have attacked the dock, and I need you to retrieve a secret surveillance device I planted there.\nHead to the dock in the [Dam Area], enter the [office building], and find a camouflaged [baseball] on the 2F shelf—it contains the collected data.\nI've sent you the vault key for the office via email—keep it safe.",
+        "objectives": [
+            "Find the Dock Office",
+            "Find Tommy's Baseball Cam",
+            "Turn in Tommy's Baseball Cam"
+        ],
+        "corpId": "ark",
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
+            },
+            {
+                "type": "reputation",
+                "corpId": "ark",
+                "quantity": 30
+            },
+            {
+                "type": "item",
+                "item_id": "mag_556x45_50",
+                "quantity": 1
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ark_21"
+        ],
+        "requiredLevel": 0,
+        "tips": "One of the hot spots. Consider getting there closer to the end of a raid.",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "-4UIeeJu-2A"
+            },
+            {
+                "author": "orbb",
+                "ytId": "gqbXu1XbELg"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "I5XTDO71-us",
+                "startTs": 829
             }
         ],
         "order": 23
@@ -1561,6 +1653,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "north side of map, located east of dock & west of clifton, walk on top of both bridges, mark the standalone bridge column in front of both broken bridges.",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "oeZ5Y7HKLiE"
+            },
             {
                 "author": "orbb",
                 "ytId": "sKc6B8RQefg"
@@ -1634,6 +1730,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "TxwpxZ1MfdY"
+            },
+            {
                 "author": "orbb",
                 "ytId": "5uY7-lpuh6Y"
             },
@@ -1706,6 +1806,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "MG2vxQy7n50"
+            },
+            {
                 "author": "orbb",
                 "ytId": "mF3yc9qY4ao"
             },
@@ -1770,6 +1874,10 @@ export const tasksData: TasksDatabase = {
         "tips": "[AR-15 Pistol](https://www.exfil-zone-assistant.app/items/weapon-ar15-pistol) or [AR-15 Hunter](https://www.exfil-zone-assistant.app/items/weapon-m4a1-hunter)",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "BAdwJWQ3-F0"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "I5XTDO71-us",
                 "startTs": 988
@@ -1821,6 +1929,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Caged room bottom of dam. Boss is relatively easy but POE is hot spot.",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "1T_mePFYBqQ"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "I5XTDO71-us",
@@ -1879,6 +1991,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "UBQ7b8-XUos"
+            },
             {
                 "author": "orbb",
                 "ytId": "HdTqbSk3eaY"
@@ -1950,6 +2066,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "nsFWQfx3RiA"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "I5XTDO71-us",
                 "startTs": 1096
@@ -2016,6 +2136,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "cDStV5mwwlc"
+            },
             {
                 "author": "orbb",
                 "ytId": "2fEEpOWBYHY"
@@ -2088,6 +2212,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Good luck getting the right extraction point.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "ETj4T41MV_c"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "I5XTDO71-us",
                 "startTs": 1164
@@ -2159,6 +2287,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Don't have to be 3 different ones. You can mark the same BMP in multiple runs.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "EctfWvGwfmw"
+            },
+            {
                 "author": "orbb",
                 "ytId": "9t1zLuov-sE"
             },
@@ -2222,6 +2354,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Any [AUG](https://www.exfil-zone-assistant.app/items/weapon-aug-a3-ris). ",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "G3X8l3BeKcY"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "I5XTDO71-us",
@@ -2291,6 +2427,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Boss wearing RYS-T, who loves to kill while you are loading.",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "cEOvYX1B8jU"
+            },
             {
                 "author": "orbb",
                 "ytId": "4eNHusxBbIU"
@@ -4273,7 +4413,7 @@ export const tasksData: TasksDatabase = {
         "videoGuides": [
             {
                 "author": "orbb",
-                "ytId": "fkx7rWmeADs",
+                "ytId": "fkx7rWmeADs"
             },
             {
                 "author": "radFoxVR",
@@ -5250,7 +5390,7 @@ export const tasksData: TasksDatabase = {
                 "type": "item",
                 "item_id": "food_meat_can",
                 "quantity": 2
-            },
+            }
         ],
         "preReward": [],
         "requiredTasks": [
@@ -5295,7 +5435,7 @@ export const tasksData: TasksDatabase = {
                 "type": "item",
                 "item_id": "med-limb-restorer-lv3",
                 "quantity": 2
-            },
+            }
         ],
         "preReward": [],
         "requiredTasks": [
@@ -5340,7 +5480,7 @@ export const tasksData: TasksDatabase = {
                 "type": "item",
                 "item_name": "HQ Power Fuel Can L",
                 "quantity": 1
-            },
+            }
         ],
         "preReward": [],
         "requiredTasks": [
@@ -5390,7 +5530,7 @@ export const tasksData: TasksDatabase = {
                 "type": "item",
                 "item_name": "'Extraction' poster",
                 "quantity": 1
-            },
+            }
         ],
         "preReward": [
             {
@@ -6467,7 +6607,6 @@ export const tasksData: TasksDatabase = {
                 "type": "experience",
                 "quantity": 7928
             },
-
             {
                 "type": "reputation",
                 "corpId": "regiment",
