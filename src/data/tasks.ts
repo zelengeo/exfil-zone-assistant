@@ -2489,6 +2489,10 @@ export const tasksData: TasksDatabase = {
         "tips": "[Household Items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Household) - very common items.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "kgXpYIQnRkI"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "ZOuSedSDlUE"
             }
@@ -2553,6 +2557,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "hrAmrlMzugo"
+            },
+            {
                 "author": "orbb",
                 "ytId": "CAxLmaHZ8Qs"
             },
@@ -2606,6 +2614,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "[Energy-saving lamp](https://www.exfil-zone-assistant.app/items/misc_b_lightbulb)",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "CF7suUFj6Qo"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "ZOuSedSDlUE",
@@ -2662,6 +2674,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "snbgxh_NnP4"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "ZOuSedSDlUE",
@@ -2729,6 +2745,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "8LP5GEnEPzE"
+            },
+            {
                 "author": "orbb",
                 "ytId": "0g5dymVNIgo"
             },
@@ -2783,6 +2803,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "[Medical Supplies](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Medicine) - common, very easy to obtain in Resort Hospital",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "sYRda20fV60"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "ZOuSedSDlUE",
@@ -2851,6 +2875,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Drop the [X-NAX](https://www.exfil-zone-assistant.app/items/taskitem_placement_maggie_medicine) in the box at the Modern Apartment reception. [Pink USB](https://www.exfil-zone-assistant.app/items/taskitem_placement_maggie_usb) is there too. ",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "va7YysdhN-0"
+            },
+            {
                 "author": "orbb",
                 "ytId": "bFUfOW56zp0"
             },
@@ -2918,6 +2946,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "gcoiROpKycY"
+            },
             {
                 "author": "orbb",
                 "ytId": "mxXxaHsasKw"
@@ -2988,6 +3020,10 @@ export const tasksData: TasksDatabase = {
         "tips": "[Medical Items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Medicine) -",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "whIfBej-7Kw"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "ZOuSedSDlUE",
                 "startTs": 237
@@ -3039,6 +3075,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "gpLeZPpMR4g"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "ZOuSedSDlUE",
                 "startTs": 265
@@ -3088,6 +3128,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Two Watchtowers are located north and south of Seafoam Scoops (cafeteria near the bank) [Signal enhancers](https://www.exfil-zone-assistant.app/items/taskitem_placement_signalenhancer) are found in both towers. Grab and place both on top of the lighthouse",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "0JbBI3nsmy4"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "ZOuSedSDlUE",
@@ -3150,6 +3194,10 @@ export const tasksData: TasksDatabase = {
         "tips": "There are more ambulances in the area. Mostly between Bank and Hospital. Mark any 3",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "rYCRQ7X8HnQ"
+            },
+            {
                 "author": "orbb",
                 "ytId": "NIGkh-lpDKw"
             },
@@ -3203,6 +3251,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Not full Coffee Drinks can be submitted too.",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "Rc94nXBvY0A"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "ZOuSedSDlUE",
@@ -3260,6 +3312,10 @@ export const tasksData: TasksDatabase = {
         "tips": "[Insulating Tape](https://www.exfil-zone-assistant.app/items/misc_b_insulatingtape), [Valve](https://www.exfil-zone-assistant.app/items/misc_b_pipeline)",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "YZwTzW9wixY"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "ZOuSedSDlUE",
                 "startTs": 356
@@ -3312,6 +3368,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "9iDjGj3v54s"
+            },
             {
                 "author": "orbb",
                 "ytId": "7zqCwM-Kuec"
@@ -3382,6 +3442,10 @@ export const tasksData: TasksDatabase = {
         "tips": "[Walkie-Talkie](https://www.exfil-zone-assistant.app/items/taskitem_placement_maggie_poison) The Key can be bought from Maggie.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "wO5JwWvgJqE"
+            },
+            {
                 "author": "orbb",
                 "ytId": "5uUVSGVt8pI"
             },
@@ -3446,6 +3510,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "TycV0bhFT9o"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "ZOuSedSDlUE",
                 "startTs": 448
@@ -3503,6 +3571,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "MssJiMkn_Lg"
+            },
             {
                 "author": "orbb",
                 "ytId": "F5OLdAL41Rw"
@@ -3564,6 +3636,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "HFBozzxJox0"
+            },
+            {
                 "author": "orbb",
                 "ytId": "n3ycwwPxpDc"
             },
@@ -3618,6 +3694,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "sGVcTvkbdBE"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "ZOuSedSDlUE",
@@ -3683,6 +3763,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "DxFAA63QYkQ"
+            },
+            {
                 "author": "orbb",
                 "ytId": "3W2xFtE2G8w"
             },
@@ -3738,6 +3822,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Can be bought from Maggie. Used Keys can be submitted.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "yR16uPS2LDA"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "ZOuSedSDlUE",
                 "startTs": 561
@@ -3789,6 +3877,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Can be bought from Maggie. Used Keys can be submitted.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "TIo5Kt3dpG0"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "ZOuSedSDlUE",
                 "startTs": 577
@@ -3839,6 +3931,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Used Keys can be submitted.",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "ssYtVOQ7PBE"
+            },
             {
                 "author": "orbb",
                 "ytId": "2df8BKPx6rw"
@@ -3900,6 +3996,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "1qDfjl-uxJk"
+            },
+            {
                 "author": "orbb",
                 "ytId": "LLb0-C95KHw"
             },
@@ -3959,6 +4059,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "3wZG-MkTN6I"
+            },
+            {
                 "author": "orbb",
                 "ytId": "M3-BtDmPK78"
             },
@@ -4013,6 +4117,10 @@ export const tasksData: TasksDatabase = {
         "tips": "[Car Battery](https://www.exfil-zone-assistant.app/items/misc_b_storagebattery)",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "v7uaFGSo3cI"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "ZOuSedSDlUE",
                 "startTs": 666
@@ -4063,6 +4171,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Located north on dam in valley between both broken bridges, north of dock office at the end of pier",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "LWNXOmN82Ww"
+            },
             {
                 "author": "orbb",
                 "ytId": "0AkItVBOwi0"
@@ -4133,6 +4245,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Bodies and medical bag are on the lowest level. ",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "jzX3dSns-Tg"
+            },
             {
                 "author": "orbb",
                 "ytId": "zhZlEVICwsU"
@@ -4206,6 +4322,10 @@ export const tasksData: TasksDatabase = {
         "tips": "take photo control console in the bomb room, bulletin located in room below conference room, photo of plants in bed base room",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "Fz6gUU2TthE"
+            },
+            {
                 "author": "orbb",
                 "ytId": "5d6THOTrYgA"
             },
@@ -4266,6 +4386,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Can be bought from Maggie. Used Keys can be submitted.",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "huKB-ierKk4"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "ZOuSedSDlUE",
@@ -4333,6 +4457,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "1st, lower part of dam in the back of crashed semi; 2nd, suburb in mall parking -1F east of escalators in military tent on shelf,3rd metro basement level, in bathroom located at end of hallway by med base(circle), enter bathroom, first sink left",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "-jfetgVDXO0"
+            },
             {
                 "author": "orbb",
                 "ytId": "g-j_4tw4zrw"
@@ -4411,6 +4539,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "lqSnMKtTnzc"
+            },
             {
                 "author": "orbb",
                 "ytId": "fkx7rWmeADs"
