@@ -4593,6 +4593,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Power plant is marked on the map, near the western bunker. Warehouses are just east next to the office building.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "ukhEmupVCc4"
+            },
+            {
                 "author": "orbb",
                 "ytId": "quTZvsysQCQ"
             },
@@ -4640,6 +4644,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "_JqOIYdaqbY"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "DIjbTZN_Wxc",
@@ -4695,6 +4703,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "0Y2tUCDF31s"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "DIjbTZN_Wxc",
@@ -4755,6 +4767,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "qkfv_Cy3Igg"
+            },
+            {
                 "author": "orbb",
                 "ytId": "IWDA_Giw4qo"
             },
@@ -4807,6 +4823,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "uTpi9FWVOys"
+            },
+            {
                 "author": "orbb",
                 "ytId": "lDhfK8lld7U"
             },
@@ -4855,6 +4875,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "[Electric items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Electric) Recommend PC fan or RAM",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "D4WIZuQI6Oc"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "DIjbTZN_Wxc",
@@ -4905,6 +4929,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "kPcTaacQHGM"
+            },
             {
                 "author": "orbb",
                 "ytId": "0c5zNm33Dx0"
@@ -4959,6 +4987,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "RduhrpnzmFA"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "DIjbTZN_Wxc",
                 "startTs": 151
@@ -5006,6 +5038,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "A1wWvu-8XCw"
+            },
             {
                 "author": "orbb",
                 "ytId": "_gVFJBMxPr8"
@@ -5057,6 +5093,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Located at the Workers Dormitory. At the laundry mat.",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "_74hXHJgw0w"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "DIjbTZN_Wxc",
@@ -5120,6 +5160,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Take Picture of Tv #1, #2, & #3 located in yellow houses on hill by military base; take picture of Tv #4 & #5 in houses behind yellow houses close to bunker extract ",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "gN2Z4hS-XrI"
+            },
+            {
                 "author": "orbb",
                 "ytId": "DrK25Bnw38g"
             },
@@ -5181,6 +5225,10 @@ export const tasksData: TasksDatabase = {
         "tips": "[Walkie-Talkie](https://www.exfil-zone-assistant.app/items/taskitem_placement_johnny_walkietalkie)",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "0iiqLGdw9Ao"
+            },
+            {
                 "author": "orbb",
                 "ytId": "kAvBXhqCx6c"
             },
@@ -5239,6 +5287,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "3zrXByCWKDo"
+            },
             {
                 "author": "orbb",
                 "ytId": "JFgC9jfom3g"
@@ -5306,6 +5358,10 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "fgCLXTHMsy4"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "DIjbTZN_Wxc",
                 "startTs": 425
@@ -5367,6 +5423,11 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 50,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "fgCLXTHMsy4",
+                "startTs": 34
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "DIjbTZN_Wxc",
@@ -5430,6 +5491,11 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "fgCLXTHMsy4",
+                "startTs": 43
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "DIjbTZN_Wxc",
                 "startTs": 465
@@ -5482,6 +5548,11 @@ export const tasksData: TasksDatabase = {
         "tips": "",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "fgCLXTHMsy4",
+                "startTs": 55
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "DIjbTZN_Wxc",
                 "startTs": 480
@@ -5532,6 +5603,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Mall roof.",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "s5fHGoyyc_w"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "ARAiv_2rqhM",
                 "startTs": 10
@@ -5577,6 +5652,10 @@ export const tasksData: TasksDatabase = {
         "tips": "Fountain over the coast (near the hotel).",
         "videoGuides": [
             {
+                "author": "HayaPlays",
+                "ytId": "D-1DRt8G4pY"
+            },
+            {
                 "author": "radFoxVR",
                 "ytId": "ARAiv_2rqhM",
                 "startTs": 60
@@ -5621,6 +5700,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "Top of the construction building (Over the docks).",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "wsIcW04gMcU"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "ARAiv_2rqhM",
@@ -5677,6 +5760,10 @@ export const tasksData: TasksDatabase = {
         "requiredLevel": 0,
         "tips": "",
         "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "uBKQha76Pds"
+            },
             {
                 "author": "radFoxVR",
                 "ytId": "ARAiv_2rqhM",
