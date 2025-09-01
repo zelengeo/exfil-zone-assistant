@@ -357,13 +357,21 @@ export const RenderTipsContent = ({content}: { content: string }) => {
     );
 };
 
+const  UTM_SOURCE = 'exfil-zone-assistant.app';
+const  UTM_CAMPAIGN = 'referral';
+const  UTM_MEDIUM = 'web';
+
+function getUTMParams({utmSource = UTM_SOURCE , utmCampaign = UTM_CAMPAIGN, utmMedium = UTM_MEDIUM}) {
+    return `utm_source=${utmSource}&utm_campaign=${utmCampaign}&utm_medium=${utmMedium}`;
+}
+
 // Function to create normal YouTube URL from video ID and optional start time
 export function getYouTubeUrl(videoId: string, startTime?: number): string {
     let url = `https://www.youtube.com/watch?v=${videoId}`;
     if (startTime && startTime > 0) {
         url += `&t=${startTime}s`;
     }
-    return url;
+    return url + "&" + getUTMParams({utmCampaign: 'task-click'});
 }
 
 // Function to create YouTube embed URL from video ID and optional start time

@@ -186,8 +186,7 @@ export default function TasksPageContent() {
                         />))}
                 </div>
                 <div className="text-sm text-tan-400 mt-8 p-4 border-t border-military-600">
-                    <p>Some task data sourced by <Link href={communityCreatorMap.plumberKarl.link} target="_blank"
-                                                       rel="noopener noreferrer" className="text-olive-400 hover:text-olive-300">@{communityCreatorMap.plumberKarl.name}</Link>. If you find any inconsistencies, please report them on our{' '}
+                    <p>If you find any inconsistencies, please use <b>Suggest Edit</b> button if you are logged in, or report them on our{' '}
                         <Link
                             href="https://discord.gg/2FCDZK6C25"
                             target="_blank"
@@ -195,7 +194,7 @@ export default function TasksPageContent() {
                             className="text-blue-400 hover:text-blue-300 underline"
                         >
                             Discord server
-                        </Link>.</p>
+                        </Link></p>
                 </div>
             </div>
         </Layout>
