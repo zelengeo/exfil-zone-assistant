@@ -7,7 +7,6 @@ import {tasksData, getAllMerchants} from '@/data/tasks';
 import {UserProgress, TaskStatus} from '@/types/tasks';
 import MerchantPanel from "@/app/tasks/components/MerchantPanel";
 import {useFetchItems} from "@/hooks/useFetchItems";
-import {communityCreatorMap} from "@/data/community";
 import Link from "next/link";
 
 // Types for component state

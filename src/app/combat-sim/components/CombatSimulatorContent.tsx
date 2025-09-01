@@ -8,7 +8,7 @@ import {
     areWeaponAmmoCompatible
 } from '../utils/types';
 import {useCombatSimulation} from "@/app/combat-sim/hooks/useCombatSimulation";
-import {Plus, Target, DollarSign, Clock, Loader2,} from 'lucide-react';
+import {Plus, Target, DollarSign, Clock, Loader2} from 'lucide-react';
 
 // Component imports
 import AttackerSetup from './AttackerSetup';
@@ -53,9 +53,6 @@ export default function CombatSimulatorContent() {
                     <h1 className="text-3xl md:text-4xl font-bold text-tan-100 mb-2 military-stencil">
                         COMBAT SIMULATOR
                     </h1>
-                    <div className="absolute top-[-10] right-0 flex items-center gap-1 bg-olive-900/70 text-olive-400 text-xs px-2 py-0.5 rounded-sm border border-olive-700/50">
-                        <span className="font-medium">v1.3.10.0</span>
-                    </div>
                     <p className="text-tan-300 max-w-3xl">
                         Analyze weapon effectiveness against armored targets. Compare multiple loadouts and find optimal
                         engagement strategies.
