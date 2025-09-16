@@ -20,7 +20,13 @@
       "bluntDamageScalar": 0.7,
       "protectiveData": [
         {
-          "bodyPart": "head",
+          "bodyPart": "head_eyes",
+          "armorClass": 4,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 180
+        },
+        {
+          "bodyPart": "head_chin",
           "armorClass": 4,
           "bluntDamageScalar": 0.7,
           "protectionAngle": 180
@@ -129,7 +135,13 @@
       "bluntDamageScalar": 0.7,
       "protectiveData": [
         {
-          "bodyPart": "head",
+          "bodyPart": "head_eyes",
+          "armorClass": 3,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 180
+        },
+        {
+          "bodyPart": "head_chin",
           "armorClass": 3,
           "bluntDamageScalar": 0.7,
           "protectionAngle": 180
@@ -238,7 +250,13 @@
       "bluntDamageScalar": 0.7,
       "protectiveData": [
         {
-          "bodyPart": "head",
+          "bodyPart": "head_eyes",
+          "armorClass": 1,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 120
+        },
+        {
+          "bodyPart": "head_chin",
           "armorClass": 1,
           "bluntDamageScalar": 0.7,
           "protectionAngle": 120
@@ -347,7 +365,13 @@
       "bluntDamageScalar": 0.7,
       "protectiveData": [
         {
-          "bodyPart": "head",
+          "bodyPart": "head_eyes",
+          "armorClass": 1,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 150
+        },
+        {
+          "bodyPart": "head_chin",
           "armorClass": 1,
           "bluntDamageScalar": 0.7,
           "protectionAngle": 150
@@ -456,7 +480,13 @@
       "bluntDamageScalar": 0.7,
       "protectiveData": [
         {
-          "bodyPart": "head",
+          "bodyPart": "head_eyes",
+          "armorClass": 5,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 180
+        },
+        {
+          "bodyPart": "head_chin",
           "armorClass": 5,
           "bluntDamageScalar": 0.7,
           "protectionAngle": 180
@@ -565,7 +595,13 @@
       "bluntDamageScalar": 0.7,
       "protectiveData": [
         {
-          "bodyPart": "head",
+          "bodyPart": "head_eyes",
+          "armorClass": 5,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 180
+        },
+        {
+          "bodyPart": "head_chin",
           "armorClass": 5,
           "bluntDamageScalar": 0.7,
           "protectionAngle": 180
