@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 import { tasksData } from '@/data/tasks';
-import {guidesConfig} from "@/content/guides/guides-config";
+import {guidesConfig} from "@/config/guides";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.exfil-zone-assistant.app';

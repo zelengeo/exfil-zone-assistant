@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import dynamic from 'next/dynamic';
-import { getGuideBySlug, getAllGuideSlugs, getRelatedGuides, guideTags } from '@/content/guides/guides-config';
+import { getGuideBySlug, getAllGuideSlugs, getRelatedGuides, guideTags } from '@/config/guides';
 import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
 import { ChevronLeft, Clock, User, Calendar, Tag } from 'lucide-react';

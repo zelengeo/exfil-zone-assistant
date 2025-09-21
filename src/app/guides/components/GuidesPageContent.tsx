@@ -6,7 +6,7 @@ import {LucideIcon, Search, Filter, Clock, Tag, Star, X, AlertCircle} from 'luci
 import * as Icons from 'lucide-react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { guidesConfig, guideTags, getFeaturedGuides } from '@/content/guides/guides-config';
+import { guidesConfig, guideTags, getFeaturedGuides } from '@/config/guides';
 import {GuideMetadata} from "@/types/guides";
 
 const getIconComponent = (icon: string) => {

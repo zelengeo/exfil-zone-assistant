@@ -81,7 +81,7 @@ export default function WhenIsTheWipeGuide() {
                 <div className="space-y-4 text-tan-200">
                     <div className="bg-green-900/20 border-l-4 border-green-500 p-4">
                         <p className="text-xl font-bold text-green-300 mb-2">
-                            Wipe Date: September 18th, 2025
+                            Wipe Date: September 24th, 2025
                         </p>
                         <p className="text-lg text-tan-200">
                             Pre-wipe event starts: Weekend of August 23rd, 2025
@@ -161,7 +161,7 @@ export default function WhenIsTheWipeGuide() {
                             </div>
                             <div className="bg-military-900 p-3 rounded-sm">
                                 <p className="text-xs text-tan-400">End Date</p>
-                                <p className="font-semibold text-tan-200">Expected September 18th, 2025</p>
+                                <p className="font-semibold text-tan-200">Expected September 24th, 2025</p>
                             </div>
                             <div className="bg-military-900 p-3 rounded-sm">
                                 <WipeDurationTracker startDate="2025-04-24" />
