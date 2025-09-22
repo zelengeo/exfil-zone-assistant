@@ -6,6 +6,7 @@ import TotalCostsDisplay from "@/app/hideout-upgrades/components/TotalCostsDispl
 import Layout from "@/components/layout/Layout";
 import {useFetchItems} from "@/hooks/useFetchItems";
 import HideoutOverview from "@/app/hideout-upgrades/components/HideoutOverview";
+import {StorageService} from "@/services/StorageService";
 
 type HideoutUpgradeKey = keyof typeof hideoutUpgrades;
 const isValidHideoutUpgradeKey = (key: string): key is HideoutUpgradeKey => {
@@ -20,7 +21,7 @@ const categories = Array.from(Object.values(hideoutUpgrades).reduce((acc, upgrad
 
 // Save upgrades
 const saveUpgrades = (upgradedAreas: Set<string>) => {
-    localStorage.setItem('hideout-upgrades', JSON.stringify([...upgradedAreas]));
+    StorageService.setHideout([...upgradedAreas]);
 };
 
 // Load upgrades
@@ -28,13 +29,12 @@ const loadUpgrades = (): Set<HideoutUpgradeKey> => {
     if (typeof window === 'undefined') return new Set<HideoutUpgradeKey>(); // Server-side safety
 
 
-    const saved = localStorage.getItem('hideout-upgrades');
-    if (!saved) return new Set<HideoutUpgradeKey>();
+    const saved = StorageService.getHideout();
+    if (!saved || !saved.length) return new Set<HideoutUpgradeKey>();
 
     try {
-        const parsedArray = JSON.parse(saved) as string[];
         // Filter out any invalid keys to ensure type safety
-        const validKeys = parsedArray.filter(isValidHideoutUpgradeKey);
+        const validKeys = saved.filter(isValidHideoutUpgradeKey);
         return new Set<HideoutUpgradeKey>(validKeys);
     } catch (error) {
         console.error('Failed to parse saved hideout upgrades:', error);

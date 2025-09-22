@@ -8,6 +8,7 @@ import {UserProgress, TaskStatus} from '@/types/tasks';
 import MerchantPanel from "@/app/tasks/components/MerchantPanel";
 import {useFetchItems} from "@/hooks/useFetchItems";
 import Link from "next/link";
+import {StorageService} from "@/services/StorageService";
 
 // Types for component state
 interface TasksPageState {
@@ -17,7 +18,6 @@ interface TasksPageState {
 }
 
 // Constants
-const STORAGE_KEY = 'exfil-zone-tasks-progress';
 const SEARCH_DEBOUNCE_MS = 300;
 
 export default function TasksPageContent() {
@@ -37,12 +37,11 @@ export default function TasksPageContent() {
     // Load progress from localStorage on mount
     useEffect(() => {
         try {
-            const savedProgress = localStorage.getItem(STORAGE_KEY);
+            const savedProgress = StorageService.getTasks()
             if (savedProgress) {
-                const parsedProgress: UserProgress = JSON.parse(savedProgress);
                 setState(prev => ({
                     ...prev,
-                    userProgress: parsedProgress,
+                    userProgress: savedProgress,
                     isLoading: false,
                 }));
             } else {
@@ -58,7 +57,7 @@ export default function TasksPageContent() {
     useEffect(() => {
         if (!state.isLoading) {
             try {
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(state.userProgress));
+                StorageService.setTasks(state.userProgress);
             } catch (error) {
                 console.error('Failed to save task progress:', error);
             }

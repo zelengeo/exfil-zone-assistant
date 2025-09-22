@@ -1,21 +1,35 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import Link from 'next/link';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Label } from '@/components/ui/label';
-import { Separator } from '@/components/ui/separator';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { Cookie, Settings, X } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from '@/components/ui/card';
+import {Button} from '@/components/ui/button';
+import {Checkbox} from '@/components/ui/checkbox';
+import {Label} from '@/components/ui/label';
+import {Separator} from '@/components/ui/separator';
+import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle} from '@/components/ui/dialog';
+import {Cookie, Settings, X} from 'lucide-react';
+import {cn} from '@/lib/utils';
+import {StorageService} from "@/services/StorageService";
 
 interface CookiePreferences {
     essential: boolean;
     analytics: boolean;
     thirdParty: boolean;
 }
+
+const isCookiePreferences = (input: unknown): input is CookiePreferences => {
+    return (
+        typeof input === "object" &&
+        input !== null &&
+        "essential" in input &&
+        typeof input.essential === "boolean" &&
+        "analytics" in input &&
+        typeof input.analytics === "boolean" &&
+        "thirdParty" in input &&
+        typeof input.thirdParty === "boolean"
+    );
+};
 
 export default function CookieConsentBanner() {
     const [isVisible, setIsVisible] = useState(false);
@@ -28,14 +42,13 @@ export default function CookieConsentBanner() {
 
     useEffect(() => {
         // Check if user has already made a choice
-        const consent = localStorage.getItem('cookie-consent');
-        if (!consent) {
+        const consent = StorageService.getCookieConsent();
+        if (!consent || !isCookiePreferences(consent)) {
             // Small delay to ensure smooth page load
             setTimeout(() => setIsVisible(true), 1000);
         } else {
             // Apply saved preferences
-            const savedPreferences = JSON.parse(consent);
-            applyPreferences(savedPreferences);
+            applyPreferences(consent);
         }
     }, []);
 
@@ -65,15 +78,15 @@ export default function CookieConsentBanner() {
             thirdParty: true,
         };
 
-        localStorage.setItem('cookie-consent', JSON.stringify(allEnabled));
-        localStorage.setItem('cookie-consent-date', new Date().toISOString());
+        StorageService.setCookieConsent(JSON.stringify(allEnabled));
+        StorageService.setCookieConsentDate(new Date().toISOString());
         applyPreferences(allEnabled);
         setIsVisible(false);
     };
 
     const handleAcceptSelected = () => {
-        localStorage.setItem('cookie-consent', JSON.stringify(preferences));
-        localStorage.setItem('cookie-consent-date', new Date().toISOString());
+        StorageService.setCookieConsent(JSON.stringify(preferences));
+        StorageService.setCookieConsentDate(new Date().toISOString());
         applyPreferences(preferences);
         setIsVisible(false);
     };
@@ -85,8 +98,9 @@ export default function CookieConsentBanner() {
             thirdParty: false,
         };
 
-        localStorage.setItem('cookie-consent', JSON.stringify(essentialOnly));
-        localStorage.setItem('cookie-consent-date', new Date().toISOString());
+
+        StorageService.setCookieConsent(JSON.stringify(essentialOnly));
+        StorageService.setCookieConsentDate(new Date().toISOString());
         applyPreferences(essentialOnly);
         setIsVisible(false);
     };
@@ -105,7 +119,7 @@ export default function CookieConsentBanner() {
                         <div className="flex items-start justify-between">
                             <div className="flex items-center gap-3">
                                 <div className="p-2 bg-olive-600/20 rounded-full">
-                                    <Cookie className="h-6 w-6 text-olive-500" />
+                                    <Cookie className="h-6 w-6 text-olive-500"/>
                                 </div>
                                 <div>
                                     <CardTitle className="text-lg">Cookie Preferences</CardTitle>
@@ -120,7 +134,7 @@ export default function CookieConsentBanner() {
                                 className="h-8 w-8 -mt-2 -mr-2"
                                 onClick={() => setIsVisible(false)}
                             >
-                                <X className="h-4 w-4" />
+                                <X className="h-4 w-4"/>
                                 <span className="sr-only">Close</span>
                             </Button>
                         </div>
@@ -128,8 +142,10 @@ export default function CookieConsentBanner() {
 
                     <CardContent className="space-y-4">
                         <p className="text-sm text-tan-300 leading-relaxed">
-                            We use cookies and similar technologies to provide you with the best experience on our website.
-                            Some cookies are essential for the site to function, while others help us understand how you use
+                            We use cookies and similar technologies to provide you with the best experience on our
+                            website.
+                            Some cookies are essential for the site to function, while others help us understand how you
+                            use
                             the site so we can improve it. You can customize your preferences below.
                         </p>
 
@@ -139,12 +155,12 @@ export default function CookieConsentBanner() {
                                 onClick={() => setShowDetails(true)}
                                 className="p-0 h-auto text-olive-500 hover:text-olive-400"
                             >
-                                <Settings className="h-4 w-4 mr-2" />
+                                <Settings className="h-4 w-4 mr-2"/>
                                 Manage preferences
                             </Button>
                         ) : (
                             <div className="space-y-3 py-2">
-                                <Separator className="bg-military-700" />
+                                <Separator className="bg-military-700"/>
 
                                 <div className="space-y-3">
                                     {/* Essential Cookies */}
@@ -175,7 +191,7 @@ export default function CookieConsentBanner() {
                                             id="analytics"
                                             checked={preferences.analytics}
                                             onCheckedChange={(checked) =>
-                                                setPreferences(prev => ({ ...prev, analytics: checked as boolean }))
+                                                setPreferences(prev => ({...prev, analytics: checked as boolean}))
                                             }
                                             className="mt-1"
                                         />
@@ -199,7 +215,7 @@ export default function CookieConsentBanner() {
                                             id="thirdParty"
                                             checked={preferences.thirdParty}
                                             onCheckedChange={(checked) =>
-                                                setPreferences(prev => ({ ...prev, thirdParty: checked as boolean }))
+                                                setPreferences(prev => ({...prev, thirdParty: checked as boolean}))
                                             }
                                             className="mt-1"
                                         />
@@ -211,7 +227,8 @@ export default function CookieConsentBanner() {
                                                 Third-Party Cookies
                                             </Label>
                                             <p className="text-xs text-tan-400">
-                                                Set by Google OAuth, Discord OAuth, and YouTube when you use these services.
+                                                Set by Google OAuth, Discord OAuth, and YouTube when you use these
+                                                services.
                                                 Required for login and video playback features.
                                             </p>
                                         </div>
@@ -258,7 +275,8 @@ export default function CookieConsentBanner() {
             </div>
 
             {/* Settings Dialog (for reopening preferences) */}
-            <Dialog open={false} onOpenChange={() => {}}>
+            <Dialog open={false} onOpenChange={() => {
+            }}>
                 <DialogContent className="bg-military-900 border-olive-700">
                     <DialogHeader>
                         <DialogTitle>Cookie Preferences</DialogTitle>
@@ -271,14 +289,4 @@ export default function CookieConsentBanner() {
             </Dialog>
         </>
     );
-}
-
-// Optional: Export a hook to programmatically show the banner again
-export function useShowCookieSettings() {
-    const showSettings = () => {
-        localStorage.removeItem('cookie-consent');
-        window.location.reload();
-    };
-
-    return { showSettings };
 }

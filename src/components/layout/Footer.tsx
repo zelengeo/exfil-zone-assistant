@@ -15,6 +15,7 @@ import {
     ExternalLink
 } from 'lucide-react';
 import {SiDiscord, SiGithub, SiX} from '@icons-pack/react-simple-icons';
+import {getVersion} from "@/config/gameVersion";
 
 const Footer: React.FC = () => {
     const currentYear = new Date().getFullYear();
@@ -56,7 +57,7 @@ const Footer: React.FC = () => {
                                     <strong>EXFIL</strong>ZONE
                                 </span>
                                 <Badge variant="outline" className="ml-2 text-xs">
-                                    v1.14.4
+                                    {getVersion()}
                                 </Badge>
                             </Link>
                             <p className="text-sm text-tan-400 leading-relaxed">

@@ -25,12 +25,11 @@ import {
 import Image from "next/image";
 import {communityCreatorMap} from "@/data/community";
 import {TaskCorrectionFormAuth} from "@/components/corrections/TaskCorrectionForm";
+import { StorageService } from '@/services/StorageService';
 
 interface TaskPageContentProps {
     taskId: string;
 }
-
-const STORAGE_KEY = 'exfil-zone-tasks-progress';
 
 export default function TaskPageContent({taskId}: TaskPageContentProps) {
     const {getItemById} = useFetchItems();
@@ -45,10 +44,9 @@ export default function TaskPageContent({taskId}: TaskPageContentProps) {
     // Load progress from localStorage
     useEffect(() => {
         try {
-            const savedProgress = localStorage.getItem(STORAGE_KEY);
+            const savedProgress = StorageService.getTasks()
             if (savedProgress) {
-                const parsedProgress: UserProgress = JSON.parse(savedProgress);
-                setUserProgress(parsedProgress);
+                setUserProgress(savedProgress);
             }
         } catch (error) {
             console.error('Failed to load task progress:', error);

@@ -40,6 +40,31 @@ export interface UserProgress {
     tasks: Record<string, TaskStatus>;
 }
 
+export const isUserProgress = (value: unknown): value is UserProgress => {
+    // Check if value is an object and not null
+    if (typeof value !== 'object' || value === null) {
+        return false;
+    }
+
+    // Check if it has a 'tasks' property
+    const obj = value as Record<string, unknown>;
+    if (!('tasks' in obj) || typeof obj.tasks !== 'object' || obj.tasks === null) {
+        return false;
+    }
+
+    // Validate each entry in tasks
+    const validStatuses: TaskStatus[] = ['completed', 'active', 'locked'];
+    const tasks = obj.tasks as Record<string, unknown>;
+
+    for (const status of Object.values(tasks)) {
+        if (typeof status !== 'string' || !validStatuses.includes(status as TaskStatus)) {
+            return false;
+        }
+    }
+
+    return true;
+};
+
 
 // Interface for merchant information
 export interface Corp {
