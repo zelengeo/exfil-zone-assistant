@@ -1,6 +1,5 @@
 export const hideoutUpgrades = {
-    // Paste the entire JSON data here
-
+    //IMPORTANT - key = areaId + Lv + level
     "RestRoomLv1": {
         "areaId": "RestRoom",
         "categoryId": "None",
@@ -588,7 +587,7 @@ export const hideoutUpgrades = {
         "categoryId": "KitchenArea",
         "level": 2,
         "upgradeName": "Microwave",
-        "upgradeDesc": "In-Raid Energy Consumption -5%",
+        "upgradeDesc": "In-Raid Energy Consumption -10%",
         "price": 200000,
         "exchange": {
             "misc_b_nut": 8,
@@ -607,7 +606,7 @@ export const hideoutUpgrades = {
         "categoryId": "KitchenArea",
         "level": 3,
         "upgradeName": "Microwave",
-        "upgradeDesc": "In-Raid Energy Consumption -5%",
+        "upgradeDesc": "In-Raid Energy Consumption -15%",
         "price": 300000,
         "exchange": {
             "misc_copperwire": 6,
@@ -906,20 +905,16 @@ export const hideoutUpgrades = {
     },
     "WorkshopZoneLv1": {
         "areaId": "WorkshopZone",
-        "categoryId": "Storage",
+        "categoryId": "WorkshopZone",
         "level": 1,
         "upgradeName": "Workshop",
-        "upgradeDesc": "Access to more stroage spaces.\nAccess to Armor Repair, Ammo loader and Keys hanger.",
+        "upgradeDesc": "Access to more storage spaces.\nAccess to Armor Repair, Ammo loader and Keys hanger.",
         "price": 50000,
-        "exchange": {
-            "misc_b_tapemeasure": 1,
-            "misc_b_wrench": 1,
-            "misc_screwdriver": 2,
-            "misc_b_wd40": 2
-        },
+        "exchange": {},
         "levelConditions": {},
         "relatedQuests": [],
-        "levelUpIcon": "Image_rest_room"
+        //TODO export "levelUpIcon": "StorageZone2_gunsmith"
+        "levelUpIcon": "Image_Rest_room22"
     },
     "StorageZoneLock1Lv1": {
         "areaId": "StorageZoneLock1",
@@ -977,6 +972,86 @@ export const hideoutUpgrades = {
         },
         "relatedQuests": [],
         "levelUpIcon": "StorageZone2_gearrack"
+    },
+    "GunsmithLv1": {
+        "areaId": "Gunsmith",
+        "categoryId": "WorkshopZone",
+        "level": 1,
+        "upgradeName": "Gunsmith",
+        "upgradeDesc": "Weapon parts storage capacity + 10kg",
+        "price": 10000,
+        "exchange": {
+            "misc_b_tapemeasure": 2,
+            "misc_b_lightbulb": 2,
+            "misc_b_rustedcleaner": 2,
+            "misc_barcleaner": 2,
+        },
+        "levelConditions": {
+            "WorkshopZone": 1
+        },
+        "relatedQuests": [],
+        //TODO export "levelUpIcon": "StorageZone2_gunsmith"
+        "levelUpIcon": "Image_Rest_room22"
+    },
+    "GunsmithLv2": {
+        "areaId": "Gunsmith",
+        "categoryId": "WorkshopZone",
+        "level": 2,
+        "upgradeName": "Gunsmith",
+        "upgradeDesc": "Weapon parts storage capacity + 10kg",
+        "price": 80000,
+        "exchange": {
+            "misc_b_pipeline": 2,
+            "misc_b_wrench": 6,
+            "misc_b_ceramic_adhesive": 8,
+            "misc_floppydisk": 2,
+        },
+        "levelConditions": {
+            "WorkshopZone": 1
+        },
+        "relatedQuests": [],
+        //TODO export "levelUpIcon": "StorageZone2_gunsmith"
+        "levelUpIcon": "Image_Rest_room22"
+    },
+    "GunsmithLv3": {
+        "areaId": "Gunsmith",
+        "categoryId": "WorkshopZone",
+        "level": 3,
+        "upgradeName": "Gunsmith",
+        "upgradeDesc": "Weapon parts storage capacity + 10kg",
+        "price": 200000,
+        "exchange": {
+            "misc_b_powerbank": 6,
+            "misc_b_oldphone": 10,
+            "misc_hammer": 6,
+            "misc_b_civilradio": 4,
+        },
+        "levelConditions": {
+            "Generator": 2
+        },
+        "relatedQuests": [],
+        //TODO export "levelUpIcon": "StorageZone2_gunsmith"
+        "levelUpIcon": "Image_Rest_room22"
+    },
+    "GunsmithLv4": {
+        "areaId": "Gunsmith",
+        "categoryId": "WorkshopZone",
+        "level": 4,
+        "upgradeName": "Gunsmith",
+        "upgradeDesc": "Weapon parts storage capacity + 10kg",
+        "price": 400000,
+        "exchange": {
+            "misc_b_superglue": 10,
+            "misc_b_newphone": 10,
+            "misc_b_recorder": 12,
+            "misc_b_electricdrill": 6,
+        },
+        "levelConditions": {
+            "Generator": 3
+        },
+        "relatedQuests": [],
+        //TODO export "levelUpIcon": "StorageZone2_gunsmith"
+        "levelUpIcon": "Image_Rest_room22"
     }
 } as const;
 
@@ -1103,5 +1178,9 @@ export const areaIcons = {
     "StorageZoneLock3": {
         "icon": "Frame_6934.webp",
         "alt": "Storage Room C"
+    },
+    "Gunsmith": {
+        "icon": "Image_bg_icon21.webp",
+        "alt": "Gunsmith Area"
     }
 } as const;

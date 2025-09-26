@@ -41,7 +41,8 @@ const AREA_POSITIONS: Record<string, AreaPosition> = {
     'StorageZoneLock1': {top: '40%', left: '78%'},
     'StorageZoneLock2': {top: '33%', left: '93%'},
     'StorageZoneLock3': {top: '20%', left: '75%'},
-    'WorkshopZone': {top: '30%', left: '83%'},
+    'WorkshopZone': {top: '27%', left: '92%'},
+    'Gunsmith': {top: '35%', left: '95%'},
 
     // Kitchen Areas
     'CoffeeMaker': {top: '48%', left: '20%'},
@@ -85,12 +86,16 @@ const areasByCategory: Record<string, string[]> = Object.values(hideoutUpgrades)
             areasByCategory[upgrade.categoryId] = Array.from(categories).filter(cat => cat !== 'None');
         } else {
             areasByCategory[upgrade.categoryId] = ["None"];
+            //Lounge and Storage do not need initial area research as Medical Area and Kitchen
             if (upgrade.categoryId === 'Lounge' || upgrade.categoryId === 'Storage') {
                 areasByCategory[upgrade.categoryId].push(upgrade.categoryId);
             }
         }
     }
     if (!areasByCategory[upgrade.categoryId].includes(upgrade.areaId)) areasByCategory[upgrade.categoryId].push(upgrade.areaId);
+    //FIXME remove log
+    console.log(`Areas by category`, areasByCategory);
+
     return areasByCategory;
 }, {} as Record<string, string[]>);
 
@@ -99,6 +104,7 @@ const upgradesByArea: Record<string, Array<UpgradeData>> = Object.values(hideout
         upgradesByArea[upgrade.areaId] = [];
     }
     upgradesByArea[upgrade.areaId].push(upgrade);
+    console.log(`upgradesBy area`, upgradesByArea);
     return upgradesByArea;
 }, {} as Record<string, Array<UpgradeData>>);
 

@@ -1,7 +1,7 @@
 // Game version configuration
 export const GAME_VERSION = {
-    current: "1.13.16.0", // Update this with each app release
-    lastWipe: "1.13.16.0", // Update this when a new wipe happens
+    current: "1.14.0.2", // Update this with each app release
+    lastWipe: "1.14.0.0", // Update this when a new wipe happens
 };
 
 // Helper function for version comparison
