@@ -1,4 +1,4 @@
-import { CommunityConfig, PartnerContributor, StandardContributor, ROLE_CONFIGS } from "@/types/community";
+import {CommunityConfig, PartnerContributor, StandardContributor, ROLE_CONFIGS} from "@/types/community";
 import HayaPlaysCard from "@/components/partners/HayaPlaysCard";
 
 export const communityCreatorMap = {
@@ -40,9 +40,8 @@ export const communityCreatorMap = {
     }
 } as const;
 
-// Partners - get priority positioning and enhanced features
-const partners: PartnerContributor[] = [
-    {
+export const partnerMap = {
+    'HayaPlays': {
         name: 'HayaPlays',
         role: 'partner',
         description: 'VR Gaming Content Creator & Community Partner',
@@ -55,7 +54,10 @@ const partners: PartnerContributor[] = [
         tags: ['VR Content', 'Gaming'],
         customComponent: HayaPlaysCard
     }
-];
+} as const;
+
+// Partners - get priority positioning and enhanced features
+const partners: PartnerContributor[] = Object.values(partnerMap) as PartnerContributor[];
 
 // Content Creators
 const creators: StandardContributor[] = Object.values(communityCreatorMap) as StandardContributor[];

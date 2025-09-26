@@ -21,7 +21,7 @@ import {
 } from "@/app/tasks/taskHelpers";
 import {corps, tasksData} from "@/data/tasks";
 import {Item} from "@/types/items";
-import {communityCreatorMap} from "@/data/community";
+import {communityCreatorMap, partnerMap} from "@/data/community";
 import ShareButton from "@/components/ShareButton";
 import {TaskCorrectionFormAuth} from "@/components/corrections/TaskCorrectionForm";
 
@@ -162,10 +162,19 @@ export default function TaskCard({
                                     <h5 className="font-medium text-tan-100 mb-2">Video Guides</h5>
                                     <div className="space-y-2">
                                         {task.videoGuides.map(({author, ytId, startTs}, index) => {
-                                            if (!author || !ytId || !(author in communityCreatorMap)) {
+                                            if (!author || !ytId) {
                                                 return null
                                             }
-                                            const communityAuthor = communityCreatorMap[author as keyof typeof communityCreatorMap];
+                                            let communityAuthor;
+                                            if (author in communityCreatorMap) {
+                                                communityAuthor = communityCreatorMap[author as keyof typeof communityCreatorMap];
+                                            } else if (author in partnerMap) {
+                                                communityAuthor = partnerMap[author as keyof typeof partnerMap];
+                                            } else {
+                                                console.warn(`Unknown author: ${author}`);
+                                                return null;
+                                            }
+
                                             return <Link
                                                 key={author + ytId + startTs + index}
                                                 href={getYouTubeUrl(ytId, startTs)}
