@@ -93,8 +93,6 @@ const areasByCategory: Record<string, string[]> = Object.values(hideoutUpgrades)
         }
     }
     if (!areasByCategory[upgrade.categoryId].includes(upgrade.areaId)) areasByCategory[upgrade.categoryId].push(upgrade.areaId);
-    //FIXME remove log
-    console.log(`Areas by category`, areasByCategory);
 
     return areasByCategory;
 }, {} as Record<string, string[]>);
