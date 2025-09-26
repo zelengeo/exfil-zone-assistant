@@ -2,7 +2,7 @@ import React from 'react';
 import {ExternalLink, Info, Megaphone, History, BookOpen} from 'lucide-react';
 
 
-const AVERAGE_DURATION_DAYS = 136;
+const AVERAGE_DURATION_DAYS = (136+153)/2;
 
 const WipeDurationTracker = ({ startDate, endDate }: { startDate: string, endDate?: string}) => {
     const start = new Date(startDate);
@@ -26,7 +26,7 @@ export default function WhenIsTheWipeGuide() {
     return (
         <div className="space-y-8">
             {/* Official Information Section uncomment when 3rd wipe progresses*/}
-            {/* <section className="military-box p-6 rounded-sm">
+            <section className="military-box p-6 rounded-sm">
                 <div className="flex items-start gap-3 mb-4">
                     <Megaphone className="text-blue-400 mt-1" size={24} />
                     <h2 className="text-2xl font-bold text-tan-100">Official Wipe Announcements</h2>
@@ -69,10 +69,10 @@ export default function WhenIsTheWipeGuide() {
                         Avoid trusting second-hand information or unverified sources.
                     </p>
                 </div>
-            </section>*/}
+            </section>
 
             {/* Upcoming Wipe Announcement Section */}
-            <section className="military-box p-6 rounded-sm border-2 border-green-600 bg-green-900/10">
+            {/*<section className="military-box p-6 rounded-sm border-2 border-green-600 bg-green-900/10">
                 <div className="flex items-start gap-3 mb-4">
                     <Megaphone className="text-green-400 mt-1 animate-pulse" size={24} />
                     <h2 className="text-2xl font-bold text-green-400">2nd Wipe Announced!</h2>
@@ -141,7 +141,7 @@ export default function WhenIsTheWipeGuide() {
                 </a>
         </div>
 </div>
-</section>
+</section>*/}
 
             {/* Wipe History Section */}
             <section className="military-box p-6 rounded-sm">
@@ -151,6 +151,32 @@ export default function WhenIsTheWipeGuide() {
                 </div>
 
                 <div className="space-y-6 text-tan-200">
+                    {/* Season 3 */}
+                    <div className="bg-military-800 border border-military-600 rounded-sm p-4">
+                        <h3 className="font-semibold text-olive-400 mb-3 text-lg">Season 3: Gunsmith</h3>
+                        <div className="grid md:grid-cols-3 gap-4 text-sm mb-3">
+                            <div className="bg-military-900 p-3 rounded-sm">
+                                <p className="text-xs text-tan-400">Start Date</p>
+                                <p className="font-semibold text-tan-200">September 25th, 2025</p>
+                            </div>
+                            <div className="bg-military-900 p-3 rounded-sm">
+                                <p className="text-xs text-tan-400">End Date</p>
+                                <p className="font-semibold text-tan-200">To be announced...</p>
+                            </div>
+                            <div className="bg-military-900 p-3 rounded-sm">
+                                <WipeDurationTracker startDate="2025-09-25" />
+                            </div>
+                        </div>
+                        <div>
+                            <p className="text-sm text-tan-300 font-medium">Major Additions:</p>
+                            <ul className="list-disc list-inside ml-4 text-sm text-tan-400 mt-2">
+                                <li>UE5</li>
+                                <li>Gunsmith system</li>
+                                <li>Smugglers Hideout map</li>
+                                <li>Revised hideout</li>
+                            </ul>
+                        </div>
+                    </div>
                     {/* Season 2 */}
                     <div className="bg-military-800 border border-military-600 rounded-sm p-4">
                         <h3 className="font-semibold text-olive-400 mb-3 text-lg">Season 2: The Resort</h3>
@@ -161,10 +187,10 @@ export default function WhenIsTheWipeGuide() {
                             </div>
                             <div className="bg-military-900 p-3 rounded-sm">
                                 <p className="text-xs text-tan-400">End Date</p>
-                                <p className="font-semibold text-tan-200">Expected September 24th, 2025</p>
+                                <p className="font-semibold text-tan-200">September 25th, 2025</p>
                             </div>
                             <div className="bg-military-900 p-3 rounded-sm">
-                                <WipeDurationTracker startDate="2025-04-25" />
+                                <WipeDurationTracker startDate="2025-04-25" endDate="2025-09-25" />
                             </div>
                         </div>
                         <div>
