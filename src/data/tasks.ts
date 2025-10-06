@@ -68,6 +68,10 @@ export const tasksData: TasksDatabase = {
                 "quantity": 15000
             },
             {
+                "type": "experience",
+                "quantity": 1569
+            },
+            {
                 "type": "reputation",
                 "corpId": "ark",
                 "quantity": 10
@@ -110,14 +114,14 @@ export const tasksData: TasksDatabase = {
         "gameId": "task.na.2",
         "description": "It seems you've been doing well on the island, but now it's time to get serious. You may have noticed that there are many scavengers wandering around; they will shoot any outsiders without warning. Thanks to them, we've lost some excellent soldiers. [Eliminate 4 of them] as a friendly reminder.",
         "objectives": [
-            "Eliminate 4 contractors or scavengers"
+            "Eliminate 4 scavengers in Suburb area"
         ],
         "corpId": "ark",
         "type": [
             "eliminate"
         ],
         "map": [
-            "any"
+            "suburb"
         ],
         "reward": [
             {
@@ -140,12 +144,12 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_id": "weapon-m4a1-factory",
+                "item_id": "weapon-m4a1-hunter",
                 "quantity": 1
             },
             {
                 "type": "item",
-                "item_id": "mag_556x45_30_stanag",
+                "item_id": "mag_556x45_20",
                 "quantity": 1
             }
         ],
@@ -175,7 +179,7 @@ export const tasksData: TasksDatabase = {
         "description": "The situation on the island is in complete chaos. Gathering some military intel might prove helpful for us.\nHead to the [Suburb area], where [intel items] are often found. Locate the [Northern Military Camp] and collect several intel documents.",
         "objectives": [
             "Reach the Military Camp",
-            "Turn in 6 Intel Items Found In Raid"
+            "Turn in 9 Intel Items Found In Raid"
         ],
         "corpId": "ark",
         "type": [
@@ -5839,7 +5843,7 @@ export const tasksData: TasksDatabase = {
         "gameId": "task.wp.2",
         "description": "Not bad! So, what do you think? Told you my gear's in a league of its own! Haha. Hold up—if you want more of the good stuff, you've gotta play by my rules.\nListen up, friend: getting on my good side is simple. Bring me [2 beers], but don't even think about trying to pass off the cheap stuff from those other folks. I've got refined tastes. Try looking around [TRUPIKS], [Altibuy], and [the graveyard]—you might just find the kind of beer I'm after.",
         "objectives": [
-            "Submit 2 Beer"
+            "Submit 4 Beer"
         ],
         "corpId": "regiment",
         "type": [
