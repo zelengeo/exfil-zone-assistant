@@ -1,5 +1,24 @@
 # Data Service Layer Guidelines
 
+## Documentation Hierarchy
+
+**Parent:** [Frontend Architecture](../CLAUDE.md) - Overall frontend patterns
+**Root:** [Root CLAUDE.md](../../CLAUDE.md) - Project overview & critical rules
+**Index:** [CLAUDE-INDEX.md](../../CLAUDE-INDEX.md) - Complete navigation
+
+**Related Documentation:**
+- [Types](../types/CLAUDE.md) - Service method type definitions
+- [Components](../components/CLAUDE.md) - Components using services
+- [App Router](../app/CLAUDE.md) - Server component data fetching
+- [Public Data](../../public/data/CLAUDE.md) - JSON data sources
+
+**See Also:**
+- For API integration, see [API CLAUDE.md](../app/api/CLAUDE.md)
+- For data schemas, see [Lib CLAUDE.md](../lib/CLAUDE.md) - Schema Organization
+- For error handling, see [Lib CLAUDE.md](../lib/CLAUDE.md) - API Error Response Format
+
+---
+
 ## Service Architecture
 
 Services act as the data access layer between components and data sources. They handle:
@@ -446,3 +465,13 @@ describe('ItemService', () => {
 - Don't cache sensitive user data
 - Don't make services dependent on each other
 - Don't skip data validation
+
+## External Resources
+
+### Data Fetching
+- **Next.js Data Fetching**: [nextjs.org/docs/app/building-your-application/data-fetching](https://nextjs.org/docs/app/building-your-application/data-fetching) - Server-side patterns
+- **React Query**: [tanstack.com/query](https://tanstack.com/query) - Client-side caching (if needed)
+
+### Testing
+- **Jest**: [jestjs.io/docs](https://jestjs.io/docs/getting-started) - Unit testing framework
+- **Testing Library**: [testing-library.com/docs/react-testing-library/intro](https://testing-library.com/docs/react-testing-library/intro) - Component testing

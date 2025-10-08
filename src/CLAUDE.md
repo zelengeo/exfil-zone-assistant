@@ -1,5 +1,24 @@
 # Frontend Architecture Guidelines
 
+## Documentation Hierarchy
+
+**Parent:** [Root CLAUDE.md](../CLAUDE.md) - Project overview & critical rules
+**Index:** [CLAUDE-INDEX.md](../CLAUDE-INDEX.md) - Complete documentation navigation
+
+**Related Documentation:**
+- [App Router](app/CLAUDE.md) - Next.js pages & routing patterns
+- [Components](components/CLAUDE.md) - React component development
+- [Types](types/CLAUDE.md) - TypeScript type definitions
+- [Services](services/CLAUDE.md) - Data access layer
+- [Content](content/CLAUDE.md) - Content creation patterns
+
+**See Also:**
+- For backend patterns, see [Lib CLAUDE.md](lib/CLAUDE.md)
+- For API routes, see [API CLAUDE.md](app/api/CLAUDE.md)
+- For styling conventions, see [Components CLAUDE.md](components/CLAUDE.md)
+
+---
+
 ## Directory Structure
 ```
 src/
@@ -8,8 +27,7 @@ src/
 ├── content/        # Static content (guides, data)
 ├── lib/           # Utilities and helpers
 ├── services/      # API and data services
-├── types/         # TypeScript type definitions
-└── hooks/         # Custom React hooks
+└── types/         # TypeScript type definitions
 ```
 
 ## Component Architecture

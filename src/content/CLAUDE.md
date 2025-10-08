@@ -1,5 +1,24 @@
 # Content Management Guidelines
 
+## Documentation Hierarchy
+
+**Parent:** [Frontend Architecture](../CLAUDE.md) - Overall frontend patterns
+**Root:** [Root CLAUDE.md](../../CLAUDE.md) - Project overview & styling rules
+**Index:** [CLAUDE-INDEX.md](../../CLAUDE-INDEX.md) - Complete navigation
+
+**Related Documentation:**
+- [Components](../components/CLAUDE.md) - Components used in guides
+- [App Router](../app/CLAUDE.md) - Guide page structure
+- [Types](../types/CLAUDE.md) - Guide metadata types
+- [Public Data](../../public/data/CLAUDE.md) - Game data referenced in guides
+
+**See Also:**
+- For styling conventions (cn utility), see [src/CLAUDE.md](../CLAUDE.md) - Styling Conventions
+- For VR design principles, see [Root CLAUDE.md](../../CLAUDE.md) - UI/UX Principles
+- For component usage in guides, see [Components CLAUDE.md](../components/CLAUDE.md)
+
+---
+
 ## Content Structure
 ```
 content/
@@ -257,6 +276,8 @@ your survival rate.
 
 ### Interactive Components
 
+**See Also:** [src/CLAUDE.md - Styling Conventions](../CLAUDE.md) for cn() utility usage in conditional styling
+
 #### Embedding Calculators
 ```typescript
 // Import and use existing calculators
@@ -512,3 +533,17 @@ export function TableOfContents({ sections }) {
 - Don't use unexplained jargon
 - Don't ignore accessibility
 - Don't publish without review
+
+## External Resources
+
+### Content Writing
+- **Markdown Guide**: [markdownguide.org](https://www.markdownguide.org) - Markdown syntax reference
+- **Writing for VR**: Best practices for VR text readability
+
+### Component Guides
+- **Next.js Image**: [nextjs.org/docs/app/api-reference/components/image](https://nextjs.org/docs/app/api-reference/components/image) - Image optimization
+- **MDX**: [mdxjs.com](https://mdxjs.com) - Markdown with JSX (if using MDX)
+
+### SEO
+- **Open Graph**: [ogp.me](https://ogp.me) - Social media meta tags
+- **Schema.org**: [schema.org](https://schema.org) - Structured data markup

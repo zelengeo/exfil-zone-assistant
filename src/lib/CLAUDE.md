@@ -1,5 +1,24 @@
 # Backend Library Guidelines
 
+## Documentation Hierarchy
+
+**Parent:** [Frontend Architecture](../CLAUDE.md) - Overall architecture
+**Root:** [Root CLAUDE.md](../../CLAUDE.md) - Project overview
+**Index:** [CLAUDE-INDEX.md](../../CLAUDE-INDEX.md) - Complete navigation
+
+**Related Documentation:**
+- [API Routes](../app/api/CLAUDE.md) - Using auth & middleware
+- [Models](../models/CLAUDE.md) - Database models
+- [Types](../types/CLAUDE.md) - Type definitions from schemas
+
+**See Also:**
+- For API route implementation, see [API CLAUDE.md](../app/api/CLAUDE.md)
+- For authentication usage, see [API CLAUDE.md](../app/api/CLAUDE.md) - Authentication Patterns
+- For database connection, see [Models CLAUDE.md](../models/CLAUDE.md)
+- For Zod schema → type inference, see [Types CLAUDE.md](../types/CLAUDE.md)
+
+---
+
 ## Directory Structure
 ```
 lib/
@@ -112,6 +131,102 @@ export async function connectDB() {
 - Use connection pooling in production
 - Handle connection errors gracefully
 - Monitor connection health
+
+## Schemas Directory Structure
+
+```
+schemas/
+├── core.ts                # Core/shared schemas
+│   ├── paginationSchema      # Pagination response format
+│   ├── successSchema         # Success response format
+│   ├── errorResponseSchema   # Error response format
+│   └── createSearchParams    # URL search params helper
+├── user.ts                # User-related schemas (~500 lines)
+│   ├── userBaseSchema        # Base user fields
+│   ├── userUpdateSchema      # Profile update validation
+│   ├── userUsernameUpdateSchema  # Username change
+│   ├── userSettingsResponseSchema  # Response format
+│   ├── userDocumentSchema    # Full user document
+│   ├── userListRequestSchema  # Admin list query
+│   ├── userListResponseSchema # Admin list response
+│   ├── UserApi              # API endpoint schemas
+│   └── IUserApi             # Inferred types
+├── dataCorrection.ts      # Data correction schemas (~350 lines)
+│   ├── dataCorrectionBaseSchema  # Base correction
+│   ├── entityTypeEnum       # Valid entity types
+│   ├── statusEnum          # Correction statuses
+│   ├── dataCorrectionResponseSchema
+│   ├── DataCorrectionApi   # API endpoint schemas
+│   └── IDataCorrectionApi  # Inferred types
+├── feedback.ts            # Feedback schemas (~250 lines)
+│   ├── feedbackBaseSchema  # Base feedback fields
+│   ├── feedbackTypeEnum    # Feedback types
+│   ├── FeedbackApi         # API endpoint schemas
+│   └── IFeedbackApi        # Inferred types
+├── task.ts                # Task schemas (~100 lines)
+│   ├── taskBaseSchema      # Task structure
+│   ├── taskObjectiveSchema # Task objectives
+│   └── taskRewardSchema    # Task rewards
+└── guards.ts              # Type guards (~15 lines)
+    ├── isValidUser         # User type guard
+    └── isValidFeedback     # Feedback type guard
+```
+
+**Schema File Organization:**
+
+Each schema file follows this pattern:
+1. **Base schemas** - Core Zod schemas for entity
+2. **Validation schemas** - Input validation (create, update)
+3. **Response schemas** - API response formats
+4. **API schemas** - Structured by endpoint (Get, Post, Patch, Delete)
+5. **Interface types** - TypeScript types inferred from schemas
+
+**Usage Pattern:**
+```typescript
+// 1. Import schema and type
+import { UserApi, IUserApi } from '@/lib/schemas/user';
+
+type ApiType = IUserApi;
+
+// 2. Validate request input
+const body = await request.json();
+const validatedData = UserApi.Patch.Request.parse(body);
+
+// 3. Type-safe response
+return NextResponse.json<ApiType['Patch']['Response']>({
+    user: updatedUser
+});
+```
+
+**File Purposes:**
+
+- **core.ts**: Shared schemas used across all entities
+  - Pagination, success/error formats
+  - Helper functions
+
+- **user.ts**: User authentication & profiles
+  - Profile updates, username changes
+  - Admin user management
+  - Role assignments
+
+- **dataCorrection.ts**: User-submitted data corrections
+  - Item/task data corrections
+  - Review workflows
+  - Admin approval system
+
+- **feedback.ts**: User feedback submissions
+  - Bug reports, feature requests
+  - Rating systems
+  - Admin review
+
+- **task.ts**: Game task/quest definitions
+  - Task structure validation
+  - Objectives, prerequisites
+  - Rewards schema
+
+- **guards.ts**: Runtime type guards
+  - Type narrowing functions
+  - Safe type checking
 
 ## Validation Schemas
 
@@ -252,6 +367,197 @@ export function handleError(error: unknown): NextResponse {
     );
 }
 ```
+
+### Standard API Error Response Format
+
+All API routes should use consistent error response formats:
+
+**Error Response Types:**
+
+```typescript
+// Success Response
+interface ApiSuccessResponse<T = unknown> {
+    data?: T;
+    success: true;
+    message?: string;
+}
+
+// Error Response
+interface ApiErrorResponse {
+    error: string;              // Error type/message
+    message?: string;           // Human-readable description
+    code?: string;              // Error code (e.g., 'VALIDATION_ERROR')
+    details?: unknown;          // Additional error context (dev only)
+    statusCode?: number;        // HTTP status code
+}
+```
+
+**HTTP Status Codes:**
+
+| Code | Error Class | Usage |
+|------|-------------|-------|
+| 400 | ValidationError | Invalid input, Zod validation failures |
+| 401 | AuthenticationError | Not logged in, invalid token |
+| 403 | InsufficientPermissionsError | Logged in but insufficient permissions |
+| 403 | BannedUserError | User account banned |
+| 404 | NotFoundError | Resource not found |
+| 409 | ConflictError | Resource conflict (e.g., duplicate username) |
+| 429 | RateLimitError | Too many requests |
+| 500 | AppError | Internal server error |
+
+**Error Response Examples:**
+
+```typescript
+// 400 - Validation Error (Zod)
+{
+    "error": "Validation failed",
+    "code": "VALIDATION_ERROR",
+    "details": [
+        {
+            "path": ["email"],
+            "message": "Invalid email format"
+        },
+        {
+            "path": ["age"],
+            "message": "Must be at least 18"
+        }
+    ]
+}
+
+// 401 - Authentication Required
+{
+    "error": "Authentication required",
+    "code": "UNAUTHENTICATED",
+    "message": "You must be logged in to access this resource"
+}
+
+// 403 - Insufficient Permissions
+{
+    "error": "Insufficient permissions",
+    "code": "FORBIDDEN",
+    "message": "Admin access required"
+}
+
+// 403 - Banned User
+{
+    "error": "Account suspended",
+    "code": "BANNED",
+    "message": "Your account has been banned"
+}
+
+// 404 - Not Found
+{
+    "error": "User not found",
+    "code": "NOT_FOUND"
+}
+
+// 409 - Conflict
+{
+    "error": "Username already taken",
+    "code": "CONFLICT",
+    "details": {
+        "field": "username",
+        "value": "john_doe"
+    }
+}
+
+// 429 - Rate Limited
+{
+    "error": "Too many requests",
+    "message": "Rate limit exceeded. Please try again in 42 seconds.",
+    "retryAfter": 42
+}
+
+// 500 - Internal Server Error (production)
+{
+    "error": "Internal server error",
+    "code": "INTERNAL_ERROR"
+}
+
+// 500 - Internal Server Error (development)
+{
+    "error": "Internal server error",
+    "code": "INTERNAL_ERROR",
+    "details": {
+        "message": "Database connection failed",
+        "stack": "Error: Connection timeout..."
+    }
+}
+```
+
+**Success Response Examples:**
+
+```typescript
+// Simple success
+{
+    "success": true,
+    "message": "Profile updated successfully"
+}
+
+// Success with data
+{
+    "success": true,
+    "data": {
+        "id": "123",
+        "username": "john_doe"
+    }
+}
+
+// Success with pagination
+{
+    "data": [...items],
+    "pagination": {
+        "page": 1,
+        "limit": 20,
+        "total": 100,
+        "pages": 5
+    }
+}
+```
+
+**Implementation Pattern:**
+
+```typescript
+import { NextResponse } from 'next/server';
+import { handleError } from '@/lib/errors';
+import { ValidationError, NotFoundError } from '@/lib/errors';
+
+export async function POST(request: NextRequest) {
+    try {
+        // Validate input
+        const body = await request.json();
+        const validatedData = schema.parse(body);
+
+        // Process request
+        const result = await processData(validatedData);
+
+        if (!result) {
+            throw new NotFoundError('Resource');
+        }
+
+        // Success response
+        return NextResponse.json({
+            success: true,
+            data: result
+        }, { status: 200 });
+
+    } catch (error) {
+        // Consistent error handling
+        return handleError(error);
+    }
+}
+```
+
+**Best Practices:**
+- ✅ Use `handleError()` for all error responses
+- ✅ Throw specific error classes (AuthenticationError, NotFoundError, etc.)
+- ✅ Include `code` field for client-side error handling
+- ✅ Provide helpful error messages for users
+- ✅ Hide sensitive error details in production
+- ✅ Log full error context server-side
+- ❌ Don't expose stack traces in production
+- ❌ Don't include sensitive data in error responses
+- ❌ Don't use different response formats per route
 
 ## Middleware
 
@@ -419,10 +725,28 @@ export const VALIDATION = {
 - Don't expose internal error details in production
 - Don't skip authentication checks
 - Don't trust client-provided user IDs
-- Don't use `any` type - use proper schemas
+- Don't use `any` type (see Root CLAUDE.md Critical Rule #3 - use Zod schemas for unknown data)
 - Don't forget to close database connections in scripts
 - Don't log sensitive data (passwords, tokens)
 - Don't bypass rate limiting in production
+
+## External Resources
+
+### Validation & Type Safety
+- **Zod**: [zod.dev](https://zod.dev) - Schema validation and type inference
+- **TypeScript**: [typescriptlang.org/docs](https://www.typescriptlang.org/docs) - Type system reference
+
+### Authentication
+- **NextAuth.js**: [next-auth.js.org](https://next-auth.js.org) - Authentication patterns
+- **OAuth 2.0**: [oauth.net/2](https://oauth.net/2/) - OAuth protocol specification
+
+### Database
+- **MongoDB**: [docs.mongodb.com](https://docs.mongodb.com) - Database operations
+- **Mongoose**: [mongoosejs.com/docs/guide.html](https://mongoosejs.com/docs/guide.html) - Schema and model guide
+
+### Rate Limiting
+- **Vercel KV**: [vercel.com/docs/storage/vercel-kv](https://vercel.com/docs/storage/vercel-kv) - Redis-based rate limiting
+- **Upstash Redis**: [docs.upstash.com/redis](https://docs.upstash.com/redis) - Serverless Redis documentation
 
 ## Future Improvements to Consider
 

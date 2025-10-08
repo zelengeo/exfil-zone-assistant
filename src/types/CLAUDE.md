@@ -1,5 +1,24 @@
 # TypeScript Type Definitions Guidelines
 
+## Documentation Hierarchy
+
+**Parent:** [Frontend Architecture](../CLAUDE.md) - Overall frontend patterns
+**Root:** [Root CLAUDE.md](../../CLAUDE.md) - Project overview & critical rules
+**Index:** [CLAUDE-INDEX.md](../../CLAUDE-INDEX.md) - Complete navigation
+
+**Related Documentation:**
+- [Components](../components/CLAUDE.md) - Component prop types
+- [Services](../services/CLAUDE.md) - Service method types
+- [API Routes](../app/api/CLAUDE.md) - API request/response types
+- [Models](../models/CLAUDE.md) - Database model types
+
+**See Also:**
+- For Zod schemas, see [Lib CLAUDE.md](../lib/CLAUDE.md) - Schema Organization
+- For API type patterns, see [API CLAUDE.md](../app/api/CLAUDE.md)
+- For runtime validation, see [Services CLAUDE.md](../services/CLAUDE.md)
+
+---
+
 ## Directory Structure
 ```
 types/
@@ -491,3 +510,14 @@ import { Item, isWeapon } from '@/types/items';
 - **Generic Types**: Single capital letter or descriptive (`T`, `TData`, `TError`)
 - **Utility Types**: PascalCase with suffix (`ItemDTO`, `UserUpdate`)
 - **Enums**: Avoid - use const objects with `as const`
+
+## External Resources
+
+### TypeScript Documentation
+- **Handbook**: [typescriptlang.org/docs/handbook](https://www.typescriptlang.org/docs/handbook) - Comprehensive guide
+- **Utility Types**: [typescriptlang.org/docs/handbook/utility-types.html](https://www.typescriptlang.org/docs/handbook/utility-types.html) - Partial, Pick, Omit, etc.
+- **Advanced Types**: [typescriptlang.org/docs/handbook/2/types-from-types.html](https://www.typescriptlang.org/docs/handbook/2/types-from-types.html) - Conditional types, mapped types
+- **Type Inference**: [typescriptlang.org/docs/handbook/type-inference.html](https://www.typescriptlang.org/docs/handbook/type-inference.html)
+
+### Validation
+- **Zod**: [zod.dev](https://zod.dev) - Runtime validation with type inference

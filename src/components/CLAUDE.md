@@ -1,5 +1,96 @@
 # Component Development Guidelines
 
+## Documentation Hierarchy
+
+**Parent:** [Frontend Architecture](../CLAUDE.md) - Overall frontend patterns
+**Root:** [Root CLAUDE.md](../../CLAUDE.md) - Project overview & styling rules
+**Index:** [CLAUDE-INDEX.md](../../CLAUDE-INDEX.md) - Complete navigation
+
+**Related Documentation:**
+- [App Router](../app/CLAUDE.md) - Using components in pages
+- [Types](../types/CLAUDE.md) - Component prop types
+- [Content](../content/CLAUDE.md) - Components in guides
+
+**See Also:**
+- For styling conventions (cn utility), see [src/CLAUDE.md](../CLAUDE.md) - Styling Conventions
+- For VR design principles, see [Root CLAUDE.md](../../CLAUDE.md) - UI/UX Principles
+- For component usage in pages, see [App CLAUDE.md](../app/CLAUDE.md)
+
+---
+
+## Components Directory Structure
+
+```
+components/
+├── ui/                        # shadcn UI components (~25 files)
+│   ├── alert.tsx             # Alert notifications
+│   ├── alert-dialog.tsx      # Modal dialogs
+│   ├── avatar.tsx            # User avatars
+│   ├── badge.tsx             # Status badges
+│   ├── button.tsx            # Button variants
+│   ├── card.tsx              # Card containers
+│   ├── checkbox.tsx          # Checkbox inputs
+│   ├── dialog.tsx            # Dialog modals
+│   ├── dropdown-menu.tsx     # Dropdown menus
+│   ├── form.tsx              # Form components
+│   ├── input.tsx             # Text inputs
+│   ├── label.tsx             # Form labels
+│   ├── navigation-menu.tsx   # Navigation components
+│   ├── progress.tsx          # Progress bars
+│   ├── scroll-area.tsx       # Custom scrollbars
+│   ├── select.tsx            # Select dropdowns
+│   ├── separator.tsx         # Visual separators
+│   ├── sheet.tsx             # Side sheets
+│   ├── skeleton.tsx          # Loading skeletons
+│   ├── sonner.tsx            # Toast notifications
+│   ├── switch.tsx            # Toggle switches
+│   ├── table.tsx             # Data tables
+│   ├── tabs.tsx              # Tab components
+│   ├── textarea.tsx          # Multi-line inputs
+│   └── tooltip.tsx           # Tooltips
+├── layout/                    # Layout components (~3 files)
+│   ├── Header.tsx            # Site header with navigation
+│   ├── Footer.tsx            # Site footer
+│   └── Layout.tsx            # Main layout wrapper
+├── corrections/               # Data correction forms (~2 files)
+│   ├── ItemCorrectionForm.tsx    # Item data corrections
+│   └── TaskCorrectionForm.tsx    # Task data corrections
+├── profile/                   # User profile components (~2 files)
+│   ├── ProfileHeader.tsx     # Profile header display
+│   └── ProfileStats.tsx      # User statistics
+├── partners/                  # Partner/sponsor components
+└── CLAUDE.md                  # This file
+```
+
+**Component Categories:**
+
+1. **UI Components** (`/ui/`)
+   - Atomic, reusable components from shadcn
+   - Fully typed with TypeScript
+   - Follow Radix UI patterns
+   - Highly composable
+   - Use for all standard UI elements
+
+2. **Layout Components** (`/layout/`)
+   - Page structure components
+   - Header, Footer, Layout wrapper
+   - Consistent across all pages
+   - Handle responsive design
+   - Global navigation
+
+3. **Feature Components** (`/corrections/`, `/profile/`, etc.)
+   - Domain-specific components
+   - Compose UI components
+   - Contain business logic
+   - Connected to data services
+   - Feature-specific state management
+
+**File Counts:**
+- Total: ~35+ component files
+- UI components: ~25 (shadcn)
+- Layout: 3
+- Feature-specific: ~7+
+
 ## Component Structure
 
 ### Basic Component Template
@@ -136,29 +227,34 @@ export function ItemCard({ item, showDetails = false }: ItemCardProps) {
 
 ## Styling Patterns
 
-### Class Organization
+**See Also:** [src/CLAUDE.md - Styling Conventions](../CLAUDE.md) for complete cn() utility usage
+
+### Component-Specific Styling Best Practices
+
 ```jsx
-<div 
+// Organize className arguments by category for readability
+<div
   className={cn(
     // Base styles
     "relative flex flex-col",
-    
+
     // Spacing
     "p-4 gap-3",
-    
-    // Colors & borders
+
+    // Colors & borders (use military theme)
     "bg-military-800 border border-military-600",
-    
+
     // Interactive states
     "hover:border-olive-400 transition-colors",
-    
-    // Responsive
+
+    // Responsive breakpoints
     "md:flex-row md:gap-6",
-    
-    // Conditional
+
+    // Conditional classes
     isActive && "ring-2 ring-olive-400",
-    
-    // Custom className prop
+    isDisabled && "opacity-50 pointer-events-none",
+
+    // Accept className prop for composition
     className
   )}
 >
@@ -166,7 +262,7 @@ export function ItemCard({ item, showDetails = false }: ItemCardProps) {
 
 ### Military Theme Classes
 ```css
-/* Commonly used military theme classes */
+/* Commonly used military theme classes (defined in globals.css) */
 .military-box     /* Standard container */
 .military-card    /* Card component */
 .military-button  /* Button styling */
@@ -347,9 +443,25 @@ const handleSubmit = useCallback((e: FormEvent) => {
 - Test user interactions
 
 ### DON'Ts ❌
-- Use `any` type
+- Use `any` type (see Root CLAUDE.md Critical Rule #3)
 - Ignore error boundaries
 - Create components over 200 lines
 - Mix business logic with UI
 - Use inline styles
 - Skip accessibility attributes
+
+## External Resources
+
+### Component Libraries
+- **shadcn/ui**: [ui.shadcn.com](https://ui.shadcn.com) - Component library source code and installation
+- **Radix UI**: [radix-ui.com](https://radix-ui.com) - Unstyled primitive components
+- **Lucide Icons**: [lucide.dev](https://lucide.dev) - Icon library used throughout
+
+### React Documentation
+- **React Hooks**: [react.dev/reference/react](https://react.dev/reference/react) - useState, useEffect, useMemo, etc.
+- **Component Patterns**: [react.dev/learn](https://react.dev/learn) - Thinking in React
+- **Accessibility**: [react.dev/learn/accessibility](https://react.dev/learn/accessibility) - ARIA and a11y best practices
+
+### Styling Resources
+- **Tailwind CSS**: [tailwindcss.com/docs](https://tailwindcss.com/docs) - Utility classes reference
+- **CVA (Class Variance Authority)**: Used by shadcn for variant management

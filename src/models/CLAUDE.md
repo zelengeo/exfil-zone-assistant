@@ -1,5 +1,23 @@
 # MongoDB Models Guidelines
 
+## Documentation Hierarchy
+
+**Parent:** [Frontend Architecture](../CLAUDE.md) - Overall architecture
+**Root:** [Root CLAUDE.md](../../CLAUDE.md) - Project overview
+**Index:** [CLAUDE-INDEX.md](../../CLAUDE-INDEX.md) - Complete navigation
+
+**Related Documentation:**
+- [Backend Utilities](../lib/CLAUDE.md) - Database connection, schemas
+- [API Routes](../app/api/CLAUDE.md) - Using models in routes
+- [Types](../types/CLAUDE.md) - Model type definitions
+
+**See Also:**
+- For MongoDB connection, see [Lib CLAUDE.md](../lib/CLAUDE.md) - Database Management
+- For API usage examples, see [API CLAUDE.md](../app/api/CLAUDE.md) - Database Operations
+- For validation schemas, see [Lib CLAUDE.md](../lib/CLAUDE.md) - Schemas Directory
+
+---
+
 ## Directory Structure
 ```
 models/
@@ -479,6 +497,19 @@ const leaderboard = await User.aggregate([
 - Don't use `populate()` in loops
 - Don't fetch entire documents if you need few fields
 - Don't forget to handle connection errors
+
+## External Resources
+
+### Mongoose Documentation
+- **Guide**: [mongoosejs.com/docs/guide.html](https://mongoosejs.com/docs/guide.html) - Schema and model guide
+- **Queries**: [mongoosejs.com/docs/queries.html](https://mongoosejs.com/docs/queries.html) - Query building
+- **Validation**: [mongoosejs.com/docs/validation.html](https://mongoosejs.com/docs/validation.html) - Schema validation
+- **Middleware**: [mongoosejs.com/docs/middleware.html](https://mongoosejs.com/docs/middleware.html) - Hooks and middleware
+
+### MongoDB Documentation
+- **Manual**: [docs.mongodb.com/manual](https://docs.mongodb.com/manual) - MongoDB operations
+- **Indexes**: [docs.mongodb.com/manual/indexes](https://docs.mongodb.com/manual/indexes) - Index optimization
+- **Aggregation**: [docs.mongodb.com/manual/aggregation](https://docs.mongodb.com/manual/aggregation) - Aggregation framework
 - Don't use synchronous operations
 - Don't store large binary data in documents
 - Don't nest documents too deeply (16MB limit)

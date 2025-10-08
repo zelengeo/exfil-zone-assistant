@@ -1,5 +1,23 @@
 # Next.js App Router Guidelines
 
+## Documentation Hierarchy
+
+**Parent:** [Frontend Architecture](../CLAUDE.md) - Overall frontend patterns
+**Root:** [Root CLAUDE.md](../../CLAUDE.md) - Project overview
+**Index:** [CLAUDE-INDEX.md](../../CLAUDE-INDEX.md) - Complete navigation
+
+**Related Documentation:**
+- [API Routes](api/CLAUDE.md) - Backend API endpoints
+- [Components](../components/CLAUDE.md) - React components for pages
+- [Types](../types/CLAUDE.md) - TypeScript types for pages
+
+**See Also:**
+- For component patterns, see [Components CLAUDE.md](../components/CLAUDE.md)
+- For data fetching, see [Services CLAUDE.md](../services/CLAUDE.md)
+- For API integration, see [API CLAUDE.md](api/CLAUDE.md)
+
+---
+
 ## Directory Structure
 ```
 app/
@@ -423,3 +441,12 @@ export async function POST(request: NextRequest) {
 - Don't use window/document in Server Components
 - Don't ignore TypeScript in params/searchParams
 - Don't mix Server and Client component logic
+
+## External Resources
+
+### Next.js Documentation
+- **App Router**: [nextjs.org/docs/app](https://nextjs.org/docs/app) - Complete App Router guide
+- **Server Components**: [nextjs.org/docs/app/building-your-application/rendering/server-components](https://nextjs.org/docs/app/building-your-application/rendering/server-components)
+- **Metadata API**: [nextjs.org/docs/app/building-your-application/optimizing/metadata](https://nextjs.org/docs/app/building-your-application/optimizing/metadata)
+- **Route Handlers**: [nextjs.org/docs/app/building-your-application/routing/route-handlers](https://nextjs.org/docs/app/building-your-application/routing/route-handlers)
+- **Loading & Error UI**: [nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming](https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming)
