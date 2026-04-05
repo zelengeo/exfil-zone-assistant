@@ -1,5 +1,4 @@
 import {CommunityConfig, PartnerContributor, StandardContributor, ROLE_CONFIGS} from "@/types/community";
-import HayaPlaysCard from "@/components/partners/HayaPlaysCard";
 
 export const communityCreatorMap = {
     orbb: {
@@ -40,21 +39,7 @@ export const communityCreatorMap = {
     }
 } as const;
 
-export const partnerMap = {
-    'HayaPlays': {
-        name: 'HayaPlays',
-        role: 'partner',
-        description: 'VR Gaming Content Creator & Community Partner',
-        logo: '/images/community/haya-logo-70x70.webp',
-        link: 'https://twitch.tv/hayaplays',
-        platform: 'twitch',
-        featured: true,
-        highlighted: true,
-        priority: 1,
-        tags: ['VR Content', 'Gaming'],
-        customComponent: HayaPlaysCard
-    }
-} as const;
+export const partnerMap = {} as const;
 
 // Partners - get priority positioning and enhanced features
 const partners: PartnerContributor[] = Object.values(partnerMap) as PartnerContributor[];
