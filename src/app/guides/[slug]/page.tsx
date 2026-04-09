@@ -211,7 +211,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
                         )}
                         <div className="flex items-center gap-1">
                             <Calendar size={16} />
-                            <span>{new Date(guide.publishedAt).toLocaleDateString()}</span>
+                            <span>{new Date(guide.updatedAt ?? guide.publishedAt).toLocaleDateString()}</span>
                         </div>
                     </div>
 
