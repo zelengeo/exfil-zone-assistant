@@ -2,21 +2,23 @@ import React from 'react';
 import {ExternalLink, Info, Megaphone, History, BookOpen} from 'lucide-react';
 
 
-const AVERAGE_DURATION_DAYS = (136+153)/2;
+// const AVERAGE_DURATION_DAYS = (136 + 153 + 88 + 122) / 4;
+const MAX_DURATION_DAYS = 153;
 
-const WipeDurationTracker = ({ startDate, endDate }: { startDate: string, endDate?: string}) => {
+const WipeDurationTracker = ({startDate, endDate}: { startDate: string, endDate?: string }) => {
     const start = new Date(startDate);
     const now = endDate ? new Date(endDate) : new Date();
     const diff = now.getTime() - start.getTime();
     const daysPassed = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const progressPercentage = Math.min((daysPassed / AVERAGE_DURATION_DAYS) * 100, 100);
+    const progressPercentage = Math.min((daysPassed / MAX_DURATION_DAYS) * 100, 100);
 
     return (
         <>
             <p className="text-xs text-tan-400">Duration</p>
-            <p className="font-semibold text-tan-200">{daysPassed} days {endDate ? null :"(Ongoing)"}</p>
-            <div className="w-full bg-military-700 rounded-full h-2.5 mt-2" title={`${Math.round(progressPercentage)}% of average wipe length`}>
-                <div className="bg-green-600 h-2.5 rounded-full" style={{ width: `${progressPercentage}%` }}></div>
+            <p className="font-semibold text-tan-200">{daysPassed} days {endDate ? null : "(Ongoing)"}</p>
+            <div className="w-full bg-military-700 rounded-full h-2.5 mt-2"
+                 title={`${Math.round(progressPercentage)}% of average wipe length`}>
+                <div className="bg-green-600 h-2.5 rounded-full" style={{width: `${progressPercentage}%`}}></div>
             </div>
         </>
     );
@@ -28,22 +30,25 @@ export default function WhenIsTheWipeGuide() {
             {/* Official Information Section uncomment when 3rd wipe progresses*/}
             <section className="military-box p-6 rounded-sm">
                 <div className="flex items-start gap-3 mb-4">
-                    <Megaphone className="text-blue-400 mt-1" size={24} />
+                    <Megaphone className="text-blue-400 mt-1" size={24}/>
                     <h2 className="text-2xl font-bold text-tan-100">Official Wipe Announcements</h2>
                 </div>
 
                 <div className="space-y-4 text-tan-200">
                     <p className="text-lg">
-                        The developers, <strong>Caveman Studios</strong>, are the only reliable source for wipe information.
-                        They always announce the official wipe date several weeks in advance to give players time to prepare.
+                        The developers, <strong>Caveman Studios</strong>, are the only reliable source for wipe
+                        information.
+                        They always announce the official wipe date several weeks in advance to give players time to
+                        prepare.
                     </p>
 
                     <div className="bg-blue-900/20 border-l-4 border-blue-600 p-4">
                         <div className="flex items-start gap-3">
-                            <Info className="text-blue-400 mt-1" size={20} />
+                            <Info className="text-blue-400 mt-1" size={20}/>
                             <div>
                                 <p className="text-blue-200">
-                                    <strong>Rule of thumb:</strong> If you haven&#39;t seen an announcement on the official ExfilZone Discord or  <a
+                                    <strong>Rule of thumb:</strong> If you haven&#39;t seen an announcement on the
+                                    official ExfilZone Discord or <a
                                     href="https://x.com/ContractorsBR" target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-blue-400 hover:text-blue-300 transition-colors"
@@ -58,33 +63,35 @@ export default function WhenIsTheWipeGuide() {
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center gap-1 mt-2 text-sm text-blue-400 hover:text-blue-300 transition-colors"
                                 >
-                                    Join the Official Discord <ExternalLink size={14} />
+                                    Join the Official Discord <ExternalLink size={14}/>
                                 </a>
                             </div>
                         </div>
                     </div>
 
                     <p>
-                        Announcements are typically made through their official channels to ensure everyone gets the same information at the same time.
+                        Announcements are typically made through their official channels to ensure everyone gets the
+                        same information at the same time.
                         Avoid trusting second-hand information or unverified sources.
                     </p>
                 </div>
             </section>
 
             {/* Upcoming Wipe Announcement Section */}
-            {/*<section className="military-box p-6 rounded-sm border-2 border-green-600 bg-green-900/10">
+            *
+            <section className="military-box p-6 rounded-sm border-2 border-green-600 bg-green-900/10">
                 <div className="flex items-start gap-3 mb-4">
-                    <Megaphone className="text-green-400 mt-1 animate-pulse" size={24} />
-                    <h2 className="text-2xl font-bold text-green-400">2nd Wipe Announced!</h2>
+                    <Megaphone className="text-green-400 mt-1 animate-pulse" size={24}/>
+                    <h2 className="text-2xl font-bold text-green-400">5th Wipe Announced!</h2>
                 </div>
 
                 <div className="space-y-4 text-tan-200">
                     <div className="bg-green-900/20 border-l-4 border-green-500 p-4">
                         <p className="text-xl font-bold text-green-300 mb-2">
-                            Wipe Date: September 25th, 2025
+                            Wipe Date: April 23th, 2026
                         </p>
                         <p className="text-lg text-tan-200">
-                            Pre-wipe event starts: Weekend of August 23rd, 2025
+                            Pre-wipe event starts: Weekend of April 2nd, 2025
                         </p>
                     </div>
 
@@ -94,29 +101,30 @@ export default function WhenIsTheWipeGuide() {
                             <li className="flex items-start gap-2">
                                 <span className="text-green-400 mt-1">•</span>
                                 <div>
-                                    <strong className="text-tan-100">Gunsmith System:</strong>
-                                    <span className="text-tan-300"> Revolutionary VR weapon customization with hundreds of unique variants through extensive part combinations</span>
+                                    <strong className="text-tan-100">PVE:</strong>
+                                    <span className="text-tan-300">Enjoy a fair, controlled environment</span>
                                 </div>
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="text-green-400 mt-1">•</span>
                                 <div>
-                                    <strong className="text-tan-100">New Map - Smuggling Tunnel:</strong>
-                                    <span className="text-tan-300"> Tight corridors and high-stakes loot opportunities</span>
+                                    <strong className="text-tan-100">New Helmets & Armors:</strong>
+                                    <span
+                                        className="text-tan-300"> Enhance your loadout variability. </span>
                                 </div>
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="text-green-400 mt-1">•</span>
                                 <div>
-                                    <strong className="text-tan-100">50% More Missions:</strong>
-                                    <span className="text-tan-300"> New objectives including photo tasks and loadout-specific challenges</span>
+                                    <strong className="text-tan-100">Dog Tag System:</strong>
+                                    <span className="text-tan-300"> New collectible trophy system</span>
                                 </div>
                             </li>
                             <li className="flex items-start gap-2">
                                 <span className="text-green-400 mt-1">•</span>
                                 <div>
-                                    <strong className="text-tan-100">Unreal Engine 5 Upgrade:</strong>
-                                    <span className="text-tan-300"> Enhanced graphics and performance</span>
+                                    <strong className="text-tan-100">Bots revamp:</strong>
+                                    <span className="text-tan-300"> Experience smarter, more reactive bot behavior</span>
                                 </div>
                             </li>
                         </ul>
@@ -124,33 +132,60 @@ export default function WhenIsTheWipeGuide() {
 
                     <div className="flex gap-4 mt-4">
                         <a
-                        href="https://discord.com/invite/contractorsshowdown"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-sm text-white transition-colors"
+                            href="https://discord.com/invite/contractorsshowdown"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-sm text-white transition-colors"
                         >
-                        Join Discord for Updates <ExternalLink size={16} />
-                    </a>
-<a
-                    href="https://x.com/contractorsbr"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-military-700 hover:bg-military-600 rounded-sm text-tan-200 transition-colors border border-military-500"
-                    >
-                    Follow on X <ExternalLink size={16} />
-                </a>
-        </div>
-</div>
-</section>*/}
+                            Join Discord for Updates <ExternalLink size={16}/>
+                        </a>
+                        <a
+                            href="https://x.com/contractorsbr"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-4 py-2 bg-military-700 hover:bg-military-600 rounded-sm text-tan-200 transition-colors border border-military-500"
+                        >
+                            Follow on X <ExternalLink size={16}/>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            *
 
             {/* Wipe History Section */}
             <section className="military-box p-6 rounded-sm">
                 <div className="flex items-start gap-3 mb-4">
-                    <History className="text-olive-400 mt-1" size={24} />
+                    <History className="text-olive-400 mt-1" size={24}/>
                     <h2 className="text-2xl font-bold text-tan-100">Wipe History</h2>
                 </div>
 
                 <div className="space-y-6 text-tan-200">
+                    {/* Season 4 */}
+                    <div className="bg-military-800 border border-military-600 rounded-sm p-4">
+                        <h3 className="font-semibold text-olive-400 mb-3 text-lg">Season 4: Placeholder</h3>
+                        <div className="grid md:grid-cols-3 gap-4 text-sm mb-3">
+                            <div className="bg-military-900 p-3 rounded-sm">
+                                <p className="text-xs text-tan-400">Start Date</p>
+                                <p className="font-semibold text-tan-200">Dec. 22nd, 2025</p>
+                            </div>
+                            <div className="bg-military-900 p-3 rounded-sm">
+                                <p className="text-xs text-tan-400">End Date</p>
+                                <p className="font-semibold text-tan-200">Expected April 23th, 2026</p>
+                            </div>
+                            <div className="bg-military-900 p-3 rounded-sm">
+                                <WipeDurationTracker startDate="2025-12-22" endDate="2026-04-23"/>
+                            </div>
+                        </div>
+                        <div>
+                            <p className="text-sm text-tan-300 font-medium">Major Additions:</p>
+                            <ul className="list-disc list-inside ml-4 text-sm text-tan-400 mt-2">
+                                <li>Dam rework</li>
+                                <li>SVD VSS</li>
+                                <li>New Ammo</li>
+                                <li>QoL improvements</li>
+                            </ul>
+                        </div>
+                    </div>
                     {/* Season 3 */}
                     <div className="bg-military-800 border border-military-600 rounded-sm p-4">
                         <h3 className="font-semibold text-olive-400 mb-3 text-lg">Season 3: Gunsmith</h3>
@@ -161,10 +196,10 @@ export default function WhenIsTheWipeGuide() {
                             </div>
                             <div className="bg-military-900 p-3 rounded-sm">
                                 <p className="text-xs text-tan-400">End Date</p>
-                                <p className="font-semibold text-tan-200">To be announced...</p>
+                                <p className="font-semibold text-tan-200">Dec. 22nd, 2025</p>
                             </div>
                             <div className="bg-military-900 p-3 rounded-sm">
-                                <WipeDurationTracker startDate="2025-09-25" />
+                                <WipeDurationTracker startDate="2025-09-25" endDate="2025-12-22"/>
                             </div>
                         </div>
                         <div>
@@ -190,7 +225,7 @@ export default function WhenIsTheWipeGuide() {
                                 <p className="font-semibold text-tan-200">September 25th, 2025</p>
                             </div>
                             <div className="bg-military-900 p-3 rounded-sm">
-                                <WipeDurationTracker startDate="2025-04-25" endDate="2025-09-25" />
+                                <WipeDurationTracker startDate="2025-04-25" endDate="2025-09-25"/>
                             </div>
                         </div>
                         <div>
@@ -218,7 +253,7 @@ export default function WhenIsTheWipeGuide() {
                             </div>
                             <div className="bg-military-900 p-3 rounded-sm">
                                 <div className="bg-military-900 p-3 rounded-sm">
-                                    <WipeDurationTracker startDate="2024-12-09" endDate={"2025-04-24"} />
+                                    <WipeDurationTracker startDate="2024-12-09" endDate={"2025-04-24"}/>
                                 </div>
                             </div>
                         </div>
@@ -235,30 +270,39 @@ export default function WhenIsTheWipeGuide() {
             {/* What is a Wipe Section */}
             <section className="military-box p-6 rounded-sm">
                 <div className="flex items-start gap-3 mb-4">
-                    <BookOpen className="text-green-400 mt-1" size={24} />
+                    <BookOpen className="text-green-400 mt-1" size={24}/>
                     <h2 className="text-2xl font-bold text-tan-100">What is a Wipe?</h2>
                 </div>
 
                 <div className="space-y-4 text-tan-200">
                     <p className="text-lg">
-                        In extraction shooters like ExfilZone, a &#34;wipe&#34; is a complete reset of all player progression. This includes your character level, skills, inventory, and faction reputation.
+                        In extraction shooters like ExfilZone, a &#34;wipe&#34; is a complete reset of all player
+                        progression. This includes your character level, skills, inventory, and faction reputation.
                     </p>
 
                     <div className="bg-green-900/20 border-l-4 border-green-600 p-4">
                         <p className="mb-2"><strong>Why are wipes necessary?</strong></p>
                         <ul className="space-y-1 list-disc list-inside ml-4">
-                            <li><strong>Fair Play:</strong> Wipes create a level playing field, allowing new players to compete with veterans.</li>
-                            <li><strong>Economic Reset:</strong> They reset the in-game economy, preventing inflation and making all items valuable again.</li>
-                            <li><strong>Fresh Experience:</strong> Wipes provide a fresh start, encouraging players to try new strategies and content.</li>
+                            <li><strong>Fair Play:</strong> Wipes create a level playing field, allowing new players to
+                                compete with veterans.
+                            </li>
+                            <li><strong>Economic Reset:</strong> They reset the in-game economy, preventing inflation
+                                and making all items valuable again.
+                            </li>
+                            <li><strong>Fresh Experience:</strong> Wipes provide a fresh start, encouraging players to
+                                try new strategies and content.
+                            </li>
                         </ul>
                     </div>
 
                     <div className="bg-blue-900/20 border border-blue-700/50 rounded-sm p-4">
                         <div className="flex items-start gap-3">
-                            <Info className="text-blue-400 mt-1" size={20} />
+                            <Info className="text-blue-400 mt-1" size={20}/>
                             <div>
                                 <p className="text-blue-200">
-                                    <strong>DLC and Bonuses:</strong> Any bonuses from DLCs or special editions of the game are reapplied to your account after each wipe. You will not lose your purchased benefits.
+                                    <strong>DLC and Bonuses:</strong> Any bonuses from DLCs or special editions of the
+                                    game are reapplied to your account after each wipe. You will not lose your purchased
+                                    benefits.
                                 </p>
                             </div>
                         </div>
