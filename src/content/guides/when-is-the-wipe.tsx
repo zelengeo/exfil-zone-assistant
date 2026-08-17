@@ -1,5 +1,5 @@
 import React from 'react';
-import {ExternalLink, Info, Megaphone, History, BookOpen} from 'lucide-react';
+import {ExternalLink, Info, Megaphone, History, BookOpen, Radar, CalendarClock} from 'lucide-react';
 
 
 // const AVERAGE_DURATION_DAYS = (136 + 153 + 88 + 122) / 4;
@@ -77,55 +77,122 @@ export default function WhenIsTheWipeGuide() {
                 </div>
             </section>
 
-            {/* Upcoming Wipe Announcement Section */}
-            *
-            <section className="military-box p-6 rounded-sm border-2 border-green-600 bg-green-900/10">
+            {/* Wipe Watch Section - swap for the announcement block once Caveman Studios confirm a date */}
+            <section className="military-box p-6 rounded-sm border-2 border-yellow-600 bg-yellow-900/10">
                 <div className="flex items-start gap-3 mb-4">
-                    <Megaphone className="text-green-400 mt-1 animate-pulse" size={24}/>
-                    <h2 className="text-2xl font-bold text-green-400">5th Wipe Announced!</h2>
+                    <Radar className="text-yellow-400 mt-1 animate-pulse" size={24}/>
+                    <h2 className="text-2xl font-bold text-yellow-400">Wipe Watch: The 6th Wipe Is Approaching</h2>
                 </div>
 
                 <div className="space-y-4 text-tan-200">
-                    <div className="bg-green-900/20 border-l-4 border-green-500 p-4">
-                        <p className="text-xl font-bold text-green-300 mb-2">
-                            Wipe Date: April 23th, 2026
+                    <div className="bg-yellow-900/20 border-l-4 border-yellow-500 p-4">
+                        <p className="text-xl font-bold text-yellow-300 mb-2">
+                            Estimated window: late September 2026
                         </p>
-                        <p className="text-lg text-tan-200">
-                            Pre-wipe event starts: Weekend of April 2nd, 2025
+                        <p className="text-tan-200">
+                            <strong>There is no official date yet.</strong> Everything below is our own estimate based
+                            on how the previous four wipes played out. Treat it as a signal to start wrapping up your
+                            progression, not as a confirmed date.
                         </p>
                     </div>
 
                     <div className="space-y-3">
-                        <h3 className="text-lg font-semibold text-olive-400">Major Features Coming:</h3>
+                        <h3 className="text-lg font-semibold text-olive-400">Signal #1: A Fresh Dev Peek Dropped</h3>
+                        <p>
+                            Caveman Studios publish a <strong className="text-tan-100">Dev Peek</strong> showing off the
+                            next season&#39;s content before every wipe. A new one landed on{' '}
+                            <strong className="text-tan-100">August 15th, 2026</strong> &mdash; and three of the four
+                            previous Dev Peeks were followed by a wipe within 2&ndash;6 weeks.
+                        </p>
+
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-sm border border-military-600">
+                                <thead>
+                                <tr className="bg-military-800 text-tan-300">
+                                    <th className="text-left p-3 font-semibold">Dev Peek</th>
+                                    <th className="text-left p-3 font-semibold">Wipe That Followed</th>
+                                    <th className="text-left p-3 font-semibold">Lead Time</th>
+                                </tr>
+                                </thead>
+                                <tbody className="text-tan-200">
+                                <tr className="border-t border-military-600">
+                                    <td className="p-3">March 21st, 2025</td>
+                                    <td className="p-3">April 24th, 2025</td>
+                                    <td className="p-3">34 days</td>
+                                </tr>
+                                <tr className="border-t border-military-600">
+                                    <td className="p-3">December 6th, 2025</td>
+                                    <td className="p-3">December 22nd, 2025</td>
+                                    <td className="p-3">16 days</td>
+                                </tr>
+                                <tr className="border-t border-military-600">
+                                    <td className="p-3">March 11th, 2026</td>
+                                    <td className="p-3">April 23rd, 2026</td>
+                                    <td className="p-3">43 days</td>
+                                </tr>
+                                <tr className="border-t border-military-600 bg-yellow-900/20">
+                                    <td className="p-3 font-semibold text-yellow-200">August 15th, 2026</td>
+                                    <td className="p-3 font-semibold text-yellow-200">Aug 31st &ndash; Sep 27th, 2026
+                                        (estimate)
+                                    </td>
+                                    <td className="p-3 font-semibold text-yellow-200">16&ndash;43 days</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p className="text-sm text-tan-300">
+                            The June 2025 Dev Peek is the one that breaks the pattern: it arrived only 47 days into
+                            Season 2 and the wipe was still 106 days away. If August 2026 turns out to be that kind of
+                            early teaser rather than a pre-wipe reveal, the wipe could slip toward the end of the year
+                            instead.
+                        </p>
+                    </div>
+
+                    <div className="space-y-3">
+                        <h3 className="text-lg font-semibold text-olive-400">Signal #2: Season 5 Is Getting Long</h3>
+                        <p>
+                            Season 5 started on April 23rd, 2026. Past seasons have run between 88 and 153 days, with an
+                            average of roughly 125. That average lands in late August 2026, and the longest season on
+                            record would still put the wipe before the end of September &mdash; the same window the Dev
+                            Peek points at.
+                        </p>
+                    </div>
+
+                    <div className="bg-blue-900/20 border border-blue-700/50 rounded-sm p-4">
+                        <div className="flex items-start gap-3">
+                            <CalendarClock className="text-blue-400 mt-1" size={20}/>
+                            <div>
+                                <p className="text-blue-200">
+                                    <strong>Next milestone to watch:</strong> the pre-wipe event announcement. The last
+                                    two pre-wipe events were announced about 3&ndash;4 weeks ahead of the wipe itself,
+                                    so once you see one, you know almost exactly how much time is left.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="space-y-3">
+                        <h3 className="text-lg font-semibold text-olive-400">How to Prepare</h3>
                         <ul className="space-y-2 ml-4">
                             <li className="flex items-start gap-2">
-                                <span className="text-green-400 mt-1">•</span>
-                                <div>
-                                    <strong className="text-tan-100">PVE:</strong>
-                                    <span className="text-tan-300">Enjoy a fair, controlled environment</span>
-                                </div>
+                                <span className="text-yellow-400 mt-1">•</span>
+                                <span className="text-tan-300">
+                                    Finish the tasks and hideout upgrades you are close to &mdash; everything resets.
+                                </span>
                             </li>
                             <li className="flex items-start gap-2">
-                                <span className="text-green-400 mt-1">•</span>
-                                <div>
-                                    <strong className="text-tan-100">New Helmets & Armors:</strong>
-                                    <span
-                                        className="text-tan-300"> Enhance your loadout variability. </span>
-                                </div>
+                                <span className="text-yellow-400 mt-1">•</span>
+                                <span className="text-tan-300">
+                                    Spend your stash. Hoarded money and high-tier gear are worth nothing after the wipe.
+                                </span>
                             </li>
                             <li className="flex items-start gap-2">
-                                <span className="text-green-400 mt-1">•</span>
-                                <div>
-                                    <strong className="text-tan-100">Dog Tag System:</strong>
-                                    <span className="text-tan-300"> New collectible trophy system</span>
-                                </div>
-                            </li>
-                            <li className="flex items-start gap-2">
-                                <span className="text-green-400 mt-1">•</span>
-                                <div>
-                                    <strong className="text-tan-100">Bots revamp:</strong>
-                                    <span className="text-tan-300"> Experience smarter, more reactive bot behavior</span>
-                                </div>
+                                <span className="text-yellow-400 mt-1">•</span>
+                                <span className="text-tan-300">
+                                    Use the remaining weeks to run the loadouts you have been saving &quot;for
+                                    later&quot;.
+                                </span>
                             </li>
                         </ul>
                     </div>
@@ -150,7 +217,6 @@ export default function WhenIsTheWipeGuide() {
                     </div>
                 </div>
             </section>
-            *
 
             {/* Wipe History Section */}
             <section className="military-box p-6 rounded-sm">
@@ -160,6 +226,32 @@ export default function WhenIsTheWipeGuide() {
                 </div>
 
                 <div className="space-y-6 text-tan-200">
+                    {/* Season 5 */}
+                    <div className="bg-military-800 border border-yellow-700/60 rounded-sm p-4">
+                        <h3 className="font-semibold text-olive-400 mb-3 text-lg">Season 5: PVE (Current)</h3>
+                        <div className="grid md:grid-cols-3 gap-4 text-sm mb-3">
+                            <div className="bg-military-900 p-3 rounded-sm">
+                                <p className="text-xs text-tan-400">Start Date</p>
+                                <p className="font-semibold text-tan-200">April 23rd, 2026</p>
+                            </div>
+                            <div className="bg-military-900 p-3 rounded-sm">
+                                <p className="text-xs text-tan-400">End Date</p>
+                                <p className="font-semibold text-yellow-300">Estimated late Aug. &ndash; Sep. 2026</p>
+                            </div>
+                            <div className="bg-military-900 p-3 rounded-sm">
+                                <WipeDurationTracker startDate="2026-04-23"/>
+                            </div>
+                        </div>
+                        <div>
+                            <p className="text-sm text-tan-300 font-medium">Major Additions:</p>
+                            <ul className="list-disc list-inside ml-4 text-sm text-tan-400 mt-2">
+                                <li>PVE mode</li>
+                                <li>Dog tag system</li>
+                                <li>New helmets and armors</li>
+                                <li>Bots revamp</li>
+                            </ul>
+                        </div>
+                    </div>
                     {/* Season 4 */}
                     <div className="bg-military-800 border border-military-600 rounded-sm p-4">
                         <h3 className="font-semibold text-olive-400 mb-3 text-lg">Season 4: Placeholder</h3>
@@ -170,7 +262,7 @@ export default function WhenIsTheWipeGuide() {
                             </div>
                             <div className="bg-military-900 p-3 rounded-sm">
                                 <p className="text-xs text-tan-400">End Date</p>
-                                <p className="font-semibold text-tan-200">Expected April 23th, 2026</p>
+                                <p className="font-semibold text-tan-200">April 23rd, 2026</p>
                             </div>
                             <div className="bg-military-900 p-3 rounded-sm">
                                 <WipeDurationTracker startDate="2025-12-22" endDate="2026-04-23"/>
