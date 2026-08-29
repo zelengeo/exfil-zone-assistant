@@ -262,7 +262,8 @@ export function ItemCorrectionForm({item, trigger}: ItemCorrectionFormProps) {
                 );
                 break;
             case "gear":
-                if (item.subcategory === "Body Armor" || item.subcategory === "Helmets" || item.subcategory === "Face Shields") {
+                if (item.subcategory === "Body Armor" || item.subcategory === "Helmets"
+                    || item.subcategory === "Face Shields" || item.subcategory === "Eye Protection") {
                     fields.push(
                         field("armorClass", "Armor Class"),
                         field("maxDurability", "Max Durability"),

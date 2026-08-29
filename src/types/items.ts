@@ -18,6 +18,13 @@ export interface Item {
 
     notes?: string;
     tips?: string;
+
+    /**
+     * Set by the extraction pipeline's merge step on items the published wiki has but the game
+     * files no longer do (`"missing-from-game-data"`). Kept so these stay visible for manual
+     * review instead of disappearing silently - see the extraction repo's mergeWithWiki.js.
+     */
+    extractionStatus?: string;
 }
 
 // Interpolation modes for curves
@@ -60,19 +67,60 @@ export type FireMode = "semiAuto" | "fullAuto" | "pumpAction" | "boltAction" | "
 export const CALIBERS = [
     '.45 ACP',
     '12GA',
+    '12.7x55',
     '5.45x39',
     '5.56x45',
     '6.8x51',
     '7.62x39',
     '7.62x51',
     '7.62x54R',
-    '9x19'
+    '9x19',
+    '9x39'
 ] as const;
 export type Caliber = typeof CALIBERS[number];
+
+/**
+ * One part of a weapon's gunsmith build. A weapon ships as a *preset*: a parts list whose single
+ * receiver (`isReceiver`) carries the simulation model, and whose other parts contribute weight
+ * and handling modifiers.
+ */
+export interface WeaponPart {
+    sellId: string;
+    count: number;
+    name: string;
+    weight: number;
+    isReceiver: boolean;
+}
+
+/** The numbers the in-game gunsmith screen shows for a preset, baked by the game itself. */
+export interface GunsmithDisplay {
+    RPM: number;
+    caliber: string;
+    ergonomics: number;
+    verticalRecoil: number;
+    horizontalRecoil: number;
+    firingPower: number;
+    spreadMOA: number;
+}
 
 // Weapon type with complete stats from game data
 export interface Weapon extends Item {
     category: 'weapons';
+
+    // Gunsmith model - a weapon is a preset built from parts, one of which is the receiver.
+    gunsmithDisplay?: GunsmithDisplay;
+    parts?: WeaponPart[];
+    receiverId?: string;
+    defaultClip?: string;
+    compatibleMagazines?: string[];
+    /**
+     * Weapons sharing a base platform, e.g. every AK74 variant. Used to group the weapons page -
+     * see `getWeaponFamilyLabel` for the display spelling.
+     */
+    family?: string;
+    gameClass?: string;
+    gameId?: string;
+
     stats: Item['stats'] & {
         // Required weapon stats
         fireRate: number;
@@ -85,7 +133,16 @@ export interface Weapon extends Item {
         MOA?: number;
         ADSSpeed: number;
         ergonomics: number;
+        /**
+         * The single mode the old data carried. `fireModes` is the game's full bit set and is
+         * authoritative where it is non-empty; this stays for the receivers that author none,
+         * where it is curated.
+         */
         fireMode: FireMode;
+        /** Every mode the receiver supports. Empty when the receiver authors no bit set. */
+        fireModes?: FireMode[];
+        /** Base penetration power of the receiver, before ammo. */
+        penetration?: number;
         firingPower: number;
         //PROBABLY LEFTOVER DATA FROM OTHER MODE/GAME cuz these values are AMMO-related
         damageRangeCurve?: string;
@@ -143,18 +200,23 @@ export interface Rail extends Attachment {
 export interface Magazine extends Attachment {
     category: 'attachments';
     subcategory: 'Magazines';
+    /** Gunsmith id, e.g. `gunsmith.flame12.clip.10`. */
+    gameId?: string;
+    /** The weapon platform this magazine belongs to, e.g. `Flame12`. */
+    family?: string;
     stats: Item['stats'] & MagazineProperties;
 }
 
 // Complete armor type with all curves
 export interface Gear extends Item {
     category: 'gear';
-    subcategory: 'Body Armor' | 'Helmets' | "Face Shields" | "Backpacks" | "Holsters";
+    subcategory: 'Body Armor' | 'Helmets' | "Face Shields" | "Eye Protection" | "Night Vision"
+        | "Backpacks" | "Holsters";
     stats: Item['stats'];
 }
 
 export interface Armor extends Gear {
-    subcategory: 'Body Armor' | 'Helmets' | "Face Shields";
+    subcategory: 'Body Armor' | 'Helmets' | "Face Shields" | "Eye Protection";
     stats: Item['stats'] & ArmorProperties;
 }
 
@@ -167,8 +229,23 @@ export interface Helmet extends Armor {
     stats: Item['stats'] & HelmetProperties;
 }
 
+/**
+ * Face shields and goggles. The game files put both under `Warfare/Helmet/Mask`; the wiki keeps
+ * "Eye Protection" as a separate shelf for goggles, which is a curated distinction (see the
+ * extraction repo's mergeWithWiki.js). They share one protection model, so they share one type.
+ */
 export interface FaceShield extends Armor {
-    subcategory: 'Face Shields';
+    subcategory: 'Face Shields' | 'Eye Protection';
+    stats: Item['stats'] & FaceShieldProperties;
+}
+
+/**
+ * Night-vision devices ship in the same data file as face shields but carry **no protection model
+ * at all** - no armour class, durability, cones or curves. They are gear, not armour, by design.
+ */
+export interface NightVision extends Gear {
+    subcategory: 'Night Vision';
+    stats: Item['stats'] & { sellId?: string };
 }
 
 export interface AttachmentPoint {
@@ -177,7 +254,11 @@ export interface AttachmentPoint {
 }
 
 export interface BackpackProperties {
+    /** Human-readable "WxDxH" in cm, derived from `storageGrid`. */
     sizes: string;
+    /** The game's own storage volume, in grid cells plus the cell size. */
+    storageGrid?: { x: number; y: number; z: number; unit: number };
+    sellId?: string;
     attachmentPoints: AttachmentPoint[];
 }
 
@@ -206,7 +287,12 @@ export interface Medicine extends Item {
 export interface Bandage extends Medicine {
     subcategory: 'Bandages';
     stats: Item['stats'] & {
-        canHealDeepWound: boolean
+        /** Curated - the game files do not record it. */
+        canHealDeepWound: boolean,
+        healPerSecond?: number,
+        healDuration?: number,
+        /** Deep-wound severity this bandage can close. */
+        operationRequirement?: number,
     }
 }
 
@@ -228,6 +314,12 @@ export interface Painkiller extends Medicine {
         energyFactor: number,
         hydraFactor: number,
         sideEffectTime: number,
+        /**
+         * Painkillers derive from the consumables base class, so they carry the provisions
+         * consumption model too.
+         */
+        threshold?: number,
+        consumptionSpeed?: number,
     }
 }
 
@@ -236,6 +328,9 @@ export interface Stim extends Medicine {
     stats: Item['stats'] & {
         useTime: number,
         effectTime: number,
+        sellId?: string,
+        /** Curated: the item -> perk link is Blueprint graph code, not data. */
+        perk?: string,
     }
 }
 
@@ -244,7 +339,11 @@ export interface Syringe extends Medicine {
     stats: Item['stats'] & {
         capacity: number,
         cureSpeed: number,
+        /** Curated - the game files do not record it. */
         canReduceBleeding: boolean,
+        healPerSecond?: number,
+        healDuration?: number,
+        useTime?: number,
     }
 }
 
@@ -252,9 +351,11 @@ export interface Syringe extends Medicine {
 export interface ProvisionsProperties {
     capacity: number;           // Maximum volume/amount
     threshold: number;          // When it's considered "empty"
+    thresholdTime?: number;     // How long consumption must continue before the threshold applies
     consumptionSpeed: number;   // How fast it's consumed
     energyFactor: number;       // Energy restoration value
     hydraFactor: number;        // Hydration restoration value
+    stackSize?: number;         // How many fit in one inventory slot
 }
 
 // Base provisions interface
@@ -278,7 +379,19 @@ export interface TaskItemProperties {
     taskIds: string[];
 }
 
-export type TaskItemSubcategory = 'Tommy' | 'Maximillian' | 'Maggie' | 'Johnny' | 'Igor' | 'Universal';
+/**
+ * Which trader's tasks an item belongs to. Curated - nothing in the client data links a quest item
+ * to a trader, so items the extraction found but nobody has classified land in `Unassigned`.
+ */
+export type TaskItemSubcategory =
+    'Tommy' | 'Maximillian' | 'Maggie' | 'Johnny' | 'Igor' | 'Universal' | 'Unassigned';
+
+export const TASK_ITEM_SUBCATEGORIES: TaskItemSubcategory[] =
+    ['Tommy', 'Maximillian', 'Maggie', 'Johnny', 'Igor', 'Universal', 'Unassigned'];
+
+export function isTaskItemSubcategory(value: string): value is TaskItemSubcategory {
+    return (TASK_ITEM_SUBCATEGORIES as string[]).includes(value);
+}
 
 export interface TaskItem extends Item {
     category: 'task-items';
@@ -286,16 +399,32 @@ export interface TaskItem extends Item {
     stats: Item['stats'] & TaskItemProperties;
 }
 
+/**
+ * A door key. The subcategory is the map it belongs to, which the game states directly - the old
+ * building-type union here never matched the shipped data.
+ */
 export interface Keys extends Item {
     category: 'keys';
-    subcategory: 'Suburb' | 'Office Buildings' | 'Industrial' | 'Residential' | 'Military';
-    stats: Item['stats'];
+    subcategory: 'Suburb' | 'Dam' | 'Metro' | 'Resort' | 'Smuggling Tunnel' | 'Smuggling Tunnel (Infection)';
+    /** Shop id, e.g. `card.map1.beartown_h1`. */
+    gameId?: string;
+    stats: Item['stats'] & {
+        /** How many times the key can be used before it breaks. */
+        uses?: number;
+        /** Where in the map the door is. */
+        location?: string;
+    };
 }
 
 export interface Misc extends Item {
     category: 'misc';
     subcategory: 'Household' | 'Intel' | 'Electric' | 'Power' | 'Tools' | 'Combustible' | 'Building' | 'HighValue' | 'Medicine';
-    stats: Item['stats'];
+    stats: Item['stats'] & {
+        /** How much the item shrinks when carried in a backpack. */
+        backpackDimensionMultiplier?: number;
+        /** How much it shrinks in a secure container. */
+        safeContainerBoundScale?: number;
+    };
 }
 
 export type AnyItem =
@@ -306,6 +435,7 @@ export type AnyItem =
     | BodyArmor
     | Helmet
     | FaceShield
+    | NightVision
     | Backpack
     | Holster
     | Medicine
@@ -340,15 +470,24 @@ export interface AmmoProperties {
     // Ballistics
     muzzleVelocity: number;
     bulletDropFactor?: number;
+    /** Scalars the game applies on top of the curves. */
+    damageFalloffFactor?: number;
+    penetrationFalloffFactor?: number;
+    /** The `BulletProfiles` asset this round's ballistics come from. */
+    bulletProfileId?: string;
 
-    //precalculated values (cache)
-    damageAtRange: {
+    /**
+     * Precalculated values (cache). Optional: only rounds that were on the published wiki carry
+     * these - the rest are interpolated from `ballisticCurves` on demand, which is where the cache
+     * came from in the first place.
+     */
+    damageAtRange?: {
         '60m': number;
         '120m': number;
         '240m': number;
         '480m': number;
     };
-    penetrationAtRange: {
+    penetrationAtRange?: {
         '60m': number;
         '120m': number;
         '240m': number;
@@ -365,6 +504,8 @@ export interface AmmoProperties {
 export interface AttachmentProperties {
     attachmentModifier?: AttachmentModifier;
     attachmentData?: AttachmentData;
+    /** The gunsmith id this part installs as, e.g. `gunsmith.20rail.foregrip.afg`. */
+    gunsmithId?: string;
 }
 
 export interface TacticalAttachmentProperties extends AttachmentProperties {
@@ -415,6 +556,8 @@ export interface MagazineProperties {
     // Magazine properties
     capacity: number;
     caliber: Caliber;
+    /** The caliber as the ammo/weapon pages spell it, e.g. `12 Gauge` for `12GA`. */
+    ammoSubcategory?: string;
     ADSSpeedModifier?: number;
     ergonomicsModifier?: number;
     compatibleWeapons: string[];
@@ -422,7 +565,10 @@ export interface MagazineProperties {
 
 export interface GrenadeProperties {
     "fuseTime": number | null;
+    /** Inner blast radius - full effect. */
     "radius": number;
+    /** Outer blast radius, where the effect has fallen off to nothing. */
+    "radiusMax"?: number | null;
     "bluntDamageScale": number;
     "bleedingChance": number;
     "effectTime": number;
@@ -445,8 +591,15 @@ export interface ArmorProperties {
     durabilityDamageScalar: number;
     bluntDamageScalar: number;
 
-    // Protection zones
-    protectiveData: ProtectiveZone[];
+    /** Shop id the game sells this under. */
+    sellId?: string;
+
+    /**
+     * Protection zones. Optional now: head gear protects through `coneRegions` in the current
+     * game model, and only the items that were on the published wiki carry curated per-bone data.
+     * Body armour still has it on every item.
+     */
+    protectiveData?: ProtectiveZone[];
 
     // Penetration curves from game data
     penetrationChanceCurve: CurvePoint[];
@@ -454,11 +607,43 @@ export interface ArmorProperties {
     antiPenetrationDurabilityScalarCurve: CurvePoint[];
 }
 
+/**
+ * A rectangular frustum of head coverage - the model helmets and face shields actually use.
+ *
+ * `widthAngle` / `heightAngle` are **half-angles** in degrees, measured from the region's own axis
+ * after `rotation`, with the apex displaced from the head origin by `offset` (cm).
+ *
+ * Nothing here is interpreted into coverage percentages yet: the region polarity question is still
+ * open upstream. See the extraction repo's docs/HEAD_PROTECTION.md.
+ */
+export interface ConeRegion {
+    region: string;
+    widthAngle: number;
+    heightAngle: number;
+    offset: { x: number; y: number; z: number };
+    rotation: { pitch: number; yaw: number; roll: number };
+}
+
+/** Head gear coverage, shared by helmets and face shields. */
+export interface HeadProtectionProperties {
+    coneRegions: ConeRegion[];
+}
+
 export type helmetSoundMix = 'default' | 'Delta' | "OPSWAT" | "MuffledGeneral";
 
-export interface HelmetProperties extends ArmorProperties {
-    soundMix: helmetSoundMix;
+export interface HelmetProperties extends ArmorProperties, HeadProtectionProperties {
+    /** Curated: only the items that were on the published wiki carry it. */
+    soundMix?: helmetSoundMix;
     "canAttach"?: string[],
+    /** Half-angles of the helmet's face opening, in degrees. */
+    faceWidthAngle?: number;
+    faceHeightAngle?: number;
+}
+
+export interface FaceShieldProperties extends ArmorProperties, HeadProtectionProperties {
+    /** Half-angles of the area the shield covers, in degrees. */
+    maskWidthAngle?: number;
+    maskHeightAngle?: number;
 }
 
 export interface ItemCategory {
@@ -484,9 +669,11 @@ export const itemCategories: Record<string, ItemCategory> = {
             '7.62x54mmR',
             '7.62x39mm',
             '5.45x39mm',
+            '9x39mm',
             '9x19mm',
             '.45 ACP',
             '12 Gauge',
+            '12.7x55mm',
         ]
     },
     'ammo': {
@@ -505,9 +692,11 @@ export const itemCategories: Record<string, ItemCategory> = {
                 '7.62x54mmR',
                 '7.62x39mm',
                 '5.45x39mm',
+                '9x39mm',
                 '9x19mm',
                 '.45 ACP',
                 '12 Gauge',
+                '12.7x55mm',
             ]
     },
     attachments: {
@@ -550,6 +739,8 @@ export const itemCategories: Record<string, ItemCategory> = {
                 'Helmets',
                 'Body Armor',
                 'Face Shields',
+                'Eye Protection',
+                'Night Vision',
                 'Backpacks',
                 'Holsters'
             ]
@@ -582,14 +773,7 @@ export const itemCategories: Record<string, ItemCategory> = {
         name: 'Task Items',
         description: 'Special task-related items for various NPCs',
         icon: 'package',
-        subcategories: [
-            'Tommy',
-            'Maximillian',
-            'Maggie',
-            'Johnny',
-            'Igor',
-            'Universal'
-        ]
+        subcategories: [...TASK_ITEM_SUBCATEGORIES]
     },
     'keys': {
         id: 'keys',
@@ -601,6 +785,8 @@ export const itemCategories: Record<string, ItemCategory> = {
             'Dam',
             'Metro',
             'Resort',
+            'Smuggling Tunnel',
+            'Smuggling Tunnel (Infection)',
         ]
     },
     'misc': {
@@ -639,8 +825,14 @@ export function getCategoryIcon(categoryId: string): string {
     return category ? category.icon : 'box';
 }
 
-// Helper to format price with currency
+/**
+ * Format price with currency.
+ *
+ * Prices are curated: the game holds them server-side, so an item nobody has priced yet arrives as
+ * 0. Showing "0 EZD" reads as free rather than unknown, so say so instead.
+ */
 export function formatPrice(price: number): string {
+    if (!Number.isFinite(price) || price <= 0) return 'Unknown';
     return price.toLocaleString() + ' EZD';
 }
 
@@ -728,6 +920,29 @@ export const RARITY_CONFIG: Record<ItemRarity, RarityConfig> = {
         description: 'Prototype and experimental gear'
     }
 };
+
+/**
+ * Display spelling for the weapon families the game data spells its own way.
+ *
+ * The raw value is the gun folder's name (`Mp5`, `SR3M_VSS_ASVAL`), which is an asset path element
+ * rather than something to show a player. Only the ones that read wrong are listed; anything not
+ * here is already correct as written (`AR15`, `AKM`, `M40A5`, `XM5`, ...).
+ */
+export const WEAPON_FAMILY_LABELS: Record<string, string> = {
+    AKalpha: 'AK Alpha',
+    Bx4: 'BX4',
+    Evo3: 'EVO 3',
+    Flame12: 'Flame 12',
+    Mp5: 'MP5',
+    ScarLH: 'SCAR-LH',
+    SR3M_VSS_ASVAL: 'SR-3M / VSS / AS VAL',
+    Svt40: 'SVT-40',
+    UMP45: 'UMP-45',
+};
+
+export function getWeaponFamilyLabel(family: string): string {
+    return WEAPON_FAMILY_LABELS[family] ?? family;
+}
 
 export const FIRE_MODE_CONFIG: Record<FireMode, string> = {
     fullAuto: "Full Auto",

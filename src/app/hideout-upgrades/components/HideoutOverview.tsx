@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import Image from 'next/image';
-import {areaIcons, hideoutUpgrades, hideoutUpgradesTasks} from '@/data/hideout-upgrades';
+import {areaIcons, categoriesWithoutArea, hideoutUpgrades, hideoutUpgradesTasks} from '@/data/hideout-upgrades';
 import {Item} from '@/types/items';
+import {tasksData} from '@/data/tasks';
 import {X, ArrowUp, DollarSign, Undo, RotateCcw, ChevronDown, ChevronUp} from 'lucide-react';
 
 
@@ -30,44 +31,85 @@ interface AreaPosition {
 // Define positions for areas/categories on the hideout image
 // These would need to be adjusted based on your actual hideout image
 const AREA_POSITIONS: Record<string, AreaPosition> = {
-    // Categories
-    'None': {top: '5%', left: '95%'},
-    'MedicalArea': {top: '28%', left: '44%'},
-    'KitchenArea': {top: '47%', left: '30%'},
-    'Storage': {top: '30%', left: '70%'},
-    'Lounge': {top: '68%', left: '35%'},
+    // Storage Zone screen
+    'None': {top: '7.5%', left: '96.5%'},
+    'AreaUpgradeArea': {top: '27.5%', left: '46.5%'},
+    'BlackmarketMoreitem': {top: '44.75%', left: '48%'},
+    'BlackmarketQuality': {top: '36.75%', left: '58%'},
 
-    // Storage Areas
-    'StorageZoneLock1': {top: '40%', left: '78%'},
-    'StorageZoneLock2': {top: '33%', left: '93%'},
-    'StorageZoneLock3': {top: '20%', left: '75%'},
-    'WorkshopZone': {top: '27%', left: '92%'},
-    'Gunsmith': {top: '35%', left: '95%'},
+    // Hideout screen
+    'MedicalArea': {top: '51.25%', left: '70%'},
+    'KitchenArea': {top: '31.25%', left: '78%'},
+    'Lounge': {top: '57.5%', left: '43.25%'},
+    'StorageZoneLock1': {top: '9.25%', left: '41.5%'},
+    'StorageZoneLock2': {top: '41%', left: '28.5%'},
+    'StorageZoneLock3': {top: '81%', left: '29.25%'},
+    'WorkshopZone': {top: '35%', left: '37.75%'},
+    'Gunsmith': {top: '22.75%', left: '33.75%'},
+    'RestRoom': {top: '73.5%', left: '65.75%'},
+    'WaterCollector': {top: '37.75%', left: '70.75%'},
+    'Generator': {top: '17%', left: '56.5%'},
+    'ShootingRange': {top: '26.5%', left: '87.75%'},
+    'CryptoMining': {top: '8.75%', left: '64%'},
+    'GeneratorZone': {top: '27%', left: '63%'},
+    'HQPAD': {top: '31.75%', left: '52.25%'},
+    'StorageZoneLock4': {top: '69.75%', left: '17%'},
+    'StorageExpansionStart': {top: '27.5%', left: '45%'},
+    'Intelligent': {top: '40%', left: '58%'},
+    'RestroomZone': {top: '45.75%', left: '45.5%'},
 
-    // Kitchen Areas
-    'CoffeeMaker': {top: '48%', left: '20%'},
-    'Refrigerator': {top: '55%', left: '27%'},
-    'MicrowaveOven': {top: '38%', left: '24%'},
+    // Kitchen Area screen
+    'CoffeeMaker': {top: '37%', left: '65.25%'},
+    'Refrigerator': {top: '46.25%', left: '72.25%'},
+    'MicrowaveOven': {top: '23%', left: '71%'},
 
-    // Medical Areas
-    'OperationBed': {top: '35%', left: '33%'},
-    'Planting': {top: '30%', left: '25%'},
-    'MedDesk': {top: '18%', left: '38%'},
+    // Medical Area screen
+    'OperationBed': {top: '66.25%', left: '67.75%'},
+    'Planting': {top: '46.25%', left: '64%'},
+    'MedDesk': {top: '39.5%', left: '73.25%'},
 
-    // Lounge Areas
-    'Sofa': {top: '71%', left: '23%'},
-    'Bookcase': {top: '75%', left: '39%'},
-    'TVSet': {top: '80%', left: '30%'},
+    // Lounge screen
+    'Sofa': {top: '53%', left: '49%'},
+    'Bookcase': {top: '68.5%', left: '45.75%'},
+    'TVSet': {top: '45.5%', left: '41.25%'},
+};
 
-    // Individual areas
-    'RestRoom': {top: '87%', left: '30%'},
-    'WaterCollector': {top: '40%', left: '40%'},
-    'Generator': {top: '72%', left: '69%'},
-    'ShootingRange': {top: '60%', left: '15%'},
-    'Intelligent': {top: '43%', left: '52%'},
-    'CryptoMining': {top: '55%', left: '46%'},
 
-    // Add more positions as needed...
+
+/**
+ * Names for the quest ids an upgrade is gated behind.
+ *
+ * `relatedQuests` holds the game's own dotted ids (`task.mall.4`). Two sources can name them: the
+ * real task list, joined on its `gameId`, and the curated `hideoutUpgradesTasks` prose written
+ * before the extraction existed. S5 gates eight upgrades on quests this wiki has not published
+ * yet, so neither source knows them and the id itself is shown - which is at least a searchable
+ * string, and never a crash.
+ */
+const questNames: Record<string, string> = {};
+for (const task of Object.values(tasksData)) {
+    if (task.gameId) questNames[task.gameId] = task.name;
+}
+const getQuestName = (questId: string) =>
+    questNames[questId]
+    ?? (hideoutUpgradesTasks as Record<string, { name: string } | undefined>)[questId]?.name
+    ?? questId;
+
+/** An area's display name - `areaIcons` carries it as the pin's alt text. */
+const getAreaName = (areaId: string) =>
+    (areaIcons as Record<string, { alt: string } | undefined>)[areaId]?.alt ?? areaId;
+
+/**
+ * Where a pin sits when nothing has placed it yet.
+ *
+ * `AREA_POSITIONS` is hand-placed against the background plate - the game files hold no coordinates
+ * for any of this - so a season that adds areas will always add them before someone has placed
+ * them. Defaulting to the centre stacks every such pin on the same spot, where only the last one
+ * drawn can be clicked; laying them along the bottom edge instead keeps each one reachable and
+ * makes it obvious which ones still need placing.
+ */
+const unplacedPosition = (areaId: string, all: string[]): AreaPosition => {
+    const index = Math.max(0, all.indexOf(areaId));
+    return {top: '92%', left: `${5 + (index % 16) * 6}%`};
 };
 
 const getAreaIconSafe = (areaId: string) => {
@@ -86,8 +128,11 @@ const areasByCategory: Record<string, string[]> = Object.values(hideoutUpgrades)
             areasByCategory[upgrade.categoryId] = Array.from(categories).filter(cat => cat !== 'None');
         } else {
             areasByCategory[upgrade.categoryId] = ["None"];
-            //Lounge and Storage do not need initial area research as Medical Area and Kitchen
-            if (upgrade.categoryId === 'Lounge' || upgrade.categoryId === 'Storage') {
+            // A category that is also an area (Medical Area, Kitchen Area) gets its own pin from
+            // the loop below, because some upgrade names it as `areaId`. Lounge and HQPAD are
+            // categories only, so their pin has to be added here. The list is derived from the
+            // data rather than spelled out, so a new season's categories need no edit.
+            if (categoriesWithoutArea.includes(upgrade.categoryId)) {
                 areasByCategory[upgrade.categoryId].push(upgrade.categoryId);
             }
         }
@@ -153,6 +198,21 @@ export default function HideoutOverview({
     const [selectedCategory, setSelectedCategory] = useState<string>('None');
     const [selectedUpgrade, setSelectedUpgrade] = useState<UpgradeData | null>(null);
 
+    /**
+     * Whether a pin navigates into a category instead of opening its own upgrade popover.
+     *
+     * An area that is also a category has to do both. From the outside its pin is the way into
+     * the category; on the category's own screen it is the area itself, so its remaining levels
+     * stay reachable - Kitchen Area has four of them, and keying this off `level === 1` used to
+     * strand every one past the first. Pins that are categories only (Lounge, HQPAD, and the
+     * `None` back pin) hold no upgrades, so they always navigate.
+     */
+    const isCategoryPin = (areaId: string) => {
+        if (!categories.has(areaId)) return false;
+        if (!upgradesByArea[areaId]) return true;
+        return (areaLevels[areaId] ?? 0) >= 1 && areaId !== selectedCategory;
+    };
+
     useEffect(() => {
         const handleEscape = (e: KeyboardEvent) => {
             if (e.key === 'Escape') {
@@ -166,7 +226,7 @@ export default function HideoutOverview({
 
     const handleAreaClick = (areaId: string) => {
         // If it's a category, switch to that category
-        if (categories.has(areaId) && areaLevels[areaId] === 1) {
+        if (isCategoryPin(areaId)) {
             setSelectedCategory(prevState => prevState === areaId ? "None" : areaId);
             return;
         }
@@ -212,13 +272,16 @@ export default function HideoutOverview({
             <div className="military-box rounded-sm p-4">
                 <h2 className="text-xl font-bold text-olive-400 mb-4 text-center">HIDEOUT OVERVIEW</h2>
                 {/* Hideout Image with Overlay Areas */}
+                {/* The plate is 1024x512, so the stage is 2:1 - a square box with `object-cover`
+                    would crop half the floor plan away. Pin coordinates are percentages of this
+                    box, so they are tied to this aspect ratio as much as to the image. */}
                 <div
-                    className="relative w-full aspect-square max-w-[1024px] mx-auto bg-black/50 rounded-sm overflow-hidden">
+                    className="relative w-full aspect-[2/1] max-w-[1024px] mx-auto bg-black/50 rounded-sm overflow-hidden">
                     {/* Background Image */}
                     <div
                         className={`absolute inset-0 transition-transform duration-500 ${selectedCategory !== 'None' ? 'scale-110' : 'scale-100'}`}>
                         <Image
-                            src="/images/hideout/Image_bg_SquareBackgroundbg612.webp" // You'll need to add your hideout background image
+                            src="/images/hideout/Image_bg_SquareBackgroundbg6_4.webp"
                             alt="Hideout"
                             fill
                             sizes={"full"}
@@ -229,8 +292,10 @@ export default function HideoutOverview({
 
                     {/* Overlay Areas */}
                     {isLoaded && areasByCategory[selectedCategory].map((areaId) => {
-                        const position = AREA_POSITIONS[areaId] || {top: '50%', left: '50%'};
-                        const isCategory = categories.has(areaId) && areaLevels[areaId] === 1;
+                        const unplaced = !AREA_POSITIONS[areaId];
+                        const position = AREA_POSITIONS[areaId]
+                            || unplacedPosition(areaId, areasByCategory[selectedCategory]);
+                        const isCategory = isCategoryPin(areaId);
                         const canUpgrade = !isCategory && checkLevelConditions(areaId, null, areaLevels);
 
 
@@ -248,9 +313,11 @@ export default function HideoutOverview({
                                 }}
                             >
                                 <div className={`relative w-full h-full rounded-sm overflow-hidden ${
-                                    isCategory
-                                        ? 'bg-blue-400/40 border-2 border-blue-200'
-                                        : 'bg-black/80 border-2 border-olive-600'
+                                    unplaced
+                                        ? 'bg-black/80 border-2 border-dashed border-tan-500'
+                                        : isCategory
+                                            ? 'bg-blue-400/40 border-2 border-blue-200'
+                                            : 'bg-black/80 border-2 border-olive-600'
                                 }`}>
                                     <Image
                                         src={`/images/hideout/${iconConfig?.icon || "Image_bg_close.webp"}`}
@@ -366,14 +433,20 @@ export default function HideoutOverview({
                                             return (
                                                 <div key={itemId}
                                                      className="bg-black/90 border border-military-600 rounded-sm p-2 flex items-center gap-2">
-                                                    <Image
-                                                        src={item?.images.icon || '/images/items/unknown.png'}
-                                                        alt={item?.name || itemId}
-                                                        unoptimized={true}
-                                                        width={40}
-                                                        height={40}
-                                                        className="object-contain"
-                                                    />
+                                                    {/* Fixed box + `fill`: the icons are not all
+                                                        square, and `width`/`height` alone lets a
+                                                        tall one (misc_b_gastank_large) stretch the
+                                                        row, because preflight forces `height:auto`. */}
+                                                    <div className="relative w-10 h-10 flex-shrink-0">
+                                                        <Image
+                                                            src={item?.images.icon || '/images/items/unknown.png'}
+                                                            alt={item?.name || itemId}
+                                                            unoptimized={true}
+                                                            fill
+                                                            sizes="40px"
+                                                            className="object-contain"
+                                                        />
+                                                    </div>
                                                     <div className="flex-grow min-w-0">
                                                         <p className="text-xs text-tan-300 truncate">{item?.name || itemId}</p>
                                                         <p className="text-sm font-bold text-olive-400">×{quantity}</p>
@@ -392,7 +465,7 @@ export default function HideoutOverview({
                                             {selectedUpgrade.relatedQuests.map((questId) => (
                                                 <div key={questId}
                                                      className="bg-black/90 border border-military-600 rounded-sm px-3 py-2">
-                                                    <p className="text-sm text-tan-200">{hideoutUpgradesTasks[questId].name}</p>
+                                                    <p className="text-sm text-tan-200">{getQuestName(questId)}</p>
                                                 </div>
                                             ))}
                                         </div>
@@ -407,7 +480,7 @@ export default function HideoutOverview({
                                             {Object.entries(selectedUpgrade.levelConditions).map(([areaId, level]) => (
                                                 <div key={areaId}
                                                      className="bg-black/90 border border-military-600 rounded-sm px-3 py-2">
-                                                    <p className={`text-sm ${((areaLevels[areaId] || 0) < level) ? "text-red-500" : "text-tan-200"}`}>{areaId}:
+                                                    <p className={`text-sm ${((areaLevels[areaId] || 0) < level) ? "text-red-500" : "text-tan-200"}`}>{getAreaName(areaId)}:
                                                         Level {level}</p>
                                                 </div>
                                             ))}

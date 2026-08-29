@@ -6,54 +6,76 @@
     "category": "gear",
     "subcategory": "Face Shields",
     "images": {
-      "icon": "/images/items/helmets/SM_Helmet_012_2_Zty.webp",
-      "thumbnail": "/images/items/helmets/SM_Helmet_012_2_Zty.webp",
-      "fullsize": "/images/items/helmets/SM_Helmet_012_2_Zty.webp"
+      "icon": "/images/items/helmets/mask-ach-faceshield.webp",
+      "thumbnail": "/images/items/helmets/mask-ach-faceshield.webp",
+      "fullsize": "/images/items/helmets/mask-ach-faceshield.webp"
     },
     "stats": {
-      "rarity": "Rare",
       "price": 35000,
       "weight": 1.5,
+      "rarity": "Rare",
       "armorClass": 4,
-      "maxDurability": 55,
-      "durabilityDamageScalar": 0.7,
-      "bluntDamageScalar": 0.7,
-      "protectiveData": [
+      "maxDurability": 95,
+      "durabilityDamageScalar": 0.5,
+      "bluntDamageScalar": 0.45,
+      "sellId": "hmat.mask.ACH",
+      "coneRegions": [
         {
-          "bodyPart": "head_eyes",
-          "armorClass": 4,
-          "bluntDamageScalar": 0.7,
-          "protectionAngle": 180
-        },
-        {
-          "bodyPart": "head_chin",
-          "armorClass": 4,
-          "bluntDamageScalar": 0.7,
-          "protectionAngle": 180
+          "region": "cone",
+          "widthAngle": 72,
+          "heightAngle": 50,
+          "offset": {
+            "x": -3,
+            "y": 0,
+            "z": 17
+          },
+          "rotation": {
+            "pitch": -50,
+            "yaw": 0,
+            "roll": 0
+          }
         }
       ],
+      "maskWidthAngle": 90,
+      "maskHeightAngle": 90,
       "penetrationChanceCurve": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -2,
+          "value": 1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0,
-          "value": 0.95,
-          "arriveTangent": -5.7641554,
-          "leaveTangent": -5.7641544
+          "value": 0.85,
+          "arriveTangent": -8.78246,
+          "leaveTangent": -8.782467
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.09,
-          "arriveTangent": -0.29457605,
-          "leaveTangent": -0.29457545
+          "tangentMode": "auto",
+          "time": 0.1,
+          "value": 0.3,
+          "arriveTangent": -1.56,
+          "leaveTangent": -1.56
         },
         {
-          "interpMode": "linear",
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0.5,
+          "value": 0.07,
+          "arriveTangent": -0.333333,
+          "leaveTangent": -0.333333
+        },
+        {
+          "interpMode": "cubic",
           "tangentMode": "auto",
           "time": 1,
-          "value": 0.04,
+          "value": 0,
           "arriveTangent": 0,
           "leaveTangent": 0
         }
@@ -71,15 +93,15 @@
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0,
-          "value": 0.6,
-          "arriveTangent": -0.144674,
-          "leaveTangent": -0.144674
+          "value": 0.75,
+          "arriveTangent": -0.278331,
+          "leaveTangent": -0.27833
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 2,
-          "value": 0.5,
+          "value": 0.25,
           "arriveTangent": -0.012679,
           "leaveTangent": -0.012679
         }
@@ -87,32 +109,213 @@
       "antiPenetrationDurabilityScalarCurve": [
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 0,
           "value": 1,
-          "arriveTangent": -0.057609,
-          "leaveTangent": -0.057609
+          "arriveTangent": 0,
+          "leaveTangent": 0
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.75,
+          "time": 0.2,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.7,
           "value": 0.833333,
-          "arriveTangent": -0.649538,
-          "leaveTangent": -0.649537
+          "arriveTangent": -0.768606,
+          "leaveTangent": -0.768606
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0,
-          "arriveTangent": -5.025785,
-          "leaveTangent": -5.025785
+          "value": 0.6,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "protectiveData": [
+        {
+          "bodyPart": "head_eyes",
+          "armorClass": 4,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 180
+        },
+        {
+          "bodyPart": "head_chin",
+          "armorClass": 4,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 180
         }
       ]
     },
-    "notes": "Military-grade face shield designed for ACH helmets. Provides excellent protection against ballistic threats while maintaining visibility.",
-    "tips": "Solid Class 4 protection for face area. Good durability and reliable performance in combat situations. Pairs well with ACH helmet systems."
+    "tips": "Solid Class 4 protection for face area. Good durability and reliable performance in combat situations. Pairs well with ACH helmet systems.",
+    "notes": "Military-grade face shield designed for ACH helmets. Provides excellent protection against ballistic threats while maintaining visibility."
+  },
+  {
+    "id": "mask-galvorgoggles",
+    "name": "Galvor ballistic goggles",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Face Shields",
+    "images": {
+      "icon": "/images/items/helmets/mask-galvorgoggles.webp",
+      "thumbnail": "/images/items/helmets/mask-galvorgoggles.webp",
+      "fullsize": "/images/items/helmets/mask-galvorgoggles.webp"
+    },
+    "stats": {
+      "price": 50000,
+      "weight": 1.5,
+      "rarity": "Rare",
+      "armorClass": 4,
+      "maxDurability": 40,
+      "durabilityDamageScalar": 0.5,
+      "bluntDamageScalar": 0.35,
+      "sellId": "hmat.mask.galvorgoggles",
+      "coneRegions": [
+        {
+          "region": "cone",
+          "widthAngle": 51,
+          "heightAngle": 15,
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 7.2
+          },
+          "rotation": {
+            "pitch": -1.000053,
+            "yaw": 0,
+            "roll": 0
+          }
+        },
+        {
+          "region": "reverse_cone",
+          "widthAngle": 9,
+          "heightAngle": 10,
+          "offset": {
+            "x": 1,
+            "y": 0,
+            "z": 2.1
+          },
+          "rotation": {
+            "pitch": 0,
+            "yaw": 0,
+            "roll": 0
+          }
+        }
+      ],
+      "maskWidthAngle": 70,
+      "maskHeightAngle": 16,
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -2,
+          "value": 1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.85,
+          "arriveTangent": -8.78246,
+          "leaveTangent": -8.782467
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0.1,
+          "value": 0.3,
+          "arriveTangent": -1.56,
+          "leaveTangent": -1.56
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0.5,
+          "value": 0.07,
+          "arriveTangent": -0.333333,
+          "leaveTangent": -0.333333
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.37965,
+          "leaveTangent": -0.37965
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.75,
+          "arriveTangent": -0.278331,
+          "leaveTangent": -0.27833
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 2,
+          "value": 0.25,
+          "arriveTangent": -0.012679,
+          "leaveTangent": -0.012679
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.7,
+          "value": 0.833333,
+          "arriveTangent": -0.768606,
+          "leaveTangent": -0.768606
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 1,
+          "value": 0.6,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ]
+    },
+    "tips": ""
   },
   {
     "id": "mask-kiver-faceshield",
@@ -121,54 +324,76 @@
     "category": "gear",
     "subcategory": "Face Shields",
     "images": {
-      "icon": "/images/items/helmets/SM_Helmet_011_2_Zty.webp",
-      "thumbnail": "/images/items/helmets/SM_Helmet_011_2_Zty.webp",
-      "fullsize": "/images/items/helmets/SM_Helmet_011_2_Zty.webp"
+      "icon": "/images/items/helmets/mask-kiver-faceshield.webp",
+      "thumbnail": "/images/items/helmets/mask-kiver-faceshield.webp",
+      "fullsize": "/images/items/helmets/mask-kiver-faceshield.webp"
     },
     "stats": {
-      "rarity": "Rare",
       "price": 28000,
       "weight": 1.2,
+      "rarity": "Rare",
       "armorClass": 3,
-      "maxDurability": 45,
-      "durabilityDamageScalar": 0.7,
-      "bluntDamageScalar": 0.7,
-      "protectiveData": [
+      "maxDurability": 120,
+      "durabilityDamageScalar": 0.5,
+      "bluntDamageScalar": 0.55,
+      "sellId": "hmat.mask.KiverM",
+      "coneRegions": [
         {
-          "bodyPart": "head_eyes",
-          "armorClass": 3,
-          "bluntDamageScalar": 0.7,
-          "protectionAngle": 180
-        },
-        {
-          "bodyPart": "head_chin",
-          "armorClass": 3,
-          "bluntDamageScalar": 0.7,
-          "protectionAngle": 180
+          "region": "cone",
+          "widthAngle": 68,
+          "heightAngle": 55,
+          "offset": {
+            "x": -3.5,
+            "y": 0,
+            "z": 15
+          },
+          "rotation": {
+            "pitch": -55,
+            "yaw": 0,
+            "roll": 0
+          }
         }
       ],
+      "maskWidthAngle": 90,
+      "maskHeightAngle": 90,
       "penetrationChanceCurve": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -2,
+          "value": 1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0,
-          "value": 0.95,
-          "arriveTangent": -5.000621,
-          "leaveTangent": -5.0006285
+          "value": 0.85,
+          "arriveTangent": -8.78246,
+          "leaveTangent": -8.782467
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.11,
-          "arriveTangent": -0.25925827,
-          "leaveTangent": -0.2592578
+          "tangentMode": "auto",
+          "time": 0.1,
+          "value": 0.3,
+          "arriveTangent": -1.56,
+          "leaveTangent": -1.56
         },
         {
-          "interpMode": "linear",
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0.5,
+          "value": 0.07,
+          "arriveTangent": -0.333333,
+          "leaveTangent": -0.333333
+        },
+        {
+          "interpMode": "cubic",
           "tangentMode": "auto",
           "time": 1,
-          "value": 0.04,
+          "value": 0,
           "arriveTangent": 0,
           "leaveTangent": 0
         }
@@ -186,15 +411,15 @@
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0,
-          "value": 0.6,
-          "arriveTangent": -0.144674,
-          "leaveTangent": -0.144674
+          "value": 0.75,
+          "arriveTangent": -0.278331,
+          "leaveTangent": -0.27833
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 2,
-          "value": 0.5,
+          "value": 0.25,
           "arriveTangent": -0.012679,
           "leaveTangent": -0.012679
         }
@@ -202,32 +427,54 @@
       "antiPenetrationDurabilityScalarCurve": [
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 0,
           "value": 1,
-          "arriveTangent": -0.057609,
-          "leaveTangent": -0.057609
+          "arriveTangent": 0,
+          "leaveTangent": 0
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.75,
+          "time": 0.2,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.7,
           "value": 0.833333,
-          "arriveTangent": -0.649538,
-          "leaveTangent": -0.649537
+          "arriveTangent": -0.768606,
+          "leaveTangent": -0.768606
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0,
-          "arriveTangent": -5.025785,
-          "leaveTangent": -5.025785
+          "value": 0.6,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "protectiveData": [
+        {
+          "bodyPart": "head_eyes",
+          "armorClass": 3,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 180
+        },
+        {
+          "bodyPart": "head_chin",
+          "armorClass": 3,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 180
         }
       ]
     },
-    "notes": "Russian-designed face shield for Kiver helmet systems. Lighter than ACH variant with good protection for its class.",
-    "tips": "Class 3 protection with excellent mobility. Lower weight makes it ideal for extended operations where every gram counts."
+    "tips": "Class 3 protection with excellent mobility. Lower weight makes it ideal for extended operations where every gram counts.",
+    "notes": "Russian-designed face shield for Kiver helmet systems. Lighter than ACH variant with good protection for its class."
   },
   {
     "id": "mask-lh250-goggle",
@@ -236,39 +483,45 @@
     "category": "gear",
     "subcategory": "Eye Protection",
     "images": {
-      "icon": "/images/items/helmets/Icon_LH250google.webp",
-      "thumbnail": "/images/items/helmets/Icon_LH250google.webp",
-      "fullsize": "/images/items/helmets/Icon_LH250google.webp"
+      "icon": "/images/items/helmets/mask-lh250-goggle.webp",
+      "thumbnail": "/images/items/helmets/mask-lh250-goggle.webp",
+      "fullsize": "/images/items/helmets/mask-lh250-goggle.webp"
     },
     "stats": {
-      "rarity": "Rare",
       "price": 15000,
       "weight": 0.6,
+      "rarity": "Rare",
       "armorClass": 1,
-      "maxDurability": 15,
+      "maxDurability": 30,
       "durabilityDamageScalar": 0.7,
       "bluntDamageScalar": 0.7,
-      "protectiveData": [
+      "sellId": "hmat.mask.LH250google",
+      "coneRegions": [
         {
-          "bodyPart": "head_eyes",
-          "armorClass": 1,
-          "bluntDamageScalar": 0.7,
-          "protectionAngle": 120
-        },
-        {
-          "bodyPart": "head_chin",
-          "armorClass": 1,
-          "bluntDamageScalar": 0.7,
-          "protectionAngle": 120
+          "region": "cone",
+          "widthAngle": 40,
+          "heightAngle": 40,
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "pitch": 0,
+            "yaw": 0,
+            "roll": 0
+          }
         }
       ],
+      "maskWidthAngle": 90,
+      "maskHeightAngle": 90,
       "penetrationChanceCurve": [
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0,
           "value": 0.95,
-          "arriveTangent": -5.1194234,
+          "arriveTangent": -5.119423,
           "leaveTangent": -5.119432
         },
         {
@@ -276,8 +529,8 @@
           "tangentMode": "user",
           "time": 0.5,
           "value": 0.11,
-          "arriveTangent": -0.48523435,
-          "leaveTangent": -0.4852341
+          "arriveTangent": -0.485234,
+          "leaveTangent": -0.485234
         },
         {
           "interpMode": "linear",
@@ -317,32 +570,54 @@
       "antiPenetrationDurabilityScalarCurve": [
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 0,
           "value": 1,
-          "arriveTangent": -0.057609,
-          "leaveTangent": -0.057609
+          "arriveTangent": 0,
+          "leaveTangent": 0
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.75,
-          "value": 0.833333,
-          "arriveTangent": -0.649538,
-          "leaveTangent": -0.649537
+          "time": 0.3,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.7,
+          "value": 0.7,
+          "arriveTangent": -1.921743,
+          "leaveTangent": -1.921743
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 1,
-          "value": 0,
-          "arriveTangent": -5.025785,
-          "leaveTangent": -5.025785
+          "value": 0.5,
+          "arriveTangent": -0.223494,
+          "leaveTangent": -0.223494
+        }
+      ],
+      "protectiveData": [
+        {
+          "bodyPart": "head_eyes",
+          "armorClass": 1,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 120
+        },
+        {
+          "bodyPart": "head_chin",
+          "armorClass": 1,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 120
         }
       ]
     },
-    "notes": "Ultra-lightweight eye protection for tactical operations. Minimal armor class but excellent mobility characteristics.",
-    "tips": "Perfect for light operations where weight matters more than protection. Very low durability means it won't last long under fire."
+    "tips": "Perfect for light operations where weight matters more than protection. Very low durability means it won't last long under fire.",
+    "notes": "Ultra-lightweight eye protection for tactical operations. Minimal armor class but excellent mobility characteristics."
   },
   {
     "id": "mask-lh250-mask",
@@ -351,40 +626,46 @@
     "category": "gear",
     "subcategory": "Face Shields",
     "images": {
-      "icon": "/images/items/helmets/Icon_LH250mask.webp",
-      "thumbnail": "/images/items/helmets/Icon_LH250mask.webp",
-      "fullsize": "/images/items/helmets/Icon_LH250mask.webp"
+      "icon": "/images/items/helmets/mask-lh250-mask.webp",
+      "thumbnail": "/images/items/helmets/mask-lh250-mask.webp",
+      "fullsize": "/images/items/helmets/mask-lh250-mask.webp"
     },
     "stats": {
-      "rarity": "Rare",
       "price": 18000,
       "weight": 0.8,
+      "rarity": "Rare",
       "armorClass": 1,
-      "maxDurability": 30,
+      "maxDurability": null,
       "durabilityDamageScalar": 0.7,
       "bluntDamageScalar": 0.7,
-      "protectiveData": [
+      "sellId": "hmat.mask.LH250mask",
+      "coneRegions": [
         {
-          "bodyPart": "head_eyes",
-          "armorClass": 1,
-          "bluntDamageScalar": 0.7,
-          "protectionAngle": 150
-        },
-        {
-          "bodyPart": "head_chin",
-          "armorClass": 1,
-          "bluntDamageScalar": 0.7,
-          "protectionAngle": 150
+          "region": "cone",
+          "widthAngle": 40,
+          "heightAngle": 40,
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "pitch": 0,
+            "yaw": 0,
+            "roll": 0
+          }
         }
       ],
+      "maskWidthAngle": 90,
+      "maskHeightAngle": 90,
       "penetrationChanceCurve": [
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0,
           "value": 0.95,
-          "arriveTangent": -4.5072236,
-          "leaveTangent": -4.5072317
+          "arriveTangent": -4.507224,
+          "leaveTangent": -4.507232
         },
         {
           "interpMode": "cubic",
@@ -432,8 +713,326 @@
       "antiPenetrationDurabilityScalarCurve": [
         {
           "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.3,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.7,
+          "value": 0.7,
+          "arriveTangent": -1.921743,
+          "leaveTangent": -1.921743
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.5,
+          "arriveTangent": -0.223494,
+          "leaveTangent": -0.223494
+        }
+      ],
+      "protectiveData": [
+        {
+          "bodyPart": "head_eyes",
+          "armorClass": 1,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 150
+        },
+        {
+          "bodyPart": "head_chin",
+          "armorClass": 1,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 150
+        }
+      ]
+    },
+    "tips": "Entry-level face protection that won't slow you down. Better durability than the goggle but still quite fragile. Good for stealth operations.",
+    "notes": "Basic tactical mask offering minimal protection with maximum comfort. Double the durability of the goggle variant."
+  },
+  {
+    "id": "mask-m1sch-faceshield",
+    "name": "Maska-1Sch FaceShield",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Face Shields",
+    "images": {
+      "icon": "/images/items/helmets/mask-m1sch-faceshield.webp",
+      "thumbnail": "/images/items/helmets/mask-m1sch-faceshield.webp",
+      "fullsize": "/images/items/helmets/mask-m1sch-faceshield.webp"
+    },
+    "stats": {
+      "price": 50000,
+      "weight": 1.1,
+      "rarity": "Epic",
+      "armorClass": 6,
+      "maxDurability": 59,
+      "durabilityDamageScalar": 0.25,
+      "bluntDamageScalar": 0.4,
+      "sellId": "hmat.mask.m1schgreen",
+      "coneRegions": [
+        {
+          "region": "cone",
+          "widthAngle": 85,
+          "heightAngle": 52,
+          "offset": {
+            "x": -6,
+            "y": 0,
+            "z": 10
+          },
+          "rotation": {
+            "pitch": -40,
+            "yaw": 0,
+            "roll": 0
+          }
+        },
+        {
+          "region": "reverse_cone",
+          "widthAngle": 30,
+          "heightAngle": 3.2,
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 7.75
+          },
+          "rotation": {
+            "pitch": 0,
+            "yaw": 0,
+            "roll": 0
+          }
+        }
+      ],
+      "maskWidthAngle": 90,
+      "maskHeightAngle": 90,
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -2,
+          "value": 1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0,
+          "value": 0.82,
+          "arriveTangent": -8.78246,
+          "leaveTangent": -8.782467
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0.1,
+          "value": 0.3,
+          "arriveTangent": -1.5,
+          "leaveTangent": -1.5
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0.5,
+          "value": 0.07,
+          "arriveTangent": -0.333333,
+          "leaveTangent": -0.333333
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.37965,
+          "leaveTangent": -0.37965
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.6,
+          "arriveTangent": -0.278331,
+          "leaveTangent": -0.27833
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 2,
+          "value": 0.2,
+          "arriveTangent": -0.012679,
+          "leaveTangent": -0.012679
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0.5,
+          "value": 0.95,
+          "arriveTangent": -0.4,
+          "leaveTangent": -0.4
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.7,
+          "value": 0.8,
+          "arriveTangent": -1.255167,
+          "leaveTangent": -1.255167
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.33,
+          "arriveTangent": -0.001907,
+          "leaveTangent": -0.001907
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "mask-rys-tfaceshield-pumpkin",
+    "name": "RYS-T FaceShield 'Pumpkin'",
+    "description": "Appearance modified. Enhanced damage reduction, lower penetration chance, but reduced durability.",
+    "category": "gear",
+    "subcategory": "Face Shields",
+    "images": {
+      "icon": "/images/items/helmets/mask-rys-tfaceshield-pumpkin.webp",
+      "thumbnail": "/images/items/helmets/mask-rys-tfaceshield-pumpkin.webp",
+      "fullsize": "/images/items/helmets/mask-rys-tfaceshield-pumpkin.webp"
+    },
+    "stats": {
+      "price": 50000,
+      "weight": 1.3,
+      "rarity": "Epic",
+      "armorClass": 5,
+      "maxDurability": 62,
+      "durabilityDamageScalar": 0.3,
+      "bluntDamageScalar": 0.45,
+      "sellId": "hmat.mask.ryt.pumpkin",
+      "coneRegions": [
+        {
+          "region": "cone",
+          "widthAngle": 60,
+          "heightAngle": 40,
+          "offset": {
+            "x": -6,
+            "y": 0,
+            "z": 13
+          },
+          "rotation": {
+            "pitch": -40,
+            "yaw": 0,
+            "roll": 0
+          }
+        }
+      ],
+      "maskWidthAngle": 90,
+      "maskHeightAngle": 90,
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.95,
+          "arriveTangent": -8.78246,
+          "leaveTangent": -8.782467
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0.1,
+          "value": 0.3,
+          "arriveTangent": -1.76,
+          "leaveTangent": -1.76
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0.5,
+          "value": 0.07,
+          "arriveTangent": -0.333333,
+          "leaveTangent": -0.333333
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        }
+      ],
+      "penetrationDamageScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.37965,
+          "leaveTangent": -0.37965
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.55,
+          "arriveTangent": -0.144674,
+          "leaveTangent": -0.144674
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 2,
+          "value": 0.45,
+          "arriveTangent": -0.012679,
+          "leaveTangent": -0.012679
+        }
+      ],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.4,
           "value": 1,
           "arriveTangent": -0.057609,
           "leaveTangent": -0.057609
@@ -441,8 +1040,8 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.75,
-          "value": 0.833333,
+          "time": 0.65,
+          "value": 0.89,
           "arriveTangent": -0.649538,
           "leaveTangent": -0.649537
         },
@@ -456,8 +1055,7 @@
         }
       ]
     },
-    "notes": "Basic tactical mask offering minimal protection with maximum comfort. Double the durability of the goggle variant.",
-    "tips": "Entry-level face protection that won't slow you down. Better durability than the goggle but still quite fragile. Good for stealth operations."
+    "tips": ""
   },
   {
     "id": "mask-ryst-faceshield",
@@ -466,54 +1064,76 @@
     "category": "gear",
     "subcategory": "Face Shields",
     "images": {
-      "icon": "/images/items/helmets/SM_Helmet_007_02_Yyp.webp",
-      "thumbnail": "/images/items/helmets/SM_Helmet_007_02_Yyp.webp",
-      "fullsize": "/images/items/helmets/SM_Helmet_007_02_Yyp.webp"
+      "icon": "/images/items/helmets/mask-ryst-faceshield.webp",
+      "thumbnail": "/images/items/helmets/mask-ryst-faceshield.webp",
+      "fullsize": "/images/items/helmets/mask-ryst-faceshield.webp"
     },
     "stats": {
-      "rarity": "Epic",
       "price": 65000,
       "weight": 1.3,
+      "rarity": "Epic",
       "armorClass": 5,
-      "maxDurability": 75,
-      "durabilityDamageScalar": 0.55,
-      "bluntDamageScalar": 0.7,
-      "protectiveData": [
+      "maxDurability": 88,
+      "durabilityDamageScalar": 0.3,
+      "bluntDamageScalar": 0.4,
+      "sellId": "hmat.mask.ryt",
+      "coneRegions": [
         {
-          "bodyPart": "head_eyes",
-          "armorClass": 5,
-          "bluntDamageScalar": 0.7,
-          "protectionAngle": 180
-        },
-        {
-          "bodyPart": "head_chin",
-          "armorClass": 5,
-          "bluntDamageScalar": 0.7,
-          "protectionAngle": 180
+          "region": "cone",
+          "widthAngle": 60,
+          "heightAngle": 40,
+          "offset": {
+            "x": -6,
+            "y": 0,
+            "z": 13
+          },
+          "rotation": {
+            "pitch": -40,
+            "yaw": 0,
+            "roll": 0
+          }
         }
       ],
+      "maskWidthAngle": 90,
+      "maskHeightAngle": 90,
       "penetrationChanceCurve": [
+        {
+          "interpMode": "linear",
+          "tangentMode": "auto",
+          "time": -2,
+          "value": 1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0,
-          "value": 0.97,
-          "arriveTangent": -3.6377645,
-          "leaveTangent": -3.637767
+          "value": 0.82,
+          "arriveTangent": -8.78246,
+          "leaveTangent": -8.782467
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.07,
-          "arriveTangent": -0.669775,
-          "leaveTangent": -0.669775
+          "tangentMode": "auto",
+          "time": 0.1,
+          "value": 0.3,
+          "arriveTangent": -1.5,
+          "leaveTangent": -1.5
         },
         {
-          "interpMode": "linear",
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0.5,
+          "value": 0.07,
+          "arriveTangent": -0.333333,
+          "leaveTangent": -0.333333
+        },
+        {
+          "interpMode": "cubic",
           "tangentMode": "auto",
           "time": 1,
-          "value": 0.02,
+          "value": 0,
           "arriveTangent": 0,
           "leaveTangent": 0
         }
@@ -532,14 +1152,14 @@
           "tangentMode": "user",
           "time": 0,
           "value": 0.6,
-          "arriveTangent": -0.144674,
-          "leaveTangent": -0.144674
+          "arriveTangent": -0.278331,
+          "leaveTangent": -0.27833
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 2,
-          "value": 0.5,
+          "value": 0.2,
           "arriveTangent": -0.012679,
           "leaveTangent": -0.012679
         }
@@ -547,32 +1167,62 @@
       "antiPenetrationDurabilityScalarCurve": [
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 0,
           "value": 1,
-          "arriveTangent": -0.057609,
-          "leaveTangent": -0.057609
+          "arriveTangent": 0,
+          "leaveTangent": 0
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.75,
-          "value": 0.833333,
-          "arriveTangent": -0.649538,
-          "leaveTangent": -0.649537
+          "time": 0.2,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0.5,
+          "value": 0.95,
+          "arriveTangent": -0.4,
+          "leaveTangent": -0.4
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.7,
+          "value": 0.8,
+          "arriveTangent": -0.84861,
+          "leaveTangent": -0.84861
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 1,
-          "value": 0,
-          "arriveTangent": -5.025785,
-          "leaveTangent": -5.025785
+          "value": 0.4,
+          "arriveTangent": -0.001907,
+          "leaveTangent": -0.001907
+        }
+      ],
+      "protectiveData": [
+        {
+          "bodyPart": "head_eyes",
+          "armorClass": 5,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 180
+        },
+        {
+          "bodyPart": "head_chin",
+          "armorClass": 5,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 180
         }
       ]
     },
-    "notes": "Elite-tier face protection with exceptional ballistic resistance. Superior durability damage scalar makes it last longer under fire.",
-    "tips": "Top-tier Class 5 protection with excellent durability. Premium choice for high-risk operations where face protection is critical."
+    "tips": "Top-tier Class 5 protection with excellent durability. Premium choice for high-risk operations where face protection is critical.",
+    "notes": "Elite-tier face protection with exceptional ballistic resistance. Superior durability damage scalar makes it last longer under fire."
   },
   {
     "id": "mask-ryst-faceshield-bonecrusher",
@@ -581,54 +1231,68 @@
     "category": "gear",
     "subcategory": "Face Shields",
     "images": {
-      "icon": "/images/items/helmets/Icon_RYS-TFaceShield_bonecrusher.webp",
-      "thumbnail": "/images/items/helmets/Icon_RYS-TFaceShield_bonecrusher.webp",
-      "fullsize": "/images/items/helmets/Icon_RYS-TFaceShield_bonecrusher.webp"
+      "icon": "/images/items/helmets/mask-ryst-faceshield-bonecrusher.webp",
+      "thumbnail": "/images/items/helmets/mask-ryst-faceshield-bonecrusher.webp",
+      "fullsize": "/images/items/helmets/mask-ryst-faceshield-bonecrusher.webp"
     },
     "stats": {
-      "rarity": "Epic",
       "price": 75000,
       "weight": 1.3,
+      "rarity": "Epic",
       "armorClass": 5,
-      "maxDurability": 75,
-      "durabilityDamageScalar": 0.55,
-      "bluntDamageScalar": 0.7,
-      "protectiveData": [
+      "maxDurability": 86,
+      "durabilityDamageScalar": 0.3,
+      "bluntDamageScalar": 0.4,
+      "sellId": "hmat.mask.ryt.bonecrusher",
+      "coneRegions": [
         {
-          "bodyPart": "head_eyes",
-          "armorClass": 5,
-          "bluntDamageScalar": 0.7,
-          "protectionAngle": 180
-        },
-        {
-          "bodyPart": "head_chin",
-          "armorClass": 5,
-          "bluntDamageScalar": 0.7,
-          "protectionAngle": 180
+          "region": "cone",
+          "widthAngle": 40,
+          "heightAngle": 40,
+          "offset": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "rotation": {
+            "pitch": 0,
+            "yaw": 0,
+            "roll": 0
+          }
         }
       ],
+      "maskWidthAngle": 90,
+      "maskHeightAngle": 90,
       "penetrationChanceCurve": [
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0,
-          "value": 0.97,
-          "arriveTangent": -3.637764,
-          "leaveTangent": -3.637767
+          "value": 0.92,
+          "arriveTangent": -8.78246,
+          "leaveTangent": -8.782467
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.07,
-          "arriveTangent": -0.669775,
-          "leaveTangent": -0.669775
+          "tangentMode": "auto",
+          "time": 0.1,
+          "value": 0.3,
+          "arriveTangent": -1.7,
+          "leaveTangent": -1.7
         },
         {
-          "interpMode": "linear",
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0.5,
+          "value": 0.07,
+          "arriveTangent": -0.333333,
+          "leaveTangent": -0.333333
+        },
+        {
+          "interpMode": "cubic",
           "tangentMode": "auto",
           "time": 1,
-          "value": 0.02,
+          "value": 0,
           "arriveTangent": 0,
           "leaveTangent": 0
         }
@@ -671,7 +1335,7 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.75,
+          "time": 0.65,
           "value": 0.833333,
           "arriveTangent": -0.649538,
           "leaveTangent": -0.649537
@@ -684,9 +1348,52 @@
           "arriveTangent": -5.025785,
           "leaveTangent": -5.025785
         }
+      ],
+      "protectiveData": [
+        {
+          "bodyPart": "head_eyes",
+          "armorClass": 5,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 180
+        },
+        {
+          "bodyPart": "head_chin",
+          "armorClass": 5,
+          "bluntDamageScalar": 0.7,
+          "protectionAngle": 180
+        }
       ]
     },
-    "notes": "Limited edition variant of the RYS-T face shield with special Bonecrusher design. Identical performance with collectible appeal.",
-    "tips": "Same excellent Class 5 protection as standard RYS-T but with unique styling. Premium price for the special edition aesthetics."
+    "tips": "Same excellent Class 5 protection as standard RYS-T but with unique styling. Premium price for the special edition aesthetics.",
+    "notes": "Limited edition variant of the RYS-T face shield with special Bonecrusher design. Identical performance with collectible appeal."
+  },
+  {
+    "id": "nvg-anpvs31",
+    "name": "AN/PVS 31",
+    "description": "Night viston helmet attachments.Bravo six,going dark!",
+    "category": "gear",
+    "subcategory": "Night Vision",
+    "images": {
+      "icon": "/images/items/helmets/nvg-anpvs31.webp",
+      "thumbnail": "/images/items/helmets/nvg-anpvs31.webp",
+      "fullsize": "/images/items/helmets/nvg-anpvs31.webp"
+    },
+    "stats": {
+      "price": 50000,
+      "weight": 0.7,
+      "rarity": "Epic",
+      "armorClass": null,
+      "maxDurability": null,
+      "durabilityDamageScalar": null,
+      "bluntDamageScalar": null,
+      "sellId": "hmat.nv.anpvs31",
+      "coneRegions": [],
+      "maskWidthAngle": null,
+      "maskHeightAngle": null,
+      "penetrationChanceCurve": [],
+      "penetrationDamageScalarCurve": [],
+      "antiPenetrationDurabilityScalarCurve": []
+    },
+    "tips": ""
   }
 ]

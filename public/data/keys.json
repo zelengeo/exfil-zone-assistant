@@ -1,192 +1,149 @@
 [
   {
+    "id": "key_apartment",
+    "name": "Apartment 2F Key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Resort",
+    "images": {
+      "icon": "/images/items/keys/key_apartment.webp",
+      "thumbnail": "/images/items/keys/key_apartment.webp",
+      "fullsize": "/images/items/keys/key_apartment.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Epic",
+      "uses": 3,
+      "location": "Apartment"
+    },
+    "gameId": "card.map4.apartment",
+    "tips": ""
+  },
+  {
+    "id": "key_armorhouse",
+    "name": "Armory's Key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Metro",
+    "images": {
+      "icon": "/images/items/keys/key_armorhouse.webp",
+      "thumbnail": "/images/items/keys/key_armorhouse.webp",
+      "fullsize": "/images/items/keys/key_armorhouse.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Uncommon",
+      "uses": 3,
+      "location": "North of rail"
+    },
+    "gameId": "card.map3.armorhouse",
+    "tips": ""
+  },
+  {
+    "id": "key_backroom",
+    "name": "Central area Secret Room Key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Smuggling Tunnel",
+    "images": {
+      "icon": "/images/items/keys/key_backroom.webp",
+      "thumbnail": "/images/items/keys/key_backroom.webp",
+      "fullsize": "/images/items/keys/key_backroom.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Common",
+      "uses": 3,
+      "location": "Central area"
+    },
+    "gameId": "card.map5.backroom",
+    "tips": ""
+  },
+  {
+    "id": "key_bankf2",
+    "name": "Bank 2F Key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Resort",
+    "images": {
+      "icon": "/images/items/keys/key_bankf2.webp",
+      "thumbnail": "/images/items/keys/key_bankf2.webp",
+      "fullsize": "/images/items/keys/key_bankf2.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Legendary",
+      "uses": 3,
+      "location": "Bank"
+    },
+    "gameId": "card.map4.bankf2",
+    "tips": ""
+  },
+  {
+    "id": "key_banksewer",
+    "name": "Bank Sewer Key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Resort",
+    "images": {
+      "icon": "/images/items/keys/key_banksewer.webp",
+      "thumbnail": "/images/items/keys/key_banksewer.webp",
+      "fullsize": "/images/items/keys/key_banksewer.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Uncommon",
+      "uses": 3,
+      "location": "Voyages"
+    },
+    "gameId": "card.map4.banksewer",
+    "tips": ""
+  },
+  {
     "id": "key_beartown_h1",
     "name": "Bearkery Storage Key",
     "description": "",
     "category": "keys",
     "subcategory": "Suburb",
     "images": {
-      "icon": "/images/items/keys/Key_Map1_bearTown_h1.webp",
-      "thumbnail": "/images/items/keys/Key_Map1_bearTown_h1.webp",
-      "fullsize": "/images/items/keys/Key_Map1_bearTown_h1.webp"
+      "icon": "/images/items/keys/key_beartown_h1.webp",
+      "thumbnail": "/images/items/keys/key_beartown_h1.webp",
+      "fullsize": "/images/items/keys/key_beartown_h1.webp"
     },
     "stats": {
       "price": 1000,
-      "weight": 0.1,
-      "rarity": "Uncommon"
+      "weight": 0.01,
+      "rarity": "Uncommon",
+      "uses": 3,
+      "location": "Hyder town"
     },
     "gameId": "card.map1.beartown_h1",
     "tips": ""
   },
   {
-    "id": "key_highbuilding_shop",
-    "name": "Office Building 2F Key",
-    "description": "",
+    "id": "key_bomb",
+    "name": "Bomb",
+    "description": "Used to demolish the wall of the control room.",
     "category": "keys",
-    "subcategory": "Suburb",
+    "subcategory": "Metro",
     "images": {
-      "icon": "/images/items/keys/Key_Map1_HighBuilding_shop.webp",
-      "thumbnail": "/images/items/keys/Key_Map1_HighBuilding_shop.webp",
-      "fullsize": "/images/items/keys/Key_Map1_HighBuilding_shop.webp"
+      "icon": "/images/items/keys/key_bomb.webp",
+      "thumbnail": "/images/items/keys/key_bomb.webp",
+      "fullsize": "/images/items/keys/key_bomb.webp"
     },
     "stats": {
       "price": 1000,
-      "weight": 0.1,
-      "rarity": "Epic"
+      "weight": 20,
+      "rarity": "Common",
+      "uses": null,
+      "location": ""
     },
-    "gameId": "card.map1.highbuilding_shop",
-    "tips": ""
-  },
-  {
-    "id": "key_mall_campshop",
-    "name": "Camp Shop’s Key",
-    "description": "",
-    "category": "keys",
-    "subcategory": "Suburb",
-    "images": {
-      "icon": "/images/items/keys/Key_Map1_Mall_CampShop.webp",
-      "thumbnail": "/images/items/keys/Key_Map1_Mall_CampShop.webp",
-      "fullsize": "/images/items/keys/Key_Map1_Mall_CampShop.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.1,
-      "rarity": "Legendary"
-    },
-    "gameId": "card.map1.campshop",
-    "tips": ""
-  },
-  {
-    "id": "key_mall_chaneo",
-    "name": "Chaneo Store's Key",
-    "description": "",
-    "category": "keys",
-    "subcategory": "Suburb",
-    "images": {
-      "icon": "/images/items/keys/Key_Map1_Mall_Chaneo.webp",
-      "thumbnail": "/images/items/keys/Key_Map1_Mall_Chaneo.webp",
-      "fullsize": "/images/items/keys/Key_Map1_Mall_Chaneo.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.1,
-      "rarity": "Legendary"
-    },
-    "gameId": "card.map1.mall_chaneo",
-    "tips": ""
-  },
-  {
-    "id": "key_motel_201",
-    "name": "Motel Room 201 Key",
-    "description": "",
-    "category": "keys",
-    "subcategory": "Suburb",
-    "images": {
-      "icon": "/images/items/keys/Key_Map1_motel_201.webp",
-      "thumbnail": "/images/items/keys/Key_Map1_motel_201.webp",
-      "fullsize": "/images/items/keys/Key_Map1_motel_201.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.1,
-      "rarity": "Rare"
-    },
-    "gameId": "card.map1.motel_201",
-    "tips": ""
-  },
-  {
-    "id": "key_motel_206",
-    "name": "Motel Room 206 Key",
-    "description": "",
-    "category": "keys",
-    "subcategory": "Suburb",
-    "images": {
-      "icon": "/images/items/keys/Key_Map1_bearTown_h1.webp",
-      "thumbnail": "/images/items/keys/Key_Map1_bearTown_h1.webp",
-      "fullsize": "/images/items/keys/Key_Map1_bearTown_h1.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.1,
-      "rarity": "Rare"
-    },
-    "gameId": "card.map1.motel_206",
-    "tips": ""
-  },
-  {
-    "id": "key_policeoffice_f2",
-    "name": "Police Station 2F Key",
-    "description": "",
-    "category": "keys",
-    "subcategory": "Suburb",
-    "images": {
-      "icon": "/images/items/keys/Key_Map1_PoliceOffice_F2.webp",
-      "thumbnail": "/images/items/keys/Key_Map1_PoliceOffice_F2.webp",
-      "fullsize": "/images/items/keys/Key_Map1_PoliceOffice_F2.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.1,
-      "rarity": "Legendary"
-    },
-    "gameId": "card.map1.bear-police-f2",
-    "tips": ""
-  },
-  {
-    "id": "key_police_f1",
-    "name": "Police Station 1F Key",
-    "description": "",
-    "category": "keys",
-    "subcategory": "Suburb",
-    "images": {
-      "icon": "/images/items/keys/Key_Map1_Police_F1.webp",
-      "thumbnail": "/images/items/keys/Key_Map1_Police_F1.webp",
-      "fullsize": "/images/items/keys/Key_Map1_Police_F1.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.1,
-      "rarity": "Legendary"
-    },
-    "gameId": "card.map1.bear-police-f1",
-    "tips": ""
-  },
-  {
-    "id": "key_westbunker",
-    "name": "Suburb Western Bunker's Key",
-    "description": "",
-    "category": "keys",
-    "subcategory": "Suburb",
-    "images": {
-      "icon": "/images/items/keys/Key_Map1_WestBunker.webp",
-      "thumbnail": "/images/items/keys/Key_Map1_WestBunker.webp",
-      "fullsize": "/images/items/keys/Key_Map1_WestBunker.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.1,
-      "rarity": "Epic"
-    },
-    "gameId": "card.map1.basementexit",
-    "tips": ""
-  },
-  {
-    "id": "key_wyethfarm",
-    "name": "Wyeth Farm's Key",
-    "description": "",
-    "category": "keys",
-    "subcategory": "Suburb",
-    "images": {
-      "icon": "/images/items/keys/Key_Map1_WestBunker.webp",
-      "thumbnail": "/images/items/keys/Key_Map1_WestBunker.webp",
-      "fullsize": "/images/items/keys/Key_Map1_WestBunker.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.1,
-      "rarity": "Rare"
-    },
-    "gameId": "card.map1.wyethfarm",
+    "gameId": "card.map3.bomb",
     "tips": ""
   },
   {
@@ -196,14 +153,16 @@
     "category": "keys",
     "subcategory": "Dam",
     "images": {
-      "icon": "/images/items/keys/Key_Map1_Mall_Chaneo.webp",
-      "thumbnail": "/images/items/keys/Key_Map1_Mall_Chaneo.webp",
-      "fullsize": "/images/items/keys/Key_Map1_Mall_Chaneo.webp"
+      "icon": "/images/items/keys/key_clifton_shop.webp",
+      "thumbnail": "/images/items/keys/key_clifton_shop.webp",
+      "fullsize": "/images/items/keys/key_clifton_shop.webp"
     },
     "stats": {
       "price": 1000,
-      "weight": 0.1,
-      "rarity": "Epic"
+      "weight": 0.01,
+      "rarity": "Epic",
+      "uses": 3,
+      "location": "Clifton shop F2"
     },
     "gameId": "card.map2.clifton_shop",
     "tips": ""
@@ -215,14 +174,16 @@
     "category": "keys",
     "subcategory": "Dam",
     "images": {
-      "icon": "/images/items/keys/Key_Map2_Dam_Station_East.webp",
-      "thumbnail": "/images/items/keys/Key_Map2_Dam_Station_East.webp",
-      "fullsize": "/images/items/keys/Key_Map2_Dam_Station_East.webp"
+      "icon": "/images/items/keys/key_dam_station_east.webp",
+      "thumbnail": "/images/items/keys/key_dam_station_east.webp",
+      "fullsize": "/images/items/keys/key_dam_station_east.webp"
     },
     "stats": {
       "price": 1000,
-      "weight": 0.1,
-      "rarity": "Epic"
+      "weight": 0.01,
+      "rarity": "Epic",
+      "uses": 3,
+      "location": "Dam station"
     },
     "gameId": "card.map2.dam_station_east",
     "tips": ""
@@ -234,111 +195,18 @@
     "category": "keys",
     "subcategory": "Dam",
     "images": {
-      "icon": "/images/items/keys/Key_Map2_Dam_Station_East.webp",
-      "thumbnail": "/images/items/keys/Key_Map2_Dam_Station_East.webp",
-      "fullsize": "/images/items/keys/Key_Map2_Dam_Station_East.webp"
+      "icon": "/images/items/keys/key_dam_station_west.webp",
+      "thumbnail": "/images/items/keys/key_dam_station_west.webp",
+      "fullsize": "/images/items/keys/key_dam_station_west.webp"
     },
     "stats": {
       "price": 1000,
-      "weight": 0.1,
-      "rarity": "Epic"
+      "weight": 0.01,
+      "rarity": "Epic",
+      "uses": 3,
+      "location": "Dam station"
     },
     "gameId": "card.map2.dam_station_west",
-    "tips": ""
-  },
-  {
-    "id": "key_dockhouse",
-    "name": "Dock Office's Key",
-    "description": "",
-    "category": "keys",
-    "subcategory": "Dam",
-    "images": {
-      "icon": "/images/items/keys/Key_Map2_DockHouse.webp",
-      "thumbnail": "/images/items/keys/Key_Map2_DockHouse.webp",
-      "fullsize": "/images/items/keys/Key_Map2_DockHouse.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.1,
-      "rarity": "Legendary"
-    },
-    "gameId": "card.map2.dockhouse",
-    "tips": ""
-  },
-  {
-    "id": "key_factory_a1",
-    "name": "Factory A1 zone Key",
-    "description": "",
-    "category": "keys",
-    "subcategory": "Dam",
-    "images": {
-      "icon": "/images/items/keys/Key_Map2_Factory_A1.webp",
-      "thumbnail": "/images/items/keys/Key_Map2_Factory_A1.webp",
-      "fullsize": "/images/items/keys/Key_Map2_Factory_A1.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.1,
-      "rarity": "Legendary"
-    },
-    "gameId": "card.map2.factory_1",
-    "tips": ""
-  },
-  {
-    "id": "key_factory_b",
-    "name": "Factory B zone Key",
-    "description": "",
-    "category": "keys",
-    "subcategory": "Dam",
-    "images": {
-      "icon": "/images/items/keys/Key_Map2_Factory_B.webp",
-      "thumbnail": "/images/items/keys/Key_Map2_Factory_B.webp",
-      "fullsize": "/images/items/keys/Key_Map2_Factory_B.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.1,
-      "rarity": "Legendary"
-    },
-    "gameId": "card.map2.factory_2",
-    "tips": ""
-  },
-  {
-    "id": "key_mid_bunker",
-    "name": "Dam Central Bunker's Key",
-    "description": "",
-    "category": "keys",
-    "subcategory": "Dam",
-    "images": {
-      "icon": "/images/items/keys/Key_Map2_mid_Bunker.webp",
-      "thumbnail": "/images/items/keys/Key_Map2_mid_Bunker.webp",
-      "fullsize": "/images/items/keys/Key_Map2_mid_Bunker.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.1,
-      "rarity": "Epic"
-    },
-    "gameId": "card.map2.midbunker",
-    "tips": ""
-  },
-  {
-    "id": "key_armorhouse",
-    "name": "Armory's Key",
-    "description": "",
-    "category": "keys",
-    "subcategory": "Metro",
-    "images": {
-      "icon": "/images/items/keys/Key_Map2_Factory_B.webp",
-      "thumbnail": "/images/items/keys/Key_Map2_Factory_B.webp",
-      "fullsize": "/images/items/keys/Key_Map2_Factory_B.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.1,
-      "rarity": "Uncommon"
-    },
-    "gameId": "card.map3.armorHouse",
     "tips": ""
   },
   {
@@ -348,16 +216,60 @@
     "category": "keys",
     "subcategory": "Metro",
     "images": {
-      "icon": "/images/items/keys/Key_Map2_Factory_B.webp",
-      "thumbnail": "/images/items/keys/Key_Map2_Factory_B.webp",
-      "fullsize": "/images/items/keys/Key_Map2_Factory_B.webp"
+      "icon": "/images/items/keys/key_datastorage.webp",
+      "thumbnail": "/images/items/keys/key_datastorage.webp",
+      "fullsize": "/images/items/keys/key_datastorage.webp"
     },
     "stats": {
       "price": 1000,
-      "weight": 0.1,
-      "rarity": "Legendary"
+      "weight": 0.01,
+      "rarity": "Legendary",
+      "uses": 3,
+      "location": "Stairwell"
     },
-    "gameId": "card.map3.DataStorage",
+    "gameId": "card.map3.datastorage",
+    "tips": ""
+  },
+  {
+    "id": "key_dockhouse",
+    "name": "Dock Office's Key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Dam",
+    "images": {
+      "icon": "/images/items/keys/key_dockhouse.webp",
+      "thumbnail": "/images/items/keys/key_dockhouse.webp",
+      "fullsize": "/images/items/keys/key_dockhouse.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Legendary",
+      "uses": 3,
+      "location": "Dock"
+    },
+    "gameId": "card.map2.dockhouse",
+    "tips": ""
+  },
+  {
+    "id": "key_dormitory02",
+    "name": "RH02 Dorm room Key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Smuggling Tunnel",
+    "images": {
+      "icon": "/images/items/keys/key_dormitory02.webp",
+      "thumbnail": "/images/items/keys/key_dormitory02.webp",
+      "fullsize": "/images/items/keys/key_dormitory02.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Common",
+      "uses": 3,
+      "location": "RH02 Dorm"
+    },
+    "gameId": "card.map5.dormitory02",
     "tips": ""
   },
   {
@@ -367,16 +279,18 @@
     "category": "keys",
     "subcategory": "Metro",
     "images": {
-      "icon": "/images/items/keys/Key_Map2_mid_Bunker.webp",
-      "thumbnail": "/images/items/keys/Key_Map2_mid_Bunker.webp",
-      "fullsize": "/images/items/keys/Key_Map2_mid_Bunker.webp"
+      "icon": "/images/items/keys/key_exitlock_f3_sewer.webp",
+      "thumbnail": "/images/items/keys/key_exitlock_f3_sewer.webp",
+      "fullsize": "/images/items/keys/key_exitlock_f3_sewer.webp"
     },
     "stats": {
       "price": 1000,
-      "weight": 0.1,
-      "rarity": "Epic"
+      "weight": 0.01,
+      "rarity": "Epic",
+      "uses": 3,
+      "location": "Near sewer area"
     },
-    "gameId": "card.map3.ExitLock_F3_sewer",
+    "gameId": "card.map3.exitlock_f3_sewer",
     "tips": ""
   },
   {
@@ -386,16 +300,18 @@
     "category": "keys",
     "subcategory": "Metro",
     "images": {
-      "icon": "/images/items/keys/Key_Map2_Factory_B.webp",
-      "thumbnail": "/images/items/keys/Key_Map2_Factory_B.webp",
-      "fullsize": "/images/items/keys/Key_Map2_Factory_B.webp"
+      "icon": "/images/items/keys/key_exitlock_trainroad.webp",
+      "thumbnail": "/images/items/keys/key_exitlock_trainroad.webp",
+      "fullsize": "/images/items/keys/key_exitlock_trainroad.webp"
     },
     "stats": {
       "price": 1000,
-      "weight": 0.1,
-      "rarity": "Epic"
+      "weight": 0.01,
+      "rarity": "Epic",
+      "uses": 3,
+      "location": "Near rail"
     },
-    "gameId": "card.map3.ExitLock_trainroad",
+    "gameId": "card.map3.exitlock_trainroad",
     "tips": ""
   },
   {
@@ -405,111 +321,123 @@
     "category": "keys",
     "subcategory": "Metro",
     "images": {
-      "icon": "/images/items/keys/Key_Map2_Factory_B.webp",
-      "thumbnail": "/images/items/keys/Key_Map2_Factory_B.webp",
-      "fullsize": "/images/items/keys/Key_Map2_Factory_B.webp"
+      "icon": "/images/items/keys/key_f3_factoryroom.webp",
+      "thumbnail": "/images/items/keys/key_f3_factoryroom.webp",
+      "fullsize": "/images/items/keys/key_f3_factoryroom.webp"
     },
     "stats": {
       "price": 1000,
-      "weight": 0.1,
-      "rarity": "Uncommon"
+      "weight": 0.01,
+      "rarity": "Uncommon",
+      "uses": 3,
+      "location": ""
     },
-    "gameId": "card.map3.FactoryRoom",
+    "gameId": "card.map3.factoryroom",
     "tips": ""
   },
   {
-    "id": "key_officerroom",
-    "name": "Officer's room Key",
+    "id": "key_factory_a1",
+    "name": "Factory A1 zone Key",
     "description": "",
     "category": "keys",
-    "subcategory": "Metro",
+    "subcategory": "Dam",
     "images": {
-      "icon": "/images/items/keys/Key_Map1_Mall_Chaneo.webp",
-      "thumbnail": "/images/items/keys/Key_Map1_Mall_Chaneo.webp",
-      "fullsize": "/images/items/keys/Key_Map1_Mall_Chaneo.webp"
+      "icon": "/images/items/keys/key_factory_a1.webp",
+      "thumbnail": "/images/items/keys/key_factory_a1.webp",
+      "fullsize": "/images/items/keys/key_factory_a1.webp"
     },
     "stats": {
       "price": 1000,
-      "weight": 0.1,
-      "rarity": "Legendary"
+      "weight": 0.01,
+      "rarity": "Legendary",
+      "uses": 3,
+      "location": "Factory"
     },
-    "gameId": "card.map3.officerRoom",
+    "gameId": "card.map2.factory_2",
     "tips": ""
   },
   {
-    "id": "key_operatingroom",
-    "name": "Medical lab's Key",
+    "id": "key_factory_b",
+    "name": "Factory B zone Key",
     "description": "",
     "category": "keys",
-    "subcategory": "Metro",
+    "subcategory": "Dam",
     "images": {
-      "icon": "/images/items/keys/Key_Map2_DockHouse.webp",
-      "thumbnail": "/images/items/keys/Key_Map2_DockHouse.webp",
-      "fullsize": "/images/items/keys/Key_Map2_DockHouse.webp"
+      "icon": "/images/items/keys/key_factory_b.webp",
+      "thumbnail": "/images/items/keys/key_factory_b.webp",
+      "fullsize": "/images/items/keys/key_factory_b.webp"
     },
     "stats": {
       "price": 1000,
-      "weight": 0.1,
-      "rarity": "Epic"
+      "weight": 0.01,
+      "rarity": "Legendary",
+      "uses": 3,
+      "location": "Factory"
     },
-    "gameId": "card.map3.operatingRoom",
+    "gameId": "card.map2.factory_1",
     "tips": ""
   },
   {
-    "id": "key_apartment",
-    "name": "Apartment 2F Key",
+    "id": "key_handlingroom01",
+    "name": "North EMR Control room Key",
     "description": "",
     "category": "keys",
-    "subcategory": "Resort",
+    "subcategory": "Smuggling Tunnel",
     "images": {
-      "icon": "/images/items/keys/card_map4_Apartment.webp",
-      "thumbnail": "/images/items/keys/card_map4_Apartment.webp",
-      "fullsize": "/images/items/keys/card_map4_Apartment.webp"
+      "icon": "/images/items/keys/key_handlingroom01.webp",
+      "thumbnail": "/images/items/keys/key_handlingroom01.webp",
+      "fullsize": "/images/items/keys/key_handlingroom01.webp"
     },
     "stats": {
       "price": 1000,
-      "weight": 0.1,
-      "rarity": "Epic"
+      "weight": 0.01,
+      "rarity": "Common",
+      "uses": 3,
+      "location": "North EMR Control room"
     },
-    "gameId": "card.map4.Apartment",
+    "gameId": "card.map5.handlingroom01",
     "tips": ""
   },
   {
-    "id": "key_bankf2",
-    "name": "Bank 2F Key",
+    "id": "key_handlingroom02",
+    "name": "South EMR Control room Key",
     "description": "",
     "category": "keys",
-    "subcategory": "Resort",
+    "subcategory": "Smuggling Tunnel",
     "images": {
-      "icon": "/images/items/keys/card_map4_BankF2.webp",
-      "thumbnail": "/images/items/keys/card_map4_BankF2.webp",
-      "fullsize": "/images/items/keys/card_map4_BankF2.webp"
+      "icon": "/images/items/keys/key_handlingroom02.webp",
+      "thumbnail": "/images/items/keys/key_handlingroom02.webp",
+      "fullsize": "/images/items/keys/key_handlingroom02.webp"
     },
     "stats": {
       "price": 1000,
-      "weight": 0.1,
-      "rarity": "Legendary"
+      "weight": 0.01,
+      "rarity": "Common",
+      "uses": 3,
+      "location": "South EMR Control room"
     },
-    "gameId": "card.map4.BankF2",
+    "gameId": "card.map5.handlingroom02",
     "tips": ""
   },
   {
-    "id": "key_banksewer",
-    "name": "Bank Sewer Key",
+    "id": "key_highbuilding_shop",
+    "name": "Office Building 2F Key",
     "description": "",
     "category": "keys",
-    "subcategory": "Resort",
+    "subcategory": "Suburb",
     "images": {
-      "icon": "/images/items/keys/card_map4_BankSewer.webp",
-      "thumbnail": "/images/items/keys/card_map4_BankSewer.webp",
-      "fullsize": "/images/items/keys/card_map4_BankSewer.webp"
+      "icon": "/images/items/keys/key_highbuilding_shop.webp",
+      "thumbnail": "/images/items/keys/key_highbuilding_shop.webp",
+      "fullsize": "/images/items/keys/key_highbuilding_shop.webp"
     },
     "stats": {
       "price": 1000,
-      "weight": 0.1,
-      "rarity": "Uncommon"
+      "weight": 0.01,
+      "rarity": "Epic",
+      "uses": 3,
+      "location": "South side F2"
     },
-    "gameId": "card.map4.BankSewer",
+    "gameId": "card.map1.highbuilding_shop",
     "tips": ""
   },
   {
@@ -519,91 +447,81 @@
     "category": "keys",
     "subcategory": "Resort",
     "images": {
-      "icon": "/images/items/keys/card_map4_HospitalF2.webp",
-      "thumbnail": "/images/items/keys/card_map4_HospitalF2.webp",
-      "fullsize": "/images/items/keys/card_map4_HospitalF2.webp"
+      "icon": "/images/items/keys/key_hospitalf2.webp",
+      "thumbnail": "/images/items/keys/key_hospitalf2.webp",
+      "fullsize": "/images/items/keys/key_hospitalf2.webp"
     },
     "stats": {
       "price": 1000,
-      "weight": 0.1,
-      "rarity": "Rare"
+      "weight": 0.01,
+      "rarity": "Rare",
+      "uses": 3,
+      "location": "Hospital"
     },
-    "gameId": "card.map4.HospitalF2",
+    "gameId": "card.map4.hospitalf2",
     "tips": ""
   },
   {
-    "id": "key_resorthotel",
-    "name": "Resort hotel 208 Key",
+    "id": "key_mall_campshop",
+    "name": "Camp Shop’s Key",
     "description": "",
     "category": "keys",
-    "subcategory": "Resort",
+    "subcategory": "Suburb",
     "images": {
-      "icon": "/images/items/keys/card_map4_Apartment.webp",
-      "thumbnail": "/images/items/keys/card_map4_Apartment.webp",
-      "fullsize": "/images/items/keys/card_map4_Apartment.webp"
+      "icon": "/images/items/keys/key_mall_campshop.webp",
+      "thumbnail": "/images/items/keys/key_mall_campshop.webp",
+      "fullsize": "/images/items/keys/key_mall_campshop.webp"
     },
     "stats": {
       "price": 1000,
-      "weight": 0.1,
-      "rarity": "Rare"
+      "weight": 0.01,
+      "rarity": "Legendary",
+      "uses": 3,
+      "location": "Mall F3"
     },
-    "gameId": "card.map4.ResortHotel",
+    "gameId": "card.map1.campshop",
     "tips": ""
   },
   {
-    "id": "key_tunnel",
-    "name": "Sunset tunnel Key",
+    "id": "key_mall_chaneo",
+    "name": "Chaneo Store's Key",
     "description": "",
     "category": "keys",
-    "subcategory": "Resort",
+    "subcategory": "Suburb",
     "images": {
-      "icon": "/images/items/keys/card_map4_Tunnel.webp",
-      "thumbnail": "/images/items/keys/card_map4_Tunnel.webp",
-      "fullsize": "/images/items/keys/card_map4_Tunnel.webp"
+      "icon": "/images/items/keys/key_mall_chaneo.webp",
+      "thumbnail": "/images/items/keys/key_mall_chaneo.webp",
+      "fullsize": "/images/items/keys/key_mall_chaneo.webp"
     },
     "stats": {
       "price": 1000,
-      "weight": 0.1,
-      "rarity": "Legendary"
+      "weight": 0.01,
+      "rarity": "Legendary",
+      "uses": 3,
+      "location": "Mall F1"
     },
-    "gameId": "card.map4.Tunnel",
+    "gameId": "card.map1.mall_chaneo",
     "tips": ""
   },
   {
-    "id": "key_voyages",
-    "name": "Halif Voyage 1F storage room Key",
+    "id": "key_map5_checkpoint",
+    "name": "Checkpoint 2F room Key",
     "description": "",
     "category": "keys",
-    "subcategory": "Resort",
+    "subcategory": "Smuggling Tunnel",
     "images": {
-      "icon": "/images/items/keys/card_map4_Voyages.webp",
-      "thumbnail": "/images/items/keys/card_map4_Voyages.webp",
-      "fullsize": "/images/items/keys/card_map4_Voyages.webp"
+      "icon": "/images/items/keys/key_map5_checkpoint.webp",
+      "thumbnail": "/images/items/keys/key_map5_checkpoint.webp",
+      "fullsize": "/images/items/keys/key_map5_checkpoint.webp"
     },
     "stats": {
       "price": 1000,
-      "weight": 0.1,
-      "rarity": "Epic"
+      "weight": 0.01,
+      "rarity": "Common",
+      "uses": 3,
+      "location": "Checkpoint 2F"
     },
-    "gameId": "card.map4.Voyages",
-    "tips": ""
-  },
-  {
-    "id": "key_bomb",
-    "name": "Bomb",
-    "description": "Used to demolish the wall of the control room.",
-    "category": "keys",
-    "subcategory": "Metro",
-    "images": {
-      "icon": "/images/items/keys/Icon_WF_Bomb.webp",
-      "thumbnail": "/images/items/keys/Icon_WF_Bomb.webp",
-      "fullsize": "/images/items/keys/Icon_WF_Bomb.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 20,
-      "rarity": "Common"
-    },
+    "gameId": "card.map5.map5_checkpoint",
     "tips": ""
   },
   {
@@ -622,6 +540,342 @@
       "weight": 0.15,
       "rarity": "Legendary"
     },
+    "tips": ""
+  },
+  {
+    "id": "key_mid_bunker",
+    "name": "Dam Central Bunker's Key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Dam",
+    "images": {
+      "icon": "/images/items/keys/key_mid_bunker.webp",
+      "thumbnail": "/images/items/keys/key_mid_bunker.webp",
+      "fullsize": "/images/items/keys/key_mid_bunker.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Epic",
+      "uses": 3,
+      "location": ""
+    },
+    "gameId": "card.map2.midbunker",
+    "tips": ""
+  },
+  {
+    "id": "key_motel_201",
+    "name": "Motel Room 201 Key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Suburb",
+    "images": {
+      "icon": "/images/items/keys/key_motel_201.webp",
+      "thumbnail": "/images/items/keys/key_motel_201.webp",
+      "fullsize": "/images/items/keys/key_motel_201.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Rare",
+      "uses": 3,
+      "location": "Motel F2"
+    },
+    "gameId": "card.map1.motel_201",
+    "tips": ""
+  },
+  {
+    "id": "key_motel_206",
+    "name": "Motel Room 206 Key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Suburb",
+    "images": {
+      "icon": "/images/items/keys/key_motel_206.webp",
+      "thumbnail": "/images/items/keys/key_motel_206.webp",
+      "fullsize": "/images/items/keys/key_motel_206.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Rare",
+      "uses": 3,
+      "location": "Motel F2"
+    },
+    "gameId": "card.map1.motel_206",
+    "tips": ""
+  },
+  {
+    "id": "key_officerroom",
+    "name": "Officer's room Key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Metro",
+    "images": {
+      "icon": "/images/items/keys/key_officerroom.webp",
+      "thumbnail": "/images/items/keys/key_officerroom.webp",
+      "fullsize": "/images/items/keys/key_officerroom.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Legendary",
+      "uses": 3,
+      "location": ""
+    },
+    "gameId": "card.map3.officerroom",
+    "tips": ""
+  },
+  {
+    "id": "key_operatingroom",
+    "name": "Medical lab's Key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Metro",
+    "images": {
+      "icon": "/images/items/keys/key_operatingroom.webp",
+      "thumbnail": "/images/items/keys/key_operatingroom.webp",
+      "fullsize": "/images/items/keys/key_operatingroom.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Epic",
+      "uses": 3,
+      "location": ""
+    },
+    "gameId": "card.map3.operatingroom",
+    "tips": ""
+  },
+  {
+    "id": "key_police_f1",
+    "name": "Police Station 1F Key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Suburb",
+    "images": {
+      "icon": "/images/items/keys/key_police_f1.webp",
+      "thumbnail": "/images/items/keys/key_police_f1.webp",
+      "fullsize": "/images/items/keys/key_police_f1.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Legendary",
+      "uses": 3,
+      "location": "Hyder town"
+    },
+    "gameId": "card.map1.bear-police-f1",
+    "tips": ""
+  },
+  {
+    "id": "key_policeoffice_f2",
+    "name": "Police Station 2F Key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Suburb",
+    "images": {
+      "icon": "/images/items/keys/key_policeoffice_f2.webp",
+      "thumbnail": "/images/items/keys/key_policeoffice_f2.webp",
+      "fullsize": "/images/items/keys/key_policeoffice_f2.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Legendary",
+      "uses": 3,
+      "location": "Hyder town"
+    },
+    "gameId": "card.map1.bear-police-f2",
+    "tips": ""
+  },
+  {
+    "id": "key_resorthotel",
+    "name": "Resort hotel 208 Key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Resort",
+    "images": {
+      "icon": "/images/items/keys/key_resorthotel.webp",
+      "thumbnail": "/images/items/keys/key_resorthotel.webp",
+      "fullsize": "/images/items/keys/key_resorthotel.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Rare",
+      "uses": 3,
+      "location": "Hotel"
+    },
+    "gameId": "card.map4.resorthotel",
+    "tips": ""
+  },
+  {
+    "id": "key_toilet",
+    "name": "Cargo Zone01 Toilet Key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Smuggling Tunnel",
+    "images": {
+      "icon": "/images/items/keys/key_toilet.webp",
+      "thumbnail": "/images/items/keys/key_toilet.webp",
+      "fullsize": "/images/items/keys/key_toilet.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Common",
+      "uses": 3,
+      "location": "Cargo Zone01"
+    },
+    "gameId": "card.map5.toilet",
+    "tips": ""
+  },
+  {
+    "id": "key_tunnel",
+    "name": "Sunset tunnel Key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Resort",
+    "images": {
+      "icon": "/images/items/keys/key_tunnel.webp",
+      "thumbnail": "/images/items/keys/key_tunnel.webp",
+      "fullsize": "/images/items/keys/key_tunnel.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Legendary",
+      "uses": 3,
+      "location": "Tunnel"
+    },
+    "gameId": "card.map4.tunnel",
+    "tips": ""
+  },
+  {
+    "id": "key_voyages",
+    "name": "Halif Voyage 1F storage room Key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Resort",
+    "images": {
+      "icon": "/images/items/keys/key_voyages.webp",
+      "thumbnail": "/images/items/keys/key_voyages.webp",
+      "fullsize": "/images/items/keys/key_voyages.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Epic",
+      "uses": 3,
+      "location": "Voyages"
+    },
+    "gameId": "card.map4.voyages",
+    "tips": ""
+  },
+  {
+    "id": "key_warehouse",
+    "name": "WH01 warehouse key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Smuggling Tunnel",
+    "images": {
+      "icon": "/images/items/keys/key_warehouse.webp",
+      "thumbnail": "/images/items/keys/key_warehouse.webp",
+      "fullsize": "/images/items/keys/key_warehouse.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Common",
+      "uses": 3,
+      "location": "WH01 warehouse"
+    },
+    "gameId": "card.map5.warehouse",
+    "tips": ""
+  },
+  {
+    "id": "key_westbunker",
+    "name": "Suburb Western Bunker's Key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Suburb",
+    "images": {
+      "icon": "/images/items/keys/key_westbunker.webp",
+      "thumbnail": "/images/items/keys/key_westbunker.webp",
+      "fullsize": "/images/items/keys/key_westbunker.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Epic",
+      "uses": 3,
+      "location": ""
+    },
+    "gameId": "card.map1.basementexit",
+    "tips": ""
+  },
+  {
+    "id": "key_windingstair",
+    "name": "Cellar Staircase gate key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Smuggling Tunnel",
+    "images": {
+      "icon": "/images/items/keys/key_windingstair.webp",
+      "thumbnail": "/images/items/keys/key_windingstair.webp",
+      "fullsize": "/images/items/keys/key_windingstair.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Common",
+      "uses": 3,
+      "location": "Cellar Staircase"
+    },
+    "gameId": "card.map5.windingstair",
+    "tips": ""
+  },
+  {
+    "id": "key_wyethfarm",
+    "name": "Wyeth Farm's Key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Suburb",
+    "images": {
+      "icon": "/images/items/keys/key_wyethfarm.webp",
+      "thumbnail": "/images/items/keys/key_wyethfarm.webp",
+      "fullsize": "/images/items/keys/key_wyethfarm.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Rare",
+      "uses": 3,
+      "location": ""
+    },
+    "gameId": "card.map1.wyethfarm",
+    "tips": ""
+  },
+  {
+    "id": "key_zombie",
+    "name": "Bloodstained key",
+    "description": "",
+    "category": "keys",
+    "subcategory": "Smuggling Tunnel (Infection)",
+    "images": {
+      "icon": "/images/items/keys/key_zombie.webp",
+      "thumbnail": "/images/items/keys/key_zombie.webp",
+      "fullsize": "/images/items/keys/key_zombie.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.01,
+      "rarity": "Common",
+      "uses": 3,
+      "location": "All Room"
+    },
+    "gameId": "card.map5.zombie",
     "tips": ""
   }
 ]

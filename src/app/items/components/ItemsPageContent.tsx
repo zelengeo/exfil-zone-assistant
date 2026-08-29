@@ -4,6 +4,8 @@ import React, {useState, useEffect} from 'react';
 import {Search} from 'lucide-react';
 import Layout from '@/components/layout/Layout';
 import ItemCard from '@/app/items/components/ItemCard';
+import WeaponFamilyGroup from '@/app/items/components/WeaponFamilyGroup';
+import {groupWeaponsByFamily} from '@/app/items/utils/weaponFamilies';
 import FilterSidebar from '@/app/items/components/FilterSidebar';
 import {itemCategories, Item, getCategoryById} from '@/types/items';
 import {useSearchParams} from "next/navigation";
@@ -48,6 +50,16 @@ export default function ItemsPageContent() {
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
+
+    // The gun rework took the weapons list from 69 items to 134 presets over 38 families - 27 of
+    // them with more than one preset, and many variants differing only cosmetically. Flat, that is
+    // a worse page than the old one, so weapons collapse into their family. Everything else stays
+    // a plain grid. Searching expands the groups, since a hit inside a collapsed row is invisible.
+    const isWeaponsView = categoryId === 'weapons';
+    const expandGroups = searchQuery.length > 0;
+    const {groups, singles} = isWeaponsView
+        ? groupWeaponsByFamily(filteredItems)
+        : {groups: [], singles: filteredItems};
 
     return (
         <Layout>
@@ -119,10 +131,24 @@ export default function ItemsPageContent() {
                     {/* Items Grid */}
                     <div className="flex-grow">
                         {filteredItems.length > 0 ? (
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                                {filteredItems.map((item) => (
-                                    <ItemCard key={item.id} item={item}/>
+                            <div className="space-y-4">
+                                {groups.map((group) => (
+                                    <WeaponFamilyGroup
+                                        // Remount when the search toggles, so the group's own open
+                                        // state picks up the new default instead of sticking.
+                                        key={`${group.key}${expandGroups ? ':open' : ''}`}
+                                        group={group}
+                                        showCaliber={!subcategoryId}
+                                        defaultExpanded={expandGroups}
+                                    />
                                 ))}
+                                {singles.length > 0 && (
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                                        {singles.map((item) => (
+                                            <ItemCard key={item.id} item={item}/>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         ) : (
                             <div className="military-box p-8 text-center rounded-sm">

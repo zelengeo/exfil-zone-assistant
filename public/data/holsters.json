@@ -6,9 +6,9 @@
     "category": "gear",
     "subcategory": "Holsters",
     "images": {
-      "icon": "/images/items/holsters/Icon_vestholster_01.webp",
-      "thumbnail": "/images/items/holsters/Icon_vestholster_01.webp",
-      "fullsize": "/images/items/holsters/Icon_vestholster_01.webp"
+      "icon": "/images/items/holsters/holster_556faster.webp",
+      "thumbnail": "/images/items/holsters/holster_556faster.webp",
+      "fullsize": "/images/items/holsters/holster_556faster.webp"
     },
     "stats": {
       "price": 1000,
@@ -27,9 +27,9 @@
     "category": "gear",
     "subcategory": "Holsters",
     "images": {
-      "icon": "/images/items/holsters/Icon_vestholster_02.webp",
-      "thumbnail": "/images/items/holsters/Icon_vestholster_02.webp",
-      "fullsize": "/images/items/holsters/Icon_vestholster_02.webp"
+      "icon": "/images/items/holsters/holster_grenade.webp",
+      "thumbnail": "/images/items/holsters/holster_grenade.webp",
+      "fullsize": "/images/items/holsters/holster_grenade.webp"
     },
     "stats": {
       "price": 1000,
@@ -46,9 +46,9 @@
     "category": "gear",
     "subcategory": "Holsters",
     "images": {
-      "icon": "/images/items/holsters/Icon_VestHolster_MagD2.webp",
-      "thumbnail": "/images/items/holsters/Icon_VestHolster_MagD2.webp",
-      "fullsize": "/images/items/holsters/Icon_VestHolster_MagD2.webp"
+      "icon": "/images/items/holsters/holster_magd.webp",
+      "thumbnail": "/images/items/holsters/holster_magd.webp",
+      "fullsize": "/images/items/holsters/holster_magd.webp"
     },
     "stats": {
       "price": 1000,
@@ -65,9 +65,9 @@
     "category": "gear",
     "subcategory": "Holsters",
     "images": {
-      "icon": "/images/items/holsters/Icon_vestholster_05.webp",
-      "thumbnail": "/images/items/holsters/Icon_vestholster_05.webp",
-      "fullsize": "/images/items/holsters/Icon_vestholster_05.webp"
+      "icon": "/images/items/holsters/holster_magl.webp",
+      "thumbnail": "/images/items/holsters/holster_magl.webp",
+      "fullsize": "/images/items/holsters/holster_magl.webp"
     },
     "stats": {
       "price": 1000,
@@ -77,7 +77,9 @@
         "holster_magm",
         "holster_mags",
         "holster_magl",
-        "holster_grenade"
+        "holster_grenade",
+        "holster_magm_pumpkin",
+        "holster_mags_pumpkin"
       ]
     },
     "tips": ""
@@ -89,9 +91,9 @@
     "category": "gear",
     "subcategory": "Holsters",
     "images": {
-      "icon": "/images/items/holsters/Icon_vestholster_04.webp",
-      "thumbnail": "/images/items/holsters/Icon_vestholster_04.webp",
-      "fullsize": "/images/items/holsters/Icon_vestholster_04.webp"
+      "icon": "/images/items/holsters/holster_magm.webp",
+      "thumbnail": "/images/items/holsters/holster_magm.webp",
+      "fullsize": "/images/items/holsters/holster_magm.webp"
     },
     "stats": {
       "price": 1000,
@@ -100,7 +102,34 @@
       "canAttach": [
         "holster_magm",
         "holster_mags",
-        "holster_grenade"
+        "holster_grenade",
+        "holster_magm_pumpkin",
+        "holster_mags_pumpkin"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "holster_magm_pumpkin",
+    "name": "Mag Pouch M 'Pumpkin'",
+    "description": "Appearance custom-made for special festivity.",
+    "category": "gear",
+    "subcategory": "Holsters",
+    "images": {
+      "icon": "/images/items/holsters/holster_magm_pumpkin.webp",
+      "thumbnail": "/images/items/holsters/holster_magm_pumpkin.webp",
+      "fullsize": "/images/items/holsters/holster_magm_pumpkin.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.1,
+      "rarity": "Uncommon",
+      "canAttach": [
+        "holster_magm",
+        "holster_mags",
+        "holster_grenade",
+        "holster_magm_pumpkin",
+        "holster_mags_pumpkin"
       ]
     },
     "tips": ""
@@ -112,9 +141,28 @@
     "category": "gear",
     "subcategory": "Holsters",
     "images": {
-      "icon": "/images/items/holsters/Icon_vestholster_06.webp",
-      "thumbnail": "/images/items/holsters/Icon_vestholster_06.webp",
-      "fullsize": "/images/items/holsters/Icon_vestholster_06.webp"
+      "icon": "/images/items/holsters/holster_mags.webp",
+      "thumbnail": "/images/items/holsters/holster_mags.webp",
+      "fullsize": "/images/items/holsters/holster_mags.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.08,
+      "rarity": "Common",
+      "canAttach": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "holster_mags_pumpkin",
+    "name": "Mag Pouch S 'Pumpkin'",
+    "description": "Appearance custom-made for special festivity.",
+    "category": "gear",
+    "subcategory": "Holsters",
+    "images": {
+      "icon": "/images/items/holsters/holster_mags_pumpkin.webp",
+      "thumbnail": "/images/items/holsters/holster_mags_pumpkin.webp",
+      "fullsize": "/images/items/holsters/holster_mags_pumpkin.webp"
     },
     "stats": {
       "price": 1000,
@@ -131,9 +179,9 @@
     "category": "gear",
     "subcategory": "Holsters",
     "images": {
-      "icon": "/images/items/holsters/VestHolster_Water.webp",
-      "thumbnail": "/images/items/holsters/VestHolster_Water.webp",
-      "fullsize": "/images/items/holsters/VestHolster_Water.webp"
+      "icon": "/images/items/holsters/holster_water.webp",
+      "thumbnail": "/images/items/holsters/holster_water.webp",
+      "fullsize": "/images/items/holsters/holster_water.webp"
     },
     "stats": {
       "price": 1000,

@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "db:test": "tsx scripts/test-mongodb-connection.ts",
-    "db:sync": "tsx scripts/sync-mongodb-indexes.ts"
+    "db:sync": "tsx scripts/sync-mongodb-indexes.ts",
+    "validate-data": "tsx scripts/validate-data.ts"
   },
   "dependencies": {
     "@auth/mongodb-adapter": "^3.10.0",

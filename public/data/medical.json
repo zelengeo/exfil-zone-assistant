@@ -6,18 +6,21 @@
     "category": "medicine",
     "subcategory": "Bandages",
     "images": {
-      "icon": "/images/items/medical/icon_bandage.webp",
-      "thumbnail": "/images/items/medical/icon_bandage.webp",
-      "fullsize": "/images/items/medical/icon_bandage.webp"
+      "icon": "/images/items/medical/med-bandage-lv1.webp",
+      "thumbnail": "/images/items/medical/med-bandage-lv1.webp",
+      "fullsize": "/images/items/medical/med-bandage-lv1.webp"
     },
     "stats": {
-      "rarity": "Common",
       "price": 724,
       "weight": 0.05,
+      "rarity": "Common",
+      "healPerSecond": 2,
+      "healDuration": 25,
+      "operationRequirement": 6,
       "canHealDeepWound": false
     },
-    "notes": "Stops bleeding.",
-    "tips": "Essential for any raid. Always carry several."
+    "tips": "Essential for any raid. Always carry several.",
+    "notes": "Stops bleeding."
   },
   {
     "id": "med-bandage-lv2",
@@ -26,18 +29,21 @@
     "category": "medicine",
     "subcategory": "Bandages",
     "images": {
-      "icon": "/images/items/medical/icon_Gauze.webp",
-      "thumbnail": "/images/items/medical/icon_Gauze.webp",
-      "fullsize": "/images/items/medical/icon_Gauze.webp"
+      "icon": "/images/items/medical/med-bandage-lv2.webp",
+      "thumbnail": "/images/items/medical/med-bandage-lv2.webp",
+      "fullsize": "/images/items/medical/med-bandage-lv2.webp"
     },
     "stats": {
-      "rarity": "Uncommon",
       "price": 1584,
       "weight": 0.05,
+      "rarity": "Uncommon",
+      "healPerSecond": 2,
+      "healDuration": 25,
+      "operationRequirement": 6,
       "canHealDeepWound": true
     },
-    "notes": "More effective than basic gauze, handles deeper wounds.",
-    "tips": "Carry at least one of these or Military-grade one."
+    "tips": "Carry at least one of these or Military-grade one.",
+    "notes": "More effective than basic gauze, handles deeper wounds."
   },
   {
     "id": "med-bandage-lv3",
@@ -46,18 +52,21 @@
     "category": "medicine",
     "subcategory": "Bandages",
     "images": {
-      "icon": "/images/items/medical/Icon_WarfareBandage_lv3.webp",
-      "thumbnail": "/images/items/medical/Icon_WarfareBandage_lv3.webp",
-      "fullsize": "/images/items/medical/Icon_WarfareBandage_lv3.webp"
+      "icon": "/images/items/medical/med-bandage-lv3.webp",
+      "thumbnail": "/images/items/medical/med-bandage-lv3.webp",
+      "fullsize": "/images/items/medical/med-bandage-lv3.webp"
     },
     "stats": {
-      "rarity": "Rare",
       "price": 4378,
       "weight": 0.05,
+      "rarity": "Rare",
+      "healPerSecond": 2,
+      "healDuration": 25,
+      "operationRequirement": 6,
       "canHealDeepWound": true
     },
-    "notes": "Superior bleeding control for combat situations.",
-    "tips": "Like Bandage, but takes less space. Carry at least one."
+    "tips": "Like Bandage, but takes less space. Carry at least one.",
+    "notes": "Superior bleeding control for combat situations."
   },
   {
     "id": "med-limb-restorer-lv1",
@@ -66,21 +75,21 @@
     "category": "medicine",
     "subcategory": "Suturing Tools",
     "images": {
-      "icon": "/images/items/medical/Icon_Suturing_Instrument_R1.webp",
-      "thumbnail": "/images/items/medical/Icon_Suturing_Instrument_R1.webp",
-      "fullsize": "/images/items/medical/Icon_Suturing_Instrument_R1.webp"
+      "icon": "/images/items/medical/med-limb-restorer-lv1.webp",
+      "thumbnail": "/images/items/medical/med-limb-restorer-lv1.webp",
+      "fullsize": "/images/items/medical/med-limb-restorer-lv1.webp"
     },
     "stats": {
-      "rarity": "Common",
       "price": 3692,
       "weight": 0.38,
+      "rarity": "Common",
       "hpPercentage": 0.5,
-      "useTime": 8,
-      "usesCount": 2,
-      "brokenHP": 1
+      "brokenHP": 1,
+      "usesCount": 3,
+      "useTime": 8
     },
-    "notes": "",
-    "tips": "Essential for blacked out limbs. Try to find better one."
+    "tips": "Essential for blacked out limbs. Try to find better one.",
+    "notes": ""
   },
   {
     "id": "med-limb-restorer-lv2",
@@ -89,21 +98,21 @@
     "category": "medicine",
     "subcategory": "Suturing Tools",
     "images": {
-      "icon": "/images/items/medical/Icon_Suturing_Instrument_R2.webp",
-      "thumbnail": "/images/items/medical/Icon_Suturing_Instrument_R2.webp",
-      "fullsize": "/images/items/medical/Icon_Suturing_Instrument_R2.webp"
+      "icon": "/images/items/medical/med-limb-restorer-lv2.webp",
+      "thumbnail": "/images/items/medical/med-limb-restorer-lv2.webp",
+      "fullsize": "/images/items/medical/med-limb-restorer-lv2.webp"
     },
     "stats": {
-      "rarity": "Uncommon",
       "price": 11883,
       "weight": 0.38,
+      "rarity": "Uncommon",
       "hpPercentage": 0.25,
-      "useTime": 7,
-      "usesCount": 3,
-      "brokenHP": 1
+      "brokenHP": 1,
+      "usesCount": 4,
+      "useTime": 6.5
     },
-    "notes": "Stops bleeding.",
-    "tips": "More efficient than R1 version, faster application time."
+    "tips": "More efficient than R1 version, faster application time.",
+    "notes": "Stops bleeding."
   },
   {
     "id": "med-limb-restorer-lv3",
@@ -112,21 +121,21 @@
     "category": "medicine",
     "subcategory": "Suturing Tools",
     "images": {
-      "icon": "/images/items/medical/Icon_Apex_Suturing_Instrument.webp",
-      "thumbnail": "/images/items/medical/Icon_Apex_Suturing_Instrument.webp",
-      "fullsize": "/images/items/medical/Icon_Apex_Suturing_Instrument.webp"
+      "icon": "/images/items/medical/med-limb-restorer-lv3.webp",
+      "thumbnail": "/images/items/medical/med-limb-restorer-lv3.webp",
+      "fullsize": "/images/items/medical/med-limb-restorer-lv3.webp"
     },
     "stats": {
-      "rarity": "Rare",
       "price": 48771,
       "weight": 0.38,
+      "rarity": "Rare",
       "hpPercentage": 0.1,
-      "useTime": 6,
-      "usesCount": 6,
-      "brokenHP": 1
+      "brokenHP": 1,
+      "usesCount": 7,
+      "useTime": 6
     },
-    "notes": "Stops bleeding.",
-    "tips": "Premium choice for multiple limb injuries, very cost-effective. Try to always have one in your loadout."
+    "tips": "Premium choice for multiple limb injuries, very cost-effective. Try to always have one in your loadout.",
+    "notes": "Stops bleeding."
   },
   {
     "id": "med-painkiller-lv1",
@@ -135,24 +144,24 @@
     "category": "medicine",
     "subcategory": "Painkillers",
     "images": {
-      "icon": "/images/items/medical/Icon_WarfarePainkillerLv1.webp",
-      "thumbnail": "/images/items/medical/Icon_WarfarePainkillerLv1.webp",
-      "fullsize": "/images/items/medical/Icon_WarfarePainkillerLv1.webp"
+      "icon": "/images/items/medical/med-painkiller-lv1.webp",
+      "thumbnail": "/images/items/medical/med-painkiller-lv1.webp",
+      "fullsize": "/images/items/medical/med-painkiller-lv1.webp"
     },
     "stats": {
-      "rarity": "Common",
       "price": 4121,
       "weight": 0.08,
+      "rarity": "Common",
       "usesCount": 3,
-      "effectTime": 120.0,
+      "effectTime": 160,
+      "sideEffectTime": 60,
       "energyFactor": -0.2,
       "hydraFactor": -0.2,
-      "sideEffectTime": 90.0,
-      "threshold": 1.0,
+      "threshold": 1,
       "consumptionSpeed": 2.25
     },
-    "notes": "",
-    "tips": "Essential for any raid."
+    "tips": "Essential for any raid.",
+    "notes": ""
   },
   {
     "id": "med-painkiller-lv2",
@@ -161,24 +170,24 @@
     "category": "medicine",
     "subcategory": "Painkillers",
     "images": {
-      "icon": "/images/items/medical/Icon_WarfarePainkillerLv2.webp",
-      "thumbnail": "/images/items/medical/Icon_WarfarePainkillerLv2.webp",
-      "fullsize": "/images/items/medical/Icon_WarfarePainkillerLv2.webp"
+      "icon": "/images/items/medical/med-painkiller-lv2.webp",
+      "thumbnail": "/images/items/medical/med-painkiller-lv2.webp",
+      "fullsize": "/images/items/medical/med-painkiller-lv2.webp"
     },
     "stats": {
-      "rarity": "Uncommon",
       "price": 9110,
       "weight": 0.08,
+      "rarity": "Uncommon",
       "usesCount": 6,
-      "effectTime": 150.0,
+      "effectTime": 200,
+      "sideEffectTime": 60,
       "energyFactor": -0.2,
       "hydraFactor": -0.2,
-      "sideEffectTime": 90.0,
-      "threshold": 1.0,
+      "threshold": 1,
       "consumptionSpeed": 2.25
     },
-    "notes": "Longer pain relief with more uses than basic version.",
-    "tips": "Better value than basic painkillers for extended raids."
+    "tips": "Better value than basic painkillers for extended raids.",
+    "notes": "Longer pain relief with more uses than basic version."
   },
   {
     "id": "med-painkiller-lv3",
@@ -187,112 +196,24 @@
     "category": "medicine",
     "subcategory": "Painkillers",
     "images": {
-      "icon": "/images/items/medical/Icon_WarfarePainkillerLv3.webp",
-      "thumbnail": "/images/items/medical/Icon_WarfarePainkillerLv3.webp",
-      "fullsize": "/images/items/medical/Icon_WarfarePainkillerLv3.webp"
+      "icon": "/images/items/medical/med-painkiller-lv3.webp",
+      "thumbnail": "/images/items/medical/med-painkiller-lv3.webp",
+      "fullsize": "/images/items/medical/med-painkiller-lv3.webp"
     },
     "stats": {
-      "rarity": "Rare",
       "price": 19262,
       "weight": 0.08,
+      "rarity": "Rare",
       "usesCount": 6,
-      "effectTime": 150.0,
+      "effectTime": 240,
+      "sideEffectTime": 40,
       "energyFactor": -0.1,
       "hydraFactor": -0.1,
-      "sideEffectTime": 60.0,
-      "threshold": 1.0,
+      "threshold": 1,
       "consumptionSpeed": 2.25
     },
-    "notes": "Less energy/hydration drain and shorter side effect duration.",
-    "tips": "Premium option with minimal downsides for serious operations. Very essential."
-  },
-  {
-    "id": "med-syringe-lv1",
-    "name": "Civilian Syringe",
-    "description": "Basic health restoration syringe.",
-    "category": "medicine",
-    "subcategory": "Syringes",
-    "images": {
-      "icon": "/images/items/medical/icon_HPsyringe1.webp",
-      "thumbnail": "/images/items/medical/icon_HPsyringe1.webp",
-      "fullsize": "/images/items/medical/icon_HPsyringe1.webp"
-    },
-    "stats": {
-      "rarity": "Common",
-      "price": 4826,
-      "weight": 0.03,
-      "capacity": 100.0,
-      "cureSpeed": 10.0,
-      "canReduceBleeding": false
-    },
-    "notes": "Stops bleeding.",
-    "tips": "Too slow to be a primary healing source."
-  },
-  {
-    "id": "med-syringe-lv2",
-    "name": "Medical Syringe",
-    "description": "Improved health restoration syringe.",
-    "category": "medicine",
-    "subcategory": "Syringes",
-    "images": {
-      "icon": "/images/items/medical/icon_HPsyringe2.webp",
-      "thumbnail": "/images/items/medical/icon_HPsyringe2.webp",
-      "fullsize": "/images/items/medical/icon_HPsyringe2.webp"
-    },
-    "stats": {
-      "rarity": "Uncommon",
-      "price": 10252,
-      "weight": 0.03,
-      "capacity": 200.0,
-      "cureSpeed": 15.0,
-      "canReduceBleeding": false
-    },
-    "notes": "Stops bleeding.",
-    "tips": "Fine, but try to have at least Military Syringe as a quick access option."
-  },
-  {
-    "id": "med-syringe-lv3",
-    "name": "Military Syringe",
-    "description": "Military-grade health restoration syringe.",
-    "category": "medicine",
-    "subcategory": "Syringes",
-    "images": {
-      "icon": "/images/items/medical/icon_syringepro1_png.webp",
-      "thumbnail": "/images/items/medical/icon_syringepro1_png.webp",
-      "fullsize": "/images/items/medical/icon_syringepro1_png.webp"
-    },
-    "stats": {
-      "rarity": "Rare",
-      "price": 22333,
-      "weight": 0.03,
-      "capacity": 300.0,
-      "cureSpeed": 20.0,
-      "canReduceBleeding": true
-    },
-    "notes": "Stops bleeding.",
-    "tips": "Viable for combat situations. Can handle bleeding while healing."
-  },
-  {
-    "id": "med-syringe-lv4",
-    "name": "Advanced Syringe",
-    "description": "Restore health.",
-    "category": "medicine",
-    "subcategory": "Syringes",
-    "images": {
-      "icon": "/images/items/medical/icon_syringepro2_png.webp",
-      "thumbnail": "/images/items/medical/icon_syringepro2_png.webp",
-      "fullsize": "/images/items/medical/icon_syringepro2_png.webp"
-    },
-    "stats": {
-      "rarity": "Rare",
-      "price": 51371,
-      "weight": 0.03,
-      "capacity": 600.0,
-      "cureSpeed": 25.0,
-      "canReduceBleeding": true
-    },
-    "notes": "Stops bleeding.",
-    "tips": "Maximum healing capacity and speed. No reason not to use."
+    "tips": "Premium option with minimal downsides for serious operations. Very essential.",
+    "notes": "Less energy/hydration drain and shorter side effect duration."
   },
   {
     "id": "med-stimul-adrenaline",
@@ -301,20 +222,21 @@
     "category": "medicine",
     "subcategory": "Stims",
     "images": {
-      "icon": "/images/items/medical/icon_Adrenaline_injector.webp",
-      "thumbnail": "/images/items/medical/icon_Adrenaline_injector.webp",
-      "fullsize": "/images/items/medical/icon_Adrenaline_injector.webp"
+      "icon": "/images/items/medical/med-stimul-adrenaline.webp",
+      "thumbnail": "/images/items/medical/med-stimul-adrenaline.webp",
+      "fullsize": "/images/items/medical/med-stimul-adrenaline.webp"
     },
     "stats": {
-      "rarity": "Epic",
       "price": 57809,
       "weight": 0.03,
-      "useTime": 3.0,
-      "effectTime": 120.0,
-      "perk" :"RapidPulsePerk"
+      "rarity": "Epic",
+      "effectTime": 120,
+      "useTime": 5,
+      "sellId": "medical.morphineneedle",
+      "perk": "RapidPulsePerk"
     },
-    "notes": "Stops bleeding.",
-    "tips": "Usable"
+    "tips": "Usable",
+    "notes": "Stops bleeding."
   },
   {
     "id": "med-stimul-hc",
@@ -323,20 +245,21 @@
     "category": "medicine",
     "subcategory": "Stims",
     "images": {
-      "icon": "/images/items/medical/icon_H_C__stimulant_injector.webp",
-      "thumbnail": "/images/items/medical/icon_H_C__stimulant_injector.webp",
-      "fullsize": "/images/items/medical/icon_H_C__stimulant_injector.webp"
+      "icon": "/images/items/medical/med-stimul-hc.webp",
+      "thumbnail": "/images/items/medical/med-stimul-hc.webp",
+      "fullsize": "/images/items/medical/med-stimul-hc.webp"
     },
     "stats": {
-      "rarity": "Epic",
       "price": 46935,
       "weight": 0.03,
-      "useTime": 3.0,
-      "effectTime": 120.0,
-      "perk" :"HemostasisPerk"
+      "rarity": "Epic",
+      "effectTime": 120,
+      "useTime": 5,
+      "sellId": "medical.morphineneedle",
+      "perk": "HemostasisPerk"
     },
-    "notes": "Stops bleeding.",
-    "tips": "Very expensive bandage."
+    "tips": "Very expensive bandage.",
+    "notes": "Stops bleeding."
   },
   {
     "id": "med-stimul-kb22",
@@ -345,42 +268,21 @@
     "category": "medicine",
     "subcategory": "Stims",
     "images": {
-      "icon": "/images/items/medical/icon_morphine.webp",
-      "thumbnail": "/images/items/medical/icon_morphine.webp",
-      "fullsize": "/images/items/medical/icon_morphine.webp"
+      "icon": "/images/items/medical/med-stimul-kb22.webp",
+      "thumbnail": "/images/items/medical/med-stimul-kb22.webp",
+      "fullsize": "/images/items/medical/med-stimul-kb22.webp"
     },
     "stats": {
-      "rarity": "Epic",
       "price": 157851,
       "weight": 0.03,
-      "useTime": 3.0,
-      "effectTime": 600.0,
-      "perk" :"LoadMasterPerk"
-    },
-    "notes": "Stops bleeding.",
-    "tips": "Can be useful for loot runs or when planning to extract with heavy gear."
-  },
-  {
-    "id": "med-stimul-p4",
-    "name": "P4 stimulant injector",
-    "description": "Increase max health and stamina recovery speed.",
-    "category": "medicine",
-    "subcategory": "Stims",
-    "images": {
-      "icon": "/images/items/medical/icon_P4_stimulant_injector.webp",
-      "thumbnail": "/images/items/medical/icon_P4_stimulant_injector.webp",
-      "fullsize": "/images/items/medical/icon_P4_stimulant_injector.webp"
-    },
-    "stats": {
       "rarity": "Epic",
-      "price": 159430,
-      "weight": 0.03,
-      "useTime": 3.0,
-      "effectTime": 240.0,
-      "perk" :"BoundlessEnergyPerk"
+      "effectTime": 600,
+      "useTime": 5,
+      "sellId": "medical.morphineneedle",
+      "perk": "LoadMasterPerk"
     },
-    "notes": "Stops bleeding.",
-    "tips": "Don't know about max health. But definitely makes you hungry."
+    "tips": "Can be useful for loot runs or when planning to extract with heavy gear.",
+    "notes": "Stops bleeding."
   },
   {
     "id": "med-stimul-morphine",
@@ -389,18 +291,142 @@
     "category": "medicine",
     "subcategory": "Stims",
     "images": {
-      "icon": "/images/items/medical/icon_morphine.webp",
-      "thumbnail": "/images/items/medical/icon_morphine.webp",
-      "fullsize": "/images/items/medical/icon_morphine.webp"
+      "icon": "/images/items/medical/med-stimul-morphine.webp",
+      "thumbnail": "/images/items/medical/med-stimul-morphine.webp",
+      "fullsize": "/images/items/medical/med-stimul-morphine.webp"
     },
     "stats": {
-      "rarity": "Epic",
       "price": 45363,
       "weight": 0.03,
-      "useTime": 3.0,
-      "effectTime": 120.0
+      "rarity": "Epic",
+      "effectTime": 120,
+      "useTime": 5,
+      "sellId": "medical.morphineneedle"
     },
-    "notes": "Stops bleeding.",
-    "tips": "Fancy painkiller"
+    "tips": "Fancy painkiller",
+    "notes": "Stops bleeding."
+  },
+  {
+    "id": "med-stimul-p4",
+    "name": "P4 stimulant injector",
+    "description": "Increase max health and stamina recovery speed.",
+    "category": "medicine",
+    "subcategory": "Stims",
+    "images": {
+      "icon": "/images/items/medical/med-stimul-p4.webp",
+      "thumbnail": "/images/items/medical/med-stimul-p4.webp",
+      "fullsize": "/images/items/medical/med-stimul-p4.webp"
+    },
+    "stats": {
+      "price": 159430,
+      "weight": 0.03,
+      "rarity": "Epic",
+      "effectTime": 5,
+      "useTime": 5,
+      "sellId": "medical.injector.p4",
+      "perk": "BoundlessEnergyPerk"
+    },
+    "tips": "Don't know about max health. But definitely makes you hungry.",
+    "notes": "Stops bleeding."
+  },
+  {
+    "id": "med-syringe-lv1",
+    "name": "Civilian Syringe",
+    "description": "Basic health restoration syringe.",
+    "category": "medicine",
+    "subcategory": "Syringes",
+    "images": {
+      "icon": "/images/items/medical/med-syringe-lv1.webp",
+      "thumbnail": "/images/items/medical/med-syringe-lv1.webp",
+      "fullsize": "/images/items/medical/med-syringe-lv1.webp"
+    },
+    "stats": {
+      "price": 4826,
+      "weight": 0.08,
+      "rarity": "Common",
+      "capacity": 100,
+      "cureSpeed": 10,
+      "healPerSecond": 20,
+      "healDuration": 5,
+      "useTime": 5,
+      "canReduceBleeding": false
+    },
+    "tips": "Too slow to be a primary healing source.",
+    "notes": "Stops bleeding."
+  },
+  {
+    "id": "med-syringe-lv2",
+    "name": "Medical Syringe",
+    "description": "Improved health restoration syringe.",
+    "category": "medicine",
+    "subcategory": "Syringes",
+    "images": {
+      "icon": "/images/items/medical/med-syringe-lv2.webp",
+      "thumbnail": "/images/items/medical/med-syringe-lv2.webp",
+      "fullsize": "/images/items/medical/med-syringe-lv2.webp"
+    },
+    "stats": {
+      "price": 10252,
+      "weight": 0.1,
+      "rarity": "Uncommon",
+      "capacity": 200,
+      "cureSpeed": 16,
+      "healPerSecond": 20,
+      "healDuration": 5,
+      "useTime": 5,
+      "canReduceBleeding": false
+    },
+    "tips": "Fine, but try to have at least Military Syringe as a quick access option.",
+    "notes": "Stops bleeding."
+  },
+  {
+    "id": "med-syringe-lv3",
+    "name": "Military Syringe",
+    "description": "Military-grade health restoration syringe.",
+    "category": "medicine",
+    "subcategory": "Syringes",
+    "images": {
+      "icon": "/images/items/medical/med-syringe-lv3.webp",
+      "thumbnail": "/images/items/medical/med-syringe-lv3.webp",
+      "fullsize": "/images/items/medical/med-syringe-lv3.webp"
+    },
+    "stats": {
+      "price": 22333,
+      "weight": 0.4,
+      "rarity": "Rare",
+      "capacity": 300,
+      "cureSpeed": 20,
+      "healPerSecond": 20,
+      "healDuration": 5,
+      "useTime": 5,
+      "canReduceBleeding": true
+    },
+    "tips": "Viable for combat situations. Can handle bleeding while healing.",
+    "notes": "Stops bleeding."
+  },
+  {
+    "id": "med-syringe-lv4",
+    "name": "Advanced Syringe",
+    "description": "Restore health.",
+    "category": "medicine",
+    "subcategory": "Syringes",
+    "images": {
+      "icon": "/images/items/medical/med-syringe-lv4.webp",
+      "thumbnail": "/images/items/medical/med-syringe-lv4.webp",
+      "fullsize": "/images/items/medical/med-syringe-lv4.webp"
+    },
+    "stats": {
+      "price": 51371,
+      "weight": 0.6,
+      "rarity": "Rare",
+      "capacity": 600,
+      "cureSpeed": 30,
+      "healPerSecond": 20,
+      "healDuration": 5,
+      "useTime": 5,
+      "canReduceBleeding": true
+    },
+    "tips": "Maximum healing capacity and speed. No reason not to use.",
+    "notes": "Stops bleeding."
   }
 ]

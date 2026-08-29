@@ -6,54 +6,14 @@
     "category": "misc",
     "subcategory": "Power",
     "images": {
-      "icon": "/images/items/misc/valuable_batteries_sizedbattery1.webp",
-      "thumbnail": "/images/items/misc/valuable_batteries_sizedbattery1.webp",
-      "fullsize": "/images/items/misc/valuable_batteries_sizedbattery1.webp"
+      "icon": "/images/items/misc/misc_1batterie_2.webp",
+      "thumbnail": "/images/items/misc/misc_1batterie_2.webp",
+      "fullsize": "/images/items/misc/misc_1batterie_2.webp"
     },
     "stats": {
       "price": 1200,
       "weight": 0.03,
       "rarity": "Uncommon",
-      "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
-    },
-    "tips": ""
-  },
-  {
-    "id": "misc_badge",
-    "name": "Sheriff's Badge",
-    "description": "",
-    "category": "misc",
-    "subcategory": "HighValue",
-    "images": {
-      "icon": "/images/items/misc/Icon_valuable_badge.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_badge.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_badge.webp"
-    },
-    "stats": {
-      "price": 116025,
-      "weight": 0.2,
-      "rarity": "Common",
-      "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
-    },
-    "tips": ""
-  },
-  {
-    "id": "misc_baseball",
-    "name": "Old Baseball",
-    "description": "",
-    "category": "misc",
-    "subcategory": "Household",
-    "images": {
-      "icon": "/images/items/misc/Icon_valuable_baseball.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_baseball.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_baseball.webp"
-    },
-    "stats": {
-      "price": 0,
-      "weight": 0.3,
-      "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
       "safeContainerBoundScale": 1.005
     },
@@ -66,9 +26,9 @@
     "category": "misc",
     "subcategory": "Power",
     "images": {
-      "icon": "/images/items/misc/valuable_batteries_sizedbattery2.webp",
-      "thumbnail": "/images/items/misc/valuable_batteries_sizedbattery2.webp",
-      "fullsize": "/images/items/misc/valuable_batteries_sizedbattery2.webp"
+      "icon": "/images/items/misc/misc_b_1battery.webp",
+      "thumbnail": "/images/items/misc/misc_b_1battery.webp",
+      "fullsize": "/images/items/misc/misc_b_1battery.webp"
     },
     "stats": {
       "price": 1200,
@@ -86,16 +46,16 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/valuable_highvalue_aladdinlamp.webp",
-      "thumbnail": "/images/items/misc/valuable_highvalue_aladdinlamp.webp",
-      "fullsize": "/images/items/misc/valuable_highvalue_aladdinlamp.webp"
+      "icon": "/images/items/misc/misc_b_aladdinlamp.webp",
+      "thumbnail": "/images/items/misc/misc_b_aladdinlamp.webp",
+      "fullsize": "/images/items/misc/misc_b_aladdinlamp.webp"
     },
     "stats": {
       "price": 1285200,
       "weight": 1.011,
       "rarity": "Ultimate",
       "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
+      "safeContainerBoundScale": 0
     },
     "tips": ""
   },
@@ -106,16 +66,16 @@
     "category": "misc",
     "subcategory": "Intel",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_AntiqueBook.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_AntiqueBook.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_AntiqueBook.webp"
+      "icon": "/images/items/misc/misc_b_antiquebook.webp",
+      "thumbnail": "/images/items/misc/misc_b_antiquebook.webp",
+      "fullsize": "/images/items/misc/misc_b_antiquebook.webp"
     },
     "stats": {
       "price": 46000,
       "weight": 0.75,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
+      "safeContainerBoundScale": 0
     },
     "tips": ""
   },
@@ -126,16 +86,16 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/valuable_highvalue_antiqueteacup.webp",
-      "thumbnail": "/images/items/misc/valuable_highvalue_antiqueteacup.webp",
-      "fullsize": "/images/items/misc/valuable_highvalue_antiqueteacup.webp"
+      "icon": "/images/items/misc/misc_b_antiqueteaset.webp",
+      "thumbnail": "/images/items/misc/misc_b_antiqueteaset.webp",
+      "fullsize": "/images/items/misc/misc_b_antiqueteaset.webp"
     },
     "stats": {
       "price": 132269,
       "weight": 0.1,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
+      "safeContainerBoundScale": 0
     },
     "tips": ""
   },
@@ -146,9 +106,9 @@
     "category": "misc",
     "subcategory": "Medicine",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_Aspire.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_Aspire.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_Aspire.webp"
+      "icon": "/images/items/misc/misc_b_aspire.webp",
+      "thumbnail": "/images/items/misc/misc_b_aspire.webp",
+      "fullsize": "/images/items/misc/misc_b_aspire.webp"
     },
     "stats": {
       "price": 1000,
@@ -166,9 +126,9 @@
     "category": "misc",
     "subcategory": "Medicine",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_AsthmaMedication.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_AsthmaMedication.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_AsthmaMedication.webp"
+      "icon": "/images/items/misc/misc_b_asthmamedication.webp",
+      "thumbnail": "/images/items/misc/misc_b_asthmamedication.webp",
+      "fullsize": "/images/items/misc/misc_b_asthmamedication.webp"
     },
     "stats": {
       "price": 0,
@@ -186,9 +146,9 @@
     "category": "misc",
     "subcategory": "Medicine",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_BandAid.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_BandAid.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_BandAid.webp"
+      "icon": "/images/items/misc/misc_b_bandaid.webp",
+      "thumbnail": "/images/items/misc/misc_b_bandaid.webp",
+      "fullsize": "/images/items/misc/misc_b_bandaid.webp"
     },
     "stats": {
       "price": 0,
@@ -206,9 +166,9 @@
     "category": "misc",
     "subcategory": "Power",
     "images": {
-      "icon": "/images/items/misc/valuable_batteries_storagebattery2.webp",
-      "thumbnail": "/images/items/misc/valuable_batteries_storagebattery2.webp",
-      "fullsize": "/images/items/misc/valuable_batteries_storagebattery2.webp"
+      "icon": "/images/items/misc/misc_b_batter_large.webp",
+      "thumbnail": "/images/items/misc/misc_b_batter_large.webp",
+      "fullsize": "/images/items/misc/misc_b_batter_large.webp"
     },
     "stats": {
       "price": 98475,
@@ -226,9 +186,9 @@
     "category": "misc",
     "subcategory": "Household",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_beardoil.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_beardoil.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_beardoil.webp"
+      "icon": "/images/items/misc/misc_b_beardoil.webp",
+      "thumbnail": "/images/items/misc/misc_b_beardoil.webp",
+      "fullsize": "/images/items/misc/misc_b_beardoil.webp"
     },
     "stats": {
       "price": 3000,
@@ -246,9 +206,9 @@
     "category": "misc",
     "subcategory": "Medicine",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_BottledGlucose.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_BottledGlucose.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_BottledGlucose.webp"
+      "icon": "/images/items/misc/misc_b_bottledglucose.webp",
+      "thumbnail": "/images/items/misc/misc_b_bottledglucose.webp",
+      "fullsize": "/images/items/misc/misc_b_bottledglucose.webp"
     },
     "stats": {
       "price": 0,
@@ -266,54 +226,14 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_BullStatue.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_BullStatue.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_BullStatue.webp"
+      "icon": "/images/items/misc/misc_b_bullstatue.webp",
+      "thumbnail": "/images/items/misc/misc_b_bullstatue.webp",
+      "fullsize": "/images/items/misc/misc_b_bullstatue.webp"
     },
     "stats": {
       "price": 110000,
       "weight": 3.8,
       "rarity": "Rare",
-      "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
-    },
-    "tips": ""
-  },
-  {
-    "id": "misc_barcleaner",
-    "name": "Household Cleaner",
-    "description": "",
-    "category": "misc",
-    "subcategory": "Household",
-    "images": {
-      "icon": "/images/items/misc/icon_houseclean.webp",
-      "thumbnail": "/images/items/misc/icon_houseclean.webp",
-      "fullsize": "/images/items/misc/icon_houseclean.webp"
-    },
-    "stats": {
-      "price": 2910,
-      "weight": 0.65,
-      "rarity": "Common",
-      "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
-    },
-    "tips": ""
-  },
-  {
-    "id": "misc_b_tape",
-    "name": "Tape",
-    "description": "",
-    "category": "misc",
-    "subcategory": "Intel",
-    "images": {
-      "icon": "/images/items/misc/Icon_gun_m92.webp",
-      "thumbnail": "/images/items/misc/Icon_gun_m92.webp",
-      "fullsize": "/images/items/misc/Icon_gun_m92.webp"
-    },
-    "stats": {
-      "price": 3822,
-      "weight": 0.27,
-      "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
       "safeContainerBoundScale": 1.005
     },
@@ -326,9 +246,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_cash.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_cash.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_cash.webp"
+      "icon": "/images/items/misc/misc_b_cash.webp",
+      "thumbnail": "/images/items/misc/misc_b_cash.webp",
+      "fullsize": "/images/items/misc/misc_b_cash.webp"
     },
     "stats": {
       "price": 25000,
@@ -346,9 +266,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_cash.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_cash.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_cash.webp"
+      "icon": "/images/items/misc/misc_b_cash2.webp",
+      "thumbnail": "/images/items/misc/misc_b_cash2.webp",
+      "fullsize": "/images/items/misc/misc_b_cash2.webp"
     },
     "stats": {
       "price": 50000,
@@ -366,33 +286,13 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_cash.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_cash.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_cash.webp"
+      "icon": "/images/items/misc/misc_b_cash3.webp",
+      "thumbnail": "/images/items/misc/misc_b_cash3.webp",
+      "fullsize": "/images/items/misc/misc_b_cash3.webp"
     },
     "stats": {
       "price": 75000,
       "weight": 0.75,
-      "rarity": "Epic",
-      "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
-    },
-    "tips": ""
-  },
-  {
-    "id": "misc_bentrifuge",
-    "name": "Centrifuge",
-    "description": "",
-    "category": "misc",
-    "subcategory": "Medicine",
-    "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_Centrifuge.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_Centrifuge.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_Centrifuge.webp"
-    },
-    "stats": {
-      "price": 80000,
-      "weight": 3.4,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
       "safeContainerBoundScale": 1.005
@@ -406,16 +306,16 @@
     "category": "misc",
     "subcategory": "Building",
     "images": {
-      "icon": "/images/items/misc/valuable_building_ceramicadhesive.webp",
-      "thumbnail": "/images/items/misc/valuable_building_ceramicadhesive.webp",
-      "fullsize": "/images/items/misc/valuable_building_ceramicadhesive.webp"
+      "icon": "/images/items/misc/misc_b_ceramic_adhesive.webp",
+      "thumbnail": "/images/items/misc/misc_b_ceramic_adhesive.webp",
+      "fullsize": "/images/items/misc/misc_b_ceramic_adhesive.webp"
     },
     "stats": {
       "price": 4200,
       "weight": 0.4,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
+      "safeContainerBoundScale": 0
     },
     "tips": ""
   },
@@ -426,94 +326,14 @@
     "category": "misc",
     "subcategory": "Electric",
     "images": {
-      "icon": "/images/items/misc/valuable_electric_civilradio.webp",
-      "thumbnail": "/images/items/misc/valuable_electric_civilradio.webp",
-      "fullsize": "/images/items/misc/valuable_electric_civilradio.webp"
+      "icon": "/images/items/misc/misc_b_civilradio.webp",
+      "thumbnail": "/images/items/misc/misc_b_civilradio.webp",
+      "fullsize": "/images/items/misc/misc_b_civilradio.webp"
     },
     "stats": {
       "price": 6600,
       "weight": 1,
       "rarity": "Epic",
-      "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
-    },
-    "tips": ""
-  },
-  {
-    "id": "misc_blimbingrope",
-    "name": "Climbing rope",
-    "description": "",
-    "category": "misc",
-    "subcategory": "Tools",
-    "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_ClimbingRope.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_ClimbingRope.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_ClimbingRope.webp"
-    },
-    "stats": {
-      "price": 20000,
-      "weight": 0.8,
-      "rarity": "Common",
-      "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
-    },
-    "tips": ""
-  },
-  {
-    "id": "misc_bomputertextbook",
-    "name": "Computer manual",
-    "description": "",
-    "category": "misc",
-    "subcategory": "Intel",
-    "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_ComputerTextbook.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_ComputerTextbook.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_ComputerTextbook.webp"
-    },
-    "stats": {
-      "price": 0,
-      "weight": 0.5,
-      "rarity": "Uncommon",
-      "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
-    },
-    "tips": ""
-  },
-  {
-    "id": "misc_bpu",
-    "name": "CPU",
-    "description": "",
-    "category": "misc",
-    "subcategory": "Electric",
-    "images": {
-      "icon": "/images/items/misc/Icon_valuable_cpu.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_cpu.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_cpu.webp"
-    },
-    "stats": {
-      "price": 87750,
-      "weight": 0.1,
-      "rarity": "Epic",
-      "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
-    },
-    "tips": ""
-  },
-  {
-    "id": "misc_brimsonqueenring",
-    "name": "Ruby ring",
-    "description": "",
-    "category": "misc",
-    "subcategory": "HighValue",
-    "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_CrimsonQueenRing.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_CrimsonQueenRing.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_CrimsonQueenRing.webp"
-    },
-    "stats": {
-      "price": 1200000,
-      "weight": 0.02,
-      "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
       "safeContainerBoundScale": 1.005
     },
@@ -526,9 +346,9 @@
     "category": "misc",
     "subcategory": "Electric",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_datacord.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_datacord.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_datacord.webp"
+      "icon": "/images/items/misc/misc_b_dataline.webp",
+      "thumbnail": "/images/items/misc/misc_b_dataline.webp",
+      "fullsize": "/images/items/misc/misc_b_dataline.webp"
     },
     "stats": {
       "price": 1323,
@@ -546,9 +366,9 @@
     "category": "misc",
     "subcategory": "Medicine",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_defibrillator.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_defibrillator.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_defibrillator.webp"
+      "icon": "/images/items/misc/misc_b_defibrillator.webp",
+      "thumbnail": "/images/items/misc/misc_b_defibrillator.webp",
+      "fullsize": "/images/items/misc/misc_b_defibrillator.webp"
     },
     "stats": {
       "price": 521360,
@@ -566,9 +386,9 @@
     "category": "misc",
     "subcategory": "Household",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_deodorant.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_deodorant.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_deodorant.webp"
+      "icon": "/images/items/misc/misc_b_deodorant.webp",
+      "thumbnail": "/images/items/misc/misc_b_deodorant.webp",
+      "fullsize": "/images/items/misc/misc_b_deodorant.webp"
     },
     "stats": {
       "price": 8820,
@@ -586,9 +406,9 @@
     "category": "misc",
     "subcategory": "Electric",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_DigitalSensor.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_DigitalSensor.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_DigitalSensor.webp"
+      "icon": "/images/items/misc/misc_b_digitalsensor.webp",
+      "thumbnail": "/images/items/misc/misc_b_digitalsensor.webp",
+      "fullsize": "/images/items/misc/misc_b_digitalsensor.webp"
     },
     "stats": {
       "price": 500000,
@@ -606,9 +426,9 @@
     "category": "misc",
     "subcategory": "Medicine",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_DisinfectingWipes.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_DisinfectingWipes.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_DisinfectingWipes.webp"
+      "icon": "/images/items/misc/misc_b_disinfectingwipes.webp",
+      "thumbnail": "/images/items/misc/misc_b_disinfectingwipes.webp",
+      "fullsize": "/images/items/misc/misc_b_disinfectingwipes.webp"
     },
     "stats": {
       "price": 0,
@@ -626,13 +446,33 @@
     "category": "misc",
     "subcategory": "Tools",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_electricdrill.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_electricdrill.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_electricdrill.webp"
+      "icon": "/images/items/misc/misc_b_electricdrill.webp",
+      "thumbnail": "/images/items/misc/misc_b_electricdrill.webp",
+      "fullsize": "/images/items/misc/misc_b_electricdrill.webp"
     },
     "stats": {
       "price": 47288,
       "weight": 2,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_b_electricdrill_blue",
+    "name": "Electric drill",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/misc_b_electricdrill_blue.webp",
+      "thumbnail": "/images/items/misc/misc_b_electricdrill_blue.webp",
+      "fullsize": "/images/items/misc/misc_b_electricdrill_blue.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 1.2,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
       "safeContainerBoundScale": 1.005
@@ -646,14 +486,34 @@
     "category": "misc",
     "subcategory": "Electric",
     "images": {
-      "icon": "/images/items/misc/valuable_electric_flashlight.webp",
-      "thumbnail": "/images/items/misc/valuable_electric_flashlight.webp",
-      "fullsize": "/images/items/misc/valuable_electric_flashlight.webp"
+      "icon": "/images/items/misc/misc_b_flashlight.webp",
+      "thumbnail": "/images/items/misc/misc_b_flashlight.webp",
+      "fullsize": "/images/items/misc/misc_b_flashlight.webp"
     },
     "stats": {
       "price": 1485,
       "weight": 0.1,
       "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_b_gamecartridge",
+    "name": "GrimLord' Cart",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_b_gamecartridge.webp",
+      "thumbnail": "/images/items/misc/misc_b_gamecartridge.webp",
+      "fullsize": "/images/items/misc/misc_b_gamecartridge.webp"
+    },
+    "stats": {
+      "price": 80000,
+      "weight": 0.1,
+      "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
       "safeContainerBoundScale": 1.005
     },
@@ -666,9 +526,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_A.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_A.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_A.webp"
+      "icon": "/images/items/misc/misc_b_gamecartridge_a.webp",
+      "thumbnail": "/images/items/misc/misc_b_gamecartridge_a.webp",
+      "fullsize": "/images/items/misc/misc_b_gamecartridge_a.webp"
     },
     "stats": {
       "price": 80000,
@@ -686,29 +546,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_B.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_B.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_B.webp"
-    },
-    "stats": {
-      "price": 80000,
-      "weight": 0.1,
-      "rarity": "Uncommon",
-      "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
-    },
-    "tips": ""
-  },
-  {
-    "id": "misc_b_gamecartridge",
-    "name": "GrimLord' Cart",
-    "description": "",
-    "category": "misc",
-    "subcategory": "HighValue",
-    "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_Cpng.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_Cpng.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_Cpng.webp"
+      "icon": "/images/items/misc/misc_b_gamecartridge_b.webp",
+      "thumbnail": "/images/items/misc/misc_b_gamecartridge_b.webp",
+      "fullsize": "/images/items/misc/misc_b_gamecartridge_b.webp"
     },
     "stats": {
       "price": 80000,
@@ -726,9 +566,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_D.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_D.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_GameCartridge_D.webp"
+      "icon": "/images/items/misc/misc_b_gamecartridge_d.webp",
+      "thumbnail": "/images/items/misc/misc_b_gamecartridge_d.webp",
+      "fullsize": "/images/items/misc/misc_b_gamecartridge_d.webp"
     },
     "stats": {
       "price": 80000,
@@ -746,9 +586,9 @@
     "category": "misc",
     "subcategory": "Electric",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_GameConsole.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_GameConsole.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_GameConsole.webp"
+      "icon": "/images/items/misc/misc_b_gameconsole.webp",
+      "thumbnail": "/images/items/misc/misc_b_gameconsole.webp",
+      "fullsize": "/images/items/misc/misc_b_gameconsole.webp"
     },
     "stats": {
       "price": 80000,
@@ -766,9 +606,9 @@
     "category": "misc",
     "subcategory": "Tools",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_GasPipeWrench.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_GasPipeWrench.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_GasPipeWrench.webp"
+      "icon": "/images/items/misc/misc_b_gaspipewrench.webp",
+      "thumbnail": "/images/items/misc/misc_b_gaspipewrench.webp",
+      "fullsize": "/images/items/misc/misc_b_gaspipewrench.webp"
     },
     "stats": {
       "price": 0,
@@ -786,9 +626,9 @@
     "category": "misc",
     "subcategory": "Combustible",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_gascan.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_gascan.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_gascan.webp"
+      "icon": "/images/items/misc/misc_b_gastank.webp",
+      "thumbnail": "/images/items/misc/misc_b_gastank.webp",
+      "fullsize": "/images/items/misc/misc_b_gastank.webp"
     },
     "stats": {
       "price": 1061,
@@ -806,9 +646,9 @@
     "category": "misc",
     "subcategory": "Combustible",
     "images": {
-      "icon": "/images/items/misc/valuable_combustible_largegascan.webp",
-      "thumbnail": "/images/items/misc/valuable_combustible_largegascan.webp",
-      "fullsize": "/images/items/misc/valuable_combustible_largegascan.webp"
+      "icon": "/images/items/misc/misc_b_gastank_large.webp",
+      "thumbnail": "/images/items/misc/misc_b_gastank_large.webp",
+      "fullsize": "/images/items/misc/misc_b_gastank_large.webp"
     },
     "stats": {
       "price": 13999,
@@ -826,9 +666,9 @@
     "category": "misc",
     "subcategory": "Building",
     "images": {
-      "icon": "/images/items/misc/ValuableItem_B_glue_large.webp",
-      "thumbnail": "/images/items/misc/ValuableItem_B_glue_large.webp",
-      "fullsize": "/images/items/misc/ValuableItem_B_glue_large.webp"
+      "icon": "/images/items/misc/misc_b_glue_large.webp",
+      "thumbnail": "/images/items/misc/misc_b_glue_large.webp",
+      "fullsize": "/images/items/misc/misc_b_glue_large.webp"
     },
     "stats": {
       "price": 10710,
@@ -846,16 +686,16 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/valuable_highvalue_goldelephant.webp",
-      "thumbnail": "/images/items/misc/valuable_highvalue_goldelephant.webp",
-      "fullsize": "/images/items/misc/valuable_highvalue_goldelephant.webp"
+      "icon": "/images/items/misc/misc_b_goldelephant.webp",
+      "thumbnail": "/images/items/misc/misc_b_goldelephant.webp",
+      "fullsize": "/images/items/misc/misc_b_goldelephant.webp"
     },
     "stats": {
       "price": 1372000,
       "weight": 6,
       "rarity": "Ultimate",
       "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
+      "safeContainerBoundScale": 0
     },
     "tips": ""
   },
@@ -866,16 +706,16 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_GoldenKnife.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_GoldenKnife.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_GoldenKnife.webp"
+      "icon": "/images/items/misc/misc_b_goldenknife.webp",
+      "thumbnail": "/images/items/misc/misc_b_goldenknife.webp",
+      "fullsize": "/images/items/misc/misc_b_goldenknife.webp"
     },
     "stats": {
       "price": 300000,
       "weight": 1.6,
       "rarity": "Legendary",
       "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
+      "safeContainerBoundScale": 0
     },
     "tips": ""
   },
@@ -886,9 +726,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_GoldenLionRing.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_GoldenLionRing.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_GoldenLionRing.webp"
+      "icon": "/images/items/misc/misc_b_goldenlionring.webp",
+      "thumbnail": "/images/items/misc/misc_b_goldenlionring.webp",
+      "fullsize": "/images/items/misc/misc_b_goldenlionring.webp"
     },
     "stats": {
       "price": 1200000,
@@ -906,9 +746,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/valuable_highvalue_goldprize.webp",
-      "thumbnail": "/images/items/misc/valuable_highvalue_goldprize.webp",
-      "fullsize": "/images/items/misc/valuable_highvalue_goldprize.webp"
+      "icon": "/images/items/misc/misc_b_goldenprize.webp",
+      "thumbnail": "/images/items/misc/misc_b_goldenprize.webp",
+      "fullsize": "/images/items/misc/misc_b_goldenprize.webp"
     },
     "stats": {
       "price": 346290,
@@ -926,9 +766,9 @@
     "category": "misc",
     "subcategory": "Combustible",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_gunoil.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_gunoil.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_gunoil.webp"
+      "icon": "/images/items/misc/misc_b_gunoil.webp",
+      "thumbnail": "/images/items/misc/misc_b_gunoil.webp",
+      "fullsize": "/images/items/misc/misc_b_gunoil.webp"
     },
     "stats": {
       "price": 12348,
@@ -946,9 +786,9 @@
     "category": "misc",
     "subcategory": "Intel",
     "images": {
-      "icon": "/images/items/misc/valuable_information_harddrive.webp",
-      "thumbnail": "/images/items/misc/valuable_information_harddrive.webp",
-      "fullsize": "/images/items/misc/valuable_information_harddrive.webp"
+      "icon": "/images/items/misc/misc_b_harddrive.webp",
+      "thumbnail": "/images/items/misc/misc_b_harddrive.webp",
+      "fullsize": "/images/items/misc/misc_b_harddrive.webp"
     },
     "stats": {
       "price": 11700,
@@ -966,9 +806,9 @@
     "category": "misc",
     "subcategory": "Intel",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_HorrorNovel.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_HorrorNovel.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_HorrorNovel.webp"
+      "icon": "/images/items/misc/misc_b_horrornovel.webp",
+      "thumbnail": "/images/items/misc/misc_b_horrornovel.webp",
+      "fullsize": "/images/items/misc/misc_b_horrornovel.webp"
     },
     "stats": {
       "price": 0,
@@ -986,9 +826,9 @@
     "category": "misc",
     "subcategory": "Building",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_ducttape.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_ducttape.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_ducttape.webp"
+      "icon": "/images/items/misc/misc_b_insulatingtape.webp",
+      "thumbnail": "/images/items/misc/misc_b_insulatingtape.webp",
+      "fullsize": "/images/items/misc/misc_b_insulatingtape.webp"
     },
     "stats": {
       "price": 4200,
@@ -1006,9 +846,9 @@
     "category": "misc",
     "subcategory": "Medicine",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_Iodophor.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_Iodophor.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_Iodophor.webp"
+      "icon": "/images/items/misc/misc_b_iodophor.webp",
+      "thumbnail": "/images/items/misc/misc_b_iodophor.webp",
+      "fullsize": "/images/items/misc/misc_b_iodophor.webp"
     },
     "stats": {
       "price": 0,
@@ -1026,9 +866,9 @@
     "category": "misc",
     "subcategory": "Power",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_ionbattery.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_ionbattery.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_ionbattery.webp"
+      "icon": "/images/items/misc/misc_b_ionbattery.webp",
+      "thumbnail": "/images/items/misc/misc_b_ionbattery.webp",
+      "fullsize": "/images/items/misc/misc_b_ionbattery.webp"
     },
     "stats": {
       "price": 6120,
@@ -1046,9 +886,9 @@
     "category": "misc",
     "subcategory": "Electric",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_LightBulb.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_LightBulb.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_LightBulb.webp"
+      "icon": "/images/items/misc/misc_b_lightbulb.webp",
+      "thumbnail": "/images/items/misc/misc_b_lightbulb.webp",
+      "fullsize": "/images/items/misc/misc_b_lightbulb.webp"
     },
     "stats": {
       "price": 4000,
@@ -1066,9 +906,9 @@
     "category": "misc",
     "subcategory": "Combustible",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_lighter.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_lighter.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_lighter.webp"
+      "icon": "/images/items/misc/misc_b_lighter.webp",
+      "thumbnail": "/images/items/misc/misc_b_lighter.webp",
+      "fullsize": "/images/items/misc/misc_b_lighter.webp"
     },
     "stats": {
       "price": 848,
@@ -1086,9 +926,9 @@
     "category": "misc",
     "subcategory": "Combustible",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_lighterfluid.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_lighterfluid.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_lighterfluid.webp"
+      "icon": "/images/items/misc/misc_b_lighterfluid.webp",
+      "thumbnail": "/images/items/misc/misc_b_lighterfluid.webp",
+      "fullsize": "/images/items/misc/misc_b_lighterfluid.webp"
     },
     "stats": {
       "price": 4200,
@@ -1106,9 +946,9 @@
     "category": "misc",
     "subcategory": "Intel",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_Magazine.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_Magazine.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_Magazine.webp"
+      "icon": "/images/items/misc/misc_b_magazine.webp",
+      "thumbnail": "/images/items/misc/misc_b_magazine.webp",
+      "fullsize": "/images/items/misc/misc_b_magazine.webp"
     },
     "stats": {
       "price": 0,
@@ -1126,9 +966,9 @@
     "category": "misc",
     "subcategory": "Power",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_MarineStorageBattery.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_MarineStorageBattery.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_MarineStorageBattery.webp"
+      "icon": "/images/items/misc/misc_b_marinestoragebattery.webp",
+      "thumbnail": "/images/items/misc/misc_b_marinestoragebattery.webp",
+      "fullsize": "/images/items/misc/misc_b_marinestoragebattery.webp"
     },
     "stats": {
       "price": 80000,
@@ -1146,9 +986,9 @@
     "category": "misc",
     "subcategory": "Combustible",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_match.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_match.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_match.webp"
+      "icon": "/images/items/misc/misc_b_match.webp",
+      "thumbnail": "/images/items/misc/misc_b_match.webp",
+      "fullsize": "/images/items/misc/misc_b_match.webp"
     },
     "stats": {
       "price": 0,
@@ -1166,9 +1006,9 @@
     "category": "misc",
     "subcategory": "Medicine",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_MedicalKit.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_MedicalKit.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_MedicalKit.webp"
+      "icon": "/images/items/misc/misc_b_medicalkit.webp",
+      "thumbnail": "/images/items/misc/misc_b_medicalkit.webp",
+      "fullsize": "/images/items/misc/misc_b_medicalkit.webp"
     },
     "stats": {
       "price": 0,
@@ -1186,9 +1026,9 @@
     "category": "misc",
     "subcategory": "Medicine",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_MedicalScissors.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_MedicalScissors.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_MedicalScissors.webp"
+      "icon": "/images/items/misc/misc_b_medicalscissors.webp",
+      "thumbnail": "/images/items/misc/misc_b_medicalscissors.webp",
+      "fullsize": "/images/items/misc/misc_b_medicalscissors.webp"
     },
     "stats": {
       "price": 0,
@@ -1206,9 +1046,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_MilitaryHardDrive.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_MilitaryHardDrive.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_MilitaryHardDrive.webp"
+      "icon": "/images/items/misc/misc_b_militaryharddrive.webp",
+      "thumbnail": "/images/items/misc/misc_b_militaryharddrive.webp",
+      "fullsize": "/images/items/misc/misc_b_militaryharddrive.webp"
     },
     "stats": {
       "price": 346000,
@@ -1226,9 +1066,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_MilitaryUSBdrive.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_MilitaryUSBdrive.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_MilitaryUSBdrive.webp"
+      "icon": "/images/items/misc/misc_b_militaryusbdrive.webp",
+      "thumbnail": "/images/items/misc/misc_b_militaryusbdrive.webp",
+      "fullsize": "/images/items/misc/misc_b_militaryusbdrive.webp"
     },
     "stats": {
       "price": 110000,
@@ -1246,13 +1086,33 @@
     "category": "misc",
     "subcategory": "Tools",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_moldboard.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_moldboard.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_moldboard.webp"
+      "icon": "/images/items/misc/misc_b_moldboard.webp",
+      "thumbnail": "/images/items/misc/misc_b_moldboard.webp",
+      "fullsize": "/images/items/misc/misc_b_moldboard.webp"
     },
     "stats": {
       "price": 743,
       "weight": 0.1,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_b_multipurposecleaner",
+    "name": "Gun Oil",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Combustible",
+    "images": {
+      "icon": "/images/items/misc/misc_b_multipurposecleaner.webp",
+      "thumbnail": "/images/items/misc/misc_b_multipurposecleaner.webp",
+      "fullsize": "/images/items/misc/misc_b_multipurposecleaner.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.8,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
       "safeContainerBoundScale": 1.005
@@ -1266,9 +1126,9 @@
     "category": "misc",
     "subcategory": "Building",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_nail.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_nail.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_nail.webp"
+      "icon": "/images/items/misc/misc_b_nail.webp",
+      "thumbnail": "/images/items/misc/misc_b_nail.webp",
+      "fullsize": "/images/items/misc/misc_b_nail.webp"
     },
     "stats": {
       "price": 945,
@@ -1286,9 +1146,9 @@
     "category": "misc",
     "subcategory": "Electric",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_newphone.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_newphone.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_newphone.webp"
+      "icon": "/images/items/misc/misc_b_newphone.webp",
+      "thumbnail": "/images/items/misc/misc_b_newphone.webp",
+      "fullsize": "/images/items/misc/misc_b_newphone.webp"
     },
     "stats": {
       "price": 18000,
@@ -1306,9 +1166,9 @@
     "category": "misc",
     "subcategory": "Building",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_nuts.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_nuts.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_nuts.webp"
+      "icon": "/images/items/misc/misc_b_nut.webp",
+      "thumbnail": "/images/items/misc/misc_b_nut.webp",
+      "fullsize": "/images/items/misc/misc_b_nut.webp"
     },
     "stats": {
       "price": 1040,
@@ -1326,14 +1186,34 @@
     "category": "misc",
     "subcategory": "Building",
     "images": {
-      "icon": "/images/items/misc/valuable_building_bignut.webp",
-      "thumbnail": "/images/items/misc/valuable_building_bignut.webp",
-      "fullsize": "/images/items/misc/valuable_building_bignut.webp"
+      "icon": "/images/items/misc/misc_b_nut2.webp",
+      "thumbnail": "/images/items/misc/misc_b_nut2.webp",
+      "fullsize": "/images/items/misc/misc_b_nut2.webp"
     },
     "stats": {
       "price": 978,
       "weight": 0.03,
       "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_b_oilstorage_large",
+    "name": "Oil Storage",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Combustible",
+    "images": {
+      "icon": "/images/items/misc/misc_b_oilstorage_large.webp",
+      "thumbnail": "/images/items/misc/misc_b_oilstorage_large.webp",
+      "fullsize": "/images/items/misc/misc_b_oilstorage_large.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 16,
+      "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
       "safeContainerBoundScale": 1.005
     },
@@ -1346,9 +1226,9 @@
     "category": "misc",
     "subcategory": "Electric",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_newphoneIcon_valuable_newphone.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_newphoneIcon_valuable_newphone.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_newphoneIcon_valuable_newphone.webp"
+      "icon": "/images/items/misc/misc_b_oldphone.webp",
+      "thumbnail": "/images/items/misc/misc_b_oldphone.webp",
+      "fullsize": "/images/items/misc/misc_b_oldphone.webp"
     },
     "stats": {
       "price": 5940,
@@ -1366,16 +1246,16 @@
     "category": "misc",
     "subcategory": "Combustible",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_OliveOil.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_OliveOil.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_OliveOil.webp"
+      "icon": "/images/items/misc/misc_b_oliveoil.webp",
+      "thumbnail": "/images/items/misc/misc_b_oliveoil.webp",
+      "fullsize": "/images/items/misc/misc_b_oliveoil.webp"
     },
     "stats": {
       "price": 48649,
       "weight": 1.1,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
+      "safeContainerBoundScale": 0
     },
     "tips": ""
   },
@@ -1386,9 +1266,9 @@
     "category": "misc",
     "subcategory": "Intel",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_OpticalDisc.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_OpticalDisc.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_OpticalDisc.webp"
+      "icon": "/images/items/misc/misc_b_opticaldisc.webp",
+      "thumbnail": "/images/items/misc/misc_b_opticaldisc.webp",
+      "fullsize": "/images/items/misc/misc_b_opticaldisc.webp"
     },
     "stats": {
       "price": 0,
@@ -1406,9 +1286,9 @@
     "category": "misc",
     "subcategory": "Electric",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_cpufan.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_cpufan.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_cpufan.webp"
+      "icon": "/images/items/misc/misc_b_pcfan.webp",
+      "thumbnail": "/images/items/misc/misc_b_pcfan.webp",
+      "fullsize": "/images/items/misc/misc_b_pcfan.webp"
     },
     "stats": {
       "price": 1500,
@@ -1426,16 +1306,16 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_Perfume.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_Perfume.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_Perfume.webp"
+      "icon": "/images/items/misc/misc_b_perfume.webp",
+      "thumbnail": "/images/items/misc/misc_b_perfume.webp",
+      "fullsize": "/images/items/misc/misc_b_perfume.webp"
     },
     "stats": {
       "price": 86000,
       "weight": 0.3,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
+      "safeContainerBoundScale": 0
     },
     "tips": ""
   },
@@ -1446,9 +1326,9 @@
     "category": "misc",
     "subcategory": "Household",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_pesticide.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_pesticide.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_pesticide.webp"
+      "icon": "/images/items/misc/misc_b_pesticide.webp",
+      "thumbnail": "/images/items/misc/misc_b_pesticide.webp",
+      "fullsize": "/images/items/misc/misc_b_pesticide.webp"
     },
     "stats": {
       "price": 9000,
@@ -1466,9 +1346,9 @@
     "category": "misc",
     "subcategory": "Building",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_piezometer.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_piezometer.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_piezometer.webp"
+      "icon": "/images/items/misc/misc_b_piezometer.webp",
+      "thumbnail": "/images/items/misc/misc_b_piezometer.webp",
+      "fullsize": "/images/items/misc/misc_b_piezometer.webp"
     },
     "stats": {
       "price": 45500,
@@ -1486,9 +1366,9 @@
     "category": "misc",
     "subcategory": "Building",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_pipeline.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_pipeline.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_pipeline.webp"
+      "icon": "/images/items/misc/misc_b_pipeline.webp",
+      "thumbnail": "/images/items/misc/misc_b_pipeline.webp",
+      "fullsize": "/images/items/misc/misc_b_pipeline.webp"
     },
     "stats": {
       "price": 4242,
@@ -1506,9 +1386,9 @@
     "category": "misc",
     "subcategory": "Tools",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_plier.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_plier.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_plier.webp"
+      "icon": "/images/items/misc/misc_b_plier.webp",
+      "thumbnail": "/images/items/misc/misc_b_plier.webp",
+      "fullsize": "/images/items/misc/misc_b_plier.webp"
     },
     "stats": {
       "price": 3090,
@@ -1526,9 +1406,9 @@
     "category": "misc",
     "subcategory": "Tools",
     "images": {
-      "icon": "/images/items/misc/valuable_tools_largeplier.webp",
-      "thumbnail": "/images/items/misc/valuable_tools_largeplier.webp",
-      "fullsize": "/images/items/misc/valuable_tools_largeplier.webp"
+      "icon": "/images/items/misc/misc_b_plier_large.webp",
+      "thumbnail": "/images/items/misc/misc_b_plier_large.webp",
+      "fullsize": "/images/items/misc/misc_b_plier_large.webp"
     },
     "stats": {
       "price": 735,
@@ -1546,9 +1426,9 @@
     "category": "misc",
     "subcategory": "Power",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_powerbank.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_powerbank.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_powerbank.webp"
+      "icon": "/images/items/misc/misc_b_powerbank.webp",
+      "thumbnail": "/images/items/misc/misc_b_powerbank.webp",
+      "fullsize": "/images/items/misc/misc_b_powerbank.webp"
     },
     "stats": {
       "price": 6000,
@@ -1566,16 +1446,16 @@
     "category": "misc",
     "subcategory": "Electric",
     "images": {
-      "icon": "/images/items/misc/valuable_electric_radioscanner.webp",
-      "thumbnail": "/images/items/misc/valuable_electric_radioscanner.webp",
-      "fullsize": "/images/items/misc/valuable_electric_radioscanner.webp"
+      "icon": "/images/items/misc/misc_b_radioscanner.webp",
+      "thumbnail": "/images/items/misc/misc_b_radioscanner.webp",
+      "fullsize": "/images/items/misc/misc_b_radioscanner.webp"
     },
     "stats": {
       "price": 25425,
       "weight": 2,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
+      "safeContainerBoundScale": 0
     },
     "tips": ""
   },
@@ -1586,9 +1466,9 @@
     "category": "misc",
     "subcategory": "Electric",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_ram.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_ram.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_ram.webp"
+      "icon": "/images/items/misc/misc_b_ram.webp",
+      "thumbnail": "/images/items/misc/misc_b_ram.webp",
+      "fullsize": "/images/items/misc/misc_b_ram.webp"
     },
     "stats": {
       "price": 5400,
@@ -1606,9 +1486,9 @@
     "category": "misc",
     "subcategory": "Household",
     "images": {
-      "icon": "/images/items/misc/valuable_household_ratpoison.webp",
-      "thumbnail": "/images/items/misc/valuable_household_ratpoison.webp",
-      "fullsize": "/images/items/misc/valuable_household_ratpoison.webp"
+      "icon": "/images/items/misc/misc_b_rat_poison.webp",
+      "thumbnail": "/images/items/misc/misc_b_rat_poison.webp",
+      "fullsize": "/images/items/misc/misc_b_rat_poison.webp"
     },
     "stats": {
       "price": 32175,
@@ -1626,9 +1506,9 @@
     "category": "misc",
     "subcategory": "Intel",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_Recorder.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_Recorder.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_Recorder.webp"
+      "icon": "/images/items/misc/misc_b_recorder.webp",
+      "thumbnail": "/images/items/misc/misc_b_recorder.webp",
+      "fullsize": "/images/items/misc/misc_b_recorder.webp"
     },
     "stats": {
       "price": 20000,
@@ -1646,9 +1526,9 @@
     "category": "misc",
     "subcategory": "Household",
     "images": {
-      "icon": "/images/items/misc/valuable_household_rustcleaner.webp",
-      "thumbnail": "/images/items/misc/valuable_household_rustcleaner.webp",
-      "fullsize": "/images/items/misc/valuable_household_rustcleaner.webp"
+      "icon": "/images/items/misc/misc_b_rustedcleaner.webp",
+      "thumbnail": "/images/items/misc/misc_b_rustedcleaner.webp",
+      "fullsize": "/images/items/misc/misc_b_rustedcleaner.webp"
     },
     "stats": {
       "price": 750,
@@ -1666,9 +1546,9 @@
     "category": "misc",
     "subcategory": "Household",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_SaltCan.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_SaltCan.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_SaltCan.webp"
+      "icon": "/images/items/misc/misc_b_saltcan.webp",
+      "thumbnail": "/images/items/misc/misc_b_saltcan.webp",
+      "fullsize": "/images/items/misc/misc_b_saltcan.webp"
     },
     "stats": {
       "price": 3000,
@@ -1686,9 +1566,9 @@
     "category": "misc",
     "subcategory": "Building",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_bolts.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_bolts.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_bolts.webp"
+      "icon": "/images/items/misc/misc_b_screw.webp",
+      "thumbnail": "/images/items/misc/misc_b_screw.webp",
+      "fullsize": "/images/items/misc/misc_b_screw.webp"
     },
     "stats": {
       "price": 1071,
@@ -1706,9 +1586,9 @@
     "category": "misc",
     "subcategory": "Household",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_shampoo.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_shampoo.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_shampoo.webp"
+      "icon": "/images/items/misc/misc_b_shampoo.webp",
+      "thumbnail": "/images/items/misc/misc_b_shampoo.webp",
+      "fullsize": "/images/items/misc/misc_b_shampoo.webp"
     },
     "stats": {
       "price": 8910,
@@ -1726,9 +1606,9 @@
     "category": "misc",
     "subcategory": "Tools",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_smallshovel.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_smallshovel.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_smallshovel.webp"
+      "icon": "/images/items/misc/misc_b_smallshovel.webp",
+      "thumbnail": "/images/items/misc/misc_b_smallshovel.webp",
+      "fullsize": "/images/items/misc/misc_b_smallshovel.webp"
     },
     "stats": {
       "price": 2970,
@@ -1746,9 +1626,9 @@
     "category": "misc",
     "subcategory": "Combustible",
     "images": {
-      "icon": "/images/items/misc/valuable_combustible_smokelesspowder.webp",
-      "thumbnail": "/images/items/misc/valuable_combustible_smokelesspowder.webp",
-      "fullsize": "/images/items/misc/valuable_combustible_smokelesspowder.webp"
+      "icon": "/images/items/misc/misc_b_smokelesspowder.webp",
+      "thumbnail": "/images/items/misc/misc_b_smokelesspowder.webp",
+      "fullsize": "/images/items/misc/misc_b_smokelesspowder.webp"
     },
     "stats": {
       "price": 45081,
@@ -1766,9 +1646,9 @@
     "category": "misc",
     "subcategory": "Household",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_soap.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_soap.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_soap.webp"
+      "icon": "/images/items/misc/misc_b_soap.webp",
+      "thumbnail": "/images/items/misc/misc_b_soap.webp",
+      "fullsize": "/images/items/misc/misc_b_soap.webp"
     },
     "stats": {
       "price": 765,
@@ -1786,16 +1666,16 @@
     "category": "misc",
     "subcategory": "Electric",
     "images": {
-      "icon": "/images/items/misc/valuable_electric_socket.webp",
-      "thumbnail": "/images/items/misc/valuable_electric_socket.webp",
-      "fullsize": "/images/items/misc/valuable_electric_socket.webp"
+      "icon": "/images/items/misc/misc_b_socket.webp",
+      "thumbnail": "/images/items/misc/misc_b_socket.webp",
+      "fullsize": "/images/items/misc/misc_b_socket.webp"
     },
     "stats": {
       "price": 6060,
       "weight": 0.4,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
+      "safeContainerBoundScale": 0
     },
     "tips": ""
   },
@@ -1806,9 +1686,9 @@
     "category": "misc",
     "subcategory": "Tools",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_sparkplug.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_sparkplug.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_sparkplug.webp"
+      "icon": "/images/items/misc/misc_b_sparkplug.webp",
+      "thumbnail": "/images/items/misc/misc_b_sparkplug.webp",
+      "fullsize": "/images/items/misc/misc_b_sparkplug.webp"
     },
     "stats": {
       "price": 8100,
@@ -1826,9 +1706,9 @@
     "category": "misc",
     "subcategory": "Building",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_spraycan.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_spraycan.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_spraycan.webp"
+      "icon": "/images/items/misc/misc_b_spraycan.webp",
+      "thumbnail": "/images/items/misc/misc_b_spraycan.webp",
+      "fullsize": "/images/items/misc/misc_b_spraycan.webp"
     },
     "stats": {
       "price": 12726,
@@ -1846,9 +1726,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/valuable_highvalue_stonelion.webp",
-      "thumbnail": "/images/items/misc/valuable_highvalue_stonelion.webp",
-      "fullsize": "/images/items/misc/valuable_highvalue_stonelion.webp"
+      "icon": "/images/items/misc/misc_b_stonlion.webp",
+      "thumbnail": "/images/items/misc/misc_b_stonlion.webp",
+      "fullsize": "/images/items/misc/misc_b_stonlion.webp"
     },
     "stats": {
       "price": 162162,
@@ -1866,16 +1746,16 @@
     "category": "misc",
     "subcategory": "Power",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_storagebattery.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_storagebattery.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_storagebattery.webp"
+      "icon": "/images/items/misc/misc_b_storagebattery.webp",
+      "thumbnail": "/images/items/misc/misc_b_storagebattery.webp",
+      "fullsize": "/images/items/misc/misc_b_storagebattery.webp"
     },
     "stats": {
       "price": 98475,
       "weight": 8,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
+      "safeContainerBoundScale": 0
     },
     "tips": ""
   },
@@ -1886,9 +1766,9 @@
     "category": "misc",
     "subcategory": "Building",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_superglue.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_superglue.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_superglue.webp"
+      "icon": "/images/items/misc/misc_b_superglue.webp",
+      "thumbnail": "/images/items/misc/misc_b_superglue.webp",
+      "fullsize": "/images/items/misc/misc_b_superglue.webp"
     },
     "stats": {
       "price": 10603,
@@ -1900,40 +1780,20 @@
     "tips": ""
   },
   {
-    "id": "misc_b_tapemeasure",
-    "name": "Measuring Tape",
+    "id": "misc_b_tape",
+    "name": "Tape",
     "description": "",
     "category": "misc",
-    "subcategory": "Tools",
+    "subcategory": "Intel",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_measuringtape.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_measuringtape.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_measuringtape.webp"
+      "icon": "/images/items/misc/misc_b_tape.webp",
+      "thumbnail": "/images/items/misc/misc_b_tape.webp",
+      "fullsize": "/images/items/misc/misc_b_tape.webp"
     },
     "stats": {
-      "price": 750,
-      "weight": 0.14,
-      "rarity": "Common",
-      "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
-    },
-    "tips": ""
-  },
-  {
-    "id": "misc_b_tapeplayer",
-    "name": "Civil radio",
-    "description": "",
-    "category": "misc",
-    "subcategory": "Electric",
-    "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_TapePlayer.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_TapePlayer.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_TapePlayer.webp"
-    },
-    "stats": {
-      "price": 0,
-      "weight": 0.6,
-      "rarity": "Epic",
+      "price": 3822,
+      "weight": 0.27,
+      "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
       "safeContainerBoundScale": 1.005
     },
@@ -1946,9 +1806,9 @@
     "category": "misc",
     "subcategory": "Tools",
     "images": {
-      "icon": "/images/items/misc/valuable_tools_tapeholder.webp",
-      "thumbnail": "/images/items/misc/valuable_tools_tapeholder.webp",
-      "fullsize": "/images/items/misc/valuable_tools_tapeholder.webp"
+      "icon": "/images/items/misc/misc_b_tape_holder.webp",
+      "thumbnail": "/images/items/misc/misc_b_tape_holder.webp",
+      "fullsize": "/images/items/misc/misc_b_tape_holder.webp"
     },
     "stats": {
       "price": 863,
@@ -1966,9 +1826,9 @@
     "category": "misc",
     "subcategory": "Combustible",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_gascan.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_gascan.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_gascan.webp"
+      "icon": "/images/items/misc/misc_b_tape_large.webp",
+      "thumbnail": "/images/items/misc/misc_b_tape_large.webp",
+      "fullsize": "/images/items/misc/misc_b_tape_large.webp"
     },
     "stats": {
       "price": 0,
@@ -1980,15 +1840,55 @@
     "tips": ""
   },
   {
+    "id": "misc_b_tapemeasure",
+    "name": "Measuring Tape",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Tools",
+    "images": {
+      "icon": "/images/items/misc/misc_b_tapemeasure.webp",
+      "thumbnail": "/images/items/misc/misc_b_tapemeasure.webp",
+      "fullsize": "/images/items/misc/misc_b_tapemeasure.webp"
+    },
+    "stats": {
+      "price": 750,
+      "weight": 0.14,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 0
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_b_tapeplayer",
+    "name": "Civil radio",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/misc_b_tapeplayer.webp",
+      "thumbnail": "/images/items/misc/misc_b_tapeplayer.webp",
+      "fullsize": "/images/items/misc/misc_b_tapeplayer.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.6,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 0
+    },
+    "tips": ""
+  },
+  {
     "id": "misc_b_tire_sealant",
     "name": "Tire sealant",
     "description": "",
     "category": "misc",
     "subcategory": "Tools",
     "images": {
-      "icon": "/images/items/misc/valuable_tools_tiresealant.webp",
-      "thumbnail": "/images/items/misc/valuable_tools_tiresealant.webp",
-      "fullsize": "/images/items/misc/valuable_tools_tiresealant.webp"
+      "icon": "/images/items/misc/misc_b_tire_sealant.webp",
+      "thumbnail": "/images/items/misc/misc_b_tire_sealant.webp",
+      "fullsize": "/images/items/misc/misc_b_tire_sealant.webp"
     },
     "stats": {
       "price": 743,
@@ -2006,16 +1906,16 @@
     "category": "misc",
     "subcategory": "Household",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_toiletpaper.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_toiletpaper.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_toiletpaper.webp"
+      "icon": "/images/items/misc/misc_b_toiletpaper.webp",
+      "thumbnail": "/images/items/misc/misc_b_toiletpaper.webp",
+      "fullsize": "/images/items/misc/misc_b_toiletpaper.webp"
     },
     "stats": {
       "price": 918,
       "weight": 0.03,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
+      "safeContainerBoundScale": 0
     },
     "tips": ""
   },
@@ -2026,9 +1926,9 @@
     "category": "misc",
     "subcategory": "Household",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_toothpaste.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_toothpaste.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_toothpaste.webp"
+      "icon": "/images/items/misc/misc_b_toothpaste.webp",
+      "thumbnail": "/images/items/misc/misc_b_toothpaste.webp",
+      "fullsize": "/images/items/misc/misc_b_toothpaste.webp"
     },
     "stats": {
       "price": 675,
@@ -2046,16 +1946,16 @@
     "category": "misc",
     "subcategory": "Electric",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_Transformer.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_Transformer.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_Transformer.webp"
+      "icon": "/images/items/misc/misc_b_transformer.webp",
+      "thumbnail": "/images/items/misc/misc_b_transformer.webp",
+      "fullsize": "/images/items/misc/misc_b_transformer.webp"
     },
     "stats": {
       "price": 63700,
       "weight": 1.6,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
+      "safeContainerBoundScale": 0
     },
     "tips": ""
   },
@@ -2066,9 +1966,9 @@
     "category": "misc",
     "subcategory": "Medicine",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_UVlight.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_UVlight.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_UVlight.webp"
+      "icon": "/images/items/misc/misc_b_uvlight.webp",
+      "thumbnail": "/images/items/misc/misc_b_uvlight.webp",
+      "fullsize": "/images/items/misc/misc_b_uvlight.webp"
     },
     "stats": {
       "price": 0,
@@ -2086,13 +1986,33 @@
     "category": "misc",
     "subcategory": "Electric",
     "images": {
-      "icon": "/images/items/misc/Icon_ValuableItem_B_VisionModule.webp",
-      "thumbnail": "/images/items/misc/Icon_ValuableItem_B_VisionModule.webp",
-      "fullsize": "/images/items/misc/Icon_ValuableItem_B_VisionModule.webp"
+      "icon": "/images/items/misc/misc_b_visionmodule.webp",
+      "thumbnail": "/images/items/misc/misc_b_visionmodule.webp",
+      "fullsize": "/images/items/misc/misc_b_visionmodule.webp"
     },
     "stats": {
       "price": 80000,
       "weight": 0.8,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_b_washingliquid",
+    "name": "Flash light",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/misc_b_washingliquid.webp",
+      "thumbnail": "/images/items/misc/misc_b_washingliquid.webp",
+      "fullsize": "/images/items/misc/misc_b_washingliquid.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.1,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
       "safeContainerBoundScale": 1.005
@@ -2106,9 +2026,9 @@
     "category": "misc",
     "subcategory": "Combustible",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_wd40.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_wd40.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_wd40.webp"
+      "icon": "/images/items/misc/misc_b_wd40.webp",
+      "thumbnail": "/images/items/misc/misc_b_wd40.webp",
+      "fullsize": "/images/items/misc/misc_b_wd40.webp"
     },
     "stats": {
       "price": 1050,
@@ -2126,9 +2046,9 @@
     "category": "misc",
     "subcategory": "Building",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_wire.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_wire.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_wire.webp"
+      "icon": "/images/items/misc/misc_b_wire.webp",
+      "thumbnail": "/images/items/misc/misc_b_wire.webp",
+      "fullsize": "/images/items/misc/misc_b_wire.webp"
     },
     "stats": {
       "price": 1040,
@@ -2146,9 +2066,9 @@
     "category": "misc",
     "subcategory": "Tools",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_wirecutter.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_wirecutter.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_wirecutter.webp"
+      "icon": "/images/items/misc/misc_b_wirecutting.webp",
+      "thumbnail": "/images/items/misc/misc_b_wirecutting.webp",
+      "fullsize": "/images/items/misc/misc_b_wirecutting.webp"
     },
     "stats": {
       "price": 3090,
@@ -2166,14 +2086,174 @@
     "category": "misc",
     "subcategory": "Tools",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_wrench.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_wrench.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_wrench.webp"
+      "icon": "/images/items/misc/misc_b_wrench.webp",
+      "thumbnail": "/images/items/misc/misc_b_wrench.webp",
+      "fullsize": "/images/items/misc/misc_b_wrench.webp"
     },
     "stats": {
       "price": 2940,
       "weight": 0.24,
       "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_badge",
+    "name": "Sheriff's Badge",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_badge.webp",
+      "thumbnail": "/images/items/misc/misc_badge.webp",
+      "fullsize": "/images/items/misc/misc_badge.webp"
+    },
+    "stats": {
+      "price": 116025,
+      "weight": 0.4,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 0
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_barcleaner",
+    "name": "Household Cleaner",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/misc_barcleaner.webp",
+      "thumbnail": "/images/items/misc/misc_barcleaner.webp",
+      "fullsize": "/images/items/misc/misc_barcleaner.webp"
+    },
+    "stats": {
+      "price": 2910,
+      "weight": 0.65,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_baseball",
+    "name": "Old Baseball",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/misc_baseball.webp",
+      "thumbnail": "/images/items/misc/misc_baseball.webp",
+      "fullsize": "/images/items/misc/misc_baseball.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.3,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_bentrifuge",
+    "name": "Centrifuge",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Medicine",
+    "images": {
+      "icon": "/images/items/misc/misc_bentrifuge.webp",
+      "thumbnail": "/images/items/misc/misc_bentrifuge.webp",
+      "fullsize": "/images/items/misc/misc_bentrifuge.webp"
+    },
+    "stats": {
+      "price": 80000,
+      "weight": 3.4,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_blimbingrope",
+    "name": "Climbing rope",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Tools",
+    "images": {
+      "icon": "/images/items/misc/misc_blimbingrope.webp",
+      "thumbnail": "/images/items/misc/misc_blimbingrope.webp",
+      "fullsize": "/images/items/misc/misc_blimbingrope.webp"
+    },
+    "stats": {
+      "price": 20000,
+      "weight": 0.8,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_bomputertextbook",
+    "name": "Computer manual",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Intel",
+    "images": {
+      "icon": "/images/items/misc/misc_bomputertextbook.webp",
+      "thumbnail": "/images/items/misc/misc_bomputertextbook.webp",
+      "fullsize": "/images/items/misc/misc_bomputertextbook.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.5,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_bpu",
+    "name": "CPU",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Electric",
+    "images": {
+      "icon": "/images/items/misc/misc_bpu.webp",
+      "thumbnail": "/images/items/misc/misc_bpu.webp",
+      "fullsize": "/images/items/misc/misc_bpu.webp"
+    },
+    "stats": {
+      "price": 87750,
+      "weight": 0.1,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_brimsonqueenring",
+    "name": "Ruby ring",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_brimsonqueenring.webp",
+      "thumbnail": "/images/items/misc/misc_brimsonqueenring.webp",
+      "fullsize": "/images/items/misc/misc_brimsonqueenring.webp"
+    },
+    "stats": {
+      "price": 1200000,
+      "weight": 0.02,
+      "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
       "safeContainerBoundScale": 1.005
     },
@@ -2186,14 +2266,174 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_camera.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_camera.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_camera.webp"
+      "icon": "/images/items/misc/misc_camera.webp",
+      "thumbnail": "/images/items/misc/misc_camera.webp",
+      "fullsize": "/images/items/misc/misc_camera.webp"
     },
     "stats": {
       "price": 93730,
       "weight": 1.7,
       "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_cardoll_cavemangold",
+    "name": "Model Car: Caveman (Gold)",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_cardoll_cavemangold.webp",
+      "thumbnail": "/images/items/misc/misc_cardoll_cavemangold.webp",
+      "fullsize": "/images/items/misc/misc_cardoll_cavemangold.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.8,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_cardoll_outlaw01",
+    "name": "Model Car: Outlaw 01",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_cardoll_outlaw01.webp",
+      "thumbnail": "/images/items/misc/misc_cardoll_outlaw01.webp",
+      "fullsize": "/images/items/misc/misc_cardoll_outlaw01.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_cardoll_outlaw02",
+    "name": "Model Car: Outlaw 02",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_cardoll_outlaw02.webp",
+      "thumbnail": "/images/items/misc/misc_cardoll_outlaw02.webp",
+      "fullsize": "/images/items/misc/misc_cardoll_outlaw02.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_cardoll_racer01",
+    "name": "Model Car: Racer 01",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_cardoll_racer01.webp",
+      "thumbnail": "/images/items/misc/misc_cardoll_racer01.webp",
+      "fullsize": "/images/items/misc/misc_cardoll_racer01.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_cardoll_racer02",
+    "name": "Model Car: Racer 02",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_cardoll_racer02.webp",
+      "thumbnail": "/images/items/misc/misc_cardoll_racer02.webp",
+      "fullsize": "/images/items/misc/misc_cardoll_racer02.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_cardoll_racer03",
+    "name": "Model Car: Racer 03",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_cardoll_racer03.webp",
+      "thumbnail": "/images/items/misc/misc_cardoll_racer03.webp",
+      "fullsize": "/images/items/misc/misc_cardoll_racer03.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_cardoll_warrior01",
+    "name": "Model Car: Warrior 01",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_cardoll_warrior01.webp",
+      "thumbnail": "/images/items/misc/misc_cardoll_warrior01.webp",
+      "fullsize": "/images/items/misc/misc_cardoll_warrior01.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_cardoll_warrior02",
+    "name": "Model Car: Warrior 02",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_cardoll_warrior02.webp",
+      "thumbnail": "/images/items/misc/misc_cardoll_warrior02.webp",
+      "fullsize": "/images/items/misc/misc_cardoll_warrior02.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
       "safeContainerBoundScale": 1.005
     },
@@ -2206,9 +2446,9 @@
     "category": "misc",
     "subcategory": "Household",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_cloth.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_cloth.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_cloth.webp"
+      "icon": "/images/items/misc/misc_cloth.webp",
+      "thumbnail": "/images/items/misc/misc_cloth.webp",
+      "fullsize": "/images/items/misc/misc_cloth.webp"
     },
     "stats": {
       "price": 0,
@@ -2226,9 +2466,9 @@
     "category": "misc",
     "subcategory": "Building",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_copperwire.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_copperwire.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_copperwire.webp"
+      "icon": "/images/items/misc/misc_copperwire.webp",
+      "thumbnail": "/images/items/misc/misc_copperwire.webp",
+      "fullsize": "/images/items/misc/misc_copperwire.webp"
     },
     "stats": {
       "price": 4326,
@@ -2246,9 +2486,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_csdollgold.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_csdollgold.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_csdollgold.webp"
+      "icon": "/images/items/misc/misc_csdoll_gold.webp",
+      "thumbnail": "/images/items/misc/misc_csdoll_gold.webp",
+      "fullsize": "/images/items/misc/misc_csdoll_gold.webp"
     },
     "stats": {
       "price": 137000,
@@ -2266,9 +2506,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_csdollstandard.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_csdollstandard.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_csdollstandard.webp"
+      "icon": "/images/items/misc/misc_csdoll_standard.webp",
+      "thumbnail": "/images/items/misc/misc_csdoll_standard.webp",
+      "fullsize": "/images/items/misc/misc_csdoll_standard.webp"
     },
     "stats": {
       "price": 25200,
@@ -2286,9 +2526,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/valuable_highvalue_contractors_ed-1.webp",
-      "thumbnail": "/images/items/misc/valuable_highvalue_contractors_ed-1.webp",
-      "fullsize": "/images/items/misc/valuable_highvalue_contractors_ed-1.webp"
+      "icon": "/images/items/misc/misc_csdoll_standard_2.webp",
+      "thumbnail": "/images/items/misc/misc_csdoll_standard_2.webp",
+      "fullsize": "/images/items/misc/misc_csdoll_standard_2.webp"
     },
     "stats": {
       "price": 25200,
@@ -2306,9 +2546,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/valuable_highvalue_csdollgold_3.webp",
-      "thumbnail": "/images/items/misc/valuable_highvalue_csdollgold_3.webp",
-      "fullsize": "/images/items/misc/valuable_highvalue_csdollgold_3.webp"
+      "icon": "/images/items/misc/misc_csdoll_standard_3.webp",
+      "thumbnail": "/images/items/misc/misc_csdoll_standard_3.webp",
+      "fullsize": "/images/items/misc/misc_csdoll_standard_3.webp"
     },
     "stats": {
       "price": 25200,
@@ -2326,9 +2566,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/valuable_highvalue_csdollgold_4.webp",
-      "thumbnail": "/images/items/misc/valuable_highvalue_csdollgold_4.webp",
-      "fullsize": "/images/items/misc/valuable_highvalue_csdollgold_4.webp"
+      "icon": "/images/items/misc/misc_csdoll_standard_4.webp",
+      "thumbnail": "/images/items/misc/misc_csdoll_standard_4.webp",
+      "fullsize": "/images/items/misc/misc_csdoll_standard_4.webp"
     },
     "stats": {
       "price": 25200,
@@ -2346,9 +2586,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/valuable_highvalue_csdollgold_5.webp",
-      "thumbnail": "/images/items/misc/valuable_highvalue_csdollgold_5.webp",
-      "fullsize": "/images/items/misc/valuable_highvalue_csdollgold_5.webp"
+      "icon": "/images/items/misc/misc_csdoll_standard_5.webp",
+      "thumbnail": "/images/items/misc/misc_csdoll_standard_5.webp",
+      "fullsize": "/images/items/misc/misc_csdoll_standard_5.webp"
     },
     "stats": {
       "price": 25200,
@@ -2366,9 +2606,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/valuable_highvalue_csdollgold_6.webp",
-      "thumbnail": "/images/items/misc/valuable_highvalue_csdollgold_6.webp",
-      "fullsize": "/images/items/misc/valuable_highvalue_csdollgold_6.webp"
+      "icon": "/images/items/misc/misc_csdoll_standard_6.webp",
+      "thumbnail": "/images/items/misc/misc_csdoll_standard_6.webp",
+      "fullsize": "/images/items/misc/misc_csdoll_standard_6.webp"
     },
     "stats": {
       "price": 25200,
@@ -2386,14 +2626,34 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/valuable_highvalue_csdollgold_7.webp",
-      "thumbnail": "/images/items/misc/valuable_highvalue_csdollgold_7.webp",
-      "fullsize": "/images/items/misc/valuable_highvalue_csdollgold_7.webp"
+      "icon": "/images/items/misc/misc_csdoll_standard_7.webp",
+      "thumbnail": "/images/items/misc/misc_csdoll_standard_7.webp",
+      "fullsize": "/images/items/misc/misc_csdoll_standard_7.webp"
     },
     "stats": {
       "price": 25200,
       "weight": 0.15,
       "rarity": "Rare",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_diamondring",
+    "name": "Diamond ring",
+    "description": "A diamond ring well-kept in a box.",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_diamondring.webp",
+      "thumbnail": "/images/items/misc/misc_diamondring.webp",
+      "fullsize": "/images/items/misc/misc_diamondring.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.15,
+      "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
       "safeContainerBoundScale": 1.005
     },
@@ -2406,9 +2666,9 @@
     "category": "misc",
     "subcategory": "Household",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_ducktoy.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_ducktoy.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_ducktoy.webp"
+      "icon": "/images/items/misc/misc_ducktoy.webp",
+      "thumbnail": "/images/items/misc/misc_ducktoy.webp",
+      "fullsize": "/images/items/misc/misc_ducktoy.webp"
     },
     "stats": {
       "price": 0,
@@ -2426,9 +2686,9 @@
     "category": "misc",
     "subcategory": "Household",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_facialcleanser.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_facialcleanser.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_facialcleanser.webp"
+      "icon": "/images/items/misc/misc_facialcleaner.webp",
+      "thumbnail": "/images/items/misc/misc_facialcleaner.webp",
+      "fullsize": "/images/items/misc/misc_facialcleaner.webp"
     },
     "stats": {
       "price": 3000,
@@ -2446,13 +2706,13 @@
     "category": "misc",
     "subcategory": "Intel",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_floppydisk.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_floppydisk.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_floppydisk.webp"
+      "icon": "/images/items/misc/misc_floppydisk.webp",
+      "thumbnail": "/images/items/misc/misc_floppydisk.webp",
+      "fullsize": "/images/items/misc/misc_floppydisk.webp"
     },
     "stats": {
       "price": 9647,
-      "weight": 0.2,
+      "weight": 0.15,
       "rarity": "Rare",
       "backpackDimensionMultiplier": 0.95,
       "safeContainerBoundScale": 1.005
@@ -2466,9 +2726,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_fossil.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_fossil.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_fossil.webp"
+      "icon": "/images/items/misc/misc_fossil.webp",
+      "thumbnail": "/images/items/misc/misc_fossil.webp",
+      "fullsize": "/images/items/misc/misc_fossil.webp"
     },
     "stats": {
       "price": 102102,
@@ -2486,9 +2746,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_gamedisk.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_gamedisk.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_gamedisk.webp"
+      "icon": "/images/items/misc/misc_gamedisk.webp",
+      "thumbnail": "/images/items/misc/misc_gamedisk.webp",
+      "fullsize": "/images/items/misc/misc_gamedisk.webp"
     },
     "stats": {
       "price": 93730,
@@ -2506,9 +2766,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/valuable_highvalue_showdown_ed2.webp",
-      "thumbnail": "/images/items/misc/valuable_highvalue_showdown_ed2.webp",
-      "fullsize": "/images/items/misc/valuable_highvalue_showdown_ed2.webp"
+      "icon": "/images/items/misc/misc_gamedisk_deluxedition.webp",
+      "thumbnail": "/images/items/misc/misc_gamedisk_deluxedition.webp",
+      "fullsize": "/images/items/misc/misc_gamedisk_deluxedition.webp"
     },
     "stats": {
       "price": 91000,
@@ -2526,9 +2786,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/valuable_highvalue_showdown_ed.webp",
-      "thumbnail": "/images/items/misc/valuable_highvalue_showdown_ed.webp",
-      "fullsize": "/images/items/misc/valuable_highvalue_showdown_ed.webp"
+      "icon": "/images/items/misc/misc_gamedisk_showdown.webp",
+      "thumbnail": "/images/items/misc/misc_gamedisk_showdown.webp",
+      "fullsize": "/images/items/misc/misc_gamedisk_showdown.webp"
     },
     "stats": {
       "price": 109200,
@@ -2546,9 +2806,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/valuable_highvalue_contractors_ed.webp",
-      "thumbnail": "/images/items/misc/valuable_highvalue_contractors_ed.webp",
-      "fullsize": "/images/items/misc/valuable_highvalue_contractors_ed.webp"
+      "icon": "/images/items/misc/misc_gamedisk_showdown_deluxedition.webp",
+      "thumbnail": "/images/items/misc/misc_gamedisk_showdown_deluxedition.webp",
+      "fullsize": "/images/items/misc/misc_gamedisk_showdown_deluxedition.webp"
     },
     "stats": {
       "price": 111384,
@@ -2566,9 +2826,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_goldcup.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_goldcup.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_goldcup.webp"
+      "icon": "/images/items/misc/misc_goldcup.webp",
+      "thumbnail": "/images/items/misc/misc_goldcup.webp",
+      "fullsize": "/images/items/misc/misc_goldcup.webp"
     },
     "stats": {
       "price": 357000,
@@ -2586,9 +2846,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_goldingot.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_goldingot.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_goldingot.webp"
+      "icon": "/images/items/misc/misc_goldingot.webp",
+      "thumbnail": "/images/items/misc/misc_goldingot.webp",
+      "fullsize": "/images/items/misc/misc_goldingot.webp"
     },
     "stats": {
       "price": 367710,
@@ -2606,16 +2866,16 @@
     "category": "misc",
     "subcategory": "Electric",
     "images": {
-      "icon": "/images/items/misc/Graphics_Card.webp",
-      "thumbnail": "/images/items/misc/Graphics_Card.webp",
-      "fullsize": "/images/items/misc/Graphics_Card.webp"
+      "icon": "/images/items/misc/misc_graphiccard.webp",
+      "thumbnail": "/images/items/misc/misc_graphiccard.webp",
+      "fullsize": "/images/items/misc/misc_graphiccard.webp"
     },
     "stats": {
       "price": 227500,
       "weight": 2.5,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
+      "safeContainerBoundScale": 0
     },
     "tips": ""
   },
@@ -2626,16 +2886,16 @@
     "category": "misc",
     "subcategory": "Combustible",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_gunpowder.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_gunpowder.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_gunpowder.webp"
+      "icon": "/images/items/misc/misc_gunpowder.webp",
+      "thumbnail": "/images/items/misc/misc_gunpowder.webp",
+      "fullsize": "/images/items/misc/misc_gunpowder.webp"
     },
     "stats": {
       "price": 45500,
       "weight": 1.2,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
+      "safeContainerBoundScale": 0
     },
     "tips": ""
   },
@@ -2646,9 +2906,9 @@
     "category": "misc",
     "subcategory": "Tools",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_hammer.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_hammer.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_hammer.webp"
+      "icon": "/images/items/misc/misc_hammer.webp",
+      "thumbnail": "/images/items/misc/misc_hammer.webp",
+      "fullsize": "/images/items/misc/misc_hammer.webp"
     },
     "stats": {
       "price": 9356,
@@ -2666,14 +2926,54 @@
     "category": "misc",
     "subcategory": "Household",
     "images": {
-      "icon": "/images/items/misc/icon_houseclean.webp",
-      "thumbnail": "/images/items/misc/icon_houseclean.webp",
-      "fullsize": "/images/items/misc/icon_houseclean.webp"
+      "icon": "/images/items/misc/misc_householdleaner.webp",
+      "thumbnail": "/images/items/misc/misc_householdleaner.webp",
+      "fullsize": "/images/items/misc/misc_householdleaner.webp"
     },
     "stats": {
       "price": 2910,
       "weight": 0.7,
       "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_magazine",
+    "name": "Magazine",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/misc_magazine.webp",
+      "thumbnail": "/images/items/misc/misc_magazine.webp",
+      "fullsize": "/images/items/misc/misc_magazine.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.3,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_metroentry",
+    "name": "Metro Entry Ticket",
+    "description": "",
+    "category": "misc",
+    "subcategory": "Household",
+    "images": {
+      "icon": "/images/items/misc/misc_metroentry.webp",
+      "thumbnail": "/images/items/misc/misc_metroentry.webp",
+      "fullsize": "/images/items/misc/misc_metroentry.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.15,
+      "rarity": "Legendary",
       "backpackDimensionMultiplier": 0.95,
       "safeContainerBoundScale": 1.005
     },
@@ -2686,9 +2986,9 @@
     "category": "misc",
     "subcategory": "Electric",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_mouse.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_mouse.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_mouse.webp"
+      "icon": "/images/items/misc/misc_mouse.webp",
+      "thumbnail": "/images/items/misc/misc_mouse.webp",
+      "fullsize": "/images/items/misc/misc_mouse.webp"
     },
     "stats": {
       "price": 1500,
@@ -2706,16 +3006,16 @@
     "category": "misc",
     "subcategory": "Household",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_mug.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_mug.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_mug.webp"
+      "icon": "/images/items/misc/misc_mug.webp",
+      "thumbnail": "/images/items/misc/misc_mug.webp",
+      "fullsize": "/images/items/misc/misc_mug.webp"
     },
     "stats": {
       "price": 0,
       "weight": 0.32,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
+      "safeContainerBoundScale": 0
     },
     "tips": ""
   },
@@ -2726,9 +3026,9 @@
     "category": "misc",
     "subcategory": "Intel",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_notepad.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_notepad.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_notepad.webp"
+      "icon": "/images/items/misc/misc_notebook.webp",
+      "thumbnail": "/images/items/misc/misc_notebook.webp",
+      "fullsize": "/images/items/misc/misc_notebook.webp"
     },
     "stats": {
       "price": 975,
@@ -2746,9 +3046,9 @@
     "category": "misc",
     "subcategory": "Combustible",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_oilcan.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_oilcan.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_oilcan.webp"
+      "icon": "/images/items/misc/misc_oilcan.webp",
+      "thumbnail": "/images/items/misc/misc_oilcan.webp",
+      "fullsize": "/images/items/misc/misc_oilcan.webp"
     },
     "stats": {
       "price": 4733,
@@ -2766,9 +3066,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_pocketwatch.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_pocketwatch.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_pocketwatch.webp"
+      "icon": "/images/items/misc/misc_pocketwatch.webp",
+      "thumbnail": "/images/items/misc/misc_pocketwatch.webp",
+      "fullsize": "/images/items/misc/misc_pocketwatch.webp"
     },
     "stats": {
       "price": 336000,
@@ -2786,9 +3086,9 @@
     "category": "misc",
     "subcategory": "Electric",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_radio.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_radio.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_radio.webp"
+      "icon": "/images/items/misc/misc_radio.webp",
+      "thumbnail": "/images/items/misc/misc_radio.webp",
+      "fullsize": "/images/items/misc/misc_radio.webp"
     },
     "stats": {
       "price": 20952,
@@ -2806,9 +3106,9 @@
     "category": "misc",
     "subcategory": "Electric",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_remotecontrol.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_remotecontrol.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_remotecontrol.webp"
+      "icon": "/images/items/misc/misc_remote.webp",
+      "thumbnail": "/images/items/misc/misc_remote.webp",
+      "fullsize": "/images/items/misc/misc_remote.webp"
     },
     "stats": {
       "price": 1470,
@@ -2826,9 +3126,9 @@
     "category": "misc",
     "subcategory": "Tools",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_screwdriver.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_screwdriver.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_screwdriver.webp"
+      "icon": "/images/items/misc/misc_screwdriver.webp",
+      "thumbnail": "/images/items/misc/misc_screwdriver.webp",
+      "fullsize": "/images/items/misc/misc_screwdriver.webp"
     },
     "stats": {
       "price": 758,
@@ -2846,9 +3146,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_silvercup.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_silvercup.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_silvercup.webp"
+      "icon": "/images/items/misc/misc_silvercup.webp",
+      "thumbnail": "/images/items/misc/misc_silvercup.webp",
+      "fullsize": "/images/items/misc/misc_silvercup.webp"
     },
     "stats": {
       "price": 91000,
@@ -2866,9 +3166,9 @@
     "category": "misc",
     "subcategory": "Household",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_sunglass.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_sunglass.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_sunglass.webp"
+      "icon": "/images/items/misc/misc_sunglass.webp",
+      "thumbnail": "/images/items/misc/misc_sunglass.webp",
+      "fullsize": "/images/items/misc/misc_sunglass.webp"
     },
     "stats": {
       "price": 0,
@@ -2886,16 +3186,16 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_toycar.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_toycar.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_toycar.webp"
+      "icon": "/images/items/misc/misc_toycar.webp",
+      "thumbnail": "/images/items/misc/misc_toycar.webp",
+      "fullsize": "/images/items/misc/misc_toycar.webp"
     },
     "stats": {
       "price": 0,
-      "weight": 0.2,
+      "weight": 2.5,
       "rarity": "Uncommon",
       "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005
+      "safeContainerBoundScale": 0
     },
     "tips": ""
   },
@@ -2906,9 +3206,9 @@
     "category": "misc",
     "subcategory": "Intel",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_tape.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_tape.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_tape.webp"
+      "icon": "/images/items/misc/misc_videotape.webp",
+      "thumbnail": "/images/items/misc/misc_videotape.webp",
+      "fullsize": "/images/items/misc/misc_videotape.webp"
     },
     "stats": {
       "price": 45081,
@@ -2926,13 +3226,13 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_vrheadset.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_vrheadset.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_vrheadset.webp"
+      "icon": "/images/items/misc/misc_vrheadset.webp",
+      "thumbnail": "/images/items/misc/misc_vrheadset.webp",
+      "fullsize": "/images/items/misc/misc_vrheadset.webp"
     },
     "stats": {
       "price": 0,
-      "weight": 0.2,
+      "weight": 7,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
       "safeContainerBoundScale": 1.005
@@ -2946,17 +3246,16 @@
     "category": "misc",
     "subcategory": "Electric",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_wastechip.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_wastechip.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_wastechip.webp"
+      "icon": "/images/items/misc/misc_wastechip.webp",
+      "thumbnail": "/images/items/misc/misc_wastechip.webp",
+      "fullsize": "/images/items/misc/misc_wastechip.webp"
     },
     "stats": {
       "price": 5880,
       "weight": 0.15,
       "rarity": "Epic",
       "backpackDimensionMultiplier": 0.95,
-      "safeContainerBoundScale": 1.005,
-      "name": "Wastechip"
+      "safeContainerBoundScale": 1.005
     },
     "tips": ""
   },
@@ -2967,9 +3266,9 @@
     "category": "misc",
     "subcategory": "HighValue",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_wooddoll.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_wooddoll.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_wooddoll.webp"
+      "icon": "/images/items/misc/misc_wooddoll.webp",
+      "thumbnail": "/images/items/misc/misc_wooddoll.webp",
+      "fullsize": "/images/items/misc/misc_wooddoll.webp"
     },
     "stats": {
       "price": 0,
@@ -2987,9 +3286,9 @@
     "category": "misc",
     "subcategory": "Tools",
     "images": {
-      "icon": "/images/items/misc/Icon_valuable_wrench.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_wrench.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_wrench.webp"
+      "icon": "/images/items/misc/misc_wrench.webp",
+      "thumbnail": "/images/items/misc/misc_wrench.webp",
+      "fullsize": "/images/items/misc/misc_wrench.webp"
     },
     "stats": {
       "price": 743,

@@ -1,123 +1,259 @@
 [
   {
-    "id": "mag_45acp_11",
-    "name": "M1911 .45 ACP Magazine",
+    "id": "mag_12GA_10",
+    "name": "Flame12 Shotgun Magazine",
+    "description": "10-round detachable magazine for 12-gauge shotguns. High-capacity tactical feeding.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_magazine_m1911.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_m1911.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_m1911.webp"
+      "icon": "/images/items/magazines/mag_12GA_10.webp",
+      "thumbnail": "/images/items/magazines/mag_12GA_10.webp",
+      "fullsize": "/images/items/magazines/mag_12GA_10.webp"
     },
     "stats": {
-      "rarity": "Uncommon",
+      "price": 10890,
+      "weight": 0.28,
+      "rarity": "Rare",
+      "capacity": 10,
+      "caliber": "12GA",
+      "ammoSubcategory": "12 Gauge",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.05,
+      "compatibleWeapons": [
+        "weapon-flame12",
+        "weapon-flame12pve"
+      ]
+    },
+    "gameId": "gunsmith.flame12.clip.10",
+    "family": "Flame12",
+    "tips": "Rare magazine type - most shotguns use tube loading instead."
+  },
+  {
+    "id": "mag_45acp_11",
+    "name": "M1911 .45 ACP Magazine",
+    "description": "Standard 11-round magazine for the iconic M1911 pistol. Reliable single-stack design.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_45acp_11.webp",
+      "thumbnail": "/images/items/magazines/mag_45acp_11.webp",
+      "fullsize": "/images/items/magazines/mag_45acp_11.webp"
+    },
+    "stats": {
+      "price": 6984,
       "weight": 0.26,
-      "capacity": 11,
+      "rarity": "Uncommon",
+      "capacity": 10,
       "caliber": ".45 ACP",
-      "ergonomicsModifier": -0.025,
+      "ammoSubcategory": ".45 ACP",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.04,
       "compatibleWeapons": [
         "weapon-m1911"
-      ],
-      "price": 6984
+      ]
     },
-    "description": "Standard 11-round magazine for the iconic M1911 pistol. Reliable single-stack design.",
+    "gameId": "gunsmith.kw1911.clip.kw1911",
+    "family": "1911",
     "tips": "Perfect balance of capacity and reliability for sidearm use."
   },
   {
     "id": "mag_45acp_25",
     "name": "Thompson M1928 Magazine",
+    "description": "25-round stick magazine for the legendary Thompson submachine gun.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_magazine_m1928.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_m1928.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_m1928.webp"
+      "icon": "/images/items/magazines/mag_45acp_25.webp",
+      "thumbnail": "/images/items/magazines/mag_45acp_25.webp",
+      "fullsize": "/images/items/magazines/mag_45acp_25.webp"
     },
     "stats": {
+      "price": 6000,
+      "weight": 0.32,
       "rarity": "Uncommon",
-      "weight": 0.28,
       "capacity": 25,
       "caliber": ".45 ACP",
-      "ergonomicsModifier": -0.03,
+      "ammoSubcategory": ".45 ACP",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.01,
       "compatibleWeapons": [
-        "weapon-thompson-m1928"
-      ],
-      "price": 6000
+        "weapon-thompson-m1928",
+        "weapon-m1928a1"
+      ]
     },
-    "description": "25-round stick magazine for the legendary Thompson submachine gun.",
+    "gameId": "gunsmith.m1928.clip.mag25",
+    "family": "M1928",
     "tips": "Classic WWII design - lighter than drum mags but lower capacity."
-  },
-  {
-    "id": "mag_45acp_30_m3a1",
-    "name": "M3A1 Grease Gun Magazine",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_magazine_WF_M3A1.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_WF_M3A1.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_WF_M3A1.webp"
-    },
-    "stats": {
-      "rarity": "Uncommon",
-      "weight": 0.27,
-      "capacity": 30,
-      "caliber": ".45 ACP",
-      "ergonomicsModifier": -0.03,
-      "compatibleWeapons": [
-        "weapon-m3a1-grease-gun"
-      ],
-      "price": 6721
-    },
-    "description": "30-round magazine for the M3A1 'Grease Gun' submachine gun.",
-    "tips": "Compact design with good capacity for close-quarters combat."
   },
   {
     "id": "mag_45acp_25_2",
     "name": "UMP45 25-Round Magazine",
+    "description": "Lightweight polymer magazine for the H&K UMP45 submachine gun.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/WF_ump45_Clip.webp",
-      "thumbnail": "/images/items/magazines/WF_ump45_Clip.webp",
-      "fullsize": "/images/items/magazines/WF_ump45_Clip.webp"
+      "icon": "/images/items/magazines/mag_45acp_25_2.webp",
+      "thumbnail": "/images/items/magazines/mag_45acp_25_2.webp",
+      "fullsize": "/images/items/magazines/mag_45acp_25_2.webp"
     },
     "stats": {
+      "price": 8282,
+      "weight": 0.17,
       "rarity": "Uncommon",
-      "weight": 0.16,
       "capacity": 25,
       "caliber": ".45 ACP",
+      "ammoSubcategory": ".45 ACP",
+      "ADSSpeedModifier": 0,
       "ergonomicsModifier": -0.03,
       "compatibleWeapons": [
         "weapon-ump45"
-      ],
-      "price": 8282
+      ]
     },
-    "description": "Lightweight polymer magazine for the H&K UMP45 submachine gun.",
+    "gameId": "gunsmith.ump.clip.25",
+    "family": "UMP45",
     "tips": "Modern polymer construction reduces weight significantly."
   },
   {
-    "id": "mag_12GA_10",
-    "name": "Flame12 Shotgun Magazine",
+    "id": "mag_45acp_30_m3a1",
+    "name": "M3A1 Grease Gun Magazine",
+    "description": "30-round magazine for the M3A1 'Grease Gun' submachine gun.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_magazine_flame12.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_flame12.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_flame12.webp"
+      "icon": "/images/items/magazines/mag_45acp_30_m3a1.webp",
+      "thumbnail": "/images/items/magazines/mag_45acp_30_m3a1.webp",
+      "fullsize": "/images/items/magazines/mag_45acp_30_m3a1.webp"
     },
     "stats": {
-      "rarity": "Rare",
-      "weight": 0.28,
-      "capacity": 10,
-      "caliber": "12GA",
-      "ergonomicsModifier": -0.05,
+      "price": 6721,
+      "weight": 0.4,
+      "rarity": "Uncommon",
+      "capacity": 30,
+      "caliber": ".45 ACP",
+      "ammoSubcategory": ".45 ACP",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.01,
       "compatibleWeapons": [
-        "weapon-flame12"
-      ],
-      "price": 10890
+        "weapon-m3a1-grease-gun"
+      ]
     },
-    "description": "10-round detachable magazine for 12-gauge shotguns. High-capacity tactical feeding.",
-    "tips": "Rare magazine type - most shotguns use tube loading instead."
+    "gameId": "gunsmith.m3a1.clip.45acp30r",
+    "family": "M3A1",
+    "tips": "Compact design with good capacity for close-quarters combat."
+  },
+  {
+    "id": "mag_545x39_30_2",
+    "name": "AK-74 PMag 30-Round",
+    "description": "Premium polymer magazine with enhanced durability and reliability.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_545x39_30_2.webp",
+      "thumbnail": "/images/items/magazines/mag_545x39_30_2.webp",
+      "fullsize": "/images/items/magazines/mag_545x39_30_2.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.11,
+      "rarity": "Rare",
+      "capacity": 30,
+      "caliber": "5.45x39",
+      "ammoSubcategory": "5.45x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0,
+      "compatibleWeapons": [
+        "weapon-aks74u",
+        "weapon-aks74unvoucher1",
+        "weapon-ak74m",
+        "weapon-ak-aks74n-standard",
+        "weapon-ak74",
+        "weapon-ak-ak74-modt",
+        "weapon-ak74n-caa74n",
+        "weapon-ak74n-fullattach",
+        "weapon-ak74n-lhv",
+        "weapon-ak74n-factory",
+        "weapon-malyuk-545"
+      ]
+    },
+    "gameId": "gunsmith.ak.clip.545pmag30",
+    "family": "AK74",
+    "tips": "Top-tier magazine with excellent feed reliability and light weight."
+  },
+  {
+    "id": "mag_545x39_30_black",
+    "name": "AK-74 Polymer Magazine (Black)",
+    "description": "Standard 30-round polymer magazine with distinctive orange coloring.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_545x39_30_black.webp",
+      "thumbnail": "/images/items/magazines/mag_545x39_30_black.webp",
+      "fullsize": "/images/items/magazines/mag_545x39_30_black.webp"
+    },
+    "stats": {
+      "price": 8160,
+      "weight": 0.2,
+      "rarity": "Uncommon",
+      "capacity": 30,
+      "caliber": "5.45x39",
+      "ammoSubcategory": "5.45x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.03,
+      "compatibleWeapons": [
+        "weapon-aks74u",
+        "weapon-aks74unvoucher1",
+        "weapon-ak74m",
+        "weapon-ak-aks74n-standard",
+        "weapon-ak74",
+        "weapon-ak-ak74-modt",
+        "weapon-ak74n-caa74n",
+        "weapon-ak74n-fullattach",
+        "weapon-ak74n-lhv",
+        "weapon-ak74n-factory",
+        "weapon-malyuk-545"
+      ]
+    },
+    "gameId": "gunsmith.ak.clip.545-6l23",
+    "family": "AK74",
+    "tips": "Lightweight alternative to steel magazines with same capacity."
+  },
+  {
+    "id": "mag_545x39_30_orange",
+    "name": "AK-74 Polymer Magazine (Orange)",
+    "description": "Standard 30-round polymer magazine with distinctive orange coloring.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_545x39_30_orange.webp",
+      "thumbnail": "/images/items/magazines/mag_545x39_30_orange.webp",
+      "fullsize": "/images/items/magazines/mag_545x39_30_orange.webp"
+    },
+    "stats": {
+      "price": 8,
+      "weight": 0.2,
+      "rarity": "Uncommon",
+      "capacity": 30,
+      "caliber": "5.45x39",
+      "ammoSubcategory": "5.45x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.03,
+      "compatibleWeapons": [
+        "weapon-aks74u",
+        "weapon-aks74unvoucher1",
+        "weapon-ak74m",
+        "weapon-ak-aks74n-standard",
+        "weapon-ak74",
+        "weapon-ak-ak74-modt",
+        "weapon-ak74n-caa74n",
+        "weapon-ak74n-fullattach",
+        "weapon-ak74n-lhv",
+        "weapon-ak74n-factory",
+        "weapon-malyuk-545"
+      ]
+    },
+    "gameId": "gunsmith.ak.clip.545-6l20",
+    "family": "AK74",
+    "tips": "Lightweight alternative to steel magazines with same capacity."
   },
   {
     "id": "mag_545x39_60",
@@ -126,409 +262,426 @@
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/WF_545Mag_PUFGUN.webp",
-      "thumbnail": "/images/items/magazines/WF_545Mag_PUFGUN.webp",
-      "fullsize": "/images/items/magazines/WF_545Mag_PUFGUN.webp"
+      "icon": "/images/items/magazines/mag_545x39_60.webp",
+      "thumbnail": "/images/items/magazines/mag_545x39_60.webp",
+      "fullsize": "/images/items/magazines/mag_545x39_60.webp"
     },
     "stats": {
+      "price": 63000,
+      "weight": 0.35,
       "rarity": "Epic",
-      "weight": 0.31,
       "capacity": 60,
       "caliber": "5.45x39",
-      "ADSSpeedModifier": 0.02,
+      "ammoSubcategory": "5.45x39mm",
+      "ADSSpeedModifier": 0,
       "ergonomicsModifier": -0.17,
       "compatibleWeapons": [
-        "weapon-ak74n-factory",
-        "weapon-ak74n-mod1",
-        "weapon-ak74",
         "weapon-aks74u",
+        "weapon-aks74unvoucher1",
         "weapon-ak74m",
-        "weapon-aks74u-zt"
-      ],
-      "price": 63000
+        "weapon-ak-aks74n-standard",
+        "weapon-ak74",
+        "weapon-ak-ak74-modt",
+        "weapon-ak74n-caa74n",
+        "weapon-ak74n-fullattach",
+        "weapon-ak74n-lhv",
+        "weapon-ak74n-factory"
+      ]
     },
+    "gameId": "gunsmith.ak.clip.545pufgun60",
+    "family": "AK74",
     "tips": "Heavy but provides sustained firepower. Affects weapon handling."
-  },
-  {
-    "id": "mag_545x39_30_black",
-    "name": "AK-74 Polymer Magazine (Black)",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_magazine_aks74u.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_aks74u.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_aks74u.webp"
-    },
-    "stats": {
-      "rarity": "Uncommon",
-      "weight": 0.2,
-      "caliber": "5.45x39",
-      "ADSSpeedModifier": 0.02,
-      "ergonomicsModifier": -0.03,
-      "compatibleWeapons": [
-        "weapon-ak74n-factory",
-        "weapon-ak74n-mod1",
-        "weapon-ak74",
-        "weapon-aks74u",
-        "weapon-ak74m",
-        "weapon-aks74u-zt",
-        "weapon-malyuk545"
-      ],
-      "price": 8160
-    },
-    "description": "Standard 30-round polymer magazine with distinctive orange coloring.",
-    "tips": "Lightweight alternative to steel magazines with same capacity."
-  },
-  {
-    "id": "mag_545x39_30_orange",
-    "name": "AK-74 Polymer Magazine (Orange)",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/WF_545y_Mag.webp",
-      "thumbnail": "/images/items/magazines/WF_545y_Mag.webp",
-      "fullsize": "/images/items/magazines/WF_545y_Mag.webp"
-    },
-    "stats": {
-      "rarity": "Uncommon",
-      "weight": 0.2,
-      "caliber": "5.45x39",
-      "ADSSpeedModifier": 0.02,
-      "ergonomicsModifier": -0.03,
-      "compatibleWeapons": [
-        "weapon-ak74n-factory",
-        "weapon-ak74n-mod1",
-        "weapon-ak74",
-        "weapon-aks74u",
-        "weapon-ak74m",
-        "weapon-aks74u-zt",
-        "weapon-malyuk545"
-      ],
-      "price": 8
-    },
-    "description": "Standard 30-round polymer magazine with distinctive orange coloring.",
-    "tips": "Lightweight alternative to steel magazines with same capacity."
-  },
-  {
-    "id": "mag_545x39_30_2",
-    "name": "AK-74 PMag 30-Round",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_magazine_762p30.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_762p30.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_762p30.webp"
-    },
-    "stats": {
-      "rarity": "Rare",
-      "weight": 0.11,
-      "capacity": 30,
-      "caliber": "5.45x39",
-      "ADSSpeedModifier": 0.02,
-      "ergonomicsModifier": -0.01,
-      "compatibleWeapons": [
-        "weapon-ak74n-factory",
-        "weapon-ak74n-mod1",
-        "weapon-ak74",
-        "weapon-aks74u",
-        "weapon-ak74m",
-        "weapon-aks74u-zt",
-        "weapon-malyuk545"
-      ],
-      "price": 10000
-    },
-    "description": "Premium polymer magazine with enhanced durability and reliability.",
-    "tips": "Top-tier magazine with excellent feed reliability and light weight."
-  },
-  {
-    "id": "mag_556x45_50",
-    "name": "AR-15 Drum Magazine (50-Round)",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_magazine_556x45NATO_Drum50.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_556x45NATO_Drum50.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_556x45NATO_Drum50.webp"
-    },
-    "stats": {
-      "rarity": "Epic",
-      "weight": 0.41,
-      "capacity": 50,
-      "caliber": "5.56x45",
-      "ergonomicsModifier": -0.12,
-      "compatibleWeapons": [
-        "weapon-hk416",
-        "weapon-m16a2",
-        "weapon-m4a1-hunter",
-        "weapon-m16a2-lv2",
-        "weapon-m4a1-factory",
-        "weapon-ar15-pistol",
-        "weapon-m4a1-agent",
-        "weapon-m4a1-cqbr",
-        "weapon-m4a1-dd",
-        "weapon-seca16"
-      ],
-      "price": 54450
-    },
-    "description": "High-capacity drum magazine for AR-15 platform rifles. 5.56x45 NATO.",
-    "tips": "Massive capacity but significantly impacts weapon maneuverability."
-  },
-  {
-    "id": "mag_556x45_30",
-    "name": "AUG A3 Standard Magazine",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_SM_Bpart_AUG_A3_Mag_30.webp",
-      "thumbnail": "/images/items/magazines/Icon_SM_Bpart_AUG_A3_Mag_30.webp",
-      "fullsize": "/images/items/magazines/Icon_SM_Bpart_AUG_A3_Mag_30.webp"
-    },
-    "stats": {
-      "rarity": "Uncommon",
-      "weight": 0.12,
-      "capacity": 30,
-      "caliber": "5.56x45",
-      "ADSSpeedModifier": 0.02,
-      "ergonomicsModifier": -0.015,
-      "compatibleWeapons": [
-        "weapon-aug-a1",
-        "weapon-aug-a3-ris",
-        "weapon-aug-a3-stg77",
-        "weapon-aug-a3-cqb"
-      ],
-      "price": 12120
-    },
-    "description": "Translucent 30-round magazine designed specifically for Steyr AUG rifles.",
-    "tips": "Unique AUG-specific design won't fit standard AR-15 platforms."
-  },
-  {
-    "id": "mag_556x45_42",
-    "name": "AUG A3 Extended Magazine",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_SM_Bpart_Aug_Mag_42.webp",
-      "thumbnail": "/images/items/magazines/Icon_SM_Bpart_Aug_Mag_42.webp",
-      "fullsize": "/images/items/magazines/Icon_SM_Bpart_Aug_Mag_42.webp"
-    },
-    "stats": {
-      "rarity": "Epic",
-      "weight": 0.21,
-      "capacity": 42,
-      "caliber": "5.56x45",
-      "ADSSpeedModifier": 0.02,
-      "ergonomicsModifier": -0.035,
-      "compatibleWeapons": [
-        "weapon-aug-a1",
-        "weapon-aug-a3-ris",
-        "weapon-aug-a3-stg77",
-        "weapon-aug-a3-cqb"
-      ],
-      "price": 34300
-    },
-    "description": "Extended 42-round magazine for sustained automatic fire with AUG rifles.",
-    "tips": "Higher capacity but longer profile affects prone shooting positions."
-  },
-  {
-    "id": "mag_556x45_30_hk416",
-    "name": "HK416 Standard Magazine",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_magazine_hk416.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_hk416.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_hk416.webp"
-    },
-    "stats": {
-      "rarity": "Uncommon",
-      "weight": 0.12,
-      "caliber": "5.56x45",
-      "capacity": 30,
-      "ADSSpeedModifier": 0.02,
-      "ergonomicsModifier": -0.01,
-      "compatibleWeapons": [
-        "weapon-m16a2",
-        "weapon-m4a1-hunter",
-        "weapon-m16a2-lv2",
-        "weapon-m4a1-factory",
-        "weapon-ar15-pistol",
-        "weapon-m4a1-agent",
-        "weapon-m4a1-cqbr",
-        "weapon-m4a1-dd",
-        "weapon-seca16"
-      ],
-      "price": 13260
-    },
-    "description": "Military-grade 30-round magazine compatible with most AR-15 platforms.",
-    "tips": "Reliable NATO standard magazine with excellent build quality."
-  },
-  {
-    "id": "mag_556x45_60",
-    "name": "AR-15 P-Mag Drum (60-Round)",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_magazine_556x45NATO_Pmag60.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_556x45NATO_Pmag60.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_556x45NATO_Pmag60.webp"
-    },
-    "stats": {
-      "rarity": "Legendary",
-      "weight": 0.45,
-      "capacity": 60,
-      "caliber": "5.56x45",
-      "ADSSpeedModifier": -0.12,
-      "ergonomicsModifier": -0.12,
-      "compatibleWeapons": [
-        "weapon-hk416",
-        "weapon-m16a2",
-        "weapon-m4a1-hunter",
-        "weapon-m16a2-lv2",
-        "weapon-m4a1-factory",
-        "weapon-ar15-pistol",
-        "weapon-m4a1-agent",
-        "weapon-m4a1-cqbr",
-        "weapon-m4a1-dd",
-        "weapon-seca16"
-      ],
-      "price": 72000
-    },
-    "description": "Premium polymer drum magazine offering maximum capacity for extended engagements.",
-    "tips": "Excellent for suppressive fire but makes weapon much heavier and bulkier."
-  },
-  {
-    "id": "mag_556x45_60_sf",
-    "name": "AR-15 P-Mag Drum (60-Round)",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_magazine_556x45NATO_SF60.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_556x45NATO_SF60.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_556x45NATO_SF60.webp"
-    },
-    "stats": {
-      "rarity": "Legendary",
-      "weight": 0.25,
-      "capacity": 60,
-      "caliber": "5.56x45",
-      "ADSSpeedModifier": -0.16,
-      "ergonomicsModifier": -0.18,
-      "compatibleWeapons": [
-        "weapon-hk416",
-        "weapon-m16a2",
-        "weapon-m4a1-hunter",
-        "weapon-m16a2-lv2",
-        "weapon-m4a1-factory",
-        "weapon-ar15-pistol",
-        "weapon-m4a1-agent",
-        "weapon-m4a1-cqbr",
-        "weapon-m4a1-dd",
-        "weapon-seca16"
-      ],
-      "price": 80000
-    },
-    "description": "Premium polymer drum magazine offering maximum capacity for extended engagements.",
-    "tips": "Excellent for suppressive fire but makes weapon much heavier and bulkier."
   },
   {
     "id": "mag_556x45_20",
     "name": "AR-15 20-Round",
+    "description": "Industry-standard polymer magazine known for exceptional reliability.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_magazine_ar15h.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_ar15h.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_ar15h.webp"
+      "icon": "/images/items/magazines/mag_556x45_20.webp",
+      "thumbnail": "/images/items/magazines/mag_556x45_20.webp",
+      "fullsize": "/images/items/magazines/mag_556x45_20.webp"
     },
     "stats": {
       "price": 8910,
-      "rarity": "Uncommon",
       "weight": 0.14,
+      "rarity": "Uncommon",
       "capacity": 20,
       "caliber": "5.56x45",
-      "ADSSpeedModifier": 0.1,
+      "ammoSubcategory": "5.56x45mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0,
       "compatibleWeapons": [
-        "weapon-hk416",
-        "weapon-m16a2",
         "weapon-m4a1-hunter",
+        "weapon-ar15longbarrelhunter",
+        "weapon-ar15-pistol",
+        "weapon-car15",
+        "weapon-car15-walther",
+        "weapon-m16a2",
+        "weapon-m16ris",
         "weapon-m16a2-lv2",
         "weapon-m4a1-factory",
-        "weapon-ar15-pistol",
-        "weapon-m4a1-agent",
-        "weapon-m4a1-cqbr",
+        "weapon-m4a1-fullattach-2025hallows",
+        "weapon-m4a1arx",
+        "weapon-m4a1cqb",
         "weapon-m4a1-dd",
-        "weapon-seca16"
+        "weapon-m4a1ddpve",
+        "weapon-m4a1-fullattach",
+        "weapon-m4a1voucherlv3",
+        "weapon-m4a1-walther",
+        "weapon-hk416",
+        "weapon-rc416a5-2025hallow",
+        "weapon-scar16"
       ]
     },
+    "gameId": "gunsmith.ar15.clip.20r",
+    "family": "AR15",
+    "tips": "Gold standard for AR-15 magazines - lightweight and virtually jam-free."
+  },
+  {
+    "id": "mag_556x45_30",
+    "name": "AUG A3 Standard Magazine",
+    "description": "Translucent 30-round magazine designed specifically for Steyr AUG rifles.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_556x45_30.webp",
+      "thumbnail": "/images/items/magazines/mag_556x45_30.webp",
+      "fullsize": "/images/items/magazines/mag_556x45_30.webp"
+    },
+    "stats": {
+      "price": 12120,
+      "weight": 0.19,
+      "rarity": "Uncommon",
+      "capacity": 30,
+      "caliber": "5.56x45",
+      "ammoSubcategory": "5.56x45mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.01,
+      "compatibleWeapons": [
+        "weapon-aug-a1",
+        "weapon-aug-a3-ris",
+        "weapon-aug-a3-cqb",
+        "weapon-auga3m1optic"
+      ]
+    },
+    "gameId": "gunsmith.aug.clip.30",
+    "family": "AUG",
+    "tips": "Unique AUG-specific design won't fit standard AR-15 platforms."
+  },
+  {
+    "id": "mag_556x45_30_hk416",
+    "name": "HK416 Standard Magazine",
+    "description": "Military-grade 30-round magazine compatible with most AR-15 platforms.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_556x45_30_hk416.webp",
+      "thumbnail": "/images/items/magazines/mag_556x45_30_hk416.webp",
+      "fullsize": "/images/items/magazines/mag_556x45_30_hk416.webp"
+    },
+    "stats": {
+      "price": 13260,
+      "weight": 0.12,
+      "rarity": "Uncommon",
+      "capacity": 30,
+      "caliber": "5.56x45",
+      "ammoSubcategory": "5.56x45mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.01,
+      "compatibleWeapons": [
+        "weapon-m4a1-hunter",
+        "weapon-ar15longbarrelhunter",
+        "weapon-ar15-pistol",
+        "weapon-car15",
+        "weapon-car15-walther",
+        "weapon-m16a2",
+        "weapon-m16ris",
+        "weapon-m16a2-lv2",
+        "weapon-m4a1-factory",
+        "weapon-m4a1-fullattach-2025hallows",
+        "weapon-m4a1arx",
+        "weapon-m4a1cqb",
+        "weapon-m4a1-dd",
+        "weapon-m4a1ddpve",
+        "weapon-m4a1-fullattach",
+        "weapon-m4a1voucherlv3",
+        "weapon-m4a1-walther",
+        "weapon-hk416",
+        "weapon-rc416a5-2025hallow",
+        "weapon-scar16"
+      ]
+    },
+    "gameId": "gunsmith.ar15.clip.hkstanag30",
+    "family": "AR15",
+    "tips": "Reliable NATO standard magazine with excellent build quality."
+  },
+  {
+    "id": "mag_556x45_30_pmag",
+    "name": "AR-15 P-Mag 30-Round",
     "description": "Industry-standard polymer magazine known for exceptional reliability.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_556x45_30_pmag.webp",
+      "thumbnail": "/images/items/magazines/mag_556x45_30_pmag.webp",
+      "fullsize": "/images/items/magazines/mag_556x45_30_pmag.webp"
+    },
+    "stats": {
+      "price": 15000,
+      "weight": 0.1,
+      "rarity": "Rare",
+      "capacity": 30,
+      "caliber": "5.56x45",
+      "ammoSubcategory": "5.56x45mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0,
+      "compatibleWeapons": [
+        "weapon-m4a1-hunter",
+        "weapon-ar15longbarrelhunter",
+        "weapon-ar15-pistol",
+        "weapon-car15",
+        "weapon-car15-walther",
+        "weapon-m16a2",
+        "weapon-m16ris",
+        "weapon-m16a2-lv2",
+        "weapon-m4a1-factory",
+        "weapon-m4a1-fullattach-2025hallows",
+        "weapon-m4a1arx",
+        "weapon-m4a1cqb",
+        "weapon-m4a1-dd",
+        "weapon-m4a1ddpve",
+        "weapon-m4a1-fullattach",
+        "weapon-m4a1voucherlv3",
+        "weapon-m4a1-walther",
+        "weapon-hk416",
+        "weapon-rc416a5-2025hallow",
+        "weapon-scar16"
+      ]
+    },
+    "gameId": "gunsmith.ar15.clip.pmag30",
+    "family": "AR15",
     "tips": "Gold standard for AR-15 magazines - lightweight and virtually jam-free."
   },
   {
     "id": "mag_556x45_30_stanag",
     "name": "STANAG 30-Round mag",
+    "description": "Industry-standard polymer magazine known for exceptional reliability.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_magazine_seca16.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_seca16.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_seca16.webp"
+      "icon": "/images/items/magazines/mag_556x45_30_stanag.webp",
+      "thumbnail": "/images/items/magazines/mag_556x45_30_stanag.webp",
+      "fullsize": "/images/items/magazines/mag_556x45_30_stanag.webp"
     },
     "stats": {
-      "rarity": "Uncommon",
+      "price": 10780,
       "weight": 0.16,
+      "rarity": "Uncommon",
       "capacity": 30,
       "caliber": "5.56x45",
+      "ammoSubcategory": "5.56x45mm",
+      "ADSSpeedModifier": 0,
       "ergonomicsModifier": -0.03,
       "compatibleWeapons": [
-        "weapon-hk416",
-        "weapon-m16a2",
         "weapon-m4a1-hunter",
+        "weapon-ar15longbarrelhunter",
+        "weapon-ar15-pistol",
+        "weapon-car15",
+        "weapon-car15-walther",
+        "weapon-m16a2",
+        "weapon-m16ris",
         "weapon-m16a2-lv2",
         "weapon-m4a1-factory",
-        "weapon-ar15-pistol",
-        "weapon-m4a1-agent",
-        "weapon-m4a1-cqbr",
+        "weapon-m4a1-fullattach-2025hallows",
+        "weapon-m4a1arx",
+        "weapon-m4a1cqb",
         "weapon-m4a1-dd",
-        "weapon-seca16"
-      ],
-      "price": 10780
+        "weapon-m4a1ddpve",
+        "weapon-m4a1-fullattach",
+        "weapon-m4a1voucherlv3",
+        "weapon-m4a1-walther",
+        "weapon-hk416",
+        "weapon-rc416a5-2025hallow",
+        "weapon-scar16"
+      ]
     },
-    "description": "Industry-standard polymer magazine known for exceptional reliability.",
+    "gameId": "gunsmith.ar15.clip.arstanag30",
+    "family": "AR15",
     "tips": "Gold standard for AR-15 magazines - lightweight and virtually jam-free."
   },
   {
-    "id": "mag_556x45_30_pmag",
-    "name": "AR-15 P-Mag 30-Round",
+    "id": "mag_556x45_42",
+    "name": "AUG A3 Extended Magazine",
+    "description": "Extended 42-round magazine for sustained automatic fire with AUG rifles.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_magazine_556x45NATO_Pmag30.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_556x45NATO_Pmag30.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_556x45NATO_Pmag30.webp"
+      "icon": "/images/items/magazines/mag_556x45_42.webp",
+      "thumbnail": "/images/items/magazines/mag_556x45_42.webp",
+      "fullsize": "/images/items/magazines/mag_556x45_42.webp"
     },
     "stats": {
-      "rarity": "Rare",
-      "weight": 0.1,
-      "capacity": 30,
+      "price": 34300,
+      "weight": 0.26,
+      "rarity": "Epic",
+      "capacity": 42,
       "caliber": "5.56x45",
-      "ADSSpeedModifier": 0.02,
-      "ergonomicsModifier": -0.01,
+      "ammoSubcategory": "5.56x45mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.02,
       "compatibleWeapons": [
-        "weapon-hk416",
-        "weapon-m16a2",
+        "weapon-aug-a1",
+        "weapon-aug-a3-ris",
+        "weapon-aug-a3-cqb",
+        "weapon-auga3m1optic"
+      ]
+    },
+    "gameId": "gunsmith.aug.clip.42",
+    "family": "AUG",
+    "tips": "Higher capacity but longer profile affects prone shooting positions."
+  },
+  {
+    "id": "mag_556x45_50",
+    "name": "AR-15 Drum Magazine (50-Round)",
+    "description": "High-capacity drum magazine for AR-15 platform rifles. 5.56x45 NATO.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_556x45_50.webp",
+      "thumbnail": "/images/items/magazines/mag_556x45_50.webp",
+      "fullsize": "/images/items/magazines/mag_556x45_50.webp"
+    },
+    "stats": {
+      "price": 54450,
+      "weight": 0.41,
+      "rarity": "Epic",
+      "capacity": 50,
+      "caliber": "5.56x45",
+      "ammoSubcategory": "5.56x45mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.12,
+      "compatibleWeapons": [
         "weapon-m4a1-hunter",
+        "weapon-ar15longbarrelhunter",
+        "weapon-ar15-pistol",
+        "weapon-car15",
+        "weapon-car15-walther",
+        "weapon-m16a2",
+        "weapon-m16ris",
         "weapon-m16a2-lv2",
         "weapon-m4a1-factory",
-        "weapon-ar15-pistol",
-        "weapon-m4a1-agent",
-        "weapon-m4a1-cqbr",
+        "weapon-m4a1-fullattach-2025hallows",
+        "weapon-m4a1arx",
+        "weapon-m4a1cqb",
         "weapon-m4a1-dd",
-        "weapon-seca16"
-      ],
-      "price": 15000
+        "weapon-m4a1ddpve",
+        "weapon-m4a1-fullattach",
+        "weapon-m4a1voucherlv3",
+        "weapon-m4a1-walther",
+        "weapon-hk416",
+        "weapon-rc416a5-2025hallow",
+        "weapon-scar16"
+      ]
     },
-    "description": "Industry-standard polymer magazine known for exceptional reliability.",
-    "tips": "Gold standard for AR-15 magazines - lightweight and virtually jam-free."
+    "gameId": "gunsmith.ar15.clip.drum50",
+    "family": "AR15",
+    "tips": "Massive capacity but significantly impacts weapon maneuverability."
+  },
+  {
+    "id": "mag_556x45_60",
+    "name": "AR-15 P-Mag Drum (60-Round)",
+    "description": "Premium polymer drum magazine offering maximum capacity for extended engagements.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_556x45_60.webp",
+      "thumbnail": "/images/items/magazines/mag_556x45_60.webp",
+      "fullsize": "/images/items/magazines/mag_556x45_60.webp"
+    },
+    "stats": {
+      "price": 72000,
+      "weight": 0.45,
+      "rarity": "Legendary",
+      "capacity": 60,
+      "caliber": "5.56x45",
+      "ammoSubcategory": "5.56x45mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.12,
+      "compatibleWeapons": [
+        "weapon-m4a1-hunter",
+        "weapon-ar15longbarrelhunter",
+        "weapon-ar15-pistol",
+        "weapon-car15",
+        "weapon-car15-walther",
+        "weapon-m16a2",
+        "weapon-m16ris",
+        "weapon-m16a2-lv2",
+        "weapon-m4a1-factory",
+        "weapon-m4a1-fullattach-2025hallows",
+        "weapon-m4a1arx",
+        "weapon-m4a1cqb",
+        "weapon-m4a1-dd",
+        "weapon-m4a1ddpve",
+        "weapon-m4a1-fullattach",
+        "weapon-m4a1voucherlv3",
+        "weapon-m4a1-walther",
+        "weapon-hk416",
+        "weapon-rc416a5-2025hallow",
+        "weapon-scar16"
+      ]
+    },
+    "gameId": "gunsmith.ar15.clip.pdrum60",
+    "family": "AR15",
+    "tips": "Excellent for suppressive fire but makes weapon much heavier and bulkier."
+  },
+  {
+    "id": "mag_556x45_60_sf",
+    "name": "AR-15 P-Mag Drum (60-Round)",
+    "description": "Premium polymer drum magazine offering maximum capacity for extended engagements.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_556x45_60_sf.webp",
+      "thumbnail": "/images/items/magazines/mag_556x45_60_sf.webp",
+      "fullsize": "/images/items/magazines/mag_556x45_60_sf.webp"
+    },
+    "stats": {
+      "price": 80000,
+      "weight": 0.25,
+      "rarity": "Legendary",
+      "capacity": 60,
+      "caliber": "5.56x45",
+      "ammoSubcategory": "5.56x45mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.18,
+      "compatibleWeapons": [
+        "weapon-m4a1-hunter",
+        "weapon-ar15longbarrelhunter",
+        "weapon-ar15-pistol",
+        "weapon-car15",
+        "weapon-car15-walther",
+        "weapon-m16a2",
+        "weapon-m16ris",
+        "weapon-m16a2-lv2",
+        "weapon-m4a1-factory",
+        "weapon-m4a1-fullattach-2025hallows",
+        "weapon-m4a1arx",
+        "weapon-m4a1cqb",
+        "weapon-m4a1-dd",
+        "weapon-m4a1ddpve",
+        "weapon-m4a1-fullattach",
+        "weapon-m4a1voucherlv3",
+        "weapon-m4a1-walther",
+        "weapon-hk416",
+        "weapon-rc416a5-2025hallow",
+        "weapon-scar16"
+      ]
+    },
+    "gameId": "gunsmith.ar15.clip.sf60",
+    "family": "AR15",
+    "tips": "Excellent for suppressive fire but makes weapon much heavier and bulkier."
   },
   {
     "id": "mag_68x51_25",
@@ -552,322 +705,131 @@
       "price": 15840
     },
     "description": "Next-generation 20-round magazine for the XM5 rifle system. 6.8x51mm cartridge.",
-    "tips": "New military standard cartridge with improved ballistics over 5.56."
-  },
-  {
-    "id": "mag_762x39_30",
-    "name": "AKM Steel Magazine",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_magazine_akm.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_akm.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_akm.webp"
-    },
-    "stats": {
-      "rarity": "Uncommon",
-      "weight": 0.35,
-      "capacity": 30,
-      "ergonomicsModifier": -0.03,
-      "caliber": "7.62x39",
-      "compatibleWeapons": [
-        "weapon-akm",
-        "weapon-akmn",
-        "weapon-akmn-g",
-        "weapon-akmn-glp",
-        "weapon-akmn-xm",
-        "weapon-malyuk762"
-      ],
-      "price": 7644
-    },
-    "description": "Robust steel magazine for AKM rifles. Time-tested Soviet design.",
-    "tips": "Heavier than polymer but incredibly durable and reliable."
-  },
-  {
-    "id": "mag_762x39_30_2",
-    "name": "AKM Polymer Magazine",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_magazine_762p30.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_762p30.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_762p30.webp"
-    },
-    "stats": {
-      "rarity": "Rare",
-      "weight": 0.11,
-      "caliber": "7.62x39",
-      "ADSSpeedModifier": 0.02,
-      "ergonomicsModifier": -0.01,
-      "compatibleWeapons": [
-        "weapon-akm",
-        "weapon-akmn",
-        "weapon-akmn-g",
-        "weapon-akmn-glp",
-        "weapon-akmn-xm",
-        "weapon-malyuk762"
-      ],
-      "price": 10000
-    },
-    "description": "Lightweight polymer alternative to traditional steel AK magazines.",
-    "tips": "Much lighter than steel with same reliability - preferred for long operations."
-  },
-  {
-    "id": "mag_762x39_20",
-    "name": "AK 20-Round Magazine",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_WF_AKM_MagC20R__1_.webp",
-      "thumbnail": "/images/items/magazines/Icon_WF_AKM_MagC20R__1_.webp",
-      "fullsize": "/images/items/magazines/Icon_WF_AKM_MagC20R__1_.webp"
-    },
-    "stats": {
-      "rarity": "Common",
-      "weight": 0.25,
-      "capacity": 20,
-      "caliber": "7.62x39",
-      "ergonomicsModifier": -0.02,
-      "compatibleWeapons": [
-        "weapon-akm",
-        "weapon-akmn",
-        "weapon-akmn-g",
-        "weapon-akmn-glp",
-        "weapon-akmn-xm",
-        "weapon-malyuk762"
-      ],
-      "price": 6370
-    },
-    "description": "Compact 20-round magazine for improved maneuverability with AK rifles.",
-    "tips": "Better for precision shooting and urban environments."
+    "tips": "New military standard cartridge with improved ballistics over 5.56.",
+    "extractionStatus": "missing-from-game-data"
   },
   {
     "id": "mag_762x39_10",
     "name": "AK 10-Round Magazine",
+    "description": "Low-profile 10-round magazine for hunting or precision applications.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_WF_AKM_MagC20R__9_.webp",
-      "thumbnail": "/images/items/magazines/Icon_WF_AKM_MagC20R__9_.webp",
-      "fullsize": "/images/items/magazines/Icon_WF_AKM_MagC20R__9_.webp"
+      "icon": "/images/items/magazines/mag_762x39_10.webp",
+      "thumbnail": "/images/items/magazines/mag_762x39_10.webp",
+      "fullsize": "/images/items/magazines/mag_762x39_10.webp"
     },
     "stats": {
-      "rarity": "Common",
+      "price": 3000,
       "weight": 0.18,
+      "rarity": "Common",
       "capacity": 10,
       "caliber": "7.62x39",
+      "ammoSubcategory": "7.62x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0,
       "compatibleWeapons": [
-        "weapon-akm",
+        "weapon-vpo136",
+        "weapon-akmcaa47",
         "weapon-akmn",
+        "weapon-akmn2025hallows",
         "weapon-akmn-g",
-        "weapon-akmn-glp",
-        "weapon-akmn-xm",
-        "weapon-malyuk762"
-      ],
-      "price": 3000
+        "weapon-nostockakm",
+        "weapon-akmn-titan",
+        "weapon-akmn-voucherlv2",
+        "weapon-rd704",
+        "weapon-rd704-2025hallows",
+        "weapon-rd704voucherlv3",
+        "weapon-malyuk-762",
+        "weapon-malyuk762-2025hallows",
+        "weapon-akalpha"
+      ]
     },
-    "description": "Low-profile 10-round magazine for hunting or precision applications.",
+    "gameId": "gunsmith.ak.clip.762akcustom10",
+    "family": "AKM",
     "tips": "Minimal profile makes prone shooting much more comfortable."
-  },
-  {
-    "id": "mag_762x39_75",
-    "name": "AKM MA-Drum 75-Round",
-    "description": "Massive drum magazine providing sustained firepower for AK-series rifles.",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_WF_AKM_MagC20R__8_.webp",
-      "thumbnail": "/images/items/magazines/Icon_WF_AKM_MagC20R__8_.webp",
-      "fullsize": "/images/items/magazines/Icon_WF_AKM_MagC20R__8_.webp"
-    },
-    "stats": {
-      "weight": 0.9,
-      "capacity": 75,
-      "ergonomicsModifier": -0.15,
-      "caliber": "7.62x39",
-      "compatibleWeapons": [
-        "weapon-akm",
-        "weapon-akmn",
-        "weapon-akmn-g",
-        "weapon-akmn-glp",
-        "weapon-akmn-xm"
-      ],
-      "rarity": "Common",
-      "price": 10000
-    },
-    "tips": "Extremely heavy but offers unmatched firepower for defensive positions."
   },
   {
     "id": "mag_762x39_10_2",
     "name": "AK Polymer 10-Round (Black)",
+    "description": "Lightweight polymer magazine in tactical black finish.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_WF_AKM_MagC20R__2_.webp",
-      "thumbnail": "/images/items/magazines/Icon_WF_AKM_MagC20R__2_.webp",
-      "fullsize": "/images/items/magazines/Icon_WF_AKM_MagC20R__2_.webp"
+      "icon": "/images/items/magazines/mag_762x39_10_2.webp",
+      "thumbnail": "/images/items/magazines/mag_762x39_10_2.webp",
+      "fullsize": "/images/items/magazines/mag_762x39_10_2.webp"
     },
     "stats": {
-      "rarity": "Common",
+      "price": 5050,
       "weight": 0.07,
+      "rarity": "Common",
       "capacity": 10,
-      "ergonomicsModifier": 0.02,
       "caliber": "7.62x39",
+      "ammoSubcategory": "7.62x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0,
       "compatibleWeapons": [
-        "weapon-akm",
+        "weapon-vpo136",
+        "weapon-akmcaa47",
         "weapon-akmn",
+        "weapon-akmn2025hallows",
         "weapon-akmn-g",
-        "weapon-akmn-glp",
-        "weapon-akmn-xm",
-        "weapon-malyuk762"
-      ],
-      "price": 5050
+        "weapon-nostockakm",
+        "weapon-akmn-titan",
+        "weapon-akmn-voucherlv2",
+        "weapon-rd704",
+        "weapon-rd704-2025hallows",
+        "weapon-rd704voucherlv3",
+        "weapon-malyuk-762",
+        "weapon-malyuk762-2025hallows",
+        "weapon-akalpha"
+      ]
     },
-    "description": "Lightweight polymer magazine in tactical black finish.",
+    "gameId": "gunsmith.ak.clip.762poly10black",
+    "family": "AKM",
     "tips": "Extremely light for extended carry missions."
   },
   {
     "id": "mag_762x39_10_3",
     "name": "AK Polymer 10-Round (FDE)",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_WF_AKM_MagC20R__3_.webp",
-      "thumbnail": "/images/items/magazines/Icon_WF_AKM_MagC20R__3_.webp",
-      "fullsize": "/images/items/magazines/Icon_WF_AKM_MagC20R__3_.webp"
-    },
-    "stats": {
-      "rarity": "Common",
-      "weight": 0.07,
-      "capacity": 10,
-      "ergonomicsModifier": 0.02,
-      "caliber": "7.62x39",
-      "compatibleWeapons": [
-        "weapon-akm",
-        "weapon-akmn",
-        "weapon-akmn-g",
-        "weapon-akmn-glp",
-        "weapon-akmn-xm",
-        "weapon-malyuk762"
-      ],
-      "price": 4900
-    },
     "description": "Lightweight polymer magazine in Flat Dark Earth finish.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_762x39_10_3.webp",
+      "thumbnail": "/images/items/magazines/mag_762x39_10_3.webp",
+      "fullsize": "/images/items/magazines/mag_762x39_10_3.webp"
+    },
+    "stats": {
+      "price": 4900,
+      "weight": 0.07,
+      "rarity": "Common",
+      "capacity": 10,
+      "caliber": "7.62x39",
+      "ammoSubcategory": "7.62x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0,
+      "compatibleWeapons": [
+        "weapon-vpo136",
+        "weapon-akmcaa47",
+        "weapon-akmn",
+        "weapon-akmn2025hallows",
+        "weapon-akmn-g",
+        "weapon-nostockakm",
+        "weapon-akmn-titan",
+        "weapon-akmn-voucherlv2",
+        "weapon-rd704",
+        "weapon-rd704-2025hallows",
+        "weapon-rd704voucherlv3",
+        "weapon-malyuk-762",
+        "weapon-malyuk762-2025hallows",
+        "weapon-akalpha"
+      ]
+    },
+    "gameId": "gunsmith.ak.clip.762poly10fde",
+    "family": "AKM",
     "tips": "FDE color matches desert and urban camouflage patterns."
-  },
-  {
-    "id": "mag_762x39_20_2",
-    "name": "AK Polymer 20-Round (Black)",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_WF_AKM_MagC20R__4_.webp",
-      "thumbnail": "/images/items/magazines/Icon_WF_AKM_MagC20R__4_.webp",
-      "fullsize": "/images/items/magazines/Icon_WF_AKM_MagC20R__4_.webp"
-    },
-    "stats": {
-      "rarity": "Uncommon",
-      "weight": 0.09,
-      "capacity": 20,
-      "caliber": "7.62x39",
-      "ergonomicsModifier": 0.01,
-      "compatibleWeapons": [
-        "weapon-akm",
-        "weapon-akmn",
-        "weapon-akmn-g",
-        "weapon-akmn-glp",
-        "weapon-akmn-xm",
-        "weapon-malyuk762"
-      ],
-      "price": 6930
-    },
-    "description": "Modern polymer magazine offering excellent weight savings over steel.",
-    "tips": "Good compromise between capacity and maneuverability."
-  },
-  {
-    "id": "mag_762x39_20_3",
-    "name": "AK Polymer 20-Round (FDE)",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_WF_AKM_MagC20R__5_.webp",
-      "thumbnail": "/images/items/magazines/Icon_WF_AKM_MagC20R__5_.webp",
-      "fullsize": "/images/items/magazines/Icon_WF_AKM_MagC20R__5_.webp"
-    },
-    "stats": {
-      "rarity": "Uncommon",
-      "weight": 0.09,
-      "capacity": 20,
-      "caliber": "7.62x39",
-      "ergonomicsModifier": 0.01,
-      "compatibleWeapons": [
-        "weapon-akm",
-        "weapon-akmn",
-        "weapon-akmn-g",
-        "weapon-akmn-glp",
-        "weapon-akmn-xm",
-        "weapon-malyuk762"
-      ],
-      "price": 7000
-    },
-    "description": "Polymer magazine in tactical Flat Dark Earth coloring.",
-    "tips": "Matches FDE weapon systems and gear setups."
-  },
-  {
-    "id": "mag_762x39_60",
-    "name": "AK Polymer 60-Round (Black)",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_WF_AKM_MagC20R__6_.webp",
-      "thumbnail": "/images/items/magazines/Icon_WF_AKM_MagC20R__6_.webp",
-      "fullsize": "/images/items/magazines/Icon_WF_AKM_MagC20R__6_.webp"
-    },
-    "stats": {
-      "rarity": "Epic",
-      "weight": 0.23,
-      "capacity": 60,
-      "ergonomicsModifier": -0.19,
-      "caliber": "7.62x39",
-      "compatibleWeapons": [
-        "weapon-akm",
-        "weapon-akmn",
-        "weapon-akmn-g",
-        "weapon-akmn-glp",
-        "weapon-akmn-xm"
-      ],
-      "price": 60000
-    },
-    "description": "High-capacity polymer magazine for sustained automatic fire.",
-    "tips": "Much lighter than drum mags while offering substantial capacity."
-  },
-  {
-    "id": "mag_762x39_60_2",
-    "name": "AK Polymer 60-Round (FDE)",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_WF_AKM_MagC20R__7_.webp",
-      "thumbnail": "/images/items/magazines/Icon_WF_AKM_MagC20R__7_.webp",
-      "fullsize": "/images/items/magazines/Icon_WF_AKM_MagC20R__7_.webp"
-    },
-    "stats": {
-      "rarity": "Epic",
-      "weight": 0.23,
-      "capacity": 60,
-      "ergonomicsModifier": -0.19,
-      "caliber": "7.62x39",
-      "compatibleWeapons": [
-        "weapon-akm",
-        "weapon-akmn",
-        "weapon-akmn-g",
-        "weapon-akmn-glp",
-        "weapon-akmn-xm"
-      ],
-      "price": 61200
-    },
-    "description": "Extended polymer magazine in desert-compatible FDE finish.",
-    "tips": "High capacity with color coordination for tactical setups."
   },
   {
     "id": "mag_762x39_15",
@@ -891,290 +853,526 @@
       "price": 10200
     },
     "description": "Detachable magazine conversion for the SKS rifle system.",
-    "tips": "Upgrade from standard 10-round fixed magazine for increased capacity."
+    "tips": "Upgrade from standard 10-round fixed magazine for increased capacity.",
+    "extractionStatus": "missing-from-game-data"
   },
   {
-    "id": "mag_762x51_20_2",
-    "name": "FAL 20-Round Magazine",
+    "id": "mag_762x39_20",
+    "name": "AK 20-Round Magazine",
+    "description": "Compact 20-round magazine for improved maneuverability with AK rifles.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_magazine_fal.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_fal.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_fal.webp"
+      "icon": "/images/items/magazines/mag_762x39_20.webp",
+      "thumbnail": "/images/items/magazines/mag_762x39_20.webp",
+      "fullsize": "/images/items/magazines/mag_762x39_20.webp"
     },
     "stats": {
-      "rarity": "Uncommon",
-      "weight": 0.35,
+      "price": 6370,
+      "weight": 0.25,
+      "rarity": "Common",
       "capacity": 20,
-      "caliber": "7.62x51",
+      "caliber": "7.62x39",
+      "ammoSubcategory": "7.62x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0,
+      "compatibleWeapons": [
+        "weapon-vpo136",
+        "weapon-akmcaa47",
+        "weapon-akmn",
+        "weapon-akmn2025hallows",
+        "weapon-akmn-g",
+        "weapon-nostockakm",
+        "weapon-akmn-titan",
+        "weapon-akmn-voucherlv2",
+        "weapon-rd704",
+        "weapon-rd704-2025hallows",
+        "weapon-rd704voucherlv3",
+        "weapon-malyuk-762",
+        "weapon-malyuk762-2025hallows",
+        "weapon-akalpha"
+      ]
+    },
+    "gameId": "gunsmith.ak.clip.762akcustom20",
+    "family": "AKM",
+    "tips": "Better for precision shooting and urban environments."
+  },
+  {
+    "id": "mag_762x39_20_2",
+    "name": "AK Polymer 20-Round (Black)",
+    "description": "Modern polymer magazine offering excellent weight savings over steel.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_762x39_20_2.webp",
+      "thumbnail": "/images/items/magazines/mag_762x39_20_2.webp",
+      "fullsize": "/images/items/magazines/mag_762x39_20_2.webp"
+    },
+    "stats": {
+      "price": 6930,
+      "weight": 0.09,
+      "rarity": "Uncommon",
+      "capacity": 20,
+      "caliber": "7.62x39",
+      "ammoSubcategory": "7.62x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0,
+      "compatibleWeapons": [
+        "weapon-vpo136",
+        "weapon-akmcaa47",
+        "weapon-akmn",
+        "weapon-akmn2025hallows",
+        "weapon-akmn-g",
+        "weapon-nostockakm",
+        "weapon-akmn-titan",
+        "weapon-akmn-voucherlv2",
+        "weapon-rd704",
+        "weapon-rd704-2025hallows",
+        "weapon-rd704voucherlv3",
+        "weapon-malyuk-762",
+        "weapon-malyuk762-2025hallows",
+        "weapon-akalpha"
+      ]
+    },
+    "gameId": "gunsmith.ak.clip.762poly20black",
+    "family": "AKM",
+    "tips": "Good compromise between capacity and maneuverability."
+  },
+  {
+    "id": "mag_762x39_20_3",
+    "name": "AK Polymer 20-Round (FDE)",
+    "description": "Polymer magazine in tactical Flat Dark Earth coloring.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_762x39_20_3.webp",
+      "thumbnail": "/images/items/magazines/mag_762x39_20_3.webp",
+      "fullsize": "/images/items/magazines/mag_762x39_20_3.webp"
+    },
+    "stats": {
+      "price": 7000,
+      "weight": 0.09,
+      "rarity": "Uncommon",
+      "capacity": 20,
+      "caliber": "7.62x39",
+      "ammoSubcategory": "7.62x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0,
+      "compatibleWeapons": [
+        "weapon-vpo136",
+        "weapon-akmcaa47",
+        "weapon-akmn",
+        "weapon-akmn2025hallows",
+        "weapon-akmn-g",
+        "weapon-nostockakm",
+        "weapon-akmn-titan",
+        "weapon-akmn-voucherlv2",
+        "weapon-rd704",
+        "weapon-rd704-2025hallows",
+        "weapon-rd704voucherlv3",
+        "weapon-malyuk-762",
+        "weapon-malyuk762-2025hallows",
+        "weapon-akalpha"
+      ]
+    },
+    "gameId": "gunsmith.ak.clip.762poly20fde",
+    "family": "AKM",
+    "tips": "Matches FDE weapon systems and gear setups."
+  },
+  {
+    "id": "mag_762x39_30",
+    "name": "AKM Steel Magazine",
+    "description": "Robust steel magazine for AKM rifles. Time-tested Soviet design.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_762x39_30.webp",
+      "thumbnail": "/images/items/magazines/mag_762x39_30.webp",
+      "fullsize": "/images/items/magazines/mag_762x39_30.webp"
+    },
+    "stats": {
+      "price": 7644,
+      "weight": 0.35,
+      "rarity": "Uncommon",
+      "capacity": 30,
+      "caliber": "7.62x39",
+      "ammoSubcategory": "7.62x39mm",
+      "ADSSpeedModifier": 0,
       "ergonomicsModifier": -0.02,
       "compatibleWeapons": [
-        "weapon-fnfal"
-      ],
-      "price": 6435
+        "weapon-vpo136",
+        "weapon-akmcaa47",
+        "weapon-akmn",
+        "weapon-akmn2025hallows",
+        "weapon-akmn-g",
+        "weapon-nostockakm",
+        "weapon-akmn-titan",
+        "weapon-akmn-voucherlv2",
+        "weapon-rd704",
+        "weapon-rd704-2025hallows",
+        "weapon-rd704voucherlv3",
+        "weapon-malyuk-762",
+        "weapon-malyuk762-2025hallows",
+        "weapon-akalpha"
+      ]
     },
-    "description": "Standard capacity magazine for the FN FAL battle rifle system.",
-    "tips": "NATO standard battle rifle magazine with proven reliability."
+    "gameId": "gunsmith.ak.clip.762ak55",
+    "family": "AKM",
+    "tips": "Heavier than polymer but incredibly durable and reliable."
   },
   {
-    "id": "mag_762x51_10_2",
-    "name": "G3 10-Round Magazine",
+    "id": "mag_762x39_30_2",
+    "name": "AKM Polymer Magazine",
+    "description": "Lightweight polymer alternative to traditional steel AK magazines.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_G3_10_Round_Magazine.webp",
-      "thumbnail": "/images/items/magazines/Icon_G3_10_Round_Magazine.webp",
-      "fullsize": "/images/items/magazines/Icon_G3_10_Round_Magazine.webp"
+      "icon": "/images/items/magazines/mag_762x39_30_2.webp",
+      "thumbnail": "/images/items/magazines/mag_762x39_30_2.webp",
+      "fullsize": "/images/items/magazines/mag_762x39_30_2.webp"
     },
     "stats": {
-      "rarity": "Common",
-      "weight": 0.07,
-      "capacity": 10,
-      "ergonomicsModifier": 0.05,
-      "caliber": "7.62x51",
-      "compatibleWeapons": [
-        "weapon-g3sg1-prs",
-        "weapon-g3a3",
-        "weapon-hk51",
-        "weapon-hk51-ace",
-        "weapon-hk51k",
-        "weapon-hk91-wood",
-        "weapon-psg1",
-        "weapon-g3sg1-ak4",
-        "weapon-g3sg1-spuhr"
-      ],
-      "price": 6180
-    },
-    "description": "Compact magazine for precision shooting with G3-series rifles.",
-    "tips": "Preferred for marksman roles and long-range engagement."
-  },
-  {
-    "id": "mag_762x51_20_3",
-    "name": "G3 20-Round Magazine",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_WF_G3SG1_Clip.webp",
-      "thumbnail": "/images/items/magazines/Icon_WF_G3SG1_Clip.webp",
-      "fullsize": "/images/items/magazines/Icon_WF_G3SG1_Clip.webp"
-    },
-    "stats": {
-      "rarity": "Common",
-      "weight": 0.14,
-      "capacity": 20,
-      "ergonomicsModifier": -0.03,
-      "caliber": "7.62x51",
-      "compatibleWeapons": [
-        "weapon-g3sg1-prs",
-        "weapon-g3a3",
-        "weapon-hk51",
-        "weapon-hk51-ace",
-        "weapon-hk51k",
-        "weapon-hk91-wood",
-        "weapon-psg1",
-        "weapon-g3sg1-ak4",
-        "weapon-g3sg1-spuhr"
-      ],
-      "price": 13000
-    },
-    "description": "Standard capacity magazine for H&K G3 rifle platform.",
-    "tips": "Reliable feeding with powerful 7.62 NATO cartridge."
-  },
-  {
-    "id": "mag_762x51_30",
-    "name": "G3 30-Round Magazine",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_G3_30_Round_Magazine.webp",
-      "thumbnail": "/images/items/magazines/Icon_G3_30_Round_Magazine.webp",
-      "fullsize": "/images/items/magazines/Icon_G3_30_Round_Magazine.webp"
-    },
-    "stats": {
+      "price": 10000,
+      "weight": 0.11,
       "rarity": "Rare",
-      "weight": 0.22,
       "capacity": 30,
-      "caliber": "7.62x51",
-      "ergonomicsModifier": 0.15,
+      "caliber": "7.62x39",
+      "ammoSubcategory": "7.62x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0,
       "compatibleWeapons": [
-        "weapon-g3sg1-prs",
-        "weapon-g3a3",
-        "weapon-hk51",
-        "weapon-hk51-ace",
-        "weapon-hk51k",
-        "weapon-hk91-wood",
-        "weapon-psg1",
-        "weapon-g3sg1-ak4",
-        "weapon-g3sg1-spuhr"
-      ],
-      "price": 36360
+        "weapon-vpo136",
+        "weapon-akmcaa47",
+        "weapon-akmn",
+        "weapon-akmn2025hallows",
+        "weapon-akmn-g",
+        "weapon-nostockakm",
+        "weapon-akmn-titan",
+        "weapon-akmn-voucherlv2",
+        "weapon-rd704",
+        "weapon-rd704-2025hallows",
+        "weapon-rd704voucherlv3",
+        "weapon-malyuk-762",
+        "weapon-malyuk762-2025hallows",
+        "weapon-akalpha"
+      ]
     },
-    "description": "Extended capacity magazine for sustained fire with G3 rifles.",
-    "tips": "Higher capacity but longer profile can interfere with prone positions."
+    "gameId": "gunsmith.ak.clip.762pmag30",
+    "family": "AKM",
+    "tips": "Much lighter than steel with same reliability - preferred for long operations."
   },
   {
-    "id": "mag_762x51_50",
-    "name": "G3 X-Products Drum (Black)",
+    "id": "mag_762x39_60",
+    "name": "AK Polymer 60-Round (Black)",
+    "description": "High-capacity polymer magazine for sustained automatic fire.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_G3_50_Round_drum_2.webp",
-      "thumbnail": "/images/items/magazines/Icon_G3_50_Round_drum_2.webp",
-      "fullsize": "/images/items/magazines/Icon_G3_50_Round_drum_2.webp"
+      "icon": "/images/items/magazines/mag_762x39_60.webp",
+      "thumbnail": "/images/items/magazines/mag_762x39_60.webp",
+      "fullsize": "/images/items/magazines/mag_762x39_60.webp"
     },
     "stats": {
-      "rarity": "Legendary",
-      "weight": 0.43,
-      "capacity": 50,
-      "caliber": "7.62x51",
-      "ergonomicsModifier": -0.3,
+      "price": 60000,
+      "weight": 0.23,
+      "rarity": "Epic",
+      "capacity": 60,
+      "caliber": "7.62x39",
+      "ammoSubcategory": "7.62x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.2,
       "compatibleWeapons": [
-        "weapon-g3sg1-prs",
-        "weapon-g3a3",
-        "weapon-hk51",
-        "weapon-hk51-ace",
-        "weapon-hk51k",
-        "weapon-hk91-wood",
-        "weapon-psg1",
-        "weapon-g3sg1-ak4",
-        "weapon-g3sg1-spuhr"
-      ],
-      "price": 64350
+        "weapon-vpo136",
+        "weapon-akmcaa47",
+        "weapon-akmn",
+        "weapon-akmn2025hallows",
+        "weapon-akmn-g",
+        "weapon-nostockakm",
+        "weapon-akmn-titan",
+        "weapon-akmn-voucherlv2",
+        "weapon-rd704",
+        "weapon-rd704-2025hallows",
+        "weapon-rd704voucherlv3",
+        "weapon-akalpha"
+      ]
     },
-    "description": "High-capacity 50-round drum magazine for G3-series rifles.",
-    "tips": "Provides suppressive fire capability but significantly increases weight."
+    "gameId": "gunsmith.ak.clip.762quad60black",
+    "family": "AKM",
+    "tips": "Much lighter than drum mags while offering substantial capacity."
   },
   {
-    "id": "mag_762x51_50_2",
-    "name": "G3 X-Products Drum (Olive)",
+    "id": "mag_762x39_60_2",
+    "name": "AK Polymer 60-Round (FDE)",
+    "description": "Extended polymer magazine in desert-compatible FDE finish.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_G3_50_Round_drum.webp",
-      "thumbnail": "/images/items/magazines/Icon_G3_50_Round_drum.webp",
-      "fullsize": "/images/items/magazines/Icon_G3_50_Round_drum.webp"
+      "icon": "/images/items/magazines/mag_762x39_60_2.webp",
+      "thumbnail": "/images/items/magazines/mag_762x39_60_2.webp",
+      "fullsize": "/images/items/magazines/mag_762x39_60_2.webp"
     },
     "stats": {
-      "rarity": "Legendary",
-      "weight": 0.43,
-      "capacity": 50,
-      "ergonomicsModifier": -0.3,
-      "caliber": "7.62x51",
+      "price": 61200,
+      "weight": 0.23,
+      "rarity": "Epic",
+      "capacity": 60,
+      "caliber": "7.62x39",
+      "ammoSubcategory": "7.62x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.2,
       "compatibleWeapons": [
-        "weapon-g3sg1-prs",
-        "weapon-g3a3",
-        "weapon-hk51",
-        "weapon-hk51-ace",
-        "weapon-hk51k",
-        "weapon-hk91-wood",
-        "weapon-psg1",
-        "weapon-g3sg1-ak4",
-        "weapon-g3sg1-spuhr"
-      ],
-      "price": 66300
+        "weapon-vpo136",
+        "weapon-akmcaa47",
+        "weapon-akmn",
+        "weapon-akmn2025hallows",
+        "weapon-akmn-g",
+        "weapon-nostockakm",
+        "weapon-akmn-titan",
+        "weapon-akmn-voucherlv2",
+        "weapon-rd704",
+        "weapon-rd704-2025hallows",
+        "weapon-rd704voucherlv3",
+        "weapon-akalpha"
+      ]
     },
-    "description": "Military-style 50-round drum in traditional olive drab finish.",
-    "tips": "Same capacity as black version but with classic military appearance."
+    "gameId": "gunsmith.ak.clip.762quad60fde",
+    "family": "AKM",
+    "tips": "High capacity with color coordination for tactical setups."
+  },
+  {
+    "id": "mag_762x39_75",
+    "name": "AKM MA-Drum 75-Round",
+    "description": "Massive drum magazine providing sustained firepower for AK-series rifles.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_762x39_75.webp",
+      "thumbnail": "/images/items/magazines/mag_762x39_75.webp",
+      "fullsize": "/images/items/magazines/mag_762x39_75.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.75,
+      "rarity": "Common",
+      "capacity": 75,
+      "caliber": "7.62x39",
+      "ammoSubcategory": "7.62x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.22,
+      "compatibleWeapons": [
+        "weapon-vpo136",
+        "weapon-akmcaa47",
+        "weapon-akmn",
+        "weapon-akmn2025hallows",
+        "weapon-akmn-g",
+        "weapon-nostockakm",
+        "weapon-akmn-titan",
+        "weapon-akmn-voucherlv2",
+        "weapon-rd704",
+        "weapon-rd704-2025hallows",
+        "weapon-rd704voucherlv3",
+        "weapon-akalpha"
+      ]
+    },
+    "gameId": "gunsmith.ak.clip.762drum60molot",
+    "family": "AKM",
+    "tips": "Extremely heavy but offers unmatched firepower for defensive positions."
   },
   {
     "id": "mag_762x51_10",
     "name": "AR-308 10-Round Magazine",
+    "description": "Precision-oriented magazine for AR-10 platform rifles.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_magazineAR308_LT.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazineAR308_LT.webp",
-      "fullsize": "/images/items/magazines/Icon_magazineAR308_LT.webp"
+      "icon": "/images/items/magazines/mag_762x51_10.webp",
+      "thumbnail": "/images/items/magazines/mag_762x51_10.webp",
+      "fullsize": "/images/items/magazines/mag_762x51_10.webp"
     },
     "stats": {
+      "price": 11220,
+      "weight": 0.14,
       "rarity": "Uncommon",
-      "weight": 0.09,
       "capacity": 10,
       "caliber": "7.62x51",
-      "ADSSpeedModifier": 0.1,
-      "ergonomicsModifier": 0.01,
+      "ammoSubcategory": "7.62x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0,
       "compatibleWeapons": [
         "weapon-ar308",
-        "weapon-ar308-lt"
-      ],
-      "price": 11220
+        "weapon-ar308pve",
+        "weapon-ar308-voucherlv2"
+      ]
     },
-    "description": "Precision-oriented magazine for AR-10 platform rifles.",
+    "gameId": "gunsmith.ar10.clip.10",
+    "family": "AR308",
     "tips": "Light weight improves weapon handling for precision shooting."
   },
   {
-    "id": "mag_762x51_20",
-    "name": "AR-308 20-Round Magazine",
+    "id": "mag_762x51_10_2",
+    "name": "G3 10-Round Magazine",
+    "description": "Compact magazine for precision shooting with G3-series rifles.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_magazine_AR308.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_AR308.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_AR308.webp"
+      "icon": "/images/items/magazines/mag_762x51_10_2.webp",
+      "thumbnail": "/images/items/magazines/mag_762x51_10_2.webp",
+      "fullsize": "/images/items/magazines/mag_762x51_10_2.webp"
     },
     "stats": {
-      "rarity": "Rare",
-      "weight": 0.15,
-      "capacity": 20,
+      "price": 6180,
+      "weight": 0.07,
+      "rarity": "Common",
+      "capacity": 10,
       "caliber": "7.62x51",
-      "ergonomicsModifier": -0.02,
+      "ammoSubcategory": "7.62x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0.02,
       "compatibleWeapons": [
-        "weapon-ar308",
-        "weapon-ar308-lt"
-      ],
-      "price": 14935
+        "weapon-g3sg1-ak4",
+        "weapon-g3a3",
+        "weapon-hk91-wood",
+        "weapon-g3sg1-prs",
+        "weapon-g3sg1-spuhr",
+        "weapon-hk51",
+        "weapon-g3hk51ris",
+        "weapon-hk51k",
+        "weapon-psg1-custom",
+        "weapon-psg1",
+        "weapon-psg-voucherlv3"
+      ]
     },
-    "description": "Standard capacity magazine for AR-10 rifle systems.",
-    "tips": "Good balance of capacity and weight for general purpose use."
+    "gameId": "gunsmith.g3.clip.10",
+    "family": "G3",
+    "tips": "Preferred for marksman roles and long-range engagement."
   },
   {
     "id": "mag_762x51_10_3",
     "name": "M40A5 10-Round Magazine (Desert)",
+    "description": "Precision magazine for the M40A5 sniper rifle system.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_magazine_m40a5_de.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_m40a5_de.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_m40a5_de.webp"
+      "icon": "/images/items/magazines/mag_762x51_10_3.webp",
+      "thumbnail": "/images/items/magazines/mag_762x51_10_3.webp",
+      "fullsize": "/images/items/magazines/mag_762x51_10_3.webp"
     },
     "stats": {
+      "price": 16320,
+      "weight": 0.5,
       "rarity": "Rare",
-      "weight": 0.36,
       "capacity": 10,
-      "ergonomicsModifier": -0.02,
       "caliber": "7.62x51",
+      "ammoSubcategory": "7.62x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.02,
       "compatibleWeapons": [
         "weapon-m40a5"
-      ],
-      "price": 16320
+      ]
     },
-    "description": "Precision magazine for the M40A5 sniper rifle system.",
+    "gameId": "gunsmith.m40a5.clip.10r",
+    "family": "M40A5",
     "tips": "Designed specifically for precision shooting applications."
   },
   {
-    "id": "mag_762x51_5",
-    "name": "M40A5 5-Round Magazine",
+    "id": "mag_762x51_20",
+    "name": "AR-308 20-Round Magazine",
+    "description": "Standard capacity magazine for AR-10 rifle systems.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_magazine_m40a5_short.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_m40a5_short.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_m40a5_short.webp"
+      "icon": "/images/items/magazines/mag_762x51_20.webp",
+      "thumbnail": "/images/items/magazines/mag_762x51_20.webp",
+      "fullsize": "/images/items/magazines/mag_762x51_20.webp"
     },
     "stats": {
-      "rarity": "Uncommon",
-      "weight": 0.23,
-      "capacity": 5,
-      "ergonomicsModifier": -0.01,
+      "price": 14935,
+      "weight": 0.17,
+      "rarity": "Rare",
+      "capacity": 20,
       "caliber": "7.62x51",
+      "ammoSubcategory": "7.62x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.01,
       "compatibleWeapons": [
-        "weapon-m40a5"
-      ],
-      "price": 8910
+        "weapon-ar308",
+        "weapon-ar308pve",
+        "weapon-ar308-voucherlv2"
+      ]
     },
-    "description": "Ultra-compact magazine for precision bolt-action rifles.",
-    "tips": "Minimal profile perfect for prone shooting and stealth operations."
+    "gameId": "gunsmith.ar10.clip.20",
+    "family": "AR308",
+    "tips": "Good balance of capacity and weight for general purpose use."
+  },
+  {
+    "id": "mag_762x51_20_2",
+    "name": "FAL 20-Round Magazine",
+    "description": "Standard capacity magazine for the FN FAL battle rifle system.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_762x51_20_2.webp",
+      "thumbnail": "/images/items/magazines/mag_762x51_20_2.webp",
+      "fullsize": "/images/items/magazines/mag_762x51_20_2.webp"
+    },
+    "stats": {
+      "price": 6435,
+      "weight": 0.35,
+      "rarity": "Uncommon",
+      "capacity": 20,
+      "caliber": "7.62x51",
+      "ammoSubcategory": "7.62x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.05,
+      "compatibleWeapons": [
+        "weapon-fn-fal",
+        "weapon-sa58-hallows02",
+        "weapon-sa58-para",
+        "weapon-sa58-hallows01",
+        "weapon-rfb"
+      ]
+    },
+    "gameId": "gunsmith.sa58.clip.20rnd",
+    "family": "SA58",
+    "tips": "NATO standard battle rifle magazine with proven reliability."
+  },
+  {
+    "id": "mag_762x51_20_3",
+    "name": "G3 20-Round Magazine",
+    "description": "Standard capacity magazine for H&K G3 rifle platform.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_762x51_20_3.webp",
+      "thumbnail": "/images/items/magazines/mag_762x51_20_3.webp",
+      "fullsize": "/images/items/magazines/mag_762x51_20_3.webp"
+    },
+    "stats": {
+      "price": 13000,
+      "weight": 0.14,
+      "rarity": "Common",
+      "capacity": 20,
+      "caliber": "7.62x51",
+      "ammoSubcategory": "7.62x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0.01,
+      "compatibleWeapons": [
+        "weapon-g3sg1-ak4",
+        "weapon-g3a3",
+        "weapon-hk91-wood",
+        "weapon-g3sg1-prs",
+        "weapon-g3sg1-spuhr",
+        "weapon-hk51",
+        "weapon-g3hk51ris",
+        "weapon-hk51k",
+        "weapon-psg1-custom",
+        "weapon-psg1",
+        "weapon-psg-voucherlv3"
+      ]
+    },
+    "gameId": "gunsmith.g3.clip.20",
+    "family": "G3",
+    "tips": "Reliable feeding with powerful 7.62 NATO cartridge."
   },
   {
     "id": "mag_762x51_20_4",
@@ -1183,369 +1381,259 @@
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_magazine_SECA17_FDE2.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_SECA17_FDE2.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_SECA17_FDE2.webp"
+      "icon": "/images/items/magazines/mag_762x51_20_4.webp",
+      "thumbnail": "/images/items/magazines/mag_762x51_20_4.webp",
+      "fullsize": "/images/items/magazines/mag_762x51_20_4.webp"
     },
     "stats": {
+      "price": 13939,
+      "weight": 0.15,
       "rarity": "Rare",
-      "weight": 0.17,
       "capacity": 20,
-      "ergonomicsModifier": -0.02,
       "caliber": "7.62x51",
+      "ammoSubcategory": "7.62x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.02,
       "compatibleWeapons": [
-        "weapon-seca17-fde",
-        "weapon-seca17ssr",
-        "weapon-seca17-bk"
-      ],
-      "price": 13939
+        "weapon-scar17-fde",
+        "weapon-scar17-black",
+        "weapon-seca17-fullattachssr",
+        "weapon-scar17-ssr"
+      ]
     },
+    "gameId": "gunsmith.scar.clip.mk17-bk",
+    "family": "ScarLH",
     "tips": "Platform-specific design optimized for reliability."
   },
   {
     "id": "mag_762x51_20_5",
     "name": "SECA17 Magazine (FDE)",
+    "description": "SECA17 rifle magazine in tactical Flat Dark Earth finish.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_magazine_SECA17_FDE.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_SECA17_FDE.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_SECA17_FDE.webp"
+      "icon": "/images/items/magazines/mag_762x51_20_5.webp",
+      "thumbnail": "/images/items/magazines/mag_762x51_20_5.webp",
+      "fullsize": "/images/items/magazines/mag_762x51_20_5.webp"
     },
     "stats": {
+      "price": 13800,
+      "weight": 0.15,
       "rarity": "Rare",
-      "weight": 0.17,
       "capacity": 20,
-      "ergonomicsModifier": -0.02,
       "caliber": "7.62x51",
+      "ammoSubcategory": "7.62x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.02,
       "compatibleWeapons": [
-        "weapon-seca17-fde",
-        "weapon-seca17ssr",
-        "weapon-seca17-bk"
-      ],
-      "price": 13800
+        "weapon-scar17-fde",
+        "weapon-scar17-black",
+        "weapon-seca17-fullattachssr",
+        "weapon-scar17-ssr"
+      ]
     },
-    "description": "SECA17 rifle magazine in tactical Flat Dark Earth finish.",
+    "gameId": "gunsmith.scar.clip.mk17-fde",
+    "family": "ScarLH",
     "tips": "Matches FDE weapon systems for coordinated appearance."
   },
   {
-    "id": "mag_762x54R_80",
-    "name": "PKP Pecheneg Drum Magazine",
+    "id": "mag_762x51_30",
+    "name": "G3 30-Round Magazine",
+    "description": "Extended capacity magazine for sustained fire with G3 rifles.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_magazine_pkp.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_pkp.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_pkp.webp"
+      "icon": "/images/items/magazines/mag_762x51_30.webp",
+      "thumbnail": "/images/items/magazines/mag_762x51_30.webp",
+      "fullsize": "/images/items/magazines/mag_762x51_30.webp"
     },
     "stats": {
-      "rarity": "Epic",
-      "weight": 0.85,
-      "capacity": 80,
-      "ergonomicsModifier": -0.2,
-      "caliber": "7.62x54R",
+      "price": 36360,
+      "weight": 0.22,
+      "rarity": "Rare",
+      "capacity": 30,
+      "caliber": "7.62x51",
+      "ammoSubcategory": "7.62x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.03,
       "compatibleWeapons": [
-        "weapon-pkp-pecheneg"
-      ],
-      "price": 77250
+        "weapon-g3sg1-ak4",
+        "weapon-g3a3",
+        "weapon-hk91-wood",
+        "weapon-g3sg1-prs",
+        "weapon-g3sg1-spuhr",
+        "weapon-hk51",
+        "weapon-g3hk51ris",
+        "weapon-hk51k",
+        "weapon-psg1-custom",
+        "weapon-psg1",
+        "weapon-psg-voucherlv3"
+      ]
     },
-    "description": "Belt-fed conversion drum for the PKP Pecheneg machine gun.",
-    "tips": "Massive capacity for sustained suppressive fire - very heavy."
+    "gameId": "gunsmith.g3.clip.30",
+    "family": "G3",
+    "tips": "Higher capacity but longer profile can interfere with prone positions."
+  },
+  {
+    "id": "mag_762x51_5",
+    "name": "M40A5 5-Round Magazine",
+    "description": "Ultra-compact magazine for precision bolt-action rifles.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_762x51_5.webp",
+      "thumbnail": "/images/items/magazines/mag_762x51_5.webp",
+      "fullsize": "/images/items/magazines/mag_762x51_5.webp"
+    },
+    "stats": {
+      "price": 8910,
+      "weight": 0.3,
+      "rarity": "Uncommon",
+      "capacity": 5,
+      "caliber": "7.62x51",
+      "ammoSubcategory": "7.62x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0.03,
+      "compatibleWeapons": [
+        "weapon-m40a5"
+      ]
+    },
+    "gameId": "gunsmith.m40a5.clip.5r",
+    "family": "M40A5",
+    "tips": "Minimal profile perfect for prone shooting and stealth operations."
+  },
+  {
+    "id": "mag_762x51_50",
+    "name": "G3 X-Products Drum (Black)",
+    "description": "High-capacity 50-round drum magazine for G3-series rifles.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_762x51_50.webp",
+      "thumbnail": "/images/items/magazines/mag_762x51_50.webp",
+      "fullsize": "/images/items/magazines/mag_762x51_50.webp"
+    },
+    "stats": {
+      "price": 64350,
+      "weight": 0.43,
+      "rarity": "Legendary",
+      "capacity": 50,
+      "caliber": "7.62x51",
+      "ammoSubcategory": "7.62x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.25,
+      "compatibleWeapons": [
+        "weapon-g3sg1-ak4",
+        "weapon-g3a3",
+        "weapon-hk91-wood",
+        "weapon-g3sg1-prs",
+        "weapon-g3sg1-spuhr",
+        "weapon-hk51",
+        "weapon-g3hk51ris",
+        "weapon-hk51k",
+        "weapon-psg1-custom",
+        "weapon-psg1",
+        "weapon-psg-voucherlv3"
+      ]
+    },
+    "gameId": "gunsmith.g3.clip.50bk",
+    "family": "G3",
+    "tips": "Provides suppressive fire capability but significantly increases weight."
+  },
+  {
+    "id": "mag_762x51_50_2",
+    "name": "G3 X-Products Drum (Olive)",
+    "description": "Military-style 50-round drum in traditional olive drab finish.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_762x51_50_2.webp",
+      "thumbnail": "/images/items/magazines/mag_762x51_50_2.webp",
+      "fullsize": "/images/items/magazines/mag_762x51_50_2.webp"
+    },
+    "stats": {
+      "price": 66300,
+      "weight": 0.43,
+      "rarity": "Legendary",
+      "capacity": 50,
+      "caliber": "7.62x51",
+      "ammoSubcategory": "7.62x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.25,
+      "compatibleWeapons": [
+        "weapon-g3sg1-ak4",
+        "weapon-g3a3",
+        "weapon-hk91-wood",
+        "weapon-g3sg1-prs",
+        "weapon-g3sg1-spuhr",
+        "weapon-hk51",
+        "weapon-g3hk51ris",
+        "weapon-hk51k",
+        "weapon-psg1-custom",
+        "weapon-psg1",
+        "weapon-psg-voucherlv3"
+      ]
+    },
+    "gameId": "gunsmith.g3.clip.50od",
+    "family": "G3",
+    "tips": "Same capacity as black version but with classic military appearance."
   },
   {
     "id": "mag_762x54R_10",
     "name": "SVT-40 10-Round Magazine",
+    "description": "Historical magazine for the Soviet SVT-40 semi-automatic rifle.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_WF_svt40_mag.webp",
-      "thumbnail": "/images/items/magazines/Icon_WF_svt40_mag.webp",
-      "fullsize": "/images/items/magazines/Icon_WF_svt40_mag.webp"
+      "icon": "/images/items/magazines/mag_762x54R_10.webp",
+      "thumbnail": "/images/items/magazines/mag_762x54R_10.webp",
+      "fullsize": "/images/items/magazines/mag_762x54R_10.webp"
     },
     "stats": {
+      "price": 8080,
+      "weight": 0.28,
       "rarity": "Uncommon",
-      "weight": 0.17,
       "capacity": 10,
-      "ergonomicsModifier": -0.03,
       "caliber": "7.62x54R",
+      "ammoSubcategory": "7.62x54mmR",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.05,
       "compatibleWeapons": [
-        "weapon-svt40"
-      ],
-      "price": 8080
+        "weapon-svt-40",
+        "weapon-svt40-sniper"
+      ]
     },
-    "description": "Historical magazine for the Soviet SVT-40 semi-automatic rifle.",
+    "gameId": "gunsmith.svt40.clip.10",
+    "family": "Svt40",
     "tips": "Classic WWII design with reliable feeding mechanism."
   },
   {
-    "id": "mag_9x19mm_25",
-    "name": "AUG Para 25-Round Magazine",
+    "id": "mag_762x54R_80",
+    "name": "PKP Pecheneg Drum Magazine",
+    "description": "Belt-fed conversion drum for the PKP Pecheneg machine gun.",
     "category": "attachments",
     "subcategory": "Magazines",
     "images": {
-      "icon": "/images/items/magazines/Icon_SM_AUG_9mm_mag.webp",
-      "thumbnail": "/images/items/magazines/Icon_SM_AUG_9mm_mag.webp",
-      "fullsize": "/images/items/magazines/Icon_SM_AUG_9mm_mag.webp"
+      "icon": "/images/items/magazines/mag_762x54R_80.webp",
+      "thumbnail": "/images/items/magazines/mag_762x54R_80.webp",
+      "fullsize": "/images/items/magazines/mag_762x54R_80.webp"
     },
     "stats": {
-      "rarity": "Uncommon",
-      "weight": 0.1,
-      "capacity": 25,
-      "ergonomicsModifier": -0.02,
-      "caliber": "9x19",
-      "compatibleWeapons": [
-        "weapon-aug-para"
-      ],
-      "price": 9090
-    },
-    "description": "Submachine gun magazine for the AUG Para 9mm variant.",
-    "tips": "Allows AUG platform to use common 9mm ammunition."
-  },
-  {
-    "id": "mag_9x19mm_25_2",
-    "name": "BX4 Storm 25-Round Magazine",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_magazine_bx4.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_bx4.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_bx4.webp"
-    },
-    "stats": {
-      "rarity": "Uncommon",
-      "weight": 0.22,
-      "capacity": 25,
-      "ergonomicsModifier": -0.025,
-      "caliber": "9x19",
-      "compatibleWeapons": [
-        "weapon-bx4",
-        "weapon-m92"
-      ],
-      "price": 9180
-    },
-    "description": "High-capacity magazine for 9mm carbines and pistols.",
-    "tips": "Shared compatibility between BX4 and M92 platforms."
-  },
-  {
-    "id": "mag_9x19mm_50_evo",
-    "name": "Scorpion EVO3 Drum Magazine",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_magazine_evo3_drum.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_evo3_drum.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_evo3_drum.webp"
-    },
-    "stats": {
+      "price": 77250,
+      "weight": 0.85,
       "rarity": "Epic",
-      "weight": 0.45,
-      "capacity": 50,
-      "ergonomicsModifier": -0.15,
-      "caliber": "9x19",
+      "capacity": 80,
+      "caliber": "7.62x54R",
+      "ammoSubcategory": "7.62x54mmR",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.3,
       "compatibleWeapons": [
-        "weapon-scorpion-evo3"
-      ],
-      "price": 56560
-    },
-    "description": "High-capacity drum magazine for CZ Scorpion submachine guns.",
-    "tips": "Maximum capacity for sustained automatic fire missions."
-  },
-  {
-    "id": "mag_9x19mm_30_evo",
-    "name": "Scorpion EVO3 Standard Magazine",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_magazine_evo3.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_evo3.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_evo3.webp"
-    },
-    "stats": {
-      "rarity": "Uncommon",
-      "weight": 0.17,
-      "capacity": 30,
-      "ergonomicsModifier": -0.02,
-      "caliber": "9x19",
-      "compatibleWeapons": [
-        "weapon-scorpion-evo3"
-      ],
-      "price": 10780
-    },
-    "description": "Standard capacity magazine for the CZ Scorpion EVO3 platform.",
-    "tips": "Good balance of capacity and weapon maneuverability."
-  },
-  {
-    "id": "mag_9x19mm_33",
-    "name": "Glock 18C Extended Magazine",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_gun_magazine_g18c33.webp",
-      "thumbnail": "/images/items/magazines/Icon_gun_magazine_g18c33.webp",
-      "fullsize": "/images/items/magazines/Icon_gun_magazine_g18c33.webp"
-    },
-    "stats": {
-      "rarity": "Rare",
-      "weight": 0.21,
-      "capacity": 33,
-      "caliber": "9x19",
-      "ADSSpeedModifier": -0.1,
-      "ergonomicsModifier": -0.05,
-      "compatibleWeapons": [
-        "weapon-glock18c"
-      ],
-      "price": 17820
-    },
-    "description": "High-capacity magazine for full-auto Glock pistols.",
-    "tips": "Extended capacity but significantly reduces concealability."
-  },
-  {
-    "id": "mag_9x19mm_17",
-    "name": "Glock 18C Standard Magazine",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_magazine_Glock18C.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_Glock18C.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_Glock18C.webp"
-    },
-    "stats": {
-      "rarity": "Common",
-      "weight": 0.13,
-      "capacity": 17,
-      "ergonomicsModifier": -0.01,
-      "caliber": "9x19",
-      "compatibleWeapons": [
-        "weapon-glock18c"
-      ],
-      "price": 4950
-    },
-    "description": "Standard 17-round magazine for Glock 9mm pistols.",
-    "tips": "Reliable standard capacity for general sidearm use."
-  },
-  {
-    "id": "mag_9x19mm_17_2",
-    "name": "Beretta M9A1 Magazine",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_magazine_m92.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_m92.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_m92.webp"
-    },
-    "stats": {
-      "price": 4080,
-      "rarity": "Uncommon",
-      "weight": 0.13,
-      "capacity": 17,
-      "ergonomicsModifier": -0.01,
-      "caliber": "9x19",
-      "compatibleWeapons": [
-        "weapon-bx4",
-        "weapon-m92"
+        "weapon-pkp-pecheneg"
       ]
     },
-    "description": "Military-standard magazine for Beretta M9 pistol series.",
-    "tips": "NATO standard sidearm magazine with proven battlefield reliability."
-  },
-  {
-    "id": "mag_9x19mm_30_mp5",
-    "name": "MP5 30-Round Magazine",
-    "category": "attachments",
-    "capacity": 30,
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/Icon_magazine_mp5.webp",
-      "thumbnail": "/images/items/magazines/Icon_magazine_mp5.webp",
-      "fullsize": "/images/items/magazines/Icon_magazine_mp5.webp"
-    },
-    "stats": {
-      "price": 10000,
-      "rarity": "Uncommon",
-      "weight": 0.23,
-      "capacity": 30,
-      "ergonomicsModifier": -0.02,
-      "caliber": "9x19",
-      "compatibleWeapons": [
-        "weapon-mp5a3"
-      ]
-    },
-    "description": "Curved magazine for the legendary H&K MP5 submachine gun.",
-    "tips": "Iconic curved design optimized for 9mm ballistics."
-  },
-  {
-    "id": "mag_9x19mm_15",
-    "name": "MP9 15-Round Magazine",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/WF_MP9_Clip15.webp",
-      "thumbnail": "/images/items/magazines/WF_MP9_Clip15.webp",
-      "fullsize": "/images/items/magazines/WF_MP9_Clip15.webp"
-    },
-    "stats": {
-      "rarity": "Common",
-      "weight": 0.08,
-      "capacity": 15,
-      "caliber": "9x19",
-      "compatibleWeapons": [
-        "weapon-mp9",
-        "weapon-mp9-n",
-        "weapon-mp9-t"
-      ],
-      "price": 4284
-    },
-    "description": "Compact magazine for the B&T MP9 submachine gun.",
-    "tips": "Small profile maintains weapon's compact characteristics."
-  },
-  {
-    "id": "mag_9x19mm_20",
-    "name": "MP9 20-Round Magazine",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/WF_MP9_Clip20.webp",
-      "thumbnail": "/images/items/magazines/WF_MP9_Clip20.webp",
-      "fullsize": "/images/items/magazines/WF_MP9_Clip20.webp"
-    },
-    "stats": {
-      "rarity": "Common",
-      "weight": 0.09,
-      "capacity": 20,
-      "caliber": "9x19",
-      "compatibleWeapons": [
-        "weapon-mp9",
-        "weapon-mp9-n",
-        "weapon-mp9-t"
-      ],
-      "price": 8330
-    },
-    "description": "Standard capacity magazine for MP9 operations.",
-    "tips": "Good compromise between size and ammunition capacity."
-  },
-  {
-    "id": "mag_9x19mm_30_mp9",
-    "name": "MP9 30-Round Magazine",
-    "category": "attachments",
-    "subcategory": "Magazines",
-    "images": {
-      "icon": "/images/items/magazines/WF_MP9_Clip30.webp",
-      "thumbnail": "/images/items/magazines/WF_MP9_Clip30.webp",
-      "fullsize": "/images/items/magazines/WF_MP9_Clip30.webp"
-    },
-    "stats": {
-      "rarity": "Uncommon",
-      "weight": 0.1,
-      "caliber": "9x19",
-      "ergonomicsModifier": -0.02,
-      "compatibleWeapons": [
-        "weapon-mp9",
-        "weapon-mp9-n",
-        "weapon-mp9-t"
-      ],
-      "price": 12500
-    },
-    "description": "Extended magazine for sustained fire with MP9 platforms.",
-    "tips": "Maximum practical capacity without resorting to drum magazines."
+    "gameId": "gunsmith.pkp.clip.drum",
+    "family": "PKP",
+    "tips": "Massive capacity for sustained suppressive fire - very heavy."
   },
   {
     "id": "mag_9x19mm_13",
@@ -1569,6 +1657,1524 @@
       ]
     },
     "description": "Standard magazine for the SIG Sauer P250 pistol platform.",
-    "tips": "Reliable feeding with SIG's modular pistol system."
+    "tips": "Reliable feeding with SIG's modular pistol system.",
+    "extractionStatus": "missing-from-game-data"
+  },
+  {
+    "id": "mag_9x19mm_15",
+    "name": "MP9 15-Round Magazine",
+    "description": "Compact magazine for the B&T MP9 submachine gun.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_9x19mm_15.webp",
+      "thumbnail": "/images/items/magazines/mag_9x19mm_15.webp",
+      "fullsize": "/images/items/magazines/mag_9x19mm_15.webp"
+    },
+    "stats": {
+      "price": 4284,
+      "weight": 0.06,
+      "rarity": "Common",
+      "capacity": 15,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0.04,
+      "compatibleWeapons": [
+        "weapon-mp9",
+        "weapon-mp9-t",
+        "weapon-mp9foldstock"
+      ]
+    },
+    "gameId": "gunsmith.mp9.clip.15",
+    "family": "MP9",
+    "tips": "Small profile maintains weapon's compact characteristics."
+  },
+  {
+    "id": "mag_9x19mm_17",
+    "name": "Glock 18C Standard Magazine",
+    "description": "Standard 17-round magazine for Glock 9mm pistols.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_9x19mm_17.webp",
+      "thumbnail": "/images/items/magazines/mag_9x19mm_17.webp",
+      "fullsize": "/images/items/magazines/mag_9x19mm_17.webp"
+    },
+    "stats": {
+      "price": 4950,
+      "weight": 0.1,
+      "rarity": "Common",
+      "capacity": 17,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.01,
+      "compatibleWeapons": [
+        "weapon-glock18c",
+        "weapon-vector9mm"
+      ]
+    },
+    "gameId": "gunsmith.g18c.clip.17rnd",
+    "family": "Vector",
+    "tips": "Reliable standard capacity for general sidearm use."
+  },
+  {
+    "id": "mag_9x19mm_17_2",
+    "name": "Beretta M9A1 Magazine",
+    "description": "Military-standard magazine for Beretta M9 pistol series.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_9x19mm_17_2.webp",
+      "thumbnail": "/images/items/magazines/mag_9x19mm_17_2.webp",
+      "fullsize": "/images/items/magazines/mag_9x19mm_17_2.webp"
+    },
+    "stats": {
+      "price": 4080,
+      "weight": 0.13,
+      "rarity": "Uncommon",
+      "capacity": 17,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.02,
+      "compatibleWeapons": [
+        "weapon-m92",
+        "weapon-bx4",
+        "weapon-bx4longbarrel"
+      ]
+    },
+    "gameId": "gunsmith.m9.clip.17rnd",
+    "family": "M9",
+    "tips": "NATO standard sidearm magazine with proven battlefield reliability."
+  },
+  {
+    "id": "mag_9x19mm_20",
+    "name": "MP9 20-Round Magazine",
+    "description": "Standard capacity magazine for MP9 operations.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_9x19mm_20.webp",
+      "thumbnail": "/images/items/magazines/mag_9x19mm_20.webp",
+      "fullsize": "/images/items/magazines/mag_9x19mm_20.webp"
+    },
+    "stats": {
+      "price": 8330,
+      "weight": 0.07,
+      "rarity": "Common",
+      "capacity": 20,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0.02,
+      "compatibleWeapons": [
+        "weapon-mp9",
+        "weapon-mp9-t",
+        "weapon-mp9foldstock"
+      ]
+    },
+    "gameId": "gunsmith.mp9.clip.20",
+    "family": "MP9",
+    "tips": "Good compromise between size and ammunition capacity."
+  },
+  {
+    "id": "mag_9x19mm_25",
+    "name": "AUG Para 25-Round Magazine",
+    "description": "Submachine gun magazine for the AUG Para 9mm variant.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_9x19mm_25.webp",
+      "thumbnail": "/images/items/magazines/mag_9x19mm_25.webp",
+      "fullsize": "/images/items/magazines/mag_9x19mm_25.webp"
+    },
+    "stats": {
+      "price": 9090,
+      "weight": 0.1,
+      "rarity": "Uncommon",
+      "capacity": 25,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.01,
+      "compatibleWeapons": [
+        "weapon-aug-para"
+      ]
+    },
+    "gameId": "gunsmith.aug.clip.9mm",
+    "family": "AUG",
+    "tips": "Allows AUG platform to use common 9mm ammunition."
+  },
+  {
+    "id": "mag_9x19mm_25_2",
+    "name": "BX4 Storm 25-Round Magazine",
+    "description": "High-capacity magazine for 9mm carbines and pistols.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_9x19mm_25_2.webp",
+      "thumbnail": "/images/items/magazines/mag_9x19mm_25_2.webp",
+      "fullsize": "/images/items/magazines/mag_9x19mm_25_2.webp"
+    },
+    "stats": {
+      "price": 9180,
+      "weight": 0.22,
+      "rarity": "Uncommon",
+      "capacity": 25,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.02,
+      "compatibleWeapons": [
+        "weapon-m92",
+        "weapon-bx4",
+        "weapon-bx4longbarrel"
+      ]
+    },
+    "gameId": "gunsmith.bx4.clip.25mag",
+    "family": "Bx4",
+    "tips": "Shared compatibility between BX4 and M92 platforms."
+  },
+  {
+    "id": "mag_9x19mm_30_evo",
+    "name": "Scorpion EVO3 Standard Magazine",
+    "description": "Standard capacity magazine for the CZ Scorpion EVO3 platform.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_9x19mm_30_evo.webp",
+      "thumbnail": "/images/items/magazines/mag_9x19mm_30_evo.webp",
+      "fullsize": "/images/items/magazines/mag_9x19mm_30_evo.webp"
+    },
+    "stats": {
+      "price": 10780,
+      "weight": 0.17,
+      "rarity": "Uncommon",
+      "capacity": 30,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.02,
+      "compatibleWeapons": [
+        "weapon-scorpion-evo3",
+        "weapon-evo3ultra"
+      ]
+    },
+    "gameId": "gunsmith.evo3.clip.30rounds",
+    "family": "Evo3",
+    "tips": "Good balance of capacity and weapon maneuverability."
+  },
+  {
+    "id": "mag_9x19mm_30_mp5",
+    "name": "MP5 30-Round Magazine",
+    "description": "Curved magazine for the legendary H&K MP5 submachine gun.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_9x19mm_30_mp5.webp",
+      "thumbnail": "/images/items/magazines/mag_9x19mm_30_mp5.webp",
+      "fullsize": "/images/items/magazines/mag_9x19mm_30_mp5.webp"
+    },
+    "stats": {
+      "price": 10000,
+      "weight": 0.17,
+      "rarity": "Uncommon",
+      "capacity": 30,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.04,
+      "compatibleWeapons": [
+        "weapon-mp5flashlight",
+        "weapon-mp5a3",
+        "weapon-mp5a4supwalther",
+        "weapon-mp5a4voucher1",
+        "weapon-mp5k-pdw",
+        "weapon-mp5k",
+        "weapon-mp5sd"
+      ]
+    },
+    "gameId": "gunsmith.mp5.clip.30rnd",
+    "family": "Mp5",
+    "tips": "Iconic curved design optimized for 9mm ballistics."
+  },
+  {
+    "id": "mag_9x19mm_30_mp9",
+    "name": "MP9 30-Round Magazine",
+    "description": "Extended magazine for sustained fire with MP9 platforms.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_9x19mm_30_mp9.webp",
+      "thumbnail": "/images/items/magazines/mag_9x19mm_30_mp9.webp",
+      "fullsize": "/images/items/magazines/mag_9x19mm_30_mp9.webp"
+    },
+    "stats": {
+      "price": 12500,
+      "weight": 0.08,
+      "rarity": "Uncommon",
+      "capacity": 30,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.01,
+      "compatibleWeapons": [
+        "weapon-mp9",
+        "weapon-mp9-t",
+        "weapon-mp9foldstock"
+      ]
+    },
+    "gameId": "gunsmith.mp9.clip.30",
+    "family": "MP9",
+    "tips": "Maximum practical capacity without resorting to drum magazines."
+  },
+  {
+    "id": "mag_9x19mm_33",
+    "name": "Glock 18C Extended Magazine",
+    "description": "High-capacity magazine for full-auto Glock pistols.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_9x19mm_33.webp",
+      "thumbnail": "/images/items/magazines/mag_9x19mm_33.webp",
+      "fullsize": "/images/items/magazines/mag_9x19mm_33.webp"
+    },
+    "stats": {
+      "price": 17820,
+      "weight": 0.15,
+      "rarity": "Rare",
+      "capacity": 33,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.055,
+      "compatibleWeapons": [
+        "weapon-glock18c",
+        "weapon-vector9mm"
+      ]
+    },
+    "gameId": "gunsmith.g18c.clip.33rnd",
+    "family": "Vector",
+    "tips": "Extended capacity but significantly reduces concealability."
+  },
+  {
+    "id": "mag_9x19mm_50_evo",
+    "name": "Scorpion EVO3 Drum Magazine",
+    "description": "High-capacity drum magazine for CZ Scorpion submachine guns.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/mag_9x19mm_50_evo.webp",
+      "thumbnail": "/images/items/magazines/mag_9x19mm_50_evo.webp",
+      "fullsize": "/images/items/magazines/mag_9x19mm_50_evo.webp"
+    },
+    "stats": {
+      "price": 56560,
+      "weight": 0.66,
+      "rarity": "Epic",
+      "capacity": 50,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.19,
+      "compatibleWeapons": [
+        "weapon-scorpion-evo3",
+        "weapon-evo3ultra"
+      ]
+    },
+    "gameId": "gunsmith.evo3.clip.drum",
+    "family": "Evo3",
+    "tips": "Maximum capacity for sustained automatic fire missions."
+  },
+  {
+    "id": "magazine-9x39-10",
+    "name": "VSS 9x39mm 10rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-9x39-10.webp",
+      "thumbnail": "/images/items/magazines/magazine-9x39-10.webp",
+      "fullsize": "/images/items/magazines/magazine-9x39-10.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.131,
+      "rarity": "Uncommon",
+      "capacity": 10,
+      "caliber": "9x39",
+      "ammoSubcategory": "9x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0.03,
+      "compatibleWeapons": [
+        "weapon-asval-standard",
+        "weapon-sr3m-standard",
+        "weapon-vss-modernized",
+        "weapon-vss-standard"
+      ]
+    },
+    "gameId": "gunsmith.9x39.clip.10",
+    "family": "SR3M_VSS_ASVAL",
+    "tips": ""
+  },
+  {
+    "id": "magazine-9x39-20",
+    "name": "ASVal 9x39mm 20rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-9x39-20.webp",
+      "thumbnail": "/images/items/magazines/magazine-9x39-20.webp",
+      "fullsize": "/images/items/magazines/magazine-9x39-20.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.181,
+      "rarity": "Uncommon",
+      "capacity": 20,
+      "caliber": "9x39",
+      "ammoSubcategory": "9x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.02,
+      "compatibleWeapons": [
+        "weapon-asval-standard",
+        "weapon-sr3m-standard",
+        "weapon-vss-modernized",
+        "weapon-vss-standard"
+      ]
+    },
+    "gameId": "gunsmith.9x39.clip.20",
+    "family": "SR3M_VSS_ASVAL",
+    "tips": ""
+  },
+  {
+    "id": "magazine-9x39-30",
+    "name": "SR-3M 9x39mm 30rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-9x39-30.webp",
+      "thumbnail": "/images/items/magazines/magazine-9x39-30.webp",
+      "fullsize": "/images/items/magazines/magazine-9x39-30.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.397,
+      "rarity": "Uncommon",
+      "capacity": 30,
+      "caliber": "9x39",
+      "ammoSubcategory": "9x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.04,
+      "compatibleWeapons": [
+        "weapon-asval-standard",
+        "weapon-sr3m-standard",
+        "weapon-vss-modernized",
+        "weapon-vss-standard"
+      ]
+    },
+    "gameId": "gunsmith.9x39.clip.30",
+    "family": "SR3M_VSS_ASVAL",
+    "tips": ""
+  },
+  {
+    "id": "magazine-akalpha-30",
+    "name": "AKalpha 7.62x39mm 30rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-akalpha-30.webp",
+      "thumbnail": "/images/items/magazines/magazine-akalpha-30.webp",
+      "fullsize": "/images/items/magazines/magazine-akalpha-30.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.16,
+      "rarity": "Common",
+      "capacity": 30,
+      "caliber": "7.62x39",
+      "ammoSubcategory": "7.62x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.01,
+      "compatibleWeapons": [
+        "weapon-akalpha",
+        "weapon-akmcaa47",
+        "weapon-akmn",
+        "weapon-akmn2025hallows",
+        "weapon-akmn-g",
+        "weapon-nostockakm",
+        "weapon-akmn-titan",
+        "weapon-akmn-voucherlv2",
+        "weapon-vpo136",
+        "weapon-malyuk-762",
+        "weapon-malyuk762-2025hallows"
+      ]
+    },
+    "gameId": "gunsmith.akalpha.clip.30",
+    "family": "AKalpha",
+    "tips": ""
+  },
+  {
+    "id": "magazine-evo3-50",
+    "name": "EVO3 9x19mm Mag",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-evo3-50.webp",
+      "thumbnail": "/images/items/magazines/magazine-evo3-50.webp",
+      "fullsize": "/images/items/magazines/magazine-evo3-50.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.66,
+      "rarity": "Uncommon",
+      "capacity": 50,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.19,
+      "compatibleWeapons": [
+        "weapon-scorpion-evo3",
+        "weapon-evo3ultra"
+      ]
+    },
+    "gameId": "pvegunsmith.evo3.clip.50",
+    "family": "Evo3",
+    "tips": ""
+  },
+  {
+    "id": "magazine-g18c-30rnd",
+    "name": "G18C 9x19mm 30rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-g18c-30rnd.webp",
+      "thumbnail": "/images/items/magazines/magazine-g18c-30rnd.webp",
+      "fullsize": "/images/items/magazines/magazine-g18c-30rnd.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.14,
+      "rarity": "Uncommon",
+      "capacity": 30,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.01,
+      "compatibleWeapons": [
+        "weapon-glock18c",
+        "weapon-vector9mm"
+      ]
+    },
+    "gameId": "gunsmith.g18c.clip.30rnd",
+    "family": "Vector",
+    "tips": ""
+  },
+  {
+    "id": "magazine-g18c-50rnd",
+    "name": "G18C 9x19mm 50rnd Drum magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-g18c-50rnd.webp",
+      "thumbnail": "/images/items/magazines/magazine-g18c-50rnd.webp",
+      "fullsize": "/images/items/magazines/magazine-g18c-50rnd.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.6,
+      "rarity": "Uncommon",
+      "capacity": 50,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.19,
+      "compatibleWeapons": [
+        "weapon-glock18c",
+        "weapon-vector9mm"
+      ]
+    },
+    "gameId": "gunsmith.g18c.clip.50rnd",
+    "family": "Vector",
+    "tips": ""
+  },
+  {
+    "id": "magazine-m1897-7round",
+    "name": "M1897 12ga 7rnd Internal magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-m1897-7round.webp",
+      "thumbnail": "/images/items/magazines/magazine-m1897-7round.webp",
+      "fullsize": "/images/items/magazines/magazine-m1897-7round.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.26,
+      "rarity": "Common",
+      "capacity": 6,
+      "caliber": "12GA",
+      "ammoSubcategory": "12 Gauge",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.02,
+      "compatibleWeapons": [
+        "weapon-m1897"
+      ]
+    },
+    "gameId": "gunsmith.m1897.clip.7round",
+    "family": "M1897",
+    "tips": ""
+  },
+  {
+    "id": "magazine-m1928-drum50",
+    "name": "M1928 .45acp 50rnd drum magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-m1928-drum50.webp",
+      "thumbnail": "/images/items/magazines/magazine-m1928-drum50.webp",
+      "fullsize": "/images/items/magazines/magazine-m1928-drum50.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.92,
+      "rarity": "Epic",
+      "capacity": 50,
+      "caliber": ".45 ACP",
+      "ammoSubcategory": ".45 ACP",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.04,
+      "compatibleWeapons": [
+        "weapon-thompson-m1928",
+        "weapon-m1928a1"
+      ]
+    },
+    "gameId": "gunsmith.m1928.clip.drum50",
+    "family": "M1928",
+    "tips": ""
+  },
+  {
+    "id": "magazine-m1a-20",
+    "name": "M1A 7.62x51mm 20rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-m1a-20.webp",
+      "thumbnail": "/images/items/magazines/magazine-m1a-20.webp",
+      "fullsize": "/images/items/magazines/magazine-m1a-20.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.23,
+      "rarity": "Rare",
+      "capacity": 20,
+      "caliber": "7.62x51",
+      "ammoSubcategory": "7.62x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.03,
+      "compatibleWeapons": [
+        "weapon-m1a-archangel",
+        "weapon-m1a-socom16"
+      ]
+    },
+    "gameId": "gunsmith.m1a.clip.20",
+    "family": "M1A",
+    "tips": ""
+  },
+  {
+    "id": "magazine-m870-10",
+    "name": "M870 12ga 10rnd Internal magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-m870-10.webp",
+      "thumbnail": "/images/items/magazines/magazine-m870-10.webp",
+      "fullsize": "/images/items/magazines/magazine-m870-10.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.4,
+      "rarity": "Common",
+      "capacity": 10,
+      "caliber": "12GA",
+      "ammoSubcategory": "12 Gauge",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.06,
+      "compatibleWeapons": [
+        "weapon-m590",
+        "weapon-m870-shorty",
+        "weapon-m870-standard"
+      ]
+    },
+    "gameId": "gunsmith.m870.clip.10",
+    "family": "M870",
+    "tips": ""
+  },
+  {
+    "id": "magazine-m870-4",
+    "name": "M870 12ga 4rnd Internal magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-m870-4.webp",
+      "thumbnail": "/images/items/magazines/magazine-m870-4.webp",
+      "fullsize": "/images/items/magazines/magazine-m870-4.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.1,
+      "rarity": "Common",
+      "capacity": 4,
+      "caliber": "12GA",
+      "ammoSubcategory": "12 Gauge",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.01,
+      "compatibleWeapons": [
+        "weapon-m590",
+        "weapon-m870-shorty",
+        "weapon-m870-standard"
+      ]
+    },
+    "gameId": "gunsmith.m870.clip.4",
+    "family": "M870",
+    "tips": ""
+  },
+  {
+    "id": "magazine-m870-7",
+    "name": "M870 12ga 7rnd Internal magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-m870-7.webp",
+      "thumbnail": "/images/items/magazines/magazine-m870-7.webp",
+      "fullsize": "/images/items/magazines/magazine-m870-7.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.3,
+      "rarity": "Common",
+      "capacity": 7,
+      "caliber": "12GA",
+      "ammoSubcategory": "12 Gauge",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.02,
+      "compatibleWeapons": [
+        "weapon-m590",
+        "weapon-m870-shorty",
+        "weapon-m870-standard"
+      ]
+    },
+    "gameId": "gunsmith.m870.clip.7",
+    "family": "M870",
+    "tips": ""
+  },
+  {
+    "id": "magazine-m870m-8rd",
+    "name": "M870-DM 12ga Mag-Fed 8rd Magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-m870m-8rd.webp",
+      "thumbnail": "/images/items/magazines/magazine-m870m-8rd.webp",
+      "fullsize": "/images/items/magazines/magazine-m870m-8rd.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.22,
+      "rarity": "Rare",
+      "capacity": 8,
+      "caliber": "12GA",
+      "ammoSubcategory": "12 Gauge",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.08,
+      "compatibleWeapons": [
+        "weapon-m870-m-gunmsith",
+        "weapon-m870-m-short"
+      ]
+    },
+    "gameId": "gunsmith.m870m.clip.8rd",
+    "family": "M870",
+    "tips": ""
+  },
+  {
+    "id": "magazine-mcx-xm5-20",
+    "name": "XM5 6.8x51mm 20rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-mcx-xm5-20.webp",
+      "thumbnail": "/images/items/magazines/magazine-mcx-xm5-20.webp",
+      "fullsize": "/images/items/magazines/magazine-mcx-xm5-20.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.21,
+      "rarity": "Uncommon",
+      "capacity": 20,
+      "caliber": "6.8x51",
+      "ammoSubcategory": "6.8x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.01,
+      "compatibleWeapons": [
+        "weapon-xm5",
+        "weapon-xm5-fullattach",
+        "weapon-xm5light"
+      ]
+    },
+    "gameId": "gunsmith.mcx.clip.xm5-20",
+    "family": "XM5",
+    "tips": ""
+  },
+  {
+    "id": "magazine-mcx-xm5-30",
+    "name": "XM5 6.8x51mm 30rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-mcx-xm5-30.webp",
+      "thumbnail": "/images/items/magazines/magazine-mcx-xm5-30.webp",
+      "fullsize": "/images/items/magazines/magazine-mcx-xm5-30.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.24,
+      "rarity": "Uncommon",
+      "capacity": 30,
+      "caliber": "6.8x51",
+      "ammoSubcategory": "6.8x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.03,
+      "compatibleWeapons": [
+        "weapon-xm5",
+        "weapon-xm5-fullattach",
+        "weapon-xm5light"
+      ]
+    },
+    "gameId": "gunsmith.mcx.clip.xm5-30",
+    "family": "XM5",
+    "tips": ""
+  },
+  {
+    "id": "magazine-mosin-internal",
+    "name": "Mosin 7.62x54mmR bolt action rifle 5rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-mosin-internal.webp",
+      "thumbnail": "/images/items/magazines/magazine-mosin-internal.webp",
+      "fullsize": "/images/items/magazines/magazine-mosin-internal.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.4,
+      "rarity": "Common",
+      "capacity": 5,
+      "caliber": "7.62x54R",
+      "ammoSubcategory": "7.62x54mmR",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.01,
+      "compatibleWeapons": [
+        "weapon-mosin-nagant",
+        "weapon-mosin-obrez",
+        "weapon-mosin-m38",
+        "weapon-mosin-91-30",
+        "weapon-mosin9130-sniper"
+      ]
+    },
+    "gameId": "gunsmith.mosin.clip.internal",
+    "family": "Mosin",
+    "tips": ""
+  },
+  {
+    "id": "magazine-mp5-100rnd",
+    "name": "MP5 9x19mm 100rnd Drum magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-mp5-100rnd.webp",
+      "thumbnail": "/images/items/magazines/magazine-mp5-100rnd.webp",
+      "fullsize": "/images/items/magazines/magazine-mp5-100rnd.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 1.3,
+      "rarity": "Uncommon",
+      "capacity": 100,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.2,
+      "compatibleWeapons": [
+        "weapon-mp5flashlight",
+        "weapon-mp5a3",
+        "weapon-mp5a4supwalther",
+        "weapon-mp5a4voucher1",
+        "weapon-mp5k-pdw",
+        "weapon-mp5k",
+        "weapon-mp5sd"
+      ]
+    },
+    "gameId": "gunsmith.mp5.clip.100rnd",
+    "family": "Mp5",
+    "tips": ""
+  },
+  {
+    "id": "magazine-mp5-10rnd",
+    "name": "MP5 9x19mm 20rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-mp5-10rnd.webp",
+      "thumbnail": "/images/items/magazines/magazine-mp5-10rnd.webp",
+      "fullsize": "/images/items/magazines/magazine-mp5-10rnd.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.12,
+      "rarity": "Uncommon",
+      "capacity": 20,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0.05,
+      "compatibleWeapons": [
+        "weapon-mp5flashlight",
+        "weapon-mp5a3",
+        "weapon-mp5a4supwalther",
+        "weapon-mp5a4voucher1",
+        "weapon-mp5k-pdw",
+        "weapon-mp5k",
+        "weapon-mp5sd"
+      ]
+    },
+    "gameId": "gunsmith.mp5.clip.10rnd",
+    "family": "Mp5",
+    "tips": ""
+  },
+  {
+    "id": "magazine-mp5-50rnd",
+    "name": "MP5 9x19mm 50rnd Drum magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-mp5-50rnd.webp",
+      "thumbnail": "/images/items/magazines/magazine-mp5-50rnd.webp",
+      "fullsize": "/images/items/magazines/magazine-mp5-50rnd.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.64,
+      "rarity": "Uncommon",
+      "capacity": 50,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.15,
+      "compatibleWeapons": [
+        "weapon-mp5flashlight",
+        "weapon-mp5a3",
+        "weapon-mp5a4supwalther",
+        "weapon-mp5a4voucher1",
+        "weapon-mp5k-pdw",
+        "weapon-mp5k",
+        "weapon-mp5sd"
+      ]
+    },
+    "gameId": "gunsmith.mp5.clip.50rnd",
+    "family": "Mp5",
+    "tips": ""
+  },
+  {
+    "id": "magazine-p226-15",
+    "name": "P226 9x19mm 15rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-p226-15.webp",
+      "thumbnail": "/images/items/magazines/magazine-p226-15.webp",
+      "fullsize": "/images/items/magazines/magazine-p226-15.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.1,
+      "rarity": "Uncommon",
+      "capacity": 15,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.01,
+      "compatibleWeapons": [
+        "weapon-p226"
+      ]
+    },
+    "gameId": "gunsmith.p226.clip.15",
+    "family": "P226",
+    "tips": ""
+  },
+  {
+    "id": "magazine-p226-20",
+    "name": "P226 9x19mm 20rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-p226-20.webp",
+      "thumbnail": "/images/items/magazines/magazine-p226-20.webp",
+      "fullsize": "/images/items/magazines/magazine-p226-20.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.11,
+      "rarity": "Uncommon",
+      "capacity": 20,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.03,
+      "compatibleWeapons": [
+        "weapon-p226"
+      ]
+    },
+    "gameId": "gunsmith.p226.clip.20",
+    "family": "P226",
+    "tips": ""
+  },
+  {
+    "id": "magazine-rfb-20rnd",
+    "name": "RFB 7.62x51mm 20rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-rfb-20rnd.webp",
+      "thumbnail": "/images/items/magazines/magazine-rfb-20rnd.webp",
+      "fullsize": "/images/items/magazines/magazine-rfb-20rnd.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.29,
+      "rarity": "Rare",
+      "capacity": 20,
+      "caliber": "7.62x51",
+      "ammoSubcategory": "7.62x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.02,
+      "compatibleWeapons": [
+        "weapon-fn-fal",
+        "weapon-sa58-hallows02",
+        "weapon-sa58-para",
+        "weapon-sa58-hallows01",
+        "weapon-rfb"
+      ]
+    },
+    "gameId": "gunsmith.rfb.clip.20rnd",
+    "family": "RFB",
+    "tips": ""
+  },
+  {
+    "id": "magazine-rsh12-cylinder",
+    "name": "RSH-12 12.7x55mm Revolver Cylinder silver",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-rsh12-cylinder.webp",
+      "thumbnail": "/images/items/magazines/magazine-rsh12-cylinder.webp",
+      "fullsize": "/images/items/magazines/magazine-rsh12-cylinder.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.25,
+      "rarity": "Common",
+      "capacity": 5,
+      "caliber": "12.7x55",
+      "ammoSubcategory": "12.7x55mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0,
+      "compatibleWeapons": [
+        "weapon-rsh12gold",
+        "weapon-rsh12silver"
+      ]
+    },
+    "gameId": "gunsmith.rsh12.clip.cylinder",
+    "family": "Revolver",
+    "tips": ""
+  },
+  {
+    "id": "magazine-rsh12-goldcylinder",
+    "name": "RSH-12 12.7x55mm Revolver Cylinder gold",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-rsh12-goldcylinder.webp",
+      "thumbnail": "/images/items/magazines/magazine-rsh12-goldcylinder.webp",
+      "fullsize": "/images/items/magazines/magazine-rsh12-goldcylinder.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.25,
+      "rarity": "Common",
+      "capacity": 5,
+      "caliber": "12.7x55",
+      "ammoSubcategory": "12.7x55mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0,
+      "compatibleWeapons": [
+        "weapon-rsh12gold",
+        "weapon-rsh12silver"
+      ]
+    },
+    "gameId": "gunsmith.rsh12.clip.goldcylinder",
+    "family": "Revolver",
+    "tips": ""
+  },
+  {
+    "id": "magazine-sa58-10rnd",
+    "name": "SA58 7.62x51mm 10rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-sa58-10rnd.webp",
+      "thumbnail": "/images/items/magazines/magazine-sa58-10rnd.webp",
+      "fullsize": "/images/items/magazines/magazine-sa58-10rnd.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.27,
+      "rarity": "Uncommon",
+      "capacity": 10,
+      "caliber": "7.62x51",
+      "ammoSubcategory": "7.62x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0.02,
+      "compatibleWeapons": [
+        "weapon-fn-fal",
+        "weapon-sa58-hallows02",
+        "weapon-sa58-para",
+        "weapon-sa58-hallows01",
+        "weapon-rfb"
+      ]
+    },
+    "gameId": "gunsmith.sa58.clip.10rnd",
+    "family": "SA58",
+    "tips": ""
+  },
+  {
+    "id": "magazine-sa58-20rndmmw",
+    "name": "SA58 7.62x51mm 20rnd MMW magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-sa58-20rndmmw.webp",
+      "thumbnail": "/images/items/magazines/magazine-sa58-20rndmmw.webp",
+      "fullsize": "/images/items/magazines/magazine-sa58-20rndmmw.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.29,
+      "rarity": "Rare",
+      "capacity": 20,
+      "caliber": "7.62x51",
+      "ammoSubcategory": "7.62x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.02,
+      "compatibleWeapons": [
+        "weapon-fn-fal",
+        "weapon-sa58-hallows02",
+        "weapon-sa58-para",
+        "weapon-sa58-hallows01",
+        "weapon-rfb"
+      ]
+    },
+    "gameId": "gunsmith.sa58.clip.20rndmmw",
+    "family": "SA58",
+    "tips": ""
+  },
+  {
+    "id": "magazine-sa58-30rnd",
+    "name": "SA58 7.62x51mm 30rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-sa58-30rnd.webp",
+      "thumbnail": "/images/items/magazines/magazine-sa58-30rnd.webp",
+      "fullsize": "/images/items/magazines/magazine-sa58-30rnd.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.49,
+      "rarity": "Rare",
+      "capacity": 30,
+      "caliber": "7.62x51",
+      "ammoSubcategory": "7.62x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.09,
+      "compatibleWeapons": [
+        "weapon-fn-fal",
+        "weapon-sa58-hallows02",
+        "weapon-sa58-para",
+        "weapon-sa58-hallows01",
+        "weapon-rfb"
+      ]
+    },
+    "gameId": "gunsmith.sa58.clip.30rnd",
+    "family": "SA58",
+    "tips": ""
+  },
+  {
+    "id": "magazine-sa58-50rnd",
+    "name": "SA58 7.62x51mm 50rnd Drum magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-sa58-50rnd.webp",
+      "thumbnail": "/images/items/magazines/magazine-sa58-50rnd.webp",
+      "fullsize": "/images/items/magazines/magazine-sa58-50rnd.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.7,
+      "rarity": "Epic",
+      "capacity": 50,
+      "caliber": "7.62x51",
+      "ammoSubcategory": "7.62x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.2,
+      "compatibleWeapons": [
+        "weapon-fn-fal",
+        "weapon-sa58-hallows02",
+        "weapon-sa58-para",
+        "weapon-sa58-hallows01"
+      ]
+    },
+    "gameId": "gunsmith.sa58.clip.50rnd",
+    "family": "SA58",
+    "tips": ""
+  },
+  {
+    "id": "magazine-sjogren-handguard-long",
+    "name": "Sjogren handguard with 12ga 10rnd integrated mag",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-sjogren-handguard-long.webp",
+      "thumbnail": "/images/items/magazines/magazine-sjogren-handguard-long.webp",
+      "fullsize": "/images/items/magazines/magazine-sjogren-handguard-long.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 1.2,
+      "rarity": "Common",
+      "capacity": 10,
+      "caliber": "12GA",
+      "ammoSubcategory": "12 Gauge",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.02,
+      "compatibleWeapons": [
+        "weapon-sjogren-fullsize",
+        "weapon-sjogren-sawoff",
+        "weapon-sjogren-inertia"
+      ]
+    },
+    "gameId": "gunsmith.sjogren.handguard.long",
+    "family": "Sjogren",
+    "tips": ""
+  },
+  {
+    "id": "magazine-sjogren-handguard-medium",
+    "name": "Sjogren handguard with12ga 6rnd integrated mag",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-sjogren-handguard-medium.webp",
+      "thumbnail": "/images/items/magazines/magazine-sjogren-handguard-medium.webp",
+      "fullsize": "/images/items/magazines/magazine-sjogren-handguard-medium.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.96,
+      "rarity": "Common",
+      "capacity": 6,
+      "caliber": "12GA",
+      "ammoSubcategory": "12 Gauge",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0.01,
+      "compatibleWeapons": [
+        "weapon-sjogren-fullsize",
+        "weapon-sjogren-sawoff",
+        "weapon-sjogren-inertia"
+      ]
+    },
+    "gameId": "gunsmith.sjogren.handguard.medium",
+    "family": "Sjogren",
+    "tips": ""
+  },
+  {
+    "id": "magazine-sjogren-handguard-short",
+    "name": "Sjogren handguard with 12ga 4rnd integrated mag",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-sjogren-handguard-short.webp",
+      "thumbnail": "/images/items/magazines/magazine-sjogren-handguard-short.webp",
+      "fullsize": "/images/items/magazines/magazine-sjogren-handguard-short.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.9,
+      "rarity": "Common",
+      "capacity": 4,
+      "caliber": "12GA",
+      "ammoSubcategory": "12 Gauge",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0.06,
+      "compatibleWeapons": [
+        "weapon-sjogren-fullsize",
+        "weapon-sjogren-sawoff",
+        "weapon-sjogren-inertia"
+      ]
+    },
+    "gameId": "gunsmith.sjogren.handguard.short",
+    "family": "Sjogren",
+    "tips": ""
+  },
+  {
+    "id": "magazine-sks-10undettachable",
+    "name": "SKS 7.62x39mm 10rnd Internal magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-sks-10undettachable.webp",
+      "thumbnail": "/images/items/magazines/magazine-sks-10undettachable.webp",
+      "fullsize": "/images/items/magazines/magazine-sks-10undettachable.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.19,
+      "rarity": "Common",
+      "capacity": 10,
+      "caliber": "7.62x39",
+      "ammoSubcategory": "7.62x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.01,
+      "compatibleWeapons": [
+        "weapon-sks",
+        "weapon-skscarbine",
+        "weapon-skstapco",
+        "weapon-sksvoucher1"
+      ]
+    },
+    "gameId": "gunsmith.sks.clip.10undettachable",
+    "family": "SKS",
+    "tips": ""
+  },
+  {
+    "id": "magazine-sks-35promag",
+    "name": "SKS 7.62x39mm 35 Pro Mag magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-sks-35promag.webp",
+      "thumbnail": "/images/items/magazines/magazine-sks-35promag.webp",
+      "fullsize": "/images/items/magazines/magazine-sks-35promag.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.22,
+      "rarity": "Uncommon",
+      "capacity": 35,
+      "caliber": "7.62x39",
+      "ammoSubcategory": "7.62x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.08,
+      "compatibleWeapons": [
+        "weapon-sks",
+        "weapon-skscarbine",
+        "weapon-skstapco",
+        "weapon-sksvoucher1"
+      ]
+    },
+    "gameId": "gunsmith.sks.clip.35promag",
+    "family": "SKS",
+    "tips": ""
+  },
+  {
+    "id": "magazine-sks-drum",
+    "name": "SKS 7.62x39mm 75rnd Drum magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-sks-drum.webp",
+      "thumbnail": "/images/items/magazines/magazine-sks-drum.webp",
+      "fullsize": "/images/items/magazines/magazine-sks-drum.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 1.05,
+      "rarity": "Uncommon",
+      "capacity": 75,
+      "caliber": "7.62x39",
+      "ammoSubcategory": "7.62x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.17,
+      "compatibleWeapons": [
+        "weapon-sks",
+        "weapon-skscarbine",
+        "weapon-skstapco",
+        "weapon-sksvoucher1"
+      ]
+    },
+    "gameId": "gunsmith.sks.clip.drum",
+    "family": "SKS",
+    "tips": ""
+  },
+  {
+    "id": "magazine-sks-puf20",
+    "name": "SKS 7.62x39mm 20rnd Puf magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-sks-puf20.webp",
+      "thumbnail": "/images/items/magazines/magazine-sks-puf20.webp",
+      "fullsize": "/images/items/magazines/magazine-sks-puf20.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.12,
+      "rarity": "Uncommon",
+      "capacity": 20,
+      "caliber": "7.62x39",
+      "ammoSubcategory": "7.62x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.05,
+      "compatibleWeapons": [
+        "weapon-sks",
+        "weapon-skscarbine",
+        "weapon-skstapco",
+        "weapon-sksvoucher1"
+      ]
+    },
+    "gameId": "gunsmith.sks.clip.puf20",
+    "family": "SKS",
+    "tips": ""
+  },
+  {
+    "id": "magazine-svd-10rnd",
+    "name": "SVD 7.62x54mmR 10rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-svd-10rnd.webp",
+      "thumbnail": "/images/items/magazines/magazine-svd-10rnd.webp",
+      "fullsize": "/images/items/magazines/magazine-svd-10rnd.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.112,
+      "rarity": "Rare",
+      "capacity": 10,
+      "caliber": "7.62x54R",
+      "ammoSubcategory": "7.62x54mmR",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.01,
+      "compatibleWeapons": [
+        "weapon-svd-modernized",
+        "weapon-svd-standard"
+      ]
+    },
+    "gameId": "gunsmith.svd.clip.10rnd",
+    "family": "SVD",
+    "tips": ""
+  },
+  {
+    "id": "magazine-vector-45acp17rnd",
+    "name": "Vector .45acp 17rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-vector-45acp17rnd.webp",
+      "thumbnail": "/images/items/magazines/magazine-vector-45acp17rnd.webp",
+      "fullsize": "/images/items/magazines/magazine-vector-45acp17rnd.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.09,
+      "rarity": "Uncommon",
+      "capacity": 17,
+      "caliber": ".45 ACP",
+      "ammoSubcategory": ".45 ACP",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.01,
+      "compatibleWeapons": [
+        "weapon-vector10mm"
+      ]
+    },
+    "gameId": "gunsmith.vector.clip.45acp17rnd",
+    "family": "Vector",
+    "tips": ""
+  },
+  {
+    "id": "magazine-vector-45acp35rnd",
+    "name": "Vector .45acp 35rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-vector-45acp35rnd.webp",
+      "thumbnail": "/images/items/magazines/magazine-vector-45acp35rnd.webp",
+      "fullsize": "/images/items/magazines/magazine-vector-45acp35rnd.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.19,
+      "rarity": "Uncommon",
+      "capacity": 35,
+      "caliber": ".45 ACP",
+      "ammoSubcategory": ".45 ACP",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.05,
+      "compatibleWeapons": [
+        "weapon-vector10mm"
+      ]
+    },
+    "gameId": "gunsmith.vector.clip.45acp35rnd",
+    "family": "Vector",
+    "tips": ""
   }
 ]

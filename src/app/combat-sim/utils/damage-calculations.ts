@@ -240,10 +240,13 @@ function applyRangeFalloff(
     ammo: AmmoProperties,
     range: number
 ): number {
+    // Prefer the precalculated cache, but only rounds that were on the published wiki carry it -
+    // the rest fall through to the curve it was computed from.
     if (RANGE_VALUES.includes(range)) {
         if (range === 0) return baseDamage;
         // @ts-expect-error - range is value 60, 120, 240, or 480
-        return ammo.damageAtRange[range + 'm'] || baseDamage;
+        const cached = ammo.damageAtRange?.[range + 'm'];
+        if (cached) return cached;
     }
 
     // Convert range from meters to distance units used in curves (appears to be in cm)
@@ -270,7 +273,8 @@ function applyRangePenetrationFalloff(
     if (RANGE_VALUES.includes(range)) {
         if (range === 0) return basePenetration;
         // @ts-expect-error - range is value 60, 120, 240, or 480
-        return ammo.penetrationAtRange[range + 'm'] || basePenetration;
+        const cached = ammo.penetrationAtRange?.[range + 'm'];
+        if (cached) return cached;
     }
 
     // Convert range from meters to distance units used in curves

@@ -6527,7 +6527,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_id": "G3 10-Round Magazine",
+                "item_id": "mag_762x51_10_2",
                 "quantity": 1
             }
         ],
@@ -8705,6 +8705,7 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
+                "item_id": "nvg-anpvs31",
                 "item_name": "AN/PVS 31 Night Vision",
                 "quantity": 1
             }

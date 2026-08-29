@@ -1,21 +1,79 @@
 [
   {
+    "id": "taskitem_animalcodebook",
+    "name": "Animal Cipher Codebook",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "DLCTask",
+    "images": {
+      "icon": "/images/items/task/taskitem_animalcodebook.webp",
+      "thumbnail": "/images/items/task/taskitem_animalcodebook.webp",
+      "fullsize": "/images/items/task/taskitem_animalcodebook.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.3,
+      "rarity": "Common",
+      "taskIds": []
+    },
+    "tips": ""
+  },
+  {
     "id": "taskitem_ark_floppydisk",
     "name": "ARK Floppy Disk",
     "description": "",
     "category": "task-items",
     "subcategory": "Tommy",
     "images": {
-      "icon": "/images/items/task/valuable_task_ark_floppydisk.webp",
-      "thumbnail": "/images/items/task/valuable_task_ark_floppydisk.webp",
-      "fullsize": "/images/items/task/valuable_task_ark_floppydisk.webp"
+      "icon": "/images/items/task/taskitem_ark_floppydisk.webp",
+      "thumbnail": "/images/items/task/taskitem_ark_floppydisk.webp",
+      "fullsize": "/images/items/task/taskitem_ark_floppydisk.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 0.15,
       "rarity": "Common",
-      "taskIds": ["ark_21"]
-
+      "taskIds": [
+        "ark_21"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_ark_floppydisk_white",
+    "name": "ARK Floppy Disk White",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "ItemRetrieval/ARK_Floppydisk",
+    "images": {
+      "icon": "/images/items/task/taskitem_ark_floppydisk_white.webp",
+      "thumbnail": "/images/items/task/taskitem_ark_floppydisk_white.webp",
+      "fullsize": "/images/items/task/taskitem_ark_floppydisk_white.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.15,
+      "rarity": "Rare",
+      "taskIds": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_b_electricdrill",
+    "name": "Electric Drill",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Johnny",
+    "images": {
+      "icon": "/images/items/task/taskitem_b_electricdrill.webp",
+      "thumbnail": "/images/items/task/taskitem_b_electricdrill.webp",
+      "fullsize": "/images/items/task/taskitem_b_electricdrill.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 1.2,
+      "rarity": "Rare",
+      "taskIds": []
     },
     "tips": ""
   },
@@ -26,16 +84,112 @@
     "category": "task-items",
     "subcategory": "Tommy",
     "images": {
-      "icon": "/images/items/task/valuable_task_tommy_baseball.webp",
-      "thumbnail": "/images/items/task/valuable_task_tommy_baseball.webp",
-      "fullsize": "/images/items/task/valuable_task_tommy_baseball.webp"
+      "icon": "/images/items/task/taskitem_baseball.webp",
+      "thumbnail": "/images/items/task/taskitem_baseball.webp",
+      "fullsize": "/images/items/task/taskitem_baseball.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 0.3,
       "rarity": "Common",
-      "taskIds": ["ark_22"]
-
+      "taskIds": [
+        "ark_22"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_black_panther_medal",
+    "name": "Black Panther Medal",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "ItemRetrieval/Black_Panther_Medal",
+    "images": {
+      "icon": "/images/items/task/taskitem_black_panther_medal.webp",
+      "thumbnail": "/images/items/task/taskitem_black_panther_medal.webp",
+      "fullsize": "/images/items/task/taskitem_black_panther_medal.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Common",
+      "taskIds": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_bug",
+    "name": "Bug",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "DLCTask",
+    "images": {
+      "icon": "/images/items/task/taskitem_bug.webp",
+      "thumbnail": "/images/items/task/taskitem_bug.webp",
+      "fullsize": "/images/items/task/taskitem_bug.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Common",
+      "taskIds": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_codebook",
+    "name": "Number Cipher Codebook",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "DLCTask",
+    "images": {
+      "icon": "/images/items/task/taskitem_codebook.webp",
+      "thumbnail": "/images/items/task/taskitem_codebook.webp",
+      "fullsize": "/images/items/task/taskitem_codebook.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.3,
+      "rarity": "Common",
+      "taskIds": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_dlcmicalocked",
+    "name": "Locked OPS Terminal",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "DLCTask",
+    "images": {
+      "icon": "/images/items/task/taskitem_dlcmicalocked.webp",
+      "thumbnail": "/images/items/task/taskitem_dlcmicalocked.webp",
+      "fullsize": "/images/items/task/taskitem_dlcmicalocked.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Common",
+      "taskIds": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_ducktoy",
+    "name": "Duck Toy",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Placement",
+    "images": {
+      "icon": "/images/items/task/taskitem_ducktoy.webp",
+      "thumbnail": "/images/items/task/taskitem_ducktoy.webp",
+      "fullsize": "/images/items/task/taskitem_ducktoy.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Common",
+      "taskIds": []
     },
     "tips": ""
   },
@@ -46,16 +200,36 @@
     "category": "task-items",
     "subcategory": "Johnny",
     "images": {
-      "icon": "/images/items/task/valuable_task_johnny_drill.webp",
-      "thumbnail": "/images/items/task/valuable_task_johnny_drill.webp",
-      "fullsize": "/images/items/task/valuable_task_johnny_drill.webp"
+      "icon": "/images/items/task/taskitem_electricdrill_blue.webp",
+      "thumbnail": "/images/items/task/taskitem_electricdrill_blue.webp",
+      "fullsize": "/images/items/task/taskitem_electricdrill_blue.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 1.2,
       "rarity": "Common",
-      "taskIds": ["trupiks_4"]
-
+      "taskIds": [
+        "trupiks_4"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_exchangecard",
+    "name": "Golden Skin Exchange Card",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "DLCTask",
+    "images": {
+      "icon": "/images/items/task/taskitem_exchangecard.webp",
+      "thumbnail": "/images/items/task/taskitem_exchangecard.webp",
+      "fullsize": "/images/items/task/taskitem_exchangecard.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Common",
+      "taskIds": []
     },
     "tips": ""
   },
@@ -66,35 +240,36 @@
     "category": "task-items",
     "subcategory": "Johnny",
     "images": {
-      "icon": "/images/items/task/valuable_task_johnny_familytape.webp",
-      "thumbnail": "/images/items/task/valuable_task_johnny_familytape.webp",
-      "fullsize": "/images/items/task/valuable_task_johnny_familytape.webp"
+      "icon": "/images/items/task/taskitem_familytape.webp",
+      "thumbnail": "/images/items/task/taskitem_familytape.webp",
+      "fullsize": "/images/items/task/taskitem_familytape.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 0.35,
       "rarity": "Common",
-      "taskIds": ["trupiks_5"]
-
+      "taskIds": [
+        "trupiks_5"
+      ]
     },
     "tips": ""
   },
   {
-    "id": "taskitem_task_gamedisk",
-    "name": "Game Disc",
+    "id": "taskitem_gold_lion",
+    "name": "Golden Lion",
     "description": "",
     "category": "task-items",
-    "subcategory": "Maximillian",
+    "subcategory": "ItemRetrieval/Golden_lion",
     "images": {
-      "icon": "/images/items/task/valuable_task_max_gamedisk.webp",
-      "thumbnail": "/images/items/task/valuable_task_max_gamedisk.webp",
-      "fullsize": "/images/items/task/valuable_task_max_gamedisk.webp"
+      "icon": "/images/items/task/taskitem_gold_lion.webp",
+      "thumbnail": "/images/items/task/taskitem_gold_lion.webp",
+      "fullsize": "/images/items/task/taskitem_gold_lion.webp"
     },
     "stats": {
-      "price": 1000,
-      "weight": 0.3,
+      "price": 0,
+      "weight": 0.2,
       "rarity": "Common",
-      "taskIds": ["forge_27"]
+      "taskIds": []
     },
     "tips": ""
   },
@@ -105,15 +280,17 @@
     "category": "task-items",
     "subcategory": "Maximillian",
     "images": {
-      "icon": "/images/items/task/valuable_task_max_goldcup.webp",
-      "thumbnail": "/images/items/task/valuable_task_max_goldcup.webp",
-      "fullsize": "/images/items/task/valuable_task_max_goldcup.webp"
+      "icon": "/images/items/task/taskitem_goldcup.webp",
+      "thumbnail": "/images/items/task/taskitem_goldcup.webp",
+      "fullsize": "/images/items/task/taskitem_goldcup.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 4.2,
       "rarity": "Common",
-      "taskIds": ["forge_1"]
+      "taskIds": [
+        "forge_1"
+      ]
     },
     "tips": ""
   },
@@ -124,15 +301,17 @@
     "category": "task-items",
     "subcategory": "Maximillian",
     "images": {
-      "icon": "/images/items/task/valuable_task_max_goldenearth.webp",
-      "thumbnail": "/images/items/task/valuable_task_max_goldenearth.webp",
-      "fullsize": "/images/items/task/valuable_task_max_goldenearth.webp"
+      "icon": "/images/items/task/taskitem_goldeearth.webp",
+      "thumbnail": "/images/items/task/taskitem_goldeearth.webp",
+      "fullsize": "/images/items/task/taskitem_goldeearth.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 4.2,
       "rarity": "Common",
-      "taskIds": ["forge_18"]
+      "taskIds": [
+        "forge_18"
+      ]
     },
     "tips": ""
   },
@@ -143,15 +322,15 @@
     "category": "task-items",
     "subcategory": "Maximillian",
     "images": {
-      "icon": "/images/items/task/valuable_task_max_goldIngot.webp",
-      "thumbnail": "/images/items/task/valuable_task_max_goldIngot.webp",
-      "fullsize": "/images/items/task/valuable_task_max_goldIngot.webp"
+      "icon": "/images/items/task/taskitem_goldingot.webp",
+      "thumbnail": "/images/items/task/taskitem_goldingot.webp",
+      "fullsize": "/images/items/task/taskitem_goldingot.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 0.8,
       "rarity": "Common",
-      "taskId": ["forge_25", "forge_15"]
+      "taskIds": []
     },
     "tips": ""
   },
@@ -162,91 +341,17 @@
     "category": "task-items",
     "subcategory": "Igor",
     "images": {
-      "icon": "/images/items/task/valuable_task_igor_gunpowder.webp",
-      "thumbnail": "/images/items/task/valuable_task_igor_gunpowder.webp",
-      "fullsize": "/images/items/task/valuable_task_igor_gunpowder.webp"
+      "icon": "/images/items/task/taskitem_gunpowder.webp",
+      "thumbnail": "/images/items/task/taskitem_gunpowder.webp",
+      "fullsize": "/images/items/task/taskitem_gunpowder.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 0.8,
       "rarity": "Common",
-      "taskIds": ["regiment_3"]
-    },
-    "tips": ""
-  },
-  {
-    "id": "taskitem_sharkdvd1",
-    "name": "\"SHARK\"",
-    "description": "",
-    "category": "task-items",
-    "subcategory": "Igor",
-    "images": {
-      "icon": "/images/items/task/valuable_task_Igor_sharkdvd_a.webp",
-      "thumbnail": "/images/items/task/valuable_task_Igor_sharkdvd_a.webp",
-      "fullsize": "/images/items/task/valuable_task_Igor_sharkdvd_a.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.03,
-      "rarity": "Common",
-      "taskIds": ["regiment_18"]
-    },
-    "tips": ""
-  },
-  {
-    "id": "taskitem_sharkdvd2",
-    "name": "\"SHARK\" Sequel",
-    "description": "",
-    "category": "task-items",
-    "subcategory": "Igor",
-    "images": {
-      "icon": "/images/items/task/valuable_task_Igor_sharkdvd_b.webp",
-      "thumbnail": "/images/items/task/valuable_task_Igor_sharkdvd_b.webp",
-      "fullsize": "/images/items/task/valuable_task_Igor_sharkdvd_b.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.03,
-      "rarity": "Common",
-      "taskIds": ["regiment_18"]
-    },
-    "tips": ""
-  },
-  {
-    "id": "taskitem_subwaydvd1",
-    "name": "\"Subway Scream\"",
-    "description": "",
-    "category": "task-items",
-    "subcategory": "Igor",
-    "images": {
-      "icon": "/images/items/task/valuable_task_Igor_subwaydvd_a.webp",
-      "thumbnail": "/images/items/task/valuable_task_Igor_subwaydvd_a.webp",
-      "fullsize": "/images/items/task/valuable_task_Igor_subwaydvd_a.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.03,
-      "rarity": "Common",
-      "taskIds": ["regiment_28"]
-    },
-    "tips": ""
-  },
-  {
-    "id": "taskitem_subwaydvd2",
-    "name": "\"Subway Scream2\"",
-    "description": "",
-    "category": "task-items",
-    "subcategory": "Igor",
-    "images": {
-      "icon": "/images/items/task/valuable_task_Igor_subwaydvd_b.webp",
-      "thumbnail": "/images/items/task/valuable_task_Igor_subwaydvd_b.webp",
-      "fullsize": "/images/items/task/valuable_task_Igor_subwaydvd_b.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.03,
-      "rarity": "Common",
-      "taskIds": ["regiment_28"]
+      "taskIds": [
+        "regiment_3"
+      ]
     },
     "tips": ""
   },
@@ -257,72 +362,55 @@
     "category": "task-items",
     "subcategory": "Igor",
     "images": {
-      "icon": "/images/items/task/valuable_task_igor_trash.webp",
-      "thumbnail": "/images/items/task/valuable_task_igor_trash.webp",
-      "fullsize": "/images/items/task/valuable_task_igor_trash.webp"
+      "icon": "/images/items/task/taskitem_igor_notebook.webp",
+      "thumbnail": "/images/items/task/taskitem_igor_notebook.webp",
+      "fullsize": "/images/items/task/taskitem_igor_notebook.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 0.27,
       "rarity": "Common",
-      "taskIds": ["regiment_10"]
+      "taskIds": [
+        "regiment_10"
+      ]
     },
     "tips": ""
   },
   {
-    "id": "taskitem_task_igor_sunglass",
-    "name": "Igor's Sunglass",
+    "id": "taskitem_mad_doc_dvd1",
+    "name": "\"Subway Scream2\"",
     "description": "",
     "category": "task-items",
     "subcategory": "Igor",
     "images": {
-      "icon": "/images/items/task/valuable_task_igor_sunglass.webp",
-      "thumbnail": "/images/items/task/valuable_task_igor_sunglass.webp",
-      "fullsize": "/images/items/task/valuable_task_igor_sunglass.webp"
+      "icon": "/images/items/task/taskitem_mad_doc_dvd1.webp",
+      "thumbnail": "/images/items/task/taskitem_mad_doc_dvd1.webp",
+      "fullsize": "/images/items/task/taskitem_mad_doc_dvd1.webp"
     },
     "stats": {
-      "price": 1000,
-      "weight": 0.1,
-      "rarity": "Common",
-      "taskIds": ["regiment_4"]
+      "price": 0,
+      "weight": 0.03,
+      "rarity": "Epic",
+      "taskIds": []
     },
     "tips": ""
   },
   {
-    "id": "taskitem_taskintelphone",
-    "name": "Ark Soldier's Phone",
+    "id": "taskitem_mad_doc_dvd2",
+    "name": "\"Subway Scream2\"",
     "description": "",
     "category": "task-items",
-    "subcategory": "Tommy",
+    "subcategory": "Igor",
     "images": {
-      "icon": "/images/items/task/valuable_task_intelphone.webp",
-      "thumbnail": "/images/items/task/valuable_task_intelphone.webp",
-      "fullsize": "/images/items/task/valuable_task_intelphone.webp"
+      "icon": "/images/items/task/taskitem_mad_doc_dvd2.webp",
+      "thumbnail": "/images/items/task/taskitem_mad_doc_dvd2.webp",
+      "fullsize": "/images/items/task/taskitem_mad_doc_dvd2.webp"
     },
     "stats": {
-      "price": 1000,
-      "weight": 0.21,
-      "rarity": "Common",
-      "taskIds": ["ark_4"]
-    },
-    "tips": ""
-  },
-  {
-    "id": "taskitem_safecase",
-    "name": "Johnny's Safebox",
-    "description": "",
-    "category": "task-items",
-    "subcategory": "Johnny",
-    "images": {
-      "icon": "/images/items/task/valuable_task_johnny_minibox.webp",
-      "thumbnail": "/images/items/task/valuable_task_johnny_minibox.webp",
-      "fullsize": "/images/items/task/valuable_task_johnny_minibox.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 7,
-      "rarity": "Common",
-      "taskId": ["trupiks_8", "trupiks_10"]
+      "price": 0,
+      "weight": 0.03,
+      "rarity": "Epic",
+      "taskIds": []
     },
     "tips": ""
   },
@@ -333,15 +421,36 @@
     "category": "task-items",
     "subcategory": "Maggie",
     "images": {
-      "icon": "/images/items/task/valuable_task_maggie_camera.webp",
-      "thumbnail": "/images/items/task/valuable_task_maggie_camera.webp",
-      "fullsize": "/images/items/task/valuable_task_maggie_camera.webp"
+      "icon": "/images/items/task/taskitem_maggie_camera.webp",
+      "thumbnail": "/images/items/task/taskitem_maggie_camera.webp",
+      "fullsize": "/images/items/task/taskitem_maggie_camera.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 1.7,
       "rarity": "Common",
-      "taskIds": ["ntg_2"]
+      "taskIds": [
+        "ntg_2"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_maggie_mince_photo",
+    "name": "Mince's Photo",
+    "description": "A photo of Mince and Maggie.",
+    "category": "task-items",
+    "subcategory": "Maggie",
+    "images": {
+      "icon": "/images/items/task/taskitem_maggie_mince_photo.webp",
+      "thumbnail": "/images/items/task/taskitem_maggie_mince_photo.webp",
+      "fullsize": "/images/items/task/taskitem_maggie_mince_photo.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.3,
+      "rarity": "Rare",
+      "taskIds": []
     },
     "tips": ""
   },
@@ -352,15 +461,17 @@
     "category": "task-items",
     "subcategory": "Maggie",
     "images": {
-      "icon": "/images/items/task/valuable_task_maggie_herbs.webp",
-      "thumbnail": "/images/items/task/valuable_task_maggie_herbs.webp",
-      "fullsize": "/images/items/task/valuable_task_maggie_herbs.webp"
+      "icon": "/images/items/task/taskitem_medherb.webp",
+      "thumbnail": "/images/items/task/taskitem_medherb.webp",
+      "fullsize": "/images/items/task/taskitem_medherb.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 4.5,
       "rarity": "Common",
-      "taskIds": ["ntg_9"]
+      "taskIds": [
+        "ntg_9"
+      ]
     },
     "tips": ""
   },
@@ -371,186 +482,91 @@
     "category": "task-items",
     "subcategory": "Maggie",
     "images": {
-      "icon": "/images/items/task/valuable_task_maggie_medicalbag.webp",
-      "thumbnail": "/images/items/task/valuable_task_maggie_medicalbag.webp",
-      "fullsize": "/images/items/task/valuable_task_maggie_medicalbag.webp"
+      "icon": "/images/items/task/taskitem_medicalbag.webp",
+      "thumbnail": "/images/items/task/taskitem_medicalbag.webp",
+      "fullsize": "/images/items/task/taskitem_medicalbag.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 0.2,
       "rarity": "Common",
-      "taskId": ["ntg_18", "ntg_29"]
+      "taskIds": []
     },
     "tips": ""
   },
   {
-    "id": "taskitem_task_missilelauncher",
-    "name": "Missile Launcher",
+    "id": "taskitem_mince_id_card",
+    "name": "NTG ID",
     "description": "",
     "category": "task-items",
-    "subcategory": "Maximillian",
+    "subcategory": "ItemRetrieval/Mince_IDcard",
     "images": {
-      "icon": "/images/items/task/valuable_task_max_missile.webp",
-      "thumbnail": "/images/items/task/valuable_task_max_missile.webp",
-      "fullsize": "/images/items/task/valuable_task_max_missile.webp"
+      "icon": "/images/items/task/taskitem_mince_id_card.webp",
+      "thumbnail": "/images/items/task/taskitem_mince_id_card.webp",
+      "fullsize": "/images/items/task/taskitem_mince_id_card.webp"
     },
     "stats": {
-      "price": 1000,
-      "weight": 2.5,
+      "price": 0,
+      "weight": 0.05,
+      "rarity": "Rare",
+      "taskIds": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_ms1000_prototype",
+    "name": "Tracker Prototype",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "ItemRetrieval/Tracker1000",
+    "images": {
+      "icon": "/images/items/task/taskitem_ms1000_prototype.webp",
+      "thumbnail": "/images/items/task/taskitem_ms1000_prototype.webp",
+      "fullsize": "/images/items/task/taskitem_ms1000_prototype.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.24,
+      "rarity": "Epic",
+      "taskIds": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_ntgdisk",
+    "name": "Caleb's Investigation Drive",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "DLCTask",
+    "images": {
+      "icon": "/images/items/task/taskitem_ntgdisk.webp",
+      "thumbnail": "/images/items/task/taskitem_ntgdisk.webp",
+      "fullsize": "/images/items/task/taskitem_ntgdisk.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
       "rarity": "Common",
-      "taskIds": ["forge_28"]
+      "taskIds": []
     },
     "tips": ""
   },
   {
-    "id": "taskitem_task_medicalreport",
-    "name": "NTG Medical Report",
+    "id": "taskitem_ntgmedica",
+    "name": "NTG's Medica",
     "description": "",
     "category": "task-items",
-    "subcategory": "Maggie",
+    "subcategory": "ItemRetrieval/NTGMedica",
     "images": {
-      "icon": "/images/items/task/valuable_task_ntg_medicalreport.webp",
-      "thumbnail": "/images/items/task/valuable_task_ntg_medicalreport.webp",
-      "fullsize": "/images/items/task/valuable_task_ntg_medicalreport.webp"
+      "icon": "/images/items/task/taskitem_ntgmedica.webp",
+      "thumbnail": "/images/items/task/taskitem_ntgmedica.webp",
+      "fullsize": "/images/items/task/taskitem_ntgmedica.webp"
     },
     "stats": {
-      "price": 1000,
+      "price": 0,
       "weight": 0.3,
-      "rarity": "Common",
-      "taskId": ["ntg_26", "ntg_32"]
-    },
-    "tips": ""
-  },
-  {
-    "id": "taskitem_taskitem_plate1",
-    "name": "Antique Tea Plate - Yin",
-    "description": "",
-    "category": "task-items",
-    "subcategory": "Maximillian",
-    "images": {
-      "icon": "/images/items/task/valuable_task_max_plate1.webp",
-      "thumbnail": "/images/items/task/valuable_task_max_plate1.webp",
-      "fullsize": "/images/items/task/valuable_task_max_plate1.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.3,
-      "rarity": "Common",
-      "taskIds": ["forge_7"]
-    },
-    "tips": ""
-  },
-  {
-    "id": "taskitem_taskitem_plate2",
-    "name": "Antique Tea Plate - Yang",
-    "description": "",
-    "category": "task-items",
-    "subcategory": "Maximillian",
-    "images": {
-      "icon": "/images/items/task/valuable_task_max_plate2.webp",
-      "thumbnail": "/images/items/task/valuable_task_max_plate2.webp",
-      "fullsize": "/images/items/task/valuable_task_max_plate2.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.3,
-      "rarity": "Common",
-      "taskIds": ["forge_7"]
-    },
-    "tips": ""
-  },
-  {
-    "id": "taskitem_taskitembase_policef1key",
-    "name": "Shooting Range Key",
-    "description": "",
-    "category": "task-items",
-    "subcategory": "Johnny",
-    "images": {
-      "icon": "/images/items/task/valuable_task_policef1key.webp",
-      "thumbnail": "/images/items/task/valuable_task_policef1key.webp",
-      "fullsize": "/images/items/task/valuable_task_policef1key.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.005,
-      "rarity": "Common",
-      "taskIds": ["trupiks_7"]
-    },
-    "tips": ""
-  },
-  {
-    "id": "taskitem_radio",
-    "name": "Portable Radio",
-    "description": "",
-    "category": "task-items",
-    "subcategory": "Maggie",
-    "images": {
-      "icon": "/images/items/task/valuable_task_maggie_radio.webp",
-      "thumbnail": "/images/items/task/valuable_task_maggie_radio.webp",
-      "fullsize": "/images/items/task/valuable_task_maggie_radio.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 7,
-      "rarity": "Common",
-      "taskIds": ["ntg_5"]
-    },
-    "tips": ""
-  },
-  {
-    "id": "taskitem_task_vrheadset",
-    "name": "VR Headset",
-    "description": "",
-    "category": "task-items",
-    "subcategory": "Maximillian",
-    "images": {
-      "icon": "/images/items/task/Icon_valuable_vrheadset.webp",
-      "thumbnail": "/images/items/task/Icon_valuable_vrheadset.webp",
-      "fullsize": "/images/items/task/Icon_valuable_vrheadset.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 7,
-      "rarity": "Common",
-      "taskIds": ["forge_30"]
-    },
-    "tips": ""
-  },
-  {
-    "id": "taskitem_wyethwine",
-    "name": "Wyeth's Dry Red Wine",
-    "description": "",
-    "category": "task-items",
-    "subcategory": "Igor",
-    "images": {
-      "icon": "/images/items/task/Icon_food_Wyeth_Wine.webp",
-      "thumbnail": "/images/items/task/Icon_food_Wyeth_Wine.webp",
-      "fullsize": "/images/items/task/Icon_food_Wyeth_Wine.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 1.3,
-      "rarity": "Common",
-      "taskIds": ["regiment_23"]
-    },
-    "tips": ""
-  },
-  {
-    "id": "taskitem_tracking_device",
-    "name": "MS2000 Tracker",
-    "description": "",
-    "category": "task-items",
-    "subcategory": "Universal",
-    "images": {
-      "icon": "/images/items/misc/Icon_valuable_task_tracker.webp",
-      "thumbnail": "/images/items/misc/Icon_valuable_task_tracker.webp",
-      "fullsize": "/images/items/misc/Icon_valuable_task_tracker.webp"
-    },
-    "stats": {
-      "price": 4000,
-      "weight": 0.1,
-      "rarity": "Common",
-      "taskIds": ["ark_12", "ark_16", "ark_24", "ark_26", "ark_33", "ntg_12", "ntg_19", "trupiks_13", "regiment_23", "forge_11", "forge_22"]
+      "rarity": "Epic",
+      "taskIds": []
     },
     "tips": ""
   },
@@ -561,34 +577,25 @@
     "category": "task-items",
     "subcategory": "Universal",
     "images": {
-      "icon": "/images/items/misc/CSP_Phone.webp",
-      "thumbnail": "/images/items/misc/CSP_Phone.webp",
-      "fullsize": "/images/items/misc/CSP_Phone.webp"
+      "icon": "/images/items/task/taskitem_photophone.webp",
+      "thumbnail": "/images/items/task/taskitem_photophone.webp",
+      "fullsize": "/images/items/task/taskitem_photophone.webp"
     },
     "stats": {
       "price": 4000,
       "weight": 0.21,
       "rarity": "Common",
-      "taskIds": ["ark_8", "ark_19", "ntg_8", "ntg_17", "ntg_30", "trupiks_11", "regiment_12", "regiment_25", "forge_6"]
-    },
-    "tips": ""
-  },
-  {
-    "id": "taskitem_placement_igor_memobeer",
-    "name": "Beer of Mourning",
-    "description": "",
-    "category": "task-items",
-    "subcategory": "Igor",
-    "images": {
-      "icon": "/images/items/task/valuable_task_igor_memobeer.webp",
-      "thumbnail": "/images/items/task/valuable_task_igor_memobeer.webp",
-      "fullsize": "/images/items/task/valuable_task_igor_memobeer.webp"
-    },
-    "stats": {
-      "price": 1000,
-      "weight": 0.8,
-      "rarity": "Common",
-      "taskIds": ["regiment_14"]
+      "taskIds": [
+        "ark_8",
+        "ark_19",
+        "ntg_8",
+        "ntg_17",
+        "ntg_30",
+        "trupiks_11",
+        "regiment_12",
+        "regiment_25",
+        "forge_6"
+      ]
     },
     "tips": ""
   },
@@ -599,15 +606,38 @@
     "category": "task-items",
     "subcategory": "Igor",
     "images": {
-      "icon": "/images/items/task/valuable_task_igor_can.webp",
-      "thumbnail": "/images/items/task/valuable_task_igor_can.webp",
-      "fullsize": "/images/items/task/valuable_task_igor_can.webp"
+      "icon": "/images/items/task/taskitem_placement_igor_foodcan.webp",
+      "thumbnail": "/images/items/task/taskitem_placement_igor_foodcan.webp",
+      "fullsize": "/images/items/task/taskitem_placement_igor_foodcan.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 0.8,
       "rarity": "Common",
-      "taskIds": ["regiment_24"]
+      "taskIds": [
+        "regiment_24"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_placement_igor_memobeer",
+    "name": "Beer of Mourning",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Igor",
+    "images": {
+      "icon": "/images/items/task/taskitem_placement_igor_memobeer.webp",
+      "thumbnail": "/images/items/task/taskitem_placement_igor_memobeer.webp",
+      "fullsize": "/images/items/task/taskitem_placement_igor_memobeer.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.8,
+      "rarity": "Common",
+      "taskIds": [
+        "regiment_14"
+      ]
     },
     "tips": ""
   },
@@ -618,15 +648,17 @@
     "category": "task-items",
     "subcategory": "Igor",
     "images": {
-      "icon": "/images/items/task/valuable_task_igor_box.webp",
-      "thumbnail": "/images/items/task/valuable_task_igor_box.webp",
-      "fullsize": "/images/items/task/valuable_task_igor_box.webp"
+      "icon": "/images/items/task/taskitem_placement_igor_supplycase.webp",
+      "thumbnail": "/images/items/task/taskitem_placement_igor_supplycase.webp",
+      "fullsize": "/images/items/task/taskitem_placement_igor_supplycase.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 17.5,
       "rarity": "Common",
-      "taskIds": ["regiment_32"]
+      "taskIds": [
+        "regiment_32"
+      ]
     },
     "tips": ""
   },
@@ -637,15 +669,17 @@
     "category": "task-items",
     "subcategory": "Johnny",
     "images": {
-      "icon": "/images/items/task/valuable_task_johnny_talkie.webp",
-      "thumbnail": "/images/items/task/valuable_task_johnny_talkie.webp",
-      "fullsize": "/images/items/task/valuable_task_johnny_talkie.webp"
+      "icon": "/images/items/task/taskitem_placement_johnny_walkietalkie.webp",
+      "thumbnail": "/images/items/task/taskitem_placement_johnny_walkietalkie.webp",
+      "fullsize": "/images/items/task/taskitem_placement_johnny_walkietalkie.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": ["trupiks_12"]
+      "taskIds": [
+        "trupiks_12"
+      ]
     },
     "tips": ""
   },
@@ -656,15 +690,18 @@
     "category": "task-items",
     "subcategory": "Maggie",
     "images": {
-      "icon": "/images/items/task/valuable_task_maggie_medical.webp",
-      "thumbnail": "/images/items/task/valuable_task_maggie_medical.webp",
-      "fullsize": "/images/items/task/valuable_task_maggie_medical.webp"
+      "icon": "/images/items/task/taskitem_placement_maggie_medicine.webp",
+      "thumbnail": "/images/items/task/taskitem_placement_maggie_medicine.webp",
+      "fullsize": "/images/items/task/taskitem_placement_maggie_medicine.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": ["ntg_7","ntg_21"]
+      "taskIds": [
+        "ntg_7",
+        "ntg_21"
+      ]
     },
     "tips": ""
   },
@@ -675,15 +712,17 @@
     "category": "task-items",
     "subcategory": "Maggie",
     "images": {
-      "icon": "/images/items/task/valuable_task_maggie_toxin.webp",
-      "thumbnail": "/images/items/task/valuable_task_maggie_toxin.webp",
-      "fullsize": "/images/items/task/valuable_task_maggie_toxin.webp"
+      "icon": "/images/items/task/taskitem_placement_maggie_poison.webp",
+      "thumbnail": "/images/items/task/taskitem_placement_maggie_poison.webp",
+      "fullsize": "/images/items/task/taskitem_placement_maggie_poison.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": ["ntg_16"]
+      "taskIds": [
+        "ntg_16"
+      ]
     },
     "tips": ""
   },
@@ -694,15 +733,17 @@
     "category": "task-items",
     "subcategory": "Maggie",
     "images": {
-      "icon": "/images/items/task/valuable_task_maggie_usb.webp",
-      "thumbnail": "/images/items/task/valuable_task_maggie_usb.webp",
-      "fullsize": "/images/items/task/valuable_task_maggie_usb.webp"
+      "icon": "/images/items/task/taskitem_placement_maggie_usb.webp",
+      "thumbnail": "/images/items/task/taskitem_placement_maggie_usb.webp",
+      "fullsize": "/images/items/task/taskitem_placement_maggie_usb.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 0.08,
       "rarity": "Common",
-      "taskIds": ["ntg_7"]
+      "taskIds": [
+        "ntg_7"
+      ]
     },
     "tips": ""
   },
@@ -713,15 +754,17 @@
     "category": "task-items",
     "subcategory": "Maximillian",
     "images": {
-      "icon": "/images/items/task/valuable_task_max_money.webp",
-      "thumbnail": "/images/items/task/valuable_task_max_money.webp",
-      "fullsize": "/images/items/task/valuable_task_max_money.webp"
+      "icon": "/images/items/task/taskitem_placement_max_cash.webp",
+      "thumbnail": "/images/items/task/taskitem_placement_max_cash.webp",
+      "fullsize": "/images/items/task/taskitem_placement_max_cash.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 0.18,
       "rarity": "Common",
-      "taskIds": ["forge_8"]
+      "taskIds": [
+        "forge_8"
+      ]
     },
     "tips": ""
   },
@@ -732,15 +775,17 @@
     "category": "task-items",
     "subcategory": "Maximillian",
     "images": {
-      "icon": "/images/items/task/valuable_task_max_phone.webp",
-      "thumbnail": "/images/items/task/valuable_task_max_phone.webp",
-      "fullsize": "/images/items/task/valuable_task_max_phone.webp"
+      "icon": "/images/items/task/taskitem_placement_max_oldphone.webp",
+      "thumbnail": "/images/items/task/taskitem_placement_max_oldphone.webp",
+      "fullsize": "/images/items/task/taskitem_placement_max_oldphone.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 0.16,
       "rarity": "Common",
-      "taskIds": ["forge_5"]
+      "taskIds": [
+        "forge_5"
+      ]
     },
     "tips": ""
   },
@@ -751,15 +796,17 @@
     "category": "task-items",
     "subcategory": "Maximillian",
     "images": {
-      "icon": "/images/items/task/valuable_task_max_diamondring.webp",
-      "thumbnail": "/images/items/task/valuable_task_max_diamondring.webp",
-      "fullsize": "/images/items/task/valuable_task_max_diamondring.webp"
+      "icon": "/images/items/task/taskitem_placement_max_ring.webp",
+      "thumbnail": "/images/items/task/taskitem_placement_max_ring.webp",
+      "fullsize": "/images/items/task/taskitem_placement_max_ring.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": ["forge_10"]
+      "taskIds": [
+        "forge_10"
+      ]
     },
     "tips": ""
   },
@@ -770,15 +817,17 @@
     "category": "task-items",
     "subcategory": "Maggie",
     "images": {
-      "icon": "/images/items/task/valuable_task_maggie_line.webp",
-      "thumbnail": "/images/items/task/valuable_task_maggie_line.webp",
-      "fullsize": "/images/items/task/valuable_task_maggie_line.webp"
+      "icon": "/images/items/task/taskitem_placement_signalenhancer.webp",
+      "thumbnail": "/images/items/task/taskitem_placement_signalenhancer.webp",
+      "fullsize": "/images/items/task/taskitem_placement_signalenhancer.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 0.24,
       "rarity": "Common",
-      "taskIds": ["ntg_11"]
+      "taskIds": [
+        "ntg_11"
+      ]
     },
     "tips": ""
   },
@@ -789,15 +838,17 @@
     "category": "task-items",
     "subcategory": "Tommy",
     "images": {
-      "icon": "/images/items/task/valuable_task_tommy_camera.webp",
-      "thumbnail": "/images/items/task/valuable_task_tommy_camera.webp",
-      "fullsize": "/images/items/task/valuable_task_tommy_camera.webp"
+      "icon": "/images/items/task/taskitem_placement_tommy_surveillancecam.webp",
+      "thumbnail": "/images/items/task/taskitem_placement_tommy_surveillancecam.webp",
+      "fullsize": "/images/items/task/taskitem_placement_tommy_surveillancecam.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 0.8,
       "rarity": "Common",
-      "taskIds": ["ark_17"]
+      "taskIds": [
+        "ark_17"
+      ]
     },
     "tips": ""
   },
@@ -808,15 +859,513 @@
     "category": "task-items",
     "subcategory": "Tommy",
     "images": {
-      "icon": "/images/items/task/valuable_task_ark_telescope.webp",
-      "thumbnail": "/images/items/task/valuable_task_ark_telescope.webp",
-      "fullsize": "/images/items/task/valuable_task_ark_telescope.webp"
+      "icon": "/images/items/task/taskitem_placement_tommy_telescope.webp",
+      "thumbnail": "/images/items/task/taskitem_placement_tommy_telescope.webp",
+      "fullsize": "/images/items/task/taskitem_placement_tommy_telescope.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 1,
       "rarity": "Common",
-      "taskIds": ["ark_7"]
+      "taskIds": [
+        "ark_7"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_radio",
+    "name": "Portable Radio",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maggie",
+    "images": {
+      "icon": "/images/items/task/taskitem_radio.webp",
+      "thumbnail": "/images/items/task/taskitem_radio.webp",
+      "fullsize": "/images/items/task/taskitem_radio.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 7,
+      "rarity": "Common",
+      "taskIds": [
+        "ntg_5"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_recorder",
+    "name": "Old Phone",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maximillian",
+    "images": {
+      "icon": "/images/items/task/taskitem_recorder.webp",
+      "thumbnail": "/images/items/task/taskitem_recorder.webp",
+      "fullsize": "/images/items/task/taskitem_recorder.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.24,
+      "rarity": "Epic",
+      "taskIds": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_route_map",
+    "name": "Transport Route Map",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "ItemRetrieval/route_map",
+    "images": {
+      "icon": "/images/items/task/taskitem_route_map.webp",
+      "thumbnail": "/images/items/task/taskitem_route_map.webp",
+      "fullsize": "/images/items/task/taskitem_route_map.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Common",
+      "taskIds": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_safecase",
+    "name": "Johnny's Safebox",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Johnny",
+    "images": {
+      "icon": "/images/items/task/taskitem_safecase.webp",
+      "thumbnail": "/images/items/task/taskitem_safecase.webp",
+      "fullsize": "/images/items/task/taskitem_safecase.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 7,
+      "rarity": "Common",
+      "taskIds": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_sake",
+    "name": "Sake",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Igor",
+    "images": {
+      "icon": "/images/items/task/taskitem_sake.webp",
+      "thumbnail": "/images/items/task/taskitem_sake.webp",
+      "fullsize": "/images/items/task/taskitem_sake.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 1.3,
+      "rarity": "Common",
+      "taskIds": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_saphireheart",
+    "name": "Heart of the Blue Sea",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Igor",
+    "images": {
+      "icon": "/images/items/task/taskitem_saphireheart.webp",
+      "thumbnail": "/images/items/task/taskitem_saphireheart.webp",
+      "fullsize": "/images/items/task/taskitem_saphireheart.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.03,
+      "rarity": "Ultimate",
+      "taskIds": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_sharkdvd1",
+    "name": "\"SHARK\"",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Igor",
+    "images": {
+      "icon": "/images/items/task/taskitem_sharkdvd1.webp",
+      "thumbnail": "/images/items/task/taskitem_sharkdvd1.webp",
+      "fullsize": "/images/items/task/taskitem_sharkdvd1.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.03,
+      "rarity": "Common",
+      "taskIds": [
+        "regiment_18"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_sharkdvd2",
+    "name": "\"SHARK\" Sequel",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Igor",
+    "images": {
+      "icon": "/images/items/task/taskitem_sharkdvd2.webp",
+      "thumbnail": "/images/items/task/taskitem_sharkdvd2.webp",
+      "fullsize": "/images/items/task/taskitem_sharkdvd2.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.03,
+      "rarity": "Common",
+      "taskIds": [
+        "regiment_18"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_signalreceiver",
+    "name": "Upgrade Module",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "DLCTask",
+    "images": {
+      "icon": "/images/items/task/taskitem_signalreceiver.webp",
+      "thumbnail": "/images/items/task/taskitem_signalreceiver.webp",
+      "fullsize": "/images/items/task/taskitem_signalreceiver.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Common",
+      "taskIds": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_subwaydvd1",
+    "name": "\"Subway Scream\"",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Igor",
+    "images": {
+      "icon": "/images/items/task/taskitem_subwaydvd1.webp",
+      "thumbnail": "/images/items/task/taskitem_subwaydvd1.webp",
+      "fullsize": "/images/items/task/taskitem_subwaydvd1.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.03,
+      "rarity": "Common",
+      "taskIds": [
+        "regiment_28"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_subwaydvd2",
+    "name": "\"Subway Scream2\"",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Igor",
+    "images": {
+      "icon": "/images/items/task/taskitem_subwaydvd2.webp",
+      "thumbnail": "/images/items/task/taskitem_subwaydvd2.webp",
+      "fullsize": "/images/items/task/taskitem_subwaydvd2.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.03,
+      "rarity": "Common",
+      "taskIds": [
+        "regiment_28"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_task_gamedisk",
+    "name": "Game Disc",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maximillian",
+    "images": {
+      "icon": "/images/items/task/taskitem_task_gamedisk.webp",
+      "thumbnail": "/images/items/task/taskitem_task_gamedisk.webp",
+      "fullsize": "/images/items/task/taskitem_task_gamedisk.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.3,
+      "rarity": "Common",
+      "taskIds": [
+        "forge_27"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_task_igor_sunglass",
+    "name": "Igor's Sunglass",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Igor",
+    "images": {
+      "icon": "/images/items/task/taskitem_task_igor_sunglass.webp",
+      "thumbnail": "/images/items/task/taskitem_task_igor_sunglass.webp",
+      "fullsize": "/images/items/task/taskitem_task_igor_sunglass.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.1,
+      "rarity": "Common",
+      "taskIds": [
+        "regiment_4"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_task_medicalreport",
+    "name": "NTG Medical Report",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maggie",
+    "images": {
+      "icon": "/images/items/task/taskitem_task_medicalreport.webp",
+      "thumbnail": "/images/items/task/taskitem_task_medicalreport.webp",
+      "fullsize": "/images/items/task/taskitem_task_medicalreport.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.3,
+      "rarity": "Common",
+      "taskIds": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_task_missilelauncher",
+    "name": "Missile Launcher",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maximillian",
+    "images": {
+      "icon": "/images/items/task/taskitem_task_missilelauncher.webp",
+      "thumbnail": "/images/items/task/taskitem_task_missilelauncher.webp",
+      "fullsize": "/images/items/task/taskitem_task_missilelauncher.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 2.5,
+      "rarity": "Common",
+      "taskIds": [
+        "forge_28"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_task_vrheadset",
+    "name": "VR Headset",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maximillian",
+    "images": {
+      "icon": "/images/items/task/taskitem_task_vrheadset.webp",
+      "thumbnail": "/images/items/task/taskitem_task_vrheadset.webp",
+      "fullsize": "/images/items/task/taskitem_task_vrheadset.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 7,
+      "rarity": "Common",
+      "taskIds": [
+        "forge_30"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_taskintelphone",
+    "name": "Ark Soldier's Phone",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Tommy",
+    "images": {
+      "icon": "/images/items/task/taskitem_taskintelphone.webp",
+      "thumbnail": "/images/items/task/taskitem_taskintelphone.webp",
+      "fullsize": "/images/items/task/taskitem_taskintelphone.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.21,
+      "rarity": "Common",
+      "taskIds": [
+        "ark_4"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_taskitem_plate1",
+    "name": "Antique Tea Plate - Yin",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maximillian",
+    "images": {
+      "icon": "/images/items/task/taskitem_taskitem_plate1.webp",
+      "thumbnail": "/images/items/task/taskitem_taskitem_plate1.webp",
+      "fullsize": "/images/items/task/taskitem_taskitem_plate1.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.3,
+      "rarity": "Common",
+      "taskIds": [
+        "forge_7"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_taskitem_plate2",
+    "name": "Antique Tea Plate - Yang",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Maximillian",
+    "images": {
+      "icon": "/images/items/task/taskitem_taskitem_plate2.webp",
+      "thumbnail": "/images/items/task/taskitem_taskitem_plate2.webp",
+      "fullsize": "/images/items/task/taskitem_taskitem_plate2.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.3,
+      "rarity": "Common",
+      "taskIds": [
+        "forge_7"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_taskitembase_policef1key",
+    "name": "Shooting Range Key",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Johnny",
+    "images": {
+      "icon": "/images/items/task/taskitem_taskitembase_policef1key.webp",
+      "thumbnail": "/images/items/task/taskitem_taskitembase_policef1key.webp",
+      "fullsize": "/images/items/task/taskitem_taskitembase_policef1key.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 0.005,
+      "rarity": "Common",
+      "taskIds": [
+        "trupiks_7"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_taskitemblack_panther_documents",
+    "name": "Black Panther Documents",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "ItemRetrieval/black_panther_documents",
+    "images": {
+      "icon": "/images/items/task/taskitem_taskitemblack_panther_documents.webp",
+      "thumbnail": "/images/items/task/taskitem_taskitemblack_panther_documents.webp",
+      "fullsize": "/images/items/task/taskitem_taskitemblack_panther_documents.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Common",
+      "taskIds": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_tracking_device",
+    "name": "MS2000 Tracker",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Universal",
+    "images": {
+      "icon": "/images/items/task/taskitem_tracking_device.webp",
+      "thumbnail": "/images/items/task/taskitem_tracking_device.webp",
+      "fullsize": "/images/items/task/taskitem_tracking_device.webp"
+    },
+    "stats": {
+      "price": 4000,
+      "weight": 0.24,
+      "rarity": "Common",
+      "taskIds": [
+        "ark_12",
+        "ark_16",
+        "ark_24",
+        "ark_26",
+        "ark_33",
+        "ntg_12",
+        "ntg_19",
+        "trupiks_13",
+        "regiment_23",
+        "forge_11",
+        "forge_22"
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_warfaretaskuvtracedetector",
+    "name": "UV Flashlight",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "DLCTask/UVNumber",
+    "images": {
+      "icon": "/images/items/task/taskitem_warfaretaskuvtracedetector.webp",
+      "thumbnail": "/images/items/task/taskitem_warfaretaskuvtracedetector.webp",
+      "fullsize": "/images/items/task/taskitem_warfaretaskuvtracedetector.webp"
+    },
+    "stats": {
+      "price": 0,
+      "weight": 0.2,
+      "rarity": "Common",
+      "taskIds": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_wyethwine",
+    "name": "Wyeth's Dry Red Wine",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Igor",
+    "images": {
+      "icon": "/images/items/task/taskitem_wyethwine.webp",
+      "thumbnail": "/images/items/task/taskitem_wyethwine.webp",
+      "fullsize": "/images/items/task/taskitem_wyethwine.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 1.3,
+      "rarity": "Common",
+      "taskIds": [
+        "regiment_23"
+      ]
     },
     "tips": ""
   }

@@ -1,55 +1,32 @@
 [
   {
-    "id": "backpack_hypertec",
-    "name": "HyperTec StorageBag",
-    "description": "",
+    "id": "backpack_007_pumpkin",
+    "name": "G.N.J.Backpack ‘Pumpkin’",
+    "description": "Appearance custom-made for special festivity.",
     "category": "gear",
     "subcategory": "Backpacks",
     "images": {
-      "icon": "/images/items/backpacks/Icon_SKM_Backpack_007_01_Jyg.webp",
-      "thumbnail": "/images/items/backpacks/Icon_SKM_Backpack_007_01_Jyg.webp",
-      "fullsize": "/images/items/backpacks/Icon_SKM_Backpack_007_01_Jyg.webp"
+      "icon": "/images/items/backpacks/backpack_007_pumpkin.webp",
+      "thumbnail": "/images/items/backpacks/backpack_007_pumpkin.webp",
+      "fullsize": "/images/items/backpacks/backpack_007_pumpkin.webp"
     },
     "stats": {
-      "price": 200000,
-      "weight": 2.9,
-      "rarity": "Epic",
-      "sizes": "75x27x36",
-      "attachmentPoints": [
-        {
-          "tag": "sides",
-          "types": [
-            "Helmet",
-            "PrimaryGun",
-            "Shotgun",
-            "Vest"
-          ]
-        }
-      ]
-    },
-    "tips": ""
-  },
-  {
-    "id": "backpack_gnjbackpack",
-    "name": "G.N.J.Backpack",
-    "description": "",
-    "category": "gear",
-    "subcategory": "Backpacks",
-    "images": {
-      "icon": "/images/items/backpacks/Icon_SKM_Backpack_006_01_Jyg.webp",
-      "thumbnail": "/images/items/backpacks/Icon_SKM_Backpack_006_01_Jyg.webp",
-      "fullsize": "/images/items/backpacks/Icon_SKM_Backpack_006_01_Jyg.webp"
-    },
-    "stats": {
-      "price": 80000,
+      "price": 1000,
       "weight": 2.7,
       "rarity": "Epic",
-      "sizes": "58x26x36",
+      "sizes": "62x23x33",
+      "storageGrid": {
+        "x": 12,
+        "y": 8,
+        "z": 21,
+        "unit": 1
+      },
+      "sellId": "backpack.bp007.pumpkin",
       "attachmentPoints": [
         {
           "tag": "back",
           "types": [
-            "PrimaryGun",
+            "GunAdvance_BP_C",
             "Shotgun"
           ]
         },
@@ -77,15 +54,22 @@
     "category": "gear",
     "subcategory": "Backpacks",
     "images": {
-      "icon": "/images/items/backpacks/Icon_backpack_lv1_01.webp",
-      "thumbnail": "/images/items/backpacks/Icon_backpack_lv1_01.webp",
-      "fullsize": "/images/items/backpacks/Icon_backpack_lv1_01.webp"
+      "icon": "/images/items/backpacks/backpack_3drt.webp",
+      "thumbnail": "/images/items/backpacks/backpack_3drt.webp",
+      "fullsize": "/images/items/backpacks/backpack_3drt.webp"
     },
     "stats": {
       "price": 20000,
       "weight": 1.1,
       "rarity": "Uncommon",
-      "sizes": "48x22x30",
+      "sizes": "47x18x27",
+      "storageGrid": {
+        "x": 12,
+        "y": 8,
+        "z": 21,
+        "unit": 1
+      },
+      "sellId": "backpack.lv1.01",
       "attachmentPoints": [
         {
           "tag": "sides",
@@ -99,26 +83,154 @@
     "tips": ""
   },
   {
+    "id": "backpack_6sh118",
+    "name": "6sh118",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Backpacks",
+    "images": {
+      "icon": "/images/items/backpacks/backpack_6sh118.webp",
+      "thumbnail": "/images/items/backpacks/backpack_6sh118.webp",
+      "fullsize": "/images/items/backpacks/backpack_6sh118.webp"
+    },
+    "stats": {
+      "price": 300000,
+      "weight": 3.1,
+      "rarity": "Epic",
+      "sizes": "79x28x36",
+      "storageGrid": {
+        "x": 12,
+        "y": 8,
+        "z": 23,
+        "unit": 1
+      },
+      "sellId": "backpack.lv3.01",
+      "attachmentPoints": [
+        {
+          "tag": "sides",
+          "types": [
+            "GunAdvance_BP_C",
+            "Helmet",
+            "Shotgun",
+            "Vest"
+          ]
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
     "id": "backpack_eliteops",
     "name": "Elite Ops",
     "description": "",
     "category": "gear",
     "subcategory": "Backpacks",
     "images": {
-      "icon": "/images/items/backpacks/Icon_backpack_lv2_green.webp",
-      "thumbnail": "/images/items/backpacks/Icon_backpack_lv2_green.webp",
-      "fullsize": "/images/items/backpacks/Icon_backpack_lv2_green.webp"
+      "icon": "/images/items/backpacks/backpack_eliteops.webp",
+      "thumbnail": "/images/items/backpacks/backpack_eliteops.webp",
+      "fullsize": "/images/items/backpacks/backpack_eliteops.webp"
     },
     "stats": {
       "price": 40000,
       "weight": 2,
       "rarity": "Rare",
-      "sizes": "50x26x36",
+      "sizes": "48x18x29",
+      "storageGrid": {
+        "x": 12,
+        "y": 8,
+        "z": 21,
+        "unit": 1
+      },
+      "sellId": "backpack.lv2.01",
       "attachmentPoints": [
         {
           "tag": "back",
           "types": [
-            "PrimaryGun",
+            "GunAdvance_BP_C",
+            "Shotgun"
+          ]
+        },
+        {
+          "tag": "sides",
+          "types": [
+            "Helmet",
+            "Holster"
+          ]
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "backpack_eliteops_green",
+    "name": "Elite Ops Green",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Backpacks",
+    "images": {
+      "icon": "/images/items/backpacks/backpack_eliteops_green.webp",
+      "thumbnail": "/images/items/backpacks/backpack_eliteops_green.webp",
+      "fullsize": "/images/items/backpacks/backpack_eliteops_green.webp"
+    },
+    "stats": {
+      "price": 40000,
+      "weight": 2,
+      "rarity": "Rare",
+      "sizes": "48x18x29",
+      "storageGrid": {
+        "x": 12,
+        "y": 8,
+        "z": 21,
+        "unit": 1
+      },
+      "sellId": "backpack.lv2.green",
+      "attachmentPoints": [
+        {
+          "tag": "back",
+          "types": [
+            "GunAdvance_BP_C",
+            "Shotgun"
+          ]
+        },
+        {
+          "tag": "sides",
+          "types": [
+            "Helmet",
+            "Holster"
+          ]
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "backpack_gnjbackpack",
+    "name": "G.N.J.Backpack",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Backpacks",
+    "images": {
+      "icon": "/images/items/backpacks/backpack_gnjbackpack.webp",
+      "thumbnail": "/images/items/backpacks/backpack_gnjbackpack.webp",
+      "fullsize": "/images/items/backpacks/backpack_gnjbackpack.webp"
+    },
+    "stats": {
+      "price": 80000,
+      "weight": 2.7,
+      "rarity": "Epic",
+      "sizes": "62x23x33",
+      "storageGrid": {
+        "x": 12,
+        "y": 8,
+        "z": 21,
+        "unit": 1
+      },
+      "sellId": "backpack.bp007",
+      "attachmentPoints": [
+        {
+          "tag": "back",
+          "types": [
+            "GunAdvance_BP_C",
             "Shotgun"
           ]
         },
@@ -140,26 +252,70 @@
     "tips": ""
   },
   {
-    "id": "backpack_eliteops_green",
-    "name": "Elite Ops Green",
+    "id": "backpack_hypertec",
+    "name": "HyperTec StorageBag",
     "description": "",
     "category": "gear",
     "subcategory": "Backpacks",
     "images": {
-      "icon": "/images/items/backpacks/Icon_backpack_lv2_01.webp",
-      "thumbnail": "/images/items/backpacks/Icon_backpack_lv2_01.webp",
-      "fullsize": "/images/items/backpacks/Icon_backpack_lv2_01.webp"
+      "icon": "/images/items/backpacks/backpack_hypertec.webp",
+      "thumbnail": "/images/items/backpacks/backpack_hypertec.webp",
+      "fullsize": "/images/items/backpacks/backpack_hypertec.webp"
     },
     "stats": {
-      "price": 40000,
-      "weight": 2,
-      "rarity": "Rare",
-      "sizes": "50x26x36",
+      "price": 200000,
+      "weight": 2.9,
+      "rarity": "Epic",
+      "sizes": "72x20x35",
+      "storageGrid": {
+        "x": 12,
+        "y": 8,
+        "z": 21,
+        "unit": 1
+      },
+      "sellId": "backpack.bp006",
+      "attachmentPoints": [
+        {
+          "tag": "sides",
+          "types": [
+            "GunAdvance_BP_C",
+            "Helmet",
+            "Shotgun",
+            "Vest"
+          ]
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "backpack_mb",
+    "name": "Mystica Ranch backpack",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Backpacks",
+    "images": {
+      "icon": "/images/items/backpacks/backpack_mb.webp",
+      "thumbnail": "/images/items/backpacks/backpack_mb.webp",
+      "fullsize": "/images/items/backpacks/backpack_mb.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 2.7,
+      "rarity": "Epic",
+      "sizes": "53x19x31",
+      "storageGrid": {
+        "x": 12,
+        "y": 8,
+        "z": 21,
+        "unit": 1
+      },
+      "sellId": "backpack.mbod",
       "attachmentPoints": [
         {
           "tag": "back",
           "types": [
-            "PrimaryGun",
+            "GunAdvance_BP_C",
             "Shotgun"
           ]
         },
@@ -187,15 +343,22 @@
     "category": "gear",
     "subcategory": "Backpacks",
     "images": {
-      "icon": "/images/items/backpacks/Icon_Backpack_010_01_Yyp.webp",
-      "thumbnail": "/images/items/backpacks/Icon_Backpack_010_01_Yyp.webp",
-      "fullsize": "/images/items/backpacks/Icon_Backpack_010_01_Yyp.webp"
+      "icon": "/images/items/backpacks/backpack_odldos_black.webp",
+      "thumbnail": "/images/items/backpacks/backpack_odldos_black.webp",
+      "fullsize": "/images/items/backpacks/backpack_odldos_black.webp"
     },
     "stats": {
       "price": 20000,
       "weight": 1.75,
       "rarity": "Rare",
-      "sizes": "51x20x37",
+      "sizes": "45x18x34",
+      "storageGrid": {
+        "x": 12,
+        "y": 8,
+        "z": 21,
+        "unit": 1
+      },
+      "sellId": "backpack.odldos.black",
       "attachmentPoints": []
     },
     "tips": ""
@@ -207,16 +370,71 @@
     "category": "gear",
     "subcategory": "Backpacks",
     "images": {
-      "icon": "/images/items/backpacks/Icon_Backpack_011_01_Yyp.webp",
-      "thumbnail": "/images/items/backpacks/Icon_Backpack_011_01_Yyp.webp",
-      "fullsize": "/images/items/backpacks/Icon_Backpack_011_01_Yyp.webp"
+      "icon": "/images/items/backpacks/backpack_odldos_flower.webp",
+      "thumbnail": "/images/items/backpacks/backpack_odldos_flower.webp",
+      "fullsize": "/images/items/backpacks/backpack_odldos_flower.webp"
     },
     "stats": {
       "price": 20000,
       "weight": 1.8,
       "rarity": "Rare",
-      "sizes": "56x23x38",
+      "sizes": "52x18x34",
+      "storageGrid": {
+        "x": 12,
+        "y": 8,
+        "z": 21,
+        "unit": 1
+      },
+      "sellId": "backpack.odldos.flower",
       "attachmentPoints": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "backpack_operatorgreencamo",
+    "name": "Operator backpack",
+    "description": "",
+    "category": "gear",
+    "subcategory": "Backpacks",
+    "images": {
+      "icon": "/images/items/backpacks/backpack_operatorgreencamo.webp",
+      "thumbnail": "/images/items/backpacks/backpack_operatorgreencamo.webp",
+      "fullsize": "/images/items/backpacks/backpack_operatorgreencamo.webp"
+    },
+    "stats": {
+      "price": 1000,
+      "weight": 2.7,
+      "rarity": "Epic",
+      "sizes": "55x18x35",
+      "storageGrid": {
+        "x": 12,
+        "y": 8,
+        "z": 21,
+        "unit": 1
+      },
+      "sellId": "backpack.operatorgreencamo",
+      "attachmentPoints": [
+        {
+          "tag": "back",
+          "types": [
+            "GunAdvance_BP_C",
+            "Shotgun"
+          ]
+        },
+        {
+          "tag": "bottom",
+          "types": [
+            "Vest"
+          ]
+        },
+        {
+          "tag": "sides",
+          "types": [
+            "Helmet",
+            "Holster"
+          ]
+        }
+      ]
     },
     "tips": ""
   },
@@ -227,20 +445,27 @@
     "category": "gear",
     "subcategory": "Backpacks",
     "images": {
-      "icon": "/images/items/backpacks/Icon_Backpack_009_01_Yyp.webp",
-      "thumbnail": "/images/items/backpacks/Icon_Backpack_009_01_Yyp.webp",
-      "fullsize": "/images/items/backpacks/Icon_Backpack_009_01_Yyp.webp"
+      "icon": "/images/items/backpacks/backpack_robinson.webp",
+      "thumbnail": "/images/items/backpacks/backpack_robinson.webp",
+      "fullsize": "/images/items/backpacks/backpack_robinson.webp"
     },
     "stats": {
       "price": 60000,
       "weight": 2.4,
       "rarity": "Epic",
-      "sizes": "64x21x40",
+      "sizes": "56x19x36",
+      "storageGrid": {
+        "x": 12,
+        "y": 8,
+        "z": 21,
+        "unit": 1
+      },
+      "sellId": "backpack.robinson",
       "attachmentPoints": [
         {
           "tag": "back",
           "types": [
-            "PrimaryGun",
+            "GunAdvance_BP_C",
             "Shotgun"
           ]
         },
@@ -267,15 +492,22 @@
     "category": "gear",
     "subcategory": "Backpacks",
     "images": {
-      "icon": "/images/items/backpacks/Icon_backpack_rs.webp",
-      "thumbnail": "/images/items/backpacks/Icon_backpack_rs.webp",
-      "fullsize": "/images/items/backpacks/Icon_backpack_rs.webp"
+      "icon": "/images/items/backpacks/backpack_rucksack.webp",
+      "thumbnail": "/images/items/backpacks/backpack_rucksack.webp",
+      "fullsize": "/images/items/backpacks/backpack_rucksack.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 1.3,
       "rarity": "Common",
-      "sizes": "33x15x19",
+      "sizes": "33x12.650868x19",
+      "storageGrid": {
+        "x": 12,
+        "y": 8,
+        "z": 21,
+        "unit": 1
+      },
+      "sellId": "backpack.rs",
       "attachmentPoints": []
     },
     "tips": ""
@@ -287,47 +519,23 @@
     "category": "gear",
     "subcategory": "Backpacks",
     "images": {
-      "icon": "/images/items/backpacks/Icon_backpack_lv1_sportbag.webp",
-      "thumbnail": "/images/items/backpacks/Icon_backpack_lv1_sportbag.webp",
-      "fullsize": "/images/items/backpacks/Icon_backpack_lv1_sportbag.webp"
+      "icon": "/images/items/backpacks/backpack_sportbag.webp",
+      "thumbnail": "/images/items/backpacks/backpack_sportbag.webp",
+      "fullsize": "/images/items/backpacks/backpack_sportbag.webp"
     },
     "stats": {
       "price": 1000,
       "weight": 1.2,
       "rarity": "Common",
-      "sizes": "35x16x21",
+      "sizes": "34x13x19.002891",
+      "storageGrid": {
+        "x": 12,
+        "y": 8,
+        "z": 21,
+        "unit": 1
+      },
+      "sellId": "backpack.lv1.sportbag",
       "attachmentPoints": []
-    },
-    "tips": ""
-  },
-  {
-    "id": "backpack_6sh118",
-    "name": "6sh118",
-    "description": "",
-    "category": "gear",
-    "subcategory": "Backpacks",
-    "images": {
-      "icon": "/images/items/backpacks/Icon_backpack_lv3_01.webp",
-      "thumbnail": "/images/items/backpacks/Icon_backpack_lv3_01.webp",
-      "fullsize": "/images/items/backpacks/Icon_backpack_lv3_01.webp"
-    },
-    "stats": {
-      "price": 300000,
-      "weight": 3.1,
-      "rarity": "Epic",
-      "sizes": "92x33x46",
-      "attachmentPoints": [
-        {
-          "tag": "sides",
-          "types": [
-            "Helmet",
-            "Holster",
-            "PrimaryGun",
-            "Shotgun",
-            "Vest"
-          ]
-        }
-      ]
     },
     "tips": ""
   }

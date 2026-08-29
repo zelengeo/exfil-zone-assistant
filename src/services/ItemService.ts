@@ -1,10 +1,10 @@
-import {Item, RARITY_CONFIG} from '@/types/items';
+import {Armor, Item, RARITY_CONFIG, isTaskItemSubcategory} from '@/types/items';
 import {
     isAmmunition, isAttachment,
     isBandage,
     isBodyArmor,
     isFaceShield, isGrenade,
-    isHelmet, isLimbRestore, isMagazine, isMedicine, isMisc, isKeys,
+    isHelmet, isLimbRestore, isMagazine, isMedicine, isMisc, isKeys, isNightVision,
     isPainkiller, isProvisions, isSight, isStim, isSyringe, isTactical, isTaskItem,
     isWeapon, isBackpack, isHolster
 } from "@/app/combat-sim/utils/types";
@@ -67,7 +67,37 @@ function isCacheValid(): boolean {
 }
 
 /**
+ * A quest item's trader is curated - nothing in the game files links the two - so items the
+ * extraction found but nobody has classified arrive carrying the game's folder name
+ * (`ItemRetrieval/Photo`, `DLCTask`). Bucket those into `Unassigned` rather than letting each
+ * become its own filter on the category page.
+ */
+function normalizeSubcategory(rawItem: Item): string {
+    const subcategory = rawItem.subcategory || '';
+    if (rawItem.category === 'task-items' && !isTaskItemSubcategory(subcategory)) {
+        return 'Unassigned';
+    }
+    return subcategory;
+}
+
+/** The stats every piece of armour carries, shared by body armour, helmets and face shields. */
+function copyArmorStats(raw: Armor, target: Armor): void {
+    target.stats.armorClass = raw.stats.armorClass;
+    target.stats.maxDurability = raw.stats.maxDurability;
+    target.stats.bluntDamageScalar = raw.stats.bluntDamageScalar;
+    target.stats.durabilityDamageScalar = raw.stats.durabilityDamageScalar;
+    target.stats.sellId = raw.stats.sellId;
+    target.stats.protectiveData = raw.stats.protectiveData;
+    target.stats.penetrationChanceCurve = raw.stats.penetrationChanceCurve;
+    target.stats.penetrationDamageScalarCurve = raw.stats.penetrationDamageScalarCurve;
+    target.stats.antiPenetrationDurabilityScalarCurve = raw.stats.antiPenetrationDurabilityScalarCurve;
+}
+
+/**
  * Transform raw item data to match our Item interface
+ *
+ * Note this copies fields **by name**: anything not listed here is dropped, so a new field in the
+ * extracted data needs a line below before it reaches the app.
  */
 function transformItemData(rawItem: Item): Item {
     // Handle different data structures from various files
@@ -76,7 +106,7 @@ function transformItemData(rawItem: Item): Item {
         name: rawItem.name,
         description: rawItem.description,
         category: rawItem.category,
-        subcategory: rawItem.subcategory || '',
+        subcategory: normalizeSubcategory(rawItem),
         images: {
             icon: rawItem.images?.icon || '/images/items/placeholder.webp',
             thumbnail: rawItem.images?.thumbnail || rawItem.images?.icon || '/images/items/placeholder.webp',
@@ -91,6 +121,7 @@ function transformItemData(rawItem: Item): Item {
 
         notes: rawItem.notes,
         tips: rawItem.tips,
+        extractionStatus: rawItem.extractionStatus,
     };
 
     // Add category-specific stats
@@ -104,8 +135,20 @@ function transformItemData(rawItem: Item): Item {
             baseItem.stats.ADSSpeed = rawItem.stats.ADSSpeed;
             baseItem.stats.MOA = rawItem.stats.MOA;
             baseItem.stats.fireMode = rawItem.stats.fireMode;
+            baseItem.stats.fireModes = rawItem.stats.fireModes;
+            baseItem.stats.penetration = rawItem.stats.penetration;
             baseItem.stats.firingPower = rawItem.stats.firingPower;
             baseItem.stats.recoilParameters = rawItem.stats.recoilParameters;
+
+            // The gunsmith build: what the player buys and what it is made of.
+            baseItem.gunsmithDisplay = rawItem.gunsmithDisplay;
+            baseItem.parts = rawItem.parts;
+            baseItem.receiverId = rawItem.receiverId;
+            baseItem.defaultClip = rawItem.defaultClip;
+            baseItem.compatibleMagazines = rawItem.compatibleMagazines;
+            baseItem.family = rawItem.family;
+            baseItem.gameClass = rawItem.gameClass;
+            baseItem.gameId = rawItem.gameId;
         }
 
         // Ammo stats
@@ -123,12 +166,16 @@ function transformItemData(rawItem: Item): Item {
             baseItem.stats.damageAtRange = rawItem.stats.damageAtRange;
             baseItem.stats.penetrationAtRange = rawItem.stats.penetrationAtRange;
             baseItem.stats.ballisticCurves = rawItem.stats.ballisticCurves;
+            baseItem.stats.damageFalloffFactor = rawItem.stats.damageFalloffFactor;
+            baseItem.stats.penetrationFalloffFactor = rawItem.stats.penetrationFalloffFactor;
+            baseItem.stats.bulletProfileId = rawItem.stats.bulletProfileId;
         }
 
         if (isGrenade(rawItem)) {
             if (!isGrenade(baseItem)) return baseItem;
             baseItem.stats.fuseTime = rawItem.stats.fuseTime;
             baseItem.stats.radius = rawItem.stats.radius;
+            baseItem.stats.radiusMax = rawItem.stats.radiusMax;
             baseItem.stats.effectTime = rawItem.stats.effectTime;
             baseItem.stats.bluntDamageScale = rawItem.stats.bluntDamageScale;
             baseItem.stats.bleedingChance = rawItem.stats.bleedingChance;
@@ -148,7 +195,10 @@ function transformItemData(rawItem: Item): Item {
                 baseItem.stats.caliber = rawItem.stats.caliber;
                 baseItem.stats.ergonomicsModifier = rawItem.stats.ergonomicsModifier;
                 baseItem.stats.ADSSpeedModifier = rawItem.stats.ADSSpeedModifier;
+                baseItem.stats.ammoSubcategory = rawItem.stats.ammoSubcategory;
                 baseItem.stats.compatibleWeapons = rawItem.stats.compatibleWeapons;
+                baseItem.gameId = rawItem.gameId;
+                baseItem.family = rawItem.family;
             } else {
                 if (isSight(rawItem)) {
                     if (!isSight(baseItem)) return baseItem;
@@ -165,50 +215,44 @@ function transformItemData(rawItem: Item): Item {
                 if (rawItem.stats.attachmentModifier) {
                     baseItem.stats.attachmentModifier = {...rawItem.stats.attachmentModifier};
                 }
+                baseItem.stats.gunsmithId = rawItem.stats.gunsmithId;
             }
         }
 
 
         if (isBodyArmor(rawItem)) {
             if (!isBodyArmor(baseItem)) return baseItem;
-            baseItem.stats.armorClass = rawItem.stats.armorClass;
-            baseItem.stats.maxDurability = rawItem.stats.maxDurability;
-            baseItem.stats.bluntDamageScalar = rawItem.stats.bluntDamageScalar;
-            baseItem.stats.durabilityDamageScalar = rawItem.stats.durabilityDamageScalar;
-            baseItem.stats.protectiveData = rawItem.stats.protectiveData;
-            baseItem.stats.penetrationChanceCurve = rawItem.stats.penetrationChanceCurve;
-            baseItem.stats.penetrationDamageScalarCurve = rawItem.stats.penetrationDamageScalarCurve;
-            baseItem.stats.antiPenetrationDurabilityScalarCurve = rawItem.stats.antiPenetrationDurabilityScalarCurve;
+            copyArmorStats(rawItem, baseItem);
         }
 
         if (isHelmet(rawItem)) {
             if (!isHelmet(baseItem)) return baseItem;
-            baseItem.stats.armorClass = rawItem.stats.armorClass;
-            baseItem.stats.maxDurability = rawItem.stats.maxDurability;
-            baseItem.stats.bluntDamageScalar = rawItem.stats.bluntDamageScalar;
-            baseItem.stats.durabilityDamageScalar = rawItem.stats.durabilityDamageScalar;
-            baseItem.stats.protectiveData = rawItem.stats.protectiveData;
-            baseItem.stats.penetrationChanceCurve = rawItem.stats.penetrationChanceCurve;
-            baseItem.stats.penetrationDamageScalarCurve = rawItem.stats.penetrationDamageScalarCurve;
-            baseItem.stats.antiPenetrationDurabilityScalarCurve = rawItem.stats.antiPenetrationDurabilityScalarCurve;
+            copyArmorStats(rawItem, baseItem);
+            baseItem.stats.coneRegions = rawItem.stats.coneRegions;
+            baseItem.stats.faceWidthAngle = rawItem.stats.faceWidthAngle;
+            baseItem.stats.faceHeightAngle = rawItem.stats.faceHeightAngle;
             baseItem.stats.soundMix = rawItem.stats.soundMix;
             baseItem.stats.canAttach = rawItem.stats.canAttach;
         }
         if (isFaceShield(rawItem)) {
             if (!isFaceShield(baseItem)) return baseItem;
-            baseItem.stats.armorClass = rawItem.stats.armorClass;
-            baseItem.stats.maxDurability = rawItem.stats.maxDurability;
-            baseItem.stats.bluntDamageScalar = rawItem.stats.bluntDamageScalar;
-            baseItem.stats.durabilityDamageScalar = rawItem.stats.durabilityDamageScalar;
-            baseItem.stats.protectiveData = rawItem.stats.protectiveData;
-            baseItem.stats.penetrationChanceCurve = rawItem.stats.penetrationChanceCurve;
-            baseItem.stats.penetrationDamageScalarCurve = rawItem.stats.penetrationDamageScalarCurve;
-            baseItem.stats.antiPenetrationDurabilityScalarCurve = rawItem.stats.antiPenetrationDurabilityScalarCurve;
+            copyArmorStats(rawItem, baseItem);
+            baseItem.stats.coneRegions = rawItem.stats.coneRegions;
+            baseItem.stats.maskWidthAngle = rawItem.stats.maskWidthAngle;
+            baseItem.stats.maskHeightAngle = rawItem.stats.maskHeightAngle;
+        }
+
+        // Night-vision devices have no protection model at all - only the shop id is theirs.
+        if (isNightVision(rawItem)) {
+            if (!isNightVision(baseItem)) return baseItem;
+            baseItem.stats.sellId = rawItem.stats.sellId;
         }
 
         if (isBackpack(rawItem)) {
             if (!isBackpack(baseItem)) return baseItem;
             baseItem.stats.sizes = rawItem.stats.sizes;
+            baseItem.stats.storageGrid = rawItem.stats.storageGrid;
+            baseItem.stats.sellId = rawItem.stats.sellId;
             baseItem.stats.attachmentPoints = rawItem.stats.attachmentPoints;
         }
 
@@ -221,6 +265,9 @@ function transformItemData(rawItem: Item): Item {
             if (isBandage(rawItem)) {
                 if (!isBandage(baseItem)) return baseItem;
                 baseItem.stats.canHealDeepWound = rawItem.stats.canHealDeepWound;
+                baseItem.stats.healPerSecond = rawItem.stats.healPerSecond;
+                baseItem.stats.healDuration = rawItem.stats.healDuration;
+                baseItem.stats.operationRequirement = rawItem.stats.operationRequirement;
             } else if (isPainkiller(rawItem)) {
                 if (!isPainkiller(baseItem)) return baseItem;
                 baseItem.stats.usesCount = rawItem.stats.usesCount;
@@ -228,15 +275,22 @@ function transformItemData(rawItem: Item): Item {
                 baseItem.stats.energyFactor = rawItem.stats.energyFactor;
                 baseItem.stats.hydraFactor = rawItem.stats.hydraFactor;
                 baseItem.stats.sideEffectTime = rawItem.stats.sideEffectTime;
+                baseItem.stats.threshold = rawItem.stats.threshold;
+                baseItem.stats.consumptionSpeed = rawItem.stats.consumptionSpeed;
             } else if (isSyringe(rawItem)) {
                 if (!isSyringe(baseItem)) return baseItem;
                 baseItem.stats.capacity = rawItem.stats.capacity;
                 baseItem.stats.cureSpeed = rawItem.stats.cureSpeed;
                 baseItem.stats.canReduceBleeding = rawItem.stats.canReduceBleeding;
+                baseItem.stats.healPerSecond = rawItem.stats.healPerSecond;
+                baseItem.stats.healDuration = rawItem.stats.healDuration;
+                baseItem.stats.useTime = rawItem.stats.useTime;
             } else if (isStim(rawItem)) {
                 if (!isStim(baseItem)) return baseItem;
                 baseItem.stats.effectTime = rawItem.stats.effectTime;
                 baseItem.stats.useTime = rawItem.stats.useTime;
+                baseItem.stats.sellId = rawItem.stats.sellId;
+                baseItem.stats.perk = rawItem.stats.perk;
             } else if (isLimbRestore(rawItem)) {
                 if (!isLimbRestore(baseItem)) return baseItem;
                 baseItem.stats.hpPercentage = rawItem.stats.hpPercentage;
@@ -250,10 +304,11 @@ function transformItemData(rawItem: Item): Item {
             if (!isProvisions(baseItem)) return baseItem;
             baseItem.stats.capacity = rawItem.stats.capacity;
             baseItem.stats.threshold = rawItem.stats.threshold;
+            baseItem.stats.thresholdTime = rawItem.stats.thresholdTime;
             baseItem.stats.consumptionSpeed = rawItem.stats.consumptionSpeed;
             baseItem.stats.energyFactor = rawItem.stats.energyFactor;
             baseItem.stats.hydraFactor = rawItem.stats.hydraFactor;
-
+            baseItem.stats.stackSize = rawItem.stats.stackSize;
         }
 
         if (isTaskItem(rawItem)) {
@@ -263,17 +318,16 @@ function transformItemData(rawItem: Item): Item {
 
         if (isKeys(rawItem)) {
             if (!isKeys(baseItem)) return baseItem;
+            baseItem.stats.uses = rawItem.stats.uses;
+            baseItem.stats.location = rawItem.stats.location;
+            baseItem.gameId = rawItem.gameId;
         }
 
 
         if (isMisc(rawItem)) {
             if (!isMisc(baseItem)) return baseItem;
-            // if (rawItem.stats.backpackDimensionMultiplier !== undefined) {
-            //     baseItem.stats.backpackDimensionMultiplier = rawItem.stats.backpackDimensionMultiplier;
-            // }
-            // if (rawItem.stats.safeContainerBoundScale !== undefined) {
-            //     baseItem.stats.safeContainerBoundScale = rawItem.stats.safeContainerBoundScale;
-            // }
+            baseItem.stats.backpackDimensionMultiplier = rawItem.stats.backpackDimensionMultiplier;
+            baseItem.stats.safeContainerBoundScale = rawItem.stats.safeContainerBoundScale;
         }
     }
 

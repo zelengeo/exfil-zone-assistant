@@ -12,7 +12,8 @@ import {
     FaceShield, Food, Grenade, Grip,
     Helmet, Holster,
     Item, Keys, LimbRestore, Magazine,
-    Medicine, Misc, Painkiller, Provisions, Rail, Sight, Stim, Suppressor, Syringe, TacticalAttachment, TaskItem,
+    Medicine, Misc, NightVision, Painkiller, Provisions, Rail, Sight, Stim, Suppressor, Syringe,
+    TacticalAttachment, TaskItem,
     Weapon
 } from "@/types/items";
 
@@ -143,7 +144,7 @@ export const RANGE_PRESETS: RangePreset[] = [
 
 // Type guards with improved checks
 export function isAnyItem(item: Item): item is AnyItem {
-    return isWeapon(item) || isAmmunition(item) || isGrenade(item) || isArmor(item) || isBackpack(item) || isHolster(item) || isMedicine(item) || isAttachment(item) || isMisc(item) || isProvisions(item) || isTaskItem(item);
+    return isWeapon(item) || isAmmunition(item) || isGrenade(item) || isArmor(item) || isNightVision(item) || isBackpack(item) || isHolster(item) || isMedicine(item) || isAttachment(item) || isMisc(item) || isProvisions(item) || isKeys(item) || isTaskItem(item);
 }
 
 export function isWeapon(item: Item): item is Weapon {
@@ -198,7 +199,7 @@ export function isGrenade(item: Item): item is Grenade {
 
 export function isArmor(item: Item): item is Armor {
     return (item.category === 'gear') &&
-    (item.subcategory === 'Body Armor' || item.subcategory === 'Helmets' || item.subcategory === 'Face Shields')
+    (item.subcategory === 'Body Armor' || item.subcategory === 'Helmets' || isFaceShield(item))
 }
 
 export function isBodyArmor(item: Item): item is BodyArmor {
@@ -211,9 +212,24 @@ export function isHelmet(item: Item): item is Helmet {
     item.subcategory === 'Helmets'
 }
 
+/** Face shields and goggles - one protection model, two curated shelves. */
 export function isFaceShield(item: Item): item is FaceShield {
     return (item.category === 'gear') &&
-    item.subcategory === 'Face Shields'
+    (item.subcategory === 'Face Shields' || item.subcategory === 'Eye Protection')
+}
+
+/**
+ * Night-vision devices ship alongside face shields but carry no protection model, so they are
+ * deliberately *not* armour - `isArmor` and `isFaceShield` both reject them.
+ */
+export function isNightVision(item: Item): item is NightVision {
+    return (item.category === 'gear') &&
+        item.subcategory === 'Night Vision'
+}
+
+/** Helmets and face shields: the gear that protects through cone regions. */
+export function isHeadProtection(item: Item): item is Helmet | FaceShield {
+    return isHelmet(item) || isFaceShield(item)
 }
 
 export function isBackpack(item: Item): item is Backpack {

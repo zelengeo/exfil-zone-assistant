@@ -1,214 +1,233 @@
+// GENERATED FILE - do not edit by hand.
+//
+// Source: the game's own `FunctionalAreaUpgradeDataTable_S5`, extracted straight from the PAK.
+// Regenerate with, in the extraction repo:
+//
+//     python tools/pakExtract/cli.py hideout
+//     node extractionCLI.js process hideoutUpgrades
+//     node tools/publishHideout.js --images
+//
+// Game version 3.0.0.0. Keys are `<areaId>Lv<level>`; `levelUpIcon` holds the upgrade id,
+// because the icons are exported keyed by id (`/images/hideout/<id>.webp`).
+//
+// Curated, and preserved across regeneration: `relatedQuests` and `hideoutUpgradesTasks`. Both
+// describe quest gating, which exists nowhere in the client data. Everything else comes from the
+// game, price included - this is the one dataset here whose prices are not server-side.
+
 export const hideoutUpgrades = {
-    //IMPORTANT - key = areaId + Lv + level
     "RestRoomLv1": {
         "areaId": "RestRoom",
         "categoryId": "None",
         "level": 1,
         "upgradeName": "Toilet",
-        "upgradeDesc": "Character experience gain +2%",
+        "upgradeDesc": "Increased EXP Gain",
         "price": 120000,
         "exchange": {
-            "misc_b_toiletpaper": 1,
-            "misc_b_rustedcleaner": 2,
-            "misc_b_pesticide": 2,
-            "misc_b_soap": 1
+            "misc_b_toiletpaper": 2,
+            "misc_hammer": 1,
+            "misc_b_pesticide": 1,
+            "misc_b_rustedcleaner": 1
         },
         "levelConditions": {
-            "WaterCollector": 1
+            "WaterCollector": 1,
+            "RestroomZone": 1
         },
         "relatedQuests": [
             "task.mall.4"
         ],
-        "levelUpIcon": "Image_rest_room"
+        "levelUpIcon": "RestRoomLv1"
     },
     "RestRoomLv2": {
         "areaId": "RestRoom",
         "categoryId": "None",
         "level": 2,
         "upgradeName": "Toilet",
-        "upgradeDesc": "Character experience gain +5%",
+        "upgradeDesc": "Increased EXP Gain",
         "price": 228000,
         "exchange": {
-            "misc_b_shampoo": 3,
-            "misc_b_ceramic_adhesive": 3,
+            "misc_b_toiletpaper": 3,
             "misc_b_beardoil": 3,
-            "misc_b_rat_poison": 1
-        },
-        "levelConditions": {
-            "RestRoom": 1,
-        },
-        "relatedQuests": [],
-        "levelUpIcon": "Image_rest_room"
-    },
-    "RestRoomLv3": {
-        "areaId": "RestRoom",
-        "categoryId": "None",
-        "level": 3,
-        "upgradeName": "Toilet",
-        "upgradeDesc": "Character experience gain +10%",
-        "price": 350000,
-        "exchange": {
-            "misc_b_lightbulb": 8,
-            "misc_b_pipeline": 5,
-            "misc_b_spraycan": 5,
-            "misc_b_piezometer": 3
+            "misc_barcleaner": 3,
+            "misc_b_shampoo": 3
         },
         "levelConditions": {
             "RestRoom": 1,
             "Player": 1
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_rest_room"
+        "levelUpIcon": "RestRoomLv2"
+    },
+    "RestRoomLv3": {
+        "areaId": "RestRoom",
+        "categoryId": "None",
+        "level": 3,
+        "upgradeName": "Toilet",
+        "upgradeDesc": "Increased EXP Gain",
+        "price": 350000,
+        "exchange": {
+            "misc_b_toiletpaper": 8,
+            "misc_b_deodorant": 8,
+            "misc_b_shampoo": 5,
+            "misc_b_piezometer": 5
+        },
+        "levelConditions": {
+            "RestRoom": 1,
+            "Player": 1
+        },
+        "relatedQuests": [],
+        "levelUpIcon": "RestRoomLv3"
     },
     "SofaLv1": {
         "areaId": "Sofa",
         "categoryId": "Lounge",
         "level": 1,
         "upgradeName": "Sofa",
-        "upgradeDesc": "Increase weight bearing capacity to 75",
+        "upgradeDesc": "Increased Carry Weight Capacity",
         "price": 50000,
         "exchange": {
-            "misc_b_insulatingtape": 5,
-            "misc_b_superglue": 3,
-            "misc_b_glue_large": 3,
-            "misc_b_deodorant": 5
+            "misc_blimbingrope": 5,
+            "misc_b_tire_sealant": 3,
+            "misc_b_plier_large": 3,
+            "misc_hammer": 5
         },
         "levelConditions": {
-            "WorkshopZone": 1
+            "WorkshopZone": 1,
+            "RestroomZone": 1
         },
         "relatedQuests": [
             "task.mall.4"
         ],
-        "levelUpIcon": "Image_Rest_sofa"
+        "levelUpIcon": "SofaLv1"
     },
     "SofaLv2": {
         "areaId": "Sofa",
         "categoryId": "Lounge",
         "level": 2,
         "upgradeName": "Sofa",
-        "upgradeDesc": "Increase weight bearing capacity to 80",
+        "upgradeDesc": "Increased Carry Weight Capacity",
         "price": 128000,
         "exchange": {
-            "misc_b_gameconsole": 4,
-            "misc_b_magazine": 4,
-            "misc_b_insulatingtape": 10,
-            "misc_blimbingrope": 3
+            "misc_b_superglue": 2,
+            "misc_b_magazine": 5,
+            "misc_b_insulatingtape": 8,
+            "misc_blimbingrope": 5
         },
         "levelConditions": {
             "Generator": 2
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_Rest_sofa"
+        "levelUpIcon": "SofaLv2"
     },
     "SofaLv3": {
         "areaId": "Sofa",
         "categoryId": "Lounge",
         "level": 3,
         "upgradeName": "Sofa",
-        "upgradeDesc": "Increase weight bearing capacity to 90",
+        "upgradeDesc": "Increased Carry Weight Capacity",
         "price": 500000,
         "exchange": {
-            "misc_b_superglue": 4,
-            "misc_b_deodorant": 8,
-            "misc_b_tire_sealant": 6,
+            "misc_b_gameconsole": 2,
+            "misc_b_tire_sealant": 8,
+            "misc_b_deodorant": 6,
             "misc_b_defibrillator": 1
         },
         "levelConditions": {
             "Generator": 3
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_Rest_sofa"
+        "levelUpIcon": "SofaLv3"
     },
     "BookcaseLv1": {
         "areaId": "Bookcase",
         "categoryId": "Lounge",
         "level": 1,
         "upgradeName": "Bookdesk",
-        "upgradeDesc": "Manual ammo reloading time -10%",
+        "upgradeDesc": "Reduced Magazine Load Time",
         "price": 50000,
         "exchange": {
-            "misc_notebook": 5,
-            "misc_b_horrornovel": 5,
-            "misc_b_magazine": 3,
-            "misc_bomputertextbook": 2
+            "misc_b_flashlight": 5,
+            "misc_b_lightbulb": 5,
+            "misc_b_socket": 3,
+            "misc_b_civilradio": 2
         },
         "levelConditions": {
-            "WorkshopZone": 1
+            "WorkshopZone": 1,
+            "RestroomZone": 1
         },
         "relatedQuests": [
             "task.mall.4"
         ],
-        "levelUpIcon": "lImage_Mine_book"
+        "levelUpIcon": "BookcaseLv1"
     },
     "BookcaseLv2": {
         "areaId": "Bookcase",
         "categoryId": "Lounge",
         "level": 2,
         "upgradeName": "Bookdesk",
-        "upgradeDesc": "Manual ammo reloading time -20%",
+        "upgradeDesc": "Reduced Magazine Load Time",
         "price": 180000,
         "exchange": {
-            "misc_b_glue_large": 8,
-            "misc_b_civilradio": 4,
-            "misc_bomputertextbook": 5,
-            "misc_b_antiquebook": 4
+            "misc_b_tape": 8,
+            "misc_b_antiquebook": 4,
+            "misc_b_recorder": 5,
+            "misc_b_powerbank": 4
         },
         "levelConditions": {
             "Generator": 2
         },
         "relatedQuests": [],
-        "levelUpIcon": "lImage_Mine_book"
+        "levelUpIcon": "BookcaseLv2"
     },
     "BookcaseLv3": {
         "areaId": "Bookcase",
         "categoryId": "Lounge",
         "level": 3,
         "upgradeName": "Bookdesk",
-        "upgradeDesc": "Manual ammo reloading time -30%",
+        "upgradeDesc": "Reduced Magazine Load Time",
         "price": 420000,
         "exchange": {
-            "misc_b_horrornovel": 10,
+            "misc_b_transformer": 2,
             "misc_bomputertextbook": 8,
-            "misc_b_digitalsensor": 1,
+            "misc_b_digitalsensor": 2,
             "misc_b_antiquebook": 6
         },
         "levelConditions": {
             "Generator": 3
         },
         "relatedQuests": [],
-        "levelUpIcon": "lImage_Mine_book"
+        "levelUpIcon": "BookcaseLv3"
     },
     "TVSetLv1": {
         "areaId": "TVSet",
         "categoryId": "Lounge",
         "level": 1,
         "upgradeName": "TV Set",
-        "upgradeDesc": "Scavenger mode CD -10%",
+        "upgradeDesc": "Reduced Scav Mode Cooldown",
         "price": 50000,
         "exchange": {
-            "misc_remote": 1,
-            "misc_1batterie_2": 5,
-            "misc_b_1battery": 5,
-            "misc_b_civilradio": 2
+            "misc_1batterie_2": 3,
+            "misc_b_1battery": 3,
+            "misc_b_ionbattery": 3,
+            "misc_b_civilradio": 3
         },
         "levelConditions": {
             "Player": 5,
             "WorkshopZone": 1
         },
         "relatedQuests": [],
-        "levelUpIcon": "lImage_Mine_TV"
+        "levelUpIcon": "TVSetLv1"
     },
     "TVSetLv2": {
         "areaId": "TVSet",
         "categoryId": "Lounge",
         "level": 2,
         "upgradeName": "TV Set",
-        "upgradeDesc": "Scavenger mode CD -20%",
+        "upgradeDesc": "Reduced Scav Mode Cooldown",
         "price": 180000,
         "exchange": {
-            "misc_b_transformer": 1,
-            "misc_b_gaspipewrench": 3,
-            "misc_videotape": 2,
+            "misc_1batterie_2": 5,
+            "misc_b_1battery": 5,
+            "misc_videotape": 1,
             "misc_b_electricdrill": 1
         },
         "levelConditions": {
@@ -216,19 +235,19 @@ export const hideoutUpgrades = {
             "Player": 1
         },
         "relatedQuests": [],
-        "levelUpIcon": "lImage_Mine_TV"
+        "levelUpIcon": "TVSetLv2"
     },
     "TVSetLv3": {
         "areaId": "TVSet",
         "categoryId": "Lounge",
         "level": 3,
         "upgradeName": "TV Set",
-        "upgradeDesc": "Scavenger mode CD -30%",
+        "upgradeDesc": "Reduced Scav Mode Cooldown",
         "price": 420000,
         "exchange": {
-            "misc_b_dataline": 8,
-            "misc_remote": 4,
-            "misc_videotape": 2,
+            "misc_1batterie_2": 8,
+            "misc_b_1battery": 8,
+            "misc_videotape": 5,
             "misc_b_rat_poison": 2
         },
         "levelConditions": {
@@ -236,77 +255,77 @@ export const hideoutUpgrades = {
             "Player": 1
         },
         "relatedQuests": [],
-        "levelUpIcon": "lImage_Mine_TV"
+        "levelUpIcon": "TVSetLv3"
     },
     "MedicalAreaLv1": {
         "areaId": "MedicalArea",
         "categoryId": "MedicalArea",
         "level": 1,
         "upgradeName": "Medical Area",
-        "upgradeDesc": "Access to a syringe holder.\nUnlocks Med Desk, Plant Stand, Operating Bed",
-        "price": 100000,
+        "upgradeDesc": "Slowly regenerate health while in HQ;\r\nUnlocks Operation Bed, Planting, and Med Desk.",
+        "price": 70000,
         "exchange": {
-            "misc_b_asthmamedication": 2,
-            "misc_b_bandaid": 3,
-            "misc_b_aspire": 1,
-            "misc_b_iodophor": 1
+            "misc_b_disinfectingwipes": 1,
+            "misc_b_bandaid": 2,
+            "misc_b_toiletpaper": 2
         },
-        "levelConditions": {
-            "WaterCollector": 1
-        },
-        "relatedQuests": [],
-        "levelUpIcon": "Image_Medical_station"
+        "levelConditions": {},
+        "relatedQuests": [
+            "task.doc.c.04"
+        ],
+        "levelUpIcon": "MedicalAreaLv1"
     },
     "OperationBedLv1": {
         "areaId": "OperationBed",
         "categoryId": "MedicalArea",
         "level": 1,
         "upgradeName": "Operating Bed",
-        "upgradeDesc": "Free limb damage repair available every hour.\r\nFaster health regeneration in Hideout.",
+        "upgradeDesc": "Faster HP Regeneration in HQ",
         "price": 60000,
         "exchange": {
-            "misc_b_medicalscissors": 2,
-            "misc_b_bottledglucose": 1,
-            "misc_b_aspire": 1,
+            "misc_b_medicalkit": 2,
+            "misc_b_flashlight": 2,
+            "misc_b_pipeline": 1,
             "misc_b_iodophor": 1
         },
         "levelConditions": {
-            "MedicalArea": 1,
-            "RestRoom": 1
+            "MedicalArea": 1
         },
-        "relatedQuests": [],
-        "levelUpIcon": "Image_Operation_bed"
+        "relatedQuests": [
+            "task.doc.b.06"
+        ],
+        "levelUpIcon": "OperationBedLv1"
     },
     "OperationBedLv2": {
         "areaId": "OperationBed",
         "categoryId": "MedicalArea",
         "level": 2,
         "upgradeName": "Operating Bed",
-        "upgradeDesc": "Faster health regeneration in Hideout.",
+        "upgradeDesc": "Faster HP Regeneration in HQ",
         "price": 120000,
         "exchange": {
+            "misc_b_bottledglucose": 5,
             "misc_b_medicalscissors": 3,
-            "misc_b_disinfectingwipes": 4,
-            "misc_b_medicalkit": 2,
+            "misc_b_bandaid": 2,
             "misc_bentrifuge": 1
         },
         "levelConditions": {
             "Generator": 2
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_Operation_bed"
+        "levelUpIcon": "OperationBedLv2"
     },
     "OperationBedLv3": {
         "areaId": "OperationBed",
         "categoryId": "MedicalArea",
         "level": 3,
         "upgradeName": "Operating Bed",
-        "upgradeDesc": "Faster health regeneration in Hideout.",
+        "upgradeDesc": "Faster HP Regeneration in HQ",
         "price": 240000,
         "exchange": {
-            "misc_b_medicalscissors": 4,
-            "misc_b_asthmamedication": 3,
-            "misc_b_bandaid": 3,
+            "misc_b_bottledglucose": 10,
+            "misc_b_medicalscissors": 5,
+            "misc_b_uvlight": 3,
             "misc_bentrifuge": 1
         },
         "levelConditions": {
@@ -314,60 +333,58 @@ export const hideoutUpgrades = {
             "WaterCollector": 3
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_Operation_bed"
+        "levelUpIcon": "OperationBedLv3"
     },
     "PlantingLv1": {
         "areaId": "Planting",
         "categoryId": "MedicalArea",
         "level": 1,
         "upgradeName": "Plant Stand",
-        "upgradeDesc": "Food recovery +10%.",
-        "price": 80000,
+        "upgradeDesc": "Improved Food Recovery Efficiency",
+        "price": 70000,
         "exchange": {
-            "misc_b_smallshovel": 2,
-            "misc_b_socket": 2,
-            "misc_b_lightbulb": 5,
-            "misc_b_rat_poison": 1
+            "misc_b_disinfectingwipes": 2,
+            "misc_b_pipeline": 1,
+            "misc_b_lightbulb": 2,
+            "misc_b_insulatingtape": 1
         },
         "levelConditions": {
-            "MedicalArea": 1,
-            "Player": 1,
-            "RestRoom": 1
+            "MedicalArea": 1
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_plantiog"
+        "levelUpIcon": "PlantingLv1"
     },
     "PlantingLv2": {
         "areaId": "Planting",
         "categoryId": "MedicalArea",
         "level": 2,
         "upgradeName": "Plant Stand",
-        "upgradeDesc": "Food recovery +20%.",
+        "upgradeDesc": "Improved Food Recovery Efficiency",
         "price": 220000,
         "exchange": {
             "misc_b_moldboard": 6,
-            "misc_b_gaspipewrench": 2,
+            "misc_b_aspire": 2,
             "misc_b_pesticide": 5,
-            "misc_b_ceramic_adhesive": 2
+            "misc_b_gaspipewrench": 2
         },
         "levelConditions": {
             "Generator": 2,
             "Player": 1
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_plantiog"
+        "levelUpIcon": "PlantingLv2"
     },
     "PlantingLv3": {
         "areaId": "Planting",
         "categoryId": "MedicalArea",
         "level": 3,
         "upgradeName": "Plant Stand",
-        "upgradeDesc": "Food recovery +30%.",
+        "upgradeDesc": "Improved Food Recovery Efficiency",
         "price": 340000,
         "exchange": {
-            "misc_b_smallshovel": 8,
-            "misc_b_match": 14,
-            "misc_b_flashlight": 8,
+            "misc_b_moldboard": 12,
+            "misc_b_match": 6,
+            "misc_b_iodophor": 6,
             "misc_b_gaspipewrench": 3
         },
         "levelConditions": {
@@ -375,39 +392,38 @@ export const hideoutUpgrades = {
             "Player": 1
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_plantiog"
+        "levelUpIcon": "PlantingLv3"
     },
     "MedDeskLv1": {
         "areaId": "MedDesk",
         "categoryId": "MedicalArea",
         "level": 1,
         "upgradeName": "Med Desk",
-        "upgradeDesc": "Drink recovery +10%.",
-        "price": 80000,
+        "upgradeDesc": "Improved Hydration Recovery Efficiency",
+        "price": 70000,
         "exchange": {
-            "misc_b_uvlight": 3,
-            "misc_b_disinfectingwipes": 3,
-            "misc_b_medicalkit": 2,
-            "misc_b_bottledglucose": 3
+            "misc_b_bottledglucose": 1,
+            "misc_b_aspire": 1,
+            "misc_b_pipeline": 1,
+            "misc_b_socket": 2
         },
         "levelConditions": {
-            "WaterCollector": 1,
             "MedicalArea": 1
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_Medical_station2"
+        "levelUpIcon": "MedDeskLv1"
     },
     "MedDeskLv2": {
         "areaId": "MedDesk",
         "categoryId": "MedicalArea",
         "level": 2,
         "upgradeName": "Med Desk",
-        "upgradeDesc": "Drink recovery +20%.",
+        "upgradeDesc": "Improved Hydration Recovery Efficiency",
         "price": 220000,
         "exchange": {
-            "misc_b_uvlight": 5,
-            "misc_b_aspire": 6,
-            "misc_b_medicalkit": 4,
+            "misc_b_uvlight": 3,
+            "misc_b_medicalkit": 6,
+            "misc_b_asthmamedication": 4,
             "misc_bentrifuge": 2
         },
         "levelConditions": {
@@ -415,183 +431,243 @@ export const hideoutUpgrades = {
             "Generator": 2
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_Medical_station2"
+        "levelUpIcon": "MedDeskLv2"
     },
     "MedDeskLv3": {
         "areaId": "MedDesk",
         "categoryId": "MedicalArea",
         "level": 3,
         "upgradeName": "Med Desk",
-        "upgradeDesc": "Drink recovery +30%.",
+        "upgradeDesc": "Improved Hydration Recovery Efficiency",
         "price": 340000,
         "exchange": {
-            "misc_b_toiletpaper": 8,
-            "misc_b_bottledglucose": 4,
-            "misc_b_iodophor": 5,
+            "misc_b_uvlight": 5,
+            "misc_b_medicalkit": 9,
+            "misc_b_asthmamedication": 5,
             "misc_bentrifuge": 3
         },
         "levelConditions": {
             "WaterCollector": 3
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_Medical_station2"
+        "levelUpIcon": "MedDeskLv3"
     },
     "WaterCollectorLv1": {
         "areaId": "WaterCollector",
         "categoryId": "None",
         "level": 1,
         "upgradeName": "Water Collector",
-        "upgradeDesc": "Access to a drink holder.\r\nRegenerate Hydration faster inside Hideout.",
+        "upgradeDesc": "Faster Hydration Regeneration in HQ",
         "price": 10000,
         "exchange": {
-            "misc_b_wire": 1,
-            "misc_barcleaner": 1,
-            "misc_screwdriver": 1,
-            "misc_b_plier_large": 1
+            "misc_b_rustedcleaner": 1,
+            "misc_hammer": 1,
+            "misc_b_nail": 1
         },
         "levelConditions": {},
         "relatedQuests": [
-            "task.mall.2"
+            "task.mall.c.04"
         ],
-        "levelUpIcon": "Image_water_collector"
+        "levelUpIcon": "WaterCollectorLv1"
     },
     "WaterCollectorLv2": {
         "areaId": "WaterCollector",
         "categoryId": "None",
         "level": 2,
         "upgradeName": "Water Collector",
-        "upgradeDesc": "Regenerate Hydration faster inside Hideout.",
+        "upgradeDesc": "Faster Hydration Regeneration in HQ",
         "price": 50000,
         "exchange": {
-            "misc_b_pipeline": 3,
+            "misc_b_pipeline": 5,
             "misc_b_insulatingtape": 5,
             "misc_b_nail": 6,
-            "misc_b_piezometer": 2
+            "misc_b_spraycan": 2
         },
-        "levelConditions": {},
+        "levelConditions": {
+            "WaterCollector": 1
+        },
         "relatedQuests": [],
-        "levelUpIcon": "Image_water_collector"
+        "levelUpIcon": "WaterCollectorLv2"
     },
     "WaterCollectorLv3": {
         "areaId": "WaterCollector",
         "categoryId": "None",
         "level": 3,
         "upgradeName": "Water Collector",
-        "upgradeDesc": "Regenerate Hydration faster inside Hideout.",
+        "upgradeDesc": "Faster Hydration Regeneration in HQ",
         "price": 100000,
         "exchange": {
-            "misc_b_spraycan": 5,
+            "misc_b_pipeline": 10,
             "misc_barcleaner": 4,
-            "misc_b_storagebattery": 1,
-            "misc_b_piezometer": 3
+            "misc_b_storagebattery": 3,
+            "misc_b_piezometer": 1
         },
-        "levelConditions": {},
+        "levelConditions": {
+            "WaterCollector": 2
+        },
         "relatedQuests": [],
-        "levelUpIcon": "Image_water_collector"
+        "levelUpIcon": "WaterCollectorLv3"
     },
     "KitchenAreaLv1": {
         "areaId": "KitchenArea",
         "categoryId": "KitchenArea",
         "level": 1,
         "upgradeName": "Kitchen Area",
-        "upgradeDesc": "Unlocks Coffee Machine, Microwave, Refrigerator",
-        "price": 80000,
+        "upgradeDesc": "Unlocks Coffee Machine, Microwave, Refrigerator\r\nIncreased Energy & Hydration Cap",
+        "price": 70000,
         "exchange": {
-            "misc_b_match": 3,
-            "misc_b_lighter": 2,
+            "misc_b_oliveoil": 3,
+            "misc_b_saltcan": 2,
             "misc_b_gastank": 1,
-            "misc_oilcan": 1
+            "misc_b_plier_large": 1
         },
         "levelConditions": {
             "WaterCollector": 1
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_keachen"
+        "levelUpIcon": "KitchenAreaLv1"
+    },
+    "KitchenAreaLv2": {
+        "areaId": "KitchenArea",
+        "categoryId": "KitchenArea",
+        "level": 2,
+        "upgradeName": "Kitchen Area",
+        "upgradeDesc": "Increased Energy & Hydration Cap",
+        "price": 220000,
+        "exchange": {
+            "misc_b_gastank": 4,
+            "misc_b_insulatingtape": 4,
+            "misc_b_pesticide": 5,
+            "misc_b_wd40": 5
+        },
+        "levelConditions": {
+            "KitchenArea": 1
+        },
+        "relatedQuests": [],
+        "levelUpIcon": "KitchenAreaLv2"
+    },
+    "KitchenAreaLv3": {
+        "areaId": "KitchenArea",
+        "categoryId": "KitchenArea",
+        "level": 3,
+        "upgradeName": "Kitchen Area",
+        "upgradeDesc": "Increased Energy & Hydration Cap",
+        "price": 330000,
+        "exchange": {
+            "misc_b_oliveoil": 5,
+            "misc_b_insulatingtape": 4,
+            "misc_b_saltcan": 6,
+            "misc_b_lighter": 4
+        },
+        "levelConditions": {
+            "KitchenArea": 2
+        },
+        "relatedQuests": [],
+        "levelUpIcon": "KitchenAreaLv3"
+    },
+    "KitchenAreaLv4": {
+        "areaId": "KitchenArea",
+        "categoryId": "KitchenArea",
+        "level": 4,
+        "upgradeName": "Kitchen Area",
+        "upgradeDesc": "Increased Energy & Hydration Cap",
+        "price": 450000,
+        "exchange": {
+            "misc_copperwire": 5,
+            "misc_b_gaspipewrench": 4,
+            "misc_b_insulatingtape": 4,
+            "misc_b_lighter": 5
+        },
+        "levelConditions": {
+            "KitchenArea": 3
+        },
+        "relatedQuests": [],
+        "levelUpIcon": "KitchenAreaLv4"
     },
     "RefrigeratorLv1": {
         "areaId": "Refrigerator",
         "categoryId": "KitchenArea",
         "level": 1,
         "upgradeName": "Refrigerator",
-        "upgradeDesc": "Food and drinks Storage.\r\nRegenerate Energy faster inside Hideout.",
-        "price": 100000,
+        "upgradeDesc": "Faster Energy Regeneration in HQ",
+        "price": 90000,
         "exchange": {
-            "misc_b_rustedcleaner": 2,
-            "misc_b_saltcan": 2,
-            "misc_b_wd40": 2,
-            "misc_copperwire": 1
+            "misc_oilcan": 2,
+            "misc_blimbingrope": 2,
+            "misc_b_spraycan": 1,
+            "misc_b_plier_large": 1
         },
         "levelConditions": {
             "KitchenArea": 1
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_Refrigerator"
+        "levelUpIcon": "RefrigeratorLv1"
     },
     "RefrigeratorLv2": {
         "areaId": "Refrigerator",
         "categoryId": "KitchenArea",
         "level": 2,
         "upgradeName": "Refrigerator",
-        "upgradeDesc": "Regenerate Energy faster inside Hideout.",
+        "upgradeDesc": "Faster Energy Regeneration in HQ",
         "price": 160000,
         "exchange": {
-            "misc_b_wirecutting": 3,
-            "misc_b_saltcan": 3,
-            "misc_b_oliveoil": 1,
+            "misc_b_oliveoil": 2,
+            "misc_b_match": 2,
+            "misc_b_wirecutting": 4,
             "misc_b_socket": 2
         },
         "levelConditions": {
             "Generator": 2
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_Refrigerator"
+        "levelUpIcon": "RefrigeratorLv2"
     },
     "RefrigeratorLv3": {
         "areaId": "Refrigerator",
         "categoryId": "KitchenArea",
         "level": 3,
         "upgradeName": "Refrigerator",
-        "upgradeDesc": "Regenerate Energy faster inside Hideout.",
+        "upgradeDesc": "Faster Energy Regeneration in HQ",
         "price": 240000,
         "exchange": {
-            "misc_wastechip": 3,
-            "misc_b_gaspipewrench": 4,
-            "misc_b_plier_large": 3,
-            "misc_b_wrench": 2
+            "misc_b_oliveoil": 4,
+            "misc_b_match": 4,
+            "misc_b_plier_large": 8,
+            "misc_copperwire": 2
         },
         "levelConditions": {},
         "relatedQuests": [],
-        "levelUpIcon": "Image_Refrigerator"
+        "levelUpIcon": "RefrigeratorLv3"
     },
     "MicrowaveOvenLv1": {
         "areaId": "MicrowaveOven",
         "categoryId": "KitchenArea",
         "level": 1,
         "upgradeName": "Microwave",
-        "upgradeDesc": "In-Raid Energy Consumption -5%",
-        "price": 100000,
+        "upgradeDesc": "Slower In-Raid Energy Drain",
+        "price": 90000,
         "exchange": {
-            "misc_b_plier": 4,
-            "misc_b_wirecutting": 4,
-            "misc_wastechip": 1,
-            "misc_b_pcfan": 6
+            "misc_b_oliveoil": 2,
+            "misc_b_plier_large": 1,
+            "misc_b_tire_sealant": 2,
+            "misc_b_moldboard": 1
         },
         "levelConditions": {
             "KitchenArea": 1
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_microwave_oven"
+        "levelUpIcon": "MicrowaveOvenLv1"
     },
     "MicrowaveOvenLv2": {
         "areaId": "MicrowaveOven",
         "categoryId": "KitchenArea",
         "level": 2,
         "upgradeName": "Microwave",
-        "upgradeDesc": "In-Raid Energy Consumption -10%",
+        "upgradeDesc": "Slower In-Raid Energy Drain",
         "price": 200000,
         "exchange": {
-            "misc_b_nut": 8,
-            "misc_b_screw": 8,
+            "misc_b_plier_large": 8,
+            "misc_b_gastank": 8,
             "misc_wastechip": 5,
             "misc_b_oliveoil": 3
         },
@@ -599,129 +675,129 @@ export const hideoutUpgrades = {
             "Generator": 2
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_microwave_oven"
+        "levelUpIcon": "MicrowaveOvenLv2"
     },
     "MicrowaveOvenLv3": {
         "areaId": "MicrowaveOven",
         "categoryId": "KitchenArea",
         "level": 3,
         "upgradeName": "Microwave",
-        "upgradeDesc": "In-Raid Energy Consumption -15%",
+        "upgradeDesc": "Slower In-Raid Energy Drain",
         "price": 300000,
         "exchange": {
             "misc_copperwire": 6,
-            "misc_b_wire": 12,
+            "misc_b_lighter": 6,
             "misc_b_wd40": 12,
-            "misc_b_digitalsensor": 1
+            "misc_b_digitalsensor": 2
         },
         "levelConditions": {
             "Generator": 3
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_microwave_oven"
+        "levelUpIcon": "MicrowaveOvenLv3"
     },
     "CoffeeMakerLv1": {
         "areaId": "CoffeeMaker",
         "categoryId": "KitchenArea",
         "level": 1,
         "upgradeName": "Coffee Maker",
-        "upgradeDesc": "In-Raid Hydration Consumption -5%",
-        "price": 100000,
+        "upgradeDesc": "Slower In-Raid Hydration Drain",
+        "price": 90000,
         "exchange": {
-            "misc_b_screw": 5,
-            "misc_b_socket": 2,
-            "misc_b_wire": 5,
-            "misc_b_nut": 5
+            "misc_b_gastank": 2,
+            "misc_b_plier_large": 1,
+            "misc_wastechip": 2,
+            "misc_b_wirecutting": 1
         },
         "levelConditions": {
             "KitchenArea": 1
         },
         "relatedQuests": [],
-        "levelUpIcon": "Frame_6172"
+        "levelUpIcon": "CoffeeMakerLv1"
     },
     "CoffeeMakerLv2": {
         "areaId": "CoffeeMaker",
         "categoryId": "KitchenArea",
         "level": 2,
         "upgradeName": "Coffee Maker",
-        "upgradeDesc": "In-Raid Hydration Consumption -10%",
+        "upgradeDesc": "Slower In-Raid Hydration Drain",
         "price": 200000,
         "exchange": {
-            "misc_b_electricdrill": 2,
-            "misc_barcleaner": 5,
-            "misc_copperwire": 5,
+            "misc_b_nut": 5,
+            "misc_barcleaner": 3,
+            "misc_b_gameconsole": 1,
             "misc_b_saltcan": 6
         },
         "levelConditions": {
             "Generator": 2
         },
         "relatedQuests": [],
-        "levelUpIcon": "Frame_6172"
+        "levelUpIcon": "CoffeeMakerLv2"
     },
     "CoffeeMakerLv3": {
         "areaId": "CoffeeMaker",
         "categoryId": "KitchenArea",
         "level": 3,
         "upgradeName": "Coffee Maker",
-        "upgradeDesc": "In-Raid Hydration Consumption -15%",
+        "upgradeDesc": "Slower In-Raid Hydration Drain",
         "price": 300000,
         "exchange": {
-            "misc_b_civilradio": 6,
             "misc_b_nut": 12,
-            "misc_b_gameconsole": 4,
-            "misc_b_antiqueteaset": 1
+            "misc_b_electricdrill": 3,
+            "misc_copperwire": 3,
+            "misc_b_lighter": 3
         },
         "levelConditions": {
             "Generator": 3
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_coffee_maker"
+        "levelUpIcon": "CoffeeMakerLv3"
     },
     "IntelligentLv1": {
         "areaId": "Intelligent",
         "categoryId": "None",
         "level": 1,
         "upgradeName": "Intel Center",
-        "upgradeDesc": "Show item prices with M.I.C.A.",
+        "upgradeDesc": "Item Market Price Visible",
         "price": 100000,
         "exchange": {
-            "misc_mouse": 2,
             "misc_b_opticaldisc": 2,
-            "misc_b_dataline": 2,
+            "misc_b_1battery": 2,
+            "misc_1batterie_2": 2,
             "misc_b_oldphone": 1
         },
         "levelConditions": {},
         "relatedQuests": [],
-        "levelUpIcon": "Image_Rest_room112"
+        "levelUpIcon": "IntelligentLv1"
     },
     "IntelligentLv2": {
         "areaId": "Intelligent",
         "categoryId": "None",
         "level": 2,
         "upgradeName": "Intel Center",
-        "upgradeDesc": "Character experience gain +15%",
+        "upgradeDesc": "Increased EXP Gain",
         "price": 160000,
         "exchange": {
-            "misc_b_insulatingtape": 4,
-            "misc_b_harddrive": 3,
-            "misc_b_opticaldisc": 3,
-            "misc_b_civilradio": 2
+            "misc_b_opticaldisc": 4,
+            "misc_b_tape": 3,
+            "misc_notebook": 3,
+            "misc_radio": 2
         },
         "levelConditions": {
             "WorkshopZone": 1
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_Rest_room112"
+        "levelUpIcon": "IntelligentLv2"
     },
     "IntelligentLv3": {
         "areaId": "Intelligent",
         "categoryId": "None",
         "level": 3,
         "upgradeName": "Intel Center",
-        "upgradeDesc": "Character experience gain +20%",
+        "upgradeDesc": "Increased EXP Gain",
         "price": 320000,
         "exchange": {
-            "misc_b_recorder": 2,
+            "misc_b_opticaldisc": 6,
             "misc_b_tape": 3,
             "misc_videotape": 2,
             "misc_b_powerbank": 3
@@ -731,18 +807,18 @@ export const hideoutUpgrades = {
             "RestRoom": 2
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_Rest_room112"
+        "levelUpIcon": "IntelligentLv3"
     },
     "IntelligentLv4": {
         "areaId": "Intelligent",
         "categoryId": "None",
         "level": 4,
         "upgradeName": "Intel Center",
-        "upgradeDesc": "Character experience gain +30%",
+        "upgradeDesc": "Increased EXP Gain",
         "price": 500000,
         "exchange": {
-            "misc_b_wirecutting": 6,
-            "misc_notebook": 6,
+            "misc_b_opticaldisc": 10,
+            "misc_b_digitalsensor": 4,
             "misc_floppydisk": 3,
             "misc_b_visionmodule": 1
         },
@@ -751,7 +827,7 @@ export const hideoutUpgrades = {
             "RestRoom": 3
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_Rest_room112"
+        "levelUpIcon": "IntelligentLv4"
     },
     "CryptoMiningLv1": {
         "areaId": "CryptoMining",
@@ -762,17 +838,15 @@ export const hideoutUpgrades = {
         "price": 100000,
         "exchange": {
             "misc_bpu": 1,
-            "misc_b_pcfan": 5,
-            "misc_b_ceramic_adhesive": 6,
+            "misc_b_rustedcleaner": 5,
+            "misc_b_ram": 6,
             "misc_b_harddrive": 5
         },
-        "levelConditions": {
-            "Generator": 2
-        },
+        "levelConditions": {},
         "relatedQuests": [
-            "task.mall.5"
+            "task.mall.b.02"
         ],
-        "levelUpIcon": "Image_Mine_field"
+        "levelUpIcon": "CryptoMiningLv1"
     },
     "CryptoMiningLv2": {
         "areaId": "CryptoMining",
@@ -784,14 +858,14 @@ export const hideoutUpgrades = {
         "exchange": {
             "misc_bpu": 4,
             "misc_b_pcfan": 6,
-            "misc_b_ceramic_adhesive": 4,
+            "misc_b_ram": 4,
             "misc_floppydisk": 4
         },
         "levelConditions": {
             "CryptoMining": 1
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_Mine_field"
+        "levelUpIcon": "CryptoMiningLv2"
     },
     "CryptoMiningLv3": {
         "areaId": "CryptoMining",
@@ -803,14 +877,14 @@ export const hideoutUpgrades = {
         "exchange": {
             "misc_bpu": 4,
             "misc_b_pcfan": 8,
-            "misc_b_ceramic_adhesive": 6,
+            "misc_b_ram": 6,
             "misc_b_harddrive": 6
         },
         "levelConditions": {
             "CryptoMining": 2
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_Mine_field"
+        "levelUpIcon": "CryptoMiningLv3"
     },
     "CryptoMiningLv4": {
         "areaId": "CryptoMining",
@@ -820,17 +894,17 @@ export const hideoutUpgrades = {
         "upgradeDesc": "Unlock more slots; Increase money output.",
         "price": 400000,
         "exchange": {
-            "misc_b_visionmodule": 6,
-            "misc_b_dataline": 10,
-            "misc_floppydisk": 8,
-            "misc_b_militaryusbdrive": 6
+            "misc_bpu": 6,
+            "misc_b_pcfan": 10,
+            "misc_b_ram": 8,
+            "misc_b_harddrive": 6
         },
         "levelConditions": {
             "CryptoMining": 3,
             "Generator": 3
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_Mine_field"
+        "levelUpIcon": "CryptoMiningLv4"
     },
     "GeneratorLv1": {
         "areaId": "Generator",
@@ -838,11 +912,11 @@ export const hideoutUpgrades = {
         "level": 1,
         "upgradeName": "Generator",
         "upgradeDesc": "Increase Fuel capacity, reduce power consumption.\nSupport upgrades for more facilities.",
-        "price": 0,
+        "price": 10000,
         "exchange": {},
         "levelConditions": {},
         "relatedQuests": [],
-        "levelUpIcon": "Image_dynamo"
+        "levelUpIcon": "GeneratorLv1"
     },
     "GeneratorLv2": {
         "areaId": "Generator",
@@ -854,8 +928,8 @@ export const hideoutUpgrades = {
         "exchange": {
             "misc_b_lighterfluid": 6,
             "misc_oilcan": 8,
-            "misc_b_wire": 12,
-            "misc_b_transformer": 6
+            "misc_b_insulatingtape": 6,
+            "misc_b_sparkplug": 1
         },
         "levelConditions": {
             "Generator": 1
@@ -863,7 +937,7 @@ export const hideoutUpgrades = {
         "relatedQuests": [
             "task.mall.3"
         ],
-        "levelUpIcon": "Image_dynamo"
+        "levelUpIcon": "GeneratorLv2"
     },
     "GeneratorLv3": {
         "areaId": "Generator",
@@ -873,16 +947,16 @@ export const hideoutUpgrades = {
         "upgradeDesc": "Increase Fuel capacity, reduce power consumption.\nSupport upgrades for more facilities.",
         "price": 300000,
         "exchange": {
-            "misc_b_visionmodule": 8,
-            "misc_oilcan": 12,
-            "misc_b_transformer": 8,
+            "misc_b_visionmodule": 4,
+            "misc_b_sparkplug": 4,
+            "misc_b_transformer": 2,
             "misc_b_marinestoragebattery": 3
         },
         "levelConditions": {
             "Generator": 2
         },
         "relatedQuests": [],
-        "levelUpIcon": "Image_dynamo"
+        "levelUpIcon": "GeneratorLv3"
     },
     "ShootingRangeLv1": {
         "areaId": "ShootingRange",
@@ -893,70 +967,88 @@ export const hideoutUpgrades = {
         "price": 50000,
         "exchange": {
             "misc_b_gunoil": 2,
-            "misc_gunpowder": 1,
+            "misc_b_insulatingtape": 2,
             "misc_b_ceramic_adhesive": 1,
             "misc_b_tire_sealant": 3
         },
         "levelConditions": {},
         "relatedQuests": [
-            "task.mall.6"
+            "task.mall.c.06"
         ],
-        "levelUpIcon": "Frame_6174"
+        "levelUpIcon": "ShootingRangeLv1"
     },
     "WorkshopZoneLv1": {
         "areaId": "WorkshopZone",
-        "categoryId": "WorkshopZone",
+        "categoryId": "None",
         "level": 1,
         "upgradeName": "Workshop",
-        "upgradeDesc": "Access to more storage spaces.\nAccess to Armor Repair, Ammo loader and Keys hanger.",
-        "price": 50000,
+        "upgradeDesc": "Access to more stroage spaces.\nAccess to Armor Repair, Ammo loader and Keys hanger.",
+        "price": 0,
         "exchange": {},
         "levelConditions": {},
+        "relatedQuests": [
+            "task.na.c.02"
+        ],
+        "levelUpIcon": "WorkshopZoneLv1"
+    },
+    "StorageExpansionStartLv1": {
+        "areaId": "StorageExpansionStart",
+        "categoryId": "None",
+        "level": 1,
+        "upgradeName": "Starter‘s Storage Expansion",
+        "upgradeDesc": "Access to Starter‘s Storage",
+        "price": 80000,
+        "exchange": {
+            "misc_b_screw": 2,
+            "misc_b_nut": 2,
+            "misc_barcleaner": 1,
+            "misc_b_wrench": 2
+        },
+        "levelConditions": {},
         "relatedQuests": [],
-        //TODO export "levelUpIcon": "StorageZone2_gunsmith"
-        "levelUpIcon": "Image_Rest_room22"
+        "levelUpIcon": "StorageExpansionStartLv1"
     },
     "StorageZoneLock1Lv1": {
         "areaId": "StorageZoneLock1",
-        "categoryId": "Storage",
+        "categoryId": "None",
         "level": 1,
         "upgradeName": "Storage Room A",
         "upgradeDesc": "Access to storage room A",
         "price": 80000,
         "exchange": {
-            "misc_b_batter_large": 1,
-            "misc_b_flashlight": 6,
-            "misc_b_nail": 8,
-            "misc_hammer": 1
+            "misc_b_nail": 3,
+            "misc_b_screw": 3,
+            "misc_b_disinfectingwipes": 3,
+            "misc_b_gastank_large": 3
         },
         "levelConditions": {
             "WorkshopZone": 1
         },
         "relatedQuests": [],
-        "levelUpIcon": "lImage_Mine_lock"
+        "levelUpIcon": "StorageZoneLock1Lv1"
     },
     "StorageZoneLock2Lv1": {
         "areaId": "StorageZoneLock2",
-        "categoryId": "Storage",
+        "categoryId": "None",
         "level": 1,
         "upgradeName": "Storage Room B",
         "upgradeDesc": "Access to storage room B",
         "price": 400000,
         "exchange": {
-            "misc_b_moldboard": 6,
-            "misc_b_nail": 10,
-            "misc_hammer": 6,
-            "misc_blimbingrope": 3
+            "misc_b_gastank_large": 6,
+            "misc_b_wrench": 6,
+            "misc_screwdriver": 6,
+            "misc_b_batter_large": 6
         },
         "levelConditions": {
             "WorkshopZone": 1
         },
         "relatedQuests": [],
-        "levelUpIcon": "StorageZone2_gearwall"
+        "levelUpIcon": "StorageZoneLock2Lv1"
     },
     "StorageZoneLock3Lv1": {
         "areaId": "StorageZoneLock3",
-        "categoryId": "Storage",
+        "categoryId": "None",
         "level": 1,
         "upgradeName": "Storage Room C",
         "upgradeDesc": "Access to storage room C",
@@ -964,58 +1056,76 @@ export const hideoutUpgrades = {
         "exchange": {
             "misc_gunpowder": 10,
             "misc_b_smokelesspowder": 10,
-            "misc_b_gunoil": 12,
+            "misc_b_piezometer": 8,
             "misc_b_visionmodule": 6
         },
         "levelConditions": {
             "WorkshopZone": 1
         },
         "relatedQuests": [],
-        "levelUpIcon": "StorageZone2_gearrack"
+        "levelUpIcon": "StorageZoneLock3Lv1"
+    },
+    "StorageZoneLock4Lv1": {
+        "areaId": "StorageZoneLock4",
+        "categoryId": "None",
+        "level": 1,
+        "upgradeName": "Storage Room D",
+        "upgradeDesc": "Access to storage room D",
+        "price": 760000,
+        "exchange": {
+            "misc_b_lightbulb": 10,
+            "misc_b_wrench": 10,
+            "misc_b_medicalscissors": 5,
+            "misc_b_defibrillator": 4
+        },
+        "levelConditions": {
+            "WorkshopZone": 1,
+            "StorageZoneLock3": 1
+        },
+        "relatedQuests": [],
+        "levelUpIcon": "StorageZoneLock4Lv1"
     },
     "GunsmithLv1": {
         "areaId": "Gunsmith",
-        "categoryId": "WorkshopZone",
+        "categoryId": "None",
         "level": 1,
         "upgradeName": "Gunsmith",
         "upgradeDesc": "Weapon parts storage capacity + 10kg",
         "price": 10000,
         "exchange": {
-            "misc_b_tapemeasure": 2,
-            "misc_b_lightbulb": 2,
+            "misc_b_screw": 2,
+            "misc_b_gastank": 2,
             "misc_b_rustedcleaner": 2,
-            "misc_barcleaner": 2,
+            "misc_barcleaner": 2
         },
         "levelConditions": {
             "WorkshopZone": 1
         },
         "relatedQuests": [],
-        //TODO export "levelUpIcon": "StorageZone2_gunsmith"
-        "levelUpIcon": "Image_Rest_room22"
+        "levelUpIcon": "GunsmithLv1"
     },
     "GunsmithLv2": {
         "areaId": "Gunsmith",
-        "categoryId": "WorkshopZone",
+        "categoryId": "None",
         "level": 2,
         "upgradeName": "Gunsmith",
         "upgradeDesc": "Weapon parts storage capacity + 10kg",
         "price": 80000,
         "exchange": {
             "misc_b_pipeline": 2,
-            "misc_b_wrench": 6,
+            "misc_b_nail": 6,
             "misc_b_ceramic_adhesive": 8,
-            "misc_floppydisk": 2,
+            "misc_floppydisk": 2
         },
         "levelConditions": {
             "WorkshopZone": 1
         },
         "relatedQuests": [],
-        //TODO export "levelUpIcon": "StorageZone2_gunsmith"
-        "levelUpIcon": "Image_Rest_room22"
+        "levelUpIcon": "GunsmithLv2"
     },
     "GunsmithLv3": {
         "areaId": "Gunsmith",
-        "categoryId": "WorkshopZone",
+        "categoryId": "None",
         "level": 3,
         "upgradeName": "Gunsmith",
         "upgradeDesc": "Weapon parts storage capacity + 10kg",
@@ -1023,19 +1133,18 @@ export const hideoutUpgrades = {
         "exchange": {
             "misc_b_powerbank": 6,
             "misc_b_oldphone": 10,
-            "misc_hammer": 6,
-            "misc_b_civilradio": 4,
+            "misc_b_sparkplug": 6,
+            "misc_b_civilradio": 4
         },
         "levelConditions": {
             "Generator": 2
         },
         "relatedQuests": [],
-        //TODO export "levelUpIcon": "StorageZone2_gunsmith"
-        "levelUpIcon": "Image_Rest_room22"
+        "levelUpIcon": "GunsmithLv3"
     },
     "GunsmithLv4": {
         "areaId": "Gunsmith",
-        "categoryId": "WorkshopZone",
+        "categoryId": "None",
         "level": 4,
         "upgradeName": "Gunsmith",
         "upgradeDesc": "Weapon parts storage capacity + 10kg",
@@ -1043,18 +1152,193 @@ export const hideoutUpgrades = {
         "exchange": {
             "misc_b_superglue": 10,
             "misc_b_newphone": 10,
-            "misc_b_recorder": 12,
-            "misc_b_electricdrill": 6,
+            "misc_b_glue_large": 8,
+            "misc_b_electricdrill": 6
         },
         "levelConditions": {
             "Generator": 3
         },
         "relatedQuests": [],
-        //TODO export "levelUpIcon": "StorageZone2_gunsmith"
-        "levelUpIcon": "Image_Rest_room22"
+        "levelUpIcon": "GunsmithLv4"
+    },
+    "GeneratorZoneLv1": {
+        "areaId": "GeneratorZone",
+        "categoryId": "None",
+        "level": 1,
+        "upgradeName": "GeneratorZone",
+        "upgradeDesc": "Unlock Generator Zone",
+        "price": 0,
+        "exchange": {},
+        "levelConditions": {},
+        "relatedQuests": [
+            "task.mall.c.01"
+        ],
+        "levelUpIcon": "GeneratorZoneLv1"
+    },
+    "RestroomZoneLv1": {
+        "areaId": "RestroomZone",
+        "categoryId": "None",
+        "level": 1,
+        "upgradeName": "Rest Area",
+        "upgradeDesc": "Unlock Restroom",
+        "price": 10000,
+        "exchange": {},
+        "levelConditions": {},
+        "relatedQuests": [
+            "task.mall.c.05"
+        ],
+        "levelUpIcon": "RestroomZoneLv1"
+    },
+    "BlackmarketMoreitemLv1": {
+        "areaId": "BlackmarketMoreitem",
+        "categoryId": "HQPAD",
+        "level": 1,
+        "upgradeName": "Procurement System",
+        "upgradeDesc": "More goods",
+        "price": 120000,
+        "exchange": {
+            "misc_hammer": 2,
+            "misc_b_recorder": 3,
+            "misc_b_1battery": 5
+        },
+        "levelConditions": {},
+        "relatedQuests": [],
+        "levelUpIcon": "BlackmarketMoreitemLv1"
+    },
+    "BlackmarketMoreitemLv2": {
+        "areaId": "BlackmarketMoreitem",
+        "categoryId": "HQPAD",
+        "level": 2,
+        "upgradeName": "Procurement System",
+        "upgradeDesc": "More goods",
+        "price": 280000,
+        "exchange": {
+            "misc_b_recorder": 3,
+            "misc_b_powerbank": 2,
+            "misc_b_oldphone": 4,
+            "misc_b_militaryusbdrive": 2
+        },
+        "levelConditions": {
+            "BlackmarketMoreitem": 1
+        },
+        "relatedQuests": [],
+        "levelUpIcon": "BlackmarketMoreitemLv2"
+    },
+    "BlackmarketQualityLv1": {
+        "areaId": "BlackmarketQuality",
+        "categoryId": "HQPAD",
+        "level": 1,
+        "upgradeName": "Procurement Quality",
+        "upgradeDesc": "Higher quality",
+        "price": 120000,
+        "exchange": {
+            "misc_b_recorder": 2,
+            "misc_b_powerbank": 2,
+            "misc_b_ram": 2,
+            "misc_b_tape": 8
+        },
+        "levelConditions": {},
+        "relatedQuests": [],
+        "levelUpIcon": "BlackmarketQualityLv1"
+    },
+    "BlackmarketQualityLv2": {
+        "areaId": "BlackmarketQuality",
+        "categoryId": "HQPAD",
+        "level": 2,
+        "upgradeName": "Procurement Quality",
+        "upgradeDesc": "Higher quality",
+        "price": 300000,
+        "exchange": {
+            "misc_bpu": 5,
+            "misc_copperwire": 9,
+            "misc_b_transformer": 2,
+            "misc_b_piezometer": 4
+        },
+        "levelConditions": {
+            "BlackmarketQuality": 1
+        },
+        "relatedQuests": [],
+        "levelUpIcon": "BlackmarketQualityLv2"
+    },
+    "BlackmarketQualityLv3": {
+        "areaId": "BlackmarketQuality",
+        "categoryId": "HQPAD",
+        "level": 3,
+        "upgradeName": "Procurement Quality",
+        "upgradeDesc": "Higher quality",
+        "price": 520000,
+        "exchange": {
+            "misc_graphiccard": 3,
+            "misc_b_militaryusbdrive": 2,
+            "misc_b_militaryharddrive": 1,
+            "misc_b_digitalsensor": 2
+        },
+        "levelConditions": {
+            "BlackmarketQuality": 2,
+            "Generator": 3
+        },
+        "relatedQuests": [],
+        "levelUpIcon": "BlackmarketQualityLv3"
+    },
+    "AreaUpgradeAreaLv1": {
+        "areaId": "AreaUpgradeArea",
+        "categoryId": "HQPAD",
+        "level": 1,
+        "upgradeName": "Storage",
+        "upgradeDesc": "Expand Junk Box Capacity",
+        "price": 488500,
+        "exchange": {
+            "misc_wastechip": 2,
+            "misc_b_flashlight": 2,
+            "misc_b_ionbattery": 2,
+            "misc_b_tapeplayer": 1
+        },
+        "levelConditions": {},
+        "relatedQuests": [],
+        "levelUpIcon": "AreaUpgradeAreaLv1"
+    },
+    "AreaUpgradeAreaLv2": {
+        "areaId": "AreaUpgradeArea",
+        "categoryId": "HQPAD",
+        "level": 2,
+        "upgradeName": "Storage",
+        "upgradeDesc": "Expand Junk Box Capacity",
+        "price": 807000,
+        "exchange": {
+            "misc_b_wirecutting": 4,
+            "misc_wastechip": 3,
+            "misc_screwdriver": 3,
+            "misc_b_storagebattery": 1
+        },
+        "levelConditions": {
+            "AreaUpgradeArea": 1
+        },
+        "relatedQuests": [],
+        "levelUpIcon": "AreaUpgradeAreaLv2"
+    },
+    "AreaUpgradeAreaLv3": {
+        "areaId": "AreaUpgradeArea",
+        "categoryId": "HQPAD",
+        "level": 3,
+        "upgradeName": "Storage",
+        "upgradeDesc": "Expand Junk Box Capacity",
+        "price": 1530200,
+        "exchange": {
+            "misc_wastechip": 8,
+            "misc_screwdriver": 8,
+            "misc_b_storagebattery": 2,
+            "misc_b_militaryharddrive": 1
+        },
+        "levelConditions": {
+            "AreaUpgradeArea": 2,
+            "Generator": 3
+        },
+        "relatedQuests": [],
+        "levelUpIcon": "AreaUpgradeAreaLv3"
     }
 } as const;
 
+/** Quest text for the upgrades `relatedQuests` points at. Curated - not in the game files. */
 export const hideoutUpgradesTasks = {
     "task.mall.1": {
         "name": "Lights On",
@@ -1082,105 +1366,142 @@ export const hideoutUpgradesTasks = {
     }
 } as const;
 
+/**
+ * Pin icons, keyed by area and by category. Paths are relative to `/images/hideout/`.
+ */
 export const areaIcons = {
-    "Lounge": {
-        "icon": "Frame_6936png.webp",
-        "alt": "Lounge"
+    "RestRoom": {
+        "icon": "areas/RestRoom.webp",
+        "alt": "Toilet"
+    },
+    "Sofa": {
+        "icon": "areas/Sofa.webp",
+        "alt": "Sofa"
+    },
+    "Bookcase": {
+        "icon": "areas/Bookcase.webp",
+        "alt": "Bookdesk"
+    },
+    "TVSet": {
+        "icon": "areas/TVSet.webp",
+        "alt": "TV Set"
     },
     "MedicalArea": {
-        "icon": "Image_bg_icon25.webp",
+        "icon": "areas/MedicalArea.webp",
         "alt": "Medical Area"
     },
-    "KitchenArea": {
-        "icon": "Frame_6073.webp",
-        "alt": "Kitchen Area"
+    "OperationBed": {
+        "icon": "areas/OperationBed.webp",
+        "alt": "Operating Bed"
     },
-    "Storage": {
-        "icon": "Image_bg_icon42.webp",
-        "alt": "Storage"
+    "Planting": {
+        "icon": "areas/Planting.webp",
+        "alt": "Plant Stand"
     },
-    "RestRoom": {
-        "icon": "Frame_5782.webp",
-        "alt": "Rest Room"
+    "MedDesk": {
+        "icon": "areas/MedDesk.webp",
+        "alt": "Med Desk"
     },
     "WaterCollector": {
-        "icon": "Image_bg_icon24.webp",
+        "icon": "areas/WaterCollector.webp",
         "alt": "Water Collector"
     },
+    "KitchenArea": {
+        "icon": "areas/KitchenArea.webp",
+        "alt": "Kitchen Area"
+    },
+    "Refrigerator": {
+        "icon": "areas/Refrigerator.webp",
+        "alt": "Refrigerator"
+    },
+    "MicrowaveOven": {
+        "icon": "areas/MicrowaveOven.webp",
+        "alt": "Microwave"
+    },
+    "CoffeeMaker": {
+        "icon": "areas/CoffeeMaker.webp",
+        "alt": "Coffee Maker"
+    },
     "Intelligent": {
-        "icon": "Frame_6076.webp",
+        "icon": "areas/Intelligent.webp",
         "alt": "Intel Center"
     },
     "CryptoMining": {
-        "icon": "Frame_6075.webp",
+        "icon": "areas/CryptoMining.webp",
         "alt": "Bitcoin Mine"
     },
     "Generator": {
-        "icon": "Frame_6074.webp",
+        "icon": "areas/Generator.webp",
         "alt": "Generator"
     },
     "ShootingRange": {
-        "icon": "Frame_6071.webp",
+        "icon": "areas/ShootingRange.webp",
         "alt": "Shooting Range"
+    },
+    "WorkshopZone": {
+        "icon": "areas/WorkshopZone.webp",
+        "alt": "Workshop"
+    },
+    "StorageExpansionStart": {
+        "icon": "areas/StorageExpansionStart.webp",
+        "alt": "Starter‘s Storage Expansion"
+    },
+    "StorageZoneLock1": {
+        "icon": "areas/StorageZoneLock1.webp",
+        "alt": "Storage Room A"
+    },
+    "StorageZoneLock2": {
+        "icon": "areas/StorageZoneLock2.webp",
+        "alt": "Storage Room B"
+    },
+    "StorageZoneLock3": {
+        "icon": "areas/StorageZoneLock3.webp",
+        "alt": "Storage Room C"
+    },
+    "StorageZoneLock4": {
+        "icon": "areas/StorageZoneLock4.webp",
+        "alt": "Storage Room D"
+    },
+    "Gunsmith": {
+        "icon": "areas/Gunsmith.webp",
+        "alt": "Gunsmith"
+    },
+    "GeneratorZone": {
+        "icon": "areas/GeneratorZone.webp",
+        "alt": "GeneratorZone"
+    },
+    "RestroomZone": {
+        "icon": "areas/RestroomZone.webp",
+        "alt": "Rest Area"
+    },
+    "BlackmarketMoreitem": {
+        "icon": "areas/BlackmarketMoreitem.webp",
+        "alt": "Procurement System"
+    },
+    "BlackmarketQuality": {
+        "icon": "areas/BlackmarketQuality.webp",
+        "alt": "Procurement Quality"
+    },
+    "AreaUpgradeArea": {
+        "icon": "areas/AreaUpgradeArea.webp",
+        "alt": "Storage"
+    },
+    "HQPAD": {
+        "icon": "areas/HQPAD.webp",
+        "alt": "Storage Zone"
+    },
+    "Lounge": {
+        "icon": "areas/Lounge.webp",
+        "alt": "Lounge"
     },
     "None": {
         "icon": "Image_bg_close.webp",
         "alt": "Back"
-    },
-    "Sofa": {
-        "icon": "Image_bg_icon2.webp",
-        "alt": "Sofa"
-    },
-    "Bookcase": {
-        "icon": "Image_bg_icon32.webp",
-        "alt": "Bookcase"
-    },
-    "TVSet": {
-        "icon": "Image_bg_icon3.webp",
-        "alt": "TV Set"
-    },
-    "OperationBed": {
-        "icon": "Frame_6924.webp",
-        "alt": "Operation Bed"
-    },
-    "Planting": {
-        "icon": "Frame_6077.webp",
-        "alt": "Planting"
-    },
-    "MedDesk": {
-        "icon": "Image_bg_icon27.webp",
-        "alt": "Medical Desk"
-    },
-    "Refrigerator": {
-        "icon": "Frame_6082.webp",
-        "alt": "Refrigerator"
-    },
-    "MicrowaveOven": {
-        "icon": "Frame_6080.webp",
-        "alt": "Microwave Oven"
-    },
-    "CoffeeMaker": {
-        "icon": "Frame_6079.webp",
-        "alt": "Coffee Maker"
-    },
-    "WorkshopZone": {
-        "icon": "Image_bg_icon21.webp",
-        "alt": "Workshop"
-    },
-    "StorageZoneLock1": {
-        "icon": "Frame_6932.webp",
-        "alt": "Storage Room A"
-    },
-    "StorageZoneLock2": {
-        "icon": "Frame_6933.webp",
-        "alt": "Storage Room B"
-    },
-    "StorageZoneLock3": {
-        "icon": "Frame_6934.webp",
-        "alt": "Storage Room C"
-    },
-    "Gunsmith": {
-        "icon": "Image_bg_icon21.webp",
-        "alt": "Gunsmith Area"
     }
 } as const;
+
+/**
+ * Categories that are not also areas, so the map has to add a pin for them explicitly. `Lounge`
+ * has always been one; S5 adds `HQPAD`. Derived, so next season maintains itself.
+ */
+export const categoriesWithoutArea: readonly string[] = ["HQPAD","Lounge"];
