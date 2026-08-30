@@ -13,6 +13,7 @@ import '../src/models/Feedback';
 import '../src/models/DataCorrection';
 // Import other models as needed
 
+
 async function syncIndexes() {
     try {
         // Connect to MongoDB
@@ -64,16 +65,18 @@ async function syncIndexes() {
         // Verify unique constraints from schema
         console.log('\n🔍 Verifying unique constraints...');
         const User = mongoose.model('User');
-        const userIndexes = await User.collection.getIndexes();
+        // Use indexes() rather than getIndexes(): the latter returns the compact
+        // form, which omits index options such as `unique`.
+        const userIndexes = await User.collection.indexes();
 
-        const emailIndex = userIndexes.email_1 as any;
+        const emailIndex = userIndexes.find((index) => index.name === 'email_1');
         if (emailIndex?.unique) {
             console.log('✅ Email unique constraint is active');
         } else {
             console.log('⚠️  Email unique constraint missing!');
         }
 
-        const usernameIndex = userIndexes.username_1 as any;
+        const usernameIndex = userIndexes.find((index) => index.name === 'username_1');
         if (usernameIndex?.unique) {
             console.log('✅ Username unique constraint is active');
         } else {

@@ -7,6 +7,7 @@ import {
     Package,
     Goal,
     Wrench,
+    Hammer,
     Target,
     FileText,
     Heart,
@@ -26,6 +27,7 @@ const Footer: React.FC = () => {
             { name: 'Tasks', href: '/tasks', icon: Goal },
             { name: 'Hideout', href: '/hideout-upgrades', icon: Wrench },
             { name: 'Combat Sim', href: '/combat-sim', icon: Target },
+            { name: 'Gunsmith', href: '/gunsmith', icon: Hammer },
             { name: 'Guides', href: '/guides', icon: FileText },
         ],
         support: [

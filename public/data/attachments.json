@@ -1,6 +1,7 @@
 [
   {
     "id": "grip_afgtrianglegrip",
+    "gameId": "gunsmith.20rail.foregrip.afg",
     "name": "Triangle Grip",
     "description": "Improves horizontal recoil control effectively and provides ADS mobility.",
     "category": "attachments",
@@ -11,7 +12,6 @@
       "fullsize": "/images/items/attachments/grip_afgtrianglegrip.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.09,
       "rarity": "Uncommon",
       "attachmentModifier": {
@@ -20,12 +20,36 @@
         "horizontalRecoilModifier": -0.02,
         "ADSSpeedModifier": 0.15
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.afg"
+      "basePrice": 3183,
+      "sellPrices": [
+        3183,
+        2865,
+        2229,
+        2229,
+        2229,
+        3183
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.foregrip.afg",
+          "level": 2,
+          "price": 7957,
+          "bundle": 1,
+          "bundlePrice": 7957,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Good starter grip for builds needing horizontal recoil control without major weight penalty"
   },
   {
     "id": "grip_gunfighter_bk",
+    "gameId": "gunsmith.20rail.foregrip.gf_mod-3_bk",
     "name": "Triangle Grip",
     "description": "Type:Triangle Grip.Reduce horizontal Recoil and increase ADS moment speed.Attaches to: SMGs,Rifles,DMRs.",
     "category": "attachments",
@@ -36,7 +60,6 @@
       "fullsize": "/images/items/attachments/grip_gunfighter_bk.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.12,
       "rarity": "Uncommon",
       "attachmentModifier": {
@@ -45,12 +68,36 @@
         "horizontalRecoilModifier": -0.03,
         "ADSSpeedModifier": 0.15
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.gf_mod-3_bk"
+      "basePrice": 5012,
+      "sellPrices": [
+        5012,
+        4511,
+        3509,
+        3509,
+        3509,
+        5012
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.foregrip.gf_mod-3_bk",
+          "level": 3,
+          "price": 14319,
+          "bundle": 1,
+          "bundlePrice": 14319,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Outstanding choice for automatic weapons where horizontal control is critical - high ergo bonus"
   },
   {
     "id": "grip_gunfighter_fde",
+    "gameId": "gunsmith.20rail.foregrip.gf_mod-3_fde",
     "name": "Vertical Grip",
     "description": "Vertical grip variant offering excellent all-around recoil control with strong ergonomics",
     "category": "attachments",
@@ -61,7 +108,6 @@
       "fullsize": "/images/items/attachments/grip_gunfighter_fde.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.12,
       "rarity": "Uncommon",
       "attachmentModifier": {
@@ -70,12 +116,36 @@
         "horizontalRecoilModifier": -0.03,
         "ADSSpeedModifier": 0.15
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.gf_mod-3_fde"
+      "basePrice": 5407,
+      "sellPrices": [
+        5407,
+        4867,
+        3785,
+        3785,
+        3785,
+        5407
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.foregrip.gf_mod-3_fde",
+          "level": 3,
+          "price": 15449,
+          "bundle": 1,
+          "bundlePrice": 15449,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Versatile grip that excels in sustained fire situations - great for spray control"
   },
   {
     "id": "grip_gunfighter_olive",
+    "gameId": "gunsmith.20rail.foregrip.gf_mod-3_olv",
     "name": "Vertical Grip",
     "description": "Olive drab vertical grip providing balanced recoil reduction with ergonomic benefits",
     "category": "attachments",
@@ -86,7 +156,6 @@
       "fullsize": "/images/items/attachments/grip_gunfighter_olive.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.12,
       "rarity": "Uncommon",
       "attachmentModifier": {
@@ -95,12 +164,36 @@
         "horizontalRecoilModifier": -0.03,
         "ADSSpeedModifier": 0.15
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.gf_mod-3_olv"
+      "basePrice": 5587,
+      "sellPrices": [
+        5587,
+        5029,
+        3911,
+        3911,
+        3911,
+        5587
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.foregrip.gf_mod-3_olv",
+          "level": 3,
+          "price": 15963,
+          "bundle": 1,
+          "bundlePrice": 15963,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Reliable all-purpose grip for mixed engagement ranges and firing patterns"
   },
   {
     "id": "grip_shift_bk",
+    "gameId": "gunsmith.20rail.foregrip.transfer_bk",
     "name": "Triangle Grip",
     "description": "Type:Triangle Grip.Reduce horizontal Recoil and increase ADS moment speed.Attaches to: SMGs,Rifles,DMRs.",
     "category": "attachments",
@@ -111,7 +204,6 @@
       "fullsize": "/images/items/attachments/grip_shift_bk.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.09,
       "rarity": "Rare",
       "attachmentModifier": {
@@ -120,12 +212,36 @@
         "horizontalRecoilModifier": -0.02,
         "ADSSpeedModifier": 0.15
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.transfer_bk"
+      "basePrice": 6004,
+      "sellPrices": [
+        6004,
+        5404,
+        4203,
+        4203,
+        4203,
+        6004
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.20rail.foregrip.transfer_bk",
+          "level": 3,
+          "price": 17155,
+          "bundle": 1,
+          "bundlePrice": 17155,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Perfect for semi-auto and controlled burst shooting - balanced stats for precision builds"
   },
   {
     "id": "grip_shift_olive",
+    "gameId": "gunsmith.20rail.foregrip.transfer_olv",
     "name": "Transfer OLV",
     "description": "Transfer-style grip optimized for weapon handling and moderate recoil control",
     "category": "attachments",
@@ -136,7 +252,6 @@
       "fullsize": "/images/items/attachments/grip_shift_olive.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.09,
       "rarity": "Rare",
       "attachmentModifier": {
@@ -145,12 +260,36 @@
         "horizontalRecoilModifier": -0.02,
         "ADSSpeedModifier": 0.15
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.transfer_olv"
+      "basePrice": 6259,
+      "sellPrices": [
+        6259,
+        5634,
+        4382,
+        4382,
+        4382,
+        6259
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.20rail.foregrip.transfer_olv",
+          "level": 3,
+          "price": 17884,
+          "bundle": 1,
+          "bundlePrice": 17884,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Good middle-ground option when you need handling improvements without extreme specialization"
   },
   {
     "id": "grip_shift_red",
+    "gameId": "gunsmith.20rail.foregrip.transfer_red",
     "name": "Transfer Red",
     "description": "Epic-tier transfer grip with enhanced vertical recoil control while maintaining balance",
     "category": "attachments",
@@ -161,7 +300,6 @@
       "fullsize": "/images/items/attachments/grip_shift_red.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.09,
       "rarity": "Epic",
       "attachmentModifier": {
@@ -170,12 +308,36 @@
         "horizontalRecoilModifier": -0.02,
         "ADSSpeedModifier": 0.15
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.transfer_red"
+      "basePrice": 6864,
+      "sellPrices": [
+        6864,
+        6178,
+        4805,
+        4805,
+        4805,
+        6864
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.20rail.foregrip.transfer_red",
+          "level": 3,
+          "price": 19612,
+          "bundle": 1,
+          "bundlePrice": 19612,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Premium choice offering the best vertical control in the Transfer series - worth the rarity"
   },
   {
     "id": "grip_shift_sand",
+    "gameId": "gunsmith.20rail.foregrip.transfer_sd",
     "name": "Transfer Sand",
     "description": "Sand-colored transfer grip providing reliable recoil management for various scenarios",
     "category": "attachments",
@@ -186,7 +348,6 @@
       "fullsize": "/images/items/attachments/grip_shift_sand.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.09,
       "rarity": "Rare",
       "attachmentModifier": {
@@ -195,12 +356,36 @@
         "horizontalRecoilModifier": -0.02,
         "ADSSpeedModifier": 0.15
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.transfer_sd"
+      "basePrice": 6060,
+      "sellPrices": [
+        6060,
+        5454,
+        4242,
+        4242,
+        4242,
+        6060
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.20rail.foregrip.transfer_sd",
+          "level": 3,
+          "price": 17313,
+          "bundle": 1,
+          "bundlePrice": 17313,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Solid option for desert-themed builds needing consistent performance across engagement types"
   },
   {
     "id": "grip_trigrip_se_bk",
+    "gameId": "gunsmith.20rail.foregrip.star5_bk",
     "name": "Triangle Grip",
     "description": "Type:Triangle Grip.Reduce horizontal Recoil and increase ADS moment speed.Attaches to: SMGs,Rifles,DMRs.",
     "category": "attachments",
@@ -211,7 +396,6 @@
       "fullsize": "/images/items/attachments/grip_trigrip_se_bk.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.15,
       "rarity": "Epic",
       "attachmentModifier": {
@@ -220,12 +404,36 @@
         "horizontalRecoilModifier": -0.04,
         "ADSSpeedModifier": 0.15
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.star5_bk"
+      "basePrice": 10959,
+      "sellPrices": [
+        10959,
+        9864,
+        7672,
+        7672,
+        7672,
+        10959
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.20rail.foregrip.star5_bk",
+          "level": 4,
+          "price": 36530,
+          "bundle": 1,
+          "bundlePrice": 36530,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Premium triangle grip - best-in-class for horizontal control with maximum handling benefits"
   },
   {
     "id": "grip_trigrip_se_grey",
+    "gameId": "gunsmith.20rail.foregrip.star5_gy",
     "name": "STAR5 GY",
     "description": "Grey STAR5 grip offering elite-level recoil management with superior ergonomics",
     "category": "attachments",
@@ -236,7 +444,6 @@
       "fullsize": "/images/items/attachments/grip_trigrip_se_grey.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.15,
       "rarity": "Epic",
       "attachmentModifier": {
@@ -245,12 +452,36 @@
         "horizontalRecoilModifier": -0.04,
         "ADSSpeedModifier": 0.15
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.star5_gy"
+      "basePrice": 11336,
+      "sellPrices": [
+        11336,
+        10203,
+        7936,
+        7936,
+        7936,
+        11336
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.20rail.foregrip.star5_gy",
+          "level": 4,
+          "price": 37787,
+          "bundle": 1,
+          "bundlePrice": 37787,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Epic-tier performance ideal for high-end builds requiring maximum horizontal stability"
   },
   {
     "id": "grip_trigrip_se_olive",
+    "gameId": "gunsmith.20rail.foregrip.star5_olv",
     "name": "STAR5 OLV",
     "description": "Olive STAR5 grip providing top-tier horizontal control with excellent handling",
     "category": "attachments",
@@ -261,7 +492,6 @@
       "fullsize": "/images/items/attachments/grip_trigrip_se_olive.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.15,
       "rarity": "Epic",
       "attachmentModifier": {
@@ -270,12 +500,38 @@
         "horizontalRecoilModifier": -0.04,
         "ADSSpeedModifier": 0.15
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.star5_olv"
+      "basePrice": 11248,
+      "sellPrices": [
+        11248,
+        10124,
+        7874,
+        7874,
+        7874,
+        11248
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.20rail.foregrip.star5_olv",
+          "level": 4,
+          "price": 37493,
+          "bundle": 1,
+          "bundlePrice": 37493,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gunsmith.008"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Outstanding choice for full-auto weapons - combines best recoil control with handling boost"
   },
   {
     "id": "grip_trigrip_se_sand",
+    "gameId": "gunsmith.20rail.foregrip.star5_sd",
     "name": "STAR5 SD",
     "description": "Sand STAR5 grip delivering premium recoil management with tactical aesthetics",
     "category": "attachments",
@@ -286,7 +542,6 @@
       "fullsize": "/images/items/attachments/grip_trigrip_se_sand.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.15,
       "rarity": "Epic",
       "attachmentModifier": {
@@ -295,12 +550,36 @@
         "horizontalRecoilModifier": -0.04,
         "ADSSpeedModifier": 0.15
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.star5_sd"
+      "basePrice": 11692,
+      "sellPrices": [
+        11692,
+        10523,
+        8185,
+        8185,
+        8185,
+        11692
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.20rail.foregrip.star5_sd",
+          "level": 4,
+          "price": 38974,
+          "bundle": 1,
+          "bundlePrice": 38974,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Elite-level grip perfect for desert operations requiring maximum weapon control"
   },
   {
     "id": "grip_trigripobra_bk",
+    "gameId": "gunsmith.20rail.foregrip.mamba_bk",
     "name": "Triangle Grip",
     "description": "Type:Triangle Grip.Reduce horizontal Recoil and increase ADS moment speed.Attaches to: SMGs,Rifles,DMRs.",
     "category": "attachments",
@@ -311,7 +590,6 @@
       "fullsize": "/images/items/attachments/grip_trigripobra_bk.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.07,
       "rarity": "Rare",
       "attachmentModifier": {
@@ -320,12 +598,38 @@
         "horizontalRecoilModifier": -0.04,
         "ADSSpeedModifier": 0.15
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.mamba_bk"
+      "basePrice": 9553,
+      "sellPrices": [
+        9553,
+        8598,
+        6688,
+        6688,
+        6688,
+        9553
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.20rail.foregrip.mamba_bk",
+          "level": 3,
+          "price": 27293,
+          "bundle": 1,
+          "bundlePrice": 27293,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gunsmith.m04"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Excellent for weapons with strong horizontal kick - lighter than alternatives with good control"
   },
   {
     "id": "grip_trigripobra_od",
+    "gameId": "gunsmith.20rail.foregrip.mamba_olv",
     "name": "Mamba SD",
     "description": "Mamba series grip offering superior horizontal control with tactical styling",
     "category": "attachments",
@@ -336,7 +640,6 @@
       "fullsize": "/images/items/attachments/grip_trigripobra_od.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.07,
       "rarity": "Rare",
       "attachmentModifier": {
@@ -345,12 +648,36 @@
         "horizontalRecoilModifier": -0.04,
         "ADSSpeedModifier": 0.15
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.mamba_olv"
+      "basePrice": 9995,
+      "sellPrices": [
+        9995,
+        8996,
+        6997,
+        6997,
+        6997,
+        9995
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.20rail.foregrip.mamba_olv",
+          "level": 3,
+          "price": 28557,
+          "bundle": 1,
+          "bundlePrice": 28557,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "High-performance option for competitive builds where horizontal stability is paramount"
   },
   {
     "id": "grip_trigripobra_sand",
+    "gameId": "gunsmith.20rail.foregrip.mamba_sd",
     "name": "Mamba OLV",
     "description": "Sand-finished Mamba grip providing exceptional horizontal recoil management",
     "category": "attachments",
@@ -361,7 +688,6 @@
       "fullsize": "/images/items/attachments/grip_trigripobra_sand.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.07,
       "rarity": "Rare",
       "attachmentModifier": {
@@ -370,12 +696,36 @@
         "horizontalRecoilModifier": -0.04,
         "ADSSpeedModifier": 0.15
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.mamba_sd"
+      "basePrice": 10281,
+      "sellPrices": [
+        10281,
+        9253,
+        7197,
+        7197,
+        7197,
+        10281
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.20rail.foregrip.mamba_sd",
+          "level": 3,
+          "price": 29374,
+          "bundle": 1,
+          "bundlePrice": 29374,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Top-tier choice for weapons requiring maximum horizontal control - rare but worth seeking"
   },
   {
     "id": "grip_verticalgrip_pk1b25u",
+    "gameId": "gunsmith.20rail.foregrip.pk1b25u",
     "name": "Vertical Grip",
     "description": "Type:Vertical Grip.Reduce Verical Recoil and incrase vertical Recoil control ability.Attaches to: SMGs,Rifles,DMRs.",
     "category": "attachments",
@@ -386,20 +736,46 @@
       "fullsize": "/images/items/attachments/grip_verticalgrip_pk1b25u.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.16,
       "rarity": "Legendary",
       "attachmentModifier": {
         "ergonomicsModifier": 0.08,
+        "verticalRecoilModifier": -0.03,
         "horizontalRecoilModifier": -0.05,
-        "ADSSpeedModifier": 0.15
+        "ADSSpeedModifier": 0.15,
+        "yawMomentumModifer": -0.1,
+        "rollMomentumModifer": -0.05
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.pk1b25u"
+      "basePrice": 15510,
+      "sellPrices": [
+        15510,
+        13959,
+        10857,
+        10857,
+        10857,
+        15510
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.20rail.foregrip.pk1b25u",
+          "level": 4,
+          "price": 51700,
+          "bundle": 1,
+          "bundlePrice": 51700,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Best overall grip available - legendary tier performance justifies the weight and rarity"
   },
   {
     "id": "grip_verticalgrip_rk1",
+    "gameId": "gunsmith.20rail.foregrip.pk-1",
     "name": "Vertical Grip",
     "description": "Type:Vertical Grip.Reduce Verical Recoil and incrase vertical Recoil control ability.Attaches to: SMGs,Rifles,DMRs.",
     "category": "attachments",
@@ -410,21 +786,46 @@
       "fullsize": "/images/items/attachments/grip_verticalgrip_rk1.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.17,
       "rarity": "Epic",
       "attachmentModifier": {
         "ergonomicsModifier": -0.03,
         "verticalRecoilModifier": -0.055,
         "horizontalRecoilModifier": -0.015,
-        "ADSSpeedModifier": 0.15
+        "ADSSpeedModifier": 0.15,
+        "yawMomentumModifer": -0.1,
+        "rollMomentumModifer": -0.05
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.pk-1"
+      "basePrice": 3247,
+      "sellPrices": [
+        3247,
+        2923,
+        2273,
+        2273,
+        2273,
+        3247
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.20rail.foregrip.pk-1",
+          "level": 2,
+          "price": 8117,
+          "bundle": 1,
+          "bundlePrice": 8117,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Unmatched vertical control for high-recoil weapons - sacrifice horizontal for vertical mastery"
   },
   {
     "id": "grip_verticalgrip_rvg_bk",
+    "gameId": "gunsmith.20rail.foregrip.pvg_bk",
     "name": "Vertical Grip",
     "description": "Type:Vertical Grip.Reduce Verical Recoil and incrase vertical Recoil control ability.Attaches to: SMGs,Rifles,DMRs.",
     "category": "attachments",
@@ -435,20 +836,46 @@
       "fullsize": "/images/items/attachments/grip_verticalgrip_rvg_bk.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.07,
       "rarity": "Rare",
       "attachmentModifier": {
         "ergonomicsModifier": 0.05,
+        "verticalRecoilModifier": -0.03,
         "horizontalRecoilModifier": -0.02,
-        "ADSSpeedModifier": 0.15
+        "ADSSpeedModifier": 0.15,
+        "yawMomentumModifer": -0.1,
+        "rollMomentumModifer": -0.05
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.pvg_bk"
+      "basePrice": 4802,
+      "sellPrices": [
+        4802,
+        4322,
+        3362,
+        3362,
+        3362,
+        4802
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.foregrip.pvg_bk",
+          "level": 3,
+          "price": 13720,
+          "bundle": 1,
+          "bundlePrice": 13720,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Reliable vertical grip for most situations - good balance of control and handling"
   },
   {
     "id": "grip_verticalgrip_rvg_olive",
+    "gameId": "gunsmith.20rail.foregrip.pvg_olv",
     "name": "PVG OLV",
     "description": "Olive RVG grip offering consistent vertical recoil management with handling benefits",
     "category": "attachments",
@@ -459,18 +886,44 @@
       "fullsize": "/images/items/attachments/grip_verticalgrip_rvg_olive.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.07,
       "rarity": "Rare",
       "attachmentModifier": {
+        "ergonomicsModifier": 0.05,
+        "verticalRecoilModifier": -0.03,
+        "horizontalRecoilModifier": -0.02,
         "ADSSpeedModifier": 0.15
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.pvg_olv"
+      "basePrice": 4811,
+      "sellPrices": [
+        4811,
+        4330,
+        3368,
+        3368,
+        3368,
+        4811
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.foregrip.pvg_olv",
+          "level": 3,
+          "price": 13745,
+          "bundle": 1,
+          "bundlePrice": 13745,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Dependable choice for builds needing vertical control without extreme weight penalties"
   },
   {
     "id": "grip_verticalgrip_rvg_sand",
+    "gameId": "gunsmith.20rail.foregrip.pvg_sd",
     "name": "PVG SD",
     "description": "Sand RVG grip delivering reliable vertical control with tactical appearance",
     "category": "attachments",
@@ -481,18 +934,44 @@
       "fullsize": "/images/items/attachments/grip_verticalgrip_rvg_sand.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.07,
       "rarity": "Rare",
       "attachmentModifier": {
+        "ergonomicsModifier": 0.05,
+        "verticalRecoilModifier": -0.03,
+        "horizontalRecoilModifier": -0.02,
         "ADSSpeedModifier": 0.15
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.pvg_sd"
+      "basePrice": 4991,
+      "sellPrices": [
+        4991,
+        4492,
+        3494,
+        3494,
+        3494,
+        4991
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.foregrip.pvg_sd",
+          "level": 3,
+          "price": 14261,
+          "bundle": 1,
+          "bundlePrice": 14261,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Solid performer for desert-themed builds requiring consistent vertical recoil management"
   },
   {
     "id": "grip_verticalgrip_sg",
+    "gameId": "gunsmith.20rail.foregrip.stormgruff",
     "name": "Vertical Grip",
     "description": "Improves horizontal recoil control effectively and provides ADS mobility.",
     "category": "attachments",
@@ -503,21 +982,46 @@
       "fullsize": "/images/items/attachments/grip_verticalgrip_sg.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.08,
       "rarity": "Uncommon",
       "attachmentModifier": {
         "ergonomicsModifier": 0.03,
         "verticalRecoilModifier": -0.05,
         "horizontalRecoilModifier": -0.01,
-        "ADSSpeedModifier": 0.15
+        "ADSSpeedModifier": 0.15,
+        "yawMomentumModifer": -0.1,
+        "rollMomentumModifer": -0.05
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.stormgruff"
+      "basePrice": 4732,
+      "sellPrices": [
+        4732,
+        4259,
+        3313,
+        3313,
+        3313,
+        4732
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.foregrip.stormgruff",
+          "level": 2,
+          "price": 11829,
+          "bundle": 1,
+          "bundlePrice": 11829,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Entry-level vertical grip - good starting point for vertical control builds on a budget"
   },
   {
     "id": "grip_verticalgrip_td",
+    "gameId": "gunsmith.20rail.foregrip.tango_down",
     "name": "Vertical Grip",
     "description": "Type:Vertical Grip.Reduce Verical Recoil and incrase vertical Recoil control ability.Attaches to: SMGs,Rifles,DMRs.",
     "category": "attachments",
@@ -528,21 +1032,46 @@
       "fullsize": "/images/items/attachments/grip_verticalgrip_td.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.09,
       "rarity": "Rare",
       "attachmentModifier": {
         "ergonomicsModifier": 0.02,
         "verticalRecoilModifier": -0.06,
         "horizontalRecoilModifier": -0.015,
-        "ADSSpeedModifier": 0.15
+        "ADSSpeedModifier": 0.15,
+        "yawMomentumModifer": -0.1,
+        "rollMomentumModifer": -0.05
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.tango_down"
+      "basePrice": 5696,
+      "sellPrices": [
+        5696,
+        5127,
+        3988,
+        3988,
+        3988,
+        5696
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.foregrip.tango_down",
+          "level": 3,
+          "price": 16275,
+          "bundle": 1,
+          "bundlePrice": 16275,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Good mid-tier option for vertical control - better than basic grips without extreme cost"
   },
   {
     "id": "grip_verticalgrip_tds_bk",
+    "gameId": "gunsmith.20rail.foregrip.tds_bk",
     "name": "Vertical Grip",
     "description": "Type:Vertical Grip.Reduce Verical Recoil and incrase vertical Recoil control ability.Attaches to: SMGs,Rifles,DMRs.",
     "category": "attachments",
@@ -553,21 +1082,46 @@
       "fullsize": "/images/items/attachments/grip_verticalgrip_tds_bk.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.06,
       "rarity": "Uncommon",
       "attachmentModifier": {
         "ergonomicsModifier": 0.04,
         "verticalRecoilModifier": -0.02,
         "horizontalRecoilModifier": -0.01,
-        "ADSSpeedModifier": 0.15
+        "ADSSpeedModifier": 0.15,
+        "yawMomentumModifer": -0.1,
+        "rollMomentumModifer": -0.05
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.tds_bk"
+      "basePrice": 2599,
+      "sellPrices": [
+        2599,
+        2340,
+        1820,
+        1820,
+        1820,
+        2599
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.foregrip.tds_bk",
+          "level": 2,
+          "price": 6498,
+          "bundle": 1,
+          "bundlePrice": 6498,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Lightweight option when you need minimal grip benefits without weight penalty"
   },
   {
     "id": "grip_verticalgrip_tds_olive",
+    "gameId": "gunsmith.20rail.foregrip.tds_olv",
     "name": "Vertical Grip",
     "description": "Olive TDs grip providing entry-level vertical control with minimal weight impact",
     "category": "attachments",
@@ -578,18 +1132,44 @@
       "fullsize": "/images/items/attachments/grip_verticalgrip_tds_olive.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.06,
       "rarity": "Uncommon",
       "attachmentModifier": {
+        "ergonomicsModifier": 0.04,
+        "verticalRecoilModifier": -0.02,
+        "horizontalRecoilModifier": -0.01,
         "ADSSpeedModifier": 0.15
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.tds_olv"
+      "basePrice": 2795,
+      "sellPrices": [
+        2795,
+        2516,
+        1957,
+        1957,
+        1957,
+        2795
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.foregrip.tds_olv",
+          "level": 2,
+          "price": 6987,
+          "bundle": 1,
+          "bundlePrice": 6987,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Basic grip for builds where weight is critical but some control is still needed"
   },
   {
     "id": "grip_verticalgrip_tds_sand",
+    "gameId": "gunsmith.20rail.foregrip.tds_sd",
     "name": "Vertical Grip",
     "description": "Sand TDs grip delivering minimal recoil control with ultra-light weight profile",
     "category": "attachments",
@@ -600,18 +1180,44 @@
       "fullsize": "/images/items/attachments/grip_verticalgrip_tds_sand.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.06,
       "rarity": "Uncommon",
       "attachmentModifier": {
+        "ergonomicsModifier": 0.04,
+        "verticalRecoilModifier": -0.02,
+        "horizontalRecoilModifier": -0.01,
         "ADSSpeedModifier": 0.15
       },
-      "gunsmithId": "gunsmith.20rail.foregrip.tds_sd"
+      "basePrice": 3198,
+      "sellPrices": [
+        3198,
+        2879,
+        2239,
+        2239,
+        2239,
+        3198
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.foregrip.tds_sd",
+          "level": 2,
+          "price": 7994,
+          "bundle": 1,
+          "bundlePrice": 7994,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Lightest grip option - use when every gram matters but you still want some improvement"
   },
   {
     "id": "muzzle_aug_adaptor_c",
+    "gameId": null,
     "name": "Aug 5.56x45 adpator",
     "description": "Specialized adapter for AUG rifles to enable 5.56x45 muzzle device compatibility",
     "category": "attachments",
@@ -622,16 +1228,25 @@
       "fullsize": "/images/items/attachments/muzzle_aug_adaptor_c.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.05,
       "rarity": "Uncommon",
       "attachmentModifier": {},
-      "gunsmithId": null
+      "basePrice": 800,
+      "sellPrices": [
+        800,
+        800,
+        560,
+        560,
+        560,
+        800
+      ],
+      "buyOffers": []
     },
     "tips": "Required adapter for AUG builds - enables access to other compensators and muzzle devices"
   },
   {
     "id": "muzzle_compensator_pistol",
+    "gameId": null,
     "name": "Pistol Compensator",
     "description": "",
     "category": "attachments",
@@ -642,7 +1257,6 @@
       "fullsize": "/images/items/attachments/muzzle_compensator_pistol.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.033,
       "rarity": "Uncommon",
       "attachmentModifier": {
@@ -650,12 +1264,22 @@
         "verticalRecoilModifier": -0.08,
         "horizontalRecoilModifier": -0.08
       },
-      "gunsmithId": null
+      "basePrice": 4284,
+      "sellPrices": [
+        4284,
+        4284,
+        2999,
+        2999,
+        2999,
+        4284
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
   {
     "id": "muzzle_compensator_raptor",
+    "gameId": null,
     "name": "Raptor Compensator",
     "description": "",
     "category": "attachments",
@@ -666,19 +1290,28 @@
       "fullsize": "/images/items/attachments/muzzle_compensator_raptor.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.045,
       "rarity": "Rare",
       "attachmentModifier": {
         "verticalRecoilModifier": -0.155,
         "horizontalRecoilModifier": -0.16
       },
-      "gunsmithId": null
+      "basePrice": 18681,
+      "sellPrices": [
+        18681,
+        18681,
+        13077,
+        13077,
+        13077,
+        18681
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
   {
     "id": "muzzle_cookiecutter_c",
+    "gameId": null,
     "name": "COOKI",
     "description": "Premium compensator offering maximum recoil reduction with significant ergonomics penalty",
     "category": "attachments",
@@ -689,7 +1322,6 @@
       "fullsize": "/images/items/attachments/muzzle_cookiecutter_c.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.098,
       "rarity": "Legendary",
       "attachmentModifier": {
@@ -697,12 +1329,22 @@
         "verticalRecoilModifier": -0.165,
         "horizontalRecoilModifier": -0.165
       },
-      "gunsmithId": null
+      "basePrice": 24240,
+      "sellPrices": [
+        24240,
+        24240,
+        16968,
+        16968,
+        16968,
+        24240
+      ],
+      "buyOffers": []
     },
     "tips": "Legendary tier - use when recoil control is absolutely critical and you can manage the ergo hit"
   },
   {
     "id": "muzzle_dmr_c",
+    "gameId": null,
     "name": "DMR Compensator",
     "description": "Heavy-duty compensator designed for designated marksman rifles and precision shooting",
     "category": "attachments",
@@ -713,7 +1355,6 @@
       "fullsize": "/images/items/attachments/muzzle_dmr_c.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.1,
       "rarity": "Uncommon",
       "attachmentModifier": {
@@ -721,12 +1362,22 @@
         "verticalRecoilModifier": -0.08,
         "horizontalRecoilModifier": -0.08
       },
-      "gunsmithId": null
+      "basePrice": 4570,
+      "sellPrices": [
+        4570,
+        4570,
+        3199,
+        3199,
+        3199,
+        4570
+      ],
+      "buyOffers": []
     },
     "tips": "Ideal for single-shot and semi-auto builds where weight penalty is acceptable"
   },
   {
     "id": "muzzle_dtk1_c",
+    "gameId": null,
     "name": "ATK1",
     "description": "Entry-level compensator with asymmetric recoil reduction favoring vertical control",
     "category": "attachments",
@@ -737,7 +1388,6 @@
       "fullsize": "/images/items/attachments/muzzle_dtk1_c.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.075,
       "rarity": "Uncommon",
       "attachmentModifier": {
@@ -745,12 +1395,22 @@
         "verticalRecoilModifier": -0.11,
         "horizontalRecoilModifier": -0.09
       },
-      "gunsmithId": null
+      "basePrice": 8969,
+      "sellPrices": [
+        8969,
+        8969,
+        6279,
+        6279,
+        6279,
+        8969
+      ],
+      "buyOffers": []
     },
     "tips": "Budget-friendly option that prioritizes vertical recoil over horizontal - good for spray patterns"
   },
   {
     "id": "muzzle_dtk2_c",
+    "gameId": null,
     "name": "ATK2",
     "description": "Lightweight compensator offering balanced recoil reduction with minimal weight penalty",
     "category": "attachments",
@@ -761,7 +1421,6 @@
       "fullsize": "/images/items/attachments/muzzle_dtk2_c.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.034,
       "rarity": "Uncommon",
       "attachmentModifier": {
@@ -769,12 +1428,22 @@
         "verticalRecoilModifier": -0.1,
         "horizontalRecoilModifier": -0.085
       },
-      "gunsmithId": null
+      "basePrice": 7605,
+      "sellPrices": [
+        7605,
+        7605,
+        5324,
+        5324,
+        5324,
+        7605
+      ],
+      "buyOffers": []
     },
     "tips": "Excellent choice for mobile builds where weight matters - solid performance with low penalties"
   },
   {
     "id": "muzzle_innovations_c",
+    "gameId": null,
     "name": "Sugar Lump",
     "description": "Advanced compensator with excellent recoil control and no ergonomics penalty",
     "category": "attachments",
@@ -785,19 +1454,28 @@
       "fullsize": "/images/items/attachments/muzzle_innovations_c.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.042,
       "rarity": "Rare",
       "attachmentModifier": {
         "verticalRecoilModifier": -0.12,
         "horizontalRecoilModifier": -0.1
       },
-      "gunsmithId": null
+      "basePrice": 11424,
+      "sellPrices": [
+        11424,
+        11424,
+        7997,
+        7997,
+        7997,
+        11424
+      ],
+      "buyOffers": []
     },
     "tips": "Rare find with no downsides - prioritize acquiring this for versatile builds"
   },
   {
     "id": "muzzle_rifle_default_c",
+    "gameId": null,
     "name": "Rifle Compensator",
     "description": "Standard rifle compensator providing basic recoil reduction for general use",
     "category": "attachments",
@@ -808,7 +1486,6 @@
       "fullsize": "/images/items/attachments/muzzle_rifle_default_c.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.045,
       "rarity": "Uncommon",
       "attachmentModifier": {
@@ -816,12 +1493,22 @@
         "verticalRecoilModifier": -0.08,
         "horizontalRecoilModifier": -0.08
       },
-      "gunsmithId": null
+      "basePrice": 4570,
+      "sellPrices": [
+        4570,
+        4570,
+        3199,
+        3199,
+        3199,
+        4570
+      ],
+      "buyOffers": []
     },
     "tips": "Reliable baseline option when other compensators aren't available or budget is tight"
   },
   {
     "id": "muzzle_slr_c",
+    "gameId": null,
     "name": "CLR BK",
     "description": "Balanced compensator offering moderate recoil reduction with minimal ergonomics penalty",
     "category": "attachments",
@@ -832,7 +1519,6 @@
       "fullsize": "/images/items/attachments/muzzle_slr_c.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.065,
       "rarity": "Uncommon",
       "attachmentModifier": {
@@ -840,12 +1526,22 @@
         "verticalRecoilModifier": -0.12,
         "horizontalRecoilModifier": -0.12
       },
-      "gunsmithId": null
+      "basePrice": 13847,
+      "sellPrices": [
+        13847,
+        13847,
+        9693,
+        9693,
+        9693,
+        13847
+      ],
+      "buyOffers": []
     },
     "tips": "Good all-around choice for mid-tier builds when you want consistent recoil control"
   },
   {
     "id": "muzzle_slr_hiheat_c",
+    "gameId": null,
     "name": "CLR HiHeat",
     "description": "High-performance compensator with superior recoil reduction at the cost of ergonomics",
     "category": "attachments",
@@ -856,7 +1552,6 @@
       "fullsize": "/images/items/attachments/muzzle_slr_hiheat_c.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.065,
       "rarity": "Epic",
       "attachmentModifier": {
@@ -864,12 +1559,22 @@
         "verticalRecoilModifier": -0.145,
         "horizontalRecoilModifier": -0.145
       },
-      "gunsmithId": null
+      "basePrice": 20006,
+      "sellPrices": [
+        20006,
+        20006,
+        14005,
+        14005,
+        14005,
+        20006
+      ],
+      "buyOffers": []
     },
     "tips": "Best-in-class recoil control for high-end builds, worth the ergonomics trade-off"
   },
   {
     "id": "muzzle_vp09_c",
+    "gameId": null,
     "name": "Viper09",
     "description": "High-tier compensator with exceptional recoil control but affects headshot damage and ADS speed",
     "category": "attachments",
@@ -880,7 +1585,6 @@
       "fullsize": "/images/items/attachments/muzzle_vp09_c.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.043,
       "rarity": "Rare",
       "attachmentModifier": {
@@ -888,12 +1592,22 @@
         "verticalRecoilModifier": -0.16,
         "horizontalRecoilModifier": -0.14
       },
-      "gunsmithId": null
+      "basePrice": 16977,
+      "sellPrices": [
+        16977,
+        16977,
+        11884,
+        11884,
+        11884,
+        16977
+      ],
+      "buyOffers": []
     },
     "tips": "Best raw recoil reduction but consider the headshot damage penalty for your playstyle"
   },
   {
     "id": "rail_default__ak_siderailattachment_01",
+    "gameId": null,
     "name": "AK Side Rail adapter",
     "description": "Standard AK side rail mount providing traditional Soviet-style optic attachment",
     "category": "attachments",
@@ -904,18 +1618,27 @@
       "fullsize": "/images/items/attachments/rail_default__ak_siderailattachment_01.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.027,
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.02
       },
-      "gunsmithId": null
+      "basePrice": 1863,
+      "sellPrices": [
+        1863,
+        1863,
+        1305,
+        1305,
+        1305,
+        1863
+      ],
+      "buyOffers": []
     },
     "tips": "Classic AK optic mounting - slightly heavier penalty but authentic mounting solution"
   },
   {
     "id": "rail_default__ak_siderailattachment_02",
+    "gameId": null,
     "name": "RSR Rail adapter",
     "description": "Enhanced RSR rail adapter offering improved AK side mounting capabilities",
     "category": "attachments",
@@ -926,18 +1649,27 @@
       "fullsize": "/images/items/attachments/rail_default__ak_siderailattachment_02.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.027,
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.02
       },
-      "gunsmithId": null
+      "basePrice": 2017,
+      "sellPrices": [
+        2017,
+        2017,
+        1412,
+        1412,
+        1412,
+        2017
+      ],
+      "buyOffers": []
     },
     "tips": "Upgraded AK rail option - same penalties as standard but potentially better compatibility"
   },
   {
     "id": "rail_default__ak74ub18_rail",
+    "gameId": null,
     "name": "AK74U Rail adapter",
     "description": "AK74U-specific rail adapter enabling optic mounting on compact AK platforms",
     "category": "attachments",
@@ -948,18 +1680,27 @@
       "fullsize": "/images/items/attachments/rail_default__ak74ub18_rail.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.02,
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.01
       },
-      "gunsmithId": null
+      "basePrice": 989,
+      "sellPrices": [
+        989,
+        989,
+        693,
+        693,
+        693,
+        989
+      ],
+      "buyOffers": []
     },
     "tips": "Required for AK74U optics - necessary adapter with standard penalties for the platform"
   },
   {
     "id": "rail_default__g3_railattachment_topbt3",
+    "gameId": null,
     "name": "BT3 Rail adapter",
     "description": "Heavy-duty G3 top rail mount with significant weight but robust attachment",
     "category": "attachments",
@@ -970,18 +1711,27 @@
       "fullsize": "/images/items/attachments/rail_default__g3_railattachment_topbt3.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.06,
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.02
       },
-      "gunsmithId": null
+      "basePrice": 2195,
+      "sellPrices": [
+        2195,
+        2195,
+        1537,
+        1537,
+        1537,
+        2195
+      ],
+      "buyOffers": []
     },
     "tips": "Heaviest G3 rail option - use when maximum stability is needed over mobility"
   },
   {
     "id": "rail_default__g3_railattachment_tophighlever",
+    "gameId": null,
     "name": "RSR Rail adapter",
     "description": "Lightweight G3 high lever rail mount with no ergonomics penalty",
     "category": "attachments",
@@ -992,16 +1742,25 @@
       "fullsize": "/images/items/attachments/rail_default__g3_railattachment_tophighlever.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.02,
       "rarity": "Common",
       "attachmentModifier": {},
-      "gunsmithId": null
+      "basePrice": 1280,
+      "sellPrices": [
+        1280,
+        1280,
+        896,
+        896,
+        896,
+        1280
+      ],
+      "buyOffers": []
     },
     "tips": "Best G3 rail choice - no ergo penalty makes it ideal for maintaining weapon handling"
   },
   {
     "id": "rail_default__g3_railattachment_topmlf",
+    "gameId": null,
     "name": "RSR Rail adapter",
     "description": "Moderate G3 MLF rail adapter balancing weight and attachment capability",
     "category": "attachments",
@@ -1012,18 +1771,27 @@
       "fullsize": "/images/items/attachments/rail_default__g3_railattachment_topmlf.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.03,
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.01
       },
-      "gunsmithId": null
+      "basePrice": 1600,
+      "sellPrices": [
+        1600,
+        1600,
+        1120,
+        1120,
+        1120,
+        1600
+      ],
+      "buyOffers": []
     },
     "tips": "Good middle-ground G3 option - reasonable penalties for most G3 builds"
   },
   {
     "id": "rail_default__m16a2_railattachment",
+    "gameId": null,
     "name": "AR15 Handle Rail",
     "description": "AR15 carry handle rail adapter enabling optic mounting on A2-style uppers",
     "category": "attachments",
@@ -1034,18 +1802,27 @@
       "fullsize": "/images/items/attachments/rail_default__m16a2_railattachment.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.02,
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.01
       },
-      "gunsmithId": null
+      "basePrice": 1584,
+      "sellPrices": [
+        1584,
+        1584,
+        1109,
+        1109,
+        1109,
+        1584
+      ],
+      "buyOffers": []
     },
     "tips": "Classic AR15 setup - necessary for traditional carry handle configurations"
   },
   {
     "id": "rail_default__mlok_railattachment_l",
+    "gameId": null,
     "name": "MLOK Rail Bottom",
     "description": "Epic-tier MLOK bottom rail with zero penalties for underbarrel accessories",
     "category": "attachments",
@@ -1056,16 +1833,25 @@
       "fullsize": "/images/items/attachments/rail_default__mlok_railattachment_l.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.012,
       "rarity": "Epic",
       "attachmentModifier": {},
-      "gunsmithId": null
+      "basePrice": 627,
+      "sellPrices": [
+        627,
+        627,
+        439,
+        439,
+        439,
+        627
+      ],
+      "buyOffers": []
     },
     "tips": "Premium MLOK rail - no penalties make it perfect for competitive builds"
   },
   {
     "id": "rail_default__mlok_railattachment_s",
+    "gameId": null,
     "name": "MLOK Rail Side",
     "description": "Ultra-lightweight MLOK side rail with no penalties for lateral mounting",
     "category": "attachments",
@@ -1076,16 +1862,25 @@
       "fullsize": "/images/items/attachments/rail_default__mlok_railattachment_s.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.008,
       "rarity": "Common",
       "attachmentModifier": {},
-      "gunsmithId": null
+      "basePrice": 621,
+      "sellPrices": [
+        621,
+        621,
+        435,
+        435,
+        435,
+        621
+      ],
+      "buyOffers": []
     },
     "tips": "Lightest rail option - perfect for side-mounted accessories without any drawbacks"
   },
   {
     "id": "rail_default__mp5_railattachment",
+    "gameId": null,
     "name": "MP5 ScopeRail",
     "description": "MP5-specific scope rail enabling optic mounting on classic SMG platform",
     "category": "attachments",
@@ -1096,18 +1891,29 @@
       "fullsize": "/images/items/attachments/rail_default__mp5_railattachment.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.018,
       "rarity": "Common",
       "attachmentModifier": {
-        "ergonomicsModifier": -0.02
+        "ergonomicsModifier": -0.02,
+        "pitchMomentumModifer": -0.01,
+        "rollMomentumModifer": 0.02
       },
-      "gunsmithId": null
+      "basePrice": 1332,
+      "sellPrices": [
+        1332,
+        1332,
+        933,
+        933,
+        933,
+        1332
+      ],
+      "buyOffers": []
     },
     "tips": "Required for MP5 optics - moderate penalty but necessary for sight upgrades"
   },
   {
     "id": "rail_default__pistol_railattachment",
+    "gameId": null,
     "name": "Pistol TacticalRail",
     "description": "Pistol tactical rail with highest ergonomics penalty for handgun accessories",
     "category": "attachments",
@@ -1118,18 +1924,27 @@
       "fullsize": "/images/items/attachments/rail_default__pistol_railattachment.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.032,
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.05
       },
-      "gunsmithId": null
+      "basePrice": 1537,
+      "sellPrices": [
+        1537,
+        1537,
+        1076,
+        1076,
+        1076,
+        1537
+      ],
+      "buyOffers": []
     },
     "tips": "Significant handling penalty - only use when pistol accessories are absolutely needed"
   },
   {
     "id": "rail_default__pkp_railattachment",
+    "gameId": null,
     "name": "PKP ScopeRail",
     "description": "Heavy PKP scope rail designed for machine gun optic mounting",
     "category": "attachments",
@@ -1140,18 +1955,27 @@
       "fullsize": "/images/items/attachments/rail_default__pkp_railattachment.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.055,
       "rarity": "Rare",
       "attachmentModifier": {
         "ergonomicsModifier": -0.03
       },
-      "gunsmithId": null
+      "basePrice": 2195,
+      "sellPrices": [
+        2195,
+        2195,
+        1537,
+        1537,
+        1537,
+        2195
+      ],
+      "buyOffers": []
     },
     "tips": "Heavy but necessary for PKP optics - moderate penalty for machine gun capability"
   },
   {
     "id": "rail_default__psg_railattachment_top",
+    "gameId": null,
     "name": "RSR Rail adapter",
     "description": "PSG-specific top rail adapter for precision rifle optic mounting",
     "category": "attachments",
@@ -1162,18 +1986,27 @@
       "fullsize": "/images/items/attachments/rail_default__psg_railattachment_top.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.02,
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.01
       },
-      "gunsmithId": null
+      "basePrice": 1280,
+      "sellPrices": [
+        1280,
+        1280,
+        896,
+        896,
+        896,
+        1280
+      ],
+      "buyOffers": []
     },
     "tips": "Standard PSG rail - minimal penalty for precision rifle optic compatibility"
   },
   {
     "id": "rail_default__railattachmentbase",
+    "gameId": null,
     "name": "SKS SopeRail",
     "description": "SKS scope rail with unique momentum modifiers affecting weapon dynamics",
     "category": "attachments",
@@ -1184,18 +2017,27 @@
       "fullsize": "/images/items/attachments/rail_default__railattachmentbase.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.021,
       "rarity": "Uncommon",
       "attachmentModifier": {
         "ergonomicsModifier": -0.01
       },
-      "gunsmithId": null
+      "basePrice": 1306,
+      "sellPrices": [
+        1306,
+        1306,
+        915,
+        915,
+        915,
+        1306
+      ],
+      "buyOffers": []
     },
     "tips": "Heaviest standard rail - momentum changes affect handling, consider impact on playstyle"
   },
   {
     "id": "rail_default__reverserail_base",
+    "gameId": null,
     "name": "45 degree Rail Adapter",
     "description": "45-degree rail adapter with no penalties for versatile angled mounting",
     "category": "attachments",
@@ -1206,18 +2048,27 @@
       "fullsize": "/images/items/attachments/rail_default__reverserail_base.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.02,
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.01
       },
-      "gunsmithId": null
+      "basePrice": 941,
+      "sellPrices": [
+        941,
+        941,
+        659,
+        659,
+        659,
+        941
+      ],
+      "buyOffers": []
     },
     "tips": "No-penalty angled mounting - excellent choice when you need 45-degree capability"
   },
   {
     "id": "scope_acog",
+    "gameId": "gunsmith.20rail.sight.acog",
     "name": "ACOG",
     "description": "Classic 4x ACOG scope with moderate weight and significant ergonomics penalty",
     "category": "attachments",
@@ -1228,7 +2079,6 @@
       "fullsize": "/images/items/attachments/scope_acog.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.41,
       "rarity": "Rare",
       "attachmentModifier": {
@@ -1236,12 +2086,36 @@
         "verticalRecoilModifier": 0.04,
         "horizontalRecoilModifier": 0.02
       },
-      "gunsmithId": "gunsmith.20rail.sight.acog"
+      "basePrice": 10713,
+      "sellPrices": [
+        10713,
+        9642,
+        7500,
+        7500,
+        7500,
+        10713
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.sight.acog",
+          "level": 2,
+          "price": 80346,
+          "bundle": 1,
+          "bundlePrice": 80346,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Reliable mid-range optic - higher recoil penalty but proven performance for most rifles"
   },
   {
     "id": "scope_aimpointt1sight",
+    "gameId": "gunsmith.20rail.sight.t1highlever",
     "name": "T1 Elevating",
     "description": "T1 Elevating red dot sight with minimal weight and low ergonomics penalty",
     "category": "attachments",
@@ -1252,7 +2126,6 @@
       "fullsize": "/images/items/attachments/scope_aimpointt1sight.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.24,
       "rarity": "Rare",
       "attachmentModifier": {
@@ -1260,12 +2133,38 @@
         "verticalRecoilModifier": 0.012,
         "horizontalRecoilModifier": 0.012
       },
-      "gunsmithId": "gunsmith.20rail.sight.t1highlever"
+      "basePrice": 6476,
+      "sellPrices": [
+        6476,
+        5829,
+        4534,
+        4534,
+        4534,
+        6476
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.sight.t1highlever",
+          "level": 1,
+          "price": 48573,
+          "bundle": 1,
+          "bundlePrice": 48573,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.c.01"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Lightweight option for close-quarters - good balance of mobility and sight picture"
   },
   {
     "id": "scope_bravo4",
+    "gameId": "gunsmith.20rail.sight.bravo4",
     "name": "Beta4",
     "description": "Legendary Beta4 scope offering best ergonomics with minimal recoil increase and stability bonus",
     "category": "attachments",
@@ -1276,7 +2175,6 @@
       "fullsize": "/images/items/attachments/scope_bravo4.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.42,
       "rarity": "Legendary",
       "attachmentModifier": {
@@ -1285,12 +2183,36 @@
         "horizontalRecoilModifier": 0.02,
         "yawStiffnessModifer": 0.015
       },
-      "gunsmithId": "gunsmith.20rail.sight.bravo4"
+      "basePrice": 12509,
+      "sellPrices": [
+        12509,
+        11259,
+        8757,
+        8757,
+        8757,
+        12509
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.sight.bravo4",
+          "level": 4,
+          "price": 125085,
+          "bundle": 1,
+          "bundlePrice": 125085,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Premium 4x option - legendary rarity justified by superior handling and yaw stability"
   },
   {
     "id": "scope_devo",
+    "gameId": "gunsmith.20rail.sight.devo",
     "name": "Levo",
     "description": "Ultra-lightweight Levo scope with excellent ergonomics and minimal penalties",
     "category": "attachments",
@@ -1301,7 +2223,6 @@
       "fullsize": "/images/items/attachments/scope_devo.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.39,
       "rarity": "Legendary",
       "attachmentModifier": {
@@ -1309,12 +2230,36 @@
         "verticalRecoilModifier": 0.015,
         "horizontalRecoilModifier": 0.015
       },
-      "gunsmithId": "gunsmith.20rail.sight.devo"
+      "basePrice": 13854,
+      "sellPrices": [
+        13854,
+        12469,
+        9698,
+        9698,
+        9698,
+        13854
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.20rail.sight.devo",
+          "level": 3,
+          "price": 118752,
+          "bundle": 1,
+          "bundlePrice": 118752,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Best mobility 4x scope - lightest weight makes it ideal for aggressive playstyles"
   },
   {
     "id": "scope_eotechhologramsight",
+    "gameId": "gunsmith.20rail.sight.eotechblack",
     "name": "PiTechS3 BK",
     "description": "PiTechS3 holographic sight with recoil influence benefits and extended zero range",
     "category": "attachments",
@@ -1325,7 +2270,6 @@
       "fullsize": "/images/items/attachments/scope_eotechhologramsight.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.27,
       "rarity": "Rare",
       "attachmentModifier": {
@@ -1333,12 +2277,36 @@
         "verticalRecoilModifier": 0.01,
         "horizontalRecoilModifier": 0.01
       },
-      "gunsmithId": "gunsmith.20rail.sight.eotechblack"
+      "basePrice": 9308,
+      "sellPrices": [
+        9308,
+        8378,
+        6516,
+        6516,
+        6516,
+        9308
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.sight.eotechblack",
+          "level": 2,
+          "price": 69810,
+          "bundle": 1,
+          "bundlePrice": 69810,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Excellent for medium range engagements - recoil influence bonus helps with follow-up shots"
   },
   {
     "id": "scope_eotechhologramsight_fde",
+    "gameId": "gunsmith.20rail.sight.eotechfde",
     "name": "PiTechS3 FDE",
     "description": "FDE variant of PiTechS3 holographic sight with identical performance characteristics",
     "category": "attachments",
@@ -1349,7 +2317,6 @@
       "fullsize": "/images/items/attachments/scope_eotechhologramsight_fde.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.27,
       "rarity": "Rare",
       "attachmentModifier": {
@@ -1357,7 +2324,30 @@
         "verticalRecoilModifier": 0.01,
         "horizontalRecoilModifier": 0.01
       },
-      "gunsmithId": "gunsmith.20rail.sight.eotechfde"
+      "basePrice": 8233,
+      "sellPrices": [
+        8233,
+        7410,
+        5764,
+        5764,
+        5764,
+        8233
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.sight.eotechfde",
+          "level": 3,
+          "price": 70569,
+          "bundle": 1,
+          "bundlePrice": 70569,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Same stats as black version - choose based on build aesthetics and camouflage needs"
   },
@@ -1373,7 +2363,6 @@
       "fullsize": "/images/items/attachments/Icon_SM_G3_Scope.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.85,
       "rarity": "Rare",
       "magnification": 8,
@@ -1397,6 +2386,7 @@
   },
   {
     "id": "scope_hamrsight_4x",
+    "gameId": "gunsmith.20rail.sight.hama",
     "name": "HRMA",
     "description": "HRMA scope providing balanced performance with moderate weight and ergonomics penalty",
     "category": "attachments",
@@ -1407,7 +2397,6 @@
       "fullsize": "/images/items/attachments/scope_hamrsight_4x.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.42,
       "rarity": "Epic",
       "attachmentModifier": {
@@ -1415,12 +2404,38 @@
         "verticalRecoilModifier": 0.03,
         "horizontalRecoilModifier": 0.015
       },
-      "gunsmithId": "gunsmith.20rail.sight.hama"
+      "basePrice": 11246,
+      "sellPrices": [
+        11246,
+        10122,
+        7873,
+        7873,
+        7873,
+        11246
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.20rail.sight.hama",
+          "level": 3,
+          "price": 96390,
+          "bundle": 1,
+          "bundlePrice": 96390,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gunsmith.m05"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Good all-around 4x choice - solid middle ground between weight, ergo penalty, and performance"
   },
   {
     "id": "scope_kobrasight_bp",
+    "gameId": "gunsmith.20rail.sight.cobra",
     "name": "Cobra",
     "description": "Basic Cobra reflex sight offering entry-level performance with higher penalties",
     "category": "attachments",
@@ -1431,7 +2446,6 @@
       "fullsize": "/images/items/attachments/scope_kobrasight_bp.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.22,
       "rarity": "Uncommon",
       "attachmentModifier": {
@@ -1439,12 +2453,36 @@
         "verticalRecoilModifier": 0.02,
         "horizontalRecoilModifier": 0.02
       },
-      "gunsmithId": "gunsmith.20rail.sight.cobra"
+      "basePrice": 5239,
+      "sellPrices": [
+        5239,
+        4716,
+        3668,
+        3668,
+        3668,
+        5239
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.20rail.sight.cobra",
+          "level": 1,
+          "price": 34929,
+          "bundle": 1,
+          "bundlePrice": 34929,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Budget option for new builds - higher ergo penalty but accessible for early game setups"
   },
   {
     "id": "scope_lcosight",
+    "gameId": "gunsmith.20rail.sight.fpo",
     "name": "FLCO",
     "description": "FLCO sight providing unique recoil reduction benefits with minimal ergonomics penalty",
     "category": "attachments",
@@ -1455,7 +2493,6 @@
       "fullsize": "/images/items/attachments/scope_lcosight.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.31,
       "rarity": "Epic",
       "attachmentModifier": {
@@ -1463,12 +2500,38 @@
         "verticalRecoilModifier": 0.015,
         "horizontalRecoilModifier": 0.015
       },
-      "gunsmithId": "gunsmith.20rail.sight.fpo"
+      "basePrice": 5760,
+      "sellPrices": [
+        5760,
+        5184,
+        4032,
+        4032,
+        4032,
+        5760
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.20rail.sight.fpo",
+          "level": 2,
+          "price": 43203,
+          "bundle": 1,
+          "bundlePrice": 43203,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gunsmith.m03"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Only reflex sight that reduces recoil - premium choice for controlled shooting"
   },
   {
     "id": "scope_mark3scope",
+    "gameId": "gunsmith.20rail.sight.mark3",
     "name": "Hunter3",
     "description": "Hunter3 8x scope with moderate ergonomics penalty and slight recoil increase",
     "category": "attachments",
@@ -1479,7 +2542,6 @@
       "fullsize": "/images/items/attachments/scope_mark3scope.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.68,
       "rarity": "Epic",
       "attachmentModifier": {
@@ -1487,7 +2549,30 @@
         "verticalRecoilModifier": 0.02,
         "horizontalRecoilModifier": 0.05
       },
-      "gunsmithId": "gunsmith.20rail.sight.mark3"
+      "basePrice": 14999,
+      "sellPrices": [
+        14999,
+        13500,
+        10500,
+        10500,
+        10500,
+        14999
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.20rail.sight.mark3",
+          "level": 3,
+          "price": 128562,
+          "bundle": 1,
+          "bundlePrice": 128562,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Good balance for long-range shooting - lighter than alternatives but adds small recoil penalty"
   },
@@ -1503,7 +2588,6 @@
       "fullsize": "/images/items/attachments/Icon_at_scope_SniperPU.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.7,
       "rarity": "Rare",
       "magnification": 4,
@@ -1521,6 +2605,7 @@
   },
   {
     "id": "scope_nighthawk",
+    "gameId": "gunsmith.20rail.sight.nighthawk",
     "name": "LP NightHawk",
     "description": "8X magnification scope for long range combatsAttaches to:  Sniper Rifles",
     "category": "attachments",
@@ -1531,7 +2616,6 @@
       "fullsize": "/images/items/attachments/scope_nighthawk.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.74,
       "rarity": "Epic",
       "attachmentModifier": {
@@ -1540,12 +2624,36 @@
         "horizontalRecoilModifier": 0.03,
         "ADSSpeedModifier": -0.4
       },
-      "gunsmithId": "gunsmith.20rail.sight.nighthawk"
+      "basePrice": 20563,
+      "sellPrices": [
+        20563,
+        18507,
+        14395,
+        14395,
+        14395,
+        20563
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.sight.nighthawk",
+          "level": 3,
+          "price": 176250,
+          "bundle": 1,
+          "bundlePrice": 176250,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Premium sniper scope - heaviest option but built for extreme range precision shooting"
   },
   {
     "id": "scope_ocp7",
+    "gameId": "gunsmith.20rail.sight.ocp7",
     "name": "Cobra",
     "description": "Mid-tier Cobra variant offering improved performance over basic model",
     "category": "attachments",
@@ -1556,7 +2664,6 @@
       "fullsize": "/images/items/attachments/scope_ocp7.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.36,
       "rarity": "Rare",
       "attachmentModifier": {
@@ -1564,12 +2671,36 @@
         "verticalRecoilModifier": 0.02,
         "horizontalRecoilModifier": 0.02
       },
-      "gunsmithId": "gunsmith.20rail.sight.ocp7"
+      "basePrice": 5577,
+      "sellPrices": [
+        5577,
+        5020,
+        3904,
+        3904,
+        3904,
+        5577
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.20rail.sight.ocp7",
+          "level": 2,
+          "price": 41829,
+          "bundle": 1,
+          "bundlePrice": 41829,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Better than basic Cobra - good stepping stone before upgrading to premium sights"
   },
   {
     "id": "scope_pistolsight_doc_mount",
+    "gameId": "gunsmith.20rail.sight.toucan2",
     "name": "Toucan2",
     "description": "Ultra-lightweight Toucan2 sight with minimal penalties across all metrics",
     "category": "attachments",
@@ -1580,13 +2711,37 @@
       "fullsize": "/images/items/attachments/scope_pistolsight_doc_mount.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.25,
       "rarity": "Rare",
       "attachmentModifier": {
         "ergonomicsModifier": -0.01
       },
-      "gunsmithId": "gunsmith.20rail.sight.toucan2"
+      "basePrice": 4210,
+      "sellPrices": [
+        4210,
+        3789,
+        2947,
+        2947,
+        2947,
+        4210
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.20rail.sight.toucan2",
+          "level": 1,
+          "price": 28068,
+          "bundle": 1,
+          "bundlePrice": 28068,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gunsmith.m01"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Best mobility option - lowest weight and penalties make it ideal for aggressive playstyles"
   },
@@ -1602,7 +2757,6 @@
       "fullsize": "/images/items/attachments/Icon_SM_PSG_Rail_Scope.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.9,
       "rarity": "Epic",
       "magnification": 4,
@@ -1623,6 +2777,7 @@
   },
   {
     "id": "scope_romeo8t",
+    "gameId": "gunsmith.20rail.sight.romeo8t",
     "name": "LOMIO8T",
     "description": "LOMIO8T sight offering recoil reduction benefits with low ergonomics penalty",
     "category": "attachments",
@@ -1633,7 +2788,6 @@
       "fullsize": "/images/items/attachments/scope_romeo8t.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.38,
       "rarity": "Epic",
       "attachmentModifier": {
@@ -1641,12 +2795,38 @@
         "verticalRecoilModifier": 0.005,
         "horizontalRecoilModifier": 0.005
       },
-      "gunsmithId": "gunsmith.20rail.sight.romeo8t"
+      "basePrice": 10105,
+      "sellPrices": [
+        10105,
+        9095,
+        7074,
+        7074,
+        7074,
+        10105
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.sight.romeo8t",
+          "level": 3,
+          "price": 86616,
+          "bundle": 1,
+          "bundlePrice": 86616,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.b.09"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Premium reflex sight - recoil reduction makes it excellent for rapid fire scenarios"
   },
   {
     "id": "scope_sight_magnifer_g33_flip_side",
+    "gameId": "gunsmith.20rail.sight.g33-flip-side",
     "name": "G33 Flip-Side 20mm magnifer scope",
     "description": "",
     "category": "attachments",
@@ -1657,7 +2837,6 @@
       "fullsize": "/images/items/attachments/scope_sight_magnifer_g33_flip_side.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.32,
       "rarity": "Common",
       "attachmentModifier": {
@@ -1666,12 +2845,36 @@
         "horizontalRecoilModifier": 0.015,
         "yawStiffnessModifer": 0.015
       },
-      "gunsmithId": "gunsmith.20rail.sight.g33-flip-side"
+      "basePrice": 11745,
+      "sellPrices": [
+        11745,
+        10571,
+        8222,
+        8222,
+        8222,
+        11745
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.20rail.sight.g33-flip-side",
+          "level": 3,
+          "price": 100668,
+          "bundle": 1,
+          "bundlePrice": 100668,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
   {
     "id": "scope_sight_magnifer_g33_flip_up",
+    "gameId": "gunsmith.20rail.sight.g33-flip-up",
     "name": "G33 Flip-Up 20mm magnifer scope",
     "description": "",
     "category": "attachments",
@@ -1682,20 +2885,44 @@
       "fullsize": "/images/items/attachments/scope_sight_magnifer_g33_flip_up.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.32,
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.05,
         "verticalRecoilModifier": 0.02,
-        "horizontalRecoilModifier": 0.02
+        "horizontalRecoilModifier": 0.02,
+        "yawStiffnessModifer": 0.015
       },
-      "gunsmithId": "gunsmith.20rail.sight.g33-flip-up"
+      "basePrice": 11767,
+      "sellPrices": [
+        11767,
+        10591,
+        8237,
+        8237,
+        8237,
+        11767
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.20rail.sight.g33-flip-up",
+          "level": 3,
+          "price": 100857,
+          "bundle": 1,
+          "bundlePrice": 100857,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
   {
     "id": "scope_spector_bk",
+    "gameId": "gunsmith.20rail.sight.scepterbk",
     "name": "ScepterDR BK",
     "description": "Black ScepterDR scope offering balanced performance with moderate ergonomics penalty",
     "category": "attachments",
@@ -1706,7 +2933,6 @@
       "fullsize": "/images/items/attachments/scope_spector_bk.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.65,
       "rarity": "Epic",
       "attachmentModifier": {
@@ -1714,12 +2940,36 @@
         "verticalRecoilModifier": 0.02,
         "horizontalRecoilModifier": 0.02
       },
-      "gunsmithId": "gunsmith.20rail.sight.scepterbk"
+      "basePrice": 11165,
+      "sellPrices": [
+        11165,
+        10049,
+        7816,
+        7816,
+        7816,
+        11165
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.sight.scepterbk",
+          "level": 4,
+          "price": 111645,
+          "bundle": 1,
+          "bundlePrice": 111645,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Solid tactical choice - good balance of features without extreme penalties in any area"
   },
   {
     "id": "scope_spector_fde",
+    "gameId": "gunsmith.20rail.sight.scepterfde",
     "name": "ScepterDR FDE",
     "description": "FDE ScepterDR scope providing identical performance to black variant with tactical styling",
     "category": "attachments",
@@ -1730,7 +2980,6 @@
       "fullsize": "/images/items/attachments/scope_spector_fde.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.65,
       "rarity": "Epic",
       "attachmentModifier": {
@@ -1738,12 +2987,36 @@
         "verticalRecoilModifier": 0.02,
         "horizontalRecoilModifier": 0.02
       },
-      "gunsmithId": "gunsmith.20rail.sight.scepterfde"
+      "basePrice": 11398,
+      "sellPrices": [
+        11398,
+        10259,
+        7979,
+        7979,
+        7979,
+        11398
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.20rail.sight.scepterfde",
+          "level": 4,
+          "price": 113976,
+          "bundle": 1,
+          "bundlePrice": 113976,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Same stats as black version - choose based on aesthetic preference for your build"
   },
   {
     "id": "scope_srs",
+    "gameId": "gunsmith.20rail.sight.srs",
     "name": "Savior",
     "description": "Savior sight with unique shift stiffness bonus and slight recoil reduction",
     "category": "attachments",
@@ -1754,7 +3027,6 @@
       "fullsize": "/images/items/attachments/scope_srs.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.39,
       "rarity": "Epic",
       "attachmentModifier": {
@@ -1763,7 +3035,30 @@
         "horizontalRecoilModifier": 0.01,
         "shiftStiffnessModifer": 0.1
       },
-      "gunsmithId": "gunsmith.20rail.sight.srs"
+      "basePrice": 9214,
+      "sellPrices": [
+        9214,
+        8293,
+        6450,
+        6450,
+        6450,
+        9214
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.sight.srs",
+          "level": 3,
+          "price": 78978,
+          "bundle": 1,
+          "bundlePrice": 78978,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Specialized for movement shooting - shift stiffness bonus improves accuracy while moving"
   },
@@ -1779,7 +3074,6 @@
       "fullsize": "/images/items/attachments/Icon_WF_SvtPU.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.7,
       "rarity": "Rare",
       "magnification": 4,
@@ -1797,6 +3091,7 @@
   },
   {
     "id": "scope_vertex",
+    "gameId": "gunsmith.20rail.sight.vertex",
     "name": "VerTac X",
     "description": "Lightweight 3x-8x VerTac variable scope with minimal ergonomics penalty and slight recoil increase",
     "category": "attachments",
@@ -1807,7 +3102,6 @@
       "fullsize": "/images/items/attachments/scope_vertex.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.57,
       "rarity": "Epic",
       "attachmentModifier": {
@@ -1815,12 +3109,58 @@
         "verticalRecoilModifier": 0.01,
         "horizontalRecoilModifier": 0.02
       },
-      "gunsmithId": "gunsmith.20rail.sight.vertex"
+      "basePrice": 24595,
+      "sellPrices": [
+        24595,
+        22136,
+        17217,
+        17217,
+        17217,
+        24595
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.20rail.sight.vertex-2",
+          "level": 4,
+          "price": 81982,
+          "bundle": 1,
+          "bundlePrice": 81982,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.research.d3"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.storagebattery2",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.20rail.sight.vertex",
+          "level": 4,
+          "price": 245946,
+          "bundle": 1,
+          "bundlePrice": 245946,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.research.d3"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Best mobility option for 8x magnification - lowest weight and ergo penalty in class"
   },
   {
     "id": "scope_walther",
+    "gameId": "gunsmith.20rail.sight.walther",
     "name": "Walther Reflex",
     "description": "Walther Reflex sight with significant ergonomics penalty despite light weight",
     "category": "attachments",
@@ -1831,7 +3171,6 @@
       "fullsize": "/images/items/attachments/scope_walther.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.12,
       "rarity": "Uncommon",
       "attachmentModifier": {
@@ -1839,12 +3178,38 @@
         "verticalRecoilModifier": 0.02,
         "horizontalRecoilModifier": 0.02
       },
-      "gunsmithId": "gunsmith.20rail.sight.walther"
+      "basePrice": 5590,
+      "sellPrices": [
+        5590,
+        5031,
+        3913,
+        3913,
+        3913,
+        5590
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.sight.walther",
+          "level": 1,
+          "price": 37269,
+          "bundle": 1,
+          "bundlePrice": 37269,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.c.07"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Avoid unless aesthetics matter - poor ergo penalty outweighs weight benefits"
   },
   {
     "id": "sight_ironsight_caffs",
+    "gameId": "gunsmith.20rail.frontsight.caffs",
     "name": "CA FRS Ironsight",
     "description": "",
     "category": "attachments",
@@ -1855,18 +3220,41 @@
       "fullsize": "/images/items/attachments/sight_ironsight_caffs.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.02,
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.01
       },
-      "gunsmithId": "gunsmith.20rail.frontsight.caffs"
+      "basePrice": 501,
+      "sellPrices": [
+        501,
+        451,
+        351,
+        351,
+        351,
+        501
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.frontsight.caffs",
+          "level": 2,
+          "price": 1252,
+          "bundle": 1,
+          "bundlePrice": 1252,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
   {
     "id": "sight_ironsight_caffs_fde",
+    "gameId": "gunsmith.20rail.frontsight.caffs_fde",
     "name": "CA FRS Ironsight",
     "description": "",
     "category": "attachments",
@@ -1877,18 +3265,41 @@
       "fullsize": "/images/items/attachments/sight_ironsight_caffs_fde.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.02,
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.01
       },
-      "gunsmithId": "gunsmith.20rail.frontsight.caffs_fde"
+      "basePrice": 553,
+      "sellPrices": [
+        553,
+        498,
+        388,
+        388,
+        388,
+        553
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.frontsight.caffs_fde",
+          "level": 2,
+          "price": 1383,
+          "bundle": 1,
+          "bundlePrice": 1383,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
   {
     "id": "sight_ironsight_caffs_green",
+    "gameId": "gunsmith.20rail.frontsight.caffs_green",
     "name": "CA FRS Ironsight",
     "description": "",
     "category": "attachments",
@@ -1899,18 +3310,41 @@
       "fullsize": "/images/items/attachments/sight_ironsight_caffs_green.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.02,
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.01
       },
-      "gunsmithId": "gunsmith.20rail.frontsight.caffs_green"
+      "basePrice": 552,
+      "sellPrices": [
+        552,
+        497,
+        387,
+        387,
+        387,
+        552
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.frontsight.caffs_green",
+          "level": 2,
+          "price": 1380,
+          "bundle": 1,
+          "bundlePrice": 1380,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
   {
     "id": "sight_ironsight_cafrs",
+    "gameId": "gunsmith.20rail.rearsight.cafrs",
     "name": "CA FRS Ironsight",
     "description": "",
     "category": "attachments",
@@ -1921,18 +3355,41 @@
       "fullsize": "/images/items/attachments/sight_ironsight_cafrs.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.02,
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.01
       },
-      "gunsmithId": "gunsmith.20rail.rearsight.cafrs"
+      "basePrice": 485,
+      "sellPrices": [
+        485,
+        437,
+        340,
+        340,
+        340,
+        485
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.rearsight.cafrs",
+          "level": 2,
+          "price": 1213,
+          "bundle": 1,
+          "bundlePrice": 1213,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
   {
     "id": "sight_ironsight_cafrs_fde",
+    "gameId": "gunsmith.20rail.rearsight.cafrs_fde",
     "name": "CA FRS Ironsight",
     "description": "",
     "category": "attachments",
@@ -1943,18 +3400,41 @@
       "fullsize": "/images/items/attachments/sight_ironsight_cafrs_fde.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.02,
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.01
       },
-      "gunsmithId": "gunsmith.20rail.rearsight.cafrs_fde"
+      "basePrice": 531,
+      "sellPrices": [
+        531,
+        478,
+        372,
+        372,
+        372,
+        531
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.rearsight.cafrs_fde",
+          "level": 2,
+          "price": 1328,
+          "bundle": 1,
+          "bundlePrice": 1328,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
   {
     "id": "sight_ironsight_cafrs_green",
+    "gameId": "gunsmith.20rail.rearsight.cafrs_green",
     "name": "CA FRS Ironsight",
     "description": "",
     "category": "attachments",
@@ -1965,18 +3445,41 @@
       "fullsize": "/images/items/attachments/sight_ironsight_cafrs_green.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.02,
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.01
       },
-      "gunsmithId": "gunsmith.20rail.rearsight.cafrs_green"
+      "basePrice": 551,
+      "sellPrices": [
+        551,
+        496,
+        386,
+        386,
+        386,
+        551
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.rearsight.cafrs_green",
+          "level": 2,
+          "price": 1377,
+          "bundle": 1,
+          "bundlePrice": 1377,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
   {
     "id": "supressor_defaultsuppressor",
+    "gameId": null,
     "name": "Rifle Suppressor",
     "description": "Standard rifle suppressor with significant ergonomics penalty but reliable recoil reduction",
     "category": "attachments",
@@ -1987,7 +3490,6 @@
       "fullsize": "/images/items/attachments/supressor_defaultsuppressor.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.48,
       "rarity": "Uncommon",
       "attachmentModifier": {
@@ -1995,12 +3497,22 @@
         "verticalRecoilModifier": -0.05,
         "horizontalRecoilModifier": -0.05
       },
-      "gunsmithId": null
+      "basePrice": 10445,
+      "sellPrices": [
+        10445,
+        10445,
+        7312,
+        7312,
+        7312,
+        10445
+      ],
+      "buyOffers": []
     },
     "tips": "Basic suppression option - heavy ergo penalty but provides consistent stealth and recoil benefits"
   },
   {
     "id": "supressor_kacprs_bk",
+    "gameId": null,
     "name": "Quicker BK",
     "description": "Quicker BK suppressor offering improved ergonomics with enhanced recoil control",
     "category": "attachments",
@@ -2011,7 +3523,6 @@
       "fullsize": "/images/items/attachments/supressor_kacprs_bk.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.42,
       "rarity": "Rare",
       "attachmentModifier": {
@@ -2019,12 +3530,22 @@
         "verticalRecoilModifier": -0.07,
         "horizontalRecoilModifier": -0.07
       },
-      "gunsmithId": null
+      "basePrice": 17920,
+      "sellPrices": [
+        17920,
+        17920,
+        12544,
+        12544,
+        12544,
+        17920
+      ],
+      "buyOffers": []
     },
     "tips": "Better than standard rifle suppressor - improved ergo penalty makes it worth the upgrade"
   },
   {
     "id": "supressor_kacprs_sand",
+    "gameId": null,
     "name": "Quicker SD",
     "description": "Sand-colored Quicker suppressor with identical performance to black variant",
     "category": "attachments",
@@ -2035,7 +3556,6 @@
       "fullsize": "/images/items/attachments/supressor_kacprs_sand.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.42,
       "rarity": "Rare",
       "attachmentModifier": {
@@ -2043,12 +3563,22 @@
         "verticalRecoilModifier": -0.07,
         "horizontalRecoilModifier": -0.07
       },
-      "gunsmithId": null
+      "basePrice": 18261,
+      "sellPrices": [
+        18261,
+        18261,
+        12783,
+        12783,
+        12783,
+        18261
+      ],
+      "buyOffers": []
     },
     "tips": "Same stats as BK version - choose based on camouflage needs and aesthetic preference"
   },
   {
     "id": "supressor_m4sd",
+    "gameId": null,
     "name": "ARSD",
     "description": "ARSD suppressor with heaviest weight but strong recoil reduction capabilities",
     "category": "attachments",
@@ -2059,7 +3589,6 @@
       "fullsize": "/images/items/attachments/supressor_m4sd.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.53,
       "rarity": "Uncommon",
       "attachmentModifier": {
@@ -2067,7 +3596,16 @@
         "verticalRecoilModifier": -0.065,
         "horizontalRecoilModifier": -0.065
       },
-      "gunsmithId": null
+      "basePrice": 13516,
+      "sellPrices": [
+        13516,
+        13516,
+        9462,
+        9462,
+        9462,
+        13516
+      ],
+      "buyOffers": []
     },
     "tips": "Heaviest standard option - only choose when maximum recoil control outweighs mobility"
   },
@@ -2083,7 +3621,6 @@
       "fullsize": "/images/items/attachments/WF_MP9_Suppressor.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.32,
       "rarity": "Epic",
       "attachmentModifier": {
@@ -2109,6 +3646,7 @@
   },
   {
     "id": "supressor_osprey9",
+    "gameId": null,
     "name": "Pelican 9",
     "description": "Pelican 9 suppressor combining lightweight design with excellent recoil control",
     "category": "attachments",
@@ -2119,7 +3657,6 @@
       "fullsize": "/images/items/attachments/supressor_osprey9.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.37,
       "rarity": "Epic",
       "attachmentModifier": {
@@ -2127,12 +3664,22 @@
         "verticalRecoilModifier": -0.075,
         "horizontalRecoilModifier": -0.075
       },
-      "gunsmithId": null
+      "basePrice": 19360,
+      "sellPrices": [
+        19360,
+        19360,
+        13552,
+        13552,
+        13552,
+        19360
+      ],
+      "buyOffers": []
     },
     "tips": "Best overall suppressor - lightest weight with superior recoil reduction and low ergo penalty"
   },
   {
     "id": "supressor_pistolsuppressor",
+    "gameId": null,
     "name": "Pistol Suppressor",
     "description": "Compact pistol suppressor designed for handgun platforms with moderate penalties",
     "category": "attachments",
@@ -2143,7 +3690,6 @@
       "fullsize": "/images/items/attachments/supressor_pistolsuppressor.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.32,
       "rarity": "Uncommon",
       "attachmentModifier": {
@@ -2151,12 +3697,22 @@
         "verticalRecoilModifier": -0.045,
         "horizontalRecoilModifier": -0.045
       },
-      "gunsmithId": null
+      "basePrice": 8235,
+      "sellPrices": [
+        8235,
+        8235,
+        5765,
+        5765,
+        5765,
+        8235
+      ],
+      "buyOffers": []
     },
     "tips": "Essential for stealth pistol builds - moderate penalties for valuable sound reduction"
   },
   {
     "id": "supressor_qdl",
+    "gameId": null,
     "name": "QDL Suppressor",
     "description": "",
     "category": "attachments",
@@ -2167,7 +3723,6 @@
       "fullsize": "/images/items/attachments/supressor_qdl.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.75,
       "rarity": "Common",
       "attachmentModifier": {
@@ -2180,16 +3735,17 @@
         "pitchMomentumModifer": 0.1,
         "rollMomentumModifer": 0.15,
         "shiftStiffnessModifer": -0.032,
+        "yawStiffnessModifer": 0.025,
         "pitchStiffnessModifer": -0.05,
         "rollStiffnessModifer": -0.05,
         "shotgunSpreadModifer": -0.15
-      },
-      "gunsmithId": "none"
+      }
     },
     "tips": ""
   },
   {
     "id": "supressor_s_hybrid46_grey",
+    "gameId": null,
     "name": "Mistrey46 GY",
     "description": "Mistrey46 Grey with highest ergonomics penalty but maximum recoil reduction",
     "category": "attachments",
@@ -2200,7 +3756,6 @@
       "fullsize": "/images/items/attachments/supressor_s_hybrid46_grey.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.51,
       "rarity": "Epic",
       "attachmentModifier": {
@@ -2208,12 +3763,22 @@
         "verticalRecoilModifier": -0.09,
         "horizontalRecoilModifier": -0.09
       },
-      "gunsmithId": null
+      "basePrice": 23174,
+      "sellPrices": [
+        23174,
+        23174,
+        16222,
+        16222,
+        16222,
+        23174
+      ],
+      "buyOffers": []
     },
     "tips": "Maximum recoil control option - extreme ergo penalty requires specialized builds to manage"
   },
   {
     "id": "supressor_s_hybrid46_sand",
+    "gameId": null,
     "name": "Mistrey46 SD",
     "description": "Sand Mistrey46 with zero weight but identical performance to grey variant",
     "category": "attachments",
@@ -2224,7 +3789,6 @@
       "fullsize": "/images/items/attachments/supressor_s_hybrid46_sand.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.51,
       "rarity": "Common",
       "attachmentModifier": {
@@ -2232,12 +3796,22 @@
         "verticalRecoilModifier": -0.09,
         "horizontalRecoilModifier": -0.09
       },
-      "gunsmithId": null
+      "basePrice": 22560,
+      "sellPrices": [
+        22560,
+        22560,
+        15792,
+        15792,
+        15792,
+        22560
+      ],
+      "buyOffers": []
     },
     "tips": "Same recoil benefits as grey but no weight - potential bug or special variant"
   },
   {
     "id": "supressor_s_tbeast_normal",
+    "gameId": null,
     "name": "Sleipnir",
     "description": "Standard Sleipnir suppressor offering balanced performance with good recoil control",
     "category": "attachments",
@@ -2248,7 +3822,6 @@
       "fullsize": "/images/items/attachments/supressor_s_tbeast_normal.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.49,
       "rarity": "Rare",
       "attachmentModifier": {
@@ -2256,12 +3829,22 @@
         "verticalRecoilModifier": -0.08,
         "horizontalRecoilModifier": -0.08
       },
-      "gunsmithId": null
+      "basePrice": 22524,
+      "sellPrices": [
+        22524,
+        22524,
+        15767,
+        15767,
+        15767,
+        22524
+      ],
+      "buyOffers": []
     },
     "tips": "Solid mid-tier choice - balanced stats make it suitable for most rifle builds"
   },
   {
     "id": "supressor_s_tbeast_u_bk",
+    "gameId": null,
     "name": "Sleipnir BK Cover ",
     "description": "Legendary Sleipnir BK Cover with enhanced recoil reduction and tactical appearance",
     "category": "attachments",
@@ -2272,7 +3855,6 @@
       "fullsize": "/images/items/attachments/supressor_s_tbeast_u_bk.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.495,
       "rarity": "Legendary",
       "attachmentModifier": {
@@ -2280,12 +3862,22 @@
         "verticalRecoilModifier": -0.11,
         "horizontalRecoilModifier": -0.11
       },
-      "gunsmithId": null
+      "basePrice": 29343,
+      "sellPrices": [
+        29343,
+        29343,
+        20541,
+        20541,
+        20541,
+        29343
+      ],
+      "buyOffers": []
     },
     "tips": "Premium Sleipnir variant - legendary tier justified by superior recoil control"
   },
   {
     "id": "supressor_s_tbeast_uamo",
+    "gameId": null,
     "name": "Sleipnir MC Cover ",
     "description": "Multicam Sleipnir Cover with zero weight but legendary-tier performance",
     "category": "attachments",
@@ -2296,7 +3888,6 @@
       "fullsize": "/images/items/attachments/supressor_s_tbeast_uamo.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.495,
       "rarity": "Legendary",
       "attachmentModifier": {
@@ -2304,12 +3895,22 @@
         "verticalRecoilModifier": -0.11,
         "horizontalRecoilModifier": -0.11
       },
-      "gunsmithId": null
+      "basePrice": 29841,
+      "sellPrices": [
+        29841,
+        29841,
+        20889,
+        20889,
+        20889,
+        29841
+      ],
+      "buyOffers": []
     },
     "tips": "Premium Sleipnir variant - legendary tier justified by superior recoil control"
   },
   {
     "id": "supressor_s_tbeast_ub",
+    "gameId": null,
     "name": "Sleipnir SD Cover ",
     "description": "Sand Sleipnir Cover offering legendary performance without weight penalty",
     "category": "attachments",
@@ -2320,7 +3921,6 @@
       "fullsize": "/images/items/attachments/supressor_s_tbeast_ub.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.495,
       "rarity": "Legendary",
       "attachmentModifier": {
@@ -2328,12 +3928,22 @@
         "verticalRecoilModifier": -0.11,
         "horizontalRecoilModifier": -0.11
       },
-      "gunsmithId": null
+      "basePrice": 29769,
+      "sellPrices": [
+        29769,
+        29769,
+        20839,
+        20839,
+        20839,
+        29769
+      ],
+      "buyOffers": []
     },
     "tips": "Premium Sleipnir variant - legendary tier justified by superior recoil control"
   },
   {
     "id": "tactical_flashlight_h200",
+    "gameId": "gunsmith.20rail.tactical.fl-h200",
     "name": "H200 FlashLight",
     "description": "H200 tactical flashlight providing 15m illumination with moderate ergonomics penalty",
     "category": "attachments",
@@ -2344,7 +3954,6 @@
       "fullsize": "/images/items/attachments/tactical_flashlight_h200.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.12,
       "rarity": "Uncommon",
       "attachmentModifier": {
@@ -2352,12 +3961,38 @@
         "verticalRecoilModifier": 0.02,
         "horizontalRecoilModifier": 0.02
       },
-      "gunsmithId": "gunsmith.20rail.tactical.fl-h200"
+      "basePrice": 9893,
+      "sellPrices": [
+        9893,
+        8904,
+        6926,
+        6926,
+        6926,
+        9893
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.20rail.tactical.fl-h200",
+          "level": 1,
+          "price": 121985,
+          "bundle": 1,
+          "bundlePrice": 121985,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.c.09"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Standard flashlight choice - good illumination range but adds recoil penalty for visibility benefit"
   },
   {
     "id": "tactical_laser_mawl1",
+    "gameId": "gunsmith.20rail.tactical.la-mawlc1",
     "name": "Laser",
     "description": "Category: AttachmentAttaches to: Rifles,SMGs,Snipers.",
     "category": "attachments",
@@ -2368,19 +4003,43 @@
       "fullsize": "/images/items/attachments/tactical_laser_mawl1.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.13,
       "rarity": "Epic",
       "attachmentModifier": {
         "ergonomicsModifier": -0.02,
+        "verticalRecoilModifier": 0.01,
         "horizontalRecoilModifier": 0.01
       },
-      "gunsmithId": "gunsmith.20rail.tactical.la-mawlc1"
+      "basePrice": 4250,
+      "sellPrices": [
+        4250,
+        3825,
+        2975,
+        2975,
+        2975,
+        4250
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.tactical.la-mawlc1",
+          "level": 3,
+          "price": 12142,
+          "bundle": 1,
+          "bundlePrice": 12142,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Best pure laser option - longest range with lowest penalties, ideal for precision shooting"
   },
   {
     "id": "tactical_laser_mx400",
+    "gameId": "gunsmith.20rail.tactical.pf-mx400",
     "name": "Laser",
     "description": "Combined laser-flashlight unit offering 30m range with moderate penalties",
     "category": "attachments",
@@ -2391,7 +4050,6 @@
       "fullsize": "/images/items/attachments/tactical_laser_mx400.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.09,
       "rarity": "Rare",
       "attachmentModifier": {
@@ -2399,12 +4057,38 @@
         "verticalRecoilModifier": 0.015,
         "horizontalRecoilModifier": 0.015
       },
-      "gunsmithId": "gunsmith.20rail.tactical.pf-mx400"
+      "basePrice": 11894,
+      "sellPrices": [
+        11894,
+        10705,
+        8326,
+        8326,
+        8326,
+        11894
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.20rail.tactical.pf-mx400",
+          "level": 2,
+          "price": 147539,
+          "bundle": 1,
+          "bundlePrice": 147539,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.research.d1"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Versatile combo unit - shorter range than pure lasers but provides both functions in one package"
   },
   {
     "id": "tactical_laser_peq",
+    "gameId": "gunsmith.20rail.tactical.la-peq",
     "name": "Laser",
     "description": "Category: AttachmentAttaches to: Rifles,SMGs,Snipers.",
     "category": "attachments",
@@ -2415,7 +4099,6 @@
       "fullsize": "/images/items/attachments/tactical_laser_peq.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.12,
       "rarity": "Rare",
       "attachmentModifier": {
@@ -2423,12 +4106,36 @@
         "verticalRecoilModifier": 0.03,
         "horizontalRecoilModifier": 0.03
       },
-      "gunsmithId": "gunsmith.20rail.tactical.la-peq"
+      "basePrice": 7721,
+      "sellPrices": [
+        7721,
+        6949,
+        5405,
+        5405,
+        5405,
+        7721
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.tactical.la-peq",
+          "level": 2,
+          "price": 19302,
+          "bundle": 1,
+          "bundlePrice": 19302,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Powerful but penalizing - highest recoil penalty makes it less ideal for rapid fire scenarios"
   },
   {
     "id": "tactical_laser_pistol",
+    "gameId": "gunsmith.20rail.tactical.pl-ac100",
     "name": "Laser",
     "description": "Compact pistol laser with 5000m range and minimal weight penalty",
     "category": "attachments",
@@ -2439,19 +4146,43 @@
       "fullsize": "/images/items/attachments/tactical_laser_pistol.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.06,
       "rarity": "Uncommon",
       "attachmentModifier": {
         "ergonomicsModifier": -0.03,
+        "verticalRecoilModifier": 0.01,
         "horizontalRecoilModifier": 0.01
       },
-      "gunsmithId": "gunsmith.20rail.tactical.pl-ac100"
+      "basePrice": 5175,
+      "sellPrices": [
+        5175,
+        4658,
+        3623,
+        3623,
+        3623,
+        5175
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.20rail.tactical.pl-ac100",
+          "level": 1,
+          "price": 11499,
+          "bundle": 1,
+          "bundlePrice": 11499,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Best tactical option overall - lightest weight with minimal penalties, excellent for all builds"
   },
   {
     "id": "tactical_laser_vario_bkshort",
+    "gameId": "gunsmith.20rail.tactical.la-variobk",
     "name": "Laser",
     "description": "Black Vario laser with 5000m range and balanced ergonomics-to-recoil trade-off",
     "category": "attachments",
@@ -2462,7 +4193,6 @@
       "fullsize": "/images/items/attachments/tactical_laser_vario_bkshort.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.13,
       "rarity": "Epic",
       "attachmentModifier": {
@@ -2470,12 +4200,36 @@
         "verticalRecoilModifier": 0.02,
         "horizontalRecoilModifier": 0.02
       },
-      "gunsmithId": "gunsmith.20rail.tactical.la-variobk"
+      "basePrice": 8172,
+      "sellPrices": [
+        8172,
+        7355,
+        5721,
+        5721,
+        5721,
+        8172
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.20rail.tactical.la-variobk",
+          "level": 3,
+          "price": 23349,
+          "bundle": 1,
+          "bundlePrice": 23349,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Premium laser choice - epic tier performance with reasonable penalties for most applications"
   },
   {
     "id": "tactical_laser_vario_fdelong",
+    "gameId": "gunsmith.20rail.tactical.la-variofde",
     "name": "Laser",
     "description": "Type:Laser.Attaches to: Rifles,SMGs,Snipers.",
     "category": "attachments",
@@ -2486,7 +4240,6 @@
       "fullsize": "/images/items/attachments/tactical_laser_vario_fdelong.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.13,
       "rarity": "Epic",
       "attachmentModifier": {
@@ -2494,7 +4247,30 @@
         "verticalRecoilModifier": 0.02,
         "horizontalRecoilModifier": 0.02
       },
-      "gunsmithId": "gunsmith.20rail.tactical.la-variofde"
+      "basePrice": 8243,
+      "sellPrices": [
+        8243,
+        7419,
+        5771,
+        5771,
+        5771,
+        8243
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.tactical.la-variofde",
+          "level": 3,
+          "price": 23550,
+          "bundle": 1,
+          "bundlePrice": 23550,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Same stats as black Vario - choose based on camouflage needs and aesthetic preference"
   }

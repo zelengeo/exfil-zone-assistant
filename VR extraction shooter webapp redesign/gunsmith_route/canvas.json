@@ -1,0 +1,23 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1440, "h": 900, "title": "Gunsmith — desktop 1440", "is_interactive": true },
+    { "file": "Anatomy.dc.html", "x": 1560, "y": 0, "w": 640, "h": 1660, "title": "Row anatomy & what changed" }
+  ],
+  "annotations": [
+    {
+      "id": "how-to-drive",
+      "x": 0,
+      "y": -172,
+      "w": 620,
+      "text": "This one is live, not a picture.\n\nClick a slot in the bench list to load its parts on the right; click a part to fit it. Six stats, both deltas, the trader panel and the recoil plot all recompute from the real numbers.\n\nFit the Reactor compensator to watch a child Suppressor slot appear under Muzzle."
+    },
+    {
+      "id": "bench-size",
+      "x": 660,
+      "y": -172,
+      "w": 640,
+      "text": "On \"the bench takes too much space\" — the Layout tweak above this artboard has a bench switch.\n\nplate = weapon plate + one-column slot list (default)\nlean  = no plate, two-column slot list, recoil panel goes full width with its own rounds and distance controls\n\nSwitch between them and pick; whichever you save becomes the file's default."
+    }
+  ],
+  "launch": { "view": "canvas" }
+}

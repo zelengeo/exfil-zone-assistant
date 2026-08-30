@@ -1,0 +1,243 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap">
+  <style>
+    body { margin:0; background:#0A0E12; font-family:'IBM Plex Sans',system-ui,sans-serif; }
+    a { color:#FF4A24; text-decoration:none; }
+    a:hover { color:#FF7A5C; }
+  </style>
+</helmet>
+
+<div style="width:640px; background:#0A0E12; color:#C6D3DC; padding:26px 24px 30px; display:flex; flex-direction:column; gap:26px; box-sizing:border-box">
+
+  <div style="display:flex; flex-direction:column; gap:7px">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.24em; color:#FF4A24">GUNSMITH · ROW ANATOMY</div>
+    <div style="font-family:'Saira Condensed',sans-serif; font-weight:800; font-size:30px; line-height:1; color:#ECF2F7; text-transform:uppercase">Six slot states, one part row</div>
+    <div style="font-size:13px; line-height:1.6; color:#8DA0AE; text-wrap:pretty">Every state below is one the published graph can actually produce. The wiki tracks no player level and no wallet, so no state here means <span style="color:#C6D3DC">blocked</span> — the two that look dimmed are dimmed because the <span style="color:#C6D3DC">build</span> is missing a parent part, not because you are.</div>
+  </div>
+
+  <!-- ============ SLOT ROW STATES ============ -->
+  <div style="display:flex; flex-direction:column; gap:11px">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.22em; color:#7E909F">SLOT ROW · 30 PX, THE FULL WIDTH OF THE BENCH</div>
+
+    <div style="display:flex; flex-direction:column; gap:9px">
+
+      <!-- 1 · selected -->
+      <div style="display:flex; align-items:center; gap:14px">
+        <div style="flex:1; display:flex; align-items:center; gap:10px; height:30px; padding:0 10px 0 9px; background:#1A222A; border:1px solid #37434F; border-left:2px solid #FF4A24">
+          <div style="flex:none; width:24px; height:24px; background:#131A21; border:1px solid #262F38; display:flex; align-items:center; justify-content:center">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5B8CA8" stroke-width="1.6"><path d="M3 12h13"></path><rect x="16" y="9" width="5" height="6"></rect></svg>
+          </div>
+          <div style="flex:none; width:96px; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.13em; color:#FFB9A8; text-transform:uppercase">Muzzle</div>
+          <div style="flex:1; min-width:0; font-size:12px; color:#DCE6ED; white-space:nowrap; overflow:hidden; text-overflow:ellipsis">AK74 Reactor 5.45x39mm compensator</div>
+          <div style="flex:none; font-family:'IBM Plex Mono',monospace; font-size:10px; color:#A9BAC6">9 opts</div>
+        </div>
+        <div style="flex:none; width:186px; font-size:11px; line-height:1.5; color:#7E909F; text-wrap:pretty"><span style="color:#FF4A24">Selected.</span> The parts column on the right is showing this slot.</div>
+      </div>
+
+      <!-- 2 · filled -->
+      <div style="display:flex; align-items:center; gap:14px">
+        <div style="flex:1; display:flex; align-items:center; gap:10px; height:30px; padding:0 10px 0 9px; background:#0E141A; border:1px solid #1B242C; border-left:2px solid #33414D">
+          <div style="flex:none; width:24px; height:24px; background:#131A21; border:1px solid #262F38; display:flex; align-items:center; justify-content:center">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#46525E" stroke-width="1.6"><path d="M4 15l6-6 5 5-6 6z"></path><path d="M14 9l4-4"></path></svg>
+          </div>
+          <div style="flex:none; width:96px; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.13em; color:#7E909F; text-transform:uppercase">Stock</div>
+          <div style="flex:1; min-width:0; font-size:12px; color:#DCE6ED; white-space:nowrap; overflow:hidden; text-overflow:ellipsis">AK74/AKM 6p20-sb5 stock</div>
+          <div style="flex:none; font-family:'IBM Plex Mono',monospace; font-size:10px; color:#46525E">5 opts</div>
+        </div>
+        <div style="flex:none; width:186px; font-size:11px; line-height:1.5; color:#7E909F; text-wrap:pretty">Filled. Icon, slot, fitted part, how many alternatives exist.</div>
+      </div>
+
+      <!-- 3 · empty -->
+      <div style="display:flex; align-items:center; gap:14px">
+        <div style="flex:1; display:flex; align-items:center; gap:10px; height:30px; padding:0 10px 0 9px; background:#0E141A; border:1px solid #1B242C; border-left:2px solid #1B242C">
+          <div style="flex:none; width:24px; height:24px; background:#131A21; border:1px solid #262F38"></div>
+          <div style="flex:none; width:96px; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.13em; color:#7E909F; text-transform:uppercase">Side rail</div>
+          <div style="flex:1; min-width:0; font-size:12px; color:#5C6E7C">Empty</div>
+          <div style="flex:none; font-family:'IBM Plex Mono',monospace; font-size:10px; color:#46525E">2 opts</div>
+        </div>
+        <div style="flex:none; width:186px; font-size:11px; line-height:1.5; color:#7E909F; text-wrap:pretty">Empty and fittable. Slot label stays lit — it is a real slot on this receiver.</div>
+      </div>
+
+      <!-- 4 · child slot, open -->
+      <div style="display:flex; align-items:center; gap:14px">
+        <div style="flex:1; display:flex; align-items:center; gap:10px; height:30px; padding:0 10px 0 24px; background:#0E141A; border:1px solid #1B242C; border-left:2px solid #1B242C">
+          <div style="flex:none; width:24px; height:24px; background:#131A21; border:1px solid #262F38"></div>
+          <div style="flex:none; width:96px; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.13em; color:#7E909F; text-transform:uppercase">Suppressor</div>
+          <div style="flex:1; min-width:0; font-size:12px; color:#5C6E7C">Empty — fits the fitted muzzle</div>
+          <div style="flex:none; font-family:'IBM Plex Mono',monospace; font-size:10px; color:#46525E">1 opt</div>
+        </div>
+        <div style="flex:none; width:186px; font-size:11px; line-height:1.5; color:#7E909F; text-wrap:pretty">Indented: a child slot that exists <span style="color:#C6D3DC">because</span> the Reactor is fitted and provides it.</div>
+      </div>
+
+      <!-- 5 · child slot, parent missing -->
+      <div style="display:flex; align-items:center; gap:14px">
+        <div style="flex:1; display:flex; align-items:center; gap:10px; height:30px; padding:0 10px 0 24px; background:#0E141A; border:1px solid #1B242C; border-left:2px solid #1B242C; opacity:.55">
+          <div style="flex:none; width:24px; height:24px; background:#131A21; border:1px solid #262F38"></div>
+          <div style="flex:none; width:96px; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.13em; color:#7E909F; text-transform:uppercase">Suppressor</div>
+          <div style="flex:1; min-width:0; font-size:12px; color:#5C6E7C">Needs a muzzle that takes one</div>
+          <div style="flex:none; font-family:'IBM Plex Mono',monospace; font-size:10px; color:#46525E">—</div>
+        </div>
+        <div style="flex:none; width:186px; font-size:11px; line-height:1.5; color:#7E909F; text-wrap:pretty">Dimmed by the <span style="color:#C6D3DC">build</span>, not by the player. Swap the muzzle and it lights up.</div>
+      </div>
+
+      <!-- 6 · data gap -->
+      <div style="display:flex; align-items:center; gap:14px">
+        <div style="flex:1; display:flex; align-items:center; gap:10px; height:30px; padding:0 10px 0 24px; background:#0E141A; border:1px solid #1B242C; border-left:2px solid #FFB020; opacity:.55">
+          <div style="flex:none; width:24px; height:24px; background:#131A21; border:1px solid #262F38"></div>
+          <div style="flex:none; width:96px; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.13em; color:#FFB020; text-transform:uppercase">Optic</div>
+          <div style="flex:1; min-width:0; font-size:12px; color:#5C6E7C">Rail open — no compatibility published</div>
+          <div style="flex:none; font-family:'IBM Plex Mono',monospace; font-size:10px; color:#46525E">?</div>
+        </div>
+        <div style="flex:none; width:186px; font-size:11px; line-height:1.5; color:#7E909F; text-wrap:pretty"><span style="color:#FFB020">Amber edge = a gap in the data</span>, not in the build. 77 of 651 parts carry no <span style="font-family:'IBM Plex Mono',monospace">installsOn</span>.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ PART ROW ============ -->
+  <div style="display:flex; flex-direction:column; gap:11px">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.22em; color:#7E909F">PART ROW · 420 PX COLUMN</div>
+
+    <div style="display:flex; align-items:flex-start; gap:11px; background:#161E26; border:1px solid #37434F; border-left:2px solid #FF4A24; padding:10px 11px">
+      <div style="flex:none; width:44px; height:44px; background:#151D24; border:1px solid #2C3743; display:flex; align-items:center; justify-content:center">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5B8CA8" stroke-width="1.5"><path d="M3 12h12"></path><rect x="15" y="8.5" width="6" height="7"></rect></svg>
+      </div>
+      <div style="flex:1; min-width:0; display:flex; flex-direction:column; gap:4px">
+        <div style="font-size:13px; font-weight:600; color:#F4F8FB; line-height:1.3">AK74 Reactor 5.45x39mm compensator</div>
+        <div style="display:flex; gap:9px; flex-wrap:wrap; font-family:'IBM Plex Mono',monospace; font-size:10px">
+          <span style="color:#4ADE80">−7% vert</span><span style="color:#4ADE80">−12% horiz</span><span style="color:#FF4A24">−1 ergo</span><span style="color:#5C6E7C">0.2 kg</span>
+        </div>
+      </div>
+      <div style="flex:none; display:flex; flex-direction:column; align-items:flex-end; gap:5px">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.05em; color:#8DA0AE; border-bottom:1px dotted #3E4C59; padding-bottom:1px">Gunsmith LL3</div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#5C6E7C">₡19,708</div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:8px 18px">
+      <div style="display:flex; gap:9px"><div style="flex:none; width:2px; background:#FF4A24"></div><div style="font-size:11px; line-height:1.5; color:#7E909F; text-wrap:pretty"><span style="color:#C6D3DC">Accent edge</span> = fitted. Clicking it again strips the slot.</div></div>
+      <div style="display:flex; gap:9px"><div style="flex:none; width:2px; background:#2A343D"></div><div style="font-size:11px; line-height:1.5; color:#7E909F; text-wrap:pretty"><span style="color:#C6D3DC">Deltas are the part's own modifiers</span>, straight out of <span style="font-family:'IBM Plex Mono',monospace">attachmentModifier</span> — signed and coloured, never ranked.</div></div>
+      <div style="display:flex; gap:9px"><div style="flex:none; width:2px; background:#2A343D"></div><div style="font-size:11px; line-height:1.5; color:#7E909F; text-wrap:pretty"><span style="color:#C6D3DC">Dotted underline</span> = there is more to know. Hover opens the panel below.</div></div>
+      <div style="display:flex; gap:9px"><div style="flex:none; width:2px; background:#2A343D"></div><div style="font-size:11px; line-height:1.5; color:#7E909F; text-wrap:pretty"><span style="color:#C6D3DC">Price sits last and smallest.</span> There is no budget to spend it against, so it is a fact, not a constraint.</div></div>
+    </div>
+  </div>
+
+  <!-- ============ THE TOOLTIP ============ -->
+  <div style="display:flex; flex-direction:column; gap:11px">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.22em; color:#7E909F">UNLOCK INFO · HOVER, NOT A GATE</div>
+    <div style="display:flex; gap:16px; align-items:flex-start">
+      <div style="flex:none; width:228px; background:#141B22; border:1px solid #3E4C59; box-shadow:0 12px 30px rgba(0,0,0,.65); padding:11px 12px; display:flex; flex-direction:column; gap:6px">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.16em; color:#5B8CA8">HOW TO GET IT</div>
+        <div style="font-size:12px; color:#DCE6ED; line-height:1.5; text-wrap:pretty">Gunsmith sells it at loyalty level 3 for ₡19,708.</div>
+        <div style="font-size:11px; color:#7E909F; line-height:1.5; text-wrap:pretty">Also moves the recoil spring itself, not just the two display numbers.</div>
+      </div>
+      <div style="flex:1; display:flex; flex-direction:column; gap:9px">
+        <div style="font-size:12px; line-height:1.6; color:#8DA0AE; text-wrap:pretty">Trader and loyalty level come from the part's own <span style="font-family:'IBM Plex Mono',monospace; color:#C6D3DC">buyOffers[0]</span>; a part with no offer says so and points at raid or a task reward instead. Nothing about it changes whether the part can be fitted.</div>
+        <div style="font-size:12px; line-height:1.6; color:#8DA0AE; text-wrap:pretty">The second line is the one thing a build screen usually hides: <span style="color:#C6D3DC">whether the part changes what you feel or only what you read.</span> A stock's −22% vertical moves the display number alone; a compensator also carries momentum and stiffness modifiers, so it moves the simulation.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ QUALITY BAND ============ -->
+  <div style="display:flex; flex-direction:column; gap:11px">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.22em; color:#7E909F">QUALITY BAND · WHERE THE NUMBER SITS IN ITS CLASS</div>
+
+    <div style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:9px">
+      <div style="background:#0E141A; border:1px solid #212A32; padding:9px 11px; display:flex; flex-direction:column; gap:6px">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.16em; color:#7E909F">VERT RECOIL</div>
+        <div style="display:flex; align-items:baseline; gap:7px">
+          <span style="font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:21px; line-height:1; color:#ECF2F7">186</span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#4ADE80">−6</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:9px">
+          <div style="flex:none; width:52px; display:flex; gap:2px">
+            <div style="flex:1; height:4px; background:#4ADE80"></div><div style="flex:1; height:4px; background:#4ADE80"></div><div style="flex:1; height:4px; background:#4ADE80"></div><div style="flex:1; height:4px; background:#4ADE80"></div>
+          </div>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.1em; color:#4ADE80">TOP 25%</span>
+        </div>
+      </div>
+      <div style="background:#0E141A; border:1px solid #212A32; padding:9px 11px; display:flex; flex-direction:column; gap:6px">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.16em; color:#7E909F">ERGONOMICS</div>
+        <div style="display:flex; align-items:baseline; gap:7px">
+          <span style="font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:21px; line-height:1; color:#ECF2F7">21</span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#FF4A24">−23</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:9px">
+          <div style="flex:none; width:52px; display:flex; gap:2px">
+            <div style="flex:1; height:4px; background:#FF4A24"></div><div style="flex:1; height:4px; background:#28323B"></div><div style="flex:1; height:4px; background:#28323B"></div><div style="flex:1; height:4px; background:#28323B"></div>
+          </div>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.1em; color:#FF4A24">BOTTOM 25%</span>
+        </div>
+      </div>
+      <div style="background:#0E141A; border:1px solid #212A32; padding:9px 11px; display:flex; flex-direction:column; gap:6px">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.16em; color:#7E909F">RPM</div>
+        <div style="display:flex; align-items:baseline; gap:7px">
+          <span style="font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:21px; line-height:1; color:#ECF2F7">650</span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:#5C6E7C">—</span>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.1em; color:#46525E">DESCRIPTIVE · NOT RANKED</div>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:18px; align-items:flex-start">
+      <div style="flex:1; display:flex; flex-direction:column; gap:7px">
+        <div style="font-size:12px; line-height:1.6; color:#8DA0AE; text-wrap:pretty">The band is a quartile against <span style="color:#C6D3DC">the 74 shipped presets whose receiver carries a <span style="font-family:'IBM Plex Mono',monospace">GunType.Rifle.*</span> tag</span> — same class only, so an SMG's ergonomics never sets the bar for a rifle's. It moves as you fit parts, because it is computed from the assembled number, not the preset's.</div>
+        <div style="font-size:12px; line-height:1.6; color:#8DA0AE; text-wrap:pretty">The delta beside the value and the band under it answer different questions: <span style="color:#C6D3DC">the delta is "what did my last part do"</span>, <span style="color:#C6D3DC">the band is "is this gun any good"</span>. The stock AK-74N is the case for having both — top-half recoil on bottom-quartile ergonomics.</div>
+      </div>
+      <div style="flex:none; width:196px; display:flex; flex-direction:column; gap:6px">
+        <div style="display:flex; align-items:center; gap:8px"><div style="width:26px; height:4px; background:#4ADE80"></div><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#8DA0AE">TOP 25%</span></div>
+        <div style="display:flex; align-items:center; gap:8px"><div style="width:26px; height:4px; background:#5B8CA8"></div><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#8DA0AE">UPPER HALF</span></div>
+        <div style="display:flex; align-items:center; gap:8px"><div style="width:26px; height:4px; background:#FFB020"></div><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#8DA0AE">LOWER HALF</span></div>
+        <div style="display:flex; align-items:center; gap:8px"><div style="width:26px; height:4px; background:#FF4A24"></div><span style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#8DA0AE">BOTTOM 25%</span></div>
+        <div style="font-size:11px; line-height:1.5; color:#5C6E7C; margin-top:3px; text-wrap:pretty">Five stats get one. RPM and caliber describe the gun rather than grade it.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <div style="display:flex; flex-direction:column; gap:11px">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.22em; color:#7E909F">BENCH HEADER · TWO IDENTITIES, TWO CONTROLS</div>
+    <div style="background:#0E141A; border:1px solid #212A32; padding:15px 16px; display:flex; flex-direction:column; gap:7px">
+      <div style="display:flex; align-items:center; gap:9px">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.22em; color:#FF4A24">AK-74N · 5.45X39 · 8 PARTS</div>
+        <div style="padding:3px 7px; border:1px solid #2A343D; font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:.12em; color:#8DA0AE">CHANGE BASE WEAPON</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:10px; color:#5C6E7C">
+        <div style="font-family:'Saira Condensed',sans-serif; font-weight:800; font-size:31px; line-height:1; color:#ECF2F7; text-transform:uppercase">Suburb patrol</div>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20h4L19.5 8.5a2.1 2.1 0 0 0-3-3L5 17v3z"></path></svg>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:8px 18px">
+      <div style="display:flex; gap:9px"><div style="flex:none; width:2px; background:#FF4A24"></div><div style="font-size:11px; line-height:1.5; color:#7E909F; text-wrap:pretty"><span style="color:#C6D3DC">Line 1 is the gun.</span> Change base weapon swaps the receiver and starts a fresh build from that preset — it opens the weapon picker, the thing the Presets rail used to half-do.</div></div>
+      <div style="display:flex; gap:9px"><div style="flex:none; width:2px; background:#2A343D"></div><div style="font-size:11px; line-height:1.5; color:#7E909F; text-wrap:pretty"><span style="color:#C6D3DC">Line 2 is the build, and it is the name field.</span> Click the title or the pencil and type; it is the same string the My builds rail shows. In the live artboard this actually works.</div></div>
+    </div>
+  </div>
+
+  <!-- ============ WHAT MOVED ============ -->
+  <div style="display:flex; flex-direction:column; gap:11px; border-top:1px solid #1B242C; padding-top:20px">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.22em; color:#7E909F">CHANGED FROM D3</div>
+    <div style="display:flex; flex-direction:column; gap:8px">
+      <div style="display:flex; gap:11px; align-items:baseline"><span style="flex:none; width:132px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.1em; color:#FF4A24">TOP RIGHT</span><span style="flex:1; font-size:12px; line-height:1.5; color:#8DA0AE; text-wrap:pretty">Account menu only. Save moved beside Reset in the bench header; the build total moved to the small line under the stats.</span></div>
+      <div style="display:flex; gap:11px; align-items:baseline"><span style="flex:none; width:132px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.1em; color:#FF4A24">PRESETS</span><span style="flex:1; font-size:12px; line-height:1.5; color:#8DA0AE; text-wrap:pretty">Gone. 134 shipped presets are a weapon picker, not a sidebar — they belong behind Change weapon.</span></div>
+      <div style="display:flex; gap:11px; align-items:baseline"><span style="flex:none; width:132px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.1em; color:#FF4A24">LOCKED PARTS</span><span style="flex:1; font-size:12px; line-height:1.5; color:#8DA0AE; text-wrap:pretty">Nothing is locked. The panel became "to buy this build" — the highest trader level each vendor asks across the fitted parts.</span></div>
+      <div style="display:flex; gap:11px; align-items:baseline"><span style="flex:none; width:132px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.1em; color:#FF4A24">SCHEMATIC</span><span style="flex:1; font-size:12px; line-height:1.5; color:#8DA0AE; text-wrap:pretty">The drawn gun was 330 px of invented geometry. The slot list is the same picker in a third of the height, and it carries part names, counts and the nesting the graph actually has.</span></div>
+      <div style="display:flex; gap:11px; align-items:baseline"><span style="flex:none; width:132px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.1em; color:#FF4A24">STATS</span><span style="flex:1; font-size:12px; line-height:1.5; color:#8DA0AE; text-wrap:pretty">Muzzle velocity and loudness dropped — neither is published. The six are the ones the game bakes: both recoils, ergonomics, spread, firing power, RPM. Five of them carry a quality band.</span></div>
+      <div style="display:flex; gap:11px; align-items:baseline"><span style="flex:none; width:132px; font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:.1em; color:#FF4A24">RECOIL LEGEND</span><span style="flex:1; font-size:12px; line-height:1.5; color:#8DA0AE; text-wrap:pretty">The three-item legend went. The dashed stock trace stayed — it is the same baseline the six deltas use, so it is a reading of the build, not a comparison feature — and it is named once in the panel's own copy instead.</span></div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":640,"height":1660}}'>
+class Component extends DCLogic {}
+</script>
+</body>
+</html>

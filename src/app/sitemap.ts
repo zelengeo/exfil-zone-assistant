@@ -37,6 +37,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
         {
+            url: `${baseUrl}/gunsmith`,
+            lastModified: lastModified,
+            changeFrequency: 'monthly' as const,
+            priority: 0.9,
+        },
+        {
             url: `${baseUrl}/tasks`,
             lastModified: lastModified,
             changeFrequency: 'monthly' as const,

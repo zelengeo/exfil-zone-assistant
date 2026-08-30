@@ -11,7 +11,6 @@
       "fullsize": "/images/items/magazines/mag_12GA_10.webp"
     },
     "stats": {
-      "price": 10890,
       "weight": 0.28,
       "rarity": "Rare",
       "capacity": 10,
@@ -22,6 +21,30 @@
       "compatibleWeapons": [
         "weapon-flame12",
         "weapon-flame12pve"
+      ],
+      "basePrice": 4264,
+      "sellPrices": [
+        4264,
+        3838,
+        2985,
+        2985,
+        2985,
+        4264
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.flame12.clip.10",
+          "level": 3,
+          "price": 12184,
+          "bundle": 1,
+          "bundlePrice": 12184,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.flame12.clip.10",
@@ -40,7 +63,6 @@
       "fullsize": "/images/items/magazines/mag_45acp_11.webp"
     },
     "stats": {
-      "price": 6984,
       "weight": 0.26,
       "rarity": "Uncommon",
       "capacity": 10,
@@ -50,6 +72,30 @@
       "ergonomicsModifier": -0.04,
       "compatibleWeapons": [
         "weapon-m1911"
+      ],
+      "basePrice": 1658,
+      "sellPrices": [
+        1658,
+        1493,
+        1161,
+        1161,
+        1161,
+        1658
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.kw1911.clip.kw1911",
+          "level": 1,
+          "price": 3684,
+          "bundle": 1,
+          "bundlePrice": 3684,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.kw1911.clip.kw1911",
@@ -68,7 +114,6 @@
       "fullsize": "/images/items/magazines/mag_45acp_25.webp"
     },
     "stats": {
-      "price": 6000,
       "weight": 0.32,
       "rarity": "Uncommon",
       "capacity": 25,
@@ -79,6 +124,30 @@
       "compatibleWeapons": [
         "weapon-thompson-m1928",
         "weapon-m1928a1"
+      ],
+      "basePrice": 1604,
+      "sellPrices": [
+        1604,
+        1444,
+        1123,
+        1123,
+        1123,
+        1604
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.m1928.clip.mag25",
+          "level": 1,
+          "price": 3564,
+          "bundle": 1,
+          "bundlePrice": 3564,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.m1928.clip.mag25",
@@ -97,7 +166,6 @@
       "fullsize": "/images/items/magazines/mag_45acp_25_2.webp"
     },
     "stats": {
-      "price": 8282,
       "weight": 0.17,
       "rarity": "Uncommon",
       "capacity": 25,
@@ -107,6 +175,30 @@
       "ergonomicsModifier": -0.03,
       "compatibleWeapons": [
         "weapon-ump45"
+      ],
+      "basePrice": 1503,
+      "sellPrices": [
+        1503,
+        1353,
+        1053,
+        1053,
+        1053,
+        1503
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ump.clip.25",
+          "level": 2,
+          "price": 3758,
+          "bundle": 1,
+          "bundlePrice": 3758,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.ump.clip.25",
@@ -125,7 +217,6 @@
       "fullsize": "/images/items/magazines/mag_45acp_30_m3a1.webp"
     },
     "stats": {
-      "price": 6721,
       "weight": 0.4,
       "rarity": "Uncommon",
       "capacity": 30,
@@ -135,6 +226,30 @@
       "ergonomicsModifier": -0.01,
       "compatibleWeapons": [
         "weapon-m3a1-grease-gun"
+      ],
+      "basePrice": 1632,
+      "sellPrices": [
+        1632,
+        1469,
+        1143,
+        1143,
+        1143,
+        1632
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.m3a1.clip.45acp30r",
+          "level": 1,
+          "price": 3627,
+          "bundle": 1,
+          "bundlePrice": 3627,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.m3a1.clip.45acp30r",
@@ -153,7 +268,6 @@
       "fullsize": "/images/items/magazines/mag_545x39_30_2.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.11,
       "rarity": "Rare",
       "capacity": 30,
@@ -173,6 +287,30 @@
         "weapon-ak74n-lhv",
         "weapon-ak74n-factory",
         "weapon-malyuk-545"
+      ],
+      "basePrice": 3914,
+      "sellPrices": [
+        3914,
+        3523,
+        2740,
+        2740,
+        2740,
+        3914
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ak.clip.545pmag30",
+          "level": 2,
+          "price": 9785,
+          "bundle": 1,
+          "bundlePrice": 9785,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.ak.clip.545pmag30",
@@ -191,7 +329,6 @@
       "fullsize": "/images/items/magazines/mag_545x39_30_black.webp"
     },
     "stats": {
-      "price": 8160,
       "weight": 0.2,
       "rarity": "Uncommon",
       "capacity": 30,
@@ -211,6 +348,32 @@
         "weapon-ak74n-lhv",
         "weapon-ak74n-factory",
         "weapon-malyuk-545"
+      ],
+      "basePrice": 1895,
+      "sellPrices": [
+        1895,
+        1706,
+        1327,
+        1327,
+        1327,
+        1895
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ak.clip.545-6l23",
+          "level": 1,
+          "price": 4212,
+          "bundle": 1,
+          "bundlePrice": 4212,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.c.09"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.ak.clip.545-6l23",
@@ -229,7 +392,6 @@
       "fullsize": "/images/items/magazines/mag_545x39_30_orange.webp"
     },
     "stats": {
-      "price": 8,
       "weight": 0.2,
       "rarity": "Uncommon",
       "capacity": 30,
@@ -249,6 +411,30 @@
         "weapon-ak74n-lhv",
         "weapon-ak74n-factory",
         "weapon-malyuk-545"
+      ],
+      "basePrice": 1895,
+      "sellPrices": [
+        1895,
+        1706,
+        1327,
+        1327,
+        1327,
+        1895
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ak.clip.545-6l20",
+          "level": 1,
+          "price": 4210,
+          "bundle": 1,
+          "bundlePrice": 4210,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.ak.clip.545-6l20",
@@ -267,7 +453,6 @@
       "fullsize": "/images/items/magazines/mag_545x39_60.webp"
     },
     "stats": {
-      "price": 63000,
       "weight": 0.35,
       "rarity": "Epic",
       "capacity": 60,
@@ -286,6 +471,32 @@
         "weapon-ak74n-fullattach",
         "weapon-ak74n-lhv",
         "weapon-ak74n-factory"
+      ],
+      "basePrice": 11382,
+      "sellPrices": [
+        11382,
+        10244,
+        7968,
+        7968,
+        7968,
+        11382
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ak.clip.545pufgun60",
+          "level": 4,
+          "price": 37939,
+          "bundle": 1,
+          "bundlePrice": 37939,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.a.07"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.ak.clip.545pufgun60",
@@ -304,7 +515,6 @@
       "fullsize": "/images/items/magazines/mag_556x45_20.webp"
     },
     "stats": {
-      "price": 8910,
       "weight": 0.14,
       "rarity": "Uncommon",
       "capacity": 20,
@@ -333,6 +543,30 @@
         "weapon-hk416",
         "weapon-rc416a5-2025hallow",
         "weapon-scar16"
+      ],
+      "basePrice": 1600,
+      "sellPrices": [
+        1600,
+        1440,
+        1120,
+        1120,
+        1120,
+        1600
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.ar15.clip.20r",
+          "level": 1,
+          "price": 3556,
+          "bundle": 1,
+          "bundlePrice": 3556,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.ar15.clip.20r",
@@ -351,7 +585,6 @@
       "fullsize": "/images/items/magazines/mag_556x45_30.webp"
     },
     "stats": {
-      "price": 12120,
       "weight": 0.19,
       "rarity": "Uncommon",
       "capacity": 30,
@@ -364,6 +597,30 @@
         "weapon-aug-a3-ris",
         "weapon-aug-a3-cqb",
         "weapon-auga3m1optic"
+      ],
+      "basePrice": 2590,
+      "sellPrices": [
+        2590,
+        2331,
+        1813,
+        1813,
+        1813,
+        2590
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.aug.clip.30",
+          "level": 3,
+          "price": 7399,
+          "bundle": 1,
+          "bundlePrice": 7399,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.aug.clip.30",
@@ -382,7 +639,6 @@
       "fullsize": "/images/items/magazines/mag_556x45_30_hk416.webp"
     },
     "stats": {
-      "price": 13260,
       "weight": 0.12,
       "rarity": "Uncommon",
       "capacity": 30,
@@ -411,6 +667,32 @@
         "weapon-hk416",
         "weapon-rc416a5-2025hallow",
         "weapon-scar16"
+      ],
+      "basePrice": 3630,
+      "sellPrices": [
+        3630,
+        3267,
+        2541,
+        2541,
+        2541,
+        3630
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.ar15.clip.hkstanag30",
+          "level": 3,
+          "price": 10372,
+          "bundle": 1,
+          "bundlePrice": 10372,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.b.10"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.ar15.clip.hkstanag30",
@@ -429,7 +711,6 @@
       "fullsize": "/images/items/magazines/mag_556x45_30_pmag.webp"
     },
     "stats": {
-      "price": 15000,
       "weight": 0.1,
       "rarity": "Rare",
       "capacity": 30,
@@ -458,6 +739,30 @@
         "weapon-hk416",
         "weapon-rc416a5-2025hallow",
         "weapon-scar16"
+      ],
+      "basePrice": 3900,
+      "sellPrices": [
+        3900,
+        3510,
+        2730,
+        2730,
+        2730,
+        3900
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.ar15.clip.pmag30",
+          "level": 3,
+          "price": 11143,
+          "bundle": 1,
+          "bundlePrice": 11143,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.ar15.clip.pmag30",
@@ -476,7 +781,6 @@
       "fullsize": "/images/items/magazines/mag_556x45_30_stanag.webp"
     },
     "stats": {
-      "price": 10780,
       "weight": 0.16,
       "rarity": "Uncommon",
       "capacity": 30,
@@ -505,6 +809,30 @@
         "weapon-hk416",
         "weapon-rc416a5-2025hallow",
         "weapon-scar16"
+      ],
+      "basePrice": 3322,
+      "sellPrices": [
+        3322,
+        2990,
+        2326,
+        2326,
+        2326,
+        3322
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.ar15.clip.arstanag30",
+          "level": 2,
+          "price": 8304,
+          "bundle": 1,
+          "bundlePrice": 8304,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.ar15.clip.arstanag30",
@@ -523,7 +851,6 @@
       "fullsize": "/images/items/magazines/mag_556x45_42.webp"
     },
     "stats": {
-      "price": 34300,
       "weight": 0.26,
       "rarity": "Epic",
       "capacity": 42,
@@ -536,6 +863,32 @@
         "weapon-aug-a3-ris",
         "weapon-aug-a3-cqb",
         "weapon-auga3m1optic"
+      ],
+      "basePrice": 5280,
+      "sellPrices": [
+        5280,
+        4752,
+        3696,
+        3696,
+        3696,
+        5280
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.aug.clip.42",
+          "level": 4,
+          "price": 17600,
+          "bundle": 1,
+          "bundlePrice": 17600,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.a.04"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.aug.clip.42",
@@ -554,7 +907,6 @@
       "fullsize": "/images/items/magazines/mag_556x45_50.webp"
     },
     "stats": {
-      "price": 54450,
       "weight": 0.41,
       "rarity": "Epic",
       "capacity": 50,
@@ -583,6 +935,32 @@
         "weapon-hk416",
         "weapon-rc416a5-2025hallow",
         "weapon-scar16"
+      ],
+      "basePrice": 15397,
+      "sellPrices": [
+        15397,
+        13858,
+        10778,
+        10778,
+        10778,
+        15397
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.ar15.clip.drum50",
+          "level": 4,
+          "price": 51323,
+          "bundle": 1,
+          "bundlePrice": 51323,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.a.03"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.ar15.clip.drum50",
@@ -601,7 +979,6 @@
       "fullsize": "/images/items/magazines/mag_556x45_60.webp"
     },
     "stats": {
-      "price": 72000,
       "weight": 0.45,
       "rarity": "Legendary",
       "capacity": 60,
@@ -630,6 +1007,56 @@
         "weapon-hk416",
         "weapon-rc416a5-2025hallow",
         "weapon-scar16"
+      ],
+      "basePrice": 16740,
+      "sellPrices": [
+        16740,
+        15066,
+        11718,
+        11718,
+        11718,
+        16740
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.ar15.clip.pdrum60",
+          "level": 4,
+          "price": 55799,
+          "bundle": 1,
+          "bundlePrice": 55799,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.a.07"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.ar15.clip.pdrum60-2",
+          "level": 4,
+          "price": 55799,
+          "bundle": 1,
+          "bundlePrice": 55799,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.a.07"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.radio",
+              "count": 1
+            },
+            {
+              "id": "valuable.information.computertextbook",
+              "count": 3
+            }
+          ]
+        }
       ]
     },
     "gameId": "gunsmith.ar15.clip.pdrum60",
@@ -648,7 +1075,6 @@
       "fullsize": "/images/items/magazines/mag_556x45_60_sf.webp"
     },
     "stats": {
-      "price": 80000,
       "weight": 0.25,
       "rarity": "Legendary",
       "capacity": 60,
@@ -677,6 +1103,56 @@
         "weapon-hk416",
         "weapon-rc416a5-2025hallow",
         "weapon-scar16"
+      ],
+      "basePrice": 18985,
+      "sellPrices": [
+        18985,
+        17087,
+        13290,
+        13290,
+        13290,
+        18985
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.ar15.clip.sf60",
+          "level": 4,
+          "price": 63282,
+          "bundle": 1,
+          "bundlePrice": 63282,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gunsmith.m09"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.ar15.clip.sf60-2",
+          "level": 4,
+          "price": 63282,
+          "bundle": 1,
+          "bundlePrice": 63282,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.research.d2"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.combustible.largegascan",
+              "count": 2
+            },
+            {
+              "id": "valuable.combustible.lighterfluid",
+              "count": 2
+            }
+          ]
+        }
       ]
     },
     "gameId": "gunsmith.ar15.clip.sf60",
@@ -701,8 +1177,7 @@
       "caliber": "6.8x51",
       "compatibleWeapons": [
         "weapon-xm5"
-      ],
-      "price": 15840
+      ]
     },
     "description": "Next-generation 20-round magazine for the XM5 rifle system. 6.8x51mm cartridge.",
     "tips": "New military standard cartridge with improved ballistics over 5.56.",
@@ -720,7 +1195,6 @@
       "fullsize": "/images/items/magazines/mag_762x39_10.webp"
     },
     "stats": {
-      "price": 3000,
       "weight": 0.18,
       "rarity": "Common",
       "capacity": 10,
@@ -743,6 +1217,30 @@
         "weapon-malyuk-762",
         "weapon-malyuk762-2025hallows",
         "weapon-akalpha"
+      ],
+      "basePrice": 528,
+      "sellPrices": [
+        528,
+        476,
+        370,
+        370,
+        370,
+        528
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ak.clip.762akcustom10",
+          "level": 1,
+          "price": 1173,
+          "bundle": 1,
+          "bundlePrice": 1173,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.ak.clip.762akcustom10",
@@ -761,7 +1259,6 @@
       "fullsize": "/images/items/magazines/mag_762x39_10_2.webp"
     },
     "stats": {
-      "price": 5050,
       "weight": 0.07,
       "rarity": "Common",
       "capacity": 10,
@@ -784,6 +1281,30 @@
         "weapon-malyuk-762",
         "weapon-malyuk762-2025hallows",
         "weapon-akalpha"
+      ],
+      "basePrice": 645,
+      "sellPrices": [
+        645,
+        581,
+        452,
+        452,
+        452,
+        645
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ak.clip.762poly10black",
+          "level": 2,
+          "price": 1612,
+          "bundle": 1,
+          "bundlePrice": 1612,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.ak.clip.762poly10black",
@@ -802,7 +1323,6 @@
       "fullsize": "/images/items/magazines/mag_762x39_10_3.webp"
     },
     "stats": {
-      "price": 4900,
       "weight": 0.07,
       "rarity": "Common",
       "capacity": 10,
@@ -825,6 +1345,30 @@
         "weapon-malyuk-762",
         "weapon-malyuk762-2025hallows",
         "weapon-akalpha"
+      ],
+      "basePrice": 676,
+      "sellPrices": [
+        676,
+        609,
+        474,
+        474,
+        474,
+        676
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ak.clip.762poly10fde",
+          "level": 2,
+          "price": 1690,
+          "bundle": 1,
+          "bundlePrice": 1690,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.ak.clip.762poly10fde",
@@ -849,8 +1393,7 @@
       "caliber": "7.62x39",
       "compatibleWeapons": [
         "weapon-sks"
-      ],
-      "price": 10200
+      ]
     },
     "description": "Detachable magazine conversion for the SKS rifle system.",
     "tips": "Upgrade from standard 10-round fixed magazine for increased capacity.",
@@ -868,7 +1411,6 @@
       "fullsize": "/images/items/magazines/mag_762x39_20.webp"
     },
     "stats": {
-      "price": 6370,
       "weight": 0.25,
       "rarity": "Common",
       "capacity": 20,
@@ -891,6 +1433,30 @@
         "weapon-malyuk-762",
         "weapon-malyuk762-2025hallows",
         "weapon-akalpha"
+      ],
+      "basePrice": 1029,
+      "sellPrices": [
+        1029,
+        927,
+        721,
+        721,
+        721,
+        1029
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ak.clip.762akcustom20",
+          "level": 1,
+          "price": 2287,
+          "bundle": 1,
+          "bundlePrice": 2287,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.ak.clip.762akcustom20",
@@ -909,7 +1475,6 @@
       "fullsize": "/images/items/magazines/mag_762x39_20_2.webp"
     },
     "stats": {
-      "price": 6930,
       "weight": 0.09,
       "rarity": "Uncommon",
       "capacity": 20,
@@ -932,6 +1497,30 @@
         "weapon-malyuk-762",
         "weapon-malyuk762-2025hallows",
         "weapon-akalpha"
+      ],
+      "basePrice": 1307,
+      "sellPrices": [
+        1307,
+        1177,
+        915,
+        915,
+        915,
+        1307
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ak.clip.762poly20black",
+          "level": 2,
+          "price": 3267,
+          "bundle": 1,
+          "bundlePrice": 3267,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.ak.clip.762poly20black",
@@ -950,7 +1539,6 @@
       "fullsize": "/images/items/magazines/mag_762x39_20_3.webp"
     },
     "stats": {
-      "price": 7000,
       "weight": 0.09,
       "rarity": "Uncommon",
       "capacity": 20,
@@ -973,6 +1561,30 @@
         "weapon-malyuk-762",
         "weapon-malyuk762-2025hallows",
         "weapon-akalpha"
+      ],
+      "basePrice": 1302,
+      "sellPrices": [
+        1302,
+        1172,
+        912,
+        912,
+        912,
+        1302
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ak.clip.762poly20fde",
+          "level": 2,
+          "price": 3254,
+          "bundle": 1,
+          "bundlePrice": 3254,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.ak.clip.762poly20fde",
@@ -991,7 +1603,6 @@
       "fullsize": "/images/items/magazines/mag_762x39_30.webp"
     },
     "stats": {
-      "price": 7644,
       "weight": 0.35,
       "rarity": "Uncommon",
       "capacity": 30,
@@ -1014,6 +1625,30 @@
         "weapon-malyuk-762",
         "weapon-malyuk762-2025hallows",
         "weapon-akalpha"
+      ],
+      "basePrice": 955,
+      "sellPrices": [
+        955,
+        860,
+        669,
+        669,
+        669,
+        955
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ak.clip.762ak55",
+          "level": 2,
+          "price": 2388,
+          "bundle": 1,
+          "bundlePrice": 2388,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.ak.clip.762ak55",
@@ -1032,7 +1667,6 @@
       "fullsize": "/images/items/magazines/mag_762x39_30_2.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.11,
       "rarity": "Rare",
       "capacity": 30,
@@ -1055,6 +1689,30 @@
         "weapon-malyuk-762",
         "weapon-malyuk762-2025hallows",
         "weapon-akalpha"
+      ],
+      "basePrice": 3548,
+      "sellPrices": [
+        3548,
+        3194,
+        2484,
+        2484,
+        2484,
+        3548
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ak.clip.762pmag30",
+          "level": 3,
+          "price": 10137,
+          "bundle": 1,
+          "bundlePrice": 10137,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.ak.clip.762pmag30",
@@ -1073,7 +1731,6 @@
       "fullsize": "/images/items/magazines/mag_762x39_60.webp"
     },
     "stats": {
-      "price": 60000,
       "weight": 0.23,
       "rarity": "Epic",
       "capacity": 60,
@@ -1094,6 +1751,48 @@
         "weapon-rd704-2025hallows",
         "weapon-rd704voucherlv3",
         "weapon-akalpha"
+      ],
+      "basePrice": 16560,
+      "sellPrices": [
+        16560,
+        14904,
+        11592,
+        11592,
+        11592,
+        16560
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.ak.clip.762quad60black",
+          "level": 3,
+          "price": 47313,
+          "bundle": 1,
+          "bundlePrice": 47313,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.ak.clip.762quad60black-2",
+          "level": 3,
+          "price": 47313,
+          "bundle": 1,
+          "bundlePrice": 47313,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.radio",
+              "count": 1
+            }
+          ]
+        }
       ]
     },
     "gameId": "gunsmith.ak.clip.762quad60black",
@@ -1112,7 +1811,6 @@
       "fullsize": "/images/items/magazines/mag_762x39_60_2.webp"
     },
     "stats": {
-      "price": 61200,
       "weight": 0.23,
       "rarity": "Epic",
       "capacity": 60,
@@ -1133,6 +1831,48 @@
         "weapon-rd704-2025hallows",
         "weapon-rd704voucherlv3",
         "weapon-akalpha"
+      ],
+      "basePrice": 16528,
+      "sellPrices": [
+        16528,
+        14876,
+        11570,
+        11570,
+        11570,
+        16528
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.ak.clip.762quad60fde",
+          "level": 3,
+          "price": 47222,
+          "bundle": 1,
+          "bundlePrice": 47222,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.ak.clip.762quad60fde-2",
+          "level": 3,
+          "price": 47222,
+          "bundle": 1,
+          "bundlePrice": 47222,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.civilradio",
+              "count": 1
+            }
+          ]
+        }
       ]
     },
     "gameId": "gunsmith.ak.clip.762quad60fde",
@@ -1151,7 +1891,6 @@
       "fullsize": "/images/items/magazines/mag_762x39_75.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.75,
       "rarity": "Common",
       "capacity": 75,
@@ -1172,6 +1911,56 @@
         "weapon-rd704-2025hallows",
         "weapon-rd704voucherlv3",
         "weapon-akalpha"
+      ],
+      "basePrice": 16935,
+      "sellPrices": [
+        16935,
+        15242,
+        11855,
+        11855,
+        11855,
+        16935
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ak.clip.762drum60molot",
+          "level": 4,
+          "price": 56450,
+          "bundle": 1,
+          "bundlePrice": 56450,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.a.08"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ak.clip.762drum60molot-2",
+          "level": 4,
+          "price": 56450,
+          "bundle": 1,
+          "bundlePrice": 56450,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.a.08"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.radio",
+              "count": 1
+            },
+            {
+              "id": "valuable.medicalsupplies.bottledglucose",
+              "count": 2
+            }
+          ]
+        }
       ]
     },
     "gameId": "gunsmith.ak.clip.762drum60molot",
@@ -1190,7 +1979,6 @@
       "fullsize": "/images/items/magazines/mag_762x51_10.webp"
     },
     "stats": {
-      "price": 11220,
       "weight": 0.14,
       "rarity": "Uncommon",
       "capacity": 10,
@@ -1202,6 +1990,30 @@
         "weapon-ar308",
         "weapon-ar308pve",
         "weapon-ar308-voucherlv2"
+      ],
+      "basePrice": 2555,
+      "sellPrices": [
+        2555,
+        2300,
+        1789,
+        1789,
+        1789,
+        2555
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.ar10.clip.10",
+          "level": 3,
+          "price": 7301,
+          "bundle": 1,
+          "bundlePrice": 7301,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.ar10.clip.10",
@@ -1220,7 +2032,6 @@
       "fullsize": "/images/items/magazines/mag_762x51_10_2.webp"
     },
     "stats": {
-      "price": 6180,
       "weight": 0.07,
       "rarity": "Common",
       "capacity": 10,
@@ -1240,6 +2051,30 @@
         "weapon-psg1-custom",
         "weapon-psg1",
         "weapon-psg-voucherlv3"
+      ],
+      "basePrice": 2166,
+      "sellPrices": [
+        2166,
+        1950,
+        1517,
+        1517,
+        1517,
+        2166
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.g3.clip.10",
+          "level": 1,
+          "price": 4814,
+          "bundle": 1,
+          "bundlePrice": 4814,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.g3.clip.10",
@@ -1258,7 +2093,6 @@
       "fullsize": "/images/items/magazines/mag_762x51_10_3.webp"
     },
     "stats": {
-      "price": 16320,
       "weight": 0.5,
       "rarity": "Rare",
       "capacity": 10,
@@ -1268,6 +2102,32 @@
       "ergonomicsModifier": -0.02,
       "compatibleWeapons": [
         "weapon-m40a5"
+      ],
+      "basePrice": 4768,
+      "sellPrices": [
+        4768,
+        4292,
+        3338,
+        3338,
+        3338,
+        4768
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.m40a5.clip.10r",
+          "level": 3,
+          "price": 13624,
+          "bundle": 1,
+          "bundlePrice": 13624,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.b.06"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.m40a5.clip.10r",
@@ -1286,7 +2146,6 @@
       "fullsize": "/images/items/magazines/mag_762x51_20.webp"
     },
     "stats": {
-      "price": 14935,
       "weight": 0.17,
       "rarity": "Rare",
       "capacity": 20,
@@ -1298,6 +2157,30 @@
         "weapon-ar308",
         "weapon-ar308pve",
         "weapon-ar308-voucherlv2"
+      ],
+      "basePrice": 5415,
+      "sellPrices": [
+        5415,
+        4874,
+        3791,
+        3791,
+        3791,
+        5415
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.ar10.clip.20",
+          "level": 3,
+          "price": 15471,
+          "bundle": 1,
+          "bundlePrice": 15471,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.ar10.clip.20",
@@ -1316,7 +2199,6 @@
       "fullsize": "/images/items/magazines/mag_762x51_20_2.webp"
     },
     "stats": {
-      "price": 6435,
       "weight": 0.35,
       "rarity": "Uncommon",
       "capacity": 20,
@@ -1330,6 +2212,30 @@
         "weapon-sa58-para",
         "weapon-sa58-hallows01",
         "weapon-rfb"
+      ],
+      "basePrice": 2926,
+      "sellPrices": [
+        2926,
+        2634,
+        2049,
+        2049,
+        2049,
+        2926
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.sa58.clip.20rnd",
+          "level": 2,
+          "price": 7315,
+          "bundle": 1,
+          "bundlePrice": 7315,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.sa58.clip.20rnd",
@@ -1348,7 +2254,6 @@
       "fullsize": "/images/items/magazines/mag_762x51_20_3.webp"
     },
     "stats": {
-      "price": 13000,
       "weight": 0.14,
       "rarity": "Common",
       "capacity": 20,
@@ -1368,6 +2273,30 @@
         "weapon-psg1-custom",
         "weapon-psg1",
         "weapon-psg-voucherlv3"
+      ],
+      "basePrice": 3786,
+      "sellPrices": [
+        3786,
+        3408,
+        2651,
+        2651,
+        2651,
+        3786
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.g3.clip.20",
+          "level": 2,
+          "price": 9464,
+          "bundle": 1,
+          "bundlePrice": 9464,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.g3.clip.20",
@@ -1386,7 +2315,6 @@
       "fullsize": "/images/items/magazines/mag_762x51_20_4.webp"
     },
     "stats": {
-      "price": 13939,
       "weight": 0.15,
       "rarity": "Rare",
       "capacity": 20,
@@ -1399,6 +2327,30 @@
         "weapon-scar17-black",
         "weapon-seca17-fullattachssr",
         "weapon-scar17-ssr"
+      ],
+      "basePrice": 4457,
+      "sellPrices": [
+        4457,
+        4012,
+        3120,
+        3120,
+        3120,
+        4457
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.scar.clip.mk17-bk",
+          "level": 3,
+          "price": 12733,
+          "bundle": 1,
+          "bundlePrice": 12733,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.scar.clip.mk17-bk",
@@ -1417,7 +2369,6 @@
       "fullsize": "/images/items/magazines/mag_762x51_20_5.webp"
     },
     "stats": {
-      "price": 13800,
       "weight": 0.15,
       "rarity": "Rare",
       "capacity": 20,
@@ -1430,6 +2381,30 @@
         "weapon-scar17-black",
         "weapon-seca17-fullattachssr",
         "weapon-scar17-ssr"
+      ],
+      "basePrice": 5098,
+      "sellPrices": [
+        5098,
+        4589,
+        3569,
+        3569,
+        3569,
+        5098
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.scar.clip.mk17-fde",
+          "level": 3,
+          "price": 14566,
+          "bundle": 1,
+          "bundlePrice": 14566,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.scar.clip.mk17-fde",
@@ -1448,7 +2423,6 @@
       "fullsize": "/images/items/magazines/mag_762x51_30.webp"
     },
     "stats": {
-      "price": 36360,
       "weight": 0.22,
       "rarity": "Rare",
       "capacity": 30,
@@ -1468,6 +2442,30 @@
         "weapon-psg1-custom",
         "weapon-psg1",
         "weapon-psg-voucherlv3"
+      ],
+      "basePrice": 7442,
+      "sellPrices": [
+        7442,
+        6698,
+        5210,
+        5210,
+        5210,
+        7442
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.g3.clip.30",
+          "level": 3,
+          "price": 21262,
+          "bundle": 1,
+          "bundlePrice": 21262,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.g3.clip.30",
@@ -1486,7 +2484,6 @@
       "fullsize": "/images/items/magazines/mag_762x51_5.webp"
     },
     "stats": {
-      "price": 8910,
       "weight": 0.3,
       "rarity": "Uncommon",
       "capacity": 5,
@@ -1496,6 +2493,30 @@
       "ergonomicsModifier": 0.03,
       "compatibleWeapons": [
         "weapon-m40a5"
+      ],
+      "basePrice": 2246,
+      "sellPrices": [
+        2246,
+        2022,
+        1573,
+        1573,
+        1573,
+        2246
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.m40a5.clip.5r",
+          "level": 3,
+          "price": 6418,
+          "bundle": 1,
+          "bundlePrice": 6418,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.m40a5.clip.5r",
@@ -1514,7 +2535,6 @@
       "fullsize": "/images/items/magazines/mag_762x51_50.webp"
     },
     "stats": {
-      "price": 64350,
       "weight": 0.43,
       "rarity": "Legendary",
       "capacity": 50,
@@ -1534,6 +2554,52 @@
         "weapon-psg1-custom",
         "weapon-psg1",
         "weapon-psg-voucherlv3"
+      ],
+      "basePrice": 19678,
+      "sellPrices": [
+        19678,
+        17711,
+        13775,
+        13775,
+        13775,
+        19678
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.g3.clip.50bk",
+          "level": 4,
+          "price": 65592,
+          "bundle": 1,
+          "bundlePrice": 65592,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.g3.clip.50bk-2",
+          "level": 4,
+          "price": 65592,
+          "bundle": 1,
+          "bundlePrice": 65592,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.radio",
+              "count": 1
+            },
+            {
+              "id": "valuable.electric.socket",
+              "count": 3
+            }
+          ]
+        }
       ]
     },
     "gameId": "gunsmith.g3.clip.50bk",
@@ -1552,7 +2618,6 @@
       "fullsize": "/images/items/magazines/mag_762x51_50_2.webp"
     },
     "stats": {
-      "price": 66300,
       "weight": 0.43,
       "rarity": "Legendary",
       "capacity": 50,
@@ -1572,6 +2637,52 @@
         "weapon-psg1-custom",
         "weapon-psg1",
         "weapon-psg-voucherlv3"
+      ],
+      "basePrice": 19676,
+      "sellPrices": [
+        19676,
+        17709,
+        13774,
+        13774,
+        13774,
+        19676
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.g3.clip.50od",
+          "level": 4,
+          "price": 65588,
+          "bundle": 1,
+          "bundlePrice": 65588,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.g3.clip.50od-2",
+          "level": 4,
+          "price": 65588,
+          "bundle": 1,
+          "bundlePrice": 65588,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.ionbattery",
+              "count": 4
+            },
+            {
+              "id": "valuable.household.facialcleanser",
+              "count": 2
+            }
+          ]
+        }
       ]
     },
     "gameId": "gunsmith.g3.clip.50od",
@@ -1590,7 +2701,6 @@
       "fullsize": "/images/items/magazines/mag_762x54R_10.webp"
     },
     "stats": {
-      "price": 8080,
       "weight": 0.28,
       "rarity": "Uncommon",
       "capacity": 10,
@@ -1601,6 +2711,30 @@
       "compatibleWeapons": [
         "weapon-svt-40",
         "weapon-svt40-sniper"
+      ],
+      "basePrice": 1134,
+      "sellPrices": [
+        1134,
+        1021,
+        794,
+        794,
+        794,
+        1134
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.svt40.clip.10",
+          "level": 3,
+          "price": 3241,
+          "bundle": 1,
+          "bundlePrice": 3241,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.svt40.clip.10",
@@ -1619,7 +2753,6 @@
       "fullsize": "/images/items/magazines/mag_762x54R_80.webp"
     },
     "stats": {
-      "price": 77250,
       "weight": 0.85,
       "rarity": "Epic",
       "capacity": 80,
@@ -1629,6 +2762,30 @@
       "ergonomicsModifier": -0.3,
       "compatibleWeapons": [
         "weapon-pkp-pecheneg"
+      ],
+      "basePrice": 7280,
+      "sellPrices": [
+        7280,
+        6552,
+        5096,
+        5096,
+        5096,
+        7280
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.pkp.clip.drum",
+          "level": 4,
+          "price": 24265,
+          "bundle": 1,
+          "bundlePrice": 24265,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.pkp.clip.drum",
@@ -1646,7 +2803,6 @@
       "fullsize": "/images/items/magazines/Icon_magazine_P250.webp"
     },
     "stats": {
-      "price": 3168,
       "rarity": "Common",
       "weight": 0.13,
       "capacity": 13,
@@ -1672,7 +2828,6 @@
       "fullsize": "/images/items/magazines/mag_9x19mm_15.webp"
     },
     "stats": {
-      "price": 4284,
       "weight": 0.06,
       "rarity": "Common",
       "capacity": 15,
@@ -1684,6 +2839,30 @@
         "weapon-mp9",
         "weapon-mp9-t",
         "weapon-mp9foldstock"
+      ],
+      "basePrice": 1487,
+      "sellPrices": [
+        1487,
+        1339,
+        1041,
+        1041,
+        1041,
+        1487
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.mp9.clip.15",
+          "level": 1,
+          "price": 3304,
+          "bundle": 1,
+          "bundlePrice": 3304,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.mp9.clip.15",
@@ -1702,7 +2881,6 @@
       "fullsize": "/images/items/magazines/mag_9x19mm_17.webp"
     },
     "stats": {
-      "price": 4950,
       "weight": 0.1,
       "rarity": "Common",
       "capacity": 17,
@@ -1713,6 +2891,30 @@
       "compatibleWeapons": [
         "weapon-glock18c",
         "weapon-vector9mm"
+      ],
+      "basePrice": 2177,
+      "sellPrices": [
+        2177,
+        1960,
+        1524,
+        1524,
+        1524,
+        2177
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.g18c.clip.17rnd",
+          "level": 1,
+          "price": 4837,
+          "bundle": 1,
+          "bundlePrice": 4837,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.g18c.clip.17rnd",
@@ -1731,7 +2933,6 @@
       "fullsize": "/images/items/magazines/mag_9x19mm_17_2.webp"
     },
     "stats": {
-      "price": 4080,
       "weight": 0.13,
       "rarity": "Uncommon",
       "capacity": 17,
@@ -1743,6 +2944,30 @@
         "weapon-m92",
         "weapon-bx4",
         "weapon-bx4longbarrel"
+      ],
+      "basePrice": 1237,
+      "sellPrices": [
+        1237,
+        1114,
+        866,
+        866,
+        866,
+        1237
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.m9.clip.17rnd",
+          "level": 1,
+          "price": 2748,
+          "bundle": 1,
+          "bundlePrice": 2748,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.m9.clip.17rnd",
@@ -1761,7 +2986,6 @@
       "fullsize": "/images/items/magazines/mag_9x19mm_20.webp"
     },
     "stats": {
-      "price": 8330,
       "weight": 0.07,
       "rarity": "Common",
       "capacity": 20,
@@ -1773,6 +2997,30 @@
         "weapon-mp9",
         "weapon-mp9-t",
         "weapon-mp9foldstock"
+      ],
+      "basePrice": 1829,
+      "sellPrices": [
+        1829,
+        1647,
+        1281,
+        1281,
+        1281,
+        1829
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.mp9.clip.20",
+          "level": 2,
+          "price": 4573,
+          "bundle": 1,
+          "bundlePrice": 4573,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.mp9.clip.20",
@@ -1791,7 +3039,6 @@
       "fullsize": "/images/items/magazines/mag_9x19mm_25.webp"
     },
     "stats": {
-      "price": 9090,
       "weight": 0.1,
       "rarity": "Uncommon",
       "capacity": 25,
@@ -1801,6 +3048,30 @@
       "ergonomicsModifier": -0.01,
       "compatibleWeapons": [
         "weapon-aug-para"
+      ],
+      "basePrice": 1970,
+      "sellPrices": [
+        1970,
+        1773,
+        1379,
+        1379,
+        1379,
+        1970
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.aug.clip.9mm",
+          "level": 2,
+          "price": 4925,
+          "bundle": 1,
+          "bundlePrice": 4925,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.aug.clip.9mm",
@@ -1819,7 +3090,6 @@
       "fullsize": "/images/items/magazines/mag_9x19mm_25_2.webp"
     },
     "stats": {
-      "price": 9180,
       "weight": 0.22,
       "rarity": "Uncommon",
       "capacity": 25,
@@ -1831,6 +3101,30 @@
         "weapon-m92",
         "weapon-bx4",
         "weapon-bx4longbarrel"
+      ],
+      "basePrice": 2948,
+      "sellPrices": [
+        2948,
+        2654,
+        2064,
+        2064,
+        2064,
+        2948
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.bx4.clip.25mag",
+          "level": 1,
+          "price": 6551,
+          "bundle": 1,
+          "bundlePrice": 6551,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.bx4.clip.25mag",
@@ -1849,7 +3143,6 @@
       "fullsize": "/images/items/magazines/mag_9x19mm_30_evo.webp"
     },
     "stats": {
-      "price": 10780,
       "weight": 0.17,
       "rarity": "Uncommon",
       "capacity": 30,
@@ -1860,6 +3153,30 @@
       "compatibleWeapons": [
         "weapon-scorpion-evo3",
         "weapon-evo3ultra"
+      ],
+      "basePrice": 1861,
+      "sellPrices": [
+        1861,
+        1675,
+        1303,
+        1303,
+        1303,
+        1861
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.evo3.clip.30rounds",
+          "level": 3,
+          "price": 5318,
+          "bundle": 1,
+          "bundlePrice": 5318,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.evo3.clip.30rounds",
@@ -1878,7 +3195,6 @@
       "fullsize": "/images/items/magazines/mag_9x19mm_30_mp5.webp"
     },
     "stats": {
-      "price": 10000,
       "weight": 0.17,
       "rarity": "Uncommon",
       "capacity": 30,
@@ -1894,6 +3210,32 @@
         "weapon-mp5k-pdw",
         "weapon-mp5k",
         "weapon-mp5sd"
+      ],
+      "basePrice": 1726,
+      "sellPrices": [
+        1726,
+        1554,
+        1209,
+        1209,
+        1209,
+        1726
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.mp5.clip.30rnd",
+          "level": 1,
+          "price": 4315,
+          "bundle": 1,
+          "bundlePrice": 4315,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.c.02"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.mp5.clip.30rnd",
@@ -1912,7 +3254,6 @@
       "fullsize": "/images/items/magazines/mag_9x19mm_30_mp9.webp"
     },
     "stats": {
-      "price": 12500,
       "weight": 0.08,
       "rarity": "Uncommon",
       "capacity": 30,
@@ -1924,6 +3265,30 @@
         "weapon-mp9",
         "weapon-mp9-t",
         "weapon-mp9foldstock"
+      ],
+      "basePrice": 2426,
+      "sellPrices": [
+        2426,
+        2184,
+        1699,
+        1699,
+        1699,
+        2426
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.mp9.clip.30",
+          "level": 3,
+          "price": 6931,
+          "bundle": 1,
+          "bundlePrice": 6931,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.mp9.clip.30",
@@ -1942,7 +3307,6 @@
       "fullsize": "/images/items/magazines/mag_9x19mm_33.webp"
     },
     "stats": {
-      "price": 17820,
       "weight": 0.15,
       "rarity": "Rare",
       "capacity": 33,
@@ -1953,6 +3317,30 @@
       "compatibleWeapons": [
         "weapon-glock18c",
         "weapon-vector9mm"
+      ],
+      "basePrice": 5567,
+      "sellPrices": [
+        5567,
+        5011,
+        3897,
+        3897,
+        3897,
+        5567
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.g18c.clip.33rnd",
+          "level": 3,
+          "price": 15905,
+          "bundle": 1,
+          "bundlePrice": 15905,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.g18c.clip.33rnd",
@@ -1971,7 +3359,6 @@
       "fullsize": "/images/items/magazines/mag_9x19mm_50_evo.webp"
     },
     "stats": {
-      "price": 56560,
       "weight": 0.66,
       "rarity": "Epic",
       "capacity": 50,
@@ -1982,6 +3369,32 @@
       "compatibleWeapons": [
         "weapon-scorpion-evo3",
         "weapon-evo3ultra"
+      ],
+      "basePrice": 13977,
+      "sellPrices": [
+        13977,
+        12580,
+        9784,
+        9784,
+        9784,
+        13977
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.evo3.clip.drum",
+          "level": 4,
+          "price": 46589,
+          "bundle": 1,
+          "bundlePrice": 46589,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.b.10"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.evo3.clip.drum",
@@ -2000,7 +3413,6 @@
       "fullsize": "/images/items/magazines/magazine-9x39-10.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.131,
       "rarity": "Uncommon",
       "capacity": 10,
@@ -2013,6 +3425,30 @@
         "weapon-sr3m-standard",
         "weapon-vss-modernized",
         "weapon-vss-standard"
+      ],
+      "basePrice": 2339,
+      "sellPrices": [
+        2339,
+        2106,
+        1638,
+        1638,
+        1638,
+        2339
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.9x39.clip.10",
+          "level": 2,
+          "price": 5848,
+          "bundle": 1,
+          "bundlePrice": 5848,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.9x39.clip.10",
@@ -2031,7 +3467,6 @@
       "fullsize": "/images/items/magazines/magazine-9x39-20.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.181,
       "rarity": "Uncommon",
       "capacity": 20,
@@ -2044,6 +3479,30 @@
         "weapon-sr3m-standard",
         "weapon-vss-modernized",
         "weapon-vss-standard"
+      ],
+      "basePrice": 3105,
+      "sellPrices": [
+        3105,
+        2795,
+        2174,
+        2174,
+        2174,
+        3105
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.9x39.clip.20",
+          "level": 3,
+          "price": 8872,
+          "bundle": 1,
+          "bundlePrice": 8872,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.9x39.clip.20",
@@ -2062,7 +3521,6 @@
       "fullsize": "/images/items/magazines/magazine-9x39-30.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.397,
       "rarity": "Uncommon",
       "capacity": 30,
@@ -2075,6 +3533,30 @@
         "weapon-sr3m-standard",
         "weapon-vss-modernized",
         "weapon-vss-standard"
+      ],
+      "basePrice": 12963,
+      "sellPrices": [
+        12963,
+        11667,
+        9075,
+        9075,
+        9075,
+        12963
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.9x39.clip.30",
+          "level": 4,
+          "price": 43210,
+          "bundle": 1,
+          "bundlePrice": 43210,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.9x39.clip.30",
@@ -2093,7 +3575,6 @@
       "fullsize": "/images/items/magazines/magazine-akalpha-30.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.16,
       "rarity": "Common",
       "capacity": 30,
@@ -2113,6 +3594,30 @@
         "weapon-vpo136",
         "weapon-malyuk-762",
         "weapon-malyuk762-2025hallows"
+      ],
+      "basePrice": 2770,
+      "sellPrices": [
+        2770,
+        2493,
+        1939,
+        1939,
+        1939,
+        2770
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.akalpha.clip.30",
+          "level": 3,
+          "price": 7915,
+          "bundle": 1,
+          "bundlePrice": 7915,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.akalpha.clip.30",
@@ -2131,7 +3636,6 @@
       "fullsize": "/images/items/magazines/magazine-evo3-50.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.66,
       "rarity": "Uncommon",
       "capacity": 50,
@@ -2160,7 +3664,6 @@
       "fullsize": "/images/items/magazines/magazine-g18c-30rnd.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.14,
       "rarity": "Uncommon",
       "capacity": 30,
@@ -2171,6 +3674,30 @@
       "compatibleWeapons": [
         "weapon-glock18c",
         "weapon-vector9mm"
+      ],
+      "basePrice": 5488,
+      "sellPrices": [
+        5488,
+        4940,
+        3842,
+        3842,
+        3842,
+        5488
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.g18c.clip.30rnd",
+          "level": 2,
+          "price": 13721,
+          "bundle": 1,
+          "bundlePrice": 13721,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.g18c.clip.30rnd",
@@ -2189,7 +3716,6 @@
       "fullsize": "/images/items/magazines/magazine-g18c-50rnd.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.6,
       "rarity": "Uncommon",
       "capacity": 50,
@@ -2200,6 +3726,32 @@
       "compatibleWeapons": [
         "weapon-glock18c",
         "weapon-vector9mm"
+      ],
+      "basePrice": 11303,
+      "sellPrices": [
+        11303,
+        10173,
+        7913,
+        7913,
+        7913,
+        11303
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.g18c.clip.50rnd",
+          "level": 4,
+          "price": 37675,
+          "bundle": 1,
+          "bundlePrice": 37675,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gunsmith.m10"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.g18c.clip.50rnd",
@@ -2218,7 +3770,6 @@
       "fullsize": "/images/items/magazines/magazine-m1897-7round.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.26,
       "rarity": "Common",
       "capacity": 6,
@@ -2228,6 +3779,30 @@
       "ergonomicsModifier": -0.02,
       "compatibleWeapons": [
         "weapon-m1897"
+      ],
+      "basePrice": 882,
+      "sellPrices": [
+        882,
+        794,
+        618,
+        618,
+        618,
+        882
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.m1897.clip.7round",
+          "level": 1,
+          "price": 1961,
+          "bundle": 1,
+          "bundlePrice": 1961,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.m1897.clip.7round",
@@ -2246,7 +3821,6 @@
       "fullsize": "/images/items/magazines/magazine-m1928-drum50.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.92,
       "rarity": "Epic",
       "capacity": 50,
@@ -2257,6 +3831,35 @@
       "compatibleWeapons": [
         "weapon-thompson-m1928",
         "weapon-m1928a1"
+      ],
+      "basePrice": 3339,
+      "sellPrices": [
+        3339,
+        3006,
+        2338,
+        2338,
+        2338,
+        3339
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.m1928.clip.drum50-2",
+          "level": 3,
+          "price": 9541,
+          "bundle": 1,
+          "bundlePrice": 9541,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.medicalsupplies.medicalscissors",
+              "count": 1
+            }
+          ]
+        }
       ]
     },
     "gameId": "gunsmith.m1928.clip.drum50",
@@ -2275,7 +3878,6 @@
       "fullsize": "/images/items/magazines/magazine-m1a-20.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.23,
       "rarity": "Rare",
       "capacity": 20,
@@ -2286,6 +3888,30 @@
       "compatibleWeapons": [
         "weapon-m1a-archangel",
         "weapon-m1a-socom16"
+      ],
+      "basePrice": 3135,
+      "sellPrices": [
+        3135,
+        2822,
+        2195,
+        2195,
+        2195,
+        3135
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.m1a.clip.20",
+          "level": 2,
+          "price": 7838,
+          "bundle": 1,
+          "bundlePrice": 7838,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.m1a.clip.20",
@@ -2304,7 +3930,6 @@
       "fullsize": "/images/items/magazines/magazine-m870-10.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.4,
       "rarity": "Common",
       "capacity": 10,
@@ -2316,6 +3941,30 @@
         "weapon-m590",
         "weapon-m870-shorty",
         "weapon-m870-standard"
+      ],
+      "basePrice": 2364,
+      "sellPrices": [
+        2364,
+        2128,
+        1655,
+        1655,
+        1655,
+        2364
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.m870.clip.10",
+          "level": 4,
+          "price": 7879,
+          "bundle": 1,
+          "bundlePrice": 7879,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.m870.clip.10",
@@ -2334,7 +3983,6 @@
       "fullsize": "/images/items/magazines/magazine-m870-4.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.1,
       "rarity": "Common",
       "capacity": 4,
@@ -2346,6 +3994,30 @@
         "weapon-m590",
         "weapon-m870-shorty",
         "weapon-m870-standard"
+      ],
+      "basePrice": 632,
+      "sellPrices": [
+        632,
+        569,
+        443,
+        443,
+        443,
+        632
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.m870.clip.4",
+          "level": 2,
+          "price": 1579,
+          "bundle": 1,
+          "bundlePrice": 1579,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.m870.clip.4",
@@ -2364,7 +4036,6 @@
       "fullsize": "/images/items/magazines/magazine-m870-7.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.3,
       "rarity": "Common",
       "capacity": 7,
@@ -2376,6 +4047,30 @@
         "weapon-m590",
         "weapon-m870-shorty",
         "weapon-m870-standard"
+      ],
+      "basePrice": 909,
+      "sellPrices": [
+        909,
+        819,
+        637,
+        637,
+        637,
+        909
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.m870.clip.7",
+          "level": 3,
+          "price": 2598,
+          "bundle": 1,
+          "bundlePrice": 2598,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.m870.clip.7",
@@ -2394,7 +4089,6 @@
       "fullsize": "/images/items/magazines/magazine-m870m-8rd.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.22,
       "rarity": "Rare",
       "capacity": 8,
@@ -2405,6 +4099,30 @@
       "compatibleWeapons": [
         "weapon-m870-m-gunmsith",
         "weapon-m870-m-short"
+      ],
+      "basePrice": 3240,
+      "sellPrices": [
+        3240,
+        2916,
+        2268,
+        2268,
+        2268,
+        3240
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.m870m.clip.8rd",
+          "level": 3,
+          "price": 9256,
+          "bundle": 1,
+          "bundlePrice": 9256,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.m870m.clip.8rd",
@@ -2423,7 +4141,6 @@
       "fullsize": "/images/items/magazines/magazine-mcx-xm5-20.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.21,
       "rarity": "Uncommon",
       "capacity": 20,
@@ -2435,6 +4152,30 @@
         "weapon-xm5",
         "weapon-xm5-fullattach",
         "weapon-xm5light"
+      ],
+      "basePrice": 4122,
+      "sellPrices": [
+        4122,
+        3710,
+        2886,
+        2886,
+        2886,
+        4122
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.mcx.clip.xm5-20",
+          "level": 4,
+          "price": 13741,
+          "bundle": 1,
+          "bundlePrice": 13741,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.mcx.clip.xm5-20",
@@ -2453,7 +4194,6 @@
       "fullsize": "/images/items/magazines/magazine-mcx-xm5-30.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.24,
       "rarity": "Uncommon",
       "capacity": 30,
@@ -2465,6 +4205,30 @@
         "weapon-xm5",
         "weapon-xm5-fullattach",
         "weapon-xm5light"
+      ],
+      "basePrice": 8278,
+      "sellPrices": [
+        8278,
+        7451,
+        5795,
+        5795,
+        5795,
+        8278
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.mcx.clip.xm5-30",
+          "level": 4,
+          "price": 27593,
+          "bundle": 1,
+          "bundlePrice": 27593,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.mcx.clip.xm5-30",
@@ -2483,7 +4247,6 @@
       "fullsize": "/images/items/magazines/magazine-mosin-internal.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.4,
       "rarity": "Common",
       "capacity": 5,
@@ -2497,6 +4260,30 @@
         "weapon-mosin-m38",
         "weapon-mosin-91-30",
         "weapon-mosin9130-sniper"
+      ],
+      "basePrice": 2235,
+      "sellPrices": [
+        2235,
+        2012,
+        1565,
+        1565,
+        1565,
+        2235
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.mosin.clip.internal",
+          "level": 1,
+          "price": 4966,
+          "bundle": 1,
+          "bundlePrice": 4966,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.mosin.clip.internal",
@@ -2515,7 +4302,6 @@
       "fullsize": "/images/items/magazines/magazine-mp5-100rnd.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 1.3,
       "rarity": "Uncommon",
       "capacity": 100,
@@ -2531,6 +4317,39 @@
         "weapon-mp5k-pdw",
         "weapon-mp5k",
         "weapon-mp5sd"
+      ],
+      "basePrice": 13689,
+      "sellPrices": [
+        13689,
+        12321,
+        9583,
+        9583,
+        9583,
+        13689
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.mp5.clip.100rnd-2",
+          "level": 4,
+          "price": 45631,
+          "bundle": 1,
+          "bundlePrice": 45631,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.radio",
+              "count": 1
+            },
+            {
+              "id": "valuable.information.computertextbook",
+              "count": 2
+            }
+          ]
+        }
       ]
     },
     "gameId": "gunsmith.mp5.clip.100rnd",
@@ -2549,7 +4368,6 @@
       "fullsize": "/images/items/magazines/magazine-mp5-10rnd.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.12,
       "rarity": "Uncommon",
       "capacity": 20,
@@ -2565,6 +4383,30 @@
         "weapon-mp5k-pdw",
         "weapon-mp5k",
         "weapon-mp5sd"
+      ],
+      "basePrice": 790,
+      "sellPrices": [
+        790,
+        711,
+        553,
+        553,
+        553,
+        790
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.mp5.clip.10rnd",
+          "level": 1,
+          "price": 1755,
+          "bundle": 1,
+          "bundlePrice": 1755,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.mp5.clip.10rnd",
@@ -2583,7 +4425,6 @@
       "fullsize": "/images/items/magazines/magazine-mp5-50rnd.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.64,
       "rarity": "Uncommon",
       "capacity": 50,
@@ -2599,6 +4440,30 @@
         "weapon-mp5k-pdw",
         "weapon-mp5k",
         "weapon-mp5sd"
+      ],
+      "basePrice": 7404,
+      "sellPrices": [
+        7404,
+        6664,
+        5183,
+        5183,
+        5183,
+        7404
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.mp5.clip.50rnd",
+          "level": 3,
+          "price": 21153,
+          "bundle": 1,
+          "bundlePrice": 21153,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.mp5.clip.50rnd",
@@ -2617,7 +4482,6 @@
       "fullsize": "/images/items/magazines/magazine-p226-15.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.1,
       "rarity": "Uncommon",
       "capacity": 15,
@@ -2627,6 +4491,30 @@
       "ergonomicsModifier": -0.01,
       "compatibleWeapons": [
         "weapon-p226"
+      ],
+      "basePrice": 1272,
+      "sellPrices": [
+        1272,
+        1145,
+        891,
+        891,
+        891,
+        1272
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.p226.clip.15",
+          "level": 1,
+          "price": 2827,
+          "bundle": 1,
+          "bundlePrice": 2827,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.p226.clip.15",
@@ -2645,7 +4533,6 @@
       "fullsize": "/images/items/magazines/magazine-p226-20.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.11,
       "rarity": "Uncommon",
       "capacity": 20,
@@ -2655,6 +4542,30 @@
       "ergonomicsModifier": -0.03,
       "compatibleWeapons": [
         "weapon-p226"
+      ],
+      "basePrice": 2214,
+      "sellPrices": [
+        2214,
+        1993,
+        1550,
+        1550,
+        1550,
+        2214
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.p226.clip.20",
+          "level": 1,
+          "price": 4921,
+          "bundle": 1,
+          "bundlePrice": 4921,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.p226.clip.20",
@@ -2673,7 +4584,6 @@
       "fullsize": "/images/items/magazines/magazine-rfb-20rnd.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.29,
       "rarity": "Rare",
       "capacity": 20,
@@ -2687,6 +4597,30 @@
         "weapon-sa58-para",
         "weapon-sa58-hallows01",
         "weapon-rfb"
+      ],
+      "basePrice": 3658,
+      "sellPrices": [
+        3658,
+        3293,
+        2561,
+        2561,
+        2561,
+        3658
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.rfb.clip.20rnd",
+          "level": 4,
+          "price": 12192,
+          "bundle": 1,
+          "bundlePrice": 12192,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.rfb.clip.20rnd",
@@ -2705,7 +4639,6 @@
       "fullsize": "/images/items/magazines/magazine-rsh12-cylinder.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.25,
       "rarity": "Common",
       "capacity": 5,
@@ -2716,7 +4649,17 @@
       "compatibleWeapons": [
         "weapon-rsh12gold",
         "weapon-rsh12silver"
-      ]
+      ],
+      "basePrice": 0,
+      "sellPrices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "buyOffers": []
     },
     "gameId": "gunsmith.rsh12.clip.cylinder",
     "family": "Revolver",
@@ -2734,7 +4677,6 @@
       "fullsize": "/images/items/magazines/magazine-rsh12-goldcylinder.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.25,
       "rarity": "Common",
       "capacity": 5,
@@ -2745,7 +4687,17 @@
       "compatibleWeapons": [
         "weapon-rsh12gold",
         "weapon-rsh12silver"
-      ]
+      ],
+      "basePrice": 0,
+      "sellPrices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "buyOffers": []
     },
     "gameId": "gunsmith.rsh12.clip.goldcylinder",
     "family": "Revolver",
@@ -2763,7 +4715,6 @@
       "fullsize": "/images/items/magazines/magazine-sa58-10rnd.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.27,
       "rarity": "Uncommon",
       "capacity": 10,
@@ -2777,6 +4728,30 @@
         "weapon-sa58-para",
         "weapon-sa58-hallows01",
         "weapon-rfb"
+      ],
+      "basePrice": 1618,
+      "sellPrices": [
+        1618,
+        1457,
+        1133,
+        1133,
+        1133,
+        1618
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.sa58.clip.10rnd",
+          "level": 1,
+          "price": 3596,
+          "bundle": 1,
+          "bundlePrice": 3596,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.sa58.clip.10rnd",
@@ -2795,7 +4770,6 @@
       "fullsize": "/images/items/magazines/magazine-sa58-20rndmmw.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.29,
       "rarity": "Rare",
       "capacity": 20,
@@ -2809,6 +4783,30 @@
         "weapon-sa58-para",
         "weapon-sa58-hallows01",
         "weapon-rfb"
+      ],
+      "basePrice": 4446,
+      "sellPrices": [
+        4446,
+        4002,
+        3113,
+        3113,
+        3113,
+        4446
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.sa58.clip.20rndmmw",
+          "level": 3,
+          "price": 12703,
+          "bundle": 1,
+          "bundlePrice": 12703,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.sa58.clip.20rndmmw",
@@ -2827,7 +4825,6 @@
       "fullsize": "/images/items/magazines/magazine-sa58-30rnd.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.49,
       "rarity": "Rare",
       "capacity": 30,
@@ -2841,6 +4838,30 @@
         "weapon-sa58-para",
         "weapon-sa58-hallows01",
         "weapon-rfb"
+      ],
+      "basePrice": 7681,
+      "sellPrices": [
+        7681,
+        6913,
+        5377,
+        5377,
+        5377,
+        7681
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.sa58.clip.30rnd",
+          "level": 3,
+          "price": 21945,
+          "bundle": 1,
+          "bundlePrice": 21945,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.sa58.clip.30rnd",
@@ -2859,7 +4880,6 @@
       "fullsize": "/images/items/magazines/magazine-sa58-50rnd.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.7,
       "rarity": "Epic",
       "capacity": 50,
@@ -2872,6 +4892,52 @@
         "weapon-sa58-hallows02",
         "weapon-sa58-para",
         "weapon-sa58-hallows01"
+      ],
+      "basePrice": 14769,
+      "sellPrices": [
+        14769,
+        13293,
+        10339,
+        10339,
+        10339,
+        14769
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.sa58.clip.50rnd",
+          "level": 4,
+          "price": 49230,
+          "bundle": 1,
+          "bundlePrice": 49230,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gunsmith.m08"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.sa58.clip.50rnd-2",
+          "level": 4,
+          "price": 49230,
+          "bundle": 1,
+          "bundlePrice": 49230,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gunsmith.m08"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.tools.hammer",
+              "count": 3
+            }
+          ]
+        }
       ]
     },
     "gameId": "gunsmith.sa58.clip.50rnd",
@@ -2890,7 +4956,6 @@
       "fullsize": "/images/items/magazines/magazine-sjogren-handguard-long.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 1.2,
       "rarity": "Common",
       "capacity": 10,
@@ -2902,6 +4967,30 @@
         "weapon-sjogren-fullsize",
         "weapon-sjogren-sawoff",
         "weapon-sjogren-inertia"
+      ],
+      "basePrice": 5696,
+      "sellPrices": [
+        5696,
+        5127,
+        3988,
+        3988,
+        3988,
+        5696
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.sjogren.handguard.long",
+          "level": 3,
+          "price": 16275,
+          "bundle": 1,
+          "bundlePrice": 16275,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.sjogren.handguard.long",
@@ -2920,7 +5009,6 @@
       "fullsize": "/images/items/magazines/magazine-sjogren-handguard-medium.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.96,
       "rarity": "Common",
       "capacity": 6,
@@ -2932,6 +5020,30 @@
         "weapon-sjogren-fullsize",
         "weapon-sjogren-sawoff",
         "weapon-sjogren-inertia"
+      ],
+      "basePrice": 4492,
+      "sellPrices": [
+        4492,
+        4043,
+        3145,
+        3145,
+        3145,
+        4492
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.sjogren.handguard.medium",
+          "level": 3,
+          "price": 12834,
+          "bundle": 1,
+          "bundlePrice": 12834,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.sjogren.handguard.medium",
@@ -2950,7 +5062,6 @@
       "fullsize": "/images/items/magazines/magazine-sjogren-handguard-short.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.9,
       "rarity": "Common",
       "capacity": 4,
@@ -2962,6 +5073,30 @@
         "weapon-sjogren-fullsize",
         "weapon-sjogren-sawoff",
         "weapon-sjogren-inertia"
+      ],
+      "basePrice": 3128,
+      "sellPrices": [
+        3128,
+        2816,
+        2190,
+        2190,
+        2190,
+        3128
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.sjogren.handguard.short",
+          "level": 3,
+          "price": 8937,
+          "bundle": 1,
+          "bundlePrice": 8937,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.sjogren.handguard.short",
@@ -2980,7 +5115,6 @@
       "fullsize": "/images/items/magazines/magazine-sks-10undettachable.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.19,
       "rarity": "Common",
       "capacity": 10,
@@ -2993,6 +5127,30 @@
         "weapon-skscarbine",
         "weapon-skstapco",
         "weapon-sksvoucher1"
+      ],
+      "basePrice": 1570,
+      "sellPrices": [
+        1570,
+        1413,
+        1099,
+        1099,
+        1099,
+        1570
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.sks.clip.10undettachable",
+          "level": 1,
+          "price": 3488,
+          "bundle": 1,
+          "bundlePrice": 3488,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.sks.clip.10undettachable",
@@ -3011,7 +5169,6 @@
       "fullsize": "/images/items/magazines/magazine-sks-35promag.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.22,
       "rarity": "Uncommon",
       "capacity": 35,
@@ -3024,6 +5181,30 @@
         "weapon-skscarbine",
         "weapon-skstapco",
         "weapon-sksvoucher1"
+      ],
+      "basePrice": 9327,
+      "sellPrices": [
+        9327,
+        8395,
+        6529,
+        6529,
+        6529,
+        9327
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.sks.clip.35promag",
+          "level": 3,
+          "price": 26648,
+          "bundle": 1,
+          "bundlePrice": 26648,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.sks.clip.35promag",
@@ -3042,7 +5223,6 @@
       "fullsize": "/images/items/magazines/magazine-sks-drum.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 1.05,
       "rarity": "Uncommon",
       "capacity": 75,
@@ -3055,6 +5235,48 @@
         "weapon-skscarbine",
         "weapon-skstapco",
         "weapon-sksvoucher1"
+      ],
+      "basePrice": 16678,
+      "sellPrices": [
+        16678,
+        15011,
+        11675,
+        11675,
+        11675,
+        16678
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.sks.clip.drum",
+          "level": 4,
+          "price": 55593,
+          "bundle": 1,
+          "bundlePrice": 55593,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.sks.clip.drum-2",
+          "level": 4,
+          "price": 55593,
+          "bundle": 1,
+          "bundlePrice": 55593,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.radio",
+              "count": 1
+            }
+          ]
+        }
       ]
     },
     "gameId": "gunsmith.sks.clip.drum",
@@ -3073,7 +5295,6 @@
       "fullsize": "/images/items/magazines/magazine-sks-puf20.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.12,
       "rarity": "Uncommon",
       "capacity": 20,
@@ -3086,6 +5307,30 @@
         "weapon-skscarbine",
         "weapon-skstapco",
         "weapon-sksvoucher1"
+      ],
+      "basePrice": 5548,
+      "sellPrices": [
+        5548,
+        4994,
+        3884,
+        3884,
+        3884,
+        5548
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.sks.clip.puf20",
+          "level": 2,
+          "price": 13871,
+          "bundle": 1,
+          "bundlePrice": 13871,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.sks.clip.puf20",
@@ -3104,7 +5349,6 @@
       "fullsize": "/images/items/magazines/magazine-svd-10rnd.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.112,
       "rarity": "Rare",
       "capacity": 10,
@@ -3115,6 +5359,30 @@
       "compatibleWeapons": [
         "weapon-svd-modernized",
         "weapon-svd-standard"
+      ],
+      "basePrice": 1454,
+      "sellPrices": [
+        1454,
+        1309,
+        1018,
+        1018,
+        1018,
+        1454
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.svd.clip.10rnd",
+          "level": 3,
+          "price": 4155,
+          "bundle": 1,
+          "bundlePrice": 4155,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.svd.clip.10rnd",
@@ -3133,7 +5401,6 @@
       "fullsize": "/images/items/magazines/magazine-vector-45acp17rnd.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.09,
       "rarity": "Uncommon",
       "capacity": 17,
@@ -3143,6 +5410,30 @@
       "ergonomicsModifier": -0.01,
       "compatibleWeapons": [
         "weapon-vector10mm"
+      ],
+      "basePrice": 2734,
+      "sellPrices": [
+        2734,
+        2461,
+        1914,
+        1914,
+        1914,
+        2734
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.vector.clip.45acp17rnd",
+          "level": 3,
+          "price": 7812,
+          "bundle": 1,
+          "bundlePrice": 7812,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.vector.clip.45acp17rnd",
@@ -3161,7 +5452,6 @@
       "fullsize": "/images/items/magazines/magazine-vector-45acp35rnd.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.19,
       "rarity": "Uncommon",
       "capacity": 35,
@@ -3171,6 +5461,30 @@
       "ergonomicsModifier": -0.05,
       "compatibleWeapons": [
         "weapon-vector10mm"
+      ],
+      "basePrice": 5461,
+      "sellPrices": [
+        5461,
+        4915,
+        3823,
+        3823,
+        3823,
+        5461
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.vector.clip.45acp35rnd",
+          "level": 3,
+          "price": 15603,
+          "bundle": 1,
+          "bundlePrice": 15603,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.vector.clip.45acp35rnd",

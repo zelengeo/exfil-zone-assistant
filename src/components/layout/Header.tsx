@@ -30,6 +30,7 @@ import {
     Package,
     Goal,
     Wrench,
+    Hammer,
     Target,
     FileText,
     Menu,
@@ -110,6 +111,13 @@ const destinations: Destination[] = [
         icon: Wrench,
         description: 'Base upgrade requirements',
         bar: true,
+    },
+    {
+        name: 'Gunsmith',
+        short: 'Gunsmith',
+        href: '/gunsmith',
+        icon: Hammer,
+        description: 'Build a gun and read its stats',
     },
     {
         name: 'Guides',

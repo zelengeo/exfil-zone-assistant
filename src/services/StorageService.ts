@@ -1,5 +1,17 @@
 import {UserProgress, TaskStatus, isUserProgress} from '@/types/tasks';
+import {SavedBuild} from '@/types/gunsmith';
 import {GAME_VERSION, compareVersions} from "@/config/gameVersion";
+
+/** Storage is a text file a user can edit, so anything read back out of it is checked. */
+function isSavedBuild(value: unknown): value is SavedBuild {
+    if (typeof value !== 'object' || value === null) return false;
+    const build = value as Partial<SavedBuild>;
+    return typeof build.id === 'string'
+        && typeof build.name === 'string'
+        && typeof build.receiverId === 'string'
+        && Array.isArray(build.parts)
+        && build.parts.every((part) => typeof part?.slotId === 'string' && typeof part?.gameId === 'string');
+}
 
 export class StorageService {
     private static VERSION_KEY = 'exfilzone_app_version';
@@ -12,13 +24,16 @@ export class StorageService {
         hideout: 'exfilzone-hideout-progress',
         hideout_focus: 'exfilzone-hideout-focus',
 
-        // UI preferences - preserved on wipe
+        // UI preferences and player-authored content - preserved on wipe
+        gunsmithBuilds: 'exfilzone-gunsmith-builds',
         cookieConsent: 'cookie-consent',
         cookieConsentDate: 'cookie-consent-date',
     } as const;
 
     // Keys to preserve during wipe
     private static PRESERVE_ON_WIPE = [
+        // A gun build is a design the player wrote, not progress the wipe resets.
+        'gunsmithBuilds',
         'cookieConsent',
         'cookieConsentDate',
     ];
@@ -61,6 +76,24 @@ export class StorageService {
     static setHideout(data: string[]): void {
         this.checkAndHandleWipe();
         localStorage.setItem(this.STORAGE_KEYS.hideout, JSON.stringify(data));
+    }
+
+    // Gunsmith builds. Player-authored and preserved across a wipe.
+    static getBuilds(): SavedBuild[] {
+        this.checkAndHandleWipe();
+        try {
+            const data = localStorage.getItem(this.STORAGE_KEYS.gunsmithBuilds);
+            if (!data) return [];
+            const parsed: unknown = JSON.parse(data);
+            return Array.isArray(parsed) ? parsed.filter(isSavedBuild) : [];
+        } catch {
+            return [];
+        }
+    }
+
+    static setBuilds(builds: SavedBuild[]): void {
+        this.checkAndHandleWipe();
+        localStorage.setItem(this.STORAGE_KEYS.gunsmithBuilds, JSON.stringify(builds));
     }
 
     // Cookie consent (preserved on wipe)

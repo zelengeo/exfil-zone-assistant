@@ -12,7 +12,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.643,
       "penetration": 1.5,
       "fireRate": 650,
@@ -47,7 +46,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "RifleDOD",
-      "caliber": "5.45x39"
+      "caliber": "5.45x39",
+      "basePrice": 16531,
+      "sellPrices": [
+        16531,
+        14878,
+        11572,
+        11572,
+        11572,
+        16531
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.ak.ak74_modt",
+          "level": 3,
+          "price": 47230,
+          "bundle": 1,
+          "bundlePrice": 47230,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 650,
@@ -149,7 +172,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 2.883,
       "penetration": 1.5,
       "fireRate": 650,
@@ -184,7 +206,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "RifleDOD",
-      "caliber": "5.45x39"
+      "caliber": "5.45x39",
+      "basePrice": 13462,
+      "sellPrices": [
+        13462,
+        12116,
+        9424,
+        9424,
+        9424,
+        13462
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.ak.aks74n_standard",
+          "level": 2,
+          "price": 33654,
+          "bundle": 1,
+          "bundlePrice": 33654,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 650,
@@ -286,7 +332,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 58000,
       "weight": 3.553,
       "penetration": 1.5,
       "fireRate": 650,
@@ -321,7 +366,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "RifleDOD",
-      "caliber": "5.45x39"
+      "caliber": "5.45x39",
+      "basePrice": 13028,
+      "sellPrices": [
+        13028,
+        11726,
+        9120,
+        9120,
+        9120,
+        13028
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.ak74",
+          "level": 2,
+          "price": 32570,
+          "bundle": 1,
+          "bundlePrice": 32570,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 650,
@@ -439,7 +508,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 36050,
       "weight": 3.093,
       "penetration": 1.5,
       "fireRate": 650,
@@ -474,7 +542,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "RifleDOD",
-      "caliber": "5.45x39"
+      "caliber": "5.45x39",
+      "basePrice": 13421,
+      "sellPrices": [
+        13421,
+        12079,
+        9395,
+        9395,
+        9395,
+        13421
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.ak74m",
+          "level": 2,
+          "price": 33553,
+          "bundle": 1,
+          "bundlePrice": 33553,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 650,
@@ -577,7 +669,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.193,
       "penetration": 1.5,
       "fireRate": 650,
@@ -612,7 +703,53 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "RifleDOD",
-      "caliber": "5.45x39"
+      "caliber": "5.45x39",
+      "basePrice": 39981,
+      "sellPrices": [
+        39981,
+        35983,
+        27987,
+        27987,
+        27987,
+        39981
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.ak74n-caa74n",
+          "level": 3,
+          "price": 114232,
+          "bundle": 1,
+          "bundlePrice": 114232,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.ak74n-caa74n-2",
+          "level": 3,
+          "price": 114232,
+          "bundle": 1,
+          "bundlePrice": 114232,
+          "stock": 6,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.combustible.gunoil",
+              "count": 2
+            },
+            {
+              "id": "valuable.electric.tapeplayer",
+              "count": 2
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 650,
@@ -728,7 +865,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 32640,
       "weight": 3.553,
       "penetration": 1.5,
       "fireRate": 650,
@@ -763,7 +899,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "RifleDOD",
-      "caliber": "5.45x39"
+      "caliber": "5.45x39",
+      "basePrice": 13889,
+      "sellPrices": [
+        13889,
+        12501,
+        9723,
+        9723,
+        9723,
+        13889
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.ak74n",
+          "level": 2,
+          "price": 34723,
+          "bundle": 1,
+          "bundlePrice": 34723,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 650,
@@ -866,7 +1026,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.902,
       "penetration": 1.5,
       "fireRate": 650,
@@ -901,7 +1060,53 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "RifleDOD",
-      "caliber": "5.45x39"
+      "caliber": "5.45x39",
+      "basePrice": 78453,
+      "sellPrices": [
+        78453,
+        70608,
+        54918,
+        54918,
+        54918,
+        78453
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.ak74n-fullattach",
+          "level": 4,
+          "price": 261510,
+          "bundle": 1,
+          "bundlePrice": 261510,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.ak74n-fullattach-2",
+          "level": 4,
+          "price": 261510,
+          "bundle": 1,
+          "bundlePrice": 261510,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.storagebattery2",
+              "count": 3
+            },
+            {
+              "id": "valuable.tools.electricdrill",
+              "count": 2
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 650,
@@ -1038,7 +1243,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.043,
       "penetration": 1.5,
       "fireRate": 650,
@@ -1073,7 +1277,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "RifleDOD",
-      "caliber": "5.45x39"
+      "caliber": "5.45x39",
+      "basePrice": 23050,
+      "sellPrices": [
+        23050,
+        20745,
+        16135,
+        16135,
+        16135,
+        23050
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.ak74n-lhv",
+          "level": 3,
+          "price": 65856,
+          "bundle": 1,
+          "bundlePrice": 65856,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 650,
@@ -1189,7 +1417,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 85850,
       "weight": 2.9,
       "penetration": 1.5,
       "fireRate": 650,
@@ -1228,7 +1455,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.717,
       "penetration": 0.9,
       "fireRate": 680,
@@ -1263,7 +1489,31 @@
       "headDamageScale": 1.6,
       "muzzleVelocity": 88000,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "7.62x39"
+      "caliber": "7.62x39",
+      "basePrice": 29732,
+      "sellPrices": [
+        29732,
+        26759,
+        20813,
+        20813,
+        20813,
+        29732
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.akalpha",
+          "level": 3,
+          "price": 84949,
+          "bundle": 1,
+          "bundlePrice": 84949,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 680,
@@ -1373,7 +1623,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 22000,
       "weight": 3.8,
       "penetration": 1.1,
       "fireRate": 600,
@@ -1421,7 +1670,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.177,
       "penetration": 1.1,
       "fireRate": 600,
@@ -1456,7 +1704,53 @@
       "headDamageScale": 1.6,
       "muzzleVelocity": 71500,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "7.62x39"
+      "caliber": "7.62x39",
+      "basePrice": 41997,
+      "sellPrices": [
+        41997,
+        37798,
+        29398,
+        29398,
+        29398,
+        41997
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.akmcaa47",
+          "level": 4,
+          "price": 139989,
+          "bundle": 1,
+          "bundlePrice": 139989,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.a.13"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.akmcaa47-2",
+          "level": 4,
+          "price": 139989,
+          "bundle": 1,
+          "bundlePrice": 139989,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.a.13"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.gameconsole",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 600,
@@ -1580,7 +1874,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 26730,
       "weight": 3.317,
       "penetration": 1.1,
       "fireRate": 600,
@@ -1616,6 +1909,50 @@
       "muzzleVelocity": 71500,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
       "caliber": "7.62x39",
+      "basePrice": 12937,
+      "sellPrices": [
+        12937,
+        11644,
+        9056,
+        9056,
+        9056,
+        12937
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.akmn-2",
+          "level": 1,
+          "price": 32342,
+          "bundle": 1,
+          "bundlePrice": 32342,
+          "stock": 6,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.c.04"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.tools.sparkplug",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.akmn",
+          "level": 2,
+          "price": 32342,
+          "bundle": 1,
+          "bundlePrice": 32342,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -1727,7 +2064,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 31620,
       "weight": 3.357,
       "penetration": 1.1,
       "fireRate": 600,
@@ -1763,6 +2099,30 @@
       "muzzleVelocity": 71500,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
       "caliber": "7.62x39",
+      "basePrice": 14186,
+      "sellPrices": [
+        14186,
+        12768,
+        9931,
+        9931,
+        9931,
+        14186
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.akmn-grip",
+          "level": 2,
+          "price": 35465,
+          "bundle": 1,
+          "bundlePrice": 35465,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -1874,7 +2234,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 26000,
       "weight": 2.9,
       "penetration": 1.1,
       "fireRate": 600,
@@ -1926,7 +2285,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.647,
       "penetration": 1.1,
       "fireRate": 600,
@@ -1961,7 +2319,31 @@
       "headDamageScale": 1.6,
       "muzzleVelocity": 71500,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "7.62x39"
+      "caliber": "7.62x39",
+      "basePrice": 19521,
+      "sellPrices": [
+        19521,
+        17569,
+        13665,
+        13665,
+        13665,
+        19521
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.akmn-titan",
+          "level": 3,
+          "price": 55774,
+          "bundle": 1,
+          "bundlePrice": 55774,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 600,
@@ -2085,7 +2467,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.647,
       "penetration": 1.1,
       "fireRate": 600,
@@ -2120,7 +2501,17 @@
       "headDamageScale": 1.6,
       "muzzleVelocity": 71500,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "7.62x39"
+      "caliber": "7.62x39",
+      "basePrice": 1,
+      "sellPrices": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "buyOffers": []
     },
     "gunsmithDisplay": {
       "RPM": 600,
@@ -2251,7 +2642,6 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 92920,
       "weight": 3.35,
       "penetration": 1.1,
       "fireRate": 600,
@@ -2301,7 +2691,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.647,
       "penetration": 1.1,
       "fireRate": 600,
@@ -2453,7 +2842,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 29000,
       "weight": 2.943,
       "penetration": 0.9,
       "fireRate": 680,
@@ -2489,6 +2877,32 @@
       "muzzleVelocity": 85500,
       "damageRangeCurve": "BR_DOD_74U",
       "caliber": "5.45x39",
+      "basePrice": 12209,
+      "sellPrices": [
+        12209,
+        10989,
+        8547,
+        8547,
+        8547,
+        12209
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.aks74un",
+          "level": 1,
+          "price": 33574,
+          "bundle": 1,
+          "bundlePrice": 33574,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.c.04"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.15
     },
     "gunsmithDisplay": {
@@ -2585,7 +2999,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 69150,
       "weight": 2.7,
       "penetration": 0.9,
       "fireRate": 650,
@@ -2636,7 +3049,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 2.943,
       "penetration": 0.9,
       "fireRate": 680,
@@ -2671,7 +3083,17 @@
       "headDamageScale": 1.4,
       "muzzleVelocity": 85500,
       "damageRangeCurve": "BR_DOD_74U",
-      "caliber": "5.45x39"
+      "caliber": "5.45x39",
+      "basePrice": 1,
+      "sellPrices": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "buyOffers": []
     },
     "gunsmithDisplay": {
       "RPM": 680,
@@ -2780,7 +3202,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 19800,
       "weight": 3.132,
       "penetration": null,
       "fireRate": 800,
@@ -2818,6 +3239,30 @@
       "muzzleVelocity": 71500,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
       "caliber": "5.56x45",
+      "basePrice": 21102,
+      "sellPrices": [
+        21102,
+        18992,
+        14772,
+        14772,
+        14772,
+        21102
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.ar15pistol",
+          "level": 1,
+          "price": 46893,
+          "bundle": 1,
+          "bundlePrice": 46893,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -2931,7 +3376,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.25,
       "penetration": null,
       "fireRate": 800,
@@ -2968,7 +3412,17 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "5.56x45"
+      "caliber": "5.56x45",
+      "basePrice": 20527,
+      "sellPrices": [
+        20527,
+        18475,
+        14369,
+        14369,
+        14369,
+        20527
+      ],
+      "buyOffers": []
     },
     "gunsmithDisplay": {
       "RPM": 800,
@@ -3080,7 +3534,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 79790,
       "weight": 4.932,
       "penetration": null,
       "fireRate": 750,
@@ -3117,7 +3570,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "7.62x51"
+      "caliber": "7.62x51",
+      "basePrice": 51721,
+      "sellPrices": [
+        51721,
+        46549,
+        36205,
+        36205,
+        36205,
+        51721
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.ar308",
+          "level": 3,
+          "price": 147774,
+          "bundle": 1,
+          "bundlePrice": 147774,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 750,
@@ -3232,7 +3709,6 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 95060,
       "weight": 3.6,
       "penetration": 2,
       "fireRate": 750,
@@ -3278,7 +3754,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 5.835,
       "penetration": null,
       "fireRate": 750,
@@ -3315,7 +3790,17 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "7.62x51"
+      "caliber": "7.62x51",
+      "basePrice": 1,
+      "sellPrices": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "buyOffers": []
     },
     "gunsmithDisplay": {
       "RPM": 750,
@@ -3405,7 +3890,7 @@
         "isReceiver": false
       },
       {
-        "sellId": "none",
+        "sellId": "",
         "count": 1,
         "name": null,
         "weight": null,
@@ -3450,7 +3935,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 5.835,
       "penetration": null,
       "fireRate": 750,
@@ -3487,7 +3971,53 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "7.62x51"
+      "caliber": "7.62x51",
+      "basePrice": 61121,
+      "sellPrices": [
+        61121,
+        55009,
+        42785,
+        42785,
+        42785,
+        61121
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.ar308pve",
+          "level": 4,
+          "price": 203735,
+          "bundle": 1,
+          "bundlePrice": 203735,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.ar308pve-2",
+          "level": 4,
+          "price": 203735,
+          "bundle": 1,
+          "bundlePrice": 203735,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.carbattery",
+              "count": 1
+            },
+            {
+              "id": "valuable.medicalsupplies.medicalkit",
+              "count": 2
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 750,
@@ -3608,7 +4138,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 2.506,
       "penetration": null,
       "fireRate": 900,
@@ -3643,7 +4172,31 @@
       "headDamageScale": 1.5,
       "muzzleVelocity": 85500,
       "damageRangeCurve": "BR_DOD_74U",
-      "caliber": "9x39"
+      "caliber": "9x39",
+      "basePrice": 32471,
+      "sellPrices": [
+        32471,
+        29224,
+        22730,
+        22730,
+        22730,
+        32471
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.asval_standard",
+          "level": 3,
+          "price": 92774,
+          "bundle": 1,
+          "bundlePrice": 92774,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 900,
@@ -3744,7 +4297,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 41000,
       "weight": 4.911,
       "penetration": 1.2,
       "fireRate": 710,
@@ -3781,7 +4333,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "AUGDOD",
-      "caliber": "5.56x45"
+      "caliber": "5.56x45",
+      "basePrice": 23840,
+      "sellPrices": [
+        23840,
+        21456,
+        16688,
+        16688,
+        16688,
+        23840
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.auga1",
+          "level": 3,
+          "price": 68113,
+          "bundle": 1,
+          "bundlePrice": 68113,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 710,
@@ -3868,7 +4444,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 59780,
       "weight": 3.921,
       "penetration": 1.2,
       "fireRate": 710,
@@ -3905,7 +4480,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "AUGDOD",
-      "caliber": "5.56x45"
+      "caliber": "5.56x45",
+      "basePrice": 23632,
+      "sellPrices": [
+        23632,
+        21269,
+        16543,
+        16543,
+        16543,
+        23632
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.auga3m1cqb",
+          "level": 3,
+          "price": 67519,
+          "bundle": 1,
+          "bundlePrice": 67519,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 710,
@@ -4013,7 +4612,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 72000,
       "weight": 4.437,
       "penetration": 1.2,
       "fireRate": 710,
@@ -4050,7 +4648,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "AUGDOD",
-      "caliber": "5.56x45"
+      "caliber": "5.56x45",
+      "basePrice": 27389,
+      "sellPrices": [
+        27389,
+        24651,
+        19173,
+        19173,
+        19173,
+        27389
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.aug.auga3_ris",
+          "level": 3,
+          "price": 78253,
+          "bundle": 1,
+          "bundlePrice": 78253,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 710,
@@ -4158,7 +4780,6 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 52520,
       "weight": 3.77,
       "penetration": 1.2,
       "fireRate": 710,
@@ -4206,7 +4827,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 45080,
       "weight": 3.785,
       "penetration": 1.2,
       "fireRate": 710,
@@ -4243,7 +4863,51 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "AUGDOD",
-      "caliber": "9x19"
+      "caliber": "9x19",
+      "basePrice": 20401,
+      "sellPrices": [
+        20401,
+        18361,
+        14281,
+        14281,
+        14281,
+        20401
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.aug9mm",
+          "level": 2,
+          "price": 51002,
+          "bundle": 1,
+          "bundlePrice": 51002,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.aug9mm-2",
+          "level": 2,
+          "price": 51002,
+          "bundle": 1,
+          "bundlePrice": 51002,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.c.08"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.combustible.gunoil",
+              "count": 2
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 710,
@@ -4336,7 +5000,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 5.011,
       "penetration": 1.2,
       "fireRate": 710,
@@ -4373,7 +5036,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "AUGDOD",
-      "caliber": "5.56x45"
+      "caliber": "5.56x45",
+      "basePrice": 28621,
+      "sellPrices": [
+        28621,
+        25759,
+        20035,
+        20035,
+        20035,
+        28621
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.auga3m1optic",
+          "level": 3,
+          "price": 81774,
+          "bundle": 1,
+          "bundlePrice": 81774,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 710,
@@ -4466,7 +5153,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 26730,
       "weight": 2.875,
       "penetration": 0.4,
       "fireRate": 800,
@@ -4501,7 +5187,31 @@
       "headDamageScale": 1.4,
       "muzzleVelocity": 48000,
       "damageRangeCurve": "BR_BX4_DOD_GY",
-      "caliber": "9x19"
+      "caliber": "9x19",
+      "basePrice": 8432,
+      "sellPrices": [
+        8432,
+        7589,
+        5903,
+        5903,
+        5903,
+        8432
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.bx4",
+          "level": 1,
+          "price": 18738,
+          "bundle": 1,
+          "bundlePrice": 18738,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 800,
@@ -4581,7 +5291,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 2.885,
       "penetration": 0.4,
       "fireRate": 800,
@@ -4616,7 +5325,31 @@
       "headDamageScale": 1.4,
       "muzzleVelocity": 48000,
       "damageRangeCurve": "BR_BX4_DOD_GY",
-      "caliber": "9x19"
+      "caliber": "9x19",
+      "basePrice": 7134,
+      "sellPrices": [
+        7134,
+        6421,
+        4994,
+        4994,
+        4994,
+        7134
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.bx4longbarrel",
+          "level": 1,
+          "price": 15853,
+          "bundle": 1,
+          "bundlePrice": 15853,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 800,
@@ -4681,7 +5414,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.361,
       "penetration": null,
       "fireRate": 800,
@@ -4719,7 +5451,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "5.56x45"
+      "caliber": "5.56x45",
+      "basePrice": 20198,
+      "sellPrices": [
+        20198,
+        18179,
+        14139,
+        14139,
+        14139,
+        20198
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.car15",
+          "level": 2,
+          "price": 50494,
+          "bundle": 1,
+          "bundlePrice": 50494,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 800,
@@ -4831,7 +5587,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.361,
       "penetration": null,
       "fireRate": 800,
@@ -4869,7 +5624,17 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "5.56x45"
+      "caliber": "5.56x45",
+      "basePrice": 27422,
+      "sellPrices": [
+        27422,
+        24680,
+        19196,
+        19196,
+        19196,
+        27422
+      ],
+      "buyOffers": []
     },
     "gunsmithDisplay": {
       "RPM": 800,
@@ -4995,7 +5760,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 5.372,
       "penetration": 0.5,
       "fireRate": 850,
@@ -5034,7 +5798,53 @@
       "headDamageScale": 1.4,
       "muzzleVelocity": 38000,
       "damageRangeCurve": "BR_CZEVO3_DOD_GY",
-      "caliber": "9x19"
+      "caliber": "9x19",
+      "basePrice": 23003,
+      "sellPrices": [
+        23003,
+        20703,
+        16103,
+        16103,
+        16103,
+        23003
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.evo3ultra",
+          "level": 3,
+          "price": 65723,
+          "bundle": 1,
+          "bundlePrice": 65723,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.evo3ultra-2",
+          "level": 3,
+          "price": 65723,
+          "bundle": 1,
+          "bundlePrice": 65723,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.oldphone",
+              "count": 1
+            },
+            {
+              "id": "valuable.tools.electricdrill",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 850,
@@ -5142,7 +5952,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 4200,
       "weight": 4.732,
       "penetration": 0.2,
       "fireRate": 400,
@@ -5180,6 +5989,48 @@
       "muzzleVelocity": 42600,
       "damageRangeCurve": "BR_O12DOD",
       "caliber": "12GA",
+      "basePrice": 20679,
+      "sellPrices": [
+        20679,
+        18612,
+        14476,
+        14476,
+        14476,
+        20679
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.flame12",
+          "level": 3,
+          "price": 59083,
+          "bundle": 1,
+          "bundlePrice": 59083,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.flame12-2",
+          "level": 3,
+          "price": 59083,
+          "bundle": 1,
+          "bundlePrice": 59083,
+          "stock": 6,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.radioscanner",
+              "count": 1
+            }
+          ]
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -5308,7 +6159,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 5.142,
       "penetration": 0.2,
       "fireRate": 400,
@@ -5345,7 +6195,53 @@
       "headDamageScale": 1.1,
       "muzzleVelocity": 42600,
       "damageRangeCurve": "BR_O12DOD",
-      "caliber": "12GA"
+      "caliber": "12GA",
+      "basePrice": 32975,
+      "sellPrices": [
+        32975,
+        29678,
+        23083,
+        23083,
+        23083,
+        32975
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.flame12pve",
+          "level": 3,
+          "price": 94214,
+          "bundle": 1,
+          "bundlePrice": 94214,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.flame12pve-2",
+          "level": 3,
+          "price": 94214,
+          "bundle": 1,
+          "bundlePrice": 94214,
+          "stock": 6,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.medicalsupplies.medicalkit",
+              "count": 1
+            },
+            {
+              "id": "valuable.tools.gaspipewrench",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 400,
@@ -5458,7 +6354,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 23760,
       "weight": 4.805,
       "penetration": 1.8,
       "fireRate": 600,
@@ -5493,7 +6388,55 @@
       "headDamageScale": 1.5,
       "muzzleVelocity": null,
       "damageRangeCurve": "FNFALDOD",
-      "caliber": "7.62x51"
+      "caliber": "7.62x51",
+      "basePrice": 41938,
+      "sellPrices": [
+        41938,
+        37745,
+        29357,
+        29357,
+        29357,
+        41938
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.fal",
+          "level": 1,
+          "price": 93195,
+          "bundle": 1,
+          "bundlePrice": 93195,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.fal-2",
+          "level": 1,
+          "price": 93195,
+          "bundle": 1,
+          "bundlePrice": 93195,
+          "stock": 6,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.c.05"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.transformer",
+              "count": 1
+            },
+            {
+              "id": "valuable.tools.screwdriver",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 600,
@@ -5605,7 +6548,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 26730,
       "weight": 4.595,
       "penetration": null,
       "fireRate": 600,
@@ -5641,6 +6583,30 @@
       "muzzleVelocity": 80000,
       "damageRangeCurve": null,
       "caliber": "7.62x51",
+      "basePrice": 18922,
+      "sellPrices": [
+        18922,
+        17030,
+        13246,
+        13246,
+        13246,
+        18922
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.g3a3",
+          "level": 2,
+          "price": 47306,
+          "bundle": 1,
+          "bundlePrice": 47306,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -5745,7 +6711,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.085,
       "penetration": null,
       "fireRate": 600,
@@ -5780,7 +6745,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": null,
-      "caliber": "7.62x51"
+      "caliber": "7.62x51",
+      "basePrice": 25499,
+      "sellPrices": [
+        25499,
+        22950,
+        17850,
+        17850,
+        17850,
+        25499
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.g3hk51ris",
+          "level": 3,
+          "price": 72855,
+          "bundle": 1,
+          "bundlePrice": 72855,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 600,
@@ -5883,7 +6872,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 55000,
       "weight": 4.778,
       "penetration": null,
       "fireRate": 600,
@@ -5919,6 +6907,30 @@
       "muzzleVelocity": 80000,
       "damageRangeCurve": null,
       "caliber": "7.62x51",
+      "basePrice": 31177,
+      "sellPrices": [
+        31177,
+        28060,
+        21824,
+        21824,
+        21824,
+        31177
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.g3ak4",
+          "level": 3,
+          "price": 89076,
+          "bundle": 1,
+          "bundlePrice": 89076,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -6030,7 +7042,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 94090,
       "weight": 5.125,
       "penetration": null,
       "fireRate": 600,
@@ -6066,6 +7077,30 @@
       "muzzleVelocity": 80000,
       "damageRangeCurve": null,
       "caliber": "7.62x51",
+      "basePrice": 33998,
+      "sellPrices": [
+        33998,
+        30599,
+        23799,
+        23799,
+        23799,
+        33998
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.g3.g3_prs",
+          "level": 3,
+          "price": 97138,
+          "bundle": 1,
+          "bundlePrice": 97138,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -6170,7 +7205,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 83420,
       "weight": 4.415,
       "penetration": null,
       "fireRate": 600,
@@ -6206,6 +7240,30 @@
       "muzzleVelocity": 80000,
       "damageRangeCurve": null,
       "caliber": "7.62x51",
+      "basePrice": 25230,
+      "sellPrices": [
+        25230,
+        22707,
+        17661,
+        17661,
+        17661,
+        25230
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.g3.g3_spuhr",
+          "level": 3,
+          "price": 72087,
+          "bundle": 1,
+          "bundlePrice": 72087,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -6310,7 +7368,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 23000,
       "weight": 1.025,
       "penetration": 0.3,
       "fireRate": 1000,
@@ -6346,7 +7403,49 @@
       "headDamageScale": 1.4,
       "muzzleVelocity": 37000,
       "damageRangeCurve": "BR_DOD_Pistol_GY",
-      "caliber": "9x19"
+      "caliber": "9x19",
+      "basePrice": 6636,
+      "sellPrices": [
+        6636,
+        5973,
+        4646,
+        4646,
+        4646,
+        6636
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.g18c",
+          "level": 2,
+          "price": 16589,
+          "bundle": 1,
+          "bundlePrice": 16589,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.g18c-2",
+          "level": 2,
+          "price": 16589,
+          "bundle": 1,
+          "bundlePrice": 16589,
+          "stock": 6,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.household.deodorant",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 1000,
@@ -6435,7 +7534,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 64000,
       "weight": 4.231,
       "penetration": 0.8,
       "fireRate": 850,
@@ -6470,7 +7568,31 @@
       "headDamageScale": 1.6,
       "muzzleVelocity": 91000,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "5.56x45"
+      "caliber": "5.56x45",
+      "basePrice": 27003,
+      "sellPrices": [
+        27003,
+        24303,
+        18903,
+        18903,
+        18903,
+        27003
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.rc416a5",
+          "level": 3,
+          "price": 77150,
+          "bundle": 1,
+          "bundlePrice": 77150,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 850,
@@ -6597,7 +7719,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 43120,
       "weight": 4.065,
       "penetration": null,
       "fireRate": 600,
@@ -6633,6 +7754,30 @@
       "muzzleVelocity": 80000,
       "damageRangeCurve": null,
       "caliber": "7.62x51",
+      "basePrice": 20511,
+      "sellPrices": [
+        20511,
+        18460,
+        14358,
+        14358,
+        14358,
+        20511
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.g3.hk51_standard",
+          "level": 2,
+          "price": 51278,
+          "bundle": 1,
+          "bundlePrice": 51278,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -6737,7 +7882,6 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 94000,
       "weight": 3.9,
       "penetration": 1,
       "fireRate": 600,
@@ -6790,7 +7934,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 56100,
       "weight": 3.865,
       "penetration": null,
       "fireRate": 600,
@@ -6826,6 +7969,30 @@
       "muzzleVelocity": 80000,
       "damageRangeCurve": null,
       "caliber": "7.62x51",
+      "basePrice": 20218,
+      "sellPrices": [
+        20218,
+        18197,
+        14153,
+        14153,
+        14153,
+        20218
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.g3hk51k",
+          "level": 3,
+          "price": 57767,
+          "bundle": 1,
+          "bundlePrice": 57767,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -6930,7 +8097,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 18810,
       "weight": 4.352,
       "penetration": null,
       "fireRate": 600,
@@ -6968,6 +8134,30 @@
       "muzzleVelocity": 80000,
       "damageRangeCurve": "BR_DOD_Rfile",
       "caliber": "7.62x51",
+      "basePrice": 15118,
+      "sellPrices": [
+        15118,
+        13607,
+        10583,
+        10583,
+        10583,
+        15118
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.g3.hk91_standard",
+          "level": 2,
+          "price": 37796,
+          "bundle": 1,
+          "bundlePrice": 37796,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -7072,7 +8262,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 30380,
       "weight": 3.651,
       "penetration": null,
       "fireRate": 800,
@@ -7111,6 +8300,30 @@
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
       "caliber": "5.56x45",
+      "basePrice": 24553,
+      "sellPrices": [
+        24553,
+        22098,
+        17188,
+        17188,
+        17188,
+        24553
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.m16a2",
+          "level": 2,
+          "price": 61382,
+          "bundle": 1,
+          "bundlePrice": 61382,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -7217,7 +8430,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 47040,
       "weight": 4.021,
       "penetration": null,
       "fireRate": 800,
@@ -7256,6 +8468,16 @@
       "muzzleVelocity": 95000,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
       "caliber": "5.56x45",
+      "basePrice": 1,
+      "sellPrices": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "buyOffers": [],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -7390,7 +8612,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.021,
       "penetration": null,
       "fireRate": 800,
@@ -7547,7 +8768,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 16160,
       "weight": 4.02,
       "penetration": null,
       "fireRate": 600,
@@ -7585,7 +8805,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": null,
-      "caliber": "12GA"
+      "caliber": "12GA",
+      "basePrice": 10775,
+      "sellPrices": [
+        10775,
+        9698,
+        7543,
+        7543,
+        7543,
+        10775
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.m1897",
+          "level": 1,
+          "price": 23944,
+          "bundle": 1,
+          "bundlePrice": 23944,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 600,
@@ -7678,7 +8922,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 16320,
       "weight": 2.095,
       "penetration": 0.4,
       "fireRate": 1000,
@@ -7717,6 +8960,30 @@
       "muzzleVelocity": 32000,
       "damageRangeCurve": "BR_DOD_Pistol_GY",
       "caliber": ".45 ACP",
+      "basePrice": 5909,
+      "sellPrices": [
+        5909,
+        5319,
+        4137,
+        4137,
+        4137,
+        5909
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.kw1911",
+          "level": 1,
+          "price": 13132,
+          "bundle": 1,
+          "bundlePrice": 13132,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -7817,7 +9084,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 5.155,
       "penetration": null,
       "fireRate": 800,
@@ -7852,7 +9118,31 @@
       "headDamageScale": 1.2,
       "muzzleVelocity": 32000,
       "damageRangeCurve": "M1A1DOD",
-      "caliber": ".45 ACP"
+      "caliber": ".45 ACP",
+      "basePrice": 14353,
+      "sellPrices": [
+        14353,
+        12918,
+        10048,
+        10048,
+        10048,
+        14353
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.m1928a1",
+          "level": 1,
+          "price": 31895,
+          "bundle": 1,
+          "bundlePrice": 31895,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 800,
@@ -7959,7 +9249,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 5.155,
       "penetration": null,
       "fireRate": 600,
@@ -7997,7 +9286,53 @@
       "headDamageScale": 1.8,
       "muzzleVelocity": 85000,
       "damageRangeCurve": "BR_DOD_DMR_GY",
-      "caliber": "7.62x51"
+      "caliber": "7.62x51",
+      "basePrice": 28880,
+      "sellPrices": [
+        28880,
+        25992,
+        20216,
+        20216,
+        20216,
+        28880
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.m1a_archangel",
+          "level": 4,
+          "price": 96266,
+          "bundle": 1,
+          "bundlePrice": 96266,
+          "stock": 5,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.m1a_archangel-2",
+          "level": 4,
+          "price": 96266,
+          "bundle": 1,
+          "bundlePrice": 96266,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.radioscanner",
+              "count": 1
+            },
+            {
+              "id": "valuable.electric.tapeplayer",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 600,
@@ -8082,7 +9417,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.155,
       "penetration": null,
       "fireRate": 600,
@@ -8120,7 +9454,49 @@
       "headDamageScale": 1.8,
       "muzzleVelocity": 85000,
       "damageRangeCurve": "BR_DOD_DMR_GY",
-      "caliber": "7.62x51"
+      "caliber": "7.62x51",
+      "basePrice": 25734,
+      "sellPrices": [
+        25734,
+        23161,
+        18014,
+        18014,
+        18014,
+        25734
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.m1a_socom16",
+          "level": 3,
+          "price": 73525,
+          "bundle": 1,
+          "bundlePrice": 73525,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.m1a_socom16-2",
+          "level": 3,
+          "price": 73525,
+          "bundle": 1,
+          "bundlePrice": 73525,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.tools.gaspipewrench",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 600,
@@ -8198,7 +9574,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 16830,
       "weight": 2.765,
       "penetration": null,
       "fireRate": 450,
@@ -8235,7 +9610,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "M3A1DOD",
-      "caliber": ".45 ACP"
+      "caliber": ".45 ACP",
+      "basePrice": 5279,
+      "sellPrices": [
+        5279,
+        4752,
+        3696,
+        3696,
+        3696,
+        5279
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.m3a1",
+          "level": 1,
+          "price": 11732,
+          "bundle": 1,
+          "bundlePrice": 11732,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 450,
@@ -8307,7 +9706,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 48960,
       "weight": 4.044,
       "penetration": 2,
       "fireRate": 1000,
@@ -8346,6 +9744,30 @@
       "muzzleVelocity": 85000,
       "damageRangeCurve": null,
       "caliber": "7.62x51",
+      "basePrice": 26144,
+      "sellPrices": [
+        26144,
+        23530,
+        18301,
+        18301,
+        18301,
+        26144
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.m40a5",
+          "level": 3,
+          "price": 74698,
+          "bundle": 1,
+          "bundlePrice": 74698,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -8447,7 +9869,6 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 29400,
       "weight": 2.4,
       "penetration": 1.2,
       "fireRate": 800,
@@ -8495,7 +9916,6 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 34680,
       "weight": 3.8,
       "penetration": 1.2,
       "fireRate": 800,
@@ -8543,7 +9963,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 97850,
       "weight": 4.021,
       "penetration": null,
       "fireRate": 800,
@@ -8582,6 +10001,30 @@
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
       "caliber": "5.56x45",
+      "basePrice": 57721,
+      "sellPrices": [
+        57721,
+        51949,
+        40405,
+        40405,
+        40405,
+        57721
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.m4a1dd",
+          "level": 4,
+          "price": 192403,
+          "bundle": 1,
+          "bundlePrice": 192403,
+          "stock": 5,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -8716,7 +10159,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 38760,
       "weight": 3.451,
       "penetration": null,
       "fireRate": 800,
@@ -8755,6 +10197,52 @@
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
       "caliber": "5.56x45",
+      "basePrice": 24028,
+      "sellPrices": [
+        24028,
+        21626,
+        16820,
+        16820,
+        16820,
+        24028
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.m4a1-2",
+          "level": 1,
+          "price": 60070,
+          "bundle": 1,
+          "bundlePrice": 60070,
+          "stock": 6,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.c.06"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.information.recorder",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.m4a1",
+          "level": 2,
+          "price": 60070,
+          "bundle": 1,
+          "bundlePrice": 60070,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.b.02"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -8875,7 +10363,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 5.636,
       "penetration": null,
       "fireRate": 800,
@@ -8913,7 +10400,53 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "5.56x45"
+      "caliber": "5.56x45",
+      "basePrice": 99958,
+      "sellPrices": [
+        99958,
+        89963,
+        69971,
+        69971,
+        69971,
+        99958
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.m4a1-fullattach",
+          "level": 4,
+          "price": 333193,
+          "bundle": 1,
+          "bundlePrice": 333193,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.m4a1-fullattach-2",
+          "level": 4,
+          "price": 333193,
+          "bundle": 1,
+          "bundlePrice": 333193,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.storagebattery2",
+              "count": 1
+            },
+            {
+              "id": "valuable.electric.visionmodule",
+              "count": 2
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 800,
@@ -9081,7 +10614,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 5.636,
       "penetration": null,
       "fireRate": 800,
@@ -9119,7 +10651,53 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "5.56x45"
+      "caliber": "5.56x45",
+      "basePrice": 99958,
+      "sellPrices": [
+        99958,
+        89963,
+        69971,
+        69971,
+        69971,
+        99958
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.m4a1-fullattach",
+          "level": 4,
+          "price": 333193,
+          "bundle": 1,
+          "bundlePrice": 333193,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.m4a1-fullattach-2",
+          "level": 4,
+          "price": 333193,
+          "bundle": 1,
+          "bundlePrice": 333193,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.storagebattery2",
+              "count": 1
+            },
+            {
+              "id": "valuable.electric.visionmodule",
+              "count": 2
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 800,
@@ -9280,7 +10858,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 27440,
       "weight": 4.152,
       "penetration": null,
       "fireRate": 800,
@@ -9318,6 +10895,32 @@
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
       "caliber": "5.56x45",
+      "basePrice": 22175,
+      "sellPrices": [
+        22175,
+        19958,
+        15523,
+        15523,
+        15523,
+        22175
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.ar15hunter",
+          "level": 1,
+          "price": 49278,
+          "bundle": 1,
+          "bundlePrice": 49278,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.c.04"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -9431,7 +11034,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.451,
       "penetration": null,
       "fireRate": 800,
@@ -9469,7 +11071,17 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "5.56x45"
+      "caliber": "5.56x45",
+      "basePrice": 31258,
+      "sellPrices": [
+        31258,
+        28133,
+        21881,
+        21881,
+        21881,
+        31258
+      ],
+      "buyOffers": []
     },
     "gunsmithDisplay": {
       "RPM": 800,
@@ -9588,7 +11200,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.021,
       "penetration": null,
       "fireRate": 800,
@@ -9626,7 +11237,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "5.56x45"
+      "caliber": "5.56x45",
+      "basePrice": 25359,
+      "sellPrices": [
+        25359,
+        22824,
+        17752,
+        17752,
+        17752,
+        25359
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.m4a1arx",
+          "level": 4,
+          "price": 84530,
+          "bundle": 1,
+          "bundlePrice": 84530,
+          "stock": 5,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 800,
@@ -9752,7 +11387,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.326,
       "penetration": null,
       "fireRate": 800,
@@ -9790,7 +11424,53 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "5.56x45"
+      "caliber": "5.56x45",
+      "basePrice": 30781,
+      "sellPrices": [
+        30781,
+        27703,
+        21547,
+        21547,
+        21547,
+        30781
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.m4a1cqb-2",
+          "level": 2,
+          "price": 76953,
+          "bundle": 1,
+          "bundlePrice": 76953,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.c.04"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.household.shampoo",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.m4a1cqb",
+          "level": 1,
+          "price": 109933,
+          "bundle": 1,
+          "bundlePrice": 109933,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.c.04"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 800,
@@ -9909,7 +11589,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.766,
       "penetration": null,
       "fireRate": 800,
@@ -9947,7 +11626,53 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "5.56x45"
+      "caliber": "5.56x45",
+      "basePrice": 82025,
+      "sellPrices": [
+        82025,
+        73823,
+        57418,
+        57418,
+        57418,
+        82025
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.m4a1ddpve",
+          "level": 4,
+          "price": 273415,
+          "bundle": 1,
+          "bundlePrice": 273415,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.m4a1ddpve-2",
+          "level": 4,
+          "price": 273415,
+          "bundle": 1,
+          "bundlePrice": 273415,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.radioscanner",
+              "count": 2
+            },
+            {
+              "id": "valuable.medicalsupplies.centrifuge",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 800,
@@ -10080,7 +11805,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.021,
       "penetration": null,
       "fireRate": 800,
@@ -10118,7 +11842,17 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "5.56x45"
+      "caliber": "5.56x45",
+      "basePrice": 1,
+      "sellPrices": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "buyOffers": []
     },
     "gunsmithDisplay": {
       "RPM": 800,
@@ -10265,7 +11999,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 24000,
       "weight": 3.828,
       "penetration": null,
       "fireRate": 600,
@@ -10302,7 +12035,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_RM870DOD",
-      "caliber": "12GA"
+      "caliber": "12GA",
+      "basePrice": 19621,
+      "sellPrices": [
+        19621,
+        17659,
+        13735,
+        13735,
+        13735,
+        19621
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.m590",
+          "level": 1,
+          "price": 43603,
+          "bundle": 1,
+          "bundlePrice": 43603,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 600,
@@ -10383,7 +12140,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.515,
       "penetration": null,
       "fireRate": 600,
@@ -10420,7 +12176,36 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_RM870DOD",
-      "caliber": "12GA"
+      "caliber": "12GA",
+      "basePrice": 25436,
+      "sellPrices": [
+        25436,
+        22893,
+        17806,
+        17806,
+        17806,
+        25436
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.m870-m-gunmsith-2",
+          "level": 3,
+          "price": 72674,
+          "bundle": 1,
+          "bundlePrice": 72674,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.visionmodule",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 600,
@@ -10526,7 +12311,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.495,
       "penetration": null,
       "fireRate": 600,
@@ -10563,7 +12347,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_RM870DOD",
-      "caliber": "12GA"
+      "caliber": "12GA",
+      "basePrice": 15903,
+      "sellPrices": [
+        15903,
+        14313,
+        11133,
+        11133,
+        11133,
+        15903
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.m870-m-short",
+          "level": 3,
+          "price": 45438,
+          "bundle": 1,
+          "bundlePrice": 45438,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 600,
@@ -10641,7 +12449,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 2.953,
       "penetration": null,
       "fireRate": 600,
@@ -10678,7 +12485,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_RM870DOD",
-      "caliber": "12GA"
+      "caliber": "12GA",
+      "basePrice": 16270,
+      "sellPrices": [
+        16270,
+        14643,
+        11389,
+        11389,
+        11389,
+        16270
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.m870_shorty",
+          "level": 2,
+          "price": 40675,
+          "bundle": 1,
+          "bundlePrice": 40675,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 600,
@@ -10758,7 +12589,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.318,
       "penetration": null,
       "fireRate": 600,
@@ -10795,7 +12625,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_RM870DOD",
-      "caliber": "12GA"
+      "caliber": "12GA",
+      "basePrice": 13580,
+      "sellPrices": [
+        13580,
+        12222,
+        9506,
+        9506,
+        9506,
+        13580
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.m870_standard",
+          "level": 2,
+          "price": 33951,
+          "bundle": 1,
+          "bundlePrice": 33951,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 600,
@@ -10875,7 +12729,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 13130,
       "weight": 1.185,
       "penetration": 0.3,
       "fireRate": 1000,
@@ -10914,6 +12767,30 @@
       "muzzleVelocity": 38000,
       "damageRangeCurve": "BR_DOD_Pistol_GY",
       "caliber": "9x19",
+      "basePrice": 5161,
+      "sellPrices": [
+        5161,
+        4645,
+        3613,
+        3613,
+        3613,
+        5161
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.m9",
+          "level": 1,
+          "price": 11468,
+          "bundle": 1,
+          "bundlePrice": 11468,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -11008,7 +12885,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 76440,
       "weight": 3.983,
       "penetration": null,
       "fireRate": 680,
@@ -11043,7 +12919,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "5.45x39"
+      "caliber": "5.45x39",
+      "basePrice": 35643,
+      "sellPrices": [
+        35643,
+        32079,
+        24951,
+        24951,
+        24951,
+        35643
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.malyuk545",
+          "level": 3,
+          "price": 101838,
+          "bundle": 1,
+          "bundlePrice": 101838,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 680,
@@ -11138,7 +13038,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 76000,
       "weight": 4.107,
       "penetration": null,
       "fireRate": 630,
@@ -11173,7 +13072,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "7.62x39"
+      "caliber": "7.62x39",
+      "basePrice": 33671,
+      "sellPrices": [
+        33671,
+        30304,
+        23570,
+        23570,
+        23570,
+        33671
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.malyuk762",
+          "level": 3,
+          "price": 96202,
+          "bundle": 1,
+          "bundlePrice": 96202,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 630,
@@ -11274,7 +13197,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.107,
       "penetration": null,
       "fireRate": 630,
@@ -11409,7 +13331,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 31040,
       "weight": 4.938,
       "penetration": 1.5,
       "fireRate": 1000,
@@ -11448,6 +13369,52 @@
       "muzzleVelocity": 76000,
       "damageRangeCurve": "Sako85DOD",
       "caliber": "7.62x54R",
+      "basePrice": 14047,
+      "sellPrices": [
+        14047,
+        12643,
+        9833,
+        9833,
+        9833,
+        14047
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.mosin9130_infantry",
+          "level": 2,
+          "price": 35117,
+          "bundle": 1,
+          "bundlePrice": 35117,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.mosin9130_infantry-2",
+          "level": 2,
+          "price": 35117,
+          "bundle": 1,
+          "bundlePrice": 35117,
+          "stock": 6,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.building.spraycan",
+              "count": 2
+            },
+            {
+              "id": "valuable.tools.hammer",
+              "count": 2
+            }
+          ]
+        }
+      ],
       "bulletDropFactor": 1.1
     },
     "gunsmithDisplay": {
@@ -11534,7 +13501,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 26190,
       "weight": 4.588,
       "penetration": 1.5,
       "fireRate": 1000,
@@ -11573,6 +13539,32 @@
       "muzzleVelocity": 76000,
       "damageRangeCurve": "Sako85DOD",
       "caliber": "7.62x54R",
+      "basePrice": 13557,
+      "sellPrices": [
+        13557,
+        12202,
+        9490,
+        9490,
+        9490,
+        13557
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.mosinm38",
+          "level": 1,
+          "price": 30127,
+          "bundle": 1,
+          "bundlePrice": 30127,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.b.05"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.1
     },
     "gunsmithDisplay": {
@@ -11659,7 +13651,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 23000,
       "weight": 4.918,
       "penetration": 1.5,
       "fireRate": 1000,
@@ -11698,6 +13689,32 @@
       "muzzleVelocity": 76000,
       "damageRangeCurve": "Sako85DOD",
       "caliber": "7.62x54R",
+      "basePrice": 12248,
+      "sellPrices": [
+        12248,
+        11024,
+        8574,
+        8574,
+        8574,
+        12248
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.mosinm1891_infantry",
+          "level": 1,
+          "price": 27218,
+          "bundle": 1,
+          "bundlePrice": 27218,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.c.06"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.1
     },
     "gunsmithDisplay": {
@@ -11784,7 +13801,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 25000,
       "weight": 2.108,
       "penetration": 1.5,
       "fireRate": 1000,
@@ -11823,6 +13839,32 @@
       "muzzleVelocity": 76000,
       "damageRangeCurve": "Sako85DOD",
       "caliber": "7.62x54R",
+      "basePrice": 12731,
+      "sellPrices": [
+        12731,
+        11458,
+        8912,
+        8912,
+        8912,
+        12731
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.mosinm1891_obrez",
+          "level": 1,
+          "price": 28290,
+          "bundle": 1,
+          "bundlePrice": 28290,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.c.07"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.1
     },
     "gunsmithDisplay": {
@@ -11895,7 +13937,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 5.378,
       "penetration": 1.5,
       "fireRate": 1000,
@@ -11933,7 +13974,31 @@
       "headDamageScale": 1.8,
       "muzzleVelocity": 76000,
       "damageRangeCurve": "Sako85DOD",
-      "caliber": "7.62x54R"
+      "caliber": "7.62x54R",
+      "basePrice": 20974,
+      "sellPrices": [
+        20974,
+        18877,
+        14682,
+        14682,
+        14682,
+        20974
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.mosin9130_sniper",
+          "level": 2,
+          "price": 52435,
+          "bundle": 1,
+          "bundlePrice": 52435,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 1000,
@@ -12025,7 +14090,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 21780,
       "weight": 3.123,
       "penetration": 0.4,
       "fireRate": 800,
@@ -12064,7 +14128,33 @@
       "headDamageScale": 1.4,
       "muzzleVelocity": 42000,
       "damageRangeCurve": "BR_MP5A2_DOD_GY",
-      "caliber": "9x19"
+      "caliber": "9x19",
+      "basePrice": 11070,
+      "sellPrices": [
+        11070,
+        9963,
+        7749,
+        7749,
+        7749,
+        11070
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.mp5a4",
+          "level": 1,
+          "price": 27675,
+          "bundle": 1,
+          "bundlePrice": 27675,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.c.02"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 800,
@@ -12160,7 +14250,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.123,
       "penetration": 0.4,
       "fireRate": 800,
@@ -12199,7 +14288,17 @@
       "headDamageScale": 1.4,
       "muzzleVelocity": 42000,
       "damageRangeCurve": "BR_MP5A2_DOD_GY",
-      "caliber": "9x19"
+      "caliber": "9x19",
+      "basePrice": 25547,
+      "sellPrices": [
+        25547,
+        22993,
+        17883,
+        17883,
+        17883,
+        25547
+      ],
+      "buyOffers": []
     },
     "gunsmithDisplay": {
       "RPM": 800,
@@ -12315,7 +14414,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.123,
       "penetration": 0.4,
       "fireRate": 800,
@@ -12354,7 +14452,17 @@
       "headDamageScale": 1.4,
       "muzzleVelocity": 42000,
       "damageRangeCurve": "BR_MP5A2_DOD_GY",
-      "caliber": "9x19"
+      "caliber": "9x19",
+      "basePrice": 1,
+      "sellPrices": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "buyOffers": []
     },
     "gunsmithDisplay": {
       "RPM": 800,
@@ -12463,7 +14571,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.193,
       "penetration": 0.4,
       "fireRate": 800,
@@ -12597,7 +14704,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 2.317,
       "penetration": 0.4,
       "fireRate": 850,
@@ -12632,7 +14738,33 @@
       "headDamageScale": 1.4,
       "muzzleVelocity": 42000,
       "damageRangeCurve": "BR_MP5A2_DOD_GY",
-      "caliber": "9x19"
+      "caliber": "9x19",
+      "basePrice": 11240,
+      "sellPrices": [
+        11240,
+        10116,
+        7868,
+        7868,
+        7868,
+        11240
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.mp5k",
+          "level": 1,
+          "price": 24978,
+          "bundle": 1,
+          "bundlePrice": 24978,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.c.02"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 850,
@@ -12727,7 +14859,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.602,
       "penetration": 0.4,
       "fireRate": 850,
@@ -12762,7 +14893,49 @@
       "headDamageScale": 1.4,
       "muzzleVelocity": 42000,
       "damageRangeCurve": "BR_MP5A2_DOD_GY",
-      "caliber": "9x19"
+      "caliber": "9x19",
+      "basePrice": 13014,
+      "sellPrices": [
+        13014,
+        11713,
+        9110,
+        9110,
+        9110,
+        13014
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.mp5k_pdw-2",
+          "level": 2,
+          "price": 37184,
+          "bundle": 1,
+          "bundlePrice": 37184,
+          "stock": 6,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.combustible.gunoil",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.mp5k_pdw",
+          "level": 3,
+          "price": 37184,
+          "bundle": 1,
+          "bundlePrice": 37184,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 850,
@@ -12864,7 +15037,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.383,
       "penetration": 0.4,
       "fireRate": 800,
@@ -12903,7 +15075,31 @@
       "headDamageScale": 1.4,
       "muzzleVelocity": 42000,
       "damageRangeCurve": "BR_MP5A2_DOD_GY",
-      "caliber": "9x19"
+      "caliber": "9x19",
+      "basePrice": 18209,
+      "sellPrices": [
+        18209,
+        16389,
+        12747,
+        12747,
+        12747,
+        18209
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.mp5sd",
+          "level": 3,
+          "price": 52025,
+          "bundle": 1,
+          "bundlePrice": 52025,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 800,
@@ -12998,7 +15194,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 28710,
       "weight": 1.13,
       "penetration": 0.4,
       "fireRate": 900,
@@ -13033,7 +15228,31 @@
       "headDamageScale": 1.4,
       "muzzleVelocity": 48000,
       "damageRangeCurve": "BR_BX4_DOD_GY",
-      "caliber": "9x19"
+      "caliber": "9x19",
+      "basePrice": 6440,
+      "sellPrices": [
+        6440,
+        5796,
+        4508,
+        4508,
+        4508,
+        6440
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.mp9",
+          "level": 2,
+          "price": 16099,
+          "bundle": 1,
+          "bundlePrice": 16099,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 900,
@@ -13100,7 +15319,6 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 34000,
       "weight": 1.3,
       "penetration": 0.4,
       "fireRate": 900,
@@ -13146,7 +15364,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 41000,
       "weight": 2.352,
       "penetration": 0.4,
       "fireRate": 900,
@@ -13181,7 +15398,49 @@
       "headDamageScale": 1.4,
       "muzzleVelocity": 48000,
       "damageRangeCurve": "BR_BX4_DOD_GY",
-      "caliber": "9x19"
+      "caliber": "9x19",
+      "basePrice": 31058,
+      "sellPrices": [
+        31058,
+        27953,
+        21741,
+        21741,
+        21741,
+        31058
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.mp9t",
+          "level": 3,
+          "price": 88738,
+          "bundle": 1,
+          "bundlePrice": 88738,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.mp9t-2",
+          "level": 3,
+          "price": 88738,
+          "bundle": 1,
+          "bundlePrice": 88738,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.tools.gaspipewrench",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 900,
@@ -13304,7 +15563,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 1.418,
       "penetration": 0.4,
       "fireRate": 900,
@@ -13339,7 +15597,31 @@
       "headDamageScale": 1.4,
       "muzzleVelocity": 48000,
       "damageRangeCurve": "BR_BX4_DOD_GY",
-      "caliber": "9x19"
+      "caliber": "9x19",
+      "basePrice": 8905,
+      "sellPrices": [
+        8905,
+        8015,
+        6234,
+        6234,
+        6234,
+        8905
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.mp9foldstock",
+          "level": 3,
+          "price": 25444,
+          "bundle": 1,
+          "bundlePrice": 25444,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 900,
@@ -13419,7 +15701,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.317,
       "penetration": 1.1,
       "fireRate": 600,
@@ -13454,7 +15735,17 @@
       "headDamageScale": 1.6,
       "muzzleVelocity": 71500,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "7.62x39"
+      "caliber": "7.62x39",
+      "basePrice": 11004,
+      "sellPrices": [
+        11004,
+        9904,
+        7703,
+        7703,
+        7703,
+        11004
+      ],
+      "buyOffers": []
     },
     "gunsmithDisplay": {
       "RPM": 600,
@@ -13557,7 +15848,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 0.91,
       "penetration": null,
       "fireRate": 800,
@@ -13595,7 +15885,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "ShotgunDOD",
-      "caliber": "9x19"
+      "caliber": "9x19",
+      "basePrice": 8447,
+      "sellPrices": [
+        8447,
+        7603,
+        5913,
+        5913,
+        5913,
+        8447
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.p226",
+          "level": 1,
+          "price": 18772,
+          "bundle": 1,
+          "bundlePrice": 18772,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 800,
@@ -13681,7 +15995,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10690,
       "weight": 0.95,
       "penetration": 0.3,
       "fireRate": 800,
@@ -13731,7 +16044,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 208000,
       "weight": 8.44,
       "penetration": 1.5,
       "fireRate": 600,
@@ -13769,6 +16081,41 @@
       "muzzleVelocity": 86800,
       "damageRangeCurve": "BR_DOD_LMG_GY",
       "caliber": "7.62x54R",
+      "basePrice": 57828,
+      "sellPrices": [
+        57828,
+        52046,
+        40480,
+        40480,
+        40480,
+        57828
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.pkp.pkp_b50-2",
+          "level": 4,
+          "price": 192760,
+          "bundle": 1,
+          "bundlePrice": 192760,
+          "stock": 5,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.a.14"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.marinestoragebattery",
+              "count": 1
+            },
+            {
+              "id": "valuable.electric.visionmodule",
+              "count": 1
+            }
+          ]
+        }
+      ],
       "bulletDropFactor": 1.55
     },
     "gunsmithDisplay": {
@@ -13869,7 +16216,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 5.272,
       "penetration": null,
       "fireRate": 600,
@@ -13906,7 +16252,17 @@
       "headDamageScale": 1.6,
       "muzzleVelocity": 80000,
       "damageRangeCurve": "BR_DOD_Rfile",
-      "caliber": "7.62x51"
+      "caliber": "7.62x51",
+      "basePrice": 1,
+      "sellPrices": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "buyOffers": []
     },
     "gunsmithDisplay": {
       "RPM": 600,
@@ -14002,7 +16358,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 86700,
       "weight": 5.272,
       "penetration": null,
       "fireRate": 600,
@@ -14040,6 +16395,30 @@
       "muzzleVelocity": 80000,
       "damageRangeCurve": "BR_DOD_Rfile",
       "caliber": "7.62x51",
+      "basePrice": 41049,
+      "sellPrices": [
+        41049,
+        36945,
+        28735,
+        28735,
+        28735,
+        41049
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.g3.psg-1_standard",
+          "level": 4,
+          "price": 136831,
+          "bundle": 1,
+          "bundlePrice": 136831,
+          "stock": 5,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -14137,7 +16516,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 5.272,
       "penetration": null,
       "fireRate": 600,
@@ -14174,7 +16552,17 @@
       "headDamageScale": 1.6,
       "muzzleVelocity": 80000,
       "damageRangeCurve": "BR_DOD_Rfile",
-      "caliber": "7.62x51"
+      "caliber": "7.62x51",
+      "basePrice": 7200,
+      "sellPrices": [
+        7200,
+        6480,
+        5040,
+        5040,
+        5040,
+        7200
+      ],
+      "buyOffers": []
     },
     "gunsmithDisplay": {
       "RPM": 600,
@@ -14277,7 +16665,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.231,
       "penetration": 0.8,
       "fireRate": 850,
@@ -14438,7 +16825,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.227,
       "penetration": 1.1,
       "fireRate": 750,
@@ -14473,7 +16859,31 @@
       "headDamageScale": 1.6,
       "muzzleVelocity": 71500,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "7.62x39"
+      "caliber": "7.62x39",
+      "basePrice": 37862,
+      "sellPrices": [
+        37862,
+        34076,
+        26504,
+        26504,
+        26504,
+        37862
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.rd704",
+          "level": 3,
+          "price": 108176,
+          "bundle": 1,
+          "bundlePrice": 108176,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 750,
@@ -14596,7 +17006,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.227,
       "penetration": 1.1,
       "fireRate": 750,
@@ -14782,7 +17191,6 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 10000,
       "weight": 3.227,
       "penetration": 1.1,
       "fireRate": 750,
@@ -14817,7 +17225,17 @@
       "headDamageScale": 1.6,
       "muzzleVelocity": 71500,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "7.62x39"
+      "caliber": "7.62x39",
+      "basePrice": 1,
+      "sellPrices": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "buyOffers": []
     },
     "gunsmithDisplay": {
       "RPM": 750,
@@ -14968,7 +17386,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 2.945,
       "penetration": 1.7,
       "fireRate": 500,
@@ -15006,7 +17423,31 @@
       "headDamageScale": 1.8,
       "muzzleVelocity": 88000,
       "damageRangeCurve": "BR_DOD_DMR_GY",
-      "caliber": "7.62x51"
+      "caliber": "7.62x51",
+      "basePrice": 22692,
+      "sellPrices": [
+        22692,
+        20423,
+        15885,
+        15885,
+        15885,
+        22692
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.rfb",
+          "level": 4,
+          "price": 75640,
+          "bundle": 1,
+          "bundlePrice": 75640,
+          "stock": 5,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 500,
@@ -15109,7 +17550,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 2.25,
       "penetration": 0.9,
       "fireRate": 400,
@@ -15147,7 +17587,35 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Pistol_GY",
-      "caliber": "12.7x55"
+      "caliber": "12.7x55",
+      "basePrice": 64164,
+      "sellPrices": [
+        64164,
+        57748,
+        44915,
+        44915,
+        44915,
+        64164
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.gungenerator.rsh12gold",
+          "level": 1,
+          "price": 102663,
+          "bundle": 1,
+          "bundlePrice": 102663,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.marc.part4.01"
+          ],
+          "requiresDlc": [
+            "dlc.s5.brokencontact"
+          ],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 400,
@@ -15212,7 +17680,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 2.25,
       "penetration": 0.9,
       "fireRate": 400,
@@ -15250,7 +17717,33 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_Pistol_GY",
-      "caliber": "12.7x55"
+      "caliber": "12.7x55",
+      "basePrice": 57990,
+      "sellPrices": [
+        57990,
+        52191,
+        40593,
+        40593,
+        40593,
+        57990
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.gungenerator.rsh12silver",
+          "level": 1,
+          "price": 92784,
+          "bundle": 1,
+          "bundlePrice": 92784,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s5.brokencontact"
+          ],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 400,
@@ -15315,7 +17808,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.348,
       "penetration": 1.8,
       "fireRate": 600,
@@ -15461,7 +17953,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.348,
       "penetration": 1.8,
       "fireRate": 600,
@@ -15607,7 +18098,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.348,
       "penetration": 1.8,
       "fireRate": 600,
@@ -15642,7 +18132,31 @@
       "headDamageScale": 1.5,
       "muzzleVelocity": null,
       "damageRangeCurve": "FNFALDOD",
-      "caliber": "7.62x51"
+      "caliber": "7.62x51",
+      "basePrice": 36273,
+      "sellPrices": [
+        36273,
+        32646,
+        25392,
+        25392,
+        25392,
+        36273
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.sa58_para",
+          "level": 2,
+          "price": 90682,
+          "bundle": 1,
+          "bundlePrice": 90682,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 600,
@@ -15753,7 +18267,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 79790,
       "weight": 3.571,
       "penetration": null,
       "fireRate": 650,
@@ -15789,6 +18302,48 @@
       "muzzleVelocity": 71500,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
       "caliber": "5.56x45",
+      "basePrice": 32832,
+      "sellPrices": [
+        32832,
+        29549,
+        22983,
+        22983,
+        22983,
+        32832
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.scarmk16",
+          "level": 3,
+          "price": 93806,
+          "bundle": 1,
+          "bundlePrice": 93806,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.scarmk16-2",
+          "level": 4,
+          "price": 93806,
+          "bundle": 1,
+          "bundlePrice": 93806,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.gameconsole",
+              "count": 1
+            }
+          ]
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -15909,7 +18464,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 85490,
       "weight": 3.615,
       "penetration": 2,
       "fireRate": 600,
@@ -15945,6 +18499,30 @@
       "muzzleVelocity": 87000,
       "damageRangeCurve": "BR_DOD_DMR_GY",
       "caliber": "7.62x51",
+      "basePrice": 41128,
+      "sellPrices": [
+        41128,
+        37016,
+        28790,
+        28790,
+        28790,
+        41128
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.seca17_bk",
+          "level": 3,
+          "price": 117509,
+          "bundle": 1,
+          "bundlePrice": 117509,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -16060,7 +18638,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 81340,
       "weight": 3.635,
       "penetration": 2,
       "fireRate": 600,
@@ -16096,6 +18673,30 @@
       "muzzleVelocity": 87000,
       "damageRangeCurve": "BR_DOD_DMR_GY",
       "caliber": "7.62x51",
+      "basePrice": 43149,
+      "sellPrices": [
+        43149,
+        38835,
+        30205,
+        30205,
+        30205,
+        43149
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.seca17_fde",
+          "level": 3,
+          "price": 123282,
+          "bundle": 1,
+          "bundlePrice": 123282,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -16211,7 +18812,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 123750,
       "weight": 4.345,
       "penetration": 2,
       "fireRate": 600,
@@ -16247,6 +18847,52 @@
       "muzzleVelocity": 87000,
       "damageRangeCurve": "BR_DOD_DMR_GY",
       "caliber": "7.62x51",
+      "basePrice": 63384,
+      "sellPrices": [
+        63384,
+        57046,
+        44369,
+        44369,
+        44369,
+        63384
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.seca17_ssr",
+          "level": 3,
+          "price": 181096,
+          "bundle": 1,
+          "bundlePrice": 181096,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.seca17_ssr-2",
+          "level": 4,
+          "price": 181096,
+          "bundle": 1,
+          "bundlePrice": 181096,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.transformer",
+              "count": 1
+            },
+            {
+              "id": "valuable.household.deodorant",
+              "count": 3
+            }
+          ]
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -16362,7 +19008,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 36720,
       "weight": 4.382,
       "penetration": 0.5,
       "fireRate": 850,
@@ -16401,7 +19046,53 @@
       "headDamageScale": 1.4,
       "muzzleVelocity": 38000,
       "damageRangeCurve": "BR_CZEVO3_DOD_GY",
-      "caliber": "9x19"
+      "caliber": "9x19",
+      "basePrice": 12693,
+      "sellPrices": [
+        12693,
+        11424,
+        8886,
+        8886,
+        8886,
+        12693
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.evo3-2",
+          "level": 2,
+          "price": 36265,
+          "bundle": 1,
+          "bundlePrice": 36265,
+          "stock": 6,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.information.recorder",
+              "count": 1
+            },
+            {
+              "id": "valuable.medicalsupplies.iodophor",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.evo3",
+          "level": 3,
+          "price": 36265,
+          "bundle": 1,
+          "bundlePrice": 36265,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 850,
@@ -16510,7 +19201,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.345,
       "penetration": 2,
       "fireRate": 600,
@@ -16545,7 +19235,17 @@
       "headDamageScale": 1.8,
       "muzzleVelocity": 87000,
       "damageRangeCurve": "BR_DOD_DMR_GY",
-      "caliber": "7.62x51"
+      "caliber": "7.62x51",
+      "basePrice": 7200,
+      "sellPrices": [
+        7200,
+        6480,
+        5040,
+        5040,
+        5040,
+        7200
+      ],
+      "buyOffers": []
     },
     "gunsmithDisplay": {
       "RPM": 600,
@@ -16666,7 +19366,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.333,
       "penetration": 0.2,
       "fireRate": 400,
@@ -16704,7 +19403,53 @@
       "headDamageScale": 1.1,
       "muzzleVelocity": 53600,
       "damageRangeCurve": "BR_S686DOD",
-      "caliber": "12GA"
+      "caliber": "12GA",
+      "basePrice": 15473,
+      "sellPrices": [
+        15473,
+        13926,
+        10832,
+        10832,
+        10832,
+        15473
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.sjogren_fullsize",
+          "level": 2,
+          "price": 38682,
+          "bundle": 1,
+          "bundlePrice": 38682,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.sjogren_fullsize-2",
+          "level": 2,
+          "price": 38682,
+          "bundle": 1,
+          "bundlePrice": 38682,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.storagebattery2",
+              "count": 1
+            },
+            {
+              "id": "valuable.building.spraycan",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 400,
@@ -16791,7 +19536,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 18540,
       "weight": 3.573,
       "penetration": 0.2,
       "fireRate": 400,
@@ -16830,6 +19574,30 @@
       "muzzleVelocity": 53600,
       "damageRangeCurve": "BR_S686DOD",
       "caliber": "12GA",
+      "basePrice": 9502,
+      "sellPrices": [
+        9502,
+        8552,
+        6652,
+        6652,
+        6652,
+        9502
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.sjogren_standard",
+          "level": 2,
+          "price": 23755,
+          "bundle": 1,
+          "bundlePrice": 23755,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -16904,7 +19672,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 2.783,
       "penetration": 0.2,
       "fireRate": 400,
@@ -16942,7 +19709,31 @@
       "headDamageScale": 1.1,
       "muzzleVelocity": 53600,
       "damageRangeCurve": "BR_S686DOD",
-      "caliber": "12GA"
+      "caliber": "12GA",
+      "basePrice": 7348,
+      "sellPrices": [
+        7348,
+        6614,
+        5144,
+        5144,
+        5144,
+        7348
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.sjogren_sawoff",
+          "level": 2,
+          "price": 18371,
+          "bundle": 1,
+          "bundlePrice": 18371,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 400,
@@ -17015,7 +19806,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 20370,
       "weight": 4.44,
       "penetration": 1.1,
       "fireRate": 720,
@@ -17054,6 +19844,32 @@
       "muzzleVelocity": 80000,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
       "caliber": "7.62x39",
+      "basePrice": 10456,
+      "sellPrices": [
+        10456,
+        9411,
+        7320,
+        7320,
+        7320,
+        10456
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.sks",
+          "level": 1,
+          "price": 23235,
+          "bundle": 1,
+          "bundlePrice": 23235,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.c.01"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -17143,7 +19959,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.31,
       "penetration": 1.1,
       "fireRate": 720,
@@ -17181,7 +19996,33 @@
       "headDamageScale": 1.8,
       "muzzleVelocity": 80000,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "7.62x39"
+      "caliber": "7.62x39",
+      "basePrice": 7202,
+      "sellPrices": [
+        7202,
+        6482,
+        5042,
+        5042,
+        5042,
+        7202
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.skscarbine",
+          "level": 1,
+          "price": 16005,
+          "bundle": 1,
+          "bundlePrice": 16005,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.c.01"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 720,
@@ -17262,7 +20103,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.319,
       "penetration": 1.1,
       "fireRate": 720,
@@ -17300,7 +20140,53 @@
       "headDamageScale": 1.8,
       "muzzleVelocity": 80000,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "7.62x39"
+      "caliber": "7.62x39",
+      "basePrice": 27264,
+      "sellPrices": [
+        27264,
+        24538,
+        19085,
+        19085,
+        19085,
+        27264
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.skstapco",
+          "level": 3,
+          "price": 77897,
+          "bundle": 1,
+          "bundlePrice": 77897,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.skstapco-2",
+          "level": 3,
+          "price": 77897,
+          "bundle": 1,
+          "bundlePrice": 77897,
+          "stock": 6,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.radioscanner",
+              "count": 1
+            },
+            {
+              "id": "valuable.information.recorder",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 720,
@@ -17395,7 +20281,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.44,
       "penetration": 1.1,
       "fireRate": 720,
@@ -17433,7 +20318,17 @@
       "headDamageScale": 1.8,
       "muzzleVelocity": 80000,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "7.62x39"
+      "caliber": "7.62x39",
+      "basePrice": 1,
+      "sellPrices": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "buyOffers": []
     },
     "gunsmithDisplay": {
       "RPM": 720,
@@ -17528,7 +20423,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.082,
       "penetration": null,
       "fireRate": 900,
@@ -17563,7 +20457,31 @@
       "headDamageScale": 1.5,
       "muzzleVelocity": 85500,
       "damageRangeCurve": "BR_DOD_74U",
-      "caliber": "9x39"
+      "caliber": "9x39",
+      "basePrice": 44669,
+      "sellPrices": [
+        44669,
+        40203,
+        31269,
+        31269,
+        31269,
+        44669
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.sr3m_standard",
+          "level": 3,
+          "price": 127627,
+          "bundle": 1,
+          "bundlePrice": 127627,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 900,
@@ -17664,7 +20582,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 5.479,
       "penetration": 1.1,
       "fireRate": 700,
@@ -17701,7 +20618,40 @@
       "headDamageScale": 1.8,
       "muzzleVelocity": null,
       "damageRangeCurve": "SVDDOD",
-      "caliber": "7.62x54R"
+      "caliber": "7.62x54R",
+      "basePrice": 60120,
+      "sellPrices": [
+        60120,
+        54108,
+        42084,
+        42084,
+        42084,
+        60120
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.svd_modernized-2",
+          "level": 4,
+          "price": 200400,
+          "bundle": 1,
+          "bundlePrice": 200400,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.marinestoragebattery",
+              "count": 1
+            },
+            {
+              "id": "valuable.electric.transformer",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 700,
@@ -17849,7 +20799,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.784999999999999,
       "penetration": 1.1,
       "fireRate": 700,
@@ -17886,7 +20835,31 @@
       "headDamageScale": 1.8,
       "muzzleVelocity": null,
       "damageRangeCurve": "SVDDOD",
-      "caliber": "7.62x54R"
+      "caliber": "7.62x54R",
+      "basePrice": 48335,
+      "sellPrices": [
+        48335,
+        43502,
+        33835,
+        33835,
+        33835,
+        48335
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.svd_standard",
+          "level": 3,
+          "price": 138100,
+          "bundle": 1,
+          "bundlePrice": 138100,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 700,
@@ -17992,7 +20965,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 55080,
       "weight": 3.866,
       "penetration": 1.1,
       "fireRate": 400,
@@ -18031,6 +21003,30 @@
       "muzzleVelocity": 80000,
       "damageRangeCurve": "BR_DOD_DMR_GY",
       "caliber": "7.62x54R",
+      "basePrice": 18258,
+      "sellPrices": [
+        18258,
+        16433,
+        12781,
+        12781,
+        12781,
+        18258
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.svt40_infantry",
+          "level": 2,
+          "price": 45646,
+          "bundle": 1,
+          "bundlePrice": 45646,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "bulletDropFactor": 1.2
     },
     "gunsmithDisplay": {
@@ -18124,7 +21120,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.286,
       "penetration": 1.1,
       "fireRate": 400,
@@ -18162,7 +21157,31 @@
       "headDamageScale": 1.8,
       "muzzleVelocity": 80000,
       "damageRangeCurve": "BR_DOD_DMR_GY",
-      "caliber": "7.62x54R"
+      "caliber": "7.62x54R",
+      "basePrice": 26652,
+      "sellPrices": [
+        26652,
+        23987,
+        18657,
+        18657,
+        18657,
+        26652
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.svt40_sniper",
+          "level": 2,
+          "price": 66631,
+          "bundle": 1,
+          "bundlePrice": 66631,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 400,
@@ -18261,7 +21280,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 18430,
       "weight": 5.155,
       "penetration": null,
       "fireRate": 800,
@@ -18296,7 +21314,36 @@
       "headDamageScale": 1.2,
       "muzzleVelocity": 32000,
       "damageRangeCurve": "M1A1DOD",
-      "caliber": ".45 ACP"
+      "caliber": ".45 ACP",
+      "basePrice": 13019,
+      "sellPrices": [
+        13019,
+        11718,
+        9114,
+        9114,
+        9114,
+        13019
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.m1928_standard-2",
+          "level": 3,
+          "price": 37198,
+          "bundle": 1,
+          "bundlePrice": 37198,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.radioscanner",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 800,
@@ -18404,7 +21451,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 33950,
       "weight": 2.61,
       "penetration": null,
       "fireRate": 600,
@@ -18443,7 +21489,31 @@
       "headDamageScale": null,
       "muzzleVelocity": null,
       "damageRangeCurve": "BR_DOD_SMG_GY",
-      "caliber": ".45 ACP"
+      "caliber": ".45 ACP",
+      "basePrice": 12131,
+      "sellPrices": [
+        12131,
+        10918,
+        8492,
+        8492,
+        8492,
+        12131
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.ump45",
+          "level": 2,
+          "price": 30327,
+          "bundle": 1,
+          "bundlePrice": 30327,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 600,
@@ -18529,7 +21599,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.34,
       "penetration": 0.5,
       "fireRate": 1000,
@@ -18568,7 +21637,31 @@
       "headDamageScale": 1.4,
       "muzzleVelocity": 35000,
       "damageRangeCurve": "BR_KrissVDOD_GY",
-      "caliber": ".45 ACP"
+      "caliber": ".45 ACP",
+      "basePrice": 26934,
+      "sellPrices": [
+        26934,
+        24241,
+        18854,
+        18854,
+        18854,
+        26934
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.vector10mm",
+          "level": 2,
+          "price": 67334,
+          "bundle": 1,
+          "bundlePrice": 67334,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 1000,
@@ -18668,7 +21761,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 2.912,
       "penetration": 0.5,
       "fireRate": 1000,
@@ -18707,7 +21799,31 @@
       "headDamageScale": 1.4,
       "muzzleVelocity": 35000,
       "damageRangeCurve": "BR_KrissVDOD_GY",
-      "caliber": "9x19"
+      "caliber": "9x19",
+      "basePrice": 24951,
+      "sellPrices": [
+        24951,
+        22456,
+        17466,
+        17466,
+        17466,
+        24951
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gungenerator.vector9mm",
+          "level": 2,
+          "price": 62377,
+          "bundle": 1,
+          "bundlePrice": 62377,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 1000,
@@ -18809,7 +21925,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.101,
       "penetration": 1.1,
       "fireRate": 600,
@@ -18846,7 +21961,31 @@
       "headDamageScale": 1.6,
       "muzzleVelocity": 71500,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "7.62x39"
+      "caliber": "7.62x39",
+      "basePrice": 12150,
+      "sellPrices": [
+        12150,
+        10935,
+        8505,
+        8505,
+        8505,
+        12150
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.vpo136",
+          "level": 1,
+          "price": 26999,
+          "bundle": 1,
+          "bundlePrice": 26999,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 600,
@@ -18949,7 +22088,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 2.9320000000000004,
       "penetration": null,
       "fireRate": 900,
@@ -18984,7 +22122,40 @@
       "headDamageScale": 1.5,
       "muzzleVelocity": 85500,
       "damageRangeCurve": "BR_DOD_74U",
-      "caliber": "9x39"
+      "caliber": "9x39",
+      "basePrice": 51074,
+      "sellPrices": [
+        51074,
+        45967,
+        35752,
+        35752,
+        35752,
+        51074
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.vss_modernized-2",
+          "level": 4,
+          "price": 170247,
+          "bundle": 1,
+          "bundlePrice": 170247,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.marinestoragebattery",
+              "count": 1
+            },
+            {
+              "id": "valuable.household.ratpoison",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 900,
@@ -19106,7 +22277,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 2.6209999999999996,
       "penetration": null,
       "fireRate": 900,
@@ -19141,7 +22311,31 @@
       "headDamageScale": 1.5,
       "muzzleVelocity": 85500,
       "damageRangeCurve": "BR_DOD_74U",
-      "caliber": "9x39"
+      "caliber": "9x39",
+      "basePrice": 28680,
+      "sellPrices": [
+        28680,
+        25812,
+        20076,
+        20076,
+        20076,
+        28680
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gungenerator.vss_standard",
+          "level": 4,
+          "price": 95599,
+          "bundle": 1,
+          "bundlePrice": 95599,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 900,
@@ -19235,7 +22429,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 121200,
       "weight": 4.59,
       "penetration": 1.3,
       "fireRate": 780,
@@ -19270,7 +22463,42 @@
       "headDamageScale": 1.6,
       "muzzleVelocity": 91000,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "6.8x51"
+      "caliber": "6.8x51",
+      "basePrice": 58934,
+      "sellPrices": [
+        58934,
+        53041,
+        41254,
+        41254,
+        41254,
+        58934
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.xm5-2",
+          "level": 4,
+          "price": 196446,
+          "bundle": 1,
+          "bundlePrice": 196446,
+          "stock": 5,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.a.14"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.marinestoragebattery",
+              "count": 1
+            },
+            {
+              "id": "valuable.medicalsupplies.centrifuge",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 780,
@@ -19392,7 +22620,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 4.59,
       "penetration": 1.3,
       "fireRate": 780,
@@ -19427,7 +22654,17 @@
       "headDamageScale": 1.6,
       "muzzleVelocity": 91000,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "6.8x51"
+      "caliber": "6.8x51",
+      "basePrice": 7200,
+      "sellPrices": [
+        7200,
+        6480,
+        5040,
+        5040,
+        5040,
+        7200
+      ],
+      "buyOffers": []
     },
     "gunsmithDisplay": {
       "RPM": 780,
@@ -19562,7 +22799,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 10000,
       "weight": 3.52,
       "penetration": 1.3,
       "fireRate": 780,
@@ -19597,7 +22833,53 @@
       "headDamageScale": 1.6,
       "muzzleVelocity": 91000,
       "damageRangeCurve": "BR_DOD_Rfile_GY",
-      "caliber": "6.8x51"
+      "caliber": "6.8x51",
+      "basePrice": 30312,
+      "sellPrices": [
+        30312,
+        27281,
+        21219,
+        21219,
+        21219,
+        30312
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.xm5light",
+          "level": 4,
+          "price": 101039,
+          "bundle": 1,
+          "bundlePrice": 101039,
+          "stock": 5,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.a.06"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gungenerator.xm5light-2",
+          "level": 4,
+          "price": 101039,
+          "bundle": 1,
+          "bundlePrice": 101039,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.a.06"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.tapeplayer",
+              "count": 3
+            }
+          ]
+        }
+      ]
     },
     "gunsmithDisplay": {
       "RPM": 780,
