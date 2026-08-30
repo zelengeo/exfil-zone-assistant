@@ -1,0 +1,156 @@
+{
+  "categories": [
+    {
+      "id": "KitchenArea",
+      "categoryNameKey": "AreaName_Kitchen_Area",
+      "categoryName": "Kitchen Area",
+      "image": "Frame_6073"
+    },
+    {
+      "id": "Lounge",
+      "categoryNameKey": "AreaName_Lounge",
+      "categoryName": "Lounge",
+      "image": "Frame_6936png"
+    },
+    {
+      "id": "MedicalArea",
+      "categoryNameKey": "AreaName_Medical_Area",
+      "categoryName": "Medical Area",
+      "image": "Image_bg_icon25"
+    },
+    {
+      "id": "Storage",
+      "categoryNameKey": "0924330E44EE5C6D0530F9A90945E7FE",
+      "categoryName": "Storage Zone",
+      "image": "Image_bg_icon42"
+    }
+  ],
+  "areas": [
+    {
+      "id": "Generator",
+      "categoryNameKey": "AreaName_Generator",
+      "categoryName": "Generator",
+      "image": "Frame_6074"
+    },
+    {
+      "id": "CrptoMining",
+      "categoryNameKey": "AreaName_Crypto_Mining",
+      "categoryName": "Bitcoin Mine",
+      "image": "Frame_6075"
+    },
+    {
+      "id": "Intelligent",
+      "categoryNameKey": "AreaName_Intel_Center",
+      "categoryName": "Intel Center",
+      "image": "Frame_6076"
+    },
+    {
+      "id": "CoffeeMaker",
+      "categoryNameKey": "AreaName_Coffee_Maker",
+      "categoryName": "Coffee Maker",
+      "image": "Frame_6079"
+    },
+    {
+      "id": "Refrigerator",
+      "categoryNameKey": "AreaName_Refrigerator",
+      "categoryName": "Refrigerator",
+      "image": "Frame_6082"
+    },
+    {
+      "id": "MicrowaveOven",
+      "categoryNameKey": "AreaName_Microwave_Oven",
+      "categoryName": "Microwave",
+      "image": "Frame_6080"
+    },
+    {
+      "id": "WaterCollector",
+      "categoryNameKey": "AreaName_Water_Collector",
+      "categoryName": "Water Collector",
+      "image": "Image_bg_icon24"
+    },
+    {
+      "id": "KitchenArea",
+      "categoryNameKey": "AreaName_Kitchen_Area",
+      "categoryName": "Kitchen Area",
+      "image": "Frame_6073"
+    },
+    {
+      "id": "Sofa",
+      "categoryNameKey": "AreaName_Sofa",
+      "categoryName": "Sofa",
+      "image": "Image_bg_icon2"
+    },
+    {
+      "id": "Bookcase",
+      "categoryNameKey": "AreaName_Bookcase",
+      "categoryName": "Bookdesk",
+      "image": "Image_bg_icon32"
+    },
+    {
+      "id": "TVSet",
+      "categoryNameKey": "AreaName_TV_Set",
+      "categoryName": "TV Set",
+      "image": "Image_bg_icon3"
+    },
+    {
+      "id": "RestRoom",
+      "categoryNameKey": "AreaName_Rest_Room",
+      "categoryName": "Toilet",
+      "image": "Frame_5782"
+    },
+    {
+      "id": "WorshopZone",
+      "categoryNameKey": "AreaName_Workshop",
+      "categoryName": "Workshop",
+      "image": "Image_bg_icon21"
+    },
+    {
+      "id": "Planting",
+      "categoryNameKey": "AreaName_Planting",
+      "categoryName": "Plant Stand",
+      "image": "Frame_6077"
+    },
+    {
+      "id": "MedicalArea",
+      "categoryNameKey": "AreaName_Medical_Area",
+      "categoryName": "Medical Area",
+      "image": "Image_bg_icon25"
+    },
+    {
+      "id": "OperationBed",
+      "categoryNameKey": "AreaName_Operation_Bed",
+      "categoryName": "Operating Bed",
+      "image": "Frame_6924"
+    },
+    {
+      "id": "MedDesk",
+      "categoryNameKey": "AreaName_MedDesk",
+      "categoryName": "Med Desk",
+      "image": "Image_bg_icon27"
+    },
+    {
+      "id": "ShootingRange",
+      "categoryNameKey": "AreaName_Shooting_Range",
+      "categoryName": "Shooting Range",
+      "image": "Frame_6071"
+    },
+    {
+      "id": "StorageZoneLock3",
+      "categoryNameKey": "AreaName_Storage_expansion3",
+      "categoryName": "Storage Room C",
+      "image": "Frame_6934"
+    },
+    {
+      "id": "StorageZoneLock2",
+      "categoryNameKey": "AreaName_Storage_Expansion_2",
+      "categoryName": "Storage Room B",
+      "image": "Frame_6933"
+    },
+    {
+      "id": "StorageZoneLock1",
+      "categoryNameKey": "AreaName_Storage_Expansion_1",
+      "categoryName": "Storage Room A",
+      "image": "Frame_6932"
+    }
+  ]
+}

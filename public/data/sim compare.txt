@@ -1,0 +1,87 @@
+===============================================================================================
+#PEN CHANCE TEST
+
+420 255 vs ~full SD prot 9pens
+240 ap vs 0 SD prot 24 nopen
+
+
+600 m4a1agent m995 vs full imtv 7.5(45)(4 3 3 6 6 2 7 4 5 5)
+600 rc416 m995 vs full imtv 12.1666 (73)(8 3 7 10 7 9 9 7 8 5)
+660 m4a1dd m995 vs full imtv 38.7878 (256)(26 26 26 17 21 21 23 28 26 17 25)
+
+
+======================================================================
+#ARMOR REPAIR SHOP:
+repair durability check:
+imtv 110/148 6792-> 140
+imtv 82/146 11601-> 136
+swat 70/131 10759-> 121
+swat 39/118 14030-> 105
+sd protect 0/172 132778-> 145
+
+
+===========================================================================================
+Shot sequence test:(prev tests - 44.75 - stomach 31.25) This values are used to define damage multipliers for each body part
+
+m4a1agent m995 - - - (380-369) 11hp arm_lower (broken)
+m4a1agent m995 - - - (369-358) 11hp arm_lower (broken)
+m4a1agent m995 - - - (358-347) 11hp arm_lower (broken)
+m4a1agent m995 - - - (347-335) 12hp arm_lower (broken)
+m4a1agent m995 - - - (335-324) 11hp arm_lower (broken)
+m4a1agent m995 - - - (324-313) 11hp arm_lower (broken)
+m4a1agent m995 - - - (313-302) 11hp arm_lower (broken)
+m4a1agent m995 - - - (302-291) 11hp arm_lower (broken)
+m4a1agent m995 - - - (291-280) 11hp arm_lower (broken)
+m4a1agent m995 - - - (280-268) 12hp arm_lower (broken)
+//11.16(6)
+
+m4a1agent m995 - - - (300-278) 22hp arm_upper (broken)
+m4a1agent m995 - - - (278-256) 22hp arm_upper (broken)
+m4a1agent m995 - - - (256-233) 23hp arm_upper (broken)
+m4a1agent m995 - - - (233-211) 22hp arm_upper (broken)
+m4a1agent m995 - - - (211-189) 22hp arm_upper (broken)
+m4a1agent m995 - - - (189-166) 23hp arm_upper (broken)
+m4a1agent m995 - - - (166-144) 22hp arm_upper (broken)
+m4a1agent m995 - - - (144-122) 22hp arm_upper (broken)
+m4a1agent m995 - - - (122-99) 23hp arm_upper (broken)
+m4a1agent m995 - - - (280-268) 12hp arm_upper (broken)
+//22.33(3)
+    // Reference values:
+
+
+===========================================================================================
+Single shot full durability testing:
+
+        m993 ds explorer 93 durability 61hp
+        m993 rampage od 66 durability 51hp
+        m995 rampage od 26 durability 34hp
+        m995 rampage od 26 durability 33hp || 26.8 35.3
+        m995 rampage od 26 durability 33hp || 26.8 35.3
+        m995 rampage od 32 durability 3hp
+        m995 police 32.5 durability 38hp
+        m995 police 32 durability 39hp   || 32.2 39.9
+        m995 imtv 23 durability 26 hp    || 20.8 28.2
+
+        51fmj sudden 18 durability 2hp   ||
+        51fmj ds exp 32 durability 73hp  || 23.9 73.8 -- outlayer does not fit other sims
+        51fmj press 38 durability 80hp   || 29.5 77.9
+        51fmj press 28 durability 4hp    ||
+        51fmj sudden 25 durability 73hp  || 23.9 73.8
+        51fmj ds exp 18 durability 3hp   ||
+        51fmj ds exp 25 durability 73hp  || 23.9 73.8
+        51fmj sudden 25 durability 73hp  || 23.9 73.8
+        51fmj ds exp 25 durability 73hp  || 23.9 73.8
+        51fmj press 28 durability 4hp
+        51fmj press 38 durability 80hp   || 29.5 77.9
+
+        762x39SP swat50% ? durability 50hp
+
+        PSO swat50 ~2.8 (6x=17) durability (6x=5)~0.85hp NO PEN
+        PSO swat0 ? durability 42hp
+
+        PP IMTV Body damage no pen sequence 2 1 2 1 2 2 1 2 1 1
+
+        pp ramp 2 32 34
+
+        SAIGA BUCKSHOT arm 65+ 20+ 20+ 19+ 22+ 11+ 26 == 183 (30 dmg in stats - 6 pellets?)
+
