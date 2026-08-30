@@ -1,5 +1,67 @@
 /** @type {import('tailwindcss').Config} */
+
+/*
+ * COLD STEEL — visual rework, Stage 1 (holding skin).
+ *
+ * Two vocabularies live here on purpose:
+ *
+ *   1. The real palette — steel / line / ink / ember / info / warn / good.
+ *      New and rewritten views use ONLY these.
+ *
+ *   2. The alias block at the bottom — olive / military / tan pointed at the
+ *      new palette so the not-yet-rewritten routes stay coherent. It is
+ *      temporary. Each route's rewrite deletes its own old classes, and when
+ *      `grep -roE "\b(military|olive|tan)-[0-9]+" src` returns nothing the
+ *      alias block comes out and the rework is done.
+ *
+ * Note `ember` rather than `accent`: shadcn already owns `accent` for menu
+ * hover surfaces (22 call sites). Ember is "the one action on the screen" —
+ * if two things on a screen are ember, one of them is wrong.
+ */
+
+const steel = {
+    950: '#0A0E12', // app background, deepest surface
+    900: '#0C1116', // subject / detail pane
+    880: '#0D1318', // top chrome, bottom nav
+    850: '#0E141A', // schematic and chart plot area
+    800: '#11171D', // resting card, list row
+    750: '#141B22', // raised card, input field
+    700: '#161E26', // hover / selected row
+    650: '#1A222A', // active nav item, selected filter
+    600: '#1C242C', // chip, avatar tile
+    550: '#1E2830', // part icon tile
+    500: '#26313C', // schematic part fill (secondary)
+    450: '#2C3844', // schematic part fill (primary)
+};
+
+const line = {
+    900: '#1B242C', // pane divider, hairline
+    800: '#212A32', // card border (resting)
+    700: '#262F38', // card border (raised)
+    600: '#2A343D', // input border, chip border
+    500: '#33414D', // secondary button border
+    400: '#37434F', // emphasis border (selected card)
+    300: '#3E4C59', // schematic outline
+    200: '#46525E', // dashed empty-slot border
+};
+
+// Text ramp. Named `ink` because Tailwind's `text-` prefix is already taken by
+// font size — `text-ink-300` reads, `text-text-300` does not.
+const ink = {
+    hi: '#F6FAFC',  // display numerals, hero headings
+    100: '#ECF2F7', // headings
+    200: '#DCE6ED', // sub-headings, list titles
+    300: '#C6D3DC', // body
+    400: '#A9BAC6', // secondary body
+    500: '#8DA0AE', // muted body
+    600: '#7E909F', // labels, eyebrows
+    700: '#5C6E7C', // disabled, placeholder
+    800: '#4C5A66', // unchecked control border
+};
+
 module.exports = {
+    // NOTE: do not "fix" these globs. Tailwind 4 auto-detects sources; adding
+    // src/app/** here overrides that detection and silently drops classes.
     content: [
         "./src/pages/**/*.{js,ts,jsx,tsx}",
         "./src/components/**/*.{js,ts,jsx,tsx}",
@@ -8,59 +70,94 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                // Military-themed color palette
+                steel,
+                line,
+                ink,
+
+                // The one action. Never more than one per screen.
+                ember: {
+                    DEFAULT: '#FF4A24',
+                    hover: '#FF6B4A',
+                    soft: '#FFB9A8', // text inside ember-bordered chips
+                    pale: '#FFD9CE',
+                    edge: '#3A2A22', // border/fill for ember-adjacent panels
+                    ink: '#0A0E12',  // text on an ember fill
+                },
+
+                // Semantic. Separate from ember, and never a substitute for it.
+                info: {
+                    DEFAULT: '#5B8CA8', // neutral data, icons, secondary progress
+                    light: '#6E9DB8',
+                    soft: '#7FA8BF',
+                    pale: '#9BBDD0',
+                },
+                warn: '#FFB020', // currency, partial progress, ready to build
+                good: '#4ADE80', // completed, improved stat, favourable verdict
+                bad: '#FF3D3D',
+                track: '#28323B', // progress-bar track
+
+                /* ---------------------------------------------------------
+                 * HOLDING SKIN — temporary aliases, deleted in Stage 10.
+                 *
+                 * olive-400/500/600 were the old single "highlight". Cold Steel
+                 * splits that into info (data) and ember (the one action), and
+                 * which one a given call site wants cannot be decided in bulk.
+                 * So every olive maps to INFO here — the quiet, safe default —
+                 * and ember gets assigned per route during that route's
+                 * rewrite, with the whole screen visible.
+                 *
+                 * The ramp splits by weight, not by hue: 200-400 are TEXT-weight
+                 * info (light enough to read on steel), 500-600 are FILL-weight
+                 * info (dark enough that the existing light button labels keep
+                 * ~6:1 contrast). Mapping both to one mid-tone would have left
+                 * every `bg-olive-600` button at 2.8:1.
+                 * ------------------------------------------------------- */
                 olive: {
-                    50: '#f7f8f5',
-                    100: '#eaefd4',
-                    200: '#d5dcb0',
-                    300: '#b8c282',
-                    400: '#9ba85e',
-                    500: '#798345',
-                    600: '#5c6534',
-                    700: '#454d28',
-                    800: '#2e331b',
-                    900: '#171a0d',
-                    950: '#0b0d07',
+                    50: ink.hi,
+                    100: ink[100],
+                    200: '#9BBDD0', // text weight
+                    300: '#7FA8BF',
+                    400: '#5B8CA8',
+                    500: '#3E7191', // fill weight (hover)
+                    600: '#35637E', // fill weight (rest)
+                    700: line[800],
+                    800: line[700],
+                    900: line[900],
+                    950: steel[950],
                 },
                 military: {
-                    100: '#efefef',
-                    200: '#d4d6d0',
-                    300: '#b5b9b1',
-                    400: '#8a9085',
-                    500: '#707769',
-                    600: '#4d5244',
-                    700: '#373c32',
-                    800: '#272a23',
-                    900: '#1a1c18',
-                    950: '#0d0e0c',
-                },
-                camo: {
-                    100: '#e8e6de',
-                    200: '#c8c5b1',
-                    300: '#a9a688',
-                    400: '#8c8766',
-                    500: '#665f42',
-                    600: '#4d4932',
-                    700: '#373327',
-                    800: '#201e18',
-                    900: '#100f0c',
-                    950: '#080805',
+                    100: ink[100],
+                    200: ink[200],
+                    300: ink[300],
+                    400: ink[500],
+                    500: ink[700],
+                    600: line[600],
+                    700: steel[700],
+                    800: steel[800],
+                    // 850 was used in 4 files and defined nowhere — those
+                    // panels have been rendering transparent. Defined now.
+                    850: steel[850],
+                    900: steel[950],
+                    950: steel[950],
                 },
                 tan: {
-                    100: '#f7eedd',
-                    200: '#efe0c3',
-                    300: '#e7d1a9',
-                    400: '#dfc38f',
-                    500: '#d4af6c',
-                    600: '#ac8d57',
-                    700: '#816a41',
-                    800: '#56472c',
-                    900: '#2b2316',
-                    950: '#16110b',
+                    100: ink[100],
+                    200: ink[200],
+                    300: ink[300],
+                    400: ink[400],
+                    500: ink[500],
+                    600: ink[600],
+                    700: ink[700],
+                    800: ink[800],
+                    900: line[500],
+                    950: line[600],
                 },
+                // `camo` is deleted — it was defined here and used nowhere.
             },
             fontFamily: {
-                sans: ['Inter', 'system-ui', 'sans-serif'],
+                display: ['var(--font-display)', 'Oswald', 'Arial Narrow', 'system-ui', 'sans-serif'],
+                sans: ['var(--font-sans)', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+                mono: ['var(--font-mono)', 'ui-monospace', 'SFMono-Regular', 'Consolas', 'monospace'],
             },
             fontSize: {
                 // Larger text for VR readability
@@ -73,17 +170,33 @@ module.exports = {
                 '5xl': '3rem',
                 '6xl': '4rem',
             },
+            letterSpacing: {
+                eyebrow: '0.24em',
+                micro: '0.18em',
+                nav: '0.06em',
+            },
             spacing: {
                 // Larger touch targets for VR
                 '12': '3rem',
                 '16': '4rem',
                 '20': '5rem',
                 '24': '6rem',
+                // Shell metrics from the handoff
+                'chrome': '62px',
+                'bottomnav': '66px',
             },
+            // Radius 0 everywhere. The only non-rectangular shape in the design
+            // is the clipped shoulder on hero panels (see .clip-shoulder).
             borderRadius: {
-                'lg': '0.75rem',
-                'xl': '1rem',
-                '2xl': '1.5rem',
+                'none': '0',
+                'sm': '0',
+                DEFAULT: '0',
+                'md': '0',
+                'lg': '0',
+                'xl': '0',
+                '2xl': '0',
+                '3xl': '0',
+                'full': '0',
             },
             minHeight: {
                 '12': '3rem',
@@ -96,6 +209,10 @@ module.exports = {
             },
             maxWidth: {
                 '7xl': '80rem',
+            },
+            screens: {
+                // The layout rule is defined against 900px, not Tailwind's lg.
+                'shell': '900px',
             },
             animation: {
                 'fade-in': 'fadeIn 0.5s ease-in-out',

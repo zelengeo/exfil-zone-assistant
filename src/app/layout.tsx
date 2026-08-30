@@ -1,24 +1,39 @@
 import React from "react";
 import type { Metadata, Viewport } from "next";
 import { AuthProvider } from '@/app/components/providers/AuthProvider';
-import { Geist, Geist_Mono } from "next/font/google";
+import { Saira_Condensed, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import "./globals.css";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Cold Steel type system.
+// Saira Condensed  — headings, numerals-as-display, buttons, list titles
+// IBM Plex Sans    — body, descriptions, objectives
+// IBM Plex Mono    — all numbers, labels, eyebrows, badges, prices
+const sairaCondensed = Saira_Condensed({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const plexSans = IBM_Plex_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const viewport: Viewport = {
-  themeColor: '#1a1c18',
+  themeColor: '#0A0E12',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
@@ -84,7 +99,7 @@ export const metadata: Metadata = {
       {
         rel: 'mask-icon',
         url: '/safari-pinned-tab.svg',
-        color: '#1a1c18',
+        color: '#0A0E12',
       },
     ],
   },
@@ -104,7 +119,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.exfil-zone-assistant.app',
   },
   other: {
-    'msapplication-TileColor': '#1a1c18',
+    'msapplication-TileColor': '#0A0E12',
     'msapplication-TileImage': '/mstile-144x144.png',
   },
 };
@@ -117,7 +132,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${sairaCondensed.variable} ${plexSans.variable} ${plexMono.variable} antialiased`}
       >
           <AuthProvider>
             {children}

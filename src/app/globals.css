@@ -6,104 +6,116 @@
 
 @config "../../tailwind.config.js";
 
+/*
+ * COLD STEEL — Stage 1 (holding skin).
+ *
+ * The shadcn semantic variables below are hex, not HSL triplets. Nothing in
+ * src/ referenced `hsl(var(--…))` directly, so the conversion is contained to
+ * this file and the @theme inline block at the bottom.
+ *
+ * Note that --accent is a steel hover surface, NOT the ember accent. shadcn
+ * uses `accent` to mean "the row you are hovering" across 37 call sites in the
+ * menu/select primitives; the one-action colour is `ember` in the Tailwind
+ * palette and --primary here.
+ */
+
 @layer base {
-  /* Military theme as default */
   :root {
-    --radius: 0.125rem; /* Sharp corners for military feel */
+    --radius: 0; /* Radius 0 everywhere. No rounded corners, no pills. */
 
-    /* Your military colors in HSL format */
-    --background: 102 8% 10%; /* military-900 */
-    --foreground: 30 13% 82%; /* tan-100 */
+    --background: #0A0E12;        /* steel-950 */
+    --foreground: #C6D3DC;        /* ink-300  */
 
-    --card: 96 6% 13%; /* military-800 */
-    --card-foreground: 30 13% 82%; /* tan-100 */
+    --card: #11171D;              /* steel-800 */
+    --card-foreground: #C6D3DC;
 
-    --popover: 96 6% 13%;
-    --popover-foreground: 30 13% 82%;
+    --popover: #141B22;           /* steel-750 */
+    --popover-foreground: #C6D3DC;
 
-    --primary: 81 33% 36%; /* olive-600 */
-    --primary-foreground: 30 13% 82%;
+    --primary: #FF4A24;           /* ember — the one action */
+    --primary-foreground: #0A0E12;
 
-    --secondary: 102 6% 16%; /* military-700 */
-    --secondary-foreground: 30 13% 82%;
+    --secondary: #161E26;         /* steel-700 */
+    --secondary-foreground: #DCE6ED;
 
-    --muted: 102 6% 20%; /* slightly lighter military */
-    --muted-foreground: 32 12% 65%; /* tan-400 */
+    --muted: #141B22;             /* steel-750 */
+    --muted-foreground: #8DA0AE;  /* ink-500  */
 
-    --accent: 81 33% 36%; /* olive-600 */
-    --accent-foreground: 30 13% 82%;
+    --accent: #161E26;            /* steel-700 — hover surface, not ember */
+    --accent-foreground: #ECF2F7;
 
-    --destructive: 0 62% 51%; /* red for errors */
-    --destructive-foreground: 30 13% 82%;
+    --destructive: #FF3D3D;
+    --destructive-foreground: #0A0E12;
 
-    --border: 102 6% 25%; /* military-600 */
-    --input: 102 6% 25%;
-    --ring: 81 33% 36%; /* olive-600 for focus rings */
+    --border: #212A32;            /* line-800 */
+    --input: #2A343D;             /* line-600 */
+    --ring: #FF4A24;              /* ember — focus is always the accent */
 
-    /* Chart colors in military theme */
-    --chart-1: 81 33% 36%; /* olive variations */
-    --chart-2: 81 33% 46%;
-    --chart-3: 81 33% 26%;
-    --chart-4: 32 12% 65%; /* tan variations */
-    --chart-5: 30 13% 72%;
+    /* Charts: semantic first, then neutrals. Ember leads because the selected
+       series is the one thing being asked about. */
+    --chart-1: #FF4A24;           /* ember  — selected / current */
+    --chart-2: #5B8CA8;           /* info   — baseline / comparison */
+    --chart-3: #4ADE80;           /* good   */
+    --chart-4: #FFB020;           /* warn   */
+    --chart-5: #8DA0AE;           /* ink-500 */
   }
 
-  /* Keep the same for dark mode since military theme is dark */
+  /* Cold Steel is a single committed dark theme — .dark matches :root. */
   .dark {
-    --background: 102 8% 10%;
-    --foreground: 30 13% 82%;
+    --background: #0A0E12;
+    --foreground: #C6D3DC;
 
-    --card: 96 6% 13%;
-    --card-foreground: 30 13% 82%;
+    --card: #11171D;
+    --card-foreground: #C6D3DC;
 
-    --popover: 96 6% 13%;
-    --popover-foreground: 30 13% 82%;
+    --popover: #141B22;
+    --popover-foreground: #C6D3DC;
 
-    --primary: 81 33% 36%;
-    --primary-foreground: 30 13% 82%;
+    --primary: #FF4A24;
+    --primary-foreground: #0A0E12;
 
-    --secondary: 102 6% 16%;
-    --secondary-foreground: 30 13% 82%;
+    --secondary: #161E26;
+    --secondary-foreground: #DCE6ED;
 
-    --muted: 102 6% 20%;
-    --muted-foreground: 32 12% 65%;
+    --muted: #141B22;
+    --muted-foreground: #8DA0AE;
 
-    --accent: 81 33% 36%;
-    --accent-foreground: 30 13% 82%;
+    --accent: #161E26;
+    --accent-foreground: #ECF2F7;
 
-    --destructive: 0 62% 51%;
-    --destructive-foreground: 30 13% 82%;
+    --destructive: #FF3D3D;
+    --destructive-foreground: #0A0E12;
 
-    --border: 102 6% 25%;
-    --input: 102 6% 25%;
-    --ring: 81 33% 36%;
+    --border: #212A32;
+    --input: #2A343D;
+    --ring: #FF4A24;
 
-    --chart-1: 81 33% 36%;
-    --chart-2: 81 33% 46%;
-    --chart-3: 81 33% 26%;
-    --chart-4: 32 12% 65%;
-    --chart-5: 30 13% 72%;
+    --chart-1: #FF4A24;
+    --chart-2: #5B8CA8;
+    --chart-3: #4ADE80;
+    --chart-4: #FFB020;
+    --chart-5: #8DA0AE;
   }
 
   /* Apply base styles */
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
 
   html {
-    @apply text-tan-100 bg-military-900;
+    @apply text-ink-300 bg-steel-950;
     scroll-behavior: smooth;
   }
 
   body {
     @apply font-sans text-base antialiased bg-background text-foreground;
-    /* Military pattern background */
-    background-image:
-            radial-gradient(rgba(77, 82, 68, 0.1) 2px, transparent 2px),
-            radial-gradient(rgba(77, 82, 68, 0.1) 2px, transparent 2px);
-    background-size: 30px 30px;
-    background-position: 0 0, 15px 15px;
-    background-blend-mode: overlay;
+    /* Cold Steel weave — a 135° hairline, far quieter than the old dot grid.
+       Panels separate by a 1px line and a background step, not by texture. */
+    background-image: repeating-linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.013) 0 1px,
+            transparent 1px 8px
+    );
   }
 
   /* Typography */
@@ -111,8 +123,19 @@
     @apply leading-relaxed;
   }
 
+  /* Headings take the condensed display face. Uppercase is applied per
+     component during each route's rewrite, not globally — forcing it here
+     would reflow copy on every page that has not been rewritten yet. */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight;
+    @apply font-display font-bold tracking-tight;
+    text-wrap: balance;
+  }
+
+  /* Focus. Because radius is 0 and there are no shadows, the ring is the only
+     affordance a keyboard user gets — never remove it. */
+  :focus-visible {
+    outline: 2px solid #FF4A24; /* ember */
+    outline-offset: 2px;
   }
 
   /* Form controls */
@@ -151,101 +174,121 @@
     @apply text-sm md:text-lg font-bold;
   }
 
-  /* Military-style elements */
+  /* ---- Cold Steel primitives (new views use these) ---- */
+
+  /* Eyebrow: mono, wide-tracked, uppercase. The label above a block. */
+  .eyebrow {
+    @apply font-mono text-[10px] tracking-eyebrow uppercase text-ink-600 leading-none;
+  }
+
+  .micro-label {
+    @apply font-mono text-[9px] tracking-micro uppercase text-ink-600 leading-none;
+  }
+
+  /* Every column of digits lines up. */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* The one non-rectangular shape in the system: a clipped shoulder on hero
+     panels. 20px desktop, 14px below the shell breakpoint. */
+  .clip-shoulder {
+    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+  }
+
+  @media (min-width: 900px) {
+    .clip-shoulder {
+      clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+    }
+  }
+
+  /* Plot and schematic grid. */
+  .plot-grid {
+    background-color: #0E141A; /* steel-850 */
+    background-image:
+            linear-gradient(#151D24 1px, transparent 1px),
+            linear-gradient(90deg, #151D24 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  /* ---- HOLDING SKIN: the old utilities, repointed ----
+     147 call sites re-skin from these four rules. Deleted in Stage 10 along
+     with the alias ramps. Note the shadows are gone: Cold Steel separates
+     panels with a hairline and a background step, never elevation. */
   .military-box {
-    @apply bg-military-800 border border-olive-700 shadow-lg;
+    @apply bg-steel-800 border border-line-800;
   }
 
   .military-card {
-    @apply bg-military-800 border border-olive-700 shadow-md;
+    @apply bg-steel-800 border border-line-800;
   }
 
   .military-button {
-    @apply bg-olive-600 hover:bg-olive-500 text-tan-100 border border-olive-700;
+    @apply bg-olive-600 hover:bg-olive-500 text-ink-100 border border-line-600;
   }
 
   .military-button-secondary {
-    @apply bg-military-700 hover:bg-military-600 text-tan-100 border border-olive-800;
+    @apply bg-steel-700 hover:bg-steel-650 text-ink-100 border border-line-700;
   }
 
-  /* High contrast for VR readability */
   .vr-high-contrast {
-    @apply text-tan-100 bg-military-900 shadow-lg;
+    @apply text-ink-100 bg-steel-950;
   }
 
-  /* Depth effect for VR */
   .vr-depth {
-    @apply shadow-xl transform transition-transform hover:scale-105;
+    @apply transition-transform;
   }
 
-  /* Stencil pattern */
+  /* Was 'Special Elite' — a typewriter face that never matched the stencil
+     intent and was never loaded. Now the real condensed display face. */
   .military-stencil {
-    font-family: 'Special Elite', monospace;
-    letter-spacing: 0.05em;
+    @apply font-display font-extrabold uppercase;
+    letter-spacing: 0.06em;
   }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 16px;
+  width: 14px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-military-800;
+  @apply bg-steel-900;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-olive-600 rounded-full border-4 border-solid border-military-800;
+  @apply bg-steel-600 border-4 border-solid border-steel-900;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-olive-500;
+  @apply bg-line-500;
 }
 
 /* Military-style elements */
 .ammo-count {
-  font-family: 'Digital-7', monospace;
+  @apply font-mono;
+  font-variant-numeric: tabular-nums;
 }
 
-/* Overlay texture */
+/* Overlay texture. Kept as a hook for Layout, but Cold Steel's ground texture
+   is a single hairline weave rather than the old 60px camo lattice. */
 .texture-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   pointer-events: none;
-  opacity: 0.05;
-  background-image:
-          linear-gradient(45deg, rgba(121, 131, 69, 0.3) 25%, transparent 25%),
-          linear-gradient(-45deg, rgba(121, 131, 69, 0.3) 25%, transparent 25%),
-          linear-gradient(45deg, transparent 75%, rgba(121, 131, 69, 0.3) 75%),
-          linear-gradient(-45deg, transparent 75%, rgba(121, 131, 69, 0.3) 75%);
-  background-size: 60px 60px;
-  background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+  background-image: repeating-linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.014) 0 1px,
+          transparent 1px 7px
+  );
 }
 
-/* Military-style dividers */
+/* Section divider — a hairline, not a hazard stripe. */
 .military-divider {
   position: relative;
-  height: 20px;
+  height: 1px;
   overflow: hidden;
-}
-
-.military-divider::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 20px;
-  background: repeating-linear-gradient(
-          -45deg,
-          rgba(102, 95, 66, 0.7),
-          rgba(102, 95, 66, 0.7) 10px,
-          rgba(26, 28, 24, 0.7) 10px,
-          rgba(26, 28, 24, 0.7) 20px
-  );
+  background: #1B242C; /* line-900 */
 }
 
 /* Animation utilities */
@@ -258,6 +301,11 @@
   to { opacity: 1; }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .fade-in { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
 /* VR browser optimization */
 @media (min-resolution: 2dppx) {
   html {
@@ -265,25 +313,31 @@
   }
 }
 
-/* Map Tailwind CSS variables to color variables */
+/* Map Tailwind CSS variables to color variables.
+   Plain var() now — the values above are hex, not HSL triplets. */
 @theme inline {
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
-  --color-popover: hsl(var(--popover));
-  --color-popover-foreground: hsl(var(--popover-foreground));
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
 }

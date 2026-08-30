@@ -23,7 +23,10 @@ const Layout: React.FC<LayoutProps> = ({
                                        }) => {
     return (
         <div className={cn(
-            "flex flex-col min-h-screen bg-military-900 text-tan-100 relative",
+            "flex flex-col min-h-screen bg-steel-950 text-ink-300 relative",
+            // Clear the fixed bottom nav below the shell breakpoint. On the
+            // wrapper, not on <main>, so the footer clears it too.
+            "pb-bottomnav shell:pb-0",
             className
         )}>
             {/* Texture overlay */}
@@ -32,7 +35,7 @@ const Layout: React.FC<LayoutProps> = ({
             {/* Skip to content link for accessibility */}
             <a
                 href="#main-content"
-                className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-olive-600 text-white px-4 py-2 rounded-sm z-50"
+                className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-ember text-ember-ink font-display font-bold uppercase tracking-nav px-4 py-2 z-50"
             >
                 Skip to content
             </a>
@@ -86,7 +89,7 @@ export const ContentLayout: React.FC<{
 
     return (
         <Layout containerClassName={cn("mx-auto", maxWidthClasses[maxWidth])}>
-            <article className="prose prose-tan prose-lg max-w-none">
+            <article className="prose prose-lg max-w-none">
                 {children}
             </article>
         </Layout>
