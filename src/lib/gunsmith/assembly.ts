@@ -106,6 +106,22 @@ export const RECOIL_PARAMETER_MODIFIERS: Partial<Record<ModifierKey, keyof Recoi
     rollStiffnessModifer: 'rollStiffness',
 };
 
+/**
+ * Does this part change what the shooter *feels*, or only the number on the screen?
+ *
+ * `VerticalRecoilControl` and `HorizontalRecoilControl` are **display only** — neither recoil
+ * simulation reads them (GUN_MODEL.md §5.3). The kick comes from the momentum, mass and stiffness
+ * members, so a part advertising "−7% vertical recoil" moves the pattern only if it *also* carries
+ * a momentum or stiffness modifier. Compensators do; most stocks and foregrips do not.
+ *
+ * 81 of the 710 parts pass this test; another 326 change a recoil rating and nothing else.
+ */
+export function affectsRecoilSimulation(part: GunsmithPart): boolean {
+    const modifier = part.stats?.attachmentModifier ?? {};
+    return (Object.keys(RECOIL_PARAMETER_MODIFIERS) as ModifierKey[])
+        .some((key) => Boolean(modifier[key]));
+}
+
 const numberOr = (value: unknown, fallback: number): number =>
     (typeof value === 'number' && Number.isFinite(value) ? value : fallback);
 

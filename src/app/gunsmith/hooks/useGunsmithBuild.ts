@@ -9,6 +9,7 @@
  */
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import type { GunsmithPart, SavedBuild } from '@/types/gunsmith';
 import type { Weapon } from '@/types/items';
 import { getGunsmithData, type GunsmithData } from '@/services/GunsmithService';
@@ -22,6 +23,8 @@ import {
 import {
     assembleBuild,
     clearSlot,
+    decodeBuild,
+    encodeBuild,
     fitPart,
     nextUniversalSlotId,
     presetToFitted,
@@ -57,14 +60,25 @@ export interface GunsmithBuildState {
     rename: (name: string) => void;
     loadPreset: (weapon: Weapon) => void;
     loadSaved: (saved: SavedBuild) => void;
+    /** Start from a bare receiver: the gun with nothing on it. */
+    loadReceiver: (receiver: GunsmithPart) => void;
     resetToPreset: () => void;
     fitted: FittedMap;
+    /** An absolute URL that rebuilds this exact gun for whoever opens it. */
+    shareLink: () => string;
 }
 
 /** Opened on nothing in particular, the route starts here. */
 const DEFAULT_PRESET_ID = 'weapon-ak74n-factory';
 
 export function useGunsmithBuild(): GunsmithBuildState {
+    const router = useRouter();
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+    // Read at mount only, so the effect below can write freely without re-triggering the load.
+    const [sharedParam] = useState(() => searchParams.get('b'));
+    const [sharedName] = useState(() => searchParams.get('n'));
+
     const [data, setData] = useState<GunsmithData | null>(null);
     const [error, setError] = useState<string | null>(null);
     const [preset, setPreset] = useState<Weapon | null>(null);
@@ -80,6 +94,17 @@ export function useGunsmithBuild(): GunsmithBuildState {
             .then((loaded) => {
                 if (cancelled) return;
                 setData(loaded);
+
+                // A shared link wins over the default preset — someone followed it to see that gun.
+                const shared = sharedParam ? decodeBuild(sharedParam, loaded.index) : null;
+                if (shared) {
+                    setReceiver(shared.receiver);
+                    setFitted(shared.fitted);
+                    setPreset(null);
+                    setName(sharedName || `${shared.receiver.name} (shared)`);
+                    return;
+                }
+
                 const first = loaded.presets.find((w) => w.id === DEFAULT_PRESET_ID) ?? loaded.presets[0];
                 if (!first) return;
                 const root = findPart(loaded.index, first.receiverId);
@@ -93,7 +118,22 @@ export function useGunsmithBuild(): GunsmithBuildState {
                 if (!cancelled) setError(cause instanceof Error ? cause.message : 'Could not load the gunsmith data.');
             });
         return () => { cancelled = true; };
+        // Read once, at mount: later edits write the URL, they do not read it back.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    // Keep the address bar in step with the build, so copying the URL is always enough. `replace`
+    // rather than `push`: fitting eight parts should not cost eight presses of the back button.
+    useEffect(() => {
+        if (!receiver) return;
+        const params = new URLSearchParams(Array.from(searchParams.entries()));
+        params.set('b', encodeBuild(receiver, fitted));
+        if (name) params.set('n', name);
+        else params.delete('n');
+        router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+        // `searchParams` is deliberately not a dependency: it changes as a result of this effect.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [receiver, fitted, name, pathname, router]);
 
     const build = useMemo(
         () => (data && receiver ? assembleBuild(receiver, fitted, data.index) : null),
@@ -152,6 +192,28 @@ export function useGunsmithBuild(): GunsmithBuildState {
         setDirty(false);
     }, [data]);
 
+    /**
+     * Swap the receiver. Everything comes off: the parts that fitted the old gun are, with very few
+     * exceptions, meaningless on another platform, and silently keeping the ones that happen to
+     * match would produce a build the player did not ask for.
+     */
+    const loadReceiver = useCallback((root: GunsmithPart) => {
+        setReceiver(root);
+        setFitted(new Map());
+        setPreset(null);
+        setName(root.name);
+        setSelectedSlot(null);
+        setDirty(false);
+    }, []);
+
+    const shareLink = useCallback(() => {
+        if (typeof window === 'undefined' || !receiver) return '';
+        const params = new URLSearchParams();
+        params.set('b', encodeBuild(receiver, fitted));
+        if (name) params.set('n', name);
+        return `${window.location.origin}${pathname}?${params.toString()}`;
+    }, [receiver, fitted, name, pathname]);
+
     const resetToPreset = useCallback(() => {
         if (!data || !preset) return;
         setFitted(presetToFitted(preset, data.index));
@@ -182,8 +244,10 @@ export function useGunsmithBuild(): GunsmithBuildState {
         rename,
         loadPreset,
         loadSaved,
+        loadReceiver,
         resetToPreset,
         fitted,
+        shareLink,
     };
 }
 

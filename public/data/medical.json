@@ -11,12 +11,35 @@
       "fullsize": "/images/items/medical/med-bandage-lv1.webp"
     },
     "stats": {
-      "price": 724,
       "weight": 0.05,
       "rarity": "Common",
       "healPerSecond": 2,
       "healDuration": 25,
       "operationRequirement": 6,
+      "basePrice": 150,
+      "sellPrices": [
+        105,
+        105,
+        105,
+        150,
+        105,
+        105
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.bandage_lv1",
+          "level": 1,
+          "price": 724,
+          "bundle": 1,
+          "bundlePrice": 724,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "canHealDeepWound": false
     },
     "tips": "Essential for any raid. Always carry several.",
@@ -34,12 +57,37 @@
       "fullsize": "/images/items/medical/med-bandage-lv2.webp"
     },
     "stats": {
-      "price": 1584,
       "weight": 0.05,
       "rarity": "Uncommon",
       "healPerSecond": 2,
       "healDuration": 25,
       "operationRequirement": 6,
+      "basePrice": 612,
+      "sellPrices": [
+        429,
+        429,
+        429,
+        612,
+        429,
+        429
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.bandage_lv2",
+          "level": 1,
+          "price": 1584,
+          "bundle": 1,
+          "bundlePrice": 1584,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.c.01"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "canHealDeepWound": true
     },
     "tips": "Carry at least one of these or Military-grade one.",
@@ -57,12 +105,35 @@
       "fullsize": "/images/items/medical/med-bandage-lv3.webp"
     },
     "stats": {
-      "price": 4378,
       "weight": 0.05,
       "rarity": "Rare",
       "healPerSecond": 2,
       "healDuration": 25,
       "operationRequirement": 6,
+      "basePrice": 1764,
+      "sellPrices": [
+        1235,
+        1235,
+        1235,
+        1764,
+        1235,
+        1235
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.bandage_lv3",
+          "level": 2,
+          "price": 4379,
+          "bundle": 1,
+          "bundlePrice": 4379,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "canHealDeepWound": true
     },
     "tips": "Like Bandage, but takes less space. Carry at least one.",
@@ -80,13 +151,54 @@
       "fullsize": "/images/items/medical/med-limb-restorer-lv1.webp"
     },
     "stats": {
-      "price": 3692,
       "weight": 0.38,
       "rarity": "Common",
       "hpPercentage": 0.5,
       "brokenHP": 1,
       "usesCount": 3,
-      "useTime": 8
+      "useTime": 8,
+      "basePrice": 1255,
+      "sellPrices": [
+        879,
+        879,
+        879,
+        1255,
+        879,
+        879
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.brokenlimbrestorer_lv1",
+          "level": 1,
+          "price": 2511,
+          "bundle": 1,
+          "bundlePrice": 2511,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.brokenlimbrestorer_lv1-2",
+          "level": 1,
+          "price": 2511,
+          "bundle": 1,
+          "bundlePrice": 2511,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "medical.brokenlimbrestorer_lv1",
+              "count": 2
+            }
+          ]
+        }
+      ]
     },
     "tips": "Essential for blacked out limbs. Try to find better one.",
     "notes": ""
@@ -103,13 +215,58 @@
       "fullsize": "/images/items/medical/med-limb-restorer-lv2.webp"
     },
     "stats": {
-      "price": 11883,
       "weight": 0.38,
       "rarity": "Uncommon",
       "hpPercentage": 0.25,
       "brokenHP": 1,
       "usesCount": 4,
-      "useTime": 6.5
+      "useTime": 6.5,
+      "basePrice": 5941,
+      "sellPrices": [
+        4159,
+        4159,
+        4159,
+        5941,
+        4159,
+        4159
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.brokenlimbrestorer_lv2",
+          "level": 1,
+          "price": 11883,
+          "bundle": 1,
+          "bundlePrice": 11883,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.c.02"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.brokenlimbrestorer_lv2-2",
+          "level": 1,
+          "price": 11883,
+          "bundle": 1,
+          "bundlePrice": 11883,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.c.02"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "medical.brokenlimbrestorer_lv2",
+              "count": 3
+            }
+          ]
+        }
+      ]
     },
     "tips": "More efficient than R1 version, faster application time.",
     "notes": "Stops bleeding."
@@ -126,13 +283,56 @@
       "fullsize": "/images/items/medical/med-limb-restorer-lv3.webp"
     },
     "stats": {
-      "price": 48771,
       "weight": 0.38,
       "rarity": "Rare",
       "hpPercentage": 0.1,
       "brokenHP": 1,
       "usesCount": 7,
-      "useTime": 6
+      "useTime": 6,
+      "basePrice": 9754,
+      "sellPrices": [
+        6828,
+        6828,
+        6828,
+        9754,
+        6828,
+        6828
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.brokenlimbrestorer_lv3-2",
+          "level": 2,
+          "price": 48771,
+          "bundle": 1,
+          "bundlePrice": 48771,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.b.04"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "medical.brokenlimbrestorer_lv3",
+              "count": 4
+            }
+          ]
+        },
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.brokenlimbrestorer_lv3",
+          "level": 4,
+          "price": 48771,
+          "bundle": 1,
+          "bundlePrice": 48771,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Premium choice for multiple limb injuries, very cost-effective. Try to always have one in your loadout.",
     "notes": "Stops bleeding."
@@ -149,7 +349,6 @@
       "fullsize": "/images/items/medical/med-painkiller-lv1.webp"
     },
     "stats": {
-      "price": 4121,
       "weight": 0.08,
       "rarity": "Common",
       "usesCount": 3,
@@ -158,7 +357,31 @@
       "energyFactor": -0.2,
       "hydraFactor": -0.2,
       "threshold": 1,
-      "consumptionSpeed": 2.25
+      "consumptionSpeed": 2.25,
+      "basePrice": 2060,
+      "sellPrices": [
+        1442,
+        1442,
+        1442,
+        2060,
+        1442,
+        1442
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.painkiller_lv1",
+          "level": 1,
+          "price": 4121,
+          "bundle": 1,
+          "bundlePrice": 4121,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Essential for any raid.",
     "notes": ""
@@ -175,7 +398,6 @@
       "fullsize": "/images/items/medical/med-painkiller-lv2.webp"
     },
     "stats": {
-      "price": 9110,
       "weight": 0.08,
       "rarity": "Uncommon",
       "usesCount": 6,
@@ -184,7 +406,31 @@
       "energyFactor": -0.2,
       "hydraFactor": -0.2,
       "threshold": 1,
-      "consumptionSpeed": 2.25
+      "consumptionSpeed": 2.25,
+      "basePrice": 4555,
+      "sellPrices": [
+        3189,
+        3189,
+        3189,
+        4555,
+        3189,
+        3189
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.painkiller_lv2",
+          "level": 1,
+          "price": 9110,
+          "bundle": 1,
+          "bundlePrice": 9110,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Better value than basic painkillers for extended raids.",
     "notes": "Longer pain relief with more uses than basic version."
@@ -201,7 +447,6 @@
       "fullsize": "/images/items/medical/med-painkiller-lv3.webp"
     },
     "stats": {
-      "price": 19262,
       "weight": 0.08,
       "rarity": "Rare",
       "usesCount": 6,
@@ -210,7 +455,31 @@
       "energyFactor": -0.1,
       "hydraFactor": -0.1,
       "threshold": 1,
-      "consumptionSpeed": 2.25
+      "consumptionSpeed": 2.25,
+      "basePrice": 9631,
+      "sellPrices": [
+        6742,
+        6742,
+        6742,
+        9631,
+        6742,
+        6742
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.painkiller_lv3",
+          "level": 3,
+          "price": 19262,
+          "bundle": 1,
+          "bundlePrice": 19262,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Premium option with minimal downsides for serious operations. Very essential.",
     "notes": "Less energy/hydration drain and shorter side effect duration."
@@ -227,12 +496,37 @@
       "fullsize": "/images/items/medical/med-stimul-adrenaline.webp"
     },
     "stats": {
-      "price": 57809,
       "weight": 0.03,
       "rarity": "Epic",
       "effectTime": 120,
       "useTime": 5,
       "sellId": "medical.morphineneedle",
+      "basePrice": 22681,
+      "sellPrices": [
+        15877,
+        15877,
+        15877,
+        22681,
+        15877,
+        15877
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.morphineneedle",
+          "level": 2,
+          "price": 45363,
+          "bundle": 1,
+          "bundlePrice": 45363,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.b.03"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "perk": "RapidPulsePerk"
     },
     "tips": "Usable",
@@ -250,12 +544,37 @@
       "fullsize": "/images/items/medical/med-stimul-hc.webp"
     },
     "stats": {
-      "price": 46935,
       "weight": 0.03,
       "rarity": "Epic",
       "effectTime": 120,
       "useTime": 5,
       "sellId": "medical.morphineneedle",
+      "basePrice": 22681,
+      "sellPrices": [
+        15877,
+        15877,
+        15877,
+        22681,
+        15877,
+        15877
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.morphineneedle",
+          "level": 2,
+          "price": 45363,
+          "bundle": 1,
+          "bundlePrice": 45363,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.b.03"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "perk": "HemostasisPerk"
     },
     "tips": "Very expensive bandage.",
@@ -273,12 +592,37 @@
       "fullsize": "/images/items/medical/med-stimul-kb22.webp"
     },
     "stats": {
-      "price": 157851,
       "weight": 0.03,
       "rarity": "Epic",
       "effectTime": 600,
       "useTime": 5,
       "sellId": "medical.morphineneedle",
+      "basePrice": 22681,
+      "sellPrices": [
+        15877,
+        15877,
+        15877,
+        22681,
+        15877,
+        15877
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.morphineneedle",
+          "level": 2,
+          "price": 45363,
+          "bundle": 1,
+          "bundlePrice": 45363,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.b.03"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "perk": "LoadMasterPerk"
     },
     "tips": "Can be useful for loot runs or when planning to extract with heavy gear.",
@@ -296,12 +640,37 @@
       "fullsize": "/images/items/medical/med-stimul-morphine.webp"
     },
     "stats": {
-      "price": 45363,
       "weight": 0.03,
       "rarity": "Epic",
       "effectTime": 120,
       "useTime": 5,
-      "sellId": "medical.morphineneedle"
+      "sellId": "medical.morphineneedle",
+      "basePrice": 22681,
+      "sellPrices": [
+        15877,
+        15877,
+        15877,
+        22681,
+        15877,
+        15877
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.morphineneedle",
+          "level": 2,
+          "price": 45363,
+          "bundle": 1,
+          "bundlePrice": 45363,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.b.03"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Fancy painkiller",
     "notes": "Stops bleeding."
@@ -318,12 +687,37 @@
       "fullsize": "/images/items/medical/med-stimul-p4.webp"
     },
     "stats": {
-      "price": 159430,
       "weight": 0.03,
       "rarity": "Epic",
       "effectTime": 5,
       "useTime": 5,
       "sellId": "medical.injector.p4",
+      "basePrice": 79715,
+      "sellPrices": [
+        55801,
+        55801,
+        55801,
+        79715,
+        55801,
+        55801
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.injector.p4",
+          "level": 4,
+          "price": 159430,
+          "bundle": 1,
+          "bundlePrice": 159430,
+          "stock": 29,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.a.11"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "perk": "BoundlessEnergyPerk"
     },
     "tips": "Don't know about max health. But definitely makes you hungry.",
@@ -341,7 +735,6 @@
       "fullsize": "/images/items/medical/med-syringe-lv1.webp"
     },
     "stats": {
-      "price": 4826,
       "weight": 0.08,
       "rarity": "Common",
       "capacity": 100,
@@ -349,6 +742,30 @@
       "healPerSecond": 20,
       "healDuration": 5,
       "useTime": 5,
+      "basePrice": 2413,
+      "sellPrices": [
+        1690,
+        1690,
+        1690,
+        2413,
+        1690,
+        1690
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.medical_needle_hp_lv1",
+          "level": 1,
+          "price": 4826,
+          "bundle": 1,
+          "bundlePrice": 4826,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "canReduceBleeding": false
     },
     "tips": "Too slow to be a primary healing source.",
@@ -366,7 +783,6 @@
       "fullsize": "/images/items/medical/med-syringe-lv2.webp"
     },
     "stats": {
-      "price": 10252,
       "weight": 0.1,
       "rarity": "Uncommon",
       "capacity": 200,
@@ -374,6 +790,52 @@
       "healPerSecond": 20,
       "healDuration": 5,
       "useTime": 5,
+      "basePrice": 5126,
+      "sellPrices": [
+        3589,
+        3589,
+        3589,
+        5126,
+        3589,
+        3589
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.medical_needle_hp_lv2",
+          "level": 1,
+          "price": 10252,
+          "bundle": 1,
+          "bundlePrice": 10252,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.c.01"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.medical_needle_hp_lv2-2",
+          "level": 1,
+          "price": 10252,
+          "bundle": 1,
+          "bundlePrice": 10252,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.c.01"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "medical.medical_needle_hp_lv2",
+              "count": 2
+            }
+          ]
+        }
+      ],
       "canReduceBleeding": false
     },
     "tips": "Fine, but try to have at least Military Syringe as a quick access option.",
@@ -391,7 +853,6 @@
       "fullsize": "/images/items/medical/med-syringe-lv3.webp"
     },
     "stats": {
-      "price": 22333,
       "weight": 0.4,
       "rarity": "Rare",
       "capacity": 300,
@@ -399,6 +860,50 @@
       "healPerSecond": 20,
       "healDuration": 5,
       "useTime": 5,
+      "basePrice": 11166,
+      "sellPrices": [
+        7817,
+        7817,
+        7817,
+        11166,
+        7817,
+        7817
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.medical_pro_needle_lv1-2",
+          "level": 1,
+          "price": 22333,
+          "bundle": 1,
+          "bundlePrice": 22333,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.c.06"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "medical.medical_pro_needle_lv1",
+              "count": 3
+            }
+          ]
+        },
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.medical_pro_needle_lv1",
+          "level": 2,
+          "price": 22333,
+          "bundle": 1,
+          "bundlePrice": 22333,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "canReduceBleeding": true
     },
     "tips": "Viable for combat situations. Can handle bleeding while healing.",
@@ -416,7 +921,6 @@
       "fullsize": "/images/items/medical/med-syringe-lv4.webp"
     },
     "stats": {
-      "price": 51371,
       "weight": 0.6,
       "rarity": "Rare",
       "capacity": 600,
@@ -424,6 +928,50 @@
       "healPerSecond": 20,
       "healDuration": 5,
       "useTime": 5,
+      "basePrice": 25685,
+      "sellPrices": [
+        17980,
+        17980,
+        17980,
+        25685,
+        17980,
+        17980
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.medical_pro_needle_lv2",
+          "level": 2,
+          "price": 51371,
+          "bundle": 1,
+          "bundlePrice": 51371,
+          "stock": 29,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.medical.medical_pro_needle_lv2-2",
+          "level": 2,
+          "price": 51371,
+          "bundle": 1,
+          "bundlePrice": 51371,
+          "stock": 29,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.b.02"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "medical.medical_pro_needle_lv2",
+              "count": 4
+            }
+          ]
+        }
+      ],
       "canReduceBleeding": true
     },
     "tips": "Maximum healing capacity and speed. No reason not to use.",

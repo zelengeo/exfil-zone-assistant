@@ -245,7 +245,7 @@ const renderCategoryStats = (item: Item) => {
             return (
                 <div className="flex items-center gap-2 text-sm">
                     <span className="text-olive-400 font-medium">Weight:</span>
-                    <span className="text-tan-100 font-mono">{item.stats.weight.toFixed(2)} kg</span>
+                    <span className="text-tan-100 font-mono">{(item.stats.weight ?? 0).toFixed(2)} kg</span>
                 </div>
             );
     }
@@ -409,7 +409,7 @@ const ItemCard: React.FC<ItemCardProps> = ({item}) => {
 
                     {/* Weight indicator */}
                     <div className="text-xs text-tan-400">
-                        {item.stats.weight.toFixed(2)} kg
+                        {(item.stats.weight ?? 0).toFixed(2)} kg
                     </div>
                 </div>
             </div>

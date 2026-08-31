@@ -127,25 +127,24 @@ export function assembleBuild(receiver: GunsmithPart, fitted: FittedMap, index: 
 }
 
 /**
- * Turn a shipped preset into a build.
+ * Place a bare list of parts onto a receiver.
  *
- * The preset lists its parts by gunsmith id and says nothing about slots, so each one is placed by
- * walking the tree and taking the slot it is a candidate for. Rail attachments are not in the tree
- * and go to the open-ended list instead; the preset's ammunition line (`bullet.*`) is not a gun
- * part and is skipped.
+ * Neither a preset nor a shared link says which slot a part sits in — both are just a list of
+ * gunsmith ids — so each one is placed by walking the tree and taking the first slot it is a
+ * candidate for. Placing is iterative because fitting one part can open the slot the next one
+ * needs: a muzzle adapter has to be on before its suppressor has anywhere to go.
+ *
+ * Rail attachments are not in the tree and go to the open-ended list instead, in the order given,
+ * so a link carrying two optics restores both.
  */
-export function presetToFitted(weapon: Weapon, index: PartIndex): FittedMap {
-    const receiver = findPart(index, weapon.receiverId);
+export function placeParts(receiver: GunsmithPart, gameIds: string[], index: PartIndex): FittedMap {
     const fitted: FittedMap = new Map();
-    if (!receiver) return fitted;
-
     const wanted = new Set(
-        (weapon.parts ?? [])
-            .map((entry) => lower(entry.sellId))
-            .filter((id) => id && !id.startsWith('bullet.') && id !== lower(weapon.receiverId)),
+        gameIds
+            .map(lower)
+            .filter((id) => id && !id.startsWith('bullet.') && id !== lower(receiver.gameId)),
     );
 
-    // Structural parts, breadth-first: placing one can open the slot the next one needs.
     let progressed = true;
     while (progressed) {
         progressed = false;
@@ -160,15 +159,23 @@ export function presetToFitted(weapon: Weapon, index: PartIndex): FittedMap {
     }
 
     // Whatever is left is a rail attachment — or a part whose mounting the game does not publish.
-    for (const gameId of wanted) {
+    for (const gameId of gameIds.map(lower)) {
+        if (!wanted.has(gameId)) continue;
         const part = findPart(index, gameId);
-        if (!part) continue;
-        const kind = universalKindOf(part);
+        const kind = part ? universalKindOf(part) : null;
         if (!kind) continue;
         fitted.set(nextUniversalSlotId(fitted, kind), gameId);
+        wanted.delete(gameId);
     }
 
     return fitted;
+}
+
+/** Turn a shipped preset into a build. Its ammunition line is not a gun part and is skipped. */
+export function presetToFitted(weapon: Weapon, index: PartIndex): FittedMap {
+    const receiver = findPart(index, weapon.receiverId);
+    if (!receiver) return new Map();
+    return placeParts(receiver, (weapon.parts ?? []).map((entry) => entry.sellId), index);
 }
 
 /** A saved build, restored. Unknown parts are dropped rather than failing the whole build. */
@@ -182,4 +189,49 @@ export function savedToFitted(saved: SavedBuild, index: PartIndex): FittedMap {
 
 export function fittedToSavedParts(fitted: FittedMap): SavedBuild['parts'] {
     return [...fitted.entries()].map(([slotId, gameId]) => ({ slotId, gameId }));
+}
+
+/* -------------------------------------------------------------------------
+ * Sharing a build as a link
+ *
+ * A wiki lives on links, so a build has to survive being pasted into Discord. The URL carries the
+ * receiver and the parts as gunsmith ids with their common `gunsmith.` prefix dropped, and nothing
+ * else: no slot ids, because those are derived and would go stale the moment the part graph
+ * changes, and no saved-build id, because the recipient does not have your localStorage.
+ * ---------------------------------------------------------------------- */
+
+const SHARE_PREFIX = 'gunsmith.';
+const SHARE_SEPARATOR = '~';
+
+const shortId = (gameId: string): string =>
+    (gameId.startsWith(SHARE_PREFIX) ? gameId.slice(SHARE_PREFIX.length) : gameId);
+
+const longId = (short: string): string =>
+    (short.includes('.') && !short.startsWith(SHARE_PREFIX) ? `${SHARE_PREFIX}${short}` : short);
+
+/** The `b` query parameter: receiver first, then every fitted part in bench order. */
+export function encodeBuild(receiver: GunsmithPart, fitted: FittedMap): string {
+    return [lower(receiver.gameId), ...fitted.values()]
+        .map(shortId)
+        .join(SHARE_SEPARATOR);
+}
+
+export interface DecodedBuild {
+    receiver: GunsmithPart;
+    fitted: FittedMap;
+    /** Ids in the link that no longer exist in the data — worth telling the reader about. */
+    unknown: string[];
+}
+
+/** Read a `b` parameter back. Returns null when the receiver itself cannot be resolved. */
+export function decodeBuild(value: string, index: PartIndex): DecodedBuild | null {
+    const ids = value.split(SHARE_SEPARATOR).map((part) => longId(lower(part.trim()))).filter(Boolean);
+    if (!ids.length) return null;
+
+    const receiver = findPart(index, ids[0]);
+    if (!receiver || !receiver.stats.gunData) return null;
+
+    const rest = ids.slice(1);
+    const unknown = rest.filter((id) => !findPart(index, id));
+    return { receiver, fitted: placeParts(receiver, rest, index), unknown };
 }

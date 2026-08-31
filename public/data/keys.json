@@ -11,11 +11,20 @@
       "fullsize": "/images/items/keys/key_apartment.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Epic",
       "uses": 3,
-      "location": "Apartment"
+      "location": "Apartment",
+      "basePrice": 6500,
+      "sellPrices": [
+        4550,
+        4550,
+        6500,
+        6500,
+        4550,
+        4550
+      ],
+      "buyOffers": []
     },
     "gameId": "card.map4.apartment",
     "tips": ""
@@ -32,11 +41,41 @@
       "fullsize": "/images/items/keys/key_armorhouse.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Uncommon",
       "uses": 3,
-      "location": "North of rail"
+      "location": "North of rail",
+      "basePrice": 1818,
+      "sellPrices": [
+        1273,
+        1273,
+        1818,
+        1818,
+        1273,
+        1273
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.card.map3.armorhouse",
+          "level": 4,
+          "price": 72984,
+          "bundle": 1,
+          "bundlePrice": 72984,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.a.09"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.highvalue.silvercup",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gameId": "card.map3.armorhouse",
     "tips": ""
@@ -53,11 +92,20 @@
       "fullsize": "/images/items/keys/key_backroom.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Common",
       "uses": 3,
-      "location": "Central area"
+      "location": "Central area",
+      "basePrice": 6368,
+      "sellPrices": [
+        4458,
+        4458,
+        6368,
+        6368,
+        4458,
+        4458
+      ],
+      "buyOffers": []
     },
     "gameId": "card.map5.backroom",
     "tips": ""
@@ -74,11 +122,20 @@
       "fullsize": "/images/items/keys/key_bankf2.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Legendary",
       "uses": 3,
-      "location": "Bank"
+      "location": "Bank",
+      "basePrice": 17000,
+      "sellPrices": [
+        11900,
+        11900,
+        17000,
+        17000,
+        11900,
+        11900
+      ],
+      "buyOffers": []
     },
     "gameId": "card.map4.bankf2",
     "tips": ""
@@ -95,11 +152,47 @@
       "fullsize": "/images/items/keys/key_banksewer.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Uncommon",
       "uses": 3,
-      "location": "Voyages"
+      "location": "Voyages",
+      "basePrice": 6630,
+      "sellPrices": [
+        4641,
+        4641,
+        6630,
+        6630,
+        4641,
+        4641
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.card.map4.banksewer",
+          "level": 3,
+          "price": 134408,
+          "bundle": 1,
+          "bundlePrice": 134408,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.ionbattery",
+              "count": 3
+            },
+            {
+              "id": "valuable.combustible.gunpowder",
+              "count": 1
+            },
+            {
+              "id": "valuable.combustible.smokelesspowder",
+              "count": 2
+            }
+          ]
+        }
+      ]
     },
     "gameId": "card.map4.banksewer",
     "tips": ""
@@ -116,11 +209,47 @@
       "fullsize": "/images/items/keys/key_beartown_h1.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Uncommon",
       "uses": 3,
-      "location": "Hyder town"
+      "location": "Hyder town",
+      "basePrice": 1854,
+      "sellPrices": [
+        1298,
+        1298,
+        1854,
+        1854,
+        1298,
+        1298
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.card.map1.beartown_h1",
+          "level": 1,
+          "price": 72254,
+          "bundle": 1,
+          "bundlePrice": 72254,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.radioscanner",
+              "count": 1
+            },
+            {
+              "id": "valuable.household.facialcleanser",
+              "count": 1
+            },
+            {
+              "id": "valuable.tools.sparkplug",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gameId": "card.map1.beartown_h1",
     "tips": ""
@@ -137,11 +266,20 @@
       "fullsize": "/images/items/keys/key_bomb.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 20,
       "rarity": "Common",
       "uses": null,
-      "location": ""
+      "location": "",
+      "basePrice": 50000,
+      "sellPrices": [
+        35000,
+        35000,
+        50000,
+        50000,
+        35000,
+        35000
+      ],
+      "buyOffers": []
     },
     "gameId": "card.map3.bomb",
     "tips": ""
@@ -158,11 +296,36 @@
       "fullsize": "/images/items/keys/key_clifton_shop.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Epic",
       "uses": 3,
-      "location": "Clifton shop F2"
+      "location": "Clifton shop F2",
+      "basePrice": 1782,
+      "sellPrices": [
+        1248,
+        1248,
+        1782,
+        1782,
+        1248,
+        1248
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.card.map2.clifton_shop",
+          "level": 1,
+          "price": 73714,
+          "bundle": 1,
+          "bundlePrice": 73714,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.c.07"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gameId": "card.map2.clifton_shop",
     "tips": ""
@@ -179,11 +342,20 @@
       "fullsize": "/images/items/keys/key_dam_station_east.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Epic",
       "uses": 3,
-      "location": "Dam station"
+      "location": "Dam station",
+      "basePrice": 1818,
+      "sellPrices": [
+        1273,
+        1273,
+        1818,
+        1818,
+        1273,
+        1273
+      ],
+      "buyOffers": []
     },
     "gameId": "card.map2.dam_station_east",
     "tips": ""
@@ -200,11 +372,60 @@
       "fullsize": "/images/items/keys/key_dam_station_west.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Epic",
       "uses": 3,
-      "location": "Dam station"
+      "location": "Dam station",
+      "basePrice": 6565,
+      "sellPrices": [
+        4596,
+        4596,
+        6565,
+        6565,
+        4596,
+        4596
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.card.map2.dam_station_west",
+          "level": 2,
+          "price": 135752,
+          "bundle": 1,
+          "bundlePrice": 135752,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.b.04"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.carbattery",
+              "count": 1
+            },
+            {
+              "id": "valuable.household.ratpoison",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.card.map2.dam_station_west-2",
+          "level": 2,
+          "price": 203628,
+          "bundle": 1,
+          "bundlePrice": 203628,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.b.04"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gameId": "card.map2.dam_station_west",
     "tips": ""
@@ -221,11 +442,20 @@
       "fullsize": "/images/items/keys/key_datastorage.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Legendary",
       "uses": 3,
-      "location": "Stairwell"
+      "location": "Stairwell",
+      "basePrice": 6695,
+      "sellPrices": [
+        4687,
+        4687,
+        6695,
+        6695,
+        4687,
+        4687
+      ],
+      "buyOffers": []
     },
     "gameId": "card.map3.datastorage",
     "tips": ""
@@ -242,11 +472,20 @@
       "fullsize": "/images/items/keys/key_dockhouse.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Legendary",
       "uses": 3,
-      "location": "Dock"
+      "location": "Dock",
+      "basePrice": 6565,
+      "sellPrices": [
+        4596,
+        4596,
+        6565,
+        6565,
+        4596,
+        4596
+      ],
+      "buyOffers": []
     },
     "gameId": "card.map2.dockhouse",
     "tips": ""
@@ -263,11 +502,20 @@
       "fullsize": "/images/items/keys/key_dormitory02.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Common",
       "uses": 3,
-      "location": "RH02 Dorm"
+      "location": "RH02 Dorm",
+      "basePrice": 16821,
+      "sellPrices": [
+        11775,
+        11775,
+        16821,
+        16821,
+        11775,
+        11775
+      ],
+      "buyOffers": []
     },
     "gameId": "card.map5.dormitory02",
     "tips": ""
@@ -284,11 +532,47 @@
       "fullsize": "/images/items/keys/key_exitlock_f3_sewer.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Epic",
       "uses": 3,
-      "location": "Near sewer area"
+      "location": "Near sewer area",
+      "basePrice": 6565,
+      "sellPrices": [
+        4596,
+        4596,
+        6565,
+        6565,
+        4596,
+        4596
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.card.map3.exitlock_f3_sewer",
+          "level": 4,
+          "price": 131719,
+          "bundle": 1,
+          "bundlePrice": 131719,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.marinestoragebattery",
+              "count": 1
+            },
+            {
+              "id": "valuable.combustible.gunoil",
+              "count": 1
+            },
+            {
+              "id": "valuable.electric.transformer",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gameId": "card.map3.exitlock_f3_sewer",
     "tips": ""
@@ -305,11 +589,47 @@
       "fullsize": "/images/items/keys/key_exitlock_trainroad.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Epic",
       "uses": 3,
-      "location": "Near rail"
+      "location": "Near rail",
+      "basePrice": 6565,
+      "sellPrices": [
+        4596,
+        4596,
+        6565,
+        6565,
+        4596,
+        4596
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.card.map3.exitlock_trainroad",
+          "level": 4,
+          "price": 133063,
+          "bundle": 1,
+          "bundlePrice": 133063,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.marinestoragebattery",
+              "count": 1
+            },
+            {
+              "id": "valuable.combustible.gunoil",
+              "count": 1
+            },
+            {
+              "id": "valuable.electric.transformer",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gameId": "card.map3.exitlock_trainroad",
     "tips": ""
@@ -326,11 +646,39 @@
       "fullsize": "/images/items/keys/key_f3_factoryroom.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Uncommon",
       "uses": 3,
-      "location": ""
+      "location": "",
+      "basePrice": 1764,
+      "sellPrices": [
+        1235,
+        1235,
+        1764,
+        1764,
+        1235,
+        1235
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.card.map3.factoryroom",
+          "level": 4,
+          "price": 72984,
+          "bundle": 1,
+          "bundlePrice": 72984,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.highvalue.perfume",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gameId": "card.map3.factoryroom",
     "tips": ""
@@ -347,11 +695,20 @@
       "fullsize": "/images/items/keys/key_factory_a1.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Legendary",
       "uses": 3,
-      "location": "Factory"
+      "location": "Factory",
+      "basePrice": 17000,
+      "sellPrices": [
+        11900,
+        11900,
+        17000,
+        17000,
+        11900,
+        11900
+      ],
+      "buyOffers": []
     },
     "gameId": "card.map2.factory_2",
     "tips": ""
@@ -368,11 +725,20 @@
       "fullsize": "/images/items/keys/key_factory_b.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Legendary",
       "uses": 3,
-      "location": "Factory"
+      "location": "Factory",
+      "basePrice": 17170,
+      "sellPrices": [
+        12019,
+        12019,
+        17170,
+        17170,
+        12019,
+        12019
+      ],
+      "buyOffers": []
     },
     "gameId": "card.map2.factory_1",
     "tips": ""
@@ -389,11 +755,20 @@
       "fullsize": "/images/items/keys/key_handlingroom01.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Common",
       "uses": 3,
-      "location": "North EMR Control room"
+      "location": "North EMR Control room",
+      "basePrice": 6432,
+      "sellPrices": [
+        4503,
+        4503,
+        6432,
+        6432,
+        4503,
+        4503
+      ],
+      "buyOffers": []
     },
     "gameId": "card.map5.handlingroom01",
     "tips": ""
@@ -410,11 +785,45 @@
       "fullsize": "/images/items/keys/key_handlingroom02.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Common",
       "uses": 3,
-      "location": "South EMR Control room"
+      "location": "South EMR Control room",
+      "basePrice": 6571,
+      "sellPrices": [
+        4600,
+        4600,
+        6571,
+        6571,
+        4600,
+        4600
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.card.map5.handlingroom02-2",
+          "level": 3,
+          "price": 136848,
+          "bundle": 1,
+          "bundlePrice": 136848,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.a.13"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.combustible.gunpowder",
+              "count": 1
+            },
+            {
+              "id": "valuable.tools.gaspipewrench",
+              "count": 2
+            }
+          ]
+        }
+      ]
     },
     "gameId": "card.map5.handlingroom02",
     "tips": ""
@@ -431,11 +840,20 @@
       "fullsize": "/images/items/keys/key_highbuilding_shop.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Epic",
       "uses": 3,
-      "location": "South side F2"
+      "location": "South side F2",
+      "basePrice": 6565,
+      "sellPrices": [
+        4596,
+        4596,
+        6565,
+        6565,
+        4596,
+        4596
+      ],
+      "buyOffers": []
     },
     "gameId": "card.map1.highbuilding_shop",
     "tips": ""
@@ -452,11 +870,36 @@
       "fullsize": "/images/items/keys/key_hospitalf2.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Rare",
       "uses": 3,
-      "location": "Hospital"
+      "location": "Hospital",
+      "basePrice": 1818,
+      "sellPrices": [
+        1273,
+        1273,
+        1818,
+        1818,
+        1273,
+        1273
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.card.map4.hospitalf2",
+          "level": 2,
+          "price": 71524,
+          "bundle": 1,
+          "bundlePrice": 71524,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.b.07"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gameId": "card.map4.hospitalf2",
     "tips": ""
@@ -473,11 +916,20 @@
       "fullsize": "/images/items/keys/key_mall_campshop.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Legendary",
       "uses": 3,
-      "location": "Mall F3"
+      "location": "Mall F3",
+      "basePrice": 16660,
+      "sellPrices": [
+        11662,
+        11662,
+        16660,
+        16660,
+        11662,
+        11662
+      ],
+      "buyOffers": []
     },
     "gameId": "card.map1.campshop",
     "tips": ""
@@ -494,11 +946,20 @@
       "fullsize": "/images/items/keys/key_mall_chaneo.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Legendary",
       "uses": 3,
-      "location": "Mall F1"
+      "location": "Mall F1",
+      "basePrice": 17340,
+      "sellPrices": [
+        12138,
+        12138,
+        17340,
+        17340,
+        12138,
+        12138
+      ],
+      "buyOffers": []
     },
     "gameId": "card.map1.mall_chaneo",
     "tips": ""
@@ -515,11 +976,47 @@
       "fullsize": "/images/items/keys/key_map5_checkpoint.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Common",
       "uses": 3,
-      "location": "Checkpoint 2F"
+      "location": "Checkpoint 2F",
+      "basePrice": 1827,
+      "sellPrices": [
+        1279,
+        1279,
+        1827,
+        1827,
+        1279,
+        1279
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.card.map5.map5_checkpoint-2",
+          "level": 3,
+          "price": 75624,
+          "bundle": 1,
+          "bundlePrice": 75624,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.ionbattery",
+              "count": 1
+            },
+            {
+              "id": "valuable.batteries.marinestoragebattery",
+              "count": 1
+            },
+            {
+              "id": "valuable.tools.climbingrope",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gameId": "card.map5.map5_checkpoint",
     "tips": ""
@@ -536,7 +1033,6 @@
       "fullsize": "/images/items/keys/Icon_Metro_Entry_Ticket.webp"
     },
     "stats": {
-      "price": 200000,
       "weight": 0.15,
       "rarity": "Legendary"
     },
@@ -554,11 +1050,49 @@
       "fullsize": "/images/items/keys/key_mid_bunker.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Epic",
       "uses": 3,
-      "location": ""
+      "location": "",
+      "basePrice": 6630,
+      "sellPrices": [
+        4641,
+        4641,
+        6630,
+        6630,
+        4641,
+        4641
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.card.map2.midbunker",
+          "level": 2,
+          "price": 137096,
+          "bundle": 1,
+          "bundlePrice": 137096,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gear.b.08"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.ionbattery",
+              "count": 3
+            },
+            {
+              "id": "valuable.combustible.gunpowder",
+              "count": 1
+            },
+            {
+              "id": "valuable.combustible.smokelesspowder",
+              "count": 2
+            }
+          ]
+        }
+      ]
     },
     "gameId": "card.map2.midbunker",
     "tips": ""
@@ -575,11 +1109,49 @@
       "fullsize": "/images/items/keys/key_motel_201.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Rare",
       "uses": 3,
-      "location": "Motel F2"
+      "location": "Motel F2",
+      "basePrice": 1800,
+      "sellPrices": [
+        1260,
+        1260,
+        1800,
+        1800,
+        1260,
+        1260
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.card.map1.motel_201",
+          "level": 1,
+          "price": 72984,
+          "bundle": 1,
+          "bundlePrice": 72984,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.b.08"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.combustible.largegascan",
+              "count": 2
+            },
+            {
+              "id": "valuable.electric.newphone",
+              "count": 1
+            },
+            {
+              "id": "valuable.household.pesticide",
+              "count": 5
+            }
+          ]
+        }
+      ]
     },
     "gameId": "card.map1.motel_201",
     "tips": ""
@@ -596,11 +1168,36 @@
       "fullsize": "/images/items/keys/key_motel_206.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Rare",
       "uses": 3,
-      "location": "Motel F2"
+      "location": "Motel F2",
+      "basePrice": 1782,
+      "sellPrices": [
+        1248,
+        1248,
+        1782,
+        1782,
+        1248,
+        1248
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.card.map1.motel_206",
+          "level": 1,
+          "price": 72254,
+          "bundle": 1,
+          "bundlePrice": 72254,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.b.10"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gameId": "card.map1.motel_206",
     "tips": ""
@@ -617,11 +1214,20 @@
       "fullsize": "/images/items/keys/key_officerroom.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Legendary",
       "uses": 3,
-      "location": ""
+      "location": "",
+      "basePrice": 16660,
+      "sellPrices": [
+        11662,
+        11662,
+        16660,
+        16660,
+        11662,
+        11662
+      ],
+      "buyOffers": []
     },
     "gameId": "card.map3.officerroom",
     "tips": ""
@@ -638,11 +1244,20 @@
       "fullsize": "/images/items/keys/key_operatingroom.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Epic",
       "uses": 3,
-      "location": ""
+      "location": "",
+      "basePrice": 6435,
+      "sellPrices": [
+        4505,
+        4505,
+        6435,
+        6435,
+        4505,
+        4505
+      ],
+      "buyOffers": []
     },
     "gameId": "card.map3.operatingroom",
     "tips": ""
@@ -659,11 +1274,20 @@
       "fullsize": "/images/items/keys/key_police_f1.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Legendary",
       "uses": 3,
-      "location": "Hyder town"
+      "location": "Hyder town",
+      "basePrice": 6435,
+      "sellPrices": [
+        4505,
+        4505,
+        6435,
+        6435,
+        4505,
+        4505
+      ],
+      "buyOffers": []
     },
     "gameId": "card.map1.bear-police-f1",
     "tips": ""
@@ -680,11 +1304,20 @@
       "fullsize": "/images/items/keys/key_policeoffice_f2.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Legendary",
       "uses": 3,
-      "location": "Hyder town"
+      "location": "Hyder town",
+      "basePrice": 6565,
+      "sellPrices": [
+        4596,
+        4596,
+        6565,
+        6565,
+        4596,
+        4596
+      ],
+      "buyOffers": []
     },
     "gameId": "card.map1.bear-police-f2",
     "tips": ""
@@ -701,11 +1334,45 @@
       "fullsize": "/images/items/keys/key_resorthotel.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Rare",
       "uses": 3,
-      "location": "Hotel"
+      "location": "Hotel",
+      "basePrice": 1782,
+      "sellPrices": [
+        1248,
+        1248,
+        1782,
+        1782,
+        1248,
+        1248
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.card.map4.resorthotel",
+          "level": 2,
+          "price": 72984,
+          "bundle": 1,
+          "bundlePrice": 72984,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.a.07"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.combustible.gunpowder",
+              "count": 1
+            },
+            {
+              "id": "valuable.combustible.smokelesspowder",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gameId": "card.map4.resorthotel",
     "tips": ""
@@ -722,11 +1389,47 @@
       "fullsize": "/images/items/keys/key_toilet.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Common",
       "uses": 3,
-      "location": "Cargo Zone01"
+      "location": "Cargo Zone01",
+      "basePrice": 1831,
+      "sellPrices": [
+        1282,
+        1282,
+        1831,
+        1831,
+        1282,
+        1282
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.card.map5.toilet-2",
+          "level": 3,
+          "price": 71312,
+          "bundle": 1,
+          "bundlePrice": 71312,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.radioscanner",
+              "count": 2
+            },
+            {
+              "id": "valuable.electric.tapeplayer",
+              "count": 1
+            },
+            {
+              "id": "valuable.household.pesticide",
+              "count": 5
+            }
+          ]
+        }
+      ]
     },
     "gameId": "card.map5.toilet",
     "tips": ""
@@ -743,11 +1446,20 @@
       "fullsize": "/images/items/keys/key_tunnel.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Legendary",
       "uses": 3,
-      "location": "Tunnel"
+      "location": "Tunnel",
+      "basePrice": 6435,
+      "sellPrices": [
+        4505,
+        4505,
+        6435,
+        6435,
+        4505,
+        4505
+      ],
+      "buyOffers": []
     },
     "gameId": "card.map4.tunnel",
     "tips": ""
@@ -764,11 +1476,47 @@
       "fullsize": "/images/items/keys/key_voyages.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Epic",
       "uses": 3,
-      "location": "Voyages"
+      "location": "Voyages",
+      "basePrice": 1800,
+      "sellPrices": [
+        1260,
+        1260,
+        1800,
+        1800,
+        1260,
+        1260
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.card.map4.voyages",
+          "level": 2,
+          "price": 73714,
+          "bundle": 1,
+          "bundlePrice": 73714,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.combustible.gunoil",
+              "count": 3
+            },
+            {
+              "id": "valuable.household.facialcleanser",
+              "count": 3
+            },
+            {
+              "id": "valuable.information.recorder",
+              "count": 2
+            }
+          ]
+        }
+      ]
     },
     "gameId": "card.map4.voyages",
     "tips": ""
@@ -785,11 +1533,47 @@
       "fullsize": "/images/items/keys/key_warehouse.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Common",
       "uses": 3,
-      "location": "WH01 warehouse"
+      "location": "WH01 warehouse",
+      "basePrice": 6354,
+      "sellPrices": [
+        4448,
+        4448,
+        6354,
+        6354,
+        4448,
+        4448
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.card.map5.warehouse-2",
+          "level": 3,
+          "price": 124301,
+          "bundle": 1,
+          "bundlePrice": 124301,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.gameconsole",
+              "count": 2
+            },
+            {
+              "id": "valuable.household.facialcleanser",
+              "count": 3
+            },
+            {
+              "id": "valuable.tools.climbingrope",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gameId": "card.map5.warehouse",
     "tips": ""
@@ -806,11 +1590,36 @@
       "fullsize": "/images/items/keys/key_westbunker.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Epic",
       "uses": 3,
-      "location": ""
+      "location": "",
+      "basePrice": 6435,
+      "sellPrices": [
+        4505,
+        4505,
+        6435,
+        6435,
+        4505,
+        4505
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.card.map1.basementexit",
+          "level": 1,
+          "price": 133063,
+          "bundle": 1,
+          "bundlePrice": 133063,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gear.c.06"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gameId": "card.map1.basementexit",
     "tips": ""
@@ -827,11 +1636,47 @@
       "fullsize": "/images/items/keys/key_windingstair.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Common",
       "uses": 3,
-      "location": "Cellar Staircase"
+      "location": "Cellar Staircase",
+      "basePrice": 16962,
+      "sellPrices": [
+        11874,
+        11874,
+        16962,
+        16962,
+        11874,
+        11874
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.card.map5.windingstair",
+          "level": 3,
+          "price": 502932,
+          "bundle": 1,
+          "bundlePrice": 502932,
+          "stock": 7,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.marinestoragebattery",
+              "count": 1
+            },
+            {
+              "id": "valuable.household.ratpoison",
+              "count": 3
+            },
+            {
+              "id": "valuable.tools.gaspipewrench",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "gameId": "card.map5.windingstair",
     "tips": ""
@@ -848,11 +1693,47 @@
       "fullsize": "/images/items/keys/key_wyethfarm.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Rare",
       "uses": 3,
-      "location": ""
+      "location": "",
+      "basePrice": 1746,
+      "sellPrices": [
+        1223,
+        1223,
+        1746,
+        1746,
+        1223,
+        1223
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.card.map1.wyethfarm",
+          "level": 1,
+          "price": 71524,
+          "bundle": 1,
+          "bundlePrice": 71524,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.building.spraycan",
+              "count": 1
+            },
+            {
+              "id": "valuable.electric.radioscanner",
+              "count": 1
+            },
+            {
+              "id": "valuable.household.pesticide",
+              "count": 4
+            }
+          ]
+        }
+      ]
     },
     "gameId": "card.map1.wyethfarm",
     "tips": ""
@@ -869,11 +1750,20 @@
       "fullsize": "/images/items/keys/key_zombie.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.01,
       "rarity": "Common",
       "uses": 3,
-      "location": "All Room"
+      "location": "All Room",
+      "basePrice": 100,
+      "sellPrices": [
+        70,
+        70,
+        100,
+        100,
+        70,
+        70
+      ],
+      "buyOffers": []
     },
     "gameId": "card.map5.zombie",
     "tips": ""

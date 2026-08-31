@@ -11,10 +11,19 @@
       "fullsize": "/images/items/task/taskitem_animalcodebook.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.3,
       "rarity": "Common",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -30,12 +39,21 @@
       "fullsize": "/images/items/task/taskitem_ark_floppydisk.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.15,
       "rarity": "Common",
       "taskIds": [
         "ark_21"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -51,10 +69,19 @@
       "fullsize": "/images/items/task/taskitem_ark_floppydisk_white.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.15,
       "rarity": "Rare",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -70,7 +97,6 @@
       "fullsize": "/images/items/task/taskitem_b_electricdrill.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 1.2,
       "rarity": "Rare",
       "taskIds": []
@@ -89,12 +115,21 @@
       "fullsize": "/images/items/task/taskitem_baseball.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.3,
       "rarity": "Common",
       "taskIds": [
         "ark_22"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -110,10 +145,19 @@
       "fullsize": "/images/items/task/taskitem_black_panther_medal.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 49348,
+      "sellPrices": [
+        49348,
+        49348,
+        49348,
+        49348,
+        49348,
+        49348
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -129,7 +173,6 @@
       "fullsize": "/images/items/task/taskitem_bug.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.2,
       "rarity": "Common",
       "taskIds": []
@@ -148,10 +191,19 @@
       "fullsize": "/images/items/task/taskitem_codebook.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.3,
       "rarity": "Common",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -167,10 +219,19 @@
       "fullsize": "/images/items/task/taskitem_dlcmicalocked.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -186,10 +247,19 @@
       "fullsize": "/images/items/task/taskitem_ducktoy.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1,
+      "sellPrices": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -205,12 +275,21 @@
       "fullsize": "/images/items/task/taskitem_electricdrill_blue.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 1.2,
       "rarity": "Common",
       "taskIds": [
         "trupiks_4"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -226,10 +305,19 @@
       "fullsize": "/images/items/task/taskitem_exchangecard.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -245,12 +333,21 @@
       "fullsize": "/images/items/task/taskitem_familytape.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.35,
       "rarity": "Common",
       "taskIds": [
         "trupiks_5"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -266,10 +363,19 @@
       "fullsize": "/images/items/task/taskitem_gold_lion.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 49348,
+      "sellPrices": [
+        49348,
+        49348,
+        49348,
+        49348,
+        49348,
+        49348
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -285,12 +391,21 @@
       "fullsize": "/images/items/task/taskitem_goldcup.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 4.2,
       "rarity": "Common",
       "taskIds": [
         "forge_1"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -306,12 +421,21 @@
       "fullsize": "/images/items/task/taskitem_goldeearth.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 4.2,
       "rarity": "Common",
       "taskIds": [
         "forge_18"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -327,10 +451,19 @@
       "fullsize": "/images/items/task/taskitem_goldingot.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.8,
       "rarity": "Common",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -346,12 +479,21 @@
       "fullsize": "/images/items/task/taskitem_gunpowder.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.8,
       "rarity": "Common",
       "taskIds": [
         "regiment_3"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -367,12 +509,21 @@
       "fullsize": "/images/items/task/taskitem_igor_notebook.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.27,
       "rarity": "Common",
       "taskIds": [
         "regiment_10"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -388,10 +539,19 @@
       "fullsize": "/images/items/task/taskitem_mad_doc_dvd1.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.03,
       "rarity": "Epic",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -407,10 +567,19 @@
       "fullsize": "/images/items/task/taskitem_mad_doc_dvd2.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.03,
       "rarity": "Epic",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -426,12 +595,21 @@
       "fullsize": "/images/items/task/taskitem_maggie_camera.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 1.7,
       "rarity": "Common",
       "taskIds": [
         "ntg_2"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -447,10 +625,19 @@
       "fullsize": "/images/items/task/taskitem_maggie_mince_photo.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.3,
       "rarity": "Rare",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -466,12 +653,21 @@
       "fullsize": "/images/items/task/taskitem_medherb.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 4.5,
       "rarity": "Common",
       "taskIds": [
         "ntg_9"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -487,10 +683,19 @@
       "fullsize": "/images/items/task/taskitem_medicalbag.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -506,10 +711,19 @@
       "fullsize": "/images/items/task/taskitem_mince_id_card.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.05,
       "rarity": "Rare",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -525,10 +739,19 @@
       "fullsize": "/images/items/task/taskitem_ms1000_prototype.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.24,
       "rarity": "Epic",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -544,10 +767,19 @@
       "fullsize": "/images/items/task/taskitem_ntgdisk.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -563,10 +795,19 @@
       "fullsize": "/images/items/task/taskitem_ntgmedica.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.3,
       "rarity": "Epic",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -582,7 +823,6 @@
       "fullsize": "/images/items/task/taskitem_photophone.webp"
     },
     "stats": {
-      "price": 4000,
       "weight": 0.21,
       "rarity": "Common",
       "taskIds": [
@@ -595,6 +835,43 @@
         "regiment_12",
         "regiment_25",
         "forge_6"
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.valuable.task.task_phone",
+          "level": 1,
+          "price": 2600,
+          "bundle": 1,
+          "bundlePrice": 2600,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.valuable.task.task_phone-2",
+          "level": 1,
+          "price": 2600,
+          "bundle": 1,
+          "bundlePrice": 2600,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -611,12 +888,21 @@
       "fullsize": "/images/items/task/taskitem_placement_igor_foodcan.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.8,
       "rarity": "Common",
       "taskIds": [
         "regiment_24"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -632,12 +918,21 @@
       "fullsize": "/images/items/task/taskitem_placement_igor_memobeer.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.8,
       "rarity": "Common",
       "taskIds": [
         "regiment_14"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -653,12 +948,21 @@
       "fullsize": "/images/items/task/taskitem_placement_igor_supplycase.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 17.5,
       "rarity": "Common",
       "taskIds": [
         "regiment_32"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -674,12 +978,21 @@
       "fullsize": "/images/items/task/taskitem_placement_johnny_walkietalkie.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.2,
       "rarity": "Common",
       "taskIds": [
         "trupiks_12"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -695,12 +1008,37 @@
       "fullsize": "/images/items/task/taskitem_placement_maggie_medicine.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.2,
       "rarity": "Common",
       "taskIds": [
         "ntg_7",
         "ntg_21"
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.valuable.task.maggie_medical",
+          "level": 1,
+          "price": 4920,
+          "bundle": 1,
+          "bundlePrice": 4920,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.b.01"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -717,11 +1055,36 @@
       "fullsize": "/images/items/task/taskitem_placement_maggie_poison.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.2,
       "rarity": "Common",
       "taskIds": [
         "ntg_16"
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.valuable.task.maggie_toxin",
+          "level": 1,
+          "price": 16709,
+          "bundle": 1,
+          "bundlePrice": 16709,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.a.06"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -738,12 +1101,21 @@
       "fullsize": "/images/items/task/taskitem_placement_maggie_usb.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.08,
       "rarity": "Common",
       "taskIds": [
         "ntg_7"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -759,12 +1131,21 @@
       "fullsize": "/images/items/task/taskitem_placement_max_cash.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.18,
       "rarity": "Common",
       "taskIds": [
         "forge_8"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -780,11 +1161,34 @@
       "fullsize": "/images/items/task/taskitem_placement_max_oldphone.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.16,
       "rarity": "Common",
       "taskIds": [
         "forge_5"
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.valuable.task.max_phone",
+          "level": 1,
+          "price": 2130,
+          "bundle": 1,
+          "bundlePrice": 2130,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -801,12 +1205,21 @@
       "fullsize": "/images/items/task/taskitem_placement_max_ring.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.2,
       "rarity": "Common",
       "taskIds": [
         "forge_10"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -822,12 +1235,21 @@
       "fullsize": "/images/items/task/taskitem_placement_signalenhancer.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.24,
       "rarity": "Common",
       "taskIds": [
         "ntg_11"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -843,12 +1265,21 @@
       "fullsize": "/images/items/task/taskitem_placement_tommy_surveillancecam.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.8,
       "rarity": "Common",
       "taskIds": [
         "ark_17"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -864,12 +1295,21 @@
       "fullsize": "/images/items/task/taskitem_placement_tommy_telescope.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 1,
       "rarity": "Common",
       "taskIds": [
         "ark_7"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -885,12 +1325,21 @@
       "fullsize": "/images/items/task/taskitem_radio.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 7,
       "rarity": "Common",
       "taskIds": [
         "ntg_5"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -906,10 +1355,19 @@
       "fullsize": "/images/items/task/taskitem_recorder.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.24,
       "rarity": "Epic",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -925,10 +1383,19 @@
       "fullsize": "/images/items/task/taskitem_route_map.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -944,10 +1411,19 @@
       "fullsize": "/images/items/task/taskitem_safecase.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 7,
       "rarity": "Common",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -963,10 +1439,19 @@
       "fullsize": "/images/items/task/taskitem_sake.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 1.3,
       "rarity": "Common",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -982,10 +1467,19 @@
       "fullsize": "/images/items/task/taskitem_saphireheart.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.03,
       "rarity": "Ultimate",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -1001,12 +1495,21 @@
       "fullsize": "/images/items/task/taskitem_sharkdvd1.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.03,
       "rarity": "Common",
       "taskIds": [
         "regiment_18"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -1022,12 +1525,21 @@
       "fullsize": "/images/items/task/taskitem_sharkdvd2.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.03,
       "rarity": "Common",
       "taskIds": [
         "regiment_18"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -1043,10 +1555,19 @@
       "fullsize": "/images/items/task/taskitem_signalreceiver.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -1062,12 +1583,21 @@
       "fullsize": "/images/items/task/taskitem_subwaydvd1.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.03,
       "rarity": "Common",
       "taskIds": [
         "regiment_28"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -1083,12 +1613,21 @@
       "fullsize": "/images/items/task/taskitem_subwaydvd2.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.03,
       "rarity": "Common",
       "taskIds": [
         "regiment_28"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -1104,12 +1643,21 @@
       "fullsize": "/images/items/task/taskitem_task_gamedisk.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.3,
       "rarity": "Common",
       "taskIds": [
         "forge_27"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -1125,12 +1673,21 @@
       "fullsize": "/images/items/task/taskitem_task_igor_sunglass.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.1,
       "rarity": "Common",
       "taskIds": [
         "regiment_4"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -1146,10 +1703,19 @@
       "fullsize": "/images/items/task/taskitem_task_medicalreport.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.3,
       "rarity": "Common",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -1165,12 +1731,21 @@
       "fullsize": "/images/items/task/taskitem_task_missilelauncher.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 2.5,
       "rarity": "Common",
       "taskIds": [
         "forge_28"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -1186,12 +1761,21 @@
       "fullsize": "/images/items/task/taskitem_task_vrheadset.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 7,
       "rarity": "Common",
       "taskIds": [
         "forge_30"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -1207,12 +1791,21 @@
       "fullsize": "/images/items/task/taskitem_taskintelphone.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.21,
       "rarity": "Common",
       "taskIds": [
         "ark_4"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -1228,12 +1821,21 @@
       "fullsize": "/images/items/task/taskitem_taskitem_plate1.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.3,
       "rarity": "Common",
       "taskIds": [
         "forge_7"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -1249,12 +1851,21 @@
       "fullsize": "/images/items/task/taskitem_taskitem_plate2.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.3,
       "rarity": "Common",
       "taskIds": [
         "forge_7"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -1270,12 +1881,21 @@
       "fullsize": "/images/items/task/taskitem_taskitembase_policef1key.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.005,
       "rarity": "Common",
       "taskIds": [
         "trupiks_7"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -1291,10 +1911,19 @@
       "fullsize": "/images/items/task/taskitem_taskitemblack_panther_documents.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 49348,
+      "sellPrices": [
+        49348,
+        49348,
+        49348,
+        49348,
+        49348,
+        49348
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -1310,7 +1939,6 @@
       "fullsize": "/images/items/task/taskitem_tracking_device.webp"
     },
     "stats": {
-      "price": 4000,
       "weight": 0.24,
       "rarity": "Common",
       "taskIds": [
@@ -1325,6 +1953,30 @@
         "regiment_23",
         "forge_11",
         "forge_22"
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.valuable.task.tracker",
+          "level": 1,
+          "price": 1100,
+          "bundle": 1,
+          "bundlePrice": 1100,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -1341,10 +1993,19 @@
       "fullsize": "/images/items/task/taskitem_warfaretaskuvtracedetector.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": []
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -1360,12 +2021,21 @@
       "fullsize": "/images/items/task/taskitem_wyethwine.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 1.3,
       "rarity": "Common",
       "taskIds": [
         "regiment_23"
-      ]
+      ],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": []
     },
     "tips": ""
   }

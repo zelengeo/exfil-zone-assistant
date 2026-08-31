@@ -11,7 +11,6 @@
       "fullsize": "/images/items/helmets/mask-ach-faceshield.webp"
     },
     "stats": {
-      "price": 35000,
       "weight": 1.5,
       "rarity": "Rare",
       "armorClass": 4,
@@ -140,6 +139,32 @@
           "leaveTangent": 0
         }
       ],
+      "basePrice": 13137,
+      "sellPrices": [
+        9196,
+        9196,
+        13137,
+        7882,
+        7882,
+        9196
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.hmat.mask.ach",
+          "level": 2,
+          "price": 43790,
+          "bundle": 1,
+          "bundlePrice": 43790,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gear.b.02"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_eyes",
@@ -170,7 +195,6 @@
       "fullsize": "/images/items/helmets/mask-galvorgoggles.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 1.5,
       "rarity": "Rare",
       "armorClass": 4,
@@ -313,6 +337,30 @@
           "arriveTangent": 0,
           "leaveTangent": 0
         }
+      ],
+      "basePrice": 13298,
+      "sellPrices": [
+        9309,
+        9309,
+        13298,
+        7979,
+        5319,
+        9309
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.hmat.mask.galvorgoggles",
+          "level": 3,
+          "price": 37245,
+          "bundle": 1,
+          "bundlePrice": 37245,
+          "stock": 19,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -329,7 +377,6 @@
       "fullsize": "/images/items/helmets/mask-kiver-faceshield.webp"
     },
     "stats": {
-      "price": 28000,
       "weight": 1.2,
       "rarity": "Rare",
       "armorClass": 3,
@@ -458,6 +505,30 @@
           "leaveTangent": 0
         }
       ],
+      "basePrice": 6134,
+      "sellPrices": [
+        4294,
+        4294,
+        6134,
+        3680,
+        3680,
+        4294
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.hmat.mask.kiverm",
+          "level": 1,
+          "price": 20444,
+          "bundle": 1,
+          "bundlePrice": 20444,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_eyes",
@@ -488,7 +559,6 @@
       "fullsize": "/images/items/helmets/mask-lh250-goggle.webp"
     },
     "stats": {
-      "price": 15000,
       "weight": 0.6,
       "rarity": "Rare",
       "armorClass": 1,
@@ -601,6 +671,16 @@
           "leaveTangent": -0.223494
         }
       ],
+      "basePrice": 910,
+      "sellPrices": [
+        637,
+        637,
+        910,
+        546,
+        364,
+        637
+      ],
+      "buyOffers": [],
       "protectiveData": [
         {
           "bodyPart": "head_eyes",
@@ -631,7 +711,6 @@
       "fullsize": "/images/items/helmets/mask-lh250-mask.webp"
     },
     "stats": {
-      "price": 18000,
       "weight": 0.8,
       "rarity": "Rare",
       "armorClass": 1,
@@ -744,6 +823,16 @@
           "leaveTangent": -0.223494
         }
       ],
+      "basePrice": 670,
+      "sellPrices": [
+        469,
+        469,
+        670,
+        402,
+        268,
+        469
+      ],
+      "buyOffers": [],
       "protectiveData": [
         {
           "bodyPart": "head_eyes",
@@ -774,7 +863,6 @@
       "fullsize": "/images/items/helmets/mask-m1sch-faceshield.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 1.1,
       "rarity": "Epic",
       "armorClass": 6,
@@ -925,6 +1013,39 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 37134,
+      "sellPrices": [
+        25994,
+        25994,
+        37134,
+        22280,
+        14854,
+        25994
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.hmat.mask.m1schgreen-2",
+          "level": 4,
+          "price": 252834,
+          "bundle": 1,
+          "bundlePrice": 252834,
+          "stock": 3,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.visionmodule",
+              "count": 2
+            },
+            {
+              "id": "valuable.highvalue.camera",
+              "count": 1
+            }
+          ]
+        }
       ]
     },
     "tips": ""
@@ -941,7 +1062,6 @@
       "fullsize": "/images/items/helmets/mask-rys-tfaceshield-pumpkin.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 1.3,
       "rarity": "Epic",
       "armorClass": 5,
@@ -1053,7 +1173,17 @@
           "arriveTangent": -5.025785,
           "leaveTangent": -5.025785
         }
-      ]
+      ],
+      "basePrice": 26000,
+      "sellPrices": [
+        26000,
+        26000,
+        26000,
+        26000,
+        26000,
+        18200
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -1069,7 +1199,6 @@
       "fullsize": "/images/items/helmets/mask-ryst-faceshield.webp"
     },
     "stats": {
-      "price": 65000,
       "weight": 1.3,
       "rarity": "Epic",
       "armorClass": 5,
@@ -1206,6 +1335,52 @@
           "leaveTangent": -0.001907
         }
       ],
+      "basePrice": 51458,
+      "sellPrices": [
+        36021,
+        36021,
+        51458,
+        30875,
+        30875,
+        36021
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.hmat.mask.RYT-2",
+          "level": 4,
+          "price": 171524,
+          "bundle": 1,
+          "bundlePrice": 171524,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.medicalsupplies.iodophor",
+              "count": 1
+            },
+            {
+              "id": "valuable.tools.electricdrill",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "vendor": "forge",
+          "goodsId": "gds.hmat.mask.ryt",
+          "level": 4,
+          "price": 171524,
+          "bundle": 1,
+          "bundlePrice": 171524,
+          "stock": 6,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_eyes",
@@ -1236,7 +1411,6 @@
       "fullsize": "/images/items/helmets/mask-ryst-faceshield-bonecrusher.webp"
     },
     "stats": {
-      "price": 75000,
       "weight": 1.3,
       "rarity": "Epic",
       "armorClass": 5,
@@ -1349,6 +1523,16 @@
           "leaveTangent": -5.025785
         }
       ],
+      "basePrice": 22469,
+      "sellPrices": [
+        15729,
+        15729,
+        22469,
+        13481,
+        13481,
+        15729
+      ],
+      "buyOffers": [],
       "protectiveData": [
         {
           "bodyPart": "head_eyes",
@@ -1379,7 +1563,6 @@
       "fullsize": "/images/items/helmets/nvg-anpvs31.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 0.7,
       "rarity": "Epic",
       "armorClass": null,
@@ -1392,7 +1575,33 @@
       "maskHeightAngle": null,
       "penetrationChanceCurve": [],
       "penetrationDamageScalarCurve": [],
-      "antiPenetrationDurabilityScalarCurve": []
+      "antiPenetrationDurabilityScalarCurve": [],
+      "basePrice": 32581,
+      "sellPrices": [
+        22807,
+        22807,
+        32581,
+        19549,
+        19549,
+        22807
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.hmat.nv.anpvs31",
+          "level": 2,
+          "price": 108601,
+          "bundle": 1,
+          "bundlePrice": 108601,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gear.b.01"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   }

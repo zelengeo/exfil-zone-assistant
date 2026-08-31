@@ -11,7 +11,6 @@
       "fullsize": "/images/items/helmets/helmet-6b47.webp"
     },
     "stats": {
-      "price": 28500,
       "weight": 1.4,
       "rarity": "Uncommon",
       "armorClass": 3,
@@ -155,6 +154,30 @@
           "leaveTangent": 0
         }
       ],
+      "basePrice": 7574,
+      "sellPrices": [
+        5302,
+        5302,
+        7574,
+        4544,
+        4544,
+        5302
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.3",
+          "level": 2,
+          "price": 25245,
+          "bundle": 1,
+          "bundlePrice": 25245,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -180,7 +203,6 @@
       "fullsize": "/images/items/helmets/helmet-ach-black.webp"
     },
     "stats": {
-      "price": 65000,
       "weight": 2.3,
       "rarity": "Epic",
       "armorClass": 4,
@@ -332,6 +354,16 @@
           "leaveTangent": -0.001907
         }
       ],
+      "basePrice": 29476,
+      "sellPrices": [
+        20634,
+        20634,
+        29476,
+        17686,
+        17686,
+        20634
+      ],
+      "buyOffers": [],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -360,7 +392,6 @@
       "fullsize": "/images/items/helmets/helmet-ach-green.webp"
     },
     "stats": {
-      "price": 43352,
       "weight": 2.3,
       "rarity": "Rare",
       "armorClass": 4,
@@ -512,6 +543,32 @@
           "leaveTangent": -0.001907
         }
       ],
+      "basePrice": 29506,
+      "sellPrices": [
+        20655,
+        20655,
+        29506,
+        17704,
+        17704,
+        20655
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.achf",
+          "level": 3,
+          "price": 98352,
+          "bundle": 1,
+          "bundlePrice": 98352,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gear.a.03"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -540,7 +597,6 @@
       "fullsize": "/images/items/helmets/helmet-beanie.webp"
     },
     "stats": {
-      "price": 9000,
       "weight": 0.05,
       "rarity": "Common",
       "armorClass": 0,
@@ -611,6 +667,30 @@
           "value": 0,
           "arriveTangent": -5.025785,
           "leaveTangent": -5.025785
+        }
+      ],
+      "basePrice": 375,
+      "sellPrices": [
+        263,
+        263,
+        375,
+        225,
+        225,
+        263
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.beanie",
+          "level": 1,
+          "price": 936,
+          "bundle": 1,
+          "bundlePrice": 936,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
         }
       ],
       "protectiveData": [
@@ -638,7 +718,6 @@
       "fullsize": "/images/items/helmets/helmet-beanie-black.webp"
     },
     "stats": {
-      "price": 11500,
       "weight": 0.05,
       "rarity": "Common",
       "armorClass": 0,
@@ -709,6 +788,30 @@
           "value": 0,
           "arriveTangent": -5.025785,
           "leaveTangent": -5.025785
+        }
+      ],
+      "basePrice": 1742,
+      "sellPrices": [
+        1220,
+        1220,
+        1742,
+        1045,
+        1045,
+        1220
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.bkberet",
+          "level": 1,
+          "price": 4353,
+          "bundle": 1,
+          "bundlePrice": 4353,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
         }
       ],
       "protectiveData": [
@@ -736,7 +839,6 @@
       "fullsize": "/images/items/helmets/helmet-beanie-camo.webp"
     },
     "stats": {
-      "price": 11500,
       "weight": 0.05,
       "rarity": "Common",
       "armorClass": 0,
@@ -809,6 +911,30 @@
           "leaveTangent": -5.025785
         }
       ],
+      "basePrice": 1783,
+      "sellPrices": [
+        1249,
+        1249,
+        1783,
+        1070,
+        1070,
+        1249
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.camoberet",
+          "level": 1,
+          "price": 4457,
+          "bundle": 1,
+          "bundlePrice": 4457,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -834,7 +960,6 @@
       "fullsize": "/images/items/helmets/helmet-bike.webp"
     },
     "stats": {
-      "price": 8500,
       "weight": 1.5,
       "rarity": "Common",
       "armorClass": 2,
@@ -955,6 +1080,30 @@
           "leaveTangent": -0.223494
         }
       ],
+      "basePrice": 4583,
+      "sellPrices": [
+        3209,
+        3209,
+        4583,
+        2750,
+        2750,
+        3209
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.1",
+          "level": 1,
+          "price": 11457,
+          "bundle": 1,
+          "bundlePrice": 11457,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -980,7 +1129,6 @@
       "fullsize": "/images/items/helmets/helmet-cap-green.webp"
     },
     "stats": {
-      "price": 11500,
       "weight": 0.05,
       "rarity": "Common",
       "armorClass": 0,
@@ -1053,6 +1201,30 @@
           "leaveTangent": -5.025785
         }
       ],
+      "basePrice": 1009,
+      "sellPrices": [
+        707,
+        707,
+        1009,
+        605,
+        605,
+        707
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.gcap",
+          "level": 1,
+          "price": 2521,
+          "bundle": 1,
+          "bundlePrice": 2521,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -1078,7 +1250,6 @@
       "fullsize": "/images/items/helmets/helmet-ccbmblack.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 0.95,
       "rarity": "Epic",
       "armorClass": 4,
@@ -1244,6 +1415,30 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 8494,
+      "sellPrices": [
+        5946,
+        5946,
+        8494,
+        5096,
+        3398,
+        5946
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.ccbmblack",
+          "level": 3,
+          "price": 41235,
+          "bundle": 1,
+          "bundlePrice": 41235,
+          "stock": 49,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -1260,7 +1455,6 @@
       "fullsize": "/images/items/helmets/helmet-chrismas-fast-zombiexma.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 1.6,
       "rarity": "Epic",
       "armorClass": 4,
@@ -1396,7 +1590,17 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
-      ]
+      ],
+      "basePrice": 38190,
+      "sellPrices": [
+        38190,
+        38190,
+        38190,
+        38190,
+        38190,
+        26733
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -1412,7 +1616,6 @@
       "fullsize": "/images/items/helmets/helmet-delta.webp"
     },
     "stats": {
-      "price": 55000,
       "weight": 1.6,
       "rarity": "Rare",
       "armorClass": 4,
@@ -1564,6 +1767,30 @@
           "leaveTangent": -0.001907
         }
       ],
+      "basePrice": 22532,
+      "sellPrices": [
+        15773,
+        15773,
+        22532,
+        13519,
+        13519,
+        15773
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.4.5",
+          "level": 3,
+          "price": 75104,
+          "bundle": 1,
+          "bundlePrice": 75104,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -1589,7 +1816,6 @@
       "fullsize": "/images/items/helmets/helmet-delta-le.webp"
     },
     "stats": {
-      "price": 62000,
       "weight": 1.6,
       "rarity": "Rare",
       "armorClass": 4,
@@ -1726,6 +1952,16 @@
           "leaveTangent": -0.001907
         }
       ],
+      "basePrice": 14307,
+      "sellPrices": [
+        10015,
+        10015,
+        14307,
+        8584,
+        8584,
+        10015
+      ],
+      "buyOffers": [],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -1751,7 +1987,6 @@
       "fullsize": "/images/items/helmets/helmet-galvor.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 2.7,
       "rarity": "Epic",
       "armorClass": 5,
@@ -1902,6 +2137,30 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 30756,
+      "sellPrices": [
+        21530,
+        21530,
+        30756,
+        18454,
+        12302,
+        21530
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.galvor1",
+          "level": 3,
+          "price": 166890,
+          "bundle": 1,
+          "bundlePrice": 166890,
+          "stock": 19,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -1918,7 +2177,6 @@
       "fullsize": "/images/items/helmets/helmet-ibh.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 1.4,
       "rarity": "Rare",
       "armorClass": 4,
@@ -2114,6 +2372,30 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 16390,
+      "sellPrices": [
+        11473,
+        11473,
+        16390,
+        9834,
+        6556,
+        11473
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.ibhblack",
+          "level": 2,
+          "price": 58974,
+          "bundle": 1,
+          "bundlePrice": 58974,
+          "stock": 49,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -2130,7 +2412,6 @@
       "fullsize": "/images/items/helmets/helmet-kiver-m.webp"
     },
     "stats": {
-      "price": 35000,
       "weight": 2.4,
       "rarity": "Uncommon",
       "armorClass": 3,
@@ -2259,6 +2540,30 @@
           "leaveTangent": 0
         }
       ],
+      "basePrice": 11236,
+      "sellPrices": [
+        7866,
+        7866,
+        11236,
+        6742,
+        6742,
+        7866
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.kiverf",
+          "level": 2,
+          "price": 37451,
+          "bundle": 1,
+          "bundlePrice": 37451,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -2287,7 +2592,6 @@
       "fullsize": "/images/items/helmets/helmet-lh250.webp"
     },
     "stats": {
-      "price": 15000,
       "weight": 0.75,
       "rarity": "Uncommon",
       "armorClass": 2,
@@ -2408,6 +2712,16 @@
           "leaveTangent": -0.223494
         }
       ],
+      "basePrice": 2682,
+      "sellPrices": [
+        1878,
+        1878,
+        2682,
+        1609,
+        1609,
+        1878
+      ],
+      "buyOffers": [],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -2437,7 +2751,6 @@
       "fullsize": "/images/items/helmets/helmet-lightweight.webp"
     },
     "stats": {
-      "price": 24000,
       "weight": 0.9,
       "rarity": "Common",
       "armorClass": 2,
@@ -2648,6 +2961,30 @@
           "leaveTangent": -0.223494
         }
       ],
+      "basePrice": 5425,
+      "sellPrices": [
+        3798,
+        3798,
+        5425,
+        3255,
+        3255,
+        3798
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.2",
+          "level": 1,
+          "price": 13562,
+          "bundle": 1,
+          "bundlePrice": 13562,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -2679,7 +3016,6 @@
       "fullsize": "/images/items/helmets/helmet-m1.webp"
     },
     "stats": {
-      "price": 15000,
       "weight": 1.4,
       "rarity": "Uncommon",
       "armorClass": 3,
@@ -2823,6 +3159,32 @@
           "leaveTangent": 0
         }
       ],
+      "basePrice": 7460,
+      "sellPrices": [
+        5222,
+        5222,
+        7460,
+        4476,
+        4476,
+        5222
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.m1",
+          "level": 1,
+          "price": 18650,
+          "bundle": 1,
+          "bundlePrice": 18650,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gear.c.07"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -2848,7 +3210,6 @@
       "fullsize": "/images/items/helmets/helmet-maska1sch.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 3.6,
       "rarity": "Epic",
       "armorClass": 5,
@@ -2984,6 +3345,30 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 33880,
+      "sellPrices": [
+        23716,
+        23716,
+        33880,
+        20328,
+        13552,
+        23716
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.m1sch",
+          "level": 4,
+          "price": 246099,
+          "bundle": 1,
+          "bundlePrice": 246099,
+          "stock": 4,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -3000,7 +3385,6 @@
       "fullsize": "/images/items/helmets/helmet-op-fast-reindeer.webp"
     },
     "stats": {
-      "price": 62000,
       "weight": 1.7,
       "rarity": "Rare",
       "armorClass": 4,
@@ -3137,6 +3521,16 @@
           "leaveTangent": -0.001907
         }
       ],
+      "basePrice": 25790,
+      "sellPrices": [
+        25790,
+        25790,
+        25790,
+        25790,
+        25790,
+        18053
+      ],
+      "buyOffers": [],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -3162,7 +3556,6 @@
       "fullsize": "/images/items/helmets/helmet-op-fast-snowing.webp"
     },
     "stats": {
-      "price": 58000,
       "weight": 1.6,
       "rarity": "Rare",
       "armorClass": 4,
@@ -3299,6 +3692,16 @@
           "leaveTangent": -0.001907
         }
       ],
+      "basePrice": 25664,
+      "sellPrices": [
+        25664,
+        25664,
+        25664,
+        25664,
+        25664,
+        17965
+      ],
+      "buyOffers": [],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -3324,7 +3727,6 @@
       "fullsize": "/images/items/helmets/helmet-op-highprotection.webp"
     },
     "stats": {
-      "price": 82325,
       "weight": 2.8,
       "rarity": "Rare",
       "armorClass": 5,
@@ -3476,6 +3878,32 @@
           "leaveTangent": -0.001907
         }
       ],
+      "basePrice": 63698,
+      "sellPrices": [
+        44589,
+        44589,
+        63698,
+        38219,
+        38219,
+        44589
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.5",
+          "level": 3,
+          "price": 212325,
+          "bundle": 1,
+          "bundlePrice": 212325,
+          "stock": 12,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.gear.a.09"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -3507,7 +3935,6 @@
       "fullsize": "/images/items/helmets/helmet-parachute-training-black.webp"
     },
     "stats": {
-      "price": 21000,
       "weight": 0.8,
       "rarity": "Common",
       "armorClass": 2,
@@ -3718,6 +4145,30 @@
           "leaveTangent": -0.223494
         }
       ],
+      "basePrice": 5418,
+      "sellPrices": [
+        3793,
+        3793,
+        5418,
+        3251,
+        3251,
+        3793
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.2bk",
+          "level": 1,
+          "price": 13545,
+          "bundle": 1,
+          "bundlePrice": 13545,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -3743,7 +4194,6 @@
       "fullsize": "/images/items/helmets/helmet-pasgt.webp"
     },
     "stats": {
-      "price": 28500,
       "weight": 2.2,
       "rarity": "Uncommon",
       "armorClass": 3,
@@ -3887,6 +4337,30 @@
           "leaveTangent": 0
         }
       ],
+      "basePrice": 8715,
+      "sellPrices": [
+        6101,
+        6101,
+        8715,
+        5229,
+        5229,
+        6101
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.3.5",
+          "level": 2,
+          "price": 29047,
+          "bundle": 1,
+          "bundlePrice": 29047,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -3912,7 +4386,6 @@
       "fullsize": "/images/items/helmets/helmet-red-beret.webp"
     },
     "stats": {
-      "price": 12750,
       "weight": 0.05,
       "rarity": "Common",
       "armorClass": 0,
@@ -3985,6 +4458,16 @@
           "leaveTangent": -0.64334
         }
       ],
+      "basePrice": 2344,
+      "sellPrices": [
+        1641,
+        1641,
+        2344,
+        1406,
+        1406,
+        1641
+      ],
+      "buyOffers": [],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -4010,7 +4493,6 @@
       "fullsize": "/images/items/helmets/helmet-riveted.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 0.9,
       "rarity": "Epic",
       "armorClass": 4,
@@ -4191,6 +4673,32 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 11300,
+      "sellPrices": [
+        11300,
+        11300,
+        11300,
+        11300,
+        11300,
+        7910
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.rivetedmask",
+          "level": 2,
+          "price": 37666,
+          "bundle": 1,
+          "bundlePrice": 37666,
+          "stock": 6,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.zombie"
+          ],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -4207,7 +4715,6 @@
       "fullsize": "/images/items/helmets/helmet-rsp.webp"
     },
     "stats": {
-      "price": 65860,
       "weight": 2.3,
       "rarity": "Epic",
       "armorClass": 5,
@@ -4359,6 +4866,30 @@
           "leaveTangent": -0.001907
         }
       ],
+      "basePrice": 56162,
+      "sellPrices": [
+        39314,
+        39314,
+        56162,
+        33697,
+        33697,
+        39314
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.5.5",
+          "level": 4,
+          "price": 187204,
+          "bundle": 1,
+          "bundlePrice": 187204,
+          "stock": 12,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -4384,7 +4915,6 @@
       "fullsize": "/images/items/helmets/helmet-rsp-black.webp"
     },
     "stats": {
-      "price": 78057,
       "weight": 2.3,
       "rarity": "Epic",
       "armorClass": 5,
@@ -4536,6 +5066,32 @@
           "leaveTangent": -0.001907
         }
       ],
+      "basePrice": 56418,
+      "sellPrices": [
+        39493,
+        39493,
+        56418,
+        33851,
+        33851,
+        39493
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.5.5nk",
+          "level": 4,
+          "price": 188057,
+          "bundle": 1,
+          "bundlePrice": 188057,
+          "stock": 12,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.gear.a.05"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -4561,7 +5117,6 @@
       "fullsize": "/images/items/helmets/helmet-rsp-ne.webp"
     },
     "stats": {
-      "price": 67304,
       "weight": 2.5,
       "rarity": "Epic",
       "armorClass": 5,
@@ -4713,6 +5268,30 @@
           "leaveTangent": -0.001907
         }
       ],
+      "basePrice": 52758,
+      "sellPrices": [
+        36931,
+        36931,
+        52758,
+        31655,
+        31655,
+        36931
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.5.5n",
+          "level": 4,
+          "price": 175860,
+          "bundle": 1,
+          "bundlePrice": 175860,
+          "stock": 12,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -4738,7 +5317,6 @@
       "fullsize": "/images/items/helmets/helmet-rys-t.webp"
     },
     "stats": {
-      "price": 102198,
       "weight": 4.4,
       "rarity": "Legendary",
       "armorClass": 6,
@@ -4875,6 +5453,56 @@
           "leaveTangent": -0.001907
         }
       ],
+      "basePrice": 90660,
+      "sellPrices": [
+        63462,
+        63462,
+        90660,
+        54396,
+        54396,
+        63462
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.6",
+          "level": 4,
+          "price": 302198,
+          "bundle": 1,
+          "bundlePrice": 302198,
+          "stock": 6,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.gear.a.11"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.6-2",
+          "level": 4,
+          "price": 302198,
+          "bundle": 1,
+          "bundlePrice": 302198,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gear.a.08"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.building.spraycan",
+              "count": 2
+            },
+            {
+              "id": "valuable.household.shampoo",
+              "count": 1
+            }
+          ]
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -4904,7 +5532,6 @@
       "fullsize": "/images/items/helmets/helmet-rys-t-bonecrusher.webp"
     },
     "stats": {
-      "price": 102198,
       "weight": 4.4,
       "rarity": "Legendary",
       "armorClass": 6,
@@ -5041,6 +5668,16 @@
           "leaveTangent": -0.001907
         }
       ],
+      "basePrice": 33637,
+      "sellPrices": [
+        23546,
+        23546,
+        33637,
+        20182,
+        13455,
+        23546
+      ],
+      "buyOffers": [],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -5070,7 +5707,6 @@
       "fullsize": "/images/items/helmets/helmet-rys-t-pumpkin.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 4.2,
       "rarity": "Epic",
       "armorClass": 5,
@@ -5190,7 +5826,17 @@
           "arriveTangent": -10.323797,
           "leaveTangent": -10.323785
         }
-      ]
+      ],
+      "basePrice": 44000,
+      "sellPrices": [
+        44000,
+        44000,
+        44000,
+        44000,
+        44000,
+        30800
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -5206,7 +5852,6 @@
       "fullsize": "/images/items/helmets/helmet-safety-first.webp"
     },
     "stats": {
-      "price": 8500,
       "weight": 0.3,
       "rarity": "Common",
       "armorClass": 1,
@@ -5334,6 +5979,30 @@
           "leaveTangent": -0.223494
         }
       ],
+      "basePrice": 3467,
+      "sellPrices": [
+        2427,
+        2427,
+        3467,
+        2080,
+        2080,
+        2427
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.0.7",
+          "level": 1,
+          "price": 8666,
+          "bundle": 1,
+          "bundlePrice": 8666,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -5359,7 +6028,6 @@
       "fullsize": "/images/items/helmets/helmet-skull-face.webp"
     },
     "stats": {
-      "price": 45000,
       "weight": 1.1,
       "rarity": "Epic",
       "armorClass": 4,
@@ -5586,6 +6254,16 @@
           "leaveTangent": -0.001907
         }
       ],
+      "basePrice": 37620,
+      "sellPrices": [
+        26334,
+        26334,
+        37620,
+        22572,
+        22572,
+        26334
+      ],
+      "buyOffers": [],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -5611,7 +6289,6 @@
       "fullsize": "/images/items/helmets/helmet-swat.webp"
     },
     "stats": {
-      "price": 68000,
       "weight": 2.4,
       "rarity": "Rare",
       "armorClass": 3,
@@ -5740,6 +6417,32 @@
           "leaveTangent": 0
         }
       ],
+      "basePrice": 11655,
+      "sellPrices": [
+        8159,
+        8159,
+        11655,
+        6993,
+        6993,
+        8159
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.4",
+          "level": 2,
+          "price": 38848,
+          "bundle": 1,
+          "bundlePrice": 38848,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gear.b.06"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -5777,7 +6480,6 @@
       "fullsize": "/images/items/helmets/helmet-tsh4m.webp"
     },
     "stats": {
-      "price": 8500,
       "weight": 1.5,
       "rarity": "Common",
       "armorClass": 0.3,
@@ -5898,6 +6600,30 @@
           "leaveTangent": -0.64334
         }
       ],
+      "basePrice": 2482,
+      "sellPrices": [
+        1738,
+        1738,
+        2482,
+        1489,
+        993,
+        1738
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.tsh4m",
+          "level": 1,
+          "price": 6205,
+          "bundle": 1,
+          "bundlePrice": 6205,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -5923,7 +6649,6 @@
       "fullsize": "/images/items/helmets/helmet-warrior.webp"
     },
     "stats": {
-      "price": 43790,
       "weight": 0.9,
       "rarity": "Rare",
       "armorClass": 4,
@@ -6060,6 +6785,30 @@
           "leaveTangent": -0.001907
         }
       ],
+      "basePrice": 40737,
+      "sellPrices": [
+        28516,
+        28516,
+        40737,
+        24442,
+        24442,
+        28516
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.helmet.warrior",
+          "level": 3,
+          "price": 135790,
+          "bundle": 1,
+          "bundlePrice": 135790,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "protectiveData": [
         {
           "bodyPart": "head_top",
@@ -6097,7 +6846,6 @@
       "fullsize": "/images/items/helmets/helmet-wbk.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 0.05,
       "rarity": "Common",
       "armorClass": 0,
@@ -6169,7 +6917,17 @@
           "arriveTangent": -5.025785,
           "leaveTangent": -5.025785
         }
-      ]
+      ],
+      "basePrice": 3138,
+      "sellPrices": [
+        3138,
+        3138,
+        3138,
+        3138,
+        3138,
+        2197
+      ],
+      "buyOffers": []
     },
     "tips": ""
   }

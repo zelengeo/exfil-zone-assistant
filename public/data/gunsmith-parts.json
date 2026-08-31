@@ -5902,7 +5902,7 @@
       "fullsize": "/images/items/gunsmith-parts/part-ak-pistolgrip-moeak.webp"
     },
     "stats": {
-      "weight": null,
+      "weight": 0,
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": 0.12
@@ -19300,6 +19300,7 @@
           "pitchStiffness": 890,
           "yawStiffness": 575,
           "rollStiffness": 800,
+          "shiftDamping": 0.75,
           "pitchDamping": 0.48,
           "yawDamping": 1.7,
           "rollDamping": 1.17,
@@ -20083,9 +20084,11 @@
           "oneHandedMultiplier": 0.05,
           "oneHandedADSMultiplier": 0.1,
           "verticalRecoilControl": 0.175,
-          "horizontalRecoilControl": 0.264
+          "horizontalRecoilControl": 0.264,
+          "bUseShoulderRest": false
         },
         "recoilComponentParameters": null,
+        "adsRecoilChange": false,
         "damageRangeCurve": "BR_DOD_Pistol_GY",
         "caliber": "9x19"
       },
@@ -23816,7 +23819,8 @@
           "oneHandedMultiplier": 0.05,
           "oneHandedADSMultiplier": 0.1,
           "verticalRecoilControl": 0.192,
-          "horizontalRecoilControl": 0.213
+          "horizontalRecoilControl": 0.213,
+          "bUseShoulderRest": false
         },
         "recoilComponentParameters": null,
         "damageRangeCurve": "BR_DOD_Pistol_GY",
@@ -24372,6 +24376,7 @@
           "pitchStiffness": 710,
           "yawStiffness": 455,
           "rollStiffness": 800,
+          "shiftDamping": 0.89,
           "pitchDamping": 2.25,
           "yawDamping": 1.7,
           "rollDamping": 1.17,
@@ -25799,6 +25804,7 @@
           "pitchStiffness": 910,
           "yawStiffness": 455,
           "rollStiffness": 800,
+          "shiftDamping": 1.65,
           "pitchDamping": 2.58,
           "yawDamping": 2.4,
           "rollDamping": 1.17,
@@ -26677,6 +26683,7 @@
           "pitchStiffness": 670,
           "yawStiffness": 820,
           "rollStiffness": 780,
+          "shiftDamping": 0.9,
           "pitchDamping": 1.74,
           "yawDamping": 1.6,
           "rollDamping": 0.3,
@@ -27798,6 +27805,7 @@
           "pitchStiffness": 650,
           "yawStiffness": 840,
           "rollStiffness": 1800,
+          "shiftDamping": 1.2,
           "pitchDamping": 4.8,
           "yawDamping": 3,
           "rollDamping": 0.19,
@@ -27898,6 +27906,7 @@
           "pitchStiffness": 650,
           "yawStiffness": 840,
           "rollStiffness": 1800,
+          "shiftDamping": 1.2,
           "pitchDamping": 4.8,
           "yawDamping": 3,
           "rollDamping": 0.19,
@@ -28815,7 +28824,8 @@
           "oneHandedMultiplier": 0.05,
           "oneHandedADSMultiplier": 0.1,
           "verticalRecoilControl": 0.148,
-          "horizontalRecoilControl": 0.202
+          "horizontalRecoilControl": 0.202,
+          "bUseShoulderRest": false
         },
         "recoilComponentParameters": null,
         "damageRangeCurve": "BR_DOD_Pistol_GY",
@@ -30800,6 +30810,7 @@
           "pitchStiffness": 1780,
           "yawStiffness": 455,
           "rollStiffness": 800,
+          "shiftDamping": 0.83,
           "pitchDamping": 0.72,
           "yawDamping": 1.7,
           "rollDamping": 1.17,
@@ -30809,6 +30820,7 @@
           "rollMass": 0.5,
           "oneHandedMultiplier": 0.01,
           "oneHandedADSMultiplier": 0.03,
+          "recoilRecoveryCoefficient": 2,
           "verticalRecoilControl": 1.125,
           "horizontalRecoilControl": 0.861
         },
@@ -30902,6 +30914,7 @@
           "pitchStiffness": 1780,
           "yawStiffness": 455,
           "rollStiffness": 800,
+          "shiftDamping": 0.83,
           "pitchDamping": 0.72,
           "yawDamping": 1.7,
           "rollDamping": 1.17,
@@ -30911,6 +30924,7 @@
           "rollMass": 0.5,
           "oneHandedMultiplier": 0.01,
           "oneHandedADSMultiplier": 0.03,
+          "recoilRecoveryCoefficient": 2,
           "verticalRecoilControl": 1.125,
           "horizontalRecoilControl": 0.861
         },
@@ -31004,6 +31018,7 @@
           "pitchStiffness": 1780,
           "yawStiffness": 455,
           "rollStiffness": 800,
+          "shiftDamping": 0.83,
           "pitchDamping": 0.72,
           "yawDamping": 1.7,
           "rollDamping": 1.17,
@@ -31013,6 +31028,7 @@
           "rollMass": 0.5,
           "oneHandedMultiplier": 0.01,
           "oneHandedADSMultiplier": 0.03,
+          "recoilRecoveryCoefficient": 2,
           "verticalRecoilControl": 1.125,
           "horizontalRecoilControl": 0.861
         },
@@ -35102,9 +35118,11 @@
           "oneHandedMultiplier": 0.05,
           "oneHandedADSMultiplier": 0.1,
           "verticalRecoilControl": 0.155,
-          "horizontalRecoilControl": 0.227
+          "horizontalRecoilControl": 0.227,
+          "bUseShoulderRest": false
         },
         "recoilComponentParameters": null,
+        "adsRecoilChange": false,
         "damageRangeCurve": "ShotgunDOD",
         "caliber": "9x19"
       },
@@ -35934,6 +35952,7 @@
           "pitchStiffness": 910,
           "yawStiffness": 455,
           "rollStiffness": 800,
+          "shiftDamping": 1,
           "pitchDamping": 3.48,
           "yawDamping": 2.4,
           "rollDamping": 1.17,
@@ -37082,6 +37101,7 @@
           "pitchStiffness": 1210,
           "yawStiffness": 655,
           "rollStiffness": 800,
+          "shiftDamping": 1.65,
           "pitchDamping": 2.58,
           "yawDamping": 2.4,
           "rollDamping": 1.17,
@@ -37488,8 +37508,10 @@
           "rollMass": 0.4,
           "oneHandedMultiplier": 0.3,
           "oneHandedADSMultiplier": 0.5,
+          "twoHandedMultiplier": 1,
           "verticalRecoilControl": 0.68,
-          "horizontalRecoilControl": 0.46
+          "horizontalRecoilControl": 0.46,
+          "bUseShoulderRest": false
         },
         "recoilComponentParameters": null,
         "damageRangeCurve": "BR_DOD_Pistol_GY",
@@ -37577,8 +37599,10 @@
           "rollMass": 0.4,
           "oneHandedMultiplier": 0.3,
           "oneHandedADSMultiplier": 0.5,
+          "twoHandedMultiplier": 1,
           "verticalRecoilControl": 0.68,
-          "horizontalRecoilControl": 0.46
+          "horizontalRecoilControl": 0.46,
+          "bUseShoulderRest": false
         },
         "recoilComponentParameters": null,
         "damageRangeCurve": "BR_DOD_Pistol_GY",
@@ -41788,6 +41812,7 @@
           "pitchStiffness": 710,
           "yawStiffness": 455,
           "rollStiffness": 800,
+          "shiftDamping": 0.89,
           "pitchDamping": 2.25,
           "yawDamping": 1.7,
           "rollDamping": 1.17,
@@ -42441,6 +42466,7 @@
           "pitchStiffness": 910,
           "yawStiffness": 455,
           "rollStiffness": 800,
+          "shiftDamping": 1.65,
           "pitchDamping": 2.58,
           "yawDamping": 2.4,
           "rollDamping": 1.17,
@@ -44845,6 +44871,7 @@
           "pitchStiffness": 970,
           "yawStiffness": 455,
           "rollStiffness": 800,
+          "shiftDamping": 1.05,
           "pitchDamping": 1.45,
           "yawDamping": 1.2,
           "rollDamping": 1.17,
@@ -46406,6 +46433,7 @@
           "pitchStiffness": 622,
           "yawStiffness": 423.25,
           "rollStiffness": 920,
+          "shiftDamping": 2.2,
           "pitchDamping": 4.28,
           "yawDamping": 4.3,
           "rollDamping": 0.204,
@@ -46511,6 +46539,7 @@
           "pitchStiffness": 622,
           "yawStiffness": 423.25,
           "rollStiffness": 920,
+          "shiftDamping": 2.2,
           "pitchDamping": 4.28,
           "yawDamping": 4.3,
           "rollDamping": 0.204,

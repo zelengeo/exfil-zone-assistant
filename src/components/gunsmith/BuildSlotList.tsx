@@ -10,6 +10,13 @@ import type { UniversalEntry } from '@/lib/gunsmith/build';
 import PartIcon from './PartIcon';
 
 interface BuildSlotListProps {
+    /**
+     * The lower receiver. It is the gun — it carries the whole simulation base every other part is
+     * a delta against — so it heads the bench rather than being implied by the title.
+     */
+    receiver: GunsmithPart;
+    /** Opens the weapon picker. Swapping the receiver empties the build, so it asks first. */
+    onChangeReceiver?: () => void;
     slots: BuildSlot[];
     universal: UniversalEntry[];
     selectedSlotId?: string | null;
@@ -30,9 +37,10 @@ interface RowProps {
     onSelect?: () => void;
     onClear?: () => void;
     emptyHint?: string;
+    className?: string;
 }
 
-function SlotRow({ label, part, depth, required, selected, onSelect, onClear, emptyHint }: RowProps) {
+function SlotRow({ label, part, depth, required, selected, onSelect, onClear, emptyHint, className }: RowProps) {
     const interactive = Boolean(onSelect);
     const Wrapper = interactive ? 'button' : 'div';
 
@@ -41,6 +49,7 @@ function SlotRow({ label, part, depth, required, selected, onSelect, onClear, em
             className={cn(
                 'flex items-stretch border-l-2',
                 selected ? 'border-l-ember bg-steel-700' : 'border-l-transparent',
+                className,
             )}
             style={{ paddingLeft: depth * 14 }}
         >
@@ -103,6 +112,8 @@ function SlotRow({ label, part, depth, required, selected, onSelect, onClear, em
  * and a build that says otherwise is lying about what has to be bought first.
  */
 export default function BuildSlotList({
+    receiver,
+    onChangeReceiver,
     slots,
     universal,
     selectedSlotId,
@@ -113,6 +124,15 @@ export default function BuildSlotList({
 }: BuildSlotListProps) {
     return (
         <div className={cn('divide-y divide-line-900', className)}>
+            <SlotRow
+                label="Receiver"
+                part={receiver}
+                depth={0}
+                required
+                onSelect={onChangeReceiver}
+                className="bg-steel-850"
+            />
+
             {slots.map((slot) => (
                 <SlotRow
                     key={slot.id}

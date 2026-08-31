@@ -11,12 +11,21 @@
       "fullsize": "/images/items/holsters/holster_556faster.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.07,
       "rarity": "Common",
       "canAttach": [
         "holster_556faster"
-      ]
+      ],
+      "basePrice": 356,
+      "sellPrices": [
+        250,
+        250,
+        356,
+        214,
+        142,
+        250
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -32,10 +41,35 @@
       "fullsize": "/images/items/holsters/holster_grenade.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.12,
       "rarity": "Uncommon",
-      "canAttach": []
+      "canAttach": [],
+      "basePrice": 367,
+      "sellPrices": [
+        257,
+        257,
+        367,
+        220,
+        147,
+        257
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vestholster.02",
+          "level": 2,
+          "price": 5113,
+          "bundle": 1,
+          "bundlePrice": 5113,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gear.b.04"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -51,10 +85,35 @@
       "fullsize": "/images/items/holsters/holster_magd.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.14,
       "rarity": "Uncommon",
-      "canAttach": []
+      "canAttach": [],
+      "basePrice": 3900,
+      "sellPrices": [
+        2730,
+        2730,
+        3900,
+        2340,
+        1560,
+        2730
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vestholster.03",
+          "level": 2,
+          "price": 7888,
+          "bundle": 1,
+          "bundlePrice": 7888,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gear.b.05"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -70,7 +129,6 @@
       "fullsize": "/images/items/holsters/holster_magl.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.12,
       "rarity": "Rare",
       "canAttach": [
@@ -80,6 +138,30 @@
         "holster_grenade",
         "holster_magm_pumpkin",
         "holster_mags_pumpkin"
+      ],
+      "basePrice": 1048,
+      "sellPrices": [
+        734,
+        734,
+        1048,
+        629,
+        419,
+        734
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vestholster.04",
+          "level": 1,
+          "price": 1291,
+          "bundle": 1,
+          "bundlePrice": 1291,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -96,7 +178,6 @@
       "fullsize": "/images/items/holsters/holster_magm.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.1,
       "rarity": "Uncommon",
       "canAttach": [
@@ -105,6 +186,30 @@
         "holster_grenade",
         "holster_magm_pumpkin",
         "holster_mags_pumpkin"
+      ],
+      "basePrice": 364,
+      "sellPrices": [
+        255,
+        255,
+        364,
+        218,
+        146,
+        255
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vestholster.05",
+          "level": 1,
+          "price": 2071,
+          "bundle": 1,
+          "bundlePrice": 2071,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -121,7 +226,6 @@
       "fullsize": "/images/items/holsters/holster_magm_pumpkin.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.1,
       "rarity": "Uncommon",
       "canAttach": [
@@ -130,6 +234,32 @@
         "holster_grenade",
         "holster_magm_pumpkin",
         "holster_mags_pumpkin"
+      ],
+      "basePrice": 366,
+      "sellPrices": [
+        366,
+        366,
+        366,
+        366,
+        366,
+        257
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vestholster.05.pumpkin",
+          "level": 1,
+          "price": 2171,
+          "bundle": 1,
+          "bundlePrice": 2171,
+          "stock": 66,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.zombie"
+          ],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -146,10 +276,33 @@
       "fullsize": "/images/items/holsters/holster_mags.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.08,
       "rarity": "Common",
-      "canAttach": []
+      "canAttach": [],
+      "basePrice": 90,
+      "sellPrices": [
+        63,
+        63,
+        90,
+        54,
+        36,
+        63
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vestholster.06",
+          "level": 1,
+          "price": 565,
+          "bundle": 1,
+          "bundlePrice": 565,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -165,10 +318,35 @@
       "fullsize": "/images/items/holsters/holster_mags_pumpkin.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.08,
       "rarity": "Common",
-      "canAttach": []
+      "canAttach": [],
+      "basePrice": 99,
+      "sellPrices": [
+        99,
+        99,
+        99,
+        99,
+        99,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vestholster.06.pumpkin",
+          "level": 1,
+          "price": 665,
+          "bundle": 1,
+          "bundlePrice": 665,
+          "stock": 66,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.zombie"
+          ],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -184,10 +362,33 @@
       "fullsize": "/images/items/holsters/holster_water.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 0.17,
       "rarity": "Uncommon",
-      "canAttach": []
+      "canAttach": [],
+      "basePrice": 1560,
+      "sellPrices": [
+        1092,
+        1092,
+        1560,
+        936,
+        624,
+        1092
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vestholster.water",
+          "level": 2,
+          "price": 1532,
+          "bundle": 1,
+          "bundlePrice": 1532,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   }

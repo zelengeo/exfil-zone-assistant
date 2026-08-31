@@ -1,18 +1,27 @@
 import React, { useState } from 'react';
 import { Link2, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+
+type ButtonProps = React.ComponentProps<typeof Button>;
 
 interface ShareButtonProps {
     getShareLink: () => string;
     title: string;
     className?: string;
-    size?: 'sm' | 'default' | 'lg' | 'icon';
+    variant?: ButtonProps['variant'];
+    size?: ButtonProps['size'];
 }
+
+/** The skin the pre-Cold-Steel call sites still expect. Rewritten views pass a variant instead. */
+const LEGACY_SKIN =
+    'bg-military-800 hover:bg-military-700 border-military-600 hover:border-olive-600 text-tan-300 hover:text-olive-400';
 
 export default function ShareButton({
                                         getShareLink,
-                                        className = 'bg-military-800 hover:bg-military-700 border-military-600 hover:border-olive-600 text-tan-300 hover:text-olive-400',
+                                        className,
                                         title,
+                                        variant = 'outline',
                                         size = 'sm'
                                     }: ShareButtonProps) {
     const [copied, setCopied] = useState(false);
@@ -35,9 +44,13 @@ export default function ShareButton({
     return (
         <Button
             onClick={handleCopyLink}
-            variant={'outline'}
+            variant={variant}
             size={size}
-            className={`${className} ${copied ? 'bg-green-600 hover:bg-green-700' : ''}`}
+            className={cn(
+                variant === 'outline' && !className && LEGACY_SKIN,
+                className,
+                copied && 'bg-good hover:bg-good text-ember-ink border-good',
+            )}
             title="Copy link to this setup"
         >
             {copied ? (

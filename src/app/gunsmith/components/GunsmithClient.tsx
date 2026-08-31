@@ -1,23 +1,21 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Pencil, RotateCcw, Save } from 'lucide-react';
+import { CopyPlus, Pencil, RotateCcw, Save } from 'lucide-react';
 import { toast } from 'sonner';
 import { cn } from '@/lib/utils';
 import type { SavedBuild } from '@/types/gunsmith';
+import ShareButton from '@/components/ShareButton';
+import { Button } from '@/components/ui/button';
 import { fittedToSavedParts } from '@/lib/gunsmith/build';
 import BuildSlotList from '@/components/gunsmith/BuildSlotList';
 import BuildSummary from '@/components/gunsmith/BuildSummary';
 import GunsmithStats from '@/components/gunsmith/GunsmithStats';
 import PartPicker from '@/components/gunsmith/PartPicker';
-import RecoilPattern from '@/components/gunsmith/RecoilPattern';
 import { useGunsmithBuild, useSlotCandidates } from '../hooks/useGunsmithBuild';
 import { useSavedBuilds } from '../hooks/useSavedBuilds';
 import SavedBuildsRail from './SavedBuildsRail';
 import WeaponPicker from './WeaponPicker';
-
-const ROUND_OPTIONS = [5, 10, 20, 30];
-const DISTANCE_OPTIONS = [25, 50, 100];
 
 export default function GunsmithClient() {
     const state = useGunsmithBuild();
@@ -27,8 +25,6 @@ export default function GunsmithClient() {
     const [renaming, setRenaming] = useState(false);
     const [changingWeapon, setChangingWeapon] = useState(false);
     const [activeSavedId, setActiveSavedId] = useState<string | null>(null);
-    const [rounds, setRounds] = useState(20);
-    const [distance, setDistance] = useState(50);
 
     // Below the three-column breakpoint the picker sits under the bench, so picking a slot would
     // otherwise look like nothing happened.
@@ -61,16 +57,22 @@ export default function GunsmithClient() {
 
     const { build, baseline, data } = state;
 
-    const handleSave = () => {
+    /**
+     * `asNew` is the difference between editing a build and forking one. Opening a saved build and
+     * pressing Save updates it in place, which is what you want nine times in ten — and exactly
+     * what you do not want the tenth, when the old one was worth keeping.
+     */
+    const handleSave = (asNew = false) => {
         const record = saved.save({
-            id: activeSavedId ?? undefined,
-            name: state.name.trim() || 'Untitled build',
+            id: asNew ? undefined : activeSavedId ?? undefined,
+            name: asNew ? `${state.name.trim() || 'Untitled build'} (copy)` : state.name.trim() || 'Untitled build',
             receiverId: state.receiver!.gameId.toLowerCase(),
             basePresetId: state.preset?.id,
             parts: fittedToSavedParts(state.fitted),
         });
         setActiveSavedId(record.id);
-        toast.success(`Saved "${record.name}"`);
+        if (asNew) state.rename(record.name);
+        toast.success(asNew ? `Saved a copy as "${record.name}"` : `Saved "${record.name}"`);
     };
 
     const handleOpenSaved = (record: SavedBuild) => {
@@ -104,7 +106,7 @@ export default function GunsmithClient() {
                 <header className="bg-steel-900 border border-line-900 px-4 py-3">
                     <div className="flex flex-wrap items-center gap-2">
                         <span className="font-mono text-[10px] tracking-eyebrow uppercase text-ink-600">
-                            {[state.receiver.name, build.display.caliber, `${build.parts.length} parts`]
+                            {[state.receiver.name, build.display.caliber]
                                 .filter(Boolean)
                                 .join(' · ')}
                         </span>
@@ -145,27 +147,47 @@ export default function GunsmithClient() {
 
                         <div className="flex items-center gap-2 ml-auto">
                             {state.preset && (
-                                <button
+                                <Button
                                     type="button"
+                                    variant="quiet"
+                                    size="micro"
                                     onClick={() => {
                                         state.resetToPreset();
                                         toast.info('Back to the factory preset');
                                     }}
                                     disabled={!state.dirty}
-                                    className="micro-label border border-line-600 text-ink-500 hover:text-ink-100 disabled:opacity-40 disabled:hover:text-ink-500 px-2.5 py-1.5 transition-colors inline-flex items-center gap-1.5"
                                 >
-                                    <RotateCcw size={11} />
+                                    <RotateCcw />
                                     Reset
-                                </button>
+                                </Button>
                             )}
-                            <button
+                            <ShareButton
+                                getShareLink={state.shareLink}
+                                title="Share"
+                                variant="quiet"
+                                size="micro"
+                            />
+                            {activeSavedId && (
+                                <Button
+                                    type="button"
+                                    variant="quiet"
+                                    size="micro"
+                                    onClick={() => handleSave(true)}
+                                >
+                                    <CopyPlus />
+                                    Save as new
+                                </Button>
+                            )}
+                            {/* The one ember on this screen. */}
+                            <Button
                                 type="button"
-                                onClick={handleSave}
-                                className="micro-label bg-ember hover:bg-ember-hover text-ember-ink px-3 py-1.5 transition-colors inline-flex items-center gap-1.5"
+                                variant="ember"
+                                size="micro"
+                                onClick={() => handleSave(false)}
                             >
-                                <Save size={11} />
-                                Save build
-                            </button>
+                                <Save />
+                                {activeSavedId ? 'Update build' : 'Save build'}
+                            </Button>
                         </div>
                     </div>
 
@@ -187,6 +209,8 @@ export default function GunsmithClient() {
                         </span>
                     </div>
                     <BuildSlotList
+                        receiver={build.receiver}
+                        onChangeReceiver={() => setChangingWeapon(true)}
                         slots={build.slots}
                         universal={build.universal}
                         selectedSlotId={state.selectedSlot}
@@ -195,54 +219,16 @@ export default function GunsmithClient() {
                     />
                 </div>
 
-                <section className="bg-steel-900 border border-line-900 p-3">
-                    <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
-                        <h2 className="eyebrow">Recoil pattern</h2>
-                        <div className="flex items-center gap-3">
-                            <Choice
-                                label="Rounds"
-                                options={ROUND_OPTIONS}
-                                value={rounds}
-                                onChange={setRounds}
-                            />
-                            <Choice
-                                label="Distance"
-                                options={DISTANCE_OPTIONS}
-                                value={distance}
-                                onChange={setDistance}
-                                suffix="m"
-                            />
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-[minmax(0,320px)_minmax(0,1fr)] gap-4">
-                        <RecoilPattern
-                            recoilParameters={build.sim.recoilParameters}
-                            fireRate={build.sim.fireRate}
-                            moa={build.sim.MOA}
-                            rounds={rounds}
-                            distance={distance}
-                            baseline={baseline?.sim.recoilParameters ?? null}
-                            className="aspect-[3/4]"
-                        />
-                        <div className="text-[12px] text-ink-500 leading-relaxed space-y-2">
-                            <p>
-                                Each dot is one round, placed where the crosshair sat before that round&apos;s own
-                                kick. It runs the game&apos;s own integrator at its fixed 3.47 ms step, including
-                                the shoulder-rest gate that holds a shot&apos;s climb back until the gun has
-                                finished travelling into the shoulder — which is why a fast burst jumps in
-                                fewer, larger steps than its rate of fire suggests.
+                {build.warnings.length > 0 && (
+                    <div className="bg-steel-900 border border-line-900 p-3">
+                        <span className="eyebrow">Notes on this build</span>
+                        {build.warnings.map((warning) => (
+                            <p key={warning} className="text-[12px] text-warn leading-relaxed mt-1">
+                                {warning}
                             </p>
-                            <p>
-                                The dashed line is the factory preset, the same baseline the six deltas above are
-                                measured against. The faint disc is the spread cone the barrel adds on top.
-                            </p>
-                            {build.warnings.map((warning) => (
-                                <p key={warning} className="text-warn">{warning}</p>
-                            ))}
-                        </div>
+                        ))}
                     </div>
-                </section>
+                )}
             </div>
 
             <div
@@ -280,8 +266,13 @@ export default function GunsmithClient() {
                 presets={data.presets}
                 index={data.index}
                 currentId={state.preset?.id}
+                currentReceiverId={build.receiver.gameId.toLowerCase()}
                 onPick={(weapon) => {
                     state.loadPreset(weapon);
+                    setActiveSavedId(null);
+                }}
+                onPickReceiver={(receiver) => {
+                    state.loadReceiver(receiver);
                     setActiveSavedId(null);
                 }}
             />
@@ -289,31 +280,3 @@ export default function GunsmithClient() {
     );
 }
 
-function Choice({ label, options, value, onChange, suffix }: {
-    label: string;
-    options: number[];
-    value: number;
-    onChange: (value: number) => void;
-    suffix?: string;
-}) {
-    return (
-        <div className="flex items-center gap-1.5">
-            <span className="micro-label text-ink-700">{label}</span>
-            {options.map((option) => (
-                <button
-                    key={option}
-                    type="button"
-                    onClick={() => onChange(option)}
-                    className={cn(
-                        'font-mono text-[10px] px-1.5 py-1 border transition-colors',
-                        option === value
-                            ? 'border-line-400 text-ink-200 bg-steel-700'
-                            : 'border-line-800 text-ink-600 hover:text-ink-300',
-                    )}
-                >
-                    {`${option}${suffix ?? ''}`}
-                </button>
-            ))}
-        </div>
-    );
-}

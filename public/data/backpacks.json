@@ -11,7 +11,6 @@
       "fullsize": "/images/items/backpacks/backpack_007_pumpkin.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 2.7,
       "rarity": "Epic",
       "sizes": "62x23x33",
@@ -43,7 +42,17 @@
             "Holster"
           ]
         }
-      ]
+      ],
+      "basePrice": 26000,
+      "sellPrices": [
+        26000,
+        26000,
+        26000,
+        26000,
+        26000,
+        18200
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -59,7 +68,6 @@
       "fullsize": "/images/items/backpacks/backpack_3drt.webp"
     },
     "stats": {
-      "price": 20000,
       "weight": 1.1,
       "rarity": "Uncommon",
       "sizes": "47x18x27",
@@ -78,6 +86,30 @@
             "Holster"
           ]
         }
+      ],
+      "basePrice": 6880,
+      "sellPrices": [
+        4816,
+        4816,
+        6880,
+        4128,
+        2752,
+        4816
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.backpack.lv1.01",
+          "level": 1,
+          "price": 17199,
+          "bundle": 1,
+          "bundlePrice": 17199,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -94,7 +126,6 @@
       "fullsize": "/images/items/backpacks/backpack_6sh118.webp"
     },
     "stats": {
-      "price": 300000,
       "weight": 3.1,
       "rarity": "Epic",
       "sizes": "79x28x36",
@@ -115,6 +146,30 @@
             "Vest"
           ]
         }
+      ],
+      "basePrice": 75600,
+      "sellPrices": [
+        52920,
+        52920,
+        75600,
+        45360,
+        30240,
+        52920
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.backpack.lv3.01",
+          "level": 4,
+          "price": 252000,
+          "bundle": 1,
+          "bundlePrice": 252000,
+          "stock": 29,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -131,7 +186,6 @@
       "fullsize": "/images/items/backpacks/backpack_eliteops.webp"
     },
     "stats": {
-      "price": 40000,
       "weight": 2,
       "rarity": "Rare",
       "sizes": "48x18x29",
@@ -157,6 +211,30 @@
             "Holster"
           ]
         }
+      ],
+      "basePrice": 16100,
+      "sellPrices": [
+        11270,
+        11270,
+        16100,
+        9660,
+        6440,
+        11270
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.backpack.lv2.01",
+          "level": 1,
+          "price": 40248,
+          "bundle": 1,
+          "bundlePrice": 40248,
+          "stock": 99,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -173,7 +251,6 @@
       "fullsize": "/images/items/backpacks/backpack_eliteops_green.webp"
     },
     "stats": {
-      "price": 40000,
       "weight": 2,
       "rarity": "Rare",
       "sizes": "48x18x29",
@@ -199,6 +276,48 @@
             "Holster"
           ]
         }
+      ],
+      "basePrice": 16100,
+      "sellPrices": [
+        11270,
+        11270,
+        16100,
+        9660,
+        6440,
+        11270
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.backpack.lv2.green",
+          "level": 2,
+          "price": 40248,
+          "bundle": 1,
+          "bundlePrice": 40248,
+          "stock": 29,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "forge",
+          "goodsId": "gds.backpack.lv2.green-2",
+          "level": 2,
+          "price": 40248,
+          "bundle": 1,
+          "bundlePrice": 40248,
+          "stock": 9,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.newphone",
+              "count": 1
+            }
+          ]
+        }
       ]
     },
     "tips": ""
@@ -215,7 +334,6 @@
       "fullsize": "/images/items/backpacks/backpack_gnjbackpack.webp"
     },
     "stats": {
-      "price": 80000,
       "weight": 2.7,
       "rarity": "Epic",
       "sizes": "62x23x33",
@@ -247,6 +365,30 @@
             "Holster"
           ]
         }
+      ],
+      "basePrice": 57750,
+      "sellPrices": [
+        40425,
+        40425,
+        57750,
+        34650,
+        23100,
+        40425
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.backpack.bp007",
+          "level": 3,
+          "price": 192500,
+          "bundle": 1,
+          "bundlePrice": 192500,
+          "stock": 29,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -263,7 +405,6 @@
       "fullsize": "/images/items/backpacks/backpack_hypertec.webp"
     },
     "stats": {
-      "price": 200000,
       "weight": 2.9,
       "rarity": "Epic",
       "sizes": "72x20x35",
@@ -284,6 +425,32 @@
             "Vest"
           ]
         }
+      ],
+      "basePrice": 52920,
+      "sellPrices": [
+        37044,
+        37044,
+        52920,
+        31752,
+        21168,
+        37044
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.backpack.bp006",
+          "level": 3,
+          "price": 176400,
+          "bundle": 1,
+          "bundlePrice": 176400,
+          "stock": 29,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.gear.a.10"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -300,7 +467,6 @@
       "fullsize": "/images/items/backpacks/backpack_mb.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 2.7,
       "rarity": "Epic",
       "sizes": "53x19x31",
@@ -332,6 +498,30 @@
             "Holster"
           ]
         }
+      ],
+      "basePrice": 26283,
+      "sellPrices": [
+        18399,
+        18399,
+        26283,
+        15770,
+        10513,
+        18399
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.backpack.mbod",
+          "level": 2,
+          "price": 85050,
+          "bundle": 1,
+          "bundlePrice": 85050,
+          "stock": 39,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -348,7 +538,6 @@
       "fullsize": "/images/items/backpacks/backpack_odldos_black.webp"
     },
     "stats": {
-      "price": 20000,
       "weight": 1.75,
       "rarity": "Rare",
       "sizes": "45x18x34",
@@ -359,7 +548,51 @@
         "unit": 1
       },
       "sellId": "backpack.odldos.black",
-      "attachmentPoints": []
+      "attachmentPoints": [],
+      "basePrice": 22680,
+      "sellPrices": [
+        15876,
+        15876,
+        22680,
+        13608,
+        9072,
+        15876
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.backpack.odldos.black-2",
+          "level": 1,
+          "price": 75600,
+          "bundle": 1,
+          "bundlePrice": 75600,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.c.08"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.household.deodorant",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.backpack.odldos.black",
+          "level": 2,
+          "price": 75600,
+          "bundle": 1,
+          "bundlePrice": 75600,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -375,7 +608,6 @@
       "fullsize": "/images/items/backpacks/backpack_odldos_flower.webp"
     },
     "stats": {
-      "price": 20000,
       "weight": 1.8,
       "rarity": "Rare",
       "sizes": "52x18x34",
@@ -386,7 +618,33 @@
         "unit": 1
       },
       "sellId": "backpack.odldos.flower",
-      "attachmentPoints": []
+      "attachmentPoints": [],
+      "basePrice": 27720,
+      "sellPrices": [
+        19404,
+        19404,
+        27720,
+        16632,
+        11088,
+        19404
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.backpack.odldos.flower",
+          "level": 3,
+          "price": 92400,
+          "bundle": 1,
+          "bundlePrice": 92400,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.b.06"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -402,7 +660,6 @@
       "fullsize": "/images/items/backpacks/backpack_operatorgreencamo.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 2.7,
       "rarity": "Epic",
       "sizes": "55x18x35",
@@ -434,6 +691,30 @@
             "Holster"
           ]
         }
+      ],
+      "basePrice": 35294,
+      "sellPrices": [
+        24706,
+        24706,
+        35294,
+        21176,
+        14118,
+        24706
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.backpack.operatorgreencamo",
+          "level": 3,
+          "price": 111375,
+          "bundle": 1,
+          "bundlePrice": 111375,
+          "stock": 29,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -450,7 +731,6 @@
       "fullsize": "/images/items/backpacks/backpack_robinson.webp"
     },
     "stats": {
-      "price": 60000,
       "weight": 2.4,
       "rarity": "Epic",
       "sizes": "56x19x36",
@@ -481,6 +761,30 @@
             "Helmet"
           ]
         }
+      ],
+      "basePrice": 40500,
+      "sellPrices": [
+        28350,
+        28350,
+        40500,
+        24300,
+        16200,
+        28350
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.backpack.robinson",
+          "level": 3,
+          "price": 135000,
+          "bundle": 1,
+          "bundlePrice": 135000,
+          "stock": 29,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -497,7 +801,6 @@
       "fullsize": "/images/items/backpacks/backpack_rucksack.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 1.3,
       "rarity": "Common",
       "sizes": "33x12.650868x19",
@@ -508,7 +811,31 @@
         "unit": 1
       },
       "sellId": "backpack.rs",
-      "attachmentPoints": []
+      "attachmentPoints": [],
+      "basePrice": 3240,
+      "sellPrices": [
+        2268,
+        2268,
+        3240,
+        1944,
+        1296,
+        2268
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.backpack.rs",
+          "level": 1,
+          "price": 8100,
+          "bundle": 1,
+          "bundlePrice": 8100,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -524,7 +851,6 @@
       "fullsize": "/images/items/backpacks/backpack_sportbag.webp"
     },
     "stats": {
-      "price": 1000,
       "weight": 1.2,
       "rarity": "Common",
       "sizes": "34x13x19.002891",
@@ -535,7 +861,31 @@
         "unit": 1
       },
       "sellId": "backpack.lv1.sportbag",
-      "attachmentPoints": []
+      "attachmentPoints": [],
+      "basePrice": 4500,
+      "sellPrices": [
+        3150,
+        3150,
+        4500,
+        2700,
+        1800,
+        3150
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.backpack.lv1.sportbag",
+          "level": 1,
+          "price": 11250,
+          "bundle": 1,
+          "bundlePrice": 11250,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   }

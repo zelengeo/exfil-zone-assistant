@@ -12,7 +12,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 100,
       "caliber": "12.7x55",
       "weight": 0.01,
       "damage": 120,
@@ -55,7 +54,53 @@
           }
         ]
       },
-      "bulletProfileId": "127x55_DamageType_FMJ"
+      "bulletProfileId": "127x55_DamageType_FMJ",
+      "basePrice": 62,
+      "sellPrices": [
+        62,
+        62,
+        44,
+        44,
+        44,
+        62
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.bullet.127x55.fmjv1",
+          "level": 1,
+          "price": 480,
+          "bundle": 15,
+          "bundlePrice": 7200,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.marc.part2.01"
+          ],
+          "requiresDlc": [
+            "dlc.s5.brokencontact"
+          ],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.127x55.fmjv1-2",
+          "level": 3,
+          "price": 480,
+          "bundle": 15,
+          "bundlePrice": 7200,
+          "stock": 60,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "medical.medical_pro_needle_lv1",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "tips": ""
   },
@@ -72,7 +117,6 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 100,
       "caliber": "12.7x55",
       "weight": 0.01,
       "damage": 108,
@@ -115,7 +159,53 @@
           }
         ]
       },
-      "bulletProfileId": "127x55_DamageType_FMJv3"
+      "bulletProfileId": "127x55_DamageType_FMJv3",
+      "basePrice": 254,
+      "sellPrices": [
+        254,
+        254,
+        178,
+        178,
+        178,
+        254
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.bullet.127x55.fmjv3",
+          "level": 1,
+          "price": 1950,
+          "bundle": 15,
+          "bundlePrice": 29250,
+          "stock": 66,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.marc.part3.01"
+          ],
+          "requiresDlc": [
+            "dlc.s5.brokencontact"
+          ],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.127x55.fmjv3-2",
+          "level": 4,
+          "price": 1950,
+          "bundle": 15,
+          "bundlePrice": 29250,
+          "stock": 30,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.household.deodorant",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "tips": ""
   },
@@ -132,7 +222,6 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 100,
       "caliber": "12.7x55",
       "weight": 0.01,
       "damage": 170,
@@ -175,7 +264,51 @@
           }
         ]
       },
-      "bulletProfileId": "127x55_DamageType_HPv1"
+      "bulletProfileId": "127x55_DamageType_HPv1",
+      "basePrice": 34,
+      "sellPrices": [
+        34,
+        34,
+        24,
+        24,
+        24,
+        34
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.bullet.127x55.hpv1",
+          "level": 1,
+          "price": 260,
+          "bundle": 15,
+          "bundlePrice": 3900,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s5.brokencontact"
+          ],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.127x55.hpv1-2",
+          "level": 2,
+          "price": 260,
+          "bundle": 15,
+          "bundlePrice": 3900,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.ionbattery",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "tips": ""
   },
@@ -192,7 +325,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 100,
       "caliber": "12GA",
       "weight": 0.01,
       "damage": 20,
@@ -235,7 +367,70 @@
           }
         ]
       },
-      "bulletProfileId": "12Gauge_DamageType_Buckshot7"
+      "bulletProfileId": "12Gauge_DamageType_Buckshot7",
+      "basePrice": 6,
+      "sellPrices": [
+        6,
+        6,
+        5,
+        5,
+        5,
+        6
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.12ga.buck7mm",
+          "level": 1,
+          "price": 47,
+          "bundle": 15,
+          "bundlePrice": 705,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.12ga.buck7mm.na",
+          "level": 1,
+          "price": 47,
+          "bundle": 15,
+          "bundlePrice": 705,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.12ga.buck7mm_Gunsmith_one",
+          "level": 1,
+          "price": 47,
+          "bundle": 1,
+          "bundlePrice": 47,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.12ga.buck7mm_WeaponWP_one",
+          "level": 1,
+          "price": 47,
+          "bundle": 1,
+          "bundlePrice": 47,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -252,7 +447,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 505,
       "caliber": "12GA",
       "weight": 0.045,
       "damage": 22,
@@ -296,6 +490,56 @@
         ]
       },
       "bulletProfileId": "12Gauge_DamageType_BuckshotAP",
+      "basePrice": 164,
+      "sellPrices": [
+        164,
+        164,
+        115,
+        115,
+        115,
+        164
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.12ga.buckapv1",
+          "level": 4,
+          "price": 1265,
+          "bundle": 15,
+          "bundlePrice": 18975,
+          "stock": 99,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.12ga.buckapv1_Gunsmith_one",
+          "level": 4,
+          "price": 1265,
+          "bundle": 1,
+          "bundlePrice": 1265,
+          "stock": -1,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.12ga.buckapv1_WeaponWP_one",
+          "level": 4,
+          "price": 1265,
+          "bundle": 1,
+          "bundlePrice": 1265,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 14.53,
         "120m": 9.36,
@@ -325,7 +569,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 85,
       "caliber": "12GA",
       "weight": 0.045,
       "damage": 25,
@@ -373,6 +616,56 @@
         ]
       },
       "bulletProfileId": "12Gauge_DamageType_BuckshotHP",
+      "basePrice": 158,
+      "sellPrices": [
+        158,
+        158,
+        111,
+        111,
+        111,
+        158
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.12ga.buckhp",
+          "level": 2,
+          "price": 1215,
+          "bundle": 15,
+          "bundlePrice": 18225,
+          "stock": 60,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.12ga.buckhp_Gunsmith_one",
+          "level": 2,
+          "price": 1215,
+          "bundle": 1,
+          "bundlePrice": 1215,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.12ga.buckhp_WeaponWP_one",
+          "level": 2,
+          "price": 1215,
+          "bundle": 1,
+          "bundlePrice": 1215,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 9.29,
         "120m": 6.92,
@@ -402,7 +695,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 765,
       "caliber": "12GA",
       "weight": 0.055,
       "damage": 145,
@@ -446,6 +738,41 @@
         ]
       },
       "bulletProfileId": "12Gauge_DamageType_SlugAPv2",
+      "basePrice": 190,
+      "sellPrices": [
+        190,
+        190,
+        133,
+        133,
+        133,
+        190
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.12ga.apv2-2",
+          "level": 4,
+          "price": 1459,
+          "bundle": 15,
+          "bundlePrice": 21885,
+          "stock": 99,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.wp.a.11"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.building.spraycan",
+              "count": 1
+            },
+            {
+              "id": "valuable.combustible.gunoil",
+              "count": 1
+            }
+          ]
+        }
+      ],
       "damageAtRange": {
         "60m": 182,
         "120m": 134.14,
@@ -475,7 +802,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 426,
       "caliber": "12GA",
       "weight": 0.055,
       "damage": 265,
@@ -519,6 +845,41 @@
         ]
       },
       "bulletProfileId": "12Gauge_DamageType_SlugHPv3",
+      "basePrice": 219,
+      "sellPrices": [
+        219,
+        219,
+        154,
+        154,
+        154,
+        219
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.12ga.hpv3-2",
+          "level": 4,
+          "price": 1681,
+          "bundle": 15,
+          "bundlePrice": 25215,
+          "stock": 66,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.gunsmith.m01"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.building.spraycan",
+              "count": 4
+            },
+            {
+              "id": "valuable.combustible.lighter.fix",
+              "count": 4
+            }
+          ]
+        }
+      ],
       "damageAtRange": {
         "60m": 160.43,
         "120m": 99.01,
@@ -548,7 +909,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 100,
       "caliber": "12GA",
       "weight": 0.01,
       "damage": 182,
@@ -591,7 +951,57 @@
           }
         ]
       },
-      "bulletProfileId": "12Gauge_DamageType_SlugAPv1"
+      "bulletProfileId": "12Gauge_DamageType_SlugAPv1",
+      "basePrice": 124,
+      "sellPrices": [
+        124,
+        124,
+        87,
+        87,
+        87,
+        124
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.12ga.apv1",
+          "level": 3,
+          "price": 956,
+          "bundle": 15,
+          "bundlePrice": 14340,
+          "stock": 89,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.12ga.apv1_Gunsmith_one",
+          "level": 3,
+          "price": 956,
+          "bundle": 1,
+          "bundlePrice": 956,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.12ga.apv1_WeaponWP_one",
+          "level": 3,
+          "price": 956,
+          "bundle": 1,
+          "bundlePrice": 956,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -608,7 +1018,6 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 100,
       "caliber": "12GA",
       "weight": 0.01,
       "damage": 150,
@@ -651,7 +1060,63 @@
           }
         ]
       },
-      "bulletProfileId": "12Gauge_DamageType_SlugFMJv1"
+      "bulletProfileId": "12Gauge_DamageType_SlugFMJv1",
+      "basePrice": 12,
+      "sellPrices": [
+        12,
+        12,
+        9,
+        9,
+        9,
+        12
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.12ga.fmjv1",
+          "level": 2,
+          "price": 95,
+          "bundle": 15,
+          "bundlePrice": 1425,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.b.11"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.12ga.fmjv1_Gunsmith_one",
+          "level": 2,
+          "price": 95,
+          "bundle": 1,
+          "bundlePrice": 95,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.b.11"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.12ga.fmjv1_WeaponWP_one",
+          "level": 2,
+          "price": 95,
+          "bundle": 1,
+          "bundlePrice": 95,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.b.11"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -668,7 +1133,6 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 100,
       "caliber": "12GA",
       "weight": 0.01,
       "damage": 168,
@@ -711,7 +1175,57 @@
           }
         ]
       },
-      "bulletProfileId": "12Gauge_DamageType_SlugHPv1"
+      "bulletProfileId": "12Gauge_DamageType_SlugHPv1",
+      "basePrice": 11,
+      "sellPrices": [
+        11,
+        11,
+        8,
+        8,
+        8,
+        11
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.12ga.hpv1",
+          "level": 1,
+          "price": 88,
+          "bundle": 15,
+          "bundlePrice": 1320,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.12ga.hpv1_Gunsmith_one",
+          "level": 1,
+          "price": 88,
+          "bundle": 1,
+          "bundlePrice": 88,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.12ga.hpv1_WeaponWP_one",
+          "level": 1,
+          "price": 88,
+          "bundle": 1,
+          "bundlePrice": 88,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -728,7 +1242,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 100,
       "caliber": "12GA",
       "weight": 0.01,
       "damage": 220,
@@ -771,7 +1284,57 @@
           }
         ]
       },
-      "bulletProfileId": "12Gauge_DamageType_SlugHPv2"
+      "bulletProfileId": "12Gauge_DamageType_SlugHPv2",
+      "basePrice": 154,
+      "sellPrices": [
+        154,
+        154,
+        108,
+        108,
+        108,
+        154
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.12ga.hpv2",
+          "level": 3,
+          "price": 1182,
+          "bundle": 15,
+          "bundlePrice": 17730,
+          "stock": 89,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.12ga.hpv2_Gunsmith_one",
+          "level": 3,
+          "price": 1182,
+          "bundle": 1,
+          "bundlePrice": 1182,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.12ga.hpv2_WeaponWP_one",
+          "level": 3,
+          "price": 1182,
+          "bundle": 1,
+          "bundlePrice": 1182,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -788,7 +1351,6 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 400,
       "caliber": ".45 ACP",
       "weight": 0.015,
       "damage": 63,
@@ -832,6 +1394,62 @@
         ]
       },
       "bulletProfileId": "45ACP_DamageType_APv1",
+      "basePrice": 136,
+      "sellPrices": [
+        136,
+        136,
+        96,
+        96,
+        96,
+        136
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.45acp.apv1",
+          "level": 4,
+          "price": 1047,
+          "bundle": 15,
+          "bundlePrice": 15705,
+          "stock": 99,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.wp.a.03"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.45acp.apv1_Gunsmith_one",
+          "level": 4,
+          "price": 1047,
+          "bundle": 1,
+          "bundlePrice": 1047,
+          "stock": -1,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.wp.a.03"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.45acp.apv1_WeaponNA_one",
+          "level": 4,
+          "price": 1047,
+          "bundle": 1,
+          "bundlePrice": 1047,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.a.03"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 63,
         "120m": 49.06,
@@ -861,7 +1479,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 110,
       "caliber": ".45 ACP",
       "weight": 0.015,
       "damage": 75,
@@ -905,6 +1522,69 @@
         ]
       },
       "bulletProfileId": "45ACP_DamageType_FMJ",
+      "basePrice": 15,
+      "sellPrices": [
+        15,
+        15,
+        11,
+        11,
+        11,
+        15
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.45acp.fmjv1",
+          "level": 1,
+          "price": 115,
+          "bundle": 15,
+          "bundlePrice": 1725,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.45acp.fmjv1_Gunsmith_one",
+          "level": 1,
+          "price": 115,
+          "bundle": 1,
+          "bundlePrice": 115,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.45acp.fmjv1_WeaponNA_one",
+          "level": 1,
+          "price": 115,
+          "bundle": 1,
+          "bundlePrice": 115,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.45acp.fmjv1_WeaponWP_one",
+          "level": 1,
+          "price": 115,
+          "bundle": 1,
+          "bundlePrice": 115,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 69.12,
         "120m": 46.48,
@@ -934,7 +1614,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 100,
       "caliber": ".45 ACP",
       "weight": 0.01,
       "damage": 86,
@@ -977,7 +1656,70 @@
           }
         ]
       },
-      "bulletProfileId": "45ACP_DamageType_HPV2"
+      "bulletProfileId": "45ACP_DamageType_HPV2",
+      "basePrice": 137,
+      "sellPrices": [
+        137,
+        137,
+        96,
+        96,
+        96,
+        137
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.45acp.hpv2",
+          "level": 3,
+          "price": 1053,
+          "bundle": 15,
+          "bundlePrice": 15795,
+          "stock": 89,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.45acp.hpv2_Gunsmith_one",
+          "level": 3,
+          "price": 1053,
+          "bundle": 1,
+          "bundlePrice": 1053,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.45acp.hpv2_WeaponNA_one",
+          "level": 3,
+          "price": 1053,
+          "bundle": 1,
+          "bundlePrice": 1053,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.45acp.hpv2_WeaponWP_one",
+          "level": 3,
+          "price": 1053,
+          "bundle": 1,
+          "bundlePrice": 1053,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -994,7 +1736,6 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 100,
       "caliber": ".45 ACP",
       "weight": 0.01,
       "damage": 105,
@@ -1037,7 +1778,33 @@
           }
         ]
       },
-      "bulletProfileId": "45ACP_DamageType_HPV3"
+      "bulletProfileId": "45ACP_DamageType_HPV3",
+      "basePrice": 311,
+      "sellPrices": [
+        311,
+        311,
+        218,
+        218,
+        218,
+        311
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.45acp.hpv3-2",
+          "level": 4,
+          "price": 2391,
+          "bundle": 15,
+          "bundlePrice": 35865,
+          "stock": 99,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.na.a.11"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -1054,7 +1821,6 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 190,
       "caliber": ".45 ACP",
       "weight": 0.015,
       "damage": 68,
@@ -1098,6 +1864,69 @@
         ]
       },
       "bulletProfileId": "45ACP_DamageType_Tracer",
+      "basePrice": 23,
+      "sellPrices": [
+        23,
+        23,
+        17,
+        17,
+        17,
+        23
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.45acp.tracerv1",
+          "level": 2,
+          "price": 175,
+          "bundle": 15,
+          "bundlePrice": 2625,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.45acp.tracerv1_Gunsmith_one",
+          "level": 2,
+          "price": 175,
+          "bundle": 1,
+          "bundlePrice": 175,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.45acp.tracerv1_WeaponNA_one",
+          "level": 2,
+          "price": 175,
+          "bundle": 1,
+          "bundlePrice": 175,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.45acp.tracerv1_WeaponWP_one",
+          "level": 2,
+          "price": 175,
+          "bundle": 1,
+          "bundlePrice": 175,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 68,
         "120m": 45.09,
@@ -1127,7 +1956,6 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 85,
       "weight": 0.015,
       "damage": 68,
       "penetration": 2.6,
@@ -1221,7 +2049,6 @@
     },
     "stats": {
       "rarity": "Ultimate",
-      "price": 100,
       "caliber": "5.45x39",
       "weight": 0.01,
       "damage": 46,
@@ -1264,7 +2091,46 @@
           }
         ]
       },
-      "bulletProfileId": "545x39_DamageType_APv1"
+      "bulletProfileId": "545x39_DamageType_APv1",
+      "basePrice": 318,
+      "sellPrices": [
+        318,
+        318,
+        223,
+        223,
+        223,
+        318
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.545x39.apv1-2",
+          "level": 4,
+          "price": 2446,
+          "bundle": 15,
+          "bundlePrice": 36690,
+          "stock": 49,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.gunsmith.m03"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.combustible.gascan",
+              "count": 1
+            },
+            {
+              "id": "valuable.combustible.match",
+              "count": 1
+            },
+            {
+              "id": "valuable.highvalue.camera",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "tips": ""
   },
@@ -1281,7 +2147,6 @@
     },
     "stats": {
       "rarity": "Ultimate",
-      "price": 100,
       "caliber": "5.45x39",
       "weight": 0.01,
       "damage": 38,
@@ -1324,7 +2189,46 @@
           }
         ]
       },
-      "bulletProfileId": "545x39_DamageType_APv2"
+      "bulletProfileId": "545x39_DamageType_APv2",
+      "basePrice": 463,
+      "sellPrices": [
+        463,
+        463,
+        325,
+        325,
+        325,
+        463
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.545x39.apv2-2",
+          "level": 4,
+          "price": 3563,
+          "bundle": 15,
+          "bundlePrice": 53445,
+          "stock": 49,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.gunsmith.m12"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.building.piezometer",
+              "count": 1
+            },
+            {
+              "id": "valuable.tools.gaspipewrench",
+              "count": 2
+            },
+            {
+              "id": "valuable.tools.sparkplug",
+              "count": 5
+            }
+          ]
+        }
+      ]
     },
     "tips": ""
   },
@@ -1341,7 +2245,6 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 145,
       "caliber": "5.45x39",
       "weight": 0.012,
       "damage": 61,
@@ -1385,6 +2288,58 @@
         ]
       },
       "bulletProfileId": "545x39_DamageType_FMJ",
+      "basePrice": 22,
+      "sellPrices": [
+        22,
+        22,
+        16,
+        16,
+        16,
+        22
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.545x39.fmjv1",
+          "level": 2,
+          "price": 167,
+          "bundle": 15,
+          "bundlePrice": 2505,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.b.10"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.545x39.fmjv1_Gunsmith_one",
+          "level": 2,
+          "price": 167,
+          "bundle": 1,
+          "bundlePrice": 167,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.545x39.fmjv1_WeaponWP_one",
+          "level": 2,
+          "price": 167,
+          "bundle": 1,
+          "bundlePrice": 167,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 61,
         "120m": 61,
@@ -1414,7 +2369,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 100,
       "caliber": "5.45x39",
       "weight": 0.01,
       "damage": 55,
@@ -1457,7 +2411,57 @@
           }
         ]
       },
-      "bulletProfileId": "545x39_DamageType_FMJv2"
+      "bulletProfileId": "545x39_DamageType_FMJv2",
+      "basePrice": 56,
+      "sellPrices": [
+        56,
+        56,
+        40,
+        40,
+        40,
+        56
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.545x39.fmjv2",
+          "level": 3,
+          "price": 427,
+          "bundle": 15,
+          "bundlePrice": 6405,
+          "stock": 89,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.545x39.fmjv2_Gunsmith_one",
+          "level": 3,
+          "price": 427,
+          "bundle": 1,
+          "bundlePrice": 427,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.545x39.fmjv2_WeaponWP_one",
+          "level": 3,
+          "price": 427,
+          "bundle": 1,
+          "bundlePrice": 427,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -1474,7 +2478,6 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 100,
       "caliber": "5.45x39",
       "weight": 0.01,
       "damage": 53,
@@ -1517,7 +2520,57 @@
           }
         ]
       },
-      "bulletProfileId": "545x39_DamageType_FMJv3"
+      "bulletProfileId": "545x39_DamageType_FMJv3",
+      "basePrice": 154,
+      "sellPrices": [
+        154,
+        154,
+        108,
+        108,
+        108,
+        154
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.545x39.fmjv3",
+          "level": 4,
+          "price": 1183,
+          "bundle": 15,
+          "bundlePrice": 17745,
+          "stock": 99,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.545x39.fmjv3_Gunsmith_one",
+          "level": 4,
+          "price": 1183,
+          "bundle": 1,
+          "bundlePrice": 1183,
+          "stock": -1,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.545x39.fmjv3_WeaponWP_one",
+          "level": 4,
+          "price": 1183,
+          "bundle": 1,
+          "bundlePrice": 1183,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -1534,7 +2587,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 65,
       "caliber": "5.45x39",
       "weight": 0.012,
       "damage": 70,
@@ -1578,6 +2630,62 @@
         ]
       },
       "bulletProfileId": "545x39_DamageType_HPv1",
+      "basePrice": 10,
+      "sellPrices": [
+        10,
+        10,
+        7,
+        7,
+        7,
+        10
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.545x39.hpv1",
+          "level": 1,
+          "price": 75,
+          "bundle": 15,
+          "bundlePrice": 1125,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.c.07"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.545x39.hpv1_Gunsmith_one",
+          "level": 1,
+          "price": 75,
+          "bundle": 1,
+          "bundlePrice": 75,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.c.08"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.545x39.hpv1_WeaponWP_one",
+          "level": 1,
+          "price": 75,
+          "bundle": 1,
+          "bundlePrice": 75,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.c.08"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 70,
         "120m": 70,
@@ -1607,7 +2715,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 100,
       "caliber": "5.45x39",
       "weight": 0.01,
       "damage": 80,
@@ -1650,7 +2757,57 @@
           }
         ]
       },
-      "bulletProfileId": "545x39_DamageType_HPv2"
+      "bulletProfileId": "545x39_DamageType_HPv2",
+      "basePrice": 7,
+      "sellPrices": [
+        7,
+        7,
+        5,
+        5,
+        5,
+        7
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.545x39.hpv2",
+          "level": 1,
+          "price": 53,
+          "bundle": 15,
+          "bundlePrice": 795,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.545x39.hpv2_Gunsmith_one",
+          "level": 1,
+          "price": 53,
+          "bundle": 1,
+          "bundlePrice": 53,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.545x39.hpv2_WeaponWP_one",
+          "level": 1,
+          "price": 53,
+          "bundle": 1,
+          "bundlePrice": 53,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -1667,7 +2824,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 285,
       "caliber": "5.45x39",
       "weight": 0.012,
       "damage": 58,
@@ -1711,6 +2867,60 @@
         ]
       },
       "bulletProfileId": "545x39_DamageType_Tracer",
+      "basePrice": 33,
+      "sellPrices": [
+        33,
+        33,
+        24,
+        24,
+        24,
+        33
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.545x39.tracerv1",
+          "level": 2,
+          "price": 251,
+          "bundle": 15,
+          "bundlePrice": 3765,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.545x39.tracerv1_Gunsmith_one",
+          "level": 2,
+          "price": 251,
+          "bundle": 1,
+          "bundlePrice": 251,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.b.10"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.545x39.tracerv1_WeaponWP_one",
+          "level": 2,
+          "price": 251,
+          "bundle": 1,
+          "bundlePrice": 251,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.b.10"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 58,
         "120m": 58,
@@ -1740,7 +2950,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 100,
       "caliber": "5.45x39",
       "weight": 0.01,
       "damage": 54,
@@ -1783,7 +2992,57 @@
           }
         ]
       },
-      "bulletProfileId": "545x39_DamageType_Tracerv2"
+      "bulletProfileId": "545x39_DamageType_Tracerv2",
+      "basePrice": 106,
+      "sellPrices": [
+        106,
+        106,
+        75,
+        75,
+        75,
+        106
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.545x39.tracerv2",
+          "level": 3,
+          "price": 813,
+          "bundle": 15,
+          "bundlePrice": 12195,
+          "stock": 89,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.545x39.tracerv2_Gunsmith_one",
+          "level": 3,
+          "price": 813,
+          "bundle": 1,
+          "bundlePrice": 813,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.545x39.tracerv2_WeaponWP_one",
+          "level": 3,
+          "price": 813,
+          "bundle": 1,
+          "bundlePrice": 813,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -1800,7 +3059,6 @@
     },
     "stats": {
       "rarity": "Ultimate",
-      "price": 1480,
       "caliber": "5.56x45",
       "weight": 0.013,
       "damage": 46,
@@ -1844,6 +3102,41 @@
         ]
       },
       "bulletProfileId": "556x45_DamageType_APv1",
+      "basePrice": 224,
+      "sellPrices": [
+        224,
+        224,
+        157,
+        157,
+        157,
+        224
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.556x45.apv1-2",
+          "level": 4,
+          "price": 1726,
+          "bundle": 15,
+          "bundlePrice": 25890,
+          "stock": 49,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.gunsmith.m02"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.household.beardoil",
+              "count": 5
+            },
+            {
+              "id": "valuable.tools.gaspipewrench",
+              "count": 2
+            }
+          ]
+        }
+      ],
       "damageAtRange": {
         "60m": 46,
         "120m": 46,
@@ -1873,7 +3166,6 @@
     },
     "stats": {
       "rarity": "Ultimate",
-      "price": 2173,
       "caliber": "5.56x45",
       "weight": 0.013,
       "damage": 39,
@@ -1917,6 +3209,45 @@
         ]
       },
       "bulletProfileId": "556x45_DamageType_APv2",
+      "basePrice": 321,
+      "sellPrices": [
+        321,
+        321,
+        225,
+        225,
+        225,
+        321
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.556x45.apv2-2",
+          "level": 4,
+          "price": 2466,
+          "bundle": 15,
+          "bundlePrice": 36990,
+          "stock": 49,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.gunsmith.m07"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.carbattery",
+              "count": 1
+            },
+            {
+              "id": "valuable.building.copperwire",
+              "count": 3
+            },
+            {
+              "id": "valuable.electric.radioscanner",
+              "count": 1
+            }
+          ]
+        }
+      ],
       "damageAtRange": {
         "60m": 39,
         "120m": 39,
@@ -1946,7 +3277,6 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 175,
       "caliber": "5.56x45",
       "weight": 0.012,
       "damage": 62,
@@ -1990,6 +3320,56 @@
         ]
       },
       "bulletProfileId": "556x45_DamageType_FMJ",
+      "basePrice": 26,
+      "sellPrices": [
+        26,
+        26,
+        19,
+        19,
+        19,
+        26
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.556x45.fmjv1",
+          "level": 2,
+          "price": 200,
+          "bundle": 15,
+          "bundlePrice": 3000,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.556x45.fmjv1_Gunsmith_one",
+          "level": 2,
+          "price": 200,
+          "bundle": 1,
+          "bundlePrice": 200,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.556x45.fmjv1_WeaponNA_one",
+          "level": 2,
+          "price": 200,
+          "bundle": 1,
+          "bundlePrice": 200,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 62,
         "120m": 62,
@@ -2019,7 +3399,6 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 100,
       "caliber": "5.56x45",
       "weight": 0.01,
       "damage": 49,
@@ -2062,7 +3441,57 @@
           }
         ]
       },
-      "bulletProfileId": "556x45_DamageType_FMJv3"
+      "bulletProfileId": "556x45_DamageType_FMJv3",
+      "basePrice": 193,
+      "sellPrices": [
+        193,
+        193,
+        136,
+        136,
+        136,
+        193
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.556x45.fmjv3",
+          "level": 4,
+          "price": 1482,
+          "bundle": 15,
+          "bundlePrice": 22230,
+          "stock": 99,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.556x45.fmjv3_Gunsmith_one",
+          "level": 4,
+          "price": 1482,
+          "bundle": 1,
+          "bundlePrice": 1482,
+          "stock": -1,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.556x45.fmjv3_WeaponNA_one",
+          "level": 4,
+          "price": 1482,
+          "bundle": 1,
+          "bundlePrice": 1482,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -2079,7 +3508,6 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 100,
       "caliber": "5.56x45",
       "weight": 0.01,
       "damage": 73,
@@ -2122,7 +3550,59 @@
           }
         ]
       },
-      "bulletProfileId": "556x45_DamageType_HPv1"
+      "bulletProfileId": "556x45_DamageType_HPv1",
+      "basePrice": 17,
+      "sellPrices": [
+        17,
+        17,
+        12,
+        12,
+        12,
+        17
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.556x45.hpv1",
+          "level": 1,
+          "price": 127,
+          "bundle": 15,
+          "bundlePrice": 1905,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.c.04"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.556x45.hpv1_Gunsmith_one",
+          "level": 1,
+          "price": 127,
+          "bundle": 1,
+          "bundlePrice": 127,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.556x45.hpv1_WeaponNA_one",
+          "level": 1,
+          "price": 127,
+          "bundle": 1,
+          "bundlePrice": 127,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -2139,7 +3619,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 100,
       "caliber": "5.56x45",
       "weight": 0.01,
       "damage": 81,
@@ -2182,7 +3661,57 @@
           }
         ]
       },
-      "bulletProfileId": "556x45_DamageType_HPv2"
+      "bulletProfileId": "556x45_DamageType_HPv2",
+      "basePrice": 9,
+      "sellPrices": [
+        9,
+        9,
+        7,
+        7,
+        7,
+        9
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.556x45.hpv2",
+          "level": 1,
+          "price": 72,
+          "bundle": 15,
+          "bundlePrice": 1080,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.556x45.hpv2_Gunsmith_one",
+          "level": 1,
+          "price": 72,
+          "bundle": 1,
+          "bundlePrice": 72,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.556x45.hpv2_WeaponNA_one",
+          "level": 1,
+          "price": 72,
+          "bundle": 1,
+          "bundlePrice": 72,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -2199,7 +3728,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 100,
       "caliber": "5.56x45",
       "weight": 0.01,
       "damage": 90,
@@ -2242,7 +3770,57 @@
           }
         ]
       },
-      "bulletProfileId": "556x45_DamageType_HPv3"
+      "bulletProfileId": "556x45_DamageType_HPv3",
+      "basePrice": 85,
+      "sellPrices": [
+        85,
+        85,
+        60,
+        60,
+        60,
+        85
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.556x45.hpv3",
+          "level": 3,
+          "price": 656,
+          "bundle": 15,
+          "bundlePrice": 9840,
+          "stock": 89,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.556x45.hpv3_Gunsmith_one",
+          "level": 3,
+          "price": 656,
+          "bundle": 1,
+          "bundlePrice": 656,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.556x45.hpv3_WeaponNA_one",
+          "level": 3,
+          "price": 656,
+          "bundle": 1,
+          "bundlePrice": 656,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -2259,7 +3837,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 480,
       "caliber": "5.56x45",
       "weight": 0.013,
       "damage": 56,
@@ -2303,6 +3880,56 @@
         ]
       },
       "bulletProfileId": "556x45_DamageType_FMJv2",
+      "basePrice": 71,
+      "sellPrices": [
+        71,
+        71,
+        50,
+        50,
+        50,
+        71
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.556x45.fmjv2",
+          "level": 3,
+          "price": 546,
+          "bundle": 15,
+          "bundlePrice": 8190,
+          "stock": 89,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.556x45.fmjv2_Gunsmith_one",
+          "level": 3,
+          "price": 546,
+          "bundle": 1,
+          "bundlePrice": 546,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.556x45.fmjv2_WeaponNA_one",
+          "level": 3,
+          "price": 546,
+          "bundle": 1,
+          "bundlePrice": 546,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 52,
         "120m": 52,
@@ -2332,7 +3959,6 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 100,
       "caliber": "5.56x45",
       "weight": 0.01,
       "damage": 58,
@@ -2375,7 +4001,63 @@
           }
         ]
       },
-      "bulletProfileId": "556x45_DamageType_Tracer"
+      "bulletProfileId": "556x45_DamageType_Tracer",
+      "basePrice": 42,
+      "sellPrices": [
+        42,
+        42,
+        30,
+        30,
+        30,
+        42
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.556x45.tracerv1",
+          "level": 2,
+          "price": 326,
+          "bundle": 15,
+          "bundlePrice": 4890,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.b.11"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.556x45.tracerv1_Gunsmith_one",
+          "level": 2,
+          "price": 326,
+          "bundle": 1,
+          "bundlePrice": 326,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.b.11"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.556x45.tracerv1_WeaponNA_one",
+          "level": 2,
+          "price": 326,
+          "bundle": 1,
+          "bundlePrice": 326,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.b.11"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -2392,7 +4074,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 100,
       "caliber": "5.56x45",
       "weight": 0.01,
       "damage": 52,
@@ -2435,7 +4116,63 @@
           }
         ]
       },
-      "bulletProfileId": "556x45_DamageType_Tracerv2"
+      "bulletProfileId": "556x45_DamageType_Tracerv2",
+      "basePrice": 138,
+      "sellPrices": [
+        138,
+        138,
+        97,
+        97,
+        97,
+        138
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.556x45.tracerv2",
+          "level": 3,
+          "price": 1064,
+          "bundle": 15,
+          "bundlePrice": 15960,
+          "stock": 89,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.b.12"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.556x45.tracerv2_Gunsmith_one",
+          "level": 3,
+          "price": 1064,
+          "bundle": 1,
+          "bundlePrice": 1064,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.b.12"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.556x45.tracerv2_WeaponNA_one",
+          "level": 3,
+          "price": 1064,
+          "bundle": 1,
+          "bundlePrice": 1064,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.b.12"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -2452,7 +4189,6 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 1680,
       "caliber": "6.8x51",
       "weight": 0.022,
       "damage": 73,
@@ -2496,6 +4232,62 @@
         ]
       },
       "bulletProfileId": "68x51_DamageType_APv1",
+      "basePrice": 292,
+      "sellPrices": [
+        292,
+        292,
+        205,
+        205,
+        205,
+        292
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.68x51.apv1",
+          "level": 4,
+          "price": 2244,
+          "bundle": 15,
+          "bundlePrice": 33660,
+          "stock": 48,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.na.a.13"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.68x51.apv1_Gunsmith_one",
+          "level": 4,
+          "price": 2244,
+          "bundle": 1,
+          "bundlePrice": 2244,
+          "stock": -1,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.na.a.13"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.68x51.apv1_WeaponNA_one",
+          "level": 4,
+          "price": 2244,
+          "bundle": 1,
+          "bundlePrice": 2244,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.a.13"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 73,
         "120m": 73,
@@ -2525,7 +4317,6 @@
     },
     "stats": {
       "rarity": "Ultimate",
-      "price": 100,
       "caliber": "6.8x51",
       "weight": 0.01,
       "damage": 66,
@@ -2568,7 +4359,38 @@
           }
         ]
       },
-      "bulletProfileId": "68x51_DamageType_APv2"
+      "bulletProfileId": "68x51_DamageType_APv2",
+      "basePrice": 416,
+      "sellPrices": [
+        416,
+        416,
+        292,
+        292,
+        292,
+        416
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.68x51.apv2-2",
+          "level": 4,
+          "price": 3197,
+          "bundle": 15,
+          "bundlePrice": 47955,
+          "stock": 29,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.gunsmith.m05"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.gameconsole",
+              "count": 2
+            }
+          ]
+        }
+      ]
     },
     "tips": ""
   },
@@ -2585,7 +4407,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 650,
       "caliber": "6.8x51",
       "weight": 0.022,
       "damage": 80,
@@ -2629,6 +4450,56 @@
         ]
       },
       "bulletProfileId": "68x51_DamageType_FMJ",
+      "basePrice": 85,
+      "sellPrices": [
+        85,
+        85,
+        60,
+        60,
+        60,
+        85
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.68x51.fmjv1",
+          "level": 3,
+          "price": 655,
+          "bundle": 15,
+          "bundlePrice": 9825,
+          "stock": 89,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.68x51.fmjv1_Gunsmith_one",
+          "level": 3,
+          "price": 655,
+          "bundle": 1,
+          "bundlePrice": 655,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.68x51.fmjv1_WeaponNA_one",
+          "level": 3,
+          "price": 655,
+          "bundle": 1,
+          "bundlePrice": 655,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 80,
         "120m": 80,
@@ -2658,7 +4529,6 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 100,
       "caliber": "6.8x51",
       "weight": 0.01,
       "damage": 88,
@@ -2701,7 +4571,57 @@
           }
         ]
       },
-      "bulletProfileId": "68x51_DamageType_HPv1"
+      "bulletProfileId": "68x51_DamageType_HPv1",
+      "basePrice": 61,
+      "sellPrices": [
+        61,
+        61,
+        43,
+        43,
+        43,
+        61
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.68x51.hpv1",
+          "level": 2,
+          "price": 470,
+          "bundle": 15,
+          "bundlePrice": 7050,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.68x51.hpv1_Gunsmith_one",
+          "level": 2,
+          "price": 470,
+          "bundle": 1,
+          "bundlePrice": 470,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.68x51.hpv1_WeaponNA_one",
+          "level": 2,
+          "price": 470,
+          "bundle": 1,
+          "bundlePrice": 470,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -2718,7 +4638,6 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 770,
       "caliber": "7.62x39",
       "weight": 0.016,
       "damage": 57,
@@ -2762,6 +4681,37 @@
         ]
       },
       "bulletProfileId": "762x39_DamageType_APv1",
+      "basePrice": 242,
+      "sellPrices": [
+        242,
+        242,
+        170,
+        170,
+        170,
+        242
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x39.apv1-2",
+          "level": 4,
+          "price": 1865,
+          "bundle": 15,
+          "bundlePrice": 27975,
+          "stock": 99,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.wp.a.09"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.tools.screwdriver",
+              "count": 1
+            }
+          ]
+        }
+      ],
       "damageAtRange": {
         "60m": 57,
         "120m": 57,
@@ -2791,7 +4741,6 @@
     },
     "stats": {
       "rarity": "Ultimate",
-      "price": 961,
       "caliber": "7.62x39",
       "weight": 0.016,
       "damage": 52,
@@ -2835,6 +4784,37 @@
         ]
       },
       "bulletProfileId": "762x39_DamageType_APv2",
+      "basePrice": 347,
+      "sellPrices": [
+        347,
+        347,
+        243,
+        243,
+        243,
+        347
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x39.apv2-2",
+          "level": 4,
+          "price": 2673,
+          "bundle": 15,
+          "bundlePrice": 40095,
+          "stock": 49,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.gunsmith.m11"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.highvalue.antiqueteacup",
+              "count": 1
+            }
+          ]
+        }
+      ],
       "damageAtRange": {
         "60m": 52,
         "120m": 52,
@@ -2864,7 +4844,6 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 100,
       "caliber": "7.62x39",
       "weight": 0.01,
       "damage": 67,
@@ -2907,7 +4886,63 @@
           }
         ]
       },
-      "bulletProfileId": "762x39_DamageType_FMJ"
+      "bulletProfileId": "762x39_DamageType_FMJ",
+      "basePrice": 21,
+      "sellPrices": [
+        21,
+        21,
+        15,
+        15,
+        15,
+        21
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x39.fmjv1",
+          "level": 2,
+          "price": 164,
+          "bundle": 15,
+          "bundlePrice": 2460,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.b.09"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x39.fmjv1_Gunsmith_one",
+          "level": 2,
+          "price": 164,
+          "bundle": 1,
+          "bundlePrice": 164,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.b.09"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x39.fmjv1_WeaponWP_one",
+          "level": 2,
+          "price": 164,
+          "bundle": 1,
+          "bundlePrice": 164,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.b.09"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -2924,7 +4959,6 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 100,
       "caliber": "7.62x39",
       "weight": 0.01,
       "damage": 59,
@@ -2967,7 +5001,57 @@
           }
         ]
       },
-      "bulletProfileId": "762x39_DamageType_FMJv3"
+      "bulletProfileId": "762x39_DamageType_FMJv3",
+      "basePrice": 163,
+      "sellPrices": [
+        163,
+        163,
+        115,
+        115,
+        115,
+        163
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x39.fmjv3",
+          "level": 4,
+          "price": 1251,
+          "bundle": 15,
+          "bundlePrice": 18765,
+          "stock": 99,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x39.fmjv3_Gunsmith_one",
+          "level": 4,
+          "price": 1251,
+          "bundle": 1,
+          "bundlePrice": 1251,
+          "stock": -1,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x39.fmjv3_WeaponWP_one",
+          "level": 4,
+          "price": 1251,
+          "bundle": 1,
+          "bundlePrice": 1251,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -2984,7 +5068,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 110,
       "caliber": "7.62x39",
       "weight": 0.016,
       "damage": 72,
@@ -3028,6 +5111,62 @@
         ]
       },
       "bulletProfileId": "762x39_DamageType_HPv1",
+      "basePrice": 15,
+      "sellPrices": [
+        15,
+        15,
+        11,
+        11,
+        11,
+        15
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x39.hpv1",
+          "level": 1,
+          "price": 115,
+          "bundle": 15,
+          "bundlePrice": 1725,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.c.05"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x39.hpv1_Gunsmith_one",
+          "level": 1,
+          "price": 115,
+          "bundle": 1,
+          "bundlePrice": 115,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.c.05"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x39.hpv1_WeaponWP_one",
+          "level": 1,
+          "price": 115,
+          "bundle": 1,
+          "bundlePrice": 115,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.c.05"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 72,
         "120m": 72,
@@ -3057,7 +5196,6 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 100,
       "caliber": "7.62x39",
       "weight": 0.01,
       "damage": 84,
@@ -3100,7 +5238,57 @@
           }
         ]
       },
-      "bulletProfileId": "762x39_DamageType_HPv2"
+      "bulletProfileId": "762x39_DamageType_HPv2",
+      "basePrice": 12,
+      "sellPrices": [
+        12,
+        12,
+        9,
+        9,
+        9,
+        12
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x39.hpv2",
+          "level": 1,
+          "price": 89,
+          "bundle": 15,
+          "bundlePrice": 1335,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x39.hpv2_Gunsmith_one",
+          "level": 1,
+          "price": 89,
+          "bundle": 1,
+          "bundlePrice": 89,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x39.hpv2_WeaponWP_one",
+          "level": 1,
+          "price": 89,
+          "bundle": 1,
+          "bundlePrice": 89,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -3117,7 +5305,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 210,
       "caliber": "7.62x39",
       "weight": 0.016,
       "damage": 62,
@@ -3161,6 +5348,56 @@
         ]
       },
       "bulletProfileId": "762x39_DamageType_FMJv2",
+      "basePrice": 99,
+      "sellPrices": [
+        99,
+        99,
+        70,
+        70,
+        70,
+        99
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x39.fmjv2",
+          "level": 3,
+          "price": 764,
+          "bundle": 15,
+          "bundlePrice": 11460,
+          "stock": 89,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x39.fmjv2_Gunsmith_one",
+          "level": 3,
+          "price": 764,
+          "bundle": 1,
+          "bundlePrice": 764,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x39.fmjv2_WeaponWP_one",
+          "level": 3,
+          "price": 764,
+          "bundle": 1,
+          "bundlePrice": 764,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 67,
         "120m": 67,
@@ -3190,7 +5427,6 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 160,
       "caliber": "7.62x39",
       "weight": 0.017,
       "damage": 65,
@@ -3234,6 +5470,56 @@
         ]
       },
       "bulletProfileId": "762x39_DamageType_Tracer",
+      "basePrice": 43,
+      "sellPrices": [
+        43,
+        43,
+        31,
+        31,
+        31,
+        43
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x39.tracerv1",
+          "level": 3,
+          "price": 328,
+          "bundle": 15,
+          "bundlePrice": 4920,
+          "stock": 89,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x39.tracerv1_Gunsmith_one",
+          "level": 3,
+          "price": 328,
+          "bundle": 1,
+          "bundlePrice": 328,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x39.tracerv1_WeaponWP_one",
+          "level": 3,
+          "price": 328,
+          "bundle": 1,
+          "bundlePrice": 328,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 65,
         "120m": 65,
@@ -3263,7 +5549,6 @@
     },
     "stats": {
       "rarity": "Ultimate",
-      "price": 2133,
       "caliber": "7.62x51",
       "weight": 0.025,
       "damage": 69,
@@ -3307,6 +5592,41 @@
         ]
       },
       "bulletProfileId": "762x51_DamageType_APv1",
+      "basePrice": 502,
+      "sellPrices": [
+        502,
+        502,
+        352,
+        352,
+        352,
+        502
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x51.apv1-2",
+          "level": 4,
+          "price": 3865,
+          "bundle": 15,
+          "bundlePrice": 57975,
+          "stock": 66,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.gunsmith.m13"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.carbattery",
+              "count": 1
+            },
+            {
+              "id": "valuable.electric.visionmodule",
+              "count": 2
+            }
+          ]
+        }
+      ],
       "damageAtRange": {
         "60m": 69,
         "120m": 69,
@@ -3336,7 +5656,6 @@
     },
     "stats": {
       "rarity": "Ultimate",
-      "price": 2608,
       "caliber": "7.62x51",
       "weight": 0.025,
       "damage": 63,
@@ -3380,6 +5699,45 @@
         ]
       },
       "bulletProfileId": "762x51_DamageType_APv2",
+      "basePrice": 584,
+      "sellPrices": [
+        584,
+        584,
+        409,
+        409,
+        409,
+        584
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x51.apv2-2",
+          "level": 4,
+          "price": 4489,
+          "bundle": 15,
+          "bundlePrice": 67335,
+          "stock": 66,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.gunsmith.m14"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.marinestoragebattery",
+              "count": 1
+            },
+            {
+              "id": "valuable.electric.transformer",
+              "count": 1
+            },
+            {
+              "id": "valuable.medicalsupplies.centrifuge",
+              "count": 1
+            }
+          ]
+        }
+      ],
       "damageAtRange": {
         "60m": 63,
         "120m": 63,
@@ -3409,7 +5767,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 515,
       "caliber": "7.62x51",
       "weight": 0.025,
       "damage": 83,
@@ -3453,6 +5810,69 @@
         ]
       },
       "bulletProfileId": "762x51_DamageType_FMJ",
+      "basePrice": 89,
+      "sellPrices": [
+        89,
+        89,
+        63,
+        63,
+        63,
+        89
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.762x51.fmjv1",
+          "level": 3,
+          "price": 685,
+          "bundle": 15,
+          "bundlePrice": 10275,
+          "stock": 89,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x51.fmjv1_Gunsmith_one",
+          "level": 3,
+          "price": 685,
+          "bundle": 1,
+          "bundlePrice": 685,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.762x51.fmjv1_WeaponNA_one",
+          "level": 3,
+          "price": 685,
+          "bundle": 1,
+          "bundlePrice": 685,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x51.fmjv1_WeaponWP_one",
+          "level": 3,
+          "price": 685,
+          "bundle": 1,
+          "bundlePrice": 685,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 83,
         "120m": 83,
@@ -3482,7 +5902,6 @@
     },
     "stats": {
       "rarity": "Ultimate",
-      "price": 100,
       "caliber": "7.62x51",
       "weight": 0.01,
       "damage": 73,
@@ -3525,7 +5944,38 @@
           }
         ]
       },
-      "bulletProfileId": "762x51_DamageType_FMJv3"
+      "bulletProfileId": "762x51_DamageType_FMJv3",
+      "basePrice": 548,
+      "sellPrices": [
+        548,
+        548,
+        384,
+        384,
+        384,
+        548
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.762x51.fmjv3-2",
+          "level": 4,
+          "price": 4217,
+          "bundle": 15,
+          "bundlePrice": 63255,
+          "stock": -1,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.na.a.12"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.transformer",
+              "count": 2
+            }
+          ]
+        }
+      ]
     },
     "tips": ""
   },
@@ -3542,7 +5992,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 195,
       "caliber": "7.62x51",
       "weight": 0.025,
       "damage": 86,
@@ -3586,6 +6035,69 @@
         ]
       },
       "bulletProfileId": "762x51_DamageType_HPv1",
+      "basePrice": 64,
+      "sellPrices": [
+        64,
+        64,
+        45,
+        45,
+        45,
+        64
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x51.hpv1",
+          "level": 1,
+          "price": 490,
+          "bundle": 15,
+          "bundlePrice": 7350,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.762x51.hpv1.na",
+          "level": 1,
+          "price": 490,
+          "bundle": 15,
+          "bundlePrice": 7350,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x51.hpv1_Gunsmith_one",
+          "level": 2,
+          "price": 490,
+          "bundle": 1,
+          "bundlePrice": 490,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.762x51.hpv1_WeaponNA_one",
+          "level": 2,
+          "price": 490,
+          "bundle": 1,
+          "bundlePrice": 490,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 86,
         "120m": 86,
@@ -3615,7 +6127,6 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 100,
       "caliber": "7.62x51",
       "weight": 0.01,
       "damage": 90,
@@ -3658,7 +6169,57 @@
           }
         ]
       },
-      "bulletProfileId": "762x51_DamageType_HPv2"
+      "bulletProfileId": "762x51_DamageType_HPv2",
+      "basePrice": 49,
+      "sellPrices": [
+        49,
+        49,
+        35,
+        35,
+        35,
+        49
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.762x51.hpv2",
+          "level": 1,
+          "price": 380,
+          "bundle": 15,
+          "bundlePrice": 5700,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x51.hpv2_Gunsmith_one",
+          "level": 1,
+          "price": 380,
+          "bundle": 1,
+          "bundlePrice": 380,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.762x51.hpv2_WeaponNA_one",
+          "level": 1,
+          "price": 380,
+          "bundle": 1,
+          "bundlePrice": 380,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -3675,7 +6236,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 100,
       "caliber": "7.62x51",
       "weight": 0.01,
       "damage": 101,
@@ -3718,7 +6278,57 @@
           }
         ]
       },
-      "bulletProfileId": "762x51_DamageType_HPv3"
+      "bulletProfileId": "762x51_DamageType_HPv3",
+      "basePrice": 72,
+      "sellPrices": [
+        72,
+        72,
+        51,
+        51,
+        51,
+        72
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.762x51.hpv3",
+          "level": 2,
+          "price": 550,
+          "bundle": 15,
+          "bundlePrice": 8250,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x51.hpv3_Gunsmith_one",
+          "level": 2,
+          "price": 550,
+          "bundle": 1,
+          "bundlePrice": 550,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.762x51.hpv3_WeaponNA_one",
+          "level": 2,
+          "price": 550,
+          "bundle": 1,
+          "bundlePrice": 550,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -3735,7 +6345,6 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 895,
       "caliber": "7.62x51",
       "weight": 0.026,
       "damage": 82,
@@ -3779,6 +6388,56 @@
         ]
       },
       "bulletProfileId": "762x51_DamageType_FMJv2",
+      "basePrice": 189,
+      "sellPrices": [
+        189,
+        189,
+        133,
+        133,
+        133,
+        189
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.762x51.fmjv2",
+          "level": 4,
+          "price": 1453,
+          "bundle": 15,
+          "bundlePrice": 21795,
+          "stock": 48,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x51.fmjv2_Gunsmith_one",
+          "level": 4,
+          "price": 1453,
+          "bundle": 1,
+          "bundlePrice": 1453,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.762x51.fmjv2_WeaponNA_one",
+          "level": 4,
+          "price": 1453,
+          "bundle": 1,
+          "bundlePrice": 1453,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 82,
         "120m": 82,
@@ -3808,7 +6467,6 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 100,
       "caliber": "7.62x51",
       "weight": 0.01,
       "damage": 80,
@@ -3851,7 +6509,57 @@
           }
         ]
       },
-      "bulletProfileId": "762x51_DamageType_Tracerv2"
+      "bulletProfileId": "762x51_DamageType_Tracerv2",
+      "basePrice": 327,
+      "sellPrices": [
+        327,
+        327,
+        229,
+        229,
+        229,
+        327
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.762x51.tracerv2",
+          "level": 4,
+          "price": 2518,
+          "bundle": 15,
+          "bundlePrice": 37770,
+          "stock": 48,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x51.tracerv2_Gunsmith_one",
+          "level": 4,
+          "price": 2518,
+          "bundle": 1,
+          "bundlePrice": 2518,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.762x51.tracerv2_WeaponNA_one",
+          "level": 4,
+          "price": 2518,
+          "bundle": 1,
+          "bundlePrice": 2518,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -3868,7 +6576,6 @@
     },
     "stats": {
       "rarity": "Ultimate",
-      "price": 100,
       "caliber": "7.62x54R",
       "weight": 0.01,
       "damage": 75,
@@ -3911,7 +6618,46 @@
           }
         ]
       },
-      "bulletProfileId": "762x54R_DamageType_APv1"
+      "bulletProfileId": "762x54R_DamageType_APv1",
+      "basePrice": 495,
+      "sellPrices": [
+        495,
+        495,
+        347,
+        347,
+        347,
+        495
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x54r.apv1-2",
+          "level": 4,
+          "price": 3809,
+          "bundle": 15,
+          "bundlePrice": 57135,
+          "stock": 66,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.gunsmith.m15"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.marinestoragebattery",
+              "count": 1
+            },
+            {
+              "id": "valuable.electric.cpu",
+              "count": 1
+            },
+            {
+              "id": "valuable.information.harddrive",
+              "count": 2
+            }
+          ]
+        }
+      ]
     },
     "tips": ""
   },
@@ -3928,7 +6674,6 @@
     },
     "stats": {
       "rarity": "Ultimate",
-      "price": 100,
       "caliber": "7.62x54R",
       "weight": 0.01,
       "damage": 72,
@@ -3971,7 +6716,38 @@
           }
         ]
       },
-      "bulletProfileId": "762x54R_DamageType_APv2"
+      "bulletProfileId": "762x54R_DamageType_APv2",
+      "basePrice": 580,
+      "sellPrices": [
+        580,
+        580,
+        406,
+        406,
+        406,
+        580
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x54r.apv2-2",
+          "level": 4,
+          "price": 4462,
+          "bundle": 15,
+          "bundlePrice": 66930,
+          "stock": 66,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.gunsmith.m16"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.medicalsupplies.defibrillator",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "tips": ""
   },
@@ -3988,7 +6764,6 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 196,
       "caliber": "7.62x54R",
       "weight": 0.028,
       "damage": 86,
@@ -4032,6 +6807,56 @@
         ]
       },
       "bulletProfileId": "762x54R_DamageType_FMJ",
+      "basePrice": 64,
+      "sellPrices": [
+        64,
+        64,
+        45,
+        45,
+        45,
+        64
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x54r.fmjv1",
+          "level": 3,
+          "price": 496,
+          "bundle": 15,
+          "bundlePrice": 7440,
+          "stock": 89,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x54r.fmjv1_Gunsmith_one",
+          "level": 3,
+          "price": 496,
+          "bundle": 1,
+          "bundlePrice": 496,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x54r.fmjv1_WeaponWP_one",
+          "level": 3,
+          "price": 496,
+          "bundle": 1,
+          "bundlePrice": 496,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 86,
         "120m": 86,
@@ -4061,7 +6886,6 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 100,
       "caliber": "7.62x54R",
       "weight": 0.01,
       "damage": 84,
@@ -4104,7 +6928,57 @@
           }
         ]
       },
-      "bulletProfileId": "762x54R_DamageType_FMJv2"
+      "bulletProfileId": "762x54R_DamageType_FMJv2",
+      "basePrice": 133,
+      "sellPrices": [
+        133,
+        133,
+        94,
+        94,
+        94,
+        133
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x54r.fmjv2",
+          "level": 4,
+          "price": 1020,
+          "bundle": 15,
+          "bundlePrice": 15300,
+          "stock": 48,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x54r.fmjv2_Gunsmith_one",
+          "level": 4,
+          "price": 1020,
+          "bundle": 1,
+          "bundlePrice": 1020,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x54r.fmjv2_WeaponWP_one",
+          "level": 4,
+          "price": 1020,
+          "bundle": 1,
+          "bundlePrice": 1020,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -4121,7 +6995,6 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 100,
       "caliber": "7.62x54R",
       "weight": 0.01,
       "damage": 78,
@@ -4164,7 +7037,38 @@
           }
         ]
       },
-      "bulletProfileId": "762x54R_DamageType_FMJv3"
+      "bulletProfileId": "762x54R_DamageType_FMJv3",
+      "basePrice": 205,
+      "sellPrices": [
+        205,
+        205,
+        144,
+        144,
+        144,
+        205
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x54r.fmjv3-2",
+          "level": 4,
+          "price": 1578,
+          "bundle": 15,
+          "bundlePrice": 23670,
+          "stock": 48,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.wp.a.10"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.carbattery",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "tips": ""
   },
@@ -4181,7 +7085,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 144,
       "caliber": "7.62x54R",
       "weight": 0.028,
       "damage": 102,
@@ -4225,6 +7128,62 @@
         ]
       },
       "bulletProfileId": "762x54R_DamageType_HPv2",
+      "basePrice": 27,
+      "sellPrices": [
+        27,
+        27,
+        19,
+        19,
+        19,
+        27
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x54r.hpv2",
+          "level": 2,
+          "price": 210,
+          "bundle": 15,
+          "bundlePrice": 3150,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.b.12"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x54r.hpv2_Gunsmith_one",
+          "level": 2,
+          "price": 210,
+          "bundle": 1,
+          "bundlePrice": 210,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.b.12"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x54r.hpv2_WeaponWP_one",
+          "level": 2,
+          "price": 210,
+          "bundle": 1,
+          "bundlePrice": 210,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.wp.b.12"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 90,
         "120m": 90,
@@ -4254,7 +7213,6 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 100,
       "caliber": "7.62x54R",
       "weight": 0.01,
       "damage": 90,
@@ -4297,7 +7255,57 @@
           }
         ]
       },
-      "bulletProfileId": "762x54R_DamageType_HPv1"
+      "bulletProfileId": "762x54R_DamageType_HPv1",
+      "basePrice": 38,
+      "sellPrices": [
+        38,
+        38,
+        27,
+        27,
+        27,
+        38
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x54r.hpv1",
+          "level": 1,
+          "price": 295,
+          "bundle": 15,
+          "bundlePrice": 4425,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x54r.hpv1_Gunsmith_one",
+          "level": 1,
+          "price": 295,
+          "bundle": 1,
+          "bundlePrice": 295,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x54r.hpv1_WeaponWP_one",
+          "level": 1,
+          "price": 295,
+          "bundle": 1,
+          "bundlePrice": 295,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -4314,7 +7322,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 502,
       "caliber": "7.62x54R",
       "weight": 0.029,
       "damage": 85,
@@ -4358,6 +7365,56 @@
         ]
       },
       "bulletProfileId": "762x54R_DamageType_Tracer",
+      "basePrice": 98,
+      "sellPrices": [
+        98,
+        98,
+        69,
+        69,
+        69,
+        98
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x54r.tracerv1",
+          "level": 3,
+          "price": 754,
+          "bundle": 15,
+          "bundlePrice": 11310,
+          "stock": 89,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x54r.tracerv1_Gunsmith_one",
+          "level": 3,
+          "price": 754,
+          "bundle": 1,
+          "bundlePrice": 754,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.762x54r.tracerv1_WeaponWP_one",
+          "level": 3,
+          "price": 754,
+          "bundle": 1,
+          "bundlePrice": 754,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 85,
         "120m": 85,
@@ -4387,7 +7444,6 @@
     },
     "stats": {
       "rarity": "Ultimate",
-      "price": 100,
       "caliber": "7.62x54R",
       "weight": 0.01,
       "damage": 77,
@@ -4430,7 +7486,46 @@
           }
         ]
       },
-      "bulletProfileId": "762x54R_DamageType_Tracerv2"
+      "bulletProfileId": "762x54R_DamageType_Tracerv2",
+      "basePrice": 378,
+      "sellPrices": [
+        378,
+        378,
+        265,
+        265,
+        265,
+        378
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.762x54r.tracerv2-2",
+          "level": 4,
+          "price": 2910,
+          "bundle": 15,
+          "bundlePrice": 43650,
+          "stock": 66,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.gunsmith.m04"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.marinestoragebattery",
+              "count": 1
+            },
+            {
+              "id": "valuable.combustible.match",
+              "count": 2
+            },
+            {
+              "id": "valuable.household.ratpoison",
+              "count": 1
+            }
+          ]
+        }
+      ]
     },
     "tips": ""
   },
@@ -4447,7 +7542,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 270,
       "caliber": "9x19",
       "weight": 0.008,
       "damage": 53,
@@ -4491,6 +7585,76 @@
         ]
       },
       "bulletProfileId": "9x19_DamageType_APv1",
+      "basePrice": 89,
+      "sellPrices": [
+        89,
+        89,
+        63,
+        63,
+        63,
+        89
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.9x19.apv1-2",
+          "level": 2,
+          "price": 683,
+          "bundle": 15,
+          "bundlePrice": 10245,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.b.05"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.radioscanner",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.9x19.apv1",
+          "level": 3,
+          "price": 683,
+          "bundle": 15,
+          "bundlePrice": 10245,
+          "stock": 89,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.9x19.apv1_Gunsmith_one",
+          "level": 3,
+          "price": 683,
+          "bundle": 1,
+          "bundlePrice": 683,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.9x19.apv1_WeaponNA_one",
+          "level": 3,
+          "price": 683,
+          "bundle": 1,
+          "bundlePrice": 683,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 53,
         "120m": 43.95,
@@ -4520,7 +7684,6 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 100,
       "caliber": "9x19",
       "weight": 0.01,
       "damage": 44,
@@ -4563,7 +7726,63 @@
           }
         ]
       },
-      "bulletProfileId": "9x19_DamageType_APv2"
+      "bulletProfileId": "9x19_DamageType_APv2",
+      "basePrice": 211,
+      "sellPrices": [
+        211,
+        211,
+        148,
+        148,
+        148,
+        211
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.9x19.apv2",
+          "level": 4,
+          "price": 1621,
+          "bundle": 15,
+          "bundlePrice": 24315,
+          "stock": 99,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.na.a.05"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.9x19.apv2_Gunsmith_one",
+          "level": 4,
+          "price": 1621,
+          "bundle": 1,
+          "bundlePrice": 1621,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.a.05"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.9x19.apv2_WeaponNA_one",
+          "level": 4,
+          "price": 1621,
+          "bundle": 1,
+          "bundlePrice": 1621,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.a.05"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -4580,7 +7799,6 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 65,
       "caliber": "9x19",
       "weight": 0.008,
       "damage": 58,
@@ -4624,6 +7842,71 @@
         ]
       },
       "bulletProfileId": "9x19_DamageType_FMJ",
+      "basePrice": 9,
+      "sellPrices": [
+        9,
+        9,
+        7,
+        7,
+        7,
+        9
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.9x19.fmjv1",
+          "level": 1,
+          "price": 67,
+          "bundle": 15,
+          "bundlePrice": 1005,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.c.03"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.9x19.fmjv1_Gunsmith_one",
+          "level": 1,
+          "price": 67,
+          "bundle": 1,
+          "bundlePrice": 67,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.9x19.fmjv1_WeaponNA_one",
+          "level": 1,
+          "price": 67,
+          "bundle": 1,
+          "bundlePrice": 67,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.9x19.fmjv1_WeaponWP_one",
+          "level": 1,
+          "price": 67,
+          "bundle": 1,
+          "bundlePrice": 67,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 58,
         "120m": 45.68,
@@ -4653,7 +7936,6 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 100,
       "caliber": "9x19",
       "weight": 0.01,
       "damage": 54,
@@ -4696,7 +7978,74 @@
           }
         ]
       },
-      "bulletProfileId": "9x19_DamageType_FMJv2"
+      "bulletProfileId": "9x19_DamageType_FMJv2",
+      "basePrice": 18,
+      "sellPrices": [
+        18,
+        18,
+        13,
+        13,
+        13,
+        18
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.9x19.fmjv2",
+          "level": 2,
+          "price": 135,
+          "bundle": 15,
+          "bundlePrice": 2025,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.9x19.fmjv2_Gunsmith_one",
+          "level": 2,
+          "price": 135,
+          "bundle": 1,
+          "bundlePrice": 135,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.b.05"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.9x19.fmjv2_WeaponNA_one",
+          "level": 2,
+          "price": 135,
+          "bundle": 1,
+          "bundlePrice": 135,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.b.05"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.9x19.fmjv2_WeaponWP_one",
+          "level": 2,
+          "price": 135,
+          "bundle": 1,
+          "bundlePrice": 135,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -4713,7 +8062,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 100,
       "caliber": "9x19",
       "weight": 0.01,
       "damage": 73,
@@ -4756,7 +8104,57 @@
           }
         ]
       },
-      "bulletProfileId": "9x19_DamageType_HPv2"
+      "bulletProfileId": "9x19_DamageType_HPv2",
+      "basePrice": 123,
+      "sellPrices": [
+        123,
+        123,
+        87,
+        87,
+        87,
+        123
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.9x19.hpv2",
+          "level": 3,
+          "price": 943,
+          "bundle": 15,
+          "bundlePrice": 14145,
+          "stock": 89,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.9x19.hpv2_Gunsmith_one",
+          "level": 3,
+          "price": 943,
+          "bundle": 1,
+          "bundlePrice": 943,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.9x19.hpv2_WeaponNA_one",
+          "level": 3,
+          "price": 943,
+          "bundle": 1,
+          "bundlePrice": 943,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -4773,7 +8171,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 100,
       "caliber": "9x19",
       "weight": 0.01,
       "damage": 88,
@@ -4816,7 +8213,57 @@
           }
         ]
       },
-      "bulletProfileId": "9x19_DamageType_HPv3"
+      "bulletProfileId": "9x19_DamageType_HPv3",
+      "basePrice": 156,
+      "sellPrices": [
+        156,
+        156,
+        110,
+        110,
+        110,
+        156
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.9x19.hpv3",
+          "level": 4,
+          "price": 1198,
+          "bundle": 15,
+          "bundlePrice": 17970,
+          "stock": 99,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.9x19.hpv3_Gunsmith_one",
+          "level": 4,
+          "price": 1198,
+          "bundle": 1,
+          "bundlePrice": 1198,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.9x19.hpv3_WeaponNA_one",
+          "level": 4,
+          "price": 1198,
+          "bundle": 1,
+          "bundlePrice": 1198,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -4833,7 +8280,6 @@
     },
     "stats": {
       "rarity": "Common",
-      "price": 55,
       "caliber": "9x19",
       "weight": 0.008,
       "damage": 65,
@@ -4877,6 +8323,69 @@
         ]
       },
       "bulletProfileId": "9x19_DamageType_HPv1",
+      "basePrice": 7,
+      "sellPrices": [
+        7,
+        7,
+        5,
+        5,
+        5,
+        7
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.9x19.hpv1",
+          "level": 1,
+          "price": 52,
+          "bundle": 15,
+          "bundlePrice": 780,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.9x19.hpv1_Gunsmith_one",
+          "level": 1,
+          "price": 52,
+          "bundle": 1,
+          "bundlePrice": 52,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.9x19.hpv1_WeaponNA_one",
+          "level": 1,
+          "price": 52,
+          "bundle": 1,
+          "bundlePrice": 52,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.9x19.hpv1_WeaponWP_one",
+          "level": 1,
+          "price": 52,
+          "bundle": 1,
+          "bundlePrice": 52,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 65,
         "120m": 49.17,
@@ -4906,7 +8415,6 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 75,
       "caliber": "9x19",
       "weight": 0.008,
       "damage": 56,
@@ -4950,6 +8458,82 @@
         ]
       },
       "bulletProfileId": "9x19_DamageType_Tracer",
+      "basePrice": 12,
+      "sellPrices": [
+        12,
+        12,
+        9,
+        9,
+        9,
+        12
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.9x19.tracerv1",
+          "level": 2,
+          "price": 95,
+          "bundle": 15,
+          "bundlePrice": 1425,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.9x19.tracerv1-2",
+          "level": 2,
+          "price": 95,
+          "bundle": 15,
+          "bundlePrice": 1425,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.9x19.tracerv1_Gunsmith_one",
+          "level": 2,
+          "price": 95,
+          "bundle": 1,
+          "bundlePrice": 95,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.9x19.tracerv1_WeaponNA_one",
+          "level": 2,
+          "price": 95,
+          "bundle": 1,
+          "bundlePrice": 95,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.9x19.tracerv1_WeaponWP_one",
+          "level": 2,
+          "price": 95,
+          "bundle": 1,
+          "bundlePrice": 95,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ],
       "damageAtRange": {
         "60m": 56,
         "120m": 42.15,
@@ -4979,7 +8563,6 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 100,
       "caliber": "9x39",
       "weight": 0.01,
       "damage": 59,
@@ -5022,7 +8605,38 @@
           }
         ]
       },
-      "bulletProfileId": "9x39_DamageType_APv1"
+      "bulletProfileId": "9x39_DamageType_APv1",
+      "basePrice": 280,
+      "sellPrices": [
+        280,
+        280,
+        196,
+        196,
+        196,
+        280
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.9x39.apv1-2",
+          "level": 4,
+          "price": 2157,
+          "bundle": 15,
+          "bundlePrice": 32355,
+          "stock": 99,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.wp.a.12"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.household.ratpoison",
+              "count": 2
+            }
+          ]
+        }
+      ]
     },
     "tips": ""
   },
@@ -5039,7 +8653,6 @@
     },
     "stats": {
       "rarity": "Ultimate",
-      "price": 100,
       "caliber": "9x39",
       "weight": 0.01,
       "damage": 56,
@@ -5082,7 +8695,42 @@
           }
         ]
       },
-      "bulletProfileId": "9x39_DamageType_APv2"
+      "bulletProfileId": "9x39_DamageType_APv2",
+      "basePrice": 531,
+      "sellPrices": [
+        531,
+        531,
+        372,
+        372,
+        372,
+        531
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.9x39.apv2-2",
+          "level": 4,
+          "price": 4081,
+          "bundle": 15,
+          "bundlePrice": 61215,
+          "stock": 66,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.gunsmith.m06"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.combustible.oilcan",
+              "count": 2
+            },
+            {
+              "id": "valuable.electric.visionmodule",
+              "count": 2
+            }
+          ]
+        }
+      ]
     },
     "tips": ""
   },
@@ -5099,7 +8747,6 @@
     },
     "stats": {
       "rarity": "Rare",
-      "price": 100,
       "caliber": "9x39",
       "weight": 0.01,
       "damage": 70,
@@ -5142,7 +8789,57 @@
           }
         ]
       },
-      "bulletProfileId": "9x39_DamageType_FMJ"
+      "bulletProfileId": "9x39_DamageType_FMJ",
+      "basePrice": 34,
+      "sellPrices": [
+        34,
+        34,
+        24,
+        24,
+        24,
+        34
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.9x39.fmjv1",
+          "level": 2,
+          "price": 260,
+          "bundle": 15,
+          "bundlePrice": 3900,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.9x39.fmjv1_Gunsmith_one",
+          "level": 3,
+          "price": 260,
+          "bundle": 1,
+          "bundlePrice": 260,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.9x39.fmjv1_WeaponWP_one",
+          "level": 3,
+          "price": 260,
+          "bundle": 1,
+          "bundlePrice": 260,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -5159,7 +8856,6 @@
     },
     "stats": {
       "rarity": "Epic",
-      "price": 100,
       "caliber": "9x39",
       "weight": 0.01,
       "damage": 67,
@@ -5202,7 +8898,57 @@
           }
         ]
       },
-      "bulletProfileId": "9x39_DamageType_FMJv2"
+      "bulletProfileId": "9x39_DamageType_FMJv2",
+      "basePrice": 66,
+      "sellPrices": [
+        66,
+        66,
+        47,
+        47,
+        47,
+        66
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.9x39.fmjv2",
+          "level": 3,
+          "price": 510,
+          "bundle": 15,
+          "bundlePrice": 7650,
+          "stock": 89,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.9x39.fmjv2_Gunsmith_one",
+          "level": 4,
+          "price": 510,
+          "bundle": 1,
+          "bundlePrice": 510,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.9x39.fmjv2_WeaponWP_one",
+          "level": 4,
+          "price": 510,
+          "bundle": 1,
+          "bundlePrice": 510,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -5219,7 +8965,6 @@
     },
     "stats": {
       "rarity": "Legendary",
-      "price": 100,
       "caliber": "9x39",
       "weight": 0.01,
       "damage": 61,
@@ -5262,7 +9007,57 @@
           }
         ]
       },
-      "bulletProfileId": "9x39_DamageType_FMJv3"
+      "bulletProfileId": "9x39_DamageType_FMJv3",
+      "basePrice": 169,
+      "sellPrices": [
+        169,
+        169,
+        119,
+        119,
+        119,
+        169
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.9x39.fmjv3",
+          "level": 4,
+          "price": 1298,
+          "bundle": 15,
+          "bundlePrice": 19470,
+          "stock": 48,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.9x39.fmjv3_Gunsmith_one",
+          "level": 4,
+          "price": 1298,
+          "bundle": 1,
+          "bundlePrice": 1298,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.9x39.fmjv3_WeaponWP_one",
+          "level": 4,
+          "price": 1298,
+          "bundle": 1,
+          "bundlePrice": 1298,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -5279,7 +9074,6 @@
     },
     "stats": {
       "rarity": "Uncommon",
-      "price": 100,
       "caliber": "9x39",
       "weight": 0.01,
       "damage": 73,
@@ -5322,7 +9116,57 @@
           }
         ]
       },
-      "bulletProfileId": "9x39_DamageType_HPv1"
+      "bulletProfileId": "9x39_DamageType_HPv1",
+      "basePrice": 20,
+      "sellPrices": [
+        20,
+        20,
+        14,
+        14,
+        14,
+        20
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.9x39.hpv1",
+          "level": 1,
+          "price": 150,
+          "bundle": 15,
+          "bundlePrice": 2250,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.9x39.hpv1_Gunsmith_one",
+          "level": 4,
+          "price": 150,
+          "bundle": 1,
+          "bundlePrice": 150,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.9x39.hpv1_WeaponWP_one",
+          "level": 4,
+          "price": 150,
+          "bundle": 1,
+          "bundlePrice": 150,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   }

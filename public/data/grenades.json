@@ -11,7 +11,6 @@
       "fullsize": "/images/items/grenades/grenade-f1-frag.webp"
     },
     "stats": {
-      "price": 24000,
       "rarity": "Rare",
       "weight": 0.5,
       "radius": 3,
@@ -155,6 +154,48 @@
           "arriveTangent": -0.000639,
           "leaveTangent": -0.000639
         }
+      ],
+      "basePrice": 7526,
+      "sellPrices": [
+        7526,
+        7526,
+        5269,
+        5269,
+        5269,
+        5269
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.grenade.f1",
+          "level": 2,
+          "price": 24000,
+          "bundle": 1,
+          "bundlePrice": 24000,
+          "stock": 6,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.grenade.f1-2",
+          "level": 2,
+          "price": 24000,
+          "bundle": 1,
+          "bundlePrice": 24000,
+          "stock": 4,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.building.ceramicadhesive",
+              "count": 3
+            }
+          ]
+        }
       ]
     },
     "tips": "High fragment count makes it deadly in confined spaces. Longer fuse time than modern grenades",
@@ -172,7 +213,6 @@
       "fullsize": "/images/items/grenades/grenade-m18-smoke.webp"
     },
     "stats": {
-      "price": 7760,
       "rarity": "Uncommon",
       "weight": 0.53,
       "radius": 10,
@@ -185,7 +225,33 @@
       "protectionGearBluntDurabilityDamageScale": 0,
       "applyChanceCurve": [],
       "damageOverDistance": [],
-      "penetrationPowerOverDistance": []
+      "penetrationPowerOverDistance": [],
+      "basePrice": 2434,
+      "sellPrices": [
+        2434,
+        2434,
+        1704,
+        1704,
+        1704,
+        1704
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.grenade.03",
+          "level": 1,
+          "price": 7760,
+          "bundle": 1,
+          "bundlePrice": 7760,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.c.05"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Provides excellent visual cover for movement. Can be held and rethrown while smoking.",
     "notes": "Non-lethal tactical grenade used for concealment and area denial"
@@ -202,7 +268,6 @@
       "fullsize": "/images/items/grenades/grenade-m67-frag.webp"
     },
     "stats": {
-      "price": 25740,
       "rarity": "Rare",
       "weight": 0.4,
       "radius": 4,
@@ -346,6 +411,48 @@
           "arriveTangent": -0.000448,
           "leaveTangent": -0.000448
         }
+      ],
+      "basePrice": 8237,
+      "sellPrices": [
+        8237,
+        8237,
+        5766,
+        5766,
+        5766,
+        5766
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.grenade.02",
+          "level": 3,
+          "price": 25740,
+          "bundle": 1,
+          "bundlePrice": 25740,
+          "stock": 4,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.grenade.02-2",
+          "level": 3,
+          "price": 25740,
+          "bundle": 1,
+          "bundlePrice": 25740,
+          "stock": 4,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.oldphone",
+              "count": 2
+            }
+          ]
+        }
       ]
     },
     "tips": "Higher damage and bleeding chance than Soviet grenades. Standard NATO issue",
@@ -363,7 +470,6 @@
       "fullsize": "/images/items/grenades/grenade-m7290-flash.webp"
     },
     "stats": {
-      "price": 850,
       "rarity": "Common",
       "weight": 0.41,
       "radius": 5,
@@ -427,6 +533,32 @@
           "arriveTangent": 0,
           "leaveTangent": 0
         }
+      ],
+      "basePrice": 1292,
+      "sellPrices": [
+        1292,
+        1292,
+        905,
+        905,
+        905,
+        905
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.grenade.01",
+          "level": 1,
+          "price": 4120,
+          "bundle": 1,
+          "bundlePrice": 4120,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.na.c.05"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": "Best used in confined spaces. Effect diminishes with distance and line of sight",
@@ -444,7 +576,6 @@
       "fullsize": "/images/items/grenades/grenade-rgd5-frag.webp"
     },
     "stats": {
-      "price": 24000,
       "rarity": "Rare",
       "weight": 0.31,
       "radius": 3,
@@ -588,6 +719,48 @@
           "arriveTangent": -0.000375,
           "leaveTangent": -0.000375
         }
+      ],
+      "basePrice": 7834,
+      "sellPrices": [
+        7834,
+        7834,
+        5484,
+        5484,
+        5484,
+        5484
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.grenade.rgd5",
+          "level": 2,
+          "price": 24000,
+          "bundle": 1,
+          "bundlePrice": 24000,
+          "stock": 6,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.grenade.rgd5-2",
+          "level": 2,
+          "price": 24000,
+          "bundle": 1,
+          "bundlePrice": 24000,
+          "stock": 4,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.electric.tapeplayer",
+              "count": 1
+            }
+          ]
+        }
       ]
     },
     "tips": "Decent",
@@ -605,7 +778,6 @@
       "fullsize": "/images/items/grenades/grenade-rgn-frag.webp"
     },
     "stats": {
-      "price": 55080,
       "rarity": "Epic",
       "weight": 0.31,
       "radius": 2,
@@ -741,6 +913,52 @@
           "arriveTangent": -0.000383,
           "leaveTangent": -0.000383
         }
+      ],
+      "basePrice": 17273,
+      "sellPrices": [
+        17273,
+        17273,
+        12092,
+        12092,
+        12092,
+        12092
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.grenade.rgn",
+          "level": 4,
+          "price": 55080,
+          "bundle": 1,
+          "bundlePrice": 55080,
+          "stock": 4,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.grenade.rgn-2",
+          "level": 4,
+          "price": 55080,
+          "bundle": 1,
+          "bundlePrice": 55080,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.building.spraycan",
+              "count": 2
+            },
+            {
+              "id": "valuable.household.shampoo",
+              "count": 2
+            }
+          ]
+        }
       ]
     },
     "tips": "No cooking time - explodes on impact. Dangerous to use in close quarters",
@@ -758,7 +976,6 @@
       "fullsize": "/images/items/grenades/grenade-rgo-frag.webp"
     },
     "stats": {
-      "price": 53000,
       "rarity": "Epic",
       "weight": 0.53,
       "radius": 2,
@@ -894,6 +1111,52 @@
           "arriveTangent": -0.000639,
           "leaveTangent": -0.000639
         }
+      ],
+      "basePrice": 16790,
+      "sellPrices": [
+        16790,
+        16790,
+        11753,
+        11753,
+        11753,
+        11753
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.grenade.rgo",
+          "level": 4,
+          "price": 53000,
+          "bundle": 1,
+          "bundlePrice": 53000,
+          "stock": 4,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.grenade.rgo-2",
+          "level": 4,
+          "price": 53000,
+          "bundle": 1,
+          "bundlePrice": 53000,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.batteries.ionbattery",
+              "count": 4
+            },
+            {
+              "id": "valuable.electric.radio",
+              "count": 1
+            }
+          ]
+        }
       ]
     },
     "tips": "No cooking time - explodes on impact. Dangerous to use in close quarters",
@@ -911,7 +1174,6 @@
       "fullsize": "/images/items/grenades/grenade-vod17-frag.webp"
     },
     "stats": {
-      "price": 10000,
       "rarity": "Uncommon",
       "weight": 0.28,
       "radius": 2,
@@ -1055,6 +1317,32 @@
           "arriveTangent": -0.000357,
           "leaveTangent": -0.000357
         }
+      ],
+      "basePrice": 3104,
+      "sellPrices": [
+        3104,
+        3104,
+        2173,
+        2173,
+        2173,
+        2173
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.grenade.vog17",
+          "level": 1,
+          "price": 10000,
+          "bundle": 1,
+          "bundlePrice": 10000,
+          "stock": 8,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.wp.c.03"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": "Usable fragmentation grenade, very compact.",
@@ -1072,7 +1360,6 @@
       "fullsize": "/images/items/grenades/grenade-vod25-frag.webp"
     },
     "stats": {
-      "price": 10100,
       "rarity": "Uncommon",
       "weight": 0.25,
       "radius": 2,
@@ -1215,6 +1502,32 @@
           "value": 0.25,
           "arriveTangent": -0.000544,
           "leaveTangent": -0.000544
+        }
+      ],
+      "basePrice": 3200,
+      "sellPrices": [
+        3200,
+        3200,
+        2240,
+        2240,
+        2240,
+        2240
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.grenade.vog25",
+          "level": 1,
+          "price": 10100,
+          "bundle": 1,
+          "bundlePrice": 10100,
+          "stock": 8,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.wp.c.04"
+          ],
+          "requiresDlc": [],
+          "exchange": []
         }
       ]
     },

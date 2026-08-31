@@ -11,7 +11,6 @@
       "fullsize": "/images/items/armor/armor-6b17.webp"
     },
     "stats": {
-      "price": 29485,
       "weight": 7.2,
       "rarity": "Rare",
       "armorClass": 4,
@@ -146,6 +145,30 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 37554,
+      "sellPrices": [
+        26288,
+        26288,
+        37554,
+        22532,
+        15022,
+        26288
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.6b17",
+          "level": 3,
+          "price": 117354,
+          "bundle": 1,
+          "bundlePrice": 117354,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": "Balance the excellent protection against the mobility penalty. Best used when expecting heavy combat or holding defensive positions.",
@@ -163,7 +186,6 @@
       "fullsize": "/images/items/armor/armor-6b17-upgrade.webp"
     },
     "stats": {
-      "price": 53225,
       "weight": 7.2,
       "rarity": "Epic",
       "armorClass": 5,
@@ -298,6 +320,30 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 68486,
+      "sellPrices": [
+        47941,
+        47941,
+        68486,
+        41092,
+        27394,
+        47941
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.6b17rig",
+          "level": 3,
+          "price": 228286,
+          "bundle": 1,
+          "bundlePrice": 228286,
+          "stock": 12,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": "The only AC5 armor at LVL3 trader. You will get used to it",
@@ -315,7 +361,6 @@
       "fullsize": "/images/items/armor/armor-6b23-1.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 9.5,
       "rarity": "Epic",
       "armorClass": 4,
@@ -450,6 +495,30 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 17856,
+      "sellPrices": [
+        12500,
+        12500,
+        17856,
+        10714,
+        7142,
+        12500
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.6b23-one",
+          "level": 2,
+          "price": 137154,
+          "bundle": 1,
+          "bundlePrice": 137154,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -466,7 +535,6 @@
       "fullsize": "/images/items/armor/armor-6b23-2.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 8.5,
       "rarity": "Rare",
       "armorClass": 3,
@@ -593,6 +661,30 @@
           "arriveTangent": 0,
           "leaveTangent": 0
         }
+      ],
+      "basePrice": 13006,
+      "sellPrices": [
+        9105,
+        9105,
+        13006,
+        7804,
+        5202,
+        9105
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.6b23-two",
+          "level": 2,
+          "price": 80373,
+          "bundle": 1,
+          "bundlePrice": 80373,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -609,7 +701,6 @@
       "fullsize": "/images/items/armor/armor-6b45.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 13,
       "rarity": "Ultimate",
       "armorClass": 5,
@@ -744,6 +835,30 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 34516,
+      "sellPrices": [
+        24162,
+        24162,
+        34516,
+        20710,
+        13806,
+        24162
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.6b45-one",
+          "level": 4,
+          "price": 260678,
+          "bundle": 1,
+          "bundlePrice": 260678,
+          "stock": 5,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -760,7 +875,6 @@
       "fullsize": "/images/items/armor/armor-6b5-16.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 7.2,
       "rarity": "Uncommon",
       "armorClass": 3,
@@ -879,6 +993,30 @@
           "arriveTangent": -0.64334,
           "leaveTangent": -0.64334
         }
+      ],
+      "basePrice": 10170,
+      "sellPrices": [
+        7119,
+        7119,
+        10170,
+        6102,
+        4068,
+        7119
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.6b516",
+          "level": 2,
+          "price": 65589,
+          "bundle": 1,
+          "bundlePrice": 65589,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -895,7 +1033,6 @@
       "fullsize": "/images/items/armor/armor-apex-bk.webp"
     },
     "stats": {
-      "price": 77284,
       "weight": 5.5,
       "rarity": "Rare",
       "armorClass": 5,
@@ -1024,6 +1161,32 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 66107,
+      "sellPrices": [
+        46275,
+        46275,
+        66107,
+        39664,
+        26443,
+        46275
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.lv6",
+          "level": 3,
+          "price": 220354,
+          "bundle": 1,
+          "bundlePrice": 220354,
+          "stock": 12,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.gear.a.04"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": "Excellent choice for high-threat environments where maximum protection is needed.",
@@ -1041,7 +1204,6 @@
       "fullsize": "/images/items/armor/armor-apex-mc.webp"
     },
     "stats": {
-      "price": 77284,
       "weight": 5.5,
       "rarity": "Epic",
       "armorClass": 5,
@@ -1170,6 +1332,30 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 66087,
+      "sellPrices": [
+        46261,
+        46261,
+        66087,
+        39652,
+        26435,
+        46261
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.lv7",
+          "level": 4,
+          "price": 220289,
+          "bundle": 1,
+          "bundlePrice": 220289,
+          "stock": 12,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": "Premium choice for experienced operators who need reliable protection without excessive bulk.",
@@ -1187,7 +1373,6 @@
       "fullsize": "/images/items/armor/armor-centurionv3smc.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 5.5,
       "rarity": "Legendary",
       "armorClass": 5,
@@ -1316,6 +1501,30 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 32962,
+      "sellPrices": [
+        23074,
+        23074,
+        32962,
+        19777,
+        13185,
+        23074
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.centurionv3smc",
+          "level": 4,
+          "price": 260642,
+          "bundle": 1,
+          "bundlePrice": 260642,
+          "stock": 5,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -1332,7 +1541,6 @@
       "fullsize": "/images/items/armor/armor-centurionv3ssd.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 5.5,
       "rarity": "Legendary",
       "armorClass": 5,
@@ -1461,6 +1669,30 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 32962,
+      "sellPrices": [
+        23074,
+        23074,
+        32962,
+        19777,
+        13185,
+        23074
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.centurionv3ssd",
+          "level": 4,
+          "price": 260358,
+          "bundle": 1,
+          "bundlePrice": 260358,
+          "stock": 5,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -1477,7 +1709,6 @@
       "fullsize": "/images/items/armor/armor-centurionv3stg.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 5.5,
       "rarity": "Legendary",
       "armorClass": 5,
@@ -1606,6 +1837,30 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 32962,
+      "sellPrices": [
+        23074,
+        23074,
+        32962,
+        19777,
+        13185,
+        23074
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.centurionv3stg",
+          "level": 4,
+          "price": 330493,
+          "bundle": 1,
+          "bundlePrice": 330493,
+          "stock": 5,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -1622,7 +1877,6 @@
       "fullsize": "/images/items/armor/armor-duo-mountains.webp"
     },
     "stats": {
-      "price": 41546,
       "weight": 4.9,
       "rarity": "Rare",
       "armorClass": 4,
@@ -1751,6 +2005,50 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 32223,
+      "sellPrices": [
+        22557,
+        22557,
+        32223,
+        19334,
+        12889,
+        22557
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.lv3",
+          "level": 2,
+          "price": 100696,
+          "bundle": 1,
+          "bundlePrice": 100696,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.lv3-2",
+          "level": 2,
+          "price": 100696,
+          "bundle": 1,
+          "bundlePrice": 100696,
+          "stock": 8,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gear.b.07"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.building.instantglue",
+              "count": 3
+            }
+          ]
+        }
       ]
     },
     "tips": "Excellent choice for long missions where equipment reliability is paramount.",
@@ -1768,7 +2066,6 @@
       "fullsize": "/images/items/armor/armor-imtv.webp"
     },
     "stats": {
-      "price": 78830,
       "weight": 8.8,
       "rarity": "Epic",
       "armorClass": 5,
@@ -1897,6 +2194,52 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 90180,
+      "sellPrices": [
+        63126,
+        63126,
+        90180,
+        54108,
+        36072,
+        63126
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.lv5-imtv",
+          "level": 4,
+          "price": 300598,
+          "bundle": 1,
+          "bundlePrice": 300598,
+          "stock": 6,
+          "resetType": "weekly",
+          "requiresTasks": [
+            "task.gear.a.12"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.lv5-imtv-2",
+          "level": 4,
+          "price": 300598,
+          "bundle": 1,
+          "bundlePrice": 300598,
+          "stock": 8,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gear.a.12"
+          ],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.household.ratpoison",
+              "count": 1
+            }
+          ]
+        }
       ]
     },
     "tips": "Heavy but reliable armor for sustained combat operations.",
@@ -1914,7 +2257,6 @@
       "fullsize": "/images/items/armor/armor-imtv-bonecrusher.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 8.8,
       "rarity": "Epic",
       "armorClass": 5,
@@ -2043,7 +2385,17 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
-      ]
+      ],
+      "basePrice": 20855,
+      "sellPrices": [
+        14599,
+        14599,
+        20855,
+        12513,
+        8342,
+        14599
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -2059,7 +2411,6 @@
       "fullsize": "/images/items/armor/armor-iotvgen3.webp"
     },
     "stats": {
-      "price": 205000,
       "weight": 9.3,
       "rarity": "Epic",
       "armorClass": 6,
@@ -2206,6 +2557,56 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 144253,
+      "sellPrices": [
+        100978,
+        100978,
+        144253,
+        86552,
+        57701,
+        100978
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.lv6iotv",
+          "level": 4,
+          "price": 480841,
+          "bundle": 1,
+          "bundlePrice": 480841,
+          "stock": 2,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.lv6iotv-2",
+          "level": 4,
+          "price": 480841,
+          "bundle": 1,
+          "bundlePrice": 480841,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.medicalsupplies.aspirin",
+              "count": 3
+            },
+            {
+              "id": "valuable.medicalsupplies.centrifuge",
+              "count": 1
+            },
+            {
+              "id": "valuable.medicalsupplies.defibrillator",
+              "count": 1
+            }
+          ]
+        }
       ]
     },
     "tips": "Ultimate protection for extreme combat situations. The weight penalty is significant but the protection is unmatched.",
@@ -2223,7 +2624,6 @@
       "fullsize": "/images/items/armor/armor-iotvgen3-pumpkin.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 8.8,
       "rarity": "Epic",
       "armorClass": 5,
@@ -2354,7 +2754,17 @@
           "arriveTangent": -2.981355,
           "leaveTangent": -2.981352
         }
-      ]
+      ],
+      "basePrice": 50000,
+      "sellPrices": [
+        50000,
+        50000,
+        50000,
+        50000,
+        50000,
+        35000
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -2370,7 +2780,6 @@
       "fullsize": "/images/items/armor/armor-jpc.webp"
     },
     "stats": {
-      "price": 41966,
       "weight": 2.8,
       "rarity": "Rare",
       "armorClass": 4,
@@ -2499,6 +2908,30 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 46303,
+      "sellPrices": [
+        32413,
+        32413,
+        46303,
+        27782,
+        18521,
+        32413
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.lv4",
+          "level": 3,
+          "price": 144695,
+          "bundle": 1,
+          "bundlePrice": 144695,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": "Perfect for fast-paced operations where speed and agility are more important than maximum protection.",
@@ -2516,7 +2949,6 @@
       "fullsize": "/images/items/armor/armor-nomadrig.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 1.5,
       "rarity": "Common",
       "armorClass": 0,
@@ -2578,6 +3010,30 @@
           "arriveTangent": 0,
           "leaveTangent": 0
         }
+      ],
+      "basePrice": 1362,
+      "sellPrices": [
+        954,
+        954,
+        1362,
+        817,
+        545,
+        954
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.lv0",
+          "level": 1,
+          "price": 4256,
+          "bundle": 1,
+          "bundlePrice": 4256,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -2594,7 +3050,6 @@
       "fullsize": "/images/items/armor/armor-police-vest.webp"
     },
     "stats": {
-      "price": 14084,
       "weight": 4.7,
       "rarity": "Uncommon",
       "armorClass": 3,
@@ -2707,6 +3162,30 @@
           "arriveTangent": -0.64334,
           "leaveTangent": -0.64334
         }
+      ],
+      "basePrice": 15324,
+      "sellPrices": [
+        10727,
+        10727,
+        15324,
+        9194,
+        6130,
+        10727
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.police",
+          "level": 1,
+          "price": 47885,
+          "bundle": 1,
+          "bundlePrice": 47885,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": "Good protection against handgun rounds and light rifle fire. Comfortable for extended wear.",
@@ -2724,7 +3203,6 @@
       "fullsize": "/images/items/armor/armor-press-vest.webp"
     },
     "stats": {
-      "price": 6435,
       "weight": 3.9,
       "rarity": "Common",
       "armorClass": 2,
@@ -2845,6 +3323,30 @@
           "arriveTangent": -0.223494,
           "leaveTangent": -0.223494
         }
+      ],
+      "basePrice": 11020,
+      "sellPrices": [
+        7714,
+        7714,
+        11020,
+        6612,
+        4408,
+        7714
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.press",
+          "level": 1,
+          "price": 34435,
+          "bundle": 1,
+          "bundlePrice": 34435,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": "Minimal protection but clearly identifies the wearer as press. Not suitable for combat operations.",
@@ -2862,7 +3364,6 @@
       "fullsize": "/images/items/armor/armor-raid-explorer-black.webp"
     },
     "stats": {
-      "price": 20444,
       "weight": 3.3,
       "rarity": "Uncommon",
       "armorClass": 3,
@@ -2975,6 +3476,30 @@
           "arriveTangent": -0.64334,
           "leaveTangent": -0.64334
         }
+      ],
+      "basePrice": 11256,
+      "sellPrices": [
+        7880,
+        7880,
+        11256,
+        6754,
+        4502,
+        7880
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.lv2-black",
+          "level": 2,
+          "price": 35172,
+          "bundle": 1,
+          "bundlePrice": 35172,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": "Good balance of protection and mobility for urban operations. Black color aids concealment at night.",
@@ -2992,7 +3517,6 @@
       "fullsize": "/images/items/armor/armor-raid-explorer-sd.webp"
     },
     "stats": {
-      "price": 19451,
       "weight": 3.3,
       "rarity": "Uncommon",
       "armorClass": 3,
@@ -3105,6 +3629,30 @@
           "arriveTangent": -0.64334,
           "leaveTangent": -0.64334
         }
+      ],
+      "basePrice": 14294,
+      "sellPrices": [
+        10006,
+        10006,
+        14294,
+        8576,
+        5718,
+        10006
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.lv2-sd",
+          "level": 2,
+          "price": 44666,
+          "bundle": 1,
+          "bundlePrice": 44666,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": "Ideal for operations in sandy or desert environments where concealment is important.",
@@ -3122,7 +3670,6 @@
       "fullsize": "/images/items/armor/armor-rampage.webp"
     },
     "stats": {
-      "price": 42805,
       "weight": 5.3,
       "rarity": "Rare",
       "armorClass": 4,
@@ -3251,6 +3798,30 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 57907,
+      "sellPrices": [
+        40535,
+        40535,
+        57907,
+        34744,
+        23163,
+        40535
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.lv5",
+          "level": 3,
+          "price": 180957,
+          "bundle": 1,
+          "bundlePrice": 180957,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": "Great for sustained combat operations where reliable protection is essential.",
@@ -3268,7 +3839,6 @@
       "fullsize": "/images/items/armor/armor-rampage-bells.webp"
     },
     "stats": {
-      "price": 63700,
       "weight": 5.3,
       "rarity": "Epic",
       "armorClass": 5,
@@ -3397,7 +3967,17 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
-      ]
+      ],
+      "basePrice": 16129,
+      "sellPrices": [
+        16129,
+        16129,
+        16129,
+        16129,
+        16129,
+        11291
+      ],
+      "buyOffers": []
     },
     "tips": "Special holiday armor with better protection than standard Rampage. Collectors item with practical benefits.",
     "notes": "Festive limited edition armor with enhanced protection rating. The bells are surprisingly tactical."
@@ -3414,7 +3994,6 @@
       "fullsize": "/images/items/armor/armor-rampage-od.webp"
     },
     "stats": {
-      "price": 42805,
       "weight": 5.3,
       "rarity": "Epic",
       "armorClass": 4,
@@ -3477,7 +4056,33 @@
           "leaveTangent": 0
         }
       ],
-      "antiPenetrationDurabilityScalarCurve": []
+      "antiPenetrationDurabilityScalarCurve": [],
+      "basePrice": 57656,
+      "sellPrices": [
+        40360,
+        40360,
+        57656,
+        34594,
+        23062,
+        40360
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.lv5od",
+          "level": 3,
+          "price": 180175,
+          "bundle": 1,
+          "bundlePrice": 180175,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.gear.a.07"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Perfect for forest and jungle operations where green/brown camouflage is advantageous.",
     "notes": "Woodland camouflage version with identical protection to standard Rampage vest."
@@ -3494,7 +4099,6 @@
       "fullsize": "/images/items/armor/armor-rampage-skull.webp"
     },
     "stats": {
-      "price": 63700,
       "weight": 5.3,
       "rarity": "Legendary",
       "armorClass": 5,
@@ -3623,7 +4227,17 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
-      ]
+      ],
+      "basePrice": 15807,
+      "sellPrices": [
+        11065,
+        11065,
+        15807,
+        9484,
+        6323,
+        11065
+      ],
+      "buyOffers": []
     },
     "tips": "Same reliable Rampage protection with enhanced armor class rating and psychological impact. Perfect for aggressive playstyles.",
     "notes": "Intimidating skull design with enhanced armor classification for psychological warfare."
@@ -3640,7 +4254,6 @@
       "fullsize": "/images/items/armor/armor-sd-protector.webp"
     },
     "stats": {
-      "price": 245000,
       "weight": 16,
       "rarity": "Ultimate",
       "armorClass": 6,
@@ -3799,6 +4412,35 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 170213,
+      "sellPrices": [
+        119150,
+        119150,
+        170213,
+        102128,
+        68085,
+        119150
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.fb012-2",
+          "level": 4,
+          "price": 315703,
+          "bundle": 1,
+          "bundlePrice": 315703,
+          "stock": 2,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "vest.fb012",
+              "count": 4
+            }
+          ]
+        }
       ]
     },
     "tips": "Ultimate protection for the most dangerous situations. The weight penalty is severe but the protection is unmatched. Consider mobility carefully.",
@@ -3816,7 +4458,6 @@
       "fullsize": "/images/items/armor/armor-sd-protector-black.webp"
     },
     "stats": {
-      "price": 245000,
       "weight": 16,
       "rarity": "Ultimate",
       "armorClass": 6,
@@ -3975,7 +4616,17 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
-      ]
+      ],
+      "basePrice": 94711,
+      "sellPrices": [
+        66298,
+        66298,
+        94711,
+        56827,
+        37884,
+        66298
+      ],
+      "buyOffers": []
     },
     "tips": "Ideal for urban operations where black camouflage provides an advantage. Maximum protection at maximum weight penalty.",
     "notes": "Black tactical variant of the ultimate protection system. Same performance with enhanced concealment."
@@ -3992,7 +4643,6 @@
       "fullsize": "/images/items/armor/armor-sdprotecter-zombiexma.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 16,
       "rarity": "Legendary",
       "armorClass": 5,
@@ -4151,7 +4801,17 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
-      ]
+      ],
+      "basePrice": 80354,
+      "sellPrices": [
+        56248,
+        56248,
+        80354,
+        48212,
+        32142,
+        56248
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -4167,7 +4827,6 @@
       "fullsize": "/images/items/armor/armor-security-vest.webp"
     },
     "stats": {
-      "price": 6371,
       "weight": 3.9,
       "rarity": "Common",
       "armorClass": 2,
@@ -4288,6 +4947,30 @@
           "arriveTangent": -0.223494,
           "leaveTangent": -0.223494
         }
+      ],
+      "basePrice": 10914,
+      "sellPrices": [
+        7640,
+        7640,
+        10914,
+        6548,
+        4366,
+        7640
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.security",
+          "level": 1,
+          "price": 34106,
+          "bundle": 1,
+          "bundlePrice": 34106,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": "Basic protection suitable for low-threat environments. Prioritizes comfort and affordability over protection.",
@@ -4305,7 +4988,6 @@
       "fullsize": "/images/items/armor/armor-soft-armor.webp"
     },
     "stats": {
-      "price": 20444,
       "weight": 4.2,
       "rarity": "Common",
       "armorClass": 3,
@@ -4418,6 +5100,48 @@
           "arriveTangent": -0.64334,
           "leaveTangent": -0.64334
         }
+      ],
+      "basePrice": 14449,
+      "sellPrices": [
+        10115,
+        10115,
+        14449,
+        8669,
+        5780,
+        10115
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.lv2",
+          "level": 1,
+          "price": 45153,
+          "bundle": 1,
+          "bundlePrice": 45153,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.lv2-2",
+          "level": 1,
+          "price": 45153,
+          "bundle": 1,
+          "bundlePrice": 45153,
+          "stock": 19,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "id": "valuable.building.superglue",
+              "count": 1
+            }
+          ]
+        }
       ]
     },
     "tips": "Good balance of protection and comfort for extended wear. Suitable for patrol and general security work.",
@@ -4435,7 +5159,6 @@
       "fullsize": "/images/items/armor/armor-sudden-attack.webp"
     },
     "stats": {
-      "price": 35000,
       "weight": 3.5,
       "rarity": "Common",
       "armorClass": 2,
@@ -4556,6 +5279,30 @@
           "arriveTangent": -0.223494,
           "leaveTangent": -0.223494
         }
+      ],
+      "basePrice": 5235,
+      "sellPrices": [
+        3665,
+        3665,
+        5235,
+        3141,
+        2094,
+        3665
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.6b2",
+          "level": 1,
+          "price": 16358,
+          "bundle": 1,
+          "bundlePrice": 16358,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": "Good starting armor for new operators or stealth missions where mobility is critical.",
@@ -4573,7 +5320,6 @@
       "fullsize": "/images/items/armor/armor-sudden-attack-vest.webp"
     },
     "stats": {
-      "price": 9251,
       "weight": 2.6,
       "rarity": "Common",
       "armorClass": 2,
@@ -4694,6 +5440,30 @@
           "arriveTangent": -0.223494,
           "leaveTangent": -0.223494
         }
+      ],
+      "basePrice": 5949,
+      "sellPrices": [
+        4165,
+        4165,
+        5949,
+        3569,
+        2380,
+        4165
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.lv1-sudden",
+          "level": 1,
+          "price": 18589,
+          "bundle": 1,
+          "bundlePrice": 18589,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": "Minimal protection but maximum mobility. Best suited for operations where speed is more important than protection.",
@@ -4711,7 +5481,6 @@
       "fullsize": "/images/items/armor/armor-tbasv5bk.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 3.3,
       "rarity": "Epic",
       "armorClass": 4,
@@ -4846,6 +5615,30 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 22698,
+      "sellPrices": [
+        15889,
+        15889,
+        22698,
+        13619,
+        9079,
+        15889
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.tbasv5bk",
+          "level": 3,
+          "price": 146735,
+          "bundle": 1,
+          "bundlePrice": 146735,
+          "stock": 49,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -4862,7 +5655,6 @@
       "fullsize": "/images/items/armor/armor-tbasv5mc.webp"
     },
     "stats": {
-      "price": 50000,
       "weight": 3.3,
       "rarity": "Epic",
       "armorClass": 4,
@@ -4997,6 +5789,30 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
+      ],
+      "basePrice": 23387,
+      "sellPrices": [
+        16371,
+        16371,
+        23387,
+        14032,
+        9355,
+        16371
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.vest.tbasv5mc",
+          "level": 3,
+          "price": 146935,
+          "bundle": 1,
+          "bundlePrice": 146935,
+          "stock": 49,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "tips": ""
@@ -5013,7 +5829,6 @@
       "fullsize": "/images/items/armor/armor-wdcs.webp"
     },
     "stats": {
-      "price": 205000,
       "weight": 7.5,
       "rarity": "Epic",
       "armorClass": 6,
@@ -5160,7 +5975,17 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
-      ]
+      ],
+      "basePrice": 115286,
+      "sellPrices": [
+        80701,
+        80701,
+        115286,
+        69172,
+        46114,
+        80701
+      ],
+      "buyOffers": []
     },
     "tips": "High-end armor providing excellent protection with reasonable weight. Includes arm protection for comprehensive coverage.",
     "notes": "Advanced tactical system with Class 6 torso protection and arm guards."
@@ -5177,7 +6002,6 @@
       "fullsize": "/images/items/armor/armor-wdcs-swat.webp"
     },
     "stats": {
-      "price": 205000,
       "weight": 8.2,
       "rarity": "Legendary",
       "armorClass": 6,
@@ -5324,7 +6148,17 @@
           "arriveTangent": -0.001907,
           "leaveTangent": -0.001907
         }
-      ]
+      ],
+      "basePrice": 54051,
+      "sellPrices": [
+        37836,
+        37836,
+        54051,
+        32431,
+        21620,
+        37836
+      ],
+      "buyOffers": []
     },
     "tips": "Top-tier armor for the most dangerous operations. Legendary rarity reflects its exceptional performance and availability.",
     "notes": "Elite law enforcement armor with premium materials and enhanced durability retention."

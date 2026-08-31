@@ -11,7 +11,6 @@
       "fullsize": "/images/items/food/food_apple.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.2,
       "rarity": "Common",
       "capacity": 15,
@@ -20,7 +19,17 @@
       "consumptionSpeed": 5,
       "energyFactor": 1,
       "hydraFactor": 1,
-      "stackSize": 1
+      "stackSize": 1,
+      "basePrice": 1087,
+      "sellPrices": [
+        761,
+        761,
+        761,
+        1087,
+        1087,
+        761
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -36,7 +45,6 @@
       "fullsize": "/images/items/food/food_beer.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.6,
       "rarity": "Common",
       "capacity": 90,
@@ -45,7 +53,17 @@
       "consumptionSpeed": 15,
       "energyFactor": 0.222,
       "hydraFactor": 0.778,
-      "stackSize": 1
+      "stackSize": 1,
+      "basePrice": 6440,
+      "sellPrices": [
+        4508,
+        4508,
+        4508,
+        6440,
+        6440,
+        4508
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -61,7 +79,6 @@
       "fullsize": "/images/items/food/food_chocolate.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.12,
       "rarity": "Common",
       "capacity": 21,
@@ -70,7 +87,31 @@
       "consumptionSpeed": 18,
       "energyFactor": 1,
       "hydraFactor": 0,
-      "stackSize": 1
+      "stackSize": 1,
+      "basePrice": 1050,
+      "sellPrices": [
+        735,
+        735,
+        735,
+        1050,
+        1050,
+        735
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.food.10",
+          "level": 1,
+          "price": 2100,
+          "bundle": 1,
+          "bundlePrice": 2100,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -86,7 +127,6 @@
       "fullsize": "/images/items/food/food_coffee.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.35,
       "rarity": "Common",
       "capacity": 58,
@@ -95,7 +135,17 @@
       "consumptionSpeed": 11,
       "energyFactor": 0,
       "hydraFactor": 1,
-      "stackSize": 1
+      "stackSize": 1,
+      "basePrice": 3300,
+      "sellPrices": [
+        2310,
+        2310,
+        2310,
+        3300,
+        3300,
+        2310
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -111,7 +161,6 @@
       "fullsize": "/images/items/food/food_energy_bar.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.08,
       "rarity": "Common",
       "capacity": 33,
@@ -120,7 +169,31 @@
       "consumptionSpeed": 8,
       "energyFactor": 1,
       "hydraFactor": 0,
-      "stackSize": 1
+      "stackSize": 1,
+      "basePrice": 1868,
+      "sellPrices": [
+        1308,
+        1308,
+        1308,
+        1868,
+        1868,
+        1308
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.food.01",
+          "level": 1,
+          "price": 3737,
+          "bundle": 1,
+          "bundlePrice": 3737,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -136,7 +209,6 @@
       "fullsize": "/images/items/food/food_ginger_bread.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.05,
       "rarity": "Common",
       "capacity": 30,
@@ -145,7 +217,17 @@
       "consumptionSpeed": 20,
       "energyFactor": 1,
       "hydraFactor": 0,
-      "stackSize": 1
+      "stackSize": 1,
+      "basePrice": 600,
+      "sellPrices": [
+        600,
+        600,
+        600,
+        600,
+        600,
+        420
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -161,7 +243,6 @@
       "fullsize": "/images/items/food/food_holiday_bottle.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.85,
       "rarity": "Common",
       "capacity": 220,
@@ -170,7 +251,17 @@
       "consumptionSpeed": 20,
       "energyFactor": 0,
       "hydraFactor": 1,
-      "stackSize": 1
+      "stackSize": 1,
+      "basePrice": 6500,
+      "sellPrices": [
+        6500,
+        6500,
+        6500,
+        6500,
+        6500,
+        4550
+      ],
+      "buyOffers": []
     },
     "tips": "Can be refilled at Water Collector in Hideout"
   },
@@ -186,7 +277,6 @@
       "fullsize": "/images/items/food/food_meat_can.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.3,
       "rarity": "Common",
       "capacity": 60,
@@ -195,7 +285,33 @@
       "consumptionSpeed": 9.5,
       "energyFactor": 1,
       "hydraFactor": 0,
-      "stackSize": 1
+      "stackSize": 1,
+      "basePrice": 3600,
+      "sellPrices": [
+        2520,
+        2520,
+        2520,
+        3600,
+        3600,
+        2520
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.food.12",
+          "level": 1,
+          "price": 7200,
+          "bundle": 1,
+          "bundlePrice": 7200,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            "task.doc.c.02"
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -211,7 +327,6 @@
       "fullsize": "/images/items/food/food_meat_can_l.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.35,
       "rarity": "Common",
       "capacity": 81,
@@ -220,7 +335,31 @@
       "consumptionSpeed": 9.2,
       "energyFactor": 1,
       "hydraFactor": 0,
-      "stackSize": 1
+      "stackSize": 1,
+      "basePrice": 5086,
+      "sellPrices": [
+        3561,
+        3561,
+        3561,
+        5086,
+        5086,
+        3561
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.food.11",
+          "level": 1,
+          "price": 10173,
+          "bundle": 1,
+          "bundlePrice": 10173,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -236,7 +375,6 @@
       "fullsize": "/images/items/food/food_mineral_water.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.5,
       "rarity": "Common",
       "capacity": 30,
@@ -245,7 +383,31 @@
       "consumptionSpeed": 5.7,
       "energyFactor": 0,
       "hydraFactor": 1,
-      "stackSize": 1
+      "stackSize": 1,
+      "basePrice": 1575,
+      "sellPrices": [
+        1103,
+        1103,
+        1103,
+        1575,
+        1575,
+        1103
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.food.08",
+          "level": 1,
+          "price": 3150,
+          "bundle": 1,
+          "bundlePrice": 3150,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -261,7 +423,6 @@
       "fullsize": "/images/items/food/food_mre.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.8,
       "rarity": "Common",
       "capacity": 120,
@@ -270,7 +431,31 @@
       "consumptionSpeed": 15,
       "energyFactor": 1,
       "hydraFactor": 0,
-      "stackSize": 1
+      "stackSize": 1,
+      "basePrice": 10200,
+      "sellPrices": [
+        7140,
+        7140,
+        7140,
+        10200,
+        10200,
+        7140
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.food.02",
+          "level": 1,
+          "price": 20400,
+          "bundle": 1,
+          "bundlePrice": 20400,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -286,7 +471,6 @@
       "fullsize": "/images/items/food/food_pea_can.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.5,
       "rarity": "Common",
       "capacity": 42,
@@ -295,7 +479,17 @@
       "consumptionSpeed": 16,
       "energyFactor": 1,
       "hydraFactor": 0.44,
-      "stackSize": 1
+      "stackSize": 1,
+      "basePrice": 2916,
+      "sellPrices": [
+        2042,
+        2042,
+        2042,
+        2916,
+        2916,
+        2042
+      ],
+      "buyOffers": []
     },
     "tips": ""
   },
@@ -311,7 +505,6 @@
       "fullsize": "/images/items/food/food_sausage.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.18,
       "rarity": "Common",
       "capacity": 42,
@@ -320,7 +513,31 @@
       "consumptionSpeed": 10,
       "energyFactor": 1,
       "hydraFactor": 0,
-      "stackSize": 1
+      "stackSize": 1,
+      "basePrice": 2400,
+      "sellPrices": [
+        1680,
+        1680,
+        1680,
+        2400,
+        2400,
+        1680
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.food.14",
+          "level": 1,
+          "price": 4800,
+          "bundle": 1,
+          "bundlePrice": 4800,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -336,7 +553,6 @@
       "fullsize": "/images/items/food/food_soda_drink.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.33,
       "rarity": "Common",
       "capacity": 28,
@@ -345,7 +561,31 @@
       "consumptionSpeed": 8,
       "energyFactor": 0.285,
       "hydraFactor": 0.714,
-      "stackSize": 1
+      "stackSize": 1,
+      "basePrice": 1070,
+      "sellPrices": [
+        749,
+        749,
+        749,
+        1070,
+        1070,
+        749
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.food.03",
+          "level": 1,
+          "price": 2140,
+          "bundle": 1,
+          "bundlePrice": 2140,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -361,7 +601,6 @@
       "fullsize": "/images/items/food/food_soda_drink_l.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.4,
       "rarity": "Common",
       "capacity": 50,
@@ -370,7 +609,31 @@
       "consumptionSpeed": 14,
       "energyFactor": 0.2,
       "hydraFactor": 0.8,
-      "stackSize": 1
+      "stackSize": 1,
+      "basePrice": 2250,
+      "sellPrices": [
+        1575,
+        1575,
+        1575,
+        2250,
+        2250,
+        1575
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.food.09",
+          "level": 1,
+          "price": 4500,
+          "bundle": 1,
+          "bundlePrice": 4500,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -386,7 +649,6 @@
       "fullsize": "/images/items/food/food_water_bottle.webp"
     },
     "stats": {
-      "price": 0,
       "weight": 0.85,
       "rarity": "Common",
       "capacity": 120,
@@ -395,7 +657,31 @@
       "consumptionSpeed": 20,
       "energyFactor": 0,
       "hydraFactor": 1,
-      "stackSize": 1
+      "stackSize": 1,
+      "basePrice": 13800,
+      "sellPrices": [
+        9660,
+        9660,
+        9660,
+        13800,
+        13800,
+        9660
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.food.04",
+          "level": 1,
+          "price": 27600,
+          "bundle": 1,
+          "bundlePrice": 27600,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": "Can be refilled at Water Collector in Hideout"
   }
