@@ -1037,11 +1037,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.visionmodule",
+              "itemId": "misc_b_visionmodule",
+              "sellId": "valuable.electric.visionmodule",
               "count": 2
             },
             {
-              "id": "valuable.highvalue.camera",
+              "itemId": "misc_camera",
+              "sellId": "valuable.highvalue.camera",
               "count": 1
             }
           ]
@@ -1358,11 +1360,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.medicalsupplies.iodophor",
+              "itemId": "misc_b_iodophor",
+              "sellId": "valuable.medicalsupplies.iodophor",
               "count": 1
             },
             {
-              "id": "valuable.tools.electricdrill",
+              "itemId": "taskitem_gold_lion",
+              "sellId": "valuable.tools.electricdrill",
               "count": 1
             }
           ]

@@ -5493,11 +5493,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.building.spraycan",
+              "itemId": "misc_b_spraycan",
+              "sellId": "valuable.building.spraycan",
               "count": 2
             },
             {
-              "id": "valuable.household.shampoo",
+              "itemId": "misc_b_shampoo",
+              "sellId": "valuable.household.shampoo",
               "count": 1
             }
           ]

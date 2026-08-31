@@ -313,7 +313,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.newphone",
+              "itemId": "misc_b_newphone",
+              "sellId": "valuable.electric.newphone",
               "count": 1
             }
           ]
@@ -574,7 +575,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.household.deodorant",
+              "itemId": "misc_b_deodorant",
+              "sellId": "valuable.household.deodorant",
               "count": 2
             }
           ]

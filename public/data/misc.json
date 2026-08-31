@@ -3596,31 +3596,38 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.highvalue.csdollgold.2",
+              "itemId": "misc_csdoll_standard_2",
+              "sellId": "valuable.highvalue.csdollgold.2",
               "count": 1
             },
             {
-              "id": "valuable.highvalue.csdollgold.3",
+              "itemId": "misc_csdoll_standard_3",
+              "sellId": "valuable.highvalue.csdollgold.3",
               "count": 1
             },
             {
-              "id": "valuable.highvalue.csdollgold.4",
+              "itemId": "misc_csdoll_standard_4",
+              "sellId": "valuable.highvalue.csdollgold.4",
               "count": 1
             },
             {
-              "id": "valuable.highvalue.csdollgold.5",
+              "itemId": "misc_csdoll_standard_5",
+              "sellId": "valuable.highvalue.csdollgold.5",
               "count": 1
             },
             {
-              "id": "valuable.highvalue.csdollgold.6",
+              "itemId": "misc_csdoll_standard_6",
+              "sellId": "valuable.highvalue.csdollgold.6",
               "count": 1
             },
             {
-              "id": "valuable.highvalue.csdollgold.7",
+              "itemId": "misc_csdoll_standard_7",
+              "sellId": "valuable.highvalue.csdollgold.7",
               "count": 1
             },
             {
-              "id": "valuable.highvalue.csdollstandard",
+              "itemId": "misc_csdoll_standard",
+              "sellId": "valuable.highvalue.csdollstandard",
               "count": 1
             }
           ]

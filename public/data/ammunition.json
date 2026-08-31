@@ -95,7 +95,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "medical.medical_pro_needle_lv1",
+              "itemId": "med-syringe-lv3",
+              "sellId": "medical.medical_pro_needle_lv1",
               "count": 1
             }
           ]
@@ -200,7 +201,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.household.deodorant",
+              "itemId": "misc_b_deodorant",
+              "sellId": "valuable.household.deodorant",
               "count": 1
             }
           ]
@@ -303,7 +305,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.ionbattery",
+              "itemId": "misc_b_ionbattery",
+              "sellId": "valuable.batteries.ionbattery",
               "count": 1
             }
           ]
@@ -763,11 +766,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.building.spraycan",
+              "itemId": "misc_b_spraycan",
+              "sellId": "valuable.building.spraycan",
               "count": 1
             },
             {
-              "id": "valuable.combustible.gunoil",
+              "itemId": "misc_b_gunoil",
+              "sellId": "valuable.combustible.gunoil",
               "count": 1
             }
           ]
@@ -870,11 +875,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.building.spraycan",
+              "itemId": "misc_b_spraycan",
+              "sellId": "valuable.building.spraycan",
               "count": 4
             },
             {
-              "id": "valuable.combustible.lighter.fix",
+              "itemId": "misc_b_lighter",
+              "sellId": "valuable.combustible.lighter.fix",
               "count": 4
             }
           ]
@@ -2117,15 +2124,18 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.combustible.gascan",
+              "itemId": "misc_b_gastank",
+              "sellId": "valuable.combustible.gascan",
               "count": 1
             },
             {
-              "id": "valuable.combustible.match",
+              "itemId": "misc_b_match",
+              "sellId": "valuable.combustible.match",
               "count": 1
             },
             {
-              "id": "valuable.highvalue.camera",
+              "itemId": "misc_camera",
+              "sellId": "valuable.highvalue.camera",
               "count": 1
             }
           ]
@@ -2215,15 +2225,18 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.building.piezometer",
+              "itemId": "misc_b_piezometer",
+              "sellId": "valuable.building.piezometer",
               "count": 1
             },
             {
-              "id": "valuable.tools.gaspipewrench",
+              "itemId": "misc_b_gaspipewrench",
+              "sellId": "valuable.tools.gaspipewrench",
               "count": 2
             },
             {
-              "id": "valuable.tools.sparkplug",
+              "itemId": "misc_b_sparkplug",
+              "sellId": "valuable.tools.sparkplug",
               "count": 5
             }
           ]
@@ -3127,11 +3140,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.household.beardoil",
+              "itemId": "misc_b_beardoil",
+              "sellId": "valuable.household.beardoil",
               "count": 5
             },
             {
-              "id": "valuable.tools.gaspipewrench",
+              "itemId": "misc_b_gaspipewrench",
+              "sellId": "valuable.tools.gaspipewrench",
               "count": 2
             }
           ]
@@ -3234,15 +3249,18 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.carbattery",
+              "itemId": "misc_b_storagebattery",
+              "sellId": "valuable.batteries.carbattery",
               "count": 1
             },
             {
-              "id": "valuable.building.copperwire",
+              "itemId": "misc_copperwire",
+              "sellId": "valuable.building.copperwire",
               "count": 3
             },
             {
-              "id": "valuable.electric.radioscanner",
+              "itemId": "misc_b_radioscanner",
+              "sellId": "valuable.electric.radioscanner",
               "count": 1
             }
           ]
@@ -4385,7 +4403,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.gameconsole",
+              "itemId": "misc_b_gameconsole",
+              "sellId": "valuable.electric.gameconsole",
               "count": 2
             }
           ]
@@ -4706,7 +4725,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.tools.screwdriver",
+              "itemId": "misc_screwdriver",
+              "sellId": "valuable.tools.screwdriver",
               "count": 1
             }
           ]
@@ -4809,7 +4829,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.highvalue.antiqueteacup",
+              "itemId": "misc_b_antiqueteaset",
+              "sellId": "valuable.highvalue.antiqueteacup",
               "count": 1
             }
           ]
@@ -5617,11 +5638,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.carbattery",
+              "itemId": "misc_b_storagebattery",
+              "sellId": "valuable.batteries.carbattery",
               "count": 1
             },
             {
-              "id": "valuable.electric.visionmodule",
+              "itemId": "misc_b_visionmodule",
+              "sellId": "valuable.electric.visionmodule",
               "count": 2
             }
           ]
@@ -5724,15 +5747,18 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.marinestoragebattery",
+              "itemId": "misc_b_marinestoragebattery",
+              "sellId": "valuable.batteries.marinestoragebattery",
               "count": 1
             },
             {
-              "id": "valuable.electric.transformer",
+              "itemId": "misc_b_transformer",
+              "sellId": "valuable.electric.transformer",
               "count": 1
             },
             {
-              "id": "valuable.medicalsupplies.centrifuge",
+              "itemId": "misc_bentrifuge",
+              "sellId": "valuable.medicalsupplies.centrifuge",
               "count": 1
             }
           ]
@@ -5970,7 +5996,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.transformer",
+              "itemId": "misc_b_transformer",
+              "sellId": "valuable.electric.transformer",
               "count": 2
             }
           ]
@@ -6644,15 +6671,18 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.marinestoragebattery",
+              "itemId": "misc_b_marinestoragebattery",
+              "sellId": "valuable.batteries.marinestoragebattery",
               "count": 1
             },
             {
-              "id": "valuable.electric.cpu",
+              "itemId": "misc_bpu",
+              "sellId": "valuable.electric.cpu",
               "count": 1
             },
             {
-              "id": "valuable.information.harddrive",
+              "itemId": "misc_b_harddrive",
+              "sellId": "valuable.information.harddrive",
               "count": 2
             }
           ]
@@ -6742,7 +6772,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.medicalsupplies.defibrillator",
+              "itemId": "misc_b_defibrillator",
+              "sellId": "valuable.medicalsupplies.defibrillator",
               "count": 1
             }
           ]
@@ -7063,7 +7094,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.carbattery",
+              "itemId": "misc_b_storagebattery",
+              "sellId": "valuable.batteries.carbattery",
               "count": 1
             }
           ]
@@ -7512,15 +7544,18 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.marinestoragebattery",
+              "itemId": "misc_b_marinestoragebattery",
+              "sellId": "valuable.batteries.marinestoragebattery",
               "count": 1
             },
             {
-              "id": "valuable.combustible.match",
+              "itemId": "misc_b_match",
+              "sellId": "valuable.combustible.match",
               "count": 2
             },
             {
-              "id": "valuable.household.ratpoison",
+              "itemId": "misc_b_rat_poison",
+              "sellId": "valuable.household.ratpoison",
               "count": 1
             }
           ]
@@ -7610,7 +7645,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.radioscanner",
+              "itemId": "misc_b_radioscanner",
+              "sellId": "valuable.electric.radioscanner",
               "count": 1
             }
           ]
@@ -8631,7 +8667,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.household.ratpoison",
+              "itemId": "misc_b_rat_poison",
+              "sellId": "valuable.household.ratpoison",
               "count": 2
             }
           ]
@@ -8721,11 +8758,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.combustible.oilcan",
+              "itemId": "misc_oilcan",
+              "sellId": "valuable.combustible.oilcan",
               "count": 2
             },
             {
-              "id": "valuable.electric.visionmodule",
+              "itemId": "misc_b_visionmodule",
+              "sellId": "valuable.electric.visionmodule",
               "count": 2
             }
           ]

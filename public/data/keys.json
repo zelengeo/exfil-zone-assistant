@@ -70,7 +70,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.highvalue.silvercup",
+              "itemId": "misc_silvercup",
+              "sellId": "valuable.highvalue.silvercup",
               "count": 1
             }
           ]
@@ -179,15 +180,18 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.ionbattery",
+              "itemId": "misc_b_ionbattery",
+              "sellId": "valuable.batteries.ionbattery",
               "count": 3
             },
             {
-              "id": "valuable.combustible.gunpowder",
+              "itemId": "misc_gunpowder",
+              "sellId": "valuable.combustible.gunpowder",
               "count": 1
             },
             {
-              "id": "valuable.combustible.smokelesspowder",
+              "itemId": "misc_b_smokelesspowder",
+              "sellId": "valuable.combustible.smokelesspowder",
               "count": 2
             }
           ]
@@ -236,15 +240,18 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.radioscanner",
+              "itemId": "misc_b_radioscanner",
+              "sellId": "valuable.electric.radioscanner",
               "count": 1
             },
             {
-              "id": "valuable.household.facialcleanser",
+              "itemId": "misc_facialcleaner",
+              "sellId": "valuable.household.facialcleanser",
               "count": 1
             },
             {
-              "id": "valuable.tools.sparkplug",
+              "itemId": "misc_b_sparkplug",
+              "sellId": "valuable.tools.sparkplug",
               "count": 1
             }
           ]
@@ -401,11 +408,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.carbattery",
+              "itemId": "misc_b_storagebattery",
+              "sellId": "valuable.batteries.carbattery",
               "count": 1
             },
             {
-              "id": "valuable.household.ratpoison",
+              "itemId": "misc_b_rat_poison",
+              "sellId": "valuable.household.ratpoison",
               "count": 1
             }
           ]
@@ -559,15 +568,18 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.marinestoragebattery",
+              "itemId": "misc_b_marinestoragebattery",
+              "sellId": "valuable.batteries.marinestoragebattery",
               "count": 1
             },
             {
-              "id": "valuable.combustible.gunoil",
+              "itemId": "misc_b_gunoil",
+              "sellId": "valuable.combustible.gunoil",
               "count": 1
             },
             {
-              "id": "valuable.electric.transformer",
+              "itemId": "misc_b_transformer",
+              "sellId": "valuable.electric.transformer",
               "count": 1
             }
           ]
@@ -616,15 +628,18 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.marinestoragebattery",
+              "itemId": "misc_b_marinestoragebattery",
+              "sellId": "valuable.batteries.marinestoragebattery",
               "count": 1
             },
             {
-              "id": "valuable.combustible.gunoil",
+              "itemId": "misc_b_gunoil",
+              "sellId": "valuable.combustible.gunoil",
               "count": 1
             },
             {
-              "id": "valuable.electric.transformer",
+              "itemId": "misc_b_transformer",
+              "sellId": "valuable.electric.transformer",
               "count": 1
             }
           ]
@@ -673,7 +688,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.highvalue.perfume",
+              "itemId": "misc_b_perfume",
+              "sellId": "valuable.highvalue.perfume",
               "count": 1
             }
           ]
@@ -814,11 +830,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.combustible.gunpowder",
+              "itemId": "misc_gunpowder",
+              "sellId": "valuable.combustible.gunpowder",
               "count": 1
             },
             {
-              "id": "valuable.tools.gaspipewrench",
+              "itemId": "misc_b_gaspipewrench",
+              "sellId": "valuable.tools.gaspipewrench",
               "count": 2
             }
           ]
@@ -1003,15 +1021,18 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.ionbattery",
+              "itemId": "misc_b_ionbattery",
+              "sellId": "valuable.batteries.ionbattery",
               "count": 1
             },
             {
-              "id": "valuable.batteries.marinestoragebattery",
+              "itemId": "misc_b_marinestoragebattery",
+              "sellId": "valuable.batteries.marinestoragebattery",
               "count": 1
             },
             {
-              "id": "valuable.tools.climbingrope",
+              "itemId": "misc_blimbingrope",
+              "sellId": "valuable.tools.climbingrope",
               "count": 1
             }
           ]
@@ -1079,15 +1100,18 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.ionbattery",
+              "itemId": "misc_b_ionbattery",
+              "sellId": "valuable.batteries.ionbattery",
               "count": 3
             },
             {
-              "id": "valuable.combustible.gunpowder",
+              "itemId": "misc_gunpowder",
+              "sellId": "valuable.combustible.gunpowder",
               "count": 1
             },
             {
-              "id": "valuable.combustible.smokelesspowder",
+              "itemId": "misc_b_smokelesspowder",
+              "sellId": "valuable.combustible.smokelesspowder",
               "count": 2
             }
           ]
@@ -1138,15 +1162,18 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.combustible.largegascan",
+              "itemId": "misc_b_gastank_large",
+              "sellId": "valuable.combustible.largegascan",
               "count": 2
             },
             {
-              "id": "valuable.electric.newphone",
+              "itemId": "misc_b_newphone",
+              "sellId": "valuable.electric.newphone",
               "count": 1
             },
             {
-              "id": "valuable.household.pesticide",
+              "itemId": "misc_b_pesticide",
+              "sellId": "valuable.household.pesticide",
               "count": 5
             }
           ]
@@ -1363,11 +1390,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.combustible.gunpowder",
+              "itemId": "misc_gunpowder",
+              "sellId": "valuable.combustible.gunpowder",
               "count": 1
             },
             {
-              "id": "valuable.combustible.smokelesspowder",
+              "itemId": "misc_b_smokelesspowder",
+              "sellId": "valuable.combustible.smokelesspowder",
               "count": 1
             }
           ]
@@ -1416,15 +1445,18 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.radioscanner",
+              "itemId": "misc_b_radioscanner",
+              "sellId": "valuable.electric.radioscanner",
               "count": 2
             },
             {
-              "id": "valuable.electric.tapeplayer",
+              "itemId": "misc_b_tapeplayer",
+              "sellId": "valuable.electric.tapeplayer",
               "count": 1
             },
             {
-              "id": "valuable.household.pesticide",
+              "itemId": "misc_b_pesticide",
+              "sellId": "valuable.household.pesticide",
               "count": 5
             }
           ]
@@ -1503,15 +1535,18 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.combustible.gunoil",
+              "itemId": "misc_b_gunoil",
+              "sellId": "valuable.combustible.gunoil",
               "count": 3
             },
             {
-              "id": "valuable.household.facialcleanser",
+              "itemId": "misc_facialcleaner",
+              "sellId": "valuable.household.facialcleanser",
               "count": 3
             },
             {
-              "id": "valuable.information.recorder",
+              "itemId": "misc_b_recorder",
+              "sellId": "valuable.information.recorder",
               "count": 2
             }
           ]
@@ -1560,15 +1595,18 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.gameconsole",
+              "itemId": "misc_b_gameconsole",
+              "sellId": "valuable.electric.gameconsole",
               "count": 2
             },
             {
-              "id": "valuable.household.facialcleanser",
+              "itemId": "misc_facialcleaner",
+              "sellId": "valuable.household.facialcleanser",
               "count": 3
             },
             {
-              "id": "valuable.tools.climbingrope",
+              "itemId": "misc_blimbingrope",
+              "sellId": "valuable.tools.climbingrope",
               "count": 1
             }
           ]
@@ -1663,15 +1701,18 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.marinestoragebattery",
+              "itemId": "misc_b_marinestoragebattery",
+              "sellId": "valuable.batteries.marinestoragebattery",
               "count": 1
             },
             {
-              "id": "valuable.household.ratpoison",
+              "itemId": "misc_b_rat_poison",
+              "sellId": "valuable.household.ratpoison",
               "count": 3
             },
             {
-              "id": "valuable.tools.gaspipewrench",
+              "itemId": "misc_b_gaspipewrench",
+              "sellId": "valuable.tools.gaspipewrench",
               "count": 1
             }
           ]
@@ -1720,15 +1761,18 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.building.spraycan",
+              "itemId": "misc_b_spraycan",
+              "sellId": "valuable.building.spraycan",
               "count": 1
             },
             {
-              "id": "valuable.electric.radioscanner",
+              "itemId": "misc_b_radioscanner",
+              "sellId": "valuable.electric.radioscanner",
               "count": 1
             },
             {
-              "id": "valuable.household.pesticide",
+              "itemId": "misc_b_pesticide",
+              "sellId": "valuable.household.pesticide",
               "count": 4
             }
           ]

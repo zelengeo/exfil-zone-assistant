@@ -1048,11 +1048,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.radio",
+              "itemId": "misc_radio",
+              "sellId": "valuable.electric.radio",
               "count": 1
             },
             {
-              "id": "valuable.information.computertextbook",
+              "itemId": "misc_bomputertextbook",
+              "sellId": "valuable.information.computertextbook",
               "count": 3
             }
           ]
@@ -1144,11 +1146,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.combustible.largegascan",
+              "itemId": "misc_b_gastank_large",
+              "sellId": "valuable.combustible.largegascan",
               "count": 2
             },
             {
-              "id": "valuable.combustible.lighterfluid",
+              "itemId": "misc_b_lighterfluid",
+              "sellId": "valuable.combustible.lighterfluid",
               "count": 2
             }
           ]
@@ -1788,7 +1792,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.radio",
+              "itemId": "misc_radio",
+              "sellId": "valuable.electric.radio",
               "count": 1
             }
           ]
@@ -1868,7 +1873,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.civilradio",
+              "itemId": "misc_b_civilradio",
+              "sellId": "valuable.electric.civilradio",
               "count": 1
             }
           ]
@@ -1952,11 +1958,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.radio",
+              "itemId": "misc_radio",
+              "sellId": "valuable.electric.radio",
               "count": 1
             },
             {
-              "id": "valuable.medicalsupplies.bottledglucose",
+              "itemId": "misc_b_bottledglucose",
+              "sellId": "valuable.medicalsupplies.bottledglucose",
               "count": 2
             }
           ]
@@ -2591,11 +2599,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.radio",
+              "itemId": "misc_radio",
+              "sellId": "valuable.electric.radio",
               "count": 1
             },
             {
-              "id": "valuable.electric.socket",
+              "itemId": "misc_b_socket",
+              "sellId": "valuable.electric.socket",
               "count": 3
             }
           ]
@@ -2674,11 +2684,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.ionbattery",
+              "itemId": "misc_b_ionbattery",
+              "sellId": "valuable.batteries.ionbattery",
               "count": 4
             },
             {
-              "id": "valuable.household.facialcleanser",
+              "itemId": "misc_facialcleaner",
+              "sellId": "valuable.household.facialcleanser",
               "count": 2
             }
           ]
@@ -3855,7 +3867,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.medicalsupplies.medicalscissors",
+              "itemId": "misc_b_medicalscissors",
+              "sellId": "valuable.medicalsupplies.medicalscissors",
               "count": 1
             }
           ]
@@ -4341,11 +4354,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.radio",
+              "itemId": "misc_radio",
+              "sellId": "valuable.electric.radio",
               "count": 1
             },
             {
-              "id": "valuable.information.computertextbook",
+              "itemId": "misc_bomputertextbook",
+              "sellId": "valuable.information.computertextbook",
               "count": 2
             }
           ]
@@ -4933,7 +4948,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.tools.hammer",
+              "itemId": "misc_hammer",
+              "sellId": "valuable.tools.hammer",
               "count": 3
             }
           ]
@@ -5272,7 +5288,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.radio",
+              "itemId": "misc_radio",
+              "sellId": "valuable.electric.radio",
               "count": 1
             }
           ]

@@ -3134,7 +3134,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.storagebattery2",
+              "itemId": "misc_b_batter_large",
+              "sellId": "valuable.batteries.storagebattery2",
               "count": 3
             }
           ]

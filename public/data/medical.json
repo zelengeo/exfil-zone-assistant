@@ -193,7 +193,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "medical.brokenlimbrestorer_lv1",
+              "itemId": "med-limb-restorer-lv1",
+              "sellId": "medical.brokenlimbrestorer_lv1",
               "count": 2
             }
           ]
@@ -261,7 +262,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "medical.brokenlimbrestorer_lv2",
+              "itemId": "med-limb-restorer-lv2",
+              "sellId": "medical.brokenlimbrestorer_lv2",
               "count": 3
             }
           ]
@@ -314,7 +316,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "medical.brokenlimbrestorer_lv3",
+              "itemId": "med-limb-restorer-lv3",
+              "sellId": "medical.brokenlimbrestorer_lv3",
               "count": 4
             }
           ]
@@ -830,7 +833,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "medical.medical_needle_hp_lv2",
+              "itemId": "med-syringe-lv2",
+              "sellId": "medical.medical_needle_hp_lv2",
               "count": 2
             }
           ]
@@ -885,7 +889,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "medical.medical_pro_needle_lv1",
+              "itemId": "med-syringe-lv3",
+              "sellId": "medical.medical_pro_needle_lv1",
               "count": 3
             }
           ]
@@ -966,7 +971,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "medical.medical_pro_needle_lv2",
+              "itemId": "med-syringe-lv4",
+              "sellId": "medical.medical_pro_needle_lv2",
               "count": 4
             }
           ]

@@ -23,25 +23,33 @@
           "bodyPart": "spine_03",
           "armorClass": 4,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 4,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 4,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "pelvis",
           "armorClass": 4,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -198,25 +206,33 @@
           "bodyPart": "spine_03",
           "armorClass": 5,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 5,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 5,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "pelvis",
           "armorClass": 5,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -373,25 +389,33 @@
           "bodyPart": "spine_03",
           "armorClass": 4,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 4,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 4,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "pelvis",
           "armorClass": 4,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -547,25 +571,33 @@
           "bodyPart": "spine_03",
           "armorClass": 3,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 80
+          "protectionAngle": 80,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 3,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 80
+          "protectionAngle": 80,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 3,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "pelvis",
           "armorClass": 3,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 85
+          "protectionAngle": 85,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -713,25 +745,33 @@
           "bodyPart": "spine_03",
           "armorClass": 5,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 5,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 5,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "pelvis",
           "armorClass": 4,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -887,25 +927,33 @@
           "bodyPart": "spine_03",
           "armorClass": 3,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 3,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 80
+          "protectionAngle": 80,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 3,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "pelvis",
           "armorClass": 2,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -1045,19 +1093,25 @@
           "bodyPart": "spine_03",
           "armorClass": 5,
           "bluntDamageScalar": 0.28,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 5,
           "bluntDamageScalar": 0.28,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 5,
           "bluntDamageScalar": 0.28,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -1216,19 +1270,25 @@
           "bodyPart": "spine_03",
           "armorClass": 5,
           "bluntDamageScalar": 0.28,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 5,
           "bluntDamageScalar": 0.28,
-          "protectionAngle": 80
+          "protectionAngle": 80,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 5,
           "bluntDamageScalar": 0.28,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -1385,19 +1445,25 @@
           "bodyPart": "spine_03",
           "armorClass": 5,
           "bluntDamageScalar": 0.25,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 5,
           "bluntDamageScalar": 0.25,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 5,
           "bluntDamageScalar": 0.25,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -1553,19 +1619,25 @@
           "bodyPart": "spine_03",
           "armorClass": 5,
           "bluntDamageScalar": 0.25,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 5,
           "bluntDamageScalar": 0.25,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 5,
           "bluntDamageScalar": 0.25,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -1721,19 +1793,25 @@
           "bodyPart": "spine_03",
           "armorClass": 5,
           "bluntDamageScalar": 0.25,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 5,
           "bluntDamageScalar": 0.25,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 5,
           "bluntDamageScalar": 0.25,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -1889,19 +1967,25 @@
           "bodyPart": "spine_03",
           "armorClass": 4,
           "bluntDamageScalar": 0.5,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 4,
           "bluntDamageScalar": 0.5,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 4,
           "bluntDamageScalar": 0.8,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -2044,7 +2128,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.building.instantglue",
+              "itemId": "misc_b_glue_large",
+              "sellId": "valuable.building.instantglue",
               "count": 3
             }
           ]
@@ -2078,19 +2163,25 @@
           "bodyPart": "spine_03",
           "armorClass": 5,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 5,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 5,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -2235,7 +2326,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.household.ratpoison",
+              "itemId": "misc_b_rat_poison",
+              "sellId": "valuable.household.ratpoison",
               "count": 1
             }
           ]
@@ -2269,19 +2361,25 @@
           "bodyPart": "spine_03",
           "armorClass": 5,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 5,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 5,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -2423,37 +2521,49 @@
           "bodyPart": "spine_03",
           "armorClass": 6,
           "bluntDamageScalar": 0.23,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 6,
           "bluntDamageScalar": 0.23,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 6,
           "bluntDamageScalar": 0.23,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "pelvis",
           "armorClass": 6,
           "bluntDamageScalar": 0.23,
-          "protectionAngle": 60
+          "protectionAngle": 60,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "UpperArm_L",
           "armorClass": 3,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "UpperArm_R",
           "armorClass": 3,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -2594,15 +2704,18 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.medicalsupplies.aspirin",
+              "itemId": "misc_b_aspire",
+              "sellId": "valuable.medicalsupplies.aspirin",
               "count": 3
             },
             {
-              "id": "valuable.medicalsupplies.centrifuge",
+              "itemId": "misc_bentrifuge",
+              "sellId": "valuable.medicalsupplies.centrifuge",
               "count": 1
             },
             {
-              "id": "valuable.medicalsupplies.defibrillator",
+              "itemId": "misc_b_defibrillator",
+              "sellId": "valuable.medicalsupplies.defibrillator",
               "count": 1
             }
           ]
@@ -2636,37 +2749,49 @@
           "bodyPart": "spine_03",
           "armorClass": 5,
           "bluntDamageScalar": 0.23,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 5,
           "bluntDamageScalar": 0.23,
-          "protectionAngle": 80
+          "protectionAngle": 80,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 5,
           "bluntDamageScalar": 0.23,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "pelvis",
           "armorClass": 5,
           "bluntDamageScalar": 0.23,
-          "protectionAngle": 60
+          "protectionAngle": 60,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "UpperArm_L",
           "armorClass": 3,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "UpperArm_R",
           "armorClass": 3,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -2792,19 +2917,25 @@
           "bodyPart": "spine_03",
           "armorClass": 4,
           "bluntDamageScalar": 0.35,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 4,
           "bluntDamageScalar": 0.35,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 3.5,
           "bluntDamageScalar": 0.35,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -3062,19 +3193,25 @@
           "bodyPart": "spine_03",
           "armorClass": 3,
           "bluntDamageScalar": 0.55,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 3,
           "bluntDamageScalar": 0.55,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 3,
           "bluntDamageScalar": 0.55,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -3215,19 +3352,25 @@
           "bodyPart": "spine_03",
           "armorClass": 2,
           "bluntDamageScalar": 0.55,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 2,
           "bluntDamageScalar": 0.55,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 2,
           "bluntDamageScalar": 0.55,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -3376,19 +3519,25 @@
           "bodyPart": "spine_03",
           "armorClass": 3,
           "bluntDamageScalar": 0.5,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 3,
           "bluntDamageScalar": 0.5,
-          "protectionAngle": 80
+          "protectionAngle": 80,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 3,
           "bluntDamageScalar": 0.5,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -3529,19 +3678,25 @@
           "bodyPart": "spine_03",
           "armorClass": 3,
           "bluntDamageScalar": 0.5,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 3,
           "bluntDamageScalar": 0.5,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 3,
           "bluntDamageScalar": 0.5,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -3682,19 +3837,25 @@
           "bodyPart": "spine_03",
           "armorClass": 4,
           "bluntDamageScalar": 0.45,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 4,
           "bluntDamageScalar": 0.45,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 4,
           "bluntDamageScalar": 0.45,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -3851,19 +4012,25 @@
           "bodyPart": "spine_03",
           "armorClass": 4,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 80
+          "protectionAngle": 80,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 4,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 80
+          "protectionAngle": 80,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 4,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -4006,19 +4173,25 @@
           "bodyPart": "spine_03",
           "armorClass": 4,
           "bluntDamageScalar": 0.45,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 4,
           "bluntDamageScalar": 0.45,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 4,
           "bluntDamageScalar": 0.45,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [],
@@ -4111,19 +4284,25 @@
           "bodyPart": "spine_03",
           "armorClass": 4,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 4,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 80
+          "protectionAngle": 80,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 4,
           "bluntDamageScalar": 0.4,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -4266,49 +4445,65 @@
           "bodyPart": "spine_03",
           "armorClass": 6,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 6,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 6,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "pelvis",
           "armorClass": 6,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "UpperArm_L",
           "armorClass": 3,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "UpperArm_R",
           "armorClass": 3,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "Thigh_L",
           "armorClass": 3,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "Thigh_R",
           "armorClass": 3,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -4436,7 +4631,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "vest.fb012",
+              "itemId": "armor-sd-protector",
+              "sellId": "vest.fb012",
               "count": 4
             }
           ]
@@ -4470,49 +4666,65 @@
           "bodyPart": "spine_03",
           "armorClass": 6,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 6,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 6,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "pelvis",
           "armorClass": 6,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "UpperArm_L",
           "armorClass": 3,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "UpperArm_R",
           "armorClass": 3,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "Thigh_L",
           "armorClass": 3,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "Thigh_R",
           "armorClass": 3,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -4655,49 +4867,65 @@
           "bodyPart": "spine_03",
           "armorClass": 5,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 5,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 5,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "pelvis",
           "armorClass": 5,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "UpperArm_L",
           "armorClass": 3,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "UpperArm_R",
           "armorClass": 3,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "Thigh_L",
           "armorClass": 3,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "Thigh_R",
           "armorClass": 3,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -4839,19 +5067,25 @@
           "bodyPart": "spine_03",
           "armorClass": 2,
           "bluntDamageScalar": 0.9,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 2,
           "bluntDamageScalar": 0.9,
-          "protectionAngle": 80
+          "protectionAngle": 80,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 2,
           "bluntDamageScalar": 0.9,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -5000,19 +5234,25 @@
           "bodyPart": "spine_03",
           "armorClass": 3,
           "bluntDamageScalar": 0.9,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 3,
           "bluntDamageScalar": 0.9,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 3,
           "bluntDamageScalar": 0.9,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -5137,7 +5377,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.building.superglue",
+              "itemId": "misc_b_superglue",
+              "sellId": "valuable.building.superglue",
               "count": 1
             }
           ]
@@ -5171,19 +5412,25 @@
           "bodyPart": "spine_03",
           "armorClass": 2,
           "bluntDamageScalar": 0.55,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 2,
           "bluntDamageScalar": 0.55,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 2,
           "bluntDamageScalar": 0.55,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -5332,19 +5579,25 @@
           "bodyPart": "spine_03",
           "armorClass": 2,
           "bluntDamageScalar": 0.55,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 2,
           "bluntDamageScalar": 0.55,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 2,
           "bluntDamageScalar": 0.55,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -5493,25 +5746,33 @@
           "bodyPart": "spine_03",
           "armorClass": 4,
           "bluntDamageScalar": 0.28,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 4,
           "bluntDamageScalar": 0.28,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 4,
           "bluntDamageScalar": 0.28,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "pelvis",
           "armorClass": 3,
           "bluntDamageScalar": 0.5,
-          "protectionAngle": 25
+          "protectionAngle": 25,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -5667,25 +5928,33 @@
           "bodyPart": "spine_03",
           "armorClass": 4,
           "bluntDamageScalar": 0.28,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 4,
           "bluntDamageScalar": 0.28,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 4,
           "bluntDamageScalar": 0.28,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "pelvis",
           "armorClass": 3,
           "bluntDamageScalar": 0.5,
-          "protectionAngle": 25
+          "protectionAngle": 25,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -5841,37 +6110,49 @@
           "bodyPart": "spine_03",
           "armorClass": 6,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 6,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 6,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "pelvis",
           "armorClass": 6,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 60
+          "protectionAngle": 60,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "UpperArm_L",
           "armorClass": 3,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "UpperArm_R",
           "armorClass": 3,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [
@@ -6014,37 +6295,49 @@
           "bodyPart": "spine_03",
           "armorClass": 6,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_02",
           "armorClass": 6,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "spine_01",
           "armorClass": 6,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "pelvis",
           "armorClass": 6,
           "bluntDamageScalar": 0.2,
-          "protectionAngle": 60
+          "protectionAngle": 60,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "UpperArm_L",
           "armorClass": 3,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         },
         {
           "bodyPart": "UpperArm_R",
           "armorClass": 3,
           "bluntDamageScalar": 0.7,
-          "protectionAngle": 90
+          "protectionAngle": 90,
+          "forwardAxis": 1,
+          "upAxis": 0
         }
       ],
       "penetrationChanceCurve": [

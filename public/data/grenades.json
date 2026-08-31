@@ -191,7 +191,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.building.ceramicadhesive",
+              "itemId": "misc_b_ceramic_adhesive",
+              "sellId": "valuable.building.ceramicadhesive",
               "count": 3
             }
           ]
@@ -448,7 +449,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.oldphone",
+              "itemId": "misc_b_oldphone",
+              "sellId": "valuable.electric.oldphone",
               "count": 2
             }
           ]
@@ -756,7 +758,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.tapeplayer",
+              "itemId": "misc_b_tapeplayer",
+              "sellId": "valuable.electric.tapeplayer",
               "count": 1
             }
           ]
@@ -950,11 +953,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.building.spraycan",
+              "itemId": "misc_b_spraycan",
+              "sellId": "valuable.building.spraycan",
               "count": 2
             },
             {
-              "id": "valuable.household.shampoo",
+              "itemId": "misc_b_shampoo",
+              "sellId": "valuable.household.shampoo",
               "count": 2
             }
           ]
@@ -1148,11 +1153,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.ionbattery",
+              "itemId": "misc_b_ionbattery",
+              "sellId": "valuable.batteries.ionbattery",
               "count": 4
             },
             {
-              "id": "valuable.electric.radio",
+              "itemId": "misc_radio",
+              "sellId": "valuable.electric.radio",
               "count": 1
             }
           ]

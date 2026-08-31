@@ -740,11 +740,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.combustible.gunoil",
+              "itemId": "misc_b_gunoil",
+              "sellId": "valuable.combustible.gunoil",
               "count": 2
             },
             {
-              "id": "valuable.electric.tapeplayer",
+              "itemId": "misc_b_tapeplayer",
+              "sellId": "valuable.electric.tapeplayer",
               "count": 2
             }
           ]
@@ -1097,11 +1099,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.storagebattery2",
+              "itemId": "misc_b_batter_large",
+              "sellId": "valuable.batteries.storagebattery2",
               "count": 3
             },
             {
-              "id": "valuable.tools.electricdrill",
+              "itemId": "taskitem_gold_lion",
+              "sellId": "valuable.tools.electricdrill",
               "count": 2
             }
           ]
@@ -1745,7 +1749,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.gameconsole",
+              "itemId": "misc_b_gameconsole",
+              "sellId": "valuable.electric.gameconsole",
               "count": 1
             }
           ]
@@ -1934,7 +1939,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.tools.sparkplug",
+              "itemId": "misc_b_sparkplug",
+              "sellId": "valuable.tools.sparkplug",
               "count": 1
             }
           ]
@@ -4008,11 +4014,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.carbattery",
+              "itemId": "misc_b_storagebattery",
+              "sellId": "valuable.batteries.carbattery",
               "count": 1
             },
             {
-              "id": "valuable.medicalsupplies.medicalkit",
+              "itemId": "misc_b_medicalkit",
+              "sellId": "valuable.medicalsupplies.medicalkit",
               "count": 2
             }
           ]
@@ -4902,7 +4910,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.combustible.gunoil",
+              "itemId": "misc_b_gunoil",
+              "sellId": "valuable.combustible.gunoil",
               "count": 2
             }
           ]
@@ -5835,11 +5844,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.oldphone",
+              "itemId": "misc_b_oldphone",
+              "sellId": "valuable.electric.oldphone",
               "count": 1
             },
             {
-              "id": "valuable.tools.electricdrill",
+              "itemId": "taskitem_gold_lion",
+              "sellId": "valuable.tools.electricdrill",
               "count": 1
             }
           ]
@@ -6026,7 +6037,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.radioscanner",
+              "itemId": "misc_b_radioscanner",
+              "sellId": "valuable.electric.radioscanner",
               "count": 1
             }
           ]
@@ -6234,11 +6246,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.medicalsupplies.medicalkit",
+              "itemId": "misc_b_medicalkit",
+              "sellId": "valuable.medicalsupplies.medicalkit",
               "count": 1
             },
             {
-              "id": "valuable.tools.gaspipewrench",
+              "itemId": "misc_b_gaspipewrench",
+              "sellId": "valuable.tools.gaspipewrench",
               "count": 1
             }
           ]
@@ -6429,11 +6443,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.transformer",
+              "itemId": "misc_b_transformer",
+              "sellId": "valuable.electric.transformer",
               "count": 1
             },
             {
-              "id": "valuable.tools.screwdriver",
+              "itemId": "misc_screwdriver",
+              "sellId": "valuable.tools.screwdriver",
               "count": 1
             }
           ]
@@ -7444,7 +7460,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.household.deodorant",
+              "itemId": "misc_b_deodorant",
+              "sellId": "valuable.household.deodorant",
               "count": 1
             }
           ]
@@ -9330,11 +9347,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.radioscanner",
+              "itemId": "misc_b_radioscanner",
+              "sellId": "valuable.electric.radioscanner",
               "count": 1
             },
             {
-              "id": "valuable.electric.tapeplayer",
+              "itemId": "misc_b_tapeplayer",
+              "sellId": "valuable.electric.tapeplayer",
               "count": 1
             }
           ]
@@ -9499,7 +9518,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.tools.gaspipewrench",
+              "itemId": "misc_b_gaspipewrench",
+              "sellId": "valuable.tools.gaspipewrench",
               "count": 1
             }
           ]
@@ -10231,7 +10251,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.information.recorder",
+              "itemId": "misc_b_recorder",
+              "sellId": "valuable.information.recorder",
               "count": 3
             }
           ]
@@ -10446,11 +10467,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.storagebattery2",
+              "itemId": "misc_b_batter_large",
+              "sellId": "valuable.batteries.storagebattery2",
               "count": 1
             },
             {
-              "id": "valuable.electric.visionmodule",
+              "itemId": "misc_b_visionmodule",
+              "sellId": "valuable.electric.visionmodule",
               "count": 2
             }
           ]
@@ -10697,11 +10720,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.storagebattery2",
+              "itemId": "misc_b_batter_large",
+              "sellId": "valuable.batteries.storagebattery2",
               "count": 1
             },
             {
-              "id": "valuable.electric.visionmodule",
+              "itemId": "misc_b_visionmodule",
+              "sellId": "valuable.electric.visionmodule",
               "count": 2
             }
           ]
@@ -11459,7 +11484,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.household.shampoo",
+              "itemId": "misc_b_shampoo",
+              "sellId": "valuable.household.shampoo",
               "count": 2
             }
           ]
@@ -11672,11 +11698,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.radioscanner",
+              "itemId": "misc_b_radioscanner",
+              "sellId": "valuable.electric.radioscanner",
               "count": 2
             },
             {
-              "id": "valuable.medicalsupplies.centrifuge",
+              "itemId": "misc_bentrifuge",
+              "sellId": "valuable.medicalsupplies.centrifuge",
               "count": 1
             }
           ]
@@ -12211,7 +12239,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.visionmodule",
+              "itemId": "misc_b_visionmodule",
+              "sellId": "valuable.electric.visionmodule",
               "count": 1
             }
           ]
@@ -13422,11 +13451,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.building.spraycan",
+              "itemId": "misc_b_spraycan",
+              "sellId": "valuable.building.spraycan",
               "count": 2
             },
             {
-              "id": "valuable.tools.hammer",
+              "itemId": "misc_hammer",
+              "sellId": "valuable.tools.hammer",
               "count": 2
             }
           ]
@@ -14942,7 +14973,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.combustible.gunoil",
+              "itemId": "misc_b_gunoil",
+              "sellId": "valuable.combustible.gunoil",
               "count": 2
             }
           ]
@@ -15460,7 +15492,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.tools.gaspipewrench",
+              "itemId": "misc_b_gaspipewrench",
+              "sellId": "valuable.tools.gaspipewrench",
               "count": 1
             }
           ]
@@ -16134,11 +16167,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.marinestoragebattery",
+              "itemId": "misc_b_marinestoragebattery",
+              "sellId": "valuable.batteries.marinestoragebattery",
               "count": 1
             },
             {
-              "id": "valuable.electric.visionmodule",
+              "itemId": "misc_b_visionmodule",
+              "sellId": "valuable.electric.visionmodule",
               "count": 1
             }
           ]
@@ -18371,7 +18406,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.gameconsole",
+              "itemId": "misc_b_gameconsole",
+              "sellId": "valuable.electric.gameconsole",
               "count": 1
             }
           ]
@@ -18916,11 +18952,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.transformer",
+              "itemId": "misc_b_transformer",
+              "sellId": "valuable.electric.transformer",
               "count": 1
             },
             {
-              "id": "valuable.household.deodorant",
+              "itemId": "misc_b_deodorant",
+              "sellId": "valuable.household.deodorant",
               "count": 3
             }
           ]
@@ -19103,11 +19141,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.information.recorder",
+              "itemId": "misc_b_recorder",
+              "sellId": "valuable.information.recorder",
               "count": 1
             },
             {
-              "id": "valuable.medicalsupplies.iodophor",
+              "itemId": "misc_b_iodophor",
+              "sellId": "valuable.medicalsupplies.iodophor",
               "count": 1
             }
           ]
@@ -19474,11 +19514,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.storagebattery2",
+              "itemId": "misc_b_batter_large",
+              "sellId": "valuable.batteries.storagebattery2",
               "count": 1
             },
             {
-              "id": "valuable.building.spraycan",
+              "itemId": "misc_b_spraycan",
+              "sellId": "valuable.building.spraycan",
               "count": 1
             }
           ]
@@ -20216,11 +20258,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.radioscanner",
+              "itemId": "misc_b_radioscanner",
+              "sellId": "valuable.electric.radioscanner",
               "count": 1
             },
             {
-              "id": "valuable.information.recorder",
+              "itemId": "misc_b_recorder",
+              "sellId": "valuable.information.recorder",
               "count": 1
             }
           ]
@@ -20682,11 +20726,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.marinestoragebattery",
+              "itemId": "misc_b_marinestoragebattery",
+              "sellId": "valuable.batteries.marinestoragebattery",
               "count": 1
             },
             {
-              "id": "valuable.electric.transformer",
+              "itemId": "misc_b_transformer",
+              "sellId": "valuable.electric.transformer",
               "count": 1
             }
           ]
@@ -21380,7 +21426,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.radioscanner",
+              "itemId": "misc_b_radioscanner",
+              "sellId": "valuable.electric.radioscanner",
               "count": 1
             }
           ]
@@ -22190,11 +22237,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.marinestoragebattery",
+              "itemId": "misc_b_marinestoragebattery",
+              "sellId": "valuable.batteries.marinestoragebattery",
               "count": 1
             },
             {
-              "id": "valuable.household.ratpoison",
+              "itemId": "misc_b_rat_poison",
+              "sellId": "valuable.household.ratpoison",
               "count": 1
             }
           ]
@@ -22533,11 +22582,13 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.batteries.marinestoragebattery",
+              "itemId": "misc_b_marinestoragebattery",
+              "sellId": "valuable.batteries.marinestoragebattery",
               "count": 1
             },
             {
-              "id": "valuable.medicalsupplies.centrifuge",
+              "itemId": "misc_bentrifuge",
+              "sellId": "valuable.medicalsupplies.centrifuge",
               "count": 1
             }
           ]
@@ -22918,7 +22969,8 @@
           "requiresDlc": [],
           "exchange": [
             {
-              "id": "valuable.electric.tapeplayer",
+              "itemId": "misc_b_tapeplayer",
+              "sellId": "valuable.electric.tapeplayer",
               "count": 3
             }
           ]
