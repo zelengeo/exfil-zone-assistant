@@ -1,141 +1,102 @@
 'use client';
 
-import React, {useState, useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import {
-    ChevronLeft,
-} from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
-import WeaponSpecificStats from "@/app/items/[id]/components/WeaponSpecificStats";
-import AmmunitionSpecificStats from "@/app/items/[id]/components/AmmunitionSpecificStats";
 import {
-    formatPrice,
+    AnyItem,
+    Item,
     formatWeight,
+    getCategoryById,
     getRarityColorClass,
-    getRarityBorderClass,
-    getCategoryById, AnyItem, Item,
 } from '@/types/items';
-import {getItemById} from "@/services/ItemService";
+import { getItemById } from '@/services/ItemService';
 import {
     isAmmunition,
     isAnyItem,
-    isArmor, isAttachment, isBackpack, isGrenade, isHolster, isMedicine, isMisc, isProvisions, isTaskItem, isWeapon
-} from "@/app/combat-sim/utils/types";
-import GrenadeSpecificStats from "@/app/items/[id]/components/GrenadeSpecificStats";
-import MedicineSpecificStats from "@/app/items/[id]/components/MedicineSpecificStats";
-import ArmorSpecificStats from "@/app/items/[id]/components/ArmorSpecificStats";
-import AttachmentSpecificStats from "@/app/items/[id]/components/AttachmentSpecificStats";
-import ProvisionsSpecificStats from "@/app/items/[id]/components/ProvisionsSpecificStats";
-import TaskItemsSpecificStats from "@/app/items/[id]/components/TaskItemsSpecificStats";
-import BackpackSpecificStats from "@/app/items/[id]/components/BackpackSpecificStats";
-import HolsterSpecificStats from "@/app/items/[id]/components/HolsterSpecificStats";
-import {ItemCorrectionFormAuth} from "@/components/corrections/ItemCorrectionForm";
+    isArmor,
+    isAttachment,
+    isBackpack,
+    isGrenade,
+    isHolster,
+    isMedicine,
+    isMisc,
+    isProvisions,
+    isTaskItem,
+    isWeapon,
+} from '@/app/combat-sim/utils/types';
+import WeaponSpecificStats from '@/app/items/[id]/components/WeaponSpecificStats';
+import AmmunitionSpecificStats from '@/app/items/[id]/components/AmmunitionSpecificStats';
+import GrenadeSpecificStats from '@/app/items/[id]/components/GrenadeSpecificStats';
+import MedicineSpecificStats from '@/app/items/[id]/components/MedicineSpecificStats';
+import ArmorSpecificStats from '@/app/items/[id]/components/ArmorSpecificStats';
+import AttachmentSpecificStats from '@/app/items/[id]/components/AttachmentSpecificStats';
+import ProvisionsSpecificStats from '@/app/items/[id]/components/ProvisionsSpecificStats';
+import TaskItemsSpecificStats from '@/app/items/[id]/components/TaskItemsSpecificStats';
+import BackpackSpecificStats from '@/app/items/[id]/components/BackpackSpecificStats';
+import HolsterSpecificStats from '@/app/items/[id]/components/HolsterSpecificStats';
+import { ItemCorrectionFormAuth } from '@/components/corrections/ItemCorrectionForm';
+import VendorLedger from '@/components/trade/VendorLedger';
+import WantedInBarter from '@/components/trade/WantedInBarter';
+import { useTradeIndex } from '@/app/items/hooks/useTradeIndex';
+import { ItemImage } from '@/app/items/components/ItemImage';
 
-// Component for displaying item images with zoom functionality
-const ItemImageDisplay: React.FC<{
-    src: string;
-    alt: string;
-    className?: string;
-}> = ({src, alt, className = ''}) => {
-    const [imageError, setImageError] = useState(false);
-    const [imageLoading, setImageLoading] = useState(true);
-
-    const handleImageError = () => {
-        setImageError(true);
-        setImageLoading(false);
-    };
-
-    const handleImageLoad = () => {
-        setImageLoading(false);
-    };
-
-    if (imageError) {
-        // Fallback when image fails to load
-        return (
-            <div className={`flex items-center justify-center bg-military-800 ${className}`}>
-                <div className="text-center p-4">
-                    <div className="text-olive-500 mb-2 font-medium military-stencil">{alt}</div>
-                    <div className="text-tan-400 text-sm">Image not available</div>
-                </div>
-            </div>
-        );
-    }
-
-    return (
-        <div className={`relative ${className} group`}>
-            {/* Loading spinner */}
-            {imageLoading && (
-                <div className="absolute inset-0 flex items-center justify-center bg-military-800 z-10">
-                    <div
-                        className="animate-spin w-8 h-8 border-2 border-olive-600 border-t-transparent rounded-full"></div>
-                </div>
-            )}
-
-            {/* Image */}
-            <div
-                className={`relative w-full h-full cursor-pointer transition-transform duration-200 hover:scale-105`}
-            >
-                <Image
-                    src={src}
-                    alt={alt}
-                    unoptimized={true}
-                    fill
-                    className="object-contain p-4"
-                    onError={handleImageError}
-                    onLoad={handleImageLoad}
-                    sizes="(max-width: 768px) 400px, 600px"
-                    priority
-                />
-            </div>
-        </div>
-    );
-};
+/**
+ * One item, in full.
+ *
+ * This is where the evidence lives: the vendor ledger, the protection viewers, the parts tree. The
+ * card next door answers "which of these should I look at"; this page answers everything after
+ * that, and is allowed to be long because the reader has already chosen.
+ */
 
 // Helper to render stats based on item category
 const renderCategorySpecificStats = (item: AnyItem) => {
     switch (item.category) {
         case 'weapons':
-            if (isWeapon(item)) return <WeaponSpecificStats item={item}/>;
+            if (isWeapon(item)) return <WeaponSpecificStats item={item} />;
             break;
         case 'ammo':
-            if (isAmmunition(item)) return <AmmunitionSpecificStats item={item}/>;
+            if (isAmmunition(item)) return <AmmunitionSpecificStats item={item} />;
             break;
-        case "attachments":
-            if (isAttachment(item)) return <AttachmentSpecificStats item={item}/>;
+        case 'attachments':
+            if (isAttachment(item)) return <AttachmentSpecificStats item={item} />;
             break;
-        case "grenades":
-            if (isGrenade(item)) return <GrenadeSpecificStats item={item}/>;
-            break
+        case 'grenades':
+            if (isGrenade(item)) return <GrenadeSpecificStats item={item} />;
+            break;
         case 'gear':
-            if (isArmor(item)) return <ArmorSpecificStats item={item}/>
-            if (isBackpack(item)) return <BackpackSpecificStats item={item}/>
-            if (isHolster(item)) return <HolsterSpecificStats item={item}/>
+            if (isArmor(item)) return <ArmorSpecificStats item={item} />;
+            if (isBackpack(item)) return <BackpackSpecificStats item={item} />;
+            if (isHolster(item)) return <HolsterSpecificStats item={item} />;
             break;
         case 'medicine':
-            if (isMedicine(item)) return <MedicineSpecificStats item={item}/>
+            if (isMedicine(item)) return <MedicineSpecificStats item={item} />;
             break;
         case 'provisions':
-            if (isProvisions(item)) return <ProvisionsSpecificStats item={item}/>
+            if (isProvisions(item)) return <ProvisionsSpecificStats item={item} />;
             break;
         case 'task-items':
-            if (isTaskItem(item)) return <TaskItemsSpecificStats item={item}/>
+            if (isTaskItem(item)) return <TaskItemsSpecificStats item={item} />;
             break;
         default:
             return null;
     }
 };
 
-interface PageProps {
-    params: Promise<{
-        id: string;
-    }>;
+function SectionHeading({ children }: { children: React.ReactNode }) {
+    return <h2 className="eyebrow mb-3">{children}</h2>;
 }
 
-export default function ItemDetail({params}: PageProps) {
-    const {id} = React.use(params);
+interface PageProps {
+    params: Promise<{ id: string }>;
+}
+
+export default function ItemDetail({ params }: PageProps) {
+    const { id } = React.use(params);
     const [item, setItem] = useState<Item | null>(null);
     const [loading, setLoading] = useState(true);
+    const trade = useTradeIndex();
 
     useEffect(() => {
         const loadItem = async () => {
@@ -152,18 +113,14 @@ export default function ItemDetail({params}: PageProps) {
         loadItem();
     }, [id]);
 
-
-    // Show loading state
     if (loading) {
         return (
             <Layout>
                 <div className="container mx-auto px-4 py-8">
                     <div className="flex items-center justify-center min-h-96">
-                        <div className="military-box p-8 rounded-sm text-center">
-                            <div
-                                className="animate-spin w-12 h-12 border-4 border-olive-600 border-t-transparent rounded-full mx-auto mb-4"></div>
-                            <h2 className="text-xl font-bold text-olive-400 mb-2">Loading Item</h2>
-                            <p className="text-tan-300">Retrieving tactical equipment data...</p>
+                        <div className="bg-steel-900 border border-line-900 p-8 text-center">
+                            <div className="eyebrow mb-2">Loading</div>
+                            <p className="text-sm text-ink-500">Retrieving item data…</p>
                         </div>
                     </div>
                 </div>
@@ -171,14 +128,14 @@ export default function ItemDetail({params}: PageProps) {
         );
     }
 
-    // Show error state
     if (!item) {
         return (
             <Layout>
                 <div className="container mx-auto px-4 py-8">
                     <div className="flex items-center justify-center min-h-96">
-                        <div className="military-box p-8 rounded-sm text-center border-l-4 border-red-600">
-                            <h2 className="text-xl font-bold text-red-400 mb-2">Item Not Found</h2>
+                        <div className="bg-steel-900 border border-line-900 border-l-2 border-l-ember p-8 text-center">
+                            <div className="eyebrow text-ember mb-2">Not found</div>
+                            <p className="text-sm text-ink-400">No item is published under that id.</p>
                         </div>
                     </div>
                 </div>
@@ -187,110 +144,113 @@ export default function ItemDetail({params}: PageProps) {
     }
 
     const category = getCategoryById(item.category);
+    const wantedIn = trade.wantedIn(item.id);
+
+    // Misc items have no specifications and often no description, which would leave the right
+    // column an empty half-page. Where there is nothing to put in it, do not reserve it.
+    const hasEvidence = Boolean(item.description) || (!isMisc(item) && isAnyItem(item)) || Boolean(item.tips);
 
     return (
         <Layout>
             <div className="container mx-auto px-4 py-8">
                 {/* Breadcrumb navigation */}
-                <div className="flex items-center gap-2 mb-6 text-tan-300">
-                    <Link href="/items" className="flex items-center gap-1 hover:text-olive-400 transition-colors">
-                        <ChevronLeft size={16}/>
+                <nav className="flex items-center gap-2 mb-6 text-xs text-ink-600">
+                    <Link href="/items" className="flex items-center gap-1 hover:text-ink-200 transition-colors">
+                        <ChevronLeft size={14} />
                         <span>Items</span>
                     </Link>
-                    <span>/</span>
+                    <span className="text-ink-800">/</span>
                     <Link
                         href={`/items?category=${item.category}`}
-                        className="hover:text-olive-400 transition-colors"
+                        className="hover:text-ink-200 transition-colors"
                     >
                         {category?.name}
                     </Link>
                     {item.subcategory && (
                         <>
-                            <span>/</span>
+                            <span className="text-ink-800">/</span>
                             <Link
                                 href={`/items?category=${item.category}&subcategory=${item.subcategory}`}
-                                className="hover:text-olive-400 transition-colors"
+                                className="hover:text-ink-200 transition-colors"
                             >
                                 {item.subcategory}
                             </Link>
                         </>
                     )}
-                </div>
+                </nav>
 
                 {/* Item header */}
-                <div className={`mb-8 border-l-4 pl-4 ${getRarityBorderClass(item.stats.rarity)}`}>
-                    <div className="inline-block px-2 py-0.5 bg-military-800/80 mb-1">
-            <span className={`text-sm ${getRarityColorClass(item.stats.rarity)}`}>
-              {item.stats.rarity}
-            </span>
+                <header className="mb-8">
+                    <div className="flex items-baseline gap-3 mb-1">
+                        <span className={`micro-label ${getRarityColorClass(item.stats.rarity)}`}>
+                            {item.stats.rarity}
+                        </span>
+                        <span className="micro-label text-ink-700">
+                            {item.subcategory || category?.name}
+                        </span>
                     </div>
-                    <h1 className="text-3xl md:text-4xl font-bold text-tan-100 mb-2">{item.name}</h1>
-                    <div className="flex items-center gap-2 text-tan-300">
-                        <span>{category?.name}</span>
-                        {item.subcategory && (
-                            <>
-                                <span>•</span>
-                                <span>{item.subcategory}</span>
-                            </>
-                        )}
+                    <h1 className="font-display text-3xl md:text-4xl text-ink-hi leading-none">{item.name}</h1>
+                    <div className="mt-2">
                         <ItemCorrectionFormAuth item={item} />
                     </div>
-                </div>
+                </header>
 
-                {/* Main content grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {/* Left column - Item image */}
-                    <div className="md:col-span-1">
-                        {/* Item image display */}
-                        <div className="military-card rounded-sm p-4 overflow-hidden">
-                            <div
-                                className="aspect-square relative bg-military-950 rounded-sm overflow-hidden border border-military-700">
-                                <ItemImageDisplay
-                                    src={item.images.fullsize}
-                                    alt={item.name}
+                <div
+                    className={
+                        hasEvidence
+                            ? 'grid grid-cols-1 lg:grid-cols-[minmax(0,340px)_minmax(0,1fr)] gap-6'
+                            : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start'
+                    }
+                >
+                    {/* Left column - the subject */}
+                    <div className={hasEvidence ? 'space-y-6' : 'contents'}>
+                        <div className="bg-steel-900 border border-line-900 p-4">
+                            <div className="aspect-square relative bg-steel-850 border border-line-800 plot-grid overflow-hidden">
+                                <ItemImage
+                                    item={item}
+                                    size="fullsize"
                                     className="w-full h-full"
+                                    showZoom={false}
                                 />
                             </div>
-                        </div>
-
-                        {/* Item price and basic stats */}
-                        <div className="military-card rounded-sm mt-6 p-5">
-                            <div className="flex justify-between items-center mb-4">
-                                <span className="text-tan-300">Market Value:</span>
-                                <span
-                                    className="text-olive-400 font-mono text-xl">{formatPrice(item.stats.price)}</span>
-                            </div>
-                            <div className="flex justify-between items-center mb-4">
-                                <span className="text-tan-300">Weight:</span>
-                                <span className="text-tan-100 font-mono">{formatWeight(item.stats.weight)}</span>
+                            <div className="flex items-baseline justify-between mt-4 pt-3 border-t border-line-900">
+                                <span className="eyebrow">Weight</span>
+                                <span className="font-mono tabular text-sm text-ink-200">
+                                    {formatWeight(item.stats.weight)}
+                                </span>
                             </div>
                         </div>
+
+                        <VendorLedger stats={item.stats} nameOf={trade.nameOf} />
+
+                        <WantedInBarter uses={wantedIn} nameOf={trade.nameOf} />
                     </div>
 
-                    {/* Right column - Item details */}
-                    <div className="md:col-span-2">
-                        <div className="military-box p-6 rounded-sm">
-                            <h2 className="text-2xl font-bold text-olive-400 mb-4">Description</h2>
-                            <p className="text-tan-200 mb-6 leading-relaxed">{item.description || item.name}</p>
+                    {/* Right column - the evidence */}
+                    {hasEvidence && (
+                    <div className="space-y-6 min-w-0">
+                        {item.description && (
+                            <section className="bg-steel-900 border border-line-900 p-5">
+                                <SectionHeading>Description</SectionHeading>
+                                <p className="text-sm text-ink-300 leading-relaxed">{item.description}</p>
+                            </section>
+                        )}
 
+                        {!isMisc(item) && isAnyItem(item) && (
+                            <section className="bg-steel-900 border border-line-900 p-5">
+                                <SectionHeading>Specifications</SectionHeading>
+                                {renderCategorySpecificStats(item)}
+                            </section>
+                        )}
 
-                            {isMisc(item) || (<><h2
-                                className="text-2xl font-bold text-olive-400 mb-4">Specifications</h2>
-                                <div className="mb-6">
-                                    {isAnyItem(item) && renderCategorySpecificStats(item)}
-                                </div>
-                            </>)}
-
-                            {item.tips && (
-                                <>
-                                    <h2 className="text-2xl font-bold text-olive-400 mb-4">Tactical Tips</h2>
-                                    <div className="military-card p-4 rounded-sm border-l-4 border-olive-600">
-                                        <p className="text-tan-200 leading-relaxed">{item.tips}</p>
-                                    </div>
-                                </>
-                            )}
-                        </div>
+                        {item.tips && (
+                            <section className="bg-steel-900 border border-line-900 border-l-2 border-l-info p-5">
+                                <SectionHeading>Tactical tips</SectionHeading>
+                                <p className="text-sm text-ink-300 leading-relaxed">{item.tips}</p>
+                            </section>
+                        )}
                     </div>
+                    )}
                 </div>
             </div>
         </Layout>

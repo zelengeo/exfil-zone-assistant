@@ -115,8 +115,12 @@ function transformItemData(rawItem: Item): Item {
 
         stats: {
             rarity: rawItem.stats?.rarity || RARITY_CONFIG.Common.name,
-            price: rawItem.stats?.price || 0,
             weight: rawItem.stats?.weight || 0,
+            // The price block travels as a unit: an item has all three fields or none, which is
+            // what lets `isPriced` be a single test rather than three.
+            basePrice: rawItem.stats?.basePrice,
+            sellPrices: rawItem.stats?.sellPrices,
+            buyOffers: rawItem.stats?.buyOffers,
         },
 
         notes: rawItem.notes,

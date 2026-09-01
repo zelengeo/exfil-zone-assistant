@@ -10,6 +10,7 @@ import {
     areWeaponAmmoCompatible, ATTACKER_COLORS
 } from '../utils/types';
 import {Ammunition, getRarityColorClass, Weapon} from '@/types/items';
+import {baseValue, cheapestOffer, formatEZD} from '@/lib/trade';
 
 interface AttackerSetupProps {
     attacker: AttackerSetupType;
@@ -54,7 +55,7 @@ export default function AttackerSetup({
 
     // Filter weapons and ammo
     const weapons = useMemo(() =>
-            items.filter(isWeapon).sort((a, b) => b.stats.price - a.stats.price),
+            items.filter(isWeapon).sort((a, b) => baseValue(b.stats) - baseValue(a.stats)),
         [items]
     );
 
@@ -355,7 +356,7 @@ export default function AttackerSetup({
                     <div className="mt-1 text-xs text-tan-400 flex gap-3">
                         <span>Damage: {attacker.ammo.stats.damage}</span>
                         <span>Penetration: {attacker.ammo.stats.penetration}</span>
-                        <span>Price: {attacker.ammo.stats.price} EZD</span>
+                        <span>Buy: {formatEZD(cheapestOffer(attacker.ammo.stats)?.price ?? 0)}</span>
                     </div>
                 )}
 

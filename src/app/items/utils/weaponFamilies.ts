@@ -1,5 +1,6 @@
 import {Item, getWeaponFamilyLabel} from '@/types/items';
 import {isWeapon} from '@/app/combat-sim/utils/types';
+import {baseValue} from '@/lib/trade';
 
 /**
  * One weapon family within one caliber - "AR15, 5.56x45mm, 17 variants".
@@ -69,8 +70,8 @@ export function groupWeaponsByFamily(items: Item[]): { groups: WeaponFamily[]; s
 /** The variant a collapsed row shows: the cheapest one, which is the plainest build of the family. */
 export function representativeVariant(items: Item[]): Item {
     return items.reduce((cheapest, item) => {
-        const price = item.stats.price || Infinity;
-        const best = cheapest.stats.price || Infinity;
-        return price < best ? item : cheapest;
+        const value = baseValue(item.stats) || Infinity;
+        const best = baseValue(cheapest.stats) || Infinity;
+        return value < best ? item : cheapest;
     });
 }

@@ -11,6 +11,7 @@
  */
 
 import type { FireMode, RecoilParameters } from '@/types/items';
+import type { TradeStats } from '@/types/trade';
 
 /** `AttachmentModifier` — the game's own spelling, "Modifer" typos included. */
 export interface AttachmentModifier {
@@ -53,18 +54,11 @@ export interface PartGunData {
 }
 
 /** One trader offer. `level` is the loyalty level the offer unlocks at. */
-export interface BuyOffer {
-    vendor: string;
-    goodsId?: string;
-    level: number;
-    price: number;
-    bundle?: number;
-    bundlePrice?: number;
-    stock?: number;
-    resetType?: string;
-    requiresTasks?: string[];
-    requiresDlc?: string[];
-}
+/**
+ * A shop listing. Lives in `types/trade.ts` now, since parts and items carry the same price block;
+ * re-exported here so the gunsmith's own imports keep working.
+ */
+export type { BuyOffer } from '@/types/trade';
 
 /**
  * The gunsmith compatibility graph, as the game's raw tags.
@@ -103,9 +97,7 @@ export interface GunsmithPart {
         capacity?: number | null;
         caliber?: string | null;
         gunData?: PartGunData | null;
-        basePrice?: number;
-        buyOffers?: BuyOffer[];
-    };
+    } & TradeStats;
     compatibility: PartCompatibility;
 }
 

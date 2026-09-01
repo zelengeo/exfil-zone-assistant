@@ -9,6 +9,7 @@ import {
 } from '../utils/types';
 import {Armor, FaceShield, getRarityColorClass} from '@/types/items';
 import {getArmorClassColor} from '../utils/body-zones';
+import {baseValue, formatEZD} from '@/lib/trade';
 
 interface DefenderSetupProps {
     defender: DefenderSetupType;
@@ -228,7 +229,7 @@ export default function DefenderSetup({defender, onUpdate}: DefenderSetupProps) 
                                 Class {defender.bodyArmor.stats.armorClass}
                             </span>
                             <span>Max Durability: {defender.bodyArmor.stats.maxDurability}</span>
-                            <span>Price: {defender.bodyArmor.stats.price} EZD</span>
+                            <span>Value: {formatEZD(baseValue(defender.bodyArmor.stats))}</span>
                         </div>
 
                         {/* Durability Slider */}
@@ -431,7 +432,7 @@ export default function DefenderSetup({defender, onUpdate}: DefenderSetupProps) 
                                 Class {defender.helmet.stats.armorClass}
                             </span>
                             <span>Max Durability: {defender.helmet.stats.maxDurability}</span>
-                            <span>Price: {defender.helmet.stats.price} EZD</span>
+                            <span>Value: {formatEZD(baseValue(defender.helmet.stats))}</span>
                         </div>
 
 
@@ -475,7 +476,7 @@ export default function DefenderSetup({defender, onUpdate}: DefenderSetupProps) 
                     <div className="flex justify-between">
                         <span className="text-tan-400">Total Protection Value:</span>
                         <span className="text-tan-100">
-                            ${((defender.bodyArmor?.stats.price || 0) + (defender.helmet?.stats.price || 0)).toLocaleString()}
+                            {formatEZD(baseValue(defender.bodyArmor?.stats ?? {}) + baseValue(defender.helmet?.stats ?? {}))}
                         </span>
                     </div>
                     <div className="flex justify-between">

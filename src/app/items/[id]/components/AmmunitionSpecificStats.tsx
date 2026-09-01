@@ -6,59 +6,37 @@ import {
 } from "lucide-react";
 import {Ammunition} from "@/types/items";
 import BallisticCurveChart from "@/app/items/components/BallisticCurveChart";
+import StatLine, {StatGrid, StatPanel} from "./StatLine";
 
+const pct = (value: number): string => `${(value * 100).toFixed(0)}%`;
 
 export default function AmmunitionSpecificStats({item}: { item: Ammunition }) {
-    return <>
-        <div className="grid grid-cols-2 gap-4 mb-6">
-            <div className="flex items-center gap-2">
-                <Crosshair size={18} className="text-olive-400"/>
-                <span className="text-tan-300">Damage:</span>
-                <span className="text-tan-100">{item.stats.damage}</span>
-            </div>
-            <div className="flex items-center gap-2">
-                <ShieldX size={18} className="text-olive-400"/>
-                <span className="text-tan-300">Penetration:</span>
-                <span className="text-tan-100">{item.stats.penetration}</span>
-            </div>
-            <div className="flex items-center gap-2">
-                <Info size={18} className="text-olive-400"/>
-                <span className="text-tan-300">Velocity:</span>
-                <span className="text-tan-100">{item.stats.muzzleVelocity / 100} m/s</span>
-            </div>
-            <div className="flex items-center gap-2">
-                <Info size={18} className="text-olive-400"/>
-                <span className="text-tan-300">Caliber:</span>
-                <span className="text-tan-100">{item.stats.caliber}</span>
-            </div>
-        </div>
+    return <div className="space-y-5">
+        <StatGrid>
+            <StatLine icon={<Crosshair size={14}/>} label="Damage" value={item.stats.damage}/>
+            <StatLine icon={<ShieldX size={14}/>} label="Penetration" value={item.stats.penetration}/>
+            <StatLine
+                icon={<Info size={14}/>}
+                label="Velocity"
+                value={`${item.stats.muzzleVelocity / 100} m/s`}
+            />
+            <StatLine icon={<Info size={14}/>} label="Caliber" value={item.stats.caliber} text/>
+        </StatGrid>
 
-        {/* Damage modifiers */}
-        <div className="military-card p-4 rounded-sm mb-6">
-            <h4 className="text-lg font-bold text-olive-400 mb-3">Damage Modifiers</h4>
-            <div className="grid grid-cols-2 gap-3 text-sm">
-                <div className="flex justify-between">
-                    <span className="text-tan-400">Blunt Damage Scale:</span>
-                    <span
-                        className="text-tan-100">{(item.stats.bluntDamageScale * 100).toFixed(0)}%</span>
-                </div>
-                <div className="flex justify-between">
-                    <span className="text-tan-400">Bleeding Chance:</span>
-                    <span
-                        className="text-tan-100">{(item.stats.bleedingChance * 100).toFixed(0)}%</span>
-                </div>
-                <div className="flex justify-between">
-                    <span className="text-tan-400">Armor Pen Damage:</span>
-                    <span
-                        className="text-tan-100">{(item.stats.protectionGearPenetratedDamageScale * 100).toFixed(0)}%</span>
-                </div>
-                <div className="flex justify-between">
-                    <span className="text-tan-400">Armor Blunt Damage:</span>
-                    <span
-                        className="text-tan-100">{(item.stats.protectionGearBluntDamageScale * 100).toFixed(0)}%</span>
-                </div>
-            </div>
-        </div>
+        <StatPanel title="Damage modifiers">
+            <StatGrid>
+                <StatLine label="Blunt damage scale" value={pct(item.stats.bluntDamageScale)}/>
+                <StatLine label="Bleeding chance" value={pct(item.stats.bleedingChance)}/>
+                <StatLine
+                    label="Armor pen damage"
+                    value={pct(item.stats.protectionGearPenetratedDamageScale)}
+                />
+                <StatLine
+                    label="Armor blunt damage"
+                    value={pct(item.stats.protectionGearBluntDamageScale)}
+                />
+            </StatGrid>
+        </StatPanel>
 
         {/* Ballistic curves */}
         <BallisticCurveChart
@@ -73,21 +51,17 @@ export default function AmmunitionSpecificStats({item}: { item: Ammunition }) {
             yLabel="Damage"
             height={250}
         />
-        <div className="mt-4">
-            <BallisticCurveChart
-                title="Penetration Over Distance"
-                curves={[{
-                    name: 'Penetration',
-                    data: item.stats.ballisticCurves.penetrationPowerOverDistance,
-                    color: '#9ba85e'
-                }]}
-                xLabel="Distance (m)"
-                xLabelModifier={0.01}
-                yLabel="Penetration Power"
-                height={250}
-            />
-        </div>
-
-    </>
-
+        <BallisticCurveChart
+            title="Penetration Over Distance"
+            curves={[{
+                name: 'Penetration',
+                data: item.stats.ballisticCurves.penetrationPowerOverDistance,
+                color: '#9ba85e'
+            }]}
+            xLabel="Distance (m)"
+            xLabelModifier={0.01}
+            yLabel="Penetration Power"
+            height={250}
+        />
+    </div>
 }

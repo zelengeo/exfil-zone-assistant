@@ -9,6 +9,7 @@ import {
     ZoneCalculation,
     AttackerSummary,
 } from './types';
+import {cheapestOffer} from '@/lib/trade';
 import {
     ARMOR_ZONES,
     getBodyPartForArmorZone,
@@ -104,8 +105,9 @@ function calculateAttackerZones(
         const fireRate = weapon.stats.fireRate || 600; //TODO cover bolt actions and pump shotguns, TODO wtf is this 600 fallback - defaults should be global
         const ttk = calculateTimeToKill(shotsToKill, fireRate);
 
-        // Calculate cost to kill
-        const costToKill = shotsToKill * ammo.stats.price;
+        // Calculate cost to kill. What the shooter pays, so this is the buy price - the cheapest
+        // offer any vendor lists - not what a vendor would pay them for the same round.
+        const costToKill = shotsToKill * (cheapestOffer(ammo.stats)?.price ?? 0);
 
         //TODO randomness of penetration is missing here
         calculations.push({

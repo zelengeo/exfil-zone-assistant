@@ -1,136 +1,234 @@
 'use client';
 
-import React, {useState, useEffect} from 'react';
-import {Search} from 'lucide-react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { LayoutGrid, Rows3, Search, SlidersHorizontal } from 'lucide-react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Layout from '@/components/layout/Layout';
 import ItemCard from '@/app/items/components/ItemCard';
+import ItemRow from '@/app/items/components/ItemRow';
 import WeaponFamilyGroup from '@/app/items/components/WeaponFamilyGroup';
-import {groupWeaponsByFamily} from '@/app/items/utils/weaponFamilies';
 import FilterSidebar from '@/app/items/components/FilterSidebar';
-import {itemCategories, Item, getCategoryById} from '@/types/items';
-import {useSearchParams} from "next/navigation";
-import {useFetchItems} from "@/hooks/useFetchItems";
+import { groupWeaponsByFamily } from '@/app/items/utils/weaponFamilies';
+import {
+    DEFAULT_FILTERS,
+    type Density,
+    type ItemFilters,
+    type SortKey,
+    applyFilters,
+    categorySortLabel,
+    hasActiveFilters,
+    parseFilters,
+    serializeFilters,
+    sortItems,
+} from '@/app/items/utils/filters';
+import { itemCategories } from '@/types/items';
+import { cn } from '@/lib/utils';
+import { useFetchItems } from '@/hooks/useFetchItems';
+import { useDebounce } from '@/hooks/useDebounce';
+import { useDensity } from '@/app/items/hooks/useDensity';
+
+/**
+ * The catalogue: 852 items behind a search box and a category rail.
+ *
+ * Two densities, because they answer different questions. The grid helps you recognise an item;
+ * the table lets you compare forty of them, which is what makes "cheapest 5.45 AP that penetrates
+ * class 5" answerable at all. Everything except the density preference lives in the URL, so a
+ * filtered list stays a shareable link.
+ */
 
 export default function ItemsPageContent() {
-
-    const {items} = useFetchItems();
+    const { items } = useFetchItems();
+    const router = useRouter();
+    const pathname = usePathname();
     const searchParams = useSearchParams();
-    const categoryId = searchParams.get('category') || '';
-    const subcategoryId = searchParams.get('subcategory') || '';
-    const [filteredItems, setFilteredItems] = useState<Item[]>([]);
-    const [searchQuery, setSearchQuery] = useState('');
+    const [density, setDensity] = useDensity();
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-    // Apply filters whenever search or category selection changes
+    const filters = useMemo(() => parseFilters(searchParams), [searchParams]);
+
+    // The search box is local and debounced into the URL: typing should not push a history entry
+    // per keystroke.
+    const [searchDraft, setSearchDraft] = useState(filters.search);
+    const debouncedSearch = useDebounce(searchDraft, 200);
+
+    const write = useCallback(
+        (next: ItemFilters) => {
+            const query = serializeFilters(next);
+            router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+        },
+        [pathname, router],
+    );
+
+    const update = useCallback(
+        (patch: Partial<ItemFilters>) => write({ ...filters, ...patch }),
+        [filters, write],
+    );
+
     useEffect(() => {
-        let result = [...items];
+        if (debouncedSearch !== filters.search) update({ search: debouncedSearch });
+        // Only the debounced value should drive this, not every filter change.
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [debouncedSearch]);
 
-        // Apply search filter
-        if (searchQuery) {
-            const query = searchQuery.toLowerCase();
-            result = result.filter(item =>
-                item.name.toLowerCase().includes(query) ||
-                item.description.toLowerCase().includes(query)
-            );
-        }
-
-        // Apply category filter
-        if (categoryId) {
-            result = result.filter(item => item.category === categoryId);
-
-            // Apply subcategory filter if applicable
-            if (subcategoryId) {
-                result = result.filter(item => item.subcategory === subcategoryId);
-            }
-        }
-
-        setFilteredItems(result);
-    }, [items, searchQuery, categoryId, subcategoryId]);
-
-    const toggleSidebar = () => {
-        setIsSidebarOpen(!isSidebarOpen);
-    };
+    const visible = useMemo(
+        () => sortItems(applyFilters(items, filters), filters),
+        [items, filters],
+    );
 
     // The gun rework took the weapons list from 69 items to 134 presets over 38 families - 27 of
     // them with more than one preset, and many variants differing only cosmetically. Flat, that is
-    // a worse page than the old one, so weapons collapse into their family. Everything else stays
-    // a plain grid. Searching expands the groups, since a hit inside a collapsed row is invisible.
-    const isWeaponsView = categoryId === 'weapons';
-    const expandGroups = searchQuery.length > 0;
-    const {groups, singles} = isWeaponsView
-        ? groupWeaponsByFamily(filteredItems)
-        : {groups: [], singles: filteredItems};
+    // a worse page than the old one, so weapons collapse into their family in the grid. The table
+    // stays flat, because comparing is the whole reason to be in it.
+    const isWeaponsView = filters.category === 'weapons' && density === 'grid';
+    const expandGroups = filters.search.length > 0;
+    const { groups, singles } = isWeaponsView
+        ? groupWeaponsByFamily(visible)
+        : { groups: [], singles: visible };
+
+    const categoryKey = categorySortLabel(filters.category);
+    const sortOptions: { key: SortKey; label: string }[] = [
+        { key: 'name', label: 'Name' },
+        { key: 'value', label: 'Value' },
+        { key: 'weight', label: 'Weight' },
+        ...(categoryKey ? [{ key: 'category' as SortKey, label: categoryKey }] : []),
+    ];
+
+    const toggleSort = (key: SortKey) => {
+        if (filters.sort === key) {
+            update({ direction: filters.direction === 'asc' ? 'desc' : 'asc' });
+        } else {
+            // Value and the category key are almost always wanted best-first.
+            update({ sort: key, direction: key === 'name' ? 'asc' : 'desc' });
+        }
+    };
 
     return (
         <Layout>
             <div className="container mx-auto px-4 py-8">
-                {/* Page Header */}
-                <div className="mb-8">
-                    <h1 className="text-3xl md:text-4xl font-bold text-tan-100 mb-2 military-stencil">ITEMS</h1>
-                    <p className="text-tan-300 max-w-3xl">
-                        Browse all in-game items, their stats, including the hidden ones. Use the filters to find exactly what you
-                        need for your next raid.
-                    </p>
-                </div>
+                <header className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-5">
+                    <h1 className="font-display text-3xl md:text-4xl text-ink-hi leading-none">ITEMS</h1>
+                    <span className="font-mono text-[11px] uppercase tracking-eyebrow text-ink-700">
+                        {items.length.toLocaleString('en-US')} items ·{' '}
+                        {Object.keys(itemCategories).length} categories
+                    </span>
+                </header>
 
-                {/* Search and Filter Controls */}
-                <div className="flex flex-wrap items-center gap-4 mb-6">
-                    {/* Search Bar */}
-                    <div className="relative flex-grow max-w-md">
-                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <Search size={20} className="text-olive-400"/>
-                        </div>
+                <div className="flex flex-wrap items-center gap-2 mb-5">
+                    <div className="relative flex-grow max-w-md min-w-0">
+                        <Search
+                            size={15}
+                            className="absolute inset-y-0 left-3 my-auto text-ink-700 pointer-events-none"
+                            aria-hidden="true"
+                        />
                         <input
-                            type="text"
-                            placeholder="Search items..."
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full py-3 pl-10 pr-4 bg-military-800 border border-olive-700 focus:border-olive-500 focus:ring-2 focus:ring-olive-500/20 rounded-sm text-tan-100 placeholder-military-400"
+                            type="search"
+                            placeholder="Search items…"
+                            value={searchDraft}
+                            onChange={(e) => setSearchDraft(e.target.value)}
+                            aria-label="Search items by name or description"
+                            className="w-full py-2 pl-9 pr-3 bg-steel-750 border border-line-600 focus:border-line-400 focus:outline-none text-sm text-ink-100 placeholder-ink-700"
                         />
                     </div>
 
-                    {/* Mobile Filter Toggle */}
                     <button
-                        onClick={toggleSidebar}
-                        className="md:hidden bg-olive-600 hover:bg-olive-500 text-tan-100 px-4 py-3 rounded-sm border border-olive-700 transition-colors"
+                        type="button"
+                        onClick={() => setIsSidebarOpen(true)}
+                        aria-label="Open filters"
+                        className={cn(
+                            'md:hidden flex items-center gap-2 px-3 py-2 border text-xs transition-colors',
+                            hasActiveFilters(filters)
+                                ? 'border-line-400 text-ink-100'
+                                : 'border-line-700 text-ink-500',
+                        )}
                     >
-                        Filters {isSidebarOpen ? '✕' : '▼'}
+                        <SlidersHorizontal size={14} />
+                        Filters
                     </button>
 
-                    {/* Filter summary - desktop only */}
-                    <div className="hidden md:flex items-center text-tan-300">
-                        {categoryId && getCategoryById(categoryId) ? (
-                            <span>
-                Category: <span className="text-olive-400">{getCategoryById(categoryId)?.name}</span>
-                                {subcategoryId && getCategoryById(categoryId)?.subcategories.includes(subcategoryId) && (
-                                    <> | Subcategory: <span className="text-olive-400">{subcategoryId}</span></>
-                                )}
-              </span>
-                        ) : (
-                            <span>All Items</span>
-                        )}
+                    {/* Sort */}
+                    <div className="flex items-center gap-1 ml-auto">
+                        <span className="eyebrow hidden sm:inline mr-1">Sort</span>
+                        {sortOptions.map((option) => {
+                            const active = filters.sort === option.key;
+                            return (
+                                <button
+                                    key={option.key}
+                                    type="button"
+                                    onClick={() => toggleSort(option.key)}
+                                    aria-pressed={active}
+                                    className={cn(
+                                        'micro-label px-2 py-1 border transition-colors',
+                                        active
+                                            ? 'border-line-400 bg-steel-650 text-ink-100'
+                                            : 'border-line-800 text-ink-600 hover:text-ink-300 hover:border-line-600',
+                                    )}
+                                >
+                                    {option.label}
+                                    {active && (filters.direction === 'asc' ? ' ↑' : ' ↓')}
+                                </button>
+                            );
+                        })}
                     </div>
 
-                    {/* Results Count */}
-                    <div className="text-tan-300 ml-auto">
-                        <span className="font-mono">{filteredItems.length}</span> items found
+                    {/* Density */}
+                    <div className="flex border border-line-800" role="group" aria-label="List density">
+                        {([
+                            { value: 'grid' as Density, icon: LayoutGrid, label: 'Grid' },
+                            { value: 'table' as Density, icon: Rows3, label: 'Table' },
+                        ]).map(({ value, icon: Icon, label }) => (
+                            <button
+                                key={value}
+                                type="button"
+                                onClick={() => setDensity(value)}
+                                aria-label={`${label} density`}
+                                aria-pressed={density === value}
+                                className={cn(
+                                    'px-2.5 py-2 transition-colors',
+                                    density === value
+                                        ? 'bg-steel-650 text-ink-100'
+                                        : 'text-ink-700 hover:text-ink-300',
+                                )}
+                            >
+                                <Icon size={14} />
+                            </button>
+                        ))}
                     </div>
                 </div>
 
-                {/* Main Content Area with Sidebar and Items Grid */}
-                <div className="flex flex-col md:flex-row gap-6">
-                    {/* Filter Sidebar - Mobile (Conditional) & Desktop */}
+                <div className="flex flex-col md:flex-row gap-5">
                     <FilterSidebar
                         categories={itemCategories}
-                        selectedCategory={categoryId}
-                        selectedSubcategory={subcategoryId}
+                        filters={filters}
+                        onChange={update}
+                        onClearAll={() => write({ ...DEFAULT_FILTERS, search: filters.search })}
                         isOpen={isSidebarOpen}
                         onClose={() => setIsSidebarOpen(false)}
                     />
 
-                    {/* Items Grid */}
-                    <div className="flex-grow">
-                        {filteredItems.length > 0 ? (
+                    <div className="flex-grow min-w-0">
+                        <div className="flex items-baseline justify-between mb-3">
+                            <span className="eyebrow">
+                                {filters.subcategory || (filters.category && itemCategories[filters.category]?.name) || 'All items'}
+                            </span>
+                            <span className="font-mono tabular text-xs text-ink-600">
+                                {visible.length.toLocaleString('en-US')} shown
+                            </span>
+                        </div>
+
+                        {visible.length === 0 ? (
+                            <div className="bg-steel-900 border border-line-900 p-8 text-center">
+                                <div className="eyebrow mb-2">Nothing matches</div>
+                                <p className="text-sm text-ink-500">
+                                    Try a different search, or reset the filters to see more items.
+                                </p>
+                            </div>
+                        ) : density === 'table' ? (
+                            <div className="border border-line-900 divide-y divide-line-900">
+                                {visible.map((item) => (
+                                    <ItemRow key={item.id} item={item} />
+                                ))}
+                            </div>
+                        ) : (
                             <div className="space-y-4">
                                 {groups.map((group) => (
                                     <WeaponFamilyGroup
@@ -138,24 +236,17 @@ export default function ItemsPageContent() {
                                         // state picks up the new default instead of sticking.
                                         key={`${group.key}${expandGroups ? ':open' : ''}`}
                                         group={group}
-                                        showCaliber={!subcategoryId}
+                                        showCaliber={!filters.subcategory}
                                         defaultExpanded={expandGroups}
                                     />
                                 ))}
                                 {singles.length > 0 && (
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
                                         {singles.map((item) => (
-                                            <ItemCard key={item.id} item={item}/>
+                                            <ItemCard key={item.id} item={item} />
                                         ))}
                                     </div>
                                 )}
-                            </div>
-                        ) : (
-                            <div className="military-box p-8 text-center rounded-sm">
-                                <h3 className="text-xl text-olive-400 mb-2">No items found</h3>
-                                <p className="text-tan-300">
-                                    Try adjusting your search or clearing filters to see more items.
-                                </p>
                             </div>
                         )}
                     </div>

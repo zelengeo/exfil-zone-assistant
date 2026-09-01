@@ -201,15 +201,15 @@ export default function BallisticCurveChart({
     }
 
     return (
-        <div className="military-card p-4 rounded-sm relative">
-            <h4 className="text-lg font-bold text-olive-400 mb-4">{title}</h4>
+        <div className="bg-steel-850 border border-line-800 p-4 relative">
+            <h4 className="eyebrow mb-4">{title}</h4>
             <div ref={containerRef} className="w-full">
                 <div className="overflow-x-auto">
                     <svg
                         ref={svgRef}
                         width={containerWidth}
                         height={height}
-                        className="bg-military-900 rounded cursor-crosshair"
+                        className="bg-steel-900 plot-grid cursor-crosshair"
                         onMouseMove={handleMouseMove}
                         onMouseLeave={handleMouseLeave}
                     >
@@ -343,7 +343,7 @@ export default function BallisticCurveChart({
             {/* Tooltip */}
             {tooltip && (
                 <div
-                    className="absolute pointer-events-none z-20 bg-military-800 border border-military-600 rounded-sm p-3 shadow-lg min-w-32"
+                    className="absolute pointer-events-none z-20 bg-steel-750 border border-line-600 p-3 min-w-32"
                     style={{
                         left: responsivePadding.left + tooltip.x,
                         top: responsivePadding.top + tooltip.y - 20,
@@ -352,13 +352,13 @@ export default function BallisticCurveChart({
                 >
                     <div className="text-sm space-y-1">
                         <div className="flex justify-between gap-4">
-                            <span className="text-tan-400">{xLabel}:</span>
-                            <span className="text-tan-100 font-mono">{tooltip.time.toFixed(2)}</span>
+                            <span className="text-ink-600">{xLabel}</span>
+                            <span className="text-ink-100 font-mono tabular">{tooltip.time.toFixed(2)}</span>
                         </div>
                         <div className="flex justify-between gap-4">
-                            <span className="text-tan-400">{yLabel}:</span>
+                            <span className="text-ink-600">{yLabel}</span>
                             <span
-                                className="font-mono font-semibold"
+                                className="font-mono tabular"
                                 style={{color: tooltip.color}}
                             >
                                         {tooltip.value.toFixed(2)}

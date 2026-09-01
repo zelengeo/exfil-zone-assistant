@@ -59,9 +59,7 @@ app/items/
 │   ├── FilterSidebar.tsx          # Category filter sidebar
 │   ├── ItemCard.tsx               # Item grid card
 │   ├── ItemImage.tsx              # Item image component
-│   ├── ItemLocations.tsx          # Item spawn locations
 │   ├── ItemsPageContent.tsx       # Main list page content
-│   ├── RelatedItems.tsx           # Related items display
 │   └── WeaponRecoilDisplay.tsx    # Weapon recoil visualization
 └── page.tsx                        # Items list page (server component)
 ```

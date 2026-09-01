@@ -7,8 +7,9 @@ import {
 } from "lucide-react";
 import {Armor} from "@/types/items";
 import BallisticCurveChart from "@/app/items/components/BallisticCurveChart";
-import {isHeadProtection, isHelmet} from "@/app/combat-sim/utils/types";
-import ArmorZonesDisplay from "@/app/items/components/ArmorZonesDisplay";
+import {isBodyArmor, isHeadProtection, isHelmet} from "@/app/combat-sim/utils/types";
+import BodyCoveragePanel from "@/components/protection/BodyCoveragePanel";
+import StatLine, {StatGrid, StatPanel} from "./StatLine";
 
 
 /** Percentages read as a hard "0%" when the underlying number is simply absent. */
@@ -26,45 +27,47 @@ function soundDampening(soundMix: string | undefined): string {
 export default function ArmorSpecificStats({item}: { item: Armor }) {
     const hasZones = Boolean(item.stats.protectiveData && item.stats.protectiveData.length > 0);
 
-    return                     <>
-        <div className="grid grid-cols-2 gap-4 mb-6">
-            <div className="flex items-center gap-2">
-                <BowArrow size={18} className="text-olive-400"/>
-                <span className="text-tan-300">Penetration Damage</span>
-                <span
-                    className="text-tan-100">{((item.stats.penetrationDamageScalarCurve?.[1]?.value || 1) * 100).toFixed(0)}%</span>
-            </div>
-            <div className="flex items-center gap-2">
-                <Shield size={18} className="text-olive-400"/>
-                <span className="text-tan-300">Max Durability:</span>
-                <span className="text-tan-100">{item.stats.maxDurability ?? 'Unknown'}</span>
-            </div>
-            <div className="flex items-center gap-2">
-                <Gavel size={18} className="text-olive-400"/>
-                <span className="text-tan-300">Blunt Damage:</span>
-                <span className="text-tan-100">{percent(item.stats.bluntDamageScalar, 100)}</span>
-            </div>
-            <div className="flex items-center gap-2">
-                <ShieldMinus size={18} className="text-olive-400"/>
-                <span className="text-tan-300">Durability Damage:</span>
-                <span
-                    className="text-tan-100">{percent(item.stats.durabilityDamageScalar, 300)}</span>
-            </div>
-            {isHelmet(item) && (
-                <div className="flex items-center gap-2">
-                    <Volume2 size={18} className="text-olive-400"/>
-                    <span className="text-tan-300">Sound Dampening:</span>
-                    <span className="text-tan-100">{soundDampening(item.stats.soundMix)}</span>
-                </div>
-            )}
-        </div>
-
-        {/* Protection zones */}
-        {hasZones && (
-            <ArmorZonesDisplay
-                protectiveData={item.stats.protectiveData!}
-                className="mb-6"
+    return <>
+        <StatGrid className="mb-6">
+            <StatLine
+                icon={<BowArrow size={14}/>}
+                label="Penetration damage"
+                value={`${((item.stats.penetrationDamageScalarCurve?.[1]?.value || 1) * 100).toFixed(0)}%`}
             />
+            <StatLine
+                icon={<Shield size={14}/>}
+                label="Max durability"
+                value={item.stats.maxDurability ?? 'Unknown'}
+            />
+            <StatLine
+                icon={<Gavel size={14}/>}
+                label="Blunt damage"
+                value={percent(item.stats.bluntDamageScalar, 100)}
+            />
+            <StatLine
+                icon={<ShieldMinus size={14}/>}
+                label="Durability damage"
+                value={percent(item.stats.durabilityDamageScalar, 300)}
+            />
+            {isHelmet(item) && (
+                <StatLine
+                    icon={<Volume2 size={14}/>}
+                    label="Sound dampening"
+                    value={soundDampening(item.stats.soundMix)}
+                    text
+                />
+            )}
+        </StatGrid>
+
+        {/*
+          * Coverage, drawn from the real geometry rather than from percentages placed by hand on a
+          * flat image. Body armour only: head gear is tested by cone regions, not by the per-bone
+          * wedge this draws.
+          */}
+        {hasZones && isBodyArmor(item) && (
+            <StatPanel title="Coverage" className="mb-6">
+                <BodyCoveragePanel armor={item}/>
+            </StatPanel>
         )}
 
         {/*
@@ -72,11 +75,12 @@ export default function ArmorSpecificStats({item}: { item: Armor }) {
           * above only exist where someone curated them. Say so rather than rendering an empty gap
           * that reads as "protects nothing" - interpreting the regions is still to come.
           */}
-        {!hasZones && isHeadProtection(item) && (
-            <div className="mb-6 text-sm text-tan-400">
-                Coverage for this item is defined by the game as
-                {' '}{item.stats.coneRegions?.length ?? 0} protection region(s) rather than per-body-part
-                zones. Zone-by-zone figures are not available yet.
+        {isHeadProtection(item) && (
+            <div className="mb-6 text-sm text-ink-500">
+                Coverage for head gear is defined by the game as
+                {' '}{item.stats.coneRegions?.length ?? 0} cone region(s) around the head rather than
+                as per-bone wedges, so the body viewer does not describe it. Drawing those regions is
+                still to come.
             </div>
         )}
 

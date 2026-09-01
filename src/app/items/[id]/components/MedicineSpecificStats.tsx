@@ -6,147 +6,97 @@ import {
 } from "lucide-react";
 import {Medicine} from "@/types/items";
 import {isBandage, isLimbRestore, isPainkiller, isStim, isSyringe} from "@/app/combat-sim/utils/types";
+import StatLine, {StatGrid, StatPanel} from "./StatLine";
 
+/** A yes/no that carries a judgement — green for the answer you want. */
+function YesNo({value}: { value: boolean }) {
+    return <span className={value ? 'text-good' : 'text-ink-600'}>{value ? 'Yes' : 'No'}</span>;
+}
 
 export default function MedicineSpecificStats({item}: { item: Medicine }) {
-    return <>
+    return <div className="space-y-5">
         {/* Bandages */}
         {isBandage(item) && (
-            <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="flex items-center gap-2">
-                    <Bandage size={18} className="text-olive-400"/>
-                    <span className="text-tan-400">Heals Deep Wound:</span>
-                    <span className={`${item.stats.canHealDeepWound ? 'text-green-400' : 'text-red-400'}`}>
-                                    {item.stats.canHealDeepWound ? 'Yes' : 'No'}</span>
-                </div>
-            </div>
+            <StatGrid>
+                <StatLine
+                    icon={<Bandage size={14}/>}
+                    label="Heals deep wound"
+                    value={<YesNo value={Boolean(item.stats.canHealDeepWound)}/>}
+                />
+            </StatGrid>
         )}
 
         {/* Limb Restorers */}
         {isLimbRestore(item) && (
-            <>
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="flex items-center gap-2">
-                        <Cross size={18} className="text-olive-400"/>
-                        <span className="text-tan-400">Max HP Penalty:</span>
-                        <span
-                            className="text-tan-100">{(item.stats.hpPercentage * 100).toFixed(0)}%</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <Timer size={18} className="text-olive-400"/>
-                        <span className="text-tan-400">Use Time:</span>
-                        <span className="text-tan-100">{item.stats.useTime}s</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <Hash size={18} className="text-olive-400"/>
-                        <span className="text-tan-400">Uses Count:</span>
-                        <span className="text-tan-100">{item.stats.usesCount}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <Bone size={18} className="text-olive-400"/>
-                        <span className="text-tan-400">HP after restore:</span>
-                        <span className="text-tan-100">{item.stats.brokenHP}</span>
-                    </div>
-                </div>
-            </>
+            <StatGrid>
+                <StatLine
+                    icon={<Cross size={14}/>}
+                    label="Max HP penalty"
+                    value={`${(item.stats.hpPercentage * 100).toFixed(0)}%`}
+                />
+                <StatLine icon={<Timer size={14}/>} label="Use time" value={`${item.stats.useTime}s`}/>
+                <StatLine icon={<Hash size={14}/>} label="Uses count" value={item.stats.usesCount}/>
+                <StatLine icon={<Bone size={14}/>} label="HP after restore" value={item.stats.brokenHP}/>
+            </StatGrid>
         )}
 
         {/* Painkillers */}
         {isPainkiller(item) && (
             <>
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="flex items-center gap-2">
-                        <Timer size={18} className="text-olive-400"/>
-                        <span className="text-tan-400">Duration:</span>
-                        <span className="text-tan-100">{item.stats.effectTime}s</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <Hash size={18} className="text-olive-400"/>
-                        <span className="text-tan-400">Uses Count:</span>
-                        <span className="text-tan-100">{item.stats.usesCount}</span>
-                    </div>
-                </div>
-                <div className="military-card p-4 rounded-sm">
-                    <h4 className="text-olive-400 font-medium mb-3">Side Effects</h4>
+                <StatGrid>
+                    <StatLine icon={<Timer size={14}/>} label="Duration" value={`${item.stats.effectTime}s`}/>
+                    <StatLine icon={<Hash size={14}/>} label="Uses count" value={item.stats.usesCount}/>
+                </StatGrid>
+                <StatPanel title="Side effects">
                     <div className="space-y-2">
-                        <div className="flex justify-between">
-                            <span className="text-tan-400">Energy Cost:</span>
-                            <span className="text-red-400">{(item.stats.energyFactor)}/s</span>
-                        </div>
-                        <div className="flex justify-between">
-                            <span className="text-tan-400">Hydration Effect:</span>
-                            <span className="text-red-400">{(item.stats.hydraFactor)}/s</span>
-                        </div>
-                        <div className="flex justify-between">
-                            <span className="text-tan-400">Side Effect Duration:</span>
-                            <span className="text-yellow-400">{item.stats.sideEffectTime}s</span>
-                        </div>
+                        <StatLine
+                            label="Energy cost"
+                            value={<span className="text-warn">{item.stats.energyFactor}/s</span>}
+                        />
+                        <StatLine
+                            label="Hydration effect"
+                            value={<span className="text-warn">{item.stats.hydraFactor}/s</span>}
+                        />
+                        <StatLine label="Side effect duration" value={`${item.stats.sideEffectTime}s`}/>
                     </div>
-                </div>
+                </StatPanel>
             </>
         )}
 
         {/* Syringes */}
         {isSyringe(item) && (
             <>
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="flex items-center gap-2">
-                        <Cross size={18} className="text-olive-400"/>
-                        <span className="text-tan-400">Total Healing:</span>
-                        <span className="text-tan-100">{item.stats.capacity} HP</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <Gauge size={18} className="text-olive-400"/>
-                        <span className="text-tan-400">Healing Speed:</span>
-                        <span className="text-tan-100">{item.stats.cureSpeed} HP/s</span>
-                    </div>
-                </div>
-                <div className="military-card p-4 rounded-sm">
-                    <h4 className="text-olive-400 font-medium mb-3">Additional Effects</h4>
-                    <div className="flex p-4 justify-between">
-                        <span className="text-tan-400">Reduce Bleeding:</span>
-                        <span
-                            className={`${item.stats.canReduceBleeding ? 'text-green-400' : 'text-red-400'}`}>
-                                    {item.stats.canReduceBleeding ? 'Yes' : 'No'}
-                                </span>
-                    </div>
-                </div>
+                <StatGrid>
+                    <StatLine icon={<Cross size={14}/>} label="Total healing" value={`${item.stats.capacity} HP`}/>
+                    <StatLine icon={<Gauge size={14}/>} label="Healing speed" value={`${item.stats.cureSpeed} HP/s`}/>
+                </StatGrid>
+                <StatPanel title="Additional effects">
+                    <StatLine
+                        label="Reduce bleeding"
+                        value={<YesNo value={Boolean(item.stats.canReduceBleeding)}/>}
+                    />
+                </StatPanel>
             </>
         )}
 
         {/* Stims */}
         {isStim(item) && (
             <>
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="flex items-center gap-2">
-                        <Gauge size={18} className="text-olive-400"/>
-                        <span className="text-tan-400">Use Time:</span>
-                        <span className="text-tan-100">{item.stats.useTime}s</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <Timer size={18} className="text-olive-400"/>
-                        <span className="text-tan-400">Effect Duration:</span>
-                        <span className="text-tan-100">{item.stats.effectTime}s</span>
-                    </div>
-                </div>
-
-                <div className="military-card p-4 rounded-sm">
-                    <h4 className="text-olive-400 font-medium mb-3">Usage Notes</h4>
-                    <div className="space-y-2 text-sm">
-                        <p className="text-tan-300">
-                            High-performance combat stimulants with specialized effects. Use strategically
-                            before combat or specific activities.
-                        </p>
-                        <div className="bg-yellow-900/20 border border-yellow-700/50 rounded-sm p-2 mt-2">
-                            <p className="text-yellow-200 text-xs">
-                                <strong>Warning:</strong> Some stimulants may have side effects like
-                                increased hunger/thirst consumption.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <StatGrid>
+                    <StatLine icon={<Gauge size={14}/>} label="Use time" value={`${item.stats.useTime}s`}/>
+                    <StatLine icon={<Timer size={14}/>} label="Effect duration" value={`${item.stats.effectTime}s`}/>
+                </StatGrid>
+                <StatPanel title="Usage notes">
+                    <p className="text-xs text-ink-400 leading-relaxed">
+                        High-performance combat stimulants with specialized effects. Use strategically
+                        before combat or specific activities.
+                    </p>
+                    <p className="text-xs text-warn leading-relaxed mt-2 border-l border-warn/50 pl-3">
+                        Some stimulants have side effects, such as increased hunger and thirst
+                        consumption.
+                    </p>
+                </StatPanel>
             </>
         )}
-    </>
-
+    </div>
 }

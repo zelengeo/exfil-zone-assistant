@@ -1,3 +1,5 @@
+import type { TradeStats } from '@/types/trade';
+
 export interface Item {
     id: string;
     name: string;
@@ -12,9 +14,8 @@ export interface Item {
     stats: {
         // Common stats for all items
         rarity: ItemRarity;
-        price: number;
         weight: number;
-    };
+    } & TradeStats;
 
     notes?: string;
     tips?: string;
@@ -446,12 +447,26 @@ export type AnyItem =
     | Keys
     | Misc;
 
-// Protective zone from armor data
+/**
+ * One protection point on a piece of armour: a bone, and the wedge around it the plate covers.
+ *
+ * A hit counts as protected when it arrives inside `protectionAngle` degrees of the bone's forward
+ * axis, measured two-sided — front and back both — which is why a 90 degree wedge covers the chest
+ * from ahead and behind but not from the flank. `forwardAxis` and `upAxis` select which of the
+ * bone's own axes to measure against, as indices into its basis. See
+ * `ProtectiveGearBlueprintFunctionLibrary.Is Protected` in the decompiled game, ported to
+ * `src/lib/protection/coverage.ts`.
+ */
 export interface ProtectiveZone {
     bodyPart: string; // bodypart.id e.g., "spine_03", "pelvis", "UpperArm_L"
     armorClass: number;
     bluntDamageScalar: number;
-    protectionAngle: number; // not used in simulation yet
+    /** Half-angle of the covered wedge, in degrees. Not uniform: 25 to 90 across the catalogue. */
+    protectionAngle: number;
+    /** Index of the bone axis the wedge points along. 1 on every published protection point. */
+    forwardAxis?: number;
+    /** Index of the bone axis taken as up when building the measuring basis. */
+    upAxis?: number;
 }
 
 export interface AmmoProperties {
@@ -823,17 +838,6 @@ export function getSubcategoriesForCategory(categoryId: string): string[] {
 export function getCategoryIcon(categoryId: string): string {
     const category = getCategoryById(categoryId);
     return category ? category.icon : 'box';
-}
-
-/**
- * Format price with currency.
- *
- * Prices are curated: the game holds them server-side, so an item nobody has priced yet arrives as
- * 0. Showing "0 EZD" reads as free rather than unknown, so say so instead.
- */
-export function formatPrice(price: number): string {
-    if (!Number.isFinite(price) || price <= 0) return 'Unknown';
-    return price.toLocaleString() + ' EZD';
 }
 
 // Helper to format weight with unit
