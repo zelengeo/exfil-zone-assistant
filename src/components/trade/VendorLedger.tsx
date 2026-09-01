@@ -1,17 +1,13 @@
 import React from 'react';
-import { Lock } from 'lucide-react';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import {
-    baseValue,
-    formatAmount,
-    isPriced,
-    offersByLevel,
-    payersByAmount,
-    vendorLabel,
-    vendorMerchant,
-} from '@/lib/trade';
+import { baseValue, formatAmount, isPriced, offersByLevel, payersByAmount } from '@/lib/trade';
+import { getVendor } from '@/lib/vendors';
 import type { BuyOffer, TradeStats } from '@/types/trade';
-import BarterCosts from './BarterCosts';
+import BarterCosts, { type ResolveItem } from './BarterCosts';
+import BarterMark from './BarterMark';
+import VendorTag from './VendorTag';
+import { Price } from './Price';
 
 /**
  * Every vendor's relationship with one item, on the detail page.
@@ -23,12 +19,15 @@ import BarterCosts from './BarterCosts';
  *
  * Vendors paying nothing are dropped. A row reading zero says only that `sellPrices` is six wide,
  * which is a fact about the format rather than about the item.
+ *
+ * This is the one place barter costs are printed in full rather than folded behind a mark: the
+ * detail page is where the evidence goes.
  */
 
 export interface VendorLedgerProps {
     stats: TradeStats;
-    /** Resolves a barter cost's `itemId` to a display name. */
-    nameOf: (itemId: string) => string | undefined;
+    /** Resolves a barter cost's `itemId` to the item, so each cost draws as a chip. */
+    resolve: ResolveItem;
     className?: string;
 }
 
@@ -43,31 +42,36 @@ function offersByVendor(stats: TradeStats): Map<string, BuyOffer[]> {
     return grouped;
 }
 
-function OfferDetail({ offer, nameOf }: { offer: BuyOffer; nameOf: (id: string) => string | undefined }) {
-    const gated = (offer.requiresTasks?.length ?? 0) > 0;
+function OfferDetail({ offer, resolve }: { offer: BuyOffer; resolve: ResolveItem }) {
     const bundled = (offer.bundle ?? 1) > 1;
+    const isBarter = (offer.exchange?.length ?? 0) > 0;
 
     return (
-        <div className="space-y-0.5">
-            <div className="flex items-baseline gap-2">
-                <span className="font-mono tabular text-sm text-ink-200">{formatAmount(offer.price)}</span>
-                <span className="micro-label text-ink-700">L{offer.level}</span>
-                {bundled && (
-                    <span className="micro-label text-ink-700">×{offer.bundle} per restock</span>
+        <div className="space-y-1">
+            <div className="flex items-baseline gap-2.5">
+                {/* A barter listing is paid in goods, so it gets the mark where a price would go. */}
+                {isBarter ? (
+                    <BarterMark variant="label" />
+                ) : (
+                    <Price amount={offer.price} size="sm" tone="body" unit={false} />
                 )}
-                {gated && (
-                    <span className="micro-label text-warn inline-flex items-center gap-1">
-                        <Lock size={9} aria-hidden="true" />
-                        task
-                    </span>
+                {/* The mark above already carries the arrows, so the tag does not repeat them. */}
+                <VendorTag
+                    vendor={offer.vendor}
+                    offer={offer}
+                    barter={false}
+                    showIcon={false}
+                />
+                {bundled && (
+                    <span className="micro-label text-ink-700">{`×${offer.bundle} per restock`}</span>
                 )}
             </div>
-            <BarterCosts costs={offer.exchange ?? []} nameOf={nameOf} />
+            <BarterCosts costs={offer.exchange ?? []} resolve={resolve} />
         </div>
     );
 }
 
-export default function VendorLedger({ stats, nameOf, className }: VendorLedgerProps) {
+export default function VendorLedger({ stats, resolve, className }: VendorLedgerProps) {
     const payouts = payersByAmount(stats);
     const buying = offersByVendor(stats);
     const base = baseValue(stats);
@@ -97,74 +101,81 @@ export default function VendorLedger({ stats, nameOf, className }: VendorLedgerP
             <div className="flex items-baseline justify-between px-4 pt-4 pb-3">
                 <span className="eyebrow">Vendor ledger</span>
                 <span className="font-mono text-[10px] uppercase text-ink-700">
-                    Best {formatAmount(base)} EZD
+                    {`Best ${formatAmount(base)} EZD`}
                 </span>
             </div>
 
-            <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1.1fr)] gap-x-4 px-4 pb-1 border-b border-line-900">
+            <div className="flex items-baseline justify-between gap-4 px-4 pb-1 border-b border-line-900">
                 <span className="eyebrow">Vendor</span>
-                <span className="eyebrow text-right">Pays you</span>
-                <span className="eyebrow">Sells it to you</span>
+                <span className="eyebrow">Pays you</span>
             </div>
 
             <div className="divide-y divide-line-900">
                 {rows.map(({ vendor, amount }) => {
                     const offers = buying.get(vendor) ?? [];
-                    const merchant = vendorMerchant(vendor);
+                    const info = getVendor(vendor);
                     const share = base > 0 ? Math.max(0, Math.min(1, amount / base)) : 0;
                     const isTop = amount > 0 && amount === base;
 
                     return (
-                        <div
-                            key={vendor}
-                            className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1.1fr)] gap-x-4 items-start px-4 py-3"
-                        >
-                            <div className="min-w-0">
-                                <div
-                                    className={cn(
-                                        'text-sm truncate',
-                                        isTop ? 'text-ink-hi' : 'text-ink-400',
-                                    )}
-                                >
-                                    {vendorLabel(vendor)}
-                                </div>
-                                {merchant && (
-                                    <div className="micro-label text-ink-700 mt-0.5">{merchant}</div>
-                                )}
-                            </div>
-
-                            <div className="text-right">
-                                <div
-                                    className={cn(
-                                        'font-mono tabular text-sm',
-                                        isTop ? 'text-ink-hi' : 'text-ink-500',
-                                    )}
-                                >
-                                    {amount > 0 ? formatAmount(amount) : '—'}
-                                </div>
-                                <div className="h-1 w-24 bg-track mt-1.5" aria-hidden="true">
-                                    <div
-                                        className={cn('h-full', isTop ? 'bg-ink-400' : 'bg-line-500')}
-                                        style={{ width: `${share * 100}%` }}
+                        <div key={vendor} className="px-4 py-3">
+                            <div className="flex items-start gap-2.5">
+                                {info?.icon && (
+                                    <Image
+                                        src={info.icon}
+                                        alt=""
+                                        width={22}
+                                        height={22}
+                                        unoptimized
+                                        className={cn('shrink-0 mt-px', !isTop && 'opacity-70')}
                                     />
+                                )}
+                                <div className="min-w-0 flex-1">
+                                    <div
+                                        className={cn(
+                                            'text-sm truncate',
+                                            isTop ? 'text-ink-hi' : 'text-ink-400',
+                                        )}
+                                    >
+                                        {info?.org ?? vendor.toUpperCase()}
+                                    </div>
+                                    <div className="micro-label text-ink-700 mt-0.5 truncate">
+                                        {info?.merchant ?? 'Hideout workbench'}
+                                    </div>
+                                </div>
+
+                                <div className="text-right shrink-0">
+                                    <div
+                                        className={cn(
+                                            'font-mono tabular text-sm',
+                                            isTop ? 'text-ink-hi' : 'text-ink-500',
+                                        )}
+                                    >
+                                        {amount > 0 ? formatAmount(amount) : '—'}
+                                    </div>
+                                    <div className="h-1 w-20 bg-track mt-1.5 ml-auto" aria-hidden="true">
+                                        <div
+                                            className={cn('h-full', isTop ? 'bg-ink-400' : 'bg-line-500')}
+                                            style={{ width: `${share * 100}%` }}
+                                        />
+                                    </div>
                                 </div>
                             </div>
 
-                            <div className="min-w-0">
-                                {offers.length ? (
-                                    <div className="space-y-2">
-                                        {offers.map((offer, i) => (
-                                            <OfferDetail
-                                                key={`${offer.vendor}-${offer.level}-${i}`}
-                                                offer={offer}
-                                                nameOf={nameOf}
-                                            />
-                                        ))}
-                                    </div>
-                                ) : (
-                                    <span className="font-mono text-xs text-ink-700">—</span>
-                                )}
-                            </div>
+                            {/* The buy side, under the vendor it belongs to rather than beside it:
+                                the ledger lives in a 340px pane and a third column cannot fit one. */}
+                            {offers.length > 0 && (
+                                <div className="mt-2.5 ml-1 pl-3 border-l border-line-800 space-y-2">
+                                    <div className="eyebrow">Sells it to you</div>
+                                    {offers.map((offer, i) => (
+                                        <OfferDetail
+                                            key={`${offer.vendor}-${offer.level}-${i}`}
+                                            offer={offer}
+                                            resolve={resolve}
+                                        />
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     );
                 })}

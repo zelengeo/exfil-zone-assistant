@@ -9,7 +9,8 @@ import {
 } from '../utils/types';
 import {Armor, FaceShield, getRarityColorClass} from '@/types/items';
 import {getArmorClassColor} from '../utils/body-zones';
-import {baseValue, formatEZD} from '@/lib/trade';
+import {baseValue} from '@/lib/trade';
+import {ItemValue, Price} from '@/components/trade/Price';
 
 interface DefenderSetupProps {
     defender: DefenderSetupType;
@@ -229,7 +230,7 @@ export default function DefenderSetup({defender, onUpdate}: DefenderSetupProps) 
                                 Class {defender.bodyArmor.stats.armorClass}
                             </span>
                             <span>Max Durability: {defender.bodyArmor.stats.maxDurability}</span>
-                            <span>Value: {formatEZD(baseValue(defender.bodyArmor.stats))}</span>
+                            <span className="inline-flex items-baseline gap-1">Value: <ItemValue stats={defender.bodyArmor.stats} size="sm" /></span>
                         </div>
 
                         {/* Durability Slider */}
@@ -432,7 +433,7 @@ export default function DefenderSetup({defender, onUpdate}: DefenderSetupProps) 
                                 Class {defender.helmet.stats.armorClass}
                             </span>
                             <span>Max Durability: {defender.helmet.stats.maxDurability}</span>
-                            <span>Value: {formatEZD(baseValue(defender.helmet.stats))}</span>
+                            <span className="inline-flex items-baseline gap-1">Value: <ItemValue stats={defender.helmet.stats} size="sm" /></span>
                         </div>
 
 
@@ -476,7 +477,11 @@ export default function DefenderSetup({defender, onUpdate}: DefenderSetupProps) 
                     <div className="flex justify-between">
                         <span className="text-tan-400">Total Protection Value:</span>
                         <span className="text-tan-100">
-                            {formatEZD(baseValue(defender.bodyArmor?.stats ?? {}) + baseValue(defender.helmet?.stats ?? {}))}
+                            <Price
+                                amount={baseValue(defender.bodyArmor?.stats ?? {}) + baseValue(defender.helmet?.stats ?? {})}
+                                size="sm"
+                                tone="body"
+                            />
                         </span>
                     </div>
                     <div className="flex justify-between">

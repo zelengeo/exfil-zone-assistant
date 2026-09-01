@@ -1,48 +1,44 @@
 import React from 'react';
-import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import ItemChip, { type ItemRef } from '@/components/items/ItemChip';
 import type { ExchangeCost } from '@/types/trade';
 
 /**
- * The barter half of an offer's price, as a footnote on that offer.
+ * The barter half of an offer's price: the items a vendor demands on top of the money.
  *
- * Deliberately quiet. Barter is genuinely interesting and genuinely niche — 106 of the route's 678
- * offers carry one — so it reads as a note attached to the price it modifies, never as a badge, a
- * column, or a section of its own.
+ * The one renderer for that list. `BarterMark` shows the same rows inside a popover where a row is
+ * too tight to spell them out; the ledger shows them inline, because the detail page is where the
+ * evidence belongs. Two placements, one implementation — the point of the exercise.
+ *
+ * Deliberately quiet either way. Barter is genuinely interesting and genuinely niche — 106 of the
+ * route's 678 offers carry one — so it reads as a note attached to the price it modifies, never as
+ * a badge, a column, or a section of its own.
  */
+
+/** Resolves a cost's `itemId` to something a chip can draw. */
+export type ResolveItem = (itemId: string) => ItemRef | undefined;
 
 export interface BarterCostsProps {
     costs: ExchangeCost[];
-    /** Resolves a cost's `itemId` to a display name. Unresolved costs fall back to the raw id. */
-    nameOf: (itemId: string) => string | undefined;
+    resolve: ResolveItem;
     className?: string;
 }
 
-export default function BarterCosts({ costs, nameOf, className }: BarterCostsProps) {
+export default function BarterCosts({ costs, resolve, className }: BarterCostsProps) {
     if (!costs.length) return null;
 
     return (
-        <p className={cn('font-mono text-[11px] text-ink-600', className)}>
-            <span className="text-ink-700">+ </span>
-            {costs.map((cost, i) => {
-                const name = nameOf(cost.itemId);
-                return (
-                    <React.Fragment key={`${cost.itemId}-${i}`}>
-                        {i > 0 && <span className="text-ink-700"> · </span>}
-                        <span className="tabular">{cost.count}×</span>{' '}
-                        {name ? (
-                            <Link
-                                href={`/items/${cost.itemId}`}
-                                className="hover:text-ink-hi underline decoration-line-600 underline-offset-2 transition-colors"
-                            >
-                                {name}
-                            </Link>
-                        ) : (
-                            <span className="text-ink-700">{cost.itemId}</span>
-                        )}
-                    </React.Fragment>
-                );
-            })}
-        </p>
+        <ul className={cn('space-y-1', className)}>
+            {costs.map((cost, i) => (
+                <li key={`${cost.itemId}-${i}`} className="flex">
+                    <ItemChip
+                        item={resolve(cost.itemId)}
+                        id={cost.itemId}
+                        count={cost.count}
+                        size="sm"
+                    />
+                </li>
+            ))}
+        </ul>
     );
 }

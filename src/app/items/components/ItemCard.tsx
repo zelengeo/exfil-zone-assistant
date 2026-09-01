@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Item, getCategoryById, getRarityColorClass } from '@/types/items';
 import { cn } from '@/lib/utils';
-import ValueLine from '@/components/trade/ValueLine';
+import { ItemValue } from '@/components/trade/Price';
 import { categoryStats, getPerformanceIndicator } from '@/app/items/utils/cardStats';
 import CoverageStrip from '@/components/protection/CoverageStrip';
 import { isArmor } from '@/app/combat-sim/utils/types';
@@ -81,7 +81,7 @@ const ItemCard: React.FC<ItemCardProps> = ({ item }) => {
                 )}
 
                 <div className="flex items-baseline justify-between gap-2 border-t border-line-800 mt-3 pt-2.5">
-                    <ValueLine stats={item.stats} size="sm" />
+                    <ItemValue stats={item.stats} size="sm" breakdown={false} />
                     <span className="font-mono text-[11px] text-ink-700 shrink-0">
                         {(item.stats.weight ?? 0).toFixed(2)} kg
                     </span>

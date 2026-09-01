@@ -40,6 +40,14 @@ export const corps: Record<string, Corp> = {
         merchantIcon: "/images/tasks/img_ar2Merchant.webp",
         ogImage: "/og/og-image-forge-task.jpg",
         levelCap: [100, 300, 800]
+    },
+    "gunsmith": {
+        name: "GUNSMITH",
+        icon: "/images/tasks/Icon_GunsmithShop_nobg.webp",
+        merchant: "Anna",
+        merchantIcon: "/images/tasks/img_GunsmithMerchant.webp",
+        ogImage: "/og/og-image-gunsmith-task.jpg",
+        levelCap: [100, 300, 800]
     }
 } as const;
 
@@ -47,343 +55,388 @@ export type CorpId = keyof typeof corps;
 
 
 export const tasksData: TasksDatabase = {
-    "ark_1": {
-        "id": "ark_1",
-        "name": "Handshake",
-        "gameId": "task.na.1",
-        "description": "Hi! I don't think I've seen you before. I'm Tommy from ARK Industries. Since that incident on the island, ARK's power has been considerably weakened. So we need to enlist some help from others like you. But before we start, you need to prove that you have the skills to survive in a war zone; it's not a place to be taken lightly. So go explore the island and [come back alive].",
+    "daily_1": {
+        "id": "daily_1",
+        "name": "Daily Task: Deployment",
+        "gameId": "task.daily.1",
+        "description": "Complete raid(s) on any map (including failed attempts).",
         "objectives": [
-            "Successfully extract from Suburb Area"
+            "Complete raid(s)"
         ],
-        "corpId": "ark",
+        "corpId": "",
         "type": [
             "extract"
         ],
         "map": [
-            "suburb"
+            "any"
         ],
         "reward": [
             {
                 "type": "money",
-                "quantity": 15000
+                "quantity": 62000
             },
             {
                 "type": "experience",
-                "quantity": 1569
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 10
+                "quantity": 1126
             },
             {
                 "type": "item",
-                "item_id": "ammo-9x19-tracer",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-bx4",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_9x19mm_25_2",
-                "quantity": 1
+                "quantity": 2,
+                "item_id": "med-limb-restorer-lv3",
+                "item_name": "Suturing Instrument"
             }
         ],
         "preReward": [],
         "requiredTasks": [],
-        "requiredLevel": 0,
-        "tips": "Check the 'Extraction' tab in the menu or use the M.I.C.A. map to find extraction points.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "5VVIFJgpw5o"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us"
-            }
-        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
         "order": 1
     },
-    "ark_2": {
-        "id": "ark_2",
-        "name": "Friendly Reminder",
-        "gameId": "task.na.2",
-        "description": "It seems you've been doing well on the island, but now it's time to get serious. You may have noticed that there are many scavengers wandering around; they will shoot any outsiders without warning. Thanks to them, we've lost some excellent soldiers. [Eliminate 4 of them] as a friendly reminder.",
+    "daily_9": {
+        "id": "daily_9",
+        "name": "Daily Task: Exploration",
+        "gameId": "task.daily.2",
+        "description": "Reach the target location.",
         "objectives": [
-            "Eliminate 4 scavengers in Suburb area"
+            "Arrive the Clifton Area"
         ],
-        "corpId": "ark",
+        "corpId": "",
         "type": [
-            "eliminate"
+            "reach"
         ],
         "map": [
-            "suburb"
+            "any"
         ],
         "reward": [
             {
                 "type": "money",
-                "quantity": 15000
+                "quantity": 42000
             },
             {
                 "type": "experience",
-                "quantity": 1569
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 10
+                "quantity": 1126
             },
             {
                 "type": "item",
-                "item_id": "ammo-556x45-mk318",
-                "quantity": 30
+                "quantity": 1,
+                "item_id": "med-limb-restorer-lv3",
+                "item_name": "Suturing Instrument"
             },
             {
                 "type": "item",
-                "item_id": "weapon-m4a1-hunter",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_556x45_20",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "med-syringe-lv4",
+                "item_name": "Stimpak Elite"
             }
         ],
         "preReward": [],
-        "requiredTasks": [
-            "ark_1"
-        ],
-        "requiredLevel": 0,
-        "tips": "Scavengers can be deadly. Try to fight one at a time and use cover",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "0eyeE4PVzxc"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 34
-            }
-        ],
+        "requiredTasks": [],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
         "order": 2
     },
-    "ark_3": {
-        "id": "ark_3",
-        "name": "Recon 1",
-        "gameId": "task.na.13",
-        "description": "The situation on the island is in complete chaos. Gathering some military intel might prove helpful for us.\nHead to the [Suburb area], where [intel items] are often found. Locate the [Northern Military Camp] and collect several intel documents.",
+    "daily_10": {
+        "id": "daily_10",
+        "name": "Daily Task: Exploration",
+        "gameId": "task.daily.3",
+        "description": "Reach the target location.",
         "objectives": [
-            "Reach the Military Camp",
-            "Turn in 9 Intel Items Found In Raid"
+            "Arrive the Lumberyard"
         ],
-        "corpId": "ark",
+        "corpId": "",
         "type": [
-            "reach",
-            "submit"
+            "reach"
         ],
         "map": [
-            "suburb"
+            "any"
         ],
         "reward": [
             {
                 "type": "money",
-                "quantity": 25000
+                "quantity": 42000
             },
             {
                 "type": "experience",
-                "quantity": 1807
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 10
+                "quantity": 1126
             },
             {
                 "type": "item",
-                "item_id": "ammo-9x19-apv1",
-                "quantity": 30
+                "quantity": 1,
+                "item_id": "med-limb-restorer-lv3",
+                "item_name": "Suturing Instrument"
             },
             {
                 "type": "item",
-                "item_id": "weapon-mp9-t",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_9x19mm_30_mp9",
-                "quantity": 2
+                "quantity": 1,
+                "item_id": "med-syringe-lv4",
+                "item_name": "Stimpak Elite"
             }
         ],
         "preReward": [],
-        "requiredTasks": [
-            "ark_2"
-        ],
-        "requiredLevel": 0,
-        "tips": "The Military Camp is north of the Mall. [Intel items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Intel) are commonly found in that area.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "496lrFHgUAY"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 64
-            }
-        ],
+        "requiredTasks": [],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
         "order": 3
     },
-    "ark_4": {
-        "id": "ark_4",
-        "name": "Lost and Found",
-        "gameId": "task.na.3",
-        "description": "Urgent mission! One of our soldiers is missing. Her last signal was near the [high-rise building] north of the [motel] in the [suburban area]. Her phone contains intel clues. We need you to find her or at least retrieve [her phone].",
+    "daily_11": {
+        "id": "daily_11",
+        "name": "Daily Task: Exploration",
+        "gameId": "task.daily.4",
+        "description": "Reach the target location.",
         "objectives": [
-            "Reach the Office Building Near the Motel",
-            "Find Intel phone the \"ARK Soldier\" was Carrying",
-            "Turn in Intel Phone"
+            "Find the Dam's Power Room"
         ],
-        "corpId": "ark",
+        "corpId": "",
         "type": [
-            "reach",
-            "retrieve",
-            "submit"
+            "reach"
         ],
         "map": [
-            "suburb"
+            "any"
         ],
         "reward": [
             {
                 "type": "money",
-                "quantity": 15000
+                "quantity": 42000
             },
             {
                 "type": "experience",
-                "quantity": 1807
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 10
+                "quantity": 1126
             },
             {
                 "type": "item",
-                "item_id": "ammo-45acp-tracer",
-                "quantity": 30
+                "quantity": 1,
+                "item_id": "med-limb-restorer-lv3",
+                "item_name": "Suturing Instrument"
             },
             {
                 "type": "item",
-                "item_id": "weapon-m1911",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_45acp_11",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "med-syringe-lv4",
+                "item_name": "Stimpak Elite"
             }
         ],
         "preReward": [],
-        "requiredTasks": [
-            "ark_3"
-        ],
-        "requiredLevel": 0,
-        "tips": "The phone is in a small room on the second floor of the office building, which is near the motel.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "1Gr-M1Npa_s"
-            },
-            {
-                "author": "orbb",
-                "ytId": "4WsA_31tZKo"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 90
-            }
-        ],
+        "requiredTasks": [],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
         "order": 4
     },
-    "ark_5": {
-        "id": "ark_5",
-        "name": "Enemies on All Sides",
-        "gameId": "task.na.z14",
-        "description": "I discovered that someone has been deliberately leaking ARK's information. There may be a traitor within us. We've been put in a vulnerable position, and some of our allies have already been ambushed by scavengers.\nFor now, go to the [Suburb area] and [weaken the scavenger] presence. I'll continue the investigation.",
+    "daily_5": {
+        "id": "daily_5",
+        "name": "Daily Task: Combat",
+        "gameId": "task.daily.5",
+        "description": "Eliminate a specific number of enemies.",
         "objectives": [
-            "Eliminate 15 Scavengers in Suburb Area"
+            "Eliminate Scavangers"
         ],
-        "corpId": "ark",
+        "corpId": "",
         "type": [
             "eliminate"
         ],
         "map": [
-            "suburb"
+            "any"
         ],
         "reward": [
             {
                 "type": "money",
-                "quantity": 18000
+                "quantity": 68000
             },
             {
                 "type": "experience",
-                "quantity": 6403
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 10
+                "quantity": 1126
             },
             {
                 "type": "item",
-                "item_id": "ammo-556x45-apv1",
-                "quantity": 30
+                "quantity": 6,
+                "item_id": "ammo-545x39-tracer",
+                "item_name": "5.45x39mm T"
             },
             {
                 "type": "item",
-                "item_id": "weapon-aug-a3-cqb",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "weapon-ak74",
+                "item_name": "AK74 5.45x39mm assault rifle"
             },
             {
                 "type": "item",
-                "item_id": "mag_556x45_30",
-                "quantity": 1
+                "quantity": 2,
+                "item_id": "mag_545x39_30_2",
+                "item_name": "AK74 P-Mag 5.45x39mm 30rnd magazine"
             }
         ],
         "preReward": [],
-        "requiredTasks": [
-            "ark_3"
-        ],
-        "requiredLevel": 0,
+        "requiredTasks": [],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "POkmMo8OcSI"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 124
-            }
-        ],
+        "videoGuides": [],
         "order": 5
     },
-    "ark_6": {
-        "id": "ark_6",
-        "name": "Coastal Manhunt",
-        "gameId": "task.na.4",
-        "description": "Unfortunately, we have lost a soldier... Based on the clues in her phone, her death is likely related to an armed forces  from [Resort Area] on the northern side of the island. Given the previous violent incident, please investigate:\r\nThe [Whitesails hospital east building] to the south, the [Rua Algasol] and the [Hotel] in the north. Lastly, [Extract] safely.",
+    "daily_12": {
+        "id": "daily_12",
+        "name": "Daily Task: Collection",
+        "gameId": "task.daily.6",
+        "description": "Submit the specified item.",
         "objectives": [
-            "Reach the shopping street Rua Algasol",
-            "Reach victoria golden hotel",
-            "Reach east of White sails Hospital",
-            "Extract from resort"
+            "Turn in Medical supplies Found In Raid"
+        ],
+        "corpId": "",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 68000
+            },
+            {
+                "type": "experience",
+                "quantity": 1126
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "food_water_bottle",
+                "item_name": "Water Bottle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-syringe-lv4",
+                "item_name": "Stimpak Elite"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 6
+    },
+    "daily_13": {
+        "id": "daily_13",
+        "name": "Daily Task: Collection",
+        "gameId": "task.daily.7",
+        "description": "Submit the specified item.",
+        "objectives": [
+            "Turn in Household Items Found In Raid"
+        ],
+        "corpId": "",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 68000
+            },
+            {
+                "type": "experience",
+                "quantity": 1126
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-syringe-lv4",
+                "item_name": "Stimpak Elite"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "armor-raid-explorer-sd",
+                "item_name": "RaidExplorer SD"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "holster_water",
+                "item_name": "Water Pouch"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 7
+    },
+    "daily_14": {
+        "id": "daily_14",
+        "name": "Daily Task: Collection",
+        "gameId": "task.daily.8",
+        "description": "Submit the specified item.",
+        "objectives": [
+            "Turn in Batteries Items Found In Raid"
+        ],
+        "corpId": "",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 68000
+            },
+            {
+                "type": "experience",
+                "quantity": 1126
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "backpack_eliteops_green",
+                "item_name": "Elite Ops Green"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "food_water_bottle",
+                "item_name": "Water Bottle"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "holster_magm",
+                "item_name": "Mag Pouch M"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 8
+    },
+    "ark_36": {
+        "id": "ark_36",
+        "name": "Seaside Pursuit",
+        "gameId": "task.na.a.01",
+        "description": "Graves is down — ARK's top brass has collapsed, but what they left behind didn't go anywhere. The military dropped a load of gear when they pulled out from the seaside. Go pick up the trail. Rua Algasol Street, Victoria Hotel, Whitesail Hospital East Wing — hit all three and extract. Remember: ARK isn't finished, and the Insane-tier threats haven't stopped.",
+        "objectives": [
+            "Arrive the Rua Algasol",
+            "Reach Victoria golden hotel",
+            "Reach the east of White Sails Hospital",
+            "Extract from Resort"
         ],
         "corpId": "ark",
         "type": [
@@ -396,75 +449,60 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 15000
+                "quantity": 45000
             },
             {
                 "type": "experience",
-                "quantity": 2178
+                "quantity": 12719
             },
             {
                 "type": "reputation",
-                "corpId": "ark",
-                "quantity": 20
+                "quantity": 50,
+                "corpId": "ark"
             },
             {
                 "type": "item",
-                "item_id": "rail_default__mp5_railattachment",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "scope_bravo4",
+                "item_name": "Beta4 20mm scope"
             },
             {
                 "type": "item",
-                "item_id": "scope_ocp7",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "scope_romeo8t",
+                "item_name": "LOMIO8T"
             },
             {
                 "type": "item",
-                "item_id": "ammo-9x19-tracer",
-                "quantity": 30
+                "quantity": 1,
+                "item_id": "tactical_laser_peq",
+                "item_name": "PEQ Laser"
             },
             {
                 "type": "item",
-                "item_id": "weapon-mp5a3",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_9x19mm_30_mp5",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "tactical_laser_pistol",
+                "item_name": "AC100 Pistol Laser"
             }
         ],
         "preReward": [],
         "requiredTasks": [
-            "ark_4",
-            "ark_5"
+            "ark_59"
         ],
-        "requiredLevel": 0,
-        "tips": "Careful, most of players rush Bank on the start.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "rCmvH338-6c"
-            },
-            {
-                "author": "orbb",
-                "ytId": "9q5RGDIiAMs"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 186
-            }
-        ],
-        "order": 6
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 3,
+        "tips": "",
+        "videoGuides": [],
+        "order": 1
     },
-    "ark_7": {
-        "id": "ark_7",
-        "name": "Surveillance 1",
-        "gameId": "task.na.5",
-        "description": "These people don't seem like locals—they look more like gang members. We need to stay cautious and gather more intel.\nI had a [binoculars] set up at the [hospital security booth] for surveillance, but someone messed with it. Could you help me reposition it [on the table] in the [backyard of the Seafoam Scoops]?",
+    "ark_37": {
+        "id": "ark_37",
+        "name": "Rangefinder Scope",
+        "gameId": "task.na.a.02",
+        "description": "First target: ARK's rangefinder scope. One's stashed somewhere along the seaside. Find it and drop it off at the back of the small seaside restaurant — I've got someone there to collect it. This isn't just any piece of kit, the Insane remnants use it for long-range targeting.",
         "objectives": [
             "Find ARK Telescope",
-            "Place telescope in the seafoam Scoops' Backyard"
+            "Place in the Seafoam Scoops' backyard"
         ],
         "corpId": "ark",
         "type": [
@@ -477,61 +515,51 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 15000
+                "quantity": 45000
             },
             {
                 "type": "experience",
-                "quantity": 2178
+                "quantity": 12719
             },
             {
                 "type": "reputation",
-                "corpId": "ark",
-                "quantity": 10
+                "quantity": 50,
+                "corpId": "ark"
             },
             {
                 "type": "item",
-                "item_id": "ammo-9x19-apv1",
-                "quantity": 30
+                "quantity": 4,
+                "item_id": "ammo-556x45-tracer",
+                "item_name": "5.56x45mm M856"
             },
             {
                 "type": "item",
-                "item_id": "weapon-mp9",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "weapon-hk416",
+                "item_name": "RC 416 A5 5.56x45mm assault rifle"
             },
             {
                 "type": "item",
-                "item_id": "mag_9x19mm_30_mp9",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "mag_556x45_30_pmag",
+                "item_name": "AR-15 5.56x45mm 30rnd P-Mag magazine"
             }
         ],
         "preReward": [],
         "requiredTasks": [
-            "ark_6"
+            "ark_36"
         ],
-        "requiredLevel": 0,
-        "tips": "[ARK's Telescope](https://www.exfil-zone-assistant.app/items/taskitem_placement_tommy_telescope)",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "_9ZPTZ3bDTQ"
-            },
-            {
-                "author": "orbb",
-                "ytId": "6MkGTEHSq_o"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 222
-            }
-        ],
-        "order": 7
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 2
     },
-    "ark_8": {
-        "id": "ark_8",
-        "name": "Through the Narrow Lens",
-        "gameId": "task.na.6",
-        "description": "The previous violent incident caused all the police forces from the Hyder Police Station to be concentrated here. Although they mean no harm, our identity makes it inconvenient to deal with them openly. Approach the bank carefully, then use [this phone] to take a few photos of the [police cars] in front of and behind the bank. Be sure to use FotoVision+ Phone. [Successfully taken photos will be automatically uploaded] to me.",
+    "ark_38": {
+        "id": "ark_38",
+        "name": "Police Car Photos",
+        "gameId": "task.na.a.03",
+        "description": "Two police cars at the resort bank — one in front, one in the back. Get me shots of the plates and the sides. Graves' people stashed critical documents in a hidden compartment in the trunk. I'll give you a phone — take the photos and send them back. This AR15 50-round drum is something only a veteran can hand out — you'll need it at Insane tier.",
         "objectives": [
             "Take photo of a police car (Front of the bank)",
             "Take photo of a police car (Back of the bank)"
@@ -546,72 +574,51 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 15000
+                "quantity": 45000
             },
             {
                 "type": "experience",
-                "quantity": 2178
+                "quantity": 12719
             },
             {
                 "type": "reputation",
-                "corpId": "ark",
-                "quantity": 10
+                "quantity": 50,
+                "corpId": "ark"
             },
             {
                 "type": "item",
-                "item_id": "ammo-556x45-mk318",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-m4a1-agent",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_556x45_30_stanag",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "mag_556x45_50",
+                "item_name": "AR-15 5.56x45mm 50rnd Drum magazine"
             }
         ],
         "preReward": [
             {
                 "type": "item",
+                "quantity": 1,
                 "item_id": "taskitem_photophone",
-                "quantity": 1
+                "item_name": "New Phone"
             }
         ],
         "requiredTasks": [
-            "ark_7"
+            "ark_37"
         ],
-        "requiredLevel": 0,
-        "tips": "Phone does not have to be extracted.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "Mrcsxs3rILU"
-            },
-            {
-                "author": "orbb",
-                "ytId": "w_8khHE_o1A"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 264
-            }
-        ],
-        "order": 8
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 3
     },
-    "ark_9": {
-        "id": "ark_9",
-        "name": "Crime Control",
-        "gameId": "task.na.7",
-        "description": "It looks like gang members looted the vault. Seems the [Resort Area] was hit by a robbery right when that incident happened on the island.\nIf we don't intervene, chaos might spiral out of control. Head to the [Fire Station], [East Military Camp], and [Halif Travel Agency], and [eliminate some of the scavengers].",
+    "ark_39": {
+        "id": "ark_39",
+        "name": "Keeping the Peace",
+        "gameId": "task.na.a.04",
+        "description": "The fire station, east military camp, and Khalif Travel Agency — all three are being used by Graves' ARK remnants as staging points. Clear at least 6 sentries and confirm all three locations. I've got a full AUG kit ready for you — 42-round mag, 510mm barrel, front grip. Fully kitted out this thing can run as a sniper or an assault rifle.",
         "objectives": [
             "Reach the Fire station",
-            "Reach the East Military camp",
+            "Reach the east military camp",
             "Reach the Halif voyage",
-            "Eliminate 6 scavengers"
+            "Eliminate Scavangers"
         ],
         "corpId": "ark",
         "type": [
@@ -624,194 +631,53 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 25000
+                "quantity": 45000
             },
             {
                 "type": "experience",
-                "quantity": 5518
+                "quantity": 15403
             },
             {
                 "type": "reputation",
-                "corpId": "ark",
-                "quantity": 10
+                "quantity": 60,
+                "corpId": "ark"
             },
             {
                 "type": "item",
-                "item_id": "ammo-9x19-apv1",
-                "quantity": 30
+                "quantity": 1,
+                "item_id": "part-aug-barrel-510",
+                "item_name": "AUG 5.56x45mm 510mm barrel"
             },
             {
                 "type": "item",
-                "item_id": "weapon-glock18c",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "mag_556x45_42",
+                "item_name": "AUG 5.56x45mm 42rnd magazine"
             },
             {
                 "type": "item",
-                "item_id": "mag_9x19mm_17",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "part-aug-mount-foregripmount1",
+                "item_name": "AUG Foregrip Mount"
             }
         ],
         "preReward": [],
         "requiredTasks": [
-            "ark_8"
+            "ark_38"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "FTnEhNWRFZc"
-            },
-            {
-                "author": "orbb",
-                "ytId": "AcsdXNUqR1k"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 296
-            }
-        ],
-        "order": 9
+        "videoGuides": [],
+        "order": 4
     },
-    "ark_10": {
-        "id": "ark_10",
-        "name": "The Imposter",
-        "gameId": "task.na.z6",
-        "description": "After the police were reassigned to the [Resort Area], some scavengers took advantage of the situation and seized control of Hyder Police Station. Among them, a figure known as \"Iron Wolf\" seems to have significant influence.\nWe need to prevent the scavengers from forming an organized fighting force. Eliminate \"Iron Wolf\" at [Hyder Police Station] before things get out of hand.",
+    "ark_40": {
+        "id": "ark_40",
+        "name": "First Test: BMP Marking",
+        "gameId": "task.na.a.05",
+        "description": "Three ARK remnant BMPs are patrolling the resort — I'm giving you three trackers, tag all of them. These aren't easy targets, Insane-tier APCs, you'll need to plan your approach. I'm throwing in another EVO3 Ultra — higher fire density up close than the standard. Plus 9mm tracer rounds — essential for low-light combat.",
         "objectives": [
-            "Reach the Hyder Town Police Station",
-            "Eliminate Iron Wolf in Police Station"
-        ],
-        "corpId": "ark",
-        "type": [
-            "reach",
-            "eliminate"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 25000
-            },
-            {
-                "type": "experience",
-                "quantity": 5518
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-762x51-fmj",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-hk51",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_762x51_10_2",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ark_8"
-        ],
-        "requiredLevel": 0,
-        "tips": "Almost Unarmored, wears [Police Vest](https://www.exfil-zone-assistant.app/items/armor-police-vest) and [Red Beret](https://www.exfil-zone-assistant.app/items/helmet-red-beret), drops [UMP](https://www.exfil-zone-assistant.app/items/weapon-ump45) or [MP9](https://www.exfil-zone-assistant.app/items/weapon-mp9-t)",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "lB4FdOsCCs0"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 338
-            }
-        ],
-        "order": 10
-    },
-    "ark_11": {
-        "id": "ark_11",
-        "name": "Tracking Device",
-        "gameId": "task.na.8",
-        "description": "We left behind a lot of useful supplies on the island.\nTo locate them, we'll need to craft some trackers.\nIf you can bring me [2 electronic items] and [2 energy items],\nI'll be able to start making them right away.",
-        "objectives": [
-            "Turn in 3 Electric Items",
-            "Turn in 2 Batteries"
-        ],
-        "corpId": "ark",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 25000
-            },
-            {
-                "type": "experience",
-                "quantity": 5518
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-556x45-mk318",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-aug-a1",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_556x45_30",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ark_9"
-        ],
-        "requiredLevel": 0,
-        "tips": "[Electric Item](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Electric), [Power Items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Power)",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "GJ1DmyX0Fzk"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 385
-            }
-        ],
-        "order": 11
-    },
-    "ark_12": {
-        "id": "ark_12",
-        "name": "A Test Run",
-        "gameId": "task.na.9",
-        "description": "Let's put the finished trackers to the test. [To mark a target, hold the tracker, approach the object you want to tag, and release when prompted—the tracker will stick to the target.]\r\nNow, take them to the [Resort Area] and mark any 3 [BMPs]. use one per target.",
-        "objectives": [
-            "Mark 3 BMPs on resort"
+            "Mark the BMPs"
         ],
         "corpId": "ark",
         "type": [
@@ -823,878 +689,77 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 25000
+                "quantity": 45000
             },
             {
                 "type": "experience",
-                "quantity": 6403
+                "quantity": 15403
             },
             {
                 "type": "reputation",
-                "corpId": "ark",
-                "quantity": 10
+                "quantity": 70,
+                "corpId": "ark"
             },
             {
                 "type": "item",
+                "quantity": 4,
                 "item_id": "ammo-9x19-tracer",
-                "quantity": 30
+                "item_name": "9x19mm G T"
             },
             {
                 "type": "item",
-                "item_id": "weapon-scorpion-evo3",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "weapon-evo3ultra",
+                "item_name": "EVO3 9x19mm sub-machine gun ULTRA edition"
             },
             {
                 "type": "item",
-                "item_id": "mag_9x19mm_30_evo",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "taskitem_tracking_device",
-                "quantity": 3
-            }
-        ],
-        "requiredTasks": [
-            "ark_11"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "PvTTxtwWXrE"
-            },
-            {
-                "author": "orbb",
-                "ytId": "8Z4xxRQxK84"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 410
-            }
-        ],
-        "order": 12
-    },
-    "ark_13": {
-        "id": "ark_13",
-        "name": "Tracing the Crime",
-        "gameId": "task.na.10",
-        "description": "The current state of the [Resort Area] is largely the work of those gang members. They've been causing chaos everywhere, supposedly in search of a priceless jewel.\nTrack their movements and investigate the [vault breach], then check the [construction site], [Waste Disposal Site], and [worker dormitory]. We need [intel] and clues to identify their leader.",
-        "objectives": [
-            "Reach the Bank vault breach",
-            "Reach the Construction site",
-            "Reach the Waste station",
-            "Reach the basketball court",
-            "Turn in 3 intel items"
-        ],
-        "corpId": "ark",
-        "type": [
-            "reach",
-            "submit"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 20000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 10
-            },
-            {
-                "type": "experience",
-                "quantity": 6403
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-9x19-apv1",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-mp9-n",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_9x19mm_30_mp9",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ark_12"
-        ],
-        "requiredLevel": 0,
-        "tips": "[Intel Items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Intel)",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "5AkwDc3BnZU"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 438
-            }
-        ],
-        "order": 13
-    },
-    "ark_14": {
-        "id": "ark_14",
-        "name": "Deterrence 1",
-        "gameId": "task.na.11",
-        "description": "The clues lead to the [worker dormitory]—the gang leader must be there.\nBefore we move in, I want you to get fully comfortable with the M4A1 series and weaken their forces in the process. Head to the [Resort Area] and eliminate [10 enemies] using an M4A1 to prove you've mastered its capabilities.",
-        "objectives": [
-            "Eliminate 10 targets with M4A1 series"
-        ],
-        "corpId": "ark",
-        "type": [
-            "eliminate"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 25000
-            },
-            {
-                "type": "experience",
-                "quantity": 6403
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-556x45-mk318",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-m4a1-cqbr",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_556x45_30_stanag",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ark_13"
-        ],
-        "requiredLevel": 0,
-        "tips": "Any M4A1: [M4A1 CQBR](https://www.exfil-zone-assistant.app/items/weapon-m4a1-cqbr) ",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "ioJZdbT7FQo"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 490
-            }
-        ],
-        "order": 14
-    },
-    "ark_15": {
-        "id": "ark_15",
-        "name": "Resort Reckoning",
-        "gameId": "task.na.12",
-        "description": "You're ready. Head to the [worker dormitory] in the [Resort Area].\nWhatever their goal is, these gang members have caused enough trouble. Eliminate their leader, [Butcher], and restore order to the resort.\nBe advised: the target has distinct tattoos and a black-and-white skull face paint. Stay sharp.",
-        "objectives": [
-            "Eliminate worker dorm's butcher"
-        ],
-        "corpId": "ark",
-        "type": [
-            "eliminate"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "experience",
-                "quantity": 7928
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 50
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-556x45-mk318",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-hk416",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_556x45_30_stanag",
-                "quantity": 2
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ark_14",
-            "ark_10"
-        ],
-        "requiredLevel": 0,
-        "tips": "Unarmored, easy target. Does not spawn every game though.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "96s9RzJyCF4"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 531
-            }
-        ],
-        "order": 15
-    },
-    "ark_16": {
-        "id": "ark_16",
-        "name": "Where Did The Trucks Go",
-        "gameId": "task.na.14",
-        "description": "The situation in the resort area has come to a close—for now. Next thing to do is rather easy to handle. We've left some [ARK trucks] around [Trupiks Mall] in the [suburb area], loaded with important cargo.\nUse the trackers to mark 3 of them—one per target. Don't waste any resources.\nGood luck finding the trucks.",
-        "objectives": [
-            "Mark 3 ARK trucks with marker device"
-        ],
-        "corpId": "ark",
-        "type": [
-            "mark"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 25000
-            },
-            {
-                "type": "experience",
-                "quantity": 6403
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 10
-            },
-            {
-                "type": "item",
+                "quantity": 1,
                 "item_id": "mag_9x19mm_50_evo",
-                "quantity": 2
+                "item_name": "EVO3 9x19mm 50rnd Drum magazine"
             }
         ],
         "preReward": [
             {
                 "type": "item",
+                "quantity": 3,
                 "item_id": "taskitem_tracking_device",
-                "quantity": 3
+                "item_name": "MS2000 Tracker"
             }
         ],
         "requiredTasks": [
-            "ark_15"
+            "ark_39"
         ],
-        "requiredLevel": 0,
-        "tips": "Trucks are all over the map.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "kg2KfkJ55bc"
-            },
-            {
-                "author": "orbb",
-                "ytId": "TejY5XxbxXs"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 566
-            }
-        ],
-        "order": 16
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 5
     },
-    "ark_17": {
-        "id": "ark_17",
-        "name": "Surveillance 2",
-        "gameId": "task.na.15",
-        "description": "The cameras I deployed earlier have been destroyed by troublemakers. Please go to the [warehouse] next to the [office building and pick up 2 cameras]. Redeploy them at the following locations:\r\n[Foodtruck pickup window] next to Altibuy, and on the [barrel next to the warehouse entrance].",
+    "ark_41": {
+        "id": "ark_41",
+        "name": "★15 Pushing the Limit Lv4",
+        "gameId": "task.na.a.06",
+        "description": "This is a real trust test. The vault breach point, construction site, garbage dump, staff quarters — confirm all four, and bring back 5 pieces of intel. Insane-tier enemies won't let you off easy — but if you make it out alive, the shop goes up to Lv4 and I'll show you something: the XM5 Light. Next-generation rifle the military left behind, 6.8x51 caliber, unlike anything you've used before.",
         "objectives": [
-            "Find Tommy's Cam",
-            "Place at Foodtruck",
-            "Place on the warehouse barrel"
+            "Reach the bank vault breach",
+            "Reach the construction site",
+            "Reach the waste station",
+            "Reach the basketball court",
+            "Turn in Intel Items Found In Raid"
         ],
         "corpId": "ark",
         "type": [
-            "retrieve",
-            "place"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 25000
-            },
-            {
-                "type": "experience",
-                "quantity": 7928
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-45acp-apv1",
-                "quantity": 60
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ark_16"
-        ],
-        "requiredLevel": 0,
-        "tips": "[Tommy's Surveillance Cam](https://www.exfil-zone-assistant.app/items/taskitem_placement_tommy_surveillancecam)",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "PhLXzQaolk4"
-            },
-            {
-                "author": "orbb",
-                "ytId": "91ZLjp02aDY"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 597
-            }
-        ],
-        "order": 17
-    },
-    "ark_18": {
-        "id": "ark_18",
-        "name": "Island Logs",
-        "gameId": "task.na.z15",
-        "description": "NTG seems to be making a move on the island as well. I'm worried they might try to monopolize the medical supplies here.\nI've heard that one of their research teams is conducting investigations and recording footage on the island. Find and retrieve [visual recordings (videotapes)] and submit them to me.",
-        "objectives": [
-            "Turn in 3 Videotape"
-        ],
-        "corpId": "ark",
-        "type": [
+            "reach",
             "submit"
         ],
         "map": [
-            "any"
+            "resort"
         ],
         "reward": [
             {
                 "type": "money",
-                "quantity": 18000
-            },
-            {
-                "type": "experience",
-                "quantity": 7928
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-762x51-M80",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-ar308",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_762x51_10",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ark_16"
-        ],
-        "requiredLevel": 0,
-        "tips": "[Videotape](https://www.exfil-zone-assistant.app/items/misc_videotape) can be often found near the TVs",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "kKCUx_m_-TY"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 650
-            }
-        ],
-        "order": 18
-    },
-    "ark_19": {
-        "id": "ark_19",
-        "name": "Captured on Site",
-        "gameId": "task.na.16",
-        "description": "New findings—someone spotted a person matching our target’s description at [TRUPIKS mall].\nMy data is outdated, so I need you to head to these locations and take photos:\n[the Burger Shop on 1F], [the Repair Station on 2F] and [the Outdoor Gear Shop on 3F]",
-        "objectives": [
-            "Find the Burger Store on the 1F of TRUPIK'S Mall and take a photo.",
-            "Find the Repair Store on the 2F of TRUPIK'S Mall and take a photo.",
-            "Find the Out-door gear store on the 3F of TRUPIK'S Mall and take a photo."
-        ],
-        "corpId": "ark",
-        "type": [
-            "reach",
-            "photo"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 25000
-            },
-            {
-                "type": "experience",
-                "quantity": 6403
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-556x45-apv1",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-aug-a3-stg77",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_556x45_30",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "taskitem_photophone",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [
-            "ark_17",
-            "ark_18"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "ZnhHANaSG6w"
-            },
-            {
-                "author": "orbb",
-                "ytId": "_OUY4xMCIUc"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 662
-            }
-        ],
-        "order": 19
-    },
-    "ark_20": {
-        "id": "ark_20",
-        "name": "Deterrence 2",
-        "gameId": "task.na.17",
-        "description": "We need to prepare for the operation to eliminate the traitor. Before that, I want you to complete another combat drill and master the use of the M16A2 —this reliable series of weapons will be key in the upcoming mission.\nEliminate [15 enemies] using an [M16A2] to prove you've fully grasped its capabilities.",
-        "objectives": [
-            "Eliminate 12 targets with: M16A2 Series"
-        ],
-        "corpId": "ark",
-        "type": [
-            "eliminate"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 25000
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-556x45-apv1",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-m16a2",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_556x45_30_stanag",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ark_19"
-        ],
-        "requiredLevel": 0,
-        "tips": "Any M16A2: [M16A2 ](https://www.exfil-zone-assistant.app/items/weapon-m16a2-lv2) ",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "t2JLqtiZSHk"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 704
-            }
-        ],
-        "order": 20
-    },
-    "ark_21": {
-        "id": "ark_21",
-        "name": "The Betrayer",
-        "gameId": "task.na.18",
-        "description": "We've tracked the traitor's latest movements. His code name is [Ravager]. He's conducting a covert operation inside [TRUPIKS Mall] and has hidden a critical data disk on the rooftop.\nThe final moment has arrived—[eliminate the traitor] and his forces at TRUPIKS, [retrieve the disk from the rooftop], and secure it at all costs.",
-        "objectives": [
-            "Find the Rooftop of TRUPIK'S Mall",
-            "Eliminate Ravager at the Mall",
-            "Find ARK Floppydisk",
-            "Turn in ARK Floppydisk"
-        ],
-        "corpId": "ark",
-        "type": [
-            "eliminate",
-            "reach",
-            "submit",
-            "retrieve"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 50
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-762x51-apv1",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-hk51k",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_762x51_20_3",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ark_20"
-        ],
-        "requiredLevel": 0,
-        "tips": "Use grenades, akimbo, everything you can think of. Good luck.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "qwXU1i0t5uM"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 749
-            }
-        ],
-        "order": 21
-    },
-    "ark_22": {
-        "id": "ark_22",
-        "name": "Inviting Troubles",
-        "gameId": "task.na.z19",
-        "description": "ARK is in a weakened state, and scavengers have attacked the dock in the [Dam Area], even blowing up the transport routes.\nHead to the [Dam Area], eliminate the scavengers, and make sure they understand they messed with the wrong people.",
-        "objectives": [
-            "Eliminate 12 scavengers in Dam area"
-        ],
-        "corpId": "ark",
-        "type": [
-            "eliminate"
-        ],
-        "map": [
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 28000
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-762x51-apv1",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-scar17-fde",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_762x51_20_5",
-                "quantity": 2
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ark_21"
-        ],
-        "requiredLevel": 0,
-        "tips": "Lots of scavengers at Factory",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "JIUcTtK-lv4"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 857
-            }
-        ],
-        "order": 22
-    },
-    "ark_23": {
-        "id": "ark_23",
-        "name": "Recon 2",
-        "gameId": "task.na.19",
-        "description": "Scavengers have attacked the dock, and I need you to retrieve a secret surveillance device I planted there.\nHead to the dock in the [Dam Area], enter the [office building], and find a camouflaged [baseball] on the 2F shelf—it contains the collected data.\nI've sent you the vault key for the office via email—keep it safe.",
-        "objectives": [
-            "Find the Dock Office",
-            "Find Tommy's Baseball Cam",
-            "Turn in Tommy's Baseball Cam"
-        ],
-        "corpId": "ark",
-        "type": [
-            "reach",
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "mag_556x45_50",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ark_21"
-        ],
-        "requiredLevel": 0,
-        "tips": "One of the hot spots. Consider getting there closer to the end of a raid.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "-4UIeeJu-2A"
-            },
-            {
-                "author": "orbb",
-                "ytId": "gqbXu1XbELg"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 829
-            }
-        ],
-        "order": 23
-    },
-    "ark_24": {
-        "id": "ark_24",
-        "name": "The Saboteur",
-        "gameId": "task.na.20",
-        "description": "A critical transport bridge has been deliberately sabotaged, disrupting both logistics and movement.\nI need you to head to the [broken bridge site], inspect the damage on [both sides] of the bridge, and [mark the destroyed piers] while gathering intel.",
-        "objectives": [
-            "Reach the East Broken Bridge",
-            "Reach the West Broken Bridge",
-            "Mark East Broken Bridge Pier",
-            "Mark West Broken Bridge Pier"
-        ],
-        "corpId": "ark",
-        "type": [
-            "reach",
-            "mark"
-        ],
-        "map": [
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "mag_556x45_60_sf",
-                "quantity": 2
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "taskitem_tracking_device",
-                "quantity": 2
-            }
-        ],
-        "requiredTasks": [
-            "ark_22",
-            "ark_23"
-        ],
-        "requiredLevel": 0,
-        "tips": "north side of map, located east of dock & west of clifton, walk on top of both bridges, mark the standalone bridge column in front of both broken bridges.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "oeZ5Y7HKLiE"
-            },
-            {
-                "author": "orbb",
-                "ytId": "sKc6B8RQefg"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 904
-            }
-        ],
-        "order": 24
-    },
-    "ark_25": {
-        "id": "ark_25",
-        "name": "Recon 3",
-        "gameId": "task.na.21",
-        "description": "Thanks for your help, but I’m unsure if other areas in the [Dam Area] have sustained damage.\nPlease check the following locations in [Clifton] to evaluate their suitability as rest points or evacuation sites: [Ellie's Shop], [the grocery Store], and the [Southeastern Extraction Point].",
-        "objectives": [
-            "Find the Grocery store in Clifton",
-            "Find the Ellie’s Shop in Clifton",
-            "Successfully extract from Southeast Road"
-        ],
-        "corpId": "ark",
-        "type": [
-            "reach",
-            "extract"
-        ],
-        "map": [
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
+                "quantity": 45000
             },
             {
                 "type": "experience",
@@ -1702,209 +767,52 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "reputation",
-                "corpId": "ark",
-                "quantity": 30
+                "quantity": 60,
+                "corpId": "ark"
             },
             {
                 "type": "item",
-                "item_id": "grip_verticalgrip_sg",
-                "quantity": 1
+                "quantity": 4,
+                "item_id": "ammo-556x45-tracer",
+                "item_name": "5.56x45mm M856"
             },
             {
                 "type": "item",
-                "item_id": "tactical_laser_peq",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "weapon-m4a1cqb",
+                "item_name": "M4A1 5.56x45mm carbine rifle CQB edition"
             },
             {
                 "type": "item",
-                "item_id": "scope_eotechhologramsight",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "supressor_m4sd",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "mag_556x45_30_pmag",
+                "item_name": "AR-15 5.56x45mm 30rnd P-Mag magazine"
             }
         ],
         "preReward": [],
         "requiredTasks": [
-            "ark_24"
+            "ark_40"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "TxwpxZ1MfdY"
-            },
-            {
-                "author": "orbb",
-                "ytId": "5uY7-lpuh6Y"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 930
-            }
-        ],
-        "order": 25
+        "videoGuides": [],
+        "order": 6
     },
-    "ark_26": {
-        "id": "ark_26",
-        "name": "Step Up the Track",
-        "gameId": "task.na.22",
-        "description": "You should be quite familiar with using trackers by now. Based on our past work together, you're the one I trust for this task.\nFind the [A1 and A2 warehouses] in the [Factory] in the [Dam Area] and mark the [green tanks] in them. They seem to be storing chemical substances in, I need precise data before initiating recovery.",
+    "ark_42": {
+        "id": "ark_42",
+        "name": "★18 Judgment Day BOSS",
+        "gameId": "task.na.a.07",
+        "description": "After Graves went down, ARK remnants set up a squad in the staff quarters — the leader is his former estate manager, goes by 'Tattoo'. Graves' old weapons cache is all in his hands. Go take him out and turn the page on ARK for good. This AR15 60-round drum is the heaviest thing I've ever handed out — Lv4-tier firepower. Come back alive and I'll buy you a drink.",
         "objectives": [
-            "Reach Factory A Zone",
-            "Mark the 3 Green Storage tank in Factory A Zone"
-        ],
-        "corpId": "ark",
-        "type": [
-            "reach",
-            "mark"
-        ],
-        "map": [
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "experience",
-                "quantity": 15403
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-556x45-mk318",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-psg1",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_556x45_30_stanag",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "taskitem_tracking_device",
-                "quantity": 3
-            }
-        ],
-        "requiredTasks": [
-            "ark_25"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "MG2vxQy7n50"
-            },
-            {
-                "author": "orbb",
-                "ytId": "mF3yc9qY4ao"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 961
-            }
-        ],
-        "order": 26
-    },
-    "ark_27": {
-        "id": "ark_27",
-        "name": "Deterrence 3",
-        "gameId": "task.na.23",
-        "description": "We're launching an operation against the scavengers who sabotaged our transport routes. Before that, I want you to train with the AR-15, a lightweight, gas-operated semi-auto rifle—I think you’ll like it.\nEliminate [10 scavengers] using an [AR-15 series weapon].",
-        "objectives": [
-            "Eliminate 10 targets with AR15 series"
+            "Eliminate Worker dorm's Butcher"
         ],
         "corpId": "ark",
         "type": [
             "eliminate"
         ],
         "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "experience",
-                "quantity": 15403
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-556x45-apv1",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-aug-a3-cqb",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_556x45_30",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ark_26"
-        ],
-        "requiredLevel": 0,
-        "tips": "[AR-15 Pistol](https://www.exfil-zone-assistant.app/items/weapon-ar15-pistol) or [AR-15 Hunter](https://www.exfil-zone-assistant.app/items/weapon-m4a1-hunter)",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "BAdwJWQ3-F0"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 988
-            }
-        ],
-        "order": 27
-    },
-    "ark_28": {
-        "id": "ark_28",
-        "name": "The Battle of the Dam",
-        "gameId": "task.na.24",
-        "description": "Your training will be crucial for this strike. Head to the [Dam Area] and eliminate a high-threat scavenger leader wearing [skull-patterned gear].\nTarget identify himself as [Skull], last seen [below the dam]—proceed with caution.",
-        "objectives": [
-            "Find the Dam Interior Substation",
-            "Eliminate Dam BOSS"
-        ],
-        "corpId": "ark",
-        "type": [
-            "reach",
-            "eliminate"
-        ],
-        "map": [
-            "dam"
+            "resort"
         ],
         "reward": [
             {
@@ -1917,39 +825,54 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "reputation",
-                "corpId": "ark",
-                "quantity": 80
+                "quantity": 80,
+                "corpId": "ark"
             },
             {
                 "type": "item",
-                "item_id": "mag_556x45_42",
-                "quantity": 1
+                "quantity": 3,
+                "item_id": "ammo-556x45-apv1",
+                "item_name": "5.56x45mm M995"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "ammo-762x51-tracerv2",
+                "item_name": "7.62x51mm M62 Tracer"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.consumption.all.hqfuel.xl"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_556x45_60",
+                "item_name": "AR-15 5.56x45mm 60rnd P-Drum magazine"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_goldingot",
+                "item_name": "Gold Ingot"
             }
         ],
         "preReward": [],
         "requiredTasks": [
-            "ark_27"
+            "ark_41"
         ],
-        "requiredLevel": 0,
-        "tips": "Caged room bottom of dam. Boss is relatively easy but POE is hot spot.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "1T_mePFYBqQ"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 1044
-            }
-        ],
-        "order": 28
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 7
     },
-    "ark_29": {
-        "id": "ark_29",
-        "name": "The Way Down",
-        "gameId": "task.na.25",
-        "description": "You're ready to push deeper into the island. Scout the [Metro Area] at these locations:\r\n[Hound Statue in Metro Station], [Public Bathhouse in lower Levels] and the [Medical Base at the bottom level].\r\nBeware—poor lighting and complex terrain will limit M.I.C.A. map functions. Stay sharp!\r\nBe sure to take a [Metro entry ticket] with you!",
+    "ark_43": {
+        "id": "ark_43",
+        "name": "Into the Underground",
+        "gameId": "task.na.a.08",
+        "description": "Tattoo's dead, ARK's chapter is closed. But there's one more road for you — the metro. After the military pulled out, they left people underground still guarding 'the last thing'. I'll give you a metro pass, bring plenty of ammo — feel out the dog head statue, public bathhouse, and medical base first and see what you can find.",
         "objectives": [
             "Find the Hound Statue",
             "Find the Public Shower room",
@@ -1965,7 +888,7 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 35000
+                "quantity": 42000
             },
             {
                 "type": "experience",
@@ -1973,51 +896,45 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "reputation",
-                "corpId": "ark",
-                "quantity": 40
+                "quantity": 40,
+                "corpId": "ark"
             },
             {
                 "type": "item",
+                "quantity": 4,
                 "item_id": "ammo-762x51-apv2",
-                "quantity": 60
+                "item_name": "7.62x51mm M993"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.consumption.all.hqfuel.xl"
             }
         ],
         "preReward": [
             {
                 "type": "item",
-                "item_id": "key_metro_entry_ticket",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "misc_metroentry",
+                "item_name": "Metro Entry Ticket"
             }
         ],
         "requiredTasks": [
-            "ark_28"
+            "ark_42"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "UBQ7b8-XUos"
-            },
-            {
-                "author": "orbb",
-                "ytId": "HdTqbSk3eaY"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 1070
-            }
-        ],
-        "order": 29
+        "videoGuides": [],
+        "order": 8
     },
-    "ark_30": {
-        "id": "ark_30",
-        "name": "Undercurrents",
-        "gameId": "task.na.z25",
-        "description": "Scavengers have infiltrated the [Metro Area], threatening vital supplies and infrastructure. If left unchecked, they could form an armed faction.\n[Eliminate 15 scavengers] to prevent further escalation.",
+    "ark_44": {
+        "id": "ark_44",
+        "name": "Undercurrent",
+        "gameId": "task.na.a.09",
+        "description": "The metro scavengers are tougher than anything on the surface — Insane-tier armor, heavy suppressing fire. Clear 18 of them. You're already comfortable with the EVO3 Ultra, here's another one — drum mag and tracer rounds, unreasonable at close range. Another metro pass for you too. If the XM5 Light isn't unlocked yet, it will be after this.",
         "objectives": [
-            "Eliminate 15 scavengers in metro area"
+            "Eliminate Scavangers in Metro Area"
         ],
         "corpId": "ark",
         "type": [
@@ -2029,7 +946,7 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 28000
+                "quantity": 42000
             },
             {
                 "type": "experience",
@@ -2037,136 +954,58 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "reputation",
-                "corpId": "ark",
-                "quantity": 10
+                "quantity": 40,
+                "corpId": "ark"
             },
             {
                 "type": "item",
-                "item_id": "ammo-762x51-apv1",
-                "quantity": 30
+                "quantity": 4,
+                "item_id": "ammo-9x19-tracer",
+                "item_name": "9x19mm G T"
             },
             {
                 "type": "item",
-                "item_id": "weapon-scar17-black",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "weapon-evo3ultra",
+                "item_name": "EVO3 9x19mm sub-machine gun ULTRA edition"
             },
             {
                 "type": "item",
-                "item_id": "mag_762x51_20_4",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "mag_9x19mm_50_evo",
+                "item_name": "EVO3 9x19mm 50rnd Drum magazine"
             }
         ],
         "preReward": [
             {
                 "type": "item",
-                "item_id": "key_metro_entry_ticket",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "misc_metroentry",
+                "item_name": "Metro Entry Ticket"
             }
         ],
         "requiredTasks": [
-            "ark_28"
+            "ark_43"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "nsFWQfx3RiA"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 1096
-            }
-        ],
-        "order": 30
+        "videoGuides": [],
+        "order": 9
     },
-    "ark_31": {
-        "id": "ark_31",
-        "name": "Entangled Paths 1",
-        "gameId": "task.na.26",
-        "description": "The [Metro Area] is more complex than expected. Without routes or shortcuts, operations and supply transport will be difficult.\nFind the [hidden passageways] in the subway. Navigation is tricky, but M.I.C.A's compass might still help.",
+    "ark_45": {
+        "id": "ark_45",
+        "name": "Deep Roots I",
+        "gameId": "task.na.a.10",
+        "description": "The hidden passages in the metro bathroom and warehouse — find both of them, then extract from underground twice. These routes are critical for surviving Phase 7 — know them well and getting out becomes a lot easier. I'm giving you the AUG A3 M1 Optic — the ultimate AUG with an integrated sight. Mag and Insane-tier M995 AP rounds included.",
         "objectives": [
             "Find the Secret Passage in the Restroom of the Metro",
-            "Find the Secret Passage in the Warehouse of the Metro"
+            "Find the Secret Passage in the Warehouse of the Metro",
+            "Successfully extract from Metro Area"
         ],
         "corpId": "ark",
         "type": [
-            "reach"
-        ],
-        "map": [
-            "metro"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "experience",
-                "quantity": 15403
-            },
-            {
-                "type": "reputation",
-                "corpId": "ark",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-762x51-apv1",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-hk51-ace",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_762x51_30",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "key_metro_entry_ticket",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [
-            "ark_29"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "cDStV5mwwlc"
-            },
-            {
-                "author": "orbb",
-                "ytId": "2fEEpOWBYHY"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 1138
-            }
-        ],
-        "order": 31
-    },
-    "ark_32": {
-        "id": "ark_32",
-        "name": "Entangled Paths 2",
-        "gameId": "task.na.27",
-        "description": "Thanks to your scouting, we now understand metro area's layout. The next step is securing safe exits.\n[Extract] from the following locations to confirm the routes:\n[Military Base Exit], [Northern Sewer Exit].",
-        "objectives": [
-            "Successfully extract from Military base exit",
-            "Successfully extract from Northern sewer"
-        ],
-        "corpId": "ark",
-        "type": [
+            "reach",
             "extract"
         ],
         "map": [
@@ -2175,7 +1014,7 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 35000
+                "quantity": 42000
             },
             {
                 "type": "experience",
@@ -2183,57 +1022,52 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "reputation",
-                "corpId": "ark",
-                "quantity": 40
+                "quantity": 40,
+                "corpId": "ark"
             },
             {
                 "type": "item",
-                "item_id": "ammo-556x45-apv2",
-                "quantity": 30
+                "quantity": 4,
+                "item_id": "ammo-556x45-apv1",
+                "item_name": "5.56x45mm M995"
             },
             {
                 "type": "item",
-                "item_id": "weapon-m4a1-dd",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "weapon-auga3m1optic",
+                "item_name": "AUG A3 M1 5.56x45mm assault rifle Optic edition"
             },
             {
                 "type": "item",
-                "item_id": "mag_556x45_30_pmag",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "mag_556x45_30",
+                "item_name": "AUG 5.56x45mm 30rnd magazine"
             }
         ],
         "preReward": [
             {
                 "type": "item",
-                "item_id": "key_metro_entry_ticket",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "misc_metroentry",
+                "item_name": "Metro Entry Ticket"
             }
         ],
         "requiredTasks": [
-            "ark_31"
+            "ark_44"
         ],
-        "requiredLevel": 0,
-        "tips": "Good luck getting the right extraction point.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "ETj4T41MV_c"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 1164
-            }
-        ],
-        "order": 32
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 10
     },
-    "ark_33": {
-        "id": "ark_33",
-        "name": "Big Guys",
-        "gameId": "task.na.28",
-        "description": "The information you provided mentioned that the [Metro area] has been transformed for military usage, and several tanks have been spotted within it.\r\nThe next task is critical. I need you to help me [mark the positions of 3 tanks]. Please be careful [NOT to mark any tanks that DO NOT have gun barrels that have medical symbols].",
+    "ark_46": {
+        "id": "ark_46",
+        "name": "Heavy Iron: Tank Marking",
+        "gameId": "task.na.a.11",
+        "description": "Three BMP tanks are sitting in the metro — the ones without red cross markings, don't touch the ones that have it, those are medical vehicles. Mark all three. Pay close attention to the reward for this one: SECA17 FDE — MK17 in FDE finish, 7.62x51 battle rifle, faster than the M40A5 bolt-action, steadier than the AR308 semi. You know your .308 ammo well by now — time for the SECA to take the stage.",
         "objectives": [
-            "Mark 3 BMP tanks without the Medical signs"
+            "Mark BMP Tank without Medical signs"
         ],
         "corpId": "ark",
         "type": [
@@ -2245,7 +1079,7 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 35000
+                "quantity": 42000
             },
             {
                 "type": "experience",
@@ -2253,66 +1087,58 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "reputation",
-                "corpId": "ark",
-                "quantity": 40
+                "quantity": 40,
+                "corpId": "ark"
             },
             {
                 "type": "item",
+                "quantity": 4,
                 "item_id": "ammo-762x51-apv1",
-                "quantity": 30
+                "item_name": "7.62x51mm M61"
             },
             {
                 "type": "item",
-                "item_id": "weapon-scar17-ssr",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "weapon-scar17-fde",
+                "item_name": "SECA17 7.62x51mm battle rifle FDE edition"
             },
             {
                 "type": "item",
+                "quantity": 1,
                 "item_id": "mag_762x51_20_4",
-                "quantity": 1
+                "item_name": "SECA17 BK 7.62x51mm 20rnd magazine"
             }
         ],
         "preReward": [
             {
                 "type": "item",
-                "item_id": "taskitem_tracking_device",
-                "quantity": 3
+                "quantity": 1,
+                "item_id": "misc_metroentry",
+                "item_name": "Metro Entry Ticket"
             },
             {
                 "type": "item",
-                "item_id": "key_metro_entry_ticket",
-                "quantity": 1
+                "quantity": 3,
+                "item_id": "taskitem_tracking_device",
+                "item_name": "MS2000 Tracker"
             }
         ],
         "requiredTasks": [
-            "ark_32"
+            "ark_45"
         ],
-        "requiredLevel": 0,
-        "tips": "Don't have to be 3 different ones. You can mark the same BMP in multiple runs.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "EctfWvGwfmw"
-            },
-            {
-                "author": "orbb",
-                "ytId": "9t1zLuov-sE"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 1202
-            }
-        ],
-        "order": 33
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 11
     },
-    "ark_34": {
-        "id": "ark_34",
-        "name": "Deterrence 4",
-        "gameId": "task.na.29",
-        "description": "The scavengers in the [Metro area] must have a leader. Before facing him, you'll need more training.\nThe AUG series is a compact, modular weapon with high precision—perfect for this mission.\nEliminate [15 targets] using an [AUG].",
+    "ark_47": {
+        "id": "ark_47",
+        "name": "Show of Force I: M4A1",
+        "gameId": "task.na.a.12",
+        "description": "SIDE mission — take out 16 enemies using your M4A1 series weapon. Proficiency check. Complete it and I'll show you the XM5 Light — the military's next generation, 6.8x51 caliber. Lighter than the M4, more accurate than the AR15. This is the start of a new era.",
         "objectives": [
-            "Eliminated 15 targets with AUG series"
+            "M4A1 series: Eliminate targets"
         ],
         "corpId": "ark",
         "type": [
@@ -2324,7 +1150,7 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 35000
+                "quantity": 42000
             },
             {
                 "type": "experience",
@@ -2332,49 +1158,103 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "reputation",
-                "corpId": "ark",
-                "quantity": 40
+                "quantity": 10,
+                "corpId": "ark"
             },
             {
                 "type": "item",
-                "item_id": "ammo-762x51-apv1",
-                "quantity": 30
+                "quantity": 4,
+                "item_id": "ammo-68x51-apv1",
+                "item_name": "6.8x51mm Hybrid"
             },
             {
                 "type": "item",
-                "item_id": "weapon-ar308-lt",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "weapon-xm5light",
+                "item_name": "XM5 6.8x51mm NGSW rifle Light edition"
             },
             {
                 "type": "item",
-                "item_id": "mag_762x51_20",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "magazine-mcx-xm5-20",
+                "item_name": "XM5 6.8x51mm 20rnd magazine"
             }
         ],
         "preReward": [],
         "requiredTasks": [
-            "ark_33"
+            "ark_38",
+            "ark_54"
         ],
-        "requiredLevel": 0,
-        "tips": "Any [AUG](https://www.exfil-zone-assistant.app/items/weapon-aug-a3-ris). ",
-        "videoGuides": [
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 12
+    },
+    "ark_48": {
+        "id": "ark_48",
+        "name": "Show of Force IV: AUG",
+        "gameId": "task.na.a.13",
+        "description": "SIDE wave two — take out 18 enemies with your AUG series. Complete it and you'll get the SECA17 in black. You're already familiar with the MK17 FDE finish — the black version is more low-profile, blends right into the shadows in the metro. The 6.8x51 AP round shop will open up too.",
+        "objectives": [
+            "AUG series: Eliminate targets"
+        ],
+        "corpId": "ark",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
             {
-                "author": "HayaPlays",
-                "ytId": "G3X8l3BeKcY"
+                "type": "money",
+                "quantity": 42000
             },
             {
-                "author": "radFoxVR",
-                "ytId": "I5XTDO71-us",
-                "startTs": 1234
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "reputation",
+                "quantity": 10,
+                "corpId": "ark"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-762x51-apv1",
+                "item_name": "7.62x51mm M61"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-scar17-black",
+                "item_name": "SECA17 7.62x51mm battle rifle BK edition"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_762x51_20_4",
+                "item_name": "SECA17 BK 7.62x51mm 20rnd magazine"
             }
         ],
-        "order": 34
+        "preReward": [],
+        "requiredTasks": [
+            "ark_41",
+            "ark_59"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 13
     },
-    "ark_35": {
-        "id": "ark_35",
-        "name": "Ruler in the Depths",
-        "gameId": "task.na.30",
-        "description": "As I suspected, the sudden appearance of the scavengers in the [Metro area] is indeed due to a leader behind them called [Ironclad].\nRest assured, we have weakened most of his power, and now he is isolated with only a few loyalists following him. Please head to the [Metro area] and eliminate this threat to cut off his leadership over the scavengers in the Metro region.",
+    "ark_49": {
+        "id": "ark_49",
+        "name": "★19 Master of the Underground: Final BOSS",
+        "gameId": "task.na.a.14",
+        "description": "The final fight — metro control room. When the military pulled out, one commander stayed behind, goes by 'The Captain'. He stayed to guard the last batch of XM5s — the flagship next-gen military version, XM5-2. The world owes you everything, and this is where it all gets paid back. Link up with Igor — he takes the east gate, you take the west, move at the same time. Take down The Captain and the XM5-2 is yours. From c.01 to today, I never misjudged you. Come back alive.",
         "objectives": [
             "Find the Metro Control Room",
             "Eliminate Ironclad in Metro area"
@@ -2398,1889 +1278,1077 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "reputation",
-                "corpId": "ark",
-                "quantity": 80
+                "quantity": 100,
+                "corpId": "ark"
             },
             {
                 "type": "item",
+                "quantity": 4,
                 "item_id": "ammo-68x51-apv1",
-                "quantity": 30
+                "item_name": "6.8x51mm Hybrid"
             },
             {
                 "type": "item",
+                "quantity": 1,
                 "item_id": "weapon-xm5",
-                "quantity": 1
+                "item_name": "XM5 6.8x51mm NGSW rifle"
             },
             {
                 "type": "item",
-                "item_id": "mag_68x51_25",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "magazine-mcx-xm5-30",
+                "item_name": "XM5 6.8x51mm 30rnd magazine"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_b_goldelephant",
+                "item_name": "Golden elephant"
             }
         ],
         "preReward": [
             {
                 "type": "item",
-                "item_id": "key_metro_entry_ticket",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "misc_metroentry",
+                "item_name": "Metro Entry Ticket"
             }
         ],
         "requiredTasks": [
-            "ark_34",
-            "ntg_29"
+            "ark_46",
+            "ark_59"
         ],
-        "requiredLevel": 0,
-        "tips": "Boss wearing RYS-T, who loves to kill while you are loading.",
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 14
+    },
+    "ark_50": {
+        "id": "ark_50",
+        "name": "Camera Placement: Warehouse & Supermarket",
+        "gameId": "task.na.b.01",
+        "description": "The cameras I set up earlier were sabotaged. Head to the [warehouse next to the Office Building to retrieve the backup cameras I left there]. Redeploy them at the [pickup window of the food truck beside Altibuy] and on the [oil barrel next to the warehouse entrance]. Remember — this isn’t the scavenger zone near the dam anymore. The people in the mall are the real deal.",
+        "objectives": [
+            "Find Tommy's cam",
+            "Place at Foodtruck; On the warehouse barrel"
+        ],
+        "corpId": "ark",
+        "type": [
+            "retrieve",
+            "place"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "experience",
+                "quantity": 5518
+            },
+            {
+                "type": "reputation",
+                "quantity": 40,
+                "corpId": "ark"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-556x45-hpv2",
+                "item_name": "5.56x45mm HP"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-hk416",
+                "item_name": "RC 416 A5 5.56x45mm assault rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "scope_lcosight",
+                "item_name": "FPO"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ark_70"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 2,
+        "tips": "",
+        "videoGuides": [],
+        "order": 15
+    },
+    "ark_51": {
+        "id": "ark_51",
+        "name": "Mall Photography",
+        "gameId": "task.na.b.02",
+        "description": "The cameras picked something up — ARK has truck unloading points on every floor of the mall. Cover floors one, two, and three, and get photo evidence on each level. Keep it clean, don't let them spot you.",
+        "objectives": [
+            "Find the Burger Store on the 1F of TRUPIK'S Mall",
+            "Find the Repair Store on the 2F of TRUPIK'S Mall",
+            "Find the Out-door gear store on the 3F of TRUPIK'S Mall",
+            "Take photo of the Burger store sign",
+            "Take photo of the Repair store sign",
+            "Take photo of the Out-door gear store sign"
+        ],
+        "corpId": "ark",
+        "type": [
+            "reach",
+            "photo"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "experience",
+                "quantity": 6403
+            },
+            {
+                "type": "reputation",
+                "quantity": 40,
+                "corpId": "ark"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-9x19-tracer",
+                "item_name": "9x19mm G T"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-scorpion-evo3",
+                "item_name": "EVO3 9x19mm sub-machine gun"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_9x19mm_30_evo",
+                "item_name": "EVO3 9x19mm 30rnd magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ark_50"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 16
+    },
+    "ark_52": {
+        "id": "ark_52",
+        "name": "Retrieve ARK Disks",
+        "gameId": "task.na.b.03",
+        "description": "The bakery, canal farm, and seaside supply point — each one has an ARK disk hidden inside. Bring all three back to me, this is more critical than the truck photos. Stay sharp, the mall isn't the dam — someone will be watching.",
+        "objectives": [
+            "Arrive the Bakery",
+            "Arrive the farm west of Hyder Town",
+            "Find the Supply Truck in the southwest",
+            "Find Ark's disk",
+            "Turn in ARK Floppydisk"
+        ],
+        "corpId": "ark",
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 24000
+            },
+            {
+                "type": "experience",
+                "quantity": 6403
+            },
+            {
+                "type": "reputation",
+                "quantity": 40,
+                "corpId": "ark"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "ammo-556x45-fmj",
+                "item_name": "5.56x45mm FMJ"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-aug-a1",
+                "item_name": "AUG A1 5.56x45mm assault rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_556x45_30",
+                "item_name": "AUG 5.56x45mm 30rnd magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ark_51"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 17
+    },
+    "ark_53": {
+        "id": "ark_53",
+        "name": "Hide Discs",
+        "gameId": "task.na.b.04",
+        "description": "Now, I need you to assist my informant. Head to the [Recreation Room in Trupiks], [Mall Surveillance Room 1], and [Mall Surveillance Room 2]. Place a set of [Discs] at each location.",
+        "objectives": [
+            "Arrive the recreation room on the 3F of Trupiks Mall",
+            "Arrive surveillance room 1 on the 1F of Trupiks Mall",
+            "Arrive surveillance room 2 on the 1F of Trupiks Mall",
+            "Put disc in place 1",
+            "Put disc in place 2",
+            "Put disc in place 3"
+        ],
+        "corpId": "ark",
+        "type": [
+            "reach",
+            "place"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 24000
+            },
+            {
+                "type": "experience",
+                "quantity": 6403
+            },
+            {
+                "type": "reputation",
+                "quantity": 40,
+                "corpId": "ark"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "ammo-9x19-apv1",
+                "item_name": "9x19mm AP"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-mp9-t",
+                "item_name": "MP9 9x19mm sub-machine gun T edition"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_9x19mm_30_mp9",
+                "item_name": "MP9 9x19mm 30rnd magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ark_52"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 18
+    },
+    "ark_54": {
+        "id": "ark_54",
+        "name": "★ The Traitor BOSS",
+        "gameId": "task.na.b.05",
+        "description": "Alright — ARK's man running the mall used to be a comrade of mine. He sold us out, and now he's calling the shots from the rooftop. Get up there, kill him, and wipe the evidence off those discs. This M40A5 is what I've been saving — .308 caliber, it'll punch right through his heavy armor. I've already fitted the scope and rail, ready to use the moment you pick it up. This is the best thing I can give you — make sure you bring it back.",
+        "objectives": [
+            "Find the Rooftop of TRUPIK'S Mall",
+            "Eliminate Ravager at the Mall"
+        ],
+        "corpId": "ark",
+        "type": [
+            "reach",
+            "eliminate"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 100000
+            },
+            {
+                "type": "experience",
+                "quantity": 7928
+            },
+            {
+                "type": "reputation",
+                "quantity": 35,
+                "corpId": "ark"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "ammo-762x51-hp",
+                "item_name": "7.62x51mm SP"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "gds.consumption.all.hqfuel.xl"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-m40a5",
+                "item_name": "M40A5 7.62x51mm bolt action rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "scope_acog",
+                "item_name": "ACOG 20mm scope"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_762x51_10_3",
+                "item_name": "M40A5 7.62x51mm 10rnd magazine"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-m40a5-mount-scoperail",
+                "item_name": "M40A5 Scope Rail mount"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_goldingot",
+                "item_name": "Gold Ingot"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ark_53"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 19
+    },
+    "ark_55": {
+        "id": "ark_55",
+        "name": "Disguised Baseball",
+        "gameId": "task.na.b.06",
+        "description": "Mall business is done. We’re moving to the dam — head to the dock office and the small shop next to it, and retrieve two surveillance devices disguised as baseballs. I need you to bring them back for analysis. How’s the M40A5 feeling after a few days? Bring an AR15 Hunter as a secondary — bolt-action rifles aren’t great up close.",
+        "objectives": [
+            "Find the Dock Office",
+            "Find Tommy's hidden camera 1",
+            "Find Tommy's hidden camera 2",
+            "Turn in Tommy's Baseball Cam"
+        ],
+        "corpId": "ark",
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "experience",
+                "quantity": 1569
+            },
+            {
+                "type": "reputation",
+                "quantity": 25,
+                "corpId": "ark"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-556x45-hpv1",
+                "item_name": "5.56x45mm MK255"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-m4a1-hunter",
+                "item_name": "AR-15 5.56x45mm semi-automatic assault rifle Hunter"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "scope_walther",
+                "item_name": "Walther Reflex"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_556x45_20",
+                "item_name": "AR-15 5.56x45mm 20rnd magazine"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-mount-handlescoperail",
+                "item_name": "AR-15 M4 Handle Scope Rail mount"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ark_54"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 20
+    },
+    "ark_56": {
+        "id": "ark_56",
+        "name": "New Bridge Maintenance",
+        "gameId": "task.na.b.07",
+        "description": "Mark the two bridge pillars under the broken dam bridge — one on the east side, one on the west. Then drop three MP5 30-round magazines into the container at the bridge head, my contact is there and will pick them up.",
+        "objectives": [
+            "Mark bridge pier 1",
+            "Mark bridge pier 2",
+            "Put magazine Mag MP5 30rnd in place"
+        ],
+        "corpId": "ark",
+        "type": [
+            "mark",
+            "place"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "experience",
+                "quantity": 1569
+            },
+            {
+                "type": "reputation",
+                "quantity": 25,
+                "corpId": "ark"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-9x19-tracer",
+                "item_name": "9x19mm G T"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-scorpion-evo3",
+                "item_name": "EVO3 9x19mm sub-machine gun"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "scope_aimpointt1sight",
+                "item_name": "T1 Elevating"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_9x19mm_50_evo",
+                "item_name": "EVO3 9x19mm 50rnd Drum magazine"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "taskitem_tracking_device",
+                "item_name": "MS2000 Tracker"
+            }
+        ],
+        "requiredTasks": [
+            "ark_55"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 21
+    },
+    "ark_57": {
+        "id": "ark_57",
+        "name": "Clifton Recon",
+        "gameId": "task.na.b.08",
+        "description": "There are several ARK supply points around Clifton — the grocery store, the barbershop, and the toll station. Check them one by one and see how much intel you can gather. Then extract from the dam twice to get familiar with the new routes.",
+        "objectives": [
+            "Arrive the grocery store in Clifton",
+            "Arrive the Barber Shop",
+            "Arrive the Toll Station",
+            "Successfully extract from Dam Area"
+        ],
+        "corpId": "ark",
+        "type": [
+            "reach",
+            "extract"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "experience",
+                "quantity": 1807
+            },
+            {
+                "type": "reputation",
+                "quantity": 25,
+                "corpId": "ark"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-556x45-hpv1",
+                "item_name": "5.56x45mm MK255"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "grenade-m67-frag",
+                "item_name": "M67 Hand grenade"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-m4a1-factory",
+                "item_name": "M4A1 5.56x45mm carbine rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "scope_aimpointt1sight",
+                "item_name": "T1 Elevating"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_556x45_30_pmag",
+                "item_name": "AR-15 5.56x45mm 30rnd P-Mag magazine"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-mount-handlescoperail",
+                "item_name": "AR-15 M4 Handle Scope Rail mount"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ark_56"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 22
+    },
+    "ark_58": {
+        "id": "ark_58",
+        "name": "Factory Oil Tanks",
+        "gameId": "task.na.b.09",
+        "description": "Three green oil tanks in Factory Zone A at the dam — mark all of them. The distances aren't short, this is where the M40A5 actually earns its keep. Bring your sniper setup, find high ground, mark all three tanks and extract.",
+        "objectives": [
+            "Mark the Green Storagetank 1 in Factory A Zone",
+            "Mark the Green Storagetank 2 in Factory A Zone",
+            "Mark the Green Storagetank 3 in Factory A Zone"
+        ],
+        "corpId": "ark",
+        "type": [
+            "mark"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "experience",
+                "quantity": 7928
+            },
+            {
+                "type": "reputation",
+                "quantity": 30,
+                "corpId": "ark"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-556x45-mk318",
+                "item_name": "5.56x45mm MK318"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-aug-a1",
+                "item_name": "AUG A1 5.56x45mm assault rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "scope_romeo8t",
+                "item_name": "LOMIO8T"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "mag_556x45_30",
+                "item_name": "AUG 5.56x45mm 30rnd magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ark_59"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 23
+    },
+    "ark_59": {
+        "id": "ark_59",
+        "name": "★ Silver Skull BOSS",
+        "gameId": "task.na.b.10",
+        "description": "Igor's in too. There's a liaison hiding in the dam's electrical room — someone running comms between ARK and the WP rebels. Both sides want him dead. Link up with Igor and go in together — he takes the main route, you take the side entrance. Take this guy out and I'll give you the best reward you've seen since Phase 3. Come back alive.",
+        "objectives": [
+            "Find the Dam's Power Room",
+            "Eliminate Skull at the Dam"
+        ],
+        "corpId": "ark",
+        "type": [
+            "reach",
+            "eliminate"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 120000
+            },
+            {
+                "type": "experience",
+                "quantity": 6403
+            },
+            {
+                "type": "reputation",
+                "quantity": 50,
+                "corpId": "ark"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "ammo-556x45-mk318",
+                "item_name": "5.56x45mm MK318"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "gds.consumption.all.hqfuel.xl"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-aug-a3-cqb",
+                "item_name": "AUG A3 M1 5.56x45mm assault rifle CQB edition"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_556x45_30",
+                "item_name": "AUG 5.56x45mm 30rnd magazine"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_goldingot",
+                "item_name": "Gold Ingot"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ark_57",
+            "regiment_16"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 24
+    },
+    "ark_60": {
+        "id": "ark_60",
+        "name": "M16A2 Proficiency",
+        "gameId": "task.na.b.11",
+        "description": "Show of force — take down 12 ARK targets using the M16A2. This is a veteran's test, prove you can actually work with iron sights and a 4x scope. Complete it and I'll give you the AR308 — the ultimate form of the .308 NA rifle.",
+        "objectives": [
+            "M16A2 series: Eliminate targets"
+        ],
+        "corpId": "ark",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "ark"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-762x51-tracerv2",
+                "item_name": "7.62x51mm M62 Tracer"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-ar308",
+                "item_name": "AR308 7.62x51mm Design marksman rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_762x51_10",
+                "item_name": "AR-10 7.62x51mm 10rnd magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ark_54"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 25
+    },
+    "ark_61": {
+        "id": "ark_61",
+        "name": "MK17 Proficiency",
+        "gameId": "task.na.b.12",
+        "description": "The resort — ARK mercenaries are stationed there. Take out 14 of them using the MK17. This is the ultimate test of the .308 platform: bolt-action with the M40A5, semi-auto with the AR308, battle-ready with the MK17 — master all three and it's perfect. Last one to add to the collection is the G3 AK4, the German army's workhorse from the 60s.",
+        "objectives": [
+            "SECA17 series: Eliminate targets"
+        ],
+        "corpId": "ark",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "ark"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-762x51-tracerv2",
+                "item_name": "7.62x51mm M62 Tracer"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-g3sg1-ak4",
+                "item_name": "G3 AK4 7.62x51mm assault rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_762x51_30",
+                "item_name": "G3 7.62x51mm 30rnd magazine"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-g3-mount-highlever",
+                "item_name": "G3 High Lever mount"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ark_60"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 26
+    },
+    "ark_1": {
+        "id": "ark_1",
+        "name": "Handshake",
+        "gameId": "task.na.c.01",
+        "description": "New blood. I'm Tommy, ARK Industries. This place is crawling with scavengers — go take out a few and prove you're not useless.",
+        "objectives": [
+            "Eliminate Scavangers in Dam Area"
+        ],
+        "corpId": "ark",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 15000
+            },
+            {
+                "type": "experience",
+                "quantity": 1569
+            },
+            {
+                "type": "reputation",
+                "quantity": 10,
+                "corpId": "ark"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-556x45-hpv1",
+                "item_name": "5.56x45mm MK255"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-car15-walther",
+                "item_name": "CAR15 5.56x45mm assault rifle Walther edition"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_556x45_20",
+                "item_name": "AR-15 5.56x45mm 20rnd magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "Check the 'Extraction' tab in the menu or use the M.I.C.A. map to find extraction points.",
         "videoGuides": [
             {
                 "author": "HayaPlays",
-                "ytId": "cEOvYX1B8jU"
+                "ytId": "5VVIFJgpw5o"
             },
             {
-                "author": "orbb",
-                "ytId": "4eNHusxBbIU"
+                "author": "radFoxVR",
+                "ytId": "I5XTDO71-us"
+            }
+        ],
+        "order": 27
+    },
+    "ark_62": {
+        "id": "ark_62",
+        "name": "Wind Farm Recon",
+        "gameId": "task.na.c.02",
+        "description": "How's the CAR15 treating you? There's ARK movement at the wind farm — head over and see what's going on.",
+        "objectives": [
+            "Arrive the Turbine Field"
+        ],
+        "corpId": "ark",
+        "type": [
+            "reach"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 20000
+            },
+            {
+                "type": "experience",
+                "quantity": 1569
+            },
+            {
+                "type": "reputation",
+                "quantity": 10,
+                "corpId": "ark"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-556x45-hpv1",
+                "item_name": "5.56x45mm MK255"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-m4a1-walther",
+                "item_name": "M4A1 5.56x45mm carbine rifle Walther edition"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_556x45_30_pmag",
+                "item_name": "AR-15 5.56x45mm 30rnd P-Mag magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ark_1"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 28
+    },
+    "ark_3": {
+        "id": "ark_3",
+        "name": "Recon 1",
+        "gameId": "task.na.c.03",
+        "description": "You're getting more reliable. I need some intel — go scavenge around and bring back whatever looks valuable.",
+        "objectives": [
+            "Turn in Intel Items Found In Raid"
+        ],
+        "corpId": "ark",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 22000
+            },
+            {
+                "type": "experience",
+                "quantity": 1807
+            },
+            {
+                "type": "reputation",
+                "quantity": 10,
+                "corpId": "ark"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-9x19-hpv2",
+                "item_name": "9x19mm Luger CCI"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-mp5a4supwalther",
+                "item_name": "MP5A4 9x19mm sub-machine gun Suppressed Walther edition"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ark_62"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "The Military Camp is north of the Mall. [Intel items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Intel) are commonly found in that area.",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "496lrFHgUAY"
             },
             {
                 "author": "radFoxVR",
                 "ytId": "I5XTDO71-us",
-                "startTs": 1297
-            }
-        ],
-        "order": 35
-    },
-    "ntg_1": {
-        "id": "ntg_1",
-        "name": "Supply Shortage 1",
-        "gameId": "task.doc.1",
-        "description": "Hi there! I'm Maggie, from the international medical organization NTG.\nLooks like a lot of people got stranded on the island after that incident.\nSince you're here, maybe you can help me out. But first, you should know this: Bring any item close to M.I.C.A. to check its details.\nNow, please help me find [3 household items]—we're facing a serious supply shortage.\nTry searching around [Wyeth Farm], [Hyder Town], and the [Motel]. Good luck!\nYou can place items on the conveyor belt to submit them.",
-        "objectives": [
-            "Turn in 3 household items found in raid"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 15000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 10
-            },
-            {
-                "type": "experience",
-                "quantity": 1569
-            },
-            {
-                "type": "item",
-                "item_id": "food_energy_bar",
-                "quantity": 2
-            },
-            {
-                "type": "item",
-                "item_id": "med-syringe-lv1",
-                "quantity": 2
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [],
-        "requiredLevel": 0,
-        "tips": "[Household Items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Household) - very common items.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "kgXpYIQnRkI"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE"
-            }
-        ],
-        "order": 1
-    },
-    "ntg_2": {
-        "id": "ntg_2",
-        "name": "Payback Time",
-        "gameId": "task.doc.2",
-        "description": "Did you notice that guy from Trupiks over there? He's Johnny, a friend of mine. Not much of a talker, especially around strangers.\nWhen I first got here, everything was chaotic and I ended up leaving the camera Johnny lent me in the [restroom] at [Altibuy Supermarket]. Could you help me get it back? I'd really appreciate it!",
-        "objectives": [
-            "Reach Altibuy Market",
-            "Find the Bathroom in Altibuy Market",
-            "Find Maggie's precious camera",
-            "Turn in Maggie's Precious Camera"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "reach",
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 15000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 10
-            },
-            {
-                "type": "experience",
-                "quantity": 1569
-            },
-            {
-                "type": "item",
-                "item_id": "med-bandage-lv1",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "med-limb-restorer-lv1",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "med-syringe-lv1",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ntg_1"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "hrAmrlMzugo"
-            },
-            {
-                "author": "orbb",
-                "ytId": "CAxLmaHZ8Qs"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 43
-            }
-        ],
-        "order": 2
-    },
-    "ntg_3": {
-        "id": "ntg_3",
-        "name": "Health Basics",
-        "gameId": "task.doc.3",
-        "description": "Thank you! I bet that last exploration must've been tiring.\nBy the way, just in case you didn’t know—bandages on the shelves can stop bleeding. That iron-shaped device is a limb fixer—it'll patch up damaged body parts. And if that’s too much trouble, the nearby medical station can fully heal you.\nAlso, one more thing—I'm having some trouble with my [energy-saving lamp]. Could you help me find a replacement?",
-        "objectives": [
-            "Turn in energy-saving lamp"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 15000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 10
-            },
-            {
-                "type": "experience",
-                "quantity": 1569
-            },
-            {
-                "type": "item",
-                "item_id": "med-syringe-lv2",
-                "quantity": 2
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ntg_2"
-        ],
-        "requiredLevel": 0,
-        "tips": "[Energy-saving lamp](https://www.exfil-zone-assistant.app/items/misc_b_lightbulb)",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "CF7suUFj6Qo"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 75
-            }
-        ],
-        "order": 3
-    },
-    "ntg_4": {
-        "id": "ntg_4",
-        "name": "A Friendly Visit",
-        "gameId": "task.doc.4",
-        "description": "I'm missing a few specific medicine samples for one of my treatment studies. With how things are on the island, I've lost contact with NTG and can't get a new shipment.\nLuckily, I once met a resourceful trader during my work—he might know a way. He lives in that standalone [villa] southeast of the mall and supermarket.\nCould you pay him a visit and see if he's okay? And while you're there, [check if the supply station] east of the villa is still intact.",
-        "objectives": [
-            "Reach the Villa",
-            "Reach the Supply station"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "reach"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 15000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 20
-            },
-            {
-                "type": "experience",
-                "quantity": 1569
-            },
-            {
-                "type": "item",
-                "item_id": "food_chocolate",
-                "quantity": 2
-            },
-            {
-                "type": "item",
-                "item_id": "med-bandage-lv2",
-                "quantity": 2
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ntg_3"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "snbgxh_NnP4"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 86
-            }
-        ],
-        "order": 4
-    },
-    "ntg_5": {
-        "id": "ntg_5",
-        "name": "Reconnect",
-        "gameId": "task.doc.5",
-        "description": "He's not there? I can only hope he's safe.\r\nMaybe it's time to try what Johnny suggested—find a way to communicate or investigate further.\r\nCan you head to the [resort area] in the north, and look for a [radio] inside the [locked room] on the [2F of the hospital's west wing]?\r\nCheck your mail for the [key].",
-        "objectives": [
-            "Reach the west of White Sails Hospital",
-            "Reach the Hospital secret room",
-            "Find Maggie's Radio",
-            "Turn in Maggie's Radio"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "reach",
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 10000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 20
-            },
-            {
-                "type": "experience",
-                "quantity": 1569
-            },
-            {
-                "type": "item",
-                "item_id": "food_mineral_water",
-                "quantity": 2
-            },
-            {
-                "type": "item",
-                "item_id": "med-limb-restorer-lv2",
-                "quantity": 2
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "key_hospitalf2",
-                "quantity": 2
-            }
-        ],
-        "requiredTasks": [
-            "ntg_1"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "8LP5GEnEPzE"
-            },
-            {
-                "author": "orbb",
-                "ytId": "0g5dymVNIgo"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 109
-            }
-        ],
-        "order": 5
-    },
-    "ntg_6": {
-        "id": "ntg_6",
-        "name": "Supply Shortage 2",
-        "gameId": "task.doc.6",
-        "description": "Sorry to trouble you again, but my supplies are running low. There should still be useful resources around the island. Could you gather some medical supplies and general items for me?\nAnywhere is fine—just don't let others get to them first!",
-        "objectives": [
-            "Turn in 4 Medical Supplies found in raid"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 15000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 30
-            },
-            {
-                "type": "experience",
-                "quantity": 2176
-            },
-            {
-                "type": "item",
-                "item_id": "med-syringe-lv3",
-                "quantity": 2
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ntg_4",
-            "ntg_5"
-        ],
-        "requiredLevel": 0,
-        "tips": "[Medical Supplies](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Medicine) - common, very easy to obtain in Resort Hospital",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "sYRda20fV60"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 158
-            }
-        ],
-        "order": 6
-    },
-    "ntg_7": {
-        "id": "ntg_7",
-        "name": "Info for Aid",
-        "gameId": "task.doc.7",
-        "description": "Thanks to the radio you recovered, I got in touch with the hospital director in the Resort Area. I've promised to help him, and in return, he'll share some info useful.\r\nPlease [deliver this X-NAX medicine] to the [Modern Apartment]'s front desk in the [Resort Area] and bring back the [data USB] there.\r\nIf you lose the task item, please come back to me to repurchase it.",
-        "objectives": [
-            "Reach the Modern apartment",
-            "Place X-NAX on the modern apartment frontdesk",
-            "Find Maggie's USB",
-            "Turn in Maggie's USB"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "reach",
-            "place",
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 20000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 10
-            },
-            {
-                "type": "experience",
-                "quantity": 5518
-            },
-            {
-                "type": "item",
-                "item_id": "med-syringe-lv4",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "med-bandage-lv1",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "taskitem_placement_maggie_medicine",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [
-            "ntg_6"
-        ],
-        "requiredLevel": 0,
-        "tips": "Drop the [X-NAX](https://www.exfil-zone-assistant.app/items/taskitem_placement_maggie_medicine) in the box at the Modern Apartment reception. [Pink USB](https://www.exfil-zone-assistant.app/items/taskitem_placement_maggie_usb) is there too. ",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "va7YysdhN-0"
-            },
-            {
-                "author": "orbb",
-                "ytId": "bFUfOW56zp0"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 185
-            }
-        ],
-        "order": 7
-    },
-    "ntg_8": {
-        "id": "ntg_8",
-        "name": "Remedy from the East",
-        "gameId": "task.doc.9",
-        "description": "The director mentioned that tourists here come from all over the world, and some exotic medicines often find their way here.\r\nHe heard there's a recipe from the East in [Room 202] of the [Victoria Golden Hotel].\r\nPlease go there and [take 2 photos] of the [medicine recipe].",
-        "objectives": [
-            "Reach victoria golden hotel room 202",
-            "Take photo of the first medicine recipe",
-            "Take photo of the second medicine recipe"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "reach",
-            "photo"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 20000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 10
-            },
-            {
-                "type": "experience",
-                "quantity": 5518
-            },
-            {
-                "type": "item",
-                "item_id": "food_meat_can_l",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "med-syringe-lv3",
-                "quantity": 2
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "taskitem_photophone",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [
-            "ntg_7"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "gcoiROpKycY"
-            },
-            {
-                "author": "orbb",
-                "ytId": "mxXxaHsasKw"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 215
-            }
-        ],
-        "order": 8
-    },
-    "ntg_9": {
-        "id": "ntg_9",
-        "name": "Exotic Remedy",
-        "gameId": "task.doc.10",
-        "description": "I studied the recipe—it's not too hard to recreate, but I'm missing the tools and some ingredients.\nI heard Eastern medicine often uses plant-based extracts.\nPlease find and bring me: [Aspirin], [Asthma medicine], [Bottled glucose], and some [Exotic Herbs].\nYou'll likely find the herbs in White Sail general Hospital.",
-        "objectives": [
-            "Find Maggie's herb",
-            "Turn in Maggie's herb",
-            "Turn in 1 asthma med",
-            "Turn in 1 aspirin box",
-            "Turn in 1 bottle of glucose"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 20000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 10
-            },
-            {
-                "type": "experience",
-                "quantity": 6403
-            },
-            {
-                "type": "item",
-                "item_id": "food_soda_drink",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "food_meat_can",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "med-stimul-p4",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ntg_8"
-        ],
-        "requiredLevel": 0,
-        "tips": "[Medical Items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Medicine) -",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "whIfBej-7Kw"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 237
-            }
-        ],
-        "order": 9
-    },
-    "ntg_10": {
-        "id": "ntg_10",
-        "name": "Clear the way",
-        "gameId": "task.doc.11",
-        "description": "Turns out that powerful Eastern remedy was… a laxative!\r\nSorry, I need to stay and look after poor Johnny.\r\nCould you check on the safety extractions in the [Resort Area] for me?\r\nI want to make sure the hospital director can get out safely.",
-        "objectives": [
-            "Extract from Broadsea Blvd East Tunnel",
-            "Extract from North Beach"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "extract"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 20000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 30
-            },
-            {
-                "type": "experience",
-                "quantity": 6403
-            },
-            {
-                "type": "item",
-                "item_id": "med-stimul-morphine",
-                "quantity": 2
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ntg_9"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "gpLeZPpMR4g"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 265
-            }
-        ],
-        "order": 10
-    },
-    "ntg_11": {
-        "id": "ntg_11",
-        "name": "Signal boost",
-        "gameId": "task.doc.12",
-        "description": "There's an old memorial lighthouse on the west side of the Resort Area. It's been inactive for years, but the signal there should be strong.\nI've arranged for a radio to be placed there.\nPlease find [2 watchtowers] near the [ice cream shop].\nEach one should have a [signal enhancer]—take them and install both [on the radio] at the [top of the lighthouse].\nOnce you're done, [extract near the lighthouse].",
-        "objectives": [
-            "Find the 2 signal enhancers",
-            "Reach the Watchtower south of the Seafoam scoops",
-            "Reach the Watchtower north of the Seafoam scoops",
-            "Place on top of the lighthouse"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "reach",
-            "retrieve",
-            "place"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 20000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 40
-            },
-            {
-                "type": "experience",
-                "quantity": 6403
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ntg_10"
-        ],
-        "requiredLevel": 0,
-        "tips": "Two Watchtowers are located north and south of Seafoam Scoops (cafeteria near the bank) [Signal enhancers](https://www.exfil-zone-assistant.app/items/taskitem_placement_signalenhancer) are found in both towers. Grab and place both on top of the lighthouse",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "0JbBI3nsmy4"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 295
-            }
-        ],
-        "order": 11
-    },
-    "ntg_12": {
-        "id": "ntg_12",
-        "name": "Where did the ambulances go?",
-        "gameId": "task.doc.8",
-        "description": "The Resort Area is in chaos. The hospital director also asked us to look for missing ambulances.\nUse the tracker to [mark 3 ambulances] in the [Resort Area].\nWe might find some extra supplies along the way.",
-        "objectives": [
-            "Mark 3 Ambulances"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "mark"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 20000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 10
-            },
-            {
-                "type": "experience",
-                "quantity": 5518
-            },
-            {
-                "type": "item",
-                "item_id": "food_sausage",
-                "quantity": 2
-            },
-            {
-                "type": "item",
-                "item_id": "med-syringe-lv3",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "taskitem_tracking_device",
-                "quantity": 3
-            }
-        ],
-        "requiredTasks": [
-            "ntg_11"
-        ],
-        "requiredLevel": 0,
-        "tips": "There are more ambulances in the area. Mostly between Bank and Hospital. Mark any 3",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "rYCRQ7X8HnQ"
-            },
-            {
-                "author": "orbb",
-                "ytId": "NIGkh-lpDKw"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 335
-            }
-        ],
-        "order": 12
-    },
-    "ntg_13": {
-        "id": "ntg_13",
-        "name": "Coffee Break",
-        "gameId": "task.doc.z9",
-        "description": "Oh, it's you. I've been trying to stretch our medical supply a bit longer.\nBy the way… have you seen any [coffee] out there? I could really use some to stay awake during night shifts.\nIt gets especially tough in the dark underground…Ah, forget I said that.\nIf you can find me some, I promise the first cup I brew will be yours!",
-        "objectives": [
-            "Submit 6 coffee drinks"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 20000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 20
-            },
-            {
-                "type": "experience",
-                "quantity": 5518
-            },
-            {
-                "type": "item",
-                "item_id": "backpack_odldos_black",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ntg_12"
-        ],
-        "requiredLevel": 0,
-        "tips": "Not full Coffee Drinks can be submitted too.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "Rc94nXBvY0A"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 367
-            }
-        ],
-        "order": 13
-    },
-    "ntg_14": {
-        "id": "ntg_14",
-        "name": "When it rains, it pours",
-        "gameId": "task.doc.z13",
-        "description": "You're just in time—my workspace has been leaking since yesterday.\nThe drainage pipes are broken, and the high humidity is ruining my supplies.\nJohnny offered to fix it, but he's short on parts.\nCould you find [3 valve pipes] and [3 rolls of insulating tape]?",
-        "objectives": [
-            "Turn in 3 valves",
-            "Turn is 3 insulating tape"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 20000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 10
-            },
-            {
-                "type": "experience",
-                "quantity": 6403
-            },
-            {
-                "type": "item",
-                "item_id": "food_mre",
-                "quantity": 2
-            },
-            {
-                "type": "item",
-                "item_id": "food_water_bottle",
-                "quantity": 2
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ntg_12"
-        ],
-        "requiredLevel": 0,
-        "tips": "[Insulating Tape](https://www.exfil-zone-assistant.app/items/misc_b_insulatingtape), [Valve](https://www.exfil-zone-assistant.app/items/misc_b_pipeline)",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "YZwTzW9wixY"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 356
-            }
-        ],
-        "order": 14
-    },
-    "ntg_15": {
-        "id": "ntg_15",
-        "name": "NTG's Investigation 1",
-        "gameId": "task.doc.13",
-        "description": "Those scavengers are messing with NTG's landing. I managed to contact NTG HQ via radio.\nThey don't fully understand what's happening on the island yet, but they've promised to investigate.\nHQ wants us to check the [locked room] on the [2F of a high-rise office building] north of the motel in the [Suburb area].\nI can't fight—please go check it out for me.",
-        "objectives": [
-            "Reach office building by motel",
-            "Find 2nd floor office lock room",
-            "Extract from suburb area"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "reach",
-            "extract"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 20000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 30
-            },
-            {
-                "type": "experience",
-                "quantity": 64030
-            },
-            {
-                "type": "item",
-                "item_id": "med-bandage-lv3",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ntg_9"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "9iDjGj3v54s"
-            },
-            {
-                "author": "orbb",
-                "ytId": "7zqCwM-Kuec"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 378
-            }
-        ],
-        "order": 15
-    },
-    "ntg_16": {
-        "id": "ntg_16",
-        "name": "Final Message",
-        "gameId": "task.doc.14",
-        "description": "A scholar friend of mine sent a strange message from the [Suburb area].\nPlease go to the [motel], check [room 206], and retrieve [a vial of medicine] mentioned in his note.\nHere's a bag and key—use them to get in.",
-        "objectives": [
-            "Reach the motel",
-            "Find Maggie's poison",
-            "Turn in Maggie's poison"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "reach",
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 20000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 40
-            },
-            {
-                "type": "experience",
-                "quantity": 7928
-            },
-            {
-                "type": "item",
-                "item_id": "med-painkiller-lv3",
-                "quantity": 2
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "key_motel_206",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "backpack_eliteops_green",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [
-            "ntg_15"
-        ],
-        "requiredLevel": 0,
-        "tips": "[Walkie-Talkie](https://www.exfil-zone-assistant.app/items/taskitem_placement_maggie_poison) The Key can be bought from Maggie.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "wO5JwWvgJqE"
-            },
-            {
-                "author": "orbb",
-                "ytId": "5uUVSGVt8pI"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 407
-            }
-        ],
-        "order": 16
-    },
-    "ntg_17": {
-        "id": "ntg_17",
-        "name": "Rest in Deep",
-        "gameId": "task.doc.15",
-        "description": "That same scholar went missing.\r\nHe once mentioned looking for research samples near a farm.\r\nThere's a rumor a body was found in the basement at [Wyeth Farm] in [Suburb area].\r\nPlease check the [cellar], and send me a [photo of the body] so I can confirm the identity.",
-        "objectives": [
-            "Arrive at the Wyeth farmhouse",
-            "Find the Basement",
-            "Find the Missing Scholar",
-            "Take photo of the corpse in Wyeth farm cellar"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "reach",
-            "photo"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 30000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 30
-            },
-            {
-                "type": "experience",
-                "quantity": 7928
-            },
-            {
-                "type": "item",
-                "item_id": "med-stimul-kb22",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "taskitem_photophone",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [
-            "ntg_16"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "TycV0bhFT9o"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 448
-            },
-            {
-                "author": "orbb",
-                "ytId": "-IE9eU_ZIJw"
-            }
-        ],
-        "order": 17
-    },
-    "ntg_18": {
-        "id": "ntg_18",
-        "name": "Private Clinic",
-        "gameId": "task.doc.16",
-        "description": "Hi. HQ is asking for combat-zone medical supplies for analysis.\r\nI once left a [medkit] at Dr. Blue's private clinic in [Palm Hill] in [Suburb area].\r\nIt's tricky to find—it's on the [2F of a detective agency].\r\nPlease retrieve it from the office for me.",
-        "objectives": [
-            "Find private clinic",
-            "Find Maggie's medical bag",
-            "Turn in Maggie's medical bag"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "reach",
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 30000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 30
-            },
-            {
-                "type": "experience",
-                "quantity": 7928
-            },
-            {
-                "type": "item",
-                "item_id": "med-stimul-p4",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ntg_17"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "MssJiMkn_Lg"
-            },
-            {
-                "author": "orbb",
-                "ytId": "F5OLdAL41Rw"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 472
-            }
-        ],
-        "order": 18
-    },
-    "ntg_19": {
-        "id": "ntg_19",
-        "name": "NTG's Investigation 2",
-        "gameId": "task.doc.17",
-        "description": "NTG wants me to investigate the [dock] in the northeast [Dam area].\nJohnny also asked me to keep an eye out for any [Trupiks trucks].\nPlease take the MS2000 tracker and [tag a few containers marked with Trupiks] at the dock. Good luck!",
-        "objectives": [
-            "Mark 3 TRUPIK's trucks with marker device"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "mark"
-        ],
-        "map": [
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 30000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 30
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "item",
-                "item_id": "med-syringe-lv4",
-                "quantity": 2
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "taskitem_tracking_device",
-                "quantity": 3
-            }
-        ],
-        "requiredTasks": [
-            "ntg_18"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "HFBozzxJox0"
-            },
-            {
-                "author": "orbb",
-                "ytId": "n3ycwwPxpDc"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 488
-            }
-        ],
-        "order": 19
-    },
-    "ntg_20": {
-        "id": "ntg_20",
-        "name": "Gear Upgrade",
-        "gameId": "task.doc.18",
-        "description": "NTG's investigation is going slow, and we're running out of supplies.\nIf you can find me [2 police radios] and [2 civilian radios], Johnny can upgrade our old radio station.\nThat'll give me a chance to run my own investigation.",
-        "objectives": [
-            "Turn in 2 Radio scanner",
-            "Turn in 2 Civil Radio"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 30000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 30
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "item",
-                "item_id": "med-bandage-lv3",
-                "quantity": 3
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ntg_19"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "sGVcTvkbdBE"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 515
-            }
-        ],
-        "order": 20
-    },
-    "ntg_21": {
-        "id": "ntg_21",
-        "name": "Medical Delivery",
-        "gameId": "task.doc.19",
-        "description": "Some lone scavengers contacted me asking for meds.\nI don't feel safe delivering them myself, but maybe you can help.\n[Please drop the medicine into the marked boxes] at these spots:\nThe [Italian Restaurant] at the -1F of [Modern apartment] in the [Resort Area],\nThe [tower crane] on the unfinished building rooftop in [Dam area],\nThe [lone cabin] on the [Dam's west side].\nIf you lose the task item, please come back to me to repurchase it.",
-        "objectives": [
-            "Place \"X-NAX\" in lone cabin on Dam",
-            "Place \"X-NAX\" on unfinished rooftop on Dam",
-            "Place \"X-NAX\" in italian restaurant on Suburb"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "place"
-        ],
-        "map": [
-            "resort",
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 30000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 30
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "item",
-                "item_id": "food_meat_can",
-                "quantity": 2
-            },
-            {
-                "type": "item",
-                "item_id": "med-syringe-lv4",
-                "quantity": 2
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "taskitem_placement_maggie_medicine",
-                "quantity": 3
-            }
-        ],
-        "requiredTasks": [
-            "ntg_20"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "DxFAA63QYkQ"
-            },
-            {
-                "author": "orbb",
-                "ytId": "3W2xFtE2G8w"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 528
-            }
-        ],
-        "order": 21
-    },
-    "ntg_22": {
-        "id": "ntg_22",
-        "name": "Keys To Safety 1",
-        "gameId": "task.doc.z19",
-        "description": "There are still some locked rooms in the city center of the [Resort Area]—could be supplies inside.\nPlease find and bring me these two: [House Key 1] and [Supermarket Storage Key]. Thanks!",
-        "objectives": [
-            "Turn in Found In Hospital 2F key",
-            "Turn in hotel 208 Key"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 10
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "item",
-                "item_id": "key_tunnel",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ntg_21"
-        ],
-        "requiredLevel": 0,
-        "tips": "Can be bought from Maggie. Used Keys can be submitted.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "yR16uPS2LDA"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 561
-            }
-        ],
-        "order": 22
-    },
-    "ntg_23": {
-        "id": "ntg_23",
-        "name": "Keys To Safety 2",
-        "gameId": "task.doc.z20",
-        "description": "I need to relocate some medical supplies to a safer location.\r\nTo do that, I need the [keys] to [Motel Room 201 and Room 206].\r\nIf you come across them during your operations, please bring them back.",
-        "objectives": [
-            "Turn in motel 206 Key",
-            "Turn in motel 201 Key"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 20
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "item",
-                "item_id": "key_beartown_h1",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ntg_22"
-        ],
-        "requiredLevel": 0,
-        "tips": "Can be bought from Maggie. Used Keys can be submitted.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "TIo5Kt3dpG0"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 577
-            }
-        ],
-        "order": 23
-    },
-    "ntg_24": {
-        "id": "ntg_24",
-        "name": "Key To Safety 3",
-        "gameId": "task.doc.z21",
-        "description": "Thanks again! Now I can secure the stash points near the suburb area.\nBut there are two more areas I need to secure in the northern [Dam area:\nthe [East Intake tower] and [West Intake tower].\nPlease locate the keys to these two hidden rooms.\nIt may take a while, but I'll be waiting for your good news.",
-        "objectives": [
-            "Turn in East Dam Inlet Key",
-            "Turn in West Dam Inlet Key"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 10
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "item",
-                "item_id": "key_dockhouse",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ntg_23"
-        ],
-        "requiredLevel": 0,
-        "tips": "Used Keys can be submitted.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "ssYtVOQ7PBE"
-            },
-            {
-                "author": "orbb",
-                "ytId": "2df8BKPx6rw"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 592
-            }
-        ],
-        "order": 24
-    },
-    "ntg_25": {
-        "id": "ntg_25",
-        "name": "NTG's Investigation 3",
-        "gameId": "task.doc.20",
-        "description": "Johnny mentioned an abandoned church near [Clifton], in the [Dam area].\nI think it's perfect as a temporary medical outpost and investigation base.\nPlease head over there and [mark the 2 windmills] beside the church—we'll send the coordinates to NTG.",
-        "objectives": [
-            "Mark the Windmill #1 in Clifton",
-            "Mark the Windmill #2 in Clifton"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "mark"
-        ],
-        "map": [
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 30
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "item",
-                "item_id": "med-bandage-lv3",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "med-syringe-lv4",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ntg_20"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "1qDfjl-uxJk"
-            },
-            {
-                "author": "orbb",
-                "ytId": "LLb0-C95KHw"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 613
-            }
-        ],
-        "order": 25
-    },
-    "ntg_26": {
-        "id": "ntg_26",
-        "name": "Shadows of the truth 1",
-        "gameId": "task.doc.21",
-        "description": "I picked up some chatter from NTG through the upgraded radio. They've been hiding investigation progress from me.\nApparently, a staff member once gathered bio-samples in the [Dam area], and left behind [2 medical reports].\nThey might contain clues about the incident.\nPlease search these spots: [East Intake Tower by the Dam] and [Factory Area, Zone C].",
-        "objectives": [
-            "Reach the East Inlet towers",
-            "Reach Factory C zone",
-            "Find 2 NTG medical reports",
-            "Turn in 2 NTG medical reports"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "reach",
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 30
-            },
-            {
-                "type": "experience",
-                "quantity": 15403
-            },
-            {
-                "type": "item",
-                "item_id": "backpack_eliteops_green",
-                "quantity": 3
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ntg_25"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "3wZG-MkTN6I"
-            },
-            {
-                "author": "orbb",
-                "ytId": "M3-BtDmPK78"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 640
-            }
-        ],
-        "order": 26
-    },
-    "ntg_27": {
-        "id": "ntg_27",
-        "name": "Bearing Burdens",
-        "gameId": "task.doc.22",
-        "description": "The upgraded radio is very powerful, but to ensure that I don't miss any useful information, I have to keep it on at all times, so the power consumption has become a problem.\nI'm sorry to ask, but could you please find me [3 storage batteries]? That way, even at night, I won't miss any crucial contact information. By the way, those batteries are quite large, so remember to bring a bigger backpack.",
-        "objectives": [
-            "Turn in 3 Vehicle Battery"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 30
-            },
-            {
-                "type": "experience",
-                "quantity": 15403
-            },
-            {
-                "type": "item",
-                "item_id": "med-stimul-kb22",
-                "quantity": 3
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ntg_26"
-        ],
-        "requiredLevel": 0,
-        "tips": "[Car Battery](https://www.exfil-zone-assistant.app/items/misc_b_storagebattery)",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "v7uaFGSo3cI"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 666
-            }
-        ],
-        "order": 27
-    },
-    "ntg_28": {
-        "id": "ntg_28",
-        "name": "Path to Escape 1",
-        "gameId": "task.doc.23",
-        "description": "I think I know what NTG is planning—resource monopoly, medical control, all of it.\nBut I'm not interested. I just want to leave this place.\nTo do that, I need to map out some exit routes.\nPlease scout the [Northern Dock] and [Broken Bridge Coastline] in the Dam area, and try returning safely—just to make sure they're viable.",
-        "objectives": [
-            "Successfully extract from the Northern Dock",
-            "Successfully extract from the coast under the broken bridge"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "extract"
-        ],
-        "map": [
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 30
-            },
-            {
-                "type": "experience",
-                "quantity": 15403
-            },
-            {
-                "type": "item",
-                "item_id": "med-syringe-lv4",
-                "quantity": 3
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "ntg_27"
-        ],
-        "requiredLevel": 0,
-        "tips": "Located north on dam in valley between both broken bridges, north of dock office at the end of pier",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "LWNXOmN82Ww"
-            },
-            {
-                "author": "orbb",
-                "ytId": "0AkItVBOwi0"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 677
-            }
-        ],
-        "order": 28
-    },
-    "ntg_29": {
-        "id": "ntg_29",
-        "name": "Shrouded in Shadows",
-        "gameId": "task.doc.28",
-        "description": "Everything—you, NTG's delays—it was all part of my plan.\nI've been the one sabotaging their landing.\nNow that I've nearly mapped out the metro facility, it's only a matter of time before I take full control.\nGo to the [Medical Base] and retrieve my [Medical Kit]—it contains evidence that could expose me.\nThen, mark the [4 body bags] inside.\nI want NTG to know loud and clear:\nThey have no place here anymore.",
-        "objectives": [
-            "Mark all 4 body bags",
-            "Find Maggie's medical bag",
-            "Turn in Maggie's medical bag"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "mark",
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "metro"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 50
-            },
-            {
-                "type": "experience",
-                "quantity": 25672
-            },
-            {
-                "type": "item",
-                "item_id": "backpack_gnjbackpack",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "med-stimul-hc",
-                "quantity": 2
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "key_metro_entry_ticket",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [
-            "ntg_28",
-            "regiment_35"
-        ],
-        "requiredLevel": 0,
-        "tips": "Bodies and medical bag are on the lowest level. ",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "jzX3dSns-Tg"
-            },
-            {
-                "author": "orbb",
-                "ytId": "zhZlEVICwsU"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 712
+                "startTs": 64
             }
         ],
         "order": 29
     },
-    "ntg_30": {
-        "id": "ntg_30",
-        "name": "Return to the dark",
-        "gameId": "task.doc.24",
-        "description": "You've been to the [Metro area], right? I used to work down there… It’s familiar, but also changed.\nCan you help me check if things are still the same?\nTake photos of the following, then make it back safely:\n[Metro Control Panel] in the Control Room.\n[Green Plants] in the Medical base center.\n[Bulletin Board] in the Inspection Room under the conference room.",
+    "ark_63": {
+        "id": "ark_63",
+        "name": "Prove Yourself",
+        "gameId": "task.na.c.04",
+        "description": "You're ready. There's a critical ARK document hidden at the front desk of the dock office at the dam. Find it and bring it back — do that, and I'll get you the fuel to power up the base.",
         "objectives": [
-            "Take photo of control room",
-            "Take photo of plants in medical base",
-            "Take photo of bulletin board in the inspection room"
+            "Find Ark's disk",
+            "Turn in ARK Floppydisk"
         ],
-        "corpId": "ntg",
+        "corpId": "ark",
         "type": [
-            "photo"
+            "retrieve",
+            "submit"
         ],
         "map": [
-            "metro"
+            "dam"
         ],
         "reward": [
             {
@@ -4288,1898 +2356,119 @@ export const tasksData: TasksDatabase = {
                 "quantity": 35000
             },
             {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 30
-            },
-            {
                 "type": "experience",
-                "quantity": 15403
+                "quantity": 1807
+            },
+            {
+                "type": "reputation",
+                "quantity": 10,
+                "corpId": "ark"
             },
             {
                 "type": "item",
-                "item_id": "med-limb-restorer-lv3",
-                "quantity": 2
+                "quantity": 4,
+                "item_id": "ammo-556x45-fmj",
+                "item_name": "5.56x45mm FMJ"
             },
             {
                 "type": "item",
-                "item_id": "med-stimul-p4",
-                "quantity": 2
+                "quantity": 2,
+                "item_id": "gds.consumption.all.hqfuel.xl"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-m4a1cqb",
+                "item_name": "M4A1 5.56x45mm carbine rifle CQB edition"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_556x45_30_pmag",
+                "item_name": "AR-15 5.56x45mm 30rnd P-Mag magazine"
             }
         ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "key_metro_entry_ticket",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "taskitem_photophone",
-                "quantity": 1
-            }
-        ],
+        "preReward": [],
         "requiredTasks": [
-            "ntg_28"
+            "ark_3"
         ],
-        "requiredLevel": 0,
-        "tips": "take photo control console in the bomb room, bulletin located in room below conference room, photo of plants in bed base room",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "Fz6gUU2TthE"
-            },
-            {
-                "author": "orbb",
-                "ytId": "5d6THOTrYgA"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 744
-            }
-        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
         "order": 30
     },
-    "ntg_31": {
-        "id": "ntg_31",
-        "name": "Shadows of the truth 2",
-        "gameId": "task.doc.25",
-        "description": "The underground facility has changed more than I expected.\nI need to know what's inside those locked rooms.\nPlease find me the [keys] to [the Armory] and the [Sewer's Room] in the metro area.",
+    "ark_64": {
+        "id": "ark_64",
+        "name": "New Friends",
+        "gameId": "task.na.c.05",
+        "description": "It’s time for some introductions—I've got a lot of history with the folks in the Market, and they’ll be your go-to for supplies from now on. ARK has hidden two tracker prototypes at the suburban supermarket—one in the bathroom and the other on the roof, which you'll need a ladder to reach. Bring them both back to me.",
         "objectives": [
-            "Turn in Armory key",
-            "Turn in Sewer's room key"
+            "Arrive the restroom in Altibuy",
+            "Find the tracker prototype 1",
+            "Find the tracker prototype 2",
+            "Turn in Tracker prototype MS1000"
         ],
-        "corpId": "ntg",
+        "corpId": "ark",
         "type": [
+            "reach",
+            "retrieve",
             "submit"
         ],
         "map": [
-            "metro"
+            "suburb"
         ],
         "reward": [
             {
                 "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 50
+                "quantity": 16000
             },
             {
                 "type": "experience",
-                "quantity": 15403
+                "quantity": 2178
+            },
+            {
+                "type": "reputation",
+                "quantity": 20,
+                "corpId": "ark"
             },
             {
                 "type": "item",
-                "item_id": "key_exitlock_f3_sewer",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
+                "quantity": 2,
+                "item_id": "grenade-m7290-flash",
+                "item_name": "M7290 FlashBanger"
+            },
             {
                 "type": "item",
-                "item_id": "key_metro_entry_ticket",
-                "quantity": 1
+                "quantity": 2,
+                "item_id": "grenade-m18-smoke",
+                "item_name": "M18 SmokeGrenade"
             }
         ],
+        "preReward": [],
         "requiredTasks": [
-            "ntg_30"
+            "ark_63"
         ],
-        "requiredLevel": 0,
-        "tips": "Can be bought from Maggie. Used Keys can be submitted.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "huKB-ierKk4"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 773
-            }
-        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
         "order": 31
     },
-    "ntg_32": {
-        "id": "ntg_32",
-        "name": "Death by deception",
-        "gameId": "task.doc.26",
-        "description": "Maybe you've noticed the bodies in the lower subway levels…\nThey were the NTG research team.\nI did what I had to—kept them from reporting back.\nNow I need you to recover their final [reports] from:\n[Suburb area], a [tent] in B1 Parking Lot of the mall.\n[Dam area], [crashed truck] below the bridge.\n[Metro area], bathroom in the medical Base.",
+    "ark_65": {
+        "id": "ark_65",
+        "name": "Truck Marking",
+        "gameId": "task.na.c.06",
+        "description": "ARK supply trucks have been showing up in the outskirts lately. Mark three of them for me — I need to map out their transport routes. Take the M16, I'm throwing in a rail mount too — slap a scope on it and you're good to go.",
         "objectives": [
-            "Find NTG Medical Reports at Suburb Mall -1F",
-            "Find NTG Medical Reports at Dam Accident Truck",
-            "Find NTG Medical Reports at Metro bathroom in the medical Base",
-            "Turn in 3 medical reports"
+            "Mark ARK Truck"
         ],
-        "corpId": "ntg",
+        "corpId": "ark",
         "type": [
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "dam",
-            "suburb",
-            "metro"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 40
-            },
-            {
-                "type": "experience",
-                "quantity": 15403
-            },
-            {
-                "type": "item",
-                "item_id": "key_factory_b",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "med-stimul-adrenaline",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "key_metro_entry_ticket",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [
-            "ntg_31"
-        ],
-        "requiredLevel": 0,
-        "tips": "1st, lower part of dam in the back of crashed semi; 2nd, suburb in mall parking -1F east of escalators in military tent on shelf,3rd metro basement level, in bathroom located at end of hallway by med base(circle), enter bathroom, first sink left",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "-jfetgVDXO0"
-            },
-            {
-                "author": "orbb",
-                "ytId": "g-j_4tw4zrw"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 788
-            }
-        ],
-        "order": 32
-    },
-    "ntg_33": {
-        "id": "ntg_33",
-        "name": "Path to Escape 2",
-        "gameId": "task.doc.27",
-        "description": "NTG just reached out again. Seems the team's disappearance finally got their attention.\nWe need to move fast.\nJust like before, find the [easternmost] and [westernmost] exits in the Subway system, and make sure they're safe.\nThen, take this [poison] and place it in the [sink] inside the [Surgery Room] at the deepest level of the [Medical Base].\nIf you lose the task item, please come back to me to repurchase it.",
-        "objectives": [
-            "Successfully extract from the West Railways, & East Metro Exit",
-            "Place Maggie's poison in surgery room sink"
-        ],
-        "corpId": "ntg",
-        "type": [
-            "extract",
-            "place"
-        ],
-        "map": [
-            "metro"
-        ],
-        "reward": [
-            {
-                "type": "reputation",
-                "corpId": "ntg",
-                "quantity": 50
-            },
-            {
-                "type": "experience",
-                "quantity": 15403
-            },
-            {
-                "type": "item",
-                "item_id": "med-stimul-adrenaline",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "med-stimul-hc",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "med-stimul-kb22",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "med-stimul-p4",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "key_metro_entry_ticket",
-                "quantity": 2
-            },
-            {
-                "type": "item",
-                "item_id": "taskitem_placement_maggie_poison",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [
-            "ntg_32"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "lqSnMKtTnzc"
-            },
-            {
-                "author": "orbb",
-                "ytId": "fkx7rWmeADs"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ZOuSedSDlUE",
-                "startTs": 831
-            }
-        ],
-        "order": 33
-    },
-    "trupiks_1": {
-        "id": "trupiks_1",
-        "name": "Secure Support",
-        "gameId": "task.mall.z1",
-        "description": "Hey there. I'm Johnny, former logistics manager for Trupiks. I'm handy with repairs and gear.\nI've noticed you're often out there risking your neck—so I'm building you a special secure safe container. It mounts to your lower back and is built to withstand just about anything you'll face on the battlefield.\nWhile I work on it, I need you to check on the security of 3 spots in the [Suburb area]: [Hyder Town], the [Power Plant] and the [Warehouse east] of the [office building].",
-        "objectives": [
-            "Reach the warehouses",
-            "Reach the power plant",
-            "Reach Hydertown"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "reach"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 30000
-            },
-            {
-                "type": "experience",
-                "quantity": 3311
-            },
-            {
-                "type": "item",
-                "item_name": "Pluto secure container",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [],
-        "requiredLevel": 0,
-        "tips": "Power plant is marked on the map, near the western bunker. Warehouses are just east next to the office building.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "ukhEmupVCc4"
-            },
-            {
-                "author": "orbb",
-                "ytId": "quTZvsysQCQ"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "DIjbTZN_Wxc"
-            }
-        ],
-        "order": 1
-    },
-    "trupiks_2": {
-        "id": "trupiks_2",
-        "name": "Lights On",
-        "gameId": "task.mall.1",
-        "description": "Hope that safe container is serving you well.\nNow, if you're interested—I can also upgrade your hideout. Just check the [Hideout tab] in your terminal, or come find me directly. I can upgrade specific rooms and utilities.\nRight now though… it's pitch black in there. I;m working under emergency lighting.\nHelp me out and find some [flammables]—I'll use them to mix fuel and get the generator running again.",
-        "objectives": [
-            "Turn in combustible items found in raid"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 26000
-            },
-            {
-                "type": "experience",
-                "quantity": 1807
-            },
-            {
-                "type": "item",
-                "item_name": "HQ Power Fuel Can L",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "trupiks_1"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "_JqOIYdaqbY"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "DIjbTZN_Wxc",
-                "startTs": 58
-            }
-        ],
-        "order": 2
-    },
-    "trupiks_3": {
-        "id": "trupiks_3",
-        "name": "The Source of Life",
-        "gameId": "task.mall.2",
-        "description": "[Unlocks Water Collector's upgrades]\nWater has become super valuable these days, but those scavengers messed up our water collection system's pipes.\nI'm in the middle of fixing the pipes, but I'd really appreciate it if you could go [deal with those troublemakers] and show them they can't just mess with our stuff.\nAfter that, the medical area will can be available for upgrade, allowing you to recover health faster in the hideout.",
-        "objectives": [
-            "Eliminate scavengers in the suburb area"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "eliminate"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 26000
-            },
-            {
-                "type": "experience",
-                "quantity": 1807
-            },
-            {
-                "type": "item",
-                "item_name": "45 acp ammo box",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_name": "5.56x54 ammo box",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_name": "9x19 ammo box",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "trupiks_2"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "0Y2tUCDF31s"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "DIjbTZN_Wxc",
-                "startTs": 101
-            }
-        ],
-        "order": 3
-    },
-    "trupiks_4": {
-        "id": "trupiks_4",
-        "name": "Handy Tools",
-        "gameId": "task.mall.3",
-        "description": "[Unlocks Generator's upgrades]\nBy the way, upgrading the the facilities will help you grow. My personal tip is to upgrade the generator first, since having power is the foundation for upgrading other facility.\nIf you need to upgrade the generator, could you help me out by getting my trusty drill back? I remember leaving it behind at the [bakery] in [Hyder Town] when I escaped.",
-        "objectives": [
-            "Find Bearkery",
-            "Find Johnny's drill",
-            "Turn in Johnny's drill"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "reach",
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 20000
-            },
-            {
-                "type": "experience",
-                "quantity": 3311
-            },
-            {
-                "type": "item",
-                "item_name": "12ga ammo box",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_name": "5.45x39 ammo box",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_name": "7.62x39 ammo box",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "trupiks_3"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "qkfv_Cy3Igg"
-            },
-            {
-                "author": "orbb",
-                "ytId": "IWDA_Giw4qo"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "DIjbTZN_Wxc",
-                "startTs": 183
-            }
-        ],
-        "order": 4
-    },
-    "trupiks_5": {
-        "id": "trupiks_5",
-        "name": "Homecoming",
-        "gameId": "task.mall.4",
-        "description": "[Unlocks Lounge/Book Shelf/Sofa's upgrades]\nYou've really done a great job setting this place up; it reminds me of home... Sorry, I guess I'm just missing my family a bit. Maybe you could do me a favor, and I can help you spruce up the lounge area a bit. Having a nice, comfortable space to rest will really help you in battle.\nCould you check out [Hyder Town] for me? My house is the first one at the east entrance of the town. If you could grab my precious [family videotapes], I'd really appreciate it. Looking forward to hearing from you!",
-        "objectives": [
-            "Reach Hyder Town",
-            "Find Johnny's FamilyTapeTurn in Johnny's FamilyTape"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "reach",
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 26000
-            },
-            {
-                "type": "experience",
-                "quantity": 1807
-            },
-            {
-                "type": "item",
-                "item_name": "Collection Box",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "trupiks_4"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "uTpi9FWVOys"
-            },
-            {
-                "author": "orbb",
-                "ytId": "lDhfK8lld7U"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "DIjbTZN_Wxc",
-                "startTs": 206
-            }
-        ],
-        "order": 5
-    },
-    "trupiks_6": {
-        "id": "trupiks_6",
-        "name": "Speaking of Finance",
-        "gameId": "task.mall.5",
-        "description": "[Unlocks Bitcoin Mine's upgrades]\nIf you're looking to secure some steady income, I recommend building and upgrading your [Bitcoin mining rig]. It'll use up some power but will bring you in some money every now and then. The more graphics cards you can get and install in there, the more money your mine can make. Just remember to keep an eye on the [generator's fuel level].\nIf you want to set up the Bitcoin mining rig, could you grab me [5 electronic devices]? I'll get those machines sorted out.",
-        "objectives": [
-            "Turn in 5 electrical items found in raid"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 30000
-            },
-            {
-                "type": "experience",
-                "quantity": 3311
-            },
-            {
-                "type": "item",
-                "item_name": "Medical box",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "trupiks_5"
-        ],
-        "requiredLevel": 0,
-        "tips": "[Electric items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Electric) Recommend PC fan or RAM",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "D4WIZuQI6Oc"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "DIjbTZN_Wxc",
-                "startTs": 226
-            }
-        ],
-        "order": 6
-    },
-    "trupiks_7": {
-        "id": "trupiks_7",
-        "name": "Target Practice",
-        "gameId": "task.mall.6",
-        "description": "[Unlocks Shooting Range's upgrades]\nHi there, I heard from Maggie that you helped her retrieve the radio, and I'm glad to see her research is going smoothly. By the way, while I was rummaging through some old stuff, I found the blueprints for our HQ.\nHere's some good news: I figured out how to unlock the shooting range behind the house. However, I still need a little favor from you. Could you please bring back the [small key] from the [office room] on the [1F of the police station in Hyder town]? I know this is nothing for you! Good luck!",
-        "objectives": [
-            "Reach Hyder Town Police Station",
-            "Find shooting range key",
-            "Turn in shooting range key"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "reach",
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 31000
-            },
-            {
-                "type": "experience",
-                "quantity": 3311
-            },
-            {
-                "type": "item",
-                "item_name": "Mag&attchament box",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "trupiks_2",
-            "ntg_5"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "kPcTaacQHGM"
-            },
-            {
-                "author": "orbb",
-                "ytId": "0c5zNm33Dx0"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "DIjbTZN_Wxc",
-                "startTs": 124
-            }
-        ],
-        "order": 7
-    },
-    "trupiks_8": {
-        "id": "trupiks_8",
-        "name": "Capacity Upgrade 1",
-        "gameId": "task.mall.z2",
-        "description": "How's the safe container working out?\nI've been studying the design, and I can now build a larger version of it. I bet you want that too.\nBut I'm short on one key item—a special [Parts Box]. Head over to the [Auto Repair Shop in the Suburb area] and see if you can find one.",
-        "objectives": [
-            "Reach the \"24hr Car Repair\"",
-            "Find Jonny's safebox",
-            "Turn in Find Jonny's safebox"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "reach",
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 30000
-            },
-            {
-                "type": "experience",
-                "quantity": 3311
-            },
-            {
-                "type": "item",
-                "item_name": "mercury box",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "trupiks_2"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "RduhrpnzmFA"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "DIjbTZN_Wxc",
-                "startTs": 151
-            }
-        ],
-        "order": 8
-    },
-    "trupiks_9": {
-        "id": "trupiks_9",
-        "name": "Canal Run",
-        "gameId": "task.mall.z3",
-        "description": "Got a strange one for you.\nSomeone told me they spotted some of my missing cargo near the [canal bridges west of Trupiks].\nProblem is… I don't know which bridge they meant.\nI need you to go check all [three canal bridges] and see what you can find.",
-        "objectives": [
-            "Reach the canal bridge 1",
-            "Reach the canal bridge 2",
-            "Reach the canal bridge 3"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "reach"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 10000
-            },
-            {
-                "type": "experience",
-                "quantity": 3311
-            },
-            {
-                "type": "item",
-                "item_name": "HQ Power Fuel Can L",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "trupiks_8",
-            "ark_16"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "A1wWvu-8XCw"
-            },
-            {
-                "author": "orbb",
-                "ytId": "_gVFJBMxPr8"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "DIjbTZN_Wxc",
-                "startTs": 241
-            }
-        ],
-        "order": 9
-    },
-    "trupiks_10": {
-        "id": "trupiks_10",
-        "name": "Capacity Upgrade 2",
-        "gameId": "task.mall.z4",
-        "description": "I need another [Parts Box]—try your luck in the [Resort Area]. Look around at the [worker's dorm], check the [Laundry room] and bring that box back if you find it.\nIf we get it, I'll get started on building a third-tier safe container.",
-        "objectives": [
-            "Find Johnny's safebox",
-            "Turn in Johnny's safebox"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 30000
-            },
-            {
-                "type": "experience",
-                "quantity": 3311
-            },
-            {
-                "type": "item",
-                "item_name": "Venus Container",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "trupiks_9"
-        ],
-        "requiredLevel": 0,
-        "tips": "Located at the Workers Dormitory. At the laundry mat.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "_74hXHJgw0w"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "DIjbTZN_Wxc",
-                "startTs": 292
-            }
-        ],
-        "order": 10
-    },
-    "trupiks_11": {
-        "id": "trupiks_11",
-        "name": "Salvage Mission 1",
-        "gameId": "task.mall.z5",
-        "description": "I'm trying to recover rare components from a specific model of TV—the same one I used to have back home.\nI've scavenged most of them already, except the [northeast side of the Suburb area].\nHead up there and [photograph any TVs] you find in those northern houses.\nI'll handle the recovery once I see what's left.",
-        "objectives": [
-            "Take Picture of Tv #1, #2, & #3 in yellow house",
-            "take picture of Tv #4 & #5 in red house"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "photo"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 10000
-            },
-            {
-                "type": "experience",
-                "quantity": 3311
-            },
-            {
-                "type": "item",
-                "item_name": "medical box",
-                "quantity": 3
-            },
-            {
-                "type": "item",
-                "item_id": "holster_magm",
-                "quantity": 2
-            },
-            {
-                "type": "item",
-                "item_id": "holster_mags",
-                "quantity": 2
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "taskitem_photophone",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [
-            "trupiks_10"
-        ],
-        "requiredLevel": 0,
-        "tips": "Take Picture of Tv #1, #2, & #3 located in yellow houses on hill by military base; take picture of Tv #4 & #5 in houses behind yellow houses close to bunker extract ",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "gN2Z4hS-XrI"
-            },
-            {
-                "author": "orbb",
-                "ytId": "DrK25Bnw38g"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "DIjbTZN_Wxc",
-                "startTs": 317
-            }
-        ],
-        "order": 11
-    },
-    "trupiks_12": {
-        "id": "trupiks_12",
-        "name": "One Last Mile",
-        "gameId": "task.mall.z6",
-        "description": "We've been having issues with security along our logistics routes.\r\nI need to deploy a comms relay setup to make sure messages get through without a hitch.\r\nHead to the [garbage station on the east of Whitesail hospital], and collect [3 walkie-talkies] from its back alley.\r\nThen go to the [skate park], locate [3 stashing cardboard boxes], and plant the walkies there.",
-        "objectives": [
-            "Find Johnny's 3 Walkie-Talkies",
-            "Place in Skate park"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "retrieve",
-            "place"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 10000
-            },
-            {
-                "type": "experience",
-                "quantity": 3311
-            },
-            {
-                "type": "item",
-                "item_name": "Mag&attchament box",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "holster_magm",
-                "quantity": 3
-            },
-            {
-                "type": "item",
-                "item_id": "holster_mags",
-                "quantity": 3
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "trupiks_11"
-        ],
-        "requiredLevel": 0,
-        "tips": "[Walkie-Talkie](https://www.exfil-zone-assistant.app/items/taskitem_placement_johnny_walkietalkie)",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "0iiqLGdw9Ao"
-            },
-            {
-                "author": "orbb",
-                "ytId": "kAvBXhqCx6c"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "DIjbTZN_Wxc",
-                "startTs": 360
-            }
-        ],
-        "order": 12
-    },
-    "trupiks_13": {
-        "id": "trupiks_13",
-        "name": "Salvage Mission 2",
-        "gameId": "task.mall.z7",
-        "description": "Word is, the [Dam Area] still shows traces of past military activity.\nI want you to survey [3 old military camps] out there and use this [tracker] to tag [two tanks] for me.\nI'll go in afterward to recover anything salvageable.",
-        "objectives": [
-            "Find the military camp next to dam",
-            "Find second military camp next to dam",
-            "Find 3rd military camp next to broken bridge",
-            "Mark all 3 tanks next to military camps"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "reach",
             "mark"
         ],
         "map": [
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 30000
-            },
-            {
-                "type": "experience",
-                "quantity": 3311
-            },
-            {
-                "type": "item",
-                "item_name": "Titan Container",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "taskitem_tracking_device",
-                "quantity": 3
-            }
-        ],
-        "requiredTasks": [
-            "trupiks_12"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "3zrXByCWKDo"
-            },
-            {
-                "author": "orbb",
-                "ytId": "JFgC9jfom3g"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "DIjbTZN_Wxc",
-                "startTs": 387
-            }
-        ],
-        "order": 13
-    },
-    "trupiks_14": {
-        "id": "trupiks_14",
-        "name": "Like Finds Like 1",
-        "gameId": "task.mall.z8",
-        "description": "Repairs and production eat up resources fast.\nI'm stocking up on supplies—and the first category is [household items].\nHere's a list. See what you can find.",
-        "objectives": [
-            "Turn in 5 Cleanser",
-            "Turn in 5 Cleaner",
-            "Turn in 5 Deodorant",
-            "Turn in 5 Pesticide",
-            "Turn in 5 Toilet Paper",
-            "Turn in 5 Soap",
-            "Turn in 5 Beard Oil",
-            "Turn in 5 Toothpaste"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 30000
-            },
-            {
-                "type": "experience",
-                "quantity": 3311
-            },
-            {
-                "type": "item",
-                "item_id": "holster_magd",
-                "quantity": 2
-            },
-            {
-                "type": "item",
-                "item_id": "holster_magm",
-                "quantity": 2
-            },
-            {
-                "type": "item",
-                "item_id": "holster_mags",
-                "quantity": 2
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "trupiks_13"
-        ],
-        "requiredLevel": 50,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "fgCLXTHMsy4"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "DIjbTZN_Wxc",
-                "startTs": 425
-            }
-        ],
-        "order": 14
-    },
-    "trupiks_15": {
-        "id": "trupiks_15",
-        "name": "Like Finds Like 2",
-        "gameId": "task.mall.z9",
-        "description": "Thanks for the last delivery. Since you're already helping, let's keep going.\nThis time I'm looking for [specific tools].\nYou'll need to collect the ones listed here exactly—no substitutes. Much appreciated.",
-        "objectives": [
-            "Turn in 5 Screwdriver",
-            "Turn in 5 Wrench",
-            "Turn in 5 Hammer",
-            "Turn in 5 Measuring Tape",
-            "Turn in 5 Wire Cutter",
-            "Turn in 5 Small Wrench",
-            "Turn in 5 Spark Plug",
-            "Turn in 5 Electric Drill"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 30000
-            },
-            {
-                "type": "experience",
-                "quantity": 3311
-            },
-            {
-                "type": "item",
-                "item_id": "holster_magd",
-                "quantity": 2
-            },
-            {
-                "type": "item",
-                "item_id": "holster_magm",
-                "quantity": 2
-            },
-            {
-                "type": "item",
-                "item_id": "holster_mags",
-                "quantity": 2
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "trupiks_14"
-        ],
-        "requiredLevel": 50,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "fgCLXTHMsy4",
-                "startTs": 34
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "DIjbTZN_Wxc",
-                "startTs": 450
-            }
-        ],
-        "order": 15
-    },
-    "trupiks_16": {
-        "id": "trupiks_16",
-        "name": "Like Finds Like 3",
-        "gameId": "task.mall.z10",
-        "description": "Next up—[storage media].\nI'm particular about these. I need the right types to ensure data integrity.\nCheck the list and get me what you can.",
-        "objectives": [
-            "Turn in 5 CD",
-            "Turn in 5 Horror Novel",
-            "Turn in 5 Magazine",
-            "Turn in 5 Recorder",
-            "Turn in 5 Computer Manual",
-            "Turn in 5 Antiquarian Book",
-            "Turn in 5 Tape",
-            "Turn in 5 Floppy Disc"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 30000
-            },
-            {
-                "type": "experience",
-                "quantity": 3311
-            },
-            {
-                "type": "item",
-                "item_id": "holster_magd",
-                "quantity": 3
-            },
-            {
-                "type": "item",
-                "item_id": "holster_magm",
-                "quantity": 3
-            },
-            {
-                "type": "item",
-                "item_id": "holster_mags",
-                "quantity": 3
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "trupiks_15"
-        ],
-        "requiredLevel": 50,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "fgCLXTHMsy4",
-                "startTs": 43
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "DIjbTZN_Wxc",
-                "startTs": 465
-            }
-        ],
-        "order": 16
-    },
-    "trupiks_17": {
-        "id": "trupiks_17",
-        "name": "Like Finds Like 4",
-        "gameId": "task.mall.z11",
-        "description": "You've gotten me this far—thank you.\nThis is the final set of supplies I need: [energy-based items].\nThese are vital to keeping our systems running smoothly. As always, here's the list. I appreciate your help.",
-        "objectives": [
-            "Turn in 5 Oil Can",
-            "Turn in 5 Gunpowder",
-            "Turn in 5 Gas Can",
-            "Turn in 5 Gun Oil",
-            "Turn in 5 Large Gas Can",
-            "Turn in 5 WD40",
-            "Turn in 5 Smokeless Powder",
-            "Turn in 5 Olive Oil"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 30000
-            },
-            {
-                "type": "experience",
-                "quantity": 3311
-            },
-            {
-                "type": "item",
-                "item_name": "Neptune container",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "trupiks_16"
-        ],
-        "requiredLevel": 50,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "fgCLXTHMsy4",
-                "startTs": 55
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "DIjbTZN_Wxc",
-                "startTs": 480
-            }
-        ],
-        "order": 17
-    },
-    "trupiks_18": {
-        "id": "trupiks_18",
-        "name": "Signal Location: Suburbs",
-        "gameId": "task.july.p1",
-        "description": "Wanna try out the latest batch of flare guns? With these, you can call in supply crates at certain special locations.\r\nGo find the specific spot in the [Suburbs]: [Central zone. You'll need elevation and visibility—look for a structure designed to attract crowds, not conceal them.]",
-        "objectives": [
-            "Find the launch site in [Suburbs]"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "reach"
-        ],
-        "map": [
             "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 10000
-            },
-            {
-                "type": "experience",
-                "quantity": 1257
-            },
-            {
-                "type": "item",
-                "item_id": "food_water_bottle",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "food_meat_can",
-                "quantity": 2
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "trupiks_13"
-        ],
-        "requiredLevel": 0,
-        "tips": "Mall roof.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "s5fHGoyyc_w"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ARAiv_2rqhM",
-                "startTs": 10
-            }
-        ],
-        "order": 18
-    },
-    "trupiks_19": {
-        "id": "trupiks_19",
-        "name": "Signal Location: The Resort",
-        "gameId": "task.july.p2",
-        "description": "Have you found the launch site in The Suburbs? Next, try to find the launch site in the [Resort area].\r\n[There's just one way onto the landmass, and no way forward past it. When the water boxes you in, send the signal.]",
-        "objectives": [
-            "Find the launch site in [Resort area]"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "reach"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 10000
-            },
-            {
-                "type": "experience",
-                "quantity": 1257
-            },
-            {
-                "type": "item",
-                "item_id": "med-limb-restorer-lv3",
-                "quantity": 2
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "trupiks_18"
-        ],
-        "requiredLevel": 0,
-        "tips": "Fountain over the coast (near the hotel).",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "D-1DRt8G4pY"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ARAiv_2rqhM",
-                "startTs": 60
-            }
-        ],
-        "order": 19
-    },
-    "trupiks_20": {
-        "id": "trupiks_20",
-        "name": "Signal Location: The Dam",
-        "gameId": "task.july.p3",
-        "description": "The last location is in the [Dam Area]. I'm pretty sure you'll find the launch site there with ease.\r\n[Northern sector. Highest structure with a clear view of the sky. If you can see the whole dockyard, you're in the right spot.]",
-        "objectives": [
-            "Find the launch site in [Dam area]"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "reach"
-        ],
-        "map": [
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 10000
-            },
-            {
-                "type": "experience",
-                "quantity": 1257
-            },
-            {
-                "type": "item",
-                "item_name": "HQ Power Fuel Can L",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "trupiks_19"
-        ],
-        "requiredLevel": 0,
-        "tips": "Top of the construction building (Over the docks).",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "wsIcW04gMcU"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ARAiv_2rqhM",
-                "startTs": 83
-            }
-        ],
-        "order": 20
-    },
-    "trupiks_21": {
-        "id": "trupiks_21",
-        "name": "Supplies Are Never Too Many",
-        "gameId": "task.july.p3",
-        "description": "The flare gun is single-use, and only the fastest can call in the supply crate.\r\nTry racing others and successfully call in a crate at all [3 launch sites] in the [Suburb], [Resort], and [Dam] areas.",
-        "objectives": [
-            "Call in a supply drop in [Suburbs area]'s launch site",
-            "Call in a supply drop in [Resort area]'s launch site",
-            "Call in a supply drop in [Dam area]'s launch site"
-        ],
-        "corpId": "trupiks",
-        "type": [
-            "reach",
-            "signal"
-        ],
-        "map": [
-            "suburb",
-            "resort",
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 10000
-            },
-            {
-                "type": "experience",
-                "quantity": 1257
-            },
-            {
-                "type": "item",
-                "item_name": "'Extraction' poster",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_name": "Flare gun",
-                "quantity": 3
-            }
-        ],
-        "requiredTasks": [
-            "trupiks_20"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "uBKQha76Pds"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "ARAiv_2rqhM",
-                "startTs": 110
-            }
-        ],
-        "order": 21
-    },
-    "regiment_1": {
-        "id": "regiment_1",
-        "name": "A Different Style",
-        "gameId": "task.wp.1",
-        "description": "Hey buddy, looks like you're running errands for that guy from... what's it called again, ARK Industry? I've seen their stuff—just a bunch of fancy toys for play-pretend made by high-and-mighty types! Ha! Want to try the real deal instead? Everything I have here packs a genuine punch... What? My weapon supply isn't the same as theirs. If you want the good stuff, just come to me, Igor. You won't regret it. Here, take this and give it a whirl.",
-        "objectives": [
-            "Eliminate 8 targets with: rifle"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "eliminate"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 15000
-            },
-            {
-                "type": "experience",
-                "quantity": 1807
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-thompson-m1928",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_45acp_25",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-45acp-fmj",
-                "quantity": 30
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [],
-        "requiredLevel": 0,
-        "tips": "Keep reward [Thompson]https://www.exfil-zone-assistant.app/items/weapon-thompson-m1928 for following tasks.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "LJ4d0WSx1Kk"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY"
-            }
-        ],
-        "order": 1
-    },
-    "regiment_2": {
-        "id": "regiment_2",
-        "name": "Taste of Life 1",
-        "gameId": "task.wp.2",
-        "description": "Not bad! So, what do you think? Told you my gear's in a league of its own! Haha. Hold up—if you want more of the good stuff, you've gotta play by my rules.\nListen up, friend: getting on my good side is simple. Bring me [2 beers], but don't even think about trying to pass off the cheap stuff from those other folks. I've got refined tastes. Try looking around [TRUPIKS], [Altibuy], and [the graveyard]—you might just find the kind of beer I'm after.",
-        "objectives": [
-            "Submit 4 Beer"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 15000
-            },
-            {
-                "type": "experience",
-                "quantity": 1807
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-545x39-fmj",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-aks74u",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_545x39_30_black",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_1"
-        ],
-        "requiredLevel": 0,
-        "tips": "Graveyard on suburb might be a 100% spawn,but food location could have it. Keep reward [AKS74u](https://www.exfil-zone-assistant.app/items/weapon-aks74u) for following tasks.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "ZWw5-ei868g"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 38
-            }
-        ],
-        "order": 2
-    },
-    "regiment_3": {
-        "id": "regiment_3",
-        "name": "Explosive Romance",
-        "gameId": "task.wp.3",
-        "description": "Hic! Ahh, it's been a long time since I had a taste like this! Hey, you, come closer—I've got something to tell ya. I know where some gunpowder's stashed. Don't ask who put it there; just go grab it for me! Hic. What? This isn't stealing. Now, enough chit-chat, get moving!\nRemember, the stuff's on the [rooftop of the Altibuy] and at the [power station east of Altibuy]. Bring it back, and of course, I'll have a nice reward for you.",
-        "objectives": [
-            "Find Igor's AltiBuy GunPowder",
-            "Find Igor's PowerStation GunPowder",
-            "Turn in 2 GunPowder"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 15000
-            },
-            {
-                "type": "experience",
-                "quantity": 1807
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "grenade-rgn-frag",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "grenade-rgo-frag",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "grenade-vod25-frag",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_2"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "3rS2fUfEi3o"
-            },
-            {
-                "author": "orbb",
-                "ytId": "FkiWA6Eb7fo"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 54
-            }
-        ],
-        "order": 3
-    },
-    "regiment_4": {
-        "id": "regiment_4",
-        "name": "Shades for Boom",
-        "gameId": "task.wp.4",
-        "description": "You know what's better than booze? Watching explosions while drinking, ha! Nothing gets the blood pumping like that!\nBut lately… damn flash burns got my eyes hurting real bad.\nNo, no, don't go crying to Maggie—I don't need eye drops.\nWhat I need is… [sunglasses]!\nGo grab me a good pair from the [Fire Station] in [Resort area], and don't take all day. The next blast show's starting soon!",
-        "objectives": [
-            "Reach the the Fire Station",
-            "Find Igor's Sunglasses",
-            "Turn in Igor's Sunglasses"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "reach",
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 15000
-            },
-            {
-                "type": "experience",
-                "quantity": 2178
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "grenade-m67-frag",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "grenade-f1-frag",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "grenade-rgd5-frag",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_3"
-        ],
-        "requiredLevel": 0,
-        "tips": "Glasses on front desk. Keep the rewards for the following quests.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "hM-2vjelmn8"
-            },
-            {
-                "author": "orbb",
-                "ytId": "kFwjed9fWWI"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 96
-            }
-        ],
-        "order": 4
-    },
-    "regiment_5": {
-        "id": "regiment_5",
-        "name": "Firepower Roundup 1",
-        "gameId": "task.wp.z3",
-        "description": "I'm taking weapons them apart for some fun— but I don't want to tear apart my own stuff! So, I need you to help me gather some weapons.\nI’ll make sure to reward you well. Let’s start simple: bring me [an M92], and [an M1928].\nI just need one of each. If you can’t find them, take a look at the scavengers. I've seen them wandering around with these weapons from time to time.",
-        "objectives": [
-            "Turn in M92 Found In Raid",
-            "Turn in M1928 Found In Raid"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 15000
-            },
-            {
-                "type": "experience",
-                "quantity": 2178
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 20
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-12ga-buckshot-ap",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-m590",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_3"
-        ],
-        "requiredLevel": 0,
-        "tips": "Does not need to be found in raid. However, popular amongst Scavengers",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "74JvskSUQqA"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 120
-            }
-        ],
-        "order": 5
-    },
-    "regiment_6": {
-        "id": "regiment_6",
-        "name": "Firepower Roundup 2",
-        "gameId": "task.wp.z4",
-        "description": "You're doing pretty well. Haha, the next items I need might be a bit harder to get, so be ready.\r\nI need you to find: an [AKS74U] and [an M4A1].\r\nSame rule, just one of each will do.",
-        "objectives": [
-            "Turn in AKS74U Found In Raid",
-            "Turn in AR15 Hunter Found In Raid"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 15000
-            },
-            {
-                "type": "experience",
-                "quantity": 2178
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-762x39-ps",
-                "quantity": 60
-            },
-            {
-                "type": "item",
-                "item_id": "mag_762x39_30",
-                "quantity": 2
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_5"
-        ],
-        "requiredLevel": 0,
-        "tips": "Does not need to be found in raid. However, popular amongst Scavengers",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "z5cZUpI2FD4"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 140
-            }
-        ],
-        "order": 6
-    },
-    "regiment_7": {
-        "id": "regiment_7",
-        "name": "Firepower Roundup 3",
-        "gameId": "task.wp.z13",
-        "description": "I used to be the best pitcher on our baseball team. Even in the army, I could toss grenades farther and more accurate than anyone else.\nBeen feeling the itch again lately...\nCan you find me some grenades to relive the glory days?\nI want: a [Frag Grenade M67], a [Frag Grenade F1], and a [Frag Grenade R5].",
-        "objectives": [
-            "Turn in M67 Found In Raid",
-            "Turn in F1 Found In Raid",
-            "Turn in RGD-5 Found In Raid"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
         ],
         "reward": [
             {
@@ -6188,1030 +2477,60 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "experience",
-                "quantity": 6403
+                "quantity": 2178
             },
             {
                 "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
+                "quantity": 10,
+                "corpId": "ark"
             },
             {
                 "type": "item",
-                "item_id": "ammo-545x39-apv1",
-                "quantity": 30
+                "quantity": 4,
+                "item_id": "ammo-556x45-fmj",
+                "item_name": "5.56x45mm FMJ"
             },
             {
                 "type": "item",
-                "item_id": "weapon-ak74n-factory",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "weapon-m16a2",
+                "item_name": "M16 5.56x45mm assault rifle M16A2"
             },
             {
                 "type": "item",
-                "item_id": "mag_762x39_30",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_6"
-        ],
-        "requiredLevel": 0,
-        "tips": "Do not have to be found in raid. Use rewards from previous task. Look for green crates",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "1RnIQMVzQSw"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 159
-            }
-        ],
-        "order": 7
-    },
-    "regiment_8": {
-        "id": "regiment_8",
-        "name": "Submachine Guns",
-        "gameId": "task.wp.5",
-        "description": "Life on the island is super boring. Want to join me for some fun? Honestly, the best thing to do is put a few bullet holes in those poor scavengers, hahaha!\nI once made a bet with a buddy on the battlefield— just using submachine guns, to see who could rack up more kills. But you know what? That guy charged out and never came back. I bet he's off slacking somewhere; totally disrespected our bet! You're wondering where he is now? Well, he's right here, this dog tag is all that's left.\nSo, how about you step in and finish that bet for him? Give it a try and [take out a few scavengers with submachine guns]!",
-        "objectives": [
-            "Eliminate 8 targets with: SMG"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "eliminate"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 25000
-            },
-            {
-                "type": "experience",
-                "quantity": 5518
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-45acp-tracer",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-ump45",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_45acp_25_2",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_7"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "x6OfU5ufssU"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 186
-            }
-        ],
-        "order": 8
-    },
-    "regiment_9": {
-        "id": "regiment_9",
-        "name": "Shotgun Shock",
-        "gameId": "task.wp.6",
-        "description": "Seeing you so busy makes me a bit nostalgic for the old days. When I first got enlisted, the front lines were still ablaze, and the higher-ups couldn't care less about us new recruits. We went through just minimal of training before being tossed into the battle. There was one time my gun ran out of bullets, and I just picked up some enemy's shotgun and charged right back! Hahaha!\nOh, after all my rambling, are your hands itching for a bit of fun? Grab that [shotgun] and head to the [Suburb area] to give those scavengers a taste of \"shotgun shock!\"",
-        "objectives": [
-            "Eliminate 5 targets with: pump shotgun"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "eliminate"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 25000
-            },
-            {
-                "type": "experience",
-                "quantity": 5518
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-12ga-buckshot-ap",
-                "quantity": 45
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-sjogren-inertia",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_8"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "CxVhy_jSNPY"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 247
-            }
-        ],
-        "order": 9
-    },
-    "regiment_10": {
-        "id": "regiment_10",
-        "name": "Treasure in the Sewage",
-        "gameId": "task.wp.7",
-        "description": "Hear that racket over in the [Resort Area]?\nDamn chaos. But what really worries me—my notes!\nMy most precious treasure, hidden in the [Wastewater Treatment Plant] on the west side.\nYou know, memory's a man's real treasure once the years pile up.\nPlease, go get it back for me!",
-        "objectives": [
-            "Reach the wastewater treatment plant",
-            "Find Igor's notes",
-            "Turn in Igor's notes"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "reach",
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 25000
-            },
-            {
-                "type": "experience",
-                "quantity": 5518
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-762x39-ps",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-sks",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_762x39_15",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_8"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "S1GprlYcPsI"
-            },
-            {
-                "author": "orbb",
-                "ytId": "ZRnKbMybPzo"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 274
-            }
-        ],
-        "order": 10
-    },
-    "regiment_11": {
-        "id": "regiment_11",
-        "name": "Long Live friendship 1",
-        "gameId": "task.wp.8",
-        "description": "I got an old buddy used to live in the [Resort Area]. He loved messing around with rocks and metal.\nNever understood why—can't protect you like a gun can, can it?\nAnyway, I heard the place is crawling with low-life thugs now.\nThey're probably disturbing his rest.\n[Go teach those punks a lesson], will you?",
-        "objectives": [
-            "Eliminate 10 scavs in resort area"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "eliminate"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 25000
-            },
-            {
-                "type": "experience",
-                "quantity": 6403
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-762x54r-tracer",
-                "quantity": 45
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-mosin-nagant",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_10"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "wE-rSY_zl2c"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 293
-            }
-        ],
-        "order": 11
-    },
-    "regiment_12": {
-        "id": "regiment_12",
-        "name": "Long Live friendship 2",
-        "gameId": "task.wp.9",
-        "description": "That old pal? Folks called him the legendary jeweler, but to me he was just Old Jay.\nHe made the 'Heart of the Blue Sea'—yep, that’s the one stolen from the bank heist.\nAfter he passed away at [White Sail Hospital], he left me a journal.\nIt mentions a few spots I want to check on.\nHelp me out—[take photos] of those places so I can see for myself.",
-        "objectives": [
-            "Take photo of a clue on the wall (Modern apartment park)",
-            "Take photo of a clue on the wall (Halif Voyage backdoor)",
-            "Take photo of a clue on the wall (Beach chair area)"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "photo"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 25000
-            },
-            {
-                "type": "experience",
-                "quantity": 6403
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-762x51-hp",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-hk91-wood",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_762x51_10_2",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "part-ar15-mount-handlescoperail",
+                "item_name": "AR-15 M4 Handle Scope Rail mount"
             }
         ],
         "preReward": [
             {
                 "type": "item",
-                "item_id": "taskitem_photophone",
-                "quantity": 1
+                "quantity": 3,
+                "item_id": "taskitem_tracking_device",
+                "item_name": "MS2000 Tracker"
             }
         ],
         "requiredTasks": [
-            "regiment_11"
+            "ark_64"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "_7scXRp08Hg"
-            },
-            {
-                "author": "orbb",
-                "ytId": "oAQ9Rl2WTmM"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 342
-            }
-        ],
-        "order": 12
+        "videoGuides": [],
+        "order": 32
     },
-    "regiment_13": {
-        "id": "regiment_13",
-        "name": "My Favorite: FAL",
-        "gameId": "task.wp.10",
-        "description": "Hey, listen up! Do you know what my favorite gun is? That's right, it's the fierce FAL! It's like an old friend, accompanying me through countless crazy moments.\nNow, I want you to take that [FAL] and [take out some pesky scavengers]! Let the bullets unleash their power and take down all the enemies! Don't be afraid; just imagine the fear in their eyes and enjoy the moment!",
+    "ark_66": {
+        "id": "ark_66",
+        "name": "Clearing Drill",
+        "gameId": "task.na.c.07",
+        "description": "Got the truck route. You did well. Take out some Scavengers with your MP5 first—do that, and I'll give you an MP9 to see how it feels.",
         "objectives": [
-            "FAL series: Eliminate 8 targets"
+            "MP5 series: Eliminate targets"
         ],
-        "corpId": "regiment",
+        "corpId": "ark",
         "type": [
             "eliminate"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 25000
-            },
-            {
-                "type": "experience",
-                "quantity": 6403
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-fn-fal",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_12"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "AVBESHutaDA"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 369
-            }
-        ],
-        "order": 13
-    },
-    "regiment_14": {
-        "id": "regiment_14",
-        "name": "One last drink, my friend",
-        "gameId": "task.wp.11",
-        "description": "You know why those thugs never found the 'Heart of the Blue Sea'?\nBecause Old Jay gave it to me. But that's between us.\nHe always loved that weird-tasting Collector's Beer.\nSo here's what I want you to do—go to his grave next to the lighthouse, and bring this [memorial beer] to him.\nHe deserves one last drink.\nIf you lose the task item, please come back to me to repurchase it.",
-        "objectives": [
-            "Place Task Beer at the Old Jay's grave"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "place"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "experience",
-                "quantity": 7928
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 50
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-762x39-ps",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-akmn-g",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_762x39_30",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "taskitem_placement_igor_memobeer",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [
-            "regiment_13"
-        ],
-        "requiredLevel": 0,
-        "tips": "Bring beer to lighthouse on resort, small grave behind, place beer",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "g5pxrf7Qm_s"
-            },
-            {
-                "author": "orbb",
-                "ytId": "fmGJ_eR3m2Y"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 420
-            }
-        ],
-        "order": 14
-    },
-    "regiment_15": {
-        "id": "regiment_15",
-        "name": "Reading Habits",
-        "gameId": "task.wp.12",
-        "description": "You ever be halfway through drooling over the \"World Gourmet Digest\" and BAM—darkness?\nPower's out again. Weird stuff. I oughta go check those damn wires someday.\nAnyway, I need to be prepared next time. Bring me a [flashlight] and a [round battery].\nAt least then I can keep reading my magazine in peace.",
-        "objectives": [
-            "Turn in 1 flashlight",
-            "Turn in 3 size D battery (round)"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 25000
-            },
-            {
-                "type": "experience",
-                "quantity": 7928
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-762x39-ps",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-akmn",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_762x39_30",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_14"
-        ],
-        "requiredLevel": 0,
-        "tips": "[Size D Battery](https://www.exfil-zone-assistant.app/items/misc_b_1battery), [Flashlight](https://www.exfil-zone-assistant.app/items/misc_b_flashlight)",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "lq5gbS1uohg"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 440
-            }
-        ],
-        "order": 15
-    },
-    "regiment_16": {
-        "id": "regiment_16",
-        "name": "The Best Can",
-        "gameId": "task.wp.z12",
-        "description": "Hey, I heard you got some coffee for that little girl? How about helping this old guy out too? We all need to satisfy our cravings after all! \nWhat I want isn't hard to find; it's just some canned food! Go check the [Suburb area] for a certain kind of [pea can]—it's delicious! Bring me [5] of them. I don't know what that producer adds to it, but every time when I eat it, my tongue gets all tingly... What? An allergic reaction? I don't believe that nonsense; it's a treat for the taste buds!",
-        "objectives": [
-            "Submit 5 can of peas"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 25000
-            },
-            {
-                "type": "experience",
-                "quantity": 6403
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "scope_mosinpu",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-762x54r-fmj",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-mosin-91-30",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_14"
-        ],
-        "requiredLevel": 0,
-        "tips": "Can submit half-eaten can.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "hYVVofQYJ2I"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 452
-            }
-        ],
-        "order": 16
-    },
-    "regiment_17": {
-        "id": "regiment_17",
-        "name": "Pistol Glory",
-        "gameId": "task.wp.13",
-        "description": "Story time! There was an old comrade of mine who complained about pistols, saying it was useless. He said it was like a firecracker—makes a noise at most, just to scare off the timid ones. Then once, we got surrounded and couldn't peek out from behind a rock for cover, with only my pistol on my hip.\nHe kept saying we were done for, but I pulled out that little pistol he looked down on and charged out shouting, then I took out all those enemies, hahaha! After that, he took my gun and kept it with him all the time.\nAlright, done with the story! Now it's your turn to make that [pistol] shine!",
-        "objectives": [
-            "Eliminate 8 targets with: pistol"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "eliminate"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 30000
-            },
-            {
-                "type": "experience",
-                "quantity": 7928
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "food_mre",
-                "quantity": 3
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_14"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "QlyJuqdDRQI"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 465
-            }
-        ],
-        "order": 17
-    },
-    "regiment_18": {
-        "id": "regiment_18",
-        "name": "Movie Night 1",
-        "gameId": "task.wp.14",
-        "description": "You know I'm a sucker for thrilling, edge-of-your-seat movies.\r\nBut I've watched my DVDs so many times, even the discs are sick of me.\r\nHead to the [Resort Area], maybe check the [Rua Algasol] and the [little diner] close to the [skate park] .\r\nFind me that shark-themed thriller to spice up movie night!",
-        "objectives": [
-            "Find SHARK CD",
-            "Find SHARK sequel CD",
-            "Turn in both CDs"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 18000
-            },
-            {
-                "type": "experience",
-                "quantity": 7928
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-545x39-apv1",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-ak74m",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_762x39_30",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_17"
-        ],
-        "requiredLevel": 0,
-        "tips": "One on toilet at Skatepark cafe. Second CD on barrel at Rua Algasol.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "PXbAP1j56eI"
-            },
-            {
-                "author": "orbb",
-                "ytId": "cNQ5CB60RpU"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 503
-            }
-        ],
-        "order": 18
-    },
-    "regiment_19": {
-        "id": "regiment_19",
-        "name": "Hunter",
-        "gameId": "task.wp.15",
-        "description": "I've been reading novels, and the author probably has never even handled a gun; what they write is completely unrealistic. Let me share a true story with you: \nBack then, before I went to the battlefield. One time, I went hunting with my Dad. I saw a shadow in the trees across the river and thought it was a bear. I fired without hesitation. Later I found out it was an enemy soldier who had escaped from the battlefield. So, what do you think? Why don't you give it a try and [put down some scavengers with bolt-action rifles]?",
-        "objectives": [
-            "Eliminate 5 targets with: Bolt Action"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "eliminate"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 25000
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-762x54r-apv1",
-                "quantity": 45
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-mosin-m38",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_18"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "WHuBQ9Te0C0"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 531
-            }
-        ],
-        "order": 19
-    },
-    "regiment_20": {
-        "id": "regiment_20",
-        "name": "Magazine Recovery",
-        "gameId": "task.wp.16",
-        "description": "You know how important recycling is on this forsaken island.\nBut some folks just dump their empty mags like they grow on trees!\nYou're better than that.\nBring me some used [AK magazines and G3 magazines].\nI'll refurb them and maybe make a few bucks on the side.",
-        "objectives": [
-            "Turn in 2 AKM metal 30-round magazines",
-            "Turn in 2 G3 30-round magazines."
-        ],
-        "corpId": "regiment",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 25000
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-762x51-hp",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-g3a3",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "mag_762x51_20_3",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_19"
-        ],
-        "requiredLevel": 0,
-        "tips": "[AKM metal magazine](https://www.exfil-zone-assistant.app/items/mag_762x39_30), [G3 30-round magazine](https://www.exfil-zone-assistant.app/items/mag_762x51_30).",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "IJSCSR36CrI"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 610
-            }
-        ],
-        "order": 20
-    },
-    "regiment_21": {
-        "id": "regiment_21",
-        "name": "My Favourite: G18",
-        "gameId": "task.wp.17",
-        "description": "My favorite pistol? G18.\nIt's like my little sidekick—never leaves my side, been through hell and back with me. Those damn scavengers nearby won't stop causing trouble… I can barely sleep!\nIf you ask me, there's no better gun to keep under your pillow than a [G18]. Grab one and give those pests a taste of sweet, compact justice.",
-        "objectives": [
-            "Eliminate 6 targets with Glock 18c pistol"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "eliminate"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 50
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-9x19-apv1",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-aug-para",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_9x19mm_25",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_20"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "bKzmk2Sd1_A"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 653
-            }
-        ],
-        "order": 21
-    },
-    "regiment_22": {
-        "id": "regiment_22",
-        "name": "Hair Comes First",
-        "gameId": "task.wp.18",
-        "description": "Hey, it's you! How's my look today?\r\nBet you won't find a more stylish guy on this rock—haha!\r\nWanna be as slick as me? Rule number one: keep your hair in shape.\r\nStop hiding it under that bulky helmet.\r\n[Take it off], head into the field, and show me how long your style survives in a firefight!",
-        "objectives": [
-            "Eliminate 8 targets without wearing helmet"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "eliminate"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "experience",
-                "quantity": 12710
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 40
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-762x54r-fmj",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-svt-40",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_762x54R_10",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_21"
-        ],
-        "requiredLevel": 0,
-        "tips": "Take off your helmet before the safe Scavenger kill, repeat.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "fPER_FH7Aw4"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 705
-            }
-        ],
-        "order": 22
-    },
-    "regiment_23": {
-        "id": "regiment_23",
-        "name": "Taste of Life 2",
-        "gameId": "task.wp.z18",
-        "description": "The beer you found last time was good, but I've been craving again recently. I heard that [Wyeth Farmhouse] in the [suburb area] has a lot of good cellar-aged wine! I need you to mark 1 [large wine barrel] in the [basement] and then find me a bottle of [Wyeth's dry red wine] in the house. Finally, make sure to extract from [Farm Road] and [Northwest Windmill] to ensure that both routes can safely bring the wine back.",
-        "objectives": [
-            "Mark the Wine Barrel",
-            "Find Wyeth's Dry Red Wine",
-            "Turn in Wyeth's Dry Red Wine",
-            "Successfully extract from Northwest Windmill",
-            "Successfully extract from Farm Road"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "submit",
-            "retrieve",
-            "mark",
-            "extract"
         ],
         "map": [
             "suburb"
@@ -7219,900 +2538,184 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 28000
+                "quantity": 20000
             },
             {
                 "type": "experience",
-                "quantity": 12719
+                "quantity": 2500
             },
             {
                 "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
+                "quantity": 10,
+                "corpId": "ark"
             },
             {
                 "type": "item",
-                "item_id": "ammo-545x39-apv1",
-                "quantity": 30
+                "quantity": 3,
+                "item_id": "ammo-9x19-fmjv2",
+                "item_name": "9x19mm Pst"
             },
             {
                 "type": "item",
-                "item_id": "weapon-ak74",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "weapon-mp9",
+                "item_name": "MP9 9x19mm sub-machine gun"
             },
             {
                 "type": "item",
-                "item_id": "mag_545x39_30_black",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "part-mp9-mount-bottom",
+                "item_name": "MP9 Bottom Rail mount"
             }
         ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "taskitem_tracking_device",
-                "quantity": 1
-            }
-        ],
+        "preReward": [],
         "requiredTasks": [
-            "regiment_21"
+            "ark_65"
         ],
-        "requiredLevel": 0,
-        "tips": "White house in farm area on Suburbs. Mark one of the huge wine barrels in basement on the SW side. Dry wine bottle in kitchen sink on ground level. Both extracts are north of the white farmhouse.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "8jXo9LaZmuU"
-            },
-            {
-                "author": "orbb",
-                "ytId": "tw_SplvvQO8"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 749
-            }
-        ],
-        "order": 23
-    },
-    "regiment_24": {
-        "id": "regiment_24",
-        "name": "Emergency Rations",
-        "gameId": "task.wp.19",
-        "description": "You know how some animals stash food for a rainy day?\nSmart, if you ask me. I'm picking up the habit myself.\nI need you to stash my favorite canned goods in these spots around the [Dam Area]:\n[On the table] inside the [wooden shack] next to the [eastern yellow water tower],\n[On the TV cabinet] in the [firewatch cabin],\n[On the table] inside the [small hut] beside the [Dam road sign].\nIf you lose the task item, please come back to me to repurchase it.",
-        "objectives": [
-            "Place Beef Can in the shack next to eastern water tower",
-            "Place Beef Can on the Firewatcher's TV cabinet",
-            "Place Beef Can in the small hut beside the Dam road sign"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "place"
-        ],
-        "map": [
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "experience",
-                "quantity": 15403
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 40
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-762x51-apv1",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-g3sg1-ak4",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_762x51_20_3",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "taskitem_placement_igor_foodcan",
-                "quantity": 3
-            }
-        ],
-        "requiredTasks": [
-            "regiment_22"
-        ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "ekMFDy4kc0w"
-            },
-            {
-                "author": "orbb",
-                "ytId": "CaU7t19ysxY"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 786
-            }
-        ],
-        "order": 24
-    },
-    "regiment_25": {
-        "id": "regiment_25",
-        "name": "What a Vacation's Meant to Be",
-        "gameId": "task.wp.z19",
-        "description": "Ah, my legs aren't what they used to be. Can't go soak in the sun and sea breeze like I once did...\nBut you still can, so don't waste it!\nHeard the [Resort Area] has a coastal sightseeing [tram].\nGo [take some photos] along the coastal route— Make sure I get a good view, will ya?",
-        "objectives": [
-            "Take photo of the tram A (Seaglass St)",
-            "Take photo of the tram B (Seaglass St)",
-            "Take photo of the tram C (Seaglass St)"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "photo"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "mag_545x39_60",
-                "quantity": 2
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "taskitem_photophone",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [
-            "regiment_24"
-        ],
-        "requiredLevel": 0,
-        "tips": "The tram train cars are located on the road by hotel, two in front of hotel and one located on the road west toward construction.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "EjvHz2SbegQ"
-            },
-            {
-                "author": "orbb",
-                "ytId": "xMd_KozHG30"
-            }
-        ],
-        "order": 25
-    },
-    "regiment_26": {
-        "id": "regiment_26",
-        "name": "G3 Assembly",
-        "gameId": "task.wp.20",
-        "description": "Some guns? Just… not right. Not until you add the right touch.\nYou know, a fine weapon and a skilled shooter don't need to spray bullets like a firehose.\nI've sent a [G3 assault rifle AK4], [Rail BT3], [10-round G3 magazine], and [ACOG] to your kiosk.\nPut it together, give it a try. Let's see how it feels in your hands.",
-        "objectives": [
-            "Eliminate 12 targets with specific assembled G3 rifle"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "eliminate"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "experience",
-                "quantity": 15403
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 40
-            },
-            {
-                "type": "item",
-                "item_id": "mag_762x39_30_2",
-                "quantity": 2
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "weapon-g3sg1-ak4",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_762x51_10_2",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "scope_acog",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "rail_default__g3_railattachment_topbt3",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [
-            "regiment_24"
-        ],
-        "requiredLevel": 0,
-        "tips": "G3 AK4, install BT3 rail (scope rail), ACOG sight, 10-round mag; you can add to the build but these items need to be install to complete task. ",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "vPttVllmYQQ"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 819
-            }
-        ],
-        "order": 26
-    },
-    "regiment_27": {
-        "id": "regiment_27",
-        "name": "My Favourite: Mosin",
-        "gameId": "task.wp.21",
-        "description": "Ahh, the Mosin... My old flame.\nThis classic rifle has a soul—every scratch tells a story from the battlefield. When I run my hands across it, I swear I hear echoes of war.\nThink you can match my glory days?\nGrab a [Mosin], find a good spot, sit still… and then—BANG!\nLet that beautiful rifle whisper a deadly lullaby.",
-        "objectives": [
-            "Eliminate 8 targets with mosin series"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "eliminate"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "experience",
-                "quantity": 15403
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 40
-            },
-            {
-                "type": "item",
-                "item_id": "scope_mosinpu",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-762x54r-apv1",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-mosin-91-30",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_26"
-        ],
-        "requiredLevel": 0,
-        "tips": "Try to roleplay WW2 Soviet partisan for better accuracy. Only [Mosin 91-30](https://www.exfil-zone-assistant.app/items/weapon-mosin-91-30) can have a [scope](https://www.exfil-zone-assistant.app/items/scope_mosinpu).",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "c-oA5Mwd0_E"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 894
-            }
-        ],
-        "order": 27
-    },
-    "regiment_28": {
-        "id": "regiment_28",
-        "name": "Movie Night 2",
-        "gameId": "task.wp.22",
-        "description": "I've watched that shark movie like… five times. Still a thrill!\nBut now I'm hungry for more.\nHead to the [Metro Area] and see if you can dig up any new flicks—\npreferably a [subway-themed] horror film.\nMaybe I'll host a movie night for the crew… Get moving!",
-        "objectives": [
-            "Find [Subway Scream]",
-            "Find [Subway Scream 2]",
-            "Turn in both CDs"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "resort"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 40
-            },
-            {
-                "type": "experience",
-                "quantity": 15403
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-545x39-apv1",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-aks74u-zt",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_545x39_30_2",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "key_metro_entry_ticket",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [
-            "regiment_27"
-        ],
-        "requiredLevel": 0,
-        "tips": "Both CDs can be found in kitchen.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "faXDU1mwj-0"
-            },
-            {
-                "author": "orbb",
-                "ytId": "tVcmvySg7Xc"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 992
-            }
-        ],
-        "order": 28
-    },
-    "regiment_29": {
-        "id": "regiment_29",
-        "name": "Dress the Part",
-        "gameId": "task.wp.z22",
-        "description": "You know, sometimes I think the cops had a cool look—\nstrutting around in armor, acting like they owned the place.\nWhy don't you give it a shot?\nThrow on a [Police PACA Body Armor] and a [Black Beret Hat].\nThen go serve some 'justice' to the bad guys out there. You'll look sharp and get the job done.",
-        "objectives": [
-            "Eliminate 16 targets in \"Police Outfit\""
-        ],
-        "corpId": "regiment",
-        "type": [
-            "eliminate"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 31000
-            },
-            {
-                "type": "experience",
-                "quantity": 3311
-            },
-            {
-                "type": "item",
-                "item_name": "Mag&attachament box",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "regiment_27"
-        ],
-        "requiredLevel": 0,
-        "tips": "Dress with [Police PACA Body Armor](https://www.exfil-zone-assistant.app/items/armor-police-vest) and [Black Beret](https://www.exfil-zone-assistant.app/items/helmet-beanie-black) and kill 16 targets.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "ng-d0GwVA64"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 1014
-            }
-        ],
-        "order": 29
-    },
-    "regiment_30": {
-        "id": "regiment_30",
-        "name": "Forever in a Flash",
-        "gameId": "task.wp.z23",
-        "description": "You know what statues and photos have in common? They both freeze a moment in time. There's something beautifully poetic about that…\r\nGo take pictures of some of the island's statues for me, will you?\r\n[The Brown Bear statue in Hyder Town],\r\n[The Bull statue in the Resort's flea market],\r\n[The Angel statue next to Clifton Church],\r\n[The Hound statue in the Subway Station].",
-        "objectives": [
-            "Take a photo of the bear at Suburbs",
-            "Take a photo of the bull at Resort",
-            "Take a photo of the angel at Dam",
-            "Take a photo of the hound at Metro"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "photo"
-        ],
-        "map": [
-            "suburb",
-            "resort",
-            "dam",
-            "metro"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 28000
-            },
-            {
-                "type": "experience",
-                "quantity": 15403
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 10
-            },
-            {
-                "type": "item",
-                "item_id": "mag_762x51_50",
-                "quantity": 2
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "key_metro_entry_ticket",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [
-            "regiment_29"
-        ],
-        "requiredLevel": 0,
-        "tips": "Dam angel located outside church in clifton. Bear located in Hyder town on suburb. Bull located in flea market on resort. Hound on metro top of stairs by east extract",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "stF3gVmw1tM"
-            },
-            {
-                "author": "orbb",
-                "ytId": "JIacdtZ1GGE"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 1094
-            }
-        ],
-        "order": 30
-    },
-    "regiment_31": {
-        "id": "regiment_31",
-        "name": "My Favourite: Sjogren",
-        "gameId": "task.wp.23",
-        "description": "Last but not least—my beloved Sjogren.\nShe's been my savior in more than one deadly mess.\nWith that boomstick in hand, hesitation simply isn't an option.\nNow it's your turn to feel its power.\nTake the [Sjogren] into the [Metro Area], and teach those scavengers a lesson.\nLet each shot ring out like thunder—let them know fear.",
-        "objectives": [
-            "Eliminate 12 targets with Sjogren shotgun in Metro"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "eliminate"
-        ],
-        "map": [
-            "metro"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "experience",
-                "quantity": 15403
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 40
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-12ga-buckshot-ap",
-                "quantity": 45
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-flame12",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_12GA_10",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "key_metro_entry_ticket",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [
-            "regiment_29"
-        ],
-        "requiredLevel": 0,
-        "tips": "[Sjogren](https://www.exfil-zone-assistant.app/items/weapon-sjogren-inertia)",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "y92XkaY4ZOs"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 1125
-            }
-        ],
-        "order": 31
-    },
-    "regiment_32": {
-        "id": "regiment_32",
-        "name": "One-time Delivery",
-        "gameId": "task.wp.24",
-        "description": "I need you to collect [3 supplycase] from three locations:\n[the Control Room],\n[the Tank Room],\n[the East Room in the Sewer Area].\nThen drop them off by the [wooden crate] just outside [the Sewer Hidden Room].\nNo detours, just in and out—one smooth run.",
-        "objectives": [
-            "Find Igor's 3 supplycase",
-            "Place next to the Sewer Hidden Room"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "retrieve",
-            "place"
-        ],
-        "map": [
-            "metro"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 42000
-            },
-            {
-                "type": "experience",
-                "quantity": 15403
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 80
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-545x39-tracer",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-malyuk-545",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_545x39_30_2",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "key_metro_entry_ticket",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [
-            "regiment_31"
-        ],
-        "requiredLevel": 0,
-        "tips": "[Igor's Supply Case](https://www.exfil-zone-assistant.app/items/taskitem_placement_igor_supplycase). One located on shelf in control room; One located on barrels in large gate room. pull lever in control room to open gate; One located in the east room of sewer area, place task item west of sewer room, two extracts, climb ladder, cross pipe, place on box outside door; items are heavy and might take two trips up ladder",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "Hj_tdUpEZVY"
-            },
-            {
-                "author": "orbb",
-                "ytId": "qfRvA2MBmGI"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 1167
-            }
-        ],
-        "order": 32
-    },
-    "regiment_33": {
-        "id": "regiment_33",
-        "name": "Into the Lion's Den",
-        "gameId": "task.wp.25",
-        "description": "Aha! Time to test your nerve, kid.\nHead into the [Metro area], mid-level area.\nThere's a military living zone there—deep inside, right across from the Reception Room and Conference Room, is Commander Boris's quarters.\nNow me and Boris… we go way back. I know the kind of junk he calls treasure—and it's worth the risk.\nYou'll need to figure out a way in and snatch his prized piece: the [Malyuk762].\nBring it back, and I'll know you've got real guts.",
-        "objectives": [
-            "Find the Officer Back Room",
-            "Turn in Malyuk 7.62"
-        ],
-        "corpId": "regiment",
-        "type": [
-            "reach",
-            "submit"
-        ],
-        "map": [
-            "metro"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 35000
-            },
-            {
-                "type": "experience",
-                "quantity": 15403
-            },
-            {
-                "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 40
-            },
-            {
-                "type": "item",
-                "item_id": "ammo-762x39-apv2",
-                "quantity": 30
-            },
-            {
-                "type": "item",
-                "item_id": "weapon-malyuk-762",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "mag_762x39_30_2",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "key_metro_entry_ticket",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [
-            "regiment_32"
-        ],
-        "requiredLevel": 0,
-        "tips": "Room located on one of the bottom level north side near extract; officer back room is locked(key not required); [Malyuk 762](https://www.exfil-zone-assistant.app/items/weapon-malyuk-762) can be bought and handed in",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "oFe1Onfi6rc"
-            },
-            {
-                "author": "orbb",
-                "ytId": "zgM6Ab7cfmI"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 1241
-            }
-        ],
+        "videoGuides": [],
         "order": 33
     },
-    "regiment_34": {
-        "id": "regiment_34",
-        "name": "War Within Self",
-        "gameId": "task.wp.26",
-        "description": "Soldier, stand tall and listen. The most fearsome enemies often lurk right beside you, and it could even be your own inner self. Your final challenge is to overcome your fears, hesitation, weakness, and self-doubt.\nForge your will... This time, I'm not joking. All the tasks I've given you before were meant to help you build a strong mindset.\n[No matter what method you use or what weapon you choose, face a large number of enemies and challenge yourself to conquer your own limitations] (you can take down other contractors).",
+    "ark_67": {
+        "id": "ark_67",
+        "name": "Transport Clues",
+        "gameId": "task.na.c.08",
+        "description": "The marked truck has provided a lead—the freight route leads to a specific location. Go there and scout it out. When you get back, this EVO3 is yours—it's a CZ Skorpion, much more agile than a rifle for close-quarters spraying",
         "objectives": [
-            "Eliminate 33 Contractors or Scavengers"
+            "Reach the Military Camp",
+            "Pistol: Eliminate targets"
         ],
-        "corpId": "regiment",
+        "corpId": "ark",
         "type": [
+            "reach",
             "eliminate"
         ],
         "map": [
-            "any"
+            "suburb"
         ],
         "reward": [
             {
                 "type": "money",
-                "quantity": 35000
+                "quantity": 22000
             },
             {
                 "type": "experience",
-                "quantity": 15403
+                "quantity": 2500
             },
             {
                 "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 40
+                "quantity": 5,
+                "corpId": "ark"
             },
             {
                 "type": "item",
-                "item_id": "ammo-762x39-apv2",
-                "quantity": 30
+                "quantity": 3,
+                "item_id": "ammo-9x19-fmjv2",
+                "item_name": "9x19mm Pst"
             },
             {
                 "type": "item",
-                "item_id": "weapon-akmn-xm",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "weapon-scorpion-evo3",
+                "item_name": "EVO3 9x19mm sub-machine gun"
             },
             {
                 "type": "item",
-                "item_id": "mag_762x39_30_2",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "scope_aimpointt1sight",
+                "item_name": "T1 Elevating"
             }
         ],
         "preReward": [],
         "requiredTasks": [
-            "regiment_33"
+            "ark_66"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "o29YJdDw1fs"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 1272
-            }
-        ],
+        "videoGuides": [],
         "order": 34
     },
-    "regiment_35": {
-        "id": "regiment_35",
-        "name": "Intermission",
-        "gameId": "task.wp.27",
-        "description": "You did awesome, haha! I knew you could pull it off. You're starting to look a lot like I used to!\n...\nCome on, don't just stand there. In times like this, shouldn't we spark one up? No worries, I've got some special stuff stashed away. Just go grab something to light it with! And don't forget the fuel!",
+    "ark_68": {
+        "id": "ark_68",
+        "name": "Rifle Drills",
+        "gameId": "task.na.c.09",
+        "description": "Iron Wolf's location is confirmed — second floor of the police station. He's got heavy armor, you'll need a rifle to deal with him. Go get some practice in with the AR15. This EVO3 Ultra is the upgraded version — more firepower than the standard, still useful up close.",
         "objectives": [
-            "Turn in 1 Lighter",
-            "Turn in 1 Lighter Fluid"
+            "AR15 series: Eliminate targets"
         ],
-        "corpId": "regiment",
+        "corpId": "ark",
         "type": [
-            "submit"
+            "eliminate"
         ],
         "map": [
-            "any"
+            "suburb"
         ],
         "reward": [
             {
                 "type": "money",
-                "quantity": 42000
+                "quantity": 25000
             },
             {
                 "type": "experience",
-                "quantity": 25672
+                "quantity": 3000
             },
             {
                 "type": "reputation",
-                "corpId": "regiment",
-                "quantity": 80
+                "quantity": 5,
+                "corpId": "ark"
             },
             {
                 "type": "item",
-                "item_id": "ammo-762x54r-apv1",
-                "quantity": 60
+                "quantity": 4,
+                "item_id": "ammo-9x19-hpv2",
+                "item_name": "9x19mm Luger CCI"
             },
             {
                 "type": "item",
-                "item_id": "weapon-pkp-pecheneg",
-                "quantity": 1
+                "quantity": 2,
+                "item_id": "grenade-m67-frag",
+                "item_name": "M67 Hand grenade"
             },
             {
                 "type": "item",
-                "item_id": "mag_762x54R_80",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "weapon-evo3ultra",
+                "item_name": "EVO3 9x19mm sub-machine gun ULTRA edition"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "scope_aimpointt1sight",
+                "item_name": "T1 Elevating"
             }
         ],
         "preReward": [],
         "requiredTasks": [
-            "regiment_34"
+            "ark_67"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "vK0wnfTx2_Y"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "YEPtvxMzsBY",
-                "startTs": 1302
-            }
-        ],
+        "videoGuides": [],
         "order": 35
     },
-    "forge_1": {
-        "id": "forge_1",
-        "name": "Secret Stash 1",
-        "gameId": "task.gear.1",
-        "description": "Hey, newbie. Name's Maximilian.\nMy trade guild deals in only the finest goods—no fluff, no nonsense.\nYou wanna do business with me? Prove you're worth the trouble.\nMy old client's looking for a particular piece of merchandise I've stashed away.\nYou know that [outdoor drive-in theater] south of the motel in the [Suburb area]?\nYeah, looks abandoned, but trust me, I hid something special there.\nCheck [behind the screen]. You'll know it when you see it—it's not something you'll miss.",
+    "ark_69": {
+        "id": "ark_69",
+        "name": "Pre-war Recon",
+        "gameId": "task.na.c.10",
+        "description": "Iron Wolf's stronghold hasn't been pinned down yet—it could be the open-air cinema or the office building, I can't confirm from here. Can you scout both locations? Clear out any Scavengers in the vicinity while you're at it.",
         "objectives": [
             "Reach the Outdoor drive-in Cinema",
-            "Find Maximillian's Golden Goblet",
-            "Turn in Maximillian's Golden Goblet"
+            "Arrive the Office Building",
+            "Eliminate Scavangers in Suburb Area"
         ],
-        "corpId": "forge",
+        "corpId": "ark",
         "type": [
             "reach",
-            "retrieve",
-            "submit"
+            "eliminate"
         ],
         "map": [
             "suburb"
@@ -8120,126 +2723,72 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 15000
-            },
-            {
-                "type": "reputation",
-                "corpId": "forge",
-                "quantity": 20
-            },
-            {
-                "type": "item",
-                "item_id": "armor-soft-armor",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "holster_magm",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [],
-        "requiredLevel": 0,
-        "tips": "Outdoor Cinema located behind motel, upstairs left on box",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "ne67lQWHgUE"
-            },
-            {
-                "author": "orbb",
-                "ytId": "3mhlLR8_jp0"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "BO5uihtPyLM"
-            }
-        ],
-        "order": 1
-    },
-    "forge_2": {
-        "id": "forge_2",
-        "name": "Better safe than sorry 1",
-        "gameId": "task.gear.2",
-        "description": "The scavengers have been too rampant lately! They've been loitering around our delivery routes.\nIt looks like I should use the alternative routes for delivery. I need you to check these locations northeast of [suburb area], as they are important stops along my route: the [checkpoint] on the road, the [unloading station], and [2 yellow-ish huts north to the unloading station].",
-        "objectives": [
-            "Find the Checkpoint",
-            "Find the Truck Unloading station",
-            "Find the The 2 yellow-ish huts"
-        ],
-        "corpId": "forge",
-        "type": [
-            "reach"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 15000
-            },
-            {
-                "type": "reputation",
-                "corpId": "forge",
-                "quantity": 20
+                "quantity": 28000
             },
             {
                 "type": "experience",
-                "quantity": 1807
+                "quantity": 3500
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "ark"
             },
             {
                 "type": "item",
-                "item_id": "helmet-bike",
-                "quantity": 1
+                "quantity": 3,
+                "item_id": "ammo-9x19-apv1",
+                "item_name": "9x19mm AP"
             },
             {
                 "type": "item",
-                "item_id": "holster_magm",
-                "quantity": 1
+                "quantity": 3,
+                "item_id": "grenade-m67-frag",
+                "item_name": "M67 Hand grenade"
             },
             {
                 "type": "item",
-                "item_id": "holster_mags",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "weapon-mp5sd",
+                "item_name": "MP5SD 9x19 sub-machine gun"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "scope_aimpointt1sight",
+                "item_name": "T1 Elevating"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-mp5-mount-mp5kmount",
+                "item_name": "MP5K Rail mount"
             }
         ],
         "preReward": [],
         "requiredTasks": [
-            "forge_1"
+            "ark_68"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "_X2LD3qDowY"
-            },
-            {
-                "author": "orbb",
-                "ytId": "zk9lVdCpsTg"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "BO5uihtPyLM",
-                "startTs": 68
-            }
-        ],
-        "order": 2
+        "videoGuides": [],
+        "order": 36
     },
-    "forge_3": {
-        "id": "forge_3",
-        "name": "Covert Evacuation",
-        "gameId": "task.gear.3",
-        "description": "You've done well, but it's not enough yet to establish a long-term partnership with me. \nGo find [the bunker near the drainage channel] on the [west side of the TRUPIK mall]. See if it's safe then [return to me]. By the way, this is the key to that bunker gate, you can try your best to unlock it and extract from there. We can discuss business afterward.",
+    "ark_70": {
+        "id": "ark_70",
+        "name": "★ First Hunt: Iron Wolf",
+        "gameId": "task.na.c.11",
+        "description": "You ready? Iron Wolf is on the second floor of the police station. Heavy armor, heavy firepower, and he knows his exits. Take him down and get out alive — this SCAR and 4x scope are the best I've been holding back. This is the most important fight you've had since you got here.",
         "objectives": [
-            "Find basement exit",
-            "Successfully extract from suburb"
+            "Reach the Hyder Town Police Station",
+            "Eliminate Iron Wolf in Police Station",
+            "Successfully extract from Suburb Area"
         ],
-        "corpId": "forge",
+        "corpId": "ark",
         "type": [
             "reach",
+            "eliminate",
             "extract"
         ],
         "map": [
@@ -8248,126 +2797,72 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 15000
-            },
-            {
-                "type": "reputation",
-                "corpId": "forge",
-                "quantity": 20
+                "quantity": 80000
             },
             {
                 "type": "experience",
-                "quantity": 1807
-            },
-            {
-                "type": "item",
-                "item_id": "helmet-beanie-black",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "armor-police-vest",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "key_westbunker",
-                "quantity": 1
-            }
-        ],
-        "requiredTasks": [
-            "forge_2"
-        ],
-        "requiredLevel": 0,
-        "tips": "Look at M.I.C.A, LOCKED extract icon near the Canal.You don't have to extract from there or open it.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "ONGlh-jfQlQ"
-            },
-            {
-                "author": "orbb",
-                "ytId": "ONQLQQK3qRI"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "BO5uihtPyLM",
-                "startTs": 109
-            }
-        ],
-        "order": 3
-    },
-    "forge_4": {
-        "id": "forge_4",
-        "name": "All pieces together 1",
-        "gameId": "task.gear.z3",
-        "description": "Hey, my partner! Do you have a moment to run an errand for me? Don't worry; it's nothing hard—completely safe with a high reward. It's simple, I just need you to collect some [notebooks] while you're out exploring.\nNo, I'm not out of paper. Let me tell you, business opportunities often hide in the words and details. These notebooks occasionally hold interesting notes from others, which are all part of preparing to meet the needs of various clients.",
-        "objectives": [
-            "Turn in 6 notebooks"
-        ],
-        "corpId": "forge",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "suburb"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 15000
-            },
-            {
-                "type": "experience",
-                "quantity": 1807
+                "quantity": 4000
             },
             {
                 "type": "reputation",
-                "corpId": "forge",
-                "quantity": 20
+                "quantity": 10,
+                "corpId": "ark"
             },
             {
                 "type": "item",
-                "item_id": "armor-raid-explorer-black",
-                "quantity": 1
+                "quantity": 4,
+                "item_id": "ammo-556x45-hpv1",
+                "item_name": "5.56x45mm MK255"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "gds.consumption.all.hqfuel.xl"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "grenade-m67-frag",
+                "item_name": "M67 Hand grenade"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-scar16",
+                "item_name": "SECA16 5.56x45mm assault rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "scope_acog",
+                "item_name": "ACOG 20mm scope"
             }
         ],
         "preReward": [],
         "requiredTasks": [
-            "forge_2"
+            "ark_69"
         ],
-        "requiredLevel": 0,
-        "tips": "[Notebook](https://www.exfil-zone-assistant.app/items/misc_notebook)",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "jHoG4FRS47k"
-            },
-            {
-                "author": "orbb",
-                "ytId": "3yUDq4fJZ-s"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "BO5uihtPyLM",
-                "startTs": 141
-            }
-        ],
-        "order": 4
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 37
     },
     "forge_5": {
         "id": "forge_5",
         "name": "No Caller Rejected",
-        "gameId": "task.gear.4",
-        "description": "Heard about that recent heist in the Resort? Everyone's scrambling to find ways to launder the loot, and there's no way I'm sitting that out.\r\nTake this [phone] and place it at the [Wall Fountain in the Rua Algasol].\r\nSomeone will reach out to me—no names, no questions.\r\nIf you lose the task item, please come back to me to repurchase it.",
+        "gameId": "task.gear.a.01",
+        "description": "Heard about that recent heist in the [Resort Area]? Everyone's scrambling to find ways to launder the loot, and there's no way I'm sitting that out.\nTake this [phone] and place it at the [Wall Fountain in the Rua Algasol].\nSomeone will reach out to me,no names, no questions.\nIf you lose the task item, please come back to me to repurchase it.",
         "objectives": [
-            "Place Max's Phone in the wall fountain"
+            "Arrive the Rua Algasol",
+            "Place in the wall fountain in Rua Algasol",
+            "Extract from Resort"
         ],
         "corpId": "forge",
         "type": [
-            "place"
+            "reach",
+            "place",
+            "extract"
         ],
         "map": [
             "resort"
@@ -8375,40 +2870,37 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 15000
-            },
-            {
-                "type": "experience",
-                "quantity": 2178
+                "quantity": 32000
             },
             {
                 "type": "reputation",
-                "corpId": "forge",
-                "quantity": 20
+                "quantity": 40,
+                "corpId": "forge"
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
             },
             {
                 "type": "item",
-                "item_id": "helmet-parachute-training-black",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "holster_magm",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "helmet-warrior",
+                "item_name": "Warrior Full Face Helmet"
             }
         ],
         "preReward": [
             {
                 "type": "item",
+                "quantity": 1,
                 "item_id": "taskitem_placement_max_oldphone",
-                "quantity": 1
+                "item_name": "Max‘s Phone"
             }
         ],
         "requiredTasks": [
-            "forge_3",
-            "forge_4"
+            "forge_27"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 3,
         "tips": "Small fountain on wall in Rua Algasol.",
         "videoGuides": [
             {
@@ -8425,13 +2917,13 @@ export const tasksData: TasksDatabase = {
                 "startTs": 154
             }
         ],
-        "order": 5
+        "order": 1
     },
     "forge_6": {
         "id": "forge_6",
         "name": "Hovolt Smuggling",
-        "gameId": "task.gear.5",
-        "description": "Ever heard of Hovolt cars? Gorgeous machines—sleek design, purr like a dream.\nThere's a dealership in the [Resort area] still intact. I want a few rides from there… eventually.\nBut first, do me a favor: [snap a picture of every color variant] they've got in the showroom.\nI need to confirm the stock.",
+        "gameId": "task.gear.a.02",
+        "description": "Ever heard of Hovolt cars? Gorgeous machines,sleek design, purr like a dream.\nThere's a dealership in the [Resort Area] still intact. I want a few rides from there... eventually.\nBut first, do me a favor: [snap a picture of every color variant] they've got in the showroom.\nI need to confirm the stock.",
         "objectives": [
             "Take photo of a black Hovolt car",
             "Take photo of a yellow Hovolt car",
@@ -8448,30 +2940,37 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 20000
+                "quantity": 32000
             },
             {
                 "type": "reputation",
-                "corpId": "forge",
-                "quantity": 20
+                "quantity": 40,
+                "corpId": "forge"
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
             },
             {
                 "type": "item",
-                "item_id": "helmet-6b47",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "helmet-delta",
+                "item_name": "Delta"
             }
         ],
         "preReward": [
             {
                 "type": "item",
+                "quantity": 1,
                 "item_id": "taskitem_photophone",
-                "quantity": 1
+                "item_name": "New Phone"
             }
         ],
         "requiredTasks": [
             "forge_5"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "Car dealership located east side by tunnel extract. All required cars are nearby.",
         "videoGuides": [
             {
@@ -8488,17 +2987,18 @@ export const tasksData: TasksDatabase = {
                 "startTs": 190
             }
         ],
-        "order": 6
+        "order": 2
     },
     "forge_7": {
         "id": "forge_7",
         "name": "Bargain Hunter",
-        "gameId": "task.gear.6",
-        "description": "Word is the northern gang's got their eyes on that mythical gem—'Blue Heart of the Sea'.\nSeems like everything else is beneath them now. Fools.\nYou head to the [Flea Market] and see what's been overlooked.\nThey might've missed some [antiques], and I'm more than happy to take those off their hands.",
+        "gameId": "task.gear.a.03",
+        "description": "Word is the northern gang's got their eyes on that mythical gem.\nSeems like everything else is beneath them now. Fools.\nYou head to the [Flea Market] in the [Resort Area] and see what's been overlooked.\nThey might've missed some [antiques], and I'm more than happy to take those off their hands.",
         "objectives": [
             "Find Antique Tea Plate - Yang",
             "Find Antique Tea Plate - Yin",
-            "Turn in both Antique Tea Plates"
+            "Turn in Antique Tea Plate - Yang",
+            "Turn in Antique Tea Plate - Yin"
         ],
         "corpId": "forge",
         "type": [
@@ -8511,28 +3011,36 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 20000
+                "quantity": 32000
             },
             {
                 "type": "reputation",
-                "corpId": "forge",
-                "quantity": 20
+                "quantity": 50,
+                "corpId": "forge"
             },
             {
                 "type": "experience",
-                "quantity": 2178
+                "quantity": 12719
             },
             {
                 "type": "item",
-                "item_id": "helmet-pasgt",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "helmet-ach-green",
+                "item_name": "ACH Helmet Green"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mask-ach-faceshield",
+                "item_name": "ACH FaceShield"
             }
         ],
         "preReward": [],
         "requiredTasks": [
             "forge_6"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "",
         "videoGuides": [
             {
@@ -8549,16 +3057,16 @@ export const tasksData: TasksDatabase = {
                 "startTs": 214
             }
         ],
-        "order": 7
+        "order": 3
     },
     "forge_8": {
         "id": "forge_8",
         "name": "Hidden in Plain Sight",
-        "gameId": "task.gear.7",
-        "description": "Looks like most of the Hyder PD are busy playing watchdogs in the [Resort area], huh?\r\nOne of  them came to me on the low—wanted to fence off something he hacked from their system.\r\nProblem is, I need some [cash] to finish the deal.\r\nFind my stashed money at these two places:\r\nThe [trash truck] west to the [modern apartment],\r\nThe [bench] north of the [worker dormitory].\r\nThen drop the cash at the [fountain across from Halif Voyage Agency]. Clean and simple.",
+        "gameId": "task.gear.a.04",
+        "description": "The cops in Hydertown seem to be in a standoff with gang members. But one of them approached me to handle some valuable goods he secretly siphoned off. Turns out I've got some money stashed in the city, just enough to trade with him. Go to [Resort Area] and find the money I hid near the [garbage trucks] at the [Fire Department], [Garbage Station], and [Workers Dorm]. Once you’ve got the money, place it next to the fountain in front of [Halif Voyage].",
         "objectives": [
-            "Find 2 of Max's money",
-            "place money next to fountain in front of Halif Voyage"
+            "Find Max's cash",
+            "Put Max's cash in place"
         ],
         "corpId": "forge",
         "type": [
@@ -8571,33 +3079,30 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 20000
+                "quantity": 32000
             },
             {
                 "type": "reputation",
-                "corpId": "forge",
-                "quantity": 20
+                "quantity": 50,
+                "corpId": "forge"
             },
             {
                 "type": "experience",
-                "quantity": 2178
+                "quantity": 12719
             },
             {
                 "type": "item",
-                "item_id": "helmet-kiver-m",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "holster_magm",
-                "quantity": 2
+                "quantity": 1,
+                "item_id": "armor-apex-bk",
+                "item_name": "ApexBK"
             }
         ],
         "preReward": [],
         "requiredTasks": [
-            "forge_6"
+            "forge_7"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "[Max's Cash](https://www.exfil-zone-assistant.app/items/taskitem_placement_max_cash)",
         "videoGuides": [
             {
@@ -8614,69 +3119,15 @@ export const tasksData: TasksDatabase = {
                 "startTs": 241
             }
         ],
-        "order": 8
-    },
-    "forge_9": {
-        "id": "forge_9",
-        "name": "All pieces together 2",
-        "gameId": "task.gear.8",
-        "description": "You're just in time; I've collected enough from the notebooks. Now, let's turn our attention to the next target: [old phones]. You heard me right! Although they might look like a pile of junk to you, they can actually hold a lot of potential value—namely, information.\nIn business, it's all about the information gap; having more intel means more opportunities for you. Besides, the profit from trading information can be greater than you think!",
-        "objectives": [
-            "Turn in 5 Old Phone"
-        ],
-        "corpId": "forge",
-        "type": [
-            "submit"
-        ],
-        "map": [
-            "any"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 20000
-            },
-            {
-                "type": "reputation",
-                "corpId": "forge",
-                "quantity": 20
-            },
-            {
-                "type": "experience",
-                "quantity": 2178
-            },
-            {
-                "type": "item",
-                "item_id": "helmet-swat",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "forge_7"
-        ],
-        "requiredLevel": 0,
-        "tips": "[Old Phone](https://www.exfil-zone-assistant.app/items/misc_b_oldphone)",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "2D_jJgmPcRc"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "BO5uihtPyLM",
-                "startTs": 276
-            }
-        ],
-        "order": 9
+        "order": 4
     },
     "forge_10": {
         "id": "forge_10",
         "name": "Freight Runner",
-        "gameId": "task.gear.9",
-        "description": "My courier got himself killed mid-run. Unfortunate… and inconvenient.\nThis shipment's hot, and I need someone reliable. That's you.\nPick up the goods from the [Grocery store] under the [modern apartment],\nThen drop the packages at:\n[East Overpass],\n[West Overpass],\n[Hospital's overpass].",
+        "gameId": "task.gear.a.05",
+        "description": "My men died while transporting goods in [Resort Area]. This shipment is urgent, and right now, you're the only one I can think of to help me, friend! I need you to take over the undelivered cargo, it's in [the supermarket at Crimson Luxe -1F]. Then place the goods at the [eastern skybridge], [western corridor], and [hospital corridor].",
         "objectives": [
-            "Find Max's diamond rings",
+            "Find Max's diamond ring",
             "Place in the East overpass",
             "Place in the West overpass",
             "Place in the Hospital overpass"
@@ -8692,29 +3143,30 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 20000
+                "quantity": 32000
             },
             {
                 "type": "reputation",
-                "corpId": "forge",
-                "quantity": 20
+                "quantity": 50,
+                "corpId": "forge"
             },
             {
                 "type": "experience",
-                "quantity": 5518
+                "quantity": 12719
             },
             {
                 "type": "item",
-                "item_id": "nvg-anpvs31",
-                "item_name": "AN/PVS 31 Night Vision",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "helmet-rsp-black",
+                "item_name": "Black EVIRS Helmet"
             }
         ],
         "preReward": [],
         "requiredTasks": [
             "forge_8"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "[Max's Diamond ring](https://www.exfil-zone-assistant.app/items/taskitem_placement_max_ring)",
         "videoGuides": [
             {
@@ -8727,80 +3179,13 @@ export const tasksData: TasksDatabase = {
                 "startTs": 286
             }
         ],
-        "order": 10
-    },
-    "forge_11": {
-        "id": "forge_11",
-        "name": "Seeing is Believing",
-        "gameId": "task.gear.15",
-        "description": "I've heard some whispers that there are plenty of good supplies near the tower inlet by the dam, but it's a dangerous area, and not many people have gone there. It's likely that those supplies have been left over from before the incident.\nI'm not one to take wild guesses, so we should confirm the source of any intel. If the rumors are true, I'll send my guys over to clean those places out. So, how about you scout it out for me, buddy? Use a tracker to [mark all the tower inlets][around the dam].",
-        "objectives": [
-            "Mark Inlet Tower 1 at Dam",
-            "Mark Inlet Tower 2 at Dam",
-            "Mark Inlet Tower 3 at Dam",
-            "Mark Inlet Tower 4 at Dam"
-        ],
-        "corpId": "forge",
-        "type": [
-            "mark"
-        ],
-        "map": [
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 20000
-            },
-            {
-                "type": "reputation",
-                "corpId": "forge",
-                "quantity": 50
-            },
-            {
-                "type": "experience",
-                "quantity": 12718
-            },
-            {
-                "type": "item",
-                "item_id": "helmet-warrior",
-                "quantity": 1
-            }
-        ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "taskitem_tracking_device",
-                "quantity": 4
-            }
-        ],
-        "requiredTasks": [
-            "forge_9"
-        ],
-        "requiredLevel": 0,
-        "tips": "Located at top of dam.Mark all 4 concrete Towers with the tracker.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "ViKeovqpdco"
-            },
-            {
-                "author": "orbb",
-                "ytId": "XJ_WamWoIds"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "BO5uihtPyLM",
-                "startTs": 595
-            }
-        ],
-        "order": 11
+        "order": 5
     },
     "forge_12": {
         "id": "forge_12",
         "name": "No Deal, No Mercy",
-        "gameId": "task.gear.10",
-        "description": "Remember that delivery payment I mentioned?\nThat damn cop is called [Barricade]. He never intended to hand the goods over. He thought he could play me. Big mistake.\nHead over to the [Silverwave Union Bank] and find him, in the [heaviest armor]. Give him a little… message.\nNobody crosses Maximilian and gets away with it.",
+        "gameId": "task.gear.a.06",
+        "description": "Remember that cop who wanted to fence stolen goods? Damn pig never intended to hand over the goods from the start. I need to show him what happens when you play games doing business with me!\nAlright partner, head to [Silverwave Bank] and teach the leader of that [Barricade] a lesson. But be careful, he's definitely prepared. He's the one dressed head-to-toe in gear.",
         "objectives": [
             "Eliminate Bank's Barricade"
         ],
@@ -8814,28 +3199,30 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 20000
+                "quantity": 32000
             },
             {
                 "type": "reputation",
-                "corpId": "forge",
-                "quantity": 20
+                "quantity": 65,
+                "corpId": "forge"
             },
             {
                 "type": "experience",
-                "quantity": 5518
+                "quantity": 15403
             },
             {
                 "type": "item",
-                "item_id": "holster_water",
-                "quantity": 3
+                "quantity": 1,
+                "item_id": "mask-ryst-faceshield",
+                "item_name": "RYS-T FaceShield"
             }
         ],
         "preReward": [],
         "requiredTasks": [
             "forge_10"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "SWAT boss located at the Bank main entrance.(Not Bonecrusher in yellow helmet)",
         "videoGuides": [
             {
@@ -8848,15 +3235,21 @@ export const tasksData: TasksDatabase = {
                 "startTs": 353
             }
         ],
-        "order": 12
+        "order": 6
     },
-    "forge_13": {
-        "id": "forge_13",
-        "name": "All pieces together 3",
-        "gameId": "task.gear.z10",
-        "description": "Alright, we've gathered enough old phones, so I won't waste time with the usual lectures. I've noticed that some residents on this island still use cassette tapes—pretty 'retro,' right?\nBy coincidence, I found a cassette player all the way in the back of the storage room, and it turns out it still works! So now, your task is to find some [tapes] for me. I'd like to hear what interesting information is on them.",
+    "forge_31": {
+        "id": "forge_31",
+        "name": "The Collector",
+        "gameId": "task.gear.a.07",
+        "description": "Trends in collectibles have shifted. Now everyone's into action figure toys.\nI'll admit, I used to think they were just decorations, but you know what? Collecting stuff really is fun. Watching your storage slowly fill up gives a certain... satisfaction.\nBring me a [full set of character figure toys], and make sure to include the [hidden variant]. I hear that one's more valuable, supposedly it has a [gold paint] finish.",
         "objectives": [
-            "Turn in 6 Tapes"
+            "Turn in CS Figure St",
+            "Turn in Medium Operator #2",
+            "Turn in Elite Operator #3",
+            "Turn in Heavy Operator #4",
+            "Turn in Light Operator #5",
+            "Turn in Operator #6",
+            "Turn in CS Figure G"
         ],
         "corpId": "forge",
         "type": [
@@ -8868,104 +3261,420 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 20000
-            },
-            {
-                "type": "experience",
-                "quantity": 5518
+                "quantity": 32000
             },
             {
                 "type": "reputation",
-                "corpId": "forge",
-                "quantity": 10
+                "quantity": 5,
+                "corpId": "forge"
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
             },
             {
                 "type": "item",
-                "item_id": "holster_grenade",
-                "quantity": 3
+                "quantity": 1,
+                "item_id": "armor-jpc",
+                "item_name": "JPC"
             }
         ],
         "preReward": [],
+        "requiredTasks": [
+            "forge_12",
+            "forge_33"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "Reward not worth it. Exchange gold figurine for Endgame equipment in official discord.",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "383lGK564T0"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "BO5uihtPyLM",
+                "startTs": 1016
+            }
+        ],
+        "order": 7
+    },
+    "forge_32": {
+        "id": "forge_32",
+        "name": "Collectors Edition",
+        "gameId": "task.gear.a.08",
+        "description": "I'd really like to show you my collection, but my shelf is just a few items away from perfection. I can't stand an incomplete collection.\nMaybe you can help me complete the final piece: find me [a full set of Contractors game discs]. Note, there are [4 versions] in total: [one standard and one deluxe edition of Contractors], and [one standard and one deluxe edition of Showdown].",
+        "objectives": [
+            "Turn in Contractors Game Disc",
+            "ShowDown Game Disc",
+            "Turn in Contractors Game Disc Collector's Edition",
+            "ShowDown Game Disc Collector's Edition"
+        ],
+        "corpId": "forge",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 32000
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "forge"
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "armor-rampage-od",
+                "item_name": "Rampage OD"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "forge_31"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "Not worth a hassle.",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "vRhiIYSbB0g"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "BO5uihtPyLM",
+                "startTs": 1028
+            }
+        ],
+        "order": 8
+    },
+    "forge_30": {
+        "id": "forge_30",
+        "name": "Virtual Realities",
+        "gameId": "task.gear.a.09",
+        "description": "Hey, I heard there are [4 VR prototype units] on this island! I need you to find them for me, they're special collectibles for certain people.\r\nBut my intel is limited. I only know [the first one] is at [the Drive-in theater in Suburb Area]; [the other 3] are scattered somewhere in [Dam Area], [Smuggling Tunnel], and [Metro Area]. Hope you can spare some time to keep an eye out for them!",
+        "objectives": [
+            "Find the VR Headset in Suburb area",
+            "Find the VR Headset in Dam area",
+            "Find the VR Headset in Metro area",
+            "Find VR Headset in Smuggling Tunnel",
+            "Turn in the VR headsets"
+        ],
+        "corpId": "forge",
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "suburb",
+            "dam",
+            "smuggling",
+            "metro"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 32000
+            },
+            {
+                "type": "reputation",
+                "quantity": 50,
+                "corpId": "forge"
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "helmet-op-highprotection",
+                "item_name": "OP HighProtection"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_metroentry",
+                "item_name": "Metro Entry Ticket"
+            }
+        ],
         "requiredTasks": [
             "forge_10"
         ],
-        "requiredLevel": 0,
-        "tips": "[Tape](https://www.exfil-zone-assistant.app/items/misc_b_tape)",
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
         "videoGuides": [
             {
                 "author": "HayaPlays",
-                "ytId": "nC2k-wBIU6k"
+                "ytId": "91XCL2Z6FT0"
+            },
+            {
+                "author": "orbb",
+                "ytId": "OCRTBDedB3Q"
             },
             {
                 "author": "radFoxVR",
                 "ytId": "BO5uihtPyLM",
-                "startTs": 378
+                "startTs": 944
             }
         ],
-        "order": 13
+        "order": 9
     },
-    "forge_14": {
-        "id": "forge_14",
-        "name": "All pieces together 4",
-        "gameId": "task.gear.z11",
-        "description": "There are so many old things here! Did you find any valuable 'antiques' while you were exploring?\nListen, I recently had a client reach out to me asking for used [cameras]. He says it's a new trend of photography among youngsters.\nIf that's the case, I can't let this opportunity slip by! Can you help me track down a few [cameras]? Who knows, I might be able to cash in on this trend.",
+    "forge_26": {
+        "id": "forge_26",
+        "name": "Business Development",
+        "gameId": "task.gear.a.10",
+        "description": "I think you should try extracting from multiple exfil points.\nThis is basically scouting work, don't rush, it's all preparation for future operations. Safely exfil once from each of these nearby locations: [Drive-in Theater in Suburb Area], [Convoy in Dam Area], and [the ambulance in Resort Area].",
         "objectives": [
-            "Turn in 3 Cameras"
+            "Successfully extract from Outdoor Cinema",
+            "Extract from Convoy",
+            "Extract from White Sail Hospital West"
         ],
         "corpId": "forge",
         "type": [
-            "submit"
+            "extract"
         ],
         "map": [
-            "any"
+            "suburb",
+            "dam",
+            "metro"
         ],
         "reward": [
             {
                 "type": "money",
-                "quantity": 20000
-            },
-            {
-                "type": "experience",
-                "quantity": 5518
+                "quantity": 32000
             },
             {
                 "type": "reputation",
-                "corpId": "forge",
-                "quantity": 10
+                "quantity": 50,
+                "corpId": "forge"
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
             },
             {
                 "type": "item",
-                "item_id": "holster_magd",
-                "quantity": 4
+                "quantity": 1,
+                "item_id": "backpack_hypertec",
+                "item_name": "HyperTec StorageBag"
             }
         ],
-        "preReward": [],
-        "requiredTasks": [
-            "forge_13"
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "key_mid_bunker",
+                "item_name": "Dam Central Bunker's Key"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "key_exitlock_f3_sewer",
+                "item_name": "Lower Sewer exit’s Key"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_metroentry",
+                "item_name": "Metro Entry Ticket"
+            }
         ],
-        "requiredLevel": 0,
-        "tips": "[Camera](https://www.exfil-zone-assistant.app/items/misc_camera)",
+        "requiredTasks": [
+            "forge_30"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
         "videoGuides": [
             {
                 "author": "HayaPlays",
-                "ytId": "FD9FA0PsFU0"
+                "ytId": "owGloA_Ccgg"
+            },
+            {
+                "author": "orbb",
+                "ytId": "FUrur2cpdUA"
             },
             {
                 "author": "radFoxVR",
                 "ytId": "BO5uihtPyLM",
-                "startTs": 391
+                "startTs": 802
             }
         ],
-        "order": 14
+        "order": 10
+    },
+    "forge_28": {
+        "id": "forge_28",
+        "name": "Treasure Beyond Measure",
+        "gameId": "task.gear.a.11",
+        "description": "That hacker sure took her time.\nThere wasn't much data inside, plus lots of useless junk files. But after her analysis, she found some important intel: a strange launcher program, a string of passwords, and a [location].\nI'll focus on studying the link between the program and the passwords. You go check the [control room] in the subway at [Metro Area] and find a [special briefcase].",
+        "objectives": [
+            "Find the Metro Control Room",
+            "Find Missile Launcher",
+            "Turn in Missile Launcher"
+        ],
+        "corpId": "forge",
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "metro"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 32000
+            },
+            {
+                "type": "reputation",
+                "quantity": 50,
+                "corpId": "forge"
+            },
+            {
+                "type": "experience",
+                "quantity": 25672
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "armor-imtv",
+                "item_name": "IMTV"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_metroentry",
+                "item_name": "Metro Entry Ticket"
+            }
+        ],
+        "requiredTasks": [
+            "forge_26"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "yVQPG5eGVAQ"
+            },
+            {
+                "author": "orbb",
+                "ytId": "yEf6vs-lZDg"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "BO5uihtPyLM",
+                "startTs": 887
+            }
+        ],
+        "order": 11
+    },
+    "forge_29": {
+        "id": "forge_29",
+        "name": "Perfect Collaboration",
+        "gameId": "task.gear.a.12",
+        "description": "You're back. Guess what you brought? Let me tell you, that earlier program is actually a missile launch program. And that case isn't just an ordinary computer. You need to connect the program from the hard drive into it and enter that password sequence to make the program run properly.\nThis thing's value is beyond money! Haha, you're my most efficient, most reliable partner.\nTake this key. Get to [the locked room in the subway sewers in Metro Area]. Everything inside is yours, take as much as you can carry. Consider this your reward as my most valued business partner.",
+        "objectives": [
+            "Find the Sewer Area Back Room"
+        ],
+        "corpId": "forge",
+        "type": [
+            "reach"
+        ],
+        "map": [
+            "metro"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 36000
+            },
+            {
+                "type": "reputation",
+                "quantity": 50,
+                "corpId": "forge"
+            },
+            {
+                "type": "experience",
+                "quantity": 25672
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "backpack_eliteops_green",
+                "item_name": "Elite Ops Green"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "helmet-rys-t",
+                "item_name": "RYS T"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "key_f3_factoryroom",
+                "item_name": "Sewer's room Key"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_metroentry",
+                "item_name": "Metro Entry Ticket"
+            }
+        ],
+        "requiredTasks": [
+            "forge_28"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "RgQT3Xioohs"
+            },
+            {
+                "author": "orbb",
+                "ytId": "Gl_3o8UfEyI"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "BO5uihtPyLM",
+                "startTs": 913
+            }
+        ],
+        "order": 12
     },
     "forge_15": {
         "id": "forge_15",
         "name": "Purge the Ranks",
-        "gameId": "task.gear.11",
-        "description": "You're back just in time! There's actually another matter that needs your attention. I hear you're quite good at handling this sort of thing.\nI have a disobedient underling who stole a few of my [gold ingots]. I can't tolerate someone taking what's mine; it's a betrayal. My other men have already cornered him in the [room by the stairs] [on TRUPIK -1F], and all you need to do is simple: do whatever it takes to \"\"retrieve\"\" what's mine.",
+        "gameId": "task.gear.b.01",
+        "description": "I've got something that needs handling now, and from what I gather, you're good at this kind of thing.\nOne of my men stole a few gold bars from me. It's not about the money, I can't stand people taking what's mine. That's betrayal. My other guys have already cornered him inside [Trupiks Mall]. Your job is simple: go to the room on [-1F], do whatever it takes, and [get my gold back].",
         "objectives": [
-            "Find Maximilian's Golden Ingots",
-            "Turn in Golden Ingots"
+            "Find Maximilian's Golden Ingots 1",
+            "Turn in Maximilian's Golden Ingots"
         ],
         "corpId": "forge",
         "type": [
@@ -8982,24 +3691,26 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "reputation",
-                "corpId": "ark",
-                "quantity": 20
+                "quantity": 20,
+                "corpId": "forge"
             },
             {
                 "type": "experience",
-                "quantity": 6403
+                "quantity": 2178
             },
             {
                 "type": "item",
-                "item_id": "mask-ach-faceshield",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "nvg-anpvs31",
+                "item_name": "AN/PVS 31"
             }
         ],
         "preReward": [],
         "requiredTasks": [
-            "forge_14"
+            "forge_39"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 2,
         "tips": "Located in the center of the Mall on -1F, in the room below escalator stairs.",
         "videoGuides": [
             {
@@ -9016,18 +3727,18 @@ export const tasksData: TasksDatabase = {
                 "startTs": 406
             }
         ],
-        "order": 15
+        "order": 13
     },
     "forge_16": {
         "id": "forge_16",
-        "name": "Better safe than sorry 2",
-        "gameId": "task.gear.12",
-        "description": "One of the top things in running a business is to always stay alert.\nI have a few hideouts in the [Suburb area] for temporary storage and transfer. I need to ensure they're in good shape. Go take a look around them: [the water tower north of Altibuy], [the green tent north of the TRUPIK mall], and [the small shack] just [north of the mall after crossing the overpass]. Check everything before you make an extraction back.",
+        "name": "Better Safe than Sorry 2",
+        "gameId": "task.gear.b.02",
+        "description": "In business, staying alert is everything. I have a few stash spots in [Suburb Area] that I use for storage and transfers during regular operations. I need to make sure they're always ready and intact.\nCheck these locations: [the water tower north of Altibuy], [the green tent in the square north of Trupiks], and [the small house past the overpass further north of the mall]. Once you've checked them thoroughly, extract back.",
         "objectives": [
-            "Find water tower near Altibuy",
-            "Find green tent in TRUPIKS plaza",
-            "Find cabin up north",
-            "Successfully extract from Suburb"
+            "Find the water tower near the AltiBuy",
+            "Find the green tent in the TRUPIKS plaza",
+            "Find the Cabin by overpass",
+            "Successfully extract from Suburb Area"
         ],
         "corpId": "forge",
         "type": [
@@ -9044,22 +3755,32 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "reputation",
-                "corpId": "forge",
-                "quantity": 30
+                "quantity": 30,
+                "corpId": "forge"
             },
             {
                 "type": "experience",
-                "quantity": 6403
+                "quantity": 5518
             },
             {
                 "type": "item",
-                "item_id": "armor-duo-mountains",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "helmet-swat",
+                "item_name": "SWAT Helmet"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "holster_mags",
+                "item_name": "Mag Pouch Small"
             }
         ],
         "preReward": [],
-        "requiredTasks": [],
-        "requiredLevel": 0,
+        "requiredTasks": [
+            "forge_15"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "water tower (more of a tank than a tower) 50M north of altibuy in the backyard of the 3 story house, green tent located in front of mall northeast corner by overpass, cabin located north of mall just past overpass before tunnel",
         "videoGuides": [
             {
@@ -9076,16 +3797,16 @@ export const tasksData: TasksDatabase = {
                 "startTs": 427
             }
         ],
-        "order": 16
+        "order": 14
     },
     "forge_17": {
         "id": "forge_17",
         "name": "Don't Play with Fire",
-        "gameId": "task.gear.13",
-        "description": "You know I always hide my goods perfectly, but a few of the hiding spots do face the risk of accidental damage.\nI need you to go check on them and leave that new tracker you got there, so I can ensure the safety of my goods in real time. The location is in the [farm], [north part]. There are several [barns]. They're the tall, cylindrical structures. [marking 3 spots] will be enough. Also, for safety, bring back the [flammable items] you can find.",
+        "gameId": "task.gear.b.03",
+        "description": "My hiding spots are flawless. But some of them are at risk of accidental damage.\nI need you to go check them and mark them with trackers so I can monitor the safety of my goods in real time. Location: [Farm Area], [mark the tall round silos up north]. And for safety, bring back any [flammable materials] nearby.",
         "objectives": [
-            "Mark the 4 North Barns",
-            "Turn in 4 combustible items"
+            "Mark the the North Barn",
+            "Turn in Combustible Items Found In Raid"
         ],
         "corpId": "forge",
         "type": [
@@ -9102,24 +3823,39 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "reputation",
-                "corpId": "forge",
-                "quantity": 30
+                "quantity": 30,
+                "corpId": "forge"
             },
             {
                 "type": "experience",
-                "quantity": 643
+                "quantity": 5518
             },
             {
                 "type": "item",
-                "item_id": "armor-raid-explorer-sd",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "helmet-pasgt",
+                "item_name": "PASGT Helmet"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "holster_grenade",
+                "item_name": "Grenade Holster"
             }
         ],
-        "preReward": [],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "taskitem_tracking_device",
+                "item_name": "MS2000 Tracker"
+            }
+        ],
         "requiredTasks": [
             "forge_16"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "These are *not* barns, they are tall silos.",
         "videoGuides": [
             {
@@ -9136,79 +3872,15 @@ export const tasksData: TasksDatabase = {
                 "startTs": 467
             }
         ],
-        "order": 17
-    },
-    "forge_18": {
-        "id": "forge_18",
-        "name": "Secret Stash 2",
-        "gameId": "task.gear.14",
-        "description": "Have you ever been to the [Dam Area]? I've still got some merchandise stashed near there, and a new client just came knocking.\r\nThey want something flashy—solid gold kind of flashy.\r\nGood thing I've got just the piece:\r\nHead to my [hideout up the hill southeast of the Dam], near an old barber shop and look for a [golden globe].\r\nPlace it on the [wooden crate] hidden in the dark inside a [blue shipping container] on the [west side of the dam's base].",
-        "objectives": [
-            "Find the Smuggling Hideout Next to Barber Shop",
-            "Find the Smuggling Hideout Next to Barber Shop",
-            "Find the Bunker in the Dam area",
-            "Find Maximilian's Golden globe",
-            "Place in the dim blue shipping container"
-        ],
-        "corpId": "forge",
-        "type": [
-            "reach",
-            "retrieve",
-            "place"
-        ],
-        "map": [
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 32000
-            },
-            {
-                "type": "reputation",
-                "corpId": "forge",
-                "quantity": 40
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "item",
-                "item_id": "armor-6b17",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "forge_17"
-        ],
-        "requiredLevel": 0,
-        "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "p1kEjvCaS5c"
-            },
-            {
-                "author": "orbb",
-                "ytId": "_lT5d6SMhp4"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "BO5uihtPyLM",
-                "startTs": 527
-            }
-        ],
-        "order": 18
+        "order": 15
     },
     "forge_19": {
         "id": "forge_19",
         "name": "Cold Hard Cash 1",
-        "gameId": "task.gear.16",
-        "description": "Thanks to you, I've been getting a lot more clients lately. But some of these rich folks are getting pretty extravagant. They always want stuff like gold, gems, and all that.\nWith so many new requests, I'm not really stocked up. How about trying your luck and helping me find [a gold ingot]? Don't worry, one bar will last me a while!",
+        "gameId": "task.gear.b.04",
+        "description": "Thanks to you, more clients have been coming my way lately. But some of these rich folks are getting more extravagant. Their requests often include items made of gold. With so many sudden demands, my supply isn't ready. Why don't you try your luck and find me a [gold ingot]?",
         "objectives": [
-            "Turn in 1 Gold Ingot"
+            "Turn in Gold ingot"
         ],
         "corpId": "forge",
         "type": [
@@ -9220,28 +3892,36 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 32000
+                "quantity": 20000
             },
             {
                 "type": "reputation",
-                "corpId": "forge",
-                "quantity": 50
+                "quantity": 30,
+                "corpId": "forge"
             },
             {
                 "type": "experience",
-                "quantity": 12719
+                "quantity": 5518
             },
             {
                 "type": "item",
-                "item_id": "misc_graphiccard",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "armor-raid-explorer-sd",
+                "item_name": "RaidExplorer SD"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "holster_water",
+                "item_name": "Water Pouch"
             }
         ],
         "preReward": [],
         "requiredTasks": [
-            "forge_11"
+            "forge_17"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "[Gold Ingot](https://www.exfil-zone-assistant.app/items/misc_goldingot)]",
         "videoGuides": [
             {
@@ -9254,18 +3934,19 @@ export const tasksData: TasksDatabase = {
                 "startTs": 624
             }
         ],
-        "order": 21
+        "order": 16
     },
     "forge_22": {
         "id": "forge_22",
         "name": "Cold Hard Cash 2",
-        "gameId": "task.gear.17",
-        "description": "Today, I went to check the warehouse and found out that the gold ingots you brought back are fake! The real ones have been swapped out! I don't know where my real gold ingots are right now, but that traitor left a contact message. The clue mentioned that this guy is disguising himself as a forklift driver. \nGo to the [dam area] and mark the [four forklifts] at the [dock] and the [factory]; I need some clues.",
+        "gameId": "task.gear.b.05",
+        "description": "After comparing the gold bar you brought with the ones I got back earlier... I realized the recovered bars were fakes!\nI must get my real gold back. The traitor left a contact clue, something about meeting a forklift driver disguised in [Dam Area].\nGo to [Dam Area] and mark the [forklifts] at the [Dock] and [Old Factory]. I need more leads.",
         "objectives": [
-            "Mark First Forklift at The Dock",
-            "Mark Second Forklift at The Dock",
-            "Mark First Forklift at The Factory",
-            "Mark Second Forklift at The Factory"
+            "Mark the forklift 1 in Dock",
+            "Mark the forklift 2 in Dock",
+            "Mark the forklift 3 in Dock",
+            "Mark the forklift 1 in Old Factory",
+            "Mark the forklift 2 in Old Factory"
         ],
         "corpId": "forge",
         "type": [
@@ -9277,35 +3958,37 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 32000
+                "quantity": 20000
             },
             {
                 "type": "reputation",
-                "corpId": "forge",
-                "quantity": 50
+                "quantity": 30,
+                "corpId": "forge"
             },
             {
                 "type": "experience",
-                "quantity": 12719
+                "quantity": 5518
             },
             {
                 "type": "item",
-                "item_id": "helmet-delta",
-                "quantity": 1
+                "quantity": 4,
+                "item_id": "holster_magd",
+                "item_name": "General Pouch"
             }
         ],
         "preReward": [
             {
                 "type": "item",
+                "quantity": 4,
                 "item_id": "taskitem_tracking_device",
-                "quantity": 4
+                "item_name": "MS2000 Tracker"
             }
         ],
         "requiredTasks": [
-            "forge_11",
-            "forge_18"
+            "forge_19"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "",
         "videoGuides": [
             {
@@ -9322,13 +4005,267 @@ export const tasksData: TasksDatabase = {
                 "startTs": 657
             }
         ],
-        "order": 22
+        "order": 17
     },
-    "forge_23": {
-        "id": "forge_23",
-        "name": "HandHeld Hero",
-        "gameId": "task.gear.z17",
-        "description": "Heh, never thought I'd see someone holding onto one of those old-school consoles.\nTakes me back—back when I ruled the neighborhood, all because I had the best game system around.\nAnyway, I want that feeling back.\nGo get me a working [game console] and [4 different game cartridges].\nMake it worth my nostalgia, yeah?",
+    "forge_25": {
+        "id": "forge_25",
+        "name": "Cold Hard Cash 3",
+        "gameId": "task.gear.b.06",
+        "description": "All this trouble over a few gold ingots, I should've put holes in him from the start! Anyway, we found a new note under a forklift with location info and a riddle.\nThe gold is in [Dam Area]. The exact spot should be this riddle:\n[Waves crash and builders scheme, a lift with a metal beam, see the gold where the heights convene.]\nSounds like you should look somewhere high up. Go get my [gold ingots] back.",
+        "objectives": [
+            "Find the Top Crane",
+            "Find Maximilian's Golden Ingots 1",
+            "Turn in Maximilian's Golden Ingots"
+        ],
+        "corpId": "forge",
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 20000
+            },
+            {
+                "type": "reputation",
+                "quantity": 30,
+                "corpId": "forge"
+            },
+            {
+                "type": "experience",
+                "quantity": 6403
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mask-ach-faceshield",
+                "item_name": "ACH FaceShield"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "forge_22"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "Climb to the top of the crane. Acrophobia is a thing.",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "c-J7YeSm0e0"
+            },
+            {
+                "author": "orbb",
+                "ytId": "OC9DuhsBReg"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "BO5uihtPyLM",
+                "startTs": 699
+            }
+        ],
+        "order": 18
+    },
+    "forge_27": {
+        "id": "forge_27",
+        "name": "Hack to Play",
+        "gameId": "task.gear.b.07",
+        "description": "While inspecting the cargo, I discovered a specially encrypted hard drive. The encryption method is highly complex. This must be for a major deal! I need to ask a hacker friend of mine for help.\r\nShe is a total gaming enthusiast. So I need you to find limited‑edition game discs for me, that’s the only way she'll put aside her pride and help.\r\nSearch in [the Old Factory B‑area workshop in Dam Area] and [the pile of containers at the bottom of the dam]. Those places might have what we're looking for.",
+        "objectives": [
+            "Arrive Old Factory Zone B",
+            "Find the precious game disc 1",
+            "Find the precious game disc 2",
+            "Turn in Game Disk"
+        ],
+        "corpId": "forge",
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 20000
+            },
+            {
+                "type": "reputation",
+                "quantity": 30,
+                "corpId": "forge"
+            },
+            {
+                "type": "experience",
+                "quantity": 6403
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "armor-duo-mountains",
+                "item_name": "Duo Mountains"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "forge_25"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "qP2i6afqkCc"
+            },
+            {
+                "author": "orbb",
+                "ytId": "p2W4kXJUtIA"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "BO5uihtPyLM",
+                "startTs": 859
+            }
+        ],
+        "order": 19
+    },
+    "forge_13": {
+        "id": "forge_13",
+        "name": "All pieces together 3",
+        "gameId": "task.gear.b.08",
+        "description": "Let's turn to another collection target: [old mobile phones]. Yeah, I know, they look like junk to you, but there's real value inside: information.\nBusiness is all about information asymmetry. More intel means more options. Hell, just trading info can be more profitable than you'd think!",
+        "objectives": [
+            "Turn in Old Phone"
+        ],
+        "corpId": "forge",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 20000
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "forge"
+            },
+            {
+                "type": "experience",
+                "quantity": 6403
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "key_mid_bunker",
+                "item_name": "Dam Central Bunker's Key"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_b_harddrive",
+                "item_name": "Hard drive"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "forge_17",
+            "forge_41"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "[Tape](https://www.exfil-zone-assistant.app/items/misc_b_tape)",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "nC2k-wBIU6k"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "BO5uihtPyLM",
+                "startTs": 378
+            }
+        ],
+        "order": 20
+    },
+    "forge_14": {
+        "id": "forge_14",
+        "name": "All pieces together 4",
+        "gameId": "task.gear.b.09",
+        "description": "While exploring, have you come across any valuable antiques?\nListen, I've recently had clients asking to buy second-hand cameras. They say it's some new photo trend.\nWell, I'm not missing this chance. Try your luck, bring me a few [cameras]. Maybe I can make some profit off this trend.",
+        "objectives": [
+            "Turn in Camera"
+        ],
+        "corpId": "forge",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 32000
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "forge"
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "key_banksewer",
+                "item_name": "Bank Sewer Key"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_graphiccard",
+                "item_name": "Graphic Card"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "forge_13"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "[Camera](https://www.exfil-zone-assistant.app/items/misc_camera)",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "FD9FA0PsFU0"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "BO5uihtPyLM",
+                "startTs": 391
+            }
+        ],
+        "order": 21
+    },
+    "forge_33": {
+        "id": "forge_33",
+        "name": "Console in the Hand",
+        "gameId": "task.gear.b.10",
+        "description": "Hey, didn't expect anyone here to still have old handheld consoles! Such nostalgia. Back in the day, I was the king of the kids in my neighborhood thanks to one of those! This is making me itch to play again. Do me a favor, get me a [game console] and [4 different] [game cartridges]!",
         "objectives": [
             "Turn in Game console",
             "Turn in 'Showdown' Cart",
@@ -9350,8 +4287,8 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "reputation",
-                "corpId": "forge",
-                "quantity": 10
+                "quantity": 5,
+                "corpId": "forge"
             },
             {
                 "type": "experience",
@@ -9359,231 +4296,5342 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "item",
-                "item_id": "helmet-ach-green",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "armor-6b17",
+                "item_name": "6B17"
             }
         ],
         "preReward": [],
         "requiredTasks": [
-            "forge_22"
+            "forge_14"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "",
-        "videoGuides": [
+        "videoGuides": [],
+        "order": 22
+    },
+    "forge_34": {
+        "id": "forge_34",
+        "name": "Referral Gift",
+        "gameId": "task.gear.c.01",
+        "description": "New blood? Tommy mentioned you over the radio. First job's gonna be a tough one — the rat hole under the dam. There's something valuable of mine in there: a golden globe. Bring it back as your introduction gift, and I'll set you up with real armor. Not that militia-grade soft vest garbage. Smugglers pass through that area sometimes — watch yourself.",
+        "objectives": [
+            "Arrive the entrance to the Rat Hole",
+            "Arrive the exit of the Rat Hole",
+            "Find Maximilian's Golden globe",
+            "Turn in Maximilian's Golden globe"
+        ],
+        "corpId": "forge",
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
             {
-                "author": "HayaPlays",
-                "ytId": "L98cI61MGHA"
+                "type": "money",
+                "quantity": 30000
             },
             {
-                "author": "radFoxVR",
-                "ytId": "BO5uihtPyLM",
-                "startTs": 643
+                "type": "reputation",
+                "quantity": 25,
+                "corpId": "forge"
+            },
+            {
+                "type": "experience",
+                "quantity": 2800
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "armor-jpc",
+                "item_name": "JPC"
             }
         ],
+        "preReward": [],
+        "requiredTasks": [
+            "ark_64"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
         "order": 23
     },
-    "forge_24": {
-        "id": "forge_24",
-        "name": "Better safe than sorry 3",
-        "gameId": "task.gear.19",
-        "description": "The [Dam area] in the north of the island has always been a key route for my cargo transport because it's close to the docks, with plenty of spots for transfers and hiding. But with that convenience and variety of routes, this prime location also attracts pesky flies.\nSo, I'm counting on you, my most trusted partner, to check out these places like you did before: the [control room beneath the dam], the [southwest tower inlet] of the dam, and the [firewatcher's cabin] on the [west side of the dam]. Just make sure everything is in order and extract from [Southwest Road].",
+    "forge_35": {
+        "id": "forge_35",
+        "name": "Dam Aircraft Recon",
+        "gameId": "task.gear.c.02",
+        "description": "Don't just treat that JPC like another piece of clothing—you need to know how to use it. There’s a crash site over by the Dam Pier; I need photos to prove how much those old aircraft engines can be scrapped for. Go and photograph both engine locations. While you're at it, grab some household items from the wreckage—I've got a buyer paying per piece.",
         "objectives": [
-            "Find the West inlet tower",
-            "Find the Firewatcher's tower",
-            "Find the Dam's Power Room",
-            "Successfully extract from Southwest Road"
+            "Capture the Aircraft engine 1",
+            "Capture the Aircraft engine 2",
+            "Turn in Household Items Found In Raid"
+        ],
+        "corpId": "forge",
+        "type": [
+            "photo",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "reputation",
+                "quantity": 25,
+                "corpId": "forge"
+            },
+            {
+                "type": "experience",
+                "quantity": 2800
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "helmet-warrior",
+                "item_name": "Warrior Full Face Helmet"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "holster_grenade",
+                "item_name": "Grenade Holster"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "taskitem_photophone",
+                "item_name": "New Phone"
+            }
+        ],
+        "requiredTasks": [
+            "forge_34"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 24
+    },
+    "forge_36": {
+        "id": "forge_36",
+        "name": "My Convoy",
+        "gameId": "task.gear.c.03",
+        "description": "My own convoy is parked at checkpoint 050 near the dam — those vehicles will engine up and pull out on schedule. If you ever need to bolt, you can hitch a ride. Go mark all three vehicle positions so you've got a clear picture in your head. Loot some electronics while you're at it — the newer the better, the kind that actually sells.",
+        "objectives": [
+            "Mark the convoy truck 1",
+            "Mark the convoy truck 2",
+            "Mark the convoy truck 3",
+            "Turn in Electric Items Found In Raid"
+        ],
+        "corpId": "forge",
+        "type": [
+            "mark",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 28000
+            },
+            {
+                "type": "reputation",
+                "quantity": 30,
+                "corpId": "forge"
+            },
+            {
+                "type": "experience",
+                "quantity": 2800
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "backpack_robinson",
+                "item_name": "Robinson BFM Backpack"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "holster_magd",
+                "item_name": "General Pouch"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "taskitem_tracking_device",
+                "item_name": "MS2000 Tracker"
+            }
+        ],
+        "requiredTasks": [
+            "forge_35"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 25
+    },
+    "forge_37": {
+        "id": "forge_37",
+        "name": "Wyeth Farm",
+        "gameId": "task.gear.c.04",
+        "description": "I’ve got a golden goblet hidden away at Wyeth Farm in the suburbs—debt collected from a client who owed me money. Bring it back, and I’ll trade you another piece of gear.",
+        "objectives": [
+            "Arrive the Bedroom in Wyeth farmhouse",
+            "Find Maximilian's Golden Goblet",
+            "Turn in Maximilian's Golden Goblet"
+        ],
+        "corpId": "forge",
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 40000
+            },
+            {
+                "type": "reputation",
+                "quantity": 30,
+                "corpId": "forge"
+            },
+            {
+                "type": "experience",
+                "quantity": 3000
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "helmet-delta",
+                "item_name": "Delta"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "armor-rampage",
+                "item_name": "Rampage"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "forge_36"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 26
+    },
+    "forge_38": {
+        "id": "forge_38",
+        "name": "Suburban Recon",
+        "gameId": "task.gear.c.05",
+        "description": "Go recon a few key areas in the suburbs — checkpoint, parking lot, watchtower, hit them one by one, memorize the terrain and personnel layout. Have a plan to run, have a way out to survive. I don't teach for free — come back when you're done, armor upgrade.",
+        "objectives": [
+            "Find the Checkpoint",
+            "Find the Truck Unloading station",
+            "Find the The 2 yellow-ish huts"
         ],
         "corpId": "forge",
         "type": [
             "reach"
         ],
         "map": [
-            "dam"
+            "suburb"
         ],
         "reward": [
             {
                 "type": "money",
-                "quantity": 32000
+                "quantity": 22000
             },
             {
                 "type": "reputation",
-                "corpId": "forge",
-                "quantity": 50
+                "quantity": 10,
+                "corpId": "forge"
             },
             {
                 "type": "experience",
-                "quantity": 15403
+                "quantity": 2178
             },
             {
                 "type": "item",
-                "item_id": "armor-jpc",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "helmet-6b47",
+                "item_name": "6B47 Helmet"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "holster_water",
+                "item_name": "Water Pouch"
             }
         ],
         "preReward": [],
         "requiredTasks": [
-            "forge_18"
+            "forge_37"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "25kCMmsdQeY"
-            },
-            {
-                "author": "orbb",
-                "ytId": "okHHthr__LY"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "BO5uihtPyLM",
-                "startTs": 754
-            }
-        ],
-        "order": 24
+        "videoGuides": [],
+        "order": 27
     },
-    "forge_25": {
-        "id": "forge_25",
-        "name": "Cold Hard Cash 3",
-        "gameId": "task.gear.18",
-        "description": "If I had known he would go to such lengths for a few golds, I should have made a few holes in him. Anyway, hurry up and check the location in the intel to find my stuff.\nThe real gold bars are hidden at the [docks]... ‘Where the golden light meets the dawn's first glow, high above the sea.' That's the riddle he left behind. Keep an eye out for [the highest place], and quickly get back my [gold ingots].",
+    "forge_39": {
+        "id": "forge_39",
+        "name": "Hidden Path",
+        "gameId": "task.gear.c.06",
+        "description": "The bunker in the suburbs, I remember it's over by the Power Plant. Not many go in, and even fewer come out. Find that exit and extract from there. I'm not asking you to scout; I want you to remember it: if the main entrance is ever blocked, you'll still have a way out.",
         "objectives": [
-            "Find Maximilian's Golden Ingots",
-            "Find the Top Crane",
-            "Turn in Maximilian's Golden Ingots"
+            "Find the Basement Exit",
+            "Successfully extract from Suburb Area"
         ],
         "corpId": "forge",
         "type": [
             "reach",
-            "retrieve",
-            "submit"
-        ],
-        "map": [
-            "dam"
-        ],
-        "reward": [
-            {
-                "type": "money",
-                "quantity": 32000
-            },
-            {
-                "type": "reputation",
-                "corpId": "forge",
-                "quantity": 50
-            },
-            {
-                "type": "experience",
-                "quantity": 15403
-            },
-            {
-                "type": "item",
-                "item_id": "mask-ryst-faceshield",
-                "quantity": 1
-            }
-        ],
-        "preReward": [],
-        "requiredTasks": [
-            "forge_18"
-        ],
-        "requiredLevel": 0,
-        "tips": "Climb to the top of the crane. Acrophobia is a thing.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "c-J7YeSm0e0"
-            },
-            {
-                "author": "orbb",
-                "ytId": "OC9DuhsBReg"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "BO5uihtPyLM",
-                "startTs": 699
-            }
-        ],
-        "order": 25
-    },
-    "forge_26": {
-        "id": "forge_26",
-        "name": "Business Development",
-        "gameId": "task.gear.21",
-        "description": "That hacker has a pretty quirky personality; he can lock himself away for days. So while we wait for him, I think you can go and try to make some extractions from various extraction points.\nI know this may sound like it's outside our usual scope of work, but don't worry—this is all part of preparing for what's to come. Make a safe escape from each of these locations: [Outdoor cinema in the Suburb area], [the Bunker in the Dam area], [the big Gate on the 3F (top level) in Metro area].",
-        "objectives": [
-            "Successfully extract from Outdoor Cinema",
-            "Successfully extract from Central Bunker",
-            "Successfully extract from North Metro Exit"
-        ],
-        "corpId": "forge",
-        "type": [
             "extract"
         ],
         "map": [
-            "suburb",
-            "dam",
-            "metro"
+            "suburb"
         ],
         "reward": [
             {
                 "type": "money",
-                "quantity": 32000
-            },
-            {
-                "type": "experience",
-                "quantity": 15403
+                "quantity": 22000
             },
             {
                 "type": "reputation",
-                "corpId": "forge",
-                "quantity": 50
+                "quantity": 20,
+                "corpId": "forge"
             },
             {
-                "type": "item",
-                "item_id": "helmet-op-highprotection",
-                "quantity": 1
+                "type": "experience",
+                "quantity": 2178
             }
         ],
         "preReward": [
             {
                 "type": "item",
-                "item_id": "key_metro_entry_ticket",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "key_westbunker",
+                "item_name": "Suburb Western Bunker's Key"
             }
         ],
         "requiredTasks": [
-            "forge_24"
+            "forge_38"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 28
+    },
+    "forge_40": {
+        "id": "forge_40",
+        "name": "Every Little Bit Counts",
+        "gameId": "task.gear.c.07",
+        "description": "An old client collects notebooks — doesn't matter who wrote them or what's inside, he pays per notebook. Pick some up when you're rummaging around, bring back a few and find me, paid per item.",
+        "objectives": [
+            "Turn in Notebook"
+        ],
+        "corpId": "forge",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 20000
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "forge"
+            },
+            {
+                "type": "experience",
+                "quantity": 2178
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "helmet-pasgt",
+                "item_name": "PASGT Helmet"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "misc_b_insulatingtape",
+                "item_name": "Insulating Tape"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "forge_36"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 29
+    },
+    "forge_41": {
+        "id": "forge_41",
+        "name": "Another Order",
+        "gameId": "task.gear.c.08",
+        "description": "He was satisfied with that batch of notebooks; now there's another order — cassette tapes, the old-fashioned kind. Plenty of them in abandoned suburban houses and old cars, just grab them as you go. Bring back enough and come find me, same as last time.",
+        "objectives": [
+            "Turn in Tape"
+        ],
+        "corpId": "forge",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 20000
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "forge"
+            },
+            {
+                "type": "experience",
+                "quantity": 2178
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "helmet-kiver-m",
+                "item_name": "Kiver-M Helmet"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_camera",
+                "item_name": "Vintage Camera"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "forge_40"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 30
+    },
+    "forge_42": {
+        "id": "forge_42",
+        "name": "Rumors",
+        "gameId": "task.gear.sq.01",
+        "description": "Ah, there you are. I've got something that might interest you.\r\nOne of my contacts brought back some news. A group of newcomers has been asking around about the Dam's power facilities. Got me thinking there might be some money in it.\r\nI heard they left behind a few intel phones. I've marked the locations.\r\nGo bring them back.\r\nDoesn't matter what's on them. Just bring them to me.",
+        "objectives": [
+            "Find the phone at the crash site",
+            "Find the phone in the house opposite Ellie's Shop",
+            "Find the phone on the old car by the cemetery",
+            "Turn in Intel Phone"
+        ],
+        "corpId": "forge",
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "experience",
+                "quantity": 3311
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "backpack_eliteops",
+                "item_name": "Elite Ops"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 31
+    },
+    "forge_43": {
+        "id": "forge_43",
+        "name": "Recon",
+        "gameId": "task.gear.sq.02",
+        "description": "Looks like those phones paid off.\r\nThe newcomers are with Leopard Global Security. LGS for short. A well-equipped private military outfit.\r\nI don't care why they're here. What I care about is whether they're going to interfere with my business.\r\nA while back, some of their people got into a fight with scavengers in the Mall's B1 warehouse area and left a few bodies behind.\r\nGo take a look. See if they left anything useful behind.",
+        "objectives": [
+            "Reach the TRUPIK'S Mall B1",
+            "Take photo of the LGS operative body #1",
+            "Take photo of the LGS operative body #2",
+            "Take photo of the LGS operative body #3",
+            "Eliminate Scav in Subrub Area"
+        ],
+        "corpId": "forge",
+        "type": [
+            "reach",
+            "photo",
+            "eliminate"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 32000
+            },
+            {
+                "type": "experience",
+                "quantity": 4000
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "armor-raid-explorer-black",
+                "item_name": "RaidExplorer Black"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "taskitem_photophone",
+                "item_name": "New Phone"
+            }
+        ],
+        "requiredTasks": [
+            "forge_42"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 32
+    },
+    "forge_44": {
+        "id": "forge_44",
+        "name": "Stakeout",
+        "gameId": "task.gear.sq.03",
+        "description": "I've managed to track down a few LGS camps. Figured I'd keep an eye on them for a while.\r\nThe black truck near the main gate of the Dam Factory and the vehicles parked outside the Bank in Resort should make good observation points.\r\nGo plant the trackers.\r\nI've already sent the equipment to your mailbox.\r\nAnd be careful. Nobody likes being watched.",
+        "objectives": [
+            "Mark the truck at the front gate of the Dam Factory",
+            "Mark the truck at the rear gate of the Dam Factory",
+            "Mark the black car at the Resort Bank",
+            "Mark the blue car at the Resort Bank"
+        ],
+        "corpId": "forge",
+        "type": [
+            "mark"
+        ],
+        "map": [
+            "dam",
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "experience",
+                "quantity": 3000
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "helmet-ccbmblack",
+                "item_name": "CCBM ballistic mask"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "taskitem_tracking_device",
+                "item_name": "MS2000 Tracker"
+            }
+        ],
+        "requiredTasks": [
+            "forge_43"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 33
+    },
+    "forge_45": {
+        "id": "forge_45",
+        "name": "Cleanup",
+        "gameId": "task.gear.sq.04",
+        "description": "Looks like the trackers are onto something.\r\nI've almost got LGS figured out, but the scavengers have been stirring up too much noise and muddying the data.\r\nClear them out — the Dam, the Resort, and the Suburbs. Don't miss any.\r\nUse the pump-action shotgun. Makes it easier to pin the blame on LGS.\r\nThe gun's waiting in your mailbox. If you lose it, Tommy can get you another one.\r\nDon't take too long.",
+        "objectives": [
+            "Pump Shotgun: Eliminate targets in Dam Area",
+            "Pump Shotgun: Eliminate targets in Suburb Area",
+            "Pump Shotgun: Eliminate targets in Resort Area"
+        ],
+        "corpId": "forge",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "dam",
+            "suburb",
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 40000
+            },
+            {
+                "type": "experience",
+                "quantity": 5011
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "armor-jpc",
+                "item_name": "JPC"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-12ga-slugfmj",
+                "item_name": "12GA Poleva-6u"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-m870-shorty",
+                "item_name": "M870 12ga pump action shotgun SHORTY edition"
+            }
+        ],
+        "requiredTasks": [
+            "forge_44"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 34
+    },
+    "forge_46": {
+        "id": "forge_46",
+        "name": "Paper Trail",
+        "gameId": "task.gear.sq.05",
+        "description": "LGS keeps everything encrypted, but nobody covers their tracks perfectly.\r\nCheck the Sector 2 Ventilation Room in Smuggling Tunnel and the Bank in Resort.\r\nIf you find any internal LGS documents, bring them back.\r\nAnd while you're there, deal with the scavengers in the tunnels. They've been causing problems for my smuggling routes.",
+        "objectives": [
+            "Find LGS File #1 [Resort]",
+            "Find LGS File #2 [Resort]",
+            "Find LGS File #3 [Smuggling Tunnel]",
+            "Turn in LGS File",
+            "Eliminate Scav in Smuggling Tunnel"
+        ],
+        "corpId": "forge",
+        "type": [
+            "retrieve",
+            "submit",
+            "eliminate"
+        ],
+        "map": [
+            "smuggling",
+            "resort",
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 50000
+            },
+            {
+                "type": "experience",
+                "quantity": 5011
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "armor-tbasv5bk",
+                "item_name": "TBAS V5 BK"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "forge_45"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 35
+    },
+    "forge_47": {
+        "id": "forge_47",
+        "name": "Bait",
+        "gameId": "task.gear.sq.06",
+        "description": "If they're so concerned about keeping this intel under wraps, well, let's help spread it around.\r\nBut first, deal with the scavengers in the area.\r\nThen place those phones loaded with LGS intel at the designated locations.\r\nThe Police Station. The Restaurant. Leave one at each.\r\nAfter that, we'll see what kind of trouble it stirs up.",
+        "objectives": [
+            "Eliminate Scav in Subrub Area",
+            "Place in the police briefing room",
+            "Place in the police office",
+            "Place at the diner front desk"
+        ],
+        "corpId": "forge",
+        "type": [
+            "eliminate",
+            "place"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "experience",
+                "quantity": 3200
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "helmet-delta",
+                "item_name": "Delta"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "taskitem_placement_max_oldphone",
+                "item_name": "Max‘s Phone"
+            }
+        ],
+        "requiredTasks": [
+            "forge_46"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 36
+    },
+    "forge_48": {
+        "id": "forge_48",
+        "name": "Golden Lion",
+        "gameId": "task.gear.sq.07",
+        "description": "Word is, before everything went south on the island, someone hid a golden lion statue at the Dam Factory.\r\nYou know I have a soft spot for that kind of thing, so I need you to do me a favor.\r\nThere aren't many leads, and the factory's been picked over more than once since then.\r\nBut I'm certain it's still somewhere in the factory.\r\nAnd lately, LGS has been sending more elites into the area.\r\nIf you run into them, take care of them. They're nothing but trouble.",
+        "objectives": [
+            "Eliminate Scav in Dam",
+            "Eliminate LGS Lv4 in Dam Area",
+            "Eliminate LGS Lv5 in Dam Area",
+            "Find the Golden Lion Statue",
+            "Turn in Golden Lion Statue"
+        ],
+        "corpId": "forge",
+        "type": [
+            "eliminate",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 40000
+            },
+            {
+                "type": "experience",
+                "quantity": 4200
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "armor-6b45",
+                "item_name": "6B45 Ratnik plate carrier vest"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "forge_47"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 37
+    },
+    "ntg_10": {
+        "id": "ntg_10",
+        "name": "Clear the Way",
+        "gameId": "task.gear.sq.08",
+        "description": "Everything we've tracked leads to Smuggling Tunnel.\r\nLGS has been active there too.\r\nI don't care what they're up to.\r\nDeal with anyone in the way.\r\nDon't let them get in the way of my business.",
+        "objectives": [
+            "Eliminate Scav in Smuggling Tunnel"
+        ],
+        "corpId": "forge",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "smuggling"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 50000
+            },
+            {
+                "type": "experience",
+                "quantity": 5000
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "helmet-galvor",
+                "item_name": "Galvor Tactical Helmet"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mask-galvorgoggles",
+                "item_name": "Galvor ballistic goggles"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "forge_48"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "HayaPlays",
-                "ytId": "owGloA_Ccgg"
-            },
-            {
-                "author": "orbb",
-                "ytId": "FUrur2cpdUA"
+                "ytId": "gpLeZPpMR4g"
             },
             {
                 "author": "radFoxVR",
-                "ytId": "BO5uihtPyLM",
-                "startTs": 802
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 265
+            }
+        ],
+        "order": 38
+    },
+    "forge_49": {
+        "id": "forge_49",
+        "name": "Loose Ends",
+        "gameId": "task.gear.sq.09",
+        "description": "It's time to wrap things up.\r\nThe only ones left underground are LGS elites, so watch yourself.\r\nAnd don't forget to bring back that LGS Medal from the bathroom.\r\nI've got a feeling it'll come in handy someday.",
+        "objectives": [
+            "Find LGS Medal",
+            "Turn in LGS Medal",
+            "Eliminate LGS Lv4 in Mero Area",
+            "Eliminate LGS Lv5 in Metro Area"
+        ],
+        "corpId": "forge",
+        "type": [
+            "retrieve",
+            "submit",
+            "eliminate"
+        ],
+        "map": [
+            "metro"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 60000
+            },
+            {
+                "type": "experience",
+                "quantity": 6000
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "helmet-op-highprotection",
+                "item_name": "OP HighProtection"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "armor-iotvgen3",
+                "item_name": "Iotv Gen3"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_metroentry",
+                "item_name": "Metro Entry Ticket"
+            }
+        ],
+        "requiredTasks": [
+            "ntg_10"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 39
+    },
+    "gunsmith_1": {
+        "id": "gunsmith_1",
+        "name": "The Gunsmith 'Color'",
+        "gameId": "task.gunsmith.001",
+        "description": "Ever thought about giving your firearms a makeover? I've got some spray paint cans here. You can use them at the [Spray Painting Station] to the right of the workbench to customize the colors and patterns of your gun parts. But first, I need you to gather some supplies for me. Go find some [Batteries] and [spray cans].",
+        "objectives": [
+            "Turn in Batteries Items Found In Raid",
+            "Find Spray can"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 12000
+            },
+            {
+                "type": "reputation",
+                "quantity": 20,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 1089
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.color.paintcan.plastic.050"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_2"
+        ],
+        "requiredPlayerLevel": 9,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 1
+    },
+    "gunsmith_3": {
+        "id": "gunsmith_3",
+        "name": "The Gunsmith 'Rebuild'",
+        "gameId": "task.gunsmith.002",
+        "description": "Retrieve the [AR15 Hunter] from the mailbox and mount it on the gunsmith bench. Load the components from the mail into the storage bay of the [Conveyor Belt] next to the bench. Swap out the wooden [Handguard], [Pistol Grip], and [Stock] of the AR15 Hunter with the three new components provided. Deliver the modified firearm to me.",
+        "objectives": [
+            "Install M16 buffer stock",
+            "Install M4 Factory original handguard",
+            "Install M4 Factory original pistol grip"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "gunsmith"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 22000
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 1089
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-m4a1-hunter",
+                "item_name": "AR-15 5.56x45mm semi-automatic assault rifle Hunter"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-arbuffer-stock-arbuffertube",
+                "item_name": "AR-15 buffer tube"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-arstock-stock-m4factory",
+                "item_name": "AR-15 M4 Factory stock"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-m4a1-hunter",
+                "item_name": "AR-15 5.56x45mm semi-automatic assault rifle Hunter"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-handguard-m4factory",
+                "item_name": "AR-15 M4 Factory handguard"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-pistolgrip-m4factory",
+                "item_name": "AR-15 M4 Factory pistolgrip"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-arbuffer-stock-m16a2",
+                "item_name": "AR-15 M16A2 buffer tube stock"
+            }
+        ],
+        "requiredTasks": [
+            "gunsmith_2"
+        ],
+        "requiredPlayerLevel": 6,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 3
+    },
+    "gunsmith_5": {
+        "id": "gunsmith_5",
+        "name": "The Gunsmith 'Assemble'",
+        "gameId": "task.gunsmith.003",
+        "description": "Get all the 1911 parts from the mailbox, then head to the gunsmith station to assemble the weapon.\nFinally, submit the completed gun to me.",
+        "objectives": [
+            "Install Barrel kw1911",
+            "Install Frontsight kw1911",
+            "Install Grip kw1911",
+            "Install Rearsight kw1911",
+            "Install UppreceiverBolt kw1911",
+            "Install Lowerreceiver kw1911"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "gunsmith"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 22000
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 1089
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "ammo-45acp-fmj",
+                "item_name": ".45acp FMJ"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-m1911",
+                "item_name": "KW1911 .45acp semi-automatic pistol"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_45acp_11",
+                "item_name": "KW1911 .45acp 10rnd magazine"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-kw1911-barrel-kw1911",
+                "item_name": "KW1911 .45acp barrel"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-kw1911-frontsight-kw1911",
+                "item_name": "KW1911 front sight"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-kw1911-lowerreceiver-kw1911",
+                "item_name": "KW1911 .45acp semi-automatic pistol"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-kw1911-pistolgrip-kw1911",
+                "item_name": "KW1911 pistol grip"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-kw1911-upperreceiver-kw1911",
+                "item_name": "KW1911 pistol slide"
+            }
+        ],
+        "requiredTasks": [
+            "gunsmith_3"
+        ],
+        "requiredPlayerLevel": 7,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 5
+    },
+    "gunsmith_7": {
+        "id": "gunsmith_7",
+        "name": "The Gunsmith 'Attach'",
+        "gameId": "task.gunsmith.004",
+        "description": "Retrieve the G3 from the mailbox.\r\nModify weapon to meet the objectives and submit it.",
+        "objectives": [
+            "G3 Lower Receiver",
+            "Ergonomics ≥"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "gunsmith"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 22000
+            },
+            {
+                "type": "reputation",
+                "quantity": 10,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 1089
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-g3-lowerreceiver-g3",
+                "item_name": "G3 7.62x51mm assault rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-g3-stock-arbufferadapter",
+                "item_name": "G3 AR Buffer tube stock adapter"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-hk51-handguard-triangle",
+                "item_name": "RC51 Triangle handguard"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-hk51-upperreceiver-hk51",
+                "item_name": "RC51 7.62x51mm upper receiver"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-g3a3",
+                "item_name": "G3 A3 7.62x51mm assault rifle"
+            }
+        ],
+        "requiredTasks": [
+            "gunsmith_5"
+        ],
+        "requiredPlayerLevel": 8,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 7
+    },
+    "gunsmith_9": {
+        "id": "gunsmith_9",
+        "name": "M16 Modification Trial",
+        "gameId": "task.gunsmith.005",
+        "description": "Modify weapon to meet the objectives and submit it.",
+        "objectives": [
+            "Install M16 5.56x45mm assault rifle",
+            "Install a magazine",
+            "Install a Mount",
+            "Vertical Recoil ≤",
+            "Horizontal Recoil ≤",
+            "Ergonomics ≥"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "gunsmith"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 22000
+            },
+            {
+                "type": "reputation",
+                "quantity": 20,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 1257
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-barrel-368mmsight",
+                "item_name": "AR-15 5.56x45mm 368mm barrel with sight"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-handguard-delta9inch",
+                "item_name": "AR-15 Delta 9-inch handguard"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-upperreceiver-m16a2",
+                "item_name": "AR-15 M16A2 5.56x45mm upper receiver"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_7"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 2,
+        "tips": "",
+        "videoGuides": [],
+        "order": 9
+    },
+    "gunsmith_11": {
+        "id": "gunsmith_11",
+        "name": "G3 Modification Trial",
+        "gameId": "task.gunsmith.006",
+        "description": "Modify weapon to meet the objectives and submit it.",
+        "objectives": [
+            "G3 Lower Receiver",
+            "Install a magazine",
+            "Vertical Recoil ≤",
+            "Horizontal Recoil ≤",
+            "Ergonomics ≥",
+            "Firing Power ≥"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "gunsmith"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 22000
+            },
+            {
+                "type": "reputation",
+                "quantity": 20,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 1257
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_762x51_30",
+                "item_name": "G3 7.62x51mm 30rnd magazine"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-g3-handguard-spuhr",
+                "item_name": "G3 SPUHR handguard"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-g3-lowerreceiver-g3ak4",
+                "item_name": "G3 AK4 7.62x51mm assault rifle"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_9"
+        ],
+        "requiredPlayerLevel": 12,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 11
+    },
+    "gunsmith_13": {
+        "id": "gunsmith_13",
+        "name": "M870 Modification Trial",
+        "gameId": "task.gunsmith.007",
+        "description": "Modify weapon to meet the objectives and submit it.",
+        "objectives": [
+            "Install M870 12ga pump action shotgun",
+            "Install PEQ-15 20mm tactical laser",
+            "Install a magazine",
+            "Vertical Recoil ≤",
+            "Ergonomics ≥",
+            "Firing Power ≥"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "gunsmith"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 22000
+            },
+            {
+                "type": "reputation",
+                "quantity": 20,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 3311
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-m870-barrel-660mm",
+                "item_name": "M870 12ga 660mm barrel"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-m870-handguard-moe",
+                "item_name": "M870 MOE handguard"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-m870-stock-sga",
+                "item_name": "M870 SGA stock"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_9"
+        ],
+        "requiredPlayerLevel": 15,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 13
+    },
+    "gunsmith_15": {
+        "id": "gunsmith_15",
+        "name": "SKS Modification Trial",
+        "gameId": "task.gunsmith.008",
+        "description": "Modify weapon to meet the objectives and submit it.",
+        "objectives": [
+            "Install OPSKS 7.62x39mm carbine rifle",
+            "Install a tactical component",
+            "Install a magazine",
+            "Vertical Recoil ≤",
+            "Horizontal Recoil ≤",
+            "Ergonomics ≥"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "gunsmith"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 22000
+            },
+            {
+                "type": "reputation",
+                "quantity": 10,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 3311
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.color.paintcan.plastic.003"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_11"
+        ],
+        "requiredPlayerLevel": 20,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 15
+    },
+    "gunsmith_17": {
+        "id": "gunsmith_17",
+        "name": "AK74N Modification Trial",
+        "gameId": "task.gunsmith.009",
+        "description": "Modify weapon to meet the objectives and submit it.",
+        "objectives": [
+            "Install AK74N 5.45x39mm assault rifle",
+            "Install a Mount",
+            "Install a magazine",
+            "Vertical Recoil ≤",
+            "Horizontal Recoil ≤",
+            "Ergonomics ≥"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "gunsmith"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 22000
+            },
+            {
+                "type": "reputation",
+                "quantity": 10,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 3311
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-rearsight-rdv2",
+                "item_name": "RD704 RDV2 rearsight"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak100-muzzle-545reactor",
+                "item_name": "AK74 Reactor 5.45x39mm compensator"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak100-muzzle-545wafflemaker",
+                "item_name": "AK74 Reactor WaffleMaker 5.45x39mm suppressor"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_13"
+        ],
+        "requiredPlayerLevel": 25,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 17
+    },
+    "gunsmith_2": {
+        "id": "gunsmith_2",
+        "name": "Workshop Interview",
+        "gameId": "task.gunsmith.m01",
+        "description": "I'm Anna. Johnny mentioned you—said you're good with your hands, not just at pulling triggers. Now that the base has power, it's time someone put this workbench to use. Let’s see what you’ve got—install this M4 lower receiver.",
+        "objectives": [
+            "AR15 Lower receiver",
+            "Install a magazine",
+            "Install a Mount"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "gunsmith"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 15000
+            },
+            {
+                "type": "reputation",
+                "quantity": 15,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 2500
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-muzzle-qdss-nt4",
+                "item_name": "AR15 QDSS-NT4 5.56x45mm suppressor"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-upperreceiver-m4factroy",
+                "item_name": "AR-15 M4 Factory 5.56x45mm upper receiver"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-arstock-stock-m4factory",
+                "item_name": "AR-15 M4 Factory stock"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_29"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 2
+    },
+    "gunsmith_4": {
+        "id": "gunsmith_4",
+        "name": "The Lost Part",
+        "gameId": "task.gunsmith.m02",
+        "description": "Want to build a gun that's truly yours? First, you need a proper barrel. Go find a 508mm long barrel. Drop anyone in your way and bring it back—intact. I don't take bent ones. Or, you might be able to score one from Tommy.",
+        "objectives": [
+            "Eliminate Scavangers in Suburb Area",
+            "Barrel AR15 508Sight"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "eliminate",
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "reputation",
+                "quantity": 20,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 3200
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "scope_acog",
+                "item_name": "ACOG 20mm scope"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-barrel-508mmsight",
+                "item_name": "AR-15 5.56x45mm 508mm barrel with sight"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_2"
+        ],
+        "requiredPlayerLevel": 5,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 4
+    },
+    "gunsmith_6": {
+        "id": "gunsmith_6",
+        "name": "The Artisan's Touch",
+        "gameId": "task.gunsmith.m03",
+        "description": "Now you have all the parts, go try the gunsmith bench. — Upper receiver, long barrel, ACOG, suppressor, plus pick a tactical accessory to tame the recoil. Sit down at the bench and assemble them one by one starting from the lower receiver.",
+        "objectives": [
+            "Install M4A1 5.56x45mm carbine rifle",
+            "Muzzle",
+            "Install a Mount",
+            "Install a tactical component"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "gunsmith"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 25000
+            },
+            {
+                "type": "reputation",
+                "quantity": 25,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 3500
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "scope_lcosight",
+                "item_name": "FPO"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-handguard-dd",
+                "item_name": "AR-15 DD handguard"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_4"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 6
+    },
+    "gunsmith_8": {
+        "id": "gunsmith_8",
+        "name": "Field Test",
+        "gameId": "task.gunsmith.m04",
+        "description": "Target practice doesn't count. This gun needs to taste blood to mean anything — head to the burger joint on the 1st floor of the Mall and take out a few scavengers with your AR15. Come back and tell me how it feels.",
+        "objectives": [
+            "Find the Burger Store on the 1F of TRUPIK'S Mall",
+            "AR15 series: Eliminate targets"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "reach",
+            "eliminate"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 28000
+            },
+            {
+                "type": "reputation",
+                "quantity": 25,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 3500
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "grip_trigripobra_bk",
+                "item_name": "Mamba BK"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-handguard-4inchris",
+                "item_name": "AR-15 4inch RIS handguard"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-arstock-stock-dd",
+                "item_name": "AR-15 DD stock"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_6"
+        ],
+        "requiredPlayerLevel": 7,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 8
+    },
+    "gunsmith_10": {
+        "id": "gunsmith_10",
+        "name": "The Last Screw Before Iron Wolf",
+        "gameId": "task.gunsmith.m05",
+        "description": "Tommy's been pushing you — Iron Wolf is holed up at the police station. Before you take this gun in, I need to do one last fine-tune. I'll push the firepower to where I like it (100%). This is the best scope I can give you — HAMR 4x. No fancy red dots for a BOSS fight.",
+        "objectives": [
+            "Firing Power ≥",
+            "Eliminate Scavangers in Suburb Area"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "gunsmith",
+            "eliminate"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 32000
+            },
+            {
+                "type": "reputation",
+                "quantity": 30,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 3800
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "scope_hamrsight_4x",
+                "item_name": "HRMA 20mm scope"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-muzzle-sf3p",
+                "item_name": "AR-15 SF3P 5.56x45mm compensator"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-pistolgrip-m4factory",
+                "item_name": "AR-15 M4 Factory pistolgrip"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_8"
+        ],
+        "requiredPlayerLevel": 10,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 10
+    },
+    "gunsmith_12": {
+        "id": "gunsmith_12",
+        "name": "Parts Upgrade",
+        "gameId": "task.gunsmith.m06",
+        "description": "I need you to find the storage rooms marked [WH] inside the Smuggling Tunnel — two in the East Zone, one in the West Zone. I also need some tools — 9 of them will do. Head in, come back, and I'll unlock a batch of VSS special-round barters — the 9x39 AP isn't sold in any shop, barter is the only way.",
+        "objectives": [
+            "Find the WH-01 East side",
+            "Find the WH-02 East side",
+            "Find the WH-03 West side",
+            "Turn in Tools Items Found In Raid"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "reach",
+            "submit"
+        ],
+        "map": [
+            "smuggling"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 60000
+            },
+            {
+                "type": "reputation",
+                "quantity": 45,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 6000
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_10",
+            "ark_70"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 2,
+        "tips": "",
+        "videoGuides": [],
+        "order": 12
+    },
+    "gunsmith_14": {
+        "id": "gunsmith_14",
+        "name": "Protection Racket",
+        "gameId": "task.gunsmith.m07",
+        "description": "To infiltrate and dismantle this transport line, we've gotta grease some palms to get our shot.\nListen up, head to the [guard post] near the [southern elevator] in the [Smuggling Tunnel] and grab the cash we've stashed. Then drop it in the designated cardboard boxes to butter up our contacts at these locations:\n[Control room], [Dock], [Warehouse], [Southern elevator].",
+        "objectives": [
+            "Find money at Southern tunnel post",
+            "Placement: control room",
+            "Placement: dock",
+            "Placement: warehouse",
+            "Placement: southern elevator"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "retrieve",
+            "place"
+        ],
+        "map": [
+            "smuggling"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 65000
+            },
+            {
+                "type": "reputation",
+                "quantity": 50,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 6500
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_556x45_60",
+                "item_name": "AR-15 5.56x45mm 60rnd P-Drum magazine"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-muzzle-sf4p",
+                "item_name": "AR-15 SF4P 5.56x45mm compensator"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_12"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 2,
+        "tips": "",
+        "videoGuides": [],
+        "order": 14
+    },
+    "gunsmith_16": {
+        "id": "gunsmith_16",
+        "name": "Close Quarters — MP9 Drill",
+        "gameId": "task.gunsmith.m08",
+        "description": "Time for your MP9 to draw blood. Narrow alleys in the Smuggling Tunnel — [15 targets]. Forget the Malyuk; SMGs rule in places like this. Extract from map5 when it's done.",
+        "objectives": [
+            "MP9 series: Eliminate targets",
+            "Extract from Smuggling Tunnel"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "eliminate",
+            "extract"
+        ],
+        "map": [
+            "smuggling"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 70000
+            },
+            {
+                "type": "reputation",
+                "quantity": 55,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 7000
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-barrel-508mm",
+                "item_name": "AR-15 5.56x45mm 508mm barrel"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "magazine-sa58-50rnd",
+                "item_name": "SA58 7.62x51mm 50rnd Drum magazine"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-svd-muzzle-suppressor",
+                "item_name": "SVD R43 7.62x54mmR suppressor"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_14"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 2,
+        "tips": "",
+        "videoGuides": [],
+        "order": 16
+    },
+    "gunsmith_18": {
+        "id": "gunsmith_18",
+        "name": "Smuggling Route: Surveillance I",
+        "gameId": "task.gunsmith.m09",
+        "description": "Tommy wants intel — help him install cameras at several spots in the smuggler's corridor. Once done, I'll equip you with a 60-round magazine.",
+        "objectives": [
+            "Find Tommy's cam",
+            "Placement 1: warehouse",
+            "Placement 2: warehouse",
+            "Placement 3: warehouse"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "retrieve",
+            "place"
+        ],
+        "map": [
+            "smuggling"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 80000
+            },
+            {
+                "type": "reputation",
+                "quantity": 60,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 8000
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-barrel-508mm",
+                "item_name": "AR-15 5.56x45mm 508mm barrel"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_556x45_60_sf",
+                "item_name": "AR-15 5.56x45mm 60rnd SSF magazine"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-arstock-stock-sl-k",
+                "item_name": "AR-15 SLK stock"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_16"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 2,
+        "tips": "",
+        "videoGuides": [],
+        "order": 18
+    },
+    "gunsmith_19": {
+        "id": "gunsmith_19",
+        "name": "Malyuk Field Trial",
+        "gameId": "task.gunsmith.m10",
+        "description": "The Malyuk is a Ukrainian mongrel — part AK, part AR. Take out [18 targets] using the Malyuk. All kills must be completed within the [Smuggling Tunnel]. Let me see if your trigger work and this gun’s alloy are a good fit. I’m throwing in an extended G18C Mag — time to upgrade your sidearm too.",
+        "objectives": [
+            "Malyuk series: Eliminate targets"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "smuggling"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 85000
+            },
+            {
+                "type": "reputation",
+                "quantity": 60,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 8500
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-malyuk-762",
+                "item_name": "Malyuk 7.62x39mm assault rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-upperreceiver-pdc",
+                "item_name": "AK74/AKM PDC dust cover"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "magazine-g18c-50rnd",
+                "item_name": "G18C 9x19mm 50rnd Drum magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_18"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 3,
+        "tips": "",
+        "videoGuides": [],
+        "order": 19
+    },
+    "gunsmith_20": {
+        "id": "gunsmith_20",
+        "name": "White Virus",
+        "gameId": "task.gunsmith.m11",
+        "description": "White ARK's database needs to be wiped. Four floppy disks — plant two of them at designated spots (a/b) to inject the virus, and bring the other two back to me so I can develop a counter-agent from them. Finish this and I'll unlock the 7.62x39 AP v2 barter — Igor's AKM can finally punch through Hard armor.",
+        "objectives": [
+            "Find White Floppydisks",
+            "Placement 2: The 2F corridor of Ventilation Room 1",
+            "Placement 1: the room on the 2F at Cargo Area 01",
+            "White Floppydisk"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "retrieve",
+            "place",
+            "submit"
+        ],
+        "map": [
+            "smuggling"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 95000
+            },
+            {
+                "type": "reputation",
+                "quantity": 65,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 9500
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-stock-zhukov-s",
+                "item_name": "AK74/AKM Zhukov-s stock"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-upperreceiver-akdustcovertitan",
+                "item_name": "AK74/AKM Titan Dust cover"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_19"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 3,
+        "tips": "",
+        "videoGuides": [],
+        "order": 20
+    },
+    "gunsmith_21": {
+        "id": "gunsmith_21",
+        "name": "Secure the Retreat — LMG Suppression",
+        "gameId": "task.gunsmith.m12",
+        "description": "The deep Smuggling Tunnel needs to be cleared out — [18 targets], [LMG only]. Machine guns only show their real teeth in the deep. Finish this and I'll unlock the 545 AP v2 barter for you — Igor's AK-74M can finally show its true precision.",
+        "objectives": [
+            "LMG: Eliminate targets"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "smuggling"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 110000
+            },
+            {
+                "type": "reputation",
+                "quantity": 70,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 10500
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_20"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 3,
+        "tips": "",
+        "videoGuides": [],
+        "order": 21
+    },
+    "gunsmith_22": {
+        "id": "gunsmith_22",
+        "name": "Smuggling Route: Surveillance II",
+        "gameId": "task.gunsmith.m13",
+        "description": "Second batch of cameras — near ventilation room No. 2. I need more information to confirm. Done and I'll unlock the good 762x51 AP v1 rounds.",
+        "objectives": [
+            "Find Tommy's cam",
+            "Placement 1: Fireplace Room",
+            "Placement 2: Fireplace Room",
+            "Placement: Emergency ladder"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "retrieve",
+            "place"
+        ],
+        "map": [
+            "smuggling"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 120000
+            },
+            {
+                "type": "reputation",
+                "quantity": 75,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 12000
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "scope_spector_bk",
+                "item_name": "Scepter BK 20mm scope"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-svd-muzzle-suppressor",
+                "item_name": "SVD R43 7.62x54mmR suppressor"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_21"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 3,
+        "tips": "",
+        "videoGuides": [],
+        "order": 22
+    },
+    "gunsmith_23": {
+        "id": "gunsmith_23",
+        "name": "Data Smuggling",
+        "gameId": "task.gunsmith.m14",
+        "description": "Critical intel is hidden within the smuggling tunnels. Infiltrate the depths to seize the Encrypted USB and all intel items. You must manually trigger the extraction switch to escape. This is a suicide mission—survive at all costs.",
+        "objectives": [
+            "Find the ventilation room control panel",
+            "Turn in USB - classified",
+            "Turn in Intel Items Found In Raid"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "reach",
+            "submit"
+        ],
+        "map": [
+            "smuggling"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 200000
+            },
+            {
+                "type": "reputation",
+                "quantity": 100,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 15000
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-handguard-xrs74yg",
+                "item_name": "AK74/AKM XRS handguard"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-upperreceiver-pdc",
+                "item_name": "AK74/AKM PDC dust cover"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-handguard-ssgen3",
+                "item_name": "AR-15 SSR Gen3 handguard"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-arstock-stock-dd",
+                "item_name": "AR-15 DD stock"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_22",
+            "trupiks_14",
+            "ntg_37"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 3,
+        "tips": "",
+        "videoGuides": [],
+        "order": 23
+    },
+    "gunsmith_24": {
+        "id": "gunsmith_24",
+        "name": "White Recorder Retrieval",
+        "gameId": "task.gunsmith.m15",
+        "description": "4 white recorders — these are ARK's final communications. Collect them all and put them in the cardboard box in the room with the turtle — my personal obsession, don't ask. Done and 762x54r AP v1 barter for you — the SVD can finally show its true power.",
+        "objectives": [
+            "Find the White Recorder on the topfloor of dock office",
+            "Find the White Recorder in the red boat",
+            "Find the White Recorder in Ventilation Room 1",
+            "Find the White Recorder in control room",
+            "Placement: Turtle habitat room"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "retrieve",
+            "place"
+        ],
+        "map": [
+            "smuggling"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 180000
+            },
+            {
+                "type": "reputation",
+                "quantity": 120,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 18000
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "scope_spector_fde",
+                "item_name": "Scepter FDE 20mm scope"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-svd-muzzle-suppressor",
+                "item_name": "SVD R43 7.62x54mmR suppressor"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_23"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 4,
+        "tips": "",
+        "videoGuides": [],
+        "order": 24
+    },
+    "gunsmith_25": {
+        "id": "gunsmith_25",
+        "name": "The Real Iron Wolf",
+        "gameId": "task.gunsmith.m16",
+        "description": "There's another Iron Wolf underground — the real one. The first was Tommy's — that was just a warm-up. This one's hide hangs in the deepest part of the Smuggling Tunnel. Kill it, and you're a master gunsmith. Everything I've built with Johnny — full-caliber top-tier ammo plus the Lv4 parts pool — has been for today. Take your strongest gun, your best attachments, your hardest armor — and bring it down.",
+        "objectives": [
+            "Eliminate Iron Wolf in Smuggling Tunnel"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "smuggling"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 500000
+            },
+            {
+                "type": "reputation",
+                "quantity": 200,
+                "corpId": "gunsmith"
+            },
+            {
+                "type": "experience",
+                "quantity": 35000
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-pistolgrip-prs",
+                "item_name": "AR-15 PRS pistolgrip"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "misc_goldingot",
+                "item_name": "Gold Ingot"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "gunsmith_24"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 4,
+        "tips": "",
+        "videoGuides": [],
+        "order": 25
+    },
+    "research_1": {
+        "id": "research_1",
+        "name": "AR-15 4in RIS",
+        "gameId": "task.research.a1",
+        "description": "Submit required items to unlock the corresponding good in the store.",
+        "objectives": [
+            "Turn in Moldboard",
+            "Turn in Screwdriver"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 5000
+            },
+            {
+                "type": "experience",
+                "quantity": 1100
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-handguard-4inchris",
+                "item_name": "AR-15 4inch RIS handguard"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 1
+    },
+    "research_5": {
+        "id": "research_5",
+        "name": "MOE-K",
+        "gameId": "task.research.a2",
+        "description": "Submit required items to unlock the corresponding good in the store.",
+        "objectives": [
+            "Mag_AR15_20R",
+            "Turn in Nuts",
+            "Turn in Bolts"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 5000
+            },
+            {
+                "type": "experience",
+                "quantity": 1100
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-pistolgrip-moe-k",
+                "item_name": "AR-15 MOE-K pistolgrip"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "research_1"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 5
+    },
+    "research_9": {
+        "id": "research_9",
+        "name": "AR-15 DD",
+        "gameId": "task.research.a3",
+        "description": "Submit required items to unlock the corresponding good in the store.",
+        "objectives": [
+            "Stock_ARStock_CAR15",
+            "Turn in Gun oil",
+            "Turn in Ceramic adhesive"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 5000
+            },
+            {
+                "type": "experience",
+                "quantity": 1100
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-arstock-stock-dd",
+                "item_name": "AR-15 DD stock"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "research_5"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 9
+    },
+    "research_13": {
+        "id": "research_13",
+        "name": "UBR",
+        "gameId": "task.research.a4",
+        "description": "Submit required items to unlock the corresponding good in the store.",
+        "objectives": [
+            "Stock_ARbuffer_HunterWood",
+            "Turn in Instant glue",
+            "Turn in Old Phone"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 5000
+            },
+            {
+                "type": "experience",
+                "quantity": 1100
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-arbuffer-stock-ubr",
+                "item_name": "AR-15 UBR buffer tube stock"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "research_9"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 13
+    },
+    "research_15": {
+        "id": "research_15",
+        "name": "AR-15 PRSGen3",
+        "gameId": "task.research.a5",
+        "description": "Submit required items to unlock the corresponding good in the store.",
+        "objectives": [
+            "UpperReceiver_AR10_AR308",
+            "Turn in Wrench",
+            "Turn in Floppydisk"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 5000
+            },
+            {
+                "type": "experience",
+                "quantity": 1100
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-arbuffer-stock-prsgen3",
+                "item_name": "AR-15 PRSGen3 buffer tube stock"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "research_13"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 15
+    },
+    "research_16": {
+        "id": "research_16",
+        "name": "AR15/AR10 CookieCutter Comp",
+        "gameId": "task.research.a6",
+        "description": "Submit required items to unlock the corresponding good in the store.",
+        "objectives": [
+            "Muzzle_AR15_SLR",
+            "Pistolgrip_AR15_prs",
+            "Turn in Nail"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 5000
+            },
+            {
+                "type": "experience",
+                "quantity": 1100
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-ar10-muzzle-cookiecutter",
+                "item_name": "AR15&AR10 CookieCutter 5.56x45mm&7.62x51mm compensator"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "research_15"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 16
+    },
+    "research_17": {
+        "id": "research_17",
+        "name": "AR-15 SSR Gen4",
+        "gameId": "task.research.a7",
+        "description": "Submit required items to unlock the corresponding good in the store.",
+        "objectives": [
+            "Stock_ARStock_DD",
+            "Turn in wastechip",
+            "Turn in Floppydisk",
+            "Turn in Videotape"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 5000
+            },
+            {
+                "type": "experience",
+                "quantity": 1100
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-handguard-ssgen3",
+                "item_name": "AR-15 SSR Gen3 handguard"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "research_16",
+            "research_14"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 17
+    },
+    "research_18": {
+        "id": "research_18",
+        "name": "AR15/AR10 TBeast MC-Cover",
+        "gameId": "task.research.a8",
+        "description": "Submit required items to unlock the corresponding good in the store.",
+        "objectives": [
+            "Barrel_AR15_180Sight",
+            "Stock_ARbuffer_UBR",
+            "Turn in CPU"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 5000
+            },
+            {
+                "type": "experience",
+                "quantity": 1100
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ar15-ar10-muzzle-tbeast-mccover",
+                "item_name": "AR15&AR10 TBeast 5.56x45mm&7.62x51mm suppressor MC-Cover"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "research_17",
+            "research_10"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 18
+    },
+    "research_19": {
+        "id": "research_19",
+        "name": "Monster556",
+        "gameId": "task.research.a9",
+        "description": "Submit required items to unlock the corresponding good in the store.",
+        "objectives": [
+            "Muzzle_AR15AR10_CookieCutter",
+            "Handguard_AR15_4inchRis",
+            "Turn in Vehicle battery",
+            "Turn in Gun oil"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 5000
+            },
+            {
+                "type": "experience",
+                "quantity": 1100
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-aug-muzzle-sfmonster556",
+                "item_name": "Monster556 5.56x45mm for SF compensator suppressor"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "research_18"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 19
+    },
+    "research_2": {
+        "id": "research_2",
+        "name": "G3 SPUHR",
+        "gameId": "task.research.b1",
+        "description": "Submit required items to unlock the corresponding good in the store.",
+        "objectives": [
+            "Stock_G3_Polyblack",
+            "Stock_G3_Polygreen",
+            "Turn in Rust cleaner"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 5000
+            },
+            {
+                "type": "experience",
+                "quantity": 1100
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-g3-handguard-spuhr",
+                "item_name": "G3 SPUHR handguard"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "research_5"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 2
+    },
+    "research_6": {
+        "id": "research_6",
+        "name": "G3 PRS Black",
+        "gameId": "task.research.b2",
+        "description": "Submit required items to unlock the corresponding good in the store.",
+        "objectives": [
+            "Mag_G3_30",
+            "Turn in Socket"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 5000
+            },
+            {
+                "type": "experience",
+                "quantity": 1100
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-g3-pistolgrip-prsblack",
+                "item_name": "G3 PRS Black pistol grip"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "research_2"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 6
+    },
+    "research_10": {
+        "id": "research_10",
+        "name": "Falcon",
+        "gameId": "task.research.b3",
+        "description": "Submit required items to unlock the corresponding good in the store.",
+        "objectives": [
+            "LowerReceiver_G3AK4",
+            "Turn in Tape player",
+            "Turn in Videotape"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 5000
+            },
+            {
+                "type": "experience",
+                "quantity": 1100
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-g3-mount-falconscope",
+                "item_name": "G3/HK51 Falcon 1.5-6X Scope"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "research_6"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 10
+    },
+    "research_3": {
+        "id": "research_3",
+        "name": "MOE",
+        "gameId": "task.research.c1",
+        "description": "Submit required items to unlock the corresponding good in the store.",
+        "objectives": [
+            "Stock_AK_6P26Sb5",
+            "Turn in Moldboard"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 5000
+            },
+            {
+                "type": "experience",
+                "quantity": 1100
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-pistolgrip-moeak",
+                "item_name": "AK74/AKM MOE pistol grip"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "research_1"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 3
+    },
+    "research_7": {
+        "id": "research_7",
+        "name": "XRS",
+        "gameId": "task.research.c2",
+        "description": "Submit required items to unlock the corresponding good in the store.",
+        "objectives": [
+            "Pistolgrip_AK_Scorpius",
+            "Turn in Instant glue",
+            "Turn in Wire Cutter"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 5000
+            },
+            {
+                "type": "experience",
+                "quantity": 1100
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-handguard-xrs74yg",
+                "item_name": "AK74/AKM XRS handguard"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "research_3",
+            "research_9"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 7
+    },
+    "research_11": {
+        "id": "research_11",
+        "name": "AKM Hexagon",
+        "gameId": "task.research.c3",
+        "description": "Submit required items to unlock the corresponding good in the store.",
+        "objectives": [
+            "Muzzle_AK_762SRVV",
+            "Turn in Recorder",
+            "Turn in Super Glue"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 5000
+            },
+            {
+                "type": "experience",
+                "quantity": 1100
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-muzzle-762hexagon",
+                "item_name": "AKM 7.62x39mm Hexagon suppressor"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "research_7",
+            "research_15"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 11
+    },
+    "research_14": {
+        "id": "research_14",
+        "name": "AK103 DTK-4m",
+        "gameId": "task.research.c4",
+        "description": "Submit required items to unlock the corresponding good in the store.",
+        "objectives": [
+            "Muzzle_AK_762-545-ATK2",
+            "Turn in Tape player",
+            "Turn in Tape",
+            "Turn in Socket"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 5000
+            },
+            {
+                "type": "experience",
+                "quantity": 1100
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak103-muzzle-762dtk-4m",
+                "item_name": "AK103 DTK-4m 7.62x39mm suppressor"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "research_11"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 14
+    },
+    "research_4": {
+        "id": "research_4",
+        "name": "MX400 Light",
+        "gameId": "task.research.d1",
+        "description": "Submit required items to unlock the corresponding good in the store.",
+        "objectives": [
+            "ForeGrip_StarkShort",
+            "Turn in Hammer"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 5000
+            },
+            {
+                "type": "experience",
+                "quantity": 1100
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "tactical_laser_mx400",
+                "item_name": "MX400 LaserFlashLight"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "research_3"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 4
+    },
+    "research_8": {
+        "id": "research_8",
+        "name": "AR-15 60rd P-Drum",
+        "gameId": "task.research.d2",
+        "description": "Submit required items to unlock the corresponding good in the store.",
+        "objectives": [
+            "Mag_AR15_Pmag30",
+            "MAG_AR10_20",
+            "Turn in Climb rope"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 5000
+            },
+            {
+                "type": "experience",
+                "quantity": 1100
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_556x45_60",
+                "item_name": "AR-15 5.56x45mm 60rnd P-Drum magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "research_4",
+            "research_18"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 8
+    },
+    "research_12": {
+        "id": "research_12",
+        "name": "VerTac X",
+        "gameId": "task.research.d3",
+        "description": "Submit required items to unlock the corresponding good in the store.",
+        "objectives": [
+            "Stock_SKS_UAS",
+            "Turn in Voltage transformer",
+            "Turn in New Phone",
+            "Turn in Badge"
+        ],
+        "corpId": "gunsmith",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 5000
+            },
+            {
+                "type": "experience",
+                "quantity": 1100
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "scope_vertex",
+                "item_name": "VerTac X 1-6x 20mm adjustable magnifer scope"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "research_8"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 12
+    },
+    "ntg_34": {
+        "id": "ntg_34",
+        "name": "Meg's USB Drive",
+        "gameId": "task.doc.a.01",
+        "description": "At the coastal modern apartments, I had someone hide a USB drive — it contains NTG's internal communications from back then. Head over there, drop my medicine at the designated spot as a signal, then retrieve the USB drive and bring it back.",
+        "objectives": [
+            "Reach the Modern apartment",
+            "Put medicine at the Crimson Luxe front desk",
+            "Find USB drive",
+            "Turn in Maggie's USB"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "reach",
+            "place",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "reputation",
+                "quantity": 30,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-stimul-adrenaline",
+                "item_name": "AdrenalineInjector"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-stimul-adrenaline",
+                "item_name": "AdrenalineInjector"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "taskitem_placement_maggie_medicine",
+                "item_name": "Maggie's Medicine"
+            }
+        ],
+        "requiredTasks": [
+            "ntg_7",
+            "ark_56"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 3,
+        "tips": "",
+        "videoGuides": [],
+        "order": 1
+    },
+    "ntg_35": {
+        "id": "ntg_35",
+        "name": "Seaside Ambulances",
+        "gameId": "task.doc.a.02",
+        "description": "ARK left behind several ambulances when they retreated from the seaside; I want to see how many are still drivable. I've sent trackers to your mailbox — just tag the ones that look repairable, don't stir up the scavengers.",
+        "objectives": [
+            "Mark the Ambulance"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "mark"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "reputation",
+                "quantity": 35,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "key_officerroom",
+                "item_name": "Officer's room Key"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-limb-restorer-lv3",
+                "item_name": "Suturing Instrument"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "taskitem_tracking_device",
+                "item_name": "MS2000 Tracker"
+            }
+        ],
+        "requiredTasks": [
+            "ntg_34"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 2
+    },
+    "ntg_36": {
+        "id": "ntg_36",
+        "name": "The Blue Wallpaper Prescription",
+        "gameId": "task.doc.a.03",
+        "description": "Thanks to you for the ambulances. Next — on the west side of the seaside hotel there's a room with blue wallpaper, and inside is a prescription sample from a former colleague of mine. Don't touch the original; just photograph it — if ARK finds out the files have been disturbed, they'll lock down the entire hotel.",
+        "objectives": [
+            "Reach the Victoria golden hotel room 202",
+            "Take photo of the first medicine recipe",
+            "Take photo of the second medicine recipe"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "reach",
+            "photo"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "reputation",
+                "quantity": 40,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-limb-restorer-lv3",
+                "item_name": "Suturing Instrument"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-stimul-kb22",
+                "item_name": "KB-22 stimulant injector"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ntg_35"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 3
+    },
+    "ntg_37": {
+        "id": "ntg_37",
+        "name": "★ Meg's Request",
+        "gameId": "task.doc.a.04",
+        "description": "The shelter's medical supplies are nearly exhausted. Meg urgently needs this specific cocktail of drugs to keep critical patients alive. The Resort has become a total meat grinder—infiltrate the area, seize the medicine, and get out alive.",
+        "objectives": [
+            "Find Maggie's herb",
+            "Turn in Maggie's herb",
+            "Turn in Asthma medicine",
+            "Turn in Aspirin",
+            "Turn in Bottled glucose"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 220000
+            },
+            {
+                "type": "reputation",
+                "quantity": 50,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 22000
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "med-stimul-kb22",
+                "item_name": "KB-22 stimulant injector"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-stimul-p4",
+                "item_name": "P4 stimulant injector"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ntg_36"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 4
+    },
+    "ntg_38": {
+        "id": "ntg_38",
+        "name": "Coastal Antenna",
+        "gameId": "task.doc.a.05",
+        "description": "I need to reach an old friend deep in the smuggler's passage — she has files I haven't gotten yet. There are pre-designated antenna spots on the seaside; check two of them to confirm the terrain first, then retrieve my modified antenna and get it placed. Once the signal is live, she'll be able to make contact.",
+        "objectives": [
+            "Reach the Watchtower south of the Seafoam scoops",
+            "Reach the Watchtower north of the Seafoam scoops",
+            "Find Signal enhancer",
+            "Place on top of the lighthouse"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "reach",
+            "retrieve",
+            "place"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "reputation",
+                "quantity": 45,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-stimul-adrenaline",
+                "item_name": "AdrenalineInjector"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "med-stimul-adrenaline",
+                "item_name": "AdrenalineInjector"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ntg_37",
+            "ark_42"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 5
+    },
+    "ntg_39": {
+        "id": "ntg_39",
+        "name": "Bunker Records",
+        "gameId": "task.doc.a.06",
+        "description": "Something the USB drive and antenna connected — there are a few pieces of physical evidence in the bunker: the train controller in the control room, the green plants in the treatment area, the notice board in the inspection room. Photograph each one; help me get a picture of the subway's current state.",
+        "objectives": [
+            "Take photo of control panel",
+            "Take photo of plants in the medical base",
+            "Take photo of Bulletin Board in the Inspection Room"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "photo"
+        ],
+        "map": [
+            "metro"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "reputation",
+                "quantity": 50,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-stimul-p4",
+                "item_name": "P4 stimulant injector"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_metroentry",
+                "item_name": "Metro Entry Ticket"
+            }
+        ],
+        "requiredTasks": [
+            "ntg_38"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 6
+    },
+    "ntg_40": {
+        "id": "ntg_40",
+        "name": "The Final Shot",
+        "gameId": "task.doc.a.07",
+        "description": "Last thing — the reagent I asked you to bring, place it where I marked. Turn in a few medical supplies while you're at it — enough to keep me steady for a while. Then don't linger; take the underground extraction point. After this, I'll go in myself.",
+        "objectives": [
+            "Place in the Surgery room sink",
+            "Turn in Medical supplies Found In Raid",
+            "Successfully extract from Metro Area"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "place",
+            "submit",
+            "extract"
+        ],
+        "map": [
+            "metro"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 220000
+            },
+            {
+                "type": "reputation",
+                "quantity": 55,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 22000
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "food_mre",
+                "item_name": "Compact Ration"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-stimul-adrenaline",
+                "item_name": "AdrenalineInjector"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "med-stimul-kb22",
+                "item_name": "KB-22 stimulant injector"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "med-stimul-p4",
+                "item_name": "P4 stimulant injector"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-stimul-adrenaline",
+                "item_name": "AdrenalineInjector"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_metroentry",
+                "item_name": "Metro Entry Ticket"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "taskitem_placement_maggie_poison",
+                "item_name": "Maggie's Poison"
+            }
+        ],
+        "requiredTasks": [
+            "ntg_39"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 7
+    },
+    "ntg_29": {
+        "id": "ntg_29",
+        "name": "Shrouded in Shadows",
+        "gameId": "task.doc.a.08",
+        "description": "What NTG did here must not be discovered... Please help me collect the evidence that could implicate me. Go to the [medical base] in [Metro Area], retrieve the incriminating clue [Maggie's medical kit], and then mark the [body bags] there. I need to find a way to erase any traces of these things.",
+        "objectives": [
+            "Mark Body Bag",
+            "Find Maggie's MedicalBag",
+            "Turn in Maggie's MedicalBag"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "mark",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "metro"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "reputation",
+                "quantity": 45,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-stimul-p4",
+                "item_name": "P4 stimulant injector"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_metroentry",
+                "item_name": "Metro Entry Ticket"
+            }
+        ],
+        "requiredTasks": [
+            "ntg_40"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "Bodies and medical bag are on the lowest level. ",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "jzX3dSns-Tg"
+            },
+            {
+                "author": "orbb",
+                "ytId": "zhZlEVICwsU"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 712
+            }
+        ],
+        "order": 8
+    },
+    "ntg_41": {
+        "id": "ntg_41",
+        "name": "Evidence of Atrocity",
+        "gameId": "task.doc.a.09",
+        "description": "Many people have witnessed disturbing traces of medical experiments in the [Smuggling Tunnel]. The scene is said to be extremely gruesome, but upon closer inspection, the methods used appear to be consistent with NTG's work. I want you to investigate the [Lab area in the northern part of the Smuggling Tunnel] and take some photos for me.",
+        "objectives": [
+            "Capture the Operating Table",
+            "Capture the Hanging body bags",
+            "Capture the Interrogation Tools",
+            "Capture the Incinerator"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "photo"
+        ],
+        "map": [
+            "smuggling"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "reputation",
+                "quantity": 50,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "backpack_gnjbackpack",
+                "item_name": "G.N.J.Backpack"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "key_exitlock_f3_sewer",
+                "item_name": "Lower Sewer exit’s Key"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ntg_29"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 9
+    },
+    "ntg_42": {
+        "id": "ntg_42",
+        "name": "Record Not Found",
+        "gameId": "task.doc.a.10",
+        "description": "Those photos... they match the rumors. I'm troubled by the blade work in the images, it even resembles my own style somewhat. Could it be...? No, that's unlikely. I need you to look for more evidence! Perhaps you can find something that identifies this person, like a [work ID], [photographs], or something similar.",
+        "objectives": [
+            "Find Maggie's Photo",
+            "Maggie's Photo",
+            "Find NTG Mince's Work ID",
+            "NTG Mince's Work ID",
+            "Extract from Smuggling Tunnel"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "retrieve",
+            "submit",
+            "extract"
+        ],
+        "map": [
+            "smuggling"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "reputation",
+                "quantity": 50,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "key_factory_b",
+                "item_name": "Factory B zone Key"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-stimul-adrenaline",
+                "item_name": "AdrenalineInjector"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ntg_41"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 10
+    },
+    "ntg_43": {
+        "id": "ntg_43",
+        "name": "Mercy in Retrospect",
+        "gameId": "task.doc.a.11",
+        "description": "The Scavengers in the [Smuggling Tunnel] call him Mince... Actually, he was my mentor during my time at NTG. He treated me like his own daughter... Now he's lost his sanity, perhaps the mysterious events on the island drove him mad. I hope you can bring him peace. Thank you...",
+        "objectives": [
+            "Eliminate Mince"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "smuggling"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "reputation",
+                "quantity": 60,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 25672
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-stimul-adrenaline",
+                "item_name": "AdrenalineInjector"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-stimul-kb22",
+                "item_name": "KB-22 stimulant injector"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-stimul-p4",
+                "item_name": "P4 stimulant injector"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ntg_42",
+            "ntg_51"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 11
+    },
+    "ntg_44": {
+        "id": "ntg_44",
+        "name": "Keys to Safety",
+        "gameId": "task.doc.a.12",
+        "description": "There are two secret locked control rooms in the [Smuggling Tunnel]. I need you to help me retrieve their keys: the key to the EMR control room on the [south side] of the ventilation chamber, and the one on the [north side].",
+        "objectives": [
+            "Turn in North EMR Control room Key",
+            "Turn in South EMR Control room Key"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 25672
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "backpack_gnjbackpack",
+                "item_name": "G.N.J.Backpack"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-stimul-hc",
+                "item_name": "H.C. stimulant injector"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-stimul-p4",
+                "item_name": "P4 stimulant injector"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ntg_37",
+            "ntg_49"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 12
+    },
+    "ntg_45": {
+        "id": "ntg_45",
+        "name": "Medical Delivery 2",
+        "gameId": "task.doc.a.13",
+        "description": "A few poor, isolated Scavengers reached out to me hoping to order some medication. Could you help me make a delivery run for them? These are the agreed drop-off locations, once you arrive, find the [cardboard box] and simply [place the medicine inside]:\nAt the [construction site rooftop crane] in [Dam Area],\nInside the [small hut with the satellite radar at the Dock] in [Dam Area],\nAnd at the [Italian restaurant in the -1F of Crimson Luxe, Resort Area].\nIf you lose any mission items, come to me to repurchase them.",
+        "objectives": [
+            "Arrive the satellite radar room at the Dock",
+            "Arrive the Construction Site's tower crane",
+            "Arrive the Italian restaurant",
+            "Put Maggie's medicine in place 1",
+            "Put Maggie's medicine in place 2",
+            "Put Maggie's medicine in place 3"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "reach",
+            "place"
+        ],
+        "map": [
+            "dam",
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "key_warehouse",
+                "item_name": "WH01 warehouse key"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "food_mre",
+                "item_name": "Compact Ration"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "taskitem_placement_maggie_medicine",
+                "item_name": "Maggie's Medicine"
+            }
+        ],
+        "requiredTasks": [
+            "ntg_29",
+            "ntg_50"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 13
+    },
+    "ntg_46": {
+        "id": "ntg_46",
+        "name": "Record Left Behind",
+        "gameId": "task.doc.a.14",
+        "description": "This island still holds scattered investigation reports left behind by NTG. Please help me recover another batch of them:\nIn the [rest area on the 2F of Trupiks Mall, Suburb Area],\nInside the [wrecked truck at the bottom of the dry riverbed] in [Dam Area],\nAnd within the [restroom of the medical base at the lowest level of Metro Area].",
+        "objectives": [
+            "Find NTG Medical Report Mall -1F",
+            "Find NTG Medical Report Dam Accident Truck",
+            "Find NTG Medical Report Bunker",
+            "Turn in NTG Medical Report"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam",
+            "resort",
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 26000
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "med-stimul-hc",
+                "item_name": "H.C. stimulant injector"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-stimul-kb22",
+                "item_name": "KB-22 stimulant injector"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.valuable.highvalue.poster_official_6"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "key_windingstair",
+                "item_name": "Cellar Staircase gate key"
+            }
+        ],
+        "requiredTasks": [
+            "ntg_42"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 14
+    },
+    "ark_4": {
+        "id": "ark_4",
+        "name": "Lost and Found",
+        "gameId": "task.doc.b.01",
+        "description": "During my last escape, I ran into a group of scavengers—they took everything I had. I know their hideout is somewhere in the [Dam Area]. Head to the [Raider Camp] and recover my [Meds]. They’re crafty and like to stash valuables in high places around their camp. Once you’ve got them, exfil at a nearby extraction point.",
+        "objectives": [
+            "Find Maggie's medicine",
+            "Turn in Maggie's medical supply",
+            "Extract from Valley Pylon"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "retrieve",
+            "submit",
+            "extract"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 45000
+            },
+            {
+                "type": "reputation",
+                "quantity": 18,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 5000
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "food_mre",
+                "item_name": "Compact Ration"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-syringe-lv2",
+                "item_name": "Stimpak Lv2"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-syringe-lv4",
+                "item_name": "Stimpak Elite"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-painkiller-lv3",
+                "item_name": "Painkiller"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ntg_61",
+            "ark_70"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 2,
+        "tips": "The phone is in a small room on the second floor of the office building, which is near the motel.",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "1Gr-M1Npa_s"
+            },
+            {
+                "author": "orbb",
+                "ytId": "4WsA_31tZKo"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "I5XTDO71-us",
+                "startTs": 90
+            }
+        ],
+        "order": 15
+    },
+    "ntg_47": {
+        "id": "ntg_47",
+        "name": "Dam First Aid Point",
+        "gameId": "task.doc.b.02",
+        "description": "The meds you brought back last time — enough to spare some. People pass through the Clifton church now and then; I want to stash a few emergency bandages inside. Just place them where I marked, go in quiet, come out quiet, don't pick a fight.",
+        "objectives": [
+            "Put bandages in place"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "place"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 48000
+            },
+            {
+                "type": "reputation",
+                "quantity": 20,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 5200
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-limb-restorer-lv2",
+                "item_name": "Suturing Instrument"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-stimul-adrenaline",
+                "item_name": "AdrenalineInjector"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "med-painkiller-lv2",
+                "item_name": "Painkiller"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ark_4"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 16
+    },
+    "ntg_48": {
+        "id": "ntg_48",
+        "name": "NTG Medical Reports",
+        "gameId": "task.doc.b.03",
+        "description": "NTG left behind a few medical reports when they retreated — one is in the blue house at the lumber yard, another is sitting on top of a brown crate near the plane wreckage. Find them for me; once I've cross-referenced them, I can map out the full surgical table procedure.",
+        "objectives": [
+            "Find NTG Medical Report",
+            "Turn in NTG Medical Report"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 55000
+            },
+            {
+                "type": "reputation",
+                "quantity": 20,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 5500
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-bandage-lv3",
+                "item_name": "Bandage"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-limb-restorer-lv3",
+                "item_name": "Suturing Instrument"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-syringe-lv2",
+                "item_name": "Stimpak Lv2"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-painkiller-lv3",
+                "item_name": "Painkiller"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ntg_47"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 17
+    },
+    "ntg_49": {
+        "id": "ntg_49",
+        "name": "River Valley Pylon Security",
+        "gameId": "task.doc.b.04",
+        "description": "The next step is the dam's west tower intake—but I can’t get a clear read on the situation down there. First, go to the pylons along the south line of the River Valley and mark them one by one. My contact can gauge the Scavengers' deployment rhythm in that area from those markers. I’ve packed the trackers for you; grab them from the mailbox before you head out.",
+        "objectives": [
+            "Mark pylons south of the riverbed 1",
+            "Mark pylons south of the riverbed 2",
+            "Mark pylons south of the riverbed 3",
+            "Mark pylons south of the riverbed 4",
+            "Mark pylons south of the riverbed 5",
+            "Mark pylons south of the riverbed 6"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "mark"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "reputation",
+                "quantity": 20,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 3000
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "key_dam_station_west",
+                "item_name": "West Dam Inlet's Key"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-bandage-lv3",
+                "item_name": "Bandage"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-syringe-lv4",
+                "item_name": "Stimpak Elite"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-painkiller-lv3",
+                "item_name": "Painkiller"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 6,
+                "item_id": "taskitem_tracking_device",
+                "item_name": "MS2000 Tracker"
+            }
+        ],
+        "requiredTasks": [
+            "ntg_48"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 18
+    },
+    "ntg_50": {
+        "id": "ntg_50",
+        "name": "West Tower Secret Room Map",
+        "gameId": "task.doc.b.05",
+        "description": "Got the key. There's a map inside the secret room at the west tower intake, and another one on the wall in Factory Zone D — photograph both and bring them back. Cross-referencing the two will show us the Scavengers' activity range in that area. I've got a mission phone ready for you, don't lose it.",
+        "objectives": [
+            "Arrive the West Inlet Tower",
+            "Arrive the Old Factory D zone",
+            "Capture the clue map 1",
+            "Capture the clue map 2"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "reach",
+            "photo"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 60000
+            },
+            {
+                "type": "reputation",
+                "quantity": 22,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 6000
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "food_soda_drink_l",
+                "item_name": "Soda Drink L"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "med-limb-restorer-lv2",
+                "item_name": "Suturing Instrument"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "med-syringe-lv2",
+                "item_name": "Stimpak Lv2"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-stimul-adrenaline",
+                "item_name": "AdrenalineInjector"
+            },
+            {
+                "type": "item",
+                "quantity": 5,
+                "item_id": "med-painkiller-lv3",
+                "item_name": "Painkiller"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "taskitem_photophone",
+                "item_name": "New Phone"
+            }
+        ],
+        "requiredTasks": [
+            "ntg_7"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 19
+    },
+    "ntg_51": {
+        "id": "ntg_51",
+        "name": "★ Factory Foreman",
+        "gameId": "task.doc.b.06",
+        "description": "I've seen the photos — the foreman in Factory Zone D was left behind by ARK to hold the power grid node. As long as he's standing, power can't reach the medical room. Go deal with him, come back, and I'll hook up the surgical table myself. The next person carried in here is waiting for exactly that.",
+        "objectives": [
+            "Eliminate the Foreman"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 80000
+            },
+            {
+                "type": "reputation",
+                "quantity": 22,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 8000
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "food_mre",
+                "item_name": "Compact Ration"
+            },
+            {
+                "type": "item",
+                "quantity": 5,
+                "item_id": "med-bandage-lv3",
+                "item_name": "Bandage"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-limb-restorer-lv3",
+                "item_name": "Suturing Instrument"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "med-syringe-lv4",
+                "item_name": "Stimpak Elite"
+            },
+            {
+                "type": "item",
+                "quantity": 5,
+                "item_id": "med-painkiller-lv3",
+                "item_name": "Painkiller"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ntg_50"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 20
+    },
+    "ntg_52": {
+        "id": "ntg_52",
+        "name": "Suburb Recon",
+        "gameId": "task.doc.b.07",
+        "description": "The surgical table is lit. Now it's time to check out the suburbs — a place I've always kept in mind but never set foot in. The suburban villa, the supply station east of the villa, the substation west of the auto repair shop — hit them all one by one. I had someone leave things in that area before the retreat; get the route down first, don't rush in.",
+        "objectives": [
+            "Arrive the Villa",
+            "Arrive the Supply Station",
+            "Arrive the substation west of the Auto Repair Shop"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "reach"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 55000
+            },
+            {
+                "type": "reputation",
+                "quantity": 25,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 7000
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "food_mre",
+                "item_name": "Compact Ration"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "food_soda_drink_l",
+                "item_name": "Soda Drink L"
+            },
+            {
+                "type": "item",
+                "quantity": 5,
+                "item_id": "med-limb-restorer-lv2",
+                "item_name": "Suturing Instrument"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-syringe-lv4",
+                "item_name": "Stimpak Elite"
+            },
+            {
+                "type": "item",
+                "quantity": 5,
+                "item_id": "med-painkiller-lv3",
+                "item_name": "Painkiller"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ntg_49",
+            "ark_57"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 21
+    },
+    "ntg_53": {
+        "id": "ntg_53",
+        "name": "Suburban Emergency Med Network",
+        "gameId": "task.doc.b.08",
+        "description": "There are no proper medical points in the suburbs; I want to set up a batch of emergency nodes — the locked room on the 2nd floor of the office building, and the tunnel near the motel, both are key choke points. Go check them out and place the suture kits where I marked. Plenty of scavengers around the tunnel, get eyes on before you go in.",
+        "objectives": [
+            "Arrive the locked room on the 2F of the Office Building",
+            "Arrive the tunnel near Motel",
+            "Put Suturing Instrument R2 in place"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "reach",
+            "place"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 70000
+            },
+            {
+                "type": "reputation",
+                "quantity": 25,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 7500
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "med-bandage-lv3",
+                "item_name": "Bandage"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "med-syringe-lv4",
+                "item_name": "Stimpak Elite"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "med-stimul-adrenaline",
+                "item_name": "AdrenalineInjector"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-painkiller-lv3",
+                "item_name": "Painkiller"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ntg_52"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 22
+    },
+    "ntg_18": {
+        "id": "ntg_18",
+        "name": "Private Clinic",
+        "gameId": "task.doc.b.09",
+        "description": "On the east side of the suburbs, there's my old private clinic — I left several med kits there, the last batch I moved out of the hospital before the evacuation. Go get them and bring everything back to me. I'm not sure whose turf that is now, read the situation yourself.",
+        "objectives": [
+            "Arrive the Private clinic",
+            "Find Maggie's medical kit 1",
+            "Find Maggie's medical kit 2",
+            "Turn in Maggie's MedicalBag"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 85000
+            },
+            {
+                "type": "reputation",
+                "quantity": 35,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 9500
+            },
+            {
+                "type": "item",
+                "quantity": 5,
+                "item_id": "med-bandage-lv3",
+                "item_name": "Bandage"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "med-limb-restorer-lv3",
+                "item_name": "Suturing Instrument"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-stimul-hc",
+                "item_name": "H.C. stimulant injector"
+            },
+            {
+                "type": "item",
+                "quantity": 5,
+                "item_id": "med-painkiller-lv3",
+                "item_name": "Painkiller"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ntg_53"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "MssJiMkn_Lg"
+            },
+            {
+                "author": "orbb",
+                "ytId": "F5OLdAL41Rw"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 472
+            }
+        ],
+        "order": 23
+    },
+    "ntg_54": {
+        "id": "ntg_54",
+        "name": "Farmstead Investigation",
+        "gameId": "task.doc.b.10",
+        "description": "A friend of mine went missing while searching for medical supplies at [Wyeth Farm]. Take this phone with you and see if you can track him down. The supplies he was looking for are probably stored in the cellar, so start there and find out what condition he’s in. If things went south, take a few photos for me. I need to know what happened.",
+        "objectives": [
+            "Arrive the Wyeth Farmhouse",
+            "Find the Basement",
+            "Find the Missing Scholar",
+            "Capture the corpse in Wyeth farm"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "reach",
+            "photo"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 100000
+            },
+            {
+                "type": "reputation",
+                "quantity": 10,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 11000
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "key_motel_206",
+                "item_name": "Motel Room 206 Key"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "food_mre",
+                "item_name": "Compact Ration"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-limb-restorer-lv3",
+                "item_name": "Suturing Instrument"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-stimul-hc",
+                "item_name": "H.C. stimulant injector"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-syringe-lv4",
+                "item_name": "Stimpak Elite"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-stimul-adrenaline",
+                "item_name": "AdrenalineInjector"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "taskitem_photophone",
+                "item_name": "New Phone"
+            }
+        ],
+        "requiredTasks": [
+            "ntg_18"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 24
+    },
+    "ntg_55": {
+        "id": "ntg_55",
+        "name": "Toxicology Recovery",
+        "gameId": "task.doc.b.11",
+        "description": "That dead colleague's research samples is still stored in 2 locations: the warehouse at [Trupiks Mall] and the [Motel]. Run a retrieval and recover his chemical samples. One is inside a [blue container in the mall warehouse], the other is in [Room 206 at the Motel]. Warning: the agents may be toxic. Proceed with caution.",
+        "objectives": [
+            "Reach the Motel",
+            "Find the blue container",
+            "Find the toxic sample 1",
+            "Find the toxic sample 2",
+            "Turn in Maggie's poison"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "reputation",
+                "quantity": 10,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "key_motel_206",
+                "item_name": "Motel Room 206 Key"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-syringe-lv4",
+                "item_name": "Stimpak Elite"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "key_motel_206",
+                "item_name": "Motel Room 206 Key"
+            }
+        ],
+        "requiredTasks": [
+            "ntg_54"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 25
+    },
+    "ntg_7": {
+        "id": "ntg_7",
+        "name": "Info for Aid",
+        "gameId": "task.doc.b.12",
+        "description": "Using the radio transmitter you brought back earlier, I made contact with the director of the hospital in [Resort Area]. I agreed to provide him with assistance, and in return, he'll share some useful information with me. Please take [copper wire] and [spark plugs] and place them inside [the hidden room in the west wing of WhiteSail Hospital, Resort Area].",
+        "objectives": [
+            "Reach the west of White Sails Hospital",
+            "Reach the Hospital secret room",
+            "Put copper wire in place",
+            "Put spark plugs in place"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "reach",
+            "place"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "reputation",
+                "quantity": 10,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "food_water_bottle",
+                "item_name": "Water Bottle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "food_chocolate",
+                "item_name": "Chocolate"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "food_meat_can",
+                "item_name": "Meat can"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "med-limb-restorer-lv3",
+                "item_name": "Suturing Instrument"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ntg_55"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "Drop the [X-NAX](https://www.exfil-zone-assistant.app/items/taskitem_placement_maggie_medicine) in the box at the Modern Apartment reception. [Pink USB](https://www.exfil-zone-assistant.app/items/taskitem_placement_maggie_usb) is there too. ",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "va7YysdhN-0"
+            },
+            {
+                "author": "orbb",
+                "ytId": "bFUfOW56zp0"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 185
             }
         ],
         "order": 26
     },
-    "forge_27": {
-        "id": "forge_27",
-        "name": "Hack to Play",
-        "gameId": "task.gear.20",
-        "description": "Thanks for checking places for me. While I was sorting through the stuff, I found something special: a super encrypted hard drive. Or in other words, a big business opportunity! \nHowever the encryption is way too tough for my team to handle. I'll have to turn to an old friend I haven't talked to in ages.\nHe's a big-time enthusiastic gamer. If you can get him something special, like a deluxe edition game disc, I think he'll be more willing to help me out.\nTry looking in the [Factory B Area] over in the [Dam area]. There's often leftover cargo there, and you might just find what I'm looking for.",
+    "ntg_56": {
+        "id": "ntg_56",
+        "name": "First Contact",
+        "gameId": "task.doc.c.01",
+        "description": "Tommy mentioned you to me — said you can run and fight. I just moved in, barely have two bandages. Head over to the valley power tower — NTG left some medical supplies there when they retreated. Clear out a couple of scavengers blocking the way while you're at it, and come back alive.",
         "objectives": [
-            "Reach Factory B zone",
-            "Find Game Disk",
-            "Turn in Game Disk"
+            "Find the ​launch site in [valle pylon]",
+            "Eliminate Scavangers in Dam Area"
         ],
-        "corpId": "forge",
+        "corpId": "ntg",
+        "type": [
+            "reach",
+            "eliminate"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 12000
+            },
+            {
+                "type": "reputation",
+                "quantity": 10,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 2178
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-bandage-lv3",
+                "item_name": "Bandage"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "med-syringe-lv1",
+                "item_name": "Stimpak Lv1"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ark_63"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 27
+    },
+    "ntg_1": {
+        "id": "ntg_1",
+        "name": "Supply Shortage 1",
+        "gameId": "task.doc.c.02",
+        "description": "Nice work. There's a temporary clinic I used to run on the north side of the dam — should still have some medical equipment inside. Make a trip out there and bring it back.",
+        "objectives": [
+            "Arrive Field Clinic",
+            "Turn in Medical supplies Found In Raid"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "reach",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 18000
+            },
+            {
+                "type": "reputation",
+                "quantity": 12,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 2178
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-bandage-lv2",
+                "item_name": "Bandage"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "med-limb-restorer-lv2",
+                "item_name": "Suturing Instrument"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-painkiller-lv2",
+                "item_name": "Painkiller"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ntg_56"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "[Household Items](https://www.exfil-zone-assistant.app/items?category=misc&subcategory=Household) - very common items.",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "kgXpYIQnRkI"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "ZOuSedSDlUE"
+            }
+        ],
+        "order": 28
+    },
+    "ntg_57": {
+        "id": "ntg_57",
+        "name": "Mark the Treatment Points",
+        "gameId": "task.doc.c.03",
+        "description": "The two windmills in Clifton used to be my backup treatment points — get familiar with the area first, then mark the equipment under both windmills for me. I've already sent the trackers to your mailbox, pick them up before you head out. I'll send someone to clean up afterwards, stay safe.",
+        "objectives": [
+            "Arrive the Clifton Area",
+            "Mark the Windmill 1 in Clifton",
+            "Mark the Windmill 2 in Clifton"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "reach",
+            "mark"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 15000
+            },
+            {
+                "type": "reputation",
+                "quantity": 13,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 2178
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "med-bandage-lv3",
+                "item_name": "Bandage"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-syringe-lv1",
+                "item_name": "Stimpak Lv1"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "med-syringe-lv3",
+                "item_name": "Stimpak Pro"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "taskitem_tracking_device",
+                "item_name": "MS2000 Tracker"
+            }
+        ],
+        "requiredTasks": [
+            "ntg_1"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 29
+    },
+    "ntg_58": {
+        "id": "ntg_58",
+        "name": "The Lost Medical Journal",
+        "gameId": "task.doc.c.04",
+        "description": "When I moved in I left my medical journal at a campfire site in the valley — it has all my prescriptions, drug formulations, and every procedure needed to set up the medical area. Without it that pile of cabinets and equipment is just collecting dust. Find it and bring it back, and the medical area can finally be put to proper use.",
+        "objectives": [
+            "Find NTG's Medica",
+            "Turn in NTG's Medica"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 25000
+            },
+            {
+                "type": "reputation",
+                "quantity": 15,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 2500
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "med-limb-restorer-lv2",
+                "item_name": "Suturing Instrument"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-syringe-lv2",
+                "item_name": "Stimpak Lv2"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-painkiller-lv3",
+                "item_name": "Painkiller"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ntg_57"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 30
+    },
+    "ntg_59": {
+        "id": "ntg_59",
+        "name": "Modified Equipment",
+        "gameId": "task.doc.c.05",
+        "description": "Next time you're out raiding and looting, grab me some household electronics and batteries on the side — I can strip them down and mod two medical devices. You can find this stuff on any map. Don't make a special trip just for this.",
+        "objectives": [
+            "Turn in Electric Items Found In Raid",
+            "Turn in Batteries Items Found In Raid"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "reputation",
+                "quantity": 15,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 2500
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "food_soda_drink_l",
+                "item_name": "Soda Drink L"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "med-bandage-lv3",
+                "item_name": "Bandage"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "med-syringe-lv2",
+                "item_name": "Stimpak Lv2"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ntg_58"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 31
+    },
+    "ntg_60": {
+        "id": "ntg_60",
+        "name": "Meg's Camera",
+        "gameId": "task.doc.c.06",
+        "description": "One more thing — if you pass by the fire lookout cabin north of the dam, bring back my camera. It has photos of every formula I compiled during my practice. Without it, I can't synthesize the advanced injectors. Get inside, grab it, bring it back to HQ.",
+        "objectives": [
+            "Arrive the Mountain Cabin",
+            "Enter the Mountain Cabin",
+            "Find Maggie's camera",
+            "Turn in Maggie's Precious Camera"
+        ],
+        "corpId": "ntg",
         "type": [
             "reach",
             "retrieve",
@@ -9599,55 +9647,592 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "reputation",
-                "corpId": "forge",
-                "quantity": 50
+                "quantity": 17,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 2800
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-bandage-lv3",
+                "item_name": "Bandage"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "med-limb-restorer-lv2",
+                "item_name": "Suturing Instrument"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "med-syringe-lv3",
+                "item_name": "Stimpak Pro"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ntg_59"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 32
+    },
+    "ntg_61": {
+        "id": "ntg_61",
+        "name": "Dock Intel",
+        "gameId": "task.doc.c.07",
+        "description": "There are a few containers left behind by ARK when they pulled out from the dam docks — black and red ones. Go mark their positions. I want to know if there's still usable medical supplies inside. The tracker's been sent to your mailbox — pick it up before you head out. Don't engage. Mark and extract.",
+        "objectives": [
+            "Mark Container 1",
+            "Mark Container 2",
+            "Mark Container 3",
+            "Mark Container 4"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "mark"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 40000
+            },
+            {
+                "type": "reputation",
+                "quantity": 18,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 3000
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-syringe-lv2",
+                "item_name": "Stimpak Lv2"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-syringe-lv4",
+                "item_name": "Stimpak Elite"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-painkiller-lv3",
+                "item_name": "Painkiller"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "taskitem_tracking_device",
+                "item_name": "MS2000 Tracker"
+            }
+        ],
+        "requiredTasks": [
+            "ntg_60"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 33
+    },
+    "ntg_62": {
+        "id": "ntg_62",
+        "name": "Clifton Hidden Room Radio",
+        "gameId": "task.doc.c.08",
+        "description": "There's an old clue tucked inside my medical journal — before I left, I hid a communication radio in the secret room of Clifton's Ellie Shop. The radio still holds signal codes for a few of my old colleagues; it was the last lifeline I left behind. The key to Ellie's shop and a large backpack have been sent to your mailbox — get inside, find the hidden entrance, and bring the radio back.",
+        "objectives": [
+            "Arrive the Clifton Area",
+            "Arrive the Ellie's Shop",
+            "Arrive the hidden room in Ellie's Shop",
+            "Find Maggie's radio",
+            "Turn in Maggie's Radio"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 20000
+            },
+            {
+                "type": "reputation",
+                "quantity": 10,
+                "corpId": "ntg"
+            },
+            {
+                "type": "experience",
+                "quantity": 5518
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "key_dam_station_east",
+                "item_name": "East Dam Inlet's Key"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "food_soda_drink_l",
+                "item_name": "Soda Drink L"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "food_chocolate",
+                "item_name": "Chocolate"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "backpack_eliteops_green",
+                "item_name": "Elite Ops Green"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "key_clifton_shop",
+                "item_name": "Ellie's Shop Key"
+            }
+        ],
+        "requiredTasks": [
+            "ntg_61"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 34
+    },
+    "ntg_63": {
+        "id": "ntg_63",
+        "name": "Messenger",
+        "gameId": "task.doc.dlc.01",
+        "description": "Hey, new face. Snap out of it. I’m Johnny, your contact.\r\nI got word you’d be coming. A guy asked me to pass something along to one of his colleagues. Well, not the package itself. Just a pickup spot.\r\nJudging by the way you’re dressed, I’d say that means you.\r\nDon’t expect me to hand-deliver it, though. This island’s no vacation spot these days. The pickup is on the roof of the Dam Dock Office. You’ll have to go get it yourself.\r\nAnd be careful with it. That thing is one pricey piece of electronics. Bring it back to me once you’ve got it, and I’ll take care of the rest.",
+        "objectives": [
+            "Find Locked OPS Terminal in Dam",
+            "Turn in Locked OPS Terminal"
+        ],
+        "corpId": "ntg",
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 60000
+            },
+            {
+                "type": "item",
+                "quantity": 10,
+                "item_id": "ammo-12-7x55-fmj",
+                "item_name": "12.7x55mm PS12"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.color.paintcan.plastic.005"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-rsh12silver",
+                "item_name": "RSH-12 12.7x55mm Revolver silver"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.valuable.task.marcus.mica"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 35
+    },
+    "regiment_23": {
+        "id": "regiment_23",
+        "name": "Taste of Life 2",
+        "gameId": "task.wp.a.01",
+        "description": "You know [Smuggling Tunnel] has always been one of the top spots for smugglers and black market dealers. Goods from everywhere, so I bet among those goodies there's Asian booze I haven't tasted.\nGo get me some [sake].",
+        "objectives": [
+            "Find Sake",
+            "Turn in Sake"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "smuggling"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 37000
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
+            },
+            {
+                "type": "reputation",
+                "quantity": 40,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-762x39-apv1",
+                "item_name": "7.62x39mm BP"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "mag_762x39_30_2",
+                "item_name": "AKM P-Mag 7.62x39mm 30rnd magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_16"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 3,
+        "tips": "White house in farm area on Suburbs. Mark one of the huge wine barrels in basement on the SW side. Dry wine bottle in kitchen sink on ground level. Both extracts are north of the white farmhouse.",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "8jXo9LaZmuU"
+            },
+            {
+                "author": "orbb",
+                "ytId": "tw_SplvvQO8"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 749
+            }
+        ],
+        "order": 1
+    },
+    "regiment_36": {
+        "id": "regiment_36",
+        "name": "Rebellious Reporter",
+        "gameId": "task.wp.a.02",
+        "description": "That cave is full of fun, heard those hypocrites put up skeleton scarecrows to warn people!\nThen we'll do the opposite, go to [Smuggling Tunnel] and snap photos of some [No Photography] signs and [skeleton scarecrows].",
+        "objectives": [
+            "Capture the 'No Photo' Sign 1 on Northeast",
+            "Capture the 'No Photo' Sign 2 at Water Gate",
+            "Capture the 'No Photo' Sign 3 at Water Gate",
+            "Capture the Skeleton Scarecrow 1",
+            "Capture the Skeleton Scarecrow 2"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "photo"
+        ],
+        "map": [
+            "smuggling"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 28000
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
+            },
+            {
+                "type": "reputation",
+                "quantity": 40,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-545x39-apv1",
+                "item_name": "5.45x39mm BS"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-ak-ak74-modt",
+                "item_name": "AK74N 5.45x39mm assault rifle Titan edition"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_545x39_30_2",
+                "item_name": "AK74 P-Mag 5.45x39mm 30rnd magazine"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "taskitem_photophone",
+                "item_name": "New Phone"
+            }
+        ],
+        "requiredTasks": [
+            "regiment_23"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 2
+    },
+    "regiment_28": {
+        "id": "regiment_28",
+        "name": "Movie Night 2",
+        "gameId": "task.wp.a.03",
+        "description": "Movies! I want more movies! Hurry to [Smuggling Tunnel] and rummage around, definitely good films there! Heard there's a lab up north, movies on that theme sound great! Like [Mad Surgeon] stuff!",
+        "objectives": [
+            "Find MAD DOC #1 at Emergency Ladder",
+            "Find MAD DOC #2 at Express Lane 2F Office",
+            "Turn in MAD DOC #1",
+            "Turn in MAD DOC #2"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "smuggling"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
+            },
+            {
+                "type": "reputation",
+                "quantity": 40,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-545x39-apv1",
+                "item_name": "5.45x39mm BS"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-ak74n-lhv",
+                "item_name": "AK74N 5.45x39mm assault rifle LHV edition"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_545x39_30_2",
+                "item_name": "AK74 P-Mag 5.45x39mm 30rnd magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_36"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "Both CDs can be found in kitchen.",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "faXDU1mwj-0"
+            },
+            {
+                "author": "orbb",
+                "ytId": "tVcmvySg7Xc"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 992
+            }
+        ],
+        "order": 3
+    },
+    "regiment_27": {
+        "id": "regiment_27",
+        "name": "My Favourite: Mosin",
+        "gameId": "task.wp.a.04",
+        "description": "My favorite gun is Mosin. This old rifle has a legendary history, every time I stroke it, I feel the hot blood from those battles.\nBut maybe you can challenge my past glory. Just grab a [Mosin], find a good spot, wait quietly, then 'bang!' Surprise your enemies with its precision and power.",
+        "objectives": [
+            "Mosin series: Eliminate targets"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
             },
             {
                 "type": "experience",
                 "quantity": 15403
             },
             {
+                "type": "reputation",
+                "quantity": 50,
+                "corpId": "regiment"
+            },
+            {
                 "type": "item",
-                "item_id": "armor-rampage-od",
-                "quantity": 1
+                "quantity": 4,
+                "item_id": "ammo-762x39-apv2",
+                "item_name": "7.62x39mm AP"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-malyuk-762",
+                "item_name": "Malyuk 7.62x39mm assault rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_762x39_30_2",
+                "item_name": "AKM P-Mag 7.62x39mm 30rnd magazine"
             }
         ],
         "preReward": [],
         "requiredTasks": [
-            "forge_22"
+            "regiment_28"
         ],
-        "requiredLevel": 0,
-        "tips": "",
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "Try to roleplay WW2 Soviet partisan for better accuracy. Only [Mosin 91-30](https://www.exfil-zone-assistant.app/items/weapon-mosin-91-30) can have a [scope](https://www.exfil-zone-assistant.app/items/scope_mosinpu).",
         "videoGuides": [
             {
                 "author": "HayaPlays",
-                "ytId": "qP2i6afqkCc"
-            },
-            {
-                "author": "orbb",
-                "ytId": "p2W4kXJUtIA"
+                "ytId": "c-oA5Mwd0_E"
             },
             {
                 "author": "radFoxVR",
-                "ytId": "BO5uihtPyLM",
-                "startTs": 859
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 894
             }
         ],
-        "order": 27
+        "order": 4
     },
-    "forge_28": {
-        "id": "forge_28",
-        "name": "Treasure Beyond Measure",
-        "gameId": "task.gear.22",
-        "description": "This hacker finished much quicker than I expected. \nThere isn't much data, mostly junk files. However, after his analysis, we uncovered something important: a strange start-up program, a string of passwords, and [a location].\nI'll focus on the program and passwords, while you check those [the control room], see if you can [find a special briefcase].",
+    "regiment_37": {
+        "id": "regiment_37",
+        "name": "My Favourite: AK",
+        "gameId": "task.wp.a.05",
+        "description": "You know AK series guns have average accuracy but super reliable operation, simple structure, perfect for mid-close range firepower. That's why I love 'em so much.\nBet you're no stranger to [AK series firearms], how about adding another layer of battle glory to it.",
         "objectives": [
-            "Find Metro Control Room",
-            "Find Missile Launcher Case",
-            "Turn in Missile Launcher Case"
+            "AK74 series: Eliminate targets"
         ],
-        "corpId": "forge",
+        "corpId": "regiment",
         "type": [
-            "reach",
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "reputation",
+                "quantity": 50,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-762x39-apv1",
+                "item_name": "7.62x39mm BP"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-rd704",
+                "item_name": "RD704 7.62x39mm assault rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_762x39_30_2",
+                "item_name": "AKM P-Mag 7.62x39mm 30rnd magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_27"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 5
+    },
+    "regiment_38": {
+        "id": "regiment_38",
+        "name": "Movie Night 3",
+        "gameId": "task.wp.a.06",
+        "description": "Rewatched those previous movies a bunch, so thrilling! How about you hit [Metro Area] for me this time and check for other films? Best if it's [subway-themed thrillers]! Hmm, maybe I can get everyone together to watch... Hurry up and get back!",
+        "objectives": [
+            "Find [Subway Scream]",
+            "Find [Subway Scream 2]",
+            "Turn in [Subway Scream]",
+            "Turn in [Subway Scream 2]"
+        ],
+        "corpId": "regiment",
+        "type": [
             "retrieve",
             "submit"
         ],
@@ -9657,7 +10242,552 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 32000
+                "quantity": 35000
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "reputation",
+                "quantity": 50,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-762x39-apv2",
+                "item_name": "7.62x39mm AP"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-akalpha",
+                "item_name": "AK Alpha 7.62x39mm assault rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_762x39_30_2",
+                "item_name": "AKM P-Mag 7.62x39mm 30rnd magazine"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_metroentry",
+                "item_name": "Metro Entry Ticket"
+            }
+        ],
+        "requiredTasks": [
+            "regiment_37"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 6
+    },
+    "regiment_32": {
+        "id": "regiment_32",
+        "name": "One-Time Delivery",
+        "gameId": "task.wp.a.07",
+        "description": "Got a troublesome job for you.\r\nHead to [Metro Area], grab [supply case] from the [Control Room], [Tank Room], and [room on the east side of the sewer area], then place them on the wooden crates outside the sewer secret room.",
+        "objectives": [
+            "Find Igor's supplycase",
+            "Place next to the Sewer Hidden Room"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "retrieve",
+            "place"
+        ],
+        "map": [
+            "metro"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 28000
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "reputation",
+                "quantity": 50,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_545x39_60",
+                "item_name": "AK74 PufGun 5.45x39mm 60rnd magazine"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_metroentry",
+                "item_name": "Metro Entry Ticket"
+            }
+        ],
+        "requiredTasks": [
+            "regiment_38"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "[Igor's Supply Case](https://www.exfil-zone-assistant.app/items/taskitem_placement_igor_supplycase). One located on shelf in control room; One located on barrels in large gate room. pull lever in control room to open gate; One located in the east room of sewer area, place task item west of sewer room, two extracts, climb ladder, cross pipe, place on box outside door; items are heavy and might take two trips up ladder",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "Hj_tdUpEZVY"
+            },
+            {
+                "author": "orbb",
+                "ytId": "qfRvA2MBmGI"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 1167
+            }
+        ],
+        "order": 7
+    },
+    "regiment_31": {
+        "id": "regiment_31",
+        "name": "My Favourite: Sjogren",
+        "gameId": "task.wp.a.08",
+        "description": "My other favorite gun is Sjogren! This one's like my savior in adventures, with it I face any challenge head-on.\nBack in those chaotic battle days, it got me out of jams countless times!\nThis time, I want you to feel its power too. So take the [Sjogren] to [Metro Area] and school those scavengers. Make every bullet thunder like lightning and shake 'em up!",
+        "objectives": [
+            "Sjogren series: Eliminate targets in Metro Area"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "metro"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "reputation",
+                "quantity": 50,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_762x39_75",
+                "item_name": "AKM Molot 7.62x39mm 75rnd Drum magazine"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_metroentry",
+                "item_name": "Metro Entry Ticket"
+            }
+        ],
+        "requiredTasks": [
+            "regiment_32"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "[Sjogren](https://www.exfil-zone-assistant.app/items/weapon-sjogren-inertia)",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "y92XkaY4ZOs"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 1125
+            }
+        ],
+        "order": 8
+    },
+    "regiment_17": {
+        "id": "regiment_17",
+        "name": "Pistol Glory",
+        "gameId": "task.wp.a.09",
+        "description": "Story time. Once my old war buddy griped that our issued pistols were useless, said they're like firecrackers, just noise to scare timid foes. Then we got pinned behind a rock, couldn't poke our heads out, only my sidearm left.\nHe said we're done for, but I drew that pistol, yelled and charged out, dropped all those enemies! Afterward, he snagged my gun and carried it everywhere.\nAlright, story's over. Now your turn to make the [pistol] shine!",
+        "objectives": [
+            "Eliminate targets with Glock18c",
+            "Eliminate targets with KW1911",
+            "Eliminate targets with M9",
+            "Eliminate targets with P226"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 28000
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.color.paintcan.plastic.013"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_27",
+            "regiment_15"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "QlyJuqdDRQI"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 465
+            }
+        ],
+        "order": 9
+    },
+    "regiment_39": {
+        "id": "regiment_39",
+        "name": "My Favourite: FAL",
+        "gameId": "task.wp.a.10",
+        "description": "My other favorite, the ferocious FAL! It's like my old pal, got me through countless wild moments.\nNow, take that [FAL] and give those bastards a few rounds! Let the bullets unleash its power, drop every enemy! Don't be scared, picture their fear, savor the moment!",
+        "objectives": [
+            "SA58 (FAL): Eliminate targets",
+            "AKM series: Eliminate targets"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-762x39-apv1",
+                "item_name": "7.62x39mm BP"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-akmn-titan",
+                "item_name": "AKMN 7.62x39mm assault rifle titan edition"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_762x39_30_2",
+                "item_name": "AKM P-Mag 7.62x39mm 30rnd magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_27",
+            "regiment_16"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 10
+    },
+    "regiment_40": {
+        "id": "regiment_40",
+        "name": "Taste of Life 3",
+        "gameId": "task.wp.a.11",
+        "description": "Last booze you got was solid, but I'm craving again lately. Heard [Suburb Area]'s [Wyeth Farmhouse] stashes tons of good liquor, even cellar-aged! Need you to mark the [large wine barrels] in the [cellar]. Then search around the island for [Wyeth dry red wine], and bring the wine back to me safely.\r\nYou can search in these places:\r\n[Wyeth Farmhouse], [Dam Power Station], [Hovolt Store].",
+        "objectives": [
+            "Mark the Wine Barrel",
+            "Find Wyeth Farm red wine 1",
+            "Find Wyeth Farm red wine 2",
+            "Find Wyeth Farm red wine 3",
+            "Turn in Wyeth's Dry Red Wine"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "mark",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "suburb",
+            "dam",
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-762x54r-apv1",
+                "item_name": "7.62x54R SNB"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-svt40-sniper",
+                "item_name": "SVT40 7.62x54mmR battle rifle sniper"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_762x54R_10",
+                "item_name": "SVT40 7.62x54mmR 10rnd magazine"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "taskitem_tracking_device",
+                "item_name": "MS2000 Tracker"
+            }
+        ],
+        "requiredTasks": [
+            "regiment_31",
+            "regiment_17"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 11
+    },
+    "regiment_30": {
+        "id": "regiment_30",
+        "name": "Forever in a Flash",
+        "gameId": "task.wp.a.12",
+        "description": "You know what's common between statues and photos? They both freeze a thing in eternal instant. So romantic... Hurry to the island and snap some statue pics for me to enjoy.\nLike [Hyder Town]'s [grizzly bear statue],\n[Resort Area] flea market's [bull statue],\n[Clifton church]'s nearby [angel statue],\nAnd [Metro Area]'s [hunting dog statue].",
+        "objectives": [
+            "Take photo of the Bear statue",
+            "Take photo of the Bull statue",
+            "Take photo of the Angel statue",
+            "Take photo of the Hound statue"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "photo"
+        ],
+        "map": [
+            "metro",
+            "suburb",
+            "dam",
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-545x39-apv1",
+                "item_name": "5.45x39mm BS"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-malyuk-545",
+                "item_name": "Malyuk 5.45x39mm assault rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_545x39_30_2",
+                "item_name": "AK74 P-Mag 5.45x39mm 30rnd magazine"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_metroentry",
+                "item_name": "Metro Entry Ticket"
+            }
+        ],
+        "requiredTasks": [
+            "regiment_31",
+            "regiment_39"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "Dam angel located outside church in clifton. Bear located in Hyder town on suburb. Bull located in flea market on resort. Hound on metro top of stairs by east extract",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "stF3gVmw1tM"
+            },
+            {
+                "author": "orbb",
+                "ytId": "JIacdtZ1GGE"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 1094
+            }
+        ],
+        "order": 12
+    },
+    "regiment_34": {
+        "id": "regiment_34",
+        "name": "War Within Self",
+        "gameId": "task.wp.a.13",
+        "description": "Warrior, stand tall and listen. The scariest enemy might be your own heart. Final challenge: conquer your fear, hesitation, weakness, and self-doubt.\nForge your will... Not joking this time. All those previous tasks were to build you a steel heart.\n[No matter the method, no matter the weapon, take on a massive horde solo, challenge yourself, conquer yourself] (can kill other contractors).",
+        "objectives": [
+            "Eliminate Contractors or Scavangers"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "experience",
+                "quantity": 15403
+            },
+            {
+                "type": "reputation",
+                "quantity": 50,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-762x39-apv2",
+                "item_name": "7.62x39mm AP"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-akmcaa47",
+                "item_name": "AKM 7.62x39mm assault rifle CAA47 edition"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_762x39_30_2",
+                "item_name": "AKM P-Mag 7.62x39mm 30rnd magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_30"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "o29YJdDw1fs"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 1272
+            }
+        ],
+        "order": 13
+    },
+    "regiment_35": {
+        "id": "regiment_35",
+        "name": "Intermission",
+        "gameId": "task.wp.a.14",
+        "description": "You did great, haha! Knew you could, catching up to me back in the day!\n...\nDon't just stand there, don't you think this is the perfect moment for a little break? Don't worry, got some prime stash here, go grab a [lighter], don't forget the fuel!",
+        "objectives": [
+            "Turn in Lighter",
+            "Turn in Lighter fluid"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 42000
             },
             {
                 "type": "experience",
@@ -9665,58 +10795,2490 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "reputation",
-                "corpId": "forge",
-                "quantity": 50
+                "quantity": 60,
+                "corpId": "regiment"
             },
             {
                 "type": "item",
-                "item_id": "helmet-rys-t",
-                "quantity": 1
+                "quantity": 4,
+                "item_id": "ammo-762x54r-apv1",
+                "item_name": "7.62x54R SNB"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-pkp-pecheneg",
+                "item_name": "PKP 7.62x54mmR LMG B50 edition"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_762x54R_80",
+                "item_name": "PKP 7.62x54mmR 80rnd Drum magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_34"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "vK0wnfTx2_Y"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 1302
+            }
+        ],
+        "order": 14
+    },
+    "regiment_10": {
+        "id": "regiment_10",
+        "name": "Treasure in the Sewage",
+        "gameId": "task.wp.b.01",
+        "description": "Heard [Resort Area] has been really chaotic lately, that's bad, my most precious treasure, [my notebook], is still hidden there! \nThey say the faintest pencil is better than the sharpest memory, that notebook is the most valuable thing to an old guy like me! Hurry and help me get it back! It's inside the [Wastewater Plant] west of [Resort Area].",
+        "objectives": [
+            "Reach the Wastewater treatment plant",
+            "Find Igor's treasure 1",
+            "Find Igor's treasure 2",
+            "Turn in Igor's notes"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 24000
+            },
+            {
+                "type": "experience",
+                "quantity": 6403
+            },
+            {
+                "type": "reputation",
+                "quantity": 20,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-762x54r-tracer",
+                "item_name": "7.62x54R T-46M"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-mosin-obrez",
+                "item_name": "MOSINM1891 bolt action rifle OBREZ edition"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_49"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 2,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "S1GprlYcPsI"
+            },
+            {
+                "author": "orbb",
+                "ytId": "ZRnKbMybPzo"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 274
+            }
+        ],
+        "order": 15
+    },
+    "regiment_11": {
+        "id": "regiment_11",
+        "name": "Long live friendship 1",
+        "gameId": "task.wp.b.02",
+        "description": "I have an old friend who used to live in [Resort Area], he loved messing with stones and metals. In my opinion, how can those things compare to guns? Guns are practical and can protect you. \nSpeaking of this makes me mad, [Resort Area] is now a mess because of a bunch of bandits, they must be disturbing my friend's rest! Go [teach those troublemakers a lesson]!",
+        "objectives": [
+            "Eliminate Scavangers in Resort Area"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 24000
+            },
+            {
+                "type": "experience",
+                "quantity": 6403
+            },
+            {
+                "type": "reputation",
+                "quantity": 20,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-762x39-tracer",
+                "item_name": "7.62x39mm T-45M"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-sks",
+                "item_name": "OP-SKS 7.62x39mm semi-automatic carbine rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "magazine-sks-puf20",
+                "item_name": "SKS 7.62x39mm 20rnd Puf magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_10"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "wE-rSY_zl2c"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 293
+            }
+        ],
+        "order": 16
+    },
+    "regiment_12": {
+        "id": "regiment_12",
+        "name": "Long live friendship 2",
+        "gameId": "task.wp.b.03",
+        "description": "That old friend of mine, people called him the legendary jeweler, but I still prefer calling him Old Jack. Actually the biggest treasure in the [Resort Area] bank heist, [Heart of the Blue Sea], was his work. After he passed away in [Whitesail Hospital], he left me a diary mentioning some locations, I want you to go [take photos] of those clues for me.",
+        "objectives": [
+            "Take photo of a clue on the wall (Modern apartment park)",
+            "Take photo of a clue on the wall (Halif Voyage backdoor)",
+            "Take photo of a clue on the wall (Beach chair area)"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "photo"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 24000
+            },
+            {
+                "type": "experience",
+                "quantity": 6403
+            },
+            {
+                "type": "reputation",
+                "quantity": 20,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-762x39-tracer",
+                "item_name": "7.62x39mm T-45M"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-akmn",
+                "item_name": "AKMN 7.62x39mm assault rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_762x39_30_2",
+                "item_name": "AKM P-Mag 7.62x39mm 30rnd magazine"
             }
         ],
         "preReward": [
             {
                 "type": "item",
-                "item_id": "key_metro_entry_ticket",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "taskitem_photophone",
+                "item_name": "New Phone"
             }
         ],
         "requiredTasks": [
-            "forge_27"
+            "regiment_11"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "HayaPlays",
-                "ytId": "yVQPG5eGVAQ"
+                "ytId": "_7scXRp08Hg"
             },
             {
                 "author": "orbb",
-                "ytId": "yEf6vs-lZDg"
+                "ytId": "oAQ9Rl2WTmM"
             },
             {
                 "author": "radFoxVR",
-                "ytId": "BO5uihtPyLM",
-                "startTs": 887
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 342
             }
         ],
+        "order": 17
+    },
+    "regiment_14": {
+        "id": "regiment_14",
+        "name": "One Last Drink, My Friend",
+        "gameId": "task.wp.b.04",
+        "description": "Know why the bandits never found [Heart of the Blue Sea]? Because Old Jack gave it to me long ago, but I don't want to make it public. Please go visit his gravestone for me, it's next to [Resort Area Lighthouse]. Old Jack loved beer the most when he was alive, take this bottle of [beer] and this [green cap] to him.\r\nIf you lose the task items, you can buy or find them in the field.",
+        "objectives": [
+            "Find the jeweler's grave",
+            "Put Beer in place",
+            "Put green cap in place"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "reach",
+            "place"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 12000
+            },
+            {
+                "type": "experience",
+                "quantity": 7928
+            },
+            {
+                "type": "reputation",
+                "quantity": 20,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-mosin-91-30",
+                "item_name": "MOSIN9130 bolt action rifle INFANTRY edition"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-muzzle-762akml",
+                "item_name": "AKM Akml 7.62x39mm compensator"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-mosin-muzzle-akmadapter",
+                "item_name": "Mosin bolt action rifle AKM muzzle adapter"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "food_beer",
+                "item_name": "Beer"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "helmet-cap-green",
+                "item_name": "Green cap"
+            }
+        ],
+        "requiredTasks": [
+            "regiment_12"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "Bring beer to lighthouse on resort, small grave behind, place beer",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "g5pxrf7Qm_s"
+            },
+            {
+                "author": "orbb",
+                "ytId": "fmGJ_eR3m2Y"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 420
+            }
+        ],
+        "order": 18
+    },
+    "regiment_18": {
+        "id": "regiment_18",
+        "name": "Movie Night 1",
+        "gameId": "task.wp.b.05",
+        "description": "You know I like thrilling and exciting movies, but I'm tired of watching my own discs! Hurry go to [Resort Area] and find me some good [shark thriller movies], maybe try [Rua Algasol] and [the fast food place near Skate park]!",
+        "objectives": [
+            "Find [SHARK]",
+            "Find [SHARK] Sequel",
+            "Turn in [SHARK]",
+            "Turn in [SHARK] Sequel"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 24000
+            },
+            {
+                "type": "experience",
+                "quantity": 7928
+            },
+            {
+                "type": "reputation",
+                "quantity": 30,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-762x54r-fmj",
+                "item_name": "7.62x54R FMJ"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-mosin-m38",
+                "item_name": "MOSINM38  bolt action rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-mosin-rearsight-m1891",
+                "item_name": "Mosin bolt action rifle M1891 barrel rear sight"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_14"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "One on toilet at Skatepark cafe. Second CD on barrel at Rua Algasol.",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "PXbAP1j56eI"
+            },
+            {
+                "author": "orbb",
+                "ytId": "cNQ5CB60RpU"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 503
+            }
+        ],
+        "order": 19
+    },
+    "regiment_25": {
+        "id": "regiment_25",
+        "name": "What a Vacation's Meant to Be",
+        "gameId": "task.wp.b.06",
+        "description": "Sigh, bad legs, I can't go out to enjoy sunshine and sea breeze. Listen, while you can still walk, enjoy vacation and travel! Heard there's a [sightseeing tram] on the coastal route of [Resort Area], go take a few photos for me. Remember, must be the coastal route, the view is great there!",
+        "objectives": [
+            "Take photo of the tram A (Seaglass St)",
+            "Take photo of the tram B (Seaglass St)",
+            "Take photo of the tram C (Seaglass St)"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "photo"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 24000
+            },
+            {
+                "type": "experience",
+                "quantity": 6403
+            },
+            {
+                "type": "reputation",
+                "quantity": 30,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-12ga-buckshot-ap",
+                "item_name": "12GA Flechette"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-sjogren-inertia",
+                "item_name": "SJOGREN 12ga semi-automatic shotgun STANDARD edition"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_18"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "The tram train cars are located on the road by hotel, two in front of hotel and one located on the road west toward construction.",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "EjvHz2SbegQ"
+            },
+            {
+                "author": "orbb",
+                "ytId": "xMd_KozHG30"
+            }
+        ],
+        "order": 20
+    },
+    "regiment_29": {
+        "id": "regiment_29",
+        "name": "Dress the Part",
+        "gameId": "task.wp.b.07",
+        "description": "Sometimes I think the police guys look pretty cool, holding guns and 'enforcing law' on disobedient people. Hmm... why don't you try it too!\nPut on [Police PACA body armor] and [Beret Hat Black], give those law-breaking guys some lessons.",
+        "objectives": [
+            "Eliminate targets in police outfits"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 24000
+            },
+            {
+                "type": "experience",
+                "quantity": 6403
+            },
+            {
+                "type": "reputation",
+                "quantity": 30,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-545x39-apv1",
+                "item_name": "5.45x39mm BS"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-ak74n-factory",
+                "item_name": "AK74N 5.45x39mm assault rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_545x39_30_black",
+                "item_name": "AK74 6l23 5.45x39mm 30rnd magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_25"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "Dress with [Police PACA Body Armor](https://www.exfil-zone-assistant.app/items/armor-police-vest) and [Black Beret](https://www.exfil-zone-assistant.app/items/helmet-beanie-black) and kill 16 targets.",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "ng-d0GwVA64"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 1014
+            }
+        ],
+        "order": 21
+    },
+    "regiment_8": {
+        "id": "regiment_8",
+        "name": "Submachine Guns",
+        "gameId": "task.wp.b.08",
+        "description": "I once made a bet with a war buddy on the battlefield, only using submachine guns, see who kills more enemies. But guess what, that guy rushed out and never came back, I bet he went somewhere to slack off, really disrespecting our bet! You ask where he is now? Here, this dog tag is his.\nNow, wanna finish that bet for him? Try it, [kill a few scavengers with a submachine gun].",
+        "objectives": [
+            "SMG: Eliminate targets"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "experience",
+                "quantity": 7928
+            },
+            {
+                "type": "reputation",
+                "quantity": 30,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "food_mre",
+                "item_name": "Compact Ration"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_29"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "x6OfU5ufssU"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 186
+            }
+        ],
+        "order": 22
+    },
+    "regiment_41": {
+        "id": "regiment_41",
+        "name": "Hair Care",
+        "gameId": "task.wp.b.09",
+        "description": "As a gentleman, even in harsh survival conditions, I must ensure my appearance is impeccable. Bring me some [personal care] items; my beauty cannot be let down.",
+        "objectives": [
+            "Turn in Cleanser",
+            "Turn in BeardOil",
+            "Turn in Deodorant"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 18000
+            },
+            {
+                "type": "experience",
+                "quantity": 7928
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-545x39-apv1",
+                "item_name": "5.45x39mm BS"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-ak74m",
+                "item_name": "AK74M 5.45x39mm assault rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_545x39_30_2",
+                "item_name": "AK74 P-Mag 5.45x39mm 30rnd magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_12"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 23
+    },
+    "regiment_42": {
+        "id": "regiment_42",
+        "name": "Old Computer",
+        "gameId": "task.wp.b.10",
+        "description": "Damn it, my computer broke, and I only used it for 20 years! I told you electronic stuff is unreliable. Fine, go get me a [hard drive], [computer manual] and [industrial socket]. I'm gonna fix this piece of junk myself.",
+        "objectives": [
+            "Hard Drive",
+            "Turn in Computer manual",
+            "Turn in Socket"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 24000
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-762x54r-fmj",
+                "item_name": "7.62x54R FMJ"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-svt-40",
+                "item_name": "SVT40 7.62x54mmR battle rifle infantry"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_762x54R_10",
+                "item_name": "SVT40 7.62x54mmR 10rnd magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_25",
+            "regiment_51"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 24
+    },
+    "regiment_15": {
+        "id": "regiment_15",
+        "name": "Reading Habits",
+        "gameId": "task.wp.b.11",
+        "description": "Hey, you hate power outages? Just now while reading my magazine, it suddenly went pitch black, weird, someday I'll go check the lines myself.\nBut before that, I need to prepare some emergency stuff. Go get me a [flashlight] and [size D battery2], so at least during blackout I can still read my magazine in peace.",
+        "objectives": [
+            "Turn in Flash light",
+            "Turn in Size D battery2"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 24000
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-545x39-apv1",
+                "item_name": "5.45x39mm BS"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-ak74n-factory",
+                "item_name": "AK74N 5.45x39mm assault rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_545x39_30_2",
+                "item_name": "AK74 P-Mag 5.45x39mm 30rnd magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_41"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "[Size D Battery](https://www.exfil-zone-assistant.app/items/misc_b_1battery), [Flashlight](https://www.exfil-zone-assistant.app/items/misc_b_flashlight)",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "lq5gbS1uohg"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 440
+            }
+        ],
+        "order": 25
+    },
+    "regiment_16": {
+        "id": "regiment_16",
+        "name": "The Best Can",
+        "gameId": "task.wp.b.12",
+        "description": "Buddy, wanna help this old guy satisfy his craving? Not hard to find, just some cans, super tasty. Don't know what's in it, every time I eat, my tongue gets numb and astringent... What? Allergic reaction? Impossible, that's baptism for the taste buds! Get me some [canned peas], wanna stock up more.",
+        "objectives": [
+            "Submit Pea can"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 35000
+            },
+            {
+                "type": "experience",
+                "quantity": 12719
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-762x51-hp",
+                "item_name": "7.62x51mm SP"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-rfb",
+                "item_name": "RFB 7.62x51mm battle rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "magazine-rfb-20rnd",
+                "item_name": "RFB 7.62x51mm 20rnd magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_42"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "Can submit half-eaten can.",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "hYVVofQYJ2I"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "YEPtvxMzsBY",
+                "startTs": 452
+            }
+        ],
+        "order": 26
+    },
+    "regiment_43": {
+        "id": "regiment_43",
+        "name": "A Real Rifle",
+        "gameId": "task.wp.c.01",
+        "description": "New blood — Tommy told me about you. Come take a look. A 9mm pistol? Ha. That's not a gun, that's a toy for babies. Go clear a few more scavengers outside the dam, prove you can handle some recoil. Come back and I'll show you a real rifle — straight from the Kalashnikov family.",
+        "objectives": [
+            "Eliminate Scavangers in Dam Area"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 12000
+            },
+            {
+                "type": "experience",
+                "quantity": 2178
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-545x39-fmj",
+                "item_name": "5.45x39mm FMJ"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-ak74",
+                "item_name": "AK74 5.45x39mm assault rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_545x39_30_orange",
+                "item_name": "AK74 6l20 5.45x39mm 30rnd magazine"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ark_63"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 27
+    },
+    "regiment_44": {
+        "id": "regiment_44",
+        "name": "The Old Soldier's Beer",
+        "gameId": "task.wp.c.02",
+        "description": "Good, you're not dead. Next thing — there are a few bottles of beer sitting untouched at the convenience store near the dam. Bring me two. One for me, and the other one… also for me. Do that and I'll hand you a real AK.",
+        "objectives": [
+            "Submit Beer"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 18000
+            },
+            {
+                "type": "experience",
+                "quantity": 2178
+            },
+            {
+                "type": "reputation",
+                "quantity": 10,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-545x39-hp",
+                "item_name": "5.45x39mm PRS"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-aks74u",
+                "item_name": "AKS74UN 5.45x39mm carbine rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "scope_kobrasight_bp",
+                "item_name": "Cobra"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-handguard-6p1-sb6-1",
+                "item_name": "AK74/AKM 6p1-sb6-1 handguard"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-mount-rsr",
+                "item_name": "AK74N/AKMN RSR mount"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-rearsight-6p1-sb2",
+                "item_name": "AK74/AKM 6p1-sb2 rearsight"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_43"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
         "order": 28
     },
-    "forge_29": {
-        "id": "forge_29",
-        "name": "Perfect Collaboration",
-        "gameId": "task.gear.23",
-        "description": "You're back! So, guess what was that box you bring? First off, the earlier program was a missile-launching program. And this box isn't just any computer; you need to connect the hard drive's program and enter that password to get it running.\nWith this, I might just retire from dealing with cargo, haha. You're the most efficient and trustworthy partner I've worked with. Here's a key to the [locked room] in [Metro area]. Everything in there is yours to take—grab as much as you want. It's my way of showing appreciation for you as my top business partner.",
+    "regiment_45": {
+        "id": "regiment_45",
+        "name": "Recover My Gunpowder",
+        "gameId": "task.wp.c.03",
+        "description": "Listen up—I’ve got two cans of gunpowder stashed at the Dam. One’s in Pine Village, the other’s in a portable toilet over at Barracks 10. Don’t ask why they’re there; don't pry into an old soldier's business. Bring both cans back—if even one is missing, we’re no longer friends.",
         "objectives": [
-            "Find the sewer area back room"
+            "Find Igor's gunpowder 1",
+            "Find Igor's gunpowder 2",
+            "Turn in Igor's GunPowder"
         ],
-        "corpId": "forge",
+        "corpId": "regiment",
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 25000
+            },
+            {
+                "type": "experience",
+                "quantity": 2500
+            },
+            {
+                "type": "reputation",
+                "quantity": 13,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "grenade-vod17-frag",
+                "item_name": "VOG-17 Frag"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-ak74n-factory",
+                "item_name": "AK74N 5.45x39mm assault rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "scope_ocp7",
+                "item_name": "OCP-7"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-mount-rsr",
+                "item_name": "AK74N/AKMN RSR mount"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-muzzle-762akml",
+                "item_name": "AKM Akml 7.62x39mm compensator"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_44"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 29
+    },
+    "regiment_46": {
+        "id": "regiment_46",
+        "name": "Get Back My Shades",
+        "gameId": "task.wp.c.04",
+        "description": "I left my sunglasses in the workshop at the dam logging site — don't laugh. Those were my father's. Worth more than this damn life of mine. Go get them back for the old man. Come back and I'll give you your next weapon — AK-74. The old soldier's go-to. 5.45 caliber — one millimeter off their 5.56, but a hell of a lot smoother on recoil.",
+        "objectives": [
+            "Arrive the Lumberyard",
+            "Find Igor's sunglasses",
+            "Turn in Igor's Sunglass"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 22000
+            },
+            {
+                "type": "experience",
+                "quantity": 2500
+            },
+            {
+                "type": "reputation",
+                "quantity": 5,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "grenade-vod25-frag",
+                "item_name": "VOG-25 Frag"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-ak74",
+                "item_name": "AK74 5.45x39mm assault rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_545x39_30_2",
+                "item_name": "AK74 P-Mag 5.45x39mm 30rnd magazine"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-pistolgrip-6p4-sb8v",
+                "item_name": "AK74/AKM 6p4-sb8v pistol grip"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_45"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 30
+    },
+    "regiment_47": {
+        "id": "regiment_47",
+        "name": "Keep the Hair Sharp",
+        "gameId": "task.wp.c.05",
+        "description": "Tommy bragged about you—said you’ve got guts. This old soldier wants to verify that. Go to the dam and take out 5 ARK lackeys, but with one condition: don't wear anything on your head. Helmets, hats, masks—take them all off. We veterans believe a man's hair should never be messed up; that's the rule. Come back alive and I’ll give you next piece: an AKMN. 7.62 caliber, a true old-school Kalashnikov.",
+        "objectives": [
+            "Eliminate targets without wearing a helmet"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 28000
+            },
+            {
+                "type": "experience",
+                "quantity": 3200
+            },
+            {
+                "type": "reputation",
+                "quantity": 13,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-545x39-fmj",
+                "item_name": "5.45x39mm FMJ"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "ammo-762x39-hp",
+                "item_name": "7.62x39mm SP"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-akmn",
+                "item_name": "AKMN 7.62x39mm assault rifle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-handguard-10-63woodgrip",
+                "item_name": "AK74/AKM 10-63 Wood handguard"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-stock-6p1-sb5",
+                "item_name": "AK74/AKM 6p1-sb5 stock"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_46"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 31
+    },
+    "regiment_48": {
+        "id": "regiment_48",
+        "name": "The Sausage Trap",
+        "gameId": "task.wp.c.06",
+        "description": "You know the toll station southwest of the dam? Bring three sausages — not for you to eat — place them on the watchtower and in the small cardboard boxes in the military camp. Leave the rest to me. Simple.",
+        "objectives": [
+            "Put sausage in place 1",
+            "Put sausage in place 2",
+            "Put sausage in place 3",
+            "Arrive the Camp #11"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "place",
+            "reach"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "experience",
+                "quantity": 2800
+            },
+            {
+                "type": "reputation",
+                "quantity": 13,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-762x54r-hpv1",
+                "item_name": "7.62x54R SP"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-mosin-nagant",
+                "item_name": "MOSINM1891 bolt action rifle INFANTRY edition"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-muzzle-6p1-014",
+                "item_name": "AKM 6p1-014 7.62x39mm compensator"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-upperreceiver-6p1-0-1",
+                "item_name": "AK74/AKM 6p1-0-1 Dust cover"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "food_sausage",
+                "item_name": "Sausage"
+            }
+        ],
+        "requiredTasks": [
+            "regiment_47"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 32
+    },
+    "regiment_49": {
+        "id": "regiment_49",
+        "name": "Rifle Proficiency",
+        "gameId": "task.wp.c.07",
+        "description": "This old soldier wants to see if you can handle a rifle. Go out and pick any rifle you want and take out 10 ARK lackeys—any model counts: AK, Mosin, SKS, your choice. When you're back, I’ll give you a Mosin Obrez—a sawn-off version I cut myself, it's a real beast at close range. I'll also upgrade your AK: a new lower receiver and 7.62 magazines.",
+        "objectives": [
+            "Rifle: Eliminate targets"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "experience",
+                "quantity": 3000
+            },
+            {
+                "type": "reputation",
+                "quantity": 18,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-762x54r-hpv1",
+                "item_name": "7.62x54R SP"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-mosin-obrez",
+                "item_name": "MOSINM1891 bolt action rifle OBREZ edition"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "mag_762x39_30",
+                "item_name": "AKM AK55 7.62x39mm 30rnd magazine"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-lowerreceiver-akmn",
+                "item_name": "AKMN 7.62x39mm assault rifle"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_48"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 33
+    },
+    "regiment_50": {
+        "id": "regiment_50",
+        "name": "A Farewell Gift",
+        "gameId": "task.wp.c.08",
+        "description": "Tommy told me—you’re heading to Bear Town to take on Iron Wolf. One last thing before the front: go to the Dam Factory and retrieve two cans of meat for me. They’ve been in my stash for years; when you're starving, they're more important than life itself. Once done, I’ll give you the good stuff I’ve been saving for 20 years: 5.45 Tracer rounds, F-1 grenades, and an AK Titan Dust Cover. Take them, and come back alive.",
+        "objectives": [
+            "Arrive Old Factory Zone A",
+            "Arrive Old Factory Zone C",
+            "Find canned food in Factory Sector C1",
+            "Find canned food in Factory Sector C2",
+            "Submit Igor's canned food"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 55000
+            },
+            {
+                "type": "experience",
+                "quantity": 3000
+            },
+            {
+                "type": "reputation",
+                "quantity": 15,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-545x39-tracer",
+                "item_name": "5.45x39mm T"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "grenade-f1-frag",
+                "item_name": "F-1  Hand grenade"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "part-ak-upperreceiver-akdustcovertitan",
+                "item_name": "AK74/AKM Titan Dust cover"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "regiment_8"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 34
+    },
+    "regiment_51": {
+        "id": "regiment_51",
+        "name": "The Veteran's Courts",
+        "gameId": "task.wp.c.09",
+        "description": "Before the war, I used to take a group of recruits to play ball on three courts — the dam, the suburbs, the resort. Back then they were all still alive. Take photos of all three courts for me; an old soldier wants to see them one more time. Here's a sawn-off shotgun — I can't handle the recoil anymore.",
+        "objectives": [
+            "Take photo of basketball court in Dam Area",
+            "Take photo of basketball court in Suburb Area",
+            "Take photo of basketball court in Resort Area"
+        ],
+        "corpId": "regiment",
+        "type": [
+            "photo"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 24000
+            },
+            {
+                "type": "experience",
+                "quantity": 5518
+            },
+            {
+                "type": "reputation",
+                "quantity": 40,
+                "corpId": "regiment"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-12ga-buckshot-ap",
+                "item_name": "12GA Flechette"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-sjogren-sawoff",
+                "item_name": "SJOGREN 12ga semi-automatic shotgun SAWOFF edition"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "taskitem_photophone",
+                "item_name": "New Phone"
+            }
+        ],
+        "requiredTasks": [
+            "regiment_48"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 35
+    },
+    "trupiks_22": {
+        "id": "trupiks_22",
+        "name": "Capacity Upgrade 3",
+        "gameId": "task.mall.a.01",
+        "description": "Hey, I used up the last batch of parts pretty quickly. Might need you to search around [Resort Area] this time. Check [the LAUNDRY in the Workers Dorm] for a special [parts box]. With some luck, I can start crafting an even larger safe.",
+        "objectives": [
+            "Find Johnny's Safebox",
+            "Turn in Johnny's Safebox"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 10000
+            },
+            {
+                "type": "experience",
+                "quantity": 3311
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.sc.caselv3"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_23",
+            "ntg_43"
+        ],
+        "requiredPlayerLevel": 30,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 1
+    },
+    "trupiks_12": {
+        "id": "trupiks_12",
+        "name": "One Last Mile",
+        "gameId": "task.mall.a.02",
+        "description": "Lately, there have been frequent security issues along the logistics routes. I need to deploy communication devices at key points to ensure smooth information flow. Go to [Resort Area], pick up the [walkie-talkie] in [the back alley of the Garbage Station], then find the [cardboard stash point at the skate park] and place the walkie-talkie there. Good luck.",
+        "objectives": [
+            "Find Johnny's walkie-talkie",
+            "Place walkie-talkie 1 in the Skate park",
+            "Place walkie-talkie 2 in the Skate park",
+            "Place walkie-talkie 3 in the Skate park",
+            "Place walkie-talkie 4 in the Skate park",
+            "Place walkie-talkie 5 in the Skate park"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "retrieve",
+            "place"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "experience",
+                "quantity": 3311
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.consumption.all.hqfuel.xl"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "holster_magm",
+                "item_name": "Mag Pouch M"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "holster_mags",
+                "item_name": "Mag Pouch Small"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_24"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "[Walkie-Talkie](https://www.exfil-zone-assistant.app/items/taskitem_placement_johnny_walkietalkie)",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "0iiqLGdw9Ao"
+            },
+            {
+                "author": "orbb",
+                "ytId": "kAvBXhqCx6c"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 360
+            }
+        ],
+        "order": 2
+    },
+    "trupiks_23": {
+        "id": "trupiks_23",
+        "name": "Hidden Exfils",
+        "gameId": "task.mall.a.03",
+        "description": "During your explorations, you've probably come across special exfiltration points that require specific rare keys to unlock. That's why these routes are rarely used.\nI'd like you to scout them for me, use the [corresponding keys] to exfil from the locked exfil points in [Dam Area], [Suburb Area], and [Resort Area].",
+        "objectives": [
+            "Successfully extract from Central Bunker",
+            "Extract from Western Bunker",
+            "Extract from Contruction site sewers"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "extract"
+        ],
+        "map": [
+            "suburb",
+            "dam",
+            "resort",
+            "metro"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "experience",
+                "quantity": 3311
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "helmet-pasgt",
+                "item_name": "PASGT Helmet"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_b_spraycan",
+                "item_name": "Spray Can"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "misc_metroentry",
+                "item_name": "Metro Entry Ticket"
+            }
+        ],
+        "requiredTasks": [
+            "trupiks_12"
+        ],
+        "requiredPlayerLevel": 30,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 3
+    },
+    "trupiks_14": {
+        "id": "trupiks_14",
+        "name": "Like Finds Like 1",
+        "gameId": "task.mall.a.04",
+        "description": "Repairs and production eat up resources fast.\nI'm stocking up on supplies,and the first category is [household items].\nHere's a list. See what you can find.",
+        "objectives": [
+            "Turn in Nail",
+            "Turn in Bolts",
+            "Turn in Nuts",
+            "Turn in Valve",
+            "Turn in Insulating Tape",
+            "Turn in Ceramic adhesive",
+            "Find Spray can",
+            "Turn in Super Glue"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "experience",
+                "quantity": 3311
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.valuable.highvalue.poster_official_1"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "holster_magd",
+                "item_name": "General Pouch"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "holster_magm",
+                "item_name": "Mag Pouch M"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_22",
+            "ark_49"
+        ],
+        "requiredPlayerLevel": 40,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "fgCLXTHMsy4"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 425
+            }
+        ],
+        "order": 4
+    },
+    "trupiks_15": {
+        "id": "trupiks_15",
+        "name": "Like Finds Like 2",
+        "gameId": "task.mall.a.05",
+        "description": "Thanks for the last delivery. Since you're already helping, let's keep going.\nThis time I'm looking for [specific tools].\nYou'll need to collect the ones listed here exactly,no substitutes. Much appreciated.",
+        "objectives": [
+            "Turn in Climb rope",
+            "Turn in Tire Sealant",
+            "Turn in Large Plier",
+            "Turn in Hammer",
+            "Turn in Moldboard",
+            "Turn in Wrench",
+            "Turn in Wire Cutter",
+            "Turn in Screwdriver"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "experience",
+                "quantity": 3311
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.valuable.highvalue.poster_official_2"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "holster_magd",
+                "item_name": "General Pouch"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "holster_magm",
+                "item_name": "Mag Pouch M"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_14"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "fgCLXTHMsy4",
+                "startTs": 34
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 450
+            }
+        ],
+        "order": 5
+    },
+    "trupiks_16": {
+        "id": "trupiks_16",
+        "name": "Like Finds Like 3",
+        "gameId": "task.mall.a.06",
+        "description": "Next up,[storage media].\nI'm particular about these. I need the right types to ensure data integrity.\nCheck the list and get me what you can.",
+        "objectives": [
+            "Turn in CD",
+            "Turn in Magazine",
+            "Turn in Notebook",
+            "Turn in Computer manual",
+            "Turn in Tape",
+            "Turn in Antiquarian Book",
+            "Turn in Recorder",
+            "Turn in Floppydisk"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 32000
+            },
+            {
+                "type": "experience",
+                "quantity": 3311
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.valuable.highvalue.poster_official_3"
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "holster_magd",
+                "item_name": "General Pouch"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "holster_mags",
+                "item_name": "Mag Pouch Small"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_15"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "fgCLXTHMsy4",
+                "startTs": 43
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 465
+            }
+        ],
+        "order": 6
+    },
+    "trupiks_17": {
+        "id": "trupiks_17",
+        "name": "Like Finds Like 4",
+        "gameId": "task.mall.a.07",
+        "description": "You've gotten me this far,thank you.\nThis is the final set of supplies I need: [energy-based items].\nThese are vital to keeping our systems running smoothly. As always, here's the list. I appreciate your help.",
+        "objectives": [
+            "Turn in WD-40",
+            "Turn in Oil can",
+            "Turn in Gas can",
+            "Turn in Olive oil",
+            "Turn in Large gas can",
+            "Turn in Gun oil",
+            "Turn in Lighter fluid",
+            "Turn in Matches"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 10000
+            },
+            {
+                "type": "experience",
+                "quantity": 1257
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "food_water_bottle",
+                "item_name": "Water Bottle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.sc.caselv4pro"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_16"
+        ],
+        "requiredPlayerLevel": 40,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "fgCLXTHMsy4",
+                "startTs": 55
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 480
+            }
+        ],
+        "order": 7
+    },
+    "trupiks_24": {
+        "id": "trupiks_24",
+        "name": "Signal Supplies",
+        "gameId": "task.mall.a.08",
+        "description": "Want to try out the new batch of signal flares we just got? With these, you can call in supply crates at specific locations.\n1. Supply point in [Suburb Area]: [Central area, high ground, good visibility, it used to be a lively place once bustling with crowds.]\n2. Supply point in [Resort Area]: [Only one path leads here, and the road ends ahead. The right spot is surrounded by water.]\n3. Supply point in [Dam Area]: [Head north, find the high-rise that never rose. From up there, the view is wide open.]",
+        "objectives": [
+            "Arrive the launch site on Trupiks rooftop",
+            "Arrive the launch site on top of Construction Site",
+            "Arrive the launch site around Victoria Hotel"
+        ],
+        "corpId": "trupiks",
         "type": [
             "reach"
         ],
         "map": [
-            "metro"
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 10000
+            },
+            {
+                "type": "experience",
+                "quantity": 1257
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.consumption.all.hqfuel.xl"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "food_mre",
+                "item_name": "Compact Ration"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_10"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 8
+    },
+    "trupiks_21": {
+        "id": "trupiks_21",
+        "name": "Supplies Are Never Too Many",
+        "gameId": "task.mall.a.09",
+        "description": "Signal flares are single-use, and only the fastest get a chance to call in a supply crate. You can try racing others to successfully call a crate at the [launch site] in [Resort Area].",
+        "objectives": [
+            "Use flare gun in Resort area launch site"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "suburb",
+            "dam",
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 10000
+            },
+            {
+                "type": "experience",
+                "quantity": 1257
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-limb-restorer-lv3",
+                "item_name": "Suturing Instrument"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "med-syringe-lv4",
+                "item_name": "Stimpak Elite"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.valuable.task.flaregun_ark"
+            }
+        ],
+        "requiredTasks": [
+            "trupiks_26"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "uBKQha76Pds"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "ARAiv_2rqhM",
+                "startTs": 110
+            }
+        ],
+        "order": 9
+    },
+    "ntg_13": {
+        "id": "ntg_13",
+        "name": "Coffee Break",
+        "gameId": "task.mall.a.10",
+        "description": "Have you come across any coffee out there? Back when I worked at Trupiks, I got used to having a cup every day, so my brewed coffee is top-notch! If you can find me some [coffee], I promise you'll get the first cup I make!",
+        "objectives": [
+            "Submit Coffee"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "resort"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 10000
+            },
+            {
+                "type": "experience",
+                "quantity": 1257
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.consumption.all.hqfuel.xl"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "food_water_bottle",
+                "item_name": "Water Bottle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.valuable.highvalue.poster_official_4"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_21"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "Not full Coffee Drinks can be submitted too.",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "Rc94nXBvY0A"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "ZOuSedSDlUE",
+                "startTs": 367
+            }
+        ],
+        "order": 10
+    },
+    "trupiks_25": {
+        "id": "trupiks_25",
+        "name": "Generator Upgrade",
+        "gameId": "task.mall.b.01",
+        "description": "The Level 1 Generator isn't gonna last at this rate—the base load is getting way too heavy. We'd better upgrade it soon to be safe. We need combustibles for the boiler, construction materials to reinforce the base, and some tools for the wiring. Keep an eye out for 'em while you're out there.",
+        "objectives": [
+            "Turn in Combustible Items Found In Raid",
+            "Turn in Building Items Found In Raid",
+            "Turn in Tools Items Found In Raid"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 16000
+            },
+            {
+                "type": "experience",
+                "quantity": 3311
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.storage.all.magazinebox"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_32"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 11
+    },
+    "trupiks_1": {
+        "id": "trupiks_1",
+        "name": "Secure Support",
+        "gameId": "task.mall.b.02",
+        "description": "I've noticed your operations outside come with high risks. I can make a special safe to help you out.\nThis unique safe straps firmly to your lower back, no battlefield mishap will affect it.\nWhile I'm making the safe, I'd like you to check the safety of three locations in [Suburb Area]: [Hyder Town], [Power Plant], and [the warehouse east of the Office Building].",
+        "objectives": [
+            "Reach Hydertown",
+            "Reach the warehouses in Surburb area",
+            "Reach the power plant in Surburb area"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "reach"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "experience",
+                "quantity": 3311
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.sc.caselv0"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_28"
+        ],
+        "requiredPlayerLevel": 7,
+        "requiredTrust": 0,
+        "tips": "Power plant is marked on the map, near the western bunker. Warehouses are just east next to the office building.",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "ukhEmupVCc4"
+            },
+            {
+                "author": "orbb",
+                "ytId": "quTZvsysQCQ"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "DIjbTZN_Wxc"
+            }
+        ],
+        "order": 12
+    },
+    "trupiks_26": {
+        "id": "trupiks_26",
+        "name": "Expansion Protocol",
+        "gameId": "task.mall.b.03",
+        "description": "Old Johnny hid key expansion parts at the Auto Repair Shop. With the bunker at capacity, you need to retrieve his safes. Stay sharp—it's dangerous out there.",
+        "objectives": [
+            "Reach the 24H Car Repair",
+            "Find Johnny's Safebox",
+            "Turn in Johnny's Safebox"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "experience",
+                "quantity": 3311
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.sc.caselv1"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_27"
+        ],
+        "requiredPlayerLevel": 10,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 13
+    },
+    "trupiks_9": {
+        "id": "trupiks_9",
+        "name": "Canal Run",
+        "gameId": "task.mall.b.04",
+        "description": "I've got a favor to ask. Someone told me they saw my missing goods near [the aqueduct bridges west of Trupiks]. Problem is, I don't know which bridge. I'd like you to [check all those aqueduct bridges] for me.",
+        "objectives": [
+            "Reach the canal bridge 1",
+            "Reach the canal bridge 2",
+            "Reach the canal bridge 3",
+            "Reach the canal bridge 4",
+            "Reach the canal bridge 5"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "reach"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 10000
+            },
+            {
+                "type": "experience",
+                "quantity": 3311
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.consumption.all.hqfuel.xl"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "food_meat_can",
+                "item_name": "Meat can"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_1",
+            "ark_67"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "A1wWvu-8XCw"
+            },
+            {
+                "author": "orbb",
+                "ytId": "_gVFJBMxPr8"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 241
+            }
+        ],
+        "order": 14
+    },
+    "trupiks_10": {
+        "id": "trupiks_10",
+        "name": "Capacity Upgrade 2",
+        "gameId": "task.mall.b.05",
+        "description": "I need to recover some special parts, the tricky part is they all come from the same model of television.\nThis TV is the same model as the one I have at home. I've already reclaimed some parts, but I'd like you to keep searching inside [residential houses in Suburb Area]. Photograph those TVs, and I'll recover the components.",
+        "objectives": [
+            "Capture TV 1 (Cottage northeast of Hyder Town)",
+            "Capture TV 2 (Cottage next to the Northern Tunnel)",
+            "Capture TV 3 (Cottage next to the Northern Tunnel)",
+            "Capture TV 4 (Yellow-ish house in the North)",
+            "Capture TV 5 (House north of Altibuy)"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "photo"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 30000
+            },
+            {
+                "type": "experience",
+                "quantity": 3311
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.sc.caselv2"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "ntg_13",
+            "ark_59"
+        ],
+        "requiredPlayerLevel": 20,
+        "requiredTrust": 0,
+        "tips": "Located at the Workers Dormitory. At the laundry mat.",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "_74hXHJgw0w"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 292
+            }
+        ],
+        "order": 15
+    },
+    "trupiks_27": {
+        "id": "trupiks_27",
+        "name": "Energy Saving",
+        "gameId": "task.mall.b.06",
+        "description": "I have a few friends hiding in Trupiks' underground parking garage. I want you to deliver some things to help them out.\r\nThe delivery targets are [energy-saving lamp] and [UV lamp]. You need to find the staircases in the underground garage. Place an [energy-saving lamp] in the cardboard box near [northeast] staircase, and place an [UV lamp] in the cardboard box near [northwest] staircase.",
+        "objectives": [
+            "Put energy-saving lamp in place",
+            "Put UV lamp in place"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "place"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 10000
+            },
+            {
+                "type": "experience",
+                "quantity": 3311
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.consumption.all.hqfuel.xl"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "holster_magm",
+                "item_name": "Mag Pouch M"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "holster_mags",
+                "item_name": "Mag Pouch Small"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_9"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 16
+    },
+    "trupiks_2": {
+        "id": "trupiks_2",
+        "name": "Lights On",
+        "gameId": "task.mall.c.01",
+        "description": "Hey, just arrived? I'm Johnny, chief engineer of this pile of junk at HQ. I've got the key to the generator room on the east side but there's nothing in there yet. \r\nWe need some decent tools before there's anything to fix. \r\nGrab some on your way out and I'll get that door open for you.",
+        "objectives": [
+            "Turn in Tools Items Found In Raid"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 12000
+            },
+            {
+                "type": "experience",
+                "quantity": 1569
+            },
+            {
+                "type": "item",
+                "quantity": 4,
+                "item_id": "ammo-9x19-fmj",
+                "item_name": "9x19mm FMJ"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.storage.all.ammobox.919"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [
+            {
+                "author": "HayaPlays",
+                "ytId": "_JqOIYdaqbY"
+            },
+            {
+                "author": "radFoxVR",
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 58
+            }
+        ],
+        "order": 17
+    },
+    "trupiks_3": {
+        "id": "trupiks_3",
+        "name": "The Source of Life",
+        "gameId": "task.mall.c.02",
+        "description": "I've checked the generator — the core components are still good, but the wiring is completely shot. There's backup power equipment at the weather station. Go check if the solar panels and cable connectors are still there so I can figure out how to wire it up.",
+        "objectives": [
+            "Arrive the Weather Outpost"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "reach"
+        ],
+        "map": [
+            "any"
         ],
         "reward": [
             {
@@ -9725,133 +13287,326 @@ export const tasksData: TasksDatabase = {
             },
             {
                 "type": "experience",
-                "quantity": 25672
-            },
-            {
-                "type": "reputation",
-                "corpId": "forge",
-                "quantity": 50
+                "quantity": 1807
             },
             {
                 "type": "item",
-                "item_id": "armor-imtv",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "key_dam_station_east",
+                "item_name": "East Dam Inlet's Key"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.storage.all.medicalbox"
             }
         ],
-        "preReward": [
-            {
-                "type": "item",
-                "item_id": "key_metro_entry_ticket",
-                "quantity": 1
-            },
-            {
-                "type": "item",
-                "item_id": "key_f3_factoryroom",
-                "quantity": 1
-            }
-        ],
+        "preReward": [],
         "requiredTasks": [
-            "forge_28"
+            "trupiks_2"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "",
         "videoGuides": [
             {
                 "author": "HayaPlays",
-                "ytId": "RgQT3Xioohs"
-            },
-            {
-                "author": "orbb",
-                "ytId": "Gl_3o8UfEyI"
+                "ytId": "0Y2tUCDF31s"
             },
             {
                 "author": "radFoxVR",
-                "ytId": "BO5uihtPyLM",
-                "startTs": 913
+                "ytId": "DIjbTZN_Wxc",
+                "startTs": 101
             }
         ],
-        "order": 29
+        "order": 18
     },
-    "forge_30": {
-        "id": "forge_30",
-        "name": "Virtual Realities",
-        "gameId": "task.gear.z21",
-        "description": "Hey, I've heard there are [3 VR headset prototypes] on this island! I need you to help me find them, as they are special collectibles for some people.\u000bHowever, my information is limited. I only know that the [1st one] is at the [Wyeth Farmhouse] in the [suburb area]; the [other two] are lost in the [dam] and [metro] areas, respectively. I hope you can take some time to keep an eye out for them!",
+    "trupiks_28": {
+        "id": "trupiks_28",
+        "name": "Old Faithful",
+        "gameId": "task.mall.c.03",
+        "description": "My old drill is still in the storage room of that barbershop in the old dam district — left it there before I moved. That thing's been with me for over a decade. The core components outlast anything on the market today. Get it back for me, and I can wire up the generator properly — after that, all we'll need is the fuel.",
         "objectives": [
-            "Find the VR Headset in Wyeth Farmhouse",
-            "Find the VR Headset in Dam area",
-            "Find the VR Headset in Metro area",
-            "Turn in 3 VR headsets"
+            "Enter the Barber Shop",
+            "Find Johnny's Drill",
+            "Turn in Johnny's Drill"
         ],
-        "corpId": "forge",
+        "corpId": "trupiks",
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "dam"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 25000
+            },
+            {
+                "type": "experience",
+                "quantity": 1807
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.consumption.all.hqfuel.xl"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.storage.all.ammobox.55645"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.storage.all.ammobox.919"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_3"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 19
+    },
+    "trupiks_29": {
+        "id": "trupiks_29",
+        "name": "First Touch at the Bench",
+        "gameId": "task.mall.c.04",
+        "description": "Buy an MP5K to practice with. Note that only weapons with rails installed can mount optics — how do you attach rails and a magazine? Just slot them on, it's simple. For complex modifications you'll need the gunsmith bench; get familiar with it, and you'll be able to tune better-feeling guns down the line.",
+        "objectives": [
+            "LowerReceiver_MP5K",
+            "Install a Mount",
+            "Install a magazine"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "gunsmith"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 16000
+            },
+            {
+                "type": "experience",
+                "quantity": 1807
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.color.paintcan.plastic.010"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "food_water_bottle",
+                "item_name": "Water Bottle"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.storage.all.ammobox.54539"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_28"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 20
+    },
+    "trupiks_30": {
+        "id": "trupiks_30",
+        "name": "First Supply Run",
+        "gameId": "task.mall.c.05",
+        "description": "There are a few spots in the outskirts I've been meaning to have someone check out — the supermarket and the auto shop, both used to be supply depots. Take a walk through them and bring back some building materials while you're at it: nails, tape, bolts — we're always running short on that stuff for base maintenance.",
+        "objectives": [
+            "Arrive the Altibuy",
+            "Reach the 24H Car Repair",
+            "Turn in Building Items Found In Raid"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "reach",
+            "submit"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 36000
+            },
+            {
+                "type": "experience",
+                "quantity": 2500
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.consumption.all.hqfuel.xl"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "gds.storage.all.ammobox.55645"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.storage.all.ammobox.919"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_29"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 21
+    },
+    "trupiks_31": {
+        "id": "trupiks_31",
+        "name": "Building the Range",
+        "gameId": "task.mall.c.06",
+        "description": "To get the shooting range up and running, we need the key—it’s from the old police station in Bear Town, where officers used to practice. Bring it back, and I’ll get the range secured with a proper lock—you'll have a safe place to hone your marksmanship. Watch your back; ARK patrols have been tight around Bear Town lately.",
+        "objectives": [
+            "Reach the Hyder Town Police Station",
+            "Find Shooting Range Key",
+            "Turn in Shooting Range Key"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "reach",
+            "retrieve",
+            "submit"
+        ],
+        "map": [
+            "suburb"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 25000
+            },
+            {
+                "type": "experience",
+                "quantity": 2500
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.color.paintcan.empty.ma"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.storage.all.ammobox.76239"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_30"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 22
+    },
+    "trupiks_32": {
+        "id": "trupiks_32",
+        "name": "Back Home",
+        "gameId": "task.mall.c.07",
+        "description": "Tommy told me you’re heading to [Hyder Town], right? The first house by the east entrance used to be mine. I left an important [Family Videotape] there. Before you deal with Iron Wolf, swing by and bring it back for me. I’ve sent some supplies to your mailbox — don’t forget to grab them.",
+        "objectives": [
+            "Find Johnny's FamilyTape",
+            "Turn in Johnny's FamilyTape"
+        ],
+        "corpId": "trupiks",
         "type": [
             "retrieve",
             "submit"
         ],
         "map": [
-            "suburb",
-            "dam",
-            "metro"
+            "suburb"
         ],
         "reward": [
             {
                 "type": "money",
-                "quantity": 32000
+                "quantity": 50000
             },
             {
                 "type": "experience",
-                "quantity": 15403
-            },
-            {
-                "type": "reputation",
-                "corpId": "forge",
-                "quantity": 10
+                "quantity": 3000
             },
             {
                 "type": "item",
-                "item_id": "backpack_hypertec",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "gds.storage.all.mini.collectionbox"
             }
         ],
         "preReward": [
             {
                 "type": "item",
-                "item_id": "key_metro_entry_ticket",
-                "quantity": 1
+                "quantity": 3,
+                "item_id": "ammo-556x45-fmj",
+                "item_name": "5.56x45mm FMJ"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.consumption.all.hqfuel.xl"
+            },
+            {
+                "type": "item",
+                "quantity": 3,
+                "item_id": "med-syringe-lv1",
+                "item_name": "Stimpak Lv1"
             }
         ],
         "requiredTasks": [
-            "forge_27"
+            "trupiks_31"
         ],
-        "requiredLevel": 0,
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
         "tips": "",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "91XCL2Z6FT0"
-            },
-            {
-                "author": "orbb",
-                "ytId": "OCRTBDedB3Q"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "BO5uihtPyLM",
-                "startTs": 944
-            }
-        ],
-        "order": 30
+        "videoGuides": [],
+        "order": 23
     },
-    "forge_31": {
-        "id": "forge_31",
-        "name": "The Collector",
-        "gameId": "task.gear.z18",
-        "description": "That client is back again. He said the trend has shifted, and now people are collecting figurines.\nI mean, those things don't serve much purpose beyond being decorative, but I have to admit, collecting can be pretty enjoyable. Watching my warehouse fill up gives me an indescribable sense of satisfaction.\nSo, I need you to find me a [complete set of character figurines]. Don't forget to grab the [rare one] too; I've heard it's a [gold-painted] version, and they say it's worth even more.",
+    "trupiks_33": {
+        "id": "trupiks_33",
+        "name": "Investigate the Hard Drive",
+        "gameId": "task.marc.part1.01",
+        "description": "This is an interesting piece of equipment. The internal layout is unusual too. You do not see a design like this every day.\r\nI have unlocked the OPS Terminal. It is yours now. I sent it to your mailbox, so do not forget to pick it up.\r\nBoot it up, and you will find the clues Caleb left behind before he disappeared.\r\nOne more thing: if you lose the terminal, come back to me. Slip me a little tip, and I can make you another one.",
         "objectives": [
-            "Hand in 7 figurines"
+            "Insert terminal into Agent PC in Dam",
+            "Insert terminal into Agent PC in Suburbs",
+            "Insert terminal into Agent PC in Resort",
+            "Find Number Cipher Codebook",
+            "Open safe and find Investigation Drive",
+            "Turn in Caleb's Investigation Drive"
         ],
-        "corpId": "forge",
+        "corpId": "trupiks",
         "type": [
+            "signal",
+            "retrieve",
             "submit"
         ],
         "map": [
@@ -9860,55 +13615,280 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 32000
-            },
-            {
-                "type": "reputation",
-                "corpId": "forge",
-                "quantity": 10
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
+                "quantity": 60000
             },
             {
                 "type": "item",
-                "item_id": "armor-apex-bk",
-                "quantity": 1
+                "quantity": 1,
+                "item_id": "backpack_hypertec",
+                "item_name": "HyperTec StorageBag"
+            },
+            {
+                "type": "item",
+                "quantity": 10,
+                "item_id": "ammo-12-7x55-fmj",
+                "item_name": "12.7x55mm PS12"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-m4a1-fullattach-2025hallows",
+                "item_name": "M4A1 5.56x45mm carbine rifle max-attach edition"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "helmet-rys-t",
+                "item_name": "RYS T"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "armor-sd-protector",
+                "item_name": "S.D. Protector Full Body Armor"
             }
         ],
         "preReward": [],
         "requiredTasks": [
-            "forge_23"
+            "ntg_63"
         ],
-        "requiredLevel": 0,
-        "tips": "Reward not worth it. Exchange gold figurine for Endgame equipment in official discord.",
-        "videoGuides": [
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 1
+    },
+    "trupiks_34": {
+        "id": "trupiks_34",
+        "name": "Upgrade Terminal: Signal Tracking",
+        "gameId": "task.marc.part2.01",
+        "description": "That investigation log you brought back says Caleb may have gotten himself into trouble.\r\nIf you want to find him, you’ll need to unlock the OPS Terminal’s signal tracking first. Caleb planted quite a few listening devices around the island, and those devices leave traceable signals behind.\r\nProblem is, terminal needs tracking upgrade module before it can lock onto those signal sources one by one.\r\nScavengers in the Dam area might be carrying them. Go get a few and bring them back to me. I’ll upgrade your terminal.",
+        "objectives": [
+            "Eliminate SCAVs at Dam, turn in Upgrade Module"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
             {
-                "author": "HayaPlays",
-                "ytId": "383lGK564T0"
+                "type": "money",
+                "quantity": 60000
             },
             {
-                "author": "radFoxVR",
-                "ytId": "BO5uihtPyLM",
-                "startTs": 1016
+                "type": "item",
+                "quantity": 10,
+                "item_id": "ammo-12-7x55-fmj",
+                "item_name": "12.7x55mm PS12"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.color.paintcan.plastic.019"
             }
         ],
-        "order": 31
-    },
-    "forge_32": {
-        "id": "forge_32",
-        "name": "\"Collectors Edition\"",
-        "gameId": "task.gear.z19",
-        "description": "I really want to show you my collection, but I'm just a few items short of perfection. I can't stand seeing those empty spots; they would leave a lingering regret.\nMaybe you can help me complete this last piece of the puzzle: I need [a complete set of the Contractors game discs]. Just so you know, the entire series includes [4 versions]: [the regular editions] of Contractors and Showdown, and [the deluxe editions] of each.",
-        "objectives": [
-            "Turn in Contractors Game Disc",
-            "Turn in ShowDown Game Disc",
-            "Turn in Contractors Game Disc Collector's Edition",
-            "Turn in ShowDown Game Disc Collector's Edition"
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_33"
         ],
-        "corpId": "forge",
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 2
+    },
+    "trupiks_35": {
+        "id": "trupiks_35",
+        "name": "Signal Tracking",
+        "gameId": "task.marc.part2.02",
+        "description": "Those upgrade modules you brought back did the trick. Terminal\"s upgrade went smoothly.\r\nYou can now use its tracking system to look for traces of your colleague.\r\nBring out OPS terminal near a signal source, and it’ll start tracking. Get close to a listening device, and terminal can read the full data.\r\nJust keep in mind, the tracking range is limited. Get too far away, and the signal disappears completely.",
+        "objectives": [
+            "Decrypt listening device with OPS Terminal",
+            "Decrypt listening device with OPS Terminal",
+            "Decrypt listening device with OPS Terminal"
+        ],
+        "corpId": "trupiks",
         "type": [
+            "signal"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 60000
+            },
+            {
+                "type": "item",
+                "quantity": 10,
+                "item_id": "ammo-12-7x55-fmjv3",
+                "item_name": "12.7x55mm PS12B"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.color.paintcan.plastic.026"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "misc_b_militaryharddrive",
+                "item_name": "Hard drive"
+            },
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "misc_b_militaryusbdrive",
+                "item_name": "CPU Fan"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_34"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 3
+    },
+    "trupiks_36": {
+        "id": "trupiks_36",
+        "name": "Transport Route",
+        "gameId": "task.marc.part3.01",
+        "description": "You’re telling me there’s an extremely dangerous virus sample on the island now? And Caleb’s dead?\r\nTch... let me make one thing clear. I’m not refunding that fat stack of money he paid me back then. Hmm... I’ve got a new suit for you. You can try it on in the restroom.\r\nStill, seeing as things have really gone sideways, I can give you a little help. Find their transport route map and bring it to me. I’ll figure out where they took that thing.\r\nYour clues have been updated. Open terminal and take a look.",
+        "objectives": [
+            "Eliminate Ringleader, turn in Transport Route Map"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "eliminate"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 60000
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "backpack_hypertec",
+                "item_name": "HyperTec StorageBag"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-ak74n-fullattach",
+                "item_name": "AK74N 5.45x39mm assault rifle max-attach edition"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "helmet-rys-t",
+                "item_name": "RYS T"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "armor-sd-protector",
+                "item_name": "S.D. Protector Full Body Armor"
+            }
+        ],
+        "preReward": [],
+        "requiredTasks": [
+            "trupiks_35"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 4
+    },
+    "trupiks_37": {
+        "id": "trupiks_37",
+        "name": "DT83 Virus",
+        "gameId": "task.marc.part3.02",
+        "description": "Well, look at that. You actually followed the trail and found a lead on the sample.\r\nI asked Maggie about it. Once the sample leaves cold storage, its activity starts degrading, so the handoff needs to happen as soon as possible.\r\nTerminal's been updated with the latest information on the virus sample. Go check it.",
+        "objectives": [
+            "Open lockbox and find Animal Cipher Codebook",
+            "Find UV Flashlight on B1 of Mall",
+            "Find the UV Flashlight in the Subway",
+            "Open the NTG Sample Safe",
+            "Find the \"Sample\""
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "retrieve",
+            "place"
+        ],
+        "map": [
+            "any"
+        ],
+        "reward": [
+            {
+                "type": "money",
+                "quantity": 60000
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "gds.color.paintcan.plastic.034"
+            },
+            {
+                "type": "item",
+                "quantity": 5,
+                "item_id": "med-stimul-hc",
+                "item_name": "H.C. stimulant injector"
+            },
+            {
+                "type": "item",
+                "quantity": 5,
+                "item_id": "med-stimul-kb22",
+                "item_name": "KB-22 stimulant injector"
+            },
+            {
+                "type": "item",
+                "quantity": 5,
+                "item_id": "med-stimul-p4",
+                "item_name": "P4 stimulant injector"
+            }
+        ],
+        "preReward": [
+            {
+                "type": "item",
+                "quantity": 2,
+                "item_id": "misc_metroentry",
+                "item_name": "Metro Entry Ticket"
+            }
+        ],
+        "requiredTasks": [
+            "trupiks_36"
+        ],
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 5
+    },
+    "trupiks_38": {
+        "id": "trupiks_38",
+        "name": "Caleb's Keepsake",
+        "gameId": "task.marc.part4.01",
+        "description": "Marcus, the mission’s over. But there’s something I never told you.\r\nCaleb... left a letter on the hard drive. Wrote it just for you.\r\nOpen terminal and take a look.",
+        "objectives": [
+            "Find Caleb's Keepsake",
+            "Turn in Caleb's Keepsake"
+        ],
+        "corpId": "trupiks",
+        "type": [
+            "retrieve",
             "submit"
         ],
         "map": [
@@ -9917,41 +13897,30 @@ export const tasksData: TasksDatabase = {
         "reward": [
             {
                 "type": "money",
-                "quantity": 32000
-            },
-            {
-                "type": "experience",
-                "quantity": 12719
-            },
-            {
-                "type": "reputation",
-                "corpId": "forge",
-                "quantity": 10
+                "quantity": 60000
             },
             {
                 "type": "item",
-                "item_id": "helmet-rsp",
-                "quantity": 1
+                "quantity": 10,
+                "item_id": "ammo-12-7x55-fmjv3",
+                "item_name": "12.7x55mm PS12B"
+            },
+            {
+                "type": "item",
+                "quantity": 1,
+                "item_id": "weapon-rsh12gold",
+                "item_name": "RSH-12 12.7x55mm Revolver gold engraving"
             }
         ],
         "preReward": [],
         "requiredTasks": [
-            "forge_23"
+            "trupiks_37"
         ],
-        "requiredLevel": 0,
-        "tips": "Not worth a hassle.",
-        "videoGuides": [
-            {
-                "author": "HayaPlays",
-                "ytId": "vRhiIYSbB0g"
-            },
-            {
-                "author": "radFoxVR",
-                "ytId": "BO5uihtPyLM",
-                "startTs": 1028
-            }
-        ],
-        "order": 32
+        "requiredPlayerLevel": 0,
+        "requiredTrust": 0,
+        "tips": "",
+        "videoGuides": [],
+        "order": 6
     }
 } as const;
 

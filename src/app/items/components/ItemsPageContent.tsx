@@ -37,7 +37,7 @@ import { useDensity } from '@/app/items/hooks/useDensity';
  */
 
 export default function ItemsPageContent() {
-    const { items } = useFetchItems();
+    const { items, getItemById } = useFetchItems();
     const router = useRouter();
     const pathname = usePathname();
     const searchParams = useSearchParams();
@@ -225,7 +225,7 @@ export default function ItemsPageContent() {
                         ) : density === 'table' ? (
                             <div className="border border-line-900 divide-y divide-line-900">
                                 {visible.map((item) => (
-                                    <ItemRow key={item.id} item={item} />
+                                    <ItemRow key={item.id} item={item} resolve={getItemById} />
                                 ))}
                             </div>
                         ) : (

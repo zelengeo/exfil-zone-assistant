@@ -221,9 +221,9 @@ export default function ItemDetail({ params }: PageProps) {
                             </div>
                         </div>
 
-                        <VendorLedger stats={item.stats} nameOf={trade.nameOf} />
+                        <VendorLedger stats={item.stats} resolve={trade.itemOf} />
 
-                        <WantedInBarter uses={wantedIn} nameOf={trade.nameOf} />
+                        <WantedInBarter uses={wantedIn} resolve={trade.itemOf} />
                     </div>
 
                     {/* Right column - the evidence */}

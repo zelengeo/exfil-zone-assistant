@@ -317,13 +317,13 @@ export function TaskCorrectionForm({task, trigger}: TaskCorrectionFormProps) {
 
                                     <TabsContent value="requirements" className="space-y-4 mt-4">
                                         {/* Required Level and Tasks */}
-                                        <FormField control={form.control} name="proposedData.requiredLevel"
+                                        <FormField control={form.control} name="proposedData.requiredPlayerLevel"
                                                    render={({field}) => (<FormItem><FormLabel>Required Level</FormLabel><FormControl><Input
                                                        type="number"
-                                                       placeholder={String(task.requiredLevel || 0)} {...field}
+                                                       placeholder={String(task.requiredPlayerLevel || 0)} {...field}
                                                        value={field.value || ""}
                                                        onChange={(e) => field.onChange(e.target.value ? Number(e.target.value) : undefined)}/></FormControl><FormDescription>Current:
-                                                       Level {task.requiredLevel || 0}</FormDescription><FormMessage/></FormItem>)}/>
+                                                       Level {task.requiredPlayerLevel || 0}</FormDescription><FormMessage/></FormItem>)}/>
                                         <div className="space-y-2">
                                             <div className="flex items-center justify-between"><FormLabel>Required
                                                 Tasks</FormLabel><Button type="button" variant="outline" size="sm"

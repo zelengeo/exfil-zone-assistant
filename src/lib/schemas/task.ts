@@ -19,7 +19,9 @@ export const taskTypeSchema = z.enum([
     'mark',
     'place',
     'photo',
-    "signal"
+    'signal',
+    // Bench work for Anna rather than a field objective. Arrived with the 227-task extraction.
+    'gunsmith',
 ]);
 
 // Task video guide schema
@@ -36,7 +38,9 @@ export const taskMapSchema = z.enum([
     'resort',
     'dam',
     'metro',
-    'any'
+    // The fifth map, added by the 227-task extraction.
+    'smuggling',
+    'any',
 ]);
 
 // Main task schema
@@ -52,7 +56,8 @@ export const taskSchema = z.object({
     reward: z.array(taskRewardSchema),
     preReward: z.array(taskRewardSchema),
     requiredTasks: z.array(z.string()),
-    requiredLevel: z.number().int().nonnegative(),
+    requiredPlayerLevel: z.number().int().nonnegative(),
+    requiredTrust: z.number().int().nonnegative(),
     tips: z.string(),
     videoGuides: z.array(taskVideoGuideSchema),
     order: z.number().int().positive(),

@@ -210,7 +210,7 @@ export default function TaskCard({
                     </div>
 
                     {/* Prerequisites */}
-                    {(task.requiredLevel || task.requiredTasks.length) ? (<div className="space-y-3">
+                    {(task.requiredPlayerLevel || task.requiredTasks.length) ? (<div className="space-y-3">
                         <div className="flex items-center gap-2">
                             <h5 className="font-medium text-tan-100 flex items-center gap-2">
                                 <Flag size={16}/>
@@ -250,12 +250,12 @@ export default function TaskCard({
 
                         <div className="grid gap-3">
                             {/* Level Requirement */}
-                            {task.requiredLevel ? (<div className="bg-military-600/30 rounded p-3">
+                            {task.requiredPlayerLevel ? (<div className="bg-military-600/30 rounded p-3">
                                 <div className="text-xs text-tan-400 mb-1">Required Level</div>
                                 <div className="text-sm font-medium text-tan-200">
                                     <span className="flex items-center gap-2">
                                         <Target size={14} className="text-amber-400"/>
-                                        Level {task.requiredLevel}
+                                        Level {task.requiredPlayerLevel}
                                     </span>
                                 </div>
                             </div>) : null}

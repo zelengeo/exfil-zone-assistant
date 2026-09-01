@@ -6,11 +6,29 @@ export interface TaskReward {
     item_id?: string; // Item rewards
 }
 
-export type TaskType = 'reach' | 'extract' | 'retrieve' | 'eliminate' | 'submit' | 'mark' | 'place' | 'photo' | "signal";
+export type TaskType =
+    | 'reach'
+    | 'extract'
+    | 'retrieve'
+    | 'eliminate'
+    | 'submit'
+    | 'mark'
+    | 'place'
+    | 'photo'
+    | 'signal'
+    /** Bench work for Anna rather than a field objective. Arrived with the 227-task extraction. */
+    | 'gunsmith';
 
 export type TaskVideoGuide = { author: string, ytId: string, startTs?: number, endTs?: number }
 
-export type TaskMap = 'suburb' | 'resort' | 'dam' | 'metro' | 'any';
+export type TaskMap =
+    | 'suburb'
+    | 'resort'
+    | 'dam'
+    | 'metro'
+    /** The fifth map, added by the 227-task extraction. */
+    | 'smuggling'
+    | 'any';
 
 export interface Task {
     id: string;
@@ -24,7 +42,10 @@ export interface Task {
     reward: TaskReward[];
     preReward: TaskReward[];
     requiredTasks: string[];
-    requiredLevel: number;
+    /** Renamed from `requiredLevel` by the 227-task extraction. */
+    requiredPlayerLevel: number;
+    /** Loyalty level with the issuing corp, 0-4. New with the same extraction. */
+    requiredTrust: number;
     tips: string;
     videoGuides: TaskVideoGuide[];
     order: number;

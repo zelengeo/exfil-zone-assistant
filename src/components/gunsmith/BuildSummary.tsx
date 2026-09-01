@@ -3,7 +3,9 @@
 import React, { useMemo } from 'react';
 import { cn } from '@/lib/utils';
 import type { GunsmithPart } from '@/types/gunsmith';
-import { cheapestOffer, vendorLabel } from './PartAvailability';
+import VendorTag from '@/components/trade/VendorTag';
+import { Price } from '@/components/trade/Price';
+import { cheapestOffer } from './PartAvailability';
 
 interface BuildSummaryProps {
     parts: GunsmithPart[];
@@ -49,16 +51,22 @@ export default function BuildSummary({ parts, weight, className }: BuildSummaryP
             <div>
                 <div className="micro-label text-ink-700">To buy this build</div>
                 <div className="font-mono tabular text-sm text-ink-300 mt-0.5">
-                    {summary.vendors.length
-                        ? summary.vendors.map(([vendor, level]) => `${vendorLabel(vendor)} L${level}`).join(' · ')
-                        : '—'}
+                    {summary.vendors.length ? (
+                        <span className="inline-flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                            {summary.vendors.map(([vendor, level]) => (
+                                <VendorTag key={vendor} vendor={vendor} level={level} />
+                            ))}
+                        </span>
+                    ) : (
+                        '—'
+                    )}
                 </div>
             </div>
 
             <div>
                 <div className="micro-label text-ink-700">Parts cost</div>
                 <div className="font-mono tabular text-sm text-ink-400 mt-0.5">
-                    {`${summary.total.toLocaleString('en-US')}`}
+                    <Price amount={summary.total} size="sm" tone="dim" />
                     {summary.unpriced > 0 && (
                         <span className="text-ink-700">{` + ${summary.unpriced} not sold`}</span>
                     )}

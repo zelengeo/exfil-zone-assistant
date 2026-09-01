@@ -1,4 +1,4 @@
-import { corps } from '@/data/tasks';
+import { getVendor, vendorOrg } from '@/lib/vendors';
 import {
     VENDOR_ORDER,
     type BarterUse,
@@ -16,16 +16,18 @@ import {
  * requirement is information, not a gate.
  */
 
-/** `gunsmith` is the hideout workbench rather than a trader, so it is not in `corps`. */
-const VENDOR_LABELS: Record<string, string> = { gunsmith: 'GUNSMITH BENCH' };
-
+/**
+ * Who a vendor is now lives in `lib/vendors.ts`, which describes all six — including the gunsmith
+ * bench, which `corps` has no row for and which carries 264 of the catalogue's buy offers. These
+ * two are kept as the names the trade call sites already use.
+ */
 export function vendorLabel(vendor: string): string {
-    return VENDOR_LABELS[vendor] ?? corps[vendor]?.name ?? vendor.toUpperCase();
+    return vendorOrg(vendor);
 }
 
 /** The trader's name, where there is one. The gunsmith bench has no merchant. */
 export function vendorMerchant(vendor: string): string | null {
-    return corps[vendor]?.merchant ?? null;
+    return getVendor(vendor)?.merchant ?? null;
 }
 
 /**

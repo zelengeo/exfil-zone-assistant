@@ -1,6 +1,6 @@
 import React from "react";
 import { Holster } from "@/types/items";
-import ItemLinkIcon from "@/components/ItemLinkIcon";
+import ItemChip from "@/components/items/ItemChip";
 import { useFetchItems } from "@/hooks/useFetchItems";
 import { Layers } from "lucide-react";
 import { StatEmpty, StatPanel } from "./StatLine";
@@ -17,7 +17,7 @@ export default function HolsterSpecificStats({ item }: { item: Holster }) {
             {attachableHolsters.length > 0 ? (
                 <div className="flex flex-wrap gap-2">
                     {attachableHolsters.map(holster => (
-                        <ItemLinkIcon key={holster.id} item={holster} />
+                        <ItemChip key={holster.id} item={holster} layout="tile" size="lg" />
                     ))}
                 </div>
             ) : (

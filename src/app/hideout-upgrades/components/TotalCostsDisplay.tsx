@@ -3,7 +3,7 @@ import {hideoutUpgrades} from '@/data/hideout-upgrades';
 import {DollarSign, Package, X} from 'lucide-react';
 import {Item} from '@/types/items';
 import Image from 'next/image';
-import ItemLinkIcon from "@/components/ItemLinkIcon";
+import ItemChip from "@/components/items/ItemChip";
 
 interface TotalCostsDisplayProps {
     upgradedAreas: Set<keyof typeof hideoutUpgrades>;
@@ -140,7 +140,7 @@ export default function TotalCostsDisplay({upgradedAreas, getItemById}: TotalCos
                     {/* Header */}
                     <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-3">
-                            <ItemLinkIcon item={item} />
+                            <ItemChip item={item} layout="tile" size="lg" newTab />
                             <div>
                                 <h3 className="text-xl font-bold text-tan-100">
                                     {item.name || selectedItem}

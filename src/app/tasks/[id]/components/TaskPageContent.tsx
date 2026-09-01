@@ -277,10 +277,10 @@ export default function TaskPageContent({taskId}: TaskPageContentProps) {
                                 <h3 className="vr-heading-3 text-tan-100 mb-3">Task Information</h3>
                                 <div className="space-y-3">
                                     {/*Required Level*/}
-                                    {task.requiredLevel ? (
+                                    {task.requiredPlayerLevel ? (
                                         <div>
                                             <p className="text-xs text-tan-400 mb-1">Required Level</p>
-                                            <p className="text-tan-200">Level {task.requiredLevel}</p>
+                                            <p className="text-tan-200">Level {task.requiredPlayerLevel}</p>
                                         </div>
                                     ) : null}
                                      {/*Maps */}
