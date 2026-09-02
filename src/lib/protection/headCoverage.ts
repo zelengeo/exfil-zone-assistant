@@ -41,6 +41,13 @@ export interface HeadZoneCoverage {
     fraction: number;
     /** Samples that landed in the zone — 0 means the zone is not on this head at all. */
     samples: number;
+    /**
+     * Which piece does the stopping, split out so a table can name the armour class that applies
+     * here. The two never stack (§14.3), so every protected sample belongs to exactly one of these
+     * and the pair sums to the protected share of the zone.
+     */
+    byHelmet: number;
+    byMask: number;
 }
 
 /** One authored region and what it means, for the viewer's key. */
@@ -122,12 +129,17 @@ export function headCoverage(
     );
 
     const zoneHits = new Map<string, number>();
+    const helmetHits = new Map<string, number>();
+    const maskHits = new Map<string, number>();
     let protectedCount = 0;
 
     for (let i = 0; i < points.length; i++) {
-        if (!protectionAt(points[i].point, gear).protected) continue;
+        const sample = protectionAt(points[i].point, gear);
+        if (!sample.protected) continue;
         protectedCount += 1;
         zoneHits.set(zones[i], (zoneHits.get(zones[i]) ?? 0) + 1);
+        const owner = sample.by === 'mask' ? maskHits : helmetHits;
+        owner.set(zones[i], (owner.get(zones[i]) ?? 0) + 1);
     }
 
     return {
@@ -140,6 +152,8 @@ export function headCoverage(
                 zone: name,
                 fraction: total ? (zoneHits.get(name) ?? 0) / total : 0,
                 samples: total,
+                byHelmet: helmetHits.get(name) ?? 0,
+                byMask: maskHits.get(name) ?? 0,
             };
         }),
         regions: regionList,

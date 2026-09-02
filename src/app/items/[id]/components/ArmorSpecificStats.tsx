@@ -2,7 +2,7 @@ import React from "react";
 import {
     BowArrow,
     Gavel,
-    Shield, ShieldMinus,
+    Shield, ShieldCheck, ShieldMinus,
     Volume2,
 } from "lucide-react";
 import {Armor, CurvePoint} from "@/types/items";
@@ -56,11 +56,46 @@ function soundDampening(soundMix: string | undefined): string {
     return (soundMix === 'OPSWAT' || soundMix === 'Delta') ? 'Weak' : 'Strong';
 }
 
+/**
+ * The headline armour class, with the spread the zones actually author beside it.
+ *
+ * The class is the whole point of a piece of armour and was missing from this page entirely - the
+ * cards carried it and the detail view did not. Body armour rates its plates separately, and the
+ * disagreement is not cosmetic: the IOTV Gen3 is a class 6 chest over class 3 shoulders, and a
+ * reader who takes "6" for the whole vest is wrong about most of their silhouette.
+ *
+ * Body armour only. Head gear rates the whole head at one class, and the `protectiveData` some
+ * helmets still carry is the old wiki's hand-approximation - the beanie authors a class 1 zone
+ * against a headline of 0 - so reading a span off it would print stale numbers as a fact.
+ */
+function armorClass(item: Armor): string {
+    const headline = formatClass(item.stats.armorClass);
+    const zones = isBodyArmor(item) ? item.stats.protectiveData : undefined;
+    if (!zones?.length) return headline;
+
+    const values = [...new Set(zones.map(zone => zone.armorClass))].sort((a, b) => a - b);
+    const span = values.length === 1
+        ? formatClass(values[0])
+        : `${formatClass(values[0])}–${formatClass(values[values.length - 1])}`;
+
+    return span === headline ? headline : `${headline} (${span})`;
+}
+
+/** `0.3` on the TSh-4M is real; `4.0` on everything else is noise. */
+function formatClass(value: number): string {
+    return Number.isInteger(value) ? String(value) : String(Number(value.toFixed(2)));
+}
+
 export default function ArmorSpecificStats({item}: { item: Armor }) {
     const hasZones = Boolean(item.stats.protectiveData && item.stats.protectiveData.length > 0);
 
     return <>
         <StatGrid className="mb-6">
+            <StatLine
+                icon={<ShieldCheck size={14}/>}
+                label="Armor class"
+                value={armorClass(item)}
+            />
             <StatLine
                 icon={<BowArrow size={14}/>}
                 label="Damage at equal class"
