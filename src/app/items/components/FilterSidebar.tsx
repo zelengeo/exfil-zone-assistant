@@ -5,9 +5,9 @@ import {
     Apple,
     BookmarkCheck,
     Bomb,
+    Boxes,
     BriefcaseMedical,
     ChevronDown,
-    ChevronRight,
     ChevronsUp,
     Drill,
     Fence,
@@ -19,7 +19,7 @@ import { ItemCategory } from '@/types/items';
 import { cn } from '@/lib/utils';
 import { vendorLabel } from '@/lib/trade';
 import { VENDOR_ORDER } from '@/types/trade';
-import type { Availability, ItemFilters } from '@/app/items/utils/filters';
+import type { Availability, FilterCounts, ItemFilters } from '@/app/items/utils/filters';
 import { PIP_LABELS, PIP_PARTS } from '@/lib/protection/summary';
 
 /**
@@ -130,6 +130,26 @@ function Group({
     );
 }
 
+/**
+ * How many items a row would show under the current search and trade filters.
+ *
+ * It sits between the label and the chevron and takes the leftover space, which is what pins every
+ * label to the left edge of the rail: without it the rows inherit the global `button` rule and
+ * centre themselves.
+ */
+function Count({ value, active }: { value: number; active?: boolean }) {
+    return (
+        <span
+            className={cn(
+                'ml-auto font-mono tabular text-[10px] shrink-0',
+                value === 0 ? 'text-ink-800' : active ? 'text-ink-300' : 'text-ink-700',
+            )}
+        >
+            {value}
+        </span>
+    );
+}
+
 function Chip({
     selected,
     onClick,
@@ -159,6 +179,8 @@ function Chip({
 export interface FilterSidebarProps {
     categories: Record<string, ItemCategory>;
     filters: ItemFilters;
+    /** Per-category totals under everything except the category rail itself. */
+    counts: FilterCounts;
     onChange: (patch: Partial<ItemFilters>) => void;
     onClearAll: () => void;
     isOpen: boolean;
@@ -168,22 +190,28 @@ export interface FilterSidebarProps {
 function SidebarBody({
     categories,
     filters,
+    counts,
     onChange,
     onClearAll,
     onNavigate,
 }: Omit<FilterSidebarProps, 'isOpen' | 'onClose'> & { onNavigate: () => void }) {
-    // Toggles the reader has made, by category id. Absent means "follow the selection", so the
-    // active category is open without an effect having to write that state down.
-    const [toggled, setToggled] = React.useState<Record<string, boolean>>({});
-    const isExpanded = (categoryId: string): boolean =>
-        toggled[categoryId] ?? categoryId === filters.category;
+    // One branch open at a time. `undefined` means "follow the selection", so the active category
+    // is open without an effect having to write that state down; anything else is the reader's own
+    // choice, and opening a second category closes the first instead of stacking two open trees.
+    const [openOverride, setOpenOverride] = React.useState<string | null | undefined>(undefined);
+    const openCategory = openOverride === undefined ? filters.category || null : openOverride;
+    const isExpanded = (categoryId: string): boolean => openCategory === categoryId;
 
-    const selectCategory = (categoryId: string) => {
+    const selectCategory = (category: ItemCategory) => {
         // Clicking the active category clears it, which is how the rail has always behaved.
-        const next = categoryId === filters.category && !filters.subcategory ? '' : categoryId;
+        const next = category.id === filters.category && !filters.subcategory ? '' : category.id;
         onChange({ category: next, subcategory: '', minArmorClass: 0, coversParts: [] });
-        setToggled((prev) => ({ ...prev, [categoryId]: !isExpanded(categoryId) }));
-        onNavigate();
+        // The branch you just moved into stays open; only the click that clears the category
+        // closes it. Widening from a family back to its category is not a reason to collapse.
+        setOpenOverride(next === '' ? null : category.id);
+        // On mobile `onNavigate` closes the drawer, and closing it on the tap that just opened a
+        // branch put the families out of reach. A branch stays; a leaf choice dismisses.
+        if (next === '' || (category.subcategories?.length ?? 0) === 0) onNavigate();
     };
 
     const selectSubcategory = (categoryId: string, subcategory: string) => {
@@ -207,70 +235,104 @@ function SidebarBody({
 
     return (
         <>
-            <div className="p-3 space-y-1">
+            <div className="p-2 space-y-0.5">
                 <button
                     type="button"
                     onClick={() => {
                         onChange({ category: '', subcategory: '', minArmorClass: 0, coversParts: [] });
+                        setOpenOverride(null);
                         onNavigate();
                     }}
                     className={cn(
-                        'w-full px-3 py-2 text-left text-sm transition-colors',
+                        'w-full flex items-center justify-start gap-2.5 border-l-2 pl-2.5 pr-2 py-2 text-sm transition-colors',
                         !filters.category
-                            ? 'bg-steel-650 text-ink-100'
-                            : 'text-ink-500 hover:bg-steel-800 hover:text-ink-200',
+                            ? 'border-ember bg-steel-650 text-ink-100'
+                            : 'border-transparent text-ink-500 hover:bg-steel-800 hover:text-ink-200',
                     )}
                 >
-                    All items
+                    <span className={!filters.category ? 'text-ember' : 'text-ink-700'}>
+                        <Boxes size={16} />
+                    </span>
+                    <span className="truncate">All items</span>
+                    <Count value={counts.total} active={!filters.category} />
                 </button>
 
                 {Object.values(categories).map((category) => {
                     const isActive = filters.category === category.id;
+                    const onCategory = isActive && !filters.subcategory;
                     const hasSubs = (category.subcategories?.length ?? 0) > 0;
+                    const expanded = isExpanded(category.id);
 
                     return (
                         <div key={category.id}>
                             <button
                                 type="button"
-                                onClick={() => selectCategory(category.id)}
+                                onClick={() => selectCategory(category)}
+                                aria-expanded={hasSubs ? expanded : undefined}
                                 className={cn(
-                                    'w-full px-3 py-2 text-left text-sm flex items-center justify-between gap-2 transition-colors',
-                                    isActive && !filters.subcategory
-                                        ? 'bg-steel-650 text-ink-100'
-                                        : 'text-ink-500 hover:bg-steel-800 hover:text-ink-200',
+                                    'w-full flex items-center justify-start gap-2.5 border-l-2 pl-2.5 pr-2 py-2 text-sm transition-colors',
+                                    onCategory && 'border-ember bg-steel-650 text-ink-100',
+                                    isActive && !onCategory && 'border-line-400 text-ink-200',
+                                    !isActive &&
+                                        'border-transparent text-ink-500 hover:bg-steel-800 hover:text-ink-200',
                                 )}
                             >
-                                <span className="flex items-center gap-2.5 min-w-0">
-                                    <span className={isActive ? 'text-info' : 'text-ink-700'}>
-                                        {getCategoryIcon(category.id)}
-                                    </span>
-                                    <span className="truncate">{category.name}</span>
+                                <span className={isActive ? 'text-ember' : 'text-ink-700'}>
+                                    {getCategoryIcon(category.id)}
                                 </span>
-                                {hasSubs &&
-                                    (isExpanded(category.id) ? (
-                                        <ChevronDown size={13} className="text-ink-700 shrink-0" />
-                                    ) : (
-                                        <ChevronRight size={13} className="text-ink-700 shrink-0" />
-                                    ))}
+                                <span className="truncate">{category.name}</span>
+                                <Count
+                                    value={counts.categories[category.id] ?? 0}
+                                    active={isActive}
+                                />
+                                {hasSubs && (
+                                    <ChevronDown
+                                        size={13}
+                                        className={cn(
+                                            'shrink-0 transition-transform',
+                                            expanded ? 'rotate-180 text-ink-500' : 'text-ink-800',
+                                        )}
+                                        aria-hidden="true"
+                                    />
+                                )}
                             </button>
 
-                            {hasSubs && isExpanded(category.id) && (
-                                <div className="pl-5 mt-0.5 space-y-0.5">
-                                    {category.subcategories.map((subcategory) => (
-                                        <button
-                                            key={subcategory}
-                                            type="button"
-                                            onClick={() => selectSubcategory(category.id, subcategory)}
-                                            className={cn(
-                                                'w-full px-3 py-1.5 text-left text-xs transition-colors',
-                                                isActive && filters.subcategory === subcategory
-                                                    ? 'bg-steel-700 text-ink-100'
-                                                    : 'text-ink-600 hover:bg-steel-800 hover:text-ink-300',
-                                            )}
-                                        >
-                                            {subcategory}
-                                        </button>
-                                    ))}
+                            {/* The family list hangs off its category on a hairline running under
+                                the category icon, so a caliber reads as part of the branch above it
+                                rather than as another top-level row. Selected segment goes ember. */}
+                            {hasSubs && expanded && (
+                                <div className="ml-5 mb-1">
+                                    {category.subcategories.map((subcategory) => {
+                                        const selected =
+                                            isActive && filters.subcategory === subcategory;
+
+                                        return (
+                                            <button
+                                                key={subcategory}
+                                                type="button"
+                                                onClick={() =>
+                                                    selectSubcategory(category.id, subcategory)
+                                                }
+                                                aria-pressed={selected}
+                                                className={cn(
+                                                    'w-full flex items-center justify-start gap-2 border-l-2 pl-3 pr-2 py-1.5 text-xs transition-colors',
+                                                    selected
+                                                        ? 'border-ember bg-steel-700 text-ink-100'
+                                                        : 'border-line-800 text-ink-600 hover:border-line-500 hover:bg-steel-800 hover:text-ink-300',
+                                                )}
+                                            >
+                                                <span className="truncate">{subcategory}</span>
+                                                <Count
+                                                    value={
+                                                        counts.subcategories[
+                                                            category.id + ':' + subcategory
+                                                        ] ?? 0
+                                                    }
+                                                    active={selected}
+                                                />
+                                            </button>
+                                        );
+                                    })}
                                 </div>
                             )}
                         </div>
@@ -380,6 +442,7 @@ function SidebarBody({
                     type="button"
                     onClick={() => {
                         onClearAll();
+                        setOpenOverride(null);
                         onNavigate();
                     }}
                     className="w-full px-3 py-2 border border-line-700 text-xs text-ink-500 hover:text-ink-200 hover:border-line-500 transition-colors"
@@ -419,7 +482,10 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose, .
 
         {/* Desktop: always there. */}
         <aside className="hidden md:block w-56 shrink-0">
-            <div className="bg-steel-900 border border-line-900 sticky top-4">
+            <div className="bg-steel-900 border border-line-800 sticky top-4 max-h-[calc(100vh-2rem)] overflow-y-auto">
+                <div className="px-3 py-2.5 border-b border-line-900">
+                    <span className="eyebrow">Scope</span>
+                </div>
                 <SidebarBody {...body} onNavigate={() => undefined} />
             </div>
         </aside>

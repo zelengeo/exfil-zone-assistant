@@ -225,3 +225,36 @@ export function sortItems(items: Item[], filters: ItemFilters): Item[] {
     // Name is the tiebreak everywhere, so an equal sort key still renders in a stable order.
     return [...items].sort((a, b) => sign * compare(a, b) || a.name.localeCompare(b.name));
 }
+
+/**
+ * How many items each category and family would show, with every filter *except* the category rail
+ * applied.
+ *
+ * The rail is the one control that should tell you where the items are before you click: with
+ * "buyable, under 20k" set, a category reading 0 is the answer, not a dead end you have to find by
+ * clicking it.
+ */
+export interface FilterCounts {
+    /** Everything matching the non-category filters. */
+    total: number;
+    /** By category id. */
+    categories: Record<string, number>;
+    /** By `${category}:${subcategory}`. */
+    subcategories: Record<string, number>;
+}
+
+export function countMatches(items: Item[], filters: ItemFilters): FilterCounts {
+    const base = applyFilters(items, { ...filters, category: '', subcategory: '' });
+    const categories: Record<string, number> = {};
+    const subcategories: Record<string, number> = {};
+
+    for (const item of base) {
+        categories[item.category] = (categories[item.category] ?? 0) + 1;
+        if (item.subcategory) {
+            const key = `${item.category}:${item.subcategory}`;
+            subcategories[key] = (subcategories[key] ?? 0) + 1;
+        }
+    }
+
+    return { total: base.length, categories, subcategories };
+}

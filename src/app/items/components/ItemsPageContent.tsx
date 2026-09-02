@@ -16,6 +16,7 @@ import {
     type SortKey,
     applyFilters,
     categorySortLabel,
+    countMatches,
     hasActiveFilters,
     parseFilters,
     serializeFilters,
@@ -74,6 +75,10 @@ export default function ItemsPageContent() {
         () => sortItems(applyFilters(items, filters), filters),
         [items, filters],
     );
+
+    // The rail's counts ignore the category selection, so every row answers "how many are in here"
+    // rather than "0, because you are looking at something else".
+    const counts = useMemo(() => countMatches(items, filters), [items, filters]);
 
     // The gun rework took the weapons list from 69 items to 134 presets over 38 families - 27 of
     // them with more than one preset, and many variants differing only cosmetically. Flat, that is
@@ -199,6 +204,7 @@ export default function ItemsPageContent() {
                     <FilterSidebar
                         categories={itemCategories}
                         filters={filters}
+                        counts={counts}
                         onChange={update}
                         onClearAll={() => write({ ...DEFAULT_FILTERS, search: filters.search })}
                         isOpen={isSidebarOpen}
