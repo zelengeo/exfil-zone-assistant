@@ -6,7 +6,7 @@ import {
     Volume2,
 } from "lucide-react";
 import {Armor} from "@/types/items";
-import BallisticCurveChart from "@/app/items/components/BallisticCurveChart";
+import BallisticCurveChart, {CURVE_COLOR} from "@/app/items/components/BallisticCurveChart";
 import {isBodyArmor, isHeadProtection, isHelmet} from "@/app/combat-sim/utils/types";
 import BodyCoveragePanel from "@/components/protection/BodyCoveragePanel";
 import StatLine, {StatGrid, StatPanel} from "./StatLine";
@@ -91,7 +91,7 @@ export default function ArmorSpecificStats({item}: { item: Armor }) {
                 curves={[{
                     name: 'Penetration Chance',
                     data: item.stats.penetrationChanceCurve,
-                    color: '#ef4444'
+                    color: CURVE_COLOR.chance
                 }]}
                 xLabel="Penetration - Armor Class"
                 yLabel="Chance"
@@ -106,7 +106,7 @@ export default function ArmorSpecificStats({item}: { item: Armor }) {
                     curves={[{
                         name: 'Damage Multiplier',
                         data: item.stats.penetrationDamageScalarCurve,
-                        color: '#9ba85e'
+                        color: CURVE_COLOR.damage
                     }]}
                     xLabel="Armor Class - Penetration"
                     yLabel="Damage Scalar"
@@ -122,7 +122,7 @@ export default function ArmorSpecificStats({item}: { item: Armor }) {
                     curves={[{
                         name: 'Armor Effectiveness',
                         data: item.stats.antiPenetrationDurabilityScalarCurve,
-                        color: '#60a5fa'
+                        color: CURVE_COLOR.effectiveness
                     }]}
                     xLabel="Missing Durability %"
                     yLabel="Effectiveness"

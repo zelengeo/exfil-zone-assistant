@@ -862,67 +862,73 @@ export interface RarityConfig {
 }
 
 // Rarity configuration object
+//
+// The values are the Cold Steel `rarity` scale from tailwind.config.js, where the reasoning
+// behind the six steps lives. Render these through <RarityBadge> rather than by hand: pairing a
+// text colour with `.micro-label` does not work, because that utility hard-sets `text-ink-600`
+// and, being declared after Tailwind's utilities, wins — which is why rarity used to render grey
+// everywhere it was shown.
 export const RARITY_CONFIG: Record<ItemRarity, RarityConfig> = {
     Common: {
         name: 'Common',
-        color: '#9CA3AF', // gray-400
-        bgColor: '#374151', // gray-700
-        borderColor: '#4B5563', // gray-600
-        textColor: 'text-gray-200',
-        bgClass: 'bg-gray-800',
-        borderClass: 'border-gray-600',
+        color: '#8DA0AE',
+        bgColor: '#161D24',
+        borderColor: '#2C363E',
+        textColor: 'text-rarity-common',
+        bgClass: 'bg-rarity-common-fill',
+        borderClass: 'border-rarity-common-edge',
         description: 'Frequently found items'
     },
     Uncommon: {
         name: 'Uncommon',
-        color: '#9BA85E', // olive-400
-        bgColor: '#2E331B', // olive-800
-        borderColor: '#454D28', // olive-700
-        textColor: 'text-olive-400',
-        bgClass: 'bg-olive-900',
-        borderClass: 'border-olive-600',
+        color: '#5FD18F',
+        bgColor: '#12211A',
+        borderColor: '#234436',
+        textColor: 'text-rarity-uncommon',
+        bgClass: 'bg-rarity-uncommon-fill',
+        borderClass: 'border-rarity-uncommon-edge',
         description: 'Less common but reliable items'
     },
     Rare: {
         name: 'Rare',
-        color: '#60A5FA', // blue-400
-        bgColor: '#1E3A8A', // blue-800
-        borderColor: '#2563EB', // blue-600
-        textColor: 'text-blue-400',
-        bgClass: 'bg-blue-900',
-        borderClass: 'border-blue-600',
+        color: '#3E8FC7',
+        bgColor: '#0F1B25',
+        borderColor: '#1E3D54',
+        textColor: 'text-rarity-rare',
+        bgClass: 'bg-rarity-rare-fill',
+        borderClass: 'border-rarity-rare-edge',
         description: 'High-quality specialized equipment'
     },
     Epic: {
         name: 'Epic',
-        color: '#A855F7', // purple-500
-        bgColor: '#581C87', // purple-800
-        borderColor: '#7C3AED', // purple-600
-        textColor: 'text-purple-400',
-        bgClass: 'bg-purple-900',
-        borderClass: 'border-purple-600',
+        color: '#CFA2FF',
+        bgColor: '#191428',
+        borderColor: '#3B2E55',
+        textColor: 'text-rarity-epic',
+        bgClass: 'bg-rarity-epic-fill',
+        borderClass: 'border-rarity-epic-edge',
         description: 'Exceptional military-grade gear'
     },
     Legendary: {
         name: 'Legendary',
-        color: '#F59E0B', // amber-500
-        bgColor: '#92400E', // amber-800
-        borderColor: '#D97706', // amber-600
-        textColor: 'text-yellow-400',
-        bgClass: 'bg-yellow-900',
-        borderClass: 'border-yellow-600',
+        color: '#F5B23A',
+        bgColor: '#1F180B',
+        borderColor: '#4A3714',
+        textColor: 'text-rarity-legendary',
+        bgClass: 'bg-rarity-legendary-fill',
+        borderClass: 'border-rarity-legendary-edge',
         description: 'Elite tactical equipment'
     },
     Ultimate: {
         name: 'Ultimate',
-        color: '#DC2626', // red-600
-        bgColor: '#7F1D1D', // red-900
-        borderColor: '#991B1B', // red-800
-        textColor: 'text-red-400',
-        bgClass: 'bg-red-900',
-        borderClass: 'border-red-600',
+        color: '#FF5F5F',
+        bgColor: '#211011',
+        borderColor: '#4E2222',
+        textColor: 'text-rarity-ultimate',
+        bgClass: 'bg-rarity-ultimate-fill',
+        borderClass: 'border-rarity-ultimate-edge',
         description: 'Prototype and experimental gear'
-    }
+    },
 };
 
 /**

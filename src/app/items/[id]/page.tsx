@@ -9,8 +9,8 @@ import {
     Item,
     formatWeight,
     getCategoryById,
-    getRarityColorClass,
 } from '@/types/items';
+import RarityBadge from '@/components/items/RarityBadge';
 import { getItemById } from '@/services/ItemService';
 import {
     isAmmunition,
@@ -182,9 +182,7 @@ export default function ItemDetail({ params }: PageProps) {
                 {/* Item header */}
                 <header className="mb-8">
                     <div className="flex items-baseline gap-3 mb-1">
-                        <span className={`micro-label ${getRarityColorClass(item.stats.rarity)}`}>
-                            {item.stats.rarity}
-                        </span>
+                        <RarityBadge rarity={item.stats.rarity} variant="chip" />
                         <span className="micro-label text-ink-700">
                             {item.subcategory || category?.name}
                         </span>

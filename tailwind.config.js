@@ -96,6 +96,25 @@ module.exports = {
                 bad: '#FF3D3D',
                 track: '#28323B', // progress-bar track
 
+                /* Item rarity. An ordinal tier scale, so it is its own vocabulary — reusing
+                 * ember/warn/good here would make a Legendary chip look like a warning and an
+                 * Ultimate one look like the page's single action.
+                 *
+                 * The steps are validated as a categorical palette against the card surface:
+                 * every adjacent tier pair clears the CVD and normal-vision separation floors, and
+                 * all six clear 3:1 contrast. Non-adjacent pairs (Rare vs Common, Rare vs Epic)
+                 * sit closer than the floor — six hues on a dark ground cannot all separate — so
+                 * rarity is never drawn as colour alone: RarityBadge always prints the tier name.
+                 */
+                rarity: {
+                    common: {DEFAULT: '#8DA0AE', edge: '#2C363E', fill: '#161D24'},
+                    uncommon: {DEFAULT: '#5FD18F', edge: '#234436', fill: '#12211A'},
+                    rare: {DEFAULT: '#3E8FC7', edge: '#1E3D54', fill: '#0F1B25'},
+                    epic: {DEFAULT: '#CFA2FF', edge: '#3B2E55', fill: '#191428'},
+                    legendary: {DEFAULT: '#F5B23A', edge: '#4A3714', fill: '#1F180B'},
+                    ultimate: {DEFAULT: '#FF5F5F', edge: '#4E2222', fill: '#211011'},
+                },
+
                 /* ---------------------------------------------------------
                  * HOLDING SKIN — temporary aliases, deleted in Stage 10.
                  *

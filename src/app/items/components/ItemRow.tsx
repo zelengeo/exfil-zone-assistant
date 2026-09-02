@@ -1,11 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
-import { Item, getRarityColorClass } from '@/types/items';
+import { Item } from '@/types/items';
 import { cn } from '@/lib/utils';
 import { ItemValue } from '@/components/trade/Price';
 import AvailabilityChip from '@/components/trade/AvailabilityChip';
 import type { ResolveItem } from '@/components/trade/BarterCosts';
 import { categoryStats } from '@/app/items/utils/cardStats';
+import RarityBadge from '@/components/items/RarityBadge';
 import { ItemImage } from './ItemImage';
 
 /**
@@ -54,9 +55,7 @@ export default function ItemRow({ item, resolve, className }: ItemRowProps) {
                     {item.name}
                 </div>
                 <div className="flex items-baseline gap-2">
-                    <span className={cn('micro-label', getRarityColorClass(item.stats.rarity))}>
-                        {item.stats.rarity}
-                    </span>
+                    <RarityBadge rarity={item.stats.rarity} />
                     <span className="micro-label text-ink-700 truncate">{item.subcategory}</span>
                 </div>
             </div>

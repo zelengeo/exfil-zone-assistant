@@ -1,11 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
-import { Item, getCategoryById, getRarityColorClass } from '@/types/items';
+import { Item, getCategoryById } from '@/types/items';
 import { cn } from '@/lib/utils';
 import { ItemValue } from '@/components/trade/Price';
 import { categoryStats, getPerformanceIndicator } from '@/app/items/utils/cardStats';
 import CoverageStrip from '@/components/protection/CoverageStrip';
 import { isArmor } from '@/app/combat-sim/utils/types';
+import RarityBadge from '@/components/items/RarityBadge';
 import { ItemImage } from './ItemImage';
 
 /**
@@ -33,14 +34,11 @@ const ItemCard: React.FC<ItemCardProps> = ({ item }) => {
             <div className="relative aspect-square bg-steel-850 border-b border-line-800 overflow-hidden">
                 <ItemImage item={item} size="thumbnail" className="w-full h-full" showZoom={false} />
 
-                <div
-                    className={cn(
-                        'absolute top-0 right-0 px-2 py-0.5 micro-label bg-steel-950/85 border-l border-b border-line-800',
-                        getRarityColorClass(item.stats.rarity),
-                    )}
-                >
-                    {item.stats.rarity}
-                </div>
+                <RarityBadge
+                    rarity={item.stats.rarity}
+                    variant="chip"
+                    className="absolute top-0 right-0 border-0 border-l border-b"
+                />
 
                 {indicator && (
                     <div

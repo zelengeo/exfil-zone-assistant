@@ -28,29 +28,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 120
+            "value": 120,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 12000,
-            "value": 120
+            "value": 120,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002835293068,
+            "leaveTangent": -0.002836488653
           },
           {
             "time": 40000,
-            "value": 48
+            "value": 48,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0007396575529,
+            "leaveTangent": -0.0007313785027
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 3.4
+            "value": 3.4,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 12000,
-            "value": 3.4
+            "value": 3.4,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00009842924919,
+            "leaveTangent": -0.00009830809722
           },
           {
             "time": 40000,
-            "value": 1.36
+            "value": 1.36,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00000486756835,
+            "leaveTangent": -0.000003028924311
           }
         ]
       },
@@ -134,29 +158,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 108
+            "value": 108,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14000,
-            "value": 108
+            "value": 108,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002224721247,
+            "leaveTangent": -0.002233653795
           },
           {
             "time": 44000,
-            "value": 48.599998
+            "value": 48.599998,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00018914674,
+            "leaveTangent": -0.0001733222016
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 4.8
+            "value": 4.8,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14000,
-            "value": 4.8
+            "value": 4.8,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000145624188,
+            "leaveTangent": -0.0001457798062
           },
           {
             "time": 44000,
-            "value": 2.16
+            "value": 2.16,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00002073902579,
+            "leaveTangent": -0.00002078942634
           }
         ]
       },
@@ -240,29 +288,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 170
+            "value": 170,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": -0.000006239394679,
+            "leaveTangent": 0
           },
           {
             "time": 15000,
-            "value": 170
+            "value": 170,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.003005626611,
+            "leaveTangent": -0.003007200547
           },
           {
             "time": 42000,
-            "value": 59.5
+            "value": 59.5,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0006087793154,
+            "leaveTangent": -0.0006030543591
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 1.5
+            "value": 1.5,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 15000,
-            "value": 1.5
+            "value": 1.5,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00002376377779,
+            "leaveTangent": -0.00002380350998
           },
           {
             "time": 42000,
-            "value": 0.525
+            "value": 0.525,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ]
       },
@@ -344,29 +416,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 20
+            "value": 20,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 1500,
-            "value": 20
+            "value": 20,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001751424745,
+            "leaveTangent": -0.001752523705
           },
           {
             "time": 26000,
-            "value": 5
+            "value": 5,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0004681779246,
+            "leaveTangent": -0.0004613121273
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 1.2
+            "value": 1.2,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 4500,
-            "value": 1.2
+            "value": 1.2,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00009200000204,
+            "leaveTangent": -0.00009200000204
           },
           {
             "time": 26000,
-            "value": 0.3
+            "value": 0.3,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001200000042,
+            "leaveTangent": -0.00001100000009
           }
         ]
       },
@@ -466,29 +562,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 22
+            "value": 22,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 2500,
-            "value": 22
+            "value": 22,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001770192524,
+            "leaveTangent": -0.001768596936
           },
           {
             "time": 23000,
-            "value": 7.7
+            "value": 7.7,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00006413431402,
+            "leaveTangent": -0.00006558124733
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 3.3
+            "value": 3.3,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 5500,
-            "value": 3.3
+            "value": 3.3,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0002375768381,
+            "leaveTangent": -0.0002380483638
           },
           {
             "time": 23000,
-            "value": 1.155
+            "value": 1.155,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001200000042,
+            "leaveTangent": -0.00001100000009
           }
         ]
       },
@@ -588,33 +708,61 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 25
+            "value": 25,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 1500,
-            "value": 25
+            "value": 25,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.01072068792,
+            "leaveTangent": -0.01074412465
           },
           {
             "time": 5000,
-            "value": 10
+            "value": 10,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0002594273828,
+            "leaveTangent": -0.0002597963321
           },
           {
             "time": 26000,
-            "value": 6.25
+            "value": 6.25,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001707015326,
+            "leaveTangent": -0.0001691315701
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 0.3
+            "value": 0.3,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 4500,
-            "value": 0.3
+            "value": 0.3,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00003635321991,
+            "leaveTangent": -0.00003635319808
           },
           {
             "time": 26000,
-            "value": 0.075
+            "value": 0.075,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000006007865977,
+            "leaveTangent": -0.000005087661975
           }
         ]
       },
@@ -714,29 +862,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 145
+            "value": 145,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 7500,
-            "value": 145
+            "value": 145,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.009051118046,
+            "leaveTangent": -0.009051227942
           },
           {
             "time": 32000,
-            "value": 58
+            "value": 58,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 3.8
+            "value": 3.8,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 7500,
-            "value": 3.8
+            "value": 3.8,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0002158649149,
+            "leaveTangent": -0.0002157856215
           },
           {
             "time": 32000,
-            "value": 1.52
+            "value": 1.52,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001200000042,
+            "leaveTangent": -0.00001100000009
           }
         ]
       },
@@ -823,29 +995,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 265
+            "value": 265,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 5500,
-            "value": 265
+            "value": 265,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.01529367734,
+            "leaveTangent": -0.01529367734
           },
           {
             "time": 30000,
-            "value": 79.5
+            "value": 79.5,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 0.2
+            "value": 0.2,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 5500,
-            "value": 0.2
+            "value": 0.2,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001889099622,
+            "leaveTangent": -0.00001889829582
           },
           {
             "time": 30000,
-            "value": 0.06
+            "value": 0.06,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -8.114392926e-7,
+            "leaveTangent": -7.846169296e-7
           }
         ]
       },
@@ -932,29 +1128,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 182
+            "value": 182,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 7500,
-            "value": 182
+            "value": 182,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.009051118046,
+            "leaveTangent": -0.009051227942
           },
           {
             "time": 32000,
-            "value": 72.800003
+            "value": 72.800003,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 2.6
+            "value": 2.6,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 7500,
-            "value": 2.6
+            "value": 2.6,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0002158649149,
+            "leaveTangent": -0.0002157856215
           },
           {
             "time": 32000,
-            "value": 1.04
+            "value": 1.04,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001200000042,
+            "leaveTangent": -0.00001100000009
           }
         ]
       },
@@ -1041,29 +1261,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 150
+            "value": 150,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 7500,
-            "value": 150
+            "value": 150,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.009051118046,
+            "leaveTangent": -0.009051227942
           },
           {
             "time": 32000,
-            "value": 60
+            "value": 60,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 2
+            "value": 2,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 7500,
-            "value": 2
+            "value": 2,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0002158649149,
+            "leaveTangent": -0.0002157856215
           },
           {
             "time": 32000,
-            "value": 0.8
+            "value": 0.8,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001200000042,
+            "leaveTangent": -0.00001100000009
           }
         ]
       },
@@ -1156,29 +1400,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 168
+            "value": 168,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 5500,
-            "value": 168
+            "value": 168,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.01529367734,
+            "leaveTangent": -0.01529367734
           },
           {
             "time": 30000,
-            "value": 50.400002
+            "value": 50.400002,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 1.5
+            "value": 1.5,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 5500,
-            "value": 1.5
+            "value": 1.5,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00009151434642,
+            "leaveTangent": -0.00009151432459
           },
           {
             "time": 30000,
-            "value": 0.45
+            "value": 0.45,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001150935805,
+            "leaveTangent": -0.00001149426043
           }
         ]
       },
@@ -1265,29 +1533,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 220
+            "value": 220,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 5500,
-            "value": 220
+            "value": 220,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.01529367734,
+            "leaveTangent": -0.01529367734
           },
           {
             "time": 30000,
-            "value": 66
+            "value": 66,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 0.5
+            "value": 0.5,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 5500,
-            "value": 0.5
+            "value": 0.5,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00005218579099,
+            "leaveTangent": -0.00005219685409
           },
           {
             "time": 30000,
-            "value": 0.15
+            "value": 0.15,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001150935805,
+            "leaveTangent": -0.00001149426043
           }
         ]
       },
@@ -1374,29 +1666,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 63
+            "value": 63,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 8000,
-            "value": 63
+            "value": 63,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.004200549796,
+            "leaveTangent": -0.00419263728
           },
           {
             "time": 33500,
-            "value": 27.09
+            "value": 27.09,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0006808370817,
+            "leaveTangent": -0.0006969600799
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 3.6
+            "value": 3.6,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 8000,
-            "value": 3.6
+            "value": 3.6,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001975530613,
+            "leaveTangent": -0.0001975606137
           },
           {
             "time": 33500,
-            "value": 1.548
+            "value": 1.548,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001705775685,
+            "leaveTangent": -0.00001729337782
           }
         ]
       },
@@ -1502,29 +1818,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 75
+            "value": 75,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 5000,
-            "value": 75
+            "value": 75,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.005460645072,
+            "leaveTangent": -0.005449623801
           },
           {
             "time": 28000,
-            "value": 33.75
+            "value": 33.75,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001045975136,
+            "leaveTangent": -0.001057948568
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 1.8
+            "value": 1.8,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 5000,
-            "value": 1.8
+            "value": 1.8,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001245295425,
+            "leaveTangent": -0.0001247843466
           },
           {
             "time": 28000,
-            "value": 0.81
+            "value": 0.81,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001705775685,
+            "leaveTangent": -0.00001729337782
           }
         ]
       },
@@ -1637,29 +1977,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 86
+            "value": 86,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 5000,
-            "value": 86
+            "value": 86,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.004200549796,
+            "leaveTangent": -0.00419263728
           },
           {
             "time": 26000,
-            "value": 38.700001
+            "value": 38.700001,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0006808370817,
+            "leaveTangent": -0.0006969600799
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 1.3
+            "value": 1.3,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 5000,
-            "value": 1.3
+            "value": 1.3,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00009210508142,
+            "leaveTangent": -0.00009225896792
           },
           {
             "time": 26000,
-            "value": 0.585
+            "value": 0.585,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001705775685,
+            "leaveTangent": -0.00001729337782
           }
         ]
       },
@@ -1759,29 +2123,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 105
+            "value": 105,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 6000,
-            "value": 105
+            "value": 105,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.004200549796,
+            "leaveTangent": -0.00419263728
           },
           {
             "time": 25000,
-            "value": 47.25
+            "value": 47.25,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0006808370817,
+            "leaveTangent": -0.0006969600799
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 1.1
+            "value": 1.1,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 8000,
-            "value": 1.1
+            "value": 1.1,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00008423827239,
+            "leaveTangent": -0.00008423752297
           },
           {
             "time": 25000,
-            "value": 0.495
+            "value": 0.495,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001705775685,
+            "leaveTangent": -0.00001729337782
           }
         ]
       },
@@ -1844,29 +2232,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 68
+            "value": 68,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 7000,
-            "value": 68
+            "value": 68,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.006947917864,
+            "leaveTangent": -0.006947515067
           },
           {
             "time": 32000,
-            "value": 27.200001
+            "value": 27.200001,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001071785111,
+            "leaveTangent": -0.001077949652
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 2.6
+            "value": 2.6,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 7000,
-            "value": 2.6
+            "value": 2.6,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00002200680865,
+            "leaveTangent": -0.00002184737241
           },
           {
             "time": 32000,
-            "value": 1.04
+            "value": 1.04,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000009393966138,
+            "leaveTangent": -0.000009429568308
           }
         ]
       },
@@ -2072,29 +2484,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 46
+            "value": 46,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 16000,
-            "value": 46
+            "value": 46,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00123219064,
+            "leaveTangent": -0.001230546623
           },
           {
             "time": 50000,
-            "value": 33.119999
+            "value": 33.119999,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001794032578,
+            "leaveTangent": -0.0001699240674
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 5.5
+            "value": 5.5,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 16000,
-            "value": 5.5
+            "value": 5.5,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001123103284,
+            "leaveTangent": -0.0001121577443
           },
           {
             "time": 50000,
-            "value": 3.96
+            "value": 3.96,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000009812966709,
+            "leaveTangent": -0.000009440997928
           }
         ]
       },
@@ -2173,29 +2609,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 38
+            "value": 38,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 16000,
-            "value": 38
+            "value": 38,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0008313075523,
+            "leaveTangent": -0.0008323182119
           },
           {
             "time": 50000,
-            "value": 27.360001
+            "value": 27.360001,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": 0.000003044125606,
+            "leaveTangent": 5.207551723e-8
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 6.2
+            "value": 6.2,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 16000,
-            "value": 6.2
+            "value": 6.2,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000171093372,
+            "leaveTangent": -0.0001711427758
           },
           {
             "time": 50000,
-            "value": 4.464
+            "value": 4.464,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001238106506,
+            "leaveTangent": -0.00001251963477
           }
         ]
       },
@@ -2274,29 +2734,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 61
+            "value": 61,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14000,
-            "value": 61
+            "value": 61,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001882600947,
+            "leaveTangent": -0.001882090815
           },
           {
             "time": 43000,
-            "value": 42.700001
+            "value": 42.700001,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007046953397,
+            "leaveTangent": -0.000070469614
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 2.4
+            "value": 2.4,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14000,
-            "value": 2.4
+            "value": 2.4,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00005867010987,
+            "leaveTangent": -0.00005891582987
           },
           {
             "time": 43000,
-            "value": 1.68
+            "value": 1.68,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002310476475,
+            "leaveTangent": -0.000002310478749
           }
         ]
       },
@@ -2398,29 +2882,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 55
+            "value": 55,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14200,
-            "value": 55
+            "value": 55,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001882600947,
+            "leaveTangent": -0.001882090815
           },
           {
             "time": 43500,
-            "value": 38.5
+            "value": 38.5,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007046953397,
+            "leaveTangent": -0.000070469614
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 3.5
+            "value": 3.5,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14200,
-            "value": 3.5
+            "value": 3.5,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001017832401,
+            "leaveTangent": -0.0001022044162
           },
           {
             "time": 43500,
-            "value": 2.45
+            "value": 2.45,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002310476475,
+            "leaveTangent": -0.000002310478749
           }
         ]
       },
@@ -2507,29 +3015,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 53
+            "value": 53,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14500,
-            "value": 53
+            "value": 53,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001882600947,
+            "leaveTangent": -0.001882090815
           },
           {
             "time": 44000,
-            "value": 34.450001
+            "value": 34.450001,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007046953397,
+            "leaveTangent": -0.000070469614
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 4.3
+            "value": 4.3,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14500,
-            "value": 4.3
+            "value": 4.3,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001480989013,
+            "leaveTangent": -0.000148805746
           },
           {
             "time": 44000,
-            "value": 2.795
+            "value": 2.795,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002310476475,
+            "leaveTangent": -0.000002310478749
           }
         ]
       },
@@ -2616,29 +3148,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 70
+            "value": 70,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 12000,
-            "value": 70
+            "value": 70,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002546070376,
+            "leaveTangent": -0.002545084571
           },
           {
             "time": 42000,
-            "value": 46.900002
+            "value": 46.900002,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 1.3
+            "value": 1.3,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 12000,
-            "value": 1.3
+            "value": 1.3,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00004709290079,
+            "leaveTangent": -0.00004707715925
           },
           {
             "time": 42000,
-            "value": 0.871
+            "value": 0.871,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ]
       },
@@ -2744,29 +3300,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 80
+            "value": 80,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 12000,
-            "value": 80
+            "value": 80,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002546070376,
+            "leaveTangent": -0.002545084571
           },
           {
             "time": 42000,
-            "value": 53.599998
+            "value": 53.599998,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 0.8
+            "value": 0.8,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 12000,
-            "value": 0.8
+            "value": 0.8,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00002316918653,
+            "leaveTangent": -0.00002319832674
           },
           {
             "time": 42000,
-            "value": 0.536
+            "value": 0.536,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ]
       },
@@ -2853,29 +3433,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 58
+            "value": 58,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14200,
-            "value": 58
+            "value": 58,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001730627846,
+            "leaveTangent": -0.00173359958
           },
           {
             "time": 43500,
-            "value": 40.599998
+            "value": 40.599998,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0002454112982,
+            "leaveTangent": -0.0002495304798
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 3
+            "value": 3,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14200,
-            "value": 3
+            "value": 3,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001116535277,
+            "leaveTangent": -0.0001116535277
           },
           {
             "time": 43500,
-            "value": 2.1
+            "value": 2.1,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001056727888,
+            "leaveTangent": -0.00001067791163
           }
         ]
       },
@@ -2979,29 +3583,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 54
+            "value": 54,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14200,
-            "value": 54
+            "value": 54,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001730627846,
+            "leaveTangent": -0.00173359958
           },
           {
             "time": 43500,
-            "value": 37.799999
+            "value": 37.799999,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0002454112982,
+            "leaveTangent": -0.0002495304798
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 3.8
+            "value": 3.8,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14200,
-            "value": 3.8
+            "value": 3.8,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001116535277,
+            "leaveTangent": -0.0001116535277
           },
           {
             "time": 43500,
-            "value": 2.66
+            "value": 2.66,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001056727888,
+            "leaveTangent": -0.00001067791163
           }
         ]
       },
@@ -3088,29 +3716,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 46
+            "value": 46,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 15000,
-            "value": 46
+            "value": 46,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001636910369,
+            "leaveTangent": -0.001630269689
           },
           {
             "time": 50000,
-            "value": 29.9
+            "value": 29.9,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0002327140537,
+            "leaveTangent": -0.0002327146503
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 5.3
+            "value": 5.3,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 15000,
-            "value": 5.3
+            "value": 5.3,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001583795238,
+            "leaveTangent": -0.0001577669027
           },
           {
             "time": 50000,
-            "value": 3.445
+            "value": 3.445,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00002130814937,
+            "leaveTangent": -0.00002105482599
           }
         ]
       },
@@ -3197,29 +3849,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 39
+            "value": 39,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 16000,
-            "value": 39
+            "value": 39,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001069173566,
+            "leaveTangent": -0.001069215243
           },
           {
             "time": 53000,
-            "value": 28.08
+            "value": 28.08,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0002114585368,
+            "leaveTangent": -0.0002123320592
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 5.8
+            "value": 5.8,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 16000,
-            "value": 5.8
+            "value": 5.8,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001501966181,
+            "leaveTangent": -0.0001501965598
           },
           {
             "time": 53000,
-            "value": 4.176
+            "value": 4.176,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00003208427734,
+            "leaveTangent": -0.00003223120439
           }
         ]
       },
@@ -3311,29 +3987,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 62
+            "value": 62,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 12000,
-            "value": 62
+            "value": 62,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001746177557,
+            "leaveTangent": -0.00174821727
           },
           {
             "time": 45000,
-            "value": 43.400002
+            "value": 43.400002,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007046953397,
+            "leaveTangent": -0.000070469614
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 2.4
+            "value": 2.4,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 12000,
-            "value": 2.4
+            "value": 2.4,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007728236233,
+            "leaveTangent": -0.00007759273285
           },
           {
             "time": 45000,
-            "value": 1.68
+            "value": 1.68,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002310476475,
+            "leaveTangent": -0.000002310478749
           }
         ]
       },
@@ -3433,29 +4133,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 49
+            "value": 49,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14000,
-            "value": 49
+            "value": 49,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001746177557,
+            "leaveTangent": -0.00174821727
           },
           {
             "time": 48000,
-            "value": 34.299999
+            "value": 34.299999,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007046953397,
+            "leaveTangent": -0.000070469614
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 4.4
+            "value": 4.4,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14000,
-            "value": 4.4
+            "value": 4.4,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001306501799,
+            "leaveTangent": -0.0001313748653
           },
           {
             "time": 48000,
-            "value": 3.08
+            "value": 3.08,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002310476475,
+            "leaveTangent": -0.000002310478749
           }
         ]
       },
@@ -3542,29 +4266,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 73
+            "value": 73,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 13500,
-            "value": 73
+            "value": 73,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00248492253,
+            "leaveTangent": -0.00248492253
           },
           {
             "time": 47500,
-            "value": 48.91
+            "value": 48.91,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 1.2
+            "value": 1.2,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 13500,
-            "value": 1.2
+            "value": 1.2,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00003904297773,
+            "leaveTangent": -0.00003904444748
           },
           {
             "time": 47500,
-            "value": 0.804
+            "value": 0.804,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ]
       },
@@ -3653,29 +4401,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 81
+            "value": 81,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 13500,
-            "value": 81
+            "value": 81,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00248492253,
+            "leaveTangent": -0.00248492253
           },
           {
             "time": 47500,
-            "value": 52.93
+            "value": 52.93,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 0.7
+            "value": 0.7,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 13500,
-            "value": 0.7
+            "value": 0.7,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001907605474,
+            "leaveTangent": -0.00001904761484
           },
           {
             "time": 47500,
-            "value": 0.469
+            "value": 0.469,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ]
       },
@@ -3762,29 +4534,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 90
+            "value": 90,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 12000,
-            "value": 90
+            "value": 90,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001553406706,
+            "leaveTangent": -0.001555983559
           },
           {
             "time": 45000,
-            "value": 63
+            "value": 63,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 0.3
+            "value": 0.3,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 12000,
-            "value": 0.3
+            "value": 0.3,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000007896076568,
+            "leaveTangent": -0.000007895868293
           },
           {
             "time": 45000,
-            "value": 0.21
+            "value": 0.21,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ]
       },
@@ -3871,29 +4667,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 56
+            "value": 56,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14000,
-            "value": 56
+            "value": 56,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001746177557,
+            "leaveTangent": -0.00174821727
           },
           {
             "time": 48000,
-            "value": 39.200001
+            "value": 39.200001,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007046953397,
+            "leaveTangent": -0.000070469614
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 3.3
+            "value": 3.3,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14000,
-            "value": 3.3
+            "value": 3.3,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007728236233,
+            "leaveTangent": -0.00007759273285
           },
           {
             "time": 48000,
-            "value": 2.31
+            "value": 2.31,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002310476475,
+            "leaveTangent": -0.000002310478749
           }
         ]
       },
@@ -3993,29 +4813,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 58
+            "value": 58,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 12000,
-            "value": 58
+            "value": 58,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001565366052,
+            "leaveTangent": -0.001565418672
           },
           {
             "time": 45000,
-            "value": 40.599998
+            "value": 40.599998,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0002862136171,
+            "leaveTangent": -0.000282836525
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 2.9
+            "value": 2.9,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 12000,
-            "value": 2.9
+            "value": 2.9,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00006948297232,
+            "leaveTangent": -0.00006957993173
           },
           {
             "time": 45000,
-            "value": 2.03
+            "value": 2.03,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001279281241,
+            "leaveTangent": -0.00001279585922
           }
         ]
       },
@@ -4108,29 +4952,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 52
+            "value": 52,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14000,
-            "value": 52
+            "value": 52,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001565366052,
+            "leaveTangent": -0.001565418672
           },
           {
             "time": 48000,
-            "value": 36.400002
+            "value": 36.400002,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0002862136171,
+            "leaveTangent": -0.000282836525
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 3.8
+            "value": 3.8,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14000,
-            "value": 3.8
+            "value": 3.8,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001110170706,
+            "leaveTangent": -0.0001110170706
           },
           {
             "time": 48000,
-            "value": 2.66
+            "value": 2.66,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001279281241,
+            "leaveTangent": -0.00001279585922
           }
         ]
       },
@@ -4223,29 +5091,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 73
+            "value": 73,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 16700,
-            "value": 73
+            "value": 73,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002257481683,
+            "leaveTangent": -0.002257562941
           },
           {
             "time": 53000,
-            "value": 47.450001
+            "value": 47.450001,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0002404019033,
+            "leaveTangent": -0.0002381080267
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 4.7
+            "value": 4.7,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 16700,
-            "value": 4.7
+            "value": 4.7,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001272572408,
+            "leaveTangent": -0.0001272572408
           },
           {
             "time": 53000,
-            "value": 3.055
+            "value": 3.055,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001687822078,
+            "leaveTangent": -0.00001643055293
           }
         ]
       },
@@ -4351,29 +5243,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 66
+            "value": 66,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 16700,
-            "value": 66
+            "value": 66,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001402783324,
+            "leaveTangent": -0.001402783673
           },
           {
             "time": 53000,
-            "value": 47.52
+            "value": 47.52,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007472761354,
+            "leaveTangent": -0.00006807477621
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 5.4
+            "value": 5.4,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 16700,
-            "value": 5.4
+            "value": 5.4,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001272572408,
+            "leaveTangent": -0.0001272572408
           },
           {
             "time": 53000,
-            "value": 3.888
+            "value": 3.888,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001687822078,
+            "leaveTangent": -0.00001643055293
           }
         ]
       },
@@ -4442,29 +5358,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 80
+            "value": 80,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 15500,
-            "value": 80
+            "value": 80,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001975918422,
+            "leaveTangent": -0.001974908402
           },
           {
             "time": 50000,
-            "value": 56
+            "value": 56,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007046953397,
+            "leaveTangent": -0.000070469614
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 3.7
+            "value": 3.7,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 15500,
-            "value": 3.7
+            "value": 3.7,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007949589053,
+            "leaveTangent": -0.000079702324
           },
           {
             "time": 50000,
-            "value": 2.59
+            "value": 2.59,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002310476475,
+            "leaveTangent": -0.000002310478749
           }
         ]
       },
@@ -4564,29 +5504,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 88
+            "value": 88,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 15500,
-            "value": 88
+            "value": 88,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001975918422,
+            "leaveTangent": -0.001974908402
           },
           {
             "time": 50000,
-            "value": 61.599998
+            "value": 61.599998,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007046953397,
+            "leaveTangent": -0.000070469614
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 2.9
+            "value": 2.9,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 15500,
-            "value": 2.9
+            "value": 2.9,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00006429025962,
+            "leaveTangent": -0.00006447559281
           },
           {
             "time": 50000,
-            "value": 2.03
+            "value": 2.03,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002310476475,
+            "leaveTangent": -0.000002310478749
           }
         ]
       },
@@ -4673,29 +5637,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 57
+            "value": 57,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14000,
-            "value": 57
+            "value": 57,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001913323533,
+            "leaveTangent": -0.001911251806
           },
           {
             "time": 44500,
-            "value": 39.330002
+            "value": 39.330002,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0002404837142,
+            "leaveTangent": -0.0002378802747
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 4.7
+            "value": 4.7,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14000,
-            "value": 4.7
+            "value": 4.7,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001517348865,
+            "leaveTangent": -0.0001516722987
           },
           {
             "time": 44500,
-            "value": 3.243
+            "value": 3.243,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00002804643736,
+            "leaveTangent": -0.00002804643736
           }
         ]
       },
@@ -4777,29 +5765,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 52
+            "value": 52,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 20000,
-            "value": 52
+            "value": 52,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0009476466803,
+            "leaveTangent": -0.0009488049545
           },
           {
             "time": 60000,
-            "value": 40.560001
+            "value": 40.560001,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001032184446,
+            "leaveTangent": -0.0001040107891
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 5.8
+            "value": 5.8,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 20000,
-            "value": 5.8
+            "value": 5.8,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001091012819,
+            "leaveTangent": -0.000109240209
           },
           {
             "time": 60000,
-            "value": 4.524
+            "value": 4.524,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00002433873306,
+            "leaveTangent": -0.00002438377851
           }
         ]
       },
@@ -4881,29 +5893,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 67
+            "value": 67,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 17000,
-            "value": 67
+            "value": 67,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001628714963,
+            "leaveTangent": -0.001628787257
           },
           {
             "time": 48000,
-            "value": 48.240002
+            "value": 48.240002,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007046953397,
+            "leaveTangent": -0.000070469614
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 2.6
+            "value": 2.6,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 17000,
-            "value": 2.6
+            "value": 2.6,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00006726242282,
+            "leaveTangent": -0.00006735811621
           },
           {
             "time": 48000,
-            "value": 1.872
+            "value": 1.872,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002310476475,
+            "leaveTangent": -0.000002310478749
           }
         ]
       },
@@ -4996,29 +6032,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 59
+            "value": 59,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14000,
-            "value": 59
+            "value": 59,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001628714963,
+            "leaveTangent": -0.001628787257
           },
           {
             "time": 44500,
-            "value": 40.709999
+            "value": 40.709999,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007046953397,
+            "leaveTangent": -0.000070469614
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 4.4
+            "value": 4.4,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 14000,
-            "value": 4.4
+            "value": 4.4,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001167992887,
+            "leaveTangent": -0.0001168047529
           },
           {
             "time": 44500,
-            "value": 3.036
+            "value": 3.036,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002310476475,
+            "leaveTangent": -0.000002310478749
           }
         ]
       },
@@ -5105,29 +6165,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 72
+            "value": 72,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 16000,
-            "value": 72
+            "value": 72,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002370660426,
+            "leaveTangent": -0.002373232041
           },
           {
             "time": 46000,
-            "value": 49.68
+            "value": 49.68,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 1.8
+            "value": 1.8,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 16000,
-            "value": 1.8
+            "value": 1.8,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00003496453064,
+            "leaveTangent": -0.00003504040797
           },
           {
             "time": 46000,
-            "value": 1.38
+            "value": 1.38,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ]
       },
@@ -5233,29 +6317,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 84
+            "value": 84,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 16000,
-            "value": 84
+            "value": 84,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002370660426,
+            "leaveTangent": -0.002373232041
           },
           {
             "time": 46000,
-            "value": 57.959999
+            "value": 57.959999,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 1.4
+            "value": 1.4,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 16000,
-            "value": 1.4
+            "value": 1.4,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00003229399226,
+            "leaveTangent": -0.00003236198609
           },
           {
             "time": 46000,
-            "value": 0.966
+            "value": 0.966,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ]
       },
@@ -5342,29 +6450,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 62
+            "value": 62,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 15000,
-            "value": 62
+            "value": 62,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001628714963,
+            "leaveTangent": -0.001628787257
           },
           {
             "time": 45000,
-            "value": 44.639999
+            "value": 44.639999,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007046953397,
+            "leaveTangent": -0.000070469614
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 3.7
+            "value": 3.7,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 15000,
-            "value": 3.7
+            "value": 3.7,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00008049127064,
+            "leaveTangent": -0.00008082050772
           },
           {
             "time": 45000,
-            "value": 2.664
+            "value": 2.664,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002310476475,
+            "leaveTangent": -0.000002310478749
           }
         ]
       },
@@ -5464,29 +6596,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 65
+            "value": 65,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 15000,
-            "value": 65
+            "value": 65,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002155151917,
+            "leaveTangent": -0.002148037311
           },
           {
             "time": 45000,
-            "value": 46.799999
+            "value": 46.799999,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001751002856,
+            "leaveTangent": -0.0001757251448
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 3.3
+            "value": 3.3,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 15000,
-            "value": 3.3
+            "value": 3.3,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001090765945,
+            "leaveTangent": -0.0001090755104
           },
           {
             "time": 45000,
-            "value": 2.376
+            "value": 2.376,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001083764982,
+            "leaveTangent": -0.00001083759253
           }
         ]
       },
@@ -5586,29 +6742,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 69
+            "value": 69,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 18000,
-            "value": 69
+            "value": 69,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002152543282,
+            "leaveTangent": -0.002152541652
           },
           {
             "time": 52000,
-            "value": 48.299999
+            "value": 48.299999,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007159130473,
+            "leaveTangent": -0.00007341894525
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 6
+            "value": 6,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 18000,
-            "value": 6
+            "value": 6,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001349768572,
+            "leaveTangent": -0.0001349804224
           },
           {
             "time": 52000,
-            "value": 4.2
+            "value": 4.2,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00002133433372,
+            "leaveTangent": -0.00002091369242
           }
         ]
       },
@@ -5695,29 +6875,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 63
+            "value": 63,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 20000,
-            "value": 63
+            "value": 63,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0006453360547,
+            "leaveTangent": -0.0006476132548
           },
           {
             "time": 65000,
-            "value": 50.400002
+            "value": 50.400002,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00005323515506,
+            "leaveTangent": -0.0000574728474
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 6.5
+            "value": 6.5,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 20000,
-            "value": 6.5
+            "value": 6.5,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00004767855717,
+            "leaveTangent": -0.00004754322799
           },
           {
             "time": 65000,
-            "value": 5.2
+            "value": 5.2,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000009389519619,
+            "leaveTangent": -0.000009439371752
           }
         ]
       },
@@ -5809,29 +7013,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 83
+            "value": 83,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 19000,
-            "value": 83
+            "value": 83,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001123355119,
+            "leaveTangent": -0.001125204726
           },
           {
             "time": 54000,
-            "value": 62.25
+            "value": 62.25,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007046953397,
+            "leaveTangent": -0.000070469614
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 3.6
+            "value": 3.6,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 19000,
-            "value": 3.6
+            "value": 3.6,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007153266051,
+            "leaveTangent": -0.00007175468636
           },
           {
             "time": 54000,
-            "value": 2.7
+            "value": 2.7,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002310476475,
+            "leaveTangent": -0.000002310478749
           }
         ]
       },
@@ -5944,29 +7172,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 73
+            "value": 73,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 18000,
-            "value": 73
+            "value": 73,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001123355119,
+            "leaveTangent": -0.001125204726
           },
           {
             "time": 52000,
-            "value": 51.099998
+            "value": 51.099998,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007046953397,
+            "leaveTangent": -0.000070469614
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 5.3
+            "value": 5.3,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 18000,
-            "value": 5.3
+            "value": 5.3,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001011714121,
+            "leaveTangent": -0.0001011714121
           },
           {
             "time": 52000,
-            "value": 3.71
+            "value": 3.71,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00002043584209,
+            "leaveTangent": -0.00002026352558
           }
         ]
       },
@@ -6035,29 +7287,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 86
+            "value": 86,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 17000,
-            "value": 86
+            "value": 86,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001858052216,
+            "leaveTangent": -0.001857982366
           },
           {
             "time": 50000,
-            "value": 60.200001
+            "value": 60.200001,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 2.5
+            "value": 2.5,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 17000,
-            "value": 2.5
+            "value": 2.5,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00004540164809,
+            "leaveTangent": -0.00004548355355
           },
           {
             "time": 50000,
-            "value": 1.75
+            "value": 1.75,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ]
       },
@@ -6170,29 +7446,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 90
+            "value": 90,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 17300,
-            "value": 90
+            "value": 90,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00106412638,
+            "leaveTangent": -0.001066503697
           },
           {
             "time": 51000,
-            "value": 67.5
+            "value": 67.5,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001967980061,
+            "leaveTangent": -0.0001967982244
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 1.9
+            "value": 1.9,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 17300,
-            "value": 1.9
+            "value": 1.9,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00003509006638,
+            "leaveTangent": -0.0000351435192
           },
           {
             "time": 51000,
-            "value": 1.425
+            "value": 1.425,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ]
       },
@@ -6279,29 +7579,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 101
+            "value": 101,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 19000,
-            "value": 101
+            "value": 101,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00167232519,
+            "leaveTangent": -0.001672326471
           },
           {
             "time": 54000,
-            "value": 75.75
+            "value": 75.75,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 1.2
+            "value": 1.2,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 19000,
-            "value": 1.2
+            "value": 1.2,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0000261549485,
+            "leaveTangent": -0.00002620035957
           },
           {
             "time": 54000,
-            "value": 0.9
+            "value": 0.9,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00000175344644,
+            "leaveTangent": -0.00000175344644
           }
         ]
       },
@@ -6388,29 +7712,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 82
+            "value": 82,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 17300,
-            "value": 82
+            "value": 82,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001123355119,
+            "leaveTangent": -0.001125204726
           },
           {
             "time": 51000,
-            "value": 61.5
+            "value": 61.5,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007046953397,
+            "leaveTangent": -0.000070469614
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 4.3
+            "value": 4.3,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 17300,
-            "value": 4.3
+            "value": 4.3,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00005829894508,
+            "leaveTangent": -0.00005839794539
           },
           {
             "time": 51000,
-            "value": 3.225
+            "value": 3.225,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002310476475,
+            "leaveTangent": -0.000002310478749
           }
         ]
       },
@@ -6510,29 +7858,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 80
+            "value": 80,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 19000,
-            "value": 80
+            "value": 80,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001219626749,
+            "leaveTangent": -0.001219626749
           },
           {
             "time": 54000,
-            "value": 60
+            "value": 60,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00004434734365,
+            "leaveTangent": -0.00004556755448
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 4.5
+            "value": 4.5,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 19000,
-            "value": 4.5
+            "value": 4.5,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00005288854663,
+            "leaveTangent": -0.00005299974509
           },
           {
             "time": 54000,
-            "value": 3.375
+            "value": 3.375,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000001687565714,
+            "leaveTangent": -0.000001671468681
           }
         ]
       },
@@ -6619,29 +7991,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 75
+            "value": 75,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 22500,
-            "value": 75
+            "value": 75,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0009614905575,
+            "leaveTangent": -0.0009596899035
           },
           {
             "time": 64000,
-            "value": 60
+            "value": 60,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00004520524817,
+            "leaveTangent": -0.00003959429159
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 6.1
+            "value": 6.1,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 22500,
-            "value": 6.1
+            "value": 6.1,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00008254962449,
+            "leaveTangent": -0.00008241621981
           },
           {
             "time": 64000,
-            "value": 4.88
+            "value": 4.88,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002993357612,
+            "leaveTangent": -0.00000296031385
           }
         ]
       },
@@ -6720,29 +8116,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 72
+            "value": 72,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 24000,
-            "value": 72
+            "value": 72,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001008359133,
+            "leaveTangent": -0.001010774751
           },
           {
             "time": 58000,
-            "value": 60
+            "value": 60,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00002581591616,
+            "leaveTangent": -0.00002650345778
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 7
+            "value": 7,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 24000,
-            "value": 7
+            "value": 7,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001545486448,
+            "leaveTangent": -0.0001552038593
           },
           {
             "time": 58000,
-            "value": 4.9
+            "value": 4.9,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001080008951,
+            "leaveTangent": -0.00001096810956
           }
         ]
       },
@@ -6811,29 +8231,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 86
+            "value": 86,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 19500,
-            "value": 86
+            "value": 86,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002285828581,
+            "leaveTangent": -0.002285732189
           },
           {
             "time": 53000,
-            "value": 60.200001
+            "value": 60.200001,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007046953397,
+            "leaveTangent": -0.000070469614
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 3.4
+            "value": 3.4,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 19500,
-            "value": 3.4
+            "value": 3.4,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00008748310938,
+            "leaveTangent": -0.00008748318214
           },
           {
             "time": 53000,
-            "value": 2.38
+            "value": 2.38,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002310476475,
+            "leaveTangent": -0.000002310478749
           }
         ]
       },
@@ -6933,29 +8377,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 84
+            "value": 84,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 18000,
-            "value": 84
+            "value": 84,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002285828581,
+            "leaveTangent": -0.002285732189
           },
           {
             "time": 50000,
-            "value": 58.799999
+            "value": 58.799999,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007046953397,
+            "leaveTangent": -0.000070469614
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 4.3
+            "value": 4.3,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 18000,
-            "value": 4.3
+            "value": 4.3,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00008748310938,
+            "leaveTangent": -0.00008748318214
           },
           {
             "time": 50000,
-            "value": 3.01
+            "value": 3.01,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002310476475,
+            "leaveTangent": -0.000002310478749
           }
         ]
       },
@@ -7042,29 +8510,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 78
+            "value": 78,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 22000,
-            "value": 78
+            "value": 78,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002285828581,
+            "leaveTangent": -0.002285732189
           },
           {
             "time": 60000,
-            "value": 50.700001
+            "value": 50.700001,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007046953397,
+            "leaveTangent": -0.000070469614
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 4.6
+            "value": 4.6,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 22000,
-            "value": 4.6
+            "value": 4.6,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00008748310938,
+            "leaveTangent": -0.00008748318214
           },
           {
             "time": 60000,
-            "value": 2.99
+            "value": 2.99,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002310476475,
+            "leaveTangent": -0.000002310478749
           }
         ]
       },
@@ -7133,29 +8625,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 102
+            "value": 102,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 20000,
-            "value": 102
+            "value": 102,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002262056572,
+            "leaveTangent": -0.002267147182
           },
           {
             "time": 56000,
-            "value": 71.400002
+            "value": 71.400002,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 2.1
+            "value": 2.1,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 20000,
-            "value": 2.1
+            "value": 2.1,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00004547486606,
+            "leaveTangent": -0.00004547484423
           },
           {
             "time": 56000,
-            "value": 1.47
+            "value": 1.47,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ]
       },
@@ -7261,29 +8777,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 90
+            "value": 90,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 20000,
-            "value": 90
+            "value": 90,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001736164675,
+            "leaveTangent": -0.001736224978
           },
           {
             "time": 56000,
-            "value": 63
+            "value": 63,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 2.3
+            "value": 2.3,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 20000,
-            "value": 2.3
+            "value": 2.3,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00005538747791,
+            "leaveTangent": -0.00005538747791
           },
           {
             "time": 56000,
-            "value": 1.61
+            "value": 1.61,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ]
       },
@@ -7370,29 +8910,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 85
+            "value": 85,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 18000,
-            "value": 85
+            "value": 85,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002478661481,
+            "leaveTangent": -0.002478562295
           },
           {
             "time": 50000,
-            "value": 59.5
+            "value": 59.5,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00004434734365,
+            "leaveTangent": -0.00004556755448
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 4.1
+            "value": 4.1,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 18000,
-            "value": 4.1
+            "value": 4.1,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001023922669,
+            "leaveTangent": -0.0001022786382
           },
           {
             "time": 50000,
-            "value": 2.87
+            "value": 2.87,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000001687565714,
+            "leaveTangent": -0.000001671468681
           }
         ]
       },
@@ -7492,29 +9056,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 77
+            "value": 77,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 22000,
-            "value": 77
+            "value": 77,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001397960586,
+            "leaveTangent": -0.001395319123
           },
           {
             "time": 60000,
-            "value": 50.049999
+            "value": 50.049999,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00004434734365,
+            "leaveTangent": -0.00004556755448
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 5.5
+            "value": 5.5,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 22000,
-            "value": 5.5
+            "value": 5.5,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001023922669,
+            "leaveTangent": -0.0001022786382
           },
           {
             "time": 60000,
-            "value": 3.575
+            "value": 3.575,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000001687565714,
+            "leaveTangent": -0.000001671468681
           }
         ]
       },
@@ -7593,29 +9181,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 53
+            "value": 53,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 8000,
-            "value": 53
+            "value": 53,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002052845666,
+            "leaveTangent": -0.002054131124
           },
           {
             "time": 36000,
-            "value": 22.790001
+            "value": 22.790001,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001206789166,
+            "leaveTangent": -0.001209263457
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 3.4
+            "value": 3.4,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 8000,
-            "value": 3.4
+            "value": 3.4,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001362124458,
+            "leaveTangent": -0.0001365201169
           },
           {
             "time": 36000,
-            "value": 1.462
+            "value": 1.462,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00006214160385,
+            "leaveTangent": -0.00006315095379
           }
         ]
       },
@@ -7736,29 +9348,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 44
+            "value": 44,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 10000,
-            "value": 44
+            "value": 44,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001685602125,
+            "leaveTangent": -0.001686153351
           },
           {
             "time": 40000,
-            "value": 19.799999
+            "value": 19.799999,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000244888186,
+            "leaveTangent": -0.0002461639524
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 4.1
+            "value": 4.1,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 10000,
-            "value": 4.1
+            "value": 4.1,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001505419059,
+            "leaveTangent": -0.0001506322733
           },
           {
             "time": 40000,
-            "value": 1.845
+            "value": 1.845,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000005126105407,
+            "leaveTangent": -0.000005153760867
           }
         ]
       },
@@ -7851,29 +9487,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 58
+            "value": 58,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 7000,
-            "value": 58
+            "value": 58,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002835293068,
+            "leaveTangent": -0.002836488653
           },
           {
             "time": 32000,
-            "value": 26.1
+            "value": 26.1,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0007396575529,
+            "leaveTangent": -0.0007313785027
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 1.4
+            "value": 1.4,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 7000,
-            "value": 1.4
+            "value": 1.4,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007555309276,
+            "leaveTangent": -0.00007538302452
           },
           {
             "time": 32000,
-            "value": 0.63
+            "value": 0.63,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00002073902579,
+            "leaveTangent": -0.00002078942634
           }
         ]
       },
@@ -7988,29 +9648,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 54
+            "value": 54,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 7000,
-            "value": 54
+            "value": 54,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002835293068,
+            "leaveTangent": -0.002836488653
           },
           {
             "time": 34000,
-            "value": 21.6
+            "value": 21.6,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0007396575529,
+            "leaveTangent": -0.0007313785027
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 2.1
+            "value": 2.1,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 7000,
-            "value": 2.1
+            "value": 2.1,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00008166783664,
+            "leaveTangent": -0.00008170489309
           },
           {
             "time": 34000,
-            "value": 0.84
+            "value": 0.84,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00002073902579,
+            "leaveTangent": -0.00002078942634
           }
         ]
       },
@@ -8114,29 +9798,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 73
+            "value": 73,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": -0.000006239394679,
+            "leaveTangent": 0
           },
           {
             "time": 7000,
-            "value": 73
+            "value": 73,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001501087798,
+            "leaveTangent": -0.001503084553
           },
           {
             "time": 34000,
-            "value": 25.549999
+            "value": 25.549999,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": 0.00008161892038,
+            "leaveTangent": 0.00008462341066
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 0.6
+            "value": 0.6,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 7000,
-            "value": 0.6
+            "value": 0.6,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001838172284,
+            "leaveTangent": -0.00001838173375
           },
           {
             "time": 34000,
-            "value": 0.21
+            "value": 0.21,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ]
       },
@@ -8223,29 +9931,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 88
+            "value": 88,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": -0.000006239394679,
+            "leaveTangent": 0
           },
           {
             "time": 6000,
-            "value": 88
+            "value": 88,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.003005626611,
+            "leaveTangent": -0.003007200547
           },
           {
             "time": 35000,
-            "value": 26.4
+            "value": 26.4,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": 0.00008161892038,
+            "leaveTangent": 0.00008462341066
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 0.2
+            "value": 0.2,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 6000,
-            "value": 0.2
+            "value": 0.2,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001304687612,
+            "leaveTangent": -0.00001306455761
           },
           {
             "time": 35000,
-            "value": 0.06
+            "value": 0.06,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ]
       },
@@ -8332,29 +10064,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 65
+            "value": 65,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": -0.000006239394679,
+            "leaveTangent": 0
           },
           {
             "time": 6000,
-            "value": 65
+            "value": 65,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001446799492,
+            "leaveTangent": -0.001446190057
           },
           {
             "time": 30000,
-            "value": 29.25
+            "value": 29.25,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": 0.00008161892038,
+            "leaveTangent": 0.00008462341066
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 1
+            "value": 1,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 6000,
-            "value": 1
+            "value": 1,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001654194057,
+            "leaveTangent": -0.00001656835957
           },
           {
             "time": 30000,
-            "value": 0.45
+            "value": 0.45,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002343194637,
+            "leaveTangent": -0.000002343192364
           }
         ]
       },
@@ -8467,29 +10223,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 56
+            "value": 56,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 6500,
-            "value": 56
+            "value": 56,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002501406241,
+            "leaveTangent": -0.00250291964
           },
           {
             "time": 34000,
-            "value": 22
+            "value": 22,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001046249992,
+            "leaveTangent": -0.001067908248
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 1.8
+            "value": 1.8,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 6500,
-            "value": 1.8
+            "value": 1.8,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00011553074,
+            "leaveTangent": -0.0001155307909
           },
           {
             "time": 34000,
-            "value": 0.72
+            "value": 0.72,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001553651782,
+            "leaveTangent": -0.00001562353282
           }
         ]
       },
@@ -8615,29 +10395,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 59
+            "value": 59,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 9500,
-            "value": 59
+            "value": 59,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0007793129771,
+            "leaveTangent": -0.000781094539
           },
           {
             "time": 56000,
-            "value": 29.5
+            "value": 29.5,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0003767781309,
+            "leaveTangent": -0.0003704305855
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 4.8
+            "value": 4.8,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 9500,
-            "value": 4.8
+            "value": 4.8,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00005947357931,
+            "leaveTangent": -0.00005949159822
           },
           {
             "time": 56000,
-            "value": 2.4
+            "value": 2.4,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00001025037636,
+            "leaveTangent": -0.000003016814389
           }
         ]
       },
@@ -8706,29 +10510,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 56
+            "value": 56,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 9000,
-            "value": 56
+            "value": 56,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001932891901,
+            "leaveTangent": -0.001937391935
           },
           {
             "time": 45000,
-            "value": 33.599998
+            "value": 33.599998,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001229408226,
+            "leaveTangent": -0.0001512905583
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 5.5
+            "value": 5.5,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 9000,
-            "value": 5.5
+            "value": 5.5,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0001822840859,
+            "leaveTangent": -0.0001823426428
           },
           {
             "time": 45000,
-            "value": 3.3
+            "value": 3.3,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": 0.000001374542876,
+            "leaveTangent": -0.00001854866241
           }
         ]
       },
@@ -8802,29 +10630,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 70
+            "value": 70,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 9000,
-            "value": 70
+            "value": 70,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002835293068,
+            "leaveTangent": -0.002836488653
           },
           {
             "time": 40000,
-            "value": 28
+            "value": 28,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0007396575529,
+            "leaveTangent": -0.0007313785027
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 2.7
+            "value": 2.7,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 9000,
-            "value": 2.7
+            "value": 2.7,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00009842924919,
+            "leaveTangent": -0.00009830809722
           },
           {
             "time": 40000,
-            "value": 1.08
+            "value": 1.08,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00000486756835,
+            "leaveTangent": -0.000003028924311
           }
         ]
       },
@@ -8911,29 +10763,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 67
+            "value": 67,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 10000,
-            "value": 67
+            "value": 67,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002835293068,
+            "leaveTangent": -0.002836488653
           },
           {
             "time": 44000,
-            "value": 30.15
+            "value": 30.15,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0004246378085,
+            "leaveTangent": -0.0004200235999
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 3.5
+            "value": 3.5,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 10000,
-            "value": 3.5
+            "value": 3.5,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00008166783664,
+            "leaveTangent": -0.00008170489309
           },
           {
             "time": 44000,
-            "value": 1.575
+            "value": 1.575,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00002073902579,
+            "leaveTangent": -0.00002078942634
           }
         ]
       },
@@ -9020,29 +10896,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 61
+            "value": 61,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 10000,
-            "value": 61
+            "value": 61,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.002224721247,
+            "leaveTangent": -0.002233653795
           },
           {
             "time": 44000,
-            "value": 27.450001
+            "value": 27.450001,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00018914674,
+            "leaveTangent": -0.0001733222016
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 4.3
+            "value": 4.3,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 10000,
-            "value": 4.3
+            "value": 4.3,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000145624188,
+            "leaveTangent": -0.0001457798062
           },
           {
             "time": 44000,
-            "value": 1.935
+            "value": 1.935,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00002073902579,
+            "leaveTangent": -0.00002078942634
           }
         ]
       },
@@ -9129,29 +11029,53 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 73
+            "value": 73,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": -0.000006239394679,
+            "leaveTangent": 0
           },
           {
             "time": 10000,
-            "value": 73
+            "value": 73,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.003005626611,
+            "leaveTangent": -0.003007200547
           },
           {
             "time": 42000,
-            "value": 25.549999
+            "value": 25.549999,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0006087793154,
+            "leaveTangent": -0.0006030543591
           }
         ],
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 1.6
+            "value": 1.6,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           },
           {
             "time": 10000,
-            "value": 1.6
+            "value": 1.6,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00002376377779,
+            "leaveTangent": -0.00002380350998
           },
           {
             "time": 42000,
-            "value": 0.56
+            "value": 0.56,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
           }
         ]
       },
