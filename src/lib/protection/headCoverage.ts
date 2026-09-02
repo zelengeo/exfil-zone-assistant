@@ -68,6 +68,12 @@ export interface HeadCoverage {
     gear: WornSet;
     /** Share of the whole head that is protected, 0–1. */
     total: number;
+    /**
+     * That share split by the piece doing the stopping, so a legend can name what each class is
+     * worth. They sum to `total`: the two never stack (§14.3).
+     */
+    byHelmet: number;
+    byMask: number;
     zones: HeadZoneCoverage[];
     regions: WornRegion[];
     /** Nothing worn authors any geometry — a night-vision device, or a picker left empty. */
@@ -132,6 +138,8 @@ export function headCoverage(
     const helmetHits = new Map<string, number>();
     const maskHits = new Map<string, number>();
     let protectedCount = 0;
+    let helmetCount = 0;
+    let maskCount = 0;
 
     for (let i = 0; i < points.length; i++) {
         const sample = protectionAt(points[i].point, gear);
@@ -140,12 +148,16 @@ export function headCoverage(
         zoneHits.set(zones[i], (zoneHits.get(zones[i]) ?? 0) + 1);
         const owner = sample.by === 'mask' ? maskHits : helmetHits;
         owner.set(zones[i], (owner.get(zones[i]) ?? 0) + 1);
+        if (sample.by === 'mask') maskCount += 1;
+        else helmetCount += 1;
     }
 
     return {
         head,
         gear,
         total: protectedCount / points.length,
+        byHelmet: helmetCount / points.length,
+        byMask: maskCount / points.length,
         zones: HEAD_ZONE_NAMES.map((name): HeadZoneCoverage => {
             const total = zoneTotals.get(name) ?? 0;
             return {

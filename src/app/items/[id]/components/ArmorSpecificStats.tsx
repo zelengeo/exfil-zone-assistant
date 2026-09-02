@@ -10,6 +10,7 @@ import BallisticCurveChart, {CURVE_COLOR} from "@/app/items/components/Ballistic
 import {isBodyArmor, isHeadProtection, isHelmet} from "@/app/combat-sim/utils/types";
 import BodyCoveragePanel from "@/components/protection/BodyCoveragePanel";
 import HeadCoveragePanel from "@/components/protection/HeadCoveragePanel";
+import {armorClassLabel} from "@/lib/protection/armorClassScale";
 import StatLine, {StatGrid, StatPanel} from "./StatLine";
 
 
@@ -69,21 +70,16 @@ function soundDampening(soundMix: string | undefined): string {
  * against a headline of 0 - so reading a span off it would print stale numbers as a fact.
  */
 function armorClass(item: Armor): string {
-    const headline = formatClass(item.stats.armorClass);
+    const headline = armorClassLabel(item.stats.armorClass);
     const zones = isBodyArmor(item) ? item.stats.protectiveData : undefined;
     if (!zones?.length) return headline;
 
     const values = [...new Set(zones.map(zone => zone.armorClass))].sort((a, b) => a - b);
     const span = values.length === 1
-        ? formatClass(values[0])
-        : `${formatClass(values[0])}–${formatClass(values[values.length - 1])}`;
+        ? armorClassLabel(values[0])
+        : `${armorClassLabel(values[0])}–${armorClassLabel(values[values.length - 1])}`;
 
     return span === headline ? headline : `${headline} (${span})`;
-}
-
-/** `0.3` on the TSh-4M is real; `4.0` on everything else is noise. */
-function formatClass(value: number): string {
-    return Number.isInteger(value) ? String(value) : String(Number(value.toFixed(2)));
 }
 
 export default function ArmorSpecificStats({item}: { item: Armor }) {

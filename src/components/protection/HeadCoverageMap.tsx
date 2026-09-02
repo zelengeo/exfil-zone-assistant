@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { RAD, headSurface, protectionAt } from '@/lib/protection/headModel';
+import { armorClassColor } from '@/lib/protection/armorClassScale';
 import type { HeadCoverage } from '@/lib/protection/headCoverage';
 import { HEAD_COLORS, REGION_COLORS, type HeadViewMode } from './HeadViewer';
 
@@ -14,7 +15,6 @@ import { HEAD_COLORS, REGION_COLORS, type HeadViewMode } from './HeadViewer';
  * defined in, which is why the zone grid can be drawn straight onto it.
  */
 
-const PROTECTED = HEAD_COLORS.protected;
 const EXPOSED = HEAD_COLORS.exposed;
 const REVERSE = HEAD_COLORS.reverse;
 const BARE = HEAD_COLORS.bare;
@@ -58,11 +58,17 @@ export default function HeadCoverageMap({
 
         const image = ctx.createImageData(PLOT.w, PLOT.h);
         const px = image.data;
-        const protectedRgb = hexToRgb(PROTECTED);
         const exposedRgb = hexToRgb(EXPOSED);
         const bareRgb = hexToRgb(BARE);
         const reverseRgb = hexToRgb(REVERSE);
         const palette = REGION_COLORS.map(hexToRgb);
+
+        // The same class tones the orbiting view uses. Two pictures of one thing must not disagree
+        // about what colour it is.
+        const tone = {
+            helmet: hexToRgb(armorClassColor(coverage.gear.helmet?.armorClass)),
+            mask: hexToRgb(armorClassColor(coverage.gear.mask?.armorClass)),
+        };
 
         for (let j = 0; j < PLOT.h; j++) {
             const pitch = 90 - (180 * (j + 0.5)) / PLOT.h;
@@ -78,7 +84,7 @@ export default function HeadCoverageMap({
                 const sample = protectionAt(point, coverage.gear);
 
                 let col: [number, number, number];
-                if (mode === 'coverage') col = sample.protected ? protectedRgb : exposedRgb;
+                if (mode === 'coverage') col = sample.protected && sample.by ? tone[sample.by] : exposedRgb;
                 else if (sample.reverse) col = reverseRgb;
                 else if (sample.hit >= 0) col = palette[sample.hit % palette.length];
                 else col = bareRgb;

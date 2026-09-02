@@ -6,6 +6,7 @@ import type { FaceShield, Helmet, Item, NightVision } from '@/types/items';
 import { isFaceShield, isHelmet, isNightVision } from '@/app/combat-sim/utils/types';
 import { getItemsByCategory } from '@/services/ItemService';
 import { headCoverage } from '@/lib/protection/headCoverage';
+import { armorClassColor, armorClassLabel } from '@/lib/protection/armorClassScale';
 import { useBodyModel } from '@/hooks/useBodyModel';
 import HeadViewer, { HEAD_COLORS, regionColor, type HeadViewMode } from './HeadViewer';
 import HeadCoverageMap from './HeadCoverageMap';
@@ -168,9 +169,29 @@ export default function HeadCoveragePanel({ item, className }: HeadCoveragePanel
     }
 
     const percent = Math.round(coverage.total * 100);
+
+    /**
+     * Coverage mode is keyed by class rather than by a single "protected", because with a shield on
+     * there are two of them and the difference is the point: the M1SCh visor rates a class above the
+     * Maska it clips to. The share beside each is what that class is actually worth on this head.
+     */
+    const worn: LegendEntry[] = ([
+        ['helmet', coverage.gear.helmet, coverage.byHelmet, 'helmet'],
+        ['shield', coverage.gear.mask, coverage.byMask, 'face shield'],
+    ] as const)
+        .filter(([, piece, share]) => piece && share > 0.001)
+        .map(([key, piece, share, noun]): LegendEntry => ({
+            key,
+            colour: armorClassColor(piece?.armorClass),
+            label: piece?.armorClass === null || piece?.armorClass === undefined
+                ? `Unrated — ${noun}`
+                : `Class ${armorClassLabel(piece.armorClass)} — ${noun}`,
+            value: `${Math.round(share * 100)}%`,
+        }));
+
     const legend: LegendEntry[] = mode === 'coverage'
         ? [
-            { key: 'protected', colour: HEAD_COLORS.protected, label: 'Protected', value: `${percent}%` },
+            ...worn,
             { key: 'exposed', colour: HEAD_COLORS.exposed, label: 'Exposed', value: `${100 - percent}%` },
         ]
         : [
@@ -370,11 +391,13 @@ export default function HeadCoveragePanel({ item, className }: HeadCoveragePanel
             <div className="space-y-2 text-[11px] leading-relaxed text-ink-600">
                 <p>
                     A helmet has exactly <span className="text-ink-400">one</span> armour class for the
-                    whole head; the geometry decides only <span className="text-ink-400">whether</span> it
-                    applies to a hit. A helmet&apos;s regions are openings in its shell. A face
+                    whole head; the geometry decides only <span className="text-ink-400">whether</span>{' '}
+                    it applies to a hit. A helmet&apos;s regions are openings in its shell. A face
                     shield&apos;s are the shell, and its dashed regions are holes cut in that — the M1sch
                     visor&apos;s vision slit is one. Figures are shares of the head hitbox&apos;s surface,
-                    measured by running the game&apos;s own test over it.
+                    measured by running the game&apos;s own test over it. Colour is the class of whatever
+                    stops a hit there, on the same ladder the item cards use, and the class is written on
+                    the head so it never rests on the colour alone.
                 </p>
 
                 {coverage.overridden && (

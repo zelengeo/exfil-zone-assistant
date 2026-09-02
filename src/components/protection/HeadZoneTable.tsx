@@ -1,6 +1,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import type { HeadCoverage, HeadZoneCoverage } from '@/lib/protection/headCoverage';
+import { armorClassColor, armorClassLabel } from '@/lib/protection/armorClassScale';
 import type { HeadZoneName } from '@/lib/protection/headModel';
 
 /**
@@ -24,12 +25,26 @@ const ZONE_LABELS: Record<HeadZoneName, string> = {
     other: 'Elsewhere',
 };
 
-/** `0.3` on the TSh-4M is real data; `4.0` on everything else is noise. */
-function formatClass(value: number): string {
-    return Number.isInteger(value) ? String(value) : String(Number(value.toFixed(2)));
-}
+const COLUMNS = 'grid grid-cols-[minmax(0,1fr)_4.5rem_4rem] gap-x-3';
 
-const COLUMNS = 'grid grid-cols-[minmax(0,1fr)_3.5rem_4rem] gap-x-3';
+/** The figure, with the tone it is drawn in on the head beside it. */
+function ClassCell({ classes }: { classes: number[] }) {
+    if (!classes.length) return <span className="font-mono tabular text-xs text-right text-ink-700">—</span>;
+    return (
+        <span className="flex items-center justify-end gap-1">
+            {classes.map((value) => (
+                <span key={value} className="flex items-center gap-1">
+                    <span
+                        className="w-2 h-2 shrink-0"
+                        style={{ backgroundColor: armorClassColor(value) }}
+                        aria-hidden="true"
+                    />
+                    <span className="font-mono tabular text-xs text-ink-100">{armorClassLabel(value)}</span>
+                </span>
+            ))}
+        </span>
+    );
+}
 
 export interface HeadZoneTableProps {
     coverage: HeadCoverage;
@@ -94,14 +109,7 @@ export default function HeadZoneTable({ coverage, className }: HeadZoneTableProp
                                     />
                                 </span>
                             </span>
-                            <span
-                                className={cn(
-                                    'font-mono tabular text-xs text-right',
-                                    any ? 'text-ink-100' : 'text-ink-700',
-                                )}
-                            >
-                                {classes.length ? classes.map(formatClass).join(' / ') : '—'}
-                            </span>
+                            <ClassCell classes={classes} />
                             <span
                                 className={cn(
                                     'font-mono tabular text-xs text-right',
@@ -117,9 +125,7 @@ export default function HeadZoneTable({ coverage, className }: HeadZoneTableProp
 
             <div className={cn(COLUMNS, 'items-baseline px-2 pt-2 mt-1 border-t border-line-800')}>
                 <span className="eyebrow">Whole head</span>
-                <span className="font-mono tabular text-sm text-right text-ink-hi">
-                    {overall.length ? overall.map(formatClass).join(' / ') : '—'}
-                </span>
+                <ClassCell classes={overall} />
                 <span className="font-mono tabular text-sm text-right text-ink-hi">
                     {Math.round(coverage.total * 100)}%
                 </span>

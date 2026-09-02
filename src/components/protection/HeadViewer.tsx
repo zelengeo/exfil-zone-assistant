@@ -13,6 +13,7 @@ import {
     type PreparedRegion,
     type WornSet,
 } from '@/lib/protection/headModel';
+import { armorClassColor, armorClassLabel } from '@/lib/protection/armorClassScale';
 import type { HeadCoverage } from '@/lib/protection/headCoverage';
 
 /**
@@ -53,16 +54,23 @@ export interface HeadViewerProps {
  * The palette, exported because three things have to agree on it — the raytraced head, the unrolled
  * map beside it and the legend that names them. A colour defined twice is a colour that drifts.
  *
- * Protected reads as the covered tone `BodyViewer` already uses; a hole is a warning, not a shade.
+ * Protection itself is no longer in here: a covered pixel takes its colour from `armorClassScale`,
+ * the same ladder the body viewer and the cards use, so that a class is one colour wherever it is
+ * drawn.
+ *
+ * `exposed` used to be `warn` — a hole is a warning, not a shade. It cannot be any more: the class
+ * ladder now spans grey, green, blue, violet, amber and red, and `warn` is within a hair of class
+ * 5's amber, so a Maska rendered as one flat mass with two identical swatches in its key. Since
+ * every strong hue collides with some rung, exposure is encoded by *not* being a ladder colour —
+ * bare, dark and desaturated against six saturated ones. The picture reads "lit means armoured",
+ * which is the question anyway.
  */
 export const HEAD_COLORS = {
-    protected: '#A9BAC6', // ink-400
-    exposed: '#FFB020', // warn
+    exposed: '#39454F', // bare skin — deliberately not `warn`; see above
     bare: '#26313C', // steel-500 — outside every region, in region mode
     reverse: '#ECF2F7', // ink-100
 } as const;
 
-const PROTECTED = HEAD_COLORS.protected;
 const EXPOSED = HEAD_COLORS.exposed;
 const BARE = HEAD_COLORS.bare;
 const REVERSE = HEAD_COLORS.reverse;
@@ -305,6 +313,7 @@ function paintHead(
     frame: CameraFrame,
     gear: WornSet,
     mode: HeadViewMode,
+    marks: ClassMark[],
 ): DepthBuffer {
     const size = frame.size;
     const image = ctx.createImageData(size, size);
@@ -312,11 +321,23 @@ function paintHead(
     const buffer: DepthBuffer = { data: new Float32Array(size * size).fill(-Infinity), size };
 
     const bg = hexToRgb(BACKGROUND);
-    const protectedRgb = hexToRgb(PROTECTED);
     const exposedRgb = hexToRgb(EXPOSED);
     const bareRgb = hexToRgb(BARE);
     const reverseRgb = hexToRgb(REVERSE);
     const palette = REGION_COLORS.map(hexToRgb);
+
+    // One tone per worn piece, by its class. A helmet and the shield filling its holes routinely
+    // rate two steps apart, and that difference is the whole reason to look at a pairing.
+    const tone = {
+        helmet: hexToRgb(armorClassColor(gear.helmet?.armorClass)),
+        mask: hexToRgb(armorClassColor(gear.mask?.armorClass)),
+    };
+    // Running centroid of each piece's visible area, so its class can be written where it applies
+    // rather than only in the key.
+    const centroid = {
+        helmet: { x: 0, y: 0, n: 0 },
+        mask: { x: 0, y: 0, n: 0 },
+    };
 
     const light = norm([
         frame.ca[0] + 0.42 * frame.up[0] - 0.34 * frame.right[0],
@@ -353,7 +374,17 @@ function paintHead(
             const sample = protectionAt(hit.point, gear);
 
             let col: [number, number, number];
-            if (mode === 'coverage') col = sample.protected ? protectedRgb : exposedRgb;
+            if (mode === 'coverage') {
+                if (sample.protected && sample.by) {
+                    col = tone[sample.by];
+                    const at = centroid[sample.by];
+                    at.x += x;
+                    at.y += y;
+                    at.n += 1;
+                } else {
+                    col = exposedRgb;
+                }
+            }
             else if (sample.reverse) col = reverseRgb;
             else if (sample.hit >= 0) col = palette[sample.hit % palette.length];
             else col = bareRgb;
@@ -368,7 +399,61 @@ function paintHead(
         }
     }
     ctx.putImageData(image, 0, 0);
+
+    // A label only where the piece owns enough of the silhouette to carry one, and only where its
+    // own centre of area is actually on it — a helmet seen from the front is a horseshoe around the
+    // visor, and its centroid lands in the middle of the visor.
+    for (const owner of ['helmet', 'mask'] as const) {
+        const piece = gear[owner];
+        const at = centroid[owner];
+        if (!piece || piece.armorClass === null || at.n < size * size * 0.012) continue;
+        const cx = Math.round(at.x / at.n);
+        const cy = Math.round(at.y / at.n);
+        const hit = headRay(head, [
+            head.centre[0] + ((cx + 0.5 - size / 2) / frame.scale) * frame.right[0]
+                + ((size / 2 - cy - 0.5) / frame.scale) * frame.up[0] + back * frame.ca[0],
+            head.centre[1] + ((cx + 0.5 - size / 2) / frame.scale) * frame.right[1]
+                + ((size / 2 - cy - 0.5) / frame.scale) * frame.up[1] + back * frame.ca[1],
+            head.centre[2] + ((cx + 0.5 - size / 2) / frame.scale) * frame.right[2]
+                + ((size / 2 - cy - 0.5) / frame.scale) * frame.up[2] + back * frame.ca[2],
+        ], dir);
+        if (!hit) continue;
+        const sample = protectionAt(hit.point, gear);
+        if (!sample.protected || sample.by !== owner) continue;
+        marks.push({
+            x: cx,
+            y: cy,
+            text: `CLASS ${armorClassLabel(piece.armorClass)}`,
+            colour: armorClassColor(piece.armorClass),
+        });
+    }
+
     return buffer;
+}
+
+/** A class figure to write on the head, once the raytrace knows where that class ended up. */
+interface ClassMark {
+    x: number;
+    y: number;
+    text: string;
+    colour: string;
+}
+
+function drawClassMarks(ctx: CanvasRenderingContext2D, marks: ClassMark[]): void {
+    if (!marks.length) return;
+    ctx.save();
+    ctx.font = "600 11px 'IBM Plex Mono', monospace";
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.lineWidth = 3.5;
+    ctx.lineJoin = 'round';
+    ctx.strokeStyle = BACKGROUND;
+    for (const mark of marks) {
+        ctx.strokeText(mark.text, mark.x, mark.y);
+        ctx.fillStyle = mark.colour;
+        ctx.fillText(mark.text, mark.x, mark.y);
+    }
+    ctx.restore();
 }
 
 export default function HeadViewer({
@@ -413,7 +498,8 @@ export default function HeadViewer({
 
         const head = coverage.head;
         const frame = cameraFrame(azimuth, elevation, head, size);
-        const buffer = paintHead(ctx, head, frame, coverage.gear, mode);
+        const marks: ClassMark[] = [];
+        const buffer = paintHead(ctx, head, frame, coverage.gear, mode, marks);
 
         if (showWireframe) {
             for (const region of wornRegions(coverage.gear)) {
@@ -440,6 +526,8 @@ export default function HeadViewer({
         }
 
         drawCardinals(ctx, head, frame);
+        // Last, over the wireframe: the figure has to survive whatever is drawn on the head.
+        if (mode === 'coverage') drawClassMarks(ctx, marks);
     }, [aperture, azimuth, coverage, dragging, elevation, highlight, mode, showWireframe]);
 
     return (

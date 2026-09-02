@@ -1,6 +1,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import type { Coverage } from '@/lib/protection/coverage';
+import { armorClassColor, armorClassLabel, UNCOVERED_COLOR } from '@/lib/protection/armorClassScale';
 
 /**
  * The numbers behind the picture, one row per collision body the piece actually covers.
@@ -67,7 +68,7 @@ export default function ZoneTable({ coverage, selected, onSelect, onHover, class
 
     return (
         <div className={cn('min-w-0', className)}>
-            <div className="grid grid-cols-[minmax(0,1fr)_2.5rem_3rem_3.5rem] gap-x-3 px-2 pb-1.5 border-b border-line-900">
+            <div className="grid grid-cols-[minmax(0,1fr)_3.25rem_3rem_3.5rem] gap-x-3 px-2 pb-1.5 border-b border-line-900">
                 <span className="eyebrow">Zone</span>
                 <span className="eyebrow text-right">Class</span>
                 <span className="eyebrow text-right">Wedge</span>
@@ -93,7 +94,7 @@ export default function ZoneTable({ coverage, selected, onSelect, onHover, class
                             onMouseEnter={() => onHover?.(zone.capsule.index)}
                             onMouseLeave={() => onHover?.(null)}
                             className={cn(
-                                'grid grid-cols-[minmax(0,1fr)_2.5rem_3rem_3.5rem] gap-x-3 items-baseline px-2 py-1.5 border-l-2 transition-colors',
+                                'grid grid-cols-[minmax(0,1fr)_3.25rem_3rem_3.5rem] gap-x-3 items-baseline px-2 py-1.5 border-l-2 transition-colors',
                                 isSelected ? 'border-l-ember bg-steel-800' : 'border-l-transparent',
                                 onSelect && 'cursor-pointer hover:bg-steel-800',
                             )}
@@ -107,8 +108,17 @@ export default function ZoneTable({ coverage, selected, onSelect, onHover, class
                                 </span>
                             </span>
 
-                            <span className="font-mono tabular text-xs text-right text-ink-100">
-                                {zone.zone ? zone.zone.armorClass : '—'}
+                            {/* The swatch is the picture's tone for this class, so a reader can
+                                match a row to a plate without counting limbs. */}
+                            <span className="flex items-center justify-end gap-1">
+                                <span
+                                    className="w-2 h-2 shrink-0"
+                                    style={{ backgroundColor: zone.zone ? armorClassColor(zone.zone.armorClass) : UNCOVERED_COLOR }}
+                                    aria-hidden="true"
+                                />
+                                <span className="font-mono tabular text-xs text-ink-100">
+                                    {zone.zone ? armorClassLabel(zone.zone.armorClass) : '—'}
+                                </span>
                             </span>
 
                             <span className="font-mono tabular text-xs text-right text-ink-500">

@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import type { Armor } from '@/types/items';
 import { bodyCoverage } from '@/lib/protection/coverage';
 import { VIEW_PRESETS, type ViewName } from '@/lib/protection/project';
+import { armorClassColor, armorClassLabel } from '@/lib/protection/armorClassScale';
 import { useBodyModel } from '@/hooks/useBodyModel';
 import BodyViewer from './BodyViewer';
 import ZoneTable from './ZoneTable';
@@ -32,6 +33,13 @@ export default function BodyCoveragePanel({ armor, className }: BodyCoveragePane
     // The coverage test samples 400 points per capsule, so it is computed once per vest, never on
     // a hover or a camera move.
     const coverage = useMemo(() => (model ? bodyCoverage(model, armor) : null), [model, armor]);
+
+    // Ascending, so the key reads as the ladder it is.
+    const classes = useMemo(
+        () => [...new Set((armor.stats.protectiveData ?? []).map((zone) => zone.armorClass))]
+            .sort((a, b) => a - b),
+        [armor],
+    );
 
     if (error) {
         return (
@@ -82,7 +90,28 @@ export default function BodyCoveragePanel({ armor, className }: BodyCoveragePane
                         </button>
                     ))}
                 </div>
-                <p className="micro-label text-ink-700 mt-2">Drag to orbit · {VIEW_PRESETS[view].azimuth}°</p>
+                {/* The key. Only the classes this vest actually authors — a full 1-to-6 ramp would
+                    be five swatches of theory for one of fact. */}
+                {classes.length > 0 && (
+                    <ul className="flex flex-wrap gap-x-3 gap-y-1 mt-2" aria-label="Armor class key">
+                        {classes.map((value) => (
+                            <li key={value} className="flex items-center gap-1.5">
+                                <span
+                                    className="w-2.5 h-2.5 shrink-0"
+                                    style={{ backgroundColor: armorClassColor(value) }}
+                                    aria-hidden="true"
+                                />
+                                <span className="micro-label text-ink-500">
+                                    Class {armorClassLabel(value)}
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+
+                <p className="micro-label text-ink-700 mt-2">
+                    Drag to orbit · {VIEW_PRESETS[view].azimuth}° · solid fill is more of the bone covered
+                </p>
             </div>
 
             <ZoneTable coverage={coverage} selected={selected} onSelect={setSelected} />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { coveragePips, hasAnyCoverage, type Pip } from '@/lib/protection/summary';
+import { armorClassColor, UNCOVERED_COLOR } from '@/lib/protection/armorClassScale';
 import type { ProtectiveZone } from '@/types/items';
 
 /**
@@ -11,18 +12,19 @@ import type { ProtectiveZone } from '@/types/items';
  * geometry waits for them on the detail page.
  */
 
-/** Armour class to fill. The ramp is monochrome on purpose: class is an amount, not a category. */
-const CLASS_FILL: Record<number, string> = {
-    0: '#28323B', // track — covered by nothing
-    2: '#4C5A66',
-    3: '#5C6E7C',
-    4: '#7E909F',
-    5: '#A9BAC6',
-    6: '#ECF2F7',
-};
-
+/**
+ * Armour class to fill, on the shared ladder.
+ *
+ * This was its own monochrome ramp, on the reasoning that class is an amount rather than a
+ * category. It is an amount — but the detail page now draws the same amount in the rarity ladder's
+ * hues, and one quantity drawn two ways across two views of the same item is worse than either
+ * choice on its own. The strip is five millimetres tall and carries no figure, so it is the one
+ * surface where the colour does stand alone: it is a "which of these should I open" cue, and the
+ * page it opens states the class in writing.
+ */
 function fillFor(pip: Pip): string {
-    return CLASS_FILL[pip.armorClass] ?? (pip.armorClass > 6 ? CLASS_FILL[6] : CLASS_FILL[0]);
+    // A pip's 0 is `coveragePips` saying no zone reached this part — an absence, not a rating.
+    return pip.armorClass > 0 ? armorClassColor(pip.armorClass) : UNCOVERED_COLOR;
 }
 
 export interface CoverageStripProps {

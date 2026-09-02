@@ -4,6 +4,7 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { cn } from '@/lib/utils';
 import { dot, segment, sub, type Capsule, type Vec3 } from '@/lib/protection/bodyModel';
 import { makeProjector, VIEW_PRESETS, type Camera, type ViewName } from '@/lib/protection/project';
+import { armorClassColor, armorClassLabel } from '@/lib/protection/armorClassScale';
 import type { Coverage, ZoneCoverage } from '@/lib/protection/coverage';
 
 /**
@@ -54,15 +55,27 @@ const COLORS = {
     selected: '#FF4A24',
 } as const;
 
-/** Coverage fraction to fill. Monochrome ramp: more cover is brighter, nothing else changes. */
-function coverFill(fraction: number): string {
-    if (fraction <= 0.001) return COLORS.bareFill;
-    const alpha = 0.25 + fraction * 0.55;
-    return `rgba(169,186,198,${alpha.toFixed(3)})`;
+function hexToRgb(hex: string): [number, number, number] {
+    const v = parseInt(hex.slice(1), 16);
+    return [(v >> 16) & 255, (v >> 8) & 255, v & 255];
 }
 
-function coverStroke(fraction: number): string {
-    return fraction <= 0.001 ? COLORS.bare : '#A9BAC6';
+/**
+ * The fill: hue says how good the plate is, opacity says how much of the bone it reaches.
+ *
+ * Two channels for two different questions, which is what the picture is actually asked. The ramp
+ * used to be monochrome for both, so a class 6 chest plate covering 55% and a class 3 shoulder
+ * covering 100% came out looking like the shoulder was the better armour.
+ */
+function coverFill(zone: ZoneCoverage): string {
+    if (zone.fraction <= 0.001) return COLORS.bareFill;
+    const [r, g, b] = hexToRgb(armorClassColor(zone.zone?.armorClass));
+    const alpha = 0.3 + zone.fraction * 0.5;
+    return `rgba(${r},${g},${b},${alpha.toFixed(3)})`;
+}
+
+function coverStroke(zone: ZoneCoverage): string {
+    return zone.fraction <= 0.001 ? COLORS.bare : armorClassColor(zone.zone?.armorClass);
 }
 
 /**
@@ -204,6 +217,10 @@ export default function BodyViewer({
             return db - da;
         });
 
+        // Text is collected here and drawn once every capsule is down, so a nearer limb cannot
+        // overdraw the figure on the chest behind it.
+        const labels: Array<{ x: number; y: number; text: string; colour: string }> = [];
+
         for (const zone of ordered) {
             const { a, b, r } = capsuleOutline(zone.capsule, projector.project, projector.scale);
             if (a.depth <= 0 && b.depth <= 0) continue;
@@ -217,7 +234,7 @@ export default function BodyViewer({
             ctx.lineTo(b.x, b.y);
             ctx.lineWidth = r * 2;
             ctx.lineCap = 'round';
-            ctx.strokeStyle = custom?.color ?? coverFill(zone.fraction);
+            ctx.strokeStyle = custom?.color ?? coverFill(zone);
             ctx.stroke();
 
             // Outline on top, so the shape reads even where two capsules meet.
@@ -225,7 +242,7 @@ export default function BodyViewer({
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
             ctx.lineWidth = 1.5;
-            ctx.strokeStyle = isSelected ? COLORS.selected : coverStroke(zone.fraction);
+            ctx.strokeStyle = isSelected ? COLORS.selected : coverStroke(zone);
             ctx.stroke();
 
             if (isSelected) {
@@ -238,11 +255,31 @@ export default function BodyViewer({
                 ctx.stroke();
             }
 
-            if (custom?.badge) {
-                ctx.font = '10px "IBM Plex Mono", monospace';
-                ctx.fillStyle = '#ECF2F7';
-                ctx.fillText(custom.badge, (a.x + b.x) / 2 + r + 4, (a.y + b.y) / 2);
+            // The class, on the plate itself. The hues are the rarity ladder, which is categorical
+            // — non-adjacent tiers do not separate under CVD — so the figure is the identity
+            // channel and the colour only the fast one. A caller's badge outranks it.
+            const badge = custom?.badge
+                ?? (zone.zone && zone.fraction > 0.001 ? armorClassLabel(zone.zone.armorClass) : null);
+            if (badge) {
+                labels.push({
+                    x: (a.x + b.x) / 2,
+                    y: (a.y + b.y) / 2,
+                    text: badge,
+                    colour: custom?.badge ? '#ECF2F7' : armorClassColor(zone.zone?.armorClass),
+                });
             }
+        }
+
+        ctx.font = "600 11px 'IBM Plex Mono', monospace";
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = '#0E141A';
+        ctx.lineJoin = 'round';
+        for (const label of labels) {
+            ctx.strokeText(label.text, label.x, label.y);
+            ctx.fillStyle = label.colour;
+            ctx.fillText(label.text, label.x, label.y);
         }
     }, [camera, coverage, overlay, selected, size]);
 
