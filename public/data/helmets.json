@@ -52,6 +52,14 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [
+        "nvg-anpvs31",
+        "mask-galvorgoggles"
+      ],
+      "attachExclusive": [
+        "nvg-anpvs31",
+        "mask-galvorgoggles"
+      ],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -244,6 +252,14 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [
+        "mask-ach-faceshield",
+        "nvg-anpvs31"
+      ],
+      "attachExclusive": [
+        "mask-ach-faceshield",
+        "nvg-anpvs31"
+      ],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -372,10 +388,7 @@
           "protectionAngle": 90
         }
       ],
-      "soundMix": "MuffledGeneral'",
-      "canAttach": [
-        "mask-ach-faceshield"
-      ]
+      "soundMix": "MuffledGeneral'"
     },
     "tips": "Excellent protection against rifle rounds. Can mount face shields for additional protection.",
     "notes": "Advanced military helmet with face shield compatibility and superior ballistic protection."
@@ -433,6 +446,14 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [
+        "mask-ach-faceshield",
+        "nvg-anpvs31"
+      ],
+      "attachExclusive": [
+        "mask-ach-faceshield",
+        "nvg-anpvs31"
+      ],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -577,10 +598,7 @@
           "protectionAngle": 90
         }
       ],
-      "soundMix": "MuffledGeneral",
-      "canAttach": [
-        "mask-ach-faceshield"
-      ]
+      "soundMix": "MuffledGeneral"
     },
     "tips": "Excellent protection against rifle rounds. Can mount face shields for additional protection.",
     "notes": "Advanced military helmet with face shield compatibility and superior ballistic protection."
@@ -623,6 +641,8 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "cubic",
@@ -744,6 +764,8 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "cubic",
@@ -865,6 +887,8 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "cubic",
@@ -986,6 +1010,8 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -1155,6 +1181,8 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "cubic",
@@ -1306,6 +1334,8 @@
       ],
       "faceWidthAngle": 30,
       "faceHeightAngle": 12,
+      "canAttach": [],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -1481,6 +1511,14 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [
+        "nvg-anpvs31",
+        "mask-galvorgoggles"
+      ],
+      "attachExclusive": [
+        "nvg-anpvs31",
+        "mask-galvorgoggles"
+      ],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -1657,6 +1695,14 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [
+        "nvg-anpvs31",
+        "mask-galvorgoggles"
+      ],
+      "attachExclusive": [
+        "nvg-anpvs31",
+        "mask-galvorgoggles"
+      ],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -1842,6 +1888,14 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [
+        "nvg-anpvs31",
+        "mask-galvorgoggles"
+      ],
+      "attachExclusive": [
+        "nvg-anpvs31",
+        "mask-galvorgoggles"
+      ],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -2028,6 +2082,14 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [
+        "nvg-anpvs31",
+        "mask-galvorgoggles"
+      ],
+      "attachExclusive": [
+        "nvg-anpvs31",
+        "mask-galvorgoggles"
+      ],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -2263,6 +2325,8 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -2438,6 +2502,10 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [
+        "mask-kiver-faceshield"
+      ],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -2572,10 +2640,7 @@
           "protectionAngle": 90
         }
       ],
-      "soundMix": "MuffledGeneral",
-      "canAttach": [
-        "mask-kiver-faceshield"
-      ]
+      "soundMix": "MuffledGeneral"
     },
     "tips": "Solid Class 3 protection with better blunt damage reduction than the 6B47. Compatible with face shields.",
     "notes": "Special forces helmet with good protection and face shield compatibility."
@@ -2618,6 +2683,11 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [
+        "mask-lh250-goggle",
+        "mask-lh250-mask"
+      ],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -2730,11 +2800,7 @@
           "protectionAngle": 90
         }
       ],
-      "soundMix": "default",
-      "canAttach": [
-        "mask-lh250-goggle",
-        "mask-lh250-mask"
-      ]
+      "soundMix": "default"
     },
     "tips": "Very light weight makes this ideal for long missions where mobility is key. Can mount specialized pilot equipment.",
     "notes": "Lightweight aviation helmet with minimal protection but excellent mobility."
@@ -2867,6 +2933,10 @@
       ],
       "faceWidthAngle": 30,
       "faceHeightAngle": 12,
+      "canAttach": [
+        "nvg-anpvs31"
+      ],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -3057,6 +3127,8 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -3236,6 +3308,10 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [
+        "mask-m1sch-faceshield"
+      ],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -3411,6 +3487,14 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [
+        "nvg-anpvs31",
+        "mask-galvorgoggles"
+      ],
+      "attachExclusive": [
+        "nvg-anpvs31",
+        "mask-galvorgoggles"
+      ],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -3582,6 +3666,11 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [
+        "nvg-anpvs31",
+        "mask-galvorgoggles"
+      ],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -3768,6 +3857,14 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 12.5,
+      "canAttach": [
+        "nvg-anpvs31",
+        "mask-galvorgoggles"
+      ],
+      "attachExclusive": [
+        "nvg-anpvs31",
+        "mask-galvorgoggles"
+      ],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -4051,6 +4148,10 @@
       ],
       "faceWidthAngle": 30,
       "faceHeightAngle": 12,
+      "canAttach": [
+        "nvg-anpvs31"
+      ],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -4235,6 +4336,8 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -4412,6 +4515,8 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "cubic",
@@ -4564,6 +4669,8 @@
       ],
       "faceWidthAngle": 30,
       "faceHeightAngle": 12,
+      "canAttach": [],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -4756,6 +4863,10 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [
+        "nvg-anpvs31"
+      ],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -4956,6 +5067,10 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [
+        "nvg-anpvs31"
+      ],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -5158,6 +5273,10 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [
+        "nvg-anpvs31"
+      ],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -5343,6 +5462,12 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [
+        "mask-ryst-faceshield",
+        "mask-rys-tfaceshield-pumpkin",
+        "mask-ryst-faceshield-bonecrusher"
+      ],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -5513,11 +5638,7 @@
           "protectionAngle": 90
         }
       ],
-      "soundMix": "MuffledGeneral",
-      "canAttach": [
-        "mask-ryst-faceshield",
-        "mask-ryst-faceshield-bonecrusher"
-      ]
+      "soundMix": "MuffledGeneral"
     },
     "tips": "The ultimate in head protection. Can stop armor-piercing rounds but the weight significantly impacts mobility and stamina.",
     "notes": "Maximum protection helmet capable of stopping high-caliber rifle rounds. Extremely heavy but nearly impenetrable."
@@ -5560,6 +5681,12 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [
+        "mask-ryst-faceshield",
+        "mask-rys-tfaceshield-pumpkin",
+        "mask-ryst-faceshield-bonecrusher"
+      ],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -5688,11 +5815,7 @@
           "protectionAngle": 90
         }
       ],
-      "soundMix": "MuffledGeneral",
-      "canAttach": [
-        "mask-ryst-faceshield",
-        "mask-ryst-faceshield-bonecrusher"
-      ]
+      "soundMix": "MuffledGeneral"
     },
     "tips": "Identical performance to the standard RYS-T but with a distinctive appearance that may make you a priority target.",
     "notes": "Maximum protection helmet with intimidating skull design. Same protection as standard RYS-T."
@@ -5735,6 +5858,12 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [
+        "mask-ryst-faceshield",
+        "mask-rys-tfaceshield-pumpkin",
+        "mask-ryst-faceshield-bonecrusher"
+      ],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -5895,6 +6024,8 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "cubic",
@@ -6146,6 +6277,10 @@
       ],
       "faceWidthAngle": 30,
       "faceHeightAngle": 12,
+      "canAttach": [
+        "nvg-anpvs31"
+      ],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -6317,6 +6452,14 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [
+        "nvg-anpvs31",
+        "mask-galvorgoggles"
+      ],
+      "attachExclusive": [
+        "nvg-anpvs31",
+        "mask-galvorgoggles"
+      ],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -6508,6 +6651,8 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -6677,6 +6822,10 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [
+        "nvg-anpvs31"
+      ],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "linear",
@@ -6874,6 +7023,8 @@
       ],
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
+      "canAttach": [],
+      "attachExclusive": [],
       "penetrationChanceCurve": [
         {
           "interpMode": "cubic",
