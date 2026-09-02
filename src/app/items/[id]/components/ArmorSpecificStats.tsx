@@ -9,6 +9,7 @@ import {Armor} from "@/types/items";
 import BallisticCurveChart, {CURVE_COLOR} from "@/app/items/components/BallisticCurveChart";
 import {isBodyArmor, isHeadProtection, isHelmet} from "@/app/combat-sim/utils/types";
 import BodyCoveragePanel from "@/components/protection/BodyCoveragePanel";
+import HeadCoveragePanel from "@/components/protection/HeadCoveragePanel";
 import StatLine, {StatGrid, StatPanel} from "./StatLine";
 
 
@@ -71,17 +72,14 @@ export default function ArmorSpecificStats({item}: { item: Armor }) {
         )}
 
         {/*
-          * Head gear protects through cone regions in the current game, and the per-bone zones
-          * above only exist where someone curated them. Say so rather than rendering an empty gap
-          * that reads as "protects nothing" - interpreting the regions is still to come.
+          * Head gear is tested by cone regions rather than by the per-bone wedge above, so it gets
+          * its own viewer. Any per-bone `protectiveData` a helmet carries was hand-approximated for
+          * the old wiki and has no counterpart in the current build - the regions are the model.
           */}
         {isHeadProtection(item) && (
-            <div className="mb-6 text-sm text-ink-500">
-                Coverage for head gear is defined by the game as
-                {' '}{item.stats.coneRegions?.length ?? 0} cone region(s) around the head rather than
-                as per-bone wedges, so the body viewer does not describe it. Drawing those regions is
-                still to come.
-            </div>
+            <StatPanel title="Coverage" className="mb-6">
+                <HeadCoveragePanel item={item}/>
+            </StatPanel>
         )}
 
         {/* Penetration curves */}
