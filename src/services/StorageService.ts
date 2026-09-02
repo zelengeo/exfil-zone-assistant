@@ -1,4 +1,4 @@
-import {UserProgress, TaskStatus, isUserProgress} from '@/types/tasks';
+import {UserProgress, TaskStatus, isUserProgress, TaskProgress, isTaskProgress} from '@/types/tasks';
 import {SavedBuild} from '@/types/gunsmith';
 import {GAME_VERSION, compareVersions} from "@/config/gameVersion";
 
@@ -20,6 +20,7 @@ export class StorageService {
     // All storage keys - centralized management
     private static STORAGE_KEYS = {
         // Game progress - cleared on wipe
+        taskProgress: 'exfilzone-tasks',
         tasks: 'exfilzone-tasks-progress',
         hideout: 'exfilzone-hideout-progress',
         hideout_focus: 'exfilzone-hideout-focus',
@@ -30,6 +31,17 @@ export class StorageService {
         cookieConsentDate: 'cookie-consent-date',
     } as const;
 
+    /**
+     * Keys nothing writes any more, removed on the next version check.
+     *
+     * Not the same idea as a wipe: these go whether or not a wipe is due, because the data behind
+     * them can no longer be read by anything.
+     */
+    private static LEGACY_KEYS = [
+        // Pre-rebuild task statuses. Superseded by `taskProgress`, and several wipes stale.
+        'exfilzone-tasks-progress',
+    ];
+
     // Keys to preserve during wipe
     private static PRESERVE_ON_WIPE = [
         // A gun build is a design the player wrote, not progress the wipe resets.
@@ -37,6 +49,35 @@ export class StorageService {
         'cookieConsent',
         'cookieConsentDate',
     ];
+
+    /* ----------------------------------------------------------------------
+     * Task progress
+     *
+     * `taskProgress` is the rebuilt tasks route's store: a record per touched task rather than a
+     * status string. It lives under its own key because the two shapes cannot share one — the old
+     * route is still mounted while the rebuild lands, and a shared key would have each route's
+     * validator reject and then overwrite the other's data on every visit.
+     *
+     * The old key is not migrated. It has been carrying statuses from several wipes ago, so
+     * `LEGACY_KEYS` removes it outright on the next version check.
+     * ------------------------------------------------------------------- */
+
+    static getTaskProgress(): TaskProgress {
+        this.checkAndHandleWipe();
+        try {
+            const data = localStorage.getItem(this.STORAGE_KEYS.taskProgress);
+            if (!data) return {tasks: {}};
+            const parsed: unknown = JSON.parse(data);
+            return isTaskProgress(parsed) ? parsed : {tasks: {}};
+        } catch {
+            return {tasks: {}};
+        }
+    }
+
+    static setTaskProgress(progress: TaskProgress): void {
+        this.checkAndHandleWipe();
+        localStorage.setItem(this.STORAGE_KEYS.taskProgress, JSON.stringify(progress));
+    }
 
     // Tasks methods
     static getTasks(): UserProgress {
@@ -135,6 +176,8 @@ export class StorageService {
     private static checkAndHandleWipe(): void {
         if (typeof window === 'undefined') return;
         if (this.hasCheckedVersion) return;
+
+        this.LEGACY_KEYS.forEach(key => localStorage.removeItem(key));
 
         const storedVersion = localStorage.getItem(this.VERSION_KEY);
         const needsWipe = !storedVersion || compareVersions(storedVersion, GAME_VERSION.lastWipe) < 0;
