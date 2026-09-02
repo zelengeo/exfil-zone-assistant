@@ -1,4 +1,5 @@
 import {Armor, Item, RARITY_CONFIG, isTaskItemSubcategory} from '@/types/items';
+import {loadDataFile} from '@/services/dataFiles';
 import {
     isAmmunition, isAttachment,
     isBandage,
@@ -39,25 +40,6 @@ const DATA_FILES = [
     'misc.json',
 ];
 
-// Import all data files statically
-// This approach works both in dev and build time
-const dataImports = {
-    'weapons.json': () => import('@/public/data/weapons.json'),
-    'ammunition.json': () => import('@/public/data/ammunition.json'),
-    'magazines.json': () => import('@/public/data/magazines.json'),
-    'attachments.json': () => import('@/public/data/attachments.json'),
-    'grenades.json': () => import('@/public/data/grenades.json'),
-    'armor.json': () => import('@/public/data/armor.json'),
-    'helmets.json': () => import('@/public/data/helmets.json'),
-    'face-shields.json': () => import('@/public/data/face-shields.json'),
-    'backpacks.json': () => import('@/public/data/backpacks.json'),
-    'holsters.json': () => import('@/public/data/holsters.json'),
-    'medical.json': () => import('@/public/data/medical.json'),
-    'provisions.json': () => import('@/public/data/provisions.json'),
-    'task-items.json': () => import('@/public/data/task-items.json'),
-    'keys.json': () => import('@/public/data/keys.json'),
-    'misc.json': () => import('@/public/data/misc.json'),
-};
 
 /**
  * Check if cache is still valid
@@ -342,89 +324,26 @@ function transformItemData(rawItem: Item): Item {
 }
 
 /**
- * Load data using Node.js fs module (for build time)
- */
-async function loadDataServerSide(): Promise<Item[]> {
-    const allItems: Item[] = [];
-
-    const importPromises = DATA_FILES.map(async (filename) => {
-        try {
-            const importFn = dataImports[filename as keyof typeof dataImports];
-            if (!importFn) {
-                console.warn(`No import function for ${filename}`);
-                return [];
-            }
-
-            const importedData = await importFn();
-            const data = importedData.default || importedData;
-
-            // Handle different file structures
-            let items: Item[] = [];
-
-            if (Array.isArray(data)) {
-                items = data as Item[];
-            }
-            return items.map(transformItemData).filter(item => item.id && item.name);
-        } catch (error) {
-            console.warn(`Error importing ${filename}:`, error);
-            return [];
-        }
-    });
-
-    const results = await Promise.all(importPromises);
-    results.forEach(items => {
-        if (Array.isArray(items)) {
-            allItems.push(...items);
-        }
-    });
-
-    return allItems;
-}
-
-/**
- * Core data fetching logic
+ * Read every data file and fold the rows into one list.
+ *
+ * A file that fails to load is warned about and skipped rather than failing the whole database:
+ * losing one category is recoverable, losing all of them leaves the page with nothing to render.
  */
 async function fetchDataInternal(): Promise<Item[]> {
-    const allItems: Item[] = [];
-
-    // Check if we're in a browser environment
-    if (typeof window === 'undefined') {
-        // Server-side: use fs to read files
-        return await loadDataServerSide();
-    }
-
-    // Client-side: use fetch
-    const fetchPromises = DATA_FILES.map(async (filename) => {
+    const perFile = await Promise.all(DATA_FILES.map(async (filename): Promise<Item[]> => {
         try {
-            const response = await fetch(`/data/${filename}`);
-            if (!response.ok) {
-                console.warn(`Failed to fetch ${filename}: ${response.statusText}`);
-                return [];
-            }
-
-            const data = await response.json();
-
-            let items: Item[] = [];
-
-            if (Array.isArray(data)) {
-                items = data;
-            }
-
-            return items.map(transformItemData).filter(item => item.id && item.name);
+            const data = await loadDataFile<unknown>(filename);
+            if (!Array.isArray(data)) return [];
+            return (data as Item[])
+                .map(transformItemData)
+                .filter(item => item.id && item.name);
         } catch (error) {
-            console.warn(`Error fetching ${filename}:`, error);
+            console.warn(`Error loading ${filename}:`, error);
             return [];
         }
-    });
+    }));
 
-    const results = await Promise.all(fetchPromises);
-    results.forEach(items => {
-        if (Array.isArray(items)) {
-            allItems.push(...items);
-        }
-    });
-
-    return allItems;
+    return perFile.flat();
 }
 
 /**

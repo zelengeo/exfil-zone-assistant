@@ -240,23 +240,21 @@ export class ProgressService {
 ## Data Source Patterns
 
 ### Static JSON Files
-```typescript
-// For build-time data
-const dataImports = {
-  'weapons.json': () => import('@/public/data/weapons.json'),
-  'armor.json': () => import('@/public/data/armor.json'),
-};
 
-async function loadStaticData(fileName: string) {
-  const importer = dataImports[fileName];
-  if (!importer) {
-    throw new Error(`Unknown data file: ${fileName}`);
-  }
-  
-  const module = await importer();
-  return module.default;
-}
+Everything in `public/data` goes through `loadDataFile`. Do **not** `import()` these files: the
+bundler inlines the bytes into a JS chunk, so the database ships twice - once as a static asset the
+browser can cache, once as JavaScript it cannot.
+
+```typescript
+import { loadDataFile } from '@/services/dataFiles';
+
+const weapons = await loadDataFile<Weapon[]>('weapons.json');
+const armor = await loadDataFile<Armor[]>('armor.json');
 ```
+
+The loader fetches `/data/<file>` in the browser and reads the same file off disk on the server, so
+callers need not care which side they are on. New files under `public/data` are covered by the
+`outputFileTracingIncludes` entry in `next.config.ts` automatically.
 
 ### API Integration (Future)
 ```typescript

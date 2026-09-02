@@ -93,12 +93,14 @@ export const useProgress = () => useContext(ProgressContext);
 
 ### Static Data
 ```javascript
-// Import JSON data directly
-import weaponsData from '@/public/data/weapons.json';
+// Read public/data through the shared loader - never `import` these files.
+// Importing inlines the JSON into a client chunk, shipping the database twice.
+import { loadDataFile } from '@/services/dataFiles';
+const weapons = await loadDataFile<Weapon[]>('weapons.json');
 
-// Transform in service layer
-import { ItemService } from '@/services/ItemService';
-const items = await ItemService.getAllItems();
+// Or go through the service layer, which already does
+import { fetchItemsData } from '@/services/ItemService';
+const { items } = await fetchItemsData();
 ```
 
 ### Dynamic Data

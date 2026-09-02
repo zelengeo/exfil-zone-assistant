@@ -5935,27 +5935,43 @@
       "antiPenetrationDurabilityScalarCurve": [
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
-          "time": 0.5,
+          "tangentMode": "auto",
+          "time": 0,
           "value": 1,
-          "arriveTangent": -0.057609,
-          "leaveTangent": -0.057609
+          "arriveTangent": 0,
+          "leaveTangent": 0
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.798511,
-          "value": 0.894253,
-          "arriveTangent": -1.307344,
-          "leaveTangent": -1.307348
+          "time": 0.2,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0.5,
+          "value": 0.95,
+          "arriveTangent": -0.4,
+          "leaveTangent": -0.4
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.7,
+          "value": 0.8,
+          "arriveTangent": -1.255167,
+          "leaveTangent": -1.255167
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 1,
-          "value": 0,
-          "arriveTangent": -10.323797,
-          "leaveTangent": -10.323785
+          "value": 0.33,
+          "arriveTangent": -0.001907,
+          "leaveTangent": -0.001907
         }
       ],
       "basePrice": 44000,

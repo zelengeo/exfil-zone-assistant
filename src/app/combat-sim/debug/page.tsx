@@ -8,7 +8,7 @@ import {DeviationValue, SingleShotTestCase, TestRunResult, TestSummary} from '..
 import {fetchItemsData} from '@/services/ItemService';
 import {isWeapon, isAmmunition, isArmor} from '../utils/types';
 import {calculateShotDamage} from '../utils/damage-calculations';
-import testData from '@/../public/data/combat-sim-test-data.json';
+import {loadDataFile} from '@/services/dataFiles';
 import {getRarityColorClass, Item} from "@/types/items";
 import "../utils/combat-test-helper"
 
@@ -71,7 +71,12 @@ export default function CombatSimDebugPage() {
     useEffect(() => {
         const loadData = async () => {
             try {
-                const {items} = await fetchItemsData();
+                const [{items}, testData] = await Promise.all([
+                    fetchItemsData(),
+                    // Fixtures for this page only - fetched, so the 55 KB does not ride along in
+                    // the bundle for every visitor who never opens the debug view.
+                    loadDataFile<{singleShotTestCases: SingleShotTestCase[]}>('combat-sim-test-data.json'),
+                ]);
                 setItems(items);
                 setTestCases(testData.singleShotTestCases);
             } catch (error) {

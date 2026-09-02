@@ -120,10 +120,10 @@ export const guidesConfig: GuideMetadata[] = [
     {
         slug: 'armor-penetration-guide',
         title: 'Penetration Mechanics Explained',
-        description: 'Master the complex mechanics of armor penetration, damage reduction, and when to aim for armor vs limbs',
+        description: 'How penetration is rolled, what damage survives it, how wear changes the odds, and the large parts of a body armor never covered',
         tags: ['combat', 'equipment', 'strategy'],
         difficulty: 'advanced',
-        readTime: '8 min',
+        readTime: '10 min',
         author: 'pogapwnz',
         publishedAt: '2025-06-10',
         featured: true,

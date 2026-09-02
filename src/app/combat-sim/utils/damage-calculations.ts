@@ -1,6 +1,27 @@
 /**
- * Effective Damage Calculation for Combat Simulator
- * Handles armor durability, penetration mechanics, and blunt damage
+ * Effective damage for the combat simulator: armour durability, penetration and blunt damage.
+ *
+ * This follows the decompiled model in the extraction repo's docs/DAMAGE_MODEL.md §3-§7 rather
+ * than a fit to measurements - `ProcessDamageReceived` and `GetDamagePostGearProtection` are read
+ * out of the shipped binary. The order the game works in, and the order below:
+ *
+ *   damage   = ammo damage at range                     (DamageOverDistance)
+ *   base     = damage x body-part multiplier x firePower
+ *   pen      = ammo penetration at range                (PenetrationPowerOverDistance)
+ *   armour   = armorClass x effectiveness(1 - dur/max)
+ *   delta    = armour - pen
+ *   through  = dur <= 0 ? always : penetrationChanceCurve(delta) >= roll
+ *   body     = base x (through ? penDamageCurve(max(delta,-2))
+ *                              : bluntDamageScalar x ammo.bluntDamageScale) x firePower
+ *   armourHP = base x durabilityDamageScalar x (through ? penDurScale : bluntDurScale)
+ *
+ * Two traps that cost the previous version its accuracy: firePower is applied TWICE on a hit the
+ * armour covers and once on a bare one, and the armour is billed from the same `base` as the body -
+ * including the body-part multiplier - using the durability it had BEFORE the bullet landed.
+ *
+ * Not modelled: `PenetrationUsed` (penetration spent on surfaces the bullet already passed
+ * through), the per-shot random seed, bleeding, and a vest's directional ProtectionAngle wedge -
+ * so an armoured zone is treated as covering every angle. See docs/ARMOR_PENETRATION_AUDIT.md.
  */
 import {ARMOR_ZONES, BODY_HP, BodyPart,} from "@/app/combat-sim/utils/body-zones";
 import {
@@ -10,8 +31,11 @@ import {
 import {AmmoProperties, ArmorProperties, CurvePoint} from "@/types/items";
 
 /**
- * Simulate combat shot-by-shot with armor degradation
- * Uses deterministic approach - average expected damage per shot
+ * Simulate combat shot by shot, wearing the armour down as it goes.
+ *
+ * Deterministic: every shot takes the MORE LIKELY of penetrate/blunt rather than rolling. That is
+ * not an average - near a 50 % penetration chance the two branches are far apart and the true
+ * expected damage sits between them, so shots-to-kill is a modal figure, not a mean.
  */
 function simulateCombat(
     ammo: AmmoProperties,
@@ -76,15 +100,26 @@ function calculateShotDamage(
     overridePenetrationChance: boolean | null = null,
     applyRandom: boolean = false,
 ): ShotResult {
-    // Apply range falloff to base damage and penetration.//FIXME DAMAGE manipulation is to handle buckshot
-    const rangeDamage = applyFirePowerDamage(applyRangeFalloff((ammo.pellets || 1) * ammo.damage, ammo, range), weaponFiringPower);
-    const rangePenetration = applyFirePowerPenetration(applyRangePenetrationFalloff(ammo.penetration, ammo, range), weaponFiringPower);
+    // Range falloff, straight off the ammo's own curves. //FIXME DAMAGE manipulation is to handle buckshot
+    const rangeDamage = applyRangeFalloff((ammo.pellets || 1) * ammo.damage, ammo, range);
+    // Firing power never touches penetration - see the note on firePowerScalar().
+    const rangePenetration = Math.max(0, applyRangePenetrationFalloff(ammo.penetration, ammo, range));
 
-    // If no armor, full damage applies
+    /*
+     * `GetDamagePostGearProtection` scales by the body-part multiplier and by firing power BEFORE
+     * it offers the hit to any gear, and it hands that value to `ProcessDamageReceived` as
+     * `BaseDamage`. So this one number is what both the body and the armour are computed from -
+     * the armour is not billed from some separate pre-multiplier figure.
+     */
+    const firePower = firePowerScalar(weaponFiringPower);
+    const baseDamage = rangeDamage * damageModifier * firePower;
+
+    // No armour at all, or none covering this hit: `ProcessDamageReceived` returns before it writes
+    // OutRawDamage, so the caller's value survives untouched and the shot deals full damage.
     if (!armor) {
         return {
             isPenetrating: true,
-            damageToBodyPart: damageModifier * rangeDamage,
+            damageToBodyPart: baseDamage,
             damageToArmor: 0,
             penetrationChance: 1
         };
@@ -108,28 +143,39 @@ function calculateShotDamage(
         armor.penetrationChanceCurve
     );
 
-    // Determine if this shot penetrates
-    const isPenetrating = overridePenetrationChance ?? (applyRandom ? (Math.random() < penetrationChance) : (penetrationChance > 0.5));
+    /*
+     * Broken armour is bypassed, not merely weakened: `GetIsPenetrated` returns true immediately
+     * when DurabilityLevel <= 0, without consulting the curve at all.
+     *
+     * Otherwise the game draws a per-shot number and penetrates when `chance >= roll`. The seed
+     * travels with the shot so client and server agree; we cannot reproduce it, so `applyRandom`
+     * rolls our own and the default path takes the more likely of the two outcomes. That default is
+     * an approximation of a coin flip, NOT the rule - near chance = 0.5 the two branches differ by
+     * a lot and the true expected damage lies between them.
+     */
+    const isPenetrating = overridePenetrationChance
+        ?? (durabilityPercent <= 0
+            || (applyRandom ? penetrationChance >= Math.random() : penetrationChance > 0.5));
 
-    let damageToBodyPart = rangeDamage * damageModifier;
-    let damageToArmor = rangeDamage;
+    let damageToBodyPart = baseDamage;
+    // The armour is billed from the same BaseDamage the body is, and from the durability it had
+    // BEFORE this bullet - §4 settles the old "maybe armour is depleted first" question: it is not.
+    let damageToArmor = baseDamage * armor.durabilityDamageScalar;
 
     if (isPenetrating) {
-        //It is possible that first damageTo armor is computed and then depleted armor value is used for the scalar...
-        const penetrationDamageScalar = getPenetrationDamageScalar(armor.penetrationDamageScalarCurve, rangePenetration, effectiveArmorClass);
-
-        damageToBodyPart *= penetrationDamageScalar;
-
-        // Armor damage for penetrating shots
-        damageToArmor *= ammo.protectionGearPenetratedDamageScale * armor.durabilityDamageScalar * 3//Measured damage deviates by <2% (rounded measured data...), so it seems correct...
+        damageToBodyPart *= getPenetrationDamageScalar(
+            armor.penetrationDamageScalarCurve, rangePenetration, effectiveArmorClass);
+        damageToArmor *= ammo.protectionGearPenetratedDamageScale;
     } else {
-        // Non-penetrating shot (blunt damage)
         damageToBodyPart *= ammo.bluntDamageScale * armor.bluntDamageScalar;
-
-        // Armor damage for non-penetrating shots
-        damageToArmor *= ammo.protectionGearBluntDamageScale * armor.durabilityDamageScalar * 3
+        damageToArmor *= ammo.protectionGearBluntDamageScale;
     }
 
+    // Firing power a second time. `GetDamagePostGearProtection` applied it once before handing the
+    // hit over, and `ProcessDamageReceived` multiplies its own damage scale by it again - so a hit
+    // the armour covers is scaled twice and a bare hit only once. The armour's durability loss is
+    // NOT scaled again; it is billed from BaseDamage, which carries the single earlier factor.
+    damageToBodyPart *= firePower;
 
     return {
         isPenetrating,
@@ -166,9 +212,9 @@ function calculatePenetrationChance(
     effectiveArmorClass: number,
     penetrationCurve: CurvePoint[]
 ): number {
-    // FIXME - probably wrong, however works fine with edgecases
-    const ratio = effectiveArmorClass - penetrationPower;
-    return interpolateBallisticCurve(penetrationCurve, ratio);
+    // Confirmed against the decompiled `GetIsPenetrated`: the curve's x is the DIFFERENCE
+    // `AntiPenetration - Penetration`, not a ratio, and it is not clamped.
+    return interpolateBallisticCurve(penetrationCurve, effectiveArmorClass - penetrationPower);
 }
 
 /**
@@ -181,20 +227,21 @@ function getPenetrationDamageScalar(
 ): number {
 
 
-    // Calculate penetration difference (not ratio)
-    // This could be what the curve x-axis represents
-    const penetrationDifference = Math.max(0, effectiveArmorClass - penetrationPower);
+    /*
+     * Same x as the chance curve - `AntiPenetration - Penetration` - clamped at -2, which is what
+     * `maxss xmm6, [-2.0f]` does immediately before the lookup. So:
+     *
+     *   x > 0  armour outclasses the round; it scraped through and keeps the least damage
+     *   x = 0  penetration exactly equals effective armour class
+     *   x < 0  the round outclasses the armour; every curve reaches 1.0 by x = -1, so beating it
+     *          by a full class is already full damage and there is no reward past that
+     *
+     * Clamping the low end at 0 (as this used to) truncated the whole region where good ammo beats
+     * good armour, and under-read damage on every over-penetrating shot.
+     */
+    const penetrationDifference = Math.max(-2, effectiveArmorClass - penetrationPower);
 
-    // Interpolate the damage scalar
-    // The curve seems centered around 0, where:
-    // x < 0: penetration barely beats armor (reduced damage)
-    // x = 0: penetration equals effective armor
-    // x > 0: penetration exceeds armor (better damage)
-
-    return interpolateBallisticCurve(
-        penetrationDamageScalarCurve,
-        penetrationDifference
-    );
+    return interpolateBallisticCurve(penetrationDamageScalarCurve, penetrationDifference);
 }
 
 /**
@@ -291,25 +338,21 @@ function applyRangePenetrationFalloff(
 }
 
 /**
- * Apply penetration correction based on weapons firingPower stat
+ * The weapon's firing-power factor on DAMAGE. `0.9 + 0.2 * FiringPower`, read out of
+ * `GetDamagePostGearProtection` and `ProcessDamageReceived`, which each apply it once.
+ *
+ * This replaces a fitted `1 - (0.5 - fp)/4.479`. That divisor sat between this expression and its
+ * square, which is exactly what fitting a single curve to a mix of armoured and unarmoured
+ * observations produces - the armoured ones are scaled twice. The old note blaming the mismatch on
+ * "some mistake at armor damage reduction part" was half right: the armour side was wrong too, but
+ * the doubling is why one factor could never fit both cases.
+ *
+ * There is deliberately no firing-power term on PENETRATION. `ProcessDamageReceived` never touches
+ * the round's penetration with it; the only thing subtracted there is `PenetrationUsed`, the
+ * penetration already spent on surfaces the bullet passed through, which we do not model.
  */
-function applyFirePowerDamage(
-    baseDamage: number,
-    firePower: number
-): number {
-    //FIXME - it kinda works, but seems to be wrong. Low firepower have debuff, high - buff. 4.479 - is handpicked value'
-    // (0.9 + 0.2 * firePower) was mentioned as THE formula but test case 556AP x Warrior x (RC/DD) is failed. Probably I have some mistake at armor damage reduction part.
-    return (1 - (0.5 - firePower)/4.479) * baseDamage;
-}
-
-/**
- * Apply penetration correction based on weapons firingPower stat
- */
-function applyFirePowerPenetration(
-    basePenetration: number,
-    firePower: number
-): number {
-    return (firePower - 0.5) + basePenetration;
+function firePowerScalar(firingPower: number): number {
+    return 0.9 + 0.2 * firingPower;
 }
 
 /**

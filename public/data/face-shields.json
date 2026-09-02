@@ -1153,27 +1153,43 @@
       "antiPenetrationDurabilityScalarCurve": [
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
-          "time": 0.4,
+          "tangentMode": "auto",
+          "time": 0,
           "value": 1,
-          "arriveTangent": -0.057609,
-          "leaveTangent": -0.057609
+          "arriveTangent": 0,
+          "leaveTangent": 0
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.65,
-          "value": 0.89,
-          "arriveTangent": -0.649538,
-          "leaveTangent": -0.649537
+          "time": 0.2,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0.5,
+          "value": 0.95,
+          "arriveTangent": -0.4,
+          "leaveTangent": -0.4
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.7,
+          "value": 0.8,
+          "arriveTangent": -0.84861,
+          "leaveTangent": -0.84861
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 1,
-          "value": 0,
-          "arriveTangent": -5.025785,
-          "leaveTangent": -5.025785
+          "value": 0.4,
+          "arriveTangent": -0.001907,
+          "leaveTangent": -0.001907
         }
       ],
       "basePrice": 26000,
@@ -1504,27 +1520,35 @@
       "antiPenetrationDurabilityScalarCurve": [
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 0,
           "value": 1,
-          "arriveTangent": -0.057609,
-          "leaveTangent": -0.057609
+          "arriveTangent": 0,
+          "leaveTangent": 0
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.65,
-          "value": 0.833333,
-          "arriveTangent": -0.649538,
-          "leaveTangent": -0.649537
+          "time": 0.3,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.7,
+          "value": 0.7,
+          "arriveTangent": -1.921743,
+          "leaveTangent": -1.921743
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 1,
-          "value": 0,
-          "arriveTangent": -5.025785,
-          "leaveTangent": -5.025785
+          "value": 0.5,
+          "arriveTangent": -0.223494,
+          "leaveTangent": -0.223494
         }
       ],
       "basePrice": 22469,

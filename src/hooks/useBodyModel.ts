@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { loadDataFile } from '@/services/dataFiles';
 import type { BodyModel } from '@/lib/protection/bodyModel';
 
 /**
@@ -19,11 +20,7 @@ let inFlight: Promise<BodyModel> | null = null;
 export function getBodyModel(): Promise<BodyModel> {
     if (cache) return Promise.resolve(cache);
     if (!inFlight) {
-        inFlight = fetch('/data/body-model.json')
-            .then((response) => {
-                if (!response.ok) throw new Error(`body-model.json: ${response.status}`);
-                return response.json() as Promise<BodyModel>;
-            })
+        inFlight = loadDataFile<BodyModel>('body-model.json')
             .then((model) => {
                 cache = model;
                 inFlight = null;

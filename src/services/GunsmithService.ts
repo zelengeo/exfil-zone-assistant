@@ -9,11 +9,13 @@
  * which is what makes them universal (see `compatibility.ts`).
  *
  * Cached at module scope like `ItemService`: the data is static per deployment, and both the
- * gunsmith route and the weapon detail page read it.
+ * gunsmith route and the weapon detail page read it. The files come through `loadDataFile`, which
+ * keeps them static assets rather than letting the bundler inline them into a client chunk.
  */
 
 import type { GunsmithPart, PartCompatibility } from '@/types/gunsmith';
 import type { Weapon } from '@/types/items';
+import { loadDataFile } from '@/services/dataFiles';
 import { indexParts, type PartIndex } from '@/lib/gunsmith/compatibility';
 import { buildBandIndex, type BandIndex } from '@/lib/gunsmith/bands';
 
@@ -87,14 +89,14 @@ function adaptAttachment(raw: RawAttachment): GunsmithPart | null {
 }
 
 async function load(): Promise<GunsmithData> {
-    const [partsModule, attachmentsModule, weaponsModule] = await Promise.all([
-        import('@/public/data/gunsmith-parts.json'),
-        import('@/public/data/attachments.json'),
-        import('@/public/data/weapons.json'),
+    const [rawParts, rawAttachments, rawWeapons] = await Promise.all([
+        loadDataFile<GunsmithPart[]>('gunsmith-parts.json'),
+        loadDataFile<RawAttachment[]>('attachments.json'),
+        loadDataFile<Weapon[]>('weapons.json'),
     ]);
 
-    const parts = (partsModule.default as unknown as GunsmithPart[]) ?? [];
-    const attachments = ((attachmentsModule.default as unknown as RawAttachment[]) ?? [])
+    const parts = rawParts ?? [];
+    const attachments = (rawAttachments ?? [])
         .map(adaptAttachment)
         .filter((part): part is GunsmithPart => part !== null);
 
@@ -102,7 +104,7 @@ async function load(): Promise<GunsmithData> {
     // numbers, and a preset is assembled from the gun-part copy.
     const index = indexParts(parts, attachments);
 
-    const presets = ((weaponsModule.default as unknown as Weapon[]) ?? [])
+    const presets = (rawWeapons ?? [])
         .filter((weapon) => Boolean(weapon.receiverId && weapon.parts?.length));
 
     return { index, presets, bands: buildBandIndex(presets, index) };

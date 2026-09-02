@@ -56,26 +56,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -4.856966,
-          "leaveTangent": -4.856977
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.12,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.03,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -239,26 +255,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -4.856966,
-          "leaveTangent": -4.856977
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.12,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.03,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -422,26 +454,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -4.856966,
-          "leaveTangent": -4.856977
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.12,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.03,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -604,26 +652,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -4.856966,
-          "leaveTangent": -4.856977
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.12,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.03,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -778,26 +842,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -3.813308,
-          "leaveTangent": -3.813313
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.15,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.02,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -960,26 +1040,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -4.856966,
-          "leaveTangent": -4.856977
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.12,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.03,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -1019,27 +1115,35 @@
       "antiPenetrationDurabilityScalarCurve": [
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 0,
           "value": 1,
-          "arriveTangent": -0.004325,
-          "leaveTangent": -0.004324
+          "arriveTangent": 0,
+          "leaveTangent": 0
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.6,
-          "value": 0.7,
-          "arriveTangent": -1.25825,
-          "leaveTangent": -1.258248
+          "time": 0.2,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": 0.7,
+          "value": 0.833333,
+          "arriveTangent": -0.768606,
+          "leaveTangent": -0.768606
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0,
-          "arriveTangent": -0.64334,
-          "leaveTangent": -0.64334
+          "value": 0.6,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "basePrice": 10170,
@@ -1118,26 +1222,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -3.813308,
-          "leaveTangent": -3.813313
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.15,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.03,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -1295,26 +1415,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -3.813308,
-          "leaveTangent": -3.813313
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.15,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.03,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -1470,26 +1606,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -3.813308,
-          "leaveTangent": -3.813313
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.15,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.03,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -1644,26 +1796,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -3.813308,
-          "leaveTangent": -3.813313
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.15,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.03,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -1818,26 +1986,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -3.813308,
-          "leaveTangent": -3.813313
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.15,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.03,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -1992,24 +2176,40 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.95,
-          "arriveTangent": -3.216769,
-          "leaveTangent": -3.216769
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.2,
-          "arriveTangent": -0.669775,
-          "leaveTangent": -0.669775
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
-          "interpMode": "linear",
+          "interpMode": "cubic",
           "tangentMode": "auto",
           "time": 1,
-          "value": 0.05,
+          "value": 0,
           "arriveTangent": 0,
           "leaveTangent": 0
         }
@@ -2188,26 +2388,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -4.584544,
-          "leaveTangent": -4.584543
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.1,
-          "arriveTangent": -0.244282,
-          "leaveTangent": -0.244281
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.02,
-          "arriveTangent": -0.159699,
-          "leaveTangent": -0.1597
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -2386,26 +2602,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -4.584544,
-          "leaveTangent": -4.584543
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.1,
-          "arriveTangent": -0.244282,
-          "leaveTangent": -0.244281
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.02,
-          "arriveTangent": -0.159699,
-          "leaveTangent": -0.1597
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -2570,26 +2802,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -4.584544,
-          "leaveTangent": -4.584543
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.1,
-          "arriveTangent": -0.244282,
-          "leaveTangent": -0.244281
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.02,
-          "arriveTangent": -0.159699,
-          "leaveTangent": -0.1597
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -2798,26 +3046,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -5.614489,
-          "leaveTangent": -5.614487
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.1,
-          "arriveTangent": -0.122326,
-          "leaveTangent": -0.122324
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.02,
-          "arriveTangent": -0.159699,
-          "leaveTangent": -0.1597
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -2857,27 +3121,43 @@
       "antiPenetrationDurabilityScalarCurve": [
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
-          "time": 0.4,
+          "tangentMode": "auto",
+          "time": 0,
           "value": 1,
-          "arriveTangent": -0.057609,
-          "leaveTangent": -0.057609
+          "arriveTangent": 0,
+          "leaveTangent": 0
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.75,
-          "value": 0.85,
-          "arriveTangent": -0.814934,
-          "leaveTangent": -0.814929
+          "time": 0.2,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0.5,
+          "value": 0.95,
+          "arriveTangent": -0.4,
+          "leaveTangent": -0.4
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.7,
+          "value": 0.8,
+          "arriveTangent": -1.255167,
+          "leaveTangent": -1.255167
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 1,
-          "value": 0,
-          "arriveTangent": -2.981355,
-          "leaveTangent": -2.981352
+          "value": 0.33,
+          "arriveTangent": -0.001907,
+          "leaveTangent": -0.001907
         }
       ],
       "basePrice": 50000,
@@ -2942,26 +3222,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.95,
-          "arriveTangent": -3.813308,
-          "leaveTangent": -3.813313
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.15,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.05,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -3092,10 +3388,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
+          "time": -1,
           "value": 1,
-          "arriveTangent": -0.669775,
-          "leaveTangent": -0.669775
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 1,
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -3218,24 +3546,40 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.95,
-          "arriveTangent": -3.216769,
-          "leaveTangent": -3.216769
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.2,
-          "arriveTangent": -0.669775,
-          "leaveTangent": -0.669775
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
-          "interpMode": "linear",
+          "interpMode": "cubic",
           "tangentMode": "auto",
           "time": 1,
-          "value": 0.05,
+          "value": 0,
           "arriveTangent": 0,
           "leaveTangent": 0
         }
@@ -3277,27 +3621,35 @@
       "antiPenetrationDurabilityScalarCurve": [
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 0,
           "value": 1,
-          "arriveTangent": -0.004325,
-          "leaveTangent": -0.004324
+          "arriveTangent": 0,
+          "leaveTangent": 0
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.6,
-          "value": 0.7,
-          "arriveTangent": -1.25825,
-          "leaveTangent": -1.258248
+          "time": 0.2,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": 0.7,
+          "value": 0.833333,
+          "arriveTangent": -0.768606,
+          "leaveTangent": -0.768606
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0,
-          "arriveTangent": -0.64334,
-          "leaveTangent": -0.64334
+          "value": 0.6,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "basePrice": 15324,
@@ -3377,24 +3729,40 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.95,
-          "arriveTangent": -3.216769,
-          "leaveTangent": -3.216769
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.2,
-          "arriveTangent": -0.669775,
-          "leaveTangent": -0.669775
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
-          "interpMode": "linear",
+          "interpMode": "cubic",
           "tangentMode": "auto",
           "time": 1,
-          "value": 0.05,
+          "value": 0,
           "arriveTangent": 0,
           "leaveTangent": 0
         }
@@ -3544,26 +3912,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.95,
-          "arriveTangent": -3.813308,
-          "leaveTangent": -3.813313
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.15,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.05,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -3603,27 +3987,35 @@
       "antiPenetrationDurabilityScalarCurve": [
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 0,
           "value": 1,
-          "arriveTangent": -0.004325,
-          "leaveTangent": -0.004324
+          "arriveTangent": 0,
+          "leaveTangent": 0
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.6,
-          "value": 0.7,
-          "arriveTangent": -1.25825,
-          "leaveTangent": -1.258248
+          "time": 0.2,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": 0.7,
+          "value": 0.833333,
+          "arriveTangent": -0.768606,
+          "leaveTangent": -0.768606
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0,
-          "arriveTangent": -0.64334,
-          "leaveTangent": -0.64334
+          "value": 0.6,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "basePrice": 11256,
@@ -3703,26 +4095,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.95,
-          "arriveTangent": -3.813308,
-          "leaveTangent": -3.813313
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.15,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.05,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -3762,27 +4170,35 @@
       "antiPenetrationDurabilityScalarCurve": [
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 0,
           "value": 1,
-          "arriveTangent": -0.004325,
-          "leaveTangent": -0.004324
+          "arriveTangent": 0,
+          "leaveTangent": 0
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.6,
-          "value": 0.7,
-          "arriveTangent": -1.25825,
-          "leaveTangent": -1.258248
+          "time": 0.2,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": 0.7,
+          "value": 0.833333,
+          "arriveTangent": -0.768606,
+          "leaveTangent": -0.768606
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0,
-          "arriveTangent": -0.64334,
-          "leaveTangent": -0.64334
+          "value": 0.6,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "basePrice": 14294,
@@ -3862,26 +4278,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -4.856966,
-          "leaveTangent": -4.856977
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.12,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.03,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -4037,26 +4469,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -4.856966,
-          "leaveTangent": -4.856977
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.12,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.03,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -4194,7 +4642,32 @@
           "upAxis": 0
         }
       ],
-      "penetrationChanceCurve": [],
+      "penetrationChanceCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0,
+          "value": 0.92,
+          "arriveTangent": -4.856966,
+          "leaveTangent": -4.856977
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.5,
+          "value": 0.12,
+          "arriveTangent": -0.463078,
+          "leaveTangent": -0.463078
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.03,
+          "arriveTangent": -0.035238,
+          "leaveTangent": -0.035238
+        }
+      ],
       "penetrationDamageScalarCurve": [
         {
           "interpMode": "cubic",
@@ -4229,7 +4702,48 @@
           "leaveTangent": 0
         }
       ],
-      "antiPenetrationDurabilityScalarCurve": [],
+      "antiPenetrationDurabilityScalarCurve": [
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0,
+          "value": 1,
+          "arriveTangent": 0,
+          "leaveTangent": 0
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
+          "time": 0.45,
+          "value": 0.95,
+          "arriveTangent": -0.5,
+          "leaveTangent": -0.5
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.7,
+          "value": 0.75,
+          "arriveTangent": -1.156385,
+          "leaveTangent": -1.156385
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1,
+          "value": 0.5,
+          "arriveTangent": -0.001907,
+          "leaveTangent": -0.001907
+        }
+      ],
       "basePrice": 57656,
       "sellPrices": [
         40360,
@@ -4309,26 +4823,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -4.856966,
-          "leaveTangent": -4.856977
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.12,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.03,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -4510,26 +5040,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -3.813308,
-          "leaveTangent": -3.813313
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.15,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.02,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -4731,26 +5277,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -3.813308,
-          "leaveTangent": -3.813313
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.15,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.02,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -4932,26 +5494,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -3.813308,
-          "leaveTangent": -3.813313
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.15,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.02,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -5092,24 +5670,40 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.95,
-          "arriveTangent": -3.216769,
-          "leaveTangent": -3.216769
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.2,
-          "arriveTangent": -0.669775,
-          "leaveTangent": -0.669775
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
-          "interpMode": "linear",
+          "interpMode": "cubic",
           "tangentMode": "auto",
           "time": 1,
-          "value": 0.05,
+          "value": 0,
           "arriveTangent": 0,
           "leaveTangent": 0
         }
@@ -5259,24 +5853,40 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.95,
-          "arriveTangent": -3.216769,
-          "leaveTangent": -3.216769
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.2,
-          "arriveTangent": -0.669775,
-          "leaveTangent": -0.669775
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
-          "interpMode": "linear",
+          "interpMode": "cubic",
           "tangentMode": "auto",
           "time": 1,
-          "value": 0.05,
+          "value": 0,
           "arriveTangent": 0,
           "leaveTangent": 0
         }
@@ -5318,27 +5928,35 @@
       "antiPenetrationDurabilityScalarCurve": [
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 0,
           "value": 1,
-          "arriveTangent": -0.004325,
-          "leaveTangent": -0.004324
+          "arriveTangent": 0,
+          "leaveTangent": 0
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.6,
-          "value": 0.7,
-          "arriveTangent": -1.25825,
-          "leaveTangent": -1.258248
+          "time": 0.2,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": 0.7,
+          "value": 0.833333,
+          "arriveTangent": -0.768606,
+          "leaveTangent": -0.768606
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0,
-          "arriveTangent": -0.64334,
-          "leaveTangent": -0.64334
+          "value": 0.6,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "basePrice": 14449,
@@ -5437,24 +6055,40 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.95,
-          "arriveTangent": -3.216769,
-          "leaveTangent": -3.216769
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.2,
-          "arriveTangent": -0.669775,
-          "leaveTangent": -0.669775
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
-          "interpMode": "linear",
+          "interpMode": "cubic",
           "tangentMode": "auto",
           "time": 1,
-          "value": 0.05,
+          "value": 0,
           "arriveTangent": 0,
           "leaveTangent": 0
         }
@@ -5604,26 +6238,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.95,
-          "arriveTangent": -3.813308,
-          "leaveTangent": -3.813313
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.15,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.05,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -5779,26 +6429,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.95,
-          "arriveTangent": -3.813308,
-          "leaveTangent": -3.813313
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.15,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.05,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -5961,26 +6627,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.95,
-          "arriveTangent": -3.813308,
-          "leaveTangent": -3.813313
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.15,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.05,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -6159,26 +6841,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -3.813308,
-          "leaveTangent": -3.813313
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.15,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.02,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -6344,26 +7042,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -3.813308,
-          "leaveTangent": -3.813313
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 0.2,
+          "value": 0.1,
+          "arriveTangent": -0.30005,
+          "leaveTangent": -0.30005
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.15,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.04,
+          "arriveTangent": -0.202114,
+          "leaveTangent": -0.202114
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "user",
+          "tangentMode": "auto",
           "time": 1,
-          "value": 0.02,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0,
+          "arriveTangent": 0,
+          "leaveTangent": 0
         }
       ],
       "penetrationDamageScalarCurve": [

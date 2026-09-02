@@ -2,8 +2,8 @@
 
 import React, { useEffect, useMemo, useState } from 'react';
 import { cn } from '@/lib/utils';
-import type { FaceShield, Helmet, Item } from '@/types/items';
-import { isFaceShield, isHelmet } from '@/app/combat-sim/utils/types';
+import type { FaceShield, Helmet, Item, NightVision } from '@/types/items';
+import { isFaceShield, isHelmet, isNightVision } from '@/app/combat-sim/utils/types';
 import { getItemsByCategory } from '@/services/ItemService';
 import { headCoverage } from '@/lib/protection/headCoverage';
 import { useBodyModel } from '@/hooks/useBodyModel';
@@ -52,7 +52,9 @@ export interface HeadCoveragePanelProps {
 
 export default function HeadCoveragePanel({ item, className }: HeadCoveragePanelProps) {
     const { model, error } = useBodyModel();
-    const [gear, setGear] = useState<{ helmets: Helmet[]; shields: FaceShield[] } | null>(null);
+    const [gear, setGear] = useState<
+        { helmets: Helmet[]; shields: FaceShield[]; nvgs: NightVision[] } | null
+    >(null);
     // `undefined` means "the reader has not chosen", which is not the same as "none" — the default
     // depends on the compatible list, which arrives asynchronously.
     const [chosenId, setChosenId] = useState<string | null | undefined>(undefined);
@@ -74,10 +76,11 @@ export default function HeadCoveragePanel({ item, className }: HeadCoveragePanel
                 setGear({
                     helmets: items.filter(isHelmet),
                     shields: items.filter(isFaceShield),
+                    nvgs: items.filter(isNightVision),
                 });
             })
             .catch(() => {
-                if (!cancelled) setGear({ helmets: [], shields: [] });
+                if (!cancelled) setGear({ helmets: [], shields: [], nvgs: [] });
             });
         return () => {
             cancelled = true;
@@ -85,9 +88,9 @@ export default function HeadCoveragePanel({ item, className }: HeadCoveragePanel
     }, []);
 
     /**
-     * Shields the helmet declares, or helmets that declare this shield. `canAttach` is curated, so
-     * a shield nothing names is not a shield nothing fits — it is a shield the wiki has not recorded
-     * a host for, which is why the picker still offers everything below.
+     * Shields the helmet declares, or helmets that declare this shield. `canAttach` now records
+     * every mount the game allows, so this list is the whole truth rather than a best guess: a
+     * pairing absent from it is one the game refuses, and the picker offers nothing beyond it.
      */
     const compatible = useMemo(() => {
         if (!gear) return [];
@@ -103,22 +106,26 @@ export default function HeadCoveragePanel({ item, className }: HeadCoveragePanel
         ? (subject === 'shield' ? compatible[0]?.id ?? null : null)
         : chosenId;
 
-    const options = useMemo(() => {
-        if (!gear) return [];
-        const all = subject === 'helmet' ? gear.shields : gear.helmets;
-        const ids = new Set(compatible.map((entry) => entry.id));
-        // Declared partners first, then the rest — the picker doubles as a "what if" for the
-        // pairings `canAttach` has not recorded.
-        return [...compatible, ...all.filter((entry) => !ids.has(entry.id))];
-    }, [compatible, gear, subject]);
-
-    const paired = options.find((entry) => entry.id === pairedId) ?? null;
+    const paired = compatible.find((entry) => entry.id === pairedId) ?? null;
     const helmet = subject === 'helmet' ? (item as Helmet) : (paired as Helmet | null);
     const shield = subject === 'shield' ? (item as FaceShield) : (paired as FaceShield | null);
 
     const coverage = useMemo(
         () => (model ? headCoverage(model, helmet, shield) : null),
         [model, helmet, shield],
+    );
+
+    /**
+     * Night vision the helmet can take. `canAttach` lists it beside the shields, but it carries no
+     * armour class, cones or durability at all — `isFaceShield` rejects it — so it is named here as
+     * a tactical fitting and never enters the picture or the numbers.
+     */
+    const nvgMounts = useMemo(
+        () =>
+            helmet
+                ? (gear?.nvgs ?? []).filter((nvg) => helmet.stats.canAttach?.includes(nvg.id))
+                : [],
+        [gear, helmet],
     );
 
     // A shield with no helmet under it protects nothing at all, so the coverage view would be a
@@ -316,7 +323,7 @@ export default function HeadCoveragePanel({ item, className }: HeadCoveragePanel
                 </div>
 
                 <div className="space-y-4 min-w-0">
-                    {options.length > 0 && (
+                    {compatible.length > 0 ? (
                         <label className="block">
                             <span className="eyebrow block mb-1">
                                 {subject === 'helmet' ? 'Worn with face shield' : 'Worn under helmet'}
@@ -329,14 +336,30 @@ export default function HeadCoveragePanel({ item, className }: HeadCoveragePanel
                                 <option value="">
                                     {subject === 'helmet' ? '— none —' : '— no helmet —'}
                                 </option>
-                                {options.map((entry) => (
+                                {compatible.map((entry) => (
                                     <option key={entry.id} value={entry.id}>
                                         {entry.name}
-                                        {compatible.some((c) => c.id === entry.id) ? '' : '  (not a declared pair)'}
                                     </option>
                                 ))}
                             </select>
                         </label>
+                    ) : (
+                        <p className="text-[11px] text-ink-600">
+                            {subject === 'helmet'
+                                ? 'Nothing that adds protection mounts to this helmet — it has no face shield or goggle fitting.'
+                                : 'No helmet declares a mount for this piece.'}
+                        </p>
+                    )}
+
+                    {nvgMounts.length > 0 && (
+                        <p className="text-[11px] text-ink-600">
+                            <span className="text-ink-400">
+                                {subject === 'helmet' ? 'Also mounts' : 'The helmet also mounts'}{' '}
+                                {nvgMounts.map((nvg) => nvg.name).join(', ')}
+                            </span>{' '}
+                            — night vision is a tactical fitting with no protection of its own, so it
+                            adds nothing to the figures here.
+                        </p>
                     )}
 
                     <HeadZoneTable coverage={coverage} />
