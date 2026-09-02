@@ -13,6 +13,7 @@ import {cheapestOffer} from '@/lib/trade';
 import {
     ARMOR_ZONES,
     getBodyPartForArmorZone,
+    isZoneCoveredAtAngle,
     isZoneProtectedBy
 } from './body-zones';
 import {
@@ -127,19 +128,29 @@ function calculateAttackerZones(
 /**
  * Get armor class for a specific zone from the armor item
  */
+/**
+ * The numbers the game actually reads for a hit: the matched zone's own, never the item's headline.
+ *
+ * `ProcessDamageReceived` uses `Zone.AntiPenetration` and `Zone.BluntDamageScalar` out of the
+ * matched `ProtectiveData` entry. The item-level `armorClass` / `bluntDamageScalar` are
+ * `AntiPenetrationDisplay` / `BluntDamageScalarDisplay` - a shop badge, and on four items they
+ * disagree with every zone they claim to describe: the Rampage Bells and Rampage Skull advertise
+ * class 5 over zones that all author 4, and the Security Vest and Soft Armor advertise 0.35 blunt
+ * over zones that all author 0.9. Several more vests rate their arm and thigh plates a full class
+ * below the chest.
+ *
+ * The display values remain the fallback only for gear that carries no zone list at all (curated
+ * head gear), where there is nothing better to use.
+ */
 function getZoneArmorClassAndBluntScalar(zoneId: string, armor: Armor): {
     armorClass: number,
     bluntDamageScalar: number
 } {
-    // Check if armor has specific protection data for this zone
-    if (armor.stats.protectiveData) {
-        const protection = armor.stats.protectiveData.find(pd => pd.bodyPart === zoneId);
-        if (protection) {
-            return {armorClass: protection.armorClass, bluntDamageScalar: protection.bluntDamageScalar};
-        }
+    const protection = armor.stats.protectiveData?.find(pd => pd.bodyPart === zoneId);
+    if (protection) {
+        return {armorClass: protection.armorClass, bluntDamageScalar: protection.bluntDamageScalar};
     }
 
-    // Fall back to armor's base armor class
     return {armorClass: armor.stats.armorClass, bluntDamageScalar: armor.stats.bluntDamageScalar};
 }
 
@@ -168,15 +179,20 @@ function getZoneArmor(zoneId: string, defender: DefenderSetup): Armor | null {
     // Check if zone is protected by body armor
     if (isZoneProtectedBy(zoneId, 'armor')) {
         if (defender.bodyArmor) {
-            // Check if body armor actually protects this specific zone
+            // `VestBase.GetProtectiveData` walks the zone list and takes the FIRST entry whose bone
+            // matches AND whose wedge contains the hit. Anything else - no entry for the bone, or an
+            // entry the shot arrived outside of - reports "not protected", and `ProcessDamageReceived`
+            // then returns before touching either the damage or the durability. So a miss here is not
+            // weak armour, it is no armour: full damage and no wear.
             if (defender.bodyArmor.stats.protectiveData) {
-                const protectsZone = defender.bodyArmor.stats.protectiveData.some((pd: ProtectiveZone) =>
-                    pd.bodyPart === zoneId // Direct match with zone ID (spine_01, spine_02, etc.)
+                const covering = defender.bodyArmor.stats.protectiveData.find((pd: ProtectiveZone) =>
+                    pd.bodyPart === zoneId
+                    && isZoneCoveredAtAngle(pd.protectionAngle, defender.engagementAngle ?? 0)
                 );
-                if (protectsZone) return defender.bodyArmor;
+                if (covering) return defender.bodyArmor;
             } else {
-                // If no specific data, assume armor protects default zones
-                return defender.bodyArmor;
+                // No zone list at all: nothing can match, so nothing is covered.
+                return null;
             }
         }
     }

@@ -61,7 +61,9 @@ export function useCombatSimulation(): UseCombatSimulationReturn {
                 bodyArmorDurability: 100,
                 helmet: null,
                 helmetDurability: 100,
-                faceShield: null
+                faceShield: null,
+                // Frontal, which is what the simulator assumed before the vest wedge was modelled.
+                engagementAngle: 0
             },
             range: 0,
             displayMode: 'stk',

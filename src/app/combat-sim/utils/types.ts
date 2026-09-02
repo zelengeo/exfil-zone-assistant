@@ -53,6 +53,12 @@ export interface DefenderSetup {
     helmet: Helmet | null;
     helmetDurability: number; // 0-100%
     faceShield: FaceShield | null;
+    /**
+     * Where the shot comes from, in degrees around the target: 0 is dead ahead, 90 is its flank,
+     * 180 is its back. Used only by the vest wedge test (`isZoneCoveredAtAngle`), which is
+     * two-sided, so 0 and 180 behave identically. Optional; absent means frontal.
+     */
+    engagementAngle?: number;
 }
 
 export interface ShotResult {

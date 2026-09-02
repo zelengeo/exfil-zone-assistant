@@ -272,6 +272,37 @@ export const ARMOR_ZONES: Record<string, ArmorZone> = {
     },
 } as const;
 /**
+ * Does a protection zone actually cover a hit arriving at this azimuth?
+ *
+ * A vest zone is a wedge, not a wrap. `ProtectiveGearBlueprintFunctionLibrary.IsProtected`, which
+ * `VestBase.GetProtectiveData` calls for every zone whose bone matches, is:
+ *
+ *     d = (HitLocation - BoneLocation) projected onto the plane of the bone's Up axis, normalised
+ *     return DegAcos(Abs(d dot Fwd)) < Zone.ProtectionAngle
+ *
+ * Every zone in the build authors ForwardVector = 1 and UpVector = 0. On a torso bone that makes
+ * Fwd the bone's *right* axis, which points the way the character faces, and Up the bone's forward
+ * axis, which is the body's long axis - so the test collapses to a pure azimuth around the torso,
+ * measured from straight ahead.
+ *
+ * Two consequences worth keeping in mind:
+ *   - `Abs` makes it TWO-SIDED. A plate covering 25 degrees of the front covers 25 degrees of the
+ *     back by the same expression, and is bare at the flanks. That is what a plate carrier is.
+ *   - 90 can never fail, since DegAcos(Abs(..)) is at most 90 - which is why 127 of the 146 zones
+ *     in the build are simply "this whole bone". Only 17 zones on shipped vests are partial.
+ *
+ * `azimuthDeg` is 0 when the shot arrives from dead ahead of the target and 90 from its side.
+ */
+export function isZoneCoveredAtAngle(protectionAngle: number | undefined, azimuthDeg: number): boolean {
+    // An unspecified angle is the 90 default, i.e. the whole bone.
+    if (protectionAngle == null) return true;
+    const wrapped = Math.abs(azimuthDeg) % 360;
+    const folded = wrapped > 180 ? 360 - wrapped : wrapped;   // 0..180
+    const offAxis = Math.min(folded, 180 - folded);           // the Abs(), 0..90
+    return offAxis < protectionAngle;
+}
+
+/**
  * Get all armor zones for a specific body part
  */
 export function getArmorZonesForBodyPart(bodyPartId: string): ArmorZone[] {
@@ -357,8 +388,11 @@ export function getZoneArmorClass (zoneId: string, defender: DefenderSetup): num
     }
 
     if (zone.defaultProtection === 'armor' && defender.bodyArmor) {
+        // Same test the simulator runs, so the body map cannot show protection the shot would not
+        // get: bone match AND the wedge has to contain the engagement angle.
         const protectiveZone = defender.bodyArmor.stats.protectiveData?.find(
-            pz => pz.bodyPart === zone.bodyPart || pz.bodyPart === zone.id
+            pz => (pz.bodyPart === zone.bodyPart || pz.bodyPart === zone.id)
+                && isZoneCoveredAtAngle(pz.protectionAngle, defender.engagementAngle ?? 0)
         );
         return protectiveZone?.armorClass || 0;
     }

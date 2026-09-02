@@ -33,6 +33,22 @@ function damageAtEqualClass(curve: CurvePoint[] | undefined): string {
     return key ? `${(key.value * 100).toFixed(0)}%` : '—';
 }
 
+/**
+ * Blunt damage the wearer still takes, read off the ZONES rather than the item's headline.
+ *
+ * `ProcessDamageReceived` multiplies by the matched zone's `BluntDamageScalar`; the item-level
+ * `bluntDamageScalar` is `BluntDamageScalarDisplay`, a shop badge that on the Security Vest and
+ * Soft Armor reads 0.35 while every zone they carry authors 0.9. Where the zones disagree with
+ * each other - most vests rate arm and thigh plates far worse than the chest - show the range.
+ */
+function bluntDamage(item: Armor): string {
+    const zones = item.stats.protectiveData;
+    if (!zones?.length) return percent(item.stats.bluntDamageScalar, 100);
+    const values = [...new Set(zones.map(z => z.bluntDamageScalar))].sort((a, b) => a - b);
+    const low = percent(values[0], 100);
+    return values.length === 1 ? low : `${low} – ${percent(values[values.length - 1], 100)}`;
+}
+
 /** Curated on the items that were on the published wiki, absent on the rest. */
 function soundDampening(soundMix: string | undefined): string {
     if (!soundMix) return 'Unknown';
@@ -58,7 +74,7 @@ export default function ArmorSpecificStats({item}: { item: Armor }) {
             <StatLine
                 icon={<Gavel size={14}/>}
                 label="Blunt damage"
-                value={percent(item.stats.bluntDamageScalar, 100)}
+                value={bluntDamage(item)}
             />
             {/*
               * Durability is spent as `damage x DurabilityDamageScalar x the round's

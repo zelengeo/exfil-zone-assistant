@@ -28,6 +28,13 @@ export default function DefenderSetup({defender, onUpdate}: DefenderSetupProps) 
     const bodyArmorDropdownRef = useRef<HTMLDivElement>(null);
     const helmetDropdownRef = useRef<HTMLDivElement>(null);
 
+    // The plates on the selected vest that cover a wedge rather than the whole bone. 90 can never
+    // fail the game's test, so anything below it is what the engagement angle actually acts on.
+    const partialZones = useMemo(
+        () => (defender.bodyArmor?.stats.protectiveData ?? []).filter(z => z.protectionAngle < 90),
+        [defender.bodyArmor],
+    );
+
     // Handle clicking outside dropdowns
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -259,6 +266,46 @@ export default function DefenderSetup({defender, onUpdate}: DefenderSetupProps) 
                                 <span>Pristine</span>
                             </div>
                         </div>
+                    </div>
+                )}
+
+                {/*
+                  * Engagement angle. A vest zone is a wedge, not a wrap - the game resolves
+                  * ProtectionAngle in the hit bone's own basis and the test is two-sided, so a plate
+                  * that covers the front covers the back and leaves the flanks bare. Only body armour
+                  * uses it; head gear is tested by cone regions instead.
+                  */}
+                {defender.bodyArmor && (
+                    <div className="mt-3 pt-3 border-t border-military-700">
+                        <div className="flex justify-between items-center mb-1">
+                            <span className="text-xs text-tan-300">Shot comes from</span>
+                            <span className="text-xs font-medium text-tan-100">
+                                {formatEngagementAngle(defender.engagementAngle ?? 0)}
+                            </span>
+                        </div>
+                        <input
+                            type="range"
+                            min="0"
+                            max="180"
+                            step="5"
+                            value={defender.engagementAngle ?? 0}
+                            onChange={(e) => onUpdate({engagementAngle: Number(e.target.value)})}
+                            className="w-full h-2 bg-military-700 rounded-sm appearance-none cursor-pointer
+                            [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:h-8
+                            [&::-webkit-slider-thumb]:bg-olive-500 [&::-webkit-slider-thumb]:rounded-sm
+                            [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-8
+                            [&::-moz-range-thumb]:bg-olive-500 [&::-moz-range-thumb]:rounded-sm [&::-moz-range-thumb]:border-0"
+                        />
+                        <div className="flex justify-between text-xs text-tan-400">
+                            <span>Front</span>
+                            <span>Side</span>
+                            <span>Back</span>
+                        </div>
+                        <p className="mt-2 text-xs text-tan-400">
+                            {partialZones.length === 0
+                                ? 'Every plate on this vest wraps the whole bone, so the angle does not change its coverage.'
+                                : `${partialZones.length} of this vest's ${defender.bodyArmor.stats.protectiveData?.length ?? 0} plates cover only a wedge (${partialZones.map(z => `${z.bodyPart} ±${z.protectionAngle}°`).join(', ')}). Front and back are equivalent; the flanks are where they run out.`}
+                        </p>
                     </div>
                 )}
             </div>
@@ -505,6 +552,14 @@ export default function DefenderSetup({defender, onUpdate}: DefenderSetupProps) 
 }
 
 // Format durability percentage
+/** The wedge test is two-sided, so 170° is described the way it behaves: 10° off the back. */
+const formatEngagementAngle = (angle: number) => {
+    if (angle === 0) return 'Dead ahead';
+    if (angle === 180) return 'Directly behind';
+    if (angle === 90) return 'Side on';
+    return angle < 90 ? `${angle}° off the front` : `${180 - angle}° off the back`;
+};
+
 const formatDurability = (durability: number) => {
     if (durability >= 80) return 'text-green-400';
     if (durability >= 60) return 'text-yellow-400';
