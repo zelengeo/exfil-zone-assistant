@@ -36,28 +36,27 @@ export const metadata: Metadata = {
     },
 };
 
-// Loading component for Suspense fallback
 function TasksLoading() {
     return (
-        <Layout>
-            <div className="container mx-auto px-4 py-8">
-                <div className="flex items-center justify-center min-h-96">
-                    <div className="military-box p-8 rounded-sm text-center">
-                        <div className="animate-spin w-12 h-12 border-4 border-olive-600 border-t-transparent rounded-full mx-auto mb-4"></div>
-                        <h2 className="text-xl font-bold text-olive-400 mb-2">Loading Tasks Database</h2>
-                        <p className="text-tan-300">Retrieving mission data and progress tracking...</p>
-                    </div>
-                </div>
+        <div className="flex items-center justify-center min-h-96">
+            <div className="bg-steel-900 border border-line-900 px-6 py-5 text-center">
+                <div className="eyebrow mb-2">Loading</div>
+                <p className="text-sm text-ink-500">Reading the task chains…</p>
             </div>
-        </Layout>
+        </div>
     );
 }
 
-// Main page component - server component following the established pattern
+/**
+ * Full width rather than the default container: the route is three panes side by side, and the
+ * 7xl container would leave the chain column too narrow to hold a task name.
+ */
 export default function TasksPage() {
     return (
-        <Suspense fallback={<TasksLoading />}>
-            <TasksPageContent />
-        </Suspense>
+        <Layout fullWidth containerClassName="max-w-[1600px] mx-auto px-3 sm:px-4 py-4">
+            <Suspense fallback={<TasksLoading />}>
+                <TasksPageContent />
+            </Suspense>
+        </Layout>
     );
 }

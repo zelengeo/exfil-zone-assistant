@@ -97,13 +97,29 @@ function without(progress: TaskProgress, taskId: string): TaskProgress {
     return { tasks };
 }
 
+/**
+ * Whether the player can record work on this task yet.
+ *
+ * A locked task cannot be ticked. Recording one done while its prerequisites are not would leave
+ * the chain describing something the game will not let you do, and every count downstream — the
+ * vendor's standing, the campaign total, which task is next up — would be counting it.
+ *
+ * Un-recording is always allowed, so there is no way to get stuck: undo the prerequisite and the
+ * tasks that depended on it are simply locked again.
+ */
+export function canComplete(task: Task, progress: TaskProgress): boolean {
+    return stateOf(task, progress) !== 'locked';
+}
+
 export function setDone(progress: TaskProgress, task: Task, done: boolean): TaskProgress {
     if (!done) return without(progress, task.id);
+    if (!canComplete(task, progress)) return progress;
     return withRecord(progress, task.id, { done: true, objectives: task.objectives.map(() => true) });
 }
 
 export function toggleObjective(progress: TaskProgress, task: Task, index: number): TaskProgress {
     if (index < 0 || index >= task.objectives.length) return progress;
+    if (!canComplete(task, progress)) return progress;
 
     const ticks = objectiveTicks(task, progress);
     ticks[index] = !ticks[index];

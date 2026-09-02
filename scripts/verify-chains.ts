@@ -98,7 +98,9 @@ if (arkCounts.locked > 0) {
 }
 
 /* Objective ticking. */
-const sample = tasksData['ark_59'] ?? Object.values(tasksData).find((t) => t.objectives.length > 2)!;
+const sample = Object.values(tasksData).find(
+    (t) => t.objectives.length > 2 && stateOf(t, EMPTY_PROGRESS) === 'open',
+)!;
 let p2: TaskProgress = EMPTY_PROGRESS;
 sample.objectives.forEach((_, i) => { p2 = toggleObjective(p2, sample, i); });
 if (stateOf(sample, p2) !== 'completed') fail('ticking every objective did not complete the task');

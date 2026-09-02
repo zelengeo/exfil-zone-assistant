@@ -19,9 +19,20 @@ export const TASK_TYPES: readonly TaskType[] = [
     'mark', 'place', 'photo', 'signal', 'gunsmith',
 ];
 
+/**
+ * The rail's last entry: every vendor's outstanding work in one list, rather than one chain.
+ *
+ * It is the same grouped-by-vendor view search produces, which is why it is a value of `owner`
+ * rather than a mode of its own — with seven owners, "what can I do right now" is a question the
+ * single-chain view cannot answer.
+ */
+export const ALL_OWNERS = 'all';
+
+export type OwnerSelection = ChainOwner | typeof ALL_OWNERS;
+
 export interface TaskFilters {
     /** Selected rail entry. Empty means "the route picks" — the vendor with work outstanding. */
-    owner: ChainOwner | '';
+    owner: OwnerSelection | '';
     /** Task shown in the detail pane. Empty means the selected chain's next-up task. */
     task: string;
     /** Searches names and objectives. A non-empty query swaps the chain column for results. */
@@ -46,7 +57,7 @@ export function parseFilters(params: ReadonlyURLSearchParams | URLSearchParams):
     const type = params.get('type');
 
     return {
-        owner: OWNER_ORDER.find((key) => key === owner) ?? '',
+        owner: owner === ALL_OWNERS ? ALL_OWNERS : OWNER_ORDER.find((key) => key === owner) ?? '',
         task: params.get('task') ?? '',
         search: params.get('q') ?? '',
         map: TASK_MAPS.find((value) => value === map) ?? 'all',
