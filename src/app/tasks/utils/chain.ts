@@ -21,6 +21,7 @@ import { type ChainOwner, ownerOf, tasksForOwner } from './vendors';
 
 /** Row height, and the lane geometry the spine is drawn on. One source for rows and SVG alike. */
 export const ROW_H = 38;
+/** The phone's row: 44px, so a row clears the minimum touch target on its own. */
 export const ROW_H_COMPACT = 44;
 export const LANE_X = 16;
 export const LANE_STEP = 18;
@@ -32,6 +33,11 @@ export const laneX = (lane: number): number => LANE_X + lane * LANE_STEP;
 
 /** Where a row's text starts: clear of its own marker, whichever lane it sits in. */
 export const rowTextX = (lane: number): number => laneX(lane) + 30;
+
+/** Clearance around a node, so a connector stops short of the marker instead of striking it. */
+export const NODE_GAP = 8;
+/** Where the elbow of a lane change sits: just above the row it lands on. */
+export const ELBOW_RISE = 13;
 
 export interface ChainNode {
     taskId: string;

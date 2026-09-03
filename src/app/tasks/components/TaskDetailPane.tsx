@@ -406,9 +406,16 @@ export default function TaskDetailPane({
                 </div>
             </div>
 
-            <div className="flex-none flex flex-wrap items-center gap-3 border-t border-line-900 mt-4 px-4 py-3 shell:px-5">
+            {/*
+              * On a phone the panel is as tall as its content and the page scrolls, so the action
+              * is pinned to the foot of the screen rather than to the end of the briefing — clearing
+              * the bottom bar, which is fixed over it. On the desktop the column already ends here.
+              */}
+            <div className="sticky bottom-bottomnav z-10 shell:static flex-none flex flex-wrap items-center gap-3 bg-steel-800 border-t border-line-900 mt-4 px-4 py-3 shell:px-5">
+                {/* What this leads to is worth a line on a desktop and a wrapped third row on a
+                    phone, where the chain underneath already says it. */}
                 {unlocks.length > 0 && (
-                    <span className="flex items-center gap-2 min-w-0">
+                    <span className="hidden shell:flex items-center gap-2 min-w-0">
                         <span className="micro-label flex-none">Unlocks</span>
                         <ArrowRight size={11} className="text-ink-700 flex-none" />
                         <span className="text-[12px] text-ink-500 truncate">

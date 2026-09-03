@@ -4,9 +4,10 @@ import React, { useCallback, useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { tasksData } from '@/data/tasks';
 import type { TaskProgress } from '@/types/tasks';
-import { type Chain, ROW_H, buildChains, rowTextX, visibleRows } from '../utils/chain';
+import { type Chain, buildChains, rowTextX, visibleRows } from '../utils/chain';
 import { countsFor, isDone, nextUpIn, stateOf } from '../utils/progress';
 import { type ChainOwner, ownerFace, tasksForOwner } from '../utils/vendors';
+import { useRowHeight } from '../hooks/useRowHeight';
 import ChainRow from './ChainRow';
 import ChainSpine, { type SpineEdge } from './ChainSpine';
 
@@ -31,7 +32,7 @@ export interface ChainColumnProps {
 }
 
 function ChainGroup({
-    chain, label, progress, visible, selectedTaskId, onSelect, numbered,
+    chain, label, progress, visible, selectedTaskId, onSelect, numbered, rowH,
 }: {
     chain: Chain;
     label: string | null;
@@ -40,6 +41,7 @@ function ChainGroup({
     selectedTaskId?: string;
     onSelect: (taskId: string) => void;
     numbered: boolean;
+    rowH: number;
 }) {
     const [open, setOpen] = useState(false);
 
@@ -80,7 +82,7 @@ function ChainGroup({
                 </div>
             )}
 
-            <div className="relative" style={{ height: shown.length * ROW_H }}>
+            <div className="relative" style={{ height: shown.length * rowH }}>
                 <ul>
                     {shown.map((node) => {
                         const task = tasksData[node.taskId];
@@ -94,13 +96,14 @@ function ChainGroup({
                                     position={numbered ? node.index + 1 : null}
                                     isNext={node.taskId === nextId}
                                     isSelected={node.taskId === selectedTaskId}
+                                    rowH={rowH}
                                     onSelect={onSelect}
                                 />
                             </li>
                         );
                     })}
                 </ul>
-                <ChainSpine edges={edges} rowCount={shown.length} />
+                <ChainSpine edges={edges} rowCount={shown.length} rowH={rowH} />
             </div>
 
             {(hidden > 0 || open) && !visible && (
@@ -129,6 +132,7 @@ export default function ChainColumn({
     const face = ownerFace(owner);
     const { chains } = buildChains(owner);
     const counts = countsFor(tasksForOwner(owner), progress);
+    const rowH = useRowHeight();
 
     const label = useCallback(
         (chain: Chain, index: number): string | null => {
@@ -162,6 +166,7 @@ export default function ChainColumn({
                     selectedTaskId={selectedTaskId}
                     onSelect={onSelect}
                     numbered={face.hasChain}
+                    rowH={rowH}
                 />
             ))}
         </section>

@@ -1,7 +1,10 @@
 /* Stage-01 harness for the tasks rebuild: exercises the chain layout and progress rules against
  * the real 227 tasks. Run: npm run verify-chains */
 import { tasksData } from '@/data/tasks';
-import { LOCKED_TAIL, MAX_LANE, buildChains, laneX, locate, rowTextX, visibleRows } from '@/app/tasks/utils/chain';
+import {
+    ELBOW_RISE, LOCKED_TAIL, MAX_LANE, NODE_GAP, ROW_H, ROW_H_COMPACT,
+    buildChains, laneX, locate, rowTextX, visibleRows,
+} from '@/app/tasks/utils/chain';
 import {
     EMPTY_PROGRESS, countsFor, gatesFor, nextUpIn, objectiveTicks,
     setDone, standingFor, stateOf, toggleObjective,
@@ -160,6 +163,24 @@ for (const owner of populatedOwners()) {
         }
     }
 }
+
+/*
+ * Row heights. The phone raises the row to 44px, and the spine is arithmetic on that number rather
+ * than on a constant, so both heights have to leave the connectors drawable.
+ */
+for (const rowH of [ROW_H, ROW_H_COMPACT]) {
+    // A straight edge between adjacent rows: it starts below one marker and ends above the next.
+    if (NODE_GAP * 2 >= rowH) fail(`row height ${rowH}: the node gaps swallow the connector`);
+
+    // A lane change turns just above the row it lands on — below the marker it left, and clear of
+    // the one it is heading for.
+    if (ELBOW_RISE <= NODE_GAP) fail(`row height ${rowH}: the elbow strikes the marker it lands on`);
+    if (ELBOW_RISE >= rowH - NODE_GAP) fail(`row height ${rowH}: the elbow turns above the row it left`);
+}
+
+// The phone's row is a thumb target, not a line of text.
+if (ROW_H_COMPACT < 44) fail(`compact rows are ${ROW_H_COMPACT}px, under the 44px minimum`);
+if (ROW_H_COMPACT <= ROW_H) fail('the compact row is not taller than the desktop row');
 
 for (const owner of ['ark', 'gunsmith', 'trupiks'] as const) {
     for (const chain of buildChains(owner).chains) {

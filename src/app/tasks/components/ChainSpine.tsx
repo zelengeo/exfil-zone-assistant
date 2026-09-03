@@ -1,5 +1,5 @@
 import React from 'react';
-import { LANE_STEP, LANE_X, MAX_LANE, ROW_H, laneX } from '../utils/chain';
+import { ELBOW_RISE, LANE_STEP, LANE_X, MAX_LANE, NODE_GAP, laneX } from '../utils/chain';
 
 /**
  * The connectors between chain rows.
@@ -15,11 +15,6 @@ import { LANE_STEP, LANE_X, MAX_LANE, ROW_H, laneX } from '../utils/chain';
  * Geometry comes from `chain.ts` so the lines and the markers cannot drift apart.
  */
 
-/** Clearance around a node, so a line stops short of the marker instead of striking through it. */
-const NODE_GAP = 8;
-/** Where the elbow of a lane change sits: just above the row it lands on. */
-const ELBOW_RISE = 13;
-
 export const SPINE_W = LANE_X + MAX_LANE * LANE_STEP + 12;
 
 export interface SpineEdge {
@@ -34,11 +29,13 @@ export interface SpineEdge {
 export interface ChainSpineProps {
     edges: SpineEdge[];
     rowCount: number;
+    /** Row height in force, which the phone raises. The lines follow the rows, not a constant. */
+    rowH: number;
 }
 
-const rowY = (row: number): number => row * ROW_H + ROW_H / 2;
+function pathFor(edge: SpineEdge, rowH: number): string {
+    const rowY = (row: number): number => row * rowH + rowH / 2;
 
-function pathFor(edge: SpineEdge): string {
     const x1 = laneX(edge.fromLane);
     const x2 = laneX(edge.toLane);
     const y1 = rowY(edge.fromRow) + NODE_GAP;
@@ -49,8 +46,8 @@ function pathFor(edge: SpineEdge): string {
     return `M ${x1} ${y1} V ${rowY(edge.toRow) - ELBOW_RISE} H ${x2} V ${y2}`;
 }
 
-export default function ChainSpine({ edges, rowCount }: ChainSpineProps) {
-    const height = rowCount * ROW_H;
+export default function ChainSpine({ edges, rowCount, rowH }: ChainSpineProps) {
+    const height = rowCount * rowH;
 
     return (
         <svg
@@ -63,7 +60,7 @@ export default function ChainSpine({ edges, rowCount }: ChainSpineProps) {
             {edges.map((edge) => (
                 <path
                     key={`${edge.fromRow}-${edge.toRow}`}
-                    d={pathFor(edge)}
+                    d={pathFor(edge, rowH)}
                     fill="none"
                     stroke="currentColor"
                     strokeWidth={1}

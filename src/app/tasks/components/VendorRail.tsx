@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { Layers } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -58,6 +58,120 @@ function VendorMark({ owner, active }: { owner: ChainOwner; active: boolean }) {
                 </span>
             )}
         </span>
+    );
+}
+
+/**
+ * The rail, folded into a strip for the phone.
+ *
+ * The same seven entries and the same order, with everything that cannot survive a 78px tile
+ * dropped: the merchant's name, the loyalty level and the reputation figure. What is left is the
+ * mark, the completion bar and the count — which is the question a strip is scanned for. Standing
+ * belongs to the chain header underneath, where there is room to print it.
+ */
+function VendorTile({
+    owner,
+    active,
+    progress,
+    matchCount,
+    onSelect,
+}: {
+    owner: ChainOwner;
+    active: boolean;
+    progress: TaskProgress;
+    matchCount: number | null;
+    onSelect: (owner: OwnerSelection) => void;
+}) {
+    const face = ownerFace(owner);
+    const standing = standingFor(owner, progress);
+    const percent = standing.total > 0 ? (standing.done / standing.total) * 100 : 0;
+    const empty = matchCount === 0;
+
+    return (
+        <button
+            type="button"
+            onClick={() => onSelect(owner)}
+            aria-current={active ? 'true' : undefined}
+            aria-label={face.org}
+            className={cn(
+                // The active mark is a pseudo-element, so a selected tile is not 2px shorter.
+                'relative flex-none w-[78px] h-[78px] flex flex-col items-center justify-center gap-[7px]',
+                'px-1.5 border-r border-line-900 transition-colors',
+                active
+                    ? 'bg-steel-700 after:absolute after:inset-x-0 after:bottom-0 after:h-[2px] after:bg-ember'
+                    : 'hover:bg-steel-800',
+                empty && 'opacity-40',
+            )}
+        >
+            <VendorMark owner={owner} active={active} />
+
+            {matchCount !== null ? (
+                <span className={cn('font-mono text-[9px] tabular leading-none', empty ? 'text-ink-700' : 'text-ink-400')}>
+                    {matchCount === 0 ? 'none' : `${matchCount} hit${matchCount === 1 ? '' : 's'}`}
+                </span>
+            ) : (
+                <>
+                    <span className="block w-11 h-[3px] bg-track" aria-hidden="true">
+                        <span
+                            className={cn('block h-[3px]', active ? 'bg-good' : 'bg-line-200')}
+                            style={{ width: `${percent}%` }}
+                        />
+                    </span>
+                    <span className={cn('font-mono text-[9px] tabular leading-none', active ? 'text-ink-400' : 'text-ink-700')}>
+                        {standing.done}/{standing.total}
+                    </span>
+                </>
+            )}
+        </button>
+    );
+}
+
+export function VendorStrip({ owners, selected, progress, onSelect, matches = null }: VendorRailProps) {
+    const strip = useRef<HTMLElement>(null);
+
+    /**
+     * Eight tiles do not fit a phone, so the one in force is scrolled to. Without this, opening a
+     * shared link to the gunsmith — or the gathered list, which is the last tile — shows a strip
+     * with nothing selected in it.
+     */
+    useEffect(() => {
+        strip.current
+            ?.querySelector('[aria-current="true"]')
+            ?.scrollIntoView({ inline: 'nearest', block: 'nearest' });
+    }, [selected]);
+
+    return (
+        <nav
+            ref={strip}
+            aria-label="Vendors"
+            className="bg-steel-900 border border-line-900 flex overflow-x-auto"
+        >
+            {owners.map((owner) => (
+                <VendorTile
+                    key={owner}
+                    owner={owner}
+                    active={selected === owner}
+                    progress={progress}
+                    matchCount={matches ? matches.get(owner) ?? 0 : null}
+                    onSelect={onSelect}
+                />
+            ))}
+
+            <button
+                type="button"
+                onClick={() => onSelect(ALL_OWNERS)}
+                aria-current={selected === ALL_OWNERS ? 'true' : undefined}
+                className={cn(
+                    'relative flex-none w-[78px] h-[78px] flex flex-col items-center justify-center gap-2 px-1.5 transition-colors',
+                    selected === ALL_OWNERS
+                        ? 'bg-steel-700 after:absolute after:inset-x-0 after:bottom-0 after:h-[2px] after:bg-ember'
+                        : 'hover:bg-steel-800',
+                )}
+            >
+                <Layers size={17} className={selected === ALL_OWNERS ? 'text-ember' : 'text-ink-700'} />
+                <span className={cn('micro-label', selected === ALL_OWNERS && 'text-ink-300')}>Open now</span>
+            </button>
+        </nav>
     );
 }
 

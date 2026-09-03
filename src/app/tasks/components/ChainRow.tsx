@@ -4,7 +4,7 @@ import React from 'react';
 import { MapPin } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { Task, TaskState } from '@/types/tasks';
-import { ROW_H, laneX, rowTextX } from '../utils/chain';
+import { laneX, rowTextX } from '../utils/chain';
 import { getTaskTypeIcon } from '../utils/taskText';
 
 /**
@@ -25,6 +25,8 @@ export interface ChainRowProps {
     position: number | null;
     isNext: boolean;
     isSelected: boolean;
+    /** Row height: 38 on the desktop, 44 on a phone, where the row is a thumb target. */
+    rowH: number;
     onSelect: (taskId: string) => void;
 }
 
@@ -40,14 +42,14 @@ export function TaskMarker({ state, isNext }: { state: TaskState; isNext: boolea
 }
 
 export default function ChainRow({
-    task, state, lane, position, isNext, isSelected, onSelect,
+    task, state, lane, position, isNext, isSelected, rowH, onSelect,
 }: ChainRowProps) {
     return (
         <button
             type="button"
             onClick={() => onSelect(task.id)}
             aria-current={isSelected ? 'true' : undefined}
-            style={{ height: ROW_H, paddingLeft: rowTextX(lane) }}
+            style={{ height: rowH, paddingLeft: rowTextX(lane) }}
             className={cn(
                 'relative w-full text-left flex items-center gap-2.5 pr-3 transition-colors',
                 // The selected edge is a pseudo-element rather than a border, which would shift the
@@ -95,7 +97,7 @@ export default function ChainRow({
                 </span>
                 <span
                     className={cn(
-                        'hidden shell:inline-flex items-center gap-1 font-mono text-[9px] leading-none px-1.5 py-1 border',
+                        'inline-flex items-center gap-1 font-mono text-[9px] leading-none px-1.5 py-1 border',
                         state === 'locked' ? 'border-line-800 text-ink-800' : 'border-line-700 text-ink-600',
                     )}
                 >

@@ -2,7 +2,7 @@
 
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { Check, Filter, MapPin, Search, X } from 'lucide-react';
+import { ArrowLeft, Check, Filter, MapPin, Search, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useDebounce } from '@/hooks/useDebounce';
 import { Button } from '@/components/ui/button';
@@ -31,9 +31,10 @@ import {
     serializeFilters,
 } from '../utils/filters';
 import ChainColumn from './ChainColumn';
+import NextUpCard from './NextUpCard';
 import SearchResults, { type SearchGroup } from './SearchResults';
 import TaskDetailPane from './TaskDetailPane';
-import VendorRail from './VendorRail';
+import VendorRail, { VendorStrip } from './VendorRail';
 
 /**
  * The tasks route: 227 contracts across seven vendors, read as chains rather than as a list.
@@ -191,11 +192,18 @@ export default function TasksPageContent() {
         return ids;
     }, [owners, progress]);
 
-    /** The chain's next open task, which is what the pane opens on when nothing is named. */
+    /**
+     * The vendor's next open task, which is what the pane opens on when nothing is named and what
+     * the phone's card carries. Chains are searched in order: four vendors run more than one, and a
+     * finished first chain must not leave the vendor looking as though it had no work left.
+     */
     const nextUp = useMemo(() => {
         if (viewingAll) return null;
-        const [chain] = buildChains(selection as ChainOwner).chains;
-        return chain ? nextUpIn(chain, progress) : null;
+        for (const chain of buildChains(selection as ChainOwner).chains) {
+            const id = nextUpIn(chain, progress);
+            if (id) return id;
+        }
+        return null;
     }, [viewingAll, selection, progress]);
 
     const selectedTask =
@@ -250,20 +258,44 @@ export default function TasksPageContent() {
         update({ search: '', owner: filters.owner === ALL_OWNERS ? '' : filters.owner });
     }, [filters.owner, update]);
 
+    /**
+     * The phone shows one thing at a time, and a named task is what turns the chain into a briefing.
+     *
+     * `?task=` therefore doubles as the phone's "which screen am I on": the same URL that seats the
+     * pane beside the chain on a desktop opens the briefing on a phone, so a link someone sends
+     * lands on the same task either way, and Back is a state change rather than a second history
+     * entry to get wrong.
+     */
+    const mobileDetail = filters.task !== '';
+
+    const closeTask = useCallback(() => update({ task: '' }), [update]);
+
+    /**
+     * The task the phone opens on. Only a sequence has a next contract — the dailies are all
+     * available at once, so they get the list and no card.
+     */
+    const cardTask = !viewingAll && nextUp && ownerFace(selection as ChainOwner).hasChain
+        ? tasksData[nextUp]
+        : undefined;
+
     return (
         <div className="flex flex-col gap-3">
-            {/* Header */}
-            <div className="flex flex-col shell:flex-row shell:items-end gap-4 shell:gap-5">
-                <div className="flex-1 min-w-0">
+            {/* Header. On a phone the campaign figure moves up beside the title and the search box
+                takes the whole of the next line, rather than three stacked blocks of chrome. */}
+            <div className={cn(
+                'flex-wrap items-end gap-3 shell:gap-5 shell:flex',
+                mobileDetail ? 'hidden' : 'flex',
+            )}>
+                <div className="flex-1 min-w-0 order-1">
                     <span className="eyebrow">
                         Operations · {campaign.total} contracts · {vendorCount} vendors
                     </span>
-                    <h1 className="mt-2 font-display text-3xl shell:text-4xl font-extrabold uppercase tracking-tight text-ink-hi leading-none">
+                    <h1 className="mt-2 font-display text-2xl shell:text-4xl font-extrabold uppercase tracking-tight text-ink-hi leading-none">
                         Task chains
                     </h1>
                 </div>
 
-                <div className="flex items-center gap-2 h-9 px-3 bg-steel-750 border border-line-600 focus-within:border-ember shell:w-72 flex-none">
+                <div className="order-3 shell:order-2 w-full shell:w-72 flex items-center gap-2 h-9 px-3 bg-steel-750 border border-line-600 focus-within:border-ember flex-none">
                     <Search size={15} className="text-ink-700 flex-none" />
                     <input
                         type="search"
@@ -280,12 +312,12 @@ export default function TasksPageContent() {
                     )}
                 </div>
 
-                <div className="flex-none shell:text-right">
+                <div className="order-2 shell:order-3 flex-none text-right">
                     <span className="micro-label">Campaign</span>
                     <div className="font-display tabular text-2xl font-bold text-ink-100 leading-none mt-1.5 mb-1.5">
                         {campaign.done}<span className="text-ink-700">/{campaign.total}</span>
                     </div>
-                    <div className="h-[3px] w-full shell:w-[186px] bg-track" aria-hidden="true">
+                    <div className="h-[3px] w-[120px] shell:w-[186px] bg-track" aria-hidden="true">
                         <div
                             className="h-[3px] bg-good"
                             style={{ width: `${campaign.total ? (campaign.done / campaign.total) * 100 : 0}%` }}
@@ -295,7 +327,10 @@ export default function TasksPageContent() {
             </div>
 
             {/* Filter bar */}
-            <div className="flex flex-wrap items-center gap-2 py-2 border-y border-line-900">
+            <div className={cn(
+                'flex-wrap items-center gap-2 py-2 border-y border-line-900 shell:flex',
+                mobileDetail ? 'hidden' : 'flex',
+            )}>
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Button variant="quiet" size="micro" aria-label="Filter by map">
@@ -371,9 +406,16 @@ export default function TasksPageContent() {
                 </span>
             </div>
 
-            {/* Three panes */}
+            {/*
+              * Three panes side by side, one pane at a time on a phone.
+              *
+              * The split is the same information in both places, not a cut-down version of it: the
+              * rail folds into a strip, the chain keeps every row, and the pane becomes a screen of
+              * its own that `?task=` switches to. A hidden grid child takes no track, so the desktop
+              * layout is unaffected by what the phone adds.
+              */}
             <div className="grid grid-cols-1 shell:grid-cols-[244px_372px_1fr] gap-3 items-start">
-                <div className="shell:sticky shell:top-4 shell:max-h-[calc(100vh-2rem)] flex flex-col min-h-0">
+                <div className="hidden shell:flex shell:sticky shell:top-4 shell:max-h-[calc(100vh-2rem)] flex-col min-h-0">
                     <VendorRail
                         owners={owners}
                         selected={selection}
@@ -383,8 +425,34 @@ export default function TasksPageContent() {
                     />
                 </div>
 
+                <div className={cn('shell:hidden', mobileDetail && 'hidden')}>
+                    <VendorStrip
+                        owners={owners}
+                        selected={selection}
+                        progress={progress}
+                        onSelect={selectOwner}
+                        matches={matches}
+                    />
+                </div>
+
+                {cardTask && (
+                    <div className={cn('shell:hidden', mobileDetail && 'hidden')}>
+                        <NextUpCard
+                            task={cardTask}
+                            progress={progress}
+                            hydrated={hydrated}
+                            onOpen={selectTask}
+                            onSetDone={setDone}
+                        />
+                    </div>
+                )}
+
                 {/* Chain column, or the gathered list that replaces it */}
-                <div className="bg-steel-900 border border-line-900 flex flex-col min-h-0 shell:sticky shell:top-4 shell:max-h-[calc(100vh-2rem)]">
+                <div className={cn(
+                    'bg-steel-900 border border-line-900 flex-col min-h-0 shell:flex',
+                    'shell:sticky shell:top-4 shell:max-h-[calc(100vh-2rem)]',
+                    mobileDetail ? 'hidden' : 'flex',
+                )}>
                     {gathered ? (
                         <SearchResults
                             title={gathered === 'search' ? 'Results' : 'Open now'}
@@ -423,8 +491,25 @@ export default function TasksPageContent() {
                     )}
                 </div>
 
-                {/* Detail pane */}
-                <div className="min-h-0 shell:sticky shell:top-4 shell:max-h-[calc(100vh-2rem)] flex flex-col">
+                {/* Detail pane, and on a phone the screen a task opens into */}
+                <div className={cn(
+                    'min-h-0 shell:sticky shell:top-4 shell:max-h-[calc(100vh-2rem)] flex-col gap-2 shell:flex',
+                    mobileDetail ? 'flex' : 'hidden',
+                )}>
+                    {mobileDetail && (
+                        <button
+                            type="button"
+                            onClick={closeTask}
+                            // `justify-start` is not redundant: the base stylesheet centres buttons.
+                            className="shell:hidden h-11 flex items-center justify-start gap-2 px-3 bg-steel-900 border border-line-900 text-left"
+                        >
+                            <ArrowLeft size={14} className="text-ink-600 flex-none" />
+                            <span className="micro-label">
+                                {gathered ? 'Back to the list' : 'Back to the chain'}
+                            </span>
+                        </button>
+                    )}
+
                     {selectedTask ? (
                         <TaskDetailPane
                             task={selectedTask}
