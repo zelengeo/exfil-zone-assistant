@@ -17,7 +17,7 @@ import { tasksData } from '@/data/tasks';
 import type { Task, TaskMap } from '@/types/tasks';
 import { useTaskProgress } from '../hooks/useTaskProgress';
 import { buildChains } from '../utils/chain';
-import { canComplete, countsFor, isDone, nextUpIn, stateOf } from '../utils/progress';
+import { countsFor, isDone, nextUpIn } from '../utils/progress';
 import { populatedOwners, tasksForOwner, type ChainOwner } from '../utils/vendors';
 import {
     ALL_OWNERS,
@@ -31,6 +31,7 @@ import {
     serializeFilters,
 } from '../utils/filters';
 import ChainColumn from './ChainColumn';
+import TaskDetailPane from './TaskDetailPane';
 import VendorRail from './VendorRail';
 
 /**
@@ -58,7 +59,7 @@ export default function TasksPageContent() {
     const router = useRouter();
     const pathname = usePathname();
     const searchParams = useSearchParams();
-    const { progress, hydrated, setDone } = useTaskProgress();
+    const { progress, hydrated, setDone, toggleObjective } = useTaskProgress();
 
     const filters = useMemo(() => parseFilters(searchParams), [searchParams]);
 
@@ -169,6 +170,27 @@ export default function TasksPageContent() {
     );
 
     const selectTask = useCallback((task: string) => update({ task }), [update]);
+
+    /**
+     * Recording work pins the pane to that task.
+     *
+     * With nothing named in the URL the pane follows the chain's next-up task — so finishing it
+     * would move next-up on and swap the pane out from under the tick that was just made, with no
+     * chance to see it land or undo it. Acting on a task selects it.
+     */
+    const pin = useCallback((task: Task) => {
+        if (!filters.task) update({ task: task.id });
+    }, [filters.task, update]);
+
+    const markDone = useCallback((task: Task, done: boolean) => {
+        setDone(task, done);
+        pin(task);
+    }, [setDone, pin]);
+
+    const tickObjective = useCallback((task: Task, index: number) => {
+        toggleObjective(task, index);
+        pin(task);
+    }, [toggleObjective, pin]);
 
     const clearSearch = useCallback(() => {
         setSearchDraft('');
@@ -327,50 +349,21 @@ export default function TasksPageContent() {
                     </div>
                 </div>
 
-                {/* Detail pane — objectives, rewards, guides and gates land here next. */}
-                <div className="bg-steel-800 border border-line-800 min-h-0">
+                {/* Detail pane */}
+                <div className="min-h-0 shell:sticky shell:top-4 shell:max-h-[calc(100vh-2rem)] flex flex-col">
                     {selectedTask ? (
-                        <div className="p-4 shell:p-5">
-                            <span className="micro-label">
-                                {selectedTask.objectives.length} objective{selectedTask.objectives.length === 1 ? '' : 's'}
-                                {selectedTask.type.length > 0 && ` · ${selectedTask.type.join(', ')}`}
-                            </span>
-                            <h2 className="mt-3 font-display text-2xl shell:text-3xl font-extrabold uppercase tracking-tight text-ink-hi leading-none">
-                                {selectedTask.name}
-                            </h2>
-                            <p className="mt-3 text-[13px] leading-relaxed text-ink-400 max-w-[70ch]">
-                                {selectedTask.description}
-                            </p>
-
-                            <ul className="mt-5 flex flex-col gap-2">
-                                {selectedTask.objectives.map((objective, index) => (
-                                    <li key={index} className="flex items-start gap-2.5 text-[13px] text-ink-300">
-                                        <span className="w-4 h-4 mt-0.5 flex-none border border-line-800 block" />
-                                        <span>{objective}</span>
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <div className="mt-6 pt-4 border-t border-line-900 flex items-center gap-3">
-                                <Button
-                                    variant="ember"
-                                    size="micro"
-                                    className="h-11 px-5"
-                                    disabled={!hydrated || !canComplete(selectedTask, progress)}
-                                    onClick={() => setDone(selectedTask, !isDone(progress, selectedTask.id))}
-                                >
-                                    <Check />
-                                    {isDone(progress, selectedTask.id) ? 'Mark incomplete' : 'Mark complete'}
-                                </Button>
-                                <span className="micro-label">
-                                    {stateOf(selectedTask, progress) === 'locked'
-                                        ? 'Locked · finish its prerequisites first'
-                                        : stateOf(selectedTask, progress)}
-                                </span>
-                            </div>
-                        </div>
+                        <TaskDetailPane
+                            task={selectedTask}
+                            progress={progress}
+                            hydrated={hydrated}
+                            onToggleObjective={tickObjective}
+                            onSetDone={markDone}
+                            onSelectTask={selectTask}
+                        />
                     ) : (
-                        <div className="p-8 text-center text-sm text-ink-700">Pick a task from the chain.</div>
+                        <div className="bg-steel-800 border border-line-800 p-8 text-center text-sm text-ink-700">
+                            Pick a task from the chain.
+                        </div>
                     )}
                 </div>
             </div>
