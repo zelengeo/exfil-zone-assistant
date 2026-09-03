@@ -26,7 +26,13 @@ The module is ~421 KB of source, and four `'use client'` components import `task
 reaches the browser bundle. That is the same pattern `services/dataFiles.ts` exists to prevent for
 `public/data`, where importing rather than loading once shipped the item database twice.
 
-Whether that cost is accepted or simply unnoticed is the open question on this record, and is why
-its status is `proposed` rather than `accepted`. Measuring the built chunk requires a production
-build. If the cost is deliberate, say so here and the matter is settled; if it is not, the smallest
-fix is a server boundary at the route rather than a change of format.
+The bundle cost is **not accepted** - decided 2026-09-04. The decision to keep the data as a
+committed TypeScript module stands; what is rejected is that it reaches the browser.
+
+The fix is not a change of format, and it is not simply routing the importers through
+`app/tasks/utils/`: a client component that imports a util which imports `tasksData` still pulls
+the data in, because a module boundary is not a server boundary. It needs the page, which is a
+server component, to select what each client component actually uses and pass that as props - and
+it only wins by passing less, since whatever is passed still travels in the RSC payload.
+
+Status stays `proposed` until that lands.

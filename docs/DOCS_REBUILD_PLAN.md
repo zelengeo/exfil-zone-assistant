@@ -142,5 +142,8 @@ the same pattern `services/dataFiles.ts` exists to prevent for `public/data`. Wh
 deliberate is the question the record cannot answer for itself. Measuring the built chunk needs a
 production build.
 
-Stage 8 (the `tasks.ts` seam) is the natural place to settle it: routing the 12 direct importers
-through `app/tasks/utils/` would also give the data a single server-side door.
+The bundle cost is not accepted (decided 2026-09-04), so stage 8 grows a second goal beyond the
+interface work. Note that the two are not the same change: making `app/tasks/utils/` the single
+door improves the interface but does not remove the data from the bundle, because a client
+component importing a util still pulls in what that util imports. Getting it out needs the server
+component to pass a selected subset as props, and to pass less than the whole database.
