@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { ArrowLeft, Check, Filter, MapPin, Search, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -526,6 +527,23 @@ export default function TasksPageContent() {
                     )}
                 </div>
             </div>
+
+            {/*
+              * The old route offered a correction form on every task card, which sent a report into
+              * a queue nobody was reading. The honest version is one line: the prerequisite graph is
+              * the part still being verified, and Discord is where a wrong edge gets fixed.
+              */}
+            <p className="micro-label text-ink-800 pt-1">
+                Prerequisites are still being verified —{' '}
+                <Link
+                    href="https://discord.gg/2FCDZK6C25"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-info hover:text-info-pale underline"
+                >
+                    report anything wrong on Discord
+                </Link>
+            </p>
         </div>
     );
 }

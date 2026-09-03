@@ -52,9 +52,9 @@ components/
 │   ├── Header.tsx            # Site header with navigation
 │   ├── Footer.tsx            # Site footer
 │   └── Layout.tsx            # Main layout wrapper
-├── corrections/               # Data correction forms (~2 files)
-│   ├── ItemCorrectionForm.tsx    # Item data corrections
-│   └── TaskCorrectionForm.tsx    # Task data corrections
+├── corrections/               # Data correction forms
+│   └── ItemCorrectionForm.tsx    # Item data corrections (the task form was removed
+│                                 #   with the /tasks rebuild — see app/tasks/CLAUDE.md)
 ├── profile/                   # User profile components (~2 files)
 │   ├── ProfileHeader.tsx     # Profile header display
 │   └── ProfileStats.tsx      # User statistics
