@@ -16,6 +16,9 @@ gotchas, point at the script rather than restating it.
 `CONTEXT.md` at the root is the glossary: the canonical name for every domain term and the words
 not to use. Check it before naming anything.
 
+`docs/adr/` records the decisions that would otherwise look arbitrary: why task data is a committed
+TypeScript module, why zod outranks hand-written types, why there is no `Corp`.
+
 Non-obvious ones worth reaching for by name:
 
 - `public/data/CLAUDE.md` — item JSON schemas, and the procedure for a game-version data update
@@ -30,7 +33,7 @@ Non-obvious ones worth reaching for by name:
 2. **shadcn/ui components** from `src/components/ui/` before hand-rolling one.
 3. **Type everything.** ESLint forbids `any`; reach for `unknown` when a type is genuinely unknown.
 4. **Zod schemas are the source of truth for types.** Infer with `z.infer<typeof schema>` rather
-   than declaring a parallel type by hand.
+   than declaring a parallel type by hand. Why: [ADR 0002](docs/adr/0002-zod-schemas-are-the-source-of-truth-for-types.md).
 5. **Edit the existing file.** Make the smallest change that does the job, keep the surrounding
    patterns, and leave unrelated code alone.
 6. **One component at a time.** Build it, check it, then start the next.

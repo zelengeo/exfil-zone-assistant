@@ -129,7 +129,18 @@ Opportunistic: do it when the data is next touched, since the churn otherwise ou
 - [x] Stage 2 — `CONTEXT.md` (106 lines, 21 terms)
 - [x] Stage 3 — Vitest (147 tests across 5 suites)
 - [x] Stage 4 — nested docs (11,495 lines to 931 across 15 files)
-- [ ] Stage 5 — delete index
-- [ ] Stage 6 — ADRs
+- [x] Stage 5 — delete index (-712 lines)
+- [x] Stage 6 — ADRs (3 records; 0001 left `proposed`, see below)
 - [ ] Stage 7 — cleanup
 - [ ] Stage 8 — deferred
+
+## Open after stage 6
+
+**ADR 0001 is `proposed`, not `accepted`.** Writing it turned up that four `'use client'`
+components import `tasksData` directly, so the ~421 KB task module reaches the browser bundle —
+the same pattern `services/dataFiles.ts` exists to prevent for `public/data`. Whether that cost is
+deliberate is the question the record cannot answer for itself. Measuring the built chunk needs a
+production build.
+
+Stage 8 (the `tasks.ts` seam) is the natural place to settle it: routing the 12 direct importers
+through `app/tasks/utils/` would also give the data a single server-side door.

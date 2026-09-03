@@ -4,7 +4,7 @@
 
 **Parent:** [App Router](../CLAUDE.md) — Next.js pages & routing
 **Root:** [Root CLAUDE.md](../../../CLAUDE.md) — project overview
-**Index:** [CLAUDE-INDEX.md](../../../CLAUDE-INDEX.md) — complete navigation
+**Glossary:** [CONTEXT.md](../../../CONTEXT.md) — canonical domain terms
 
 **Related:**
 - [Types](../../types/CLAUDE.md) — `Task`, `TaskProgress`, `TaskState`
