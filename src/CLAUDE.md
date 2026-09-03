@@ -1,250 +1,69 @@
-# Frontend Architecture Guidelines
+# Frontend Architecture
 
-## Documentation Hierarchy
+How the client half is arranged, and the few conventions that are not obvious from reading a file.
 
-**Parent:** [Root CLAUDE.md](../CLAUDE.md) - Project overview & critical rules
-**Index:** [CLAUDE-INDEX.md](../CLAUDE-INDEX.md) - Complete documentation navigation
+## Layers
 
-**Related Documentation:**
-- [App Router](app/CLAUDE.md) - Next.js pages & routing patterns
-- [Components](components/CLAUDE.md) - React component development
-- [Types](types/CLAUDE.md) - TypeScript type definitions
-- [Services](services/CLAUDE.md) - Data access layer
-- [Content](content/CLAUDE.md) - Content creation patterns
+- `app/` — routes. A route owns its components in `app/<route>/components/` and its logic in
+  `app/<route>/utils/`; both stay there until a second route needs them.
+- `components/` — shared across routes. `ui/` is shadcn; the rest are grouped by domain
+  (`items/`, `tasks/`, `trade/`, `protection/`, `gunsmith/`, `corrections/`, `profile/`, `layout/`).
+- `lib/` — request plumbing and pure game logic. See [lib/CLAUDE.md](lib/CLAUDE.md).
+- `services/` — how data is reached. See [services/CLAUDE.md](services/CLAUDE.md).
+- `data/`, `types/`, `hooks/`, `config/`, `content/`.
 
-**See Also:**
-- For backend patterns, see [Lib CLAUDE.md](lib/CLAUDE.md)
-- For API routes, see [API CLAUDE.md](app/api/CLAUDE.md)
-- For styling conventions, see [Components CLAUDE.md](components/CLAUDE.md)
+## Reading game data
 
----
-
-## Directory Structure
-```
-src/
-├── app/            # Next.js App Router pages and layouts
-├── components/     # Reusable React components
-├── content/        # Static content (guides, data)
-├── lib/           # Utilities and helpers
-├── services/      # API and data services
-└── types/         # TypeScript type definitions
-```
-
-## Component Architecture
-
-### Component Categories
-1. **Layout Components** (`/components/layout/`)
-    - Header, Footer, Navigation
-    - Consistent across all pages
-    - Handle responsive design
-
-2. **UI Components** (`/components/ui/`)
-    - Buttons, Cards, Modals
-    - Follow shadcn patterns
-    - Highly reusable
-
-3. **Feature Components** (`/components/[feature]/`)
-    - ItemCard, CombatSimulator, TaskTracker
-    - Domain-specific logic
-    - Compose UI components
-
-### Component Rules
 ```typescript
-// ✅ CORRECT: Typed props with interface
-interface ComponentProps {
-  title: string;
-  items: Item[];
-  onSelect?: (item: Item) => void;
-}
-
-export function Component({ title, items, onSelect }: ComponentProps) {
-  // Implementation
-}
-
-// ❌ WRONG: Inline types or any
-export function Component({ title, items }: any) {
-  // Don't do this
-}
-```
-
-## State Management Patterns
-
-### Local State
-```javascript
-// Simple state for UI controls
-const [isOpen, setIsOpen] = useState(false);
-const [filter, setFilter] = useState('all');
-```
-
-### Complex State
-```javascript
-// Use reducer for complex state logic
-const [state, dispatch] = useReducer(reducer, initialState);
-```
-
-### Global State
-```javascript
-// Use Context API for cross-component state
-const ProgressContext = createContext();
-export const useProgress = () => useContext(ProgressContext);
-```
-
-## Data Fetching Patterns
-
-### Static Data
-```javascript
-// Read public/data through the shared loader - never `import` these files.
-// Importing inlines the JSON into a client chunk, shipping the database twice.
 import { loadDataFile } from '@/services/dataFiles';
 const weapons = await loadDataFile<Weapon[]>('weapons.json');
-
-// Or go through the service layer, which already does
-import { fetchItemsData } from '@/services/ItemService';
-const { items } = await fetchItemsData();
 ```
 
-### Dynamic Data
-```javascript
-// Use React hooks for client-side fetching
-const { data, loading, error } = useItemData(itemId);
+Never `import` a file from `public/data`. The bundler inlines the same bytes into a client chunk,
+which is how the database once shipped twice across 16 chunks. `dataFiles.ts` explains the whole
+trap in its header; `ItemService` already goes through it.
+
+## Client state
+
+There is no state library, and no React Context outside shadcn internals. Progress and preferences
+are localStorage, reached through two layers:
+
+- `services/StorageService.ts` owns every key, the game-version check, and wipe semantics. Storage
+  is a text file a user can edit, so everything read back out of it is validated.
+- Per-route hooks — `useTaskProgress`, `useSavedBuilds`, `useDensity` — wrap it in
+  `useSyncExternalStore` over a module-level store, and expose `hydrated`.
+
+Render the pre-hydration state and swap once `hydrated` is true. Reading `localStorage` during the
+first render breaks SSR.
+
+## Styling
+
+Compose with `cn()`, never string concatenation, so later classes can override earlier ones:
+
+```tsx
+<div className={cn('military-box p-4', isActive && 'border-olive-400')}>
 ```
 
-## Styling Conventions
+Shared component classes live in `@layer components` in `app/globals.css`. Casing is a CSS concern:
+the `micro-label` and `eyebrow` utilities uppercase, so data keeps its own casing.
 
-### Tailwind Classes
-```jsx
-// ✅ CORRECT: Use cn() utility for conditional classes
-<div className={cn(
-  "military-box p-4",
-  isActive && "border-olive-400",
-  isDisabled && "opacity-50"
-)}>
+## VR and touch
 
-// ❌ WRONG: String concatenation
-<div className={`military-box p-4 ${isActive ? 'border-olive-400' : ''}`}>
-```
+- Touch targets at least 44x44px, and the phone row height exists for this reason
+- Contrast for a dim headset panel, not a calibrated monitor
+- Keyboard focus stays visible
+- Mobile matters as much as VR
 
-### Custom Styles
-```css
-/* Only in globals.css */
-@layer components {
-  .military-box {
-    @apply bg-military-800 border border-military-600 rounded-sm;
-  }
-}
-```
+## Conventions
 
-## Performance Optimizations
+- **Components** are `PascalCase.tsx`, hooks are `useThing.ts`, utilities are `camelCase.ts`.
+- **Types** go in `src/types/`, or are inferred from a zod schema. There is no
+  `ComponentName.types.ts` convention — nothing in the repo uses one.
+- **Imports** in order: external packages, internal aliases (`@/`), relative, then types.
+- Prefer server components; add `'use client'` only when the component needs it.
+- Data pages are statically generated. Keep them that way.
 
-### Code Splitting
-```javascript
-// Dynamic imports for heavy components
-const CombatSimulator = dynamic(
-  () => import('@/components/combat-sim/CombatSimulator'),
-  { 
-    loading: () => <LoadingSpinner />,
-    ssr: false 
-  }
-);
-```
+## Tests
 
-### Memoization
-```javascript
-// Memoize expensive calculations
-const sortedItems = useMemo(
-  () => items.sort((a, b) => b.value - a.value),
-  [items]
-);
-
-// Memoize callbacks
-const handleSelect = useCallback(
-  (item) => {
-    dispatch({ type: 'SELECT_ITEM', payload: item });
-  },
-  [dispatch]
-);
-```
-
-### Image Optimization
-```jsx
-// Always use Next.js Image component
-import Image from 'next/image';
-
-<Image 
-  src="/images/item.webp"
-  alt="Item name"
-  width={64}
-  height={64}
-  loading="lazy"
-/>
-```
-
-## Error Handling
-
-### Component Error Boundaries
-```javascript
-// Wrap features in error boundaries
-<ErrorBoundary fallback={<ErrorMessage />}>
-  <FeatureComponent />
-</ErrorBoundary>
-```
-
-### Data Validation
-```javascript
-// Validate data at service layer
-if (!isValidItem(data)) {
-  console.error('Invalid item data:', data);
-  return null;
-}
-```
-
-## Accessibility
-
-### VR Optimizations
-- Minimum touch target: 44x44px
-- Focus visible indicators
-- Keyboard navigation support
-- High contrast ratios (WCAG AA)
-
-### ARIA Labels
-```jsx
-<button
-  aria-label="Filter weapons by caliber"
-  aria-pressed={isFiltered}
-  className="vr-button"
->
-  Filter
-</button>
-```
-
-## File Naming Conventions
-- Components: PascalCase (`ItemCard.tsx`)
-- Utilities: camelCase (`formatDate.ts`)
-- Types: PascalCase with `.types.ts` (`Item.types.ts`)
-- Hooks: camelCase with `use` prefix (`useItemFilter.ts`)
-- Constants: UPPER_SNAKE_CASE in files (`RARITY_CONFIG`)
-
-## Import Order
-1. React and core libraries
-2. Third-party libraries
-3. Internal aliases (@/)
-4. Relative imports
-5. Static assets
-6. Types
-
-## Testing Patterns
-```javascript
-// Component test example
-describe('ItemCard', () => {
-  it('displays item information correctly', () => {
-    render(<ItemCard item={mockItem} />);
-    expect(screen.getByText(mockItem.name)).toBeInTheDocument();
-  });
-});
-```
-
-## Common Utilities Location
-- `/lib/utils.ts` - General utilities (cn, formatters)
-- `/lib/calculations.ts` - Game calculations
-- `/lib/constants.ts` - App-wide constants
-- `/services/` - Data fetching and transformation
+`npm test` runs Vitest over `src/**/*.test.ts`, in a node environment — the suites cover pure
+modules and the published data, not components. Put a spec beside the module it checks.
