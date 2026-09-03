@@ -4486,6 +4486,33 @@
     "tips": ""
   },
   {
+    "id": "magazine-mx338-5",
+    "name": "MX338 .338 LM 5-round magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-mx338-5.webp",
+      "thumbnail": "/images/items/magazines/magazine-mx338-5.webp",
+      "fullsize": "/images/items/magazines/magazine-mx338-5.webp"
+    },
+    "stats": {
+      "weight": 0.35,
+      "rarity": "Common",
+      "capacity": 5,
+      "caliber": ".338 LM",
+      "ammoSubcategory": ".338 Lapua Magnum",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.02,
+      "compatibleWeapons": [
+        "weapon-mx338-nf"
+      ]
+    },
+    "gameId": "gunsmith.mx338.clip.5",
+    "family": "AXMC",
+    "tips": ""
+  },
+  {
     "id": "magazine-p226-15",
     "name": "P226 9x19mm 15rnd magazine",
     "description": "",
@@ -4958,6 +4985,62 @@
     },
     "gameId": "gunsmith.sa58.clip.50rnd",
     "family": "SA58",
+    "tips": ""
+  },
+  {
+    "id": "magazine-sesa2-5",
+    "name": "SESA-2 .338 LM 5-round magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-sesa2-5.webp",
+      "thumbnail": "/images/items/magazines/magazine-sesa2-5.webp",
+      "fullsize": "/images/items/magazines/magazine-sesa2-5.webp"
+    },
+    "stats": {
+      "weight": 0.16,
+      "rarity": "Common",
+      "capacity": 5,
+      "caliber": ".338 LM",
+      "ammoSubcategory": ".338 Lapua Magnum",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.01,
+      "compatibleWeapons": [
+        "weapon-sesa2-fullattached",
+        "weapon-sesa2-shortstandard"
+      ]
+    },
+    "gameId": "gunsmith.sesa2.clip.5",
+    "family": "SRSA2",
+    "tips": ""
+  },
+  {
+    "id": "magazine-sesa2-8",
+    "name": "SESA-2 .338 LM 8-round magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-sesa2-8.webp",
+      "thumbnail": "/images/items/magazines/magazine-sesa2-8.webp",
+      "fullsize": "/images/items/magazines/magazine-sesa2-8.webp"
+    },
+    "stats": {
+      "weight": 0.26,
+      "rarity": "Common",
+      "capacity": 8,
+      "caliber": ".338 LM",
+      "ammoSubcategory": ".338 Lapua Magnum",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.04,
+      "compatibleWeapons": [
+        "weapon-sesa2-fullattached",
+        "weapon-sesa2-shortstandard"
+      ]
+    },
+    "gameId": "gunsmith.sesa2.clip.8",
+    "family": "SRSA2",
     "tips": ""
   },
   {

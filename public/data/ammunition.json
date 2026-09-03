@@ -1638,6 +1638,338 @@
     "tips": ""
   },
   {
+    "id": "ammo-338lapua-apv1",
+    "name": ".338 LM AP",
+    "description": "",
+    "category": "ammo",
+    "subcategory": ".338 Lapua Magnum",
+    "images": {
+      "icon": "/images/items/ammo/ammo-338lapua-apv1.webp",
+      "thumbnail": "/images/items/ammo/ammo-338lapua-apv1.webp",
+      "fullsize": "/images/items/ammo/ammo-338lapua-apv1.webp"
+    },
+    "stats": {
+      "rarity": "Uncommon",
+      "caliber": ".338 LM",
+      "weight": 0.01,
+      "damage": 115,
+      "penetration": 7.7,
+      "muzzleVelocity": 93000,
+      "bleedingChance": 0.13,
+      "bluntDamageScale": 0.3,
+      "protectionGearPenetratedDamageScale": 1,
+      "protectionGearBluntDamageScale": 0.6,
+      "damageFalloffFactor": 0.8,
+      "penetrationFalloffFactor": 0.8,
+      "ballisticCurves": {
+        "interpolation": "linear+cubic",
+        "damageOverDistance": [
+          {
+            "time": 0,
+            "value": 115,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "time": 26000,
+            "value": 115,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0006835872773,
+            "leaveTangent": -0.000683736871
+          },
+          {
+            "time": 75000,
+            "value": 92,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0003694452462,
+            "leaveTangent": -0.0003670266597
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "time": 0,
+            "value": 7.7,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "time": 26000,
+            "value": 7.7,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00004498370254,
+            "leaveTangent": -0.00004489511775
+          },
+          {
+            "time": 75000,
+            "value": 6.16,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002310476475,
+            "leaveTangent": -0.000002310478749
+          }
+        ]
+      },
+      "bulletProfileId": "338LM_DamageType_APV1"
+    },
+    "tips": ""
+  },
+  {
+    "id": "ammo-338lapua-fmj",
+    "name": ".338 LM FMJ",
+    "description": "",
+    "category": "ammo",
+    "subcategory": ".338 Lapua Magnum",
+    "images": {
+      "icon": "/images/items/ammo/ammo-338lapua-fmj.webp",
+      "thumbnail": "/images/items/ammo/ammo-338lapua-fmj.webp",
+      "fullsize": "/images/items/ammo/ammo-338lapua-fmj.webp"
+    },
+    "stats": {
+      "rarity": "Uncommon",
+      "caliber": ".338 LM",
+      "weight": 0.01,
+      "damage": 122,
+      "penetration": 5.6,
+      "muzzleVelocity": 90500,
+      "bleedingChance": 0.14,
+      "bluntDamageScale": 0.27,
+      "protectionGearPenetratedDamageScale": 0.9,
+      "protectionGearBluntDamageScale": 0.55,
+      "damageFalloffFactor": 0.75,
+      "penetrationFalloffFactor": 0.75,
+      "ballisticCurves": {
+        "interpolation": "linear+cubic",
+        "damageOverDistance": [
+          {
+            "time": 0,
+            "value": 122,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "time": 24500,
+            "value": 122,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.0004988364526,
+            "leaveTangent": -0.0004981745733
+          },
+          {
+            "time": 72500,
+            "value": 91.5,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001123355119,
+            "leaveTangent": -0.001125204726
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "time": 0,
+            "value": 5.6,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "time": 24500,
+            "value": 5.6,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007153266051,
+            "leaveTangent": -0.00007175468636
+          },
+          {
+            "time": 72500,
+            "value": 4.2,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002310476475,
+            "leaveTangent": -0.000002310478749
+          }
+        ]
+      },
+      "bulletProfileId": "338LM_DamageType_FMJ"
+    },
+    "tips": ""
+  },
+  {
+    "id": "ammo-338lapua-hpv1",
+    "name": ".338 LM VT-X",
+    "description": "",
+    "category": "ammo",
+    "subcategory": ".338 Lapua Magnum",
+    "images": {
+      "icon": "/images/items/ammo/ammo-338lapua-hpv1.webp",
+      "thumbnail": "/images/items/ammo/ammo-338lapua-hpv1.webp",
+      "fullsize": "/images/items/ammo/ammo-338lapua-hpv1.webp"
+    },
+    "stats": {
+      "rarity": "Uncommon",
+      "caliber": ".338 LM",
+      "weight": 0.01,
+      "damage": 196,
+      "penetration": 2,
+      "muzzleVelocity": 79000,
+      "bleedingChance": 0.15,
+      "bluntDamageScale": 0.13,
+      "protectionGearPenetratedDamageScale": 0.5,
+      "protectionGearBluntDamageScale": 0.28,
+      "damageFalloffFactor": 0.6,
+      "penetrationFalloffFactor": 0.6,
+      "ballisticCurves": {
+        "interpolation": "linear+cubic",
+        "damageOverDistance": [
+          {
+            "time": 0,
+            "value": 196,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "time": 22000,
+            "value": 196,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00007046953397,
+            "leaveTangent": -0.000070469614
+          },
+          {
+            "time": 79000,
+            "value": 117.599998,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001123355119,
+            "leaveTangent": -0.001125204726
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "time": 0,
+            "value": 2,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "time": 22000,
+            "value": 2,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00003653912427,
+            "leaveTangent": -0.000036638452
+          },
+          {
+            "time": 79000,
+            "value": 1.2,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002310476475,
+            "leaveTangent": -0.000002310478749
+          }
+        ]
+      },
+      "bulletProfileId": "338LM_DamageType_HPV1"
+    },
+    "tips": ""
+  },
+  {
+    "id": "ammo-338lapua-hpv2",
+    "name": ".338 LM UPS",
+    "description": "",
+    "category": "ammo",
+    "subcategory": ".338 Lapua Magnum",
+    "images": {
+      "icon": "/images/items/ammo/ammo-338lapua-hpv2.webp",
+      "thumbnail": "/images/items/ammo/ammo-338lapua-hpv2.webp",
+      "fullsize": "/images/items/ammo/ammo-338lapua-hpv2.webp"
+    },
+    "stats": {
+      "rarity": "Uncommon",
+      "caliber": ".338 LM",
+      "weight": 0.01,
+      "damage": 142,
+      "penetration": 3.9,
+      "muzzleVelocity": 82500,
+      "bleedingChance": 0.18,
+      "bluntDamageScale": 0,
+      "protectionGearPenetratedDamageScale": 0.75,
+      "protectionGearBluntDamageScale": 0.42,
+      "damageFalloffFactor": 0.65,
+      "penetrationFalloffFactor": 0.65,
+      "ballisticCurves": {
+        "interpolation": "linear+cubic",
+        "damageOverDistance": [
+          {
+            "time": 0,
+            "value": 142,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "time": 23000,
+            "value": 142,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001376815257,
+            "leaveTangent": -0.001368237892
+          },
+          {
+            "time": 64500,
+            "value": 92.300003,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.001123355119,
+            "leaveTangent": -0.001125204726
+          }
+        ],
+        "penetrationPowerOverDistance": [
+          {
+            "time": 0,
+            "value": 3.9,
+            "interpMode": "linear",
+            "tangentMode": "auto",
+            "arriveTangent": 0,
+            "leaveTangent": 0
+          },
+          {
+            "time": 23000,
+            "value": 3.9,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.00004957744022,
+            "leaveTangent": -0.00004969170914
+          },
+          {
+            "time": 64500,
+            "value": 2.535,
+            "interpMode": "cubic",
+            "tangentMode": "user",
+            "arriveTangent": -0.000002310476475,
+            "leaveTangent": -0.000002310478749
+          }
+        ]
+      },
+      "bulletProfileId": "338LM_DamageType_HPV2"
+    },
+    "tips": ""
+  },
+  {
     "id": "ammo-45acp-apv1",
     "name": ".45acp AP",
     "description": "Armor Piercing pistol ammunition with hardened steel core. Designed to penetrate light body armor at close range with heavy .45 caliber power.",

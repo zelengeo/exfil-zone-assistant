@@ -143,7 +143,12 @@ for (const { file, category } of DATA_FILES) {
         if (!item.name) fail('required-field', `${where}: no name`);
         if (!item.images?.icon) fail('required-field', `${where}: no images.icon`);
         if (typeof item.stats?.weight !== 'number') fail('required-field', `${where}: stats.weight is not a number`);
-        if (typeof item.stats?.price !== 'number') fail('required-field', `${where}: stats.price is not a number`);
+        // `stats.price` retired in favour of the extracted shop data. A missing `basePrice` is a
+        // real state - loot-only and seasonal items are listed by no vendor - so it is a curation
+        // queue, not a break; a present-but-non-numeric one still is.
+        if (item.stats?.basePrice !== undefined && typeof item.stats.basePrice !== 'number') {
+            fail('required-field', `${where}: stats.basePrice is not a number`);
+        }
 
         // category / subcategory
         if (item.category !== category) {
@@ -175,7 +180,8 @@ for (const { file, category } of DATA_FILES) {
         }
 
         // curation backlog — reported, never fatal
-        if (item.stats?.price === 0) warn('curation-price', `${where}: price 0`);
+        if (item.stats?.basePrice === undefined) warn('curation-price', `${where}: no basePrice - listed by no vendor`);
+        else if (item.stats.basePrice === 0) warn('curation-price', `${where}: basePrice 0`);
         if (!item.description) warn('curation-description', `${where}: empty description`);
         // Two different queues. `missing-from-game-data` is "review and delete"; anything else is
         // an item the extraction accounts for under a type the wiki does not publish yet, which

@@ -3320,7 +3320,7 @@
         "sellId": "gunsmith.ar15.pistolgrip.m16a1",
         "count": 1,
         "name": "AR-15 M16A1 pistolgrip",
-        "weight": 0.06,
+        "weight": 0,
         "isReceiver": false
       },
       {
@@ -3857,7 +3857,7 @@
         "sellId": "gunsmith.ar15.pistolgrip.m16a1",
         "count": 1,
         "name": "AR-15 M16A1 pistolgrip",
-        "weight": 0.06,
+        "weight": 0,
         "isReceiver": false
       },
       {
@@ -5535,7 +5535,7 @@
         "sellId": "gunsmith.ar15.pistolgrip.m16a1",
         "count": 1,
         "name": "AR-15 M16A1 pistolgrip",
-        "weight": 0.06,
+        "weight": 0,
         "isReceiver": false
       },
       {
@@ -5694,7 +5694,7 @@
         "sellId": "gunsmith.ar15.pistolgrip.m16a1",
         "count": 1,
         "name": "AR-15 M16A1 pistolgrip",
-        "weight": 0.06,
+        "weight": 0,
         "isReceiver": false
       },
       {
@@ -15747,6 +15747,164 @@
     "tips": ""
   },
   {
+    "id": "weapon-mx338-nf",
+    "name": "MX338 .338LM bolt action sniper rfile scope attached edtion",
+    "description": "",
+    "category": "weapons",
+    "subcategory": ".338 Lapua Magnum",
+    "images": {
+      "icon": "/images/items/weapons/weapon-mx338-nf.webp",
+      "thumbnail": "/images/items/weapons/weapon-mx338-nf.webp",
+      "fullsize": "/images/items/weapons/weapon-mx338-nf.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "weight": 6.567,
+      "penetration": 2,
+      "fireRate": 30,
+      "fireMode": "boltAction",
+      "fireModes": [
+        "boltAction"
+      ],
+      "MOA": null,
+      "ADSSpeed": 1,
+      "ergonomics": 0.7,
+      "recoilParameters": {
+        "shiftMomentum": 320,
+        "pitchBaseMomentum": 465,
+        "yawBaseMomentum": 30,
+        "rollBaseMomentum": 80,
+        "shiftStiffness": 300,
+        "pitchStiffness": 650,
+        "yawStiffness": 820,
+        "rollStiffness": 780,
+        "shiftDamping": 0.9,
+        "pitchDamping": 1.64,
+        "yawDamping": 1.6,
+        "rollDamping": 0.3,
+        "shiftMass": 0.75,
+        "pitchMass": 1.2,
+        "yawMass": 3,
+        "rollMass": 0.7,
+        "oneHandedMultiplier": 0.05,
+        "oneHandedADSMultiplier": 0.15,
+        "verticalRecoilControl": 1.32,
+        "horizontalRecoilControl": 1.32
+      },
+      "recoilComponentParameters": null,
+      "firingPower": 0.5,
+      "hitDamage": 150,
+      "headDamageScale": null,
+      "muzzleVelocity": 85000,
+      "damageRangeCurve": null,
+      "caliber": ".338 LM"
+    },
+    "gunsmithDisplay": {
+      "RPM": 30,
+      "caliber": ".338 LM",
+      "ergonomics": 6.000006,
+      "verticalRecoil": 399.960029,
+      "horizontalRecoil": 411.839998,
+      "firingPower": 103,
+      "spreadMOA": 0.361
+    },
+    "parts": [
+      {
+        "sellId": "gunsmith.mx338.lowerreceiver.mx338",
+        "count": 1,
+        "name": "MX338 .338 LM bolt action sniper rfile",
+        "weight": 1.7,
+        "isReceiver": true
+      },
+      {
+        "sellId": "gunsmith.mx338.handguard.mx338",
+        "count": 1,
+        "name": "MX338 .338 LM handguard",
+        "weight": 0.38,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.mx338.barrel.mx338",
+        "count": 1,
+        "name": "MX338 .338 LM bolt action barrel",
+        "weight": 1.8,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.mx338.muzzle.compensator",
+        "count": 1,
+        "name": "MX338 .338 LM Compensator",
+        "weight": 0.18,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.mx338.stock.mx338",
+        "count": 1,
+        "name": "MX338 .338 LM Stock",
+        "weight": 0.53,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.mx338.muzzle.suppressor",
+        "count": 1,
+        "name": "MX338 .338 LM Suppressor",
+        "weight": 0.5,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.mlok.mount.mount-s",
+        "count": 2,
+        "name": "M-Lok Short mount",
+        "weight": 0.01,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.20rail.tactical.fl-h200",
+        "count": 1,
+        "name": null,
+        "weight": null,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.20rail.tactical.la-peq",
+        "count": 1,
+        "name": null,
+        "weight": null,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.20rail.sight.nighthawk",
+        "count": 1,
+        "name": null,
+        "weight": null,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.mx338.clip.5",
+        "count": 1,
+        "name": "MX338 .338 LM 5-round magazine",
+        "weight": 0.35,
+        "isReceiver": false
+      },
+      {
+        "sellId": "bullet.338lm.hpv2",
+        "count": 5,
+        "name": null,
+        "weight": null,
+        "isReceiver": false
+      }
+    ],
+    "receiverId": "gunsmith.mx338.lowerreceiver.mx338",
+    "defaultClip": "MAG_MX338_10",
+    "compatibleMagazines": [
+      "magazine-mx338-5"
+    ],
+    "family": "AXMC",
+    "gameClass": "GunGenerator_MX338_Standard_C",
+    "gameId": "gungenerator.mx338.nf",
+    "tips": ""
+  },
+  {
     "id": "weapon-nostockakm",
     "name": "AKMN 7.62x39mm assault rifle No Stock edition",
     "description": "",
@@ -18464,7 +18622,7 @@
         "sellId": "gunsmith.ar15.pistolgrip.m16a1",
         "count": 1,
         "name": "AR-15 M16A1 pistolgrip",
-        "weight": 0.06,
+        "weight": 0,
         "isReceiver": false
       },
       {
@@ -18643,7 +18801,7 @@
         "sellId": "gunsmith.ar15.pistolgrip.m16a1",
         "count": 1,
         "name": "AR-15 M16A1 pistolgrip",
-        "weight": 0.06,
+        "weight": 0,
         "isReceiver": false
       },
       {
@@ -19424,6 +19582,303 @@
     "family": "ScarLH",
     "gameClass": "GunGenerator_SCAR_MK17_FullAttachSSR_C",
     "gameId": "gungenerator.seca17_fullattachssr",
+    "tips": ""
+  },
+  {
+    "id": "weapon-sesa2-fullattached",
+    "name": "SESA-2 .338 LM bolt action sniper rfile full attached edtion",
+    "description": "",
+    "category": "weapons",
+    "subcategory": ".338 Lapua Magnum",
+    "images": {
+      "icon": "/images/items/weapons/weapon-sesa2-fullattached.webp",
+      "thumbnail": "/images/items/weapons/weapon-sesa2-fullattached.webp",
+      "fullsize": "/images/items/weapons/weapon-sesa2-fullattached.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "weight": 6.734,
+      "penetration": 2,
+      "fireRate": 30,
+      "fireMode": "boltAction",
+      "fireModes": [
+        "boltAction"
+      ],
+      "MOA": null,
+      "ADSSpeed": 1,
+      "ergonomics": 0.7,
+      "recoilParameters": {
+        "shiftMomentum": 320,
+        "pitchBaseMomentum": 385,
+        "yawBaseMomentum": 30,
+        "rollBaseMomentum": 80,
+        "shiftStiffness": 300,
+        "pitchStiffness": 680,
+        "yawStiffness": 820,
+        "rollStiffness": 780,
+        "shiftDamping": 0.9,
+        "pitchDamping": 1.64,
+        "yawDamping": 1.6,
+        "rollDamping": 0.3,
+        "shiftMass": 0.75,
+        "pitchMass": 1.2,
+        "yawMass": 3,
+        "rollMass": 0.7,
+        "oneHandedMultiplier": 0.05,
+        "oneHandedADSMultiplier": 0.15,
+        "verticalRecoilControl": 0.95,
+        "horizontalRecoilControl": 0.95
+      },
+      "recoilComponentParameters": null,
+      "firingPower": 0.5,
+      "hitDamage": 150,
+      "headDamageScale": null,
+      "muzzleVelocity": 85000,
+      "damageRangeCurve": null,
+      "caliber": ".338 LM"
+    },
+    "gunsmithDisplay": {
+      "RPM": 30,
+      "caliber": ".338 LM",
+      "ergonomics": 37,
+      "verticalRecoil": 350.549984,
+      "horizontalRecoil": 344.850004,
+      "firingPower": 98,
+      "spreadMOA": 0.8075
+    },
+    "parts": [
+      {
+        "sellId": "gunsmith.sesa2.lowerreceiver.sesa2",
+        "count": 1,
+        "name": "SESA-2 .338 LM bolt action sniper rfile",
+        "weight": 2.9,
+        "isReceiver": true
+      },
+      {
+        "sellId": "gunsmith.sesa2.handguard.long",
+        "count": 1,
+        "name": "SESA-2 .338 LM short handguard",
+        "weight": 0.31,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.sesa2.barrel.560mm",
+        "count": 1,
+        "name": "SESA-2 .338 LM 560mm barrel",
+        "weight": 1.4,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.sesa2.muzzle.compensator",
+        "count": 1,
+        "name": "SESA-2 .338 LM Compensator",
+        "weight": 0.21,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.sesa2.muzzle.suppressor",
+        "count": 1,
+        "name": "SESA-2 .338 LM Suppressor",
+        "weight": 0.4,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.mlok.mount.mount-l",
+        "count": 1,
+        "name": "M-Lok Long mount",
+        "weight": 0.02,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.20rail.foregrip.gf_mod-3_bk",
+        "count": 1,
+        "name": null,
+        "weight": null,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.mlok.mount.mount-s",
+        "count": 2,
+        "name": "M-Lok Short mount",
+        "weight": 0.01,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.20rail.tactical.fl-h200",
+        "count": 1,
+        "name": null,
+        "weight": null,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.20rail.tactical.la-peq",
+        "count": 1,
+        "name": null,
+        "weight": null,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.20rail.sight.scepterbk",
+        "count": 1,
+        "name": null,
+        "weight": null,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.sesa2.clip.8",
+        "count": 1,
+        "name": "SESA-2 .338 LM 8-round magazine",
+        "weight": 0.26,
+        "isReceiver": false
+      },
+      {
+        "sellId": "bullet.338lm.hpv2",
+        "count": 8,
+        "name": null,
+        "weight": null,
+        "isReceiver": false
+      }
+    ],
+    "receiverId": "gunsmith.sesa2.lowerreceiver.sesa2",
+    "defaultClip": "MAG_SESA2_10",
+    "compatibleMagazines": [
+      "magazine-sesa2-8",
+      "magazine-sesa2-5"
+    ],
+    "family": "SRSA2",
+    "gameClass": "GunGenerator_SESA2_FullAttached_C",
+    "gameId": "gungenerator.sesa2.fullattached",
+    "tips": ""
+  },
+  {
+    "id": "weapon-sesa2-shortstandard",
+    "name": "SESA-2 .338 LM bolt action sniper rfile standard edtion",
+    "description": "",
+    "category": "weapons",
+    "subcategory": ".338 Lapua Magnum",
+    "images": {
+      "icon": "/images/items/weapons/weapon-sesa2-shortstandard.webp",
+      "thumbnail": "/images/items/weapons/weapon-sesa2-shortstandard.webp",
+      "fullsize": "/images/items/weapons/weapon-sesa2-shortstandard.webp"
+    },
+    "stats": {
+      "rarity": "Common",
+      "weight": 5.148,
+      "penetration": 2,
+      "fireRate": 30,
+      "fireMode": "boltAction",
+      "fireModes": [
+        "boltAction"
+      ],
+      "MOA": null,
+      "ADSSpeed": 1,
+      "ergonomics": 0.7,
+      "recoilParameters": {
+        "shiftMomentum": 320,
+        "pitchBaseMomentum": 385,
+        "yawBaseMomentum": 30,
+        "rollBaseMomentum": 80,
+        "shiftStiffness": 300,
+        "pitchStiffness": 680,
+        "yawStiffness": 820,
+        "rollStiffness": 780,
+        "shiftDamping": 0.9,
+        "pitchDamping": 1.64,
+        "yawDamping": 1.6,
+        "rollDamping": 0.3,
+        "shiftMass": 0.75,
+        "pitchMass": 1.2,
+        "yawMass": 3,
+        "rollMass": 0.7,
+        "oneHandedMultiplier": 0.05,
+        "oneHandedADSMultiplier": 0.15,
+        "verticalRecoilControl": 0.95,
+        "horizontalRecoilControl": 0.95
+      },
+      "recoilComponentParameters": null,
+      "firingPower": 0.5,
+      "hitDamage": 150,
+      "headDamageScale": null,
+      "muzzleVelocity": 85000,
+      "damageRangeCurve": null,
+      "caliber": ".338 LM"
+    },
+    "gunsmithDisplay": {
+      "RPM": 30,
+      "caliber": ".338 LM",
+      "ergonomics": 62,
+      "verticalRecoil": 333.450007,
+      "horizontalRecoil": 333.450007,
+      "firingPower": 100,
+      "spreadMOA": 0.833
+    },
+    "parts": [
+      {
+        "sellId": "gunsmith.sesa2.lowerreceiver.sesa2",
+        "count": 1,
+        "name": "SESA-2 .338 LM bolt action sniper rfile",
+        "weight": 2.9,
+        "isReceiver": true
+      },
+      {
+        "sellId": "gunsmith.sesa2.handguard.long",
+        "count": 1,
+        "name": "SESA-2 .338 LM short handguard",
+        "weight": 0.31,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.sesa2.barrel.560mm",
+        "count": 1,
+        "name": "SESA-2 .338 LM 560mm barrel",
+        "weight": 1.4,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.sesa2.muzzle.compensator",
+        "count": 1,
+        "name": "SESA-2 .338 LM Compensator",
+        "weight": 0.21,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.20rail.rearsight.cafrs",
+        "count": 1,
+        "name": null,
+        "weight": null,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.20rail.frontsight.caffs",
+        "count": 1,
+        "name": null,
+        "weight": null,
+        "isReceiver": false
+      },
+      {
+        "sellId": "gunsmith.sesa2.clip.5",
+        "count": 1,
+        "name": "SESA-2 .338 LM 5-round magazine",
+        "weight": 0.16,
+        "isReceiver": false
+      },
+      {
+        "sellId": "bullet.338lm.hpv2",
+        "count": 5,
+        "name": null,
+        "weight": null,
+        "isReceiver": false
+      }
+    ],
+    "receiverId": "gunsmith.sesa2.lowerreceiver.sesa2",
+    "defaultClip": "MAG_SESA2_5",
+    "compatibleMagazines": [
+      "magazine-sesa2-8",
+      "magazine-sesa2-5"
+    ],
+    "family": "SRSA2",
+    "gameClass": "GunGenerator_SESA2_Standard_C",
+    "gameId": "gungenerator.sesa2.shortstandard",
     "tips": ""
   },
   {

@@ -66,6 +66,7 @@ export interface RecoilParameters {
 
 export type FireMode = "semiAuto" | "fullAuto" | "pumpAction" | "boltAction" | "burstFire"
 export const CALIBERS = [
+    '.338 LM',
     '.45 ACP',
     '12GA',
     '12.7x55',
@@ -689,6 +690,7 @@ export const itemCategories: Record<string, ItemCategory> = {
             '.45 ACP',
             '12 Gauge',
             '12.7x55mm',
+            '.338 Lapua Magnum',
         ]
     },
     'ammo': {
@@ -712,6 +714,7 @@ export const itemCategories: Record<string, ItemCategory> = {
                 '.45 ACP',
                 '12 Gauge',
                 '12.7x55mm',
+                '.338 Lapua Magnum',
             ]
     },
     attachments: {

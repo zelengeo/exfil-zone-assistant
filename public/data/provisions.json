@@ -684,5 +684,73 @@
       ]
     },
     "tips": "Can be refilled at Water Collector in Hideout"
+  },
+  {
+    "id": "food_watle1_bear_black",
+    "name": "Beer",
+    "description": "",
+    "category": "provisions",
+    "subcategory": "Drinks",
+    "images": {
+      "icon": "/images/items/food/food_watle1_bear_black.webp",
+      "thumbnail": "/images/items/food/food_watle1_bear_black.webp",
+      "fullsize": "/images/items/food/food_watle1_bear_black.webp"
+    },
+    "stats": {
+      "weight": 0.6,
+      "rarity": "Uncommon",
+      "capacity": 50,
+      "threshold": 2,
+      "thresholdTime": 0.3,
+      "consumptionSpeed": 10,
+      "energyFactor": 0.1,
+      "hydraFactor": 1,
+      "stackSize": 1,
+      "basePrice": 10200,
+      "sellPrices": [
+        10200,
+        10200,
+        10200,
+        10200,
+        10200,
+        7140
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "food_watle1_bear_festival",
+    "name": "Festival Beer",
+    "description": "",
+    "category": "provisions",
+    "subcategory": "Drinks",
+    "images": {
+      "icon": "/images/items/food/food_watle1_bear_festival.webp",
+      "thumbnail": "/images/items/food/food_watle1_bear_festival.webp",
+      "fullsize": "/images/items/food/food_watle1_bear_festival.webp"
+    },
+    "stats": {
+      "weight": 0.6,
+      "rarity": "Uncommon",
+      "capacity": 50,
+      "threshold": 2,
+      "thresholdTime": 0.3,
+      "consumptionSpeed": 10,
+      "energyFactor": 0.1,
+      "hydraFactor": 1,
+      "stackSize": 1,
+      "basePrice": 8415,
+      "sellPrices": [
+        8415,
+        8415,
+        8415,
+        8415,
+        8415,
+        5891
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
   }
 ]

@@ -14178,7 +14178,7 @@
       "fullsize": "/images/items/gunsmith-parts/part-ar15-pistolgrip-m16a1.webp"
     },
     "stats": {
-      "weight": 0.06,
+      "weight": 0,
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": 0.04
@@ -34751,6 +34751,360 @@
     }
   },
   {
+    "id": "part-mx338-barrel-mx338",
+    "gameId": "gunsmith.mx338.barrel.mx338",
+    "name": "MX338 .338 LM bolt action barrel",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "AXMC",
+    "group": "mx338",
+    "slot": "barrel",
+    "partType": "Barrel",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-mx338-barrel-mx338.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-mx338-barrel-mx338.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-mx338-barrel-mx338.webp"
+    },
+    "stats": {
+      "weight": 1.8,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.4,
+        "verticalRecoilModifier": -0.18,
+        "horizontalRecoilModifier": -0.18,
+        "pitchMomentumModifer": 0.05,
+        "pitchStiffnessModifer": 0.05,
+        "firingPowerModifier": 0.05
+      },
+      "partMOA": 0.38,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.MX338.LowerReceiver.MX338"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Barrel"
+      ],
+      "requiresPartTypes": [
+        "Barrel"
+      ],
+      "tags": [
+        "GunpartType.Barrel"
+      ]
+    }
+  },
+  {
+    "id": "part-mx338-clip-5",
+    "gameId": "gunsmith.mx338.clip.5",
+    "name": "MX338 .338 LM 5-round magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "AXMC",
+    "group": "mx338",
+    "slot": "clip",
+    "partType": "Clip",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-mx338-clip-5.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-mx338-clip-5.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-mx338-clip-5.webp"
+    },
+    "stats": {
+      "weight": 0.35,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.02
+      },
+      "partMOA": null,
+      "capacity": 5,
+      "caliber": "338Lapua",
+      "gunData": null
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.MX338.LowerReceiver.MX338"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Clip"
+      ],
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Clip"
+      ]
+    }
+  },
+  {
+    "id": "part-mx338-handguard-mx338",
+    "gameId": "gunsmith.mx338.handguard.mx338",
+    "name": "MX338 .338 LM handguard",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "AXMC",
+    "group": "mx338",
+    "slot": "handguard",
+    "partType": "Handguard",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-mx338-handguard-mx338.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-mx338-handguard-mx338.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-mx338-handguard-mx338.webp"
+    },
+    "stats": {
+      "weight": 0.38,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": 0.19,
+        "verticalRecoilModifier": -0.02,
+        "horizontalRecoilModifier": -0.02,
+        "pitchMomentumModifer": 0.05,
+        "pitchStiffnessModifer": 0.05
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.MX338.LowerReceiver.MX338"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Handguard"
+      ],
+      "requiresPartTypes": [
+        "Handguard"
+      ],
+      "tags": [
+        "GunpartType.Handguard"
+      ]
+    }
+  },
+  {
+    "id": "part-mx338-lowerreceiver-mx338",
+    "gameId": "gunsmith.mx338.lowerreceiver.mx338",
+    "name": "MX338 .338 LM bolt action sniper rfile",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "AXMC",
+    "group": "mx338",
+    "slot": "lowerreceiver",
+    "partType": "LowerReceiver",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-mx338-lowerreceiver-mx338.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-mx338-lowerreceiver-mx338.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-mx338-lowerreceiver-mx338.webp"
+    },
+    "stats": {
+      "weight": 1.7,
+      "rarity": "Common",
+      "attachmentModifier": {},
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": {
+        "fireRate": 30,
+        "fireRateIsDefault": false,
+        "MOA": null,
+        "penetration": 2,
+        "ergonomics": 0.7,
+        "firingPower": 0.5,
+        "hitDamage": 150,
+        "headDamageScale": null,
+        "muzzleVelocity": 85000,
+        "ADSSpeed": 1,
+        "fireMode": "boltAction",
+        "fireModes": [
+          "boltAction"
+        ],
+        "recoilParameters": {
+          "shiftMomentum": 320,
+          "pitchBaseMomentum": 465,
+          "yawBaseMomentum": 30,
+          "rollBaseMomentum": 80,
+          "shiftStiffness": 300,
+          "pitchStiffness": 650,
+          "yawStiffness": 820,
+          "rollStiffness": 780,
+          "shiftDamping": 0.9,
+          "pitchDamping": 1.64,
+          "yawDamping": 1.6,
+          "rollDamping": 0.3,
+          "shiftMass": 0.75,
+          "pitchMass": 1.2,
+          "yawMass": 3,
+          "rollMass": 0.7,
+          "oneHandedMultiplier": 0.05,
+          "oneHandedADSMultiplier": 0.15,
+          "verticalRecoilControl": 1.32,
+          "horizontalRecoilControl": 1.32
+        },
+        "recoilComponentParameters": null,
+        "damageRangeCurve": null,
+        "caliber": ".338 LM"
+      }
+    },
+    "compatibility": {
+      "installsOn": [],
+      "provides": [],
+      "requiresPartTypes": [
+        "LowerReceiver",
+        "UpperReceiver",
+        "PistolGrip",
+        "Handguard",
+        "Stock",
+        "Clip"
+      ],
+      "tags": [
+        "GunType.Boltaction.MX338"
+      ]
+    }
+  },
+  {
+    "id": "part-mx338-muzzle-compensator",
+    "gameId": "gunsmith.mx338.muzzle.compensator",
+    "name": "MX338 .338 LM Compensator",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "AXMC",
+    "group": "mx338",
+    "slot": "muzzle",
+    "partType": "Muzzle",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-mx338-muzzle-compensator.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-mx338-muzzle-compensator.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-mx338-muzzle-compensator.webp"
+    },
+    "stats": {
+      "weight": 0.18,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.01,
+        "verticalRecoilModifier": -0.13,
+        "horizontalRecoilModifier": -0.13,
+        "shiftMomentumModifer": -0.05,
+        "shiftStiffnessModifer": 0.05,
+        "yawStiffnessModifer": 0.05,
+        "pitchStiffnessModifer": 0.1,
+        "rollStiffnessModifer": 0.05,
+        "accuracyModifier": 0.02
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.MX338.Barrel.MX338"
+      ],
+      "provides": [
+        "GunSmithSlot.Barrel.Muzzle"
+      ],
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Muzzle"
+      ]
+    }
+  },
+  {
+    "id": "part-mx338-muzzle-suppressor",
+    "gameId": "gunsmith.mx338.muzzle.suppressor",
+    "name": "MX338 .338 LM Suppressor",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "AXMC",
+    "group": "mx338",
+    "slot": "muzzle",
+    "partType": "Muzzle",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-mx338-muzzle-suppressor.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-mx338-muzzle-suppressor.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-mx338-muzzle-suppressor.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Uncommon",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.2,
+        "verticalRecoilModifier": -0.03,
+        "horizontalRecoilModifier": -0.03,
+        "pitchMomentumModifer": -0.03,
+        "pitchStiffnessModifer": 0.03,
+        "accuracyModifier": 0.03,
+        "firingPowerModifier": -0.02
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.MX338.Muzzle.Compensator"
+      ],
+      "provides": [
+        "GunSmithSlot.Compensator.Suppressor"
+      ],
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Muzzle.suppressor"
+      ]
+    }
+  },
+  {
+    "id": "part-mx338-stock-mx338",
+    "gameId": "gunsmith.mx338.stock.mx338",
+    "name": "MX338 .338 LM Stock",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "AXMC",
+    "group": "mx338",
+    "slot": "stock",
+    "partType": "Stock",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-mx338-stock-mx338.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-mx338-stock-mx338.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-mx338-stock-mx338.webp"
+    },
+    "stats": {
+      "weight": 0.53,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.04,
+        "verticalRecoilModifier": -0.2,
+        "horizontalRecoilModifier": -0.2,
+        "pitchMomentumModifer": 0.26,
+        "pitchStiffnessModifer": 0.26
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.MX338.LowerReceiver.MX338"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Stock"
+      ],
+      "requiresPartTypes": [
+        "Stock"
+      ],
+      "tags": [
+        "GunpartType.Stock"
+      ]
+    }
+  },
+  {
     "id": "part-p226-barrel-threaded",
     "gameId": "gunsmith.p226.barrel.threaded",
     "name": "P226 9x19mm Threaded barrel",
@@ -41364,6 +41718,490 @@
       ],
       "tags": [
         "GunpartType.UpperReceiver"
+      ]
+    }
+  },
+  {
+    "id": "part-sesa2-barrel-410mm",
+    "gameId": "gunsmith.sesa2.barrel.410mm",
+    "name": "SESA-2 .338 LM 410mm barrel",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "SRSA2",
+    "group": "sesa2",
+    "slot": "barrel",
+    "partType": "Barrel",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-sesa2-barrel-410mm.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-sesa2-barrel-410mm.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-sesa2-barrel-410mm.webp"
+    },
+    "stats": {
+      "weight": 1.2,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.15,
+        "verticalRecoilModifier": -0.3,
+        "horizontalRecoilModifier": -0.3,
+        "pitchMomentumModifer": 0.05,
+        "pitchStiffnessModifer": 0.05
+      },
+      "partMOA": 1.12,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.SESA2.LowerReceiver.SESA2"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Barrel"
+      ],
+      "requiresPartTypes": [
+        "Barrel"
+      ],
+      "tags": [
+        "GunpartType.Barrel"
+      ]
+    }
+  },
+  {
+    "id": "part-sesa2-barrel-560mm",
+    "gameId": "gunsmith.sesa2.barrel.560mm",
+    "name": "SESA-2 .338 LM 560mm barrel",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "SRSA2",
+    "group": "sesa2",
+    "slot": "barrel",
+    "partType": "Barrel",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-sesa2-barrel-560mm.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-sesa2-barrel-560mm.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-sesa2-barrel-560mm.webp"
+    },
+    "stats": {
+      "weight": 1.4,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.24,
+        "verticalRecoilModifier": -0.23,
+        "horizontalRecoilModifier": -0.23,
+        "pitchMomentumModifer": 0.05,
+        "pitchStiffnessModifer": 0.05
+      },
+      "partMOA": 0.85,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.SESA2.LowerReceiver.SESA2"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Barrel"
+      ],
+      "requiresPartTypes": [
+        "Barrel"
+      ],
+      "tags": [
+        "GunpartType.Barrel"
+      ]
+    }
+  },
+  {
+    "id": "part-sesa2-barrel-660mm",
+    "gameId": "gunsmith.sesa2.barrel.660mm",
+    "name": "SESA-2 .338 LM 660mm barrel",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "SRSA2",
+    "group": "sesa2",
+    "slot": "barrel",
+    "partType": "Barrel",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-sesa2-barrel-660mm.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-sesa2-barrel-660mm.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-sesa2-barrel-660mm.webp"
+    },
+    "stats": {
+      "weight": 1.6,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.32,
+        "verticalRecoilModifier": -0.16,
+        "horizontalRecoilModifier": -0.16,
+        "pitchMomentumModifer": 0.05,
+        "pitchStiffnessModifer": 0.05
+      },
+      "partMOA": 0.66,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.SESA2.LowerReceiver.SESA2"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Barrel"
+      ],
+      "requiresPartTypes": [
+        "Barrel"
+      ],
+      "tags": [
+        "GunpartType.Barrel"
+      ]
+    }
+  },
+  {
+    "id": "part-sesa2-clip-5",
+    "gameId": "gunsmith.sesa2.clip.5",
+    "name": "SESA-2 .338 LM 5-round magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "SRSA2",
+    "group": "sesa2",
+    "slot": "clip",
+    "partType": "Clip",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-sesa2-clip-5.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-sesa2-clip-5.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-sesa2-clip-5.webp"
+    },
+    "stats": {
+      "weight": 0.16,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.01
+      },
+      "partMOA": null,
+      "capacity": 5,
+      "caliber": "338Lapua",
+      "gunData": null
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.SESA2.LowerReceiver.SESA2"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Clip"
+      ],
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Clip"
+      ]
+    }
+  },
+  {
+    "id": "part-sesa2-clip-8",
+    "gameId": "gunsmith.sesa2.clip.8",
+    "name": "SESA-2 .338 LM 8-round magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "SRSA2",
+    "group": "sesa2",
+    "slot": "clip",
+    "partType": "Clip",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-sesa2-clip-8.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-sesa2-clip-8.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-sesa2-clip-8.webp"
+    },
+    "stats": {
+      "weight": 0.26,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.04
+      },
+      "partMOA": null,
+      "capacity": 8,
+      "caliber": "338Lapua",
+      "gunData": null
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.SESA2.LowerReceiver.SESA2"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Clip"
+      ],
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Clip"
+      ]
+    }
+  },
+  {
+    "id": "part-sesa2-handguard-long",
+    "gameId": "gunsmith.sesa2.handguard.long",
+    "name": "SESA-2 .338 LM short handguard",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "SRSA2",
+    "group": "sesa2",
+    "slot": "handguard",
+    "partType": "Handguard",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-sesa2-handguard-long.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-sesa2-handguard-long.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-sesa2-handguard-long.webp"
+    },
+    "stats": {
+      "weight": 0.31,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": 0.2,
+        "verticalRecoilModifier": -0.025,
+        "horizontalRecoilModifier": -0.025,
+        "pitchMomentumModifer": -0.05,
+        "pitchStiffnessModifer": 0.05
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.SESA2.LowerReceiver.SESA2"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Handguard"
+      ],
+      "requiresPartTypes": [
+        "Handguard"
+      ],
+      "tags": [
+        "GunpartType.Handguard"
+      ]
+    }
+  },
+  {
+    "id": "part-sesa2-handguard-short",
+    "gameId": "gunsmith.sesa2.handguard.short",
+    "name": "SESA-2 .338 LM long handguard",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "SRSA2",
+    "group": "sesa2",
+    "slot": "handguard",
+    "partType": "Handguard",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-sesa2-handguard-short.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-sesa2-handguard-short.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-sesa2-handguard-short.webp"
+    },
+    "stats": {
+      "weight": 0.19,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": 0.27,
+        "verticalRecoilModifier": -0.035,
+        "horizontalRecoilModifier": -0.035,
+        "pitchMomentumModifer": -0.05,
+        "pitchStiffnessModifer": 0.05
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.SESA2.LowerReceiver.SESA2"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Handguard"
+      ],
+      "requiresPartTypes": [
+        "Handguard"
+      ],
+      "tags": [
+        "GunpartType.Handguard"
+      ]
+    }
+  },
+  {
+    "id": "part-sesa2-lowerreceiver-sesa2",
+    "gameId": "gunsmith.sesa2.lowerreceiver.sesa2",
+    "name": "SESA-2 .338 LM bolt action sniper rfile",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "SRSA2",
+    "group": "sesa2",
+    "slot": "lowerreceiver",
+    "partType": "LowerReceiver",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-sesa2-lowerreceiver-sesa2.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-sesa2-lowerreceiver-sesa2.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-sesa2-lowerreceiver-sesa2.webp"
+    },
+    "stats": {
+      "weight": 2.9,
+      "rarity": "Common",
+      "attachmentModifier": {},
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": {
+        "fireRate": 30,
+        "fireRateIsDefault": false,
+        "MOA": null,
+        "penetration": 2,
+        "ergonomics": 0.7,
+        "firingPower": 0.5,
+        "hitDamage": 150,
+        "headDamageScale": null,
+        "muzzleVelocity": 85000,
+        "ADSSpeed": 1,
+        "fireMode": "boltAction",
+        "fireModes": [
+          "boltAction"
+        ],
+        "recoilParameters": {
+          "shiftMomentum": 320,
+          "pitchBaseMomentum": 385,
+          "yawBaseMomentum": 30,
+          "rollBaseMomentum": 80,
+          "shiftStiffness": 300,
+          "pitchStiffness": 680,
+          "yawStiffness": 820,
+          "rollStiffness": 780,
+          "shiftDamping": 0.9,
+          "pitchDamping": 1.64,
+          "yawDamping": 1.6,
+          "rollDamping": 0.3,
+          "shiftMass": 0.75,
+          "pitchMass": 1.2,
+          "yawMass": 3,
+          "rollMass": 0.7,
+          "oneHandedMultiplier": 0.05,
+          "oneHandedADSMultiplier": 0.15,
+          "verticalRecoilControl": 0.95,
+          "horizontalRecoilControl": 0.95
+        },
+        "recoilComponentParameters": null,
+        "damageRangeCurve": null,
+        "caliber": ".338 LM"
+      }
+    },
+    "compatibility": {
+      "installsOn": [],
+      "provides": [],
+      "requiresPartTypes": [
+        "LowerReceiver",
+        "UpperReceiver",
+        "PistolGrip",
+        "Stock",
+        "Clip"
+      ],
+      "tags": [
+        "GunType.Boltaction.SESA2"
+      ]
+    }
+  },
+  {
+    "id": "part-sesa2-muzzle-compensator",
+    "gameId": "gunsmith.sesa2.muzzle.compensator",
+    "name": "SESA-2 .338 LM Compensator",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "SRSA2",
+    "group": "sesa2",
+    "slot": "muzzle",
+    "partType": "Muzzle",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-sesa2-muzzle-compensator.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-sesa2-muzzle-compensator.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-sesa2-muzzle-compensator.webp"
+    },
+    "stats": {
+      "weight": 0.21,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.01,
+        "verticalRecoilModifier": -0.16,
+        "horizontalRecoilModifier": -0.16,
+        "shiftMomentumModifer": -0.05,
+        "shiftStiffnessModifer": 0.05,
+        "yawStiffnessModifer": 0.05,
+        "pitchStiffnessModifer": 0.1,
+        "rollStiffnessModifer": 0.05,
+        "accuracyModifier": 0.02
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.SESA2.Barrel"
+      ],
+      "provides": [
+        "GunSmithSlot.Barrel.Muzzle"
+      ],
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Muzzle"
+      ]
+    }
+  },
+  {
+    "id": "part-sesa2-muzzle-suppressor",
+    "gameId": "gunsmith.sesa2.muzzle.suppressor",
+    "name": "SESA-2 .338 LM Suppressor",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "SRSA2",
+    "group": "sesa2",
+    "slot": "muzzle",
+    "partType": "Muzzle",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-sesa2-muzzle-suppressor.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-sesa2-muzzle-suppressor.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-sesa2-muzzle-suppressor.webp"
+    },
+    "stats": {
+      "weight": 0.4,
+      "rarity": "Uncommon",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.18,
+        "verticalRecoilModifier": -0.02,
+        "horizontalRecoilModifier": -0.02,
+        "pitchMomentumModifer": -0.02,
+        "pitchStiffnessModifer": 0.02,
+        "accuracyModifier": 0.03,
+        "firingPowerModifier": -0.02
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.SESA2.Muzzle.Compensator"
+      ],
+      "provides": [
+        "GunSmithSlot.Compensator.Suppressor"
+      ],
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Muzzle.suppressor"
       ]
     }
   },
