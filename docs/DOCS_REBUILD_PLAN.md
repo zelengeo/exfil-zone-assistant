@@ -68,6 +68,12 @@ Terms to resolve, with the usage evidence that makes each one a question:
   `src/app/combat-sim/utils/damage-calculations.ts`, `src/lib/gates.ts`
 - **Done when:** `npm test` runs green and the pre-deploy checklist stops being a lie
 
+**Outcome.** 147 tests, type-check clean. Writing the damage specs turned up two things the code
+hides: `ballisticCurves` is required and every one of the 85 published rounds carries it, so the
+default-falloff branch in `applyRangeFalloff` is unreachable in practice; and past point blank the
+curve supplies damage outright rather than scaling the round own figure, which means `pellets` and
+`damage` stop mattering beyond zero range.
+
 Sequenced before Stage 4 so the documentation pass describes a runner that exists, and writes the
 testing sections once rather than twice.
 
@@ -121,7 +127,7 @@ Opportunistic: do it when the data is next touched, since the churn otherwise ou
 - [x] Stage 0 — audit, plan, decisions
 - [x] Stage 1 — root `CLAUDE.md` (525 to 110 lines)
 - [x] Stage 2 — `CONTEXT.md` (106 lines, 21 terms)
-- [~] Stage 3 — Vitest (runner, port, gates + vendors specs; headModel and damage-calculations specs outstanding)
+- [x] Stage 3 — Vitest (147 tests across 5 suites)
 - [ ] Stage 4 — nested docs
 - [ ] Stage 5 — delete index
 - [ ] Stage 6 — ADRs
