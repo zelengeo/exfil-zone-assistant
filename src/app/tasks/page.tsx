@@ -53,7 +53,7 @@ function TasksLoading() {
  */
 export default function TasksPage() {
     return (
-        <Layout fullWidth containerClassName="max-w-[1600px] mx-auto px-3 sm:px-4 py-4">
+        <Layout fullWidth containerClassName="w-full max-w-[1600px] mx-auto px-3 sm:px-4 py-4">
             <Suspense fallback={<TasksLoading />}>
                 <TasksPageContent />
             </Suspense>

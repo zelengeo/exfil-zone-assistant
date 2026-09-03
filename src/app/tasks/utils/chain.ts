@@ -27,6 +27,12 @@ export const LANE_STEP = 18;
 /** Lane 0 is the spine, lane 1 the branch beside it. Deeper branches fold back onto lane 1. */
 export const MAX_LANE = 1;
 
+/** Centre of a lane, in the row's own coordinates. The spine and the row markers share it. */
+export const laneX = (lane: number): number => LANE_X + lane * LANE_STEP;
+
+/** Where a row's text starts: clear of its own marker, whichever lane it sits in. */
+export const rowTextX = (lane: number): number => laneX(lane) + 30;
+
 export interface ChainNode {
     taskId: string;
     /** 0 is the spine. */
@@ -141,40 +147,90 @@ function components(tasks: Task[], ids: Set<string>): Task[][] {
 }
 
 /**
+ * How much chain is left below a task — the longest path downwards, in rows.
+ *
+ * This is what decides which successor keeps the spine. Without it a fork hands lane 0 to whichever
+ * successor is drawn first, and if that one is a leaf, the entire rest of the chain is drawn as a
+ * branch: the gunsmith's first chain put 23 of its 25 rows in lane 1 beside an empty spine.
+ */
+function heightMap(tasks: Task[], ids: Set<string>): Map<string, number> {
+    const children = new Map<string, string[]>();
+    for (const task of tasks) {
+        for (const prereq of internalPrereqs(task, ids)) {
+            const list = children.get(prereq);
+            if (list) list.push(task.id);
+            else children.set(prereq, [task.id]);
+        }
+    }
+
+    const heights = new Map<string, number>();
+    const visiting = new Set<string>();
+
+    const walk = (id: string): number => {
+        const known = heights.get(id);
+        if (known !== undefined) return known;
+        if (visiting.has(id)) return 0;
+
+        visiting.add(id);
+        let height = 0;
+        for (const child of children.get(id) ?? []) height = Math.max(height, walk(child) + 1);
+        visiting.delete(id);
+
+        heights.set(id, height);
+        return height;
+    };
+
+    tasks.forEach((task) => walk(task.id));
+    return heights;
+}
+
+/**
  * Lane assignment.
  *
- * A task inherits its parent's lane when it is that parent's first placed successor, and steps one
- * lane right when it is a later one — which is the branch the design draws stepping out of the
- * spine. A task with more than one prerequisite is a join and returns to lane 0, which is what
- * brings a branch back in. Beyond `MAX_LANE` the branch stays where it is rather than marching off
- * the column; the densest graph in the data (the gunsmith, 8 branch nodes inside a depth of 15) is
- * the one to watch this on.
+ * A task keeps its parent's lane when it carries the longest continuation of that parent, and steps
+ * one lane right otherwise — which is the branch the design draws stepping out of the spine. Sorting
+ * by remaining depth rather than by draw order is what keeps the main line straight: the side quest
+ * is the shorter of the two, whichever the data happens to list first.
+ *
+ * A task with more than one prerequisite is a join and returns to lane 0, which is what brings a
+ * branch back in. Beyond `MAX_LANE` the branch stays where it is rather than marching off the
+ * column; the gunsmith, with a three-way fork off its root, is the one to watch this on.
  */
-function assignLanes(ordered: Task[], ids: Set<string>): Map<string, number> {
+function assignLanes(ordered: Task[], ids: Set<string>, heights: Map<string, number>): Map<string, number> {
+    // The successor that inherits each parent's lane: the deepest, with the authored order as a
+    // tiebreak so two equally long continuations resolve the same way on every render.
+    const spineChild = new Map<string, string>();
+    for (const task of ordered) {
+        for (const parent of internalPrereqs(task, ids)) {
+            const held = spineChild.get(parent);
+            if (held === undefined || (heights.get(task.id) ?? 0) > (heights.get(held) ?? 0)) {
+                spineChild.set(parent, task.id);
+            }
+        }
+    }
+
     const lanes = new Map<string, number>();
-    const placedChildren = new Set<string>();
 
     for (const task of ordered) {
         const prereqs = internalPrereqs(task, ids);
 
-        if (prereqs.length === 0 || prereqs.length > 1) {
+        if (prereqs.length !== 1) {
             lanes.set(task.id, 0);
-            prereqs.forEach((id) => placedChildren.add(id));
             continue;
         }
 
         const [parent] = prereqs;
         const parentLane = lanes.get(parent) ?? 0;
-        const isFirstChild = !placedChildren.has(parent);
-        placedChildren.add(parent);
+        const keepsSpine = spineChild.get(parent) === task.id;
 
-        lanes.set(task.id, isFirstChild ? parentLane : Math.min(parentLane + 1, MAX_LANE));
+        lanes.set(task.id, keepsSpine ? parentLane : Math.min(parentLane + 1, MAX_LANE));
     }
 
     return lanes;
 }
 
 function buildChain(group: Task[], ids: Set<string>, depths: Map<string, number>): Chain {
+    const heights = heightMap(group, ids);
     const ordered = [...group].sort((a, b) => {
         const byDepth = (depths.get(a.id) ?? 0) - (depths.get(b.id) ?? 0);
         if (byDepth !== 0) return byDepth;
@@ -183,7 +239,7 @@ function buildChain(group: Task[], ids: Set<string>, depths: Map<string, number>
         return a.name.localeCompare(b.name);
     });
 
-    const lanes = assignLanes(ordered, ids);
+    const lanes = assignLanes(ordered, ids, heights);
     const nodes: ChainNode[] = ordered.map((task, index) => ({
         taskId: task.id,
         lane: lanes.get(task.id) ?? 0,
@@ -236,6 +292,48 @@ export function buildChains(owner: ChainOwner): OwnerChains {
     const built: OwnerChains = { owner, chains, total: tasks.length };
     cache.set(owner, built);
     return built;
+}
+
+/**
+ * How far past the frontier a chain shows its locked tail before collapsing the rest.
+ *
+ * Some chains run thirty rows past anything reachable today. The first dozen are what you are
+ * working towards; the rest is a wall.
+ */
+export const LOCKED_TAIL = 12;
+
+export interface VisibleRows {
+    shown: ChainNode[];
+    /** Rows folded away. Zero when the whole chain is on screen. */
+    hidden: number;
+}
+
+/**
+ * The rows a chain draws, with its locked tail folded away.
+ *
+ * Takes a predicate rather than a `TaskProgress` so the rule stays a layout decision: the tail is
+ * the run of unreachable rows at the bottom, whatever made them unreachable. The selected task is
+ * always kept, so the column never hides the task the detail pane is showing.
+ */
+export function visibleRows(
+    nodes: ChainNode[],
+    isLocked: (taskId: string) => boolean,
+    selectedTaskId?: string,
+): VisibleRows {
+    let tail = 0;
+    for (let index = nodes.length - 1; index >= 0; index -= 1) {
+        const { taskId } = nodes[index];
+        if (!isLocked(taskId) || taskId === selectedTaskId) {
+            tail = index + 1;
+            break;
+        }
+    }
+
+    const selected = nodes.findIndex((node) => node.taskId === selectedTaskId);
+    const keep = Math.max(Math.min(nodes.length, tail + LOCKED_TAIL), selected + 1);
+    const hidden = nodes.length - keep;
+
+    return hidden > 0 ? { shown: nodes.slice(0, keep), hidden } : { shown: nodes, hidden: 0 };
 }
 
 /** The chain a task sits in, and its node — what the detail pane's "task 06 of 35" reads. */

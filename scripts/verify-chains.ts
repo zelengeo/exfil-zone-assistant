@@ -1,7 +1,7 @@
 /* Stage-01 harness for the tasks rebuild: exercises the chain layout and progress rules against
  * the real 227 tasks. Run: npm run verify-chains */
 import { tasksData } from '@/data/tasks';
-import { buildChains, locate, MAX_LANE } from '@/app/tasks/utils/chain';
+import { LOCKED_TAIL, MAX_LANE, buildChains, laneX, locate, rowTextX, visibleRows } from '@/app/tasks/utils/chain';
 import {
     EMPTY_PROGRESS, countsFor, gatesFor, nextUpIn, objectiveTicks,
     setDone, standingFor, stateOf, toggleObjective,
@@ -113,6 +113,67 @@ let p3 = setDone(EMPTY_PROGRESS, sample, true);
 if (objectiveTicks(sample, p3).some((t) => !t)) fail('marking done did not tick every objective');
 p3 = setDone(p3, sample, false);
 if (Object.keys(p3.tasks).length !== 0) fail('undo left a record behind');
+
+/* --------------------------------------------------------------------------
+ * Stage 03 — what the chain column draws
+ * ----------------------------------------------------------------------- */
+
+const lockedAt = (progress: TaskProgress) => (taskId: string) =>
+    stateOf(tasksData[taskId], progress) === 'locked';
+
+for (const owner of populatedOwners()) {
+    for (const chain of buildChains(owner).chains) {
+        // A branch steps out one lane at a time and rejoins; nothing may jump a lane.
+        for (const e of chain.edges) {
+            if (e.toLane > e.fromLane + 1) fail(`${owner}: edge ${e.from}->${e.to} jumps ${e.fromLane}->${e.toLane}`);
+            if (e.toLane < 0 || e.fromLane < 0) fail(`${owner}: negative lane`);
+        }
+
+        // The spine has to stay the main line. Handing lane 0 to whichever successor was drawn
+        // first put 23 of the gunsmith's 25 rows on the branch, beside an empty spine.
+        const branchRows = chain.nodes.filter((n) => n.lane > 0).length;
+        if (branchRows * 2 > chain.nodes.length) {
+            fail(`${owner}: ${branchRows} of ${chain.nodes.length} rows are on the branch`);
+        }
+
+        // Rows must clear their own marker, whichever lane they sit in.
+        for (const node of chain.nodes) {
+            if (rowTextX(node.lane) <= laneX(node.lane)) fail(`${owner}: row text overlaps its marker`);
+        }
+
+        const { shown, hidden } = visibleRows(chain.nodes, lockedAt(EMPTY_PROGRESS));
+        if (shown.length + hidden !== chain.nodes.length) fail(`${owner}: collapse lost rows`);
+        if (hidden > 0 && shown.length < LOCKED_TAIL) fail(`${owner}: collapsed too aggressively`);
+
+        // The selected task is never folded away, even at the very bottom of the tail.
+        const last = chain.nodes[chain.nodes.length - 1];
+        const withSelection = visibleRows(chain.nodes, lockedAt(EMPTY_PROGRESS), last.taskId);
+        if (!withSelection.shown.some((node) => node.taskId === last.taskId)) {
+            fail(`${owner}: collapse hid the selected task`);
+        }
+
+        // Nothing to fold away when nothing is locked. Stated as a predicate rather than by walking
+        // a chain to completion: several chains cannot be finished from inside themselves, because
+        // a task partway down waits on another vendor.
+        if (visibleRows(chain.nodes, () => false).hidden !== 0) {
+            fail(`${owner}: a chain with nothing locked still collapses`);
+        }
+    }
+}
+
+for (const owner of ['ark', 'gunsmith', 'trupiks'] as const) {
+    for (const chain of buildChains(owner).chains) {
+        const { shown, hidden } = visibleRows(chain.nodes, lockedAt(EMPTY_PROGRESS));
+        const branch = chain.nodes.filter((n) => n.lane > 0).length;
+        const joins = chain.nodes.filter((n) => chain.edges.filter((e) => e.to === n.taskId).length > 1).length;
+        const fan = Math.max(...chain.nodes.map((n) => chain.edges.filter((e) => e.from === n.taskId).length));
+        console.log(
+            `${owner.padEnd(9)} chain @${tasksData[chain.rootTaskId].name}: ${chain.nodes.length} rows,` +
+            ` ${branch} on the branch, ${joins} joins, ${chain.edges.length} edges, widest fan ${fan}` +
+            ` | column draws ${shown.length}, folds ${hidden}`,
+        );
+    }
+}
 
 /* Data-shaped spot checks. */
 const gated = Object.values(tasksData).filter((t) => gatesFor(t).trust !== null);

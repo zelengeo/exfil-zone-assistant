@@ -25,10 +25,12 @@ import {
     TASK_TYPES,
     type OwnerSelection,
     type TaskFilters,
+    isNarrowed,
     matchesFilters,
     parseFilters,
     serializeFilters,
 } from '../utils/filters';
+import ChainColumn from './ChainColumn';
 import VendorRail from './VendorRail';
 
 /**
@@ -99,19 +101,36 @@ export default function TasksPageContent() {
     const selection: OwnerSelection = filters.owner === '' ? autoOwner : filters.owner;
     const viewingAll = selection === ALL_OWNERS || filters.search !== '';
 
-    /** Chain order, flattened. The spine that draws it arrives with the chain column. */
-    const ordered = useMemo((): Task[] => {
-        const source = viewingAll ? owners : [selection as ChainOwner];
-        return source.flatMap((owner) =>
-            buildChains(owner).chains.flatMap((chain) => chain.nodes.map((node) => tasksData[node.taskId])),
-        );
-    }, [viewingAll, owners, selection]);
+    /** The owners on screen, and their tasks in chain order. */
+    const shownOwners = useMemo(
+        (): ChainOwner[] => (viewingAll ? owners : [selection as ChainOwner]),
+        [viewingAll, owners, selection],
+    );
+
+    const ordered = useMemo((): Task[] => shownOwners.flatMap((owner) =>
+        buildChains(owner).chains.flatMap((chain) => chain.nodes.map((node) => tasksData[node.taskId])),
+    ), [shownOwners]);
 
     const listed = useMemo(
         () => ordered.filter((task) => (
             matchesFilters(task, filters) && !(filters.hideDone && isDone(progress, task.id))
         )),
         [ordered, filters, progress],
+    );
+
+    /**
+     * What the chain column may draw. Null while nothing is narrowing the view, which is what lets
+     * a chain collapse its locked tail — under a filter every surviving row has to stay put.
+     */
+    const visible = useMemo(
+        () => (isNarrowed(filters) ? new Set(listed.map((task) => task.id)) : null),
+        [filters, listed],
+    );
+
+    /** Vendors with nothing left after the filter drop out of the column, not out of the rail. */
+    const columnOwners = useMemo(
+        () => (visible ? shownOwners.filter((owner) => tasksForOwner(owner).some((task) => visible.has(task.id))) : shownOwners),
+        [shownOwners, visible],
     );
 
     /** Matches per vendor, for the rail's search face. */
@@ -148,6 +167,8 @@ export default function TasksPageContent() {
         (owner: OwnerSelection) => update({ owner, task: '' }),
         [update],
     );
+
+    const selectTask = useCallback((task: string) => update({ task }), [update]);
 
     const clearSearch = useCallback(() => {
         setSearchDraft('');
@@ -287,53 +308,23 @@ export default function TasksPageContent() {
                     />
                 </div>
 
-                {/* Chain column — the spine and its branches replace this list next. */}
+                {/* Chain column */}
                 <div className="bg-steel-900 border border-line-900 flex flex-col min-h-0 shell:sticky shell:top-4 shell:max-h-[calc(100vh-2rem)]">
-                    <div className="px-3 py-2.5 border-b border-line-900 flex-none">
-                        <span className="eyebrow">{viewingAll ? 'All vendors' : 'Chain'}</span>
-                        <div className="micro-label mt-1.5">{listed.length} shown</div>
-                    </div>
-                    <ul className="flex-1 min-h-0 overflow-y-auto">
-                        {listed.map((task) => {
-                            const state = stateOf(task, progress);
-                            const isNext = task.id === nextUp;
-                            return (
-                                <li key={task.id}>
-                                    <button
-                                        type="button"
-                                        onClick={() => update({ task: task.id })}
-                                        className={cn(
-                                            'w-full text-left flex items-center gap-2 px-3 h-[38px] transition-colors hover:bg-steel-800',
-                                            selectedTask?.id === task.id && 'bg-steel-700 shadow-[inset_2px_0_0_var(--color-ember)]',
-                                        )}
-                                    >
-                                        <span
-                                            className={cn(
-                                                'w-[9px] h-[9px] flex-none block',
-                                                state === 'completed' && 'bg-good',
-                                                state === 'open' && (isNext ? 'border-2 border-ember' : 'border border-line-400'),
-                                                state === 'locked' && 'border border-line-400',
-                                            )}
-                                        />
-                                        <span
-                                            className={cn(
-                                                'flex-1 min-w-0 truncate text-[13px]',
-                                                state === 'completed' && 'text-ink-600 line-through decoration-line-500',
-                                                state === 'open' && 'text-ink-hi font-semibold',
-                                                state === 'locked' && 'text-ink-700',
-                                            )}
-                                        >
-                                            {task.name}
-                                        </span>
-                                        <span className="micro-label flex-none">{task.map[0]}</span>
-                                    </button>
-                                </li>
-                            );
-                        })}
+                    <div className="flex-1 min-h-0 overflow-y-auto">
+                        {columnOwners.map((owner) => (
+                            <ChainColumn
+                                key={owner}
+                                owner={owner}
+                                progress={progress}
+                                visible={visible}
+                                selectedTaskId={selectedTask?.id}
+                                onSelect={selectTask}
+                            />
+                        ))}
                         {listed.length === 0 && (
-                            <li className="px-3 py-6 text-center text-sm text-ink-700">Nothing matches those filters.</li>
+                            <p className="px-3 py-6 text-center text-sm text-ink-700">Nothing matches those filters.</p>
                         )}
-                    </ul>
+                    </div>
                 </div>
 
                 {/* Detail pane — objectives, rewards, guides and gates land here next. */}

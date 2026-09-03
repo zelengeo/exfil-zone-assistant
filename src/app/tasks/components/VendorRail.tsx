@@ -163,7 +163,7 @@ export default function VendorRail({ owners, selected, progress, onSelect, match
                 onClick={() => onSelect(ALL_OWNERS)}
                 aria-current={selected === ALL_OWNERS ? 'true' : undefined}
                 className={cn(
-                    'flex-none flex items-center gap-2 px-3 py-3 border-t border-line-900 border-l-2 transition-colors',
+                    'flex-none flex items-center justify-start gap-2 px-3 py-3 border-t border-line-900 border-l-2 transition-colors',
                     selected === ALL_OWNERS ? 'border-l-ember bg-steel-700' : 'border-l-transparent hover:bg-steel-800',
                 )}
             >
