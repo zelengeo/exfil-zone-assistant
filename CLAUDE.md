@@ -48,7 +48,7 @@ Split, for historical reasons that surprise everyone who meets it:
   generated. 12 files import `tasksData` directly.
 - **`src/data/hideout-upgrades.ts`**, `community.ts`, `taskInconsistencies.json` — same treatment.
 
-`npm run validate-data` checks the JSON; `npm run verify-chains` checks the task DAG's invariants.
+`npm run validate-data` checks the JSON; `npm test` checks the task DAG invariants.
 Run the matching one after touching either.
 
 ## Client state and persistence

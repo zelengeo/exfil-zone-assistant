@@ -66,7 +66,7 @@ app/tasks/
     └── taskText.tsx              # icons, highlighting, tips, video links
 ```
 
-`scripts/verify-chains.ts` (`npm run verify-chains`) asserts the layout and data invariants below.
+`src/app/tasks/utils/chains.test.ts` (`npm test`) asserts the layout and data invariants below.
 Run it after touching `chain.ts`, the geometry constants, or task data.
 
 ---
@@ -157,8 +157,8 @@ Two traps worth knowing:
 ## Known data quirks
 
 - **Cross-vendor gates are correct, not bugs.** Regiment opens with nothing available (its root
-  needs ARK's `ark_63`) and ARK stalls at 21 of 37 (`ark_59` needs `regiment_16`). `verify-chains`
-  proves all 227 tasks fall out of a cross-vendor fixpoint in 9 rounds. The rail opens on a vendor
+  needs ARK's `ark_63`) and ARK stalls at 21 of 37 (`ark_59` needs `regiment_16`). The suite
+  proves all 227 tasks fall out of a cross-vendor fixpoint. The rail opens on a vendor
   that *has* open work, so this is never mistaken for a broken page.
 - **`order` collides** for 19 gunsmith tasks (the `research_*` family reuses 1..25) and 6 of
   Trupik's. Harmless — the layout is topological — but it means `order` cannot be trusted as an id.

@@ -61,7 +61,9 @@ Terms to resolve, with the usage evidence that makes each one a question:
 
 - Add Vitest
 - Port `scripts/verify-chains.ts` into it — it is already a test suite wearing a script costume
-- Absorb `src/app/combat-sim/utils/{combat-test-helper,test-types}.ts`, the other hand-rolled harness
+- ~~Absorb `src/app/combat-sim/utils/{combat-test-helper,test-types}.ts`~~ — dropped. These are not
+  a test harness: both are imported by `CombatSimulatorContent.tsx` and the live `/combat-sim/debug`
+  page. Absorbing them would break that page.
 - First specs on the pure calculation modules: `src/lib/protection/headModel.ts`,
   `src/app/combat-sim/utils/damage-calculations.ts`, `src/lib/gates.ts`
 - **Done when:** `npm test` runs green and the pre-deploy checklist stops being a lie
@@ -119,7 +121,7 @@ Opportunistic: do it when the data is next touched, since the churn otherwise ou
 - [x] Stage 0 — audit, plan, decisions
 - [x] Stage 1 — root `CLAUDE.md` (525 to 110 lines)
 - [x] Stage 2 — `CONTEXT.md` (106 lines, 21 terms)
-- [ ] Stage 3 — Vitest
+- [~] Stage 3 — Vitest (runner, port, gates + vendors specs; headModel and damage-calculations specs outstanding)
 - [ ] Stage 4 — nested docs
 - [ ] Stage 5 — delete index
 - [ ] Stage 6 — ADRs
