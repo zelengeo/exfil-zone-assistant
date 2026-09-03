@@ -48,6 +48,25 @@ export function quickHighlight(text: string): React.ReactNode[] {
     ));
 }
 
+/**
+ * The search term, picked out of the line it was found in.
+ *
+ * A result list that shows only task names cannot say why a task matched, since most matches are in
+ * an objective. Highlighting the term in the matched line answers that without a second click.
+ */
+export function highlightMatch(text: string, query: string): React.ReactNode[] {
+    const term = query.trim();
+    if (!term) return [text];
+
+    // The query is typed by a player, so it can hold regex punctuation — escape before matching.
+    const pattern = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'ig');
+    return text.split(pattern).map((part, index) => (
+        part.toLowerCase() === term.toLowerCase()
+            ? <span key={index} className="text-ember-soft font-semibold">{part}</span>
+            : <React.Fragment key={index}>{part}</React.Fragment>
+    ));
+}
+
 export type TextPart = string | { type: 'link'; text: string; url: string };
 
 /** Splits `[label](url)` out of a tip, leaving the surrounding prose as plain strings. */

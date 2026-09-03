@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { Check, Filter, MapPin, Search, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useDebounce } from '@/hooks/useDebounce';
@@ -17,8 +17,8 @@ import { tasksData } from '@/data/tasks';
 import type { Task, TaskMap } from '@/types/tasks';
 import { useTaskProgress } from '../hooks/useTaskProgress';
 import { buildChains } from '../utils/chain';
-import { countsFor, isDone, nextUpIn } from '../utils/progress';
-import { populatedOwners, tasksForOwner, type ChainOwner } from '../utils/vendors';
+import { countsFor, isDone, nextUpIn, stateOf } from '../utils/progress';
+import { ownerFace, ownerOf, populatedOwners, tasksForOwner, type ChainOwner } from '../utils/vendors';
 import {
     ALL_OWNERS,
     TASK_MAPS,
@@ -31,6 +31,7 @@ import {
     serializeFilters,
 } from '../utils/filters';
 import ChainColumn from './ChainColumn';
+import SearchResults, { type SearchGroup } from './SearchResults';
 import TaskDetailPane from './TaskDetailPane';
 import VendorRail from './VendorRail';
 
@@ -56,7 +57,6 @@ const MAP_LABELS: Record<TaskMap, string> = {
 };
 
 export default function TasksPageContent() {
-    const router = useRouter();
     const pathname = usePathname();
     const searchParams = useSearchParams();
     const { progress, hydrated, setDone, toggleObjective } = useTaskProgress();
@@ -68,12 +68,20 @@ export default function TasksPageContent() {
     const [searchDraft, setSearchDraft] = useState(filters.search);
     const debouncedSearch = useDebounce(searchDraft, 200);
 
+    /**
+     * Filters are written straight to the history entry rather than through `router.replace`.
+     *
+     * The App Router treats a replace to the bare pathname as a no-op, so clearing the last filter
+     * left both the URL and the view where they were — "back to chain" did nothing at all from
+     * `?vendor=all`. `history.replaceState` is integrated with the router in Next 15+ and drives
+     * `useSearchParams`, and on a static page it also avoids an RSC round trip per keystroke.
+     */
     const write = useCallback(
         (next: TaskFilters) => {
             const query = serializeFilters(next);
-            router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+            window.history.replaceState(null, '', query ? `${pathname}?${query}` : pathname);
         },
-        [pathname, router],
+        [pathname],
     );
 
     const update = useCallback(
@@ -144,6 +152,45 @@ export default function TasksPageContent() {
         return counts;
     }, [filters, owners]);
 
+    /**
+     * Whether the middle column is showing a chain or a gathered list.
+     *
+     * Two different questions arrive at the same shape: a search, and the rail's last entry. The
+     * open-now view narrows to what is reachable, because "every task from every vendor" is 227
+     * rows and answers nothing the chain column does not answer better.
+     */
+    const gathered = filters.search !== '' ? 'search' : (selection === ALL_OWNERS ? 'open' : null);
+
+    const groups = useMemo((): SearchGroup[] => {
+        if (!gathered) return [];
+        const source = gathered === 'open'
+            ? listed.filter((task) => stateOf(task, progress) === 'open')
+            : listed;
+
+        // `listed` already runs in rail order, so the groups come out in the rail's order too.
+        const byOwner = new Map<ChainOwner, Task[]>();
+        for (const task of source) {
+            const owner = ownerOf(task);
+            const bucket = byOwner.get(owner);
+            if (bucket) bucket.push(task);
+            else byOwner.set(owner, [task]);
+        }
+        return [...byOwner.entries()].map(([owner, tasks]) => ({ owner, tasks }));
+    }, [gathered, listed, progress]);
+
+    /** Every chain's next-up task, so a gathered row keeps the marker it has in its own column. */
+    const nextUpIds = useMemo(() => {
+        const ids = new Set<string>();
+        for (const owner of owners) {
+            if (!ownerFace(owner).hasChain) continue;
+            for (const chain of buildChains(owner).chains) {
+                const id = nextUpIn(chain, progress);
+                if (id) ids.add(id);
+            }
+        }
+        return ids;
+    }, [owners, progress]);
+
     /** The chain's next open task, which is what the pane opens on when nothing is named. */
     const nextUp = useMemo(() => {
         if (viewingAll) return null;
@@ -196,6 +243,12 @@ export default function TasksPageContent() {
         setSearchDraft('');
         update({ search: '' });
     }, [update]);
+
+    /** Out of the gathered list and back to a single vendor's sequence. */
+    const backToChain = useCallback(() => {
+        setSearchDraft('');
+        update({ search: '', owner: filters.owner === ALL_OWNERS ? '' : filters.owner });
+    }, [filters.owner, update]);
 
     return (
         <div className="flex flex-col gap-3">
@@ -330,23 +383,44 @@ export default function TasksPageContent() {
                     />
                 </div>
 
-                {/* Chain column */}
+                {/* Chain column, or the gathered list that replaces it */}
                 <div className="bg-steel-900 border border-line-900 flex flex-col min-h-0 shell:sticky shell:top-4 shell:max-h-[calc(100vh-2rem)]">
-                    <div className="flex-1 min-h-0 overflow-y-auto">
-                        {columnOwners.map((owner) => (
-                            <ChainColumn
-                                key={owner}
-                                owner={owner}
-                                progress={progress}
-                                visible={visible}
-                                selectedTaskId={selectedTask?.id}
-                                onSelect={selectTask}
-                            />
-                        ))}
-                        {listed.length === 0 && (
-                            <p className="px-3 py-6 text-center text-sm text-ink-700">Nothing matches those filters.</p>
-                        )}
-                    </div>
+                    {gathered ? (
+                        <SearchResults
+                            title={gathered === 'search' ? 'Results' : 'Open now'}
+                            summary={
+                                `${groups.reduce((total, group) => total + group.tasks.length, 0)} tasks`
+                                + ` · ${groups.length} vendor${groups.length === 1 ? '' : 's'}`
+                            }
+                            groups={groups}
+                            progress={progress}
+                            nextUp={nextUpIds}
+                            query={filters.search}
+                            selectedTaskId={selectedTask?.id}
+                            onSelect={selectTask}
+                            onBack={backToChain}
+                            backLabel="Back to chain"
+                            empty={gathered === 'search'
+                                ? 'Nothing matches that search.'
+                                : 'Nothing is open. Every vendor is waiting on a prerequisite.'}
+                        />
+                    ) : (
+                        <div className="flex-1 min-h-0 overflow-y-auto">
+                            {columnOwners.map((owner) => (
+                                <ChainColumn
+                                    key={owner}
+                                    owner={owner}
+                                    progress={progress}
+                                    visible={visible}
+                                    selectedTaskId={selectedTask?.id}
+                                    onSelect={selectTask}
+                                />
+                            ))}
+                            {listed.length === 0 && (
+                                <p className="px-3 py-6 text-center text-sm text-ink-700">Nothing matches those filters.</p>
+                            )}
+                        </div>
+                    )}
                 </div>
 
                 {/* Detail pane */}

@@ -28,7 +28,11 @@ export interface ChainRowProps {
     onSelect: (taskId: string) => void;
 }
 
-function Marker({ state, isNext }: { state: TaskState; isNext: boolean }) {
+/**
+ * The four shapes the filter bar's key names. Exported because the search results draw the same
+ * ones — a task must not change shape depending on which list it turns up in.
+ */
+export function TaskMarker({ state, isNext }: { state: TaskState; isNext: boolean }) {
     if (state === 'completed') return <span className="block w-[9px] h-[9px] bg-good" />;
     if (isNext) return <span className="block w-3 h-3 border-2 border-ember" />;
     if (state === 'open') return <span className="block w-[9px] h-[9px] border border-line-200" />;
@@ -58,7 +62,7 @@ export default function ChainRow({
                 style={{ left: laneX(lane) }}
                 aria-hidden="true"
             >
-                <Marker state={state} isNext={isNext} />
+                <TaskMarker state={state} isNext={isNext} />
             </span>
 
             {position !== null && (
