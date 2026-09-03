@@ -13,6 +13,9 @@ Every route and layer keeps its own `CLAUDE.md` next to the code it describes. R
 what you are touching. `src/app/tasks/CLAUDE.md` is the house style: cache the reasoning and the
 gotchas, point at the script rather than restating it.
 
+`CONTEXT.md` at the root is the glossary: the canonical name for every domain term and the words
+not to use. Check it before naming anything.
+
 Non-obvious ones worth reaching for by name:
 
 - `public/data/CLAUDE.md` — item JSON schemas, and the procedure for a game-version data update
