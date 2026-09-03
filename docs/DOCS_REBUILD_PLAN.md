@@ -112,8 +112,10 @@ trade-off:
 - `.claude/config.yaml` is not a format Claude Code reads; its three rules are inert. Port to
   `.claude/settings.json` or delete
 - Add the `.env.example` the setup instructions have always referenced
-- Decide on the 17 tracked files under `claude/audit_1/` and
-  `VR extraction shooter webapp redesign/` (the latter is already eslint-ignored, so half-vendored)
+- ~~Decide on the tracked working notes~~ — `claude/audit_1/` deleted: 9 files of an audit this
+  rebuild supersedes, and the last thing referencing `CLAUDE-INDEX.md`. `VR extraction shooter
+  webapp redesign/` is kept: 7 files touched four days ago, live design handoff, already
+  eslint-ignored
 
 ### Stage 8 — `src/data/tasks.ts` seam (deferred)
 
@@ -131,7 +133,7 @@ Opportunistic: do it when the data is next touched, since the churn otherwise ou
 - [x] Stage 4 — nested docs (11,495 lines to 931 across 15 files)
 - [x] Stage 5 — delete index (-712 lines)
 - [x] Stage 6 — ADRs (3 records; 0001 left `proposed`, see below)
-- [ ] Stage 7 — cleanup
+- [x] Stage 7 — cleanup
 - [ ] Stage 8 — deferred
 
 ## Open after stage 6
