@@ -67,18 +67,12 @@ export async function generateStaticParams() {
 // Loading component for Suspense fallback
 function TaskLoading() {
     return (
-        <Layout>
-            <div className="container mx-auto px-4 py-8">
-                <div className="flex items-center justify-center min-h-96">
-                    <div className="military-box p-8 rounded-sm text-center">
-                        <div
-                            className="animate-spin w-12 h-12 border-4 border-olive-600 border-t-transparent rounded-full mx-auto mb-4"></div>
-                        <h2 className="text-xl font-bold text-olive-400 mb-2">Loading Task Details</h2>
-                        <p className="text-tan-300">Retrieving task information...</p>
-                    </div>
-                </div>
+        <div className="flex items-center justify-center min-h-96">
+            <div className="bg-steel-900 border border-line-900 px-6 py-5 text-center">
+                <div className="eyebrow mb-2">Loading</div>
+                <p className="text-sm text-ink-500">Reading the task…</p>
             </div>
-        </Layout>
+        </div>
     );
 }
 
@@ -92,8 +86,10 @@ export default function TaskPage({params}: TaskPageProps) {
     }
 
     return (
-        <Suspense fallback={<TaskLoading/>}>
-            <TaskPageContent taskId={id}/>
-        </Suspense>
+        <Layout fullWidth containerClassName="w-full max-w-[1100px] mx-auto px-3 sm:px-4 py-4">
+            <Suspense fallback={<TaskLoading/>}>
+                <TaskPageContent taskId={id}/>
+            </Suspense>
+        </Layout>
     );
 }

@@ -6,7 +6,7 @@ import {
     EMPTY_PROGRESS, countsFor, gatesFor, nextUpIn, objectiveTicks,
     setDone, standingFor, stateOf, toggleObjective,
 } from '@/app/tasks/utils/progress';
-import { OWNER_ORDER, externalPrereqsOf, populatedOwners, tasksForOwner } from '@/app/tasks/utils/vendors';
+import { OWNER_ORDER, externalPrereqsOf, ownerOf, populatedOwners, tasksForOwner } from '@/app/tasks/utils/vendors';
 import type { TaskProgress } from '@/types/tasks';
 
 let failures = 0;
@@ -174,6 +174,49 @@ for (const owner of ['ark', 'gunsmith', 'trupiks'] as const) {
         );
     }
 }
+
+/* --------------------------------------------------------------------------
+ * The database as a whole
+ *
+ * Per-vendor walks stall on purpose — the vendors interleave — so the question of whether the
+ * campaign is finishable can only be asked across all seven at once.
+ * ----------------------------------------------------------------------- */
+
+const dangling = Object.values(tasksData).flatMap((task) =>
+    task.requiredTasks.filter((id) => !tasksData[id]).map((id) => `${task.id}<-${id}`));
+if (dangling.length > 0) fail(`prerequisites pointing at a task that does not exist: ${dangling.join(', ')}`);
+
+const reachable = new Set<string>();
+let rounds = 0;
+for (let moved = true; moved; rounds += 1) {
+    moved = false;
+    for (const task of Object.values(tasksData)) {
+        if (reachable.has(task.id)) continue;
+        if (task.requiredTasks.every((id) => reachable.has(id))) {
+            reachable.add(task.id);
+            moved = true;
+        }
+    }
+}
+console.log(`whole campaign: ${reachable.size} of ${Object.keys(tasksData).length} reachable in ${rounds} rounds`);
+if (reachable.size !== Object.keys(tasksData).length) {
+    const stuck = Object.values(tasksData).filter((task) => !reachable.has(task.id));
+    fail(`${stuck.length} tasks can never be completed — ${stuck.slice(0, 5).map((t) => t.id).join(', ')}`);
+}
+
+/*
+ * `order` must never put a prerequisite after the task that needs it. It is a tiebreak between rows
+ * at equal depth, so an inversion would sort a task above something it depends on.
+ */
+let inversions = 0;
+for (const task of Object.values(tasksData)) {
+    for (const prereq of task.requiredTasks) {
+        const before = tasksData[prereq];
+        if (before && ownerOf(before) === ownerOf(task) && before.order >= task.order) inversions += 1;
+    }
+}
+console.log(`order inversions: ${inversions}`);
+if (inversions > 0) fail(`${inversions} prerequisites are ordered at or after their dependant`);
 
 /* Data-shaped spot checks. */
 const gated = Object.values(tasksData).filter((t) => gatesFor(t).trust !== null);

@@ -261,10 +261,8 @@ export default function TaskDetailPane({
         : 'daily contract';
 
     return (
-        <article className={cn(
-            'bg-steel-800 border border-line-800 flex flex-col min-h-0',
-            variant === 'page' && 'border-0 bg-transparent',
-        )}>
+        // The page variant is the same panel; it just does not scroll inside a fixed-height column.
+        <article className="bg-steel-800 border border-line-800 flex flex-col min-h-0">
             <div className="flex-none flex items-center justify-between gap-3 bg-steel-900 border-b border-line-900 px-4 py-2.5">
                 <span className="micro-label truncate">
                     {face.org}{face.merchant && ` / ${face.merchant}`} — {position}
