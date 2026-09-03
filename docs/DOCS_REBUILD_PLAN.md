@@ -128,7 +128,7 @@ Opportunistic: do it when the data is next touched, since the churn otherwise ou
 - [x] Stage 1 — root `CLAUDE.md` (525 to 110 lines)
 - [x] Stage 2 — `CONTEXT.md` (106 lines, 21 terms)
 - [x] Stage 3 — Vitest (147 tests across 5 suites)
-- [ ] Stage 4 — nested docs
+- [x] Stage 4 — nested docs (11,495 lines to 931 across 15 files)
 - [ ] Stage 5 — delete index
 - [ ] Stage 6 — ADRs
 - [ ] Stage 7 — cleanup
