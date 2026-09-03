@@ -49,7 +49,7 @@ const PRESENTATION: Record<VendorKey, Pick<Vendor, 'org' | 'short'>> = {
     forge: { org: 'Boulder Forge', short: 'FORGE' },
     ntg: { org: 'N.T.G', short: 'N.T.G' },
     trupiks: { org: "Trupik's", short: "TRUPIK'S" },
-    gunsmith: { org: 'Gunsmith', short: 'GUNSMITH' },
+    gunsmith: { org: 'Neumann', short: 'NEUMANN' },
 };
 
 function build(key: VendorKey): Vendor {

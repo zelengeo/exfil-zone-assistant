@@ -21,6 +21,11 @@ describe('the vendor record', () => {
         }
     });
 
+    it('names the gunsmith vendor Neumann, not by its role', () => {
+        // Checked against the game UI: the shop front is Neumann, the bench work is the role.
+        expect(getVendor('gunsmith')?.org).toBe('Neumann');
+    });
+
     it('keeps org and merchant as separate names', () => {
         // The two halves of a vendor: the organisation, and the person behind the counter.
         for (const vendor of VENDOR_LIST) {

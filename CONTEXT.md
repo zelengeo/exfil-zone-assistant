@@ -14,7 +14,7 @@ goods data uses, which is why the key sometimes reads as a role rather than a na
 _Avoid_: Corp, corporation, trader, faction, shop, owner
 
 **Org**:
-The organisation half of a vendor: ARK, N.T.G, TRUPIK'S, REGIMENT, BOULDER FORGE, NEUMANN. Carries
+The organisation half of a vendor: ARK, N.T.G, Trupik's, Regiment, Boulder Forge, Neumann. Carries
 its own name and icon, and is written in its own casing rather than uppercased in data.
 _Avoid_: Corp, company, brand
 
@@ -29,7 +29,7 @@ presentation grouping, not a claim about who issues the work.
 _Avoid_: Owner, chain owner, corp
 
 **Gunsmith**:
-Three distinct things share this word, so it is never used alone. The **vendor** is NEUMANN, fronted
+Three distinct things share this word, so it is never used alone. The **vendor** is Neumann, fronted
 by Anna. The **task kind** is bench work rather than a field objective. The **build feature** is the
 weapon-assembly tool, and is the only one the bare word may refer to.
 
@@ -54,7 +54,7 @@ rather than being completed once.
 _Avoid_: Repeatable, rotating task
 
 **Research**:
-A task that unlocks a good in a vendor's store by turning in materials. Issued by NEUMANN.
+A task that unlocks a good in a vendor's store by turning in materials. Issued by Neumann.
 _Avoid_: Unlock, crafting task
 
 **Chain**:
@@ -80,7 +80,7 @@ _Avoid_: Internal id, real id, source id
 
 **Id**:
 The identifier this wiki routes on, such as `ark_63`. Its prefix is part of the id and carries no
-meaning: a task whose id begins `research_` is issued by NEUMANN, not by anything called research.
+meaning: a task whose id begins `research_` is issued by Neumann, not by anything called research.
 _Avoid_: Slug, key, wiki id
 
 ### Trade
