@@ -8,8 +8,8 @@ import {paginationSchema, successSchema} from "@/lib/schemas/core";
 export const entityTypeEnum = ['item', 'task', 'npc', 'location', 'quest'] as const;
 export const correctionStatusEnum = ['pending', 'approved', 'rejected', 'implemented'] as const;
 export const rarityEnum = ['Common', 'Uncommon', 'Rare', 'Epic', 'Legendary', "Ultimate"] as const;
-export const taskTypesEnum = ['reach', 'extract', 'retrieve', 'eliminate', 'submit', 'mark', 'place', 'photo', "signal"] as const;
-export const taskMapsEnum = ['suburb', 'resort', 'dam', 'metro', 'any'] as const;
+export const taskTypesEnum = ['reach', 'extract', 'retrieve', 'eliminate', 'submit', 'mark', 'place', 'photo', "signal", 'gunsmith'] as const;
+export const taskMapsEnum = ['suburb', 'resort', 'dam', 'metro', 'smuggling', 'any'] as const;
 
 // Base correction schema
 const taskCorrectionProposedDataSchema = taskSchema.omit({

@@ -493,7 +493,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 3,
         "tips": "",
         "videoGuides": [],
-        "order": 1
+        "order": 24
     },
     "ark_37": {
         "id": "ark_37",
@@ -553,7 +553,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 2
+        "order": 25
     },
     "ark_38": {
         "id": "ark_38",
@@ -607,7 +607,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 3
+        "order": 26
     },
     "ark_39": {
         "id": "ark_39",
@@ -669,7 +669,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 4
+        "order": 27
     },
     "ark_40": {
         "id": "ark_40",
@@ -734,7 +734,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 5
+        "order": 29
     },
     "ark_41": {
         "id": "ark_41",
@@ -797,7 +797,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 6
+        "order": 30
     },
     "ark_42": {
         "id": "ark_42",
@@ -866,7 +866,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 7
+        "order": 31
     },
     "ark_43": {
         "id": "ark_43",
@@ -926,7 +926,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 8
+        "order": 33
     },
     "ark_44": {
         "id": "ark_44",
@@ -991,7 +991,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 9
+        "order": 34
     },
     "ark_45": {
         "id": "ark_45",
@@ -1059,7 +1059,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 10
+        "order": 35
     },
     "ark_46": {
         "id": "ark_46",
@@ -1130,7 +1130,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 11
+        "order": 36
     },
     "ark_47": {
         "id": "ark_47",
@@ -1189,7 +1189,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 12
+        "order": 28
     },
     "ark_48": {
         "id": "ark_48",
@@ -1248,7 +1248,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 13
+        "order": 32
     },
     "ark_49": {
         "id": "ark_49",
@@ -1322,7 +1322,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 14
+        "order": 37
     },
     "ark_50": {
         "id": "ark_50",
@@ -1382,7 +1382,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 2,
         "tips": "",
         "videoGuides": [],
-        "order": 15
+        "order": 12
     },
     "ark_51": {
         "id": "ark_51",
@@ -1446,7 +1446,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 16
+        "order": 13
     },
     "ark_52": {
         "id": "ark_52",
@@ -1510,7 +1510,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 17
+        "order": 14
     },
     "ark_53": {
         "id": "ark_53",
@@ -1574,7 +1574,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 18
+        "order": 15
     },
     "ark_54": {
         "id": "ark_54",
@@ -1657,7 +1657,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 19
+        "order": 16
     },
     "ark_55": {
         "id": "ark_55",
@@ -1732,7 +1732,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 20
+        "order": 17
     },
     "ark_56": {
         "id": "ark_56",
@@ -1806,7 +1806,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 21
+        "order": 19
     },
     "ark_57": {
         "id": "ark_57",
@@ -1886,7 +1886,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 22
+        "order": 21
     },
     "ark_58": {
         "id": "ark_58",
@@ -2024,7 +2024,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 24
+        "order": 22
     },
     "ark_60": {
         "id": "ark_60",
@@ -2082,7 +2082,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 25
+        "order": 18
     },
     "ark_61": {
         "id": "ark_61",
@@ -2146,7 +2146,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 26
+        "order": 20
     },
     "ark_1": {
         "id": "ark_1",
@@ -2211,7 +2211,7 @@ export const tasksData: TasksDatabase = {
                 "ytId": "I5XTDO71-us"
             }
         ],
-        "order": 27
+        "order": 1
     },
     "ark_62": {
         "id": "ark_62",
@@ -2269,7 +2269,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 28
+        "order": 2
     },
     "ark_3": {
         "id": "ark_3",
@@ -2331,7 +2331,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 64
             }
         ],
-        "order": 29
+        "order": 3
     },
     "ark_63": {
         "id": "ark_63",
@@ -2396,7 +2396,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 30
+        "order": 4
     },
     "ark_64": {
         "id": "ark_64",
@@ -2453,7 +2453,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 31
+        "order": 5
     },
     "ark_65": {
         "id": "ark_65",
@@ -2518,7 +2518,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 32
+        "order": 6
     },
     "ark_66": {
         "id": "ark_66",
@@ -2576,7 +2576,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 33
+        "order": 7
     },
     "ark_67": {
         "id": "ark_67",
@@ -2636,7 +2636,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 34
+        "order": 8
     },
     "ark_68": {
         "id": "ark_68",
@@ -2700,7 +2700,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 35
+        "order": 9
     },
     "ark_69": {
         "id": "ark_69",
@@ -2773,7 +2773,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 36
+        "order": 10
     },
     "ark_70": {
         "id": "ark_70",
@@ -2846,7 +2846,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 37
+        "order": 11
     },
     "forge_5": {
         "id": "forge_5",
@@ -2917,7 +2917,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 154
             }
         ],
-        "order": 1
+        "order": 28
     },
     "forge_6": {
         "id": "forge_6",
@@ -2987,7 +2987,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 190
             }
         ],
-        "order": 2
+        "order": 29
     },
     "forge_7": {
         "id": "forge_7",
@@ -3057,7 +3057,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 214
             }
         ],
-        "order": 3
+        "order": 30
     },
     "forge_8": {
         "id": "forge_8",
@@ -3119,7 +3119,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 241
             }
         ],
-        "order": 4
+        "order": 31
     },
     "forge_10": {
         "id": "forge_10",
@@ -3179,7 +3179,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 286
             }
         ],
-        "order": 5
+        "order": 32
     },
     "forge_12": {
         "id": "forge_12",
@@ -3235,7 +3235,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 353
             }
         ],
-        "order": 6
+        "order": 33
     },
     "forge_31": {
         "id": "forge_31",
@@ -3298,7 +3298,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 1016
             }
         ],
-        "order": 7
+        "order": 35
     },
     "forge_32": {
         "id": "forge_32",
@@ -3357,7 +3357,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 1028
             }
         ],
-        "order": 8
+        "order": 37
     },
     "forge_30": {
         "id": "forge_30",
@@ -3432,7 +3432,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 944
             }
         ],
-        "order": 9
+        "order": 34
     },
     "forge_26": {
         "id": "forge_26",
@@ -3515,7 +3515,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 802
             }
         ],
-        "order": 10
+        "order": 36
     },
     "forge_28": {
         "id": "forge_28",
@@ -3586,7 +3586,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 887
             }
         ],
-        "order": 11
+        "order": 38
     },
     "forge_29": {
         "id": "forge_29",
@@ -3665,7 +3665,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 913
             }
         ],
-        "order": 12
+        "order": 39
     },
     "forge_15": {
         "id": "forge_15",
@@ -3727,7 +3727,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 406
             }
         ],
-        "order": 13
+        "order": 18
     },
     "forge_16": {
         "id": "forge_16",
@@ -3797,7 +3797,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 427
             }
         ],
-        "order": 14
+        "order": 19
     },
     "forge_17": {
         "id": "forge_17",
@@ -3872,7 +3872,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 467
             }
         ],
-        "order": 15
+        "order": 20
     },
     "forge_19": {
         "id": "forge_19",
@@ -3934,7 +3934,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 624
             }
         ],
-        "order": 16
+        "order": 21
     },
     "forge_22": {
         "id": "forge_22",
@@ -4005,7 +4005,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 657
             }
         ],
-        "order": 17
+        "order": 23
     },
     "forge_25": {
         "id": "forge_25",
@@ -4069,7 +4069,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 699
             }
         ],
-        "order": 18
+        "order": 25
     },
     "forge_27": {
         "id": "forge_27",
@@ -4134,7 +4134,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 859
             }
         ],
-        "order": 19
+        "order": 27
     },
     "forge_13": {
         "id": "forge_13",
@@ -4197,7 +4197,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 378
             }
         ],
-        "order": 20
+        "order": 22
     },
     "forge_14": {
         "id": "forge_14",
@@ -4259,7 +4259,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 391
             }
         ],
-        "order": 21
+        "order": 24
     },
     "forge_33": {
         "id": "forge_33",
@@ -4309,7 +4309,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 22
+        "order": 26
     },
     "forge_34": {
         "id": "forge_34",
@@ -4360,7 +4360,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 23
+        "order": 7
     },
     "forge_35": {
         "id": "forge_35",
@@ -4422,7 +4422,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 24
+        "order": 9
     },
     "forge_36": {
         "id": "forge_36",
@@ -4485,7 +4485,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 25
+        "order": 11
     },
     "forge_37": {
         "id": "forge_37",
@@ -4541,7 +4541,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 26
+        "order": 13
     },
     "forge_38": {
         "id": "forge_38",
@@ -4595,7 +4595,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 27
+        "order": 15
     },
     "forge_39": {
         "id": "forge_39",
@@ -4644,7 +4644,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 28
+        "order": 17
     },
     "forge_40": {
         "id": "forge_40",
@@ -4696,7 +4696,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 29
+        "order": 14
     },
     "forge_41": {
         "id": "forge_41",
@@ -4748,7 +4748,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 30
+        "order": 16
     },
     "forge_42": {
         "id": "forge_42",
@@ -4791,7 +4791,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 31
+        "order": 1
     },
     "forge_43": {
         "id": "forge_43",
@@ -4845,7 +4845,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 32
+        "order": 2
     },
     "forge_44": {
         "id": "forge_44",
@@ -4897,7 +4897,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 33
+        "order": 3
     },
     "forge_45": {
         "id": "forge_45",
@@ -4955,7 +4955,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 34
+        "order": 4
     },
     "forge_46": {
         "id": "forge_46",
@@ -5004,7 +5004,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 35
+        "order": 5
     },
     "forge_47": {
         "id": "forge_47",
@@ -5056,7 +5056,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 36
+        "order": 6
     },
     "forge_48": {
         "id": "forge_48",
@@ -5103,7 +5103,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 37
+        "order": 8
     },
     "ntg_10": {
         "id": "ntg_10",
@@ -5160,7 +5160,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 265
             }
         ],
-        "order": 38
+        "order": 10
     },
     "forge_49": {
         "id": "forge_49",
@@ -5219,7 +5219,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 39
+        "order": 12
     },
     "gunsmith_1": {
         "id": "gunsmith_1",
@@ -5265,7 +5265,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 1
+        "order": 2
     },
     "gunsmith_3": {
         "id": "gunsmith_3",
@@ -5705,7 +5705,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 13
+        "order": 12
     },
     "gunsmith_15": {
         "id": "gunsmith_15",
@@ -5755,7 +5755,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 15
+        "order": 13
     },
     "gunsmith_17": {
         "id": "gunsmith_17",
@@ -5818,7 +5818,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 17
+        "order": 14
     },
     "gunsmith_2": {
         "id": "gunsmith_2",
@@ -5878,7 +5878,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 2
+        "order": 1
     },
     "gunsmith_4": {
         "id": "gunsmith_4",
@@ -6152,7 +6152,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 2,
         "tips": "",
         "videoGuides": [],
-        "order": 12
+        "order": 15
     },
     "gunsmith_14": {
         "id": "gunsmith_14",
@@ -6209,7 +6209,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 2,
         "tips": "",
         "videoGuides": [],
-        "order": 14
+        "order": 16
     },
     "gunsmith_16": {
         "id": "gunsmith_16",
@@ -6269,7 +6269,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 2,
         "tips": "",
         "videoGuides": [],
-        "order": 16
+        "order": 17
     },
     "gunsmith_18": {
         "id": "gunsmith_18",
@@ -6803,7 +6803,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 5
+        "order": 3
     },
     "research_9": {
         "id": "research_9",
@@ -6846,7 +6846,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 9
+        "order": 6
     },
     "research_13": {
         "id": "research_13",
@@ -6889,7 +6889,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 13
+        "order": 9
     },
     "research_15": {
         "id": "research_15",
@@ -6932,7 +6932,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 15
+        "order": 11
     },
     "research_16": {
         "id": "research_16",
@@ -6975,7 +6975,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 16
+        "order": 13
     },
     "research_17": {
         "id": "research_17",
@@ -7020,7 +7020,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 17
+        "order": 15
     },
     "research_18": {
         "id": "research_18",
@@ -7064,7 +7064,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 18
+        "order": 16
     },
     "research_19": {
         "id": "research_19",
@@ -7108,7 +7108,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 19
+        "order": 18
     },
     "research_2": {
         "id": "research_2",
@@ -7151,7 +7151,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 2
+        "order": 4
     },
     "research_6": {
         "id": "research_6",
@@ -7193,7 +7193,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 6
+        "order": 7
     },
     "research_10": {
         "id": "research_10",
@@ -7278,7 +7278,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 3
+        "order": 2
     },
     "research_7": {
         "id": "research_7",
@@ -7322,7 +7322,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 7
+        "order": 8
     },
     "research_11": {
         "id": "research_11",
@@ -7366,7 +7366,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 11
+        "order": 12
     },
     "research_14": {
         "id": "research_14",
@@ -7452,7 +7452,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 4
+        "order": 5
     },
     "research_8": {
         "id": "research_8",
@@ -7496,7 +7496,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 8
+        "order": 17
     },
     "research_12": {
         "id": "research_12",
@@ -7540,7 +7540,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 12
+        "order": 19
     },
     "ntg_34": {
         "id": "ntg_34",
@@ -7606,7 +7606,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 3,
         "tips": "",
         "videoGuides": [],
-        "order": 1
+        "order": 21
     },
     "ntg_35": {
         "id": "ntg_35",
@@ -7665,7 +7665,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 2
+        "order": 23
     },
     "ntg_36": {
         "id": "ntg_36",
@@ -7720,7 +7720,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 3
+        "order": 24
     },
     "ntg_37": {
         "id": "ntg_37",
@@ -7777,7 +7777,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 4
+        "order": 25
     },
     "ntg_38": {
         "id": "ntg_38",
@@ -7835,7 +7835,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 5
+        "order": 26
     },
     "ntg_39": {
         "id": "ntg_39",
@@ -7890,7 +7890,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 6
+        "order": 28
     },
     "ntg_40": {
         "id": "ntg_40",
@@ -7977,7 +7977,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 7
+        "order": 29
     },
     "ntg_29": {
         "id": "ntg_29",
@@ -8048,7 +8048,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 712
             }
         ],
-        "order": 8
+        "order": 30
     },
     "ntg_41": {
         "id": "ntg_41",
@@ -8103,7 +8103,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 9
+        "order": 31
     },
     "ntg_42": {
         "id": "ntg_42",
@@ -8161,7 +8161,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 10
+        "order": 33
     },
     "ntg_43": {
         "id": "ntg_43",
@@ -8220,7 +8220,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 11
+        "order": 34
     },
     "ntg_44": {
         "id": "ntg_44",
@@ -8280,7 +8280,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 12
+        "order": 27
     },
     "ntg_45": {
         "id": "ntg_45",
@@ -8347,7 +8347,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 13
+        "order": 32
     },
     "ntg_46": {
         "id": "ntg_46",
@@ -8417,7 +8417,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 14
+        "order": 35
     },
     "ark_4": {
         "id": "ark_4",
@@ -8500,7 +8500,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 90
             }
         ],
-        "order": 15
+        "order": 10
     },
     "ntg_47": {
         "id": "ntg_47",
@@ -8558,7 +8558,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 16
+        "order": 11
     },
     "ntg_48": {
         "id": "ntg_48",
@@ -8624,7 +8624,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 17
+        "order": 12
     },
     "ntg_49": {
         "id": "ntg_49",
@@ -8700,7 +8700,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 18
+        "order": 13
     },
     "ntg_50": {
         "id": "ntg_50",
@@ -8781,7 +8781,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 19
+        "order": 20
     },
     "ntg_51": {
         "id": "ntg_51",
@@ -8851,7 +8851,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 20
+        "order": 22
     },
     "ntg_52": {
         "id": "ntg_52",
@@ -8924,7 +8924,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 21
+        "order": 14
     },
     "ntg_53": {
         "id": "ntg_53",
@@ -8991,7 +8991,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 22
+        "order": 15
     },
     "ntg_18": {
         "id": "ntg_18",
@@ -9074,7 +9074,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 472
             }
         ],
-        "order": 23
+        "order": 16
     },
     "ntg_54": {
         "id": "ntg_54",
@@ -9161,7 +9161,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 24
+        "order": 17
     },
     "ntg_55": {
         "id": "ntg_55",
@@ -9226,7 +9226,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 25
+        "order": 18
     },
     "ntg_7": {
         "id": "ntg_7",
@@ -9308,7 +9308,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 185
             }
         ],
-        "order": 26
+        "order": 19
     },
     "ntg_56": {
         "id": "ntg_56",
@@ -9362,7 +9362,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 27
+        "order": 2
     },
     "ntg_1": {
         "id": "ntg_1",
@@ -9431,7 +9431,7 @@ export const tasksData: TasksDatabase = {
                 "ytId": "ZOuSedSDlUE"
             }
         ],
-        "order": 28
+        "order": 3
     },
     "ntg_57": {
         "id": "ntg_57",
@@ -9499,7 +9499,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 29
+        "order": 4
     },
     "ntg_58": {
         "id": "ntg_58",
@@ -9559,7 +9559,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 30
+        "order": 5
     },
     "ntg_59": {
         "id": "ntg_59",
@@ -9618,7 +9618,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 31
+        "order": 6
     },
     "ntg_60": {
         "id": "ntg_60",
@@ -9681,7 +9681,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 32
+        "order": 7
     },
     "ntg_61": {
         "id": "ntg_61",
@@ -9749,7 +9749,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 33
+        "order": 8
     },
     "ntg_62": {
         "id": "ntg_62",
@@ -9826,7 +9826,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 34
+        "order": 9
     },
     "ntg_63": {
         "id": "ntg_63",
@@ -9879,7 +9879,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 35
+        "order": 1
     },
     "regiment_23": {
         "id": "regiment_23",
@@ -9947,7 +9947,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 749
             }
         ],
-        "order": 1
+        "order": 22
     },
     "regiment_36": {
         "id": "regiment_36",
@@ -10016,7 +10016,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 2
+        "order": 23
     },
     "regiment_28": {
         "id": "regiment_28",
@@ -10092,7 +10092,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 992
             }
         ],
-        "order": 3
+        "order": 24
     },
     "regiment_27": {
         "id": "regiment_27",
@@ -10160,7 +10160,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 894
             }
         ],
-        "order": 4
+        "order": 25
     },
     "regiment_37": {
         "id": "regiment_37",
@@ -10218,7 +10218,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 5
+        "order": 26
     },
     "regiment_38": {
         "id": "regiment_38",
@@ -10287,7 +10287,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 6
+        "order": 29
     },
     "regiment_32": {
         "id": "regiment_32",
@@ -10356,7 +10356,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 1167
             }
         ],
-        "order": 7
+        "order": 30
     },
     "regiment_31": {
         "id": "regiment_31",
@@ -10419,7 +10419,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 1125
             }
         ],
-        "order": 8
+        "order": 31
     },
     "regiment_17": {
         "id": "regiment_17",
@@ -10478,7 +10478,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 465
             }
         ],
-        "order": 9
+        "order": 27
     },
     "regiment_39": {
         "id": "regiment_39",
@@ -10538,7 +10538,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 10
+        "order": 28
     },
     "regiment_40": {
         "id": "regiment_40",
@@ -10612,7 +10612,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 11
+        "order": 32
     },
     "regiment_30": {
         "id": "regiment_30",
@@ -10698,7 +10698,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 1094
             }
         ],
-        "order": 12
+        "order": 33
     },
     "regiment_34": {
         "id": "regiment_34",
@@ -10766,7 +10766,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 1272
             }
         ],
-        "order": 13
+        "order": 34
     },
     "regiment_35": {
         "id": "regiment_35",
@@ -10835,7 +10835,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 1302
             }
         ],
-        "order": 14
+        "order": 35
     },
     "regiment_10": {
         "id": "regiment_10",
@@ -10906,7 +10906,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 274
             }
         ],
-        "order": 15
+        "order": 9
     },
     "regiment_11": {
         "id": "regiment_11",
@@ -10974,7 +10974,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 293
             }
         ],
-        "order": 16
+        "order": 10
     },
     "regiment_12": {
         "id": "regiment_12",
@@ -11055,7 +11055,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 342
             }
         ],
-        "order": 17
+        "order": 11
     },
     "regiment_14": {
         "id": "regiment_14",
@@ -11143,7 +11143,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 420
             }
         ],
-        "order": 18
+        "order": 12
     },
     "regiment_18": {
         "id": "regiment_18",
@@ -11219,7 +11219,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 503
             }
         ],
-        "order": 19
+        "order": 14
     },
     "regiment_25": {
         "id": "regiment_25",
@@ -11282,7 +11282,7 @@ export const tasksData: TasksDatabase = {
                 "ytId": "xMd_KozHG30"
             }
         ],
-        "order": 20
+        "order": 16
     },
     "regiment_29": {
         "id": "regiment_29",
@@ -11350,7 +11350,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 1014
             }
         ],
-        "order": 21
+        "order": 17
     },
     "regiment_8": {
         "id": "regiment_8",
@@ -11406,7 +11406,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 186
             }
         ],
-        "order": 22
+        "order": 19
     },
     "regiment_41": {
         "id": "regiment_41",
@@ -11466,7 +11466,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 23
+        "order": 13
     },
     "regiment_42": {
         "id": "regiment_42",
@@ -11527,7 +11527,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 24
+        "order": 18
     },
     "regiment_15": {
         "id": "regiment_15",
@@ -11596,7 +11596,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 440
             }
         ],
-        "order": 25
+        "order": 15
     },
     "regiment_16": {
         "id": "regiment_16",
@@ -11664,7 +11664,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 452
             }
         ],
-        "order": 26
+        "order": 20
     },
     "regiment_43": {
         "id": "regiment_43",
@@ -11722,7 +11722,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 27
+        "order": 1
     },
     "regiment_44": {
         "id": "regiment_44",
@@ -11798,7 +11798,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 28
+        "order": 2
     },
     "regiment_45": {
         "id": "regiment_45",
@@ -11871,7 +11871,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 29
+        "order": 3
     },
     "regiment_46": {
         "id": "regiment_46",
@@ -11939,7 +11939,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 30
+        "order": 4
     },
     "regiment_47": {
         "id": "regiment_47",
@@ -12009,7 +12009,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 31
+        "order": 5
     },
     "regiment_48": {
         "id": "regiment_48",
@@ -12084,7 +12084,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 32
+        "order": 6
     },
     "regiment_49": {
         "id": "regiment_49",
@@ -12148,7 +12148,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 33
+        "order": 7
     },
     "regiment_50": {
         "id": "regiment_50",
@@ -12212,7 +12212,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 34
+        "order": 21
     },
     "regiment_51": {
         "id": "regiment_51",
@@ -12273,7 +12273,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 35
+        "order": 8
     },
     "trupiks_22": {
         "id": "trupiks_22",
@@ -12316,7 +12316,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 1
+        "order": 19
     },
     "trupiks_12": {
         "id": "trupiks_12",
@@ -12388,7 +12388,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 360
             }
         ],
-        "order": 2
+        "order": 17
     },
     "trupiks_23": {
         "id": "trupiks_23",
@@ -12447,7 +12447,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 3
+        "order": 18
     },
     "trupiks_14": {
         "id": "trupiks_14",
@@ -12517,7 +12517,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 425
             }
         ],
-        "order": 4
+        "order": 20
     },
     "trupiks_15": {
         "id": "trupiks_15",
@@ -12587,7 +12587,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 450
             }
         ],
-        "order": 5
+        "order": 21
     },
     "trupiks_16": {
         "id": "trupiks_16",
@@ -12657,7 +12657,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 465
             }
         ],
-        "order": 6
+        "order": 22
     },
     "trupiks_17": {
         "id": "trupiks_17",
@@ -12721,7 +12721,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 480
             }
         ],
-        "order": 7
+        "order": 23
     },
     "trupiks_24": {
         "id": "trupiks_24",
@@ -12769,7 +12769,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 8
+        "order": 16
     },
     "trupiks_21": {
         "id": "trupiks_21",
@@ -12834,7 +12834,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 110
             }
         ],
-        "order": 9
+        "order": 13
     },
     "ntg_13": {
         "id": "ntg_13",
@@ -12895,7 +12895,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 367
             }
         ],
-        "order": 10
+        "order": 14
     },
     "trupiks_25": {
         "id": "trupiks_25",
@@ -12937,7 +12937,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 11
+        "order": 9
     },
     "trupiks_1": {
         "id": "trupiks_1",
@@ -12992,7 +12992,7 @@ export const tasksData: TasksDatabase = {
                 "ytId": "DIjbTZN_Wxc"
             }
         ],
-        "order": 12
+        "order": 5
     },
     "trupiks_26": {
         "id": "trupiks_26",
@@ -13036,7 +13036,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 13
+        "order": 12
     },
     "trupiks_9": {
         "id": "trupiks_9",
@@ -13101,7 +13101,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 241
             }
         ],
-        "order": 14
+        "order": 10
     },
     "trupiks_10": {
         "id": "trupiks_10",
@@ -13209,7 +13209,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 16
+        "order": 11
     },
     "trupiks_2": {
         "id": "trupiks_2",
@@ -13263,7 +13263,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 58
             }
         ],
-        "order": 17
+        "order": 1
     },
     "trupiks_3": {
         "id": "trupiks_3",
@@ -13319,7 +13319,7 @@ export const tasksData: TasksDatabase = {
                 "startTs": 101
             }
         ],
-        "order": 18
+        "order": 2
     },
     "trupiks_28": {
         "id": "trupiks_28",
@@ -13373,7 +13373,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 19
+        "order": 3
     },
     "trupiks_29": {
         "id": "trupiks_29",
@@ -13426,7 +13426,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 20
+        "order": 4
     },
     "trupiks_30": {
         "id": "trupiks_30",
@@ -13479,7 +13479,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 21
+        "order": 6
     },
     "trupiks_31": {
         "id": "trupiks_31",
@@ -13528,7 +13528,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 22
+        "order": 7
     },
     "trupiks_32": {
         "id": "trupiks_32",
@@ -13588,7 +13588,7 @@ export const tasksData: TasksDatabase = {
         "requiredTrust": 0,
         "tips": "",
         "videoGuides": [],
-        "order": 23
+        "order": 8
     },
     "trupiks_33": {
         "id": "trupiks_33",
