@@ -6,13 +6,13 @@
 
 ## Why
 
-The agent-facing documentation had grown to ~12,700 lines across 18 `CLAUDE.md` files. Most of it
+The agent-facing documentation had grown to ~12,700 lines across 18 `AGENTS.md` files. Most of it
 restated things the agent can look up (`package.json`, the file tree, npm scripts), and the restated
 copies had gone stale — the root doc named `tailwind.config.ts` and `next.config.js` (the repo has
 `tailwind.config.js` and `next.config.ts`), told the reader to copy a `.env.example` that does not
 exist, and listed `npm test` in the pre-deploy checklist for a repo with no test runner installed.
 
-The standard to write against already exists in-repo: `src/app/tasks/CLAUDE.md` (179 lines). It
+The standard to write against already exists in-repo: `src/app/tasks/AGENTS.md` (179 lines). It
 caches only what cannot be looked up — why the tasks route has no available/locked/completed tabs,
 how the 128 gate ids join through `gameId` — and points at `npm run verify-chains` rather than
 restating it.
@@ -28,7 +28,7 @@ restating it.
 
 ## Stages
 
-### Stage 1 — Root `CLAUDE.md`
+### Stage 1 — Root `AGENTS.md`
 
 The only always-loaded file, so every stale line costs on every turn.
 
@@ -77,12 +77,12 @@ curve supplies damage outright rather than scaling the round own figure, which m
 Sequenced before Stage 4 so the documentation pass describes a runner that exists, and writes the
 testing sections once rather than twice.
 
-### Stage 4 — The 15 nested `CLAUDE.md` files
+### Stage 4 — The 15 nested `AGENTS.md` files
 
-Cut to the `src/app/tasks/CLAUDE.md` standard.
+Cut to the `src/app/tasks/AGENTS.md` standard.
 
-- Strip the generic example code that dominates the bulk: `src/lib/CLAUDE.md` is 597 of 888 lines
-  inside code fences, `src/models/CLAUDE.md` 493 of 709, `public/data/CLAUDE.md` 524 of 909
+- Strip the generic example code that dominates the bulk: `src/lib/AGENTS.md` is 597 of 888 lines
+  inside code fences, `src/models/AGENTS.md` 493 of 709, `public/data/AGENTS.md` 524 of 909
 - Delete the three `## Future Improvements to Consider` sections outright
 - Collapse the boilerplate repeated across files: `Documentation Hierarchy` appears in 10 files,
   `DO's` in 8, `DON'Ts` in 6, `Directory Structure` in 6
@@ -95,7 +95,7 @@ Cut to the `src/app/tasks/CLAUDE.md` standard.
 ### Stage 5 — Delete `CLAUDE-INDEX.md`
 
 712 lines duplicating the file tree, self-reporting counts that are already wrong ("Total
-Documentation Files: 11", actual 18). Root `CLAUDE.md` carries the pointer list instead.
+Documentation Files: 11", actual 18). Root `AGENTS.md` carries the pointer list instead.
 
 ### Stage 6 — ADRs in `docs/adr/`
 
@@ -127,7 +127,7 @@ Opportunistic: do it when the data is next touched, since the churn otherwise ou
 ## Status
 
 - [x] Stage 0 — audit, plan, decisions
-- [x] Stage 1 — root `CLAUDE.md` (525 to 110 lines)
+- [x] Stage 1 — root `AGENTS.md` (525 to 110 lines)
 - [x] Stage 2 — `CONTEXT.md` (106 lines, 21 terms)
 - [x] Stage 3 — Vitest (147 tests across 5 suites)
 - [x] Stage 4 — nested docs (11,495 lines to 931 across 15 files)

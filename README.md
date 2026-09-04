@@ -2,7 +2,7 @@
 
 <div align="center">
 
-[![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1.7-38B2AC?logo=tailwind-css)](https://tailwindcss.com)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -34,44 +34,62 @@ A comprehensive wiki and combat simulator for VR tactical shooters. Providing ac
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: Next.js 14 (App Router), React, TypeScript
+- **Frontend**: Next.js 16 (App Router), React 19, TypeScript
 - **Styling**: Tailwind CSS 4.1.7
-- **Data**: Static JSON with plans for dynamic backend
+- **Data**: Static JSON; MongoDB for accounts and reader submissions
 - **Deployment**: Vercel
 
 ## 🏁 Getting Started
 
 ### Prerequisites
-- Node.js 18+
-- npm/yarn/pnpm
+
+- Node.js 20.9 or newer
+- npm (the committed lockfile is `package-lock.json`)
+- Docker Desktop when working on authentication, submissions, or admin features
 
 ### Installation
 
 1. Clone the repository
+
 ```bash
 git clone https://github.com/zelengeo/exfil-zone-assistant.git
 cd exfil-zone-assistant
 ```
 
 2. Install dependencies
+
 ```bash
 npm install
-# or
-yarn install
-# or
-pnpm install
 ```
 
-3. Run the development server
+3. Create the local environment file and fill in the OAuth credentials when you need sign-in
+
+```powershell
+Copy-Item .env.example .env.local
+```
+
+4. Start MongoDB when you need account-backed features
+
+```bash
+docker compose up -d mongodb
+```
+
+5. Run the development server
+
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+6. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+Before committing, run the checks that match your change:
+
+```bash
+npm run lint
+npm run type-check
+npm test
+npm run validate-data
+```
 
 ### Building for Production
 
@@ -80,26 +98,30 @@ npm run build
 npm start
 ```
 
+## Coding agents
+
+[`AGENTS.md`](AGENTS.md) is the canonical source of repository instructions. More specific
+`AGENTS.md` files sit beside the routes and layers they govern. The `CLAUDE.md` files are one-line
+compatibility imports, so Claude Code and agents that natively read `AGENTS.md` receive the same
+guidance without maintaining two copies. Keep shared project rules in `AGENTS.md`; keep personal
+agent settings outside the repository and tool-specific integrations in their adapter directory.
+
 ## 🗂️ Project Structure
 
 ```
 exfil-zone-assistant/
-├── app/                    # Next.js App Router pages
-│   ├── items/             # Item database pages
-│   ├── combat-sim/        # Combat simulator
-│   └── guides/            # Game guides
-├── components/            # Reusable React components
-│   ├── layout/           # Layout components
-│   ├── items/            # Item-specific components
-│   └── combat-sim/       # Combat simulator components
-├── content/              # Static content
-│   └── guides/           # Guide content (MDX/TSX)
-├── lib/                  # Utility functions and configs
-│   ├── guides/           # Guide configuration
-│   └── items/            # Item data and helpers
-├── public/               # Static assets
-│   └── images/           # Item and UI images
-└── types/                # TypeScript type definitions
+├── src/
+│   ├── app/               # Next.js App Router pages and route-owned code
+│   ├── components/        # Components shared across routes
+│   ├── content/           # Guide content
+│   ├── lib/               # Request plumbing and pure game logic
+│   ├── services/          # Data and persistence access
+│   ├── models/            # Mongoose models
+│   └── types/             # Shared TypeScript types
+├── public/
+│   ├── data/              # Validated game data served as JSON
+│   └── images/            # Item and UI images
+└── scripts/               # Validation and database utilities
 ```
 
 ## 🤝 Contributing

@@ -4,7 +4,7 @@
 **Written:** 2026-09-04
 **Design:** https://claude.ai/code/artifact/f7f02f61-a355-4c1b-8ccd-cb0e38994d87
 **Route:** `src/app/hideout-upgrades/` — 1,000 lines across four files
-**Read first:** [the route's own doc](../src/app/hideout-upgrades/CLAUDE.md), then
+**Read first:** [the route's own doc](../src/app/hideout-upgrades/AGENTS.md), then
 [`CONTEXT.md`](../CONTEXT.md) for the vocabulary
 
 The job is a UI rewrite against a design that already exists. This brief is the other half: the
@@ -41,7 +41,7 @@ The route is still on the holding skin: 13 uses of `olive-400`, 12 of `tan-100`,
 `military-600`, and so on down. If the design is Cold Steel — `steel-*`, `line-*`, `ink-*`, plus
 `ember` / `info` / `warn` / `good` / `bad` — then this is a full repaint, not a touch-up, and the
 tasks route is the worked example of what that looks like finished. Two traps that cost time there,
-both in `src/app/tasks/CLAUDE.md`: `globals.css` centres every `button`, and colours defined in
+both in `src/app/tasks/AGENTS.md`: `globals.css` centres every `button`, and colours defined in
 `tailwind.config.js` are not emitted as `--color-*` variables, so `shadow-[inset_2px_0_0_var(--color-ember)]`
 renders nothing.
 
@@ -54,7 +54,7 @@ renders nothing.
 `HideoutUpgradesClient` reads storage with `useState` + `useEffect` calling `StorageService`
 directly. Every other route goes through a per-route hook wrapping `useSyncExternalStore` over a
 module-level store, exposing a `hydrated` flag — `useTaskProgress`, `useSavedBuilds`, `useDensity`.
-The root `CLAUDE.md` says to do it that way and this route is the one that does not.
+The root `AGENTS.md` says to do it that way and this route is the one that does not.
 
 It is also the only lint error on the route:
 
@@ -72,7 +72,7 @@ first render breaks SSR, and this page is statically generated.
 ### 2b. `hideout_focus` is a key nothing uses
 
 `StorageService.STORAGE_KEYS` declares `hideout_focus: 'exfilzone-hideout-focus'`. Nothing reads or
-writes it. The route's `CLAUDE.md` says it holds "the current target", so the doc describes a
+writes it. The route's `AGENTS.md` says it holds "the current target", so the doc describes a
 feature that is not there.
 
 Either wire it up, if the new design has a focused-target concept, or delete the key and fix the
@@ -127,7 +127,7 @@ never crashes. Keep the three-step fallback.
 ## What was done
 
 Everything below except §2c, which the list of criteria never asked for and which the brief itself
-files as a judgement call. The reasoning against it is now in the route's `CLAUDE.md`: 44 KB is not
+files as a judgement call. The reasoning against it is now in the route's `AGENTS.md`: 44 KB is not
 431 KB, and the move needs a schema, a service, a loading state and a change in the extraction repo.
 
 Two things went further than the brief asked, both because the specs made them visible:
@@ -150,7 +150,7 @@ did not exist before.
 - The three upgrade rules live in `utils/` with specs, and `npm test` covers them
 - Progress goes through a `useHideoutProgress` hook with a `hydrated` flag
 - `npx eslint src/app/hideout-upgrades` is clean
-- `hideout_focus` is either used or gone, and the route's `CLAUDE.md` matches what is there
+- `hideout_focus` is either used or gone, and the route's `AGENTS.md` matches what is there
 - The three loose JSON files are deleted
 - No client chunk on this route carries task data — check the built output, not the imports
-- The route's `CLAUDE.md` is updated in the same change, not after
+- The route's `AGENTS.md` is updated in the same change, not after

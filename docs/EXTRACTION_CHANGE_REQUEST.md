@@ -243,7 +243,7 @@ Change A:
   reads what the offer carries. `Gate.task` narrows from `Task` to the three published fields
 - `src/lib/gates.test.ts` — most of it goes with the join it was the alarm for
 - `src/lib/schemas/` and `npm run validate-data` — the new offer shape
-- `src/lib/CLAUDE.md` — retire the "dead join" gotcha
+- `src/lib/AGENTS.md` — retire the "dead join" gotcha
 - **Expected:** the 228 KB chunk leaves `/items` and `/gunsmith` outright
 
 Change B:
