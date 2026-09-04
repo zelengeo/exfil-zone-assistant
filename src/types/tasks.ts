@@ -1,59 +1,24 @@
-export interface TaskReward {
-    type: 'money' | 'reputation' | 'experience' | 'item';
-    quantity: number;
-    corpId?: string; // For reputation rewards
-    item_name?: string; // Temp for item rewards
-    item_id?: string; // Item rewards
-}
-
-export type TaskType =
-    | 'reach'
-    | 'extract'
-    | 'retrieve'
-    | 'eliminate'
-    | 'submit'
-    | 'mark'
-    | 'place'
-    | 'photo'
-    | 'signal'
-    /** Bench work for Anna rather than a field objective. Arrived with the 227-task extraction. */
-    | 'gunsmith';
-
-export type TaskVideoGuide = { author: string, ytId: string, startTs?: number, endTs?: number }
-
-export type TaskMap =
-    | 'suburb'
-    | 'resort'
-    | 'dam'
-    | 'metro'
-    /** The fifth map, added by the 227-task extraction. */
-    | 'smuggling'
-    | 'any';
-
-export interface Task {
-    id: string;
-    name: string;
-    gameId: string;
-    description: string;
-    objectives: string[];
-    corpId: string;
-    type: TaskType[];
-    map: TaskMap[];
-    reward: TaskReward[];
-    preReward: TaskReward[];
-    requiredTasks: string[];
-    /** Renamed from `requiredLevel` by the 227-task extraction. */
-    requiredPlayerLevel: number;
-    /** Loyalty level with the issuing corp, 0-4. New with the same extraction. */
-    requiredTrust: number;
-    tips: string;
-    videoGuides: TaskVideoGuide[];
-    order: number;
-}
-
-export interface TasksDatabase {
-    [key: string]: Task;
-}
+/**
+ * What a task is, and what a player has done to one — two different questions, kept apart.
+ *
+ * The published shape is defined once, as the zod schema in `lib/schemas/task.ts`, and re-exported
+ * here so that `@/types/tasks` stays the import path the app reads. It used to be declared twice:
+ * an interface here and an inferred `ITask` there, which is the exact pair critical rule 4 and
+ * [ADR 0002](../../docs/adr/0002-zod-schemas-are-the-source-of-truth-for-types.md) forbid. The
+ * schema won because it is the one of the two that also validates `public/data/tasks.json` when
+ * `TaskService` loads it.
+ *
+ * Everything below the re-exports is progress, which is this app's own idea and has no published
+ * counterpart.
+ */
+export type {
+    ITask as Task,
+    TaskMap,
+    TaskReward,
+    TaskType,
+    TaskVideoGuide,
+    TasksDatabase,
+} from '@/lib/schemas/task';
 
 /* --------------------------------------------------------------------------
  * Progress
@@ -137,14 +102,3 @@ export const isUserProgress = (value: unknown): value is UserProgress => {
 
     return true;
 };
-
-
-// Interface for merchant information
-export interface Corp {
-    name: string;
-    icon: string;
-    merchant: string;
-    merchantIcon: string;
-    ogImage: string;
-    levelCap: number[];
-}

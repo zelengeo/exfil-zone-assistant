@@ -3,12 +3,17 @@
 Hand-written types for the game data. Everything request-shaped is inferred from a zod schema in
 `lib/schemas/` instead — see [Critical rule 4](../../CLAUDE.md).
 
+`tasks.ts` is the exception in both directions: the published task shape is **inferred** from
+`lib/schemas/task.ts` and only re-exported here, because that schema also validates
+`public/data/tasks.json` when `TaskService` loads it. The progress shapes below the re-exports are
+hand-written, being this app's own idea with nothing published to validate against.
+
 ## The files
 
 | File | Owns |
 |---|---|
 | `items.ts` | the catalogue: every item category, calibers, curves, armour and ammo properties |
-| `tasks.ts` | `Task`, `Corp`, `TaskMap`, `TaskType`, progress shapes |
+| `tasks.ts` | `Task`, `TaskMap`, `TaskType` (re-exported from the schema), progress shapes |
 | `trade.ts` | `BuyOffer`, `TradeStats`, `VendorKey`, `VENDOR_ORDER` |
 | `gunsmith.ts` | saved builds, parts, slots |
 | `guides.ts`, `community.ts` | content metadata |

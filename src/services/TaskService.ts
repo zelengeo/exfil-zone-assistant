@@ -44,9 +44,9 @@ export function fetchTasks(): Promise<TasksDatabase> {
         inFlight = loadDataFile<unknown>('tasks.json')
             .then((raw) => {
                 // Storage the app does not control, so it is validated rather than trusted. The
-                // schema is the one the task API already uses, which is what keeps a data drop and
-                // an endpoint from disagreeing about what a task is.
-                cache = tasksDatabaseSchema.parse(raw) as TasksDatabase;
+                // schema is the one the task API already uses and the one `Task` is inferred from,
+                // so this needs no cast: parsing is what produces the type.
+                cache = tasksDatabaseSchema.parse(raw);
                 inFlight = null;
                 return cache;
             })

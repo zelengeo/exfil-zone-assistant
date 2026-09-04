@@ -86,6 +86,22 @@ function warn(check: string, message: string): void {
 // ---------------------------------------------------------------------------
 
 /**
+ * Gunsmith parts, for resolving references only.
+ *
+ * Deliberately not in `DATA_FILES`. They are items a task can hand over — 89 of the reward
+ * references point at one — but they are not the same shape: 668 rows with a `family`, a `slot` and
+ * a `compatibility` block, and none of the rarity, price or subcategory fields the item checks
+ * assert. Running those checks over them turns 89 false "no such item" errors into 668 real-looking
+ * `enum-drift` ones, which is not a trade. So they count as known ids and nothing more.
+ */
+const gunsmithPartsPath = path.join(DATA_DIR, 'gunsmith-parts.json');
+const gunsmithPartIds = new Set<string>(
+    fs.existsSync(gunsmithPartsPath)
+        ? (JSON.parse(fs.readFileSync(gunsmithPartsPath, 'utf8')) as RawItem[]).map((part) => part.id)
+        : [],
+);
+
+/**
  * Tasks come out of `public/data` like everything else now, which is also what lets `--data` check
  * a candidate task drop rather than always this repo's copy.
  */
@@ -232,7 +248,7 @@ for (const file of ['helmets.json', 'face-shields.json']) {
 
 function checkRef(check: string, from: string, id: unknown, allowed?: Set<string>): void {
     if (typeof id !== 'string' || !id) return;
-    const known = allowed ? allowed.has(id) : itemsById.has(id);
+    const known = allowed ? allowed.has(id) : (itemsById.has(id) || gunsmithPartIds.has(id));
     if (!known) fail(check, `${from} -> ${id} (no such item)`);
 }
 
