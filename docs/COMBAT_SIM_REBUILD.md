@@ -3,7 +3,7 @@
 **Status:** built 2026-09-04. Stages 0-8 are in; the spray formula is the one thing still open.
 **Design:** https://claude.ai/code/artifact/3f1f4bf8-dbc4-45ca-ad98-9bb40db46c41
 **Route:** `src/app/combat-sim/` — ~2,700 lines across 13 files
-**Read first:** [the route's own doc](../src/app/combat-sim/CLAUDE.md), then
+**Read first:** [the route's own doc](../src/app/combat-sim/AGENTS.md), then
 [`src/lib/protection/`](../src/lib/protection) — the rebuild is mostly a matter of deleting the
 route's private geometry and reading the shared one instead.
 
@@ -138,7 +138,7 @@ read-only, deltas, and the link to the bench.
 
 Delete `components/BodyModel/`, `AttackerSetup`, `AttackerSummaryCard`, `DefenderSetup`,
 `CombatSummary`, `CombatSimulatorContent`, `hooks/useCombatSimulation.ts`, `utils/body-zones.ts`,
-`utils/combat-calculations.ts`. Rewrite `src/app/combat-sim/CLAUDE.md`. `npm run lint`, `npm test`,
+`utils/combat-calculations.ts`. Rewrite `src/app/combat-sim/AGENTS.md`. `npm run lint`, `npm test`,
 `npm run build`.
 
 The debug page, `combat-test-helper.ts` and `damage-calculations.ts` survive the rebuild untouched
