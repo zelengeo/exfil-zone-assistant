@@ -13,8 +13,8 @@
 /**
  * The six shop fronts, in the order `sellPrices` is written.
  *
- * Must stay in step with `VENDORS` in the extraction repo's `config/shopPrices.js`. Five are
- * traders and key into `corps`; `gunsmith` is the hideout workbench and does not.
+ * Must stay in step with `VENDORS` in the extraction repo's `config/shopPrices.js`. All six are
+ * described in `src/lib/vendors.ts`; `gunsmith` is Neumann, whose counter is the weapon bench.
  */
 export const VENDOR_ORDER = ['ark', 'regiment', 'forge', 'ntg', 'trupiks', 'gunsmith'] as const;
 

@@ -3,7 +3,8 @@ import {Metadata} from 'next';
 import {notFound} from 'next/navigation';
 import Layout from '@/components/layout/Layout';
 import TaskPageContent from './components/TaskPageContent';
-import {corps, tasksData} from '@/data/tasks';
+import {tasksData} from '@/data/tasks';
+import {getVendor} from '@/lib/vendors';
 
 interface TaskPageProps {
     params: Promise<{
@@ -22,7 +23,7 @@ export async function generateMetadata({params}: TaskPageProps): Promise<Metadat
         };
     }
 
-    const merchant = corps[task.corpId];
+    const vendor = getVendor(task.corpId);
 
     return {
         title: `${task.name} - Task Guide`,
@@ -39,7 +40,7 @@ export async function generateMetadata({params}: TaskPageProps): Promise<Metadat
             type: 'website',
             images: [
                 {
-                    url: merchant?.ogImage || '/og/og-image-task-manager.jpg',
+                    url: vendor?.ogImage || '/og/og-image-task-manager.jpg',
                     width: 1200,
                     height: 630,
                     alt: `${task.name} Task Guide - ExfilZone Assistant`,

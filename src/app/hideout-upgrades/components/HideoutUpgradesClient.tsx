@@ -43,7 +43,12 @@ const loadUpgrades = (): Set<HideoutUpgradeKey> => {
 };
 
 
-export default function HideoutUpgradesClient() {
+interface HideoutUpgradesClientProps {
+    /** Task names by the game's own quest id, joined on the server — see `page.tsx`. */
+    questNames: Record<string, string>;
+}
+
+export default function HideoutUpgradesClient({questNames}: HideoutUpgradesClientProps) {
     const {getItemById} = useFetchItems();
     const [upgradedAreas, setUpgradedAreas] = useState<Set<HideoutUpgradeKey>>(new Set());
     const [isLoaded, setIsLoaded] = useState(false);
@@ -117,7 +122,8 @@ export default function HideoutUpgradesClient() {
 
             {/* Hideout Overview Section */}
             <section className="mb-12">
-                <HideoutOverview upgradedAreas={upgradedAreas}
+                <HideoutOverview questNames={questNames}
+                                 upgradedAreas={upgradedAreas}
                                  areaLevels={areaLevels}
                                  onAreaUpgrade={onAreaUpgrade}
                                  resetUpgrades={resetUpgrades}

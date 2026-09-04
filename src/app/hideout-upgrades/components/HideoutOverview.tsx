@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import Image from 'next/image';
 import {areaIcons, categoriesWithoutArea, hideoutUpgrades, hideoutUpgradesTasks} from '@/data/hideout-upgrades';
 import {Item} from '@/types/items';
-import {tasksData} from '@/data/tasks';
 import {X, ArrowUp, DollarSign, Undo, RotateCcw, ChevronDown, ChevronUp} from 'lucide-react';
 
 
@@ -13,6 +12,12 @@ const isValidHideoutUpgradeKey = (key: string): key is HideoutUpgradeKey => {
 };
 
 interface HideoutOverviewProps {
+    /**
+     * Names for the quest ids an upgrade is gated behind, keyed by the game's own dotted id
+     * (`task.mall.4`). Joined on the server from the task database's `gameId` - see `page.tsx`
+     * for why it arrives as a prop rather than as an import.
+     */
+    questNames: Record<string, string>;
     upgradedAreas: Set<HideoutUpgradeKey>;
     areaLevels: Record<string, number>;
     getItemById: (id: string) => Item | undefined;
@@ -77,20 +82,16 @@ const AREA_POSITIONS: Record<string, AreaPosition> = {
 
 
 /**
- * Names for the quest ids an upgrade is gated behind.
+ * The name behind one quest id.
  *
  * `relatedQuests` holds the game's own dotted ids (`task.mall.4`). Two sources can name them: the
- * real task list, joined on its `gameId`, and the curated `hideoutUpgradesTasks` prose written
- * before the extraction existed. S5 gates eight upgrades on quests this wiki has not published
- * yet, so neither source knows them and the id itself is shown - which is at least a searchable
- * string, and never a crash.
+ * real task list, joined on its `gameId` and handed down as `questNames`, and the curated
+ * `hideoutUpgradesTasks` prose written before the extraction existed. S5 gates eight upgrades on
+ * quests this wiki has not published yet, so neither source knows them and the id itself is shown -
+ * which is at least a searchable string, and never a crash.
  */
-const questNames: Record<string, string> = {};
-for (const task of Object.values(tasksData)) {
-    if (task.gameId) questNames[task.gameId] = task.name;
-}
-const getQuestName = (questId: string) =>
-    questNames[questId]
+const questName = (names: Record<string, string>, questId: string) =>
+    names[questId]
     ?? (hideoutUpgradesTasks as Record<string, { name: string } | undefined>)[questId]?.name
     ?? questId;
 
@@ -188,6 +189,7 @@ const getAreaUpgradeId = (areaId: string, level: number) => {
 
 
 export default function HideoutOverview({
+                                            questNames,
                                             upgradedAreas,
                                             areaLevels,
                                             getItemById,
@@ -465,7 +467,7 @@ export default function HideoutOverview({
                                             {selectedUpgrade.relatedQuests.map((questId) => (
                                                 <div key={questId}
                                                      className="bg-black/90 border border-military-600 rounded-sm px-3 py-2">
-                                                    <p className="text-sm text-tan-200">{getQuestName(questId)}</p>
+                                                    <p className="text-sm text-tan-200">{questName(questNames, questId)}</p>
                                                 </div>
                                             ))}
                                         </div>

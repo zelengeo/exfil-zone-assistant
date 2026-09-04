@@ -83,4 +83,8 @@ fields you need.
   an unresolved gate still renders as a legible id. `src/lib/gates.test.ts` is the alarm.
 - **`vendors.ts` is the one description of the six shop fronts.** The answer used to live at three
   call sites in three vocabularies, one of them missing the gunsmith. See `CONTEXT.md` for the
-  vocabulary itself.
+  vocabulary itself. It writes the six rows out rather than reading them from `corps` in
+  `@/data/tasks`, and that is load-bearing: `corps` is six rows inside a 431 KB module, so the
+  import dragged all 227 tasks into the client bundle of every route that names a vendor. A spec in
+  `vendors.test.ts` compares the copy against `corps` so it cannot drift, and another asserts the
+  import stays gone.

@@ -34,6 +34,19 @@ Three helpers in `HideoutOverview.tsx` carry the rules:
 `getAreaUpgradeId` returning null is how the modal knows there is no next or previous level, so it
 drives button state directly. Keep it total — a throw there becomes a broken modal, not an error.
 
+## Quest names arrive as a prop
+
+`relatedQuests` holds the game's own dotted ids (`task.mall.4`), and naming them means joining on
+the task database's `gameId`. That join happens in `page.tsx` and travels down as `questNames`,
+which looks like ceremony and is not: this route wants 227 names and nothing else, but importing
+`tasksData` anywhere inside the client tree put the whole 431 KB module in the hideout bundle. A
+module boundary is not a server boundary; the page is one, so the join runs at build time and about
+7 KB of names travel instead. Add a second thing you need from the task data the same way.
+
+S5 gates eight upgrades on quests this wiki has not published yet, so neither `questNames` nor the
+curated `hideoutUpgradesTasks` prose knows them and the raw id is shown — searchable, and never a
+crash.
+
 ## Progress
 
 Two localStorage keys through `StorageService`: `hideout` for what is built and `hideout_focus` for

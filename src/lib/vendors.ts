@@ -1,4 +1,3 @@
-import { corps } from '@/data/tasks';
 import { VENDOR_ORDER, type VendorKey } from '@/types/trade';
 
 /**
@@ -8,11 +7,17 @@ import { VENDOR_ORDER, type VendorKey } from '@/types/trade';
  * organisation icon and the merchant portrait, `lib/trade.ts` read `corps[key].name` for a label
  * and special-cased the gunsmith by hand, and the gunsmith — which carries 264 of the catalogue's
  * 1 332 buy offers — had no row at all. Three call sites, three vocabularies, one of them missing
- * a vendor. `corps` has since gained its sixth row, so all six are now described in one place and
- * drawn from one record.
+ * a vendor.
  *
- * `corps` stays the raw extraction record and stays the tasks route's source for reputation. What
- * lives here is the presentation vocabulary layered over it.
+ * The record is written out here rather than read from `corps` in `@/data/tasks`, and that is the
+ * load-bearing part: `corps` is six rows inside a 431 KB module, so importing it for a merchant's
+ * name pulled all 227 tasks into the client bundle of every route that names a vendor — the items
+ * catalogue, the gunsmith bench and the combat simulator among them. Six rows of presentation are
+ * cheaper to keep here than a bundler edge is to explain. `corps` remains the extraction's own
+ * record and nothing in the app reads it.
+ *
+ * See `CONTEXT.md` for the vocabulary — org, merchant, vendor — and ADR 0003 for why a vendor has
+ * two names rather than one.
  */
 
 export interface Vendor {
@@ -24,49 +29,81 @@ export interface Vendor {
     org: string;
     /** The chip form: short enough to sit beside a loyalty level without wrapping. */
     short: string;
-    /** The person behind the counter. Null only for a vendor `corps` has no row for. */
-    merchant: string | null;
+    /** The person behind the counter. */
+    merchant: string;
     /** The organisation's mark. Square, transparent ground. */
-    icon: string | null;
+    icon: string;
     /** The merchant's portrait. Taller than wide. */
-    portrait: string | null;
+    portrait: string;
+    /** The share card a task page opens with. */
+    ogImage: string;
     /**
      * Reputation needed for loyalty levels 2, 3 and 4. Empty where the vendor has no tiers —
      * Trupik's is the only one, and its ten offers are all level 1, so that is a fact and not a gap.
      */
     levelCap: number[];
-    /**
-     * Whether `corps` describes this vendor. True for all six today; it stays as the test a call
-     * site needs when the extraction adds a shop front the task data has not caught up with.
-     */
-    isTrader: boolean;
 }
 
-/** Presentation over `corps`, keyed the way `sellPrices` and `buyOffers` are keyed. */
-const PRESENTATION: Record<VendorKey, Pick<Vendor, 'org' | 'short'>> = {
-    ark: { org: 'ARK', short: 'ARK' },
-    regiment: { org: 'Regiment', short: 'REGIMENT' },
-    forge: { org: 'Boulder Forge', short: 'FORGE' },
-    ntg: { org: 'N.T.G', short: 'N.T.G' },
-    trupiks: { org: "Trupik's", short: "TRUPIK'S" },
-    gunsmith: { org: 'Neumann', short: 'NEUMANN' },
+/** Keyed the way `sellPrices` and `buyOffers` are keyed, and ordered the way the rail reads. */
+const RECORD: Record<VendorKey, Omit<Vendor, 'key'>> = {
+    ark: {
+        org: 'ARK',
+        short: 'ARK',
+        merchant: 'Tommy',
+        icon: '/images/tasks/icon_Arkshop1_nobg.webp',
+        portrait: '/images/tasks/img_ark1Merchant.webp',
+        ogImage: '/og/og-image-ark-task.jpg',
+        levelCap: [100, 300, 800],
+    },
+    regiment: {
+        org: 'Regiment',
+        short: 'REGIMENT',
+        merchant: 'Igor',
+        icon: '/images/tasks/icon_Regishop_nobg.webp',
+        portrait: '/images/tasks/img_RegiMerchant.webp',
+        ogImage: '/og/og-image-regiment-task.jpg',
+        levelCap: [100, 300, 800],
+    },
+    forge: {
+        org: 'Boulder Forge',
+        short: 'FORGE',
+        merchant: 'Maximilian',
+        icon: '/images/tasks/icon_Arkshop2_nobg.webp',
+        portrait: '/images/tasks/img_ar2Merchant.webp',
+        ogImage: '/og/og-image-forge-task.jpg',
+        levelCap: [100, 300, 800],
+    },
+    ntg: {
+        org: 'N.T.G',
+        short: 'N.T.G',
+        merchant: 'Maggie',
+        icon: '/images/tasks/icon_NTGshop_nobg.webp',
+        portrait: '/images/tasks/img_DocMerchant.webp',
+        ogImage: '/og/og-image-ntg-task.jpg',
+        levelCap: [100, 300, 800],
+    },
+    trupiks: {
+        org: "Trupik's",
+        short: "TRUPIK'S",
+        merchant: 'Johnny',
+        icon: '/images/tasks/icon_TPshop_nobg.webp',
+        portrait: '/images/tasks/img_TPMerchant.webp',
+        ogImage: '/og/og-image-trupik-task.jpg',
+        levelCap: [],
+    },
+    gunsmith: {
+        org: 'Neumann',
+        short: 'NEUMANN',
+        merchant: 'Anna',
+        icon: '/images/tasks/Icon_GunsmithShop_nobg.webp',
+        portrait: '/images/tasks/img_GunsmithMerchant.webp',
+        ogImage: '/og/og-image-gunsmith-task.jpg',
+        levelCap: [100, 300, 800],
+    },
 };
 
-function build(key: VendorKey): Vendor {
-    const corp = corps[key];
-    return {
-        key,
-        ...PRESENTATION[key],
-        merchant: corp?.merchant ?? null,
-        icon: corp?.icon ?? null,
-        portrait: corp?.merchantIcon ?? null,
-        levelCap: corp?.levelCap ?? [],
-        isTrader: Boolean(corp),
-    };
-}
-
 export const VENDORS: Record<VendorKey, Vendor> = Object.fromEntries(
-    VENDOR_ORDER.map((key) => [key, build(key)]),
+    VENDOR_ORDER.map((key) => [key, { key, ...RECORD[key] }]),
 ) as Record<VendorKey, Vendor>;
 
 /** Every vendor, in the order `sellPrices` is written. */
@@ -97,7 +134,7 @@ export function vendorShort(vendor: string): string {
  * The reputation a loyalty level costs, or null where the vendor publishes no tiers.
  *
  * `levelCap` is written as the thresholds for levels 2, 3 and 4 — the tasks route reads it the
- * same way in `taskHelpers.reputationFor`. Level 1 is free, which is why it returns 0.
+ * same way. Level 1 is free, which is why it returns 0.
  */
 export function reputationForLevel(vendor: string, level: number): number | null {
     if (level <= 1) return 0;

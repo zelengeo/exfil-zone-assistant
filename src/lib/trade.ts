@@ -17,15 +17,15 @@ import {
  */
 
 /**
- * Who a vendor is now lives in `lib/vendors.ts`, which describes all six — including the gunsmith
- * bench, which `corps` has no row for and which carries 264 of the catalogue's buy offers. These
- * two are kept as the names the trade call sites already use.
+ * Who a vendor is now lives in `lib/vendors.ts`, which describes all six — including Neumann, who
+ * carries 264 of the catalogue's buy offers and once had no row anywhere. These two are kept as
+ * the names the trade call sites already use.
  */
 export function vendorLabel(vendor: string): string {
     return vendorOrg(vendor);
 }
 
-/** The trader's name, where there is one. The gunsmith bench has no merchant. */
+/** The person behind the counter, or null for a shop front the record does not describe. */
 export function vendorMerchant(vendor: string): string | null {
     return getVendor(vendor)?.merchant ?? null;
 }

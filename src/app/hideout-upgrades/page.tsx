@@ -1,6 +1,7 @@
 import {Metadata} from 'next';
 import {Suspense} from 'react';
 import Layout from "@/components/layout/Layout";
+import {tasksData} from '@/data/tasks';
 import HideoutUpgradesClient from './components/HideoutUpgradesClient';
 
 export const metadata: Metadata = {
@@ -46,10 +47,26 @@ function ItemsLoading() {
         </Layout>
     );
 }
+/**
+ * The names behind the quest ids an upgrade is gated on, joined on the task's own `gameId`.
+ *
+ * Built here rather than in the client, and that is the whole point of the prop: this route needs
+ * 227 names and nothing else from the task database, but importing `tasksData` inside the client
+ * tree put the entire 431 KB module in the hideout bundle. A module boundary is not a server
+ * boundary — the page is, so the join happens once at build time and 7 KB of names travel instead.
+ */
+function questNames(): Record<string, string> {
+    const names: Record<string, string> = {};
+    for (const task of Object.values(tasksData)) {
+        if (task.gameId) names[task.gameId] = task.name;
+    }
+    return names;
+}
+
 export default function HideoutUpgradesPage() {
     return (
         <Suspense fallback={<ItemsLoading />}>
-            <HideoutUpgradesClient />
+            <HideoutUpgradesClient questNames={questNames()} />
         </Suspense>
     );
 }
