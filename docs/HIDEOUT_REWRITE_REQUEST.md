@@ -1,6 +1,6 @@
 # Hideout route rewrite — brief
 
-**Status:** requested, not started
+**Status:** done, 2026-09-04. Kept as the account of why the route looks like this.
 **Written:** 2026-09-04
 **Design:** https://claude.ai/code/artifact/f7f02f61-a355-4c1b-8ccd-cb0e38994d87
 **Route:** `src/app/hideout-upgrades/` — 1,000 lines across four files
@@ -123,6 +123,26 @@ curated prose knows them and the raw id is shown. That is deliberate: an id is s
 never crashes. Keep the three-step fallback.
 
 ---
+
+## What was done
+
+Everything below except §2c, which the list of criteria never asked for and which the brief itself
+files as a judgement call. The reasoning against it is now in the route's `CLAUDE.md`: 44 KB is not
+431 KB, and the move needs a schema, a service, a loading state and a change in the extraction repo.
+
+Two things went further than the brief asked, both because the specs made them visible:
+
+- **`canUndo` had a hole.** It refused an undo that another area stood on, but not one that a higher
+  level of the *same* area stood on — reachable in two clicks of the pane's level chevrons, and it
+  left the area reading level 3 with level 2's materials back in the remaining list. Fixed, specced.
+- **The materials filter is "ready", not "reachable".** The design's chip read "only what is
+  reachable"; on the real data every upgrade is eventually reachable, so that filter would hide
+  nothing. Only 9 of 70 upgrades have no task anywhere on their path, so filtering on *that* hides
+  87% of the list. It filters to what could be built right now instead — the same "ready" the map
+  paints, and the question a raider actually arrives with.
+
+`CONTEXT.md` gained a Hideout section: the rewrite makes **room** and **zone** user-facing words that
+did not exist before.
 
 ## Done when
 

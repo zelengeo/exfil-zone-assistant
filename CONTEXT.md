@@ -71,6 +71,36 @@ Points earned with one vendor, which raise trust as they cross that vendor's cap
 publishes no tiers, so reputation buys nothing there.
 _Avoid_: Rep, favour, standing, XP
 
+### Hideout
+
+**Upgrade**:
+One level of one zone, bought with money and materials. The unit the hideout route counts: 70 of
+them. Identified as `<areaId>Lv<level>`.
+_Avoid_: Improvement, build, node
+
+**Zone**:
+One upgradable place in the hideout — the generator, the toilet, the shooting range. Carries its own
+ladder of levels and its own pin on the floor plate. `areaId` in the data.
+_Avoid_: Area, facility, station, module
+
+**Room**:
+One screen of the hideout map, holding a set of zones: the main floor plus the lounge, medical,
+kitchen and HQ pad. `categoryId` in the data. Two rooms are also zones, and two hold no upgrades of
+their own.
+_Avoid_: Category, floor, section, tab
+
+**Materials**:
+The items an upgrade asks for, on top of its price. `exchange` in the data.
+_Avoid_: Ingredients, components, requirements, costs
+
+**Built**:
+An upgrade the player has recorded as done. The hideout's form of progress, and the only thing the
+route stores.
+_Avoid_: Completed, unlocked, owned, purchased
+
+> The generated hideout data says `relatedQuests`, and the field name stays because the extraction
+> writes it. Everything a reader sees says **task**.
+
 ### Identity
 
 **Game id**:

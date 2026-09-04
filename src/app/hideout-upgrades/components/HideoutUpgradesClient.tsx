@@ -1,143 +1,187 @@
 'use client';
 
-import React, {useState, useMemo, useEffect} from 'react';
-import {hideoutUpgrades} from '@/data/hideout-upgrades';
-import TotalCostsDisplay from "@/app/hideout-upgrades/components/TotalCostsDisplay";
-import Layout from "@/components/layout/Layout";
-import {useFetchItems} from "@/hooks/useFetchItems";
-import HideoutOverview from "@/app/hideout-upgrades/components/HideoutOverview";
-import {StorageService} from "@/services/StorageService";
-
-type HideoutUpgradeKey = keyof typeof hideoutUpgrades;
-const isValidHideoutUpgradeKey = (key: string): key is HideoutUpgradeKey => {
-    return key in hideoutUpgrades;
-};
-
-
-const categories = Array.from(Object.values(hideoutUpgrades).reduce((acc, upgrade) => {
-    acc.add(upgrade.categoryId);
-    return acc;
-}, new Set<string>()))
-
-// Save upgrades
-const saveUpgrades = (upgradedAreas: Set<string>) => {
-    StorageService.setHideout([...upgradedAreas]);
-};
-
-// Load upgrades
-const loadUpgrades = (): Set<HideoutUpgradeKey> => {
-    if (typeof window === 'undefined') return new Set<HideoutUpgradeKey>(); // Server-side safety
-
-
-    const saved = StorageService.getHideout();
-    if (!saved || !saved.length) return new Set<HideoutUpgradeKey>();
-
-    try {
-        // Filter out any invalid keys to ensure type safety
-        const validKeys = saved.filter(isValidHideoutUpgradeKey);
-        return new Set<HideoutUpgradeKey>(validKeys);
-    } catch (error) {
-        console.error('Failed to parse saved hideout upgrades:', error);
-        return new Set<HideoutUpgradeKey>();
-    }
-};
-
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import Layout from '@/components/layout/Layout';
+import { useFetchItems } from '@/hooks/useFetchItems';
+import {
+    AREAS,
+    MAIN_FLOOR,
+    TOTAL_UPGRADES,
+    UPGRADES,
+    type UpgradeId,
+    type Zone,
+    areaLevelsOf,
+    roomName,
+    roomSummaries,
+    upgradeId,
+    zonesOf,
+} from '../utils/hideout';
+import { useHideoutProgress } from '../hooks/useHideoutProgress';
+import FloorPlate from './FloorPlate';
+import MaterialsPanel from './MaterialsPanel';
+import RoomRail from './RoomRail';
+import ZoneList from './ZoneList';
+import ZonePane from './ZonePane';
 
 interface HideoutUpgradesClientProps {
     /** Task names by the game's own quest id, joined on the server — see `page.tsx`. */
     questNames: Record<string, string>;
 }
 
-export default function HideoutUpgradesClient({questNames}: HideoutUpgradesClientProps) {
-    const {getItemById} = useFetchItems();
-    const [upgradedAreas, setUpgradedAreas] = useState<Set<HideoutUpgradeKey>>(new Set());
-    const [isLoaded, setIsLoaded] = useState(false);
+/**
+ * The route's state: which room is open, which zone is selected, and how the phone sorts its list.
+ *
+ * Progress is not here — it lives in `useHideoutProgress`, so the plate, the rail, the pane and the
+ * materials list all read one store rather than a value threaded down from this component. What is
+ * left is genuinely view state, and it is deliberately not in the URL: a half-built hideout is not
+ * a thing anyone shares, and the progress that would give a shared link meaning never leaves the
+ * device anyway.
+ */
+export default function HideoutUpgradesClient({ questNames }: HideoutUpgradesClientProps) {
+    const { getItemById } = useFetchItems();
+    const { built, hydrated, setBuilt, reset } = useHideoutProgress();
 
-    useEffect(() => {
-        setUpgradedAreas(loadUpgrades());
-        setIsLoaded(true);
+    const [openRoom, setOpenRoom] = useState<string>(MAIN_FLOOR);
+    const [selected, setSelected] = useState<UpgradeId | null>(null);
+    const [readyFirst, setReadyFirst] = useState(true);
+
+    const levels = useMemo(() => areaLevelsOf(built), [built]);
+    const zones = useMemo(() => zonesOf(openRoom, levels, built), [openRoom, levels, built]);
+    const rooms = useMemo(() => roomSummaries(built), [built]);
+
+    /** The level a pin opens on: the next one to build, or the top one when the zone is finished. */
+    const openLevelOf = useCallback((areaId: string) => {
+        const current = levels[areaId] ?? 0;
+        return upgradeId(areaId, current + 1) ?? upgradeId(areaId, Math.max(1, current));
+    }, [levels]);
+
+    const selectZone = useCallback((zone: Zone) => {
+        if (zone.state === 'room') {
+            setOpenRoom((previous) => (previous === zone.areaId ? MAIN_FLOOR : zone.areaId));
+            setSelected(null);
+            return;
+        }
+        setSelected(openLevelOf(zone.areaId));
+    }, [openLevelOf]);
+
+    /** Jump to whatever is standing in the selected zone's way, switching rooms if it lives elsewhere. */
+    const goToArea = useCallback((areaId: string) => {
+        const id = openLevelOf(areaId);
+        if (!id) return;
+        const room = UPGRADES[id].categoryId;
+        if (room !== openRoom) setOpenRoom(room);
+        setSelected(id);
+    }, [openLevelOf, openRoom]);
+
+    const goToLevel = useCallback((level: number) => {
+        if (!selected) return;
+        const id = upgradeId(UPGRADES[selected].areaId, level);
+        if (id) setSelected(id);
+    }, [selected]);
+
+    /**
+     * Building advances to the next level, so a run of upgrades in one zone is a run of clicks in
+     * one place. There is nothing above the top level, and `upgradeId` answering null is what says
+     * so — which is why it has to stay total.
+     */
+    const build = useCallback((isBuild: boolean) => {
+        if (!selected) return;
+        setBuilt(selected, isBuild);
+        if (isBuild) {
+            const { areaId, level } = UPGRADES[selected];
+            const next = upgradeId(areaId, level + 1);
+            if (next) setSelected(next);
+        }
+    }, [selected, setBuilt]);
+
+    const openRoomChanged = useCallback((roomId: string) => {
+        setOpenRoom(roomId);
+        setSelected(null);
     }, []);
 
-    const onAreaUpgrade = (upgradeKey: HideoutUpgradeKey, isLevelUp: boolean = true ) => {
-        setUpgradedAreas(prev => {
-            let newState;
-            if (isLevelUp) {
-                newState = new Set([...prev, upgradeKey]);
-            } else {
-                newState = new Set([...prev]);
-                newState.delete(upgradeKey);
-            }
-            saveUpgrades(newState);
-            return newState;
-        })
-    }
+    const resetAll = useCallback(() => {
+        reset();
+        setSelected(null);
+    }, [reset]);
 
-    const resetUpgrades = () => {
-        const newState = new Set<HideoutUpgradeKey>();
-        saveUpgrades(newState)
-        setUpgradedAreas(newState)
-    }
+    useEffect(() => {
+        const onKey = (event: KeyboardEvent) => { if (event.key === 'Escape') setSelected(null); };
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+    }, []);
 
-    // Track current level for each area
-    const areaLevels = useMemo(() => {
-        const levels: Record<string, number> = {
-            Player: 10
-        };
-        categories.forEach(categoryId => {
-            levels[categoryId] = 1;
-        })
-        levels['KitchenArea'] = 0;
-        levels['MedicalArea'] = 0;
+    const selectedArea = selected ? UPGRADES[selected].areaId : null;
+    const percent = hydrated ? (built.size / TOTAL_UPGRADES) * 100 : 0;
 
-        // Initialize all areas at level 0
-        Object.values(hideoutUpgrades).forEach(upgrade => {
-            if (!levels[upgrade.areaId]) {
-                levels[upgrade.areaId] = 0;
-            }
-        });
+    return (
+        <Layout fullWidth containerClassName="mx-auto max-w-[1600px] px-4 py-6 sm:px-6">
+            <div className="flex flex-wrap items-end gap-x-5 gap-y-4">
+                <div className="min-w-0 flex-1">
+                    <span className="eyebrow">
+                        Hideout · {TOTAL_UPGRADES} upgrades · {AREAS.length} zones · {rooms.length} rooms
+                    </span>
+                    <h1 className="mt-2 font-display text-3xl font-extrabold uppercase leading-none tracking-[0.015em] text-ink-hi sm:text-4xl">
+                        Hideout
+                    </h1>
+                </div>
 
-        // Update levels based on upgrades
-        upgradedAreas.forEach(upgradeKey => {
-            const upgrade = hideoutUpgrades[upgradeKey as HideoutUpgradeKey];
-            if (upgrade) {
-                levels[upgrade.areaId] = Math.max(levels[upgrade.areaId] || 0, upgrade.level);
-            }
-        });
-
-        return levels;
-    }, [upgradedAreas]);
-
-    return <Layout>
-        <div className="container mx-auto px-4 py-8">
-            {/* Page Title */}
-            <div className="mb-8">
-                <h1 className="text-3xl md:text-4xl font-bold text-tan-100 mb-2 military-stencil">
-                    HIDEOUT UPGRADES
-                </h1>
-                <p className="text-tan-300 max-w-3xl">
-                    Manage and track your hideout improvements
-                </p>
+                <div className="flex-none text-right">
+                    <span className="micro-label">Built</span>
+                    <div className="tabular my-1.5 font-display text-2xl font-bold leading-none text-ink-100 sm:text-[27px]">
+                        {hydrated ? built.size : '—'}<span className="text-ink-700">/{TOTAL_UPGRADES}</span>
+                    </div>
+                    <span className="block h-[3px] w-[186px] bg-track">
+                        <span className="block h-[3px] bg-good transition-[width] duration-300" style={{ width: `${percent}%` }} />
+                    </span>
+                </div>
             </div>
 
+            <div className="mt-4 grid min-h-0 gap-3 shell:grid-cols-[minmax(0,1fr)_420px]">
+                {/* The plate leads on desktop and the rail sits under it; on the phone the rail is
+                    the top chrome and the plate is the picture below it. */}
+                <div className="flex min-w-0 flex-col gap-3">
+                    <div className="order-1 shell:order-2">
+                        <RoomRail rooms={rooms} openRoom={openRoom} onOpen={openRoomChanged} hydrated={hydrated} />
+                    </div>
 
-            {/* Hideout Overview Section */}
-            <section className="mb-12">
-                <HideoutOverview questNames={questNames}
-                                 upgradedAreas={upgradedAreas}
-                                 areaLevels={areaLevels}
-                                 onAreaUpgrade={onAreaUpgrade}
-                                 resetUpgrades={resetUpgrades}
-                                 getItemById={getItemById}
-                                 isLoaded={isLoaded}/>
-            </section>
+                    <div className="order-2 shell:order-1">
+                        <FloorPlate
+                            room={openRoom}
+                            zones={zones}
+                            selectedArea={selectedArea}
+                            onSelect={selectZone}
+                            onReset={resetAll}
+                            hydrated={hydrated}
+                            anyBuilt={hydrated && built.size > 0}
+                        />
+                    </div>
 
-            {/* Divider */}
-            <div className="border-t border-military-600 my-8"></div>
+                    <div className="order-3">
+                        <ZoneList
+                            zones={zones}
+                            selectedArea={selectedArea}
+                            onSelect={selectZone}
+                            readyFirst={readyFirst}
+                            onReadyFirstChange={setReadyFirst}
+                            roomLabel={openRoom === MAIN_FLOOR ? 'Main floor' : roomName(openRoom)}
+                        />
+                    </div>
+                </div>
 
-            {/* Exchange Cost Summary Section */}
-            <section>
-                {isLoaded && <TotalCostsDisplay upgradedAreas={upgradedAreas} getItemById={getItemById}/>}
-            </section>
-        </div>
-    </Layout>
+                <ZonePane
+                    upgrade={selected ? UPGRADES[selected] : null}
+                    levels={levels}
+                    built={built}
+                    questNames={questNames}
+                    getItemById={getItemById}
+                    onClose={() => setSelected(null)}
+                    onLevel={goToLevel}
+                    onBuild={build}
+                    onGoToArea={goToArea}
+                />
+            </div>
+
+            <MaterialsPanel built={built} levels={levels} getItemById={getItemById} hydrated={hydrated} />
+        </Layout>
+    );
 }

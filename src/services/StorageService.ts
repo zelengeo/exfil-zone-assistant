@@ -23,7 +23,6 @@ export class StorageService {
         taskProgress: 'exfilzone-tasks',
         tasks: 'exfilzone-tasks-progress',
         hideout: 'exfilzone-hideout-progress',
-        hideout_focus: 'exfilzone-hideout-focus',
 
         // UI preferences and player-authored content - preserved on wipe
         gunsmithBuilds: 'exfilzone-gunsmith-builds',

@@ -31,22 +31,21 @@ export const metadata: Metadata = {
     },
 };
 
-function ItemsLoading() {
+function HideoutLoading() {
     return (
-        <Layout>
-            <div className="container mx-auto px-4 py-8">
-                <div className="flex items-center justify-center min-h-96">
-                    <div className="military-box p-8 rounded-sm text-center">
-                        <div
-                            className="animate-spin w-12 h-12 border-4 border-olive-600 border-t-transparent rounded-full mx-auto mb-4"></div>
-                        <h2 className="text-xl font-bold text-olive-400 mb-2">Hideout Upgrades Calculator</h2>
-                        <p className="text-tan-300">Loading hideout upgrades...</p>
-                    </div>
-                </div>
+        <Layout fullWidth containerClassName="mx-auto max-w-[1600px] px-4 py-6 sm:px-6">
+            <span className="eyebrow">Hideout</span>
+            <h1 className="mt-2 font-display text-3xl font-extrabold uppercase leading-none tracking-[0.015em] text-ink-hi sm:text-4xl">
+                Hideout
+            </h1>
+            <div className="mt-4 grid gap-3 shell:grid-cols-[minmax(0,1fr)_420px]">
+                <div className="aspect-[2/1] w-full animate-pulse border border-line-800 bg-steel-850" />
+                <div className="hidden animate-pulse border border-line-900 bg-steel-900 shell:block" />
             </div>
         </Layout>
     );
 }
+
 /**
  * The names behind the quest ids an upgrade is gated on, joined on the task's own `gameId`.
  *
@@ -65,7 +64,7 @@ async function questNames(): Promise<Record<string, string>> {
 
 export default async function HideoutUpgradesPage() {
     return (
-        <Suspense fallback={<ItemsLoading />}>
+        <Suspense fallback={<HideoutLoading />}>
             <HideoutUpgradesClient questNames={await questNames()} />
         </Suspense>
     );
