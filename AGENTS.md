@@ -128,3 +128,19 @@ about production.
 `ADMIN_EMAIL_1` through `ADMIN_EMAIL_3` promote those accounts to admin on sign-in, checked in
 `src/app/api/auth/[...nextauth]/route.ts`. That is how the first admin is created; after that, an
 existing admin can grant roles through the admin users API.
+
+## Agent skills
+
+### Issue tracker
+
+Issues and specs are tracked in this repository's GitHub Issues. See
+`docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The repository uses the five default mattpocock/skills triage labels. See
+`docs/agents/triage-labels.md`.
+
+### Domain docs
+
+This is a single-context repository. See `docs/agents/domain.md`.
