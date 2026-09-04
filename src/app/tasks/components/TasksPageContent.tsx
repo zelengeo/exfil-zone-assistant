@@ -14,7 +14,8 @@ import {
     DropdownMenuRadioItem,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { tasksData } from '@/data/tasks';
+import { loadedTasks } from '@/services/TaskService';
+import { useFetchTasks } from '@/hooks/useFetchTasks';
 import type { Task, TaskMap } from '@/types/tasks';
 import { useTaskProgress } from '../hooks/useTaskProgress';
 import { buildChains } from '../utils/chain';
@@ -59,6 +60,9 @@ const MAP_LABELS: Record<TaskMap, string> = {
 };
 
 export default function TasksPageContent() {
+    // Suspends until the task database lands. Every chain, filter and count below reads it
+    // synchronously, so this is the one place the route waits.
+    useFetchTasks();
     const pathname = usePathname();
     const searchParams = useSearchParams();
     const { progress, hydrated, setDone, toggleObjective } = useTaskProgress();
@@ -119,7 +123,7 @@ export default function TasksPageContent() {
     );
 
     const ordered = useMemo((): Task[] => shownOwners.flatMap((owner) =>
-        buildChains(owner).chains.flatMap((chain) => chain.nodes.map((node) => tasksData[node.taskId])),
+        buildChains(owner).chains.flatMap((chain) => chain.nodes.map((node) => loadedTasks()[node.taskId])),
     ), [shownOwners]);
 
     const listed = useMemo(
@@ -208,12 +212,12 @@ export default function TasksPageContent() {
     }, [viewingAll, selection, progress]);
 
     const selectedTask =
-        (filters.task && tasksData[filters.task])
-        || (nextUp ? tasksData[nextUp] : undefined)
+        (filters.task && loadedTasks()[filters.task])
+        || (nextUp ? loadedTasks()[nextUp] : undefined)
         || listed[0];
 
     const campaign = useMemo(() => {
-        const all = Object.values(tasksData);
+        const all = Object.values(loadedTasks());
         return { done: all.filter((task) => isDone(progress, task.id)).length, total: all.length };
     }, [progress]);
 
@@ -276,7 +280,7 @@ export default function TasksPageContent() {
      * available at once, so they get the list and no card.
      */
     const cardTask = !viewingAll && nextUp && ownerFace(selection as ChainOwner).hasChain
-        ? tasksData[nextUp]
+        ? loadedTasks()[nextUp]
         : undefined;
 
     return (

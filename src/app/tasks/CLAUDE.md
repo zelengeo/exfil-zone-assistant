@@ -71,6 +71,26 @@ Run it after touching `chain.ts`, the geometry constants, or task data.
 
 ---
 
+## Where the tasks come from
+
+`public/data/tasks.json`, through `src/services/TaskService.ts` — not an import. The route reads the
+database synchronously in a dozen places per render (`chain.ts`, `progress.ts`, `vendors.ts` and
+three components all index it), so the load happens once at the top instead:
+
+- `TasksPageContent` and `TaskPageContent` each call `useFetchTasks()` as their first hook, which
+  suspends until the file lands. Both pages already have a `<Suspense>` boundary.
+- Everything below them calls `loadedTasks()` / `taskById()`, which **throw** if that has not
+  happened. If you add a component that reads tasks outside those two trees, it needs its own
+  `useFetchTasks()` above it.
+- Server code — `[id]/page.tsx`, `sitemap.ts` — awaits `fetchTasks()` instead.
+
+It was `src/data/tasks.ts` until 2026-09-04, and the move is
+[ADR 0004](../../../docs/adr/0004-task-data-is-json-in-public-data.md). The short version: the
+module put 431 KB in the bundle of every route that named a task, and bought synchronous access that
+was not reaching the prerendered HTML anyway.
+
+---
+
 ## Chains
 
 `buildChains(owner)` in `utils/chain.ts`:

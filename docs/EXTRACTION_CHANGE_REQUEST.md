@@ -1,6 +1,7 @@
 # Extraction change request — get the task database out of the browser bundle
 
-**Status:** requested, not started — the app side waits for this data
+**Status:** fulfilled 2026-09-04 — both changes landed and the app side is done. Kept as the record
+of what was asked for and why; §4 is still live guidance for the publisher.
 **Written:** 2026-09-04
 **Target repo:** `D:\rep_path\exfil-zone-assistant-extraction`
 **Consumer:** this repo — `public/data/`, `src/lib/gates.ts`, `src/data/tasks.ts`

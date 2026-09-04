@@ -19,8 +19,8 @@ import fs from 'fs';
 import path from 'path';
 
 import { CALIBERS, itemCategories, RARITY_CONFIG } from '../src/types/items';
-import { tasksData } from '../src/data/tasks';
 import { hideoutUpgrades } from '../src/data/hideout-upgrades';
+import type { TasksDatabase } from '../src/types/tasks';
 
 const ROOT = path.join(__dirname, '..');
 
@@ -84,6 +84,17 @@ function warn(check: string, message: string): void {
 // ---------------------------------------------------------------------------
 // load
 // ---------------------------------------------------------------------------
+
+/**
+ * Tasks come out of `public/data` like everything else now, which is also what lets `--data` check
+ * a candidate task drop rather than always this repo's copy.
+ */
+const tasksPath = path.join(DATA_DIR, 'tasks.json');
+if (!fs.existsSync(tasksPath)) {
+    console.error(`missing ${tasksPath}`);
+    process.exit(1);
+}
+const tasksData: TasksDatabase = JSON.parse(fs.readFileSync(tasksPath, 'utf8'));
 
 const byFile = new Map<string, RawItem[]>();
 const allItems: Array<RawItem & { _file: string }> = [];

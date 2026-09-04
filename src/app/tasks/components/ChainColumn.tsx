@@ -2,7 +2,7 @@
 
 import React, { useCallback, useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import { tasksData } from '@/data/tasks';
+import { loadedTasks } from '@/services/TaskService';
 import type { TaskProgress } from '@/types/tasks';
 import { type Chain, buildChains, rowTextX, visibleRows } from '../utils/chain';
 import { countsFor, isDone, nextUpIn, stateOf } from '../utils/progress';
@@ -56,7 +56,7 @@ function ChainGroup({
     // and hiding part of that subset would give two different answers to "what matched".
     const collapsible = !visible && !open;
     const { shown, hidden } = collapsible
-        ? visibleRows(nodes, (taskId) => stateOf(tasksData[taskId], progress) === 'locked', selectedTaskId)
+        ? visibleRows(nodes, (taskId) => stateOf(loadedTasks()[taskId], progress) === 'locked', selectedTaskId)
         : { shown: nodes, hidden: 0 };
 
     const rowOf = new Map(shown.map((node, row) => [node.taskId, row]));
@@ -85,7 +85,7 @@ function ChainGroup({
             <div className="relative" style={{ height: shown.length * rowH }}>
                 <ul>
                     {shown.map((node) => {
-                        const task = tasksData[node.taskId];
+                        const task = loadedTasks()[node.taskId];
                         if (!task) return null;
                         return (
                             <li key={node.taskId}>
@@ -139,7 +139,7 @@ export default function ChainColumn({
             if (!face.hasChain) return 'Standalone contracts · no prerequisites';
             if (chains.length === 1) return null;
             // Named by the task it opens on: "chain 2" alone says nothing about which one it is.
-            return `Chain ${index + 1} · ${tasksData[chain.rootTaskId]?.name ?? chain.rootTaskId}`;
+            return `Chain ${index + 1} · ${loadedTasks()[chain.rootTaskId]?.name ?? chain.rootTaskId}`;
         },
         [chains.length, face.hasChain],
     );

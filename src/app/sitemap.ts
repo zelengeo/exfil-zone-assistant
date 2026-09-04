@@ -1,14 +1,14 @@
 import { MetadataRoute } from 'next';
-import { tasksData } from '@/data/tasks';
+import { fetchTasks } from '@/services/TaskService';
 import {guidesConfig} from "@/config/guides";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const baseUrl = 'https://www.exfil-zone-assistant.app';
 
     const lastModified = new Date('2025-07-03');
 
     // Generate task page entries
-    const taskPages = Object.keys(tasksData).map((taskId) => ({
+    const taskPages = Object.keys(await fetchTasks()).map((taskId) => ({
         url: `${baseUrl}/tasks/${taskId}`,
         lastModified: lastModified,
         changeFrequency: 'monthly' as const,

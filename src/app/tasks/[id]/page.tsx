@@ -1,9 +1,9 @@
-import {Suspense, use} from 'react';
+import {Suspense} from 'react';
 import {Metadata} from 'next';
 import {notFound} from 'next/navigation';
 import Layout from '@/components/layout/Layout';
 import TaskPageContent from './components/TaskPageContent';
-import {tasksData} from '@/data/tasks';
+import {fetchTasks} from '@/services/TaskService';
 import {getVendor} from '@/lib/vendors';
 
 interface TaskPageProps {
@@ -15,7 +15,7 @@ interface TaskPageProps {
 // Generate metadata for each task page
 export async function generateMetadata({params}: TaskPageProps): Promise<Metadata> {
     const {id} = await params;
-    const task = tasksData[id];
+    const task = (await fetchTasks())[id];
     if (!task) {
         return {
             title: 'Task Not Found',
@@ -60,7 +60,7 @@ export async function generateMetadata({params}: TaskPageProps): Promise<Metadat
 
 // Generate static params for all tasks
 export async function generateStaticParams() {
-    return Object.keys(tasksData).map((id) => ({
+    return Object.keys(await fetchTasks()).map((id) => ({
         id: id,
     }));
 }
@@ -78,9 +78,9 @@ function TaskLoading() {
 }
 
 // Main page component
-export default function TaskPage({params}: TaskPageProps) {
-    const {id} = use(params);
-    const task = tasksData[id];
+export default async function TaskPage({params}: TaskPageProps) {
+    const {id} = await params;
+    const task = (await fetchTasks())[id];
 
     if (!task) {
         notFound();

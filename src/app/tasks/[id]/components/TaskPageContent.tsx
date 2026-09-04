@@ -3,7 +3,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
-import { tasksData } from '@/data/tasks';
+import { loadedTasks } from '@/services/TaskService';
+import { useFetchTasks } from '@/hooks/useFetchTasks';
 import { useTaskProgress } from '../../hooks/useTaskProgress';
 import { ownerFace, ownerOf } from '../../utils/vendors';
 import TaskDetailPane from '../../components/TaskDetailPane';
@@ -21,9 +22,12 @@ import TaskDetailPane from '../../components/TaskDetailPane';
  */
 
 export default function TaskPageContent({ taskId }: { taskId: string }) {
+    // Suspends until the task database lands; everything below it reads that database
+    // synchronously, including the pane's chain position and its "unlocks" rows.
+    useFetchTasks();
     const { progress, hydrated, setDone, toggleObjective } = useTaskProgress();
 
-    const task = tasksData[taskId];
+    const task = loadedTasks()[taskId];
     // The route already calls notFound() for an unknown id; this is the belt to that's braces.
     if (!task) return null;
 

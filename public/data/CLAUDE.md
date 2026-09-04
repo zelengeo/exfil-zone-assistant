@@ -42,6 +42,11 @@ task DAG is asserted against this data, not against fixtures.
   bookmarks, saved builds and stored progress.
 - **Vendor keys** in `sellPrices` and `buyOffers` are the game's own, which is why one of them reads
   as a role rather than a name. See [`CONTEXT.md`](../../CONTEXT.md).
+- **`tasks.json` is here too**, and is the whole task database — id-keyed, 227 rows, the shape
+  `tasksDatabaseSchema` in `src/lib/schemas/task.ts` describes. Read it through
+  `src/services/TaskService.ts`, never by importing it. It was `src/data/tasks.ts` until
+  2026-09-04; the ids in it are keys to players' stored progress, so renaming one silently marks
+  the wrong contract complete for everyone who had it ticked.
 - **A buy offer's `requiresTasks` carries the task, not just its id.** Each entry is
   `{ gameId, id, name, corpId }` — the in-game id the goods data names, plus the join against the
   task database resolved upstream. The app reads what is there and never joins, so a gate published

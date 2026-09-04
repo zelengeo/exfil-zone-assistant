@@ -134,8 +134,33 @@ Opportunistic: do it when the data is next touched, since the churn otherwise ou
 - [x] Stage 5 — delete index (-712 lines)
 - [x] Stage 6 — ADRs (3 records; 0001 left `proposed`, see below)
 - [x] Stage 7 — cleanup
-- [ ] Stage 8 — in progress: `1ea0ef1` closed the `corps` leak; the rest waits on extraction data,
-      specified in [EXTRACTION_CHANGE_REQUEST.md](EXTRACTION_CHANGE_REQUEST.md)
+- [x] Stage 8 — done. No client chunk in the build carries task data, measured 2026-09-04
+
+## Stage 8, as it actually went
+
+Three changes, not the one the plan sketched.
+
+1. **`1ea0ef1`** — `lib/vendors.ts` stopped reading `corps`, which took the task database out of
+   every route that merely named a vendor, and the hideout planner's quest-name join moved up to its
+   server page.
+2. **`68f194d`** — the extraction began publishing a buy offer's gate with the task on it, so
+   `lib/gates.ts` stopped joining against the database at all. That closed `/items` and `/gunsmith`.
+3. **Tasks moved to `public/data/tasks.json`**, read through `TaskService`. That closed `/tasks` and
+   `/tasks/[id]`, and let `src/data/tasks.ts` be deleted.
+
+The interface half of the original plan came along with (3): the route's synchronous readers now go
+through one door, and five of the six helpers that lived at the foot of `tasks.ts` turned out to
+have no callers at all.
+
+Two things the plan had wrong. Routing the client importers through `app/tasks/utils/` would not
+have helped on its own — a module boundary is not a server boundary — and that was known; what was
+not is that **passing less as props was not the answer either**, because the tasks route genuinely
+needs the whole database in the client to filter and lay out chains. Loading it as a static asset is
+what makes that fine.
+
+Left undone deliberately: the 227 task pages still prerender as a spinner. See
+[ADR 0004](adr/0004-task-data-is-json-in-public-data.md) for why that is a refactor of the detail
+pane rather than a data question.
 
 ## Open after stage 6
 

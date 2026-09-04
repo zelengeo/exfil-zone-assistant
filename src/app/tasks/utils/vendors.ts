@@ -1,4 +1,4 @@
-import { tasksData } from '@/data/tasks';
+import { loadedTasks } from '@/services/TaskService';
 import { getVendor, type Vendor } from '@/lib/vendors';
 import { VENDOR_ORDER, type VendorKey } from '@/types/trade';
 import type { Task } from '@/types/tasks';
@@ -94,7 +94,7 @@ let index: Map<ChainOwner, Task[]> | null = null;
 function ownerIndex(): Map<ChainOwner, Task[]> {
     if (!index) {
         index = new Map<ChainOwner, Task[]>(OWNER_ORDER.map((owner) => [owner, []]));
-        for (const task of Object.values(tasksData)) {
+        for (const task of Object.values(loadedTasks())) {
             const bucket = index.get(ownerOf(task));
             // An owner the rail does not know about would otherwise vanish. Give it a bucket, so a
             // future corp shows up as a rail entry rather than as missing tasks.
@@ -127,7 +127,7 @@ export function populatedOwners(): ChainOwner[] {
 export function externalPrereqsOf(task: Task): string[] {
     const owner = ownerOf(task);
     return task.requiredTasks.filter((id) => {
-        const prereq = tasksData[id];
+        const prereq = loadedTasks()[id];
         return prereq !== undefined && ownerOf(prereq) !== owner;
     });
 }

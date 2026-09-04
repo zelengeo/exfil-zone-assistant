@@ -1,4 +1,4 @@
-import { tasksData } from '@/data/tasks';
+import { loadedTasks } from '@/services/TaskService';
 import type { Task } from '@/types/tasks';
 import { type ChainOwner, ownerOf, tasksForOwner } from './vendors';
 
@@ -96,7 +96,7 @@ function depthMap(tasks: Task[], ids: Set<string>): Map<string, number> {
         if (visiting.has(id)) return 0;
 
         visiting.add(id);
-        const task = tasksData[id];
+        const task = loadedTasks()[id];
         let depth = 0;
         for (const prereq of internalPrereqs(task, ids)) {
             depth = Math.max(depth, walk(prereq) + 1);
@@ -292,7 +292,8 @@ export function buildChains(owner: ChainOwner): OwnerChains {
         .sort((a, b) => {
             const bySize = b.nodes.length - a.nodes.length;
             if (bySize !== 0) return bySize;
-            return tasksData[a.rootTaskId].order - tasksData[b.rootTaskId].order;
+            const db = loadedTasks();
+            return db[a.rootTaskId].order - db[b.rootTaskId].order;
         });
 
     const built: OwnerChains = { owner, chains, total: tasks.length };
@@ -344,7 +345,7 @@ export function visibleRows(
 
 /** The chain a task sits in, and its node — what the detail pane's "task 06 of 35" reads. */
 export function locate(taskId: string): { chain: Chain; node: ChainNode } | null {
-    const task = tasksData[taskId];
+    const task = loadedTasks()[taskId];
     if (!task) return null;
 
     for (const chain of buildChains(ownerOf(task)).chains) {

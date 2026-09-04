@@ -6,7 +6,7 @@
  * shapes — a vendor whose chain interleaves with another's, a fan wide enough to strand the spine.
  */
 import { describe, expect, it } from 'vitest';
-import { tasksData } from '@/data/tasks';
+import { fetchTasks, loadedTasks } from '@/services/TaskService';
 import {
     ELBOW_RISE, LOCKED_TAIL, MAX_LANE, NODE_GAP, ROW_H, ROW_H_COMPACT,
     buildChains, laneX, locate, rowTextX, visibleRows,
@@ -18,6 +18,11 @@ import {
 import { externalPrereqsOf, ownerOf, populatedOwners, tasksForOwner } from '@/app/tasks/utils/vendors';
 import type { TaskProgress } from '@/types/tasks';
 
+// The chain layout reads the database synchronously, so it has to be in memory before the module
+// scope below touches it. Vitest runs these files as ESM, so a top-level await is the whole setup.
+await fetchTasks();
+
+const tasksData = loadedTasks();
 const owners = populatedOwners();
 const allTasks = Object.values(tasksData);
 const lockedAt = (progress: TaskProgress) => (taskId: string) =>

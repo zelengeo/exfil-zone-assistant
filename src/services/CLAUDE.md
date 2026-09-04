@@ -1,6 +1,6 @@
 # Services
 
-How data is reached. Four modules, each the only door to one thing.
+How data is reached. Five modules, each the only door to one thing.
 
 ## `dataFiles.ts` — the door to `public/data`
 
@@ -27,6 +27,23 @@ Loads every category through `loadDataFile`, then holds the result in a module-l
 - `clearItemsCache()`, `getCacheStatus()` — for the admin health page
 
 Call the query functions rather than filtering `fetchItemsData()` yourself; they share the cache.
+
+## `TaskService.ts` — the 227 tasks
+
+Same cache-behind-a-function shape as `ItemService`, with one difference worth knowing before
+calling it:
+
+- `fetchTasks()` — the load. Await it in a server component.
+- `loadedTasks()`, `taskById(id)`, `allTasks()`, `tasksRequiring(id)` — synchronous, and they
+  **throw** until that load has finished.
+- `useFetchTasks()` (in `src/hooks/`) suspends a client tree until it has, the way `useFetchItems`
+  does. Call it at the top of the component that owns the tree; both task routes already have a
+  `<Suspense>` boundary above.
+
+The synchronous readers are deliberate: the chain layout indexes the database in a dozen places per
+render, and threading a promise through all of them would buy nothing over suspending once. Throwing
+rather than returning an empty database is deliberate too — an empty task list reads as data loss,
+not as a bug.
 
 ## `GunsmithService.ts` — weapon build data
 

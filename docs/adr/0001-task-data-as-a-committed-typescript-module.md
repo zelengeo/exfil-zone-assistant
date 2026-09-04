@@ -1,8 +1,14 @@
 ---
-status: proposed
+status: superseded
 ---
 
 # Task data is a committed TypeScript module, not JSON
+
+> **Superseded by [ADR 0004](0004-task-data-is-json-in-public-data.md)** on 2026-09-04. This record
+> was never accepted: writing it turned up the bundle cost below, measuring it settled the question
+> the other way, and the tasks moved to `public/data/tasks.json`. Kept because it is the account of
+> why they were ever a TypeScript module, which is the part a reader of the new arrangement will
+> want.
 
 Every other dataset in this repo is JSON under `public/data`, read at runtime through
 `loadDataFile` so it stays a CDN-cached static asset and out of the JavaScript. The 227 tasks are
@@ -26,13 +32,6 @@ The module is ~421 KB of source, and four `'use client'` components import `task
 reaches the browser bundle. That is the same pattern `services/dataFiles.ts` exists to prevent for
 `public/data`, where importing rather than loading once shipped the item database twice.
 
-The bundle cost is **not accepted** - decided 2026-09-04. The decision to keep the data as a
-committed TypeScript module stands; what is rejected is that it reaches the browser.
-
-The fix is not a change of format, and it is not simply routing the importers through
-`app/tasks/utils/`: a client component that imports a util which imports `tasksData` still pulls
-the data in, because a module boundary is not a server boundary. It needs the page, which is a
-server component, to select what each client component actually uses and pass that as props - and
-it only wins by passing less, since whatever is passed still travels in the RSC payload.
-
-Status stays `proposed` until that lands.
+The bundle cost was **not accepted** - decided 2026-09-04. What followed is in ADR 0004: the fix
+turned out to be a change of format after all, because the synchronous access this record trades
+431 KB for was not reaching the prerendered HTML either.

@@ -1,4 +1,4 @@
-import { tasksData } from '@/data/tasks';
+import { loadedTasks } from '@/services/TaskService';
 import type { Task, TaskProgress, TaskRecord, TaskState } from '@/types/tasks';
 import type { Chain } from './chain';
 import { type ChainOwner, ownerFace, tasksForOwner } from './vendors';
@@ -72,7 +72,7 @@ export function countsFor(tasks: Task[], progress: TaskProgress): Record<TaskSta
  */
 export function nextUpIn(chain: Chain, progress: TaskProgress): string | null {
     for (const node of chain.nodes) {
-        const task = tasksData[node.taskId];
+        const task = loadedTasks()[node.taskId];
         if (task && stateOf(task, progress) === 'open') return node.taskId;
     }
     return null;

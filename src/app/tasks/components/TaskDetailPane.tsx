@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { tasksData, getTasksRequiring } from '@/data/tasks';
+import { loadedTasks, tasksRequiring } from '@/services/TaskService';
 import { communityCreatorMap } from '@/data/community';
 import { useFetchItems } from '@/hooks/useFetchItems';
 import type { Item } from '@/types/items';
@@ -201,7 +201,7 @@ function RelatedTask({
     onSelectTask?: (taskId: string) => void;
     trailing?: React.ReactNode;
 }) {
-    const task = tasksData[taskId];
+    const task = loadedTasks()[taskId];
     if (!task) return null;
 
     const done = isDone(progress, taskId);
@@ -242,7 +242,7 @@ export default function TaskDetailPane({
     const ticks = objectiveTicks(task, progress);
     const gates = gatesFor(task);
     const editable = hydrated && canComplete(task, progress);
-    const unlocks = getTasksRequiring(task.id);
+    const unlocks = tasksRequiring(task.id);
 
     const share = useCallback(() => {
         const url = window.location.href;

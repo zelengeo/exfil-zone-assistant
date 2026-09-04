@@ -9,12 +9,12 @@ import { VENDOR_ORDER, type VendorKey } from '@/types/trade';
  * 1 332 buy offers — had no row at all. Three call sites, three vocabularies, one of them missing
  * a vendor.
  *
- * The record is written out here rather than read from `corps` in `@/data/tasks`, and that is the
- * load-bearing part: `corps` is six rows inside a 431 KB module, so importing it for a merchant's
- * name pulled all 227 tasks into the client bundle of every route that names a vendor — the items
- * catalogue, the gunsmith bench and the combat simulator among them. Six rows of presentation are
- * cheaper to keep here than a bundler edge is to explain. `corps` remains the extraction's own
- * record and nothing in the app reads it.
+ * The record is written out here rather than read from the task data, and that is the load-bearing
+ * part: it used to be six rows of a `corps` map inside a 431 KB module, so importing it for a
+ * merchant's name pulled all 227 tasks into the client bundle of every route that named a vendor —
+ * the items catalogue, the gunsmith bench and the combat simulator among them. `corps` has since
+ * been deleted along with that module, which makes this the only description there is. Keep it
+ * dependency-free: whatever gets imported here is imported by every route that draws a vendor.
  *
  * See `CONTEXT.md` for the vocabulary — org, merchant, vendor — and ADR 0003 for why a vendor has
  * two names rather than one.

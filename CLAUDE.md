@@ -40,16 +40,18 @@ Non-obvious ones worth reaching for by name:
 
 ## Where game data lives
 
-Split, for historical reasons that surprise everyone who meets it:
-
 - **`public/data/*.json`** — every item category (weapons, ammunition, armor, helmets, attachments,
-  medical, provisions, task-items). Every reader goes through `loadDataFile` in
+  medical, provisions, task-items) and the 227 tasks. Every reader goes through `loadDataFile` in
   `src/services/dataFiles.ts`. Never `import` these files: the bundler inlines the same bytes into
   client chunks, which once shipped the database twice over 16 chunks for no gain. That
   file has a header comment explaining the whole trap.
-- **`src/data/tasks.ts`** — 227 tasks as a hand-maintained TypeScript module, not JSON, not
-  generated. 12 files import `tasksData` directly.
-- **`src/data/hideout-upgrades.ts`**, `community.ts`, `taskInconsistencies.json` — same treatment.
+- **`src/data/hideout-upgrades.ts`**, `community.ts`, `taskInconsistencies.json` — still committed
+  TypeScript. Small enough that the bundle cost has never been the question.
+
+Tasks are reached through `src/services/TaskService.ts`, which loads `tasks.json` once and then
+answers synchronously; `useFetchTasks` suspends a client tree until that has happened. They were a
+431 KB TypeScript module until 2026-09-04 — [ADR 0001](docs/adr/0001-task-data-as-a-committed-typescript-module.md)
+is the account of why, and of what it cost.
 
 `npm run validate-data` checks the JSON; `npm test` checks the task DAG invariants.
 Run the matching one after touching either.

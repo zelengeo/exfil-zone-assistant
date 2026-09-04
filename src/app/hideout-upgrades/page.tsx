@@ -1,7 +1,7 @@
 import {Metadata} from 'next';
 import {Suspense} from 'react';
 import Layout from "@/components/layout/Layout";
-import {tasksData} from '@/data/tasks';
+import {fetchTasks} from '@/services/TaskService';
 import HideoutUpgradesClient from './components/HideoutUpgradesClient';
 
 export const metadata: Metadata = {
@@ -55,18 +55,18 @@ function ItemsLoading() {
  * tree put the entire 431 KB module in the hideout bundle. A module boundary is not a server
  * boundary — the page is, so the join happens once at build time and 7 KB of names travel instead.
  */
-function questNames(): Record<string, string> {
+async function questNames(): Promise<Record<string, string>> {
     const names: Record<string, string> = {};
-    for (const task of Object.values(tasksData)) {
+    for (const task of Object.values(await fetchTasks())) {
         if (task.gameId) names[task.gameId] = task.name;
     }
     return names;
 }
 
-export default function HideoutUpgradesPage() {
+export default async function HideoutUpgradesPage() {
     return (
         <Suspense fallback={<ItemsLoading />}>
-            <HideoutUpgradesClient questNames={questNames()} />
+            <HideoutUpgradesClient questNames={await questNames()} />
         </Suspense>
     );
 }
