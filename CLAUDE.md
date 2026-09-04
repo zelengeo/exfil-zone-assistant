@@ -16,8 +16,16 @@ gotchas, point at the script rather than restating it.
 `CONTEXT.md` at the root is the glossary: the canonical name for every domain term and the words
 not to use. Check it before naming anything.
 
-`docs/adr/` records the decisions that would otherwise look arbitrary: why task data is a committed
-TypeScript module, why zod outranks hand-written types, why there is no `Corp`.
+`docs/adr/` records the decisions that would otherwise look arbitrary: why the task data moved out
+of the bundle, why zod outranks hand-written types, why there is no `Corp`. A record marked
+superseded is kept on purpose — it is the account of why the thing it describes was ever done that
+way.
+
+`docs/*.md` is the work not yet done: a plan, or a brief for a change this repo is waiting on or
+about to start. Check for one covering the route you are touching before planning it yourself —
+`HIDEOUT_REWRITE_REQUEST.md` and `EXTRACTION_CHANGE_REQUEST.md` are the current pair, and each
+carries the reasoning that would otherwise have to be rediscovered. Their headers say whether they
+are still live.
 
 Non-obvious ones worth reaching for by name:
 
