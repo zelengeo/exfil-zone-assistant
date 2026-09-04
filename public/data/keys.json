@@ -65,7 +65,12 @@
           "stock": 10,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.a.09"
+            {
+              "gameId": "task.doc.a.09",
+              "id": "ntg_41",
+              "name": "Evidence of Atrocity",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -327,7 +332,12 @@
           "stock": 10,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.c.07"
+            {
+              "gameId": "task.doc.c.07",
+              "id": "ntg_61",
+              "name": "Dock Intel",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -403,7 +413,12 @@
           "stock": 10,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.b.04"
+            {
+              "gameId": "task.doc.b.04",
+              "id": "ntg_49",
+              "name": "River Valley Pylon Security",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -429,7 +444,12 @@
           "stock": 10,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.b.04"
+            {
+              "gameId": "task.doc.b.04",
+              "id": "ntg_49",
+              "name": "River Valley Pylon Security",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -825,7 +845,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.a.13"
+            {
+              "gameId": "task.doc.a.13",
+              "id": "ntg_45",
+              "name": "Medical Delivery 2",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -912,7 +937,12 @@
           "stock": 10,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.b.07"
+            {
+              "gameId": "task.doc.b.07",
+              "id": "ntg_52",
+              "name": "Suburb Recon",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -1095,7 +1125,12 @@
           "stock": 10,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gear.b.08"
+            {
+              "gameId": "task.gear.b.08",
+              "id": "forge_13",
+              "name": "All pieces together 3",
+              "corpId": "forge"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -1157,7 +1192,12 @@
           "stock": 10,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.b.08"
+            {
+              "gameId": "task.doc.b.08",
+              "id": "ntg_53",
+              "name": "Suburban Emergency Med Network",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -1219,7 +1259,12 @@
           "stock": 10,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.b.10"
+            {
+              "gameId": "task.doc.b.10",
+              "id": "ntg_54",
+              "name": "Farmstead Investigation",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -1385,7 +1430,12 @@
           "stock": 10,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.a.07"
+            {
+              "gameId": "task.doc.a.07",
+              "id": "ntg_40",
+              "name": "The Final Shot",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -1652,7 +1702,12 @@
           "stock": 10,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gear.c.06"
+            {
+              "gameId": "task.gear.c.06",
+              "id": "forge_39",
+              "name": "Hidden Path",
+              "corpId": "forge"
+            }
           ],
           "requiresDlc": [],
           "exchange": []

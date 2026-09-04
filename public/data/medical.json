@@ -82,7 +82,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.c.01"
+            {
+              "gameId": "task.doc.c.01",
+              "id": "ntg_56",
+              "name": "First Contact",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -242,7 +247,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.c.02"
+            {
+              "gameId": "task.doc.c.02",
+              "id": "ntg_1",
+              "name": "Supply Shortage 1",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -257,7 +267,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.c.02"
+            {
+              "gameId": "task.doc.c.02",
+              "id": "ntg_1",
+              "name": "Supply Shortage 1",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -311,7 +326,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.b.04"
+            {
+              "gameId": "task.doc.b.04",
+              "id": "ntg_49",
+              "name": "River Valley Pylon Security",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -524,7 +544,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.b.03"
+            {
+              "gameId": "task.doc.b.03",
+              "id": "ntg_48",
+              "name": "NTG Medical Reports",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -572,7 +597,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.b.03"
+            {
+              "gameId": "task.doc.b.03",
+              "id": "ntg_48",
+              "name": "NTG Medical Reports",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -620,7 +650,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.b.03"
+            {
+              "gameId": "task.doc.b.03",
+              "id": "ntg_48",
+              "name": "NTG Medical Reports",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -668,7 +703,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.b.03"
+            {
+              "gameId": "task.doc.b.03",
+              "id": "ntg_48",
+              "name": "NTG Medical Reports",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -715,7 +755,12 @@
           "stock": 29,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.a.11"
+            {
+              "gameId": "task.doc.a.11",
+              "id": "ntg_43",
+              "name": "Mercy in Retrospect",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -813,7 +858,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.c.01"
+            {
+              "gameId": "task.doc.c.01",
+              "id": "ntg_56",
+              "name": "First Contact",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -828,7 +878,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.c.01"
+            {
+              "gameId": "task.doc.c.01",
+              "id": "ntg_56",
+              "name": "First Contact",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -884,7 +939,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.c.06"
+            {
+              "gameId": "task.doc.c.06",
+              "id": "ntg_60",
+              "name": "Meg's Camera",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -966,7 +1026,12 @@
           "stock": 29,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.b.02"
+            {
+              "gameId": "task.doc.b.02",
+              "id": "ntg_47",
+              "name": "Dam First Aid Point",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": [

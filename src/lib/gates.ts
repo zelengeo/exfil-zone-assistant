@@ -1,6 +1,5 @@
-import { tasksData } from '@/data/tasks';
 import type { Task } from '@/types/tasks';
-import type { BuyOffer } from '@/types/trade';
+import type { BuyOffer, TaskGate } from '@/types/trade';
 
 /**
  * What stands between a player and an offer.
@@ -14,13 +13,21 @@ import type { BuyOffer } from '@/types/trade';
  * as an id. An id rendered in mono reads as an id, which is honest; a guessed name would not be.
  */
 
+/**
+ * As much of a task as a gate ever shows: a mark, a name, and somewhere to go.
+ *
+ * Deliberately not the whole `Task`. Naming a gate used to mean holding the task database in the
+ * client, and these three fields are all `TaskChip` has ever read from it.
+ */
+export type GatedTask = Pick<Task, 'id' | 'name' | 'corpId'>;
+
 export type Gate =
     | {
           kind: 'task';
           /** The in-game id the offer names, e.g. `task.marc.part2.01`. */
           id: string;
-          /** The published task. Null only if the task database does not know this id. */
-          task: Task | null;
+          /** The task, where the extraction resolved it. Null means print the id. */
+          task: GatedTask | null;
       }
     | {
           kind: 'dlc';
@@ -33,26 +40,24 @@ export type Gate =
 /* --------------------------------------------------------------------------
  * Tasks
  *
- * `requiresTasks` names tasks by their in-game id, not by the wiki id the tasks route routes on,
- * so the join goes through `gameId`. It was a dead join for a while — the task database was a
- * naming generation behind the goods data and matched none of the 128 gates — and is now complete:
- * all 128 resolve against the 227 published tasks.
+ * `requiresTasks` names a task by its in-game id and carries the wiki id, name and corp beside it,
+ * resolved by the extraction at publish time. This file used to do that join itself, against the
+ * whole task database — which meant every route that drew a gate shipped 431 KB of tasks to name
+ * one. Reading what the offer already carries costs nothing and cannot go stale against a task
+ * list this repo no longer holds.
+ *
+ * The join it replaced was dead for a season without anyone noticing, because an unresolved gate
+ * still renders as a legible id. `scripts/validate-data.ts` is the alarm now, and it checks the
+ * published files rather than a join.
  * ----------------------------------------------------------------------- */
 
-let byGameId: Map<string, Task> | null = null;
-
-function taskIndex(): Map<string, Task> {
-    if (!byGameId) {
-        byGameId = new Map<string, Task>();
-        for (const task of Object.values(tasksData)) {
-            if (task.gameId) byGameId.set(task.gameId, task);
-        }
-    }
-    return byGameId;
-}
-
-function taskGate(gameId: string): Gate {
-    return { kind: 'task', id: gameId, task: taskIndex().get(gameId) ?? null };
+function taskGate({ gameId, id, name, corpId }: TaskGate): Gate {
+    return {
+        kind: 'task',
+        id: gameId,
+        // All four or none: a half-resolved gate prints as an id rather than as a partial name.
+        task: id && name && corpId !== undefined ? { id, name, corpId } : null,
+    };
 }
 
 /* --------------------------------------------------------------------------

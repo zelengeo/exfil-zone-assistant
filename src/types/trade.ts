@@ -41,6 +41,24 @@ export interface ExchangeCost {
     count: number;
 }
 
+/**
+ * A task an offer is gated on, as the goods data publishes it.
+ *
+ * `gameId` is the id the goods data itself names and is the only field guaranteed present. The
+ * other three are the join against the task database, and the extraction resolves them at publish
+ * time - see `docs/EXTRACTION_CHANGE_REQUEST.md` for why the join moved upstream. All 215 published
+ * gates carry the full set today; a gate naming a task the extraction cannot resolve arrives with
+ * `gameId` alone rather than with a guessed name, which is why the three are optional.
+ */
+export interface TaskGate {
+    /** The in-game id, e.g. `task.marc.part2.01`. Always present, and always printable. */
+    gameId: string;
+    /** The wiki id, i.e. the `/tasks/<id>` route. */
+    id?: string;
+    name?: string;
+    corpId?: string;
+}
+
 /** One shop listing: a vendor selling an item at a loyalty level. */
 export interface BuyOffer {
     vendor: string;
@@ -51,7 +69,7 @@ export interface BuyOffer {
     bundlePrice?: number;
     stock?: number;
     resetType?: string;
-    requiresTasks?: string[];
+    requiresTasks?: TaskGate[];
     requiresDlc?: string[];
     /** Present and non-empty only on barter listings — 106 of the items route's 678 offers. */
     exchange?: ExchangeCost[];

@@ -520,7 +520,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gunsmith.008"
+            {
+              "gameId": "task.gunsmith.008",
+              "id": "gunsmith_15",
+              "name": "SKS Modification Trial",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -618,7 +623,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gunsmith.m04"
+            {
+              "gameId": "task.gunsmith.m04",
+              "id": "gunsmith_8",
+              "name": "Field Test",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -2153,7 +2163,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.01"
+            {
+              "gameId": "task.na.c.01",
+              "id": "ark_1",
+              "name": "Handshake",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -2424,7 +2439,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gunsmith.m05"
+            {
+              "gameId": "task.gunsmith.m05",
+              "id": "gunsmith_10",
+              "name": "The Last Screw Before Iron Wolf",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -2520,7 +2540,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gunsmith.m03"
+            {
+              "gameId": "task.gunsmith.m03",
+              "id": "gunsmith_6",
+              "name": "The Artisan's Touch",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -2736,7 +2761,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gunsmith.m01"
+            {
+              "gameId": "task.gunsmith.m01",
+              "id": "gunsmith_2",
+              "name": "Workshop Interview",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -2815,7 +2845,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.09"
+            {
+              "gameId": "task.na.b.09",
+              "id": "ark_58",
+              "name": "Factory Oil Tanks",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -3129,7 +3164,12 @@
           "stock": 2,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.d3"
+            {
+              "gameId": "task.research.d3",
+              "id": "research_12",
+              "name": "VerTac X",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -3150,7 +3190,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.d3"
+            {
+              "gameId": "task.research.d3",
+              "id": "research_12",
+              "name": "VerTac X",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -3199,7 +3244,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.07"
+            {
+              "gameId": "task.na.c.07",
+              "id": "ark_66",
+              "name": "Clearing Drill",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -3982,7 +4032,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.c.09"
+            {
+              "gameId": "task.wp.c.09",
+              "id": "regiment_51",
+              "name": "The Veteran's Courts",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -4078,7 +4133,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.d1"
+            {
+              "gameId": "task.research.d1",
+              "id": "research_4",
+              "name": "MX400 Light",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []

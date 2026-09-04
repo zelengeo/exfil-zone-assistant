@@ -15,7 +15,11 @@ import type { Task } from '@/types/tasks';
  */
 
 export interface TaskChipProps {
-    task: Task;
+    /**
+     * Three fields, not a whole `Task`: a chip has never read more, and asking for the full shape
+     * meant a gate could not name its task without the task database in the client.
+     */
+    task: Pick<Task, 'id' | 'name' | 'corpId'>;
     size?: 'sm' | 'md';
     className?: string;
 }

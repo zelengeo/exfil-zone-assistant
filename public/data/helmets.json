@@ -584,7 +584,12 @@
           "stock": 9,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gear.a.03"
+            {
+              "gameId": "task.gear.a.03",
+              "id": "forge_7",
+              "name": "Bargain Hunter",
+              "corpId": "forge"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -3251,7 +3256,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gear.c.07"
+            {
+              "gameId": "task.gear.c.07",
+              "id": "forge_40",
+              "name": "Every Little Bit Counts",
+              "corpId": "forge"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -3995,7 +4005,12 @@
           "stock": 12,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.gear.a.09"
+            {
+              "gameId": "task.gear.a.09",
+              "id": "forge_30",
+              "name": "Virtual Realities",
+              "corpId": "forge"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -5201,7 +5216,12 @@
           "stock": 12,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.gear.a.05"
+            {
+              "gameId": "task.gear.a.05",
+              "id": "forge_10",
+              "name": "Freight Runner",
+              "corpId": "forge"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -5598,7 +5618,12 @@
           "stock": 6,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.gear.a.11"
+            {
+              "gameId": "task.gear.a.11",
+              "id": "forge_28",
+              "name": "Treasure Beyond Measure",
+              "corpId": "forge"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -5613,7 +5638,12 @@
           "stock": 9,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gear.a.08"
+            {
+              "gameId": "task.gear.a.08",
+              "id": "forge_32",
+              "name": "Collectors Edition",
+              "corpId": "forge"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -6598,7 +6628,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gear.b.06"
+            {
+              "gameId": "task.gear.b.06",
+              "id": "forge_25",
+              "name": "Cold Hard Cash 3",
+              "corpId": "forge"
+            }
           ],
           "requiresDlc": [],
           "exchange": []

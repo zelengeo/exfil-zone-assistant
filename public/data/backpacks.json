@@ -447,7 +447,12 @@
           "stock": 29,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.gear.a.10"
+            {
+              "gameId": "task.gear.a.10",
+              "id": "forge_26",
+              "name": "Business Development",
+              "corpId": "forge"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -570,7 +575,12 @@
           "stock": 2,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.c.08"
+            {
+              "gameId": "task.doc.c.08",
+              "id": "ntg_62",
+              "name": "Clifton Hidden Room Radio",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -641,7 +651,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.b.06"
+            {
+              "gameId": "task.doc.b.06",
+              "id": "ntg_51",
+              "name": "★ Factory Foreman",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": []

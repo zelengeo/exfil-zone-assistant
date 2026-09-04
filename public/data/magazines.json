@@ -369,7 +369,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.c.09"
+            {
+              "gameId": "task.wp.c.09",
+              "id": "regiment_51",
+              "name": "The Veteran's Courts",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -492,7 +497,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.a.07"
+            {
+              "gameId": "task.wp.a.07",
+              "id": "regiment_32",
+              "name": "One-Time Delivery",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -688,7 +698,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.10"
+            {
+              "gameId": "task.na.b.10",
+              "id": "ark_59",
+              "name": "★ Silver Skull BOSS",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -884,7 +899,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.a.04"
+            {
+              "gameId": "task.na.a.04",
+              "id": "ark_39",
+              "name": "Keeping the Peace",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -956,7 +976,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.a.03"
+            {
+              "gameId": "task.na.a.03",
+              "id": "ark_38",
+              "name": "Police Car Photos",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -1028,7 +1053,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.a.07"
+            {
+              "gameId": "task.na.a.07",
+              "id": "ark_42",
+              "name": "★18 Judgment Day BOSS",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -1043,7 +1073,12 @@
           "stock": 2,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.a.07"
+            {
+              "gameId": "task.na.a.07",
+              "id": "ark_42",
+              "name": "★18 Judgment Day BOSS",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -1126,7 +1161,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gunsmith.m09"
+            {
+              "gameId": "task.gunsmith.m09",
+              "id": "gunsmith_18",
+              "name": "Smuggling Route: Surveillance I",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -1141,7 +1181,12 @@
           "stock": 2,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.d2"
+            {
+              "gameId": "task.research.d2",
+              "id": "research_8",
+              "name": "AR-15 60rd P-Drum",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -1938,7 +1983,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.a.08"
+            {
+              "gameId": "task.wp.a.08",
+              "id": "regiment_31",
+              "name": "My Favourite: Sjogren",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -1953,7 +2003,12 @@
           "stock": 2,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.a.08"
+            {
+              "gameId": "task.wp.a.08",
+              "id": "regiment_31",
+              "name": "My Favourite: Sjogren",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -2131,7 +2186,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.06"
+            {
+              "gameId": "task.na.b.06",
+              "id": "ark_55",
+              "name": "Disguised Baseball",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -3243,7 +3303,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.02"
+            {
+              "gameId": "task.na.c.02",
+              "id": "ark_62",
+              "name": "Wind Farm Recon",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -3402,7 +3467,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.10"
+            {
+              "gameId": "task.na.b.10",
+              "id": "ark_59",
+              "name": "★ Silver Skull BOSS",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -3759,7 +3829,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gunsmith.m10"
+            {
+              "gameId": "task.gunsmith.m10",
+              "id": "gunsmith_19",
+              "name": "Malyuk Field Trial",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -4955,7 +5030,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gunsmith.m08"
+            {
+              "gameId": "task.gunsmith.m08",
+              "id": "gunsmith_16",
+              "name": "Close Quarters — MP9 Drill",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -4970,7 +5050,12 @@
           "stock": 2,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gunsmith.m08"
+            {
+              "gameId": "task.gunsmith.m08",
+              "id": "gunsmith_16",
+              "name": "Close Quarters — MP9 Drill",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": [

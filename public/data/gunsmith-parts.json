@@ -2933,7 +2933,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.c.09"
+            {
+              "gameId": "task.wp.c.09",
+              "id": "regiment_51",
+              "name": "The Veteran's Courts",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -3073,7 +3078,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.a.07"
+            {
+              "gameId": "task.wp.a.07",
+              "id": "regiment_32",
+              "name": "One-Time Delivery",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -3350,7 +3360,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.a.08"
+            {
+              "gameId": "task.wp.a.08",
+              "id": "regiment_31",
+              "name": "My Favourite: Sjogren",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -3365,7 +3380,12 @@
           "stock": 2,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.a.08"
+            {
+              "gameId": "task.wp.a.08",
+              "id": "regiment_31",
+              "name": "My Favourite: Sjogren",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -4450,7 +4470,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.c2"
+            {
+              "gameId": "task.research.c2",
+              "id": "research_7",
+              "name": "XRS",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -5005,7 +5030,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.c.01"
+            {
+              "gameId": "task.wp.c.01",
+              "id": "regiment_43",
+              "name": "A Real Rifle",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -5231,7 +5261,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.c3"
+            {
+              "gameId": "task.research.c3",
+              "id": "research_11",
+              "name": "AKM Hexagon",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -5792,7 +5827,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.c.04"
+            {
+              "gameId": "task.wp.c.04",
+              "id": "regiment_46",
+              "name": "Get Back My Shades",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -5936,7 +5976,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.c1"
+            {
+              "gameId": "task.research.c1",
+              "id": "research_3",
+              "name": "MOE",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -7819,7 +7864,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.c4"
+            {
+              "gameId": "task.research.c4",
+              "id": "research_14",
+              "name": "AK103 DTK-4m",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -10348,7 +10398,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.a6"
+            {
+              "gameId": "task.research.a6",
+              "id": "research_16",
+              "name": "AR15/AR10 CookieCutter Comp",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -10861,7 +10916,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.a8"
+            {
+              "gameId": "task.research.a8",
+              "id": "research_18",
+              "name": "AR15/AR10 TBeast MC-Cover",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -11098,7 +11158,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.10"
+            {
+              "gameId": "task.na.c.10",
+              "id": "ark_69",
+              "name": "Pre-war Recon",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -11241,7 +11306,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.01"
+            {
+              "gameId": "task.na.b.01",
+              "id": "ark_50",
+              "name": "Camera Placement: Warehouse & Supermarket",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -11527,7 +11597,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.08"
+            {
+              "gameId": "task.na.c.08",
+              "id": "ark_67",
+              "name": "Transport Clues",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -11731,7 +11806,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.a.03"
+            {
+              "gameId": "task.na.a.03",
+              "id": "ark_38",
+              "name": "Police Car Photos",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -11801,7 +11881,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.10"
+            {
+              "gameId": "task.na.b.10",
+              "id": "ark_59",
+              "name": "★ Silver Skull BOSS",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -11871,7 +11956,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.a.07"
+            {
+              "gameId": "task.na.a.07",
+              "id": "ark_42",
+              "name": "★18 Judgment Day BOSS",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -11886,7 +11976,12 @@
           "stock": 2,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.a.07"
+            {
+              "gameId": "task.na.a.07",
+              "id": "ark_42",
+              "name": "★18 Judgment Day BOSS",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -12033,7 +12128,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gunsmith.m09"
+            {
+              "gameId": "task.gunsmith.m09",
+              "id": "gunsmith_18",
+              "name": "Smuggling Route: Surveillance I",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -12048,7 +12148,12 @@
           "stock": 2,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.d2"
+            {
+              "gameId": "task.research.d2",
+              "id": "research_8",
+              "name": "AR-15 60rd P-Drum",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -12131,7 +12236,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.a1"
+            {
+              "gameId": "task.research.a1",
+              "id": "research_1",
+              "name": "AR-15 4in RIS",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -12276,7 +12386,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gunsmith.m03"
+            {
+              "gameId": "task.gunsmith.m03",
+              "id": "gunsmith_6",
+              "name": "The Artisan's Touch",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -12786,7 +12901,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.a7"
+            {
+              "gameId": "task.research.a7",
+              "id": "research_17",
+              "name": "AR-15 SSR Gen4",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -12801,7 +12921,12 @@
           "stock": 2,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.a7"
+            {
+              "gameId": "task.research.a7",
+              "id": "research_17",
+              "name": "AR-15 SSR Gen4",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -13406,7 +13531,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gunsmith.m05"
+            {
+              "gameId": "task.gunsmith.m05",
+              "id": "gunsmith_10",
+              "name": "The Last Screw Before Iron Wolf",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -13705,7 +13835,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.06"
+            {
+              "gameId": "task.na.c.06",
+              "id": "ark_65",
+              "name": "Truck Marking",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -14423,7 +14558,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.a2"
+            {
+              "gameId": "task.research.a2",
+              "id": "research_5",
+              "name": "MOE-K",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -14864,7 +15004,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gunsmith.m01"
+            {
+              "gameId": "task.gunsmith.m01",
+              "id": "gunsmith_2",
+              "name": "Workshop Interview",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -15383,7 +15528,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.a5"
+            {
+              "gameId": "task.research.a5",
+              "id": "research_15",
+              "name": "AR-15 PRSGen3",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -15459,7 +15609,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.a4"
+            {
+              "gameId": "task.research.a4",
+              "id": "research_13",
+              "name": "UBR",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -15757,7 +15912,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.a3"
+            {
+              "gameId": "task.research.a3",
+              "id": "research_9",
+              "name": "AR-15 DD",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -15899,7 +16059,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gunsmith.m01"
+            {
+              "gameId": "task.gunsmith.m01",
+              "id": "gunsmith_2",
+              "name": "Workshop Interview",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -16184,7 +16349,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.03"
+            {
+              "gameId": "task.na.b.03",
+              "id": "ark_52",
+              "name": "Retrieve ARK Disks",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -16460,7 +16630,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.a.04"
+            {
+              "gameId": "task.na.a.04",
+              "id": "ark_39",
+              "name": "Keeping the Peace",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -17650,7 +17825,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.a9"
+            {
+              "gameId": "task.research.a9",
+              "id": "research_19",
+              "name": "Monster556",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -17665,7 +17845,12 @@
           "stock": 2,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.a9"
+            {
+              "gameId": "task.research.a9",
+              "id": "research_19",
+              "name": "Monster556",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -17880,7 +18065,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.04"
+            {
+              "gameId": "task.na.b.04",
+              "id": "ark_53",
+              "name": "Hide Discs",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -18595,7 +18785,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.10"
+            {
+              "gameId": "task.na.b.10",
+              "id": "ark_59",
+              "name": "★ Silver Skull BOSS",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -19955,7 +20150,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gunsmith.m10"
+            {
+              "gameId": "task.gunsmith.m10",
+              "id": "gunsmith_19",
+              "name": "Malyuk Field Trial",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -20990,7 +21190,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.b1"
+            {
+              "gameId": "task.research.b1",
+              "id": "research_2",
+              "name": "G3 SPUHR",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -21060,7 +21265,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.09"
+            {
+              "gameId": "task.na.c.09",
+              "id": "ark_68",
+              "name": "Rifle Drills",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -21491,7 +21701,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.b3"
+            {
+              "gameId": "task.research.b3",
+              "id": "research_10",
+              "name": "Falcon",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -21956,7 +22171,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.research.b2"
+            {
+              "gameId": "task.research.b2",
+              "id": "research_6",
+              "name": "G3 PRS Black",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -26499,7 +26719,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.07"
+            {
+              "gameId": "task.na.b.07",
+              "id": "ark_56",
+              "name": "New Bridge Maintenance",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -26567,7 +26792,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.06"
+            {
+              "gameId": "task.na.b.06",
+              "id": "ark_55",
+              "name": "Disguised Baseball",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -27004,7 +27234,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.08"
+            {
+              "gameId": "task.na.b.08",
+              "id": "ark_57",
+              "name": "Clifton Recon",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -31833,7 +32068,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.02"
+            {
+              "gameId": "task.na.c.02",
+              "id": "ark_62",
+              "name": "Wind Farm Recon",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -32788,7 +33028,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.01"
+            {
+              "gameId": "task.na.c.01",
+              "id": "ark_1",
+              "name": "Handshake",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -33146,7 +33391,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.03"
+            {
+              "gameId": "task.na.c.03",
+              "id": "ark_3",
+              "name": "Recon 1",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -33220,7 +33470,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.03"
+            {
+              "gameId": "task.na.c.03",
+              "id": "ark_3",
+              "name": "Recon 1",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -38740,7 +38995,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gunsmith.m08"
+            {
+              "gameId": "task.gunsmith.m08",
+              "id": "gunsmith_16",
+              "name": "Close Quarters — MP9 Drill",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -38755,7 +39015,12 @@
           "stock": 2,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gunsmith.m08"
+            {
+              "gameId": "task.gunsmith.m08",
+              "id": "gunsmith_16",
+              "name": "Close Quarters — MP9 Drill",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -46817,7 +47082,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gunsmith.m02"
+            {
+              "gameId": "task.gunsmith.m02",
+              "id": "gunsmith_4",
+              "name": "The Lost Part",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": []

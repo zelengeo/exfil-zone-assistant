@@ -240,6 +240,57 @@ for (const task of Object.values(tasksData)) {
     }
 }
 
+// buy-offer task gates
+//
+// The successor to a join this repo used to do at render time against the whole task database.
+// The extraction resolves it now, which means a stale publish no longer shows up as a missing name
+// on a page nobody was looking at - it shows up here. Every part is checked, because a gate that
+// resolves to the wrong task is worse than one that resolves to nothing: it renders as a confident
+// link to the wrong contract.
+const tasksByGameId = new Map(
+    Object.values(tasksData).filter((task) => task.gameId).map((task) => [task.gameId, task]),
+);
+
+for (const item of allItems) {
+    const offers = (item.stats?.buyOffers ?? []) as Array<{ requiresTasks?: unknown }>;
+    for (const offer of offers) {
+        const gates = offer.requiresTasks;
+        if (gates === undefined) continue;
+        if (!Array.isArray(gates)) {
+            fail('gate-shape', `${item._file}/${item.id}: requiresTasks is ${typeof gates}, expected an array`);
+            continue;
+        }
+        for (const gate of gates) {
+            const from = `${item._file}/${item.id}`;
+            if (typeof gate !== 'object' || gate === null || Array.isArray(gate)) {
+                // The pre-2026-09 shape was a bare id string. A publisher that regressed to it
+                // would leave every gate on the site nameless.
+                fail('gate-shape', `${from}: requiresTasks entry is ${typeof gate}, expected an object with gameId`);
+                continue;
+            }
+            const { gameId, id, name, corpId } = gate as Record<string, unknown>;
+            if (typeof gameId !== 'string' || !gameId) {
+                fail('gate-shape', `${from}: gate has no gameId`);
+                continue;
+            }
+            const task = tasksByGameId.get(gameId);
+            // An unresolved gate is legal - it prints as its id - but it is never silent, because
+            // all 215 resolved when the shape landed and a new gap is a publish that went wrong.
+            if (id === undefined && name === undefined && corpId === undefined) {
+                warn('gate-unresolved', `${from}: ${gameId} carries no task${task ? ` (but ${task.id} matches it)` : ''}`);
+                continue;
+            }
+            if (!task) {
+                fail('gate-ref', `${from}: ${gameId} -> ${String(id)} (no task has that gameId)`);
+                continue;
+            }
+            if (id !== task.id) fail('gate-ref', `${from}: ${gameId} says id ${String(id)}, tasks say ${task.id}`);
+            if (name !== task.name) fail('gate-ref', `${from}: ${task.id} says name ${JSON.stringify(name)}, tasks say ${JSON.stringify(task.name)}`);
+            if (corpId !== task.corpId) fail('gate-ref', `${from}: ${task.id} says corpId ${JSON.stringify(corpId)}, tasks say ${JSON.stringify(task.corpId)}`);
+        }
+    }
+}
+
 // combat-sim test cases
 // Always this repo's copy: it is a fixture that lives here, not part of the item set being
 // validated, so `--data` must not send the lookup somewhere it does not exist.

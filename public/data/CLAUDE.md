@@ -34,7 +34,7 @@ like the curation backlog. Its header explains the split and the `--data <dir>` 
 candidate set before it is published.
 
 Run it after any edit here. Run `npm test` too when the change touches tasks or vendor keys: the
-task DAG and the gate join are both asserted against this data, not against fixtures.
+task DAG is asserted against this data, not against fixtures.
 
 ## Conventions
 
@@ -42,6 +42,11 @@ task DAG and the gate join are both asserted against this data, not against fixt
   bookmarks, saved builds and stored progress.
 - **Vendor keys** in `sellPrices` and `buyOffers` are the game's own, which is why one of them reads
   as a role rather than a name. See [`CONTEXT.md`](../../CONTEXT.md).
+- **A buy offer's `requiresTasks` carries the task, not just its id.** Each entry is
+  `{ gameId, id, name, corpId }` — the in-game id the goods data names, plus the join against the
+  task database resolved upstream. The app reads what is there and never joins, so a gate published
+  with `gameId` alone renders as a raw id; `validate-data` fails on one that names a task the task
+  data contradicts. See [EXTRACTION_CHANGE_REQUEST.md](../../docs/EXTRACTION_CHANGE_REQUEST.md).
 - **Images** are `.webp` under `public/images/items/`, named by item id. `validate-data` checks that
   every item has one and reports files nothing references.
 - **Optional fields usually mean uneven data**, not unimportant data — only rounds that were on the

@@ -306,7 +306,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.c.02"
+            {
+              "gameId": "task.doc.c.02",
+              "id": "ntg_1",
+              "name": "Supply Shortage 1",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": []

@@ -99,7 +99,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.marc.part2.01"
+            {
+              "gameId": "task.marc.part2.01",
+              "id": "trupiks_34",
+              "name": "Upgrade Terminal: Signal Tracking",
+              "corpId": "trupiks"
+            }
           ],
           "requiresDlc": [
             "dlc.s5.brokencontact"
@@ -229,7 +234,12 @@
           "stock": 66,
           "resetType": "daily",
           "requiresTasks": [
-            "task.marc.part3.01"
+            {
+              "gameId": "task.marc.part3.01",
+              "id": "trupiks_36",
+              "name": "Transport Route",
+              "corpId": "trupiks"
+            }
           ],
           "requiresDlc": [
             "dlc.s5.brokencontact"
@@ -933,7 +943,12 @@
           "stock": 99,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.wp.a.11"
+            {
+              "gameId": "task.wp.a.11",
+              "id": "regiment_40",
+              "name": "Taste of Life 3",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -1066,7 +1081,12 @@
           "stock": 66,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.gunsmith.m01"
+            {
+              "gameId": "task.gunsmith.m01",
+              "id": "gunsmith_2",
+              "name": "Workshop Interview",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -1332,7 +1352,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.b.11"
+            {
+              "gameId": "task.wp.b.11",
+              "id": "regiment_15",
+              "name": "Reading Habits",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -1347,7 +1372,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.b.11"
+            {
+              "gameId": "task.wp.b.11",
+              "id": "regiment_15",
+              "name": "Reading Habits",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -1362,7 +1392,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.b.11"
+            {
+              "gameId": "task.wp.b.11",
+              "id": "regiment_15",
+              "name": "Reading Habits",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -2069,7 +2104,12 @@
           "stock": 99,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.wp.a.03"
+            {
+              "gameId": "task.wp.a.03",
+              "id": "regiment_28",
+              "name": "Movie Night 2",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -2084,7 +2124,12 @@
           "stock": -1,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.wp.a.03"
+            {
+              "gameId": "task.wp.a.03",
+              "id": "regiment_28",
+              "name": "Movie Night 2",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -2099,7 +2144,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.a.03"
+            {
+              "gameId": "task.wp.a.03",
+              "id": "regiment_28",
+              "name": "Movie Night 2",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -2526,7 +2576,12 @@
           "stock": 99,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.na.a.11"
+            {
+              "gameId": "task.na.a.11",
+              "id": "ark_46",
+              "name": "Heavy Iron: Tank Marking",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -2887,7 +2942,12 @@
           "stock": 49,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.gunsmith.m03"
+            {
+              "gameId": "task.gunsmith.m03",
+              "id": "gunsmith_6",
+              "name": "The Artisan's Touch",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -3012,7 +3072,12 @@
           "stock": 49,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.gunsmith.m12"
+            {
+              "gameId": "task.gunsmith.m12",
+              "id": "gunsmith_21",
+              "name": "Secure the Retreat — LMG Suppression",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -3137,7 +3202,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.b.10"
+            {
+              "gameId": "task.wp.b.10",
+              "id": "regiment_42",
+              "name": "Old Computer",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -3551,7 +3621,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.c.07"
+            {
+              "gameId": "task.wp.c.07",
+              "id": "regiment_49",
+              "name": "Rifle Proficiency",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -3566,7 +3641,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.c.08"
+            {
+              "gameId": "task.wp.c.08",
+              "id": "regiment_50",
+              "name": "A Farewell Gift",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -3581,7 +3661,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.c.08"
+            {
+              "gameId": "task.wp.c.08",
+              "id": "regiment_50",
+              "name": "A Farewell Gift",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -3849,7 +3934,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.b.10"
+            {
+              "gameId": "task.wp.b.10",
+              "id": "regiment_42",
+              "name": "Old Computer",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -3864,7 +3954,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.b.10"
+            {
+              "gameId": "task.wp.b.10",
+              "id": "regiment_42",
+              "name": "Old Computer",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -4119,7 +4214,12 @@
           "stock": 49,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.gunsmith.m02"
+            {
+              "gameId": "task.gunsmith.m02",
+              "id": "gunsmith_4",
+              "name": "The Lost Part",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -4252,7 +4352,12 @@
           "stock": 49,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.gunsmith.m07"
+            {
+              "gameId": "task.gunsmith.m07",
+              "id": "gunsmith_14",
+              "name": "Protection Racket",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -4669,7 +4774,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.04"
+            {
+              "gameId": "task.na.c.04",
+              "id": "ark_63",
+              "name": "Prove Yourself",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -5216,7 +5326,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.11"
+            {
+              "gameId": "task.na.b.11",
+              "id": "ark_60",
+              "name": "M16A2 Proficiency",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -5231,7 +5346,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.11"
+            {
+              "gameId": "task.na.b.11",
+              "id": "ark_60",
+              "name": "M16A2 Proficiency",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -5246,7 +5366,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.11"
+            {
+              "gameId": "task.na.b.11",
+              "id": "ark_60",
+              "name": "M16A2 Proficiency",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -5355,7 +5480,12 @@
           "stock": 89,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.12"
+            {
+              "gameId": "task.na.b.12",
+              "id": "ark_61",
+              "name": "MK17 Proficiency",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -5370,7 +5500,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.12"
+            {
+              "gameId": "task.na.b.12",
+              "id": "ark_61",
+              "name": "MK17 Proficiency",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -5385,7 +5520,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.12"
+            {
+              "gameId": "task.na.b.12",
+              "id": "ark_61",
+              "name": "MK17 Proficiency",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -5494,7 +5634,12 @@
           "stock": 48,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.na.a.13"
+            {
+              "gameId": "task.na.a.13",
+              "id": "ark_48",
+              "name": "Show of Force IV: AUG",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -5509,7 +5654,12 @@
           "stock": -1,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.na.a.13"
+            {
+              "gameId": "task.na.a.13",
+              "id": "ark_48",
+              "name": "Show of Force IV: AUG",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -5524,7 +5674,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.a.13"
+            {
+              "gameId": "task.na.a.13",
+              "id": "ark_48",
+              "name": "Show of Force IV: AUG",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -5646,7 +5801,12 @@
           "stock": 29,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.gunsmith.m05"
+            {
+              "gameId": "task.gunsmith.m05",
+              "id": "gunsmith_10",
+              "name": "The Last Screw Before Iron Wolf",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -6040,7 +6200,12 @@
           "stock": 99,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.wp.a.09"
+            {
+              "gameId": "task.wp.a.09",
+              "id": "regiment_17",
+              "name": "Pistol Glory",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -6168,7 +6333,12 @@
           "stock": 49,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.gunsmith.m11"
+            {
+              "gameId": "task.gunsmith.m11",
+              "id": "gunsmith_20",
+              "name": "White Virus",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -6296,7 +6466,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.b.09"
+            {
+              "gameId": "task.wp.b.09",
+              "id": "regiment_41",
+              "name": "Hair Care",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -6311,7 +6486,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.b.09"
+            {
+              "gameId": "task.wp.b.09",
+              "id": "regiment_41",
+              "name": "Hair Care",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -6326,7 +6506,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.b.09"
+            {
+              "gameId": "task.wp.b.09",
+              "id": "regiment_41",
+              "name": "Hair Care",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -6568,7 +6753,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.c.05"
+            {
+              "gameId": "task.wp.c.05",
+              "id": "regiment_47",
+              "name": "Keep the Hair Sharp",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -6583,7 +6773,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.c.05"
+            {
+              "gameId": "task.wp.c.05",
+              "id": "regiment_47",
+              "name": "Keep the Hair Sharp",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -6598,7 +6793,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.c.05"
+            {
+              "gameId": "task.wp.c.05",
+              "id": "regiment_47",
+              "name": "Keep the Hair Sharp",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -7145,7 +7345,12 @@
           "stock": 66,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.gunsmith.m13"
+            {
+              "gameId": "task.gunsmith.m13",
+              "id": "gunsmith_22",
+              "name": "Smuggling Route: Surveillance II",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -7278,7 +7483,12 @@
           "stock": 66,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.gunsmith.m14"
+            {
+              "gameId": "task.gunsmith.m14",
+              "id": "gunsmith_23",
+              "name": "Data Smuggling",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -7575,7 +7785,12 @@
           "stock": -1,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.na.a.12"
+            {
+              "gameId": "task.na.a.12",
+              "id": "ark_47",
+              "name": "Show of Force I: M4A1",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -8394,7 +8609,12 @@
           "stock": 66,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.gunsmith.m15"
+            {
+              "gameId": "task.gunsmith.m15",
+              "id": "gunsmith_24",
+              "name": "White Recorder Retrieval",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -8519,7 +8739,12 @@
           "stock": 66,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.gunsmith.m16"
+            {
+              "gameId": "task.gunsmith.m16",
+              "id": "gunsmith_25",
+              "name": "The Real Iron Wolf",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -8913,7 +9138,12 @@
           "stock": 48,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.wp.a.10"
+            {
+              "gameId": "task.wp.a.10",
+              "id": "regiment_39",
+              "name": "My Favourite: FAL",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -9028,7 +9258,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.b.12"
+            {
+              "gameId": "task.wp.b.12",
+              "id": "regiment_16",
+              "name": "The Best Can",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -9043,7 +9278,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.b.12"
+            {
+              "gameId": "task.wp.b.12",
+              "id": "regiment_16",
+              "name": "The Best Can",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -9058,7 +9298,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.b.12"
+            {
+              "gameId": "task.wp.b.12",
+              "id": "regiment_16",
+              "name": "The Best Can",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -9459,7 +9704,12 @@
           "stock": 66,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.gunsmith.m04"
+            {
+              "gameId": "task.gunsmith.m04",
+              "id": "gunsmith_8",
+              "name": "Field Test",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -9584,7 +9834,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.05"
+            {
+              "gameId": "task.na.b.05",
+              "id": "ark_54",
+              "name": "★ The Traitor BOSS",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -9751,7 +10006,12 @@
           "stock": 99,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.na.a.05"
+            {
+              "gameId": "task.na.a.05",
+              "id": "ark_40",
+              "name": "First Test: BMP Marking",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -9766,7 +10026,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.a.05"
+            {
+              "gameId": "task.na.a.05",
+              "id": "ark_40",
+              "name": "First Test: BMP Marking",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -9781,7 +10046,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.a.05"
+            {
+              "gameId": "task.na.a.05",
+              "id": "ark_40",
+              "name": "First Test: BMP Marking",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -9890,7 +10160,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.03"
+            {
+              "gameId": "task.na.c.03",
+              "id": "ark_3",
+              "name": "Recon 1",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -10064,7 +10339,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.05"
+            {
+              "gameId": "task.na.b.05",
+              "id": "ark_54",
+              "name": "★ The Traitor BOSS",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -10079,7 +10359,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.05"
+            {
+              "gameId": "task.na.b.05",
+              "id": "ark_54",
+              "name": "★ The Traitor BOSS",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -10798,7 +11083,12 @@
           "stock": 99,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.wp.a.12"
+            {
+              "gameId": "task.wp.a.12",
+              "id": "regiment_30",
+              "name": "Forever in a Flash",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -10913,7 +11203,12 @@
           "stock": 66,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.gunsmith.m06"
+            {
+              "gameId": "task.gunsmith.m06",
+              "id": "gunsmith_12",
+              "name": "Parts Upgrade",
+              "corpId": "gunsmith"
+            }
           ],
           "requiresDlc": [],
           "exchange": [

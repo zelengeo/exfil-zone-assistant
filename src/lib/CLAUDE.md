@@ -78,9 +78,14 @@ fields you need.
 
 - **There is no `constants.ts`.** Roles are `rolesEnum` in `schemas/user.ts`; rate limits are
   arguments at the call site. Do not add a constants file to hold a single value.
-- **`gates.ts` joins on `gameId`, not `id`.** The goods data names tasks by their in-game id while
-  the tasks route routes on the wiki id. The join has been dead before and fails silently, because
-  an unresolved gate still renders as a legible id. `src/lib/gates.test.ts` is the alarm.
+- **`gates.ts` does no join any more, and must not grow one back.** The goods data names tasks by
+  their in-game id while the tasks route routes on the wiki id, and this file used to reconcile the
+  two against the whole task database — which put 431 KB of tasks in the items and gunsmith bundles
+  to name a gate. An offer now carries its task's id, name and corp, resolved by the extraction at
+  publish time. A spec asserts the module has no value imports at all. The failure this guards
+  against is silent, because an unresolved gate still renders as a legible id: the join was dead for
+  a whole season before anyone noticed. `npm run validate-data` is the alarm now, and it checks the
+  published files rather than a join.
 - **`vendors.ts` is the one description of the six shop fronts.** The answer used to live at three
   call sites in three vocabularies, one of them missing the gunsmith. See `CONTEXT.md` for the
   vocabulary itself. It writes the six rows out rather than reading them from `corps` in

@@ -64,7 +64,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gear.b.04"
+            {
+              "gameId": "task.gear.b.04",
+              "id": "forge_19",
+              "name": "Cold Hard Cash 1",
+              "corpId": "forge"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -108,7 +113,12 @@
           "stock": -1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gear.b.05"
+            {
+              "gameId": "task.gear.b.05",
+              "id": "forge_22",
+              "name": "Cold Hard Cash 2",
+              "corpId": "forge"
+            }
           ],
           "requiresDlc": [],
           "exchange": []

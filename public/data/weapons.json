@@ -1729,7 +1729,12 @@
           "stock": 1,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.a.13"
+            {
+              "gameId": "task.wp.a.13",
+              "id": "regiment_34",
+              "name": "War Within Self",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -1744,7 +1749,12 @@
           "stock": 2,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.a.13"
+            {
+              "gameId": "task.wp.a.13",
+              "id": "regiment_34",
+              "name": "War Within Self",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -1934,7 +1944,12 @@
           "stock": 6,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.c.04"
+            {
+              "gameId": "task.wp.c.04",
+              "id": "regiment_46",
+              "name": "Get Back My Shades",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -2903,7 +2918,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.c.04"
+            {
+              "gameId": "task.wp.c.04",
+              "id": "regiment_46",
+              "name": "Get Back My Shades",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -4905,7 +4925,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.08"
+            {
+              "gameId": "task.na.c.08",
+              "id": "ark_67",
+              "name": "Transport Clues",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -6438,7 +6463,12 @@
           "stock": 6,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.c.05"
+            {
+              "gameId": "task.wp.c.05",
+              "id": "regiment_47",
+              "name": "Keep the Hair Sharp",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -10246,7 +10276,12 @@
           "stock": 6,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.06"
+            {
+              "gameId": "task.na.c.06",
+              "id": "ark_65",
+              "name": "Truck Marking",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -10267,7 +10302,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.b.02"
+            {
+              "gameId": "task.na.b.02",
+              "id": "ark_51",
+              "name": "Mall Photography",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -10949,7 +10989,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.04"
+            {
+              "gameId": "task.na.c.04",
+              "id": "ark_63",
+              "name": "Prove Yourself",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -11479,7 +11524,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.04"
+            {
+              "gameId": "task.na.c.04",
+              "id": "ark_63",
+              "name": "Prove Yourself",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -11500,7 +11550,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.04"
+            {
+              "gameId": "task.na.c.04",
+              "id": "ark_63",
+              "name": "Prove Yourself",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -13609,7 +13664,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.b.05"
+            {
+              "gameId": "task.wp.b.05",
+              "id": "regiment_18",
+              "name": "Movie Night 1",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -13761,7 +13821,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.c.06"
+            {
+              "gameId": "task.wp.c.06",
+              "id": "regiment_48",
+              "name": "The Sausage Trap",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -13913,7 +13978,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.c.07"
+            {
+              "gameId": "task.wp.c.07",
+              "id": "regiment_49",
+              "name": "Rifle Proficiency",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -14205,7 +14275,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.02"
+            {
+              "gameId": "task.na.c.02",
+              "id": "ark_62",
+              "name": "Wind Farm Recon",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -14815,7 +14890,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.02"
+            {
+              "gameId": "task.na.c.02",
+              "id": "ark_62",
+              "name": "Wind Farm Recon",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -16320,7 +16400,12 @@
           "stock": 5,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.a.14"
+            {
+              "gameId": "task.wp.a.14",
+              "id": "regiment_35",
+              "name": "Intermission",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -17832,7 +17917,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.marc.part4.01"
+            {
+              "gameId": "task.marc.part4.01",
+              "id": "trupiks_38",
+              "name": "Caleb's Keepsake",
+              "corpId": "trupiks"
+            }
           ],
           "requiresDlc": [
             "dlc.s5.brokencontact"
@@ -20398,7 +20488,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.c.01"
+            {
+              "gameId": "task.wp.c.01",
+              "id": "regiment_43",
+              "name": "A Real Rifle",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -20552,7 +20647,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.wp.c.01"
+            {
+              "gameId": "task.wp.c.01",
+              "id": "regiment_43",
+              "name": "A Real Rifle",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -23032,7 +23132,12 @@
           "stock": 5,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.a.14"
+            {
+              "gameId": "task.na.a.14",
+              "id": "ark_49",
+              "name": "★19 Master of the Underground: Final BOSS",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -23404,7 +23509,12 @@
           "stock": 5,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.a.06"
+            {
+              "gameId": "task.na.a.06",
+              "id": "ark_41",
+              "name": "★15 Pushing the Limit Lv4",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -23419,7 +23529,12 @@
           "stock": 2,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.a.06"
+            {
+              "gameId": "task.na.a.06",
+              "id": "ark_41",
+              "name": "★15 Pushing the Limit Lv4",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": [

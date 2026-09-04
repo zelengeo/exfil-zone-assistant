@@ -1034,7 +1034,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.b.01"
+            {
+              "gameId": "task.doc.b.01",
+              "id": "ark_4",
+              "name": "Lost and Found",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -1080,7 +1085,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.doc.a.06"
+            {
+              "gameId": "task.doc.a.06",
+              "id": "ntg_39",
+              "name": "Bunker Records",
+              "corpId": "ntg"
+            }
           ],
           "requiresDlc": [],
           "exchange": []

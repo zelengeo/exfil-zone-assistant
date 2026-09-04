@@ -247,7 +247,12 @@
           "stock": 10,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.05"
+            {
+              "gameId": "task.na.c.05",
+              "id": "ark_64",
+              "name": "New Friends",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -556,7 +561,12 @@
           "stock": 10,
           "resetType": "daily",
           "requiresTasks": [
-            "task.na.c.05"
+            {
+              "gameId": "task.na.c.05",
+              "id": "ark_64",
+              "name": "New Friends",
+              "corpId": "ark"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -1345,7 +1355,12 @@
           "stock": 8,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.wp.c.03"
+            {
+              "gameId": "task.wp.c.03",
+              "id": "regiment_45",
+              "name": "Recover My Gunpowder",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -1531,7 +1546,12 @@
           "stock": 8,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.wp.c.04"
+            {
+              "gameId": "task.wp.c.04",
+              "id": "regiment_46",
+              "name": "Get Back My Shades",
+              "corpId": "regiment"
+            }
           ],
           "requiresDlc": [],
           "exchange": []

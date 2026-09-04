@@ -159,7 +159,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gear.b.02"
+            {
+              "gameId": "task.gear.b.02",
+              "id": "forge_16",
+              "name": "Better Safe than Sorry 2",
+              "corpId": "forge"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -1624,7 +1629,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gear.b.01"
+            {
+              "gameId": "task.gear.b.01",
+              "id": "forge_15",
+              "name": "Purge the Ranks",
+              "corpId": "forge"
+            }
           ],
           "requiresDlc": [],
           "exchange": []

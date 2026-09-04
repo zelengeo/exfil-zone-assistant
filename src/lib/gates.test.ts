@@ -1,16 +1,23 @@
 /**
  * What stands between a player and an offer.
  *
- * The join these functions perform was dead for a while — the task database was a naming generation
- * behind the goods data and matched none of the gates — and it fails silently when it breaks, since
- * an unresolved gate still renders as a legible id. These specs are the alarm.
+ * These used to be the alarm on a join: `gates.ts` matched the goods data's in-game ids against the
+ * task database through `gameId`, and that join was dead for a season without anyone noticing,
+ * because an unresolved gate still renders as a legible id. The extraction resolves it now, so what
+ * is left here is the reading of what an offer carries — and one guard that the join has not crept
+ * back in. The published data itself is checked by `npm run validate-data`.
  */
+import { readFile } from 'node:fs/promises';
 import { describe, expect, it } from 'vitest';
-import { tasksData } from '@/data/tasks';
 import { collectGates, offerGates } from '@/lib/gates';
-import type { BuyOffer } from '@/types/trade';
+import type { BuyOffer, TaskGate } from '@/types/trade';
 
-const knownTask = Object.values(tasksData).find((task) => task.gameId)!;
+const seaside: TaskGate = {
+    gameId: 'task.marc.part2.01',
+    id: 'ark_36',
+    name: 'Seaside Pursuit',
+    corpId: 'ark',
+};
 
 const offer = (extra: Partial<BuyOffer>): BuyOffer =>
     ({ vendor: 'ark', level: 1, price: 100, ...extra });
@@ -20,17 +27,44 @@ describe('offerGates', () => {
         expect(offerGates(undefined)).toEqual([]);
     });
 
-    it('resolves a task gate through the game id, not the route id', () => {
-        const [gate] = offerGates(offer({ requiresTasks: [knownTask.gameId] }));
+    it('names a task gate by the id the goods data uses, not the route id', () => {
+        // The two are different ids and always have been: `task.marc.part2.01` is what the offer
+        // names, `ark_36` is what /tasks routes on. A gate is identified by the former.
+        const [gate] = offerGates(offer({ requiresTasks: [seaside] }));
 
-        expect(gate).toMatchObject({ kind: 'task', id: knownTask.gameId });
-        expect(gate.kind === 'task' && gate.task?.id).toBe(knownTask.id);
+        expect(gate).toEqual({
+            kind: 'task',
+            id: 'task.marc.part2.01',
+            task: { id: 'ark_36', name: 'Seaside Pursuit', corpId: 'ark' },
+        });
     });
 
-    it('keeps an unresolved task gate printable as an id', () => {
-        const [gate] = offerGates(offer({ requiresTasks: ['task.nobody.knows.this'] }));
+    it('keeps a gate the extraction could not resolve printable as an id', () => {
+        const [gate] = offerGates(offer({ requiresTasks: [{ gameId: 'task.nobody.knows.this' }] }));
 
         expect(gate).toEqual({ kind: 'task', id: 'task.nobody.knows.this', task: null });
+    });
+
+    it('prints the id rather than half a name when the join is incomplete', () => {
+        // Partial resolution is the shape a broken publish would produce. A chip with an id and no
+        // name renders as an empty link, which reads as a bug in the page rather than in the data.
+        const [gate] = offerGates(offer({
+            requiresTasks: [{ gameId: 'task.marc.part2.01', id: 'ark_36' }],
+        }));
+
+        expect(gate).toEqual({ kind: 'task', id: 'task.marc.part2.01', task: null });
+    });
+
+    it('resolves a daily, whose corp id is the empty string', () => {
+        // `corpId: ''` is how the data files a daily, and it is a real value rather than a gap —
+        // so the all-or-nothing test above must not read it as one.
+        const [gate] = offerGates(offer({
+            requiresTasks: [{ gameId: 'task.daily.1', id: 'daily_1', name: 'Deployment', corpId: '' }],
+        }));
+
+        expect(gate.kind === 'task' && gate.task).toEqual({
+            id: 'daily_1', name: 'Deployment', corpId: '',
+        });
     });
 
     it('labels a known DLC with its season', () => {
@@ -52,7 +86,7 @@ describe('offerGates', () => {
     it('puts playtime before money', () => {
         const gates = offerGates(offer({
             requiresDlc: ['dlc.s3.ak'],
-            requiresTasks: [knownTask.gameId],
+            requiresTasks: [seaside],
         }));
 
         expect(gates.map((gate) => gate.kind)).toEqual(['task', 'dlc']);
@@ -62,8 +96,8 @@ describe('offerGates', () => {
 describe('collectGates', () => {
     it('names each gate once across the whole set', () => {
         const gates = collectGates([
-            offer({ requiresTasks: [knownTask.gameId] }),
-            offer({ vendor: 'ntg', requiresTasks: [knownTask.gameId] }),
+            offer({ requiresTasks: [seaside] }),
+            offer({ vendor: 'ntg', requiresTasks: [seaside] }),
         ]);
 
         expect(gates).toHaveLength(1);
@@ -72,7 +106,7 @@ describe('collectGates', () => {
     it('orders tasks before DLC across the set, not just within an offer', () => {
         const gates = collectGates([
             offer({ requiresDlc: ['dlc.s3.m4'] }),
-            offer({ requiresTasks: [knownTask.gameId] }),
+            offer({ requiresTasks: [seaside] }),
         ]);
 
         expect(gates.map((gate) => gate.kind)).toEqual(['task', 'dlc']);
@@ -80,5 +114,18 @@ describe('collectGates', () => {
 
     it('has nothing to say about an empty catalogue', () => {
         expect(collectGates([])).toEqual([]);
+    });
+});
+
+describe('the module itself', () => {
+    it('reads gates from the offer rather than from the task database', async () => {
+        // The load-bearing one. `gates.ts` is reached from the items catalogue and the gunsmith
+        // bench, so importing the task database here put 431 KB of tasks in both bundles to name
+        // a gate. The join lives in the extraction now; see docs/EXTRACTION_CHANGE_REQUEST.md.
+        const source = await readFile(new URL('./gates.ts', import.meta.url), 'utf8');
+        const values = [...source.matchAll(/^import (?!type )[^;]+from '([^']+)';/gm)]
+            .map((match) => match[1]);
+
+        expect(values).toEqual([]);
     });
 });

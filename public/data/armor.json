@@ -1356,7 +1356,12 @@
           "stock": 12,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.gear.a.04"
+            {
+              "gameId": "task.gear.a.04",
+              "id": "forge_8",
+              "name": "Hidden in Plain Sight",
+              "corpId": "forge"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -2323,7 +2328,12 @@
           "stock": 8,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gear.b.07"
+            {
+              "gameId": "task.gear.b.07",
+              "id": "forge_27",
+              "name": "Hack to Play",
+              "corpId": "forge"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -2522,7 +2532,12 @@
           "stock": 6,
           "resetType": "weekly",
           "requiresTasks": [
-            "task.gear.a.12"
+            {
+              "gameId": "task.gear.a.12",
+              "id": "forge_29",
+              "name": "Perfect Collaboration",
+              "corpId": "forge"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
@@ -2537,7 +2552,12 @@
           "stock": 8,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gear.a.12"
+            {
+              "gameId": "task.gear.a.12",
+              "id": "forge_29",
+              "name": "Perfect Collaboration",
+              "corpId": "forge"
+            }
           ],
           "requiresDlc": [],
           "exchange": [
@@ -4764,7 +4784,12 @@
           "stock": 99,
           "resetType": "daily",
           "requiresTasks": [
-            "task.gear.a.07"
+            {
+              "gameId": "task.gear.a.07",
+              "id": "forge_31",
+              "name": "The Collector",
+              "corpId": "forge"
+            }
           ],
           "requiresDlc": [],
           "exchange": []
