@@ -23,12 +23,22 @@
  * through), the per-shot random seed, bleeding, and a vest's directional ProtectionAngle wedge -
  * so an armoured zone is treated as covering every angle. See docs/ARMOR_PENETRATION_AUDIT.md.
  */
-import {ARMOR_ZONES, BODY_HP, BodyPart,} from "@/app/combat-sim/utils/body-zones";
+import {TOTAL_HP} from "@/lib/protection/bodyModel";
 import {
     CombatSimulationResult,
     RANGE_VALUES, ShotResult, ShotResultWithLeftovers
 } from "@/app/combat-sim/utils/types";
 import {AmmoProperties, ArmorProperties, CurvePoint} from "@/types/items";
+
+/** The bone that was hit, as the shot loop needs it. Comes off `resolveBone` via `target-model`. */
+interface HitPart {
+    /** `BodyPartDamageScalar` for the bone. One scalar, whatever the part's remaining HP. */
+    scalar: number;
+    /** The pool this bone drains. */
+    maxHealth: number;
+    /** At zero this one kills; everything else is a crippled limb. */
+    vital: boolean;
+}
 
 /**
  * Simulate combat shot by shot, wearing the armour down as it goes.
@@ -36,25 +46,28 @@ import {AmmoProperties, ArmorProperties, CurvePoint} from "@/types/items";
  * Deterministic: every shot takes the MORE LIKELY of penetrate/blunt rather than rolling. That is
  * not an average - near a 50 % penetration chance the two branches are far apart and the true
  * expected damage sits between them, so shots-to-kill is a modal figure, not a mean.
+ *
+ * `part` used to be a zone id into a hand-authored table that carried a second, lower multiplier
+ * for a limb already at zero HP. Nothing in the decompiled model has one: `GetBodyPartDetail`
+ * resolves a bone to a detail and `BodyPartDamageScalar` gives that detail one number. See the
+ * header of `target-model.ts`.
  */
 function simulateCombat(
     ammo: AmmoProperties,
     armor: ArmorProperties | null,
     weaponFiringPower: number,
-    zoneId: keyof typeof ARMOR_ZONES,
-    bodyPart: BodyPart,
+    part: HitPart,
     range: number,
 ): CombatSimulationResult {
     const shots: ShotResultWithLeftovers[] = [];
-    const armorZone = ARMOR_ZONES[zoneId];
-    let currentBodyPartHP = bodyPart.hp;
-    let currentBodyHP = BODY_HP;
+    let currentBodyPartHP = part.maxHealth;
+    let currentBodyHP = TOTAL_HP;
     let currentArmorDurability = armor?.currentDurability || 0;
     let totalDamageDealt = 0;
     let shotsToKill = 0;
 
 
-    while ((bodyPart.isVital ? currentBodyPartHP > 0 : currentBodyHP > 0) && shotsToKill < 99) { // Safety limit
+    while ((part.vital ? currentBodyPartHP > 0 : currentBodyHP > 0) && shotsToKill < 99) { // Safety limit
         shotsToKill++;
 
         const shotResult = calculateShotDamage(
@@ -62,7 +75,7 @@ function simulateCombat(
             armor,
             currentArmorDurability,
             weaponFiringPower,
-            (currentBodyPartHP > 0) ? armorZone.damageModifier : armorZone.destroyedDamageModifier,
+            part.scalar,
             range,
             null,
             false,
@@ -383,3 +396,4 @@ export {
     simulateCombat,
     calculateShotDamage
 };
+export type { HitPart };

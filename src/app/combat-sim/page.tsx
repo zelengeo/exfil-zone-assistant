@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { Metadata } from 'next';
-import CombatSimulatorContent from './components/CombatSimulatorContent';
+import CombatSimClient from './components/CombatSimClient';
 import Layout from '@/components/layout/Layout';
 
 export const metadata: Metadata = {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 // Loading component for Suspense fallback
-function ItemsLoading() {
+function SimulatorLoading() {
     return (
         <Layout>
             <div className="container mx-auto px-4 py-8">
@@ -42,8 +42,8 @@ function ItemsLoading() {
 // Main page component - now a server component
 export default function CombatSimulatorPage() {
     return (
-        <Suspense fallback={<ItemsLoading />}>
-            <CombatSimulatorContent />
+        <Suspense fallback={<SimulatorLoading />}>
+            <CombatSimClient />
         </Suspense>
     );
 }
