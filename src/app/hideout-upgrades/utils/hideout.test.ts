@@ -16,7 +16,9 @@ import {
     type Built,
     type UpgradeId,
     areaLevelsOf,
+    BAND_ORDER,
     bandOf,
+    bandScaleOf,
     canBuild,
     canUndo,
     gatesOf,
@@ -25,6 +27,7 @@ import {
     levelsOfArea,
     maxLevelOf,
     questName,
+    rankMaterials,
     remaining,
     roomSummaries,
     upgradeId,
@@ -371,13 +374,125 @@ describe('remaining', () => {
     it('ready-only empties out once the hideout is finished', () => {
         expect(remaining(EVERYTHING, areaLevelsOf(EVERYTHING), true).upgrades).toBe(0);
     });
+});
 
-    it('bands split at 10 and 5', () => {
-        expect(bandOf(10)).toBe('bulk');
-        expect(bandOf(9)).toBe('some');
-        expect(bandOf(5)).toBe('some');
-        expect(bandOf(4)).toBe('few');
-        expect(bandOf(1)).toBe('few');
+describe('rankMaterials', () => {
+    const items = [
+        { itemId: 'bulky', quantity: 25 },
+        { itemId: 'precious', quantity: 2 },
+        { itemId: 'middling', quantity: 10 },
+        { itemId: 'unpriced', quantity: 8 },
+    ];
+    // `precious` is worth the most each; `bulky` is worth the most in total; `unpriced` is the one
+    // material the catalogue carries no price for.
+    const prices: Record<string, number | null> = {
+        bulky: 90_000, precious: 600_000, middling: 5_000, unpriced: null,
+    };
+    const valueOf = (itemId: string) => prices[itemId] ?? null;
+    const order = (sort: Parameters<typeof rankMaterials>[1]) =>
+        rankMaterials(items, sort, valueOf).map((material) => material.itemId);
+
+    it('orders by quantity', () => {
+        expect(order('quantity')).toEqual(['bulky', 'middling', 'unpriced', 'precious']);
+    });
+
+    it('orders by what one is worth', () => {
+        expect(order('unitValue')).toEqual(['precious', 'bulky', 'middling', 'unpriced']);
+    });
+
+    it('orders by what the whole line is worth', () => {
+        expect(order('totalValue')).toEqual(['bulky', 'precious', 'middling', 'unpriced']);
+    });
+
+    it('carries both numbers, and nulls rather than zero for the unpriced', () => {
+        const ranked = rankMaterials(items, 'quantity', valueOf);
+        const bulky = ranked.find((material) => material.itemId === 'bulky');
+        expect(bulky).toMatchObject({ unitValue: 90_000, totalValue: 2_250_000 });
+
+        const unpriced = ranked.find((material) => material.itemId === 'unpriced');
+        expect(unpriced).toMatchObject({ unitValue: null, totalValue: null });
+    });
+
+    it('keeps an item priced at zero above one with no price at all', () => {
+        const withZero = [{ itemId: 'free', quantity: 1 }, { itemId: 'unknown', quantity: 1 }];
+        const ranked = rankMaterials(withZero, 'unitValue', (id) => (id === 'free' ? 0 : null));
+        expect(ranked.map((material) => material.itemId)).toEqual(['free', 'unknown']);
+    });
+
+    it('is stable and total — same input, same order, nothing dropped', () => {
+        for (const sort of ['quantity', 'unitValue', 'totalValue'] as const) {
+            const once = order(sort);
+            expect(order(sort)).toEqual(once);
+            expect(once).toHaveLength(items.length);
+            expect(new Set(once).size).toBe(items.length);
+        }
+    });
+
+    it('does not mutate what it was given', () => {
+        const source = [...items];
+        rankMaterials(source, 'totalValue', valueOf);
+        expect(source).toEqual(items);
+    });
+
+    it('ranks the real remaining list under every order', () => {
+        const { items: real } = remaining(NOTHING, areaLevelsOf(NOTHING));
+        for (const sort of ['quantity', 'unitValue', 'totalValue'] as const) {
+            const ranked = rankMaterials(real, sort, () => null);
+            expect(ranked).toHaveLength(real.length);
+        }
+    });
+});
+
+describe('bands follow whatever the list is ordered by', () => {
+    const material = (quantity: number, unitValue: number | null) => ({
+        itemId: 'x', quantity, unitValue, totalValue: unitValue === null ? null : unitValue * quantity,
+    });
+
+    it('splits quantity at 10 and 5', () => {
+        expect(bandOf(material(10, 1), 'quantity')).toBe('high');
+        expect(bandOf(material(9, 1), 'quantity')).toBe('mid');
+        expect(bandOf(material(5, 1), 'quantity')).toBe('mid');
+        expect(bandOf(material(4, 1), 'quantity')).toBe('low');
+    });
+
+    it('splits unit value at 100k and 25k', () => {
+        expect(bandOf(material(1, 100_000), 'unitValue')).toBe('high');
+        expect(bandOf(material(1, 99_999), 'unitValue')).toBe('mid');
+        expect(bandOf(material(1, 25_000), 'unitValue')).toBe('mid');
+        expect(bandOf(material(1, 24_999), 'unitValue')).toBe('low');
+    });
+
+    it('splits total value at 1M and 250k', () => {
+        expect(bandOf(material(10, 100_000), 'totalValue')).toBe('high');
+        expect(bandOf(material(10, 99_999), 'totalValue')).toBe('mid');
+        expect(bandOf(material(10, 25_000), 'totalValue')).toBe('mid');
+        expect(bandOf(material(10, 24_999), 'totalValue')).toBe('low');
+    });
+
+    it('puts a material with no price in the lowest band, never a value one', () => {
+        for (const sort of ['unitValue', 'totalValue'] as const) {
+            expect(bandOf(material(30, null), sort)).toBe('low');
+        }
+        // Its quantity still bands normally when quantity is what is being measured.
+        expect(bandOf(material(30, null), 'quantity')).toBe('high');
+    });
+
+    it('bands every material exactly once, under every order', () => {
+        const { items } = remaining(NOTHING, areaLevelsOf(NOTHING));
+        for (const sort of ['quantity', 'unitValue', 'totalValue'] as const) {
+            const ranked = rankMaterials(items, sort, (id) => id.length * 1000);
+            const counts = { high: 0, mid: 0, low: 0 };
+            for (const entry of ranked) counts[bandOf(entry, sort)] += 1;
+            expect(counts.high + counts.mid + counts.low).toBe(items.length);
+        }
+    });
+
+    it('names its axis and all three bands, for every order', () => {
+        for (const sort of ['quantity', 'unitValue', 'totalValue'] as const) {
+            const scale = bandScaleOf(sort);
+            expect(scale.measure).toBeTruthy();
+            for (const band of BAND_ORDER) expect(scale.labels[band]).toBeTruthy();
+        }
     });
 });
 

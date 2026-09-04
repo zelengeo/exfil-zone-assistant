@@ -391,9 +391,12 @@ function LevelStep({
     );
 }
 
-/** The route's section rule: a dot, a label, a hairline, and a count on the right. */
-export function Rule({ label, note, dot = 'bg-ink-600', ink = 'text-ink-600' }: {
-    label: string; note?: string | false; dot?: string; ink?: string;
+/**
+ * The route's section rule: a dot, a label, a hairline, and a count on the right. `action` takes a
+ * control that belongs to the section rather than to any one row in it.
+ */
+export function Rule({ label, note, dot = 'bg-ink-600', ink = 'text-ink-600', action }: {
+    label: string; note?: string | false; dot?: string; ink?: string; action?: React.ReactNode;
 }) {
     return (
         <div className="flex flex-none items-center gap-2.5">
@@ -401,6 +404,7 @@ export function Rule({ label, note, dot = 'bg-ink-600', ink = 'text-ink-600' }: 
             <span className={cn('micro-label', ink)}>{label}</span>
             <span className="block h-px flex-1 bg-line-900" aria-hidden="true" />
             {note && <span className="micro-label text-ink-700">{note}</span>}
+            {action}
         </div>
     );
 }

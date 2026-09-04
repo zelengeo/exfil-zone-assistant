@@ -112,6 +112,53 @@ was on that row until the rewrite placed it.
 
 ---
 
+## Materials: three orders, and bands that follow them
+
+| Sort | Answers | Bands |
+|---|---|---|
+| Quantity | what am I most short of | 10 or more · 5 to 9 · 1 to 4 |
+| Unit value | what is worth picking up when I see one | 100k or more · 25k to 100k · under 25k |
+| Total value | what is this line costing me overall | 1M or more · 250k to 1M · under 250k |
+
+They disagree sharply, which is the point: the digital sensor is 25th by quantity and first by both
+value measures.
+
+**Bands measure whatever the list is ordered by.** A band that always counted quantity while the
+order counted money would be two questions stacked on one screen — you would sort by value and still
+be told "10 or more". `bandScaleOf(sort)` carries the thresholds, the labels, and the name of the
+axis, which the filter row prints ("By total value") so the chips are never ambiguous.
+
+Thresholds are round numbers chosen against the real spread, not percentiles: a boundary a player
+cannot repeat from memory is not worth having. On a fresh save they split 49/26/14 by quantity,
+10/23/55 by unit value and 9/29/50 by total value — the value scales lead with a short list on
+purpose, since "what is actually worth money" is only useful while it stays short.
+
+The leading band's bar tracks whichever number is being sorted on and the tile's sub-line prints it,
+so the order is never a mystery.
+
+### Density
+
+Each band renders as **full tiles** or **compact chips**, toggled from its own header. The default
+is the leading band full and the tail compact: the first band is the one you act on, the rest is a
+list of names you scan. A band shown as tiles caps at 20 with its own "show all".
+
+The toggle is a command button — labelled with what it will do, not with the state it is in — which
+is the only way one control reads unambiguously at that size.
+
+Value is the item's **base sell price** — `baseValue`/`isPriced` from `@/lib/trade`, which is the
+best of the six vendor sell columns. Rarity would be the more natural axis and is not yet reliable
+in the data, so price stands in for it.
+
+`rankMaterials` takes the price as a `unitValueOf` callback rather than reading the catalogue
+itself: `utils/hideout.ts` knows the hideout database and nothing else, and this keeps the ordering
+testable without loading 1,500 items.
+
+**One of the 89 materials has no price** (Household Cleaner). Unpriced sorts *last* under a value
+order and prints "No price" — never zero, because the catalogue genuinely prices some things at
+zero and "unknown" is not "worthless".
+
+---
+
 ## Task names arrive as a prop
 
 `relatedQuests` holds the game's own dotted ids (`task.mall.4`), and naming them means joining on the

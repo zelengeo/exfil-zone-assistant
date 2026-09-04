@@ -356,18 +356,6 @@ export function gatesOf(
 /* Materials                                                                   */
 /* -------------------------------------------------------------------------- */
 
-/** Quantity bands. The same three the old summary used, and the boundaries players talk in. */
-export type Band = 'bulk' | 'some' | 'few';
-
-export const bandOf = (quantity: number): Band =>
-    quantity >= 10 ? 'bulk' : quantity >= 5 ? 'some' : 'few';
-
-export const BAND_LABELS: Record<Band, string> = {
-    bulk: '10 or more',
-    some: '5 to 9',
-    few: '1 to 4',
-};
-
 export interface Remaining {
     /** Money, across every unbuilt level. */
     price: number;
@@ -413,6 +401,138 @@ export function remaining(built: Built, levels: AreaLevels, readyOnly = false): 
         items,
         units: items.reduce((sum, item) => sum + item.quantity, 0),
     };
+}
+
+/**
+ * How the materials list is ordered.
+ *
+ * Quantity answers "what am I short of"; the two value orders answer "what is this costing me".
+ * They disagree sharply on the real data — the digital sensor is 25th by quantity and first by
+ * value — which is the whole reason for offering more than one.
+ */
+export type MaterialSort = 'quantity' | 'unitValue' | 'totalValue';
+
+export const MATERIAL_SORTS: Record<MaterialSort, string> = {
+    quantity: 'Quantity',
+    unitValue: 'Unit value',
+    totalValue: 'Total value',
+};
+
+export interface RankedMaterial {
+    itemId: string;
+    quantity: number;
+    /** What one of them sells for, or null for an item the catalogue does not price. */
+    unitValue: number | null;
+    /** `quantity × unitValue`, or null when unpriced. */
+    totalValue: number | null;
+}
+
+/**
+ * The remaining materials in one order, carrying the numbers that order was chosen on.
+ *
+ * Value comes in through `unitValueOf` rather than being read here: this module knows the hideout
+ * database and nothing else, and the price of an item belongs to the catalogue. That also keeps the
+ * function testable without loading 1,500 items.
+ */
+export function rankMaterials(
+    items: readonly { itemId: string; quantity: number }[],
+    sort: MaterialSort,
+    unitValueOf: (itemId: string) => number | null,
+): RankedMaterial[] {
+    const ranked: RankedMaterial[] = items.map(({ itemId, quantity }) => {
+        const unitValue = unitValueOf(itemId);
+        return {
+            itemId,
+            quantity,
+            unitValue,
+            totalValue: unitValue === null ? null : unitValue * quantity,
+        };
+    });
+
+    const key = (material: RankedMaterial): number | null =>
+        sort === 'quantity' ? material.quantity
+            : sort === 'unitValue' ? material.unitValue
+                : material.totalValue;
+
+    return ranked.sort((a, b) => {
+        const left = key(a);
+        const right = key(b);
+
+        // An unpriced item sorts last under a value order rather than as zero: "not known" is not
+        // "worthless", and the catalogue does price some things at zero. Quantity breaks the tie,
+        // then the id, so the order is total and stable.
+        if (left === null && right === null) return b.quantity - a.quantity || a.itemId.localeCompare(b.itemId);
+        if (left === null) return 1;
+        if (right === null) return -1;
+
+        return right - left || b.quantity - a.quantity || a.itemId.localeCompare(b.itemId);
+    });
+}
+
+/**
+ * Bands: the three tiers the materials list groups into.
+ *
+ * They band on whatever the list is ordered by, because a band that always measured quantity while
+ * the order measured money would be two different questions stacked on one screen — you would sort
+ * by value and still be told "10 or more".
+ */
+export type Band = 'high' | 'mid' | 'low';
+
+export const BAND_ORDER: readonly Band[] = ['high', 'mid', 'low'];
+
+interface BandScale {
+    /** Names the axis, so the filter row can say what its chips are counting. */
+    measure: string;
+    labels: Record<Band, string>;
+    valueOf: (material: RankedMaterial) => number | null;
+    high: number;
+    mid: number;
+}
+
+/**
+ * Thresholds are round numbers chosen against the real spread of the 89 materials, not percentiles:
+ * a band boundary a player cannot repeat from memory is not worth having. They put 49/26/14 items
+ * in the quantity bands, 10/23/55 in the unit-value bands and 9/29/50 in the total-value ones — the
+ * value scales lead with a short list on purpose, since "what is actually worth money" is only
+ * useful while it stays short.
+ */
+const BAND_SCALES: Record<MaterialSort, BandScale> = {
+    quantity: {
+        measure: 'By quantity',
+        labels: { high: '10 or more', mid: '5 to 9', low: '1 to 4' },
+        valueOf: (material) => material.quantity,
+        high: 10,
+        mid: 5,
+    },
+    unitValue: {
+        measure: 'By unit value',
+        labels: { high: '100k or more', mid: '25k to 100k', low: 'Under 25k' },
+        valueOf: (material) => material.unitValue,
+        high: 100_000,
+        mid: 25_000,
+    },
+    totalValue: {
+        measure: 'By total value',
+        labels: { high: '1M or more', mid: '250k to 1M', low: 'Under 250k' },
+        valueOf: (material) => material.totalValue,
+        high: 1_000_000,
+        mid: 250_000,
+    },
+};
+
+export const bandScaleOf = (sort: MaterialSort): BandScale => BAND_SCALES[sort];
+
+/**
+ * Which band a material falls in under one order.
+ *
+ * An unpriced material has no value to band on and lands in the lowest, where the row's "No price"
+ * label says why rather than letting it read as cheap.
+ */
+export function bandOf(material: RankedMaterial, sort: MaterialSort): Band {
+    const scale = BAND_SCALES[sort];
+    const value = scale.valueOf(material);
+    if (value === null) return 'low';
+    return value >= scale.high ? 'high' : value >= scale.mid ? 'mid' : 'low';
 }
 
 export interface Wanted {

@@ -113,8 +113,11 @@ export default function HideoutUpgradesClient({ questNames }: HideoutUpgradesCli
     const selectedArea = selected ? UPGRADES[selected].areaId : null;
     const percent = hydrated ? (built.size / TOTAL_UPGRADES) * 100 : 0;
 
+    // w-full is load-bearing: mx-auto makes <main> a flex item with auto side margins, which
+    // cancels align-items:stretch and lets it shrink to its content's max-content width. Without
+    // w-full, Materials in "Full" density has a narrow max-content and drags the whole page in.
     return (
-        <Layout fullWidth containerClassName="mx-auto max-w-[1600px] px-4 py-6 sm:px-6">
+        <Layout fullWidth containerClassName="mx-auto w-full max-w-[1600px] px-4 py-6 sm:px-6">
             <div className="flex flex-wrap items-end gap-x-5 gap-y-4">
                 <div className="min-w-0 flex-1">
                     <span className="eyebrow">
