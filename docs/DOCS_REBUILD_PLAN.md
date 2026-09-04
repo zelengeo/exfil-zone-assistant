@@ -134,7 +134,8 @@ Opportunistic: do it when the data is next touched, since the churn otherwise ou
 - [x] Stage 5 — delete index (-712 lines)
 - [x] Stage 6 — ADRs (3 records; 0001 left `proposed`, see below)
 - [x] Stage 7 — cleanup
-- [ ] Stage 8 — deferred
+- [ ] Stage 8 — in progress: `1ea0ef1` closed the `corps` leak; the rest waits on extraction data,
+      specified in [EXTRACTION_CHANGE_REQUEST.md](EXTRACTION_CHANGE_REQUEST.md)
 
 ## Open after stage 6
 
@@ -145,7 +146,8 @@ deliberate is the question the record cannot answer for itself. Measuring the bu
 production build.
 
 The bundle cost is not accepted (decided 2026-09-04), so stage 8 grows a second goal beyond the
-interface work. Note that the two are not the same change: making `app/tasks/utils/` the single
+interface work. What that takes is specified for the extraction repo in
+[EXTRACTION_CHANGE_REQUEST.md](EXTRACTION_CHANGE_REQUEST.md); both halves wait on that data. Note that the two are not the same change: making `app/tasks/utils/` the single
 door improves the interface but does not remove the data from the bundle, because a client
 component importing a util still pulls in what that util imports. Getting it out needs the server
 component to pass a selected subset as props, and to pass less than the whole database.
