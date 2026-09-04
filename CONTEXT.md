@@ -101,6 +101,37 @@ _Avoid_: Completed, unlocked, owned, purchased
 > The generated hideout data says `relatedQuests`, and the field name stays because the extraction
 > writes it. Everything a reader sees says **task**.
 
+### Combat
+
+**Loadout**:
+A build and the round it is firing, in one of the simulator's four slots. A build alone is not a
+loadout — a build carries a magazine, never a round.
+_Avoid_: Attacker, weapon, setup, gun
+
+**Zone**:
+One collision capsule of the target, or one of the head's readings. What a shot can land on. The
+thirteen capsules are the game's own; nothing in this route authors zones of its own any more.
+_Avoid_: Body part, hitbox, area, region
+
+**Reading**:
+One distinct armour answer on the head. A helmet's shell, the shield filling its holes and whatever
+neither reaches are three readings, however many named head zones share each.
+_Avoid_: Head zone, face zone, helmet slot
+
+**Verdict**:
+The three-tier answer above the page — best case, aimed, spraying.
+_Avoid_: Summary, result, headline
+
+**Spray estimate**:
+The rounds a burst held on centre mass takes on average. Always named as an estimate: it is the one
+figure on the page that models the player rather than the game.
+_Avoid_: Average TTK, real TTK, practical TTK
+
+**Facing**:
+Where the shot comes from — front, flank or rear. The vest wedge test is two-sided, so front and
+rear are the same answer and the flank is the whole question.
+_Avoid_: Angle, azimuth, direction, stance
+
 ### Identity
 
 **Game id**:

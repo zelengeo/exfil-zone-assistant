@@ -24,6 +24,13 @@ export interface ZoneOverlay {
     color?: string;
     /** Short text drawn beside the capsule. */
     badge?: string;
+    /**
+     * Horizontal bands down the capsule instead of one flat colour, top first, `share` summing to
+     * 1. The head is the one bone that is not one reading: a helmet's shell, the shield filling its
+     * holes and whatever neither reaches are three different armour classes on one capsule, so a
+     * single tint would have to pick one of them and lie about the rest.
+     */
+    bands?: Array<{ share: number; color: string }>;
 }
 
 export interface BodyViewerProps {
@@ -228,14 +235,38 @@ export default function BodyViewer({
             const custom = overlay?.[zone.capsule.index];
             const isSelected = selected === zone.capsule.index;
 
-            ctx.beginPath();
-            // A stadium: both caps plus the connecting body. Round joins give the tangent lines.
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.lineWidth = r * 2;
-            ctx.lineCap = 'round';
+            const stadium = () => {
+                ctx.beginPath();
+                // A stadium: both caps plus the connecting body. Round joins give the tangent lines.
+                ctx.moveTo(a.x, a.y);
+                ctx.lineTo(b.x, b.y);
+                ctx.lineWidth = r * 2;
+                ctx.lineCap = 'round';
+            };
+
+            stadium();
             ctx.strokeStyle = custom?.color ?? coverFill(zone);
             ctx.stroke();
+
+            // Banded fill: the same stadium re-stroked once per band, each clipped to its own slab.
+            // Clipping rather than drawing slabs keeps the silhouette exactly the capsule's.
+            if (custom?.bands?.length) {
+                const top = Math.min(a.y, b.y) - r;
+                const height = Math.abs(a.y - b.y) + r * 2;
+                let offset = 0;
+                for (const band of custom.bands) {
+                    const slab = height * band.share;
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.rect(Math.min(a.x, b.x) - r - 1, top + offset, Math.abs(a.x - b.x) + r * 2 + 2, slab);
+                    ctx.clip();
+                    stadium();
+                    ctx.strokeStyle = band.color;
+                    ctx.stroke();
+                    ctx.restore();
+                    offset += slab;
+                }
+            }
 
             // Outline on top, so the shape reads even where two capsules meet.
             ctx.beginPath();
