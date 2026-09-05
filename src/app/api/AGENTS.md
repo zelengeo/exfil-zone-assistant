@@ -56,6 +56,16 @@ Anything a reader typed goes through `sanitizeUserInput` before it reaches the d
 `requireAdminOrModerator` read the user row. Roles and ban state on the token can be stale, so any
 route acting on them — not merely sitting behind them — needs a form that hits the database.
 
+## Session refresh
+
+The JWT `update` callback treats the update payload as untrusted and uses it only as a refresh
+signal. It preserves the token's existing subject and replaces profile, role and ban claims from
+the matching user row. A missing user throws so NextAuth clears the session cookie.
+
+When deploying the 2026-09-05 B01 fix, rotate `NEXTAUTH_SECRET` once in every deployed environment
+to revoke tokens issued while client input could replace the subject. A code deployment alone does
+not invalidate those tokens.
+
 ## Rate limiting
 
 `'auth'` is the strict tier, `'api'` the ordinary one. The backend is Vercel KV only in production

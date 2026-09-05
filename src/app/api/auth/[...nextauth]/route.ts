@@ -6,8 +6,15 @@ import GoogleProvider from "next-auth/providers/google";
 import {connectDB} from "@/lib/mongodb";
 import { User } from "@/models/User";
 import { Account } from '@/models/Account';
-import {IUser, IUserToken} from "@/lib/schemas/user";
+import {IUserToken} from "@/lib/schemas/user";
 import {ensureUniqueUsername, generateUsername} from "@/lib/auth/username";
+
+class SessionUserNotFoundError extends Error {
+    constructor() {
+        super('The user for this session no longer exists');
+        this.name = 'SessionUserNotFoundError';
+    }
+}
 
 declare module "next-auth" {
     interface Session {
@@ -252,7 +259,7 @@ export const authOptions: NextAuthOptions = {
             return false;
         },
 
-        async jwt({ token, user, account, trigger, session }) {
+        async jwt({ token, user, account, trigger }) {
             // Initial sign in
             if (user && account) {
                 await connectDB();
@@ -261,38 +268,43 @@ export const authOptions: NextAuthOptions = {
                     .select('displayName username avatarUrl rank roles isBanned')
                     .lean<IUserToken>();
 
-                if (dbUser) {
-                    token.id = user.id; // MongoDB _id as string
-                    token.displayName = dbUser.displayName;
-                    token.username = dbUser.username;
-                    token.avatarUrl = dbUser.avatarUrl;
-                    token.rank = dbUser.rank;
-                    token.roles = dbUser.roles || ["user"];
-                    token.isBanned = dbUser.isBanned;
+                if (!dbUser) {
+                    throw new SessionUserNotFoundError();
                 }
+
+                token.id = user.id; // MongoDB _id as string
+                token.displayName = dbUser.displayName;
+                token.username = dbUser.username;
+                token.avatarUrl = dbUser.avatarUrl;
+                token.rank = dbUser.rank;
+                token.roles = dbUser.roles || ["user"];
+                token.isBanned = dbUser.isBanned;
             }
 
             // Handle token refresh - fetch fresh data from DB
             if (trigger === "update") {
+                const authenticatedUserId = token.id;
+                if (typeof authenticatedUserId !== 'string' || authenticatedUserId.length === 0) {
+                    throw new SessionUserNotFoundError();
+                }
+
                 await connectDB();
-                const dbUser = await User.findById(token.id)
+                const dbUser = await User.findById(authenticatedUserId)
                     .select('displayName username avatarUrl rank roles isBanned')
-                    .lean<IUser>();
+                    .lean<IUserToken>();
 
-                if (dbUser) {
-                    // Update token with fresh data from database
-                    token.displayName = dbUser.displayName;
-                    token.username = dbUser.username;
-                    token.avatarUrl = dbUser.avatarUrl;
-                    token.rank = dbUser.rank;
-                    token.roles = dbUser.roles || ["user"];
-                    token.isBanned = dbUser.isBanned;
+                if (!dbUser) {
+                    throw new SessionUserNotFoundError();
                 }
 
-                // Merge with session data if provided
-                if (session) {
-                    Object.assign(token, session);
-                }
+                // Session update payloads are client input. Refresh only server-owned claims while
+                // preserving the authenticated subject already encoded in the token.
+                token.displayName = dbUser.displayName;
+                token.username = dbUser.username;
+                token.avatarUrl = dbUser.avatarUrl;
+                token.rank = dbUser.rank;
+                token.roles = dbUser.roles || ["user"];
+                token.isBanned = dbUser.isBanned;
             }
 
             return token;
