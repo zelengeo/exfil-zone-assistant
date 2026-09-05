@@ -1,5 +1,4 @@
 // src/lib/mongodb.ts
-import { MongoClient, ServerApiVersion } from 'mongodb';
 import mongoose from 'mongoose';
 
 if (!process.env.MONGODB_URI) {
@@ -8,50 +7,7 @@ if (!process.env.MONGODB_URI) {
 
 const uri = process.env.MONGODB_URI;
 
-const mongoClientOptions = {
-    // Server API Version for production stability
-    serverApi: {
-        version: ServerApiVersion.v1,
-        strict: true,
-        deprecationErrors: true,
-    },
-    
-    // Connection Pool Settings
-    maxPoolSize: 10,              // Maximum number of connections in the pool
-    minPoolSize: 2,               // Minimum number of connections to maintain
-    maxIdleTimeMS: 10000,         // Close idle connections after 10 seconds
-
-    // Timeout Settings
-    serverSelectionTimeoutMS: 5000,  // How long to try to connect before timing out
-    connectTimeoutMS: 10000,         // TCP connection timeout
-    socketTimeoutMS: 0,              // 0 = no timeout (let Next.js handle request timeouts)
-};
-
-let client: MongoClient;
-let clientPromise: Promise<MongoClient>;
-
-// In development, use global variable to preserve client across hot reloads
-// In production, create a single instance
-if (process.env.NODE_ENV === 'development') {
-    // Preserve the client across module reloads in development
-    const globalWithMongo = global as typeof globalThis & {
-        _mongoClientPromise?: Promise<MongoClient>;
-    };
-
-    if (!globalWithMongo._mongoClientPromise) {
-        client = new MongoClient(uri, mongoClientOptions);
-        globalWithMongo._mongoClientPromise = client.connect();
-    }
-    clientPromise = globalWithMongo._mongoClientPromise;
-} else {
-    // In production, create a single client instance
-    client = new MongoClient(uri, mongoClientOptions);
-    clientPromise = client.connect();
-}
-
-// Mongoose uses its own connection pool, separate from MongoClient
 const mongooseOptions = {
-    // Connection Pool (Mongoose uses the same underlying driver)
     maxPoolSize: 10,              // Should match expected concurrent operations
     minPoolSize: 2,               // Maintain minimum connections for fast queries
 
@@ -152,17 +108,11 @@ export async function isDatabaseConnected(): Promise<boolean> {
 export async function disconnectDB(): Promise<void> {
     try {
         await mongoose.connection.close();
-        // Also close the MongoClient used by NextAuth
-        const resolvedClient = await clientPromise;
-        await resolvedClient.close();
-        console.log('All MongoDB connections closed');
+        console.log('MongoDB connection closed');
     } catch (error) {
         console.error('Error closing MongoDB connections:', error);
     }
 }
-
-// Default export for NextAuth
-export default clientPromise;
 
 // Named exports for your application
 export { mongoose };

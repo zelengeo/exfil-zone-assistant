@@ -67,8 +67,6 @@ export const authOptions: NextAuthOptions = {
         maxAge: 30 * 24 * 60 * 60, // 30 days (production standard)
     },
 
-    // adapter: MongoDBAdapter(clientPromise),
-
     events: {
         // async createUser({ user }) {
         //     await connectDB();
@@ -199,8 +197,6 @@ export const authOptions: NextAuthOptions = {
         error: '/auth/error',
         newUser: '/dashboard'
     },
-
-    debug: process.env.NODE_ENV === 'development',
 
     secret: process.env.NEXTAUTH_SECRET,
 };
