@@ -67,6 +67,14 @@ is the account of why, and of what it cost.
 `npm run validate-data` checks the JSON; `npm test` checks the task DAG invariants.
 Run the matching one after touching either.
 
+## Local validation
+
+Use `npm run verify:local` when validation needs the database. It starts the loopback-only Compose
+replica set, creates missing model indexes without dropping existing ones, verifies a real
+transaction, then runs the repository gates. The command overrides `MONGODB_URI` only for its child
+processes, so an Atlas URI in `.env.local` stays unchanged. `npm run db:ui` explicitly enables the
+otherwise inactive mongo-express profile.
+
 ## Client state and persistence
 
 There is no state library, and no React Context outside shadcn internals. Player progress is

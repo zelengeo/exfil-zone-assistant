@@ -45,7 +45,7 @@ A comprehensive wiki and combat simulator for VR tactical shooters. Providing ac
 
 - Node.js 20.9 or newer
 - npm (the committed lockfile is `package-lock.json`)
-- Docker Desktop when working on authentication, submissions, or admin features
+- Docker Desktop when working on authentication, submissions, admin features, or full validation
 
 ### Installation
 
@@ -62,34 +62,44 @@ cd exfil-zone-assistant
 npm install
 ```
 
-3. Create the local environment file and fill in the OAuth credentials when you need sign-in
+3. Create the local environment file. Fill in OAuth credentials only when you need to exercise the
+   real Google or Discord sign-in flow.
 
 ```powershell
 Copy-Item .env.example .env.local
 ```
 
-4. Start MongoDB when you need account-backed features
+4. Start the app with its local MongoDB replica set
 
 ```bash
-docker compose up -d mongodb
+npm run dev:local
 ```
 
-5. Run the development server
+`dev:local` starts MongoDB, creates the model indexes, verifies a real transaction, and overrides
+only `MONGODB_URI` for the development process. Any Atlas URI in `.env.local` remains untouched.
+
+5. To inspect the database, explicitly start the optional local admin UI
 
 ```bash
-npm run dev
+npm run db:ui
 ```
+
+Open [http://localhost:8081](http://localhost:8081) and sign in with `local` / `exfilzone-local`.
+Override `MONGO_EXPRESS_USERNAME` and `MONGO_EXPRESS_PASSWORD` in the shell if needed. Both MongoDB
+and mongo-express bind only to `127.0.0.1`.
 
 6. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-Before committing, run the checks that match your change:
+Run the full repeatable validation path against local MongoDB:
 
 ```bash
-npm run lint
-npm run type-check
-npm test
-npm run validate-data
+npm run verify:local
 ```
+
+This prepares MongoDB, checks replica-set transactions, then runs lint, type checking, unit/data
+tests, and the production build. It does not fake OAuth: signed-in browser flows still require a
+localhost callback configured with Google or Discord. `npm run db:down` stops the stack without
+deleting its volume.
 
 ### Building for Production
 

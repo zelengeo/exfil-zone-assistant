@@ -1,56 +1,56 @@
 services:
   mongodb:
     image: mongo:7.0
-    container_name: exfilzone-mongodb
     restart: unless-stopped
     ports:
-      - "27018:27017"  # Standard binding
+      - "127.0.0.1:27018:27017"
     environment:
       MONGO_INITDB_DATABASE: exfil-zone-assistant
     volumes:
       - mongodb_data:/data/db
-    networks:
-      - exfilzone-network
     command: mongod --replSet rs0 --bind_ip_all
     healthcheck:
       test: |
         mongosh --quiet --eval "
         try {
-          var status = rs.status();
-          if (status.ok) exit(0);
+          var hello = db.hello();
+          if (hello.setName === 'rs0' && hello.isWritablePrimary) quit(0);
+          if (!hello.setName) {
+            rs.initiate({
+              _id: 'rs0',
+              members: [{ _id: 0, host: 'mongodb:27017' }]
+            });
+          }
         } catch (e) {
-          rs.initiate({
-            _id: 'rs0',
-            members: [{ _id: 0, host: 'mongodb:27017' }]
-          });
+          try {
+            rs.initiate({
+              _id: 'rs0',
+              members: [{ _id: 0, host: 'mongodb:27017' }]
+            });
+          } catch (initError) {}
         }
-        exit(1);"
+        quit(1);"
       interval: 5s
       timeout: 10s
       retries: 30
       start_period: 10s
 
   mongo-express:
-    image: mongo-express:latest
-    container_name: exfilzone-mongo-express
+    image: mongo-express:1.0.2-20
+    profiles:
+      - tools
     restart: unless-stopped
     ports:
-      - "8081:8081"
+      - "127.0.0.1:8081:8081"
     environment:
-      ME_CONFIG_MONGODB_URL: mongodb://mongodb:27017/?replicaSet=rs0
-      ME_CONFIG_BASICAUTH: false
+      ME_CONFIG_MONGODB_URL: mongodb://mongodb:27017/?replicaSet=rs0&directConnection=true
+      ME_CONFIG_BASICAUTH_ENABLED: "true"
+      ME_CONFIG_BASICAUTH_USERNAME: ${MONGO_EXPRESS_USERNAME:-local}
+      ME_CONFIG_BASICAUTH_PASSWORD: ${MONGO_EXPRESS_PASSWORD:-exfilzone-local}
       ME_CONFIG_MONGODB_ENABLE_ADMIN: true
     depends_on:
       mongodb:
         condition: service_healthy
-    networks:
-      - exfilzone-network
 
 volumes:
   mongodb_data:
-    name: exfilzone-mongodb-data
-
-networks:
-  exfilzone-network:
-    name: exfilzone-network
-    driver: bridge

@@ -7,16 +7,26 @@
   },
   "scripts": {
     "dev": "next dev",
+    "dev:local": "npm run db:prepare:local && tsx scripts/run-with-local-mongodb.ts dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
     "db:test": "tsx scripts/test-mongodb-connection.ts",
+    "db:test:local": "tsx scripts/run-with-local-mongodb.ts db:test -- --transaction",
     "db:sync": "tsx scripts/sync-mongodb-indexes.ts",
+    "db:bootstrap:local": "tsx scripts/run-with-local-mongodb.ts db:bootstrap",
+    "db:up": "docker compose up -d --wait mongodb",
+    "db:ui": "docker compose --profile tools up -d --wait mongo-express",
+    "db:down": "docker compose down",
+    "db:prepare:local": "npm run db:up && npm run db:bootstrap:local && npm run db:test:local",
+    "db:bootstrap": "tsx scripts/bootstrap-local-mongodb.ts",
     "validate-data": "tsx scripts/validate-data.ts",
     "lint:fix": "eslint . --fix",
     "type-check": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "verify": "npm run lint && npm run type-check && npm test && npm run validate-data && npm run build",
+    "verify:local": "npm run db:prepare:local && tsx scripts/run-with-local-mongodb.ts verify"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",

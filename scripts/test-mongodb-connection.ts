@@ -1,6 +1,7 @@
-// scripts/test-mongodb-connection.js
-import {MongoClient} from 'mongodb';
-import {config} from "dotenv";
+import { randomUUID } from 'node:crypto';
+
+import { MongoClient } from 'mongodb';
+import { config } from 'dotenv';
 
 config({ path: '.env.local' });
 
@@ -8,32 +9,54 @@ async function testConnection() {
     const uri = process.env.MONGODB_URI;
 
     if (!uri) {
-        console.error('❌ MONGODB_URI not found in environment variables');
-        return;
+        throw new Error('MONGODB_URI is not set');
     }
 
     const client = new MongoClient(uri);
+    const checkTransactions = process.argv.includes('--transaction');
 
     try {
-        console.log('🔄 Attempting to connect to MongoDB Atlas...');
+        console.log('🔄 Connecting to the configured MongoDB database...');
         await client.connect();
-        console.log('✅ Successfully connected to MongoDB Atlas!');
+        const db = client.db();
+        await db.command({ ping: 1 });
+        console.log(`✅ Connected to database "${db.databaseName}"`);
 
-        // Test database access
-        const db = client.db('exfil-zone-assistant');
-        const collections = await db.listCollections().toArray();
-        console.log('📁 Collections:', collections.map(c => c.name));
+        if (checkTransactions) {
+            const hello = await db.command({ hello: 1 });
+            const setName = typeof hello.setName === 'string' ? hello.setName : undefined;
+            const isWritablePrimary = hello.isWritablePrimary === true;
 
-        // Ping the database
-        await db.admin().ping();
-        console.log('✅ Database ping successful!');
+            if (setName !== 'rs0' || !isWritablePrimary) {
+                throw new Error('Local MongoDB is not a writable member of replica set "rs0"');
+            }
 
-    } catch (error) {
-        console.error('❌ Connection failed:', error instanceof Error ? error.message : String(error));
+            const collectionName = `__local_validation_${randomUUID().replaceAll('-', '')}`;
+            const collection = db.collection(collectionName);
+            const session = client.startSession();
+
+            try {
+                await db.createCollection(collectionName);
+                await session.withTransaction(async () => {
+                    const marker = randomUUID();
+                    await collection.insertOne({ marker }, { session });
+                    const stored = await collection.findOne({ marker }, { session });
+                    if (!stored) throw new Error('Transaction write was not readable');
+                    await collection.deleteOne({ marker }, { session });
+                });
+            } finally {
+                await session.endSession();
+                await collection.drop().catch(() => undefined);
+            }
+
+            console.log('✅ Replica-set transaction committed successfully');
+        }
     } finally {
         await client.close();
-        console.log('🔒 Connection closed');
     }
 }
 
-testConnection();
+testConnection().catch((error: unknown) => {
+    console.error('❌ MongoDB check failed:', error instanceof Error ? error.message : String(error));
+    process.exitCode = 1;
+});
