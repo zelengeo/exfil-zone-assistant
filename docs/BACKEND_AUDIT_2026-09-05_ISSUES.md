@@ -17,7 +17,7 @@ The sections below are the exact proposed issue bodies, apart from GitHub number
 | [B03](#b03) | [High] Enforce authorization on correction deletion until retirement | bug, ready-for-agent | None |
 | [B04](#b04) | [High] Repair MongoDB connection lifecycle and remove the unused client pool | bug | None — implemented locally; local replica-set verification pending |
 | [B05](#b05) | [High] Connect before creating database sessions in write handlers | bug | None — implemented locally; local replica-set smoke pending |
-| [B06](#b06) | [High] Make account deletion atomic and consistent about retained references | bug, needs-triage | B04, B05 |
+| [B06](#b06) | [High] Make account deletion atomic and consistent about retained references | bug, needs-triage | None — B04/B05 shipped; implemented locally, historical migration pending |
 | [B07](#b07) | [High] Restrict local MongoDB and mongo-express exposure | bug, ready-for-agent | None |
 | [B08](#b08) | [Medium] Isolate rate-limit policies and preserve their full expiry windows | bug, ready-for-agent | None |
 | [B09](#b09) | [Medium] Make rate-limit backend failures explicit and health reporting truthful | bug, needs-triage | B08 |
@@ -503,6 +503,8 @@ Local audit: `docs/BACKEND_AUDIT_2026-09-05.md`, section `B05`. A GitHub trackin
 
 **Proposed labels:** bug, needs-triage
 
+**Implementation status:** Implemented locally on 2026-09-05 and verified against the local replica set. The retention policy was triaged with the maintainer on 2026-09-05 and is recorded in `src/app/api/AGENTS.md`. Historical remediation of records written by the pre-fix path has not been executed and is still owed — see the note below the acceptance criteria.
+
 Part of the backend audit dated 2026-09-05. Audit finding: **B06**. Priority: **High**.
 
 ### Concrete evidence and affected paths
@@ -536,17 +538,56 @@ No bulk production purge, legal-policy invention, unrelated moderation rewrite, 
 
 ### Acceptance criteria
 
-- [ ] Injected failure after any mutation rolls back all account-deletion changes.
-- [ ] Both deletion paths remove OAuth links and the User consistently, and treat retained feedback/correction/reviewer references according to one recorded policy.
-- [ ] No deleted username or user ID is newly copied into notes by the cleanup operation.
-- [ ] No writes target schema fields that do not exist.
+- [x] Injected failure after any mutation rolls back all account-deletion changes.
+- [x] Both deletion paths remove OAuth links and the User consistently, and treat retained feedback/correction/reviewer references according to one recorded policy.
+- [x] No deleted username or user ID is newly copied into notes by the cleanup operation.
+- [x] No writes target schema fields that do not exist.
 - [ ] Historical remediation and retention decisions are explicit before any migration is executed.
+
+**Retention policy, decided by the maintainer on 2026-09-05.** `User` and `Account` are hard
+deleted; there is no soft-delete state anywhere in the app. Authored `Feedback` survives with
+`userId` unset, and `reviewerNotes[].addedByUserId` is unset for that account's own notes only.
+`DataCorrection` is deliberately left untouched because the retirement (B12) erases the collection
+wholesale, so anonymizing those rows would be discarded work. Recorded in
+`src/app/api/AGENTS.md` under "Account deletion", with a pointer from `src/models/AGENTS.md`.
+
+**Historical remediation still owed.** No migration was executed. Two classes of pre-fix record may
+exist and are the remaining work behind the last unticked criterion:
+
+1. `Feedback.reviewerNotes` entries written by the old self-service path, holding
+   `User account deleted - <username>` and the deleted user's id in `addedByUserId`. These are the
+   records the fix stops creating but does not clean up.
+2. Accounts whose self-service deletion failed partway and left OAuth links removed with the `User`
+   row intact — possible under the pre-fix sessionless transaction, not detectable from the code.
+
+Deciding whether to purge or leave these is a retention decision, not an implementation one, and it
+belongs with the B12 correction-data erasure so both run under one reviewed migration.
 
 ### Required tests or verification
 
-- Replica-set integration test that injects a failure after Account deletion and verifies User, Account and Feedback remain unchanged.
-- Successful self/admin deletion, missing user, protected admin and repeat request cases.
-- Verify authored feedback and reviewer attribution cleanup, including retained correction records if the collection still exists.
+- [x] Replica-set integration test that injects a failure after Account deletion and verifies User, Account and Feedback remain unchanged.
+- [x] Successful self/admin deletion, missing user, protected admin and repeat request cases.
+- [x] Verify authored feedback and reviewer attribution cleanup. Correction records are asserted untouched rather than cleaned, per the recorded policy.
+
+Implemented in:
+
+- `src/lib/auth/account-deletion.ts`
+- `src/lib/auth/account-deletion.test.ts`
+- `src/lib/auth/account-deletion.integration.test.ts`
+- `src/app/api/user/route.ts`
+- `src/app/api/user/route.test.ts`
+- `src/app/api/admin/users/[id]/route.ts`
+- `src/app/api/admin/users/[id]/route.test.ts`
+- `src/app/api/AGENTS.md`
+- `src/models/AGENTS.md`
+- `src/AGENTS.md`
+- `AGENTS.md`
+
+Verification note: `npm run verify:local` stops at `npm run lint`, which fails on 10 pre-existing
+`react-hooks` errors in frontend components untouched by this change (identical with the branch
+stashed). The remaining gates were run directly: 283 tests pass with `MONGODB_URI` on the loopback
+replica set — including the 5 replica-set deletion cases — and `npm run build` succeeds.
+`npm run validate-data` reports its 54 pre-existing missing-image errors.
 
 Add durable regression tests for changed behavior. Existing passing game-data tests alone do not verify this issue. Any infrastructure verification uses disposable/local resources unless live access and the specific operation are authorized.
 

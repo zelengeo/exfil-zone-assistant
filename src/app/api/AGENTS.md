@@ -46,9 +46,43 @@ routes never build a status code by hand.
 
 Authenticate and validate before allocating a database session, and always await `connectDB()`
 before `mongoose.startSession()`. Keep session creation inside the handler's `try`, hold the session
-as nullable until creation succeeds, and abort only when `inTransaction()` is true. End every
-created session exactly once. Abort and end-session failures are logged separately and must not
-replace the original API error or a successful committed response.
+as nullable until creation succeeds, and end every created session exactly once. End-session
+failures are logged separately and must not replace the original API error or a successful
+committed response.
+
+Prefer `session.withTransaction(...)`, which commits, aborts and retries transient failures on its
+own — `account-deletion.ts` and `oauth-sign-in.ts` both use it. A hand-rolled
+`startTransaction`/`commitTransaction` pair additionally has to abort only when `inTransaction()`
+is true, and log an abort failure without replacing the original error.
+
+Every read and write that participates carries the session. A query that omits it runs outside the
+transaction and is not rolled back, which is not visible in a test with mocked persistence — that
+is what the replica-set suite is for.
+
+## Account deletion
+
+Both entry points — `user` DELETE for self-service and `admin/users/[id]` DELETE — go through
+`deleteUserAccount` in [lib/auth/account-deletion.ts](../../lib/auth/account-deletion.ts). The
+routes own their gates; the operation owns the connection, the session and the writes, so the two
+paths cannot drift apart again. A route that needs to refuse a particular target passes a guard,
+which runs inside the transaction against the freshly read user row.
+
+The policy, decided 2026-09-05:
+
+| Record | On deletion |
+|---|---|
+| `User`, `Account` | hard deleted — there is no soft-delete flag anywhere in the app |
+| `Feedback` authored by the account | kept, `userId` unset |
+| `Feedback.reviewerNotes[].addedByUserId` | kept, attribution unset for that account's notes only |
+| `DataCorrection` | untouched — the collection is erased wholesale by the correction retirement |
+
+Anonymization removes references and adds nothing. The pre-fix self-service path pushed a note
+naming the account it had just deleted, which re-identified the row it was anonymizing; the admin
+path set `isAnonymous`, a field `Feedback` does not declare, so strict mode dropped it silently.
+Neither is a mistake to repeat: write only to declared fields, and never name the deleted account.
+
+`account-deletion.integration.test.ts` is the proof that the rollback is real. It runs only when
+`MONGODB_URI` is the loopback replica set, which `npm run verify:local` supplies.
 
 ## Validation
 

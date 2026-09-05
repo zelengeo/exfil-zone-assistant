@@ -9,6 +9,10 @@ Four active Mongoose models. Everything else the app knows is static data, not d
 | `DataCorrection` | reader-submitted corrections and their review | the app |
 | `Feedback` | bug reports and requests, and their triage | the app |
 
+Every one of these except `Feedback`'s review notes carries a reference to `User`. What happens to
+each of them when an account is deleted is one recorded policy, in
+[api](../app/api/AGENTS.md#account-deletion) — do not answer that question again per route.
+
 The app uses JWT sessions and no database adapter. `Session.ts` is a commented-out legacy
 placeholder, not a registered model. OAuth identity code reads and writes `Account` directly.
 

@@ -66,4 +66,8 @@ the `micro-label` and `eyebrow` utilities uppercase, so data keeps its own casin
 ## Tests
 
 `npm test` runs Vitest over `src/**/*.test.ts`, in a node environment — the suites cover pure
-modules and the published data, not components. Put a spec beside the module it checks.
+modules, route handlers over mocked persistence, and the published data, not components. Put a spec
+beside the module it checks.
+
+A `*.integration.test.ts` needs a database and skips itself unless `MONGODB_URI` is the loopback
+replica set, so `npm test` stays offline. `npm run verify:local` is what runs them.

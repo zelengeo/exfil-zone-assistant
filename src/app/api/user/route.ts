@@ -7,10 +7,8 @@ import { withRateLimit } from '@/lib/middleware';
 import { logger } from '@/lib/logger';
 import { handleError, NotFoundError } from '@/lib/errors';
 import { requireAuth } from "@/lib/auth/utils";
+import { deleteUserAccount } from "@/lib/auth/account-deletion";
 import {sanitizeUserInput} from "@/lib/utils";
-import mongoose from "mongoose";
-import {Account} from "@/models/Account";
-import {Feedback} from "@/models/Feedback";
 
 type ApiType = IUserApi;
 export async function GET(request: NextRequest) {
@@ -82,60 +80,18 @@ export async function DELETE(request: NextRequest) {
     try {
         const session = await requireAuth();
 
-        await connectDB();
+        const { username } = await deleteUserAccount(session.user.id);
 
-        // Start a transaction for safe deletion
-        const mongooseSession = await mongoose.startSession();
+        logger.info('User account deleted', {
+            userId: session.user.id,
+            username,
+            deletedBy: session.user.id,
+        });
 
-        try {
-            await mongooseSession.withTransaction(async () => {
-                // Find the user to delete
-                const userToDelete = await User.findById(session.user.id);
-                if (!userToDelete) {
-                    throw new NotFoundError('User');
-                }
-
-                // Delete associated accounts (OAuth connections)
-                await Account.deleteMany({userId: session.user.id});
-
-                // Handle feedback - either anonymize or delete based on your policy
-                // For this example, we'll anonymize feedback to preserve data integrity
-                await Feedback.updateMany(
-                    {userId: session.user.id},
-                    {
-                        $unset: {userId: 1},
-                        $push: {
-                            reviewerNotes: {
-                                note: `User account deleted - ${session.user.username || "|unknown_username|"}`,
-                                addedByUserId: session.user.id
-                                // timestamp gets set automatically
-                            }
-                        }
-                    }
-                );
-
-                // Delete the user
-                await User.findByIdAndDelete(session.user.id);
-
-                logger.info('User account deleted', {
-                    userId: session.user.id,
-                    username: userToDelete.username,
-                    deletedBy: session.user.id,
-                });
-            });
-
-            return NextResponse.json({
-                success: true,
-                message: 'User account deleted successfully',
-            });
-
-        } catch (error) {
-            await mongooseSession.abortTransaction();
-            throw error;
-        } finally {
-            await mongooseSession.endSession();
-        }
-
+        return NextResponse.json({
+            success: true,
+            message: 'User account deleted successfully',
+        });
     } catch (error) {
         logger.error('User deletion failed', error, {
             path: '/api/user',
@@ -144,5 +100,4 @@ export async function DELETE(request: NextRequest) {
 
         return handleError(error);
     }
-
 }

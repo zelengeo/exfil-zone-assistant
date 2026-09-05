@@ -1,11 +1,10 @@
 // src/app/api/admin/users/[id]/route.ts
 import {NextRequest, NextResponse} from 'next/server';
-import mongoose, {type ClientSession, isValidObjectId} from "mongoose";
+import {isValidObjectId} from "mongoose";
 import {connectDB} from '@/lib/mongodb';
 import {User} from '@/models/User';
-import {Account} from "@/models/Account";
-import {Feedback} from "@/models/Feedback";
 import {requireAdmin} from "@/lib/auth/utils";
+import {deleteUserAccount} from "@/lib/auth/account-deletion";
 import {withRateLimit} from "@/lib/middleware";
 import {
     AuthorizationError,
@@ -65,7 +64,6 @@ export async function DELETE(
         request,
         async () => {
             const { id } = await params;
-            let mongooseSession: ClientSession | null = null;
 
             try {
                 const {session} = await requireAdmin();
@@ -74,49 +72,21 @@ export async function DELETE(
                     throw new ValidationError('Invalid user ID');
                 }
 
-                await connectDB();
-                mongooseSession = await mongoose.startSession();
-
-                // Start transaction
-                mongooseSession.startTransaction();
-
-                const user = await User.findById(id).session(mongooseSession);
-                if (!user) {
-                    throw new NotFoundError('User');
-                }
-
-                // Prevent deleting yourself
+                // Neither check needs the database, so a refused deletion never opens a session.
                 if (session.user.id === id) {
                     throw new ConflictError('Cannot delete your own account');
                 }
 
-                // Prevent deleting other admins
-                if (user.roles?.includes('admin')) {
-                    throw new AuthorizationError('Cannot delete admin accounts');
-                }
-
-                // Delete user
-                await User.findByIdAndDelete(id).session(mongooseSession);
-
-                // Delete associated accounts
-                await Account.deleteMany({ userId: id }).session(mongooseSession);
-
-                // Anonymize feedback instead of deleting
-                await Feedback.updateMany(
-                    { userId: id },
-                    {
-                        $unset: { userId: 1 },
-                        $set: { isAnonymous: true }
+                const {username} = await deleteUserAccount(id, (user) => {
+                    if (user.roles?.includes('admin')) {
+                        throw new AuthorizationError('Cannot delete admin accounts');
                     }
-                ).session(mongooseSession);
-
-                // Commit transaction
-                await mongooseSession.commitTransaction();
+                });
 
                 logger.info('User deleted', {
                     adminId: session.user.id,
                     deletedUserId: id,
-                    username: user.username
+                    username
                 });
 
                 return NextResponse.json<ApiType['Delete']['Response']>({
@@ -125,29 +95,11 @@ export async function DELETE(
                 });
 
             } catch (error) {
-                // Abort transaction on error
-                if (mongooseSession?.inTransaction()) {
-                    try {
-                        await mongooseSession.abortTransaction();
-                    } catch (cleanupError) {
-                        logger.error('Failed to abort user deletion transaction', cleanupError);
-                    }
-                }
-
                 logger.error('User deletion error:', error, {
                     path: `/api/admin/users/${id}`,
                     method: 'DELETE',
                 });
                 return handleError(error);
-            } finally {
-                // End session
-                if (mongooseSession) {
-                    try {
-                        await mongooseSession.endSession();
-                    } catch (cleanupError) {
-                        logger.error('Failed to end user deletion session', cleanupError);
-                    }
-                }
             }
         },
         'admin'

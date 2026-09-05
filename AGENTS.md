@@ -72,8 +72,9 @@ Run the matching one after touching either.
 Use `npm run verify:local` when validation needs the database. It starts the loopback-only Compose
 replica set, creates missing model indexes without dropping existing ones, verifies a real
 transaction, then runs the repository gates. The command overrides `MONGODB_URI` only for its child
-processes, so an Atlas URI in `.env.local` stays unchanged. `npm run db:ui` explicitly enables the
-otherwise inactive mongo-express profile.
+processes, so an Atlas URI in `.env.local` stays unchanged. That override is also what un-skips the
+`*.integration.test.ts` suites, which refuse to run against anything but the loopback replica set.
+`npm run db:ui` explicitly enables the otherwise inactive mongo-express profile.
 
 ## Client state and persistence
 
