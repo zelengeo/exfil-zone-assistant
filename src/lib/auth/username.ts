@@ -1,5 +1,6 @@
 import { User } from '@/models/User';
 import { User as NextAuthUser } from 'next-auth';
+import type { ClientSession } from 'mongoose';
 
 export function generateUsername(
     user: NextAuthUser,
@@ -33,12 +34,16 @@ export function generateUsername(
         .substring(0, 20); // Max 20 chars
 }
 
-export async function ensureUniqueUsername(baseUsername: string): Promise<string> {
+export async function ensureUniqueUsername(
+    baseUsername: string,
+    session?: ClientSession,
+): Promise<string> {
     let username = baseUsername;
     let counter = 0;
 
     while (true) {
-        const exists = await User.findOne({ username });
+        const query = User.findOne({ username });
+        const exists = session ? await query.session(session) : await query;
         if (!exists) {
             return username;
         }

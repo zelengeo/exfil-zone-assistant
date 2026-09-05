@@ -5,9 +5,8 @@ import DiscordProvider from "next-auth/providers/discord";
 import GoogleProvider from "next-auth/providers/google";
 import {connectDB} from "@/lib/mongodb";
 import { User } from "@/models/User";
-import { Account } from '@/models/Account';
 import {IUserToken} from "@/lib/schemas/user";
-import {ensureUniqueUsername, generateUsername} from "@/lib/auth/username";
+import {authorizeOAuthSignIn} from '@/lib/auth/oauth-sign-in';
 
 class SessionUserNotFoundError extends Error {
     constructor() {
@@ -49,16 +48,6 @@ declare module "next-auth/jwt" {
         roles: IUserToken["roles"];
         isBanned: IUserToken["isBanned"];
     }
-}
-
-function isAdminEmail(email: string): boolean {
-    const adminEmails = [
-        process.env.ADMIN_EMAIL_1,
-        process.env.ADMIN_EMAIL_2,
-        process.env.ADMIN_EMAIL_3,
-    ].filter(Boolean).map(email => email?.toLowerCase());
-
-    return adminEmails.includes(email.toLowerCase());
 }
 
 export const authOptions: NextAuthOptions = {
@@ -127,136 +116,8 @@ export const authOptions: NextAuthOptions = {
 
 
     callbacks: {
-        async signIn({ user, account }) {
-            if (account?.provider === 'discord' || account?.provider === 'google') {
-                try {
-                    // Rate limiting could be added here for production
-                    // const clientIP = request.headers.get('x-forwarded-for') || 'unknown';
-                    // if (await isRateLimited(clientIP, 'auth_signin')) return false;
-                    
-                    await connectDB();
-
-                    // CHANGE: Use email to find user, not the OAuth provider ID
-                    const dbUser = await User.findOne({ email: user.email?.toLowerCase() });
-
-                    if (!dbUser) {
-                        // Create user since JWT doesn't auto-create them
-                        const baseUsername = generateUsername(user);
-                        const username = await ensureUniqueUsername(baseUsername);
-
-                        const newUser = new User({
-                            email: user.email?.toLowerCase(),
-                            displayName: user.name,
-                            username: username,
-                            avatarUrl: user.image,
-                            vrHeadset: null,
-                            level: 1,
-                            rank: isAdminEmail(user.email || '') ? 'elite' : 'recruit',
-                            badges: [],
-                            stats: {
-                                contributionPoints: 0,
-                                feedbackSubmitted: 0,
-                                bugsReported: 0,
-                                featuresProposed: 0,
-                                dataCorrections: 0,
-                                correctionsAccepted: 0,
-                            },
-                            roles: isAdminEmail(user.email || '') ? ['user', 'admin'] : ['user'],
-                            preferences: {
-                                emailNotifications: false,
-                                publicProfile: true,
-                                showContributions: true,
-                            },
-                            isActive: true,
-                            isBanned: false,
-                            lastLoginAt: new Date(),
-                        });
-
-                        const savedUser = await newUser.save();
-
-                        // Update the user object with the MongoDB _id for the JWT
-                        user.id = savedUser._id.toString();
-
-                        // Link new OAuth account to existing user
-                        await Account.create({
-                            userId: savedUser._id,
-                            type: account.type,
-                            provider: account.provider,
-                            providerAccountId: account.providerAccountId,
-                            refresh_token: account.refresh_token,
-                            access_token: account.access_token,
-                            expires_at: account.expires_at,
-                            token_type: account.token_type,
-                            scope: account.scope,
-                            id_token: account.id_token,
-                            session_state: account.session_state,
-                        });
-
-                        console.log(`✅ Created new user ${user.email} with ID ${user.id}`);
-                        return true;
-                    } else {
-                        // User exists - check if this OAuth account is already linked
-                        const existingAccount = await Account.findOne({
-                            provider: account.provider,
-                            providerAccountId: account.providerAccountId,
-                        });
-
-                        if (existingAccount) {
-                            // Account exists - verify it belongs to this user
-                            if (existingAccount.userId.toString() !== dbUser._id.toString()) {
-                                // This OAuth account is linked to a different user!
-                                return false; // Deny sign-in
-                            }
-                            // Account correctly linked - proceed with sign-in
-                        } else {
-                            // Link new OAuth account to existing user
-                            await Account.create({
-                                userId: dbUser._id,
-                                type: account.type,
-                                provider: account.provider,
-                                providerAccountId: account.providerAccountId,
-                                refresh_token: account.refresh_token,
-                                access_token: account.access_token,
-                                expires_at: account.expires_at,
-                                token_type: account.token_type,
-                                scope: account.scope,
-                                id_token: account.id_token,
-                                session_state: account.session_state,
-                            });
-                        }
-                    }
-
-                    // User exists - update as before
-                    let needsUpdate = false;
-
-                    if (user.email && isAdminEmail(user.email)) {
-                        if (!dbUser.roles?.includes('admin')) {
-                            dbUser.roles = [...(dbUser.roles || []), 'admin'];
-                            dbUser.rank = 'elite';
-                            needsUpdate = true;
-                            console.log(`🔐 Auto-promoted ${user.email} to admin`);
-                        }
-                    }
-
-                    dbUser.lastLoginAt = new Date();
-                    needsUpdate = true;
-
-                    if (needsUpdate) {
-                        await dbUser.save();
-                    }
-
-                    // IMPORTANT: Set user.id to the MongoDB _id for JWT
-                    user.id = dbUser._id.toString();
-
-                    return true;
-                } catch (error) {
-                    console.error('Sign in error:', error);
-                    return false;
-                }
-            }
-
-            console.error('Unexpected sign-in scenario', { user, account });
-            return false;
+        async signIn({ user, account, profile }) {
+            return authorizeOAuthSignIn({ user, account, profile });
         },
 
         async jwt({ token, user, account, trigger }) {

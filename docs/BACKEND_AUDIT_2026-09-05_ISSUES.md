@@ -12,8 +12,8 @@ The sections below are the exact proposed issue bodies, apart from GitHub number
 
 | Key | Proposed title | Labels | Blocked by |
 |---|---|---|---|
-| [B01](#b01) | [Critical] Prevent client session updates from changing JWT identity | bug, ready-for-agent | None |
-| [B02](#b02) | [High] Verify OAuth email ownership and resolve linked accounts by provider identity | bug, ready-for-agent | None |
+| [B01](#b01) | [Critical] Prevent client session updates from changing JWT identity | bug | None — implemented locally; rollout pending |
+| [B02](#b02) | [High] Verify OAuth email ownership and resolve linked accounts by provider identity | bug | None — implemented locally; rollout pending |
 | [B03](#b03) | [High] Enforce authorization on correction deletion until retirement | bug, ready-for-agent | None |
 | [B04](#b04) | [High] Repair MongoDB connection lifecycle and remove the unused client pool | bug, ready-for-agent | None |
 | [B05](#b05) | [High] Connect before creating database sessions in write handlers | bug, ready-for-agent | None |
@@ -68,7 +68,9 @@ flowchart TD
 
 **Proposed title:** [Critical] Prevent client session updates from changing JWT identity
 
-**Proposed labels:** bug, ready-for-agent
+**Proposed labels:** bug
+
+**Implementation status:** Implemented locally on 2026-09-05; production deployment and pre-fix session revocation remain pending. Keep the issue open until the fixed deployment uses a rotated `NEXTAUTH_SECRET` and the rollout checks pass.
 
 Part of the backend audit dated 2026-09-05. Audit finding: **B01**. Priority: **Critical**.
 
@@ -102,16 +104,31 @@ No OAuth linking redesign, role hierarchy change, UI redesign, or live secret ro
 
 ### Acceptance criteria
 
-- [ ] A session update cannot change id, sub, roles, isBanned or other security claims through client input.
-- [ ] Refresh reads the original authenticated user and cannot grant access to a different account.
-- [ ] Deleted users cannot retain a valid refreshed identity.
-- [ ] The rollout records how all pre-fix sessions are invalidated; production revocation remains an explicit deployment operation.
+- [x] A session update cannot change id, sub, roles, isBanned or other security claims through client input.
+- [x] Refresh reads the original authenticated user and cannot grant access to a different account.
+- [x] Deleted users cannot retain a valid refreshed identity.
+- [x] The rollout records how all pre-fix sessions are invalidated; production revocation remains an explicit deployment operation.
+
+Implemented in:
+
+- `src/app/api/auth/[...nextauth]/route.ts`
+- `src/lib/auth/session-update.test.ts`
+- `src/app/api/AGENTS.md`
+- `.env.example`
 
 ### Required tests or verification
 
-- Regression using the real NextAuth session update flow with a normal user and an admin fixture: injected identity does not pass requireAdmin.
-- Verify legitimate profile refresh, ban state refresh, missing user, unauthenticated update and malformed payload handling.
-- Run the existing test suite, type-check and lint for changed files.
+- [x] Regression using the real NextAuth session update flow with a normal user and an admin fixture: injected identity does not pass requireAdmin.
+- [x] Verify legitimate profile refresh, ban state refresh, missing user, unauthenticated update and malformed payload handling.
+- [x] Run the existing test suite, type-check and lint for changed files.
+
+Local verification result: **8 test files, 215 tests passed**; TypeScript and changed-file ESLint passed. The production build compiled and type-checked, then stalled during static generation because the configured development MongoDB SRV was unreachable and the existing B04 reconnect loop kept retrying.
+
+Rollout verification still required:
+
+- Deploy the fixed callback with a rotated production `NEXTAUTH_SECRET`.
+- Confirm all pre-fix JWT sessions are rejected and users must sign in again.
+- Confirm a normal account cannot pass `requireAdmin` after a session refresh.
 
 Add durable regression tests for changed behavior. Existing passing game-data tests alone do not verify this issue. Any infrastructure verification uses disposable/local resources unless live access and the specific operation are authorized.
 
@@ -141,7 +158,9 @@ Primary references: [1](https://next-auth.js.org/getting-started/client#updating
 
 **Proposed title:** [High] Verify OAuth email ownership and resolve linked accounts by provider identity
 
-**Proposed labels:** bug, ready-for-agent
+**Proposed labels:** bug
+
+**Implementation status:** Implemented locally on 2026-09-05; production deployment, unique-index verification and historical OAuth-link review remain pending. Keep the issue open until those rollout checks are complete.
 
 Part of the backend audit dated 2026-09-05. Audit finding: **B02**. Priority: **High**.
 
@@ -175,17 +194,34 @@ No new providers, manual account-linking UI, provider-token retention changes, o
 
 ### Acceptance criteria
 
-- [ ] Verified provider identity remains stable if the provider email changes; it cannot silently move to another User.
-- [ ] Unverified, missing or malformed email claims cannot link to an existing user or bootstrap an admin.
-- [ ] An existing link to another user is never reassigned.
-- [ ] Concurrent sign-ins cannot create conflicting links or leave successful partial registration; database constraints remain authoritative.
-- [ ] Existing legitimate verified Google/Discord sign-ins continue working.
+- [x] Verified provider identity remains stable if the provider email changes; it cannot silently move to another User.
+- [x] Unverified, missing or malformed email claims cannot link to an existing user or bootstrap an admin.
+- [x] An existing link to another user is never reassigned.
+- [x] Concurrent sign-ins cannot create conflicting links or leave successful partial registration; database constraints remain authoritative.
+- [x] Existing legitimate verified Google/Discord sign-ins continue working.
+
+Implemented in:
+
+- `src/app/api/auth/[...nextauth]/route.ts`
+- `src/lib/auth/oauth-profile.ts`
+- `src/lib/auth/oauth-sign-in.ts`
+- `src/lib/auth/oauth-sign-in.test.ts`
+- `src/lib/auth/username.ts`
+- `src/app/api/AGENTS.md`
 
 ### Required tests or verification
 
-- Provider-profile fixtures for Google email_verified and Discord verified: true, false, absent and missing email.
-- Existing link, changed email, cross-provider same verified email, conflicting link and configured admin email cases.
-- Replica-set integration or equivalent persistence tests for concurrent creation and write failure recovery.
+- [x] Provider-profile fixtures for Google email_verified and Discord verified: true, false, absent and missing email.
+- [x] Existing link, changed email, cross-provider same verified email, conflicting link and configured admin email cases.
+- [x] Equivalent transactional persistence tests for concurrent creation and write failure recovery.
+
+Local verification result: **9 test files, 233 tests passed**; TypeScript and changed-file ESLint passed. No live provider or database was mutated.
+
+Rollout verification still required:
+
+- Verify the deployed unique indexes on User email/username and Account provider identity.
+- Review or reset provider links created before verified-email enforcement through a separately authorized, recoverable procedure; current records cannot prove which historical links were legitimate.
+- Exercise verified Google and Discord sign-in against the development deployment, including an existing link and a new cross-provider link.
 
 Add durable regression tests for changed behavior. Existing passing game-data tests alone do not verify this issue. Any infrastructure verification uses disposable/local resources unless live access and the specific operation are authorized.
 
@@ -1434,6 +1470,3 @@ B-key references will be replaced with GitHub issue numbers during publication. 
 Local audit: `docs/BACKEND_AUDIT_2026-09-05.md`, section `B18`. A GitHub tracking issue will contain the same audit snapshot after publication.
 
 > Agents and maintainers can reproduce retired functionality, apply incorrect authorization assumptions or run destructive operational scripts without knowing the target and recovery procedure.
-
-
-

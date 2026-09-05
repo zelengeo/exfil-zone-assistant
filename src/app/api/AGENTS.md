@@ -56,6 +56,13 @@ Anything a reader typed goes through `sanitizeUserInput` before it reaches the d
 `requireAdminOrModerator` read the user row. Roles and ban state on the token can be stale, so any
 route acting on them — not merely sitting behind them — needs a form that hits the database.
 
+## OAuth identity
+
+Provider plus provider account id is the canonical sign-in identity. Existing links resolve their
+user before considering email. A new Google or Discord link requires the provider-specific email
+verification claim, then normalizes email for cross-provider linking and admin bootstrap. User and
+Account creation share one transaction; duplicate-key races retry from the canonical stored link.
+
 ## Session refresh
 
 The JWT `update` callback treats the update payload as untrusted and uses it only as a refresh

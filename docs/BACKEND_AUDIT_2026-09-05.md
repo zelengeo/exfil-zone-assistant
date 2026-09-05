@@ -1,6 +1,6 @@
 # Backend audit — 2026-09-05
 
-**Status:** Findings recorded; remediation not implemented by this audit.
+**Status:** Remediation in progress. B01 and B02 are implemented and locally verified; production deployment, pre-fix session revocation and historical OAuth-link review remain pending.
 **Repository:** zelengeo/exfil-zone-assistant.
 **Source snapshot verified when saving:** `9639e01a1cdb4fb32435309eaf68f561e6b4046a`.
 **Scope:** Next.js API routes, exported admin server actions, auth callbacks/gates, Mongoose models, MongoDB lifecycle and scripts, rate limiting, related UI entry points and agent documentation.
@@ -16,13 +16,13 @@ The database currently supports accounts, provider links, feedback and correctio
 - Read application code, installed NextAuth/Mongoose implementations, root/scoped AGENTS files, operational scripts and environment examples.
 - Ran the existing suite through `node.exe node_modules/vitest/vitest.mjs run --reporter=dot`: **7 files, 210 tests passed**. The suites cover game logic/published data, not backend contracts.
 - Ran isolated in-memory reproductions against transpiled application source, the installed NextAuth core session handler and installed Mongoose/MongoDB errors. Persistence/provider responses were mocked; no live account impersonation, role update, index mutation or record deletion occurred.
-- Those ad-hoc reproductions were executed from shell input and were not committed as regression tests. Implementation issues require durable tests.
+- Those ad-hoc reproductions were executed from shell input and were not committed as regression tests. B01 and B02 now have durable regression suites; the remaining implementation issues still require their own tests.
 - Confirmed reproductions: JWT identity substitution followed by the real admin gate; non-admin cross-user correction deletion; read/write quota collision in both backends; premature weekly quota cleanup; KV fail-open; stranded connection waiters; deletion writes outside the session; cold-connection startSession timeout; unverified-provider email linking; duplicate-key and malformed-JSON errors becoming 500.
 - Source-traced findings are identified separately below. A mocked-provider result proves the application accepts that input, not that a live provider takeover was performed.
 - **Unverified operational state:** Atlas users/permissions/network access, deployed indexes and explain plans, backup/restore configuration, production KV credentials/backend, ingress forwarding-header rewriting, platform rate limits, and whether this source snapshot is deployed.
 - Docker exposure is conditional on host firewall/routing; only configuration was inspected.
 - Only `.env.example` is tracked among environment files. Secret values were not needed for this audit.
-- No application source changes were made. Saving this document and publishing implementation issues are subsequent user-authorized work.
+- The audit pass made no application source changes. B01 and B02 remediation were subsequently implemented in this branch; no production deployment, secret rotation or historical OAuth-link mutation was performed.
 
 ## Prioritization
 
@@ -38,8 +38,8 @@ The complete implementation drafts and dependency graph are saved in [BACKEND_AU
 
 | Finding | Implementation draft |
 |---|---|
-| B01 | [[Critical] Prevent client session updates from changing JWT identity](BACKEND_AUDIT_2026-09-05_ISSUES.md#b01) |
-| B02 | [[High] Verify OAuth email ownership and resolve linked accounts by provider identity](BACKEND_AUDIT_2026-09-05_ISSUES.md#b02) |
+| B01 | [[Critical] Prevent client session updates from changing JWT identity](BACKEND_AUDIT_2026-09-05_ISSUES.md#b01) — implemented locally; rollout pending |
+| B02 | [[High] Verify OAuth email ownership and resolve linked accounts by provider identity](BACKEND_AUDIT_2026-09-05_ISSUES.md#b02) — implemented locally; rollout pending |
 | B03 | [[High] Enforce authorization on correction deletion until retirement](BACKEND_AUDIT_2026-09-05_ISSUES.md#b03) |
 | B04 | [[High] Repair MongoDB connection lifecycle and remove the unused client pool](BACKEND_AUDIT_2026-09-05_ISSUES.md#b04) |
 | B05 | [[High] Connect before creating database sessions in write handlers](BACKEND_AUDIT_2026-09-05_ISSUES.md#b05) |
@@ -61,6 +61,15 @@ The complete implementation drafts and dependency graph are saved in [BACKEND_AU
 
 **Critical — Prevent client session updates from changing JWT identity**
 
+**Remediation status (2026-09-05):** Implemented locally and covered by durable tests. The JWT update callback now ignores the client payload, preserves the existing authenticated subject, and refreshes profile, role and ban claims only from that subject's database row. A missing subject throws through NextAuth's session handler, which clears the session cookie. Production deployment and `NEXTAUTH_SECRET` rotation remain pending, so this finding stays open operationally.
+
+**Changed paths:**
+
+- `src/app/api/auth/[...nextauth]/route.ts`
+- `src/lib/auth/session-update.test.ts`
+- `src/app/api/AGENTS.md`
+- `.env.example`
+
 **Evidence and affected paths:** The update branch refreshes database fields and then executes Object.assign(token, session). NextAuth passes request body data into this callback and re-encodes the returned token. Client data can replace id, roles and isBanned. requireAdmin subsequently queries the overwritten id. Public profile responses expose target IDs.
 
 - [src/app/api/auth/[...nextauth]/route.ts:275](https://github.com/zelengeo/exfil-zone-assistant/blob/9639e01a1cdb4fb32435309eaf68f561e6b4046a/src/app/api/auth/%5B...nextauth%5D/route.ts#L275)
@@ -73,7 +82,11 @@ The complete implementation drafts and dependency graph are saved in [BACKEND_AU
 
 **Verification:** Reproduced with the installed NextAuth core session handler, actual application callbacks and requireAdmin, with persistence mocked. The member's identity changed and the admin gate succeeded. No live account was accessed.
 
+**Remediation verification:** The durable suite exercises the installed NextAuth session-update handler and the real `requireAdmin` gate. It covers injected identity/authorization claims, legitimate profile refresh, server-owned ban refresh, a deleted user, an unauthenticated update and malformed update data. The injected administrator id is never queried and the member session does not pass `requireAdmin`. Full result: **8 test files, 215 tests passed**; TypeScript and changed-file ESLint passed. The production build compiled and type-checked, then could not complete static generation because the configured development MongoDB SRV was unreachable from the verification environment and the existing B04 reconnect loop continued retrying.
+
 **Remediation boundary:** Replace the arbitrary merge with explicit server-owned claims; handle a missing user by invalidating the session; add a documented deployment step to revoke previously issued sessions after the fix.
+
+**Pending rollout:** Deploy the fix with a newly generated production `NEXTAUTH_SECRET` so every JWT issued before remediation is rejected. Verify users must sign in again and that ordinary users cannot reach the admin gate. A code deployment without this rotation does not close the historical-token exposure.
 
 **Non-goals:** No OAuth linking redesign, role hierarchy change, UI redesign, or live secret rotation during implementation without deployment authorization.
 
@@ -83,6 +96,17 @@ The complete implementation drafts and dependency graph are saved in [BACKEND_AU
 ## B02
 
 **High — Verify OAuth email ownership and resolve linked accounts by provider identity**
+
+**Remediation status (2026-09-05):** Implemented locally and covered by durable tests. Sign-in now resolves an existing Account by provider plus provider account id before considering email. Only a new Google or Discord link accepts a normalized email with that provider's explicit verification claim. User creation, link creation, login metadata and verified-email admin bootstrap share one transaction; duplicate-key races retry from stored canonical identity.
+
+**Changed paths:**
+
+- `src/app/api/auth/[...nextauth]/route.ts`
+- `src/lib/auth/oauth-profile.ts`
+- `src/lib/auth/oauth-sign-in.ts`
+- `src/lib/auth/oauth-sign-in.test.ts`
+- `src/lib/auth/username.ts`
+- `src/app/api/AGENTS.md`
 
 **Evidence and affected paths:** signIn finds a User by lowercased email before consulting Account. A missing provider link is created for that user without inspecting profile.verified or profile.email_verified. ADMIN_EMAIL promotion uses the same unchecked email. User creation and account linking use separate writes.
 
@@ -96,7 +120,11 @@ The complete implementation drafts and dependency graph are saved in [BACKEND_AU
 
 **Verification:** The actual signIn callback accepted an explicitly unverified Discord profile and linked it to an existing admin fixture. Provider response and database were mocked; no live-provider takeover was attempted.
 
+**Remediation verification:** Provider fixtures cover Google `email_verified` and Discord `verified` as true, false and absent, plus missing and malformed email. Callback-level tests cover existing Google and Discord links after an email change or ownership conflict, cross-provider linking by one verified normalized email, verified and unverified configured-admin cases, an orphaned link, transaction rollback after link failure, duplicate-key winner recovery and concurrent cross-provider sign-ins. Full result: **9 test files, 233 tests passed**; TypeScript and changed-file ESLint passed. Persistence behavior uses an equivalent transactional test boundary; no live provider or database was mutated.
+
 **Remediation boundary:** Define provider-specific verification, identity lookup and safe linking behavior; preserve legitimate existing links; make first-login/link creation idempotent under concurrent requests and handle uniqueness conflicts; apply the same verified-email requirement to admin bootstrap.
+
+**Pending rollout:** Verify the deployed unique indexes on User email/username and Account provider identity before relying on conflict recovery. Links created under the old email-first policy cannot be proven legitimate from current records alone; review or reset them through a separately authorized, recoverable production procedure. Deploying this code does not repair an already-misassociated provider link.
 
 **Non-goals:** No new providers, manual account-linking UI, provider-token retention changes, or broad auth-library migration.
 
