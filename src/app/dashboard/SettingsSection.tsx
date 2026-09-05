@@ -202,41 +202,41 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
     };
 
     return (
-        <div className="bg-military-850 border border-military-700 rounded-sm p-6 mt-6">
-            <h3 className="text-xl font-bold text-tan-100 mb-6">Account Settings</h3>
+        <div className="bg-steel-800 border border-line-800 p-6 mt-6">
+            <h3 className="font-display font-bold uppercase tracking-tight text-xl text-ink-100 mb-6">Account Settings</h3>
 
             {/* Profile Settings */}
             <div className="mb-8">
-                <h4 className="text-lg font-medium text-tan-200 mb-4 flex items-center gap-2">
-                    <User className="h-5 w-5"/>
+                <h4 className="font-display font-semibold uppercase tracking-tight text-lg text-ink-200 mb-4 flex items-center gap-2">
+                    <User className="h-5 w-5 text-info" strokeWidth={1.6}/>
                     Profile Information
                 </h4>
 
                 <div className="space-y-4">
                     {/* Display Name */}
                     <div>
-                        <label className="block text-sm font-medium text-tan-300 mb-1">
+                        <label className="block text-sm font-medium text-ink-300 mb-1">
                             Display Name
                         </label>
                         <input
                             type="text"
                             value={settings.displayName}
                             onChange={(e) => setSettings({...settings, displayName: e.target.value})}
-                            className="w-full px-3 py-2 bg-military-800 border border-military-600 rounded-sm text-tan-100
-                       focus:outline-none focus:border-olive-500 focus:ring-1 focus:ring-olive-500"
+                            className="w-full px-3 py-2 bg-steel-750 border border-line-600 text-ink-100
+                       focus:outline-none focus:border-line-400"
                             placeholder="Enter Display Name"
                         />
                         {errors.displayName && (
-                            <p className="mt-1 text-sm text-red-400">{errors.displayName}</p>
+                            <p className="mt-1 text-sm text-bad">{errors.displayName}</p>
                         )}
-                        <p className="mt-1 text-xs text-tan-500">
+                        <p className="mt-1 text-xs text-ink-500">
                             3-20 characters, letters, numbers, underscores, and hyphens only
                         </p>
                     </div>
 
                     {/* Bio */}
                     <div>
-                        <label className="block text-sm font-medium text-tan-300 mb-1">
+                        <label className="block text-sm font-medium text-ink-300 mb-1">
                             Bio
                         </label>
                         <textarea
@@ -244,11 +244,11 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                             onChange={(e) => setSettings({...settings, bio: e.target.value})}
                             maxLength={500}
                             rows={3}
-                            className="w-full px-3 py-2 bg-military-800 border border-military-600 rounded-sm text-tan-100
-                       focus:outline-none focus:border-olive-500 focus:ring-1 focus:ring-olive-500 resize-none"
+                            className="w-full px-3 py-2 bg-steel-750 border border-line-600 text-ink-100
+                       focus:outline-none focus:border-line-400 resize-none"
                             placeholder="Tell us about yourself..."
                         />
-                        <p className="mt-1 text-xs text-tan-500">
+                        <p className="mt-1 text-xs text-ink-500">
                             {settings.bio?.length || 0}/500 characters
                         </p>
                     </div>
@@ -256,7 +256,7 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                     {/* Location and VR Headset */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label className="block text-sm font-medium text-tan-300 mb-1">
+                            <label className="block text-sm font-medium text-ink-300 mb-1">
                                 <Globe className="inline h-4 w-4 mr-1"/>
                                 Region
                             </label>
@@ -266,8 +266,8 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                                     ...settings,
                                     location: e.target.value as UserSettings["location"]
                                 })}
-                                className="w-full px-3 py-2 bg-military-800 border border-military-600 rounded-sm text-tan-100
-                         focus:outline-none focus:border-olive-500 focus:ring-1 focus:ring-olive-500"
+                                className="w-full px-3 py-2 bg-steel-750 border border-line-600 text-ink-100
+                         focus:outline-none focus:border-line-400"
                             >
                                 <option value="">Not specified</option>
                                 <option value="eu">EU - Europe</option>
@@ -278,7 +278,7 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium text-tan-300 mb-1">
+                            <label className="block text-sm font-medium text-ink-300 mb-1">
                                 <Headphones className="inline h-4 w-4 mr-1"/>
                                 VR Headset
                             </label>
@@ -288,8 +288,8 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                                     ...settings,
                                     vrHeadset: e.target.value as UserSettings["vrHeadset"]
                                 })}
-                                className="w-full px-3 py-2 bg-military-800 border border-military-600 rounded-sm text-tan-100
-                         focus:outline-none focus:border-olive-500 focus:ring-1 focus:ring-olive-500"
+                                className="w-full px-3 py-2 bg-steel-750 border border-line-600 text-ink-100
+                         focus:outline-none focus:border-line-400"
                             >
                                 {vrHeadsetOptions.map(option => (
                                     <option key={option.value || "undefined"} value={option.value}>
@@ -304,16 +304,16 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
 
             {/* Privacy Settings */}
             <div className="mb-8">
-                <h4 className="text-lg font-medium text-tan-200 mb-4 flex items-center gap-2">
-                    <Eye className="h-5 w-5"/>
+                <h4 className="font-display font-semibold uppercase tracking-tight text-lg text-ink-200 mb-4 flex items-center gap-2">
+                    <Eye className="h-5 w-5 text-info" strokeWidth={1.6}/>
                     Privacy Settings
                 </h4>
 
                 <div className="space-y-4">
-                    <div className="flex items-center justify-between p-4 bg-military-800 rounded-sm">
+                    <div className="flex items-center justify-between p-4 bg-steel-750 border border-line-800">
                         <div>
-                            <p className="font-medium text-tan-200">Public Profile</p>
-                            <p className="text-sm text-tan-500">Allow others to view your profile and stats</p>
+                            <p className="font-medium text-ink-200">Public Profile</p>
+                            <p className="text-sm text-ink-500">Allow others to view your profile and stats</p>
                         </div>
                         <Switch checked={settings.preferences?.publicProfile}
                                 onCheckedChange={(checked) => setSettings({
@@ -326,10 +326,10 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                                 })}/>
                     </div>
 
-                    <div className="flex items-center justify-between p-4 bg-military-800 rounded-sm">
+                    <div className="flex items-center justify-between p-4 bg-steel-750 border border-line-800">
                         <div>
-                            <p className="font-medium text-tan-200">Show Contributions</p>
-                            <p className="text-sm text-tan-500">Display accepted contributions on your public
+                            <p className="font-medium text-ink-200">Show Contributions</p>
+                            <p className="text-sm text-ink-500">Display accepted contributions on your public
                                 profile</p>
                         </div>
                         <Switch checked={!!settings.preferences?.showContributions}
@@ -346,10 +346,10 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                         />
                     </div>
 
-                    <div className="flex items-center justify-between p-4 bg-military-800 rounded-sm">
+                    <div className="flex items-center justify-between p-4 bg-steel-750 border border-line-800">
                         <div>
-                            <p className="font-medium text-tan-200">Email Notifications</p>
-                            <p className="text-sm text-tan-500">Receive updates about your contributions</p>
+                            <p className="font-medium text-ink-200">Email Notifications</p>
+                            <p className="text-sm text-ink-500">Receive updates about your contributions</p>
                         </div>
                         <Switch checked={!!settings.preferences?.emailNotifications}
                                 onCheckedChange={(checked) => setSettings({
@@ -368,12 +368,12 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
             </div>
 
             {/* Save Button */}
-            <div className="flex items-center gap-3 pb-6 border-b border-military-700">
+            <div className="flex items-center gap-3 pb-6 border-b border-line-800">
                 <button
                     onClick={handleSave}
                     disabled={loading || saveStatus === 'saving'}
-                    className="px-6 py-2 bg-olive-600 hover:bg-olive-500 disabled:bg-military-700
-                   text-white rounded-sm transition-colors flex items-center gap-2"
+                    className="px-6 py-2 bg-ember hover:bg-ember-hover disabled:opacity-50
+                   text-ember-ink font-display font-bold uppercase tracking-nav transition-colors flex items-center gap-2"
                 >
                     {saveStatus === 'saving' ? (
                         <>
@@ -389,14 +389,14 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                 </button>
 
                 {saveStatus === 'saved' && (
-                    <span className="text-green-400 flex items-center gap-1">
+                    <span className="text-good flex items-center gap-1">
             <Check className="h-4 w-4"/>
             Settings saved successfully
           </span>
                 )}
 
                 {saveStatus === 'error' && (
-                    <span className="text-red-400 flex items-center gap-1">
+                    <span className="text-bad flex items-center gap-1">
             <AlertCircle className="h-4 w-4"/>
                         {errors.general || 'Failed to save settings'}
           </span>
@@ -405,29 +405,29 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
 
             {/* Account Management */}
             <div className="pt-6">
-                <h4 className="text-lg font-medium text-orange-400 mb-4 flex items-center gap-2">
+                <h4 className="font-display font-semibold uppercase tracking-tight text-lg text-warn mb-4 flex items-center gap-2">
                     <Settings className="h-5 w-5"/>
                     Account Management
                 </h4>
 
                 <div className="space-y-3">
                     {/* Session Refresh */}
-                    <div className="flex items-center justify-between p-4 bg-military-800 rounded-sm">
+                    <div className="flex items-center justify-between p-4 bg-steel-750 border border-line-800">
                         <div>
-                            <p className="font-medium text-tan-200">Session Refresh</p>
-                            <p className="text-sm text-tan-500">Sync your account with latest server data</p>
+                            <p className="font-medium text-ink-200">Session Refresh</p>
+                            <p className="text-sm text-ink-500">Sync your account with latest server data</p>
                         </div>
                         <SessionRefreshButton variant="outline" size="sm"/>
                     </div>
 
                     {/* Username Change */}
-                    <div className="p-4 bg-military-800 rounded-sm">
+                    <div className="p-4 bg-steel-750 border border-line-800">
                         <div className="flex items-center justify-between mb-2">
                             <div>
-                                <p className="font-medium text-tan-200">Change Username</p>
-                                <p className="text-sm text-tan-500">
+                                <p className="font-medium text-ink-200">Change Username</p>
+                                <p className="text-sm text-ink-500">
                                     Current: <span
-                                    className="font-mono text-olive-400">@{session?.user?.username}</span>
+                                    className="font-mono text-info">@{session?.user?.username}</span>
                                 </p>
                             </div>
                             {!showUsernameChange && (
@@ -442,8 +442,8 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                         </div>
 
                         {showUsernameChange && (
-                            <div className="mt-4 p-4 bg-military-900 rounded-sm border border-orange-800/50">
-                                <p className="text-sm text-orange-400 mb-3">
+                            <div className="mt-4 p-4 bg-steel-900 border border-ember-edge">
+                                <p className="text-sm text-warn mb-3">
                                     ⚠️ Username changes are limited. Choose carefully as this affects your profile URL
                                     and mentions.
                                 </p>
@@ -451,12 +451,12 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                                     type="text"
                                     value={newUsername}
                                     onChange={(e) => setNewUsername(e.target.value.toLowerCase())}
-                                    className="w-full px-3 py-2 bg-military-800 border border-military-600 rounded-sm text-tan-100
-                                 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 mb-3"
+                                    className="w-full px-3 py-2 bg-steel-750 border border-line-600 text-ink-100
+                                 focus:outline-none focus:border-ember mb-3"
                                     placeholder="new-username"
                                 />
                                 {usernameError && (
-                                    <p className="text-sm text-red-400 mb-3">{usernameError}</p>
+                                    <p className="text-sm text-bad mb-3">{usernameError}</p>
                                 )}
                                 <div className="flex gap-3">
                                     <Button
@@ -487,7 +487,7 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
 
             {/* Danger Zone */}
             <div className="pt-6">
-                <h4 className="text-lg font-medium text-red-400 mb-4 flex items-center gap-2">
+                <h4 className="font-display font-semibold uppercase tracking-tight text-lg text-bad mb-4 flex items-center gap-2">
                     <AlertCircle className="h-5 w-5"/>
                     Danger Zone
                 </h4>
@@ -496,14 +496,14 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                     <Button
                         onClick={() => setShowDeleteConfirm(true)}
                         variant="destructive"
-                        className="bg-red-900/20 hover:bg-red-900/30 text-red-400 border-red-800"
+                        className="bg-transparent hover:bg-bad/10 text-bad border border-bad/50"
                     >
                         <Trash2 className="h-4 w-4 mr-2"/>
                         Delete Account
                     </Button>
                 ) : (
-                    <div className="p-4 bg-red-900/20 border border-red-800 rounded-sm">
-                        <p className="text-red-400 mb-3">
+                    <div className="p-4 bg-steel-900 border border-bad/40">
+                        <p className="text-bad mb-3">
                             This action cannot be undone. Please type <strong>{session?.user?.username}</strong> to
                             confirm.
                         </p>
@@ -511,12 +511,12 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                             type="text"
                             value={deleteConfirmText}
                             onChange={(e) => setDeleteConfirmText(e.target.value)}
-                            className="w-full px-3 py-2 bg-military-800 border border-red-800 rounded-sm text-tan-100
-                         focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 mb-3"
+                            className="w-full px-3 py-2 bg-steel-750 border border-bad/50 text-ink-100
+                         focus:outline-none focus:border-bad mb-3"
                             placeholder="Type your username"
                         />
                         {errors.delete && (
-                            <p className="text-sm text-red-400 mb-3">{errors.delete}</p>
+                            <p className="text-sm text-bad mb-3">{errors.delete}</p>
                         )}
                         <div className="flex gap-3">
                             <Button

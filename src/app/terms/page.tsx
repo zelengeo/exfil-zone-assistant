@@ -6,12 +6,12 @@ export default function TermsOfServicePage() {
     return (
         <Layout>
             <div className="max-w-4xl mx-auto px-4 py-8 ">
-                <Card>
+                <Card className="bg-steel-800 border-line-800 shadow-none">
                     <CardHeader>
-                        <CardTitle className="text-3xl">Terms of Service</CardTitle>
-                        <p className="text-muted-foreground">Last updated: {new Date().toLocaleDateString()}</p>
+                        <CardTitle className="font-display font-extrabold uppercase tracking-tight text-3xl text-ink-100">Terms of Service</CardTitle>
+                        <p className="text-ink-500 font-mono tabular text-sm">Last updated: {new Date().toLocaleDateString()}</p>
                     </CardHeader>
-                    <CardContent className="prose prose-slate max-w-none">
+                    <CardContent className="prose prose-invert max-w-none prose-headings:font-display prose-headings:uppercase prose-headings:tracking-tight prose-a:text-info">
                         <h2>1. Acceptance of Terms</h2>
                         <p>
                             By accessing and using ExfilZone Assistant (&#34;the Service&#34;), you agree to be bound by

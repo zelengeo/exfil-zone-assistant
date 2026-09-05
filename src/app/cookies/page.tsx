@@ -99,18 +99,18 @@ export default function CookiePolicyPage() {
                     {/* Header */}
                     <div className="text-center space-y-4">
                         <div className="flex justify-center">
-                            <div className="w-16 h-16 bg-olive-600/20 rounded-full flex items-center justify-center">
-                                <Cookie className="w-8 h-8 text-olive-500" />
+                            <div className="w-16 h-16 border border-line-600 flex items-center justify-center">
+                                <Cookie className="w-8 h-8 text-info" strokeWidth={1.6} />
                             </div>
                         </div>
-                        <h1 className="text-4xl font-bold text-tan-100 military-stencil">COOKIE POLICY</h1>
-                        <p className="text-tan-400">Last updated: {lastUpdated}</p>
+                        <h1 className="text-4xl military-stencil text-ink-100">COOKIE POLICY</h1>
+                        <p className="text-ink-400 font-mono tabular text-sm">Last updated: {lastUpdated}</p>
                     </div>
 
                     {/* Introduction */}
-                    <Card className="bg-military-800/50 border-olive-700">
+                    <Card className="bg-steel-800 border-line-700 shadow-none">
                         <CardContent className="pt-6">
-                            <p className="text-tan-300 leading-relaxed">
+                            <p className="text-ink-300 leading-relaxed">
                                 ExfilZone Assistant (&#34;we&#34;, &#34;our&#34;, or &#34;us&#34;) uses cookies and similar technologies to provide and improve our service.
                                 This Cookie Policy explains what cookies are, how we use them, and your choices regarding their use.
                             </p>
@@ -119,10 +119,10 @@ export default function CookiePolicyPage() {
 
                     {/* What are cookies */}
                     <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold text-tan-100">What Are Cookies?</h2>
-                        <Card className="bg-military-800/30 border-military-700">
+                        <h2 className="font-display font-bold uppercase tracking-tight text-2xl text-ink-100">What Are Cookies?</h2>
+                        <Card className="bg-steel-800 border-line-800 shadow-none">
                             <CardContent className="pt-6">
-                                <p className="text-tan-400 leading-relaxed">
+                                <p className="text-ink-400 leading-relaxed">
                                     Cookies are small text files that are placed on your device when you visit a website.
                                     They help the website remember information about your visit, such as your preferred language
                                     and other settings, which can make your next visit easier and the site more useful to you.
@@ -133,13 +133,13 @@ export default function CookiePolicyPage() {
 
                     {/* How we use cookies */}
                     <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold text-tan-100">How We Use Cookies</h2>
+                        <h2 className="font-display font-bold uppercase tracking-tight text-2xl text-ink-100">How We Use Cookies</h2>
                         <div className="grid gap-4">
                             {cookieCategories.map((category) => (
-                                <Card key={category.name} className="bg-military-800/30 border-military-700">
+                                <Card key={category.name} className="bg-steel-800 border-line-800 shadow-none">
                                     <CardHeader>
                                         <CardTitle className="flex items-center gap-3 text-lg">
-                                            <category.icon className="w-5 h-5 text-olive-500" />
+                                            <category.icon className="w-5 h-5 text-info" />
                                             {category.name}
                                             {category.required && (
                                                 <Badge variant="secondary" className="ml-auto">
@@ -147,7 +147,7 @@ export default function CookiePolicyPage() {
                                                 </Badge>
                                             )}
                                         </CardTitle>
-                                        <CardDescription className="text-tan-400">
+                                        <CardDescription className="text-ink-400">
                                             {category.description}
                                         </CardDescription>
                                     </CardHeader>
@@ -155,26 +155,26 @@ export default function CookiePolicyPage() {
                                         <div className="overflow-x-auto">
                                             <Table>
                                                 <TableHeader>
-                                                    <TableRow className="border-military-700">
-                                                        <TableHead className="text-tan-300">Cookie Name</TableHead>
-                                                        <TableHead className="text-tan-300">Purpose</TableHead>
-                                                        <TableHead className="text-tan-300">Duration</TableHead>
-                                                        <TableHead className="text-tan-300">Provider</TableHead>
+                                                    <TableRow className="border-line-800">
+                                                        <TableHead className="text-ink-300">Cookie Name</TableHead>
+                                                        <TableHead className="text-ink-300">Purpose</TableHead>
+                                                        <TableHead className="text-ink-300">Duration</TableHead>
+                                                        <TableHead className="text-ink-300">Provider</TableHead>
                                                     </TableRow>
                                                 </TableHeader>
                                                 <TableBody>
                                                     {category.cookies.map((cookie, index) => (
-                                                        <TableRow key={index} className="border-military-700">
-                                                            <TableCell className="font-mono text-sm text-tan-400">
+                                                        <TableRow key={index} className="border-line-800">
+                                                            <TableCell className="font-mono text-sm text-ink-400">
                                                                 {cookie.name}
                                                             </TableCell>
-                                                            <TableCell className="text-sm text-tan-400">
+                                                            <TableCell className="text-sm text-ink-400">
                                                                 {cookie.purpose}
                                                             </TableCell>
-                                                            <TableCell className="text-sm text-tan-400">
+                                                            <TableCell className="text-sm text-ink-400">
                                                                 {cookie.duration}
                                                             </TableCell>
-                                                            <TableCell className="text-sm text-tan-400">
+                                                            <TableCell className="text-sm text-ink-400">
                                                                 {cookie.provider}
                                                             </TableCell>
                                                         </TableRow>
@@ -190,19 +190,19 @@ export default function CookiePolicyPage() {
 
                     {/* Vercel Analytics Note */}
                     <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold text-tan-100">About Vercel Analytics</h2>
-                        <Card className="bg-military-800/30 border-military-700">
+                        <h2 className="font-display font-bold uppercase tracking-tight text-2xl text-ink-100">About Vercel Analytics</h2>
+                        <Card className="bg-steel-800 border-line-800 shadow-none">
                             <CardContent className="pt-6 space-y-4">
-                                <p className="text-tan-400 leading-relaxed">
+                                <p className="text-ink-400 leading-relaxed">
                                     We use Vercel Analytics to understand how visitors use our website. Vercel Analytics is privacy-focused and:
                                 </p>
-                                <ul className="list-disc list-inside space-y-2 text-tan-400">
+                                <ul className="list-disc list-inside space-y-2 text-ink-400">
                                     <li>Does not collect any personal data or personally identifiable information (PII)</li>
                                     <li>Does not use any cross-site or cross-device tracking</li>
                                     <li>Anonymizes all data collected</li>
                                     <li>Is GDPR, CCPA, and PECR compliant</li>
                                 </ul>
-                                <p className="text-tan-400 leading-relaxed">
+                                <p className="text-ink-400 leading-relaxed">
                                     While Vercel Analytics is privacy-compliant by design, we still list it here for full transparency
                                     and to comply with GDPR requirements about informing users of all cookies and tracking technologies used.
                                 </p>
@@ -212,38 +212,38 @@ export default function CookiePolicyPage() {
 
                     {/* Third-party services */}
                     <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold text-tan-100">Third-Party Services</h2>
-                        <Card className="bg-military-800/30 border-military-700">
+                        <h2 className="font-display font-bold uppercase tracking-tight text-2xl text-ink-100">Third-Party Services</h2>
+                        <Card className="bg-steel-800 border-line-800 shadow-none">
                             <CardContent className="pt-6 space-y-4">
-                                <p className="text-tan-400 leading-relaxed">
+                                <p className="text-ink-400 leading-relaxed">
                                     When you use third-party services through our website, they may set their own cookies:
                                 </p>
                                 <div className="space-y-3">
                                     <div className="flex items-start gap-3">
-                                        <SiGoogle className="w-5 h-5 text-olive-500 mt-0.5" />
+                                        <SiGoogle className="w-5 h-5 text-info mt-0.5" />
                                         <div>
-                                            <p className="font-medium text-tan-300">Google OAuth & YouTube</p>
-                                            <p className="text-sm text-tan-500">
+                                            <p className="font-medium text-ink-300">Google OAuth & YouTube</p>
+                                            <p className="text-sm text-ink-500">
                                                 Used for authentication and embedded video content.
                                                 <a href="https://policies.google.com/technologies/cookies"
                                                    target="_blank"
                                                    rel="noopener noreferrer"
-                                                   className="text-olive-500 hover:text-olive-400 ml-1">
+                                                   className="text-info hover:text-info-light ml-1">
                                                     Learn more →
                                                 </a>
                                             </p>
                                         </div>
                                     </div>
                                     <div className="flex items-start gap-3">
-                                        <SiDiscord className="w-5 h-5 text-olive-500 mt-0.5" />
+                                        <SiDiscord className="w-5 h-5 text-info mt-0.5" />
                                         <div>
-                                            <p className="font-medium text-tan-300">Discord OAuth</p>
-                                            <p className="text-sm text-tan-500">
+                                            <p className="font-medium text-ink-300">Discord OAuth</p>
+                                            <p className="text-sm text-ink-500">
                                                 Used for authentication.
                                                 <a href="https://discord.com/privacy"
                                                    target="_blank"
                                                    rel="noopener noreferrer"
-                                                   className="text-olive-500 hover:text-olive-400 ml-1">
+                                                   className="text-info hover:text-info-light ml-1">
                                                     Learn more →
                                                 </a>
                                             </p>
@@ -256,45 +256,45 @@ export default function CookiePolicyPage() {
 
                     {/* Your choices */}
                     <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold text-tan-100">Your Cookie Choices</h2>
-                        <Card className="bg-military-800/30 border-military-700">
+                        <h2 className="font-display font-bold uppercase tracking-tight text-2xl text-ink-100">Your Cookie Choices</h2>
+                        <Card className="bg-steel-800 border-line-800 shadow-none">
                             <CardContent className="pt-6 space-y-4">
-                                <p className="text-tan-400 leading-relaxed">
+                                <p className="text-ink-400 leading-relaxed">
                                     You have several options for managing cookies:
                                 </p>
-                                <ul className="space-y-3 text-tan-400">
+                                <ul className="space-y-3 text-ink-400">
                                     <li className="flex items-start gap-2">
-                                        <span className="text-olive-500 mt-1">•</span>
+                                        <span className="text-info mt-1">•</span>
                                         <div>
-                                            <strong className="text-tan-300">Browser Settings:</strong> Most browsers allow you to refuse cookies or delete cookies.
+                                            <strong className="text-ink-300">Browser Settings:</strong> Most browsers allow you to refuse cookies or delete cookies.
                                             The methods for doing so vary from browser to browser. Visit your browser&#39;s help pages for guidance.
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-2">
-                                        <span className="text-olive-500 mt-1">•</span>
+                                        <span className="text-info mt-1">•</span>
                                         <div>
-                                            <strong className="text-tan-300">Essential Cookies:</strong> You cannot opt out of essential cookies as they are
+                                            <strong className="text-ink-300">Essential Cookies:</strong> You cannot opt out of essential cookies as they are
                                             necessary for the website to function. Disabling these will prevent you from using our service.
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-2">
-                                        <span className="text-olive-500 mt-1">•</span>
+                                        <span className="text-info mt-1">•</span>
                                         <div>
-                                            <strong className="text-tan-300">Analytics Cookies:</strong> You can opt out of Vercel Analytics by using
+                                            <strong className="text-ink-300">Analytics Cookies:</strong> You can opt out of Vercel Analytics by using
                                             browser extensions that block analytics scripts.
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-2">
-                                        <span className="text-olive-500 mt-1">•</span>
+                                        <span className="text-info mt-1">•</span>
                                         <div>
-                                            <strong className="text-tan-300">Third-Party Cookies:</strong> You can manage third-party cookies through
+                                            <strong className="text-ink-300">Third-Party Cookies:</strong> You can manage third-party cookies through
                                             the respective service providers&#39; privacy settings.
                                         </div>
                                     </li>
                                 </ul>
-                                <div className="mt-4 p-4 bg-military-900/50 rounded-lg border border-olive-800">
-                                    <p className="text-sm text-tan-400">
-                                        <strong className="text-tan-300">Note:</strong> Disabling cookies may affect the functionality of our website.
+                                <div className="mt-4 p-4 bg-steel-900 border border-line-700">
+                                    <p className="text-sm text-ink-400">
+                                        <strong className="text-ink-300">Note:</strong> Disabling cookies may affect the functionality of our website.
                                         Some features may not work properly without cookies.
                                     </p>
                                 </div>
@@ -304,13 +304,13 @@ export default function CookiePolicyPage() {
 
                     {/* Contact */}
                     <section className="space-y-4">
-                        <h2 className="text-2xl font-semibold text-tan-100">Questions or Concerns?</h2>
-                        <Card className="bg-military-800/30 border-military-700">
+                        <h2 className="font-display font-bold uppercase tracking-tight text-2xl text-ink-100">Questions or Concerns?</h2>
+                        <Card className="bg-steel-800 border-line-800 shadow-none">
                             <CardContent className="pt-6">
-                                <p className="text-tan-400 leading-relaxed">
+                                <p className="text-ink-400 leading-relaxed">
                                     If you have any questions about our use of cookies or this Cookie Policy,
                                     please visit our{' '}
-                                    <a href="/privacy" className="text-olive-500 hover:text-olive-400">
+                                    <a href="/privacy" className="text-info hover:text-info-light">
                                         Privacy Policy
                                     </a>{' '}
                                     for more information about how we handle your data.
@@ -321,7 +321,7 @@ export default function CookiePolicyPage() {
 
                     {/* Footer note */}
                     <div className="text-center pt-8">
-                        <p className="text-sm text-tan-500">
+                        <p className="text-sm text-ink-500">
                             This cookie policy is effective as of {lastUpdated}
                         </p>
                     </div>

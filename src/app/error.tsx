@@ -21,18 +21,18 @@ export default function Error({
     }, [error]);
 
     return (
-        <div className="min-h-screen flex items-center justify-center">
-            <div className="text-center space-y-4">
-                <AlertCircle className="mx-auto h-12 w-12 text-red-500" />
-                <h2 className="text-2xl font-bold">Something went wrong!</h2>
-                <p className="text-muted-foreground max-w-md mx-auto">
+        <div className="min-h-screen bg-steel-950 text-ink-300 flex items-center justify-center p-4">
+            <div className="text-center space-y-4 max-w-md">
+                <AlertCircle className="mx-auto h-12 w-12 text-bad" strokeWidth={1.5} />
+                <h2 className="font-display font-bold uppercase tracking-tight text-2xl text-ink-100">Something went wrong!</h2>
+                <p className="text-ink-400">
                     We apologize for the inconvenience. Please try again or contact support if the problem persists.
                 </p>
                 <div className="flex gap-4 justify-center">
-                    <Button onClick={reset} variant="default">
+                    <Button onClick={reset} variant="ember">
                         Try again
                     </Button>
-                    <Button onClick={() => window.location.href = '/'} variant="outline">
+                    <Button onClick={() => window.location.href = '/'} variant="quiet">
                         Go home
                     </Button>
                 </div>

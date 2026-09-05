@@ -86,9 +86,9 @@ export const communityConfig: CommunityConfig = {
 export const getRoleConfig = (role: string) => {
     return ROLE_CONFIGS[role] || {
         label: role,
-        color: 'text-tan-400',
-        borderColor: 'border-military-700',
-        bgColor: 'bg-military-800',
+        color: 'text-ink-400',
+        borderColor: 'border-line-800',
+        bgColor: 'bg-steel-800',
         priority: 999
     };
 };

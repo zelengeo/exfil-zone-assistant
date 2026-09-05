@@ -31,28 +31,25 @@ function SignInContent() {
     const errorMessage = error ? getAuthErrorMessage(error) : null;
 
     return (
-        <div className="min-h-screen bg-military-900 flex items-center justify-center px-4 py-12">
-            {/* Background texture */}
-            <div className="absolute inset-0 texture-overlay pointer-events-none opacity-50"></div>
-
+        <div className="min-h-screen bg-steel-950 text-ink-300 flex items-center justify-center px-4 py-12">
             <div className="w-full max-w-5xl relative z-10">
                 <div className="grid lg:grid-cols-2 gap-8 items-start">
                     {/* Left side - Sign in form */}
-                    <Card className="bg-military-800/90 backdrop-blur border-olive-700">
+                    <Card className="bg-steel-800 border-line-800 shadow-none">
                         <CardHeader className="space-y-1 text-center">
                             <div className="flex justify-center mb-4">
-                                <div className="w-20 h-20 rounded-full bg-olive-600/20 flex items-center justify-center">
-                                    <Shield className="w-10 h-10 text-olive-500" />
+                                <div className="w-20 h-20 border border-line-600 flex items-center justify-center">
+                                    <Shield className="w-10 h-10 text-info" strokeWidth={1.5} />
                                 </div>
                             </div>
-                            <CardTitle className="text-2xl font-bold text-tan-100">Welcome Back, Operator</CardTitle>
-                            <CardDescription className="text-tan-400">
+                            <CardTitle className="font-display font-bold uppercase tracking-tight text-2xl text-ink-100">Welcome Back, Operator</CardTitle>
+                            <CardDescription className="text-ink-400">
                                 Sign in to access your profile and contribute to the community
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-4">
                             {errorMessage && (
-                                <Alert variant="destructive" className="border-red-800 bg-red-900/20">
+                                <Alert variant="destructive" className="border-bad/50 bg-steel-900">
                                     <AlertDescription>{errorMessage}</AlertDescription>
                                 </Alert>
                             )}
@@ -61,8 +58,8 @@ function SignInContent() {
                                 <Button
                                     onClick={() => handleSignIn('discord')}
                                     disabled={isLoading !== null}
-                                    variant="outline"
-                                    className="w-full h-12 relative border-olive-700 hover:bg-olive-900/20 hover:border-olive-600 transition-all"
+                                    variant="quiet"
+                                    className="w-full h-12 relative"
                                 >
                                     {isLoading === 'discord' ? (
                                         <Loader2 className="w-5 h-5 animate-spin" />
@@ -77,8 +74,8 @@ function SignInContent() {
                                 <Button
                                     onClick={() => handleSignIn('google')}
                                     disabled={isLoading !== null}
-                                    variant="outline"
-                                    className="w-full h-12 relative border-olive-700 hover:bg-olive-900/20 hover:border-olive-600 transition-all"
+                                    variant="quiet"
+                                    className="w-full h-12 relative"
                                 >
                                     {isLoading === 'google' ? (
                                         <Loader2 className="w-5 h-5 animate-spin" />
@@ -92,8 +89,8 @@ function SignInContent() {
 
                                 <Button
                                     disabled={true}
-                                    variant="outline"
-                                    className="w-full h-12 relative border-olive-700 hover:bg-olive-900/20 hover:border-olive-600 transition-all"
+                                    variant="quiet"
+                                    className="w-full h-12 relative"
                                 >
                                         <SiMeta className="w-5 h-5 absolute left-4" />
                                         <span>Continue with Meta</span>
@@ -102,16 +99,16 @@ function SignInContent() {
 
                             <div className="relative">
                                 <div className="absolute inset-0 flex items-center">
-                                    <span className="w-full border-t border-military-700" />
+                                    <span className="w-full border-t border-line-800" />
                                 </div>
-                                <div className="relative flex justify-center text-xs uppercase">
-                                    <span className="bg-military-800 px-2 text-tan-500">Or</span>
+                                <div className="relative flex justify-center">
+                                    <span className="bg-steel-800 px-2 font-mono text-[10px] tracking-eyebrow uppercase text-ink-600">Or</span>
                                 </div>
                             </div>
 
                             <Button
                                 variant="ghost"
-                                className="w-full text-tan-400 hover:text-tan-200"
+                                className="w-full text-ink-400 hover:text-ink-100 hover:bg-steel-700"
                                 onClick={() => router.push(callbackUrl)}
                             >
                                 Continue as Guest
@@ -122,59 +119,59 @@ function SignInContent() {
                     {/* Right side - Benefits */}
                     <div className="space-y-6 lg:pt-8">
                         <div>
-                            <h2 className="text-3xl font-bold text-tan-100 mb-2 military-stencil">
-                                JOIN THE RANKS
+                            <h2 className="font-display font-extrabold uppercase tracking-tight text-3xl text-ink-100 mb-2">
+                                Join the Ranks
                             </h2>
-                            <p className="text-tan-400">
+                            <p className="text-ink-400">
                                 Create an account to unlock exclusive features and contribute to the ExfilZone community
                             </p>
                         </div>
 
                         <div className="space-y-4">
-                            <div className="flex gap-4 p-4 rounded-lg bg-military-800/50 border border-olive-800/50">
+                            <div className="flex gap-4 p-4 bg-steel-800 border border-line-800">
                                 <div className="flex-shrink-0">
-                                    <Trophy className="w-8 h-8 text-olive-500" />
+                                    <Trophy className="w-8 h-8 text-info" strokeWidth={1.5} />
                                 </div>
                                 <div>
-                                    <h3 className="font-semibold text-tan-200 mb-1">Track Your Progress</h3>
-                                    <p className="text-sm text-tan-400">
+                                    <h3 className="font-semibold text-ink-200 mb-1">Track Your Progress</h3>
+                                    <p className="text-sm text-ink-400">
                                         Earn ranks and badges as you contribute. Build your reputation in the community.
                                     </p>
                                 </div>
                             </div>
 
-                            <div className="flex gap-4 p-4 rounded-lg bg-military-800/50 border border-olive-800/50">
+                            <div className="flex gap-4 p-4 bg-steel-800 border border-line-800">
                                 <div className="flex-shrink-0">
-                                    <Users className="w-8 h-8 text-olive-500" />
+                                    <Users className="w-8 h-8 text-info" strokeWidth={1.5} />
                                 </div>
                                 <div>
-                                    <h3 className="font-semibold text-tan-200 mb-1">Submit Feedback</h3>
-                                    <p className="text-sm text-tan-400">
+                                    <h3 className="font-semibold text-ink-200 mb-1">Submit Feedback</h3>
+                                    <p className="text-sm text-ink-400">
                                         Report bugs, suggest features, and help improve the game data accuracy.
                                     </p>
                                 </div>
                             </div>
 
-                            <div className="flex gap-4 p-4 rounded-lg bg-military-800/50 border border-olive-800/50">
+                            <div className="flex gap-4 p-4 bg-steel-800 border border-line-800">
                                 <div className="flex-shrink-0">
-                                    <Shield className="w-8 h-8 text-olive-500" />
+                                    <Shield className="w-8 h-8 text-info" strokeWidth={1.5} />
                                 </div>
                                 <div>
-                                    <h3 className="font-semibold text-tan-200 mb-1">Exclusive Access</h3>
-                                    <p className="text-sm text-tan-400">
+                                    <h3 className="font-semibold text-ink-200 mb-1">Exclusive Access</h3>
+                                    <p className="text-sm text-ink-400">
                                         Get early access to new features and participate in community decisions.
                                     </p>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="pt-4 text-sm text-tan-500">
+                        <div className="pt-4 text-sm text-ink-600">
                             <p>By signing in, you agree to our{' '}
-                                <Link href="/terms" className="text-olive-500 hover:text-olive-400 underline">
+                                <Link href="/terms" className="text-info hover:text-info-light underline">
                                     Terms of Service
                                 </Link>{' '}
                                 and{' '}
-                                <Link href="/privacy" className="text-olive-500 hover:text-olive-400 underline">
+                                <Link href="/privacy" className="text-info hover:text-info-light underline">
                                     Privacy Policy
                                 </Link>
                             </p>
@@ -189,19 +186,18 @@ function SignInContent() {
 export default function SignInPage() {
     return (
         <Suspense fallback={
-            <div className="min-h-screen bg-military-900 flex items-center justify-center px-4 py-12">
-                <div className="absolute inset-0 texture-overlay pointer-events-none opacity-50"></div>
+            <div className="min-h-screen bg-steel-950 text-ink-300 flex items-center justify-center px-4 py-12">
                 <div className="w-full max-w-md relative z-10">
-                    <Card className="bg-military-800/90 backdrop-blur border-olive-700">
+                    <Card className="bg-steel-800 border-line-800 shadow-none">
                         <CardHeader className="space-y-1 text-center">
                             <div className="flex justify-center mb-4">
-                                <div className="w-20 h-20 rounded-full bg-olive-600/20 flex items-center justify-center">
-                                    <Shield className="w-10 h-10 text-olive-500" />
+                                <div className="w-20 h-20 border border-line-600 flex items-center justify-center">
+                                    <Shield className="w-10 h-10 text-info" strokeWidth={1.5} />
                                 </div>
                             </div>
-                            <CardTitle className="text-2xl font-bold text-tan-100">Welcome Back, Operator</CardTitle>
-                            <CardDescription className="text-tan-400">
-                                Loading sign in options...
+                            <CardTitle className="font-display font-bold uppercase tracking-tight text-2xl text-ink-100">Welcome Back, Operator</CardTitle>
+                            <CardDescription className="text-ink-400">
+                                Loading sign in options&hellip;
                             </CardDescription>
                         </CardHeader>
                     </Card>

@@ -13,9 +13,9 @@ interface ShareButtonProps {
     size?: ButtonProps['size'];
 }
 
-/** The skin the pre-Cold-Steel call sites still expect. Rewritten views pass a variant instead. */
+/** The default skin for call sites that don't pass their own. Rewritten views pass a variant instead. */
 const LEGACY_SKIN =
-    'bg-military-800 hover:bg-military-700 border-military-600 hover:border-olive-600 text-tan-300 hover:text-olive-400';
+    'bg-steel-800 hover:bg-steel-700 border-line-600 hover:border-line-500 text-ink-400 hover:text-ink-100';
 
 export default function ShareButton({
                                         getShareLink,

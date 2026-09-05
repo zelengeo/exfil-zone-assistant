@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import {Heart, Globe, Star} from 'lucide-react';
 import {SiDiscord, SiGithub, SiTwitch, SiX, SiYoutube, SiTelegram} from "@icons-pack/react-simple-icons";
+import {cn} from "@/lib/utils";
 import {getAllContributorsByRole, getRoleConfig} from "@/data/community";
 import {PartnerContributor, StandardContributor} from "@/types/community";
 
@@ -35,22 +36,20 @@ const PartnerCard = ({partner}: { partner: PartnerContributor }) => {
         return <CustomComponent/>;
     }
 
-    // Enhanced partner card with highlighting
     return (
-        <div className={`
-            ${partner.highlighted
-            ? 'bg-gradient-to-br from-yellow-900/30 to-orange-900/20 border-2 border-yellow-600/80 shadow-lg shadow-yellow-900/20'
-            : `${roleConfig.bgColor} border ${roleConfig.borderColor}`
-        }
-            rounded-sm p-6 relative overflow-hidden group hover:border-olive-600 transition-all duration-300
-        `}>
+        <div className={cn(
+            "p-6 relative overflow-hidden group transition-colors",
+            partner.highlighted
+                ? "bg-steel-800 border-2 border-warn/60"
+                : cn(roleConfig.bgColor, "border", roleConfig.borderColor),
+            "hover:border-line-500"
+        )}>
             {/* Featured badge */}
             {partner.featured && (
                 <div className="absolute top-2 right-2">
-                    <div
-                        className="flex items-center gap-1 bg-yellow-600/20 border border-yellow-600/50 rounded-sm px-2 py-1">
-                        <Star size={12} className="text-yellow-400"/>
-                        <span className="text-xs text-yellow-300 font-medium">Featured</span>
+                    <div className="flex items-center gap-1 border border-warn/50 px-2 py-1">
+                        <Star size={12} className="text-warn"/>
+                        <span className="font-mono text-[9px] tracking-micro uppercase text-warn">Featured</span>
                     </div>
                 </div>
             )}
@@ -63,21 +62,21 @@ const PartnerCard = ({partner}: { partner: PartnerContributor }) => {
                         unoptimized={true}
                         width={48}
                         height={48}
-                        className="rounded-full border-2 border-yellow-600/60"
+                        className="border border-warn/60"
                     />
                 )}
                 <div className="flex-1">
-                    <h3 className="text-lg font-bold text-tan-100 group-hover:text-yellow-300 transition-colors">
+                    <h3 className="font-display font-bold uppercase tracking-tight text-lg text-ink-100 group-hover:text-warn transition-colors">
                         {partner.name}
                     </h3>
-                    <p className={`text-sm ${roleConfig.color} font-medium`}>
+                    <p className={cn("font-mono text-[10px] tracking-micro uppercase mt-0.5", roleConfig.color)}>
                         {roleConfig.label}
                     </p>
                 </div>
             </div>
 
             {partner.description && (
-                <p className="text-sm text-tan-300 mb-4 leading-relaxed">
+                <p className="text-sm text-ink-400 mb-4 leading-relaxed">
                     {partner.description}
                 </p>
             )}
@@ -88,7 +87,7 @@ const PartnerCard = ({partner}: { partner: PartnerContributor }) => {
                     {partner.tags.map((tag, index) => (
                         <span
                             key={index}
-                            className="text-xs bg-military-700/50 border border-military-600 rounded-sm px-2 py-1 text-tan-400"
+                            className="font-mono text-[10px] tracking-micro uppercase border border-line-600 px-2 py-1 text-ink-400"
                         >
                             {tag}
                         </span>
@@ -102,7 +101,7 @@ const PartnerCard = ({partner}: { partner: PartnerContributor }) => {
                     href={partner.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-600/20 border border-yellow-600/50 rounded-sm text-yellow-300 hover:bg-yellow-600/30 hover:border-yellow-500 transition-all font-medium text-sm"
+                    className="inline-flex items-center gap-2 px-4 py-2 border border-warn/50 text-warn hover:bg-steel-700 transition-colors font-display font-semibold uppercase tracking-nav text-sm"
                 >
                     {getPlatformIcon(partner.platform)}
                     <span>Visit Channel</span>
@@ -122,15 +121,18 @@ const ContributorCard = ({contributor}: { contributor: StandardContributor }) =>
             href={contributor.link || '#'}
             target={contributor.link ? '_blank' : '_self'}
             rel="noopener noreferrer"
-            className={`
-                military-card p-4 rounded-sm border ${roleConfig.borderColor} ${roleConfig.bgColor} 
-                hover:border-olive-600 transition-all group cursor-pointer block
-            `}
+            className={cn(
+                "p-4 border transition-colors group cursor-pointer block",
+                roleConfig.bgColor, roleConfig.borderColor,
+                "hover:border-line-500"
+            )}
         >
             <div className="flex items-center gap-3">
                 {/* Role icon/initial */}
-                <div
-                    className={`w-10 h-10 rounded-sm ${roleConfig.bgColor} ${contributor.logo ? "" : "border "+ roleConfig.borderColor } flex items-center justify-center flex-shrink-0`}>
+                <div className={cn(
+                    "w-10 h-10 flex items-center justify-center flex-shrink-0 border",
+                    contributor.logo ? "border-transparent" : roleConfig.borderColor
+                )}>
                     {contributor.logo ? (
                             <Image
                                 src={contributor.logo}
@@ -138,7 +140,7 @@ const ContributorCard = ({contributor}: { contributor: StandardContributor }) =>
                                 unoptimized={true}
                                 width={40}
                                 height={40}
-                                className={`rounded-full border-2 ${roleConfig.borderColor}`}
+                                className={cn("border", roleConfig.borderColor)}
                             />
                         )
                         : contributor.platform ? (
@@ -146,7 +148,7 @@ const ContributorCard = ({contributor}: { contributor: StandardContributor }) =>
                             {getPlatformIcon(contributor.platform)}
                         </span>
                         ) : (
-                            <span className={`text-sm font-bold ${roleConfig.color}`}>
+                            <span className={cn("font-display font-bold text-sm", roleConfig.color)}>
                             {contributor.name.charAt(0).toUpperCase()}
                         </span>
                         )}
@@ -154,17 +156,17 @@ const ContributorCard = ({contributor}: { contributor: StandardContributor }) =>
 
                 {/* Content */}
                 <div className="flex-1 min-w-0">
-                    <h3 className="text-sm font-semibold text-tan-100 group-hover:text-olive-400 transition-colors truncate">
+                    <h3 className="text-sm font-semibold text-ink-100 group-hover:text-info transition-colors truncate">
                         {contributor.name}
                     </h3>
-                    <p className={`text-xs ${roleConfig.color} truncate`}>
+                    <p className={cn("font-mono text-[9px] tracking-micro uppercase mt-0.5 truncate", roleConfig.color)}>
                         {roleConfig.label}
                     </p>
                 </div>
 
                 {/* External link indicator */}
                 {contributor.link && (
-                    <span className="text-tan-500 group-hover:text-olive-400 transition-colors flex-shrink-0">
+                    <span className="text-ink-600 group-hover:text-info transition-colors flex-shrink-0">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                              strokeWidth="2">
                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
@@ -177,7 +179,7 @@ const ContributorCard = ({contributor}: { contributor: StandardContributor }) =>
 
             {/* Optional: Show description */}
             {contributor.description && (
-                <p className="text-xs text-tan-300 mt-2 line-clamp-2">
+                <p className="text-xs text-ink-400 mt-2 line-clamp-2">
                     {contributor.description}
                 </p>
             )}
@@ -193,13 +195,13 @@ const SectionHeader = ({title, description, icon: Icon}: {
 }) => (
     <div className="text-center mb-8">
         <div className="flex items-center justify-center gap-3 mb-3">
-            {Icon && <Icon size={24} className="text-olive-400"/>}
-            <h3 className="text-2xl font-bold text-tan-100 military-stencil">
+            {Icon && <Icon size={20} className="text-info"/>}
+            <h3 className="font-display font-bold uppercase tracking-tight text-2xl text-ink-100">
                 {title}
             </h3>
         </div>
         {description && (
-            <p className="text-tan-300 max-w-2xl mx-auto">
+            <p className="text-ink-400 max-w-2xl mx-auto">
                 {description}
             </p>
         )}
@@ -215,10 +217,10 @@ export default function CommunitySection() {
             <div className="max-w-7xl mx-auto">
                 {/* Main Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-tan-100 mb-4 military-stencil">
-                        Community & Contributors
+                    <h2 className="font-display font-extrabold uppercase tracking-tight text-3xl md:text-4xl text-ink-100 mb-4">
+                        Community &amp; Contributors
                     </h2>
-                    <p className="text-lg text-tan-300 max-w-3xl mx-auto">
+                    <p className="text-lg text-ink-400 max-w-3xl mx-auto">
                         ExfilZone Assistant is powered by an amazing community of players, creators, and contributors
                         who help make this resource better for everyone.
                     </p>
@@ -289,20 +291,20 @@ export default function CommunitySection() {
                 </div>
 
                 {/* Call to Action */}
-                <div className="bg-military-800 border border-olive-700 rounded-sm p-8 text-center mt-16">
-                    <h3 className="text-2xl font-bold text-tan-100 mb-4">
+                <div className="bg-steel-800 border border-line-800 p-8 text-center mt-16 clip-shoulder">
+                    <h3 className="font-display font-bold uppercase tracking-tight text-2xl text-ink-100 mb-4">
                         Join Our Community
                     </h3>
-                    <p className="text-tan-300 mb-6 max-w-2xl mx-auto">
+                    <p className="text-ink-400 mb-6 max-w-2xl mx-auto">
                         Whether you&#39;re a content creator, developer, or passionate player, there are many ways to
                         contribute to the ExfilZone Assistant project.
                     </p>
 
-                    <div className="flex flex-wrap gap-4 justify-center">
+                    <div className="flex flex-wrap gap-3 justify-center">
                         <a
                             href="https://discord.gg/2FCDZK6C25"
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-olive-600 hover:bg-olive-500
-                        text-military-900 font-medium rounded-sm transition-colors"
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-ember hover:bg-ember-hover
+                        text-ember-ink font-display font-bold uppercase tracking-nav transition-colors"
                         >
                             <SiDiscord size={20}/>
                             Join Discord
@@ -312,8 +314,8 @@ export default function CommunitySection() {
                             href="https://github.com/zelengeo/exfil-zone-assistant"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-military-700 hover:bg-military-600
-                    text-tan-100 font-medium rounded-sm transition-colors border border-military-600"
+                            className="inline-flex items-center gap-2 px-6 py-3 border border-line-500 hover:bg-steel-700
+                    text-ink-200 font-display font-bold uppercase tracking-nav transition-colors"
                         >
                             <SiGithub size={20}/>
                             Contribute on GitHub
@@ -323,10 +325,10 @@ export default function CommunitySection() {
                             href="https://ko-fi.com/J3J41GATK0"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-military-700 hover:bg-military-600
-                text-tan-100 font-medium rounded-sm transition-colors border border-military-600"
+                            className="inline-flex items-center gap-2 px-6 py-3 border border-line-500 hover:bg-steel-700
+                text-ink-200 font-display font-bold uppercase tracking-nav transition-colors"
                         >
-                            <Heart size={20} className="text-red-400"/>
+                            <Heart size={20} className="text-ember"/>
                             Support Us
                         </a>
                     </div>
@@ -334,7 +336,7 @@ export default function CommunitySection() {
 
                 {/* Special Thanks */}
                 <div className="mt-8 text-center">
-                    <p className="text-sm text-tan-400">
+                    <p className="text-sm text-ink-500">
                         Special thanks to all our supporters and the Contractors Showdown community!
                     </p>
                 </div>

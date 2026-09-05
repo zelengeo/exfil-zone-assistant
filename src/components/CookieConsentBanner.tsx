@@ -114,16 +114,16 @@ export default function CookieConsentBanner() {
                 "fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6",
                 "animate-in slide-in-from-bottom duration-500"
             )}>
-                <Card className="max-w-5xl mx-auto bg-military-900/95 backdrop-blur-md border-olive-700 shadow-2xl">
+                <Card className="max-w-5xl mx-auto bg-steel-900/95 backdrop-blur-md border-line-700 shadow-none">
                     <CardHeader className="pb-3">
                         <div className="flex items-start justify-between">
                             <div className="flex items-center gap-3">
-                                <div className="p-2 bg-olive-600/20 rounded-full">
-                                    <Cookie className="h-6 w-6 text-olive-500"/>
+                                <div className="p-2 border border-line-600">
+                                    <Cookie className="h-6 w-6 text-info" strokeWidth={1.6}/>
                                 </div>
                                 <div>
-                                    <CardTitle className="text-lg">Cookie Preferences</CardTitle>
-                                    <CardDescription className="text-tan-400">
+                                    <CardTitle className="font-display font-bold uppercase tracking-tight text-lg text-ink-100">Cookie Preferences</CardTitle>
+                                    <CardDescription className="text-ink-400">
                                         We use cookies to enhance your experience
                                     </CardDescription>
                                 </div>
@@ -141,7 +141,7 @@ export default function CookieConsentBanner() {
                     </CardHeader>
 
                     <CardContent className="space-y-4">
-                        <p className="text-sm text-tan-300 leading-relaxed">
+                        <p className="text-sm text-ink-300 leading-relaxed">
                             We use cookies and similar technologies to provide you with the best experience on our
                             website.
                             Some cookies are essential for the site to function, while others help us understand how you
@@ -153,18 +153,18 @@ export default function CookieConsentBanner() {
                             <Button
                                 variant="link"
                                 onClick={() => setShowDetails(true)}
-                                className="p-0 h-auto text-olive-500 hover:text-olive-400"
+                                className="p-0 h-auto text-info hover:text-info-light"
                             >
                                 <Settings className="h-4 w-4 mr-2"/>
                                 Manage preferences
                             </Button>
                         ) : (
                             <div className="space-y-3 py-2">
-                                <Separator className="bg-military-700"/>
+                                <Separator className="bg-line-800"/>
 
                                 <div className="space-y-3">
                                     {/* Essential Cookies */}
-                                    <div className="flex items-start space-x-3 p-3 rounded-lg bg-military-800/50">
+                                    <div className="flex items-start space-x-3 p-3 bg-steel-800 border border-line-800">
                                         <Checkbox
                                             id="essential"
                                             checked={true}
@@ -174,11 +174,11 @@ export default function CookieConsentBanner() {
                                         <div className="flex-1 space-y-1">
                                             <Label
                                                 htmlFor="essential"
-                                                className="text-sm font-medium text-tan-200 cursor-not-allowed"
+                                                className="text-sm font-medium text-ink-200 cursor-not-allowed"
                                             >
                                                 Essential Cookies
                                             </Label>
-                                            <p className="text-xs text-tan-400">
+                                            <p className="text-xs text-ink-400">
                                                 Required for the website to function. These include session cookies
                                                 for authentication and security features.
                                             </p>
@@ -186,7 +186,7 @@ export default function CookieConsentBanner() {
                                     </div>
 
                                     {/* Analytics Cookies */}
-                                    <div className="flex items-start space-x-3 p-3 rounded-lg bg-military-800/50">
+                                    <div className="flex items-start space-x-3 p-3 bg-steel-800 border border-line-800">
                                         <Checkbox
                                             id="analytics"
                                             checked={preferences.analytics}
@@ -198,11 +198,11 @@ export default function CookieConsentBanner() {
                                         <div className="flex-1 space-y-1">
                                             <Label
                                                 htmlFor="analytics"
-                                                className="text-sm font-medium text-tan-200 cursor-pointer"
+                                                className="text-sm font-medium text-ink-200 cursor-pointer"
                                             >
                                                 Analytics Cookies
                                             </Label>
-                                            <p className="text-xs text-tan-400">
+                                            <p className="text-xs text-ink-400">
                                                 Help us understand how visitors use our site. All data collected by
                                                 Vercel Analytics is anonymized and privacy-focused.
                                             </p>
@@ -210,7 +210,7 @@ export default function CookieConsentBanner() {
                                     </div>
 
                                     {/* Third-Party Cookies */}
-                                    <div className="flex items-start space-x-3 p-3 rounded-lg bg-military-800/50">
+                                    <div className="flex items-start space-x-3 p-3 bg-steel-800 border border-line-800">
                                         <Checkbox
                                             id="thirdParty"
                                             checked={preferences.thirdParty}
@@ -222,11 +222,11 @@ export default function CookieConsentBanner() {
                                         <div className="flex-1 space-y-1">
                                             <Label
                                                 htmlFor="thirdParty"
-                                                className="text-sm font-medium text-tan-200 cursor-pointer"
+                                                className="text-sm font-medium text-ink-200 cursor-pointer"
                                             >
                                                 Third-Party Cookies
                                             </Label>
-                                            <p className="text-xs text-tan-400">
+                                            <p className="text-xs text-ink-400">
                                                 Set by Google OAuth, Discord OAuth, and YouTube when you use these
                                                 services.
                                                 Required for login and video playback features.
@@ -242,23 +242,24 @@ export default function CookieConsentBanner() {
                         <div className="flex flex-col sm:flex-row gap-3 flex-1">
                             <Button
                                 onClick={handleRejectNonEssential}
-                                variant="outline"
-                                className="flex-1 sm:flex-initial border-military-700 hover:bg-military-800"
+                                variant="quiet"
+                                className="flex-1 sm:flex-initial"
                             >
                                 Essential only
                             </Button>
                             {showDetails && (
                                 <Button
                                     onClick={handleAcceptSelected}
-                                    variant="outline"
-                                    className="flex-1 sm:flex-initial border-olive-700 hover:bg-olive-900/20"
+                                    variant="quiet"
+                                    className="flex-1 sm:flex-initial"
                                 >
                                     Save preferences
                                 </Button>
                             )}
                             <Button
                                 onClick={handleAcceptAll}
-                                className="flex-1 sm:flex-initial bg-olive-600 hover:bg-olive-500"
+                                variant="ember"
+                                className="flex-1 sm:flex-initial"
                             >
                                 Accept all
                             </Button>
@@ -266,7 +267,7 @@ export default function CookieConsentBanner() {
 
                         <Link
                             href="/cookies"
-                            className="text-xs text-tan-500 hover:text-tan-400 text-center sm:text-right"
+                            className="text-xs text-ink-500 hover:text-ink-300 text-center sm:text-right"
                         >
                             Cookie Policy →
                         </Link>
@@ -277,10 +278,10 @@ export default function CookieConsentBanner() {
             {/* Settings Dialog (for reopening preferences) */}
             <Dialog open={false} onOpenChange={() => {
             }}>
-                <DialogContent className="bg-military-900 border-olive-700">
+                <DialogContent className="bg-steel-900 border-line-700">
                     <DialogHeader>
                         <DialogTitle>Cookie Preferences</DialogTitle>
-                        <DialogDescription className="text-tan-400">
+                        <DialogDescription className="text-ink-400">
                             Manage your cookie preferences. You can change these settings at any time.
                         </DialogDescription>
                     </DialogHeader>

@@ -18,10 +18,10 @@ const Toaster = ({ ...props }: ToasterProps) => {
               cancelButton: "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground",
               // Custom styles for different toast types
               //FIXME - remove !important - look for the correct way to do this
-              success: "group-[.toaster]:!bg-olive-600/60 group-[.toaster]:!text-tan-100 group-[.toaster]:!border-olive-500",
-              error: "group-[.toaster]:!bg-destructive/60 group-[.toaster]:!text-destructive-foreground group-[.toaster]:!border-destructive",
-              warning: "group-[.toaster]:!bg-orange-600/60 group-[.toaster]:!text-tan-100 group-[.toaster]:!border-orange-500",
-              info: "group-[.toaster]:!bg-military-700/60 group-[.toaster]:!text-tan-100 group-[.toaster]:!border-military-600",
+              success: "group-[.toaster]:!bg-steel-800 group-[.toaster]:!text-ink-100 group-[.toaster]:!border-good/50",
+              error: "group-[.toaster]:!bg-steel-800 group-[.toaster]:!text-ink-100 group-[.toaster]:!border-bad/50",
+              warning: "group-[.toaster]:!bg-steel-800 group-[.toaster]:!text-ink-100 group-[.toaster]:!border-warn/50",
+              info: "group-[.toaster]:!bg-steel-800 group-[.toaster]:!text-ink-100 group-[.toaster]:!border-line-600",
           },
       }}
       {...props}

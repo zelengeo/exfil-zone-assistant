@@ -1,16 +1,18 @@
 // app/privacy/page.tsx
+import Layout from "@/components/layout/Layout";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import React from "react";
 
 export default function PrivacyPolicyPage() {
     return (
+        <Layout>
         <div className="max-w-4xl mx-auto px-4 py-8">
-            <Card>
+            <Card className="bg-steel-800 border-line-800 shadow-none">
                 <CardHeader>
-                    <CardTitle className="text-3xl">Privacy Policy</CardTitle>
-                    <p className="text-muted-foreground">Last updated: {new Date().toLocaleDateString()}</p>
+                    <CardTitle className="font-display font-extrabold uppercase tracking-tight text-3xl text-ink-100">Privacy Policy</CardTitle>
+                    <p className="text-ink-500 font-mono tabular text-sm">Last updated: {new Date().toLocaleDateString()}</p>
                 </CardHeader>
-                <CardContent className="prose prose-slate max-w-none">
+                <CardContent className="prose prose-invert max-w-none prose-headings:font-display prose-headings:uppercase prose-headings:tracking-tight prose-a:text-info">
                     <h2>1. Information We Collect</h2>
                     <h3>Information you provide:</h3>
                     <ul>
@@ -97,7 +99,7 @@ export default function PrivacyPolicyPage() {
                     </p>
                     <ul>
                         <li>Discord: <a href={"https://discord.gg/2FCDZK6C25"}
-                                        className="p-2 rounded-sm hover:bg-military-800 transition-colors border border-transparent hover:border-olive-700"
+                                        className="hover:text-info-light transition-colors"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         aria-label="Discord">
@@ -131,5 +133,6 @@ export default function PrivacyPolicyPage() {
                 </CardContent>
             </Card>
         </div>
+        </Layout>
     );
 }

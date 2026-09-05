@@ -1,8 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
-import { Badge } from '@/components/ui/badge';
 import {
     Package,
     Goal,
@@ -10,7 +8,6 @@ import {
     Hammer,
     Target,
     FileText,
-    Heart,
     MessageCircle,
     Coffee,
     ExternalLink
@@ -44,53 +41,39 @@ const Footer: React.FC = () => {
     };
 
     return (
-        <footer className="relative mt-auto bg-military-900 border-t border-olive-800">
-            {/* Texture overlay */}
-            <div className="absolute inset-0 texture-overlay pointer-events-none opacity-30"></div>
-
+        <footer className="relative mt-auto bg-steel-880 border-t border-line-900">
             <div className="relative z-10">
                 {/* Main footer content */}
                 <div className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
                         {/* Brand section */}
                         <div className="space-y-4">
-                            <Link href="/" className="inline-block">
-                                <span className="text-2xl text-olive-500 military-stencil">
-                                    <strong>EXFIL</strong>ZONE
+                            <Link href="/" className="inline-flex items-baseline gap-2 group">
+                                <span className="military-stencil text-2xl text-ink-100 transition-colors group-hover:text-ember">
+                                    <strong className="font-extrabold">EXFIL</strong>ZONE
                                 </span>
-                                <Badge variant="outline" className="ml-2 text-xs">
+                                <span className="font-mono text-[10px] tracking-micro uppercase text-ink-600 border border-line-700 px-1.5 py-0.5">
                                     {getVersion()}
-                                </Badge>
+                                </span>
                             </Link>
-                            <p className="text-sm text-tan-400 leading-relaxed">
+                            <p className="text-sm text-ink-500 leading-relaxed">
                                 Your tactical companion for Contractors Showdown ExfilZone.
-                                Providing accurate combat simulations and comprehensive game data.
+                                Accurate combat simulations and comprehensive game data.
                             </p>
                             <div className="flex gap-2">
-                                <Button
-                                    variant="outline"
-                                    size="sm"
-                                    className="border-olive-700 hover:bg-olive-900/20"
-                                    asChild
-                                >
+                                <Button variant="quiet" size="sm" asChild>
                                     <a
                                         href="https://ko-fi.com/J3J41GATK0"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center gap-2"
                                     >
                                         <Coffee className="h-4 w-4" />
                                         Support
                                     </a>
                                 </Button>
-                                <Button
-                                    variant="outline"
-                                    size="sm"
-                                    className="border-olive-700 hover:bg-olive-900/20"
-                                    asChild
-                                >
-                                    <Link href="/feedback" aria-disabled={true} className="flex items-center gap-2">
-                                        <Heart className="h-4 w-4" />
+                                <Button variant="quiet" size="sm" asChild>
+                                    <Link href="/feedback">
+                                        <MessageCircle className="h-4 w-4" />
                                         Feedback
                                     </Link>
                                 </Button>
@@ -99,17 +82,15 @@ const Footer: React.FC = () => {
 
                         {/* Quick Links */}
                         <div>
-                            <h3 className="text-sm font-semibold text-tan-100 uppercase tracking-wider mb-4">
-                                Resources
-                            </h3>
+                            <h3 className="eyebrow mb-4">Resources</h3>
                             <nav className="space-y-3">
                                 {navigation.main.map((item) => (
                                     <Link
                                         key={item.name}
                                         href={item.href}
-                                        className="flex items-center gap-2 text-sm text-tan-400 hover:text-olive-400 transition-colors"
+                                        className="flex items-center gap-2 text-sm text-ink-400 hover:text-ink-100 transition-colors"
                                     >
-                                        <item.icon className="h-4 w-4 text-olive-600" />
+                                        <item.icon className="h-4 w-4 text-info" strokeWidth={1.6} />
                                         {item.name}
                                     </Link>
                                 ))}
@@ -118,9 +99,7 @@ const Footer: React.FC = () => {
 
                         {/* Community */}
                         <div>
-                            <h3 className="text-sm font-semibold text-tan-100 uppercase tracking-wider mb-4">
-                                Community
-                            </h3>
+                            <h3 className="eyebrow mb-4">Community</h3>
                             <nav className="space-y-3">
                                 {navigation.support.map((item) => (
                                     <Link
@@ -128,12 +107,12 @@ const Footer: React.FC = () => {
                                         href={item.href}
                                         target={item.external ? "_blank" : undefined}
                                         rel={item.external ? "noopener noreferrer" : undefined}
-                                        className="flex items-center gap-2 text-sm text-tan-400 hover:text-olive-400 transition-colors"
+                                        className="flex items-center gap-2 text-sm text-ink-400 hover:text-ink-100 transition-colors"
                                     >
-                                        <item.icon className="h-4 w-4 text-olive-600" />
+                                        <item.icon className="h-4 w-4 text-info" strokeWidth={1.6} />
                                         {item.name}
                                         {item.external && (
-                                            <ExternalLink className="h-3 w-3 ml-1" />
+                                            <ExternalLink className="h-3 w-3 ml-1 text-ink-700" />
                                         )}
                                     </Link>
                                 ))}
@@ -142,15 +121,13 @@ const Footer: React.FC = () => {
 
                         {/* Legal */}
                         <div>
-                            <h3 className="text-sm font-semibold text-tan-100 uppercase tracking-wider mb-4">
-                                Legal
-                            </h3>
+                            <h3 className="eyebrow mb-4">Legal</h3>
                             <nav className="space-y-3">
                                 {navigation.legal.map((item) => (
                                     <Link
                                         key={item.name}
                                         href={item.href}
-                                        className="block text-sm text-tan-400 hover:text-olive-400 transition-colors"
+                                        className="block text-sm text-ink-400 hover:text-ink-100 transition-colors"
                                     >
                                         {item.name}
                                     </Link>
@@ -161,28 +138,28 @@ const Footer: React.FC = () => {
                 </div>
 
                 {/* Bottom bar */}
-                <Separator className="bg-olive-800" />
-                <div className="max-w-7xl mx-auto px-6 py-6">
-                    <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-                        <div className="text-xs text-tan-500 text-center sm:text-left space-y-1">
-                            <p>© {currentYear} ExfilZone Assistant. All rights reserved.</p>
-                            <p>
-                                Unofficial fan-made tool for Contractors Showdown.
-                                Game content © Caveman Studios.
-                            </p>
-                        </div>
+                <div className="border-t border-line-900">
+                    <div className="max-w-7xl mx-auto px-6 py-6">
+                        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+                            <div className="text-xs text-ink-600 text-center sm:text-left space-y-1">
+                                <p>© {currentYear} ExfilZone Assistant. All rights reserved.</p>
+                                <p>
+                                    Unofficial fan-made tool for Contractors Showdown.
+                                    Game content © Caveman Studios.
+                                </p>
+                            </div>
 
-                        {/* Ko-fi supporter badge */}
-                        <div className="flex items-center gap-2">
-                            <span className="text-xs text-tan-500">Built with ☕ by </span>
-                            <a
-                                href="https://x.com/pogapwnz"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1.5 py-1 rounded-sm bg-olive-900/30 hover:bg-olive-900/50 transition-colors"
-                            >
-                                <span className="text-xs font-medium text-tan-300">pogapwnz</span>
-                            </a>
+                            <div className="flex items-center gap-2">
+                                <span className="text-xs text-ink-600">Built with ☕ by</span>
+                                <a
+                                    href="https://x.com/pogapwnz"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-1.5 px-2 py-1 bg-steel-700 hover:bg-steel-650 transition-colors"
+                                >
+                                    <span className="text-xs font-medium text-ink-300">pogapwnz</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

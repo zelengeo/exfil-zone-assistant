@@ -45,33 +45,35 @@ export interface RoleConfig {
 }
 
 // Enhanced role configurations
+// Cold Steel: roles read as quiet data. Partner is the one tier that carries a
+// warm accent; the rest sit on the resting card surface with an info label.
 export const ROLE_CONFIGS: Record<string, RoleConfig> = {
     partner: {
         label: 'Partner',
-        color: 'text-yellow-400',
-        borderColor: 'border-yellow-600',
-        bgColor: 'bg-yellow-900/20',
+        color: 'text-warn',
+        borderColor: 'border-warn/40',
+        bgColor: 'bg-steel-800',
         priority: 1
     },
     creator: {
         label: 'Content Creator',
-        color: 'text-green-400',
-        borderColor: 'border-green-700',
-        bgColor: 'bg-green-900/20',
+        color: 'text-info',
+        borderColor: 'border-line-800',
+        bgColor: 'bg-steel-800',
         priority: 2
     },
     contributor: {
         label: 'Contributor',
-        color: 'text-blue-400',
-        borderColor: 'border-blue-700',
-        bgColor: 'bg-blue-900/20',
+        color: 'text-info',
+        borderColor: 'border-line-800',
+        bgColor: 'bg-steel-800',
         priority: 3
     },
     supporter: {
         label: 'Supporter',
-        color: 'text-purple-400',
-        borderColor: 'border-purple-700',
-        bgColor: 'bg-purple-900/20',
+        color: 'text-info',
+        borderColor: 'border-line-800',
+        bgColor: 'bg-steel-800',
         priority: 4
     }
 };

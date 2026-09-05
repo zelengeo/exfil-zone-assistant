@@ -71,14 +71,14 @@ export function FeedbackForm() {
 
     if (isSubmitted) {
         return (
-            <Card className="bg-olive-900/20 border-olive-700">
+            <Card className="bg-steel-800 border-good/40 shadow-none">
                 <CardContent className="flex items-center gap-3 py-6">
-                    <CheckCircle2 className="h-6 w-6 text-olive-400 flex-shrink-0"/>
+                    <CheckCircle2 className="h-6 w-6 text-good flex-shrink-0"/>
                     <div>
-                        <h3 className="font-semibold text-tan-100 mb-1">
+                        <h3 className="font-semibold text-ink-100 mb-1">
                             Feedback Submitted Successfully
                         </h3>
-                        <p className="text-tan-300 text-sm">
+                        <p className="text-ink-300 text-sm">
                             Thank you for your feedback! We&#39;ll review it and get back to you if needed.
                         </p>
                     </div>
@@ -90,9 +90,9 @@ export function FeedbackForm() {
     return (
         <form onSubmit={handleSubmit} className="space-y-6">
             {error && (
-                <Alert className="border-red-600 bg-red-900/20">
-                    <AlertCircle className="h-4 w-4 text-red-400"/>
-                    <AlertDescription className="text-red-300">
+                <Alert className="border-bad/50 bg-steel-800">
+                    <AlertCircle className="h-4 w-4 text-bad"/>
+                    <AlertDescription className="text-bad">
                         {error}
                     </AlertDescription>
                 </Alert>
@@ -101,7 +101,7 @@ export function FeedbackForm() {
             {/* Feedback Type and Priority */}
             <div className="grid md:grid-cols-3 gap-4">
                 <div className="space-y-2">
-                    <Label htmlFor="feedback-type" className="text-tan-200">
+                    <Label htmlFor="feedback-type" className="text-ink-200">
                         Feedback Type *
                     </Label>
                     <Select
@@ -109,17 +109,17 @@ export function FeedbackForm() {
                         onValueChange={(value: FeedbackType) => updateFormData('type', value)}
                         required
                     >
-                        <SelectTrigger className="bg-military-700 border-military-600 text-tan-100">
+                        <SelectTrigger className="bg-steel-750 border-line-600 text-ink-100">
                             <SelectValue placeholder="Select feedback type"/>
                         </SelectTrigger>
-                        <SelectContent className="bg-military-800 border-military-600">
-                            <SelectItem value="bug" className="text-tan-100 focus:bg-military-700">
+                        <SelectContent className="bg-steel-800 border-line-600">
+                            <SelectItem value="bug" className="text-ink-100 focus:bg-steel-700">
                                 Bug Report
                             </SelectItem>
-                            <SelectItem value="feature" className="text-tan-100 focus:bg-military-700">
+                            <SelectItem value="feature" className="text-ink-100 focus:bg-steel-700">
                                 Feature Request
                             </SelectItem>
-                            <SelectItem value="general" className="text-tan-100 focus:bg-military-700">
+                            <SelectItem value="general" className="text-ink-100 focus:bg-steel-700">
                                 General Feedback
                             </SelectItem>
                         </SelectContent>
@@ -127,36 +127,36 @@ export function FeedbackForm() {
                 </div>
 
                 <div className="space-y-2">
-                    <Label htmlFor="category" className="text-tan-200">
+                    <Label htmlFor="category" className="text-ink-200">
                         Category
                     </Label>
                     <Select
                         value={formData.category}
                         onValueChange={(value: FeedbackCategory) => updateFormData('category', value)}
                     >
-                        <SelectTrigger className="bg-military-700 border-military-600 text-tan-100">
+                        <SelectTrigger className="bg-steel-750 border-line-600 text-ink-100">
                             <SelectValue placeholder="Select category"/>
                         </SelectTrigger>
-                        <SelectContent className="bg-military-800 border-military-600">
-                            <SelectItem value="items" className="text-tan-100 focus:bg-military-700">
+                        <SelectContent className="bg-steel-800 border-line-600">
+                            <SelectItem value="items" className="text-ink-100 focus:bg-steel-700">
                                 Items
                             </SelectItem>
-                            <SelectItem value="tasks" className="text-tan-100 focus:bg-military-700">
+                            <SelectItem value="tasks" className="text-ink-100 focus:bg-steel-700">
                                 Tasks
                             </SelectItem>
-                            <SelectItem value="hideout" className="text-tan-100 focus:bg-military-700">
+                            <SelectItem value="hideout" className="text-ink-100 focus:bg-steel-700">
                                 Hideout
                             </SelectItem>
-                            <SelectItem value="combat-sim" className="text-tan-100 focus:bg-military-700">
+                            <SelectItem value="combat-sim" className="text-ink-100 focus:bg-steel-700">
                                 Combat Sim
                             </SelectItem>
-                            <SelectItem value="guides" className="text-tan-100 focus:bg-military-700">
+                            <SelectItem value="guides" className="text-ink-100 focus:bg-steel-700">
                                 Guides
                             </SelectItem>
-                            <SelectItem value="ui" className="text-tan-100 focus:bg-military-700">
+                            <SelectItem value="ui" className="text-ink-100 focus:bg-steel-700">
                                 UI
                             </SelectItem>
-                            <SelectItem value="other" className="text-tan-100 focus:bg-military-700">
+                            <SelectItem value="other" className="text-ink-100 focus:bg-steel-700">
                                 Other
                             </SelectItem>
                         </SelectContent>
@@ -164,24 +164,24 @@ export function FeedbackForm() {
                 </div>
 
                 <div className="space-y-2">
-                    <Label htmlFor="priority" className="text-tan-200">
+                    <Label htmlFor="priority" className="text-ink-200">
                         Priority
                     </Label>
                     <Select
                         value={formData.priority}
                         onValueChange={(value: FeedbackPriority) => updateFormData('priority', value)}
                     >
-                        <SelectTrigger className="bg-military-700 border-military-600 text-tan-100">
+                        <SelectTrigger className="bg-steel-750 border-line-600 text-ink-100">
                             <SelectValue placeholder="Select priority"/>
                         </SelectTrigger>
-                        <SelectContent className="bg-military-800 border-military-600">
-                            <SelectItem value="low" className="text-tan-100 focus:bg-military-700">
+                        <SelectContent className="bg-steel-800 border-line-600">
+                            <SelectItem value="low" className="text-ink-100 focus:bg-steel-700">
                                 Low
                             </SelectItem>
-                            <SelectItem value="medium" className="text-tan-100 focus:bg-military-700">
+                            <SelectItem value="medium" className="text-ink-100 focus:bg-steel-700">
                                 Medium
                             </SelectItem>
-                            <SelectItem value="high" className="text-tan-100 focus:bg-military-700">
+                            <SelectItem value="high" className="text-ink-100 focus:bg-steel-700">
                                 High
                             </SelectItem>
                         </SelectContent>
@@ -191,7 +191,7 @@ export function FeedbackForm() {
 
             {/* Title */}
             <div className="space-y-2">
-                <Label htmlFor="title" className="text-tan-200">
+                <Label htmlFor="title" className="text-ink-200">
                     Title *
                 </Label>
                 <Input
@@ -200,14 +200,14 @@ export function FeedbackForm() {
                     placeholder="Brief summary of your feedback"
                     value={formData.title}
                     onChange={(e) => updateFormData('title', e.target.value)}
-                    className="bg-military-700 border-military-600 text-tan-100 placeholder:text-tan-500"
+                    className="bg-steel-750 border-line-600 text-ink-100 placeholder:text-ink-700"
                     required
                 />
             </div>
 
             {/* Description */}
             <div className="space-y-2">
-                <Label htmlFor="description" className="text-tan-200">
+                <Label htmlFor="description" className="text-ink-200">
                     Description *
                 </Label>
                 <Textarea
@@ -215,7 +215,7 @@ export function FeedbackForm() {
                     placeholder="Provide detailed information about your feedback. For bugs, include steps to reproduce. For features, describe the desired functionality."
                     value={formData.description}
                     onChange={(e) => updateFormData('description', e.target.value)}
-                    className="bg-military-700 border-military-600 text-tan-100 placeholder:text-tan-500 min-h-[120px]"
+                    className="bg-steel-750 border-line-600 text-ink-100 placeholder:text-ink-700 min-h-[120px]"
                     required
                 />
             </div>
@@ -225,7 +225,8 @@ export function FeedbackForm() {
             <Button
                 type="submit"
                 disabled={isSubmitting || !formData.type || !formData.title || !formData.description}
-                className="w-full bg-olive-600 hover:bg-olive-700 text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                variant="ember"
+                className="w-full disabled:opacity-50 disabled:cursor-not-allowed"
             >
                 {isSubmitting ? (
                     <>

@@ -1,104 +1,85 @@
 import React from "react";
 import Link from "next/link";
-import {Briefcase, FileText, House, MapPin, Package, Target} from "lucide-react";
+import {Briefcase, FileText, Hammer, House, MapPin, Package, Target, type LucideIcon} from "lucide-react";
+import {cn} from "@/lib/utils";
+
+interface Operation {
+    name: string;
+    href: string;
+    icon: LucideIcon;
+    blurb: string;
+    soon?: boolean;
+}
+
+const operations: Operation[] = [
+    {name: "Combat Simulator", href: "/combat-sim", icon: Target, blurb: "Test weapon damage against armor configurations"},
+    {name: "Items Database", href: "/items", icon: Package, blurb: "Browse every in-game item, its stats and locations"},
+    {name: "Gunsmith", href: "/gunsmith", icon: Hammer, blurb: "Build a weapon and read the consequence of each part"},
+    {name: "Hideout", href: "/hideout-upgrades", icon: House, blurb: "Plan base upgrades and track what each one needs"},
+    {name: "Tasks", href: "/tasks", icon: Briefcase, blurb: "227 contracts as vendor chains, with progress tracking"},
+    {name: "Guides", href: "/guides", icon: FileText, blurb: "Detailed explanations of the game's core systems"},
+    {name: "Maps", href: "#", icon: MapPin, blurb: "Interactive maps with loot spots and extracts", soon: true},
+];
 
 export default function NavigationSection() {
-    return <section className="py-16 bg-military-800 relative">
-        <div className="absolute inset-0 texture-overlay"></div>
-        <div className="container mx-auto px-6 relative z-10">
-            <div className="flex items-center justify-center mb-10">
-                <div className="h-px bg-olive-700 w-20"></div>
-                <h2 className="text-3xl font-bold mx-4 text-center military-stencil text-olive-400">OPERATIONS</h2>
-                <div className="h-px bg-olive-700 w-20"></div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                <Link href="/combat-sim" className="military-card hover:bg-military-700 rounded-sm p-8 transition-all hover:shadow-lg group">
-                    <div className="flex items-start gap-4">
-                        <div className="bg-olive-600 p-3 rounded-sm text-military-900 border border-olive-500">
-                            <Target size={32} />
-                        </div>
-                        <div>
-                            <h3 className="text-xl font-bold mb-2 group-hover:text-olive-400 transition-colors">Combat Simulator</h3>
-                            <p className="text-tan-300">Test weapon damage against armor configurations</p>
-                        </div>
-                    </div>
-                </Link>
-
-                <Link href="/items"
-                      className="military-card hover:bg-military-700 rounded-sm p-8 transition-all hover:shadow-lg group">
-                    <div className="flex items-start gap-4">
-                        <div className="bg-olive-600 p-3 rounded-sm text-military-900 border border-olive-500">
-                            <Package size={32}/>
-                        </div>
-                        <div>
-                            <h3 className="text-xl font-bold mb-2 group-hover:text-olive-400 transition-colors">Items
-                                Database</h3>
-                            <p className="text-tan-300">Browse all in-game items, stats, and locations</p>
-                        </div>
-                    </div>
-                </Link>
-
-                <Link href="/hideout-upgrades"
-                      className="military-card hover:bg-military-700 rounded-sm p-8 transition-all hover:shadow-lg group">
-                    <div className="flex items-start gap-4">
-                        <div className="bg-olive-600 p-3 rounded-sm text-military-900 border border-olive-500">
-                            <House size={32}/>
-                        </div>
-                        <div>
-                            <h3 className="text-xl font-bold mb-2 group-hover:text-olive-400 transition-colors">Hideout</h3>
-                            <p className="text-tan-300">Upgrade your base and track progression</p>
-                        </div>
-                    </div>
-                </Link>
-
-                <Link href="/guides"
-                      className="military-card hover:bg-military-700 rounded-sm p-8 transition-all hover:shadow-lg group">
-                    <div className="flex items-start gap-4">
-                        <div className="bg-olive-600 p-3 rounded-sm text-military-900 border border-olive-500">
-                            <FileText size={32}/>
-                        </div>
-                        <div>
-                            <h3 className="text-xl font-bold mb-2 group-hover:text-olive-400 transition-colors">Game
-                                Mechanics</h3>
-                            <p className="text-tan-300">Detailed explanations of core systems</p>
-                        </div>
-                    </div>
-                </Link>
-
-                <Link href="/tasks"
-                      className="military-card hover:bg-military-700 rounded-sm p-8 transition-all hover:shadow-lg group">
-                    <div className="flex items-start gap-4">
-                        <div className="bg-olive-600 p-3 rounded-sm text-military-900 border border-olive-500">
-                            <Briefcase size={32}/>
-                        </div>
-                        <div>
-                            <h3 className="text-xl font-bold mb-2 text-tan-300">Tasks</h3>
-                            <p className="text-tan-300/70">Mission guides and progress tracking</p>
-                        </div>
-                    </div>
-                </Link>
-
-                <div
-                    className="relative military-card rounded-sm p-8 bg-military-800 border border-military-700 opacity-75">
-                    <div className="flex items-start gap-4">
-                        <div className="bg-military-700 p-3 rounded-sm text-tan-300 border border-military-600">
-                            <MapPin size={32}/>
-                        </div>
-                        <div className="flex-1">
-                            <div className="flex items-start justify-between gap-2 mb-2">
-                                <h3 className="text-xl font-bold text-tan-300">Maps</h3>
-                                <span className="bg-military-700 text-olive-400 px-2 py-0.5 rounded-sm text-xs font-medium border border-olive-600 whitespace-nowrap">
-                            Coming Soon
-                        </span>
-                            </div>
-                            <p className="text-tan-300/70">Interactive maps with loot spots and extracts</p>
-                        </div>
-                    </div>
+    return (
+        <section className="py-16 bg-steel-900 border-y border-line-900">
+            <div className="container mx-auto px-6">
+                <div className="flex items-center justify-center gap-4 mb-10">
+                    <span className="h-px w-16 bg-line-700"/>
+                    <h2 className="eyebrow text-ink-500">Operations</h2>
+                    <span className="h-px w-16 bg-line-700"/>
                 </div>
 
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+                    {operations.map((op) => {
+                        const body = (
+                            <>
+                                <div className={cn(
+                                    "flex-none w-11 h-11 flex items-center justify-center border",
+                                    op.soon ? "border-line-700 text-ink-600" : "border-line-600 text-info"
+                                )}>
+                                    <op.icon size={22} strokeWidth={1.6}/>
+                                </div>
+                                <div className="flex-1">
+                                    <div className="flex items-start justify-between gap-2">
+                                        <h3 className={cn(
+                                            "font-display font-bold uppercase tracking-tight text-lg leading-tight",
+                                            op.soon ? "text-ink-400" : "text-ink-100 group-hover:text-ember transition-colors"
+                                        )}>
+                                            {op.name}
+                                        </h3>
+                                        {op.soon && (
+                                            <span className="flex-none font-mono text-[9px] tracking-micro uppercase text-ink-600 border border-line-700 px-1.5 py-0.5">
+                                                Soon
+                                            </span>
+                                        )}
+                                    </div>
+                                    <p className="text-sm text-ink-500 mt-1 leading-relaxed">{op.blurb}</p>
+                                </div>
+                            </>
+                        );
+
+                        if (op.soon) {
+                            return (
+                                <div key={op.name} className="flex items-start gap-4 p-6 bg-steel-800 border border-dashed border-line-700 opacity-70">
+                                    {body}
+                                </div>
+                            );
+                        }
+
+                        return (
+                            <Link
+                                key={op.name}
+                                href={op.href}
+                                className="group flex items-start gap-4 p-6 bg-steel-800 border border-line-800 hover:bg-steel-700 hover:border-line-600 transition-colors"
+                            >
+                                {body}
+                            </Link>
+                        );
+                    })}
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    );
 }

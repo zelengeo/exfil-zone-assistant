@@ -4,6 +4,7 @@ import React, {useState, useEffect} from 'react';
 import Link from 'next/link';
 import Image from 'next/image'
 import {ArrowRight} from 'lucide-react';
+import {cn} from '@/lib/utils';
 
 interface Slide {
     id: string;
@@ -66,16 +67,6 @@ const slides: Slide[] = [
         ctaText: "Read Guides",
         ctaLink: "/guides"
     }
-    //TODO
-    // {
-    //     id: 5,
-    //     title: "JOIN THE COMMUNITY",
-    //     subtitle: "SQUAD UP",
-    //     description: "Connect with players, share strategies, and stay updated",
-    //     backgroundImage: "/images/hero/slide-5.jpg", // Add your image
-    //     ctaText: "Get Involved",
-    //     ctaLink: "#community"
-    // }
 ];
 
 export default function HeroSlider() {
@@ -99,7 +90,7 @@ export default function HeroSlider() {
 
     return (
         <section
-            className="relative h-96 md:h-[500px] lg:h-[600px] overflow-hidden"
+            className="relative h-96 md:h-[500px] lg:h-[560px] overflow-hidden border-b border-line-900"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
         >
@@ -107,14 +98,12 @@ export default function HeroSlider() {
             {slides.map((slide, index) => (
                 <div
                     key={slide.id}
-                    className={`absolute inset-0 transition-opacity duration-1000 ${
+                    className={cn(
+                        "absolute inset-0 transition-opacity duration-1000",
                         index === currentSlide ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    )}
                 >
-                    {/* Gradient Overlay */}
-
-                    {/* Background Image */}
-                    <div className="absolute inset-0 bg-military-800">
+                    <div className="absolute inset-0 bg-steel-850">
                         <div className="relative w-full h-full overflow-hidden">
                             <Image
                                 src={slide.backgroundImage}
@@ -127,7 +116,7 @@ export default function HeroSlider() {
                  md:left-auto md:right-0 md:translate-x-0"
                             />
                             <div
-                                className="absolute inset-0 bg-gradient-to-r from-military-900 via-military-900/85 to-transparent z-10"/>
+                                className="absolute inset-0 bg-gradient-to-r from-steel-950 via-steel-950/85 to-transparent z-10"/>
                         </div>
                     </div>
                 </div>
@@ -140,30 +129,33 @@ export default function HeroSlider() {
                         {slides.map((slide, index) => (
                             <div
                                 key={slide.id}
-                                className={`transition-all duration-500 ${
+                                className={cn(
+                                    "transition-all duration-500",
                                     index === currentSlide
                                         ? 'opacity-100 transform translate-x-0 relative'
                                         : 'opacity-0 transform -translate-x-full pointer-events-none absolute inset-0'
-                                }`}
+                                )}
                             >
-                                <div className="inline-block mb-4 px-3 py-1 border border-olive-500 bg-military-800/80">
-                                    <h2 className="text-olive-400 military-stencil">{slide.subtitle}</h2>
+                                <div className="inline-block mb-4">
+                                    <span className="font-mono text-[10px] tracking-eyebrow uppercase text-ink-500 border-b border-ember/60 pb-1">
+                                        {slide.subtitle}
+                                    </span>
                                 </div>
 
-                                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-tan-100 mb-4 military-stencil">
+                                <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-extrabold uppercase tracking-tight text-ink-hi mb-4 leading-[0.98]">
                                     {slide.title}
                                 </h1>
 
-                                <div className="bg-military-900/80 border border-olive-700 p-4 mb-8">
-                                    <p className="text-xl md:text-2xl text-tan-200">
+                                <div className="bg-steel-900/85 border border-line-700 p-4 mb-8 clip-shoulder">
+                                    <p className="text-lg md:text-xl text-ink-300 leading-relaxed">
                                         {slide.description}
                                     </p>
                                 </div>
 
-                                <div className="flex flex-wrap gap-4">
+                                <div className="flex flex-wrap gap-3">
                                     <Link
                                         href={slide.ctaLink}
-                                        className="bg-olive-600 hover:bg-olive-500 text-tan-100 px-6 py-3 rounded-sm font-medium text-lg transition-colors flex items-center gap-2 border border-olive-500 hover:border-olive-400"
+                                        className="bg-ember hover:bg-ember-hover text-ember-ink px-6 py-3 font-display font-bold uppercase tracking-nav text-lg transition-colors flex items-center gap-2"
                                     >
                                         {slide.ctaText}
                                         <ArrowRight size={20}/>
@@ -172,7 +164,7 @@ export default function HeroSlider() {
                                     {slide.ctaSecondary && (
                                         <Link
                                             href={slide.ctaSecondary.link}
-                                            className="bg-military-800/80 hover:bg-military-700 text-tan-100 px-6 py-3 rounded-sm font-medium text-lg transition-colors border border-olive-700 hover:border-olive-500"
+                                            className="bg-transparent hover:bg-steel-700 text-ink-200 px-6 py-3 font-display font-bold uppercase tracking-nav text-lg transition-colors border border-line-500"
                                         >
                                             {slide.ctaSecondary.text}
                                         </Link>
@@ -187,17 +179,17 @@ export default function HeroSlider() {
             {/* Navigation Controls */}
             <div className="absolute bottom-8 left-0 right-0 z-30">
                 <div className="container mx-auto px-6">
-                    {/* Dots */}
                     <div className="flex items-center justify-end gap-2">
                         {slides.map((_, index) => (
                             <button
                                 key={index}
                                 onClick={() => goToSlide(index)}
-                                className={`min-w-2 min-h-2 w-2 h-2 rounded-full transition-all ${
+                                className={cn(
+                                    "min-w-2 min-h-2 h-1.5 transition-all",
                                     index === currentSlide
-                                        ? 'bg-olive-400 w-8'
-                                        : 'bg-olive-700 hover:bg-olive-600'
-                                }`}
+                                        ? 'bg-ember w-8'
+                                        : 'bg-steel-600 hover:bg-steel-550 w-2'
+                                )}
                                 aria-label={`Go to slide ${index + 1}`}
                             />
                         ))}

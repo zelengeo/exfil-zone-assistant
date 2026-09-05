@@ -18,13 +18,13 @@ function AuthErrorContent() {
     const isCriticalError = ['Configuration', 'OAuthSignin', 'OAuthCallback', 'OAuthCreateAccount'].includes(error || '');
 
     return (
-        <div className="min-h-[80vh] flex items-center justify-center px-4">
-            <Card className="w-full max-w-md">
+        <div className="min-h-screen bg-steel-950 text-ink-300 flex items-center justify-center px-4 py-12">
+            <Card className="w-full max-w-md bg-steel-800 border-line-800 shadow-none">
                 <CardHeader className="text-center">
-                    <div className="mx-auto mb-4 w-12 h-12 rounded-full bg-destructive/10 flex items-center justify-center">
+                    <div className="mx-auto mb-4 w-12 h-12 border border-bad/40 flex items-center justify-center">
                         <AlertCircle className="w-6 h-6 text-destructive" />
                     </div>
-                    <CardTitle className="text-2xl">Authentication Error</CardTitle>
+                    <CardTitle className="font-display font-bold uppercase tracking-tight text-2xl text-ink-100">Authentication Error</CardTitle>
                     <CardDescription>
                         We encountered a problem signing you in
                     </CardDescription>
@@ -40,7 +40,7 @@ function AuthErrorContent() {
                     </Alert>
 
                     {error && (
-                        <div className="rounded-lg bg-muted p-3">
+                        <div className="bg-steel-750 border border-line-700 p-3">
                             <p className="text-xs text-muted-foreground">
                                 Error code: <code className="font-mono">{error}</code>
                             </p>
@@ -52,7 +52,7 @@ function AuthErrorContent() {
                     <Button
                         asChild
                         className="w-full"
-                        variant={isCriticalError ? "outline" : "default"}
+                        variant={isCriticalError ? "quiet" : "ember"}
                     >
                         <Link href="/auth/signin">
                             <RotateCcw className="mr-2 h-4 w-4" />
@@ -89,13 +89,13 @@ function AuthErrorContent() {
 export default function AuthErrorPage() {
     return (
         <Suspense fallback={
-            <div className="min-h-[80vh] flex items-center justify-center px-4">
-                <Card className="w-full max-w-md">
+            <div className="min-h-screen bg-steel-950 text-ink-300 flex items-center justify-center px-4 py-12">
+                <Card className="w-full max-w-md bg-steel-800 border-line-800 shadow-none">
                     <CardHeader className="text-center">
-                        <div className="mx-auto mb-4 w-12 h-12 rounded-full bg-destructive/10 flex items-center justify-center">
+                        <div className="mx-auto mb-4 w-12 h-12 border border-bad/40 flex items-center justify-center">
                             <AlertCircle className="w-6 h-6 text-destructive" />
                         </div>
-                        <CardTitle className="text-2xl">Authentication Error</CardTitle>
+                        <CardTitle className="font-display font-bold uppercase tracking-tight text-2xl text-ink-100">Authentication Error</CardTitle>
                         <CardDescription>
                             Loading error details...
                         </CardDescription>

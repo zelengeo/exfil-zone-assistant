@@ -25,11 +25,11 @@ import SettingsSection from "@/app/dashboard/SettingsSection";
 
 // Rank configuration
 const rankConfig = {
-    recruit: { next: 'soldier', pointsRequired: 100, color: 'text-gray-400' },
-    soldier: { next: 'specialist', pointsRequired: 500, color: 'text-blue-400' },
-    specialist: { next: 'veteran', pointsRequired: 1500, color: 'text-purple-400' },
-    veteran: { next: 'elite', pointsRequired: 3000, color: 'text-orange-400' },
-    elite: { next: null, pointsRequired: 5000, color: 'text-yellow-400' }
+    recruit: { next: 'soldier', pointsRequired: 100, color: 'text-ink-400' },
+    soldier: { next: 'specialist', pointsRequired: 500, color: 'text-info' },
+    specialist: { next: 'veteran', pointsRequired: 1500, color: 'text-info-light' },
+    veteran: { next: 'elite', pointsRequired: 3000, color: 'text-warn' },
+    elite: { next: null, pointsRequired: 5000, color: 'text-good' }
 };
 
 export default async function DashboardPage() {
@@ -70,12 +70,13 @@ export default async function DashboardPage() {
             <div className="max-w-7xl mx-auto p-4 sm:p-6">
                 {/* Header */}
                 <div className="mb-8">
-                    <h1 className="text-3xl font-bold text-tan-100 mb-2">Dashboard</h1>
-                    <p className="text-tan-400">Welcome back, {user.displayName}!</p>
+                    <p className="eyebrow mb-2">Operator</p>
+                    <h1 className="font-display font-extrabold uppercase tracking-tight text-3xl text-ink-100">Dashboard</h1>
+                    <p className="text-ink-400 mt-1">Welcome back, {user.displayName}!</p>
                 </div>
 
                 {/* User Profile Card */}
-                <div className="bg-military-850 border border-military-700 rounded-sm p-6 mb-6">
+                <div className="bg-steel-800 border border-line-800 p-6 mb-6">
                     <div className="flex flex-col sm:flex-row items-start gap-6">
                         {/* Avatar */}
                         <div className="flex-shrink-0">
@@ -85,11 +86,11 @@ export default async function DashboardPage() {
                                     alt={user.displayName || user.username}
                                     width={88}
                                     height={88}
-                                    className="w-24 h-24 rounded-sm border-2 border-olive-600"
+                                    className="w-24 h-24 border border-line-500"
                                 />
                             ) : (
-                                <div className="w-24 h-24 bg-military-700 rounded-sm border-2 border-olive-600 flex items-center justify-center">
-                  <span className="text-3xl font-bold text-tan-300">
+                                <div className="w-24 h-24 bg-steel-700 border border-line-500 flex items-center justify-center">
+                  <span className="font-display font-bold text-3xl text-ink-300">
                     {user.username[0].toUpperCase()}
                   </span>
                                 </div>
@@ -99,28 +100,28 @@ export default async function DashboardPage() {
                         {/* User Info */}
                         <div className="flex-grow">
                             <div className="flex items-center gap-3 mb-2">
-                                <h2 className="text-2xl font-bold text-tan-100">{user.username}</h2>
-                                <span className={`px-3 py-1 rounded-sm text-sm font-medium bg-military-800 ${currentRankConfig.color}`}>
-                  {user.rank.toUpperCase()}
+                                <h2 className="font-display font-bold uppercase tracking-tight text-2xl text-ink-100">{user.username}</h2>
+                                <span className={`px-2 py-1 font-mono text-[10px] tracking-micro uppercase border border-line-600 bg-steel-700 ${currentRankConfig.color}`}>
+                  {user.rank}
                 </span>
                             </div>
 
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4 text-sm">
                                 <div>
-                                    <p className="text-tan-500">Level</p>
-                                    <p className="text-tan-200 font-medium">{user.level}</p>
+                                    <p className="eyebrow mb-1">Level</p>
+                                    <p className="text-ink-200 font-mono tabular font-medium">{user.level}</p>
                                 </div>
                                 <div>
-                                    <p className="text-tan-500">Account Age</p>
-                                    <p className="text-tan-200 font-medium">{accountAge} days</p>
+                                    <p className="eyebrow mb-1">Account Age</p>
+                                    <p className="text-ink-200 font-mono tabular font-medium">{accountAge} days</p>
                                 </div>
                                 <div>
-                                    <p className="text-tan-500">Last Login</p>
-                                    <p className="text-tan-200 font-medium">{lastLogin}</p>
+                                    <p className="eyebrow mb-1">Last Login</p>
+                                    <p className="text-ink-200 font-mono tabular font-medium">{lastLogin}</p>
                                 </div>
                                 <div>
-                                    <p className="text-tan-500">Status</p>
-                                    <p className={`font-medium ${user.isBanned ? 'text-red-400' : user.isActive ? 'text-green-400' :  'text-yellow-400'}`}>
+                                    <p className="eyebrow mb-1">Status</p>
+                                    <p className={`font-medium ${user.isBanned ? 'text-bad' : user.isActive ? 'text-good' :  'text-warn'}`}>
                                         {user.isBanned ? 'Banned' : user.isActive ? 'Active' : 'Inactive'}
                                     </p>
                                 </div>
@@ -130,14 +131,14 @@ export default async function DashboardPage() {
                             {(user.location || user.vrHeadset) && (
                                 <div className="flex flex-wrap gap-4 mt-4">
                                     {user.location && (
-                                        <div className="flex items-center gap-2 text-sm text-tan-400">
-                                            <MapPin className="h-4 w-4" />
+                                        <div className="flex items-center gap-2 text-sm text-ink-400">
+                                            <MapPin className="h-4 w-4" strokeWidth={1.6} />
                                             <span>{user.location.toUpperCase()} Region</span>
                                         </div>
                                     )}
                                     {user.vrHeadset && (
-                                        <div className="flex items-center gap-2 text-sm text-tan-400">
-                                            <Headphones className="h-4 w-4" />
+                                        <div className="flex items-center gap-2 text-sm text-ink-400">
+                                            <Headphones className="h-4 w-4" strokeWidth={1.6} />
                                             <span>{user.vrHeadset}</span>
                                         </div>
                                     )}
@@ -149,14 +150,14 @@ export default async function DashboardPage() {
                     {/* Rank Progress */}
                     <div className="mt-6">
                         <div className="flex justify-between items-center mb-2">
-                            <span className="text-sm text-tan-400">Progress to {currentRankConfig.next || 'Max Rank'}</span>
-                            <span className="text-sm text-tan-300 font-medium">
+                            <span className="text-sm text-ink-400">Progress to {currentRankConfig.next || 'Max Rank'}</span>
+                            <span className="text-sm text-ink-300 font-mono tabular">
                 {user.stats.contributionPoints} / {currentRankConfig.pointsRequired} CP
               </span>
                         </div>
-                        <div className="w-full bg-military-700 rounded-full h-2">
+                        <div className="w-full bg-track h-1.5">
                             <div
-                                className="bg-olive-500 h-2 rounded-full transition-all duration-500"
+                                className="bg-info h-1.5 transition-all duration-500"
                                 style={{ width: `${Math.min(progressToNextRank, 100)}%` }}
                             />
                         </div>
@@ -166,51 +167,51 @@ export default async function DashboardPage() {
                 {/* Contribution Stats Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                     {/* Total Contributions */}
-                    <div className="bg-military-850 border border-military-700 rounded-sm p-6">
+                    <div className="bg-steel-800 border border-line-800 p-6">
                         <div className="flex items-center justify-between mb-4">
-                            <Trophy className="h-8 w-8 text-olive-500" />
-                            <span className="text-2xl font-bold text-tan-100">
+                            <Trophy className="h-8 w-8 text-info" strokeWidth={1.6} />
+                            <span className="font-mono tabular font-bold text-2xl text-ink-100">
                 {user.stats.contributionPoints}
               </span>
                         </div>
-                        <h3 className="text-tan-300 font-medium">Total Contribution Points</h3>
-                        <p className="text-sm text-tan-500 mt-1">Keep contributing to rank up!</p>
+                        <h3 className="text-ink-300 font-medium">Total Contribution Points</h3>
+                        <p className="text-sm text-ink-500 mt-1">Keep contributing to rank up!</p>
                     </div>
 
                     {/* Feedback Submitted */}
-                    <div className="bg-military-850 border border-military-700 rounded-sm p-6">
+                    <div className="bg-steel-800 border border-line-800 p-6">
                         <div className="flex items-center justify-between mb-4">
-                            <Activity className="h-8 w-8 text-blue-500" />
-                            <span className="text-2xl font-bold text-tan-100">
+                            <Activity className="h-8 w-8 text-info" strokeWidth={1.6} />
+                            <span className="font-mono tabular font-bold text-2xl text-ink-100">
                 {user.stats.feedbackSubmitted}
               </span>
                         </div>
-                        <h3 className="text-tan-300 font-medium">Total Feedback</h3>
-                        <p className="text-sm text-tan-500 mt-1">All types of contributions</p>
+                        <h3 className="text-ink-300 font-medium">Total Feedback</h3>
+                        <p className="text-sm text-ink-500 mt-1">All types of contributions</p>
                     </div>
 
                     {/* Bugs Reported */}
-                    <div className="bg-military-850 border border-military-700 rounded-sm p-6">
+                    <div className="bg-steel-800 border border-line-800 p-6">
                         <div className="flex items-center justify-between mb-4">
-                            <Bug className="h-8 w-8 text-red-500" />
-                            <span className="text-2xl font-bold text-tan-100">
+                            <Bug className="h-8 w-8 text-bad" strokeWidth={1.6} />
+                            <span className="font-mono tabular font-bold text-2xl text-ink-100">
                 {user.stats.bugsReported}
               </span>
                         </div>
-                        <h3 className="text-tan-300 font-medium">Bugs Reported</h3>
-                        <p className="text-sm text-tan-500 mt-1">Help us fix issues</p>
+                        <h3 className="text-ink-300 font-medium">Bugs Reported</h3>
+                        <p className="text-sm text-ink-500 mt-1">Help us fix issues</p>
                     </div>
 
                     {/* Features Proposed */}
-                    <div className="bg-military-850 border border-military-700 rounded-sm p-6">
+                    <div className="bg-steel-800 border border-line-800 p-6">
                         <div className="flex items-center justify-between mb-4">
-                            <Lightbulb className="h-8 w-8 text-yellow-500" />
-                            <span className="text-2xl font-bold text-tan-100">
+                            <Lightbulb className="h-8 w-8 text-warn" strokeWidth={1.6} />
+                            <span className="font-mono tabular font-bold text-2xl text-ink-100">
                 {user.stats.featuresProposed}
               </span>
                         </div>
-                        <h3 className="text-tan-300 font-medium">Features Proposed</h3>
-                        <p className="text-sm text-tan-500 mt-1">Your improvement ideas</p>
+                        <h3 className="text-ink-300 font-medium">Features Proposed</h3>
+                        <p className="text-sm text-ink-500 mt-1">Your improvement ideas</p>
                     </div>
 
                 </div>
@@ -218,58 +219,58 @@ export default async function DashboardPage() {
                 {/* Two Column Layout */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {/* Recent Activity */}
-                    <div className="bg-military-850 border border-military-700 rounded-sm p-6">
-                        <h3 className="text-xl font-bold text-tan-100 mb-4 flex items-center gap-2">
-                            <Clock className="h-5 w-5" />
+                    <div className="bg-steel-800 border border-line-800 p-6">
+                        <h3 className="font-display font-bold uppercase tracking-tight text-xl text-ink-100 mb-4 flex items-center gap-2">
+                            <Clock className="h-5 w-5 text-info" strokeWidth={1.6} />
                             Recent Activity
                         </h3>
                         {recentFeedback.length > 0 ? (
                             <div className="space-y-3">
                                 {recentFeedback.map((feedback: IFeedback) => (
-                                    <div key={feedback._id.toString()} className="border-l-2 border-military-700 pl-4 py-2">
+                                    <div key={feedback._id.toString()} className="border-l-2 border-line-700 pl-4 py-2">
                                         <div className="flex items-center gap-2 mb-1">
-                                            {feedback.type === 'bug' && <Bug className="h-4 w-4 text-red-500" />}
-                                            {feedback.type === 'feature' && <Lightbulb className="h-4 w-4 text-yellow-500" />}
-                                            {feedback.type === 'data_correction' && <FileEdit className="h-4 w-4 text-purple-500" />}
-                                            <span className="text-sm font-medium text-tan-200">{feedback.title}</span>
+                                            {feedback.type === 'bug' && <Bug className="h-4 w-4 text-bad" strokeWidth={1.6} />}
+                                            {feedback.type === 'feature' && <Lightbulb className="h-4 w-4 text-warn" strokeWidth={1.6} />}
+                                            {feedback.type === 'data_correction' && <FileEdit className="h-4 w-4 text-info" strokeWidth={1.6} />}
+                                            <span className="text-sm font-medium text-ink-200">{feedback.title}</span>
                                         </div>
-                                        <div className="flex items-center gap-4 text-xs text-tan-500">
-                      <span className={`px-2 py-0.5 rounded-sm ${
-                          feedback.status === 'accepted' ? 'bg-green-900/30 text-green-400' :
-                              feedback.status === 'rejected' ? 'bg-red-900/30 text-red-400' :
-                                  feedback.status === 'implemented' ? 'bg-blue-900/30 text-blue-400' :
-                                      'bg-military-700 text-tan-400'
+                                        <div className="flex items-center gap-4 text-xs text-ink-500">
+                      <span className={`px-2 py-0.5 font-mono text-[10px] tracking-micro uppercase border ${
+                          feedback.status === 'accepted' ? 'border-good/40 text-good' :
+                              feedback.status === 'rejected' ? 'border-bad/40 text-bad' :
+                                  feedback.status === 'implemented' ? 'border-info/40 text-info' :
+                                      'border-line-600 text-ink-400'
                       }`}>
                         {feedback.status}
                       </span>
-                                            <span>{new Date(feedback.createdAt).toLocaleDateString()}</span>
+                                            <span className="font-mono tabular">{new Date(feedback.createdAt).toLocaleDateString()}</span>
                                         </div>
                                     </div>
                                 ))}
                             </div>
                         ) : (
-                            <p className="text-tan-500 text-center py-8">
+                            <p className="text-ink-500 text-center py-8">
                                 No contributions yet. Start by reporting a bug or suggesting a feature!
                             </p>
                         )}
                     </div>
 
                     {/* Badges & Achievements */}
-                    <div className="bg-military-850 border border-military-700 rounded-sm p-6">
-                        <h3 className="text-xl font-bold text-tan-100 mb-4 flex items-center gap-2">
-                            <Award className="h-5 w-5" />
-                            Badges & Achievements
+                    <div className="bg-steel-800 border border-line-800 p-6">
+                        <h3 className="font-display font-bold uppercase tracking-tight text-xl text-ink-100 mb-4 flex items-center gap-2">
+                            <Award className="h-5 w-5 text-info" strokeWidth={1.6} />
+                            Badges &amp; Achievements
                         </h3>
                         {user.badges && user.badges.length > 0 ? (
                             <div className="grid grid-cols-2 gap-3">
                                 {user.badges.map((badge) => (
-                                    <div key={badge.id} className="bg-military-800 rounded-sm p-3 border border-military-700">
+                                    <div key={badge.id} className="bg-steel-750 p-3 border border-line-700">
                                         <div className="flex items-center gap-2 mb-1">
-                                            <Star className="h-4 w-4 text-yellow-500" />
-                                            <span className="text-sm font-medium text-tan-200">{badge.name}</span>
+                                            <Star className="h-4 w-4 text-warn" strokeWidth={1.6} />
+                                            <span className="text-sm font-medium text-ink-200">{badge.name}</span>
                                         </div>
-                                        <p className="text-xs text-tan-500">{badge.description}</p>
-                                        <p className="text-xs text-tan-600 mt-1">
+                                        <p className="text-xs text-ink-500">{badge.description}</p>
+                                        <p className="text-xs text-ink-600 mt-1 font-mono tabular">
                                             Earned {new Date(badge.earnedAt).toLocaleDateString()}
                                         </p>
                                     </div>
@@ -277,9 +278,9 @@ export default async function DashboardPage() {
                             </div>
                         ) : (
                             <div className="text-center py-8">
-                                <Award className="h-12 w-12 text-military-600 mx-auto mb-3" />
-                                <p className="text-tan-500">No badges earned yet</p>
-                                <p className="text-sm text-tan-600 mt-1">Keep contributing to unlock achievements!</p>
+                                <Award className="h-12 w-12 text-ink-700 mx-auto mb-3" strokeWidth={1.6} />
+                                <p className="text-ink-500">No badges earned yet</p>
+                                <p className="text-sm text-ink-600 mt-1">Keep contributing to unlock achievements!</p>
                             </div>
                         )}
                     </div>
