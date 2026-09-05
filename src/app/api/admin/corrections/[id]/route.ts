@@ -7,7 +7,7 @@ import {IDataCorrectionApi, DataCorrectionApi } from '@/lib/schemas/dataCorrecti
 import {withRateLimit} from '@/lib/middleware';
 import {logger} from '@/lib/logger';
 import {NotFoundError, ValidationError, handleError, ConflictError} from '@/lib/errors';
-import mongoose, {isValidObjectId} from 'mongoose';
+import mongoose, {type ClientSession, isValidObjectId} from 'mongoose';
 import {requireAdminOrModerator} from "@/lib/auth/utils";
 
 type ApiType = IDataCorrectionApi['Admin']['ById']
@@ -68,7 +68,7 @@ export async function PATCH(
 ) {
     return withRateLimit(request, async () => {
         const { id } = await params;
-        const session = await mongoose.startSession();
+        let session: ClientSession | null = null;
 
         try {
             const { session: adminSession } = await requireAdminOrModerator();
@@ -81,6 +81,7 @@ export async function PATCH(
             const validatedData = DataCorrectionApi.Admin.ById.Patch.Request.parse(body);
 
             await connectDB();
+            session = await mongoose.startSession();
 
             // Start transaction
             session.startTransaction();
@@ -143,13 +144,25 @@ export async function PATCH(
 
         } catch (error) {
             // Abort transaction on error
-            await session.abortTransaction();
+            if (session?.inTransaction()) {
+                try {
+                    await session.abortTransaction();
+                } catch (cleanupError) {
+                    logger.error('Failed to abort correction review transaction', cleanupError);
+                }
+            }
 
             logger.error('Failed to review correction', error);
             return handleError(error);
         } finally {
             // End session
-            await session.endSession();
+            if (session) {
+                try {
+                    await session.endSession();
+                } catch (cleanupError) {
+                    logger.error('Failed to end correction review session', cleanupError);
+                }
+            }
         }
     }, 'admin');
 }

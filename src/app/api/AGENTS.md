@@ -42,6 +42,14 @@ Five things in that order, every time: rate limit, gate, connect, parse, respond
 so there is no branching on their result; `handleError` is the only thing that formats an error, so
 routes never build a status code by hand.
 
+## Transactions
+
+Authenticate and validate before allocating a database session, and always await `connectDB()`
+before `mongoose.startSession()`. Keep session creation inside the handler's `try`, hold the session
+as nullable until creation succeeds, and abort only when `inTransaction()` is true. End every
+created session exactly once. Abort and end-session failures are logged separately and must not
+replace the original API error or a successful committed response.
+
 ## Validation
 
 Parse with the endpoint's own schema from `lib/schemas/`, never with an ad-hoc object. Type the

@@ -1,7 +1,7 @@
 // src/app/api/feedback/route.ts
 import {NextRequest, NextResponse} from 'next/server';
 import {connectDB} from '@/lib/mongodb';
-import mongoose from "mongoose";
+import mongoose, {type ClientSession} from "mongoose";
 import {Feedback} from '@/models/Feedback';
 import {User} from '@/models/User';
 import {IFeedbackApi, FeedbackApi} from "@/lib/schemas/feedback";
@@ -20,10 +20,9 @@ export async function POST(request: NextRequest) {
     return withRateLimit(
         request,
         async () => {
-            const mongooseSession = await mongoose.startSession();
+            let mongooseSession: ClientSession | null = null;
 
             try {
-                await connectDB();
                 const body = await request.json();
                 const validatedData = FeedbackApi["Post"]["Request"].parse(body);
                 
@@ -37,6 +36,8 @@ export async function POST(request: NextRequest) {
                     await requireAuthWithUserCheck();
                 }
 
+                await connectDB();
+                mongooseSession = await mongoose.startSession();
 
                 // Sanitize inputs
                 const sanitizedData = {
@@ -94,8 +95,12 @@ export async function POST(request: NextRequest) {
 
             } catch (error) {
                 // Abort transaction on error
-                if (mongooseSession.inTransaction()) {
-                    await mongooseSession.abortTransaction();
+                if (mongooseSession?.inTransaction()) {
+                    try {
+                        await mongooseSession.abortTransaction();
+                    } catch (cleanupError) {
+                        logger.error('Failed to abort feedback transaction', cleanupError);
+                    }
                 }
 
                 logger.error('Feedback submission failed', error, {
@@ -106,7 +111,13 @@ export async function POST(request: NextRequest) {
                 return handleError(error);
             } finally {
                 // End session
-                await mongooseSession.endSession();
+                if (mongooseSession) {
+                    try {
+                        await mongooseSession.endSession();
+                    } catch (cleanupError) {
+                        logger.error('Failed to end feedback session', cleanupError);
+                    }
+                }
             }
         },
         session ? 'feedbackPostAuthenticated' : 'feedbackPostUnauthenticated'

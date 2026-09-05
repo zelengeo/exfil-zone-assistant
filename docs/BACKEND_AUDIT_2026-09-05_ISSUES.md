@@ -16,7 +16,7 @@ The sections below are the exact proposed issue bodies, apart from GitHub number
 | [B02](#b02) | [High] Verify OAuth email ownership and resolve linked accounts by provider identity | bug | None — implemented locally; rollout pending |
 | [B03](#b03) | [High] Enforce authorization on correction deletion until retirement | bug, ready-for-agent | None |
 | [B04](#b04) | [High] Repair MongoDB connection lifecycle and remove the unused client pool | bug | None — implemented locally; local replica-set verification pending |
-| [B05](#b05) | [High] Connect before creating database sessions in write handlers | bug, ready-for-agent | None |
+| [B05](#b05) | [High] Connect before creating database sessions in write handlers | bug | None — implemented locally; local replica-set smoke pending |
 | [B06](#b06) | [High] Make account deletion atomic and consistent about retained references | bug, needs-triage | B04, B05 |
 | [B07](#b07) | [High] Restrict local MongoDB and mongo-express exposure | bug, ready-for-agent | None |
 | [B08](#b08) | [Medium] Isolate rate-limit policies and preserve their full expiry windows | bug, ready-for-agent | None |
@@ -415,7 +415,9 @@ Local audit: `docs/BACKEND_AUDIT_2026-09-05.md`, section `B04`. A GitHub trackin
 
 **Proposed title:** [High] Connect before creating database sessions in write handlers
 
-**Proposed labels:** bug, ready-for-agent
+**Proposed labels:** bug
+
+**Implementation status:** Implemented locally on 2026-09-05; a disposable local replica-set smoke test for feedback submission and admin deletion remains pending because the Docker daemon was unavailable. No development-cluster records were created or deleted during automated verification.
 
 Part of the backend audit dated 2026-09-05. Audit finding: **B05**. Priority: **High**.
 
@@ -449,16 +451,28 @@ No connection-cache redesign, data-retention decision, or changes to the busines
 
 ### Acceptance criteria
 
-- [ ] Each retained handler succeeds on a fresh process with a reachable database.
-- [ ] Connection/startSession failures are translated into the normal API error contract.
-- [ ] A session is ended exactly once when created; cleanup does not mask the original error.
-- [ ] Unauthorized requests do not start transactions.
+- [x] Each retained handler succeeds on a fresh process with a reachable database.
+- [x] Connection/startSession failures are translated into the normal API error contract.
+- [x] A session is ended exactly once when created; cleanup does not mask the original error.
+- [x] Unauthorized requests do not start transactions.
+
+Implemented in:
+
+- `src/app/api/feedback/route.ts`
+- `src/app/api/feedback/route.test.ts`
+- `src/app/api/admin/users/[id]/route.ts`
+- `src/app/api/admin/users/[id]/route.test.ts`
+- `src/app/api/admin/corrections/[id]/route.ts`
+- `src/app/api/admin/corrections/[id]/route.test.ts`
+- `src/app/api/AGENTS.md`
 
 ### Required tests or verification
 
-- Cold-start route tests with no pre-existing Mongoose connection.
-- Inject connect, startSession, write, commit and abort failures and assert response and cleanup behavior.
-- Replica-set smoke test for feedback submission and admin deletion.
+- [x] Cold-start route tests with no pre-existing Mongoose connection.
+- [x] Inject connect, startSession, write, commit, abort and end-session failures and assert response and cleanup behavior.
+- [ ] Replica-set smoke test for feedback submission and admin deletion.
+
+Local verification result: **14 test files, 261 tests passed**; TypeScript and changed-file ESLint passed. The route tests control the connection boundary and driver session directly, reproducing the cold-start hang before the fix and verifying connection/session ordering, error translation, active-transaction aborts and exactly-once cleanup after the fix. Docker is installed, but its daemon was not running, so the disposable replica-set smoke test could not be executed. No configured remote database was contacted.
 
 Add durable regression tests for changed behavior. Existing passing game-data tests alone do not verify this issue. Any infrastructure verification uses disposable/local resources unless live access and the specific operation are authorized.
 

@@ -1,6 +1,6 @@
 // src/app/api/admin/users/[id]/route.ts
 import {NextRequest, NextResponse} from 'next/server';
-import mongoose, {isValidObjectId} from "mongoose";
+import mongoose, {type ClientSession, isValidObjectId} from "mongoose";
 import {connectDB} from '@/lib/mongodb';
 import {User} from '@/models/User';
 import {Account} from "@/models/Account";
@@ -65,15 +65,17 @@ export async function DELETE(
         request,
         async () => {
             const { id } = await params;
-            const mongooseSession = await mongoose.startSession();
+            let mongooseSession: ClientSession | null = null;
 
             try {
                 const {session} = await requireAdmin();
-                await connectDB();
 
                 if (!isValidObjectId(id)) {
                     throw new ValidationError('Invalid user ID');
                 }
+
+                await connectDB();
+                mongooseSession = await mongoose.startSession();
 
                 // Start transaction
                 mongooseSession.startTransaction();
@@ -124,7 +126,13 @@ export async function DELETE(
 
             } catch (error) {
                 // Abort transaction on error
-                await mongooseSession.abortTransaction();
+                if (mongooseSession?.inTransaction()) {
+                    try {
+                        await mongooseSession.abortTransaction();
+                    } catch (cleanupError) {
+                        logger.error('Failed to abort user deletion transaction', cleanupError);
+                    }
+                }
 
                 logger.error('User deletion error:', error, {
                     path: `/api/admin/users/${id}`,
@@ -133,7 +141,13 @@ export async function DELETE(
                 return handleError(error);
             } finally {
                 // End session
-                await mongooseSession.endSession();
+                if (mongooseSession) {
+                    try {
+                        await mongooseSession.endSession();
+                    } catch (cleanupError) {
+                        logger.error('Failed to end user deletion session', cleanupError);
+                    }
+                }
             }
         },
         'admin'
