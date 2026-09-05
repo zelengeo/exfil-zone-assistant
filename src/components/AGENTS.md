@@ -9,7 +9,7 @@ when a second route needs it.
 |---|---|
 | `ui/` | shadcn primitives — 27 of them, generated, not hand-edited |
 | `layout/` | `Header`, `Footer`, navigation — every page |
-| `items/`, `tasks/`, `trade/`, `protection/`, `gunsmith/`, `profile/` | domain components |
+| `items/`, `tasks/`, `trade/`, `protection/`, `gunsmith/` | domain components |
 | root | the few app-wide singletons: `CookieConsentBanner`, `ShareButton`, `SessionRefreshButton` |
 
 Check `ui/` before building a primitive. Adding a shadcn component is a generator run, not a

@@ -11,12 +11,6 @@ import { requireAuth } from "@/lib/auth/utils";
 
 type ApiType = IUserApi['UpdateUsername'];
 
-// Username update rate limit: 1 per week
-const USERNAME_UPDATE_RATE_LIMIT = {
-    interval: 60 * 60 * 24 * 7, // 1 week
-    uniqueTokenPerInterval: 1,
-};
-
 export async function PATCH(request: NextRequest) {
     return withRateLimit(request, async () => {
         try {
@@ -66,5 +60,5 @@ export async function PATCH(request: NextRequest) {
             logger.error('Failed to update username', error);
             return handleError(error);
         }
-    }, USERNAME_UPDATE_RATE_LIMIT);
+    }, 'usernameUpdate');
 }

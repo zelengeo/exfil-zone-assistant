@@ -7,12 +7,6 @@ import { handleError} from '@/lib/errors';
 import { logger } from '@/lib/logger';
 import {IUserApi, UserApi} from "@/lib/schemas/user";
 
-// Check username rate limit: 20 per minute
-const CHECK_USERNAME_RATE_LIMIT = {
-    interval: 60,
-    uniqueTokenPerInterval: 20,
-};
-
 type ApiType = IUserApi['CheckUsername'];
 export async function GET(request: NextRequest) {
     return withRateLimit(
@@ -48,6 +42,6 @@ export async function GET(request: NextRequest) {
                 return handleError(error);
             }
         },
-        CHECK_USERNAME_RATE_LIMIT
+        'usernameCheck'
     );
 }

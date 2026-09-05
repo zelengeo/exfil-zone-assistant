@@ -3,6 +3,7 @@ import { NextRequest } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
 import { requireAdminOrModerator } from '@/lib/auth/utils';
 import { getRateLimiter } from '@/lib/rate-limit/rate-limit-factory';
+import { RATE_LIMIT_CONFIGS } from '@/lib/rate-limit/rate-limit';
 import { withRateLimit } from '@/lib/middleware';
 import { handleError } from '@/lib/errors';
 import { logger } from '@/lib/logger';
@@ -121,12 +122,12 @@ async function checkRateLimiterHealth() {
     try {
         const rateLimiter = getRateLimiter();
 
-        // Test rate limiter by checking a test key
-        const testKey = 'health-check-test';
-        const result = await rateLimiter.check(testKey, {
-            interval: 60,
-            uniqueTokenPerInterval: 100
-        });
+        // Probes the limiter itself, on its own policy so it cannot consume a real allowance.
+        const result = await rateLimiter.check(
+            'healthCheck',
+            'health-check-test',
+            RATE_LIMIT_CONFIGS.healthCheck,
+        );
 
         return {
             status: result ? 'operational' as const : 'degraded' as const,

@@ -76,6 +76,17 @@ processes, so an Atlas URI in `.env.local` stays unchanged. That override is als
 `*.integration.test.ts` suites, which refuse to run against anything but the loopback replica set.
 `npm run db:ui` explicitly enables the otherwise inactive mongo-express profile.
 
+## Data migrations
+
+`scripts/retire-correction-data.ts` finishes the correction retirement and the account-deletion
+remediation that the code changes deliberately left alone: dropping `datacorrections`, and pulling
+the identifying reviewer notes the pre-fix deletion path wrote. Run
+`npm run db:retire-corrections` for a dry run against `MONGODB_URI`; writing needs
+`--apply --confirm=<database>`, where the name must match the database the URI actually resolves to.
+`npm run db:retire-corrections:local` points it at the loopback replica set. It is idempotent, and
+its third step only reports — orphaned references and sign-in-locked users are retention decisions,
+so the script surfaces them and stops.
+
 ## Client state and persistence
 
 There is no state library, and no React Context outside shadcn internals. Player progress is

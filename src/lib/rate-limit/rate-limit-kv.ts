@@ -1,37 +1,46 @@
 import { kv } from '@vercel/kv';
-import type { RateLimiter, RateLimitConfig, RateLimitResult } from './rate-limit';
+import {
+    resolveWindow,
+    type RateLimiter,
+    type RateLimitConfig,
+    type RateLimitResult,
+} from './rate-limit';
 
 export class KVRateLimiter implements RateLimiter {
-    async check(key: string, config: RateLimitConfig): Promise<RateLimitResult> {
+    async check(
+        policy: string,
+        identifier: string,
+        config: RateLimitConfig,
+    ): Promise<RateLimitResult> {
         const now = Date.now();
-        const window = Math.floor(now / 1000 / config.interval);
-        const resetTime = (window + 1) * config.interval * 1000;
-        const identifier = `rate_limit:${key}:${window}`;
+        const window = resolveWindow(policy, identifier, config, now);
 
         try {
-            const current = await kv.incr(identifier);
+            // One round trip, so a process that dies mid-check cannot leave a counter without an
+            // expiry the way a separate INCR then EXPIRE could. The TTL is set on every call
+            // rather than only on the first: it is the time left in this window, so re-setting it
+            // never extends the counter past the window, and it repairs any key that somehow lost
+            // its expiry.
+            const [current] = await kv.pipeline()
+                .incr(window.key)
+                .expire(window.key, window.ttlSeconds)
+                .exec<[number, number]>();
 
-            // Set expiry on first request in this window
-            if (current === 1) {
-                await kv.expire(identifier, config.interval + 1);
-            }
-
-            const remaining = Math.max(0, config.uniqueTokenPerInterval - current);
             const success = current <= config.uniqueTokenPerInterval;
 
             return {
                 success,
-                remaining,
-                reset: resetTime,
-                retryAfter: success ? undefined : Math.ceil((resetTime - now) / 1000),
+                remaining: Math.max(0, config.uniqueTokenPerInterval - current),
+                reset: window.reset,
+                retryAfter: success ? undefined : Math.ceil((window.reset - now) / 1000),
             };
         } catch (error) {
             console.error('KV rate limit error:', error);
-            // Fail open - allow request if KV is down
+            // Fail open — a limiter outage must not take the API down with it.
             return {
                 success: true,
                 remaining: config.uniqueTokenPerInterval,
-                reset: resetTime,
+                reset: window.reset,
             };
         }
     }

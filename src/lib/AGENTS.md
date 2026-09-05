@@ -61,7 +61,23 @@ production and both `KV_REST_API_URL` and `KV_REST_API_TOKEN` are set, otherwise
 limiter. Development is always in-memory, so a limit that holds locally proves nothing about
 production — and the in-memory store is per-instance, which on serverless is per-lambda.
 
-Wrap a handler with `withRateLimit(request, handler, 'api' | 'auth')`; `'auth'` is the stricter tier.
+Wrap a handler with `withRateLimit(request, handler, policy)`, where `policy` is a key of
+`RATE_LIMIT_CONFIGS`. Inline config objects are not accepted: a counter is namespaced by its policy
+name, and an anonymous object has none. Add a named policy instead.
+
+**Counters are keyed `rl:<policy>:<caller>:<window>`, built in one place —** `resolveWindow` in
+`rate-limit.ts`, which both backends call. Two policies sharing an interval used to share a counter,
+so `feedbackGetAuthenticated` (60/hour) and `feedbackPostAuthenticated` (30/hour) collided for the
+same user: memory sized the shared bucket from whichever policy arrived first, KV compared one count
+against both caps. Sharing an allowance now requires deliberately passing the same policy name.
+
+Both backends admit identically: increment, then compare the running count to the cap passed on
+*this* call. Memory expires a counter at its own window end rather than after a fixed hour — the old
+cutoff silently reset the daily and weekly policies. KV increments and sets expiry in one pipeline,
+with a TTL of the time left in the window, so a counter can never be left without one.
+
+A route that limits signed-in and anonymous callers differently passes the matching policy itself,
+as `feedback` does. There is no automatic substitution in the middleware.
 
 ## Database
 

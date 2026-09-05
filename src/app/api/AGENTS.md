@@ -76,7 +76,7 @@ The policy, decided 2026-09-05:
 | `User`, `Account` | hard deleted — there is no soft-delete flag anywhere in the app |
 | `Feedback` authored by the account | kept, `userId` unset |
 | `Feedback.reviewerNotes[].addedByUserId` | kept, attribution unset for that account's notes only |
-| `datacorrections` rows | unreachable — the model was removed by the correction retirement |
+| `datacorrections` rows | unreachable — model removed; `npm run db:retire-corrections` erases them |
 
 Anonymization removes references and adds nothing. The pre-fix self-service path pushed a note
 naming the account it had just deleted, which re-identified the row it was anonymizing; the admin

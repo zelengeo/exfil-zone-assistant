@@ -2,12 +2,16 @@ import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { getRateLimiter } from '@/lib/rate-limit/rate-limit-factory';
-import { getIdentifier, RATE_LIMIT_CONFIGS, type RateLimitConfig } from '@/lib/rate-limit/rate-limit';
+import { getIdentifier, RATE_LIMIT_CONFIGS, type RateLimitPolicy } from '@/lib/rate-limit/rate-limit';
 
+/**
+ * Every caller names a policy from RATE_LIMIT_CONFIGS. Inline configs are no longer accepted:
+ * a counter needs a stable name to be namespaced by, and an anonymous object has none.
+ */
 export async function withRateLimit(
     request: Request,
     handler: () => Promise<Response>,
-    configKey: keyof typeof RATE_LIMIT_CONFIGS | RateLimitConfig
+    policy: RateLimitPolicy
 ): Promise<Response> {
     const rateLimiter = getRateLimiter();
 
@@ -15,18 +19,13 @@ export async function withRateLimit(
     const session = await getServerSession(authOptions);
     const identifier = await getIdentifier(request, session?.user?.id);
 
-    // Get config
-    const config = typeof configKey === 'string'
-        ? RATE_LIMIT_CONFIGS[configKey]
-        : configKey;
-
-    // Apply stricter limits for anonymous users
-    const finalConfig = !session?.user?.id && typeof configKey === 'string' && configKey.includes('Authenticated')
-        ? RATE_LIMIT_CONFIGS[configKey.replace('Authenticated', 'Anonymous') as keyof typeof RATE_LIMIT_CONFIGS] || config
-        : config;
+    // Routes that limit signed-in and anonymous callers differently pass the policy that matches,
+    // as the feedback route does. There is no automatic substitution here: the previous attempt
+    // rewrote 'Authenticated' to a nonexistent 'Anonymous' policy name and always fell through.
+    const finalConfig = RATE_LIMIT_CONFIGS[policy];
 
     // Check rate limit
-    const result = await rateLimiter.check(identifier, finalConfig);
+    const result = await rateLimiter.check(policy, identifier, finalConfig);
 
     // Add rate limit headers
     const headers = new Headers({

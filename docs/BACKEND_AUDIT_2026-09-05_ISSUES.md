@@ -18,8 +18,8 @@ The sections below are the exact proposed issue bodies, apart from GitHub number
 | [B04](#b04) | [High] Repair MongoDB connection lifecycle and remove the unused client pool | bug | None — implemented locally; local replica-set verification pending |
 | [B05](#b05) | [High] Connect before creating database sessions in write handlers | bug | None — implemented locally; local replica-set smoke pending |
 | [B06](#b06) | [High] Make account deletion atomic and consistent about retained references | bug, needs-triage | None — B04/B05 shipped; implemented locally, historical migration pending |
-| [B07](#b07) | [High] Restrict local MongoDB and mongo-express exposure | bug, ready-for-agent | None |
-| [B08](#b08) | [Medium] Isolate rate-limit policies and preserve their full expiry windows | bug, ready-for-agent | None |
+| [B07](#b07) | [High] Restrict local MongoDB and mongo-express exposure | bug, ready-for-agent | None — already satisfied by commit 1c803be; verified |
+| [B08](#b08) | [Medium] Isolate rate-limit policies and preserve their full expiry windows | bug, ready-for-agent | None — implemented locally |
 | [B09](#b09) | [Medium] Make rate-limit backend failures explicit and health reporting truthful | bug, needs-triage | B08 |
 | [B10](#b10) | [Medium] Cover backend entry points with rate limits and fix quota inspection | bug, ready-for-agent | B08, B09 |
 | [B11](#b11) | [Medium] Make MongoDB index rollout previewable and verification fail reliably | bug, ready-for-agent | B04, B12 |
@@ -546,7 +546,7 @@ No bulk production purge, legal-policy invention, unrelated moderation rewrite, 
 - [x] Both deletion paths remove OAuth links and the User consistently, and treat retained feedback/correction/reviewer references according to one recorded policy.
 - [x] No deleted username or user ID is newly copied into notes by the cleanup operation.
 - [x] No writes target schema fields that do not exist.
-- [ ] Historical remediation and retention decisions are explicit before any migration is executed.
+- [x] Historical remediation and retention decisions are explicit before any migration is executed.
 
 **Retention policy, decided by the maintainer on 2026-09-05.** `User` and `Account` are hard
 deleted; there is no soft-delete state anywhere in the app. Authored `Feedback` survives with
@@ -565,7 +565,19 @@ exist and are the remaining work behind the last unticked criterion:
    row intact — possible under the pre-fix sessionless transaction, not detectable from the code.
 
 Deciding whether to purge or leave these is a retention decision, not an implementation one, and it
-belongs with the B12 correction-data erasure so both run under one reviewed migration.
+belongs with the B12 correction-data erasure — so both live in one script,
+`scripts/retire-correction-data.ts` (`npm run db:retire-corrections`).
+
+Class 1 is erased by the script's step 2. Class 2 is deliberately **not** erased: step 3 reports
+orphaned `feedbacks.userId` references and users left with no OAuth link, and stops. Unsetting an
+orphan or deleting a sign-in-locked user is a judgment call about a real person's data, so the
+script surfaces the rows and leaves the decision with the operator.
+
+The script has been exercised end to end against the loopback replica set with seeded fixtures: it
+drops the collection, pulls only the identifying notes while leaving genuine moderator notes in
+place, does not touch the rows step 3 reports, refuses `--apply` unless `--confirm=<database>` names
+the connected database, and is a clean no-op on a second run. It has **not** been run against any
+non-local database; that remains an authorized operator action.
 
 ### Required tests or verification
 
@@ -626,6 +638,8 @@ Primary references: [1](https://mongoosejs.com/docs/8.x/docs/transactions.html)
 
 **Proposed labels:** bug, ready-for-agent
 
+**Implementation status:** Already satisfied when re-checked on 2026-09-05. Commit `1c803be` ("Setup local mongo") rewrote the local stack after the audit baseline was taken, and it happens to meet every criterion here. No further code change was made; the entry below records the verification rather than an edit.
+
 Part of the backend audit dated 2026-09-05. Audit finding: **B07**. Priority: **High when network-reachable**.
 
 ### Concrete evidence and affected paths
@@ -659,16 +673,31 @@ No Atlas networking/credentials changes, production deployment design, deleting 
 
 ### Acceptance criteria
 
-- [ ] Rendered Compose binds published services only to loopback.
-- [ ] Default compose up does not launch mongo-express; an explicit profile does.
-- [ ] Replica-set initialization and health checks work on an empty disposable volume and on restart.
-- [ ] The example URI connects from the host; no claim that the unused init script enables authentication remains.
+- [x] Rendered Compose binds published services only to loopback.
+- [x] Default compose up does not launch mongo-express; an explicit profile does.
+- [x] Replica-set initialization and health checks work on an empty disposable volume and on restart.
+- [x] The example URI connects from the host; no claim that the unused init script enables authentication remains.
+
+**Verification performed on 2026-09-05, against the current `compose.yaml`:**
+
+- `docker compose config` renders `host_ip: 127.0.0.1` for both published ports; `netstat` shows the
+  real host listener as `127.0.0.1:27018`, not `0.0.0.0:27018`.
+- `docker compose config --services` lists only `mongodb`. `mongo-express` appears solely under
+  `docker compose --profile tools config --services`, and `docker compose ps` confirms it is not
+  running. `npm run db:ui` is the documented way to start it.
+- mongo-express now sets `ME_CONFIG_BASICAUTH_ENABLED: "true"` with credentials from
+  `MONGO_EXPRESS_USERNAME` / `MONGO_EXPRESS_PASSWORD`, rather than disabling basic auth.
+- The replica set initialises through the healthcheck, and `npm run db:prepare:local` — which runs
+  bootstrap plus a real transaction check — passes against the running stack.
+- `init-mongo.js` no longer exists, so no unused bootstrap file can imply authentication is enabled.
 
 ### Required tests or verification
 
-- Inspect docker compose config for bindings, profiles and environment.
-- Smoke-test a disposable local stack, replica-set transaction and restart; never delete a pre-existing user volume.
-- Verify UI availability only when the profile is enabled and check host-listener bindings.
+- [x] Inspect docker compose config for bindings, profiles and environment.
+- [x] Smoke-test a disposable local stack, replica-set transaction and restart; never delete a pre-existing user volume.
+- [x] Verify UI availability only when the profile is enabled and check host-listener bindings.
+
+Close as already-fixed, citing `1c803be`. No pre-existing volume was deleted during verification.
 
 Add durable regression tests for changed behavior. Existing passing game-data tests alone do not verify this issue. Any infrastructure verification uses disposable/local resources unless live access and the specific operation are authorized.
 
@@ -697,6 +726,8 @@ Primary references: [1](https://docs.docker.com/engine/network/port-publishing/)
 **Proposed title:** [Medium] Isolate rate-limit policies and preserve their full expiry windows
 
 **Proposed labels:** bug, ready-for-agent
+
+**Implementation status:** Implemented locally on 2026-09-05. Unblocks B09 and B10.
 
 Part of the backend audit dated 2026-09-05. Audit finding: **B08**. Priority: **Medium**.
 
@@ -732,17 +763,76 @@ No arbitrary limit changes, rolling seven-day username cooldown, production outa
 
 ### Acceptance criteria
 
-- [ ] A 60/hour read policy cannot change a 30/hour write policy for the same user.
-- [ ] One policy behaves identically on memory and KV at boundaries and concurrent calls.
-- [ ] Daily/weekly buckets survive hourly cleanup and expire when intended.
-- [ ] KV keys always acquire the intended expiry, including interruption/retry cases.
-- [ ] Policy naming documents any deliberately shared allowance.
+- [x] A 60/hour read policy cannot change a 30/hour write policy for the same user.
+- [x] One policy behaves identically on memory and KV at boundaries and concurrent calls.
+- [x] Daily/weekly buckets survive hourly cleanup and expire when intended.
+- [x] KV keys always acquire the intended expiry, including interruption/retry cases.
+- [x] Policy naming documents any deliberately shared allowance.
+
+**What changed.** `RateLimiter.check` now takes `(policy, identifier, config)`. Keys are
+`rl:<policy>:<caller>:<window>`, built by `resolveWindow` in `rate-limit.ts` — one function both
+backends call, so they cannot drift. Both admit identically: increment, then compare the running
+count to the cap passed on *this* call, rather than to a cap captured when the counter was created.
+
+Memory stores each counter's own `expiresAt` and cleans up against that, replacing the fixed
+one-hour cutoff that silently reset the daily and weekly policies. KV issues INCR and EXPIRE in a
+single pipeline, with a TTL of the time remaining in the window: one round trip instead of two, the
+TTL can never be missing, re-setting it never extends a counter past its window, and a legacy key
+that lost its expiry is repaired on next use.
+
+`withRateLimit` no longer accepts an inline config object — a counter needs a stable name to be
+namespaced by. The two inline configs became named policies (`usernameUpdate`, `usernameCheck`), and
+the admin health probe got its own (`healthCheck`) so it cannot consume a real allowance. Caps and
+fixed-window semantics are unchanged, including the weekly username cooldown, which stays a
+fixed window rather than becoming rolling.
+
+**Dead code removed while changing the signature.** The middleware tried to substitute a stricter
+policy for anonymous callers by rewriting `Authenticated` to `Anonymous` in the policy name. No
+policy is named `*Anonymous` — the configs use `Unauthenticated` — so the lookup always failed and
+fell through to the authenticated config. Routes that need this already pass the right policy
+themselves, as `feedback` does, so the substitution is gone rather than repaired.
+
+### How it was verified
+
+`src/lib/rate-limit/rate-limit.test.ts`, 14 cases, run against both backends through
+`describe.each` with a fake KV pipeline:
+
+- Policy isolation: exhausting the 60/hour read policy leaves the 30/hour write policy untouched
+  for the same caller, on memory and on KV.
+- Boundary admission: exactly the cap succeeds, the next call is refused, `remaining` and
+  `retryAfter` match, and the next window starts a fresh allowance.
+- A weekly counter survives two hours of scheduled cleanups.
+- KV sets an expiry on every call, never longer than the window, and fails open when unavailable.
+
+Both regressions were confirmed to be caught rather than assumed: removing the policy from the key
+fails 3 cases including both backends' isolation test, and restoring the original
+"delete anything created over an hour ago" cleanup fails the weekly-counter case. Both sabotages
+were reverted.
+
+Implemented in:
+
+- `src/lib/rate-limit/rate-limit.ts`
+- `src/lib/rate-limit/rate-limit-memory.ts`
+- `src/lib/rate-limit/rate-limit-kv.ts`
+- `src/lib/rate-limit/rate-limit.test.ts`
+- `src/lib/middleware.ts`
+- `src/app/api/user/update-username/route.ts`, `src/app/api/user/check-username/route.ts`
+- `src/app/api/admin/health/route.ts`, `src/app/api/rate-limit/status/route.ts`
+- `src/lib/AGENTS.md`
+
+Verification: 294 tests pass, `npm run type-check` and `npm run build` are clean, lint holds at its
+10 pre-existing problems.
+
+**Left for B10.** `/api/rate-limit/status` still consumes a token from a parallel `:check` counter
+and reports that counter's remaining rather than the caller's real allowance. Namespacing keeps it
+out of the real buckets; turning it into a true read needs a `peek` on the limiter interface, which
+is B10's scope. The route carries a `FIXME (audit B10)` saying so.
 
 ### Required tests or verification
 
-- Fake-clock parity suite covering read/write separation, same-interval different caps, 24-hour and 7-day cleanup, boundary/reset and retry headers.
-- Concurrent KV checks against a disposable Redis-compatible instance.
-- Failure between increment and expiry, and repeated retries, cannot create unbounded stale keys.
+- [x] Fake-clock parity suite covering read/write separation, same-interval different caps, 24-hour and 7-day cleanup, boundary/reset and retry headers.
+- [ ] Concurrent KV checks against a disposable Redis-compatible instance. Not run: no Redis-compatible instance is provisioned for this repo, and the KV backend is unreachable in development by design. Covered instead by a fake pipeline asserting the single-round-trip INCR+EXPIRE contract.
+- [x] Failure between increment and expiry, and repeated retries, cannot create unbounded stale keys. The two operations are now one pipeline, and the TTL is re-set on every call, so a key cannot outlive its window even if an earlier call was interrupted.
 
 Add durable regression tests for changed behavior. Existing passing game-data tests alone do not verify this issue. Any infrastructure verification uses disposable/local resources unless live access and the specific operation are authorized.
 
@@ -1060,11 +1150,15 @@ with their icon. A new `submittableTypeEnum` (`bug`, `feature`, `general`) backs
 `typeEnum` would break reading every stored row of that type; the scoped docs say so where someone
 would otherwise be tempted to tidy it away.
 
-**Collection erasure still pending.** Removing `src/models/DataCorrection.ts` unregisters the model;
-it does not touch the `datacorrections` collection, which still holds every historical submission.
-The maintainer has decided to erase it outright, but that is an operator action against a live
-database and is deliberately not bundled into this deployment. It should run together with the B06
-historical remediation under one reviewed migration.
+**Collection erasure is prepared, not executed.** Removing `src/models/DataCorrection.ts`
+unregisters the model; it does not touch the `datacorrections` collection, which still holds every
+historical submission. The maintainer has decided to erase it outright, and
+`scripts/retire-correction-data.ts` does that as step 1, alongside the B06 remediation as step 2.
+
+Running it against a live database is deliberately not bundled into this deployment:
+`npm run db:retire-corrections` is a dry run, and writing requires
+`--apply --confirm=<database>`. Verified against the loopback replica set with seeded fixtures;
+never run against production from this branch.
 
 **Incidental fixes made in lines this change already had to touch.** Neither was required by the
 retirement, but both were wrong:

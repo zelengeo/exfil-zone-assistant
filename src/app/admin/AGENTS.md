@@ -36,8 +36,8 @@ delete another reader's submission (audit B03), so retirement closed that rather
 and render. It is absent from `submittableTypeEnum`, so a new one cannot be created. Do not "tidy"
 it out of `typeEnum` — that breaks reading every stored row of that type.
 
-The `datacorrections` collection is not dropped by this change. Erasing it is a separate operator
-decision, recorded with the account-deletion policy in [api](../api/AGENTS.md#account-deletion).
+The `datacorrections` collection is not dropped by the code change. `npm run db:retire-corrections`
+is the operator action that erases it — dry run by default, see the root `AGENTS.md`.
 
 ## Feedback
 

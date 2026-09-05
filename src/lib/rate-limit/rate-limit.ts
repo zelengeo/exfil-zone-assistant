@@ -54,7 +54,56 @@ export const RATE_LIMIT_CONFIGS = {
         interval: 60,
         uniqueTokenPerInterval: 30,
     },
+    // Username changes: 1 per week
+    usernameUpdate: {
+        interval: 60 * 60 * 24 * 7,
+        uniqueTokenPerInterval: 1,
+    },
+    // Username availability probe: 20 per minute
+    usernameCheck: {
+        interval: 60,
+        uniqueTokenPerInterval: 20,
+    },
+    // Rate-limiter liveness probe used by the admin health view: 100 per minute
+    healthCheck: {
+        interval: 60,
+        uniqueTokenPerInterval: 100,
+    },
 } as const;
+
+export type RateLimitPolicy = keyof typeof RATE_LIMIT_CONFIGS;
+
+/**
+ * Every policy owns its own counters. Two policies with the same interval — `feedbackGetAuthenticated`
+ * at 60/hour and `feedbackPostAuthenticated` at 30/hour — used to land on one bucket for a caller,
+ * so reads either inflated or exhausted the write allowance depending on the backend. The policy
+ * name is part of the key precisely so that cannot happen; sharing an allowance now requires
+ * deliberately passing the same policy name.
+ */
+export interface RateLimitWindow {
+    /** Storage key: policy, then caller, then the fixed window this call falls in. */
+    key: string;
+    /** When the current window ends, in epoch milliseconds. */
+    reset: number;
+    /** Seconds until just after the window ends — never longer than the window itself. */
+    ttlSeconds: number;
+}
+
+export function resolveWindow(
+    policy: string,
+    identifier: string,
+    config: RateLimitConfig,
+    now: number,
+): RateLimitWindow {
+    const windowIndex = Math.floor(now / 1000 / config.interval);
+    const reset = (windowIndex + 1) * config.interval * 1000;
+
+    return {
+        key: `rl:${policy}:${identifier}:${windowIndex}`,
+        reset,
+        ttlSeconds: Math.ceil((reset - now) / 1000) + 1,
+    };
+}
 
 // Get identifier from request
 export async function getIdentifier(request?: Request, userId?: string): Promise<string> {
@@ -68,7 +117,8 @@ export async function getIdentifier(request?: Request, userId?: string): Promise
     return `ip:${ip}`;
 }
 
-// Rate limiter interface
+// Rate limiter interface. Both backends admit identically: count this call, then compare the
+// running count against the policy's cap.
 export interface RateLimiter {
-    check(key: string, config: RateLimitConfig): Promise<RateLimitResult>;
+    check(policy: string, identifier: string, config: RateLimitConfig): Promise<RateLimitResult>;
 }

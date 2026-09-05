@@ -13,7 +13,10 @@ export async function GET(request: Request) {
 
         const limits = await Promise.all(
             Object.entries(RATE_LIMIT_CONFIGS).map(async ([key, config]) => {
-                const result = await rateLimiter.check(`${identifier}:check`, config);
+                // FIXME (audit B10): this consumes a token from a parallel ':check' counter and
+                // reports that counter's remaining, not the caller's real allowance. Namespacing
+                // keeps it out of the real buckets; making it a true read is B10's job.
+                const result = await rateLimiter.check(key, `${identifier}:check`, config);
                 return {
                     endpoint: key,
                     limit: config.uniqueTokenPerInterval,

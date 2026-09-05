@@ -1,66 +1,63 @@
-import type { RateLimiter, RateLimitConfig, RateLimitResult } from './rate-limit';
+import {
+    resolveWindow,
+    type RateLimiter,
+    type RateLimitConfig,
+    type RateLimitResult,
+} from './rate-limit';
 
-interface TokenBucket {
-    tokens: number;
-    lastRefill: number;
+interface WindowCounter {
+    count: number;
+    /** When this counter stops mattering. Cleanup reads this, never a fixed age. */
+    expiresAt: number;
 }
 
 export class InMemoryRateLimiter implements RateLimiter {
-    private buckets = new Map<string, TokenBucket>();
+    private counters = new Map<string, WindowCounter>();
     private cleanupInterval: NodeJS.Timeout;
 
     constructor() {
-        // Clean up old buckets every 5 minutes
         this.cleanupInterval = setInterval(() => this.cleanup(), 5 * 60 * 1000);
     }
 
-    async check(key: string, config: RateLimitConfig): Promise<RateLimitResult> {
+    async check(
+        policy: string,
+        identifier: string,
+        config: RateLimitConfig,
+    ): Promise<RateLimitResult> {
         const now = Date.now();
-        const windowStart = Math.floor(now / 1000 / config.interval) * config.interval * 1000;
-        const identifier = `${key}:${windowStart}`;
+        const window = resolveWindow(policy, identifier, config, now);
 
-        let bucket = this.buckets.get(identifier);
+        // The key already names the window, so a counter never spans one. There is nothing to
+        // refill: a new window is simply a key that does not exist yet.
+        let counter = this.counters.get(window.key);
 
-        if (!bucket) {
-            bucket = {
-                tokens: config.uniqueTokenPerInterval,
-                lastRefill: now,
-            };
-            this.buckets.set(identifier, bucket);
+        if (!counter) {
+            counter = { count: 0, expiresAt: window.reset };
+            this.counters.set(window.key, counter);
         }
 
-        // Refill tokens if in new window
-        const timePassed = now - bucket.lastRefill;
-        const intervalsPass = Math.floor(timePassed / (config.interval * 1000));
+        counter.count += 1;
 
-        if (intervalsPass > 0) {
-            bucket.tokens = config.uniqueTokenPerInterval;
-            bucket.lastRefill = now;
-        }
-
-        // Check if request can proceed
-        const success = bucket.tokens > 0;
-        if (success) {
-            bucket.tokens--;
-        }
-
-        const resetTime = windowStart + config.interval * 1000;
+        // Compare against the config handed to this call rather than a cap captured when the
+        // counter was created, so the answer cannot depend on which policy arrived first.
+        const success = counter.count <= config.uniqueTokenPerInterval;
 
         return {
             success,
-            remaining: Math.max(0, bucket.tokens),
-            reset: resetTime,
-            retryAfter: success ? undefined : Math.ceil((resetTime - now) / 1000),
+            remaining: Math.max(0, config.uniqueTokenPerInterval - counter.count),
+            reset: window.reset,
+            retryAfter: success ? undefined : Math.ceil((window.reset - now) / 1000),
         };
     }
 
     private cleanup() {
         const now = Date.now();
-        const cutoff = now - 60 * 60 * 1000; // Remove entries older than 1 hour
 
-        for (const [key, bucket] of this.buckets.entries()) {
-            if (bucket.lastRefill < cutoff) {
-                this.buckets.delete(key);
+        // Dropping anything older than a fixed hour used to reset the daily and weekly policies,
+        // because their counters legitimately sit untouched for longer than that.
+        for (const [key, counter] of this.counters.entries()) {
+            if (counter.expiresAt <= now) {
+                this.counters.delete(key);
             }
         }
     }
