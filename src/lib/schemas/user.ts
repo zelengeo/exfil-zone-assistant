@@ -54,8 +54,6 @@ export const userBaseSchema = z.object({
         feedbackSubmitted: z.number().default(0),
         bugsReported: z.number().default(0),
         featuresProposed: z.number().default(0),
-        dataCorrections: z.number().default(0),
-        correctionsAccepted: z.number().default(0),
     }),
 
 

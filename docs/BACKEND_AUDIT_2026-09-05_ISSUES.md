@@ -14,7 +14,7 @@ The sections below are the exact proposed issue bodies, apart from GitHub number
 |---|---|---|---|
 | [B01](#b01) | [Critical] Prevent client session updates from changing JWT identity | bug | None — implemented locally; rollout pending |
 | [B02](#b02) | [High] Verify OAuth email ownership and resolve linked accounts by provider identity | bug | None — implemented locally; rollout pending |
-| [B03](#b03) | [High] Enforce authorization on correction deletion until retirement | bug, ready-for-agent | None |
+| [B03](#b03) | [High] Enforce authorization on correction deletion until retirement | bug, ready-for-agent | Superseded by B12 — the vulnerable route was deleted, not gated |
 | [B04](#b04) | [High] Repair MongoDB connection lifecycle and remove the unused client pool | bug | None — implemented locally; local replica-set verification pending |
 | [B05](#b05) | [High] Connect before creating database sessions in write handlers | bug | None — implemented locally; local replica-set smoke pending |
 | [B06](#b06) | [High] Make account deletion atomic and consistent about retained references | bug, needs-triage | None — B04/B05 shipped; implemented locally, historical migration pending |
@@ -23,7 +23,7 @@ The sections below are the exact proposed issue bodies, apart from GitHub number
 | [B09](#b09) | [Medium] Make rate-limit backend failures explicit and health reporting truthful | bug, needs-triage | B08 |
 | [B10](#b10) | [Medium] Cover backend entry points with rate limits and fix quota inspection | bug, ready-for-agent | B08, B09 |
 | [B11](#b11) | [Medium] Make MongoDB index rollout previewable and verification fail reliably | bug, ready-for-agent | B04, B12 |
-| [B12](#b12) | [Medium] Retire data-correction submissions across UI, APIs and moderation | enhancement, ready-for-agent | None |
+| [B12](#b12) | [Medium] Retire data-correction submissions across UI, APIs and moderation | enhancement, ready-for-agent | None — implemented locally; collection erasure pending |
 | [B13](#b13) | [Medium] Enforce current account status on mutations and session refresh | bug, needs-triage | B01 |
 | [B14](#b14) | [Medium] Enforce profile privacy in server responses and shared reads | bug, needs-triage | None |
 | [B15](#b15) | [Medium] Return correct API errors for duplicate keys and malformed JSON | bug, ready-for-agent | None |
@@ -254,6 +254,8 @@ Primary references: [1](https://next-auth.js.org/providers/google), [2](https://
 
 **Proposed labels:** bug, ready-for-agent
 
+**Implementation status:** Superseded by B12 on 2026-09-05. The maintainer chose retirement over containment, so `DELETE /api/corrections/[id]` was deleted rather than gated with `requireAdmin`. The vulnerability is closed by the route's absence; no authorization fix was written. Close as superseded, not as fixed.
+
 Part of the backend audit dated 2026-09-05. Audit finding: **B03**. Priority: **High**.
 
 ### Concrete evidence and affected paths
@@ -285,10 +287,12 @@ Do not wait for the retirement project, change all moderation roles, or delete h
 
 ### Acceptance criteria
 
-- [ ] Anonymous callers receive 401; ordinary users and moderators cannot delete through the admin-only legacy endpoint.
-- [ ] Denied calls never execute a delete query.
-- [ ] Authorized deletion, invalid ID and missing-record responses behave consistently.
-- [ ] If B12 removes this route first, verify route removal and close this issue as superseded with evidence.
+- [n/a] Anonymous callers receive 401; ordinary users and moderators cannot delete through the admin-only legacy endpoint.
+- [n/a] Denied calls never execute a delete query.
+- [n/a] Authorized deletion, invalid ID and missing-record responses behave consistently.
+- [x] If B12 removes this route first, verify route removal and close this issue as superseded with evidence.
+
+**Evidence of removal.** `src/app/api/corrections/route.ts` and `src/app/api/corrections/[id]/route.ts` are deleted. A repository search for `api/corrections` returns nothing outside this audit document, and `npm run build` emits no `/api/corrections` route. The first three criteria are marked n/a because there is no endpoint left to authorize.
 
 ### Required tests or verification
 
@@ -1003,6 +1007,8 @@ Primary references: [1](https://mongoosejs.com/docs/8.x/docs/api/model.html#Mode
 
 **Proposed labels:** enhancement, ready-for-agent
 
+**Implementation status:** Implemented locally on 2026-09-05. Code, routes, model and UI are removed; the `datacorrections` collection itself is untouched and its erasure remains an explicit operator step — see the note below the acceptance criteria.
+
 Part of the backend audit dated 2026-09-05. Audit finding: **B12**. Priority: **Medium**.
 
 ### Concrete evidence and affected paths
@@ -1040,19 +1046,65 @@ No removal of ordinary feedback, all user accounts, unrelated partner/moderator 
 
 ### Acceptance criteria
 
-- [ ] Item pages have no suggestion action or correction form dependency.
-- [ ] All /api/corrections and /api/admin/corrections methods are absent or explicitly retired, with no remaining database mutations.
-- [ ] New feedback cannot use data_correction; bug/feature/general feedback still works.
-- [ ] No active UI invites correction submissions or shows correction-specific rewards/counters.
-- [ ] Historical-data handling and any later archive/delete migration are recorded separately; removing a model is not treated as deleting a collection.
-- [ ] Search and build verification find no active imports of retired correction modules or dead navigation.
+- [x] Item pages have no suggestion action or correction form dependency.
+- [x] All /api/corrections and /api/admin/corrections methods are absent or explicitly retired, with no remaining database mutations.
+- [x] New feedback cannot use data_correction; bug/feature/general feedback still works.
+- [x] No active UI invites correction submissions or shows correction-specific rewards/counters.
+- [x] Historical-data handling and any later archive/delete migration are recorded separately; removing a model is not treated as deleting a collection.
+- [x] Search and build verification find no active imports of retired correction modules or dead navigation.
+
+**Readable but not writable.** `data_correction` stays in the feedback `typeEnum`, which is what the
+Mongoose enum and every response schema validate against, so historical rows still parse and render
+with their icon. A new `submittableTypeEnum` (`bug`, `feature`, `general`) backs
+`feedbackSubmitSchema` alone, so a POST naming the retired type is a 400. Removing the value from
+`typeEnum` would break reading every stored row of that type; the scoped docs say so where someone
+would otherwise be tempted to tidy it away.
+
+**Collection erasure still pending.** Removing `src/models/DataCorrection.ts` unregisters the model;
+it does not touch the `datacorrections` collection, which still holds every historical submission.
+The maintainer has decided to erase it outright, but that is an operator action against a live
+database and is deliberately not bundled into this deployment. It should run together with the B06
+historical remediation under one reviewed migration.
+
+**Incidental fixes made in lines this change already had to touch.** Neither was required by the
+retirement, but both were wrong:
+
+- The feedback stats increment built its field name from the type name, producing
+  `stats.featuresReported` and `stats.generalsReported`, neither of which `User` declares — strict
+  mode dropped them, so only bug reports ever counted. It is now an explicit lookup that maps
+  `feature` to the declared `stats.featuresProposed`.
+- The `/admin` dashboard "Corrections" card was wired to `User.countDocuments` filtered by the
+  `admin` and `moderator` roles — it never counted corrections. It is now a "Staff" card naming what
+  it actually queries, rather than being deleted along with a working query.
 
 ### Required tests or verification
 
-- Route checks for every retired method, plus general-feedback rejection of data_correction.
-- Regression for retained anonymous/general feedback and authenticated feedback.
-- Item page, dashboard and admin navigation smoke tests; npm test, type-check, lint and build.
-- If B03 has not shipped, removal must explicitly verify that its vulnerable DELETE path is gone.
+- [x] Route checks for every retired method, plus general-feedback rejection of data_correction.
+- [x] Regression for retained anonymous/general feedback and authenticated feedback.
+- [x] Item page, dashboard and admin navigation smoke tests; npm test, type-check, lint and build.
+- [x] If B03 has not shipped, removal must explicitly verify that its vulnerable DELETE path is gone.
+
+Removed:
+
+- `src/app/api/corrections/route.ts`, `src/app/api/corrections/[id]/route.ts`
+- `src/app/api/admin/corrections/route.ts`, `src/app/api/admin/corrections/[id]/route.ts` (and its test)
+- `src/app/admin/corrections/page.tsx`
+- `src/components/corrections/ItemCorrectionForm.tsx`
+- `src/lib/schemas/dataCorrection.ts`, `src/models/DataCorrection.ts`
+
+Edited: `src/app/items/[id]/page.tsx`, `src/app/admin/components/AdminSidebar.tsx`,
+`src/app/admin/page.tsx`, `src/app/admin/feedback/page.tsx`,
+`src/app/admin/feedback/components/FeedbackFilters.tsx`, `src/app/dashboard/page.tsx`,
+`src/app/user/[username]/page.tsx`, `src/components/profile/ProfileStats.tsx`,
+`src/app/api/feedback/route.ts` and its test, `src/app/api/user/[username]/route.ts`,
+`src/lib/auth/oauth-sign-in.ts`, `src/lib/schemas/feedback.ts`, `src/lib/schemas/user.ts`,
+`src/models/User.ts`, `scripts/bootstrap-local-mongodb.ts`, `scripts/sync-mongodb-indexes.ts`,
+and the scoped `AGENTS.md` files for `admin`, `api`, `components`, `lib`, `models`, `tasks` and
+`src`.
+
+Verification: 280 tests pass against the loopback replica set, `npm run type-check` and
+`npm run build` are clean, and `npm run lint` drops from 11 pre-existing problems to 10 — the
+eleventh lived in the deleted admin corrections page. No new lint errors.
 
 Add durable regression tests for changed behavior. Existing passing game-data tests alone do not verify this issue. Any infrastructure verification uses disposable/local resources unless live access and the specific operation are authorized.
 

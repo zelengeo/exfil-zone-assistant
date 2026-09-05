@@ -4,10 +4,10 @@ import {connectDB} from '@/lib/mongodb';
 import mongoose, {type ClientSession} from "mongoose";
 import {Feedback} from '@/models/Feedback';
 import {User} from '@/models/User';
-import {IFeedbackApi, FeedbackApi} from "@/lib/schemas/feedback";
+import {IFeedbackApi, FeedbackApi, type SubmittableFeedbackType} from "@/lib/schemas/feedback";
 import {withRateLimit} from "@/lib/middleware";
 import {logger} from "@/lib/logger";
-import {handleError, AuthenticationError} from "@/lib/errors";
+import {handleError} from "@/lib/errors";
 import {sanitizeUserInput} from "@/lib/utils";
 import {requireAuthWithUserCheck} from "@/lib/auth/utils";
 import {getServerSession} from "next-auth";
@@ -15,6 +15,12 @@ import {authOptions} from "@/app/api/auth/[...nextauth]/route";
 
 
 type ApiType = IFeedbackApi;
+
+/** Declared User.stats counters, by the feedback type that increments them. */
+const PER_TYPE_STAT: Partial<Record<SubmittableFeedbackType, string>> = {
+    bug: 'stats.bugsReported',
+    feature: 'stats.featuresProposed',
+};
 export async function POST(request: NextRequest) {
     const session = await getServerSession(authOptions);
     return withRateLimit(
@@ -25,12 +31,7 @@ export async function POST(request: NextRequest) {
             try {
                 const body = await request.json();
                 const validatedData = FeedbackApi["Post"]["Request"].parse(body);
-                
-                // Check authentication requirements based on feedback type
-                if (!session && validatedData.type === 'data_correction') {
-                    throw new AuthenticationError('Authentication required for data corrections');
-                }
-                
+
                 // If user is logged in, verify they're not banned
                 if (session) {
                     await requireAuthWithUserCheck();
@@ -64,12 +65,18 @@ export async function POST(request: NextRequest) {
 
                 // Update user stats if authenticated
                 if (session?.user?.id) {
+                    // The per-type counter is looked up, not built from the type name: the old
+                    // template produced 'stats.featuresReported' and 'stats.generalsReported',
+                    // neither of which the User schema declares, so strict mode dropped them and
+                    // only bug reports ever counted.
+                    const perTypeStat = PER_TYPE_STAT[validatedData.type];
+
                     await User.findByIdAndUpdate(
                         session.user.id,
                         {
                             $inc: {
                                 'stats.feedbackSubmitted': 1,
-                                [`stats.${validatedData.type}sReported`]: 1,
+                                ...(perTypeStat ? {[perTypeStat]: 1} : {}),
                             }
                         },
                         {session: mongooseSession}
@@ -84,7 +91,6 @@ export async function POST(request: NextRequest) {
                     feedbackId: feedback[0]._id.toString(),
                     type: feedback[0].type,
                     userId: session?.user?.id,
-                    isAnonymous: feedback[0].isAnonymous,
                 });
 
                 return NextResponse.json<ApiType["Post"]["Response"]>({

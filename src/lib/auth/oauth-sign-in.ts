@@ -94,8 +94,6 @@ async function resolveUser(
                     feedbackSubmitted: 0,
                     bugsReported: 0,
                     featuresProposed: 0,
-                    dataCorrections: 0,
-                    correctionsAccepted: 0,
                 },
                 roles: admin ? ['user', 'admin'] : ['user'],
                 preferences: {

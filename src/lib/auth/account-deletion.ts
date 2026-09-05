@@ -31,9 +31,10 @@ export interface DeletedAccount {
  * - `Feedback` authored by the account survives with `userId` unset. Nothing identifying is
  *   written in its place: the anonymization step must not name the account it just erased.
  * - Review notes the account left stay readable; only `addedByUserId` goes.
- * - `DataCorrection` is deliberately untouched. The whole collection is erased by the correction
- *   retirement (audit B12), so anonymizing rows here would only be work thrown away. Until that
- *   ships, a deleted account's id survives in that collection alone.
+ *
+ * There is deliberately no `DataCorrection` step. The correction retirement (audit B12) removed the
+ * model, so nothing here can reach that collection; the rows themselves outlive this code until an
+ * operator erases them, which is a retention decision rather than an implementation one.
  */
 async function removeAccount(
     userId: Types.ObjectId,

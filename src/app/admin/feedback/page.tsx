@@ -6,7 +6,7 @@ import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/compo
 import {Badge} from '@/components/ui/badge';
 import {FeedbackTable} from './components/FeedbackTable';
 import {FeedbackFilters} from './components/FeedbackFilters';
-import {ShieldCheck, MessageSquare, Bug, Lightbulb, Database, TrendingUp} from 'lucide-react';
+import {ShieldCheck, MessageSquare, Bug, Lightbulb, TrendingUp} from 'lucide-react';
 import {requireAdmin} from "@/lib/auth/utils";
 
 interface FeedbackStats {
@@ -200,22 +200,6 @@ export default async function AdminFeedbackPage({
                     </CardContent>
                 </Card>
 
-                <Card className="bg-military-800 border-military-700">
-                    <CardHeader className="flex flex-row items-center justify-between pb-3">
-                        <CardTitle className="text-sm font-medium text-tan-300">
-                            Data Issues
-                        </CardTitle>
-                        <Database className="h-4 w-4 text-blue-500"/>
-                    </CardHeader>
-                    <CardContent>
-                        <div className="text-2xl font-bold text-tan-100">
-                            {stats.byType.data_correction || 0}
-                        </div>
-                        <p className="text-xs text-tan-500">
-                            {stats.byStatus.implemented || 0} resolved
-                        </p>
-                    </CardContent>
-                </Card>
             </div>
 
             {/* Priority Breakdown */}

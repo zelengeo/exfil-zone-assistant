@@ -10,7 +10,6 @@ import {
     Bug,
     Lightbulb,
     FileEdit,
-    CheckCircle2,
     Activity,
     Calendar,
     MapPin,
@@ -191,7 +190,7 @@ export default async function UserProfilePage({params}: UserProfilePageProps) {
                 {!isProfilePrivate && (
                     <>
                         {/* Stats Overview */}
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
                             <div className="bg-military-850 border border-military-700 rounded-sm p-4">
                                 <div className="flex items-center justify-between mb-2">
                                     <Trophy className="h-6 w-6 text-olive-500"/>
@@ -210,16 +209,6 @@ export default async function UserProfilePage({params}: UserProfilePageProps) {
                   </span>
                                 </div>
                                 <p className="text-sm text-tan-400">Total Contributions</p>
-                            </div>
-
-                            <div className="bg-military-850 border border-military-700 rounded-sm p-4">
-                                <div className="flex items-center justify-between mb-2">
-                                    <CheckCircle2 className="h-6 w-6 text-green-500"/>
-                                    <span className="text-xl font-bold text-tan-100">
-                    {user.stats.correctionsAccepted}
-                  </span>
-                                </div>
-                                <p className="text-sm text-tan-400">Accepted Contributions</p>
                             </div>
 
                             <div className="bg-military-850 border border-military-700 rounded-sm p-4">
@@ -252,23 +241,6 @@ export default async function UserProfilePage({params}: UserProfilePageProps) {
                                         </div>
                                         <span className="text-tan-100 font-medium">{user.stats.featuresProposed}</span>
                                     </div>
-                                    <div className="flex justify-between items-center">
-                                        <div className="flex items-center gap-2">
-                                            <FileEdit className="h-4 w-4 text-purple-500"/>
-                                            <span className="text-tan-300">Data Corrections</span>
-                                        </div>
-                                        <span className="text-tan-100 font-medium">{user.stats.dataCorrections}</span>
-                                    </div>
-                                    {user.stats.dataCorrections > 0 && (
-                                        <div className="pt-3 mt-3 border-t border-military-700">
-                                            <div className="flex justify-between items-center text-sm">
-                                                <span className="text-tan-500">Acceptance Rate</span>
-                                                <span className="text-green-400 font-medium">
-                          {Math.round((user.stats.correctionsAccepted / user.stats.dataCorrections) * 100)}%
-                        </span>
-                                            </div>
-                                        </div>
-                                    )}
                                 </div>
                             </div>
 

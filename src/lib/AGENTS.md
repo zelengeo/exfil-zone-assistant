@@ -52,7 +52,7 @@ return NextResponse.json<IUserApi['Patch']['Response']>({ user });
 ```
 
 `core.ts` holds the shared pagination, success and error shapes; the rest are per entity
-(`user`, `dataCorrection`, `feedback`, `task`), with `guards.ts` for runtime narrowing.
+(`user`, `feedback`, `task`), with `guards.ts` for runtime narrowing.
 
 ## Rate limiting
 

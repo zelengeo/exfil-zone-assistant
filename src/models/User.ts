@@ -27,8 +27,6 @@ const UserSchema = new Schema({
         feedbackSubmitted: { type: Number, default: 0 },
         bugsReported: { type: Number, default: 0 },
         featuresProposed: { type: Number, default: 0 },
-        dataCorrections: { type: Number, default: 0 },
-        correctionsAccepted: { type: Number, default: 0 },
         contributionPoints: { type: Number, default: 0 },
     },
 

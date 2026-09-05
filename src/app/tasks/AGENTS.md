@@ -195,5 +195,5 @@ Two traps worth knowing:
 ## Corrections
 
 The task correction form was removed with the rebuild: it fed a queue nobody read. `/tasks` carries
-one line pointing at Discord instead. **Item** corrections are untouched — `ItemCorrectionForm`,
-`/api/corrections`, the admin queue and the `DataCorrection` model all still serve them.
+one line pointing at Discord instead. Item corrections went the same way on 2026-09-05 (audit B12),
+so the form, `/api/corrections`, the admin queue and the `DataCorrection` model are all gone.

@@ -54,8 +54,6 @@ export async function GET(
                             feedbackSubmitted: 0,
                             bugsReported: 0,
                             featuresProposed: 0,
-                            dataCorrections: 0,
-                            correctionsAccepted: 0,
                         },
                         preferences: {
                             publicProfile: false,

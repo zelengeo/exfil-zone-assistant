@@ -3,7 +3,10 @@ import {Types} from "mongoose";
 import {IUser} from "@/lib/schemas/user";
 import {paginationSchema, successSchema} from "@/lib/schemas/core";
 
+// Every type a stored row may carry. 'data_correction' is retired: no new row can be created
+// with it, but historical rows still have to parse and render, so it stays readable.
 export const typeEnum = ['bug', 'feature', 'data_correction', "general"] as const;
+export const submittableTypeEnum = ['bug', 'feature', 'general'] as const;
 export const statusEnum = ['new', 'in_review', 'accepted', 'rejected', 'implemented', 'duplicate'] as const;
 export const priorityEnum = ['low', 'medium', 'high', 'critical'] as const;
 export const categoryEnum = ['items', 'tasks', 'hideout', 'combat-sim', 'guides', 'ui', 'other'] as const;
@@ -45,7 +48,6 @@ export const feedbackDocumentSchema = feedbackBaseSchema.extend({
 
 // ===== VALIDATION SCHEMAS FOR API =====
 export const feedbackSubmitSchema = feedbackBaseSchema.pick({
-    type: true,
     title: true,
     description: true,
     category: true,
@@ -53,6 +55,8 @@ export const feedbackSubmitSchema = feedbackBaseSchema.pick({
     pageUrl: true,
     userAgent: true,
     priority: true,
+}).extend({
+    type: z.enum(submittableTypeEnum),
 });
 
 // Feedback admin schemas
@@ -194,6 +198,7 @@ export type FeedbackSubmitInput = z.infer<typeof feedbackSubmitSchema>;
 export type FeedbackStatusUpdateInput = z.infer<typeof feedbackStatusUpdateSchema>;
 
 export type FeedbackType = (typeof typeEnum)[number];
+export type SubmittableFeedbackType = (typeof submittableTypeEnum)[number];
 export type FeedbackStatus = (typeof statusEnum)[number];
 export type FeedbackPriority = (typeof priorityEnum)[number];
 export type FeedbackCategory = (typeof categoryEnum)[number];

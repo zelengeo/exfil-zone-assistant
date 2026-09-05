@@ -36,7 +36,6 @@ import ProvisionsSpecificStats from '@/app/items/[id]/components/ProvisionsSpeci
 import TaskItemsSpecificStats from '@/app/items/[id]/components/TaskItemsSpecificStats';
 import BackpackSpecificStats from '@/app/items/[id]/components/BackpackSpecificStats';
 import HolsterSpecificStats from '@/app/items/[id]/components/HolsterSpecificStats';
-import { ItemCorrectionFormAuth } from '@/components/corrections/ItemCorrectionForm';
 import VendorLedger from '@/components/trade/VendorLedger';
 import WantedInBarter from '@/components/trade/WantedInBarter';
 import { useTradeIndex } from '@/app/items/hooks/useTradeIndex';
@@ -188,9 +187,6 @@ export default function ItemDetail({ params }: PageProps) {
                         </span>
                     </div>
                     <h1 className="font-display text-3xl md:text-4xl text-ink-hi leading-none">{item.name}</h1>
-                    <div className="mt-2">
-                        <ItemCorrectionFormAuth item={item} />
-                    </div>
                 </header>
 
                 <div

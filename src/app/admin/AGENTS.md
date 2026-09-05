@@ -1,11 +1,10 @@
 # Admin
 
-Six pages behind one gate. Moderation of reader submissions, plus a health view.
+Five pages behind one gate. Moderation of reader submissions, plus a health view.
 
 | Page | Does |
 |---|---|
 | `/admin` | dashboard |
-| `/admin/corrections` | review submitted data corrections |
 | `/admin/feedback` | triage bug reports and requests |
 | `/admin/users`, `/admin/users/[id]/edit` | list, edit, ban |
 | `/admin/roles` | grant and revoke roles |
@@ -27,15 +26,18 @@ Five, from `rolesEnum` in `lib/schemas/user.ts`: `user`, `contributor`, `moderat
 `api/admin/users/[id]/roles/route.ts` but are commented out, so any admin can assign any role
 including admin. Treat that as the current behaviour rather than an oversight to code around.
 
-## Corrections
+## Corrections are gone
 
-Entity types are `item`, `task`, `npc`, `location`, `quest`; statuses are `pending`, `approved`,
-`rejected`, `implemented`. Note that `approved` and `implemented` are separate: approving accepts
-the report, implementing records that the published data actually changed. A correction can sit
-approved for as long as the next data extraction takes.
+`/admin/corrections`, the correction APIs, the `DataCorrection` model and its schemas were removed
+on 2026-09-05 (audit B12). The queue was unread, and its DELETE endpoint let any signed-in reader
+delete another reader's submission (audit B03), so retirement closed that rather than gating it.
 
-Submissions may be anonymous — `userId` is optional — so nothing in the review path may assume a
-user to credit.
+`data_correction` survives in the feedback `typeEnum` because historical rows still have to parse
+and render. It is absent from `submittableTypeEnum`, so a new one cannot be created. Do not "tidy"
+it out of `typeEnum` — that breaks reading every stored row of that type.
+
+The `datacorrections` collection is not dropped by this change. Erasing it is a separate operator
+decision, recorded with the account-deletion policy in [api](../api/AGENTS.md#account-deletion).
 
 ## Feedback
 

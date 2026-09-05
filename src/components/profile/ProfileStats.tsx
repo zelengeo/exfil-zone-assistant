@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Award, MessageSquare, Target, TrendingUp } from 'lucide-react';
+import { Award, MessageSquare, TrendingUp } from 'lucide-react';
 
 interface ProfileStatsProps {
     user: {
@@ -7,8 +7,6 @@ interface ProfileStatsProps {
             feedbackSubmitted: number;
             bugsReported: number;
             featuresProposed: number;
-            dataCorrections: number;
-            correctionsAccepted: number;
             contributionPoints: number;
         };
         level: number;
@@ -22,12 +20,6 @@ export function ProfileStats({ user }: ProfileStatsProps) {
             value: user.stats.feedbackSubmitted,
             icon: MessageSquare,
             color: 'text-blue-500',
-        },
-        {
-            label: 'Corrections Accepted',
-            value: user.stats.correctionsAccepted,
-            icon: Target,
-            color: 'text-green-500',
         },
         {
             label: 'Contribution Points',
@@ -75,10 +67,6 @@ export function ProfileStats({ user }: ProfileStatsProps) {
                     <div className="flex justify-between text-sm">
                         <span className="text-muted-foreground">Feature Requests</span>
                         <span className="font-medium">{user.stats.featuresProposed}</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                        <span className="text-muted-foreground">Data Corrections</span>
-                        <span className="font-medium">{user.stats.dataCorrections}</span>
                     </div>
                 </CardContent>
             </Card>

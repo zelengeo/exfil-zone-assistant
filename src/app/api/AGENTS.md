@@ -10,13 +10,15 @@ all share.
 | `auth/[...nextauth]` | — |
 | `user`, `user/update`, `user/update-username`, `user/check-username` | `requireAuth` |
 | `user/[username]` | public profile |
-| `corrections`, `corrections/[id]` | `requireAuth` to submit |
 | `feedback` | `requireAuth` |
-| `admin/corrections`, `admin/corrections/[id]` | `requireAdmin` |
 | `admin/feedback/[id]` | `requireAdmin` |
 | `admin/users`, `admin/users/[id]`, `admin/users/[id]/roles` | `requireAdmin` |
 | `admin/health` | `requireAdmin` |
 | `rate-limit/status` | — |
+
+The correction endpoints were removed on 2026-09-05 (audit B12). `feedback` still stores rows of
+type `data_correction` from before the retirement and must keep rendering them, but
+`submittableTypeEnum` keeps new ones out — a POST naming that type is a 400.
 
 ## The shape of a handler
 
@@ -74,7 +76,7 @@ The policy, decided 2026-09-05:
 | `User`, `Account` | hard deleted — there is no soft-delete flag anywhere in the app |
 | `Feedback` authored by the account | kept, `userId` unset |
 | `Feedback.reviewerNotes[].addedByUserId` | kept, attribution unset for that account's notes only |
-| `DataCorrection` | untouched — the collection is erased wholesale by the correction retirement |
+| `datacorrections` rows | unreachable — the model was removed by the correction retirement |
 
 Anonymization removes references and adds nothing. The pre-fix self-service path pushed a note
 naming the account it had just deleted, which re-identified the row it was anonymizing; the admin

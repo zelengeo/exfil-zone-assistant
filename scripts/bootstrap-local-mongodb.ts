@@ -2,7 +2,6 @@ import { config } from 'dotenv';
 import mongoose from 'mongoose';
 
 import { Account } from '../src/models/Account';
-import { DataCorrection } from '../src/models/DataCorrection';
 import { Feedback } from '../src/models/Feedback';
 import { User } from '../src/models/User';
 import { assertLocalMongoUri } from './local-mongodb';
@@ -21,7 +20,6 @@ async function bootstrapLocalMongoDB(): Promise<void> {
         await User.createIndexes();
         await Account.createIndexes();
         await Feedback.createIndexes();
-        await DataCorrection.createIndexes();
 
         const userIndexes = await User.collection.indexes();
         const accountIndexes = await Account.collection.indexes();

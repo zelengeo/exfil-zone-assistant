@@ -105,9 +105,6 @@ export function FeedbackFilters({ currentFilters }: FeedbackFiltersProps) {
                             <SelectItem value="feature" className="text-tan-100 focus:bg-military-700">
                                 Feature Request
                             </SelectItem>
-                            <SelectItem value="data_correction" className="text-tan-100 focus:bg-military-700">
-                                Data Issue
-                            </SelectItem>
                         </SelectContent>
                     </Select>
                 </div>

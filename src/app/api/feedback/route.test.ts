@@ -83,10 +83,10 @@ function feedbackRequest(): NextRequest {
     }) as NextRequest;
 }
 
-function dataCorrectionRequest(): NextRequest {
+function retiredTypeRequest(): NextRequest {
     return new Request('http://localhost/api/feedback', {
         body: JSON.stringify({
-            description: 'A data correction requires an authenticated account.',
+            description: 'Data corrections were retired; this type is no longer submittable.',
             title: 'Incorrect item data',
             type: 'data_correction',
         }),
@@ -190,14 +190,30 @@ describe('POST /api/feedback transaction lifecycle', () => {
         expect(mocks.session.endSession).toHaveBeenCalledOnce();
     });
 
-    it('rejects unauthorized feedback before connecting or creating a session', async () => {
+    it('rejects the retired data_correction type before connecting or creating a session', async () => {
         mocks.connected = true;
 
-        const response = await POST(dataCorrectionRequest());
+        const response = await POST(retiredTypeRequest());
 
-        expect(response.status).toBe(401);
+        expect(response.status).toBe(400);
         expect(mocks.connectDB).not.toHaveBeenCalled();
         expect(mocks.startSession).not.toHaveBeenCalled();
         expect(mocks.session.startTransaction).not.toHaveBeenCalled();
+    });
+
+    it.each(['bug', 'feature', 'general'])('still accepts %s feedback', async (type) => {
+        mocks.connected = true;
+
+        const response = await POST(new Request('http://localhost/api/feedback', {
+            body: JSON.stringify({
+                description: 'Ordinary feedback keeps working after the retirement.',
+                title: 'Still submittable',
+                type,
+            }),
+            headers: { 'Content-Type': 'application/json' },
+            method: 'POST',
+        }) as NextRequest);
+
+        expect(response.status).toBe(200);
     });
 });

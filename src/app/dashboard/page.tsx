@@ -14,7 +14,6 @@ import {
     Bug,
     Lightbulb,
     FileEdit,
-    CheckCircle2,
     Activity,
     MapPin,
     Headphones,
@@ -165,7 +164,7 @@ export default async function DashboardPage() {
                 </div>
 
                 {/* Contribution Stats Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                     {/* Total Contributions */}
                     <div className="bg-military-850 border border-military-700 rounded-sm p-6">
                         <div className="flex items-center justify-between mb-4">
@@ -214,34 +213,6 @@ export default async function DashboardPage() {
                         <p className="text-sm text-tan-500 mt-1">Your improvement ideas</p>
                     </div>
 
-                    {/* Data Corrections */}
-                    <div className="bg-military-850 border border-military-700 rounded-sm p-6">
-                        <div className="flex items-center justify-between mb-4">
-                            <FileEdit className="h-8 w-8 text-purple-500" />
-                            <span className="text-2xl font-bold text-tan-100">
-                {user.stats.dataCorrections}
-              </span>
-                        </div>
-                        <h3 className="text-tan-300 font-medium">Data Corrections</h3>
-                        <p className="text-sm text-tan-500 mt-1">Submitted corrections</p>
-                    </div>
-
-                    {/* Accepted Corrections */}
-                    <div className="bg-military-850 border border-military-700 rounded-sm p-6">
-                        <div className="flex items-center justify-between mb-4">
-                            <CheckCircle2 className="h-8 w-8 text-green-500" />
-                            <span className="text-2xl font-bold text-tan-100">
-                {user.stats.correctionsAccepted}
-              </span>
-                        </div>
-                        <h3 className="text-tan-300 font-medium">Corrections Accepted</h3>
-                        <p className="text-sm text-tan-500 mt-1">
-                            {user.stats.dataCorrections > 0
-                                ? `${Math.round((user.stats.correctionsAccepted / user.stats.dataCorrections) * 100)}% acceptance rate`
-                                : 'Submit your first correction!'
-                            }
-                        </p>
-                    </div>
                 </div>
 
                 {/* Two Column Layout */}
