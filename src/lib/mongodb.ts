@@ -20,70 +20,36 @@ const mongooseOptions = {
     autoIndex: false,
 };
 
-// Global variable to track if Mongoose is connecting/connected
-let isConnecting = false;
+mongoose.set('strictQuery', true);
 
-export async function connectDB() {
-    // If already connected, return immediately
+mongoose.connection.on('connected', () => {
+    console.log('Mongoose connected to MongoDB');
+});
+
+mongoose.connection.on('error', (error) => {
+    console.error('Mongoose connection error:', error);
+});
+
+mongoose.connection.on('disconnected', () => {
+    console.log('Mongoose disconnected');
+});
+
+let connectionPromise: Promise<void> | null = null;
+
+export function connectDB(): Promise<void> {
     if (mongoose.connection.readyState === 1) {
-        return;
+        return Promise.resolve();
     }
 
-    // If already connecting, wait for it
-    if (isConnecting) {
-        // Wait for connection to complete
-        await new Promise<void>((resolve) => {
-            const checkConnection = setInterval(() => {
-                if (mongoose.connection.readyState === 1) {
-                    clearInterval(checkConnection);
-                    resolve();
-                }
-            }, 100);
-        });
-        return;
-    }
-
-    try {
-        isConnecting = true;
-
-        // Configure Mongoose settings
-        mongoose.set('strictQuery', true); 
-
-        // Set up connection event handlers BEFORE connecting
-        mongoose.connection.on('connected', () => {
-            console.log('Mongoose connected to MongoDB');
-        });
-
-        mongoose.connection.on('error', (err) => {
-            console.error('Mongoose connection error:', err);
-            isConnecting = false;
-        });
-
-        mongoose.connection.on('disconnected', () => {
-            console.log('Mongoose disconnected');
-            isConnecting = false;
-        });
-
-        // In production, implement reconnection logic
-        if (process.env.NODE_ENV === 'production') {
-            mongoose.connection.on('disconnected', () => {
-                console.log('Mongoose disconnected. Attempting to reconnect...');
-                setTimeout(() => {
-                    mongoose.connect(uri, mongooseOptions).catch(console.error);
-                }, 5000);
+    if (!connectionPromise) {
+        connectionPromise = mongoose.connect(uri, mongooseOptions)
+            .then(() => undefined)
+            .finally(() => {
+                connectionPromise = null;
             });
-        }
-
-        // Connect to MongoDB
-        await mongoose.connect(uri, mongooseOptions);
-
-    } catch (error) {
-        console.error('MongoDB connection error:', error);
-        isConnecting = false;
-        throw error;
-    } finally {
-        isConnecting = false;
     }
+
+    return connectionPromise;
 }
 
 /**

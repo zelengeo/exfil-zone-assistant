@@ -15,7 +15,7 @@ The sections below are the exact proposed issue bodies, apart from GitHub number
 | [B01](#b01) | [Critical] Prevent client session updates from changing JWT identity | bug | None — implemented locally; rollout pending |
 | [B02](#b02) | [High] Verify OAuth email ownership and resolve linked accounts by provider identity | bug | None — implemented locally; rollout pending |
 | [B03](#b03) | [High] Enforce authorization on correction deletion until retirement | bug, ready-for-agent | None |
-| [B04](#b04) | [High] Repair MongoDB connection lifecycle and remove the unused client pool | bug, ready-for-agent | None |
+| [B04](#b04) | [High] Repair MongoDB connection lifecycle and remove the unused client pool | bug | None — implemented locally; local replica-set verification pending |
 | [B05](#b05) | [High] Connect before creating database sessions in write handlers | bug, ready-for-agent | None |
 | [B06](#b06) | [High] Make account deletion atomic and consistent about retained references | bug, needs-triage | B04, B05 |
 | [B07](#b07) | [High] Restrict local MongoDB and mongo-express exposure | bug, ready-for-agent | None |
@@ -322,7 +322,9 @@ Local audit: `docs/BACKEND_AUDIT_2026-09-05.md`, section `B03`. A GitHub trackin
 
 **Proposed title:** [High] Repair MongoDB connection lifecycle and remove the unused client pool
 
-**Proposed labels:** bug, ready-for-agent
+**Proposed labels:** bug
+
+**Implementation status:** Implemented locally on 2026-09-05; a disposable local replica-set reconnect check remains pending because the Docker daemon was unavailable. No Atlas connection was attempted.
 
 Part of the backend audit dated 2026-09-05. Audit finding: **B04**. Priority: **High**.
 
@@ -358,17 +360,32 @@ No database/ODM migration, guessed pool-size optimization, Atlas configuration c
 
 ### Acceptance criteria
 
-- [ ] Concurrent callers share one attempt and all reject on connection failure; a later call can reconnect.
-- [ ] Repeated disconnect/retry cycles do not increase event listener or timer counts.
-- [ ] Explicit shutdown cannot schedule an unintended reconnect.
-- [ ] Importing the module creates no unused native client or unhandled eager rejection.
-- [ ] Health does not label Mongoose connection-object counts as socket-pool availability.
+- [x] Concurrent callers share one attempt and all reject on connection failure; a later call can reconnect.
+- [x] Repeated disconnect/retry cycles do not increase event listener or timer counts.
+- [x] Explicit shutdown cannot schedule an unintended reconnect.
+- [x] Importing the module creates no unused native client or unhandled eager rejection.
+- [x] Health does not label Mongoose connection-object counts as socket-pool availability.
+
+Implemented in:
+
+- `src/lib/mongodb.ts`
+- `src/lib/mongodb.test.ts`
+- `src/app/api/admin/health/route.ts`
+- `src/app/api/admin/health/route.test.ts`
+- `package.json`
+- `package-lock.json`
+- `src/lib/AGENTS.md`
+- `src/models/AGENTS.md`
+- `src/app/admin/AGENTS.md`
 
 ### Required tests or verification
 
-- Concurrent success, initial failure, retry, disconnect and deliberate shutdown lifecycle tests using controlled driver events.
-- Assert one pool/connection attempt and bounded listeners/timers.
-- Verify health response distinguishes unavailable metrics from zero; exercise a local replica-set reconnect without touching Atlas.
+- [x] Concurrent success, initial failure, retry, disconnect and deliberate shutdown lifecycle tests using controlled driver events.
+- [x] Assert one pool/connection attempt and bounded listeners/timers.
+- [x] Verify health response distinguishes unavailable metrics from zero.
+- [ ] Exercise a local replica-set reconnect without touching Atlas.
+
+Local verification result: **11 test files, 242 tests passed**; TypeScript and changed-file ESLint passed. The package lock parses successfully, the unused Auth MongoDB adapter and its lockfile subtree were removed, and the native `mongodb` dependency remains for `scripts/test-mongodb-connection.ts`. Docker is installed, but its daemon was not running, so the disposable replica-set check could not be executed. No configured remote database was contacted.
 
 Add durable regression tests for changed behavior. Existing passing game-data tests alone do not verify this issue. Any infrastructure verification uses disposable/local resources unless live access and the specific operation are authorized.
 

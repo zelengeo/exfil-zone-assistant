@@ -16,11 +16,6 @@ interface HealthCheckResult {
         database: {
             status: 'connected' | 'disconnected' | 'error';
             latency?: number;
-            connections?: {
-                current: number;
-                available: number;
-                poolSize: number;
-            };
             stats?: {
                 collections: number;
                 dataSize: number;
@@ -51,8 +46,6 @@ interface HealthCheckResult {
     };
 }
 
-const mongoMaxPoolSize = 10;
-
 async function checkDatabaseHealth() {
     try {
         // Ensure connection
@@ -81,45 +74,36 @@ async function checkDatabaseHealth() {
         await db.admin().ping();
         const latency = Date.now() - startTime;
 
-        // Get connection stats
-        let connections;
+        let stats;
         try {
-            // Only use safe, non-admin operations
             const collections = await db.listCollections().toArray();
 
-            connections = {
-                current: mongoose.connections.length,
-                available: mongoMaxPoolSize - mongoose.connections.length,
-                poolSize: mongoMaxPoolSize,
-                stats: {
-                    collections: collections.length,
-                    dataSize: 0,
-                    storageSize: 0,
-                    indexes: 0,
-                }
+            stats = {
+                collections: collections.length,
+                dataSize: 0,
+                storageSize: 0,
+                indexes: 0,
             };
 
-            // Try db.stats() - this usually works with readWrite role
             try {
-                const stats = await db.stats();
-                connections.stats = {
-                    collections: stats.collections || collections.length,
-                    dataSize: Math.round((stats.dataSize || 0) / 1024 / 1024),
-                    storageSize: Math.round((stats.storageSize || 0) / 1024 / 1024),
-                    indexes: stats.indexes || 0,
+                const databaseStats = await db.stats();
+                stats = {
+                    collections: databaseStats.collections || collections.length,
+                    dataSize: Math.round((databaseStats.dataSize || 0) / 1024 / 1024),
+                    storageSize: Math.round((databaseStats.storageSize || 0) / 1024 / 1024),
+                    indexes: databaseStats.indexes || 0,
                 };
             } catch {
-                // db.stats() might also be restricted, that's OK
                 logger.debug('db.stats() not available - using basic metrics');
             }
         } catch (error) {
             logger.warn(`Could not fetch database info:${error instanceof Error ? ` ${error.message}` : error}`, );
-            connections = undefined; // Will be omitted from response
+            stats = undefined;
         }
         return {
             status: 'connected' as const,
             latency,
-            connections
+            stats,
         };
     } catch (error) {
         logger.error('Database health check failed:', error);

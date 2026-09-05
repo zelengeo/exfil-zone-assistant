@@ -65,9 +65,11 @@ Wrap a handler with `withRateLimit(request, handler, 'api' | 'auth')`; `'auth'` 
 
 ## Database
 
-`connectDB()` is a singleton over the Mongoose connection, cached across lambda invocations. Call it
-at the top of any route that touches the database. Prefer `.lean()` for reads, and `.select()` the
-fields you need.
+`connectDB()` shares one in-flight Mongoose connection promise across callers. Every caller receives
+the same success or failure, and a failed attempt clears the promise so a later request can retry.
+Mongoose's driver owns reconnect behavior; do not add polling waiters or application reconnect
+timers. Call `connectDB()` at the top of any route that touches the database. Prefer `.lean()` for
+reads, and `.select()` the fields you need.
 
 ## Utilities
 

@@ -47,7 +47,9 @@ review is a running log rather than one overwritten field — append, never repl
 
 Two checks, run together: `checkDatabaseHealth` and `checkRateLimiterHealth`. The rate-limiter check
 writes a real key through the live limiter, so in development it exercises the in-memory backend and
-says nothing about KV.
+says nothing about KV. Database health reports ping latency and database stats when the configured
+MongoDB role exposes them. It omits unavailable metrics; Mongoose connection-object counts are not
+socket-pool usage and must not be presented as capacity.
 
 ## Writing an admin page
 
