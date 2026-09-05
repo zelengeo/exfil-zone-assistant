@@ -5,6 +5,7 @@ import { Loader2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Layout from '@/components/layout/Layout';
 import ShareButton from '@/components/ShareButton';
+import Slider from '@/components/ui/slider';
 import { useCombatSim, type SimView } from '../hooks/useCombatSim';
 import { RANGE_VALUES } from '../utils/types';
 import { formatShots, shotsColor } from '../utils/scenario';
@@ -16,6 +17,7 @@ import DefenderPanel from './DefenderPanel';
 import LoadoutPicker from './LoadoutPicker';
 import CompareView from './CompareView';
 import NumbersView from './NumbersView';
+import PanelNote from './PanelNote';
 
 // Live console tooling for the debug page; imported for its side effects, as it always has been.
 import '../utils/combat-test-helper';
@@ -87,21 +89,25 @@ export default function CombatSimClient() {
                         <Loader2 size={18} className="animate-spin" />
                         <span className="text-sm">Loading the body model and the part index…</span>
                     </div>
-                ) : picking !== null && sim.data ? (
-                    <LoadoutPicker
-                        loadoutId={picking}
-                        current={sim.loadouts.find((entry) => entry.id === picking) ?? null}
-                        presets={sim.catalogue.presets}
-                        ammo={sim.catalogue.ammo}
-                        index={sim.data.index}
-                        onPick={(loadout) => {
-                            sim.setLoadout(picking, loadout);
-                            setPicking(null);
-                        }}
-                        onClose={() => setPicking(null)}
-                    />
                 ) : (
                     <>
+                        {/* On top of the page rather than instead of it: the swap was why the picker
+                            read as a route the reader had to find their way back from. */}
+                        {picking !== null && sim.data && (
+                            <LoadoutPicker
+                                loadoutId={picking}
+                                current={sim.loadouts.find((entry) => entry.id === picking) ?? null}
+                                presets={sim.catalogue.presets}
+                                ammo={sim.catalogue.ammo}
+                                index={sim.data.index}
+                                onPick={(loadout) => {
+                                    sim.setLoadout(picking, loadout);
+                                    setPicking(null);
+                                }}
+                                onClose={() => setPicking(null)}
+                            />
+                        )}
+
                         <VerdictBar
                             outcome={sim.selected}
                             onShowHead={() => { sim.setView('read'); setTab('head'); }}
@@ -193,10 +199,13 @@ export default function CombatSimClient() {
 /**
  * Range, and what it costs.
  *
- * The slider's own track is the falloff reading: the five preset ranges with the shots each takes,
- * so moving the handle is not a leap of faith. Every published round carries ballistic curves, and
- * past point blank those curves supply the damage outright — which is why a build can simply stop
- * being able to kill somewhere down this row.
+ * The row under the slider is the falloff reading: the five preset ranges with the shots each takes,
+ * so moving the handle is not a leap of faith. The reasoning behind it is in the panel's note rather
+ * than standing under it in prose.
+ *
+ * The slider is the app's own rather than an `input[type=range]`, because the native control insets
+ * its track by half a thumb at each end - which on this panel left a visible stretch of track at 0 m
+ * and at 600 m that the handle could not reach.
  */
 function RangeControl({
     range, onRange, byRange, selectedId,
@@ -208,24 +217,34 @@ function RangeControl({
 }) {
     return (
         <section className="border border-line-800 bg-steel-800 p-4">
-            <div className="flex items-baseline justify-between">
-                <h2 className="eyebrow">Range &mdash; shots to centre mass</h2>
-                <span className="font-mono tabular text-lg text-ink-hi">{range} m</span>
+            <div className="flex items-center justify-between gap-2">
+                <h2 className="eyebrow">Range</h2>
+                <div className="flex items-center gap-1">
+                    <span className="font-mono tabular text-lg text-ink-hi">{range} m</span>
+                    <PanelNote label="the range row">
+                        <p>
+                            The row below is the falloff: the five preset ranges with the shots each takes
+                            to centre mass, so moving the handle is not a leap of faith.
+                        </p>
+                        <p>
+                            Every published round carries ballistic curves, and past point blank those curves
+                            supply the damage outright &mdash; which is why a build can simply stop being able
+                            to kill somewhere along the row.
+                        </p>
+                    </PanelNote>
+                </div>
             </div>
 
-            <input
-                type="range"
+            <Slider
+                value={range}
                 min={0}
                 max={600}
                 step={10}
-                value={range}
-                onChange={(event) => onRange(Number(event.target.value))}
-                aria-label="Range in metres"
-                className="w-full mt-3 h-2 bg-steel-700 appearance-none cursor-pointer
-                    [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-4
-                    [&::-webkit-slider-thumb]:h-8 [&::-webkit-slider-thumb]:bg-ember
-                    [&::-moz-range-thumb]:w-4 [&::-moz-range-thumb]:h-8 [&::-moz-range-thumb]:bg-ember
-                    [&::-moz-range-thumb]:border-0"
+                onChange={onRange}
+                label="Range in metres"
+                valueText={(value) => `${value} metres`}
+                ticks={RANGE_VALUES}
+                className="mt-1"
             />
 
             <ul className="grid grid-cols-5 gap-1 mt-3">

@@ -2,6 +2,7 @@
 
 import React, { useMemo, useState } from 'react';
 import { cn } from '@/lib/utils';
+import PanelNote from './PanelNote';
 import BodyViewer, { type ZoneOverlay } from '@/components/protection/BodyViewer';
 import HeadViewer, { type HeadViewMode } from '@/components/protection/HeadViewer';
 import HeadCoverageMap from '@/components/protection/HeadCoverageMap';
@@ -277,9 +278,21 @@ function HeadPanel({
 
             {/* Three answers, not six numbers. */}
             <div className="mt-3 border-t border-line-900 pt-3">
-                <p className="eyebrow mb-2">
-                    {target.head.length === 1 ? 'One answer' : `${target.head.length} answers, not six numbers`}
-                </p>
+                <div className="flex items-center justify-between gap-2 mb-2">
+                    <p className="eyebrow">
+                        {target.head.length === 1 ? 'One answer' : `${target.head.length} answers, not six numbers`}
+                    </p>
+                    <PanelNote label="the head readings">
+                        <p>
+                            A helmet has one class for its whole shell and its cone regions are the holes in
+                            it; a face shield is the inverse, its regions <em>are</em> its shell.
+                        </p>
+                        <p>
+                            The two never stack, so a head has as many readings as there are pieces reaching
+                            it &mdash; never six, and rarely one.
+                        </p>
+                    </PanelNote>
+                </div>
                 <ul className="divide-y divide-line-900">
                     {target.head.map((zone) => {
                         const entry = outcome?.byZoneId.get(zone.id) ?? null;
@@ -323,11 +336,6 @@ function HeadPanel({
                         );
                     })}
                 </ul>
-                <p className="micro-label text-ink-700 mt-2 leading-relaxed">
-                    A helmet has one class for its whole shell and its cone regions are the holes in it; a face
-                    shield is the inverse, its regions <em>are</em> its shell. The two never stack, so a head has
-                    as many readings as there are pieces reaching it &mdash; never six, and rarely one.
-                </p>
             </div>
         </div>
     );

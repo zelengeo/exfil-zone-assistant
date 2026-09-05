@@ -89,6 +89,45 @@ The formula is deliberately still open. `spray.test.ts` pins its *properties* �
 distribution sums to one, scatter grows with range — rather than a golden number, because pinning
 the number would be pinning the current guess.
 
+## How the page is read, and what was cut
+
+The route was rebuilt once for the numbers and once more for the reading of them. The second pass
+undid four things that had each looked reasonable on their own:
+
+- **Standing prose.** Every panel ended in a paragraph explaining how to read it. All of it true,
+  all of it charging the same rent on the hundredth visit as on the first, and on a phone beside a
+  headset it cost more rows than the figures it explained. `PanelNote` keeps the words and gives up
+  the space: an `i` beside the panel heading. Nothing a reader needs *without* asking may live in a
+  note — that belongs in the panel, as a figure or a label.
+- **The picker as a view swap.** `LoadoutPicker` replaced the whole page, so it read as a route the
+  reader had navigated to, with a `Close` word in the corner as the only way back. It is a dialog:
+  scrim, Escape, a 44px close and a footer action. The way *in* is a labelled button on the selected
+  rail row, not the word "change".
+- **Ammunition as a margin note.** The round moves the answer more than anything else on the page —
+  it sets both terms of the penetration test and the damage the shot arrives with, where the gun
+  contributes two of six bench figures. It had a grey line of small caps. It now gets a column of
+  the picker, a line of every rail row, and the verdict bar's header.
+- **Armour as a list of names.** Three `Select` dropdowns of bare names asked the reader to know
+  thirty-seven vests by name, and omitted the one fact that decides every number. `ArmorPicker`
+  orders by class, heaviest first, with the picture and the durability pool on every row.
+
+`ClassLadder` is the piece that ties the last two together. Penetration and armour class are the
+same axis — `GetIsPenetrated` reads its curve on `armourClass − penetration` — so both are drawn on
+one six-rung ladder in the shared class colours, and "is this round enough for that plate" becomes a
+glance rather than arithmetic. `armorClassScale` records that the palette is categorical and does not
+clear colourblind separation between non-adjacent rungs, so nothing is colour alone: the rungs are a
+count and the figure prints beside them.
+
+Durability is drawn on the same ladder as a second, hollow reading, because durability scales the
+class itself rather than merely running out. `effectiveArmorClass` exists for that display and
+returns **0 at zero durability** — broken armour is bypassed outright by `GetIsPenetrated`, and the
+curve read at x = 1 returns about a third of a class, which would promise protection the shot path
+never applies.
+
+`components/ui/slider.tsx` is hand-rolled rather than shadcn, and is the one non-shadcn file in that
+directory. `input[type=range]` insets its track by half a thumb at each end, which left visible
+stretches of the range and durability tracks that the handle could not reach.
+
 ## Loadouts
 
 A gun is a build, not an item. `loadout.ts` turns a shipped preset, a saved build or a shared link

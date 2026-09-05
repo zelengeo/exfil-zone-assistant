@@ -3,6 +3,8 @@
 import React from 'react';
 
 import { cn } from '@/lib/utils';
+import ItemIcon from '@/components/items/ItemIcon';
+import PanelNote from './PanelNote';
 import { armorClassColor, armorClassLabel, UNCOVERED_COLOR } from '@/lib/protection/armorClassScale';
 import { Price } from '@/components/trade/Price';
 
@@ -111,10 +113,21 @@ function PerZoneCard({ outcome }: { outcome: LoadoutOutcome | null }) {
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 px-3 py-2.5 border-b border-line-800">
                 <h2 className="military-stencil text-base text-ink-100">Per zone</h2>
                 {outcome && <span className="text-xs text-ink-500">{outcome.loadout.name}</span>}
-                <span className="micro-label text-ink-700">
-                    head readings first, then every capsule below the neck &middot; hands and feet author no zone,
-                    so no round ever reports one
-                </span>
+                <span className="micro-label text-ink-700">head readings first, then every capsule below the neck</span>
+                <span className="flex-1" />
+                <PanelNote label="the per-zone table">
+                    <p>
+                        Cover is measured, not asserted &mdash; the game&rsquo;s own{' '}
+                        <span className="text-ink-200">Is Protected</span> test run over each capsule&rsquo;s
+                        surface. Class is the plate&rsquo;s rating at that spot, which need not match the
+                        vest&rsquo;s headline.
+                    </p>
+                    <p>
+                        A head reading&rsquo;s cone names the zones it covers, because head gear protects
+                        through cone regions rather than a wedge angle. Hands and feet author no zone, so no
+                        round ever reports one.
+                    </p>
+                </PanelNote>
             </div>
 
             {outcome ? (
@@ -146,12 +159,6 @@ function PerZoneCard({ outcome }: { outcome: LoadoutOutcome | null }) {
                 </p>
             )}
 
-            <p className="micro-label text-ink-700 px-3 py-2.5 border-t border-line-900 leading-relaxed">
-                Cover is measured, not asserted &mdash; the game&rsquo;s own <span className="text-ink-500">Is Protected</span> test
-                run over each capsule&rsquo;s surface. Class is the plate&rsquo;s rating at that spot, which need not
-                match the vest&rsquo;s headline. A head reading&rsquo;s cone names the zones it covers, because head
-                gear protects through cone regions rather than a wedge angle.
-            </p>
         </section>
     );
 }
@@ -170,9 +177,18 @@ function RangeTable({
         <section className="border border-line-800 bg-steel-800">
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 px-3 py-2.5 border-b border-line-800">
                 <h2 className="military-stencil text-base text-ink-100">Every loadout, every range</h2>
-                <span className="micro-label text-ink-700">
-                    shots to centre mass, aimed &middot; the axis Compare holds at one range, this holds at every one
-                </span>
+                <span className="micro-label text-ink-700">shots to centre mass, aimed</span>
+                <span className="flex-1" />
+                <PanelNote label="the range table">
+                    <p>
+                        The axis Compare holds at one range, this one holds at every range.
+                    </p>
+                    <p>
+                        &infin; is the model finding no kill inside the safety limit at that range &mdash; not a
+                        missing figure, a round that cannot do it. Aimed is the fewest rounds off the head: the
+                        shot a player can take repeatably.
+                    </p>
+                </PanelNote>
             </div>
 
             {outcomes.length > 0 ? (
@@ -205,7 +221,7 @@ function RangeTable({
                                         style={{ gridTemplateColumns: template }}
                                     >
                                         <span className="min-w-0 flex items-center gap-2">
-                                            <span className="w-5 h-5 bg-steel-550 border border-line-800 shrink-0" aria-hidden="true" />
+                                            <ItemIcon item={outcome.loadout.ammo} size={20} />
                                             <span className="min-w-0 truncate">
                                                 <span className={cn('text-sm', isSelected ? 'text-ink-100' : 'text-ink-200')}>
                                                     {outcome.loadout.name}
@@ -238,11 +254,6 @@ function RangeTable({
                 <p className="text-sm text-ink-500 p-4">No loadout is ready to compare.</p>
             )}
 
-            <p className="micro-label text-ink-700 px-3 py-2.5 border-t border-line-900 leading-relaxed">
-                &infin; is the model finding no kill inside the safety limit at that range &mdash; not a missing
-                figure, a round that cannot do it. Aimed is the fewest rounds off the head, the shot a player can
-                take repeatably.
-            </p>
         </section>
     );
 }
@@ -296,6 +307,19 @@ function SprayCard({ outcome }: { outcome: LoadoutOutcome | null }) {
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 px-3 py-2.5 border-b border-line-800">
                 <h2 className="military-stencil text-base text-ink-100">The spray estimate</h2>
                 <span className="micro-label text-ember-soft">estimate &middot; models the player, not the game</span>
+                <span className="flex-1" />
+                <PanelNote label="the spray estimate">
+                    <p>
+                        This is the one figure on the page that models the player rather than the game, so it
+                        stays labelled an estimate everywhere it appears.
+                    </p>
+                    <p>
+                        It assumes the shooter holds on the centre of the upper chest without pulling down
+                        against climb, against a frontal, standing target in the body model&rsquo;s reference
+                        pose &mdash; the pessimistic end of what a real player does. Movement, leaning, and the
+                        bursts after a reset are not modelled.
+                    </p>
+                </PanelNote>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-line-900">
@@ -327,13 +351,6 @@ function SprayCard({ outcome }: { outcome: LoadoutOutcome | null }) {
                 )}
             </div>
 
-            <p className="micro-label text-ink-700 px-3 py-2.5 border-t border-line-900 leading-relaxed">
-                This is the one figure on the page that models the player rather than the game, so it stays
-                labelled an estimate everywhere it appears. It assumes the shooter holds on the centre of the
-                upper chest without pulling down against climb, against a frontal, standing target in the body
-                model&rsquo;s reference pose &mdash; the pessimistic end of what a real player does. Movement,
-                leaning, and the bursts after a reset are not modelled.
-            </p>
         </section>
     );
 }

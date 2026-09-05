@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
+import { AmmoTag } from './AmmoDisplay';
+import PanelNote from './PanelNote';
 import { Price } from '@/components/trade/Price';
 import { formatSeconds, formatShots, shotsColor, type LoadoutOutcome } from '../utils/scenario';
 
@@ -68,6 +70,13 @@ export default function VerdictBar({ outcome, onShowHead, onExplainSpray, classN
 
     return (
         <div className={cn('border border-line-800 bg-steel-800', className)}>
+            {/* Whose answer this is. The bar used to open on a bare numeral, which left the round -
+                the input that moves it most - unnamed anywhere near the figure it produced. */}
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 px-4 py-2 border-b border-line-900">
+                <span className="text-sm text-ink-200 truncate">{outcome.loadout.name}</span>
+                <AmmoTag ammo={outcome.loadout.ammo} className="min-w-0 w-full sm:w-auto" />
+            </div>
+
             <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,15rem)_minmax(0,1fr)] gap-5 p-4">
                 {/* The recommendation, at the size a reader can take in from across a room. */}
                 <div className="flex items-baseline gap-3 lg:flex-col lg:gap-1 lg:items-start">
@@ -134,33 +143,55 @@ export default function VerdictBar({ outcome, onShowHead, onExplainSpray, classN
             {/* Why the third tier exists at all: a casual reader does not aim per zone. */}
             {spray && (
                 <div className="border-t border-line-900 px-4 py-3">
-                    <p className="eyebrow mb-1">If you just hold the trigger</p>
-                    <p className="text-sm text-ink-400 leading-relaxed">
-                        {spray.rounds === null ? (
-                            <>Holding the trigger on centre mass does not put this target down at all &mdash;{' '}
-                                {Math.round(spray.hitRate * 100)}% of rounds land, and the plate takes what
-                                arrives.</>
-                        ) : (
-                            <>Hosing centre mass on full auto averages{' '}
-                                <span className="font-mono tabular text-ink-100">{Math.round(spray.rounds)}</span>{' '}
-                                rounds &mdash; against{' '}
-                                <span className="font-mono tabular text-ink-100">
-                                    {aimed ? formatShots(aimed.shotsToKill) : '—'}
-                                </span>{' '}
-                                aimed. {Math.round(spray.hitRate * 100)}% of them land at all, and the crosshair has
-                                climbed {Math.round(spray.climbCm)} cm by the end of the burst.</>
-                        )}{' '}
-                        <span className="text-ink-600">This one is an estimate: it models the player, not the game.</span>
-                        {onExplainSpray && (
-                            <button
-                                type="button"
-                                onClick={onExplainSpray}
-                                className="ml-2 micro-label text-ember hover:underline"
+                    <div className="flex items-center justify-between gap-2 mb-2">
+                        <p className="eyebrow">If you just hold the trigger</p>
+                        <div className="flex items-center gap-1">
+                            {onExplainSpray && (
+                                <button
+                                    type="button"
+                                    onClick={onExplainSpray}
+                                    className="micro-label text-ember hover:underline min-h-8 px-1"
+                                >
+                                    how it is estimated &rarr;
+                                </button>
+                            )}
+                            <PanelNote label="the spray estimate">
+                                <p>
+                                    This one is an estimate: it models the player, not the game. It walks the
+                                    gun&rsquo;s own recoil pattern and samples the spread cone around each shot.
+                                </p>
+                                <p>
+                                    {spray.rounds === null
+                                        ? 'Holding the trigger on centre mass does not put this target down at all — the plate takes what arrives.'
+                                        : 'Compare it against the aimed figure above: the gap is what aiming is worth against this target.'}
+                                </p>
+                            </PanelNote>
+                        </div>
+                    </div>
+
+                    <dl className="grid grid-cols-3 gap-px bg-line-900 border border-line-900">
+                        <div className="bg-steel-850 p-2.5">
+                            <dt className="micro-label text-ink-700">Rounds</dt>
+                            <dd
+                                className="font-mono tabular text-xl leading-none mt-1"
+                                style={{ color: shotsColor(spray.rounds ?? Infinity) }}
                             >
-                                how it is estimated &rarr;
-                            </button>
-                        )}
-                    </p>
+                                {spray.rounds === null ? '∞' : Math.round(spray.rounds)}
+                            </dd>
+                        </div>
+                        <div className="bg-steel-850 p-2.5">
+                            <dt className="micro-label text-ink-700">Land</dt>
+                            <dd className="font-mono tabular text-xl text-ink-100 leading-none mt-1">
+                                {Math.round(spray.hitRate * 100)}%
+                            </dd>
+                        </div>
+                        <div className="bg-steel-850 p-2.5">
+                            <dt className="micro-label text-ink-700">Climb</dt>
+                            <dd className="font-mono tabular text-xl text-ink-100 leading-none mt-1">
+                                {Math.round(spray.climbCm)}<span className="text-sm text-ink-600"> cm</span>
+                            </dd>
+                        </div>
+                    </dl>
                 </div>
             )}
         </div>

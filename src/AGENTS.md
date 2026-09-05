@@ -6,7 +6,8 @@ How the client half is arranged, and the few conventions that are not obvious fr
 
 - `app/` — routes. A route owns its components in `app/<route>/components/` and its logic in
   `app/<route>/utils/`; both stay there until a second route needs them.
-- `components/` — shared across routes. `ui/` is shadcn; the rest are grouped by domain
+- `components/` — shared across routes. `ui/` is shadcn, with one hand-rolled exception
+  (`ui/slider.tsx`, whose header says why); the rest are grouped by domain
   (`items/`, `tasks/`, `trade/`, `protection/`, `gunsmith/`, `layout/`).
 - `lib/` — request plumbing and pure game logic. See [lib/AGENTS.md](lib/AGENTS.md).
 - `services/` — how data is reached. See [services/AGENTS.md](services/AGENTS.md).

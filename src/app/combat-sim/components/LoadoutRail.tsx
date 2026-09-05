@@ -1,9 +1,12 @@
 'use client';
 
 import React from 'react';
+import { SlidersHorizontal } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { formatShots, shotsColor, type LoadoutOutcome, type ZoneOutcome } from '../utils/scenario';
 import { ZONE_GROUPS, ZONE_GROUP_LABELS, type ZoneGroup } from '../utils/target-model';
+import { AmmoTag } from './AmmoDisplay';
+import PanelNote from './PanelNote';
 
 /**
  * Every loadout, and its whole body reading in one strip.
@@ -103,9 +106,21 @@ export default function LoadoutRail({
 
     return (
         <div className={cn('min-w-0', className)}>
-            <div className="flex items-baseline justify-between px-2 pb-1.5 border-b border-line-900">
+            <div className="flex items-center justify-between gap-2 px-2 pb-1.5 border-b border-line-900">
                 <span className="eyebrow">Loadout</span>
-                <span className="eyebrow">shots &middot; {columnLabel}</span>
+                <div className="flex items-center gap-1">
+                    <span className="eyebrow">shots &middot; {columnLabel}</span>
+                    <PanelNote label="the loadout strips">
+                        <p>
+                            Each strip is one gun&rsquo;s whole body reading, head to calves. Taller and
+                            greener is fewer shots.
+                        </p>
+                        <p>
+                            The first pip is split because the head is: the front half is the visor and what
+                            it leaves open, the back half is the helmet shell.
+                        </p>
+                    </PanelNote>
+                </div>
             </div>
 
             <ul className="divide-y divide-line-900">
@@ -124,41 +139,47 @@ export default function LoadoutRail({
                                 onClick={() => onSelect(outcome.loadoutId)}
                                 aria-pressed={isSelected}
                                 className={cn(
-                                    'w-full min-h-11 px-2 py-2 text-left flex items-center gap-3 transition-colors',
+                                    'w-full min-h-11 px-2 py-2 text-left flex flex-col items-stretch gap-1',
+                                    'transition-colors',
                                     isSelected
                                         ? 'bg-steel-700 border-l-2 border-ember'
                                         : 'border-l-2 border-transparent hover:bg-steel-750',
                                 )}
                             >
-                                <span className="min-w-0 flex-1">
-                                    <span className="block text-sm text-ink-100 truncate">
+                                <span className="flex items-center gap-3 w-full">
+                                    <span className="min-w-0 flex-1 block text-sm text-ink-100 truncate">
                                         {outcome.loadout.name}
                                     </span>
-                                    <span className="block micro-label text-ink-600 truncate">
-                                        {outcome.loadout.ammo?.name ?? 'no round'}
+                                    <span
+                                        className="font-mono tabular text-base w-8 text-right shrink-0"
+                                        style={{ color: figure ? shotsColor(figure.shotsToKill) : undefined }}
+                                    >
+                                        {figure ? formatShots(figure.shotsToKill) : '—'}
                                     </span>
+                                    <Pips outcome={outcome} highlightGroup={highlightGroup} />
                                 </span>
-                                <span
-                                    className="font-mono tabular text-base w-6 text-right"
-                                    style={{ color: figure ? shotsColor(figure.shotsToKill) : undefined }}
-                                >
-                                    {figure ? formatShots(figure.shotsToKill) : '—'}
-                                </span>
-                                <Pips outcome={outcome} highlightGroup={highlightGroup} />
+                                {/* The round gets the row's full width rather than the sliver left over
+                                    beside the strip: at 17rem it was truncating to two characters. */}
+                                <AmmoTag ammo={outcome.loadout.ammo} variant="compact" className="w-full" />
                             </button>
                             {isSelected && onEdit && (
-                                <div className="px-2 pb-2 flex items-center justify-between">
-                                    <span className="micro-label text-ink-700">
+                                <div className="px-2 pb-2 flex items-center gap-2">
+                                    <span className="micro-label text-ink-700 min-w-0 flex-1 truncate">
                                         {outcome.loadout.build.parts.length} parts &middot;{' '}
                                         {Math.round(outcome.loadout.build.display.RPM)} RPM &middot; FP{' '}
                                         {Math.round(outcome.loadout.build.display.firingPower)}
                                     </span>
+                                    {/* The way in. A word in the corner was the only route to the picker,
+                                        and readers did not find it. */}
                                     <button
                                         type="button"
                                         onClick={() => onEdit(outcome.loadoutId)}
-                                        className="micro-label text-ember hover:underline"
+                                        className="shrink-0 inline-flex items-center gap-1.5 micro-label
+                                            text-ink-200 min-h-11 px-3 border border-line-600
+                                            hover:border-ember hover:text-ink-hi transition-colors"
                                     >
-                                        change &rarr;
+                                        <SlidersHorizontal size={13} aria-hidden="true" />
+                                        Gun &amp; round
                                     </button>
                                 </div>
                             )}
@@ -166,12 +187,6 @@ export default function LoadoutRail({
                     );
                 })}
             </ul>
-
-            <p className="micro-label text-ink-700 mt-2 leading-relaxed px-2">
-                Each strip is one gun&rsquo;s whole body reading, head to calves, on the ramp above. Taller and
-                greener is fewer shots. The first pip is split because the head is: front half is the visor and
-                what it leaves open, back half is the helmet shell.
-            </p>
 
             {onCompare && outcomes.length > 1 && (
                 <button

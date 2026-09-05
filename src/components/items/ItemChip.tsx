@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React from 'react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import type { Item } from '@/types/items';
+import ItemIcon from './ItemIcon';
 
 /**
  * One item, named and linked — the app's smallest reference to something in the catalogue.
@@ -41,10 +41,11 @@ export interface ItemChipProps {
     className?: string;
 }
 
-const TILE: Record<NonNullable<ItemChipProps['size']>, string> = {
-    sm: 'w-5 h-5',
-    md: 'w-8 h-8',
-    lg: 'w-12 h-12',
+/** Matches `ItemIcon`'s pixel sizing: the chip's three sizes are 20, 32 and 48px tiles. */
+const TILE: Record<NonNullable<ItemChipProps['size']>, number> = {
+    sm: 20,
+    md: 32,
+    lg: 48,
 };
 
 const NAME: Record<NonNullable<ItemChipProps['size']>, string> = {
@@ -54,35 +55,14 @@ const NAME: Record<NonNullable<ItemChipProps['size']>, string> = {
 };
 
 function Icon({ item, size }: { item: ItemRef | null; size: NonNullable<ItemChipProps['size']> }) {
-    const [failed, setFailed] = useState(false);
-    const src = item?.images?.icon;
-
+    // The tile itself lives in `ItemIcon`, so the pickers that cannot nest a link inside a button
+    // draw the same square. All the chip adds is the hover tell that it is a link.
     return (
-        <span
-            className={cn(
-                'relative shrink-0 bg-steel-850 border border-line-800 overflow-hidden',
-                'group-hover/chip:border-line-500 transition-colors',
-                TILE[size],
-            )}
-        >
-            {src && !failed ? (
-                <Image
-                    src={src}
-                    alt=""
-                    fill
-                    unoptimized
-                    sizes="48px"
-                    className="object-contain p-px"
-                    onError={() => setFailed(true)}
-                />
-            ) : (
-                // No placeholder art exists in `public/`, and the three files the old components
-                // pointed at were never there. A letter is honest and costs no request.
-                <span className="absolute inset-0 flex items-center justify-center font-mono text-[10px] text-ink-700">
-                    {(item?.name ?? item?.id ?? '?').charAt(0).toUpperCase()}
-                </span>
-            )}
-        </span>
+        <ItemIcon
+            item={item}
+            size={TILE[size]}
+            className="group-hover/chip:border-line-500 transition-colors"
+        />
     );
 }
 

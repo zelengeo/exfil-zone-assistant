@@ -392,8 +392,33 @@ function extendShotResult(shotResult: ShotResult, armorDurabilityLeft: number, h
     return {...shotResult, remainingArmorDurability: armorDurabilityLeft, remainingHp: hpLeft};
 }
 
+/**
+ * The class a worn piece is actually rating right now.
+ *
+ * `calculateShotDamage` computes this internally on every shot; it is exported separately because
+ * the UI has to be able to say it without firing one. A class 5 vest at 30% durability does not
+ * stop class 5 rounds, and a picker that prints only the sticker class is inviting the reader to
+ * plan around protection the target no longer has.
+ *
+ * Display only — the shot path still derives its own from the durability it holds at that moment.
+ */
+function effectiveArmorClass(
+    armorClass: number,
+    durabilityFraction: number,
+    curve?: CurvePoint[],
+): number {
+    // Broken armour is bypassed rather than weakened: `GetIsPenetrated` returns true the moment
+    // DurabilityLevel <= 0, without consulting the curve. Reading the curve at x = 1 anyway returns
+    // whatever it happens to hold there - a third of a class on most vests - and printing that
+    // would promise the reader protection the shot path does not apply.
+    if (!(durabilityFraction > 0)) return 0;
+    const clamped = Math.min(1, durabilityFraction);
+    return armorClass * getArmorEffectivenessFromDurability(clamped, curve);
+}
+
 export {
     simulateCombat,
-    calculateShotDamage
+    calculateShotDamage,
+    effectiveArmorClass
 };
 export type { HitPart };

@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
+import ItemIcon from '@/components/items/ItemIcon';
+import PanelNote from './PanelNote';
 import BodyViewer, { type ZoneOverlay } from '@/components/protection/BodyViewer';
 import {
     HEAD_CAPSULE,
@@ -217,6 +219,20 @@ export default function CompareView({ outcomes, target, selectedLoadoutId, onSel
                     <span className="micro-label text-ink-700">
                         shots to kill · brightest cell in a column is the best loadout for that spot
                     </span>
+                    <span className="flex-1" />
+                    <PanelNote label="the comparison grid">
+                        <p>
+                            <span className="text-ink-200">Face</span> and{' '}
+                            <span className="text-ink-200">shell</span> are separate columns because they are
+                            separate pieces of gear that never stack &mdash; where one is missing, the cell
+                            falls back to the open-head reading.
+                        </p>
+                        <p>
+                            Left and right limbs share a column while the gear is symmetric.{' '}
+                            <span className="text-ink-200">Plate costs</span> counts the chest reading&rsquo;s
+                            own shot ladder: how many rounds the vest stopped before the rest went through.
+                        </p>
+                    </PanelNote>
                 </div>
 
                 <div className="overflow-x-auto">
@@ -252,7 +268,7 @@ export default function CompareView({ outcomes, target, selectedLoadoutId, onSel
                                     )}
                                 >
                                     <span className="flex items-center gap-2 min-w-0 py-1">
-                                        <span className="w-6 h-6 shrink-0 bg-steel-550 border border-line-800" aria-hidden="true" />
+                                        <ItemIcon item={outcome.loadout.ammo} size={24} />
                                         <span className="min-w-0">
                                             <span className={cn('block text-sm truncate', isSelected ? 'text-ink-100' : 'text-ink-200')}>
                                                 {outcome.loadout.name}
@@ -299,13 +315,6 @@ export default function CompareView({ outcomes, target, selectedLoadoutId, onSel
                     </div>
                 </div>
 
-                <p className="micro-label text-ink-700 px-3 py-2.5 border-t border-line-900 leading-relaxed">
-                    <span className="text-ink-500">Face</span> and <span className="text-ink-500">shell</span> are
-                    separate columns because they are separate pieces of gear that never stack — where one is missing,
-                    the cell falls back to the open-head reading. Left and right limbs share a column while the gear
-                    is symmetric. <span className="text-ink-500">Plate costs</span> counts the chest reading&apos;s own
-                    shot ladder: how many rounds the vest stopped before the rest went through.
-                </p>
             </div>
         </div>
     );
