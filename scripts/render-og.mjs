@@ -41,6 +41,53 @@ const cardPresets = {
       height: 352,
     },
   },
+  combat: {
+    eyebrow: 'FIELD SYSTEM / COMBAT SIM',
+    titlePrimary: 'COMBAT',
+    titleAccent: 'SIM',
+    titleGap: 12,
+    descriptor: 'DAMAGE MODEL',
+    benefit: 'Know where to aim and how many rounds it takes.',
+    status: 'AIMED SHOT // LIVE LOADOUT',
+    screen: {
+      path: ['public', 'og', 'art', 'combat-sim-ui-capture.png'],
+      left: 475,
+      top: 135,
+      width: 588,
+      height: 352,
+    },
+  },
+  hideout: {
+    eyebrow: 'FIELD SYSTEM / HIDEOUT',
+    titlePrimary: 'HIDEOUT',
+    titleAccent: '',
+    descriptor: 'UPGRADE PLANNER',
+    benefit: 'See what is ready, what it costs, and what blocks it.',
+    status: '70 UPGRADES // 29 ZONES',
+    screen: {
+      path: ['public', 'og', 'art', 'hideout-ui-capture.png'],
+      left: 475,
+      top: 135,
+      width: 588,
+      height: 352,
+      brightness: 1.08,
+    },
+  },
+  gunsmith: {
+    eyebrow: 'FIELD SYSTEM / GUNSMITH',
+    titlePrimary: 'GUN',
+    titleAccent: 'SMITH',
+    descriptor: 'WEAPON BUILDER',
+    benefit: 'Assemble real parts and see the resulting weapon stats.',
+    status: 'BUILD STATE // LIVE STATS',
+    screen: {
+      path: ['public', 'og', 'art', 'gunsmith-ui-capture.png'],
+      left: 475,
+      top: 135,
+      width: 588,
+      height: 352,
+    },
+  },
 };
 
 const card = cardPresets[presetArgument];
@@ -134,13 +181,15 @@ const overlay = Buffer.from(`
 
 await mkdir(dirname(outputPath), { recursive: true });
 
+const screenSource = card.screen ? sharp(repositoryPath(...card.screen.path)) : null;
+
 const [background, logo, screen] = await Promise.all([
   sharp(inputPath).resize(1200, 630, { fit: 'cover', position: 'centre' }).toBuffer(),
   sharp(repositoryPath('public', 'brand', 'logo-ez.svg')).resize(110, 110, { fit: 'contain' }).png().toBuffer(),
-  card.screen
-    ? sharp(repositoryPath(...card.screen.path))
+  screenSource && card.screen
+    ? screenSource
       .resize(card.screen.width, card.screen.height, { fit: 'cover', position: 'centre' })
-      .modulate({ brightness: 0.98, saturation: 0.9 })
+      .modulate({ brightness: card.screen.brightness ?? 0.98, saturation: 0.9 })
       .sharpen({ sigma: 0.6 })
       .png()
       .toBuffer()
