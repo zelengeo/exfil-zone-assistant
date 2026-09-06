@@ -4,6 +4,7 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import ItemIcon from '@/components/items/ItemIcon';
 import type { Ammunition } from '@/types/items';
+import { bluntDamageScale } from '@/app/combat-sim/utils/props';
 import ClassLadder from './ClassLadder';
 
 /**
@@ -24,8 +25,12 @@ export function ammoFigures(ammo: Ammunition) {
     return {
         penetration: ammo.stats.penetration,
         damage: ammo.stats.damage,
-        /** What the round still delivers when the plate stops it, as a percentage of its damage. */
-        blunt: Math.round(ammo.stats.bluntDamageScale * 100),
+        /**
+         * What the round still delivers when the plate stops it, as a percentage of its damage.
+         * Through `bluntDamageScale` rather than off the row, because nine rounds publish a zero
+         * the game does not have — printing "0% if stopped" over a sim that used another number.
+         */
+        blunt: Math.round(bluntDamageScale(ammo) * 100),
     };
 }
 

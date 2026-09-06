@@ -7,6 +7,7 @@ import { fetchItemsData } from '@/services/ItemService';
 import { calculateShotDamage } from './damage-calculations';
 import {isArmor, isAmmunition, isWeapon} from './types';
 import {AmmoProperties, ArmorProperties} from "@/types/items";
+import { ammoProperties } from './props';
 
 
 
@@ -68,20 +69,10 @@ export async function testShotDamage(
         console.log(`- Armor Class: ${zoneArmorClass}`);
         console.log(`- Blunt Scalar: ${zoneBluntScalar}`);
 
-        // Convert to required formats
-        const ammoProps: AmmoProperties = {
-            damage: ammo.stats.damage,
-            penetration: ammo.stats.penetration,
-            caliber: ammo.stats.caliber,
-            muzzleVelocity: ammo.stats.muzzleVelocity,
-            bleedingChance: ammo.stats.bleedingChance || 0,
-            bluntDamageScale: ammo.stats.bluntDamageScale || 0.1,
-            protectionGearPenetratedDamageScale: ammo.stats.protectionGearPenetratedDamageScale || 0.5,
-            protectionGearBluntDamageScale: ammo.stats.protectionGearBluntDamageScale || 0.9,
-            damageAtRange: ammo.stats.damageAtRange,
-            penetrationAtRange: ammo.stats.penetrationAtRange,
-            ballisticCurves: ammo.stats.ballisticCurves,
-        };
+        // Through `ammoProperties`, not a second copy of it. This block used to be its own hand
+        // rolled duplicate and had drifted: it dropped `pellets`, so buckshot was billed one pellet
+        // here and nine on the page, and it carried its own blunt-scale substitution.
+        const ammoProps: AmmoProperties = ammoProperties(ammo);
 
         const armorProps: ArmorProperties = {
             armorClass: zoneArmorClass,

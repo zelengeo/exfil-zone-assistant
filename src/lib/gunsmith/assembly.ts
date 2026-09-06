@@ -39,6 +39,16 @@ export const FIRING_POWER_BASE_SCALE = 20;
 export const FIRING_POWER_MODIFIER_SCALE = 100;
 
 /**
+ * The sim scale carries the same asymmetry, and for the same reason the display does.
+ * `GetAttachmentModifiers` (GUN_MODEL.md §5.1) accumulates `FiringPowerModifier` **divided by
+ * 0.2** — the literal in the binary is `1/0.2f`, `4.999999046325684` — and its consumer then
+ * computes `(GunData.FiringPower + sum) * 0.2`. So a part is worth five times its face value to
+ * the shot model, and dividing here is what makes the two scales the same statement:
+ * `0.9 + 0.2 * (base + sum/0.2)` is `(90 + base*20 + sum*100) / 100`.
+ */
+export const FIRING_POWER_MODIFIER_DIVISOR = 0.2;
+
+/**
  * `GunData.FiringRate` when the receiver authors none — a native C++ default the PAK cannot show.
  * 14 of the 61 receivers are in that position and every preset built on one bakes 600 RPM.
  */
@@ -229,7 +239,12 @@ export function assembleGun(gun: PartGunData | null, entries: BuildEntry[]): Ass
     }
 
     const ergonomics = round(numberOr(gun?.ergonomics, 0) + totals.ergonomicsModifier);
-    const firingPower = round(numberOr(gun?.firingPower, 0) + totals.firingPowerModifier);
+    // Divided, not added at face value: see FIRING_POWER_MODIFIER_DIVISOR. Adding raw under-counts
+    // every attachment fivefold, and silently — the display line below has always been right, so
+    // the gunsmith screen agreed with the game while the sim quietly shot a weaker gun. An RC416
+    // with a 368mm barrel and a QDSS-NT4 read 1.01 where the game shows 105%.
+    const firingPower = round(numberOr(gun?.firingPower, 0)
+        + totals.firingPowerModifier / FIRING_POWER_MODIFIER_DIVISOR);
     const moa = baseMOA(gun, entries);
     if (moa === null) warnings.push('Neither the receiver nor any fitted part publishes an MOA, so spread cannot be shown.');
 

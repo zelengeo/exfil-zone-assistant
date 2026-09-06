@@ -112,7 +112,10 @@ export const userUpdateSchema = userBaseSchema.pick({
     location: true,
     vrHeadset: true,
     preferences: true,
-}).partial().transform((data) => {
+}).partial().extend({
+    // PATCH omission must not apply the creation-time location default.
+    location: z.enum(locationEnum).optional(),
+}).transform((data) => {
     // Clean up undefined values
     const cleaned = {...data};
 
@@ -134,6 +137,11 @@ export const adminUserUpdateSchema = userBaseSchema.pick({
     bio: true,
     isBanned: true,
     banReason: true,
+}).partial().extend({
+    // Zod defaults are for creating users, never for omitted fields in an admin PATCH.
+    rank: z.enum(rankEnum).optional(),
+    roles: z.array(z.enum(rolesEnum)).optional(),
+    isBanned: z.boolean().optional(),
 });
 
 export const userUsernameUpdateSchema = userBaseSchema.pick({

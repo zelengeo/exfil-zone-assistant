@@ -7,7 +7,9 @@
  * shipped preset, one of their own saved builds, a shared link) into the same shape, and says
  * plainly which of the assembled figures the damage model actually reads.
  *
- * **Two of six reach the sim.** `firingPower` scales damage, once, as `0.9 + 0.2 × fp`; `fireRate`
+ * **Two of six reach the sim.** `firingPower` scales damage as `0.9 + 0.2 × fp` — once on a bare
+ * hit, twice on one the armour covers, which is the model's and not this module's business;
+ * `fireRate`
  * turns shots into seconds. Ergonomics and ADS speed reach nothing at all. Spread and the two
  * recoil axes reach only the spray estimate in `spray.ts` — which is the first time a compensator
  * has moved a number on this page.

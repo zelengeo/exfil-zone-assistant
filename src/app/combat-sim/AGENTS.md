@@ -22,13 +22,27 @@ every zone and produces everything the page draws.
 Read the comments in `damage-calculations.ts` before changing any of it — they cite the decompiled
 functions each rule came from. The parts that have cost time:
 
-- **Firing power is `0.9 + 0.2 * fp`, applied once.** It replaced a fitted curve that scaled armoured
-  shots twice, which is why no single factor could ever fit both armoured and unarmoured
-  observations.
+- **Firing power is `0.9 + 0.2 * fp`, applied once on a bare hit and twice on a covered one.**
+  `GetDamagePostGearProtection` applies it before offering the hit to any gear, and
+  `ProcessDamageReceived` applies it again to its own damage scale — so armour that covers a hit
+  costs it `fp` a second time, and the plate's durability loss carries only the first. That
+  asymmetry is why the old fitted single curve could never match both armoured and unarmoured
+  observations at once: its divisor sat between `0.9 + 0.2·fp` and its square. Confirmed by the
+  2026-09-05 capture (extraction repo, `docs/DAMAGE_MODEL.md` §7.1) — do not "simplify" it back to
+  one multiplication.
+- **A part's `firingPowerModifier` is worth `1/0.2` to the sim.** `GetAttachmentModifiers` divides
+  it before the consumer multiplies by 0.2, so `src/lib/gunsmith/assembly.ts` divides too. Adding it
+  at face value under-counts every attachment fivefold, and does it invisibly, because the display
+  scale is a separate line that was always right.
 - **Firing power never touches penetration.** `ProcessDamageReceived` does not apply it there.
 - **The penetration scalar is read on `armourClass - penetration`, clamped at -2**, not at 0.
   Clamping at 0 truncated the whole region where good ammo beats good armour and under-read every
   over-penetrating shot.
+- **Nine rounds publish `bluntDamageScale: 0` and the game does not have that zero.** The profile
+  omits the float because it equals the class default, and the extraction writes a zero for the
+  value it is missing. Substituted in one place, `utils/props.ts`, which every reader goes through —
+  the picker used to print "0% if stopped" over a sim quietly using a different number. 0.2 is
+  measured against a thirteen-shot ApexMC run; the 12GA constant is not.
 - **Ballistic curves are keyed in centimetres**, and past point blank they supply the damage
   outright rather than scaling the round's own figure — so `damage` and `pellets` stop mattering
   beyond range 0. Every published round carries curves, so the no-curve fallback is unreachable in

@@ -1,10 +1,12 @@
 /**
  * The shot model, pinned at the points where it has been wrong before.
  *
- * Two of these are regression bars rather than fresh checks. Firing power is `0.9 + 0.2 * fp`
- * applied once, replacing a fitted curve that scaled armoured shots twice; and the penetration
- * damage scalar is looked up on `armourClass - penetration` clamped at -2, replacing a clamp at 0
- * that truncated the whole region where good ammo beats good armour.
+ * Two of these are regression bars rather than fresh checks. Firing power is `0.9 + 0.2 * fp`,
+ * applied once on a bare hit and **twice** on one the armour covers — `GetDamagePostGearProtection`
+ * before the gear sees it, `ProcessDamageReceived` again on its own scale — replacing a single
+ * fitted curve that could match neither case; and the penetration damage scalar is looked up on
+ * `armourClass - penetration` clamped at -2, replacing a clamp at 0 that truncated the whole region
+ * where good ammo beats good armour.
  *
  * Everything runs with `applyRandom` off and the penetration roll overridden, so a failure here is
  * the model changing rather than a die landing differently.
@@ -88,7 +90,7 @@ describe('an unarmoured hit at point blank', () => {
     });
 
     it('applies firing power once, as 0.9 + 0.2 * fp', () => {
-        // The bug this guards: a fitted curve that scaled armoured shots twice.
+        // Once, because nothing covered the hit. The covered case is twice - see below.
         const shot = calculateShotDamage(ammo(), null, null, 1, 1, 0);
 
         expect(shot.damageToBodyPart).toBeCloseTo(110);
@@ -153,6 +155,26 @@ describe('an armoured hit', () => {
 
     it('keeps a stopped round under what the same round does to bare flesh', () => {
         expect(shoot(false).damageToBodyPart).toBeLessThan(unarmoured().damageToBodyPart);
+    });
+
+    it('applies firing power a second time, and only to the body', () => {
+        /*
+         * The rule that reads like a bug and is not: `GetDamagePostGearProtection` scales by
+         * firing power before offering the hit to any gear, and `ProcessDamageReceived` scales its
+         * own damage figure by it again. So a covered hit carries `fp` squared while the plate's
+         * durability loss - billed from the same BaseDamage - carries it once.
+         *
+         * At fp 1 the scalar is 1.1. The plate here is transparent (scalar 1 at every lookup, no
+         * durability curve), so the only thing between 100 damage and the result is the exponent.
+         */
+        const plate = armor({
+            penetrationDamageScalarCurve: linear([[-2, 1], [10, 1]]),
+            durabilityDamageScalar: 1,
+        });
+        const shot = calculateShotDamage(ammo(), plate, 100, 1, 1, 0, true);
+
+        expect(shot.damageToBodyPart).toBeCloseTo(100 * 1.1 * 1.1);
+        expect(shot.damageToArmor).toBeCloseTo(100 * 1.1);
     });
 
     it('rewards beating the armour class, rather than truncating at parity', () => {

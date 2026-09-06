@@ -10,13 +10,19 @@ import {
     NotFoundError
 } from "@/lib/errors";
 
-export async function requireAuth() {
+// Identity only. Self-service deletion deliberately remains available to banned users.
+export async function requireSession() {
     const session = await getServerSession(authOptions);
 
     if (!session?.user?.id) {
         throw new AuthenticationError();
     }
-    //For read operations consider that sufficient. POST operations will check db value
+    return session;
+}
+
+export async function requireAuth() {
+    const session = await requireSession();
+    // Cheap reads may use token state; mutation gates below always read the current row.
     if (session.user.isBanned) {
         throw new BannedUserError();
     }
@@ -25,7 +31,7 @@ export async function requireAuth() {
 }
 
 export async function requireAuthWithUserCheck() {
-    const session = await requireAuth();
+    const session = await requireSession();
 
     await connectDB();
     const user = await User.findById(session.user.id).select('isBanned roles username').lean<UserAuth>();
@@ -42,18 +48,7 @@ export async function requireAuthWithUserCheck() {
 }
 
 export async function requireAdmin() {
-    const session = await requireAuth();
-
-    await connectDB();
-    const user = await User.findById(session.user.id).select('isBanned roles username').lean<UserAuth>();
-
-    if (!user) {
-        throw new NotFoundError('User not found');
-    }
-
-    if (user.isBanned) {
-        throw new BannedUserError();
-    }
+    const { session, user } = await requireAuthWithUserCheck();
 
     if (!user?.roles?.includes('admin')) {
         throw new InsufficientPermissionsError('Admin');
@@ -63,18 +58,7 @@ export async function requireAdmin() {
 }
 
 export async function requireAdminOrModerator() {
-    const session = await requireAuth();
-
-    await connectDB();
-    const user = await User.findById(session.user.id).select('isBanned roles username').lean<UserAuth>();
-
-    if (!user) {
-        throw new NotFoundError('User not found');
-    }
-
-    if (user.isBanned) {
-        throw new BannedUserError();
-    }
+    const { session, user } = await requireAuthWithUserCheck();
 
     const hasPermission = user?.roles?.some(role =>
         ['admin', 'moderator'].includes(role)

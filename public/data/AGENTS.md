@@ -58,5 +58,15 @@ task DAG is asserted against this data, not against fixtures.
   published wiki carry `damageAtRange`, and head gear protects through `coneRegions` rather than
   per-bone `protectiveData`.
 
+`sim compare.txt` used to sit here — 87 lines of penetration-chance counts, superseded and
+**removed 2026-09-06**. It pooled long unattended series into one rate, but a vest loses durability
+on every shot and durability scales its armour class, so each shot in a run had a different
+probability: its headline cell fired 600 rounds into an IMTV that the same file's own ammunition
+breaks in about twelve, and past that point penetration is unconditional. It was reachable on the
+public site, so it is gone rather than annotated. The analysis is
+`docs/ARMOR_PENETRATION_AUDIT.md` §4 in the extraction repo, the replacement protocol is
+`docs/IN_GAME_TESTS.md` §10.1, and `git show 9e4de8e -- 'public/data/sim compare.txt'` still has the
+file. Do not reintroduce it as an oracle.
+
 The migration this data came from is written up in
 [`docs/DATA_MIGRATION_PLAN.md`](../../docs/DATA_MIGRATION_PLAN.md).
