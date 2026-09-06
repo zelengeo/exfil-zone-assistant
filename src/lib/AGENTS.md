@@ -39,7 +39,21 @@ turn it into a response.
 | `AppError` | 500 |
 
 `handleError(error)` also understands `ZodError`, and hides detail in production. Every route ends
-in `catch (error) { return handleError(error); }` — nothing else formats an error response.
+in `catch (error) { return handleError(error); }` — nothing else formats an error response. It
+accepts `unknown`, including a thrown `null` or string, because reading `.message` off one used to
+crash the handler itself.
+
+A duplicate-key violation becomes a 409 naming the field but never the colliding value.
+`isDuplicateKeyError` matches structurally on `code === 11000` rather than on a class: the installed
+driver throws `MongoServerError`, which is **not** a `MongooseError` and is not named `MongoError`,
+so the old class-based guard sent every uniqueness conflict to 500. A pre-check like
+`update-username`'s cannot close that race; the unique index decides and this is how the loser is
+reported.
+
+Read a JSON body with `parseJsonBody(request)` from `lib/request.ts`, never `request.json()`
+directly — it turns a malformed body into a 400. It is a separate boundary on purpose: catching
+`SyntaxError` inside `handleError` would reclassify a genuine bug in our own code as the caller's
+mistake, so a `SyntaxError` from anywhere else still reports 500.
 
 ## Schemas are the source of truth for types
 
@@ -78,6 +92,37 @@ with a TTL of the time left in the window, so a counter can never be left withou
 
 A route that limits signed-in and anonymous callers differently passes the matching policy itself,
 as `feedback` does. There is no automatic substitution in the middleware.
+
+**Coverage is enforced by a test, not by discipline.** `rate-limit/coverage.test.ts` walks
+`app/api/**/route.ts` and every `'use server'` `actions.ts`, and fails when a handler ships without
+a policy or names one that does not exist. A server action is a POST endpoint with a generated URL,
+not an internal call, so it needs a policy too — `enforceRateLimit(policy)` throws instead of
+returning a response, which is what a server action can use. The NextAuth catch-all is the one
+allowed exception: it reaches the limiter directly, because `middleware.ts` imports `authOptions`
+from it and the other direction would close an import cycle. There, only sign-in *initiation* is
+limited; `session`, `csrf` and `callback` are ordinary login traffic and throttling them breaks
+logins rather than abuse.
+
+**Who a caller is.** A signed-in caller is their user id — the only identity here that cannot be
+forged. Everyone else is their client address, taken from `RATE_LIMIT_TRUSTED_IP_HEADER` if set,
+otherwise `x-forwarded-for` then `x-real-ip`, normalized so a varying source port cannot buy extra
+buckets. A forwarded header is a claim, not a fact: it is only as good as an ingress that overwrites
+what the client sent. Confirm the header for the actual host before calling anonymous limits
+abuse-resistant. Callers with no usable address share one `ip:unknown` bucket, deliberately — the
+alternative is an unlimited unidentified caller.
+
+## When the limiter cannot answer
+
+Every policy declares `failClosed`. Anything that mutates or authenticates refuses with a **503**
+when the backend is unavailable, so an outage cannot be used as a way around the limit; reads stay
+open so an outage degrades the site instead of taking it down. A backend failure is never reported
+as a 429 — that would tell a reader to slow down for a fault that is ours.
+
+`getRateLimiterSelection()` reports which backend is live and whether production fell back to
+memory. That fallback still serves — refusing every request is worse than a weak limit — but it is
+**not** a healthy state: a cold start logs an error and `/admin/health` shows the limiter as
+`misconfigured`. KV has never been provisioned for this project, so that is the current production
+state by choice, and the health view is where it stays visible.
 
 ## Database
 

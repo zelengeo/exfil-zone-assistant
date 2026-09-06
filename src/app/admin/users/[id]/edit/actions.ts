@@ -12,6 +12,7 @@ import {
 import { isValidObjectId } from 'mongoose';
 import { logger } from '@/lib/logger';
 import { sanitizeUserInput } from '@/lib/utils';
+import { enforceRateLimit } from '@/lib/middleware';
 import { revalidatePath } from 'next/cache';
 import {
     NotFoundError,
@@ -21,13 +22,17 @@ import {
 } from '@/lib/errors';
 
 /**
- * Server action to fetch user for editing
- * No rate limiting needed - this is internal server-side only
+ * Server action to fetch user for editing.
+ *
+ * A server action is a POST endpoint with a generated URL, not an internal call — the browser
+ * invokes it, so anything reachable from the client is reachable by anyone who can call it. It
+ * carries the same 'admin' policy as the equivalent API route.
  */
 export async function getUserForEdit(id: string): Promise<GetUserForEditResult> {
     try {
         // 1. Check authentication and authorization
         await requireAdmin();
+        await enforceRateLimit('admin');
 
         // 2. Validate input
         if (!isValidObjectId(id)) {
@@ -90,6 +95,7 @@ export async function updateUser(
     try {
         // 1. Check authentication and authorization
         const { session } = await requireAdmin();
+        await enforceRateLimit('admin');
 
         // 2. Validate inputs
         if (!isValidObjectId(userId)) {

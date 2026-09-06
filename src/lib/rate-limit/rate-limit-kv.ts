@@ -36,9 +36,13 @@ export class KVRateLimiter implements RateLimiter {
             };
         } catch (error) {
             console.error('KV rate limit error:', error);
-            // Fail open — a limiter outage must not take the API down with it.
+            // The decision is reported as unknown rather than as a pass. What that means for the
+            // request is the caller's policy: `failClosed` mutations refuse with a 503, reads are
+            // still served. Silently returning a plain success is what let an outage double as a
+            // way around every limit.
             return {
                 success: true,
+                degraded: true,
                 remaining: config.uniqueTokenPerInterval,
                 reset: window.reset,
             };

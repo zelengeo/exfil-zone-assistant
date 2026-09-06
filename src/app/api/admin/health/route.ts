@@ -2,7 +2,7 @@
 import { NextRequest } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
 import { requireAdminOrModerator } from '@/lib/auth/utils';
-import { getRateLimiter } from '@/lib/rate-limit/rate-limit-factory';
+import { getRateLimiterSelection } from '@/lib/rate-limit/rate-limit-factory';
 import { RATE_LIMIT_CONFIGS } from '@/lib/rate-limit/rate-limit';
 import { withRateLimit } from '@/lib/middleware';
 import { handleError } from '@/lib/errors';
@@ -26,7 +26,7 @@ interface HealthCheckResult {
             error?: string;
         };
         rateLimiter: {
-            status: 'operational' | 'degraded' | 'error';
+            status: 'operational' | 'degraded' | 'misconfigured' | 'error';
             type: 'kv' | 'memory';
             error?: string;
         };
@@ -116,28 +116,44 @@ async function checkDatabaseHealth() {
 }
 
 async function checkRateLimiterHealth() {
-    // Determine type based on environment
-    const hasKV = process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN;
-    const type = process.env.NODE_ENV === 'production' && hasKV ? 'kv' as const : 'memory' as const;
-    try {
-        const rateLimiter = getRateLimiter();
+    // The backend is whatever the factory actually chose, not a second guess at the same
+    // environment variables — the two could disagree, and this view is meant to be believed.
+    const { limiter, backend, misconfigured } = getRateLimiterSelection();
 
-        // Probes the limiter itself, on its own policy so it cannot consume a real allowance.
-        const result = await rateLimiter.check(
+    if (misconfigured) {
+        return {
+            status: 'misconfigured' as const,
+            type: backend,
+            error: 'Production is using the in-memory limiter. KV_REST_API_URL and '
+                + 'KV_REST_API_TOKEN are not both set, so limits are per-instance.',
+        };
+    }
+
+    try {
+        // Probes the limiter on its own policy, so a health check never spends a user's allowance.
+        const result = await limiter.check(
             'healthCheck',
-            'health-check-test',
+            'health-check-probe',
             RATE_LIMIT_CONFIGS.healthCheck,
         );
 
-        return {
-            status: result ? 'operational' as const : 'degraded' as const,
-            type
-        };
+        // A degraded result is the backend saying it could not answer. Reporting that as
+        // operational — which testing the result object for truthiness did — is precisely how an
+        // outage stayed invisible here.
+        if (result.degraded) {
+            return {
+                status: 'degraded' as const,
+                type: backend,
+                error: 'The rate-limit backend did not answer; limits are not being enforced.',
+            };
+        }
+
+        return { status: 'operational' as const, type: backend };
     } catch (error) {
         logger.error('Rate limiter health check failed:', error);
         return {
             status: 'error' as const,
-            type,
+            type: backend,
             error: error instanceof Error ? error.message : 'Unknown error'
         };
     }
@@ -181,6 +197,7 @@ export async function GET(request: NextRequest) {
                 } else if (
                     dbHealth.status === 'disconnected' ||
                     rateLimiterHealth.status === 'degraded' ||
+                    rateLimiterHealth.status === 'misconfigured' ||
                     memoryHealth.percentUsed > 90
                 ) {
                     overallStatus = 'degraded';

@@ -5,7 +5,7 @@ Three active Mongoose models. Everything else the app knows is static data, not 
 | Model | Holds | Owned by |
 |---|---|---|
 | `User` | profile, roles, ban state, contribution stats | the app |
-| `Account` | OAuth provider links | the app's OAuth sign-in flow |
+| `Account` | OAuth provider links — identity only, no tokens | the app's OAuth sign-in flow |
 | `Feedback` | bug reports and requests, and their triage | the app |
 
 `Account.userId`, `Feedback.userId` and `Feedback.reviewerNotes[].addedByUserId` all reference
@@ -28,12 +28,24 @@ optional, and it is not a style choice.
 ## Indexes live with the schema
 
 Each model declares its own indexes immediately after the schema, with a comment saying which query
-they serve. `npm run db:sync` pushes them to Atlas — a new index is not live because it was
-committed.
+they serve. A new index is not live because it was committed.
 
-`User` carries compound indexes on `_id` with `isBanned` and `roles` because the auth path reads
-exactly those fields on nearly every request; the three-field one is a covering index for the full
-check. Sparse indexes on `reviewedBy` keep the unreviewed majority out of the index.
+`npm run db:sync` **previews** by default: it prints the target — host and database, never
+credentials — and the create/drop diff, and writes nothing. `npm run db:sync -- --apply` performs
+the changes, then verifies the unique constraints identity depends on (`User.email`,
+`User.username`, `Account.provider` + `providerAccountId`) and exits nonzero if any is absent or
+non-unique. Preview is the default because `syncIndexes` **drops** anything not in the schema.
+
+**Do not add an `_id`-prefixed compound index.** An equality match on `_id` resolves through IDHACK
+against the default `_id_` index and returns at most one document, so such an index is never a
+candidate. `User` carried three of them, justified as covering the auth path; explain on the real
+auth query — `findById().select('isBanned roles username')` — reports IDHACK, 1 key examined and
+**0 rejected plans**, meaning the planner never considered them. They were removed on 2026-09-06
+(audit B11), along with a `Feedback` index on `reviewedBy`/`reviewedAt`, neither of which is a field
+that schema declares.
+
+An index whose comment explains a query nobody runs is the failure mode to watch for here: it costs
+writes and storage silently, and the comment makes it look considered.
 
 ## Types come from zod, not from Mongoose
 

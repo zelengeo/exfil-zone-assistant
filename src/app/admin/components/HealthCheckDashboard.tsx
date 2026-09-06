@@ -25,7 +25,7 @@ interface HealthData {
             error?: string;
         };
         rateLimiter: {
-            status: 'operational' | 'degraded' | 'error';
+            status: 'operational' | 'degraded' | 'misconfigured' | 'error';
             type: 'kv' | 'memory';
             error?: string;
         };
@@ -101,6 +101,7 @@ export function HealthCheckDashboard() {
             connected: 'default',
             operational: 'default',
             degraded: 'secondary',
+            misconfigured: 'destructive',
             disconnected: 'secondary',
             unhealthy: 'destructive',
             error: 'destructive',

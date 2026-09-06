@@ -13,6 +13,7 @@ import {
     NotFoundError,
     ValidationError
 } from "@/lib/errors";
+import {parseJsonBody} from "@/lib/request";
 import {logger} from "@/lib/logger";
 import {AdminUserUpdateInput, IUserApi, UserApi} from "@/lib/schemas/user";
 import { sanitizeUserInput } from '@/lib/utils';
@@ -117,7 +118,7 @@ export async function PATCH(
                 const {session} = await requireAdmin();
                 await connectDB();
 
-                const body = await request.json();
+                const body = await parseJsonBody(request);
                 // Validate input
                 const validatedData = UserApi.Admin.ById.Patch.Request.parse(body);
 

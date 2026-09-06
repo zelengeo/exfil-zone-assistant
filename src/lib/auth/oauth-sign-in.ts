@@ -114,18 +114,16 @@ async function resolveUser(
             throw new OAuthSignInRejectedError('Unable to resolve a user for this OAuth identity');
         }
 
+        // Identity only. The provider's access, refresh and ID tokens are deliberately not
+        // stored: nothing in this app calls a provider API on the user's behalf, and the NextAuth
+        // database adapter is disabled, so keeping them only raised the stakes of a database or
+        // backup leak. If a feature ever needs one, take it from the sign-in callback then rather
+        // than keeping every token against the possibility.
         await Account.create([{
             userId: dbUser._id,
             type: account.type,
             provider,
             providerAccountId: account.providerAccountId,
-            refresh_token: account.refresh_token,
-            access_token: account.access_token,
-            expires_at: account.expires_at,
-            token_type: account.token_type,
-            scope: account.scope,
-            id_token: account.id_token,
-            session_state: account.session_state,
         }], { session });
     }
 

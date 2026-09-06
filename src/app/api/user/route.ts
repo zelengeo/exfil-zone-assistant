@@ -6,6 +6,7 @@ import { UserApi, IUserApi } from '@/lib/schemas/user';
 import { withRateLimit } from '@/lib/middleware';
 import { logger } from '@/lib/logger';
 import { handleError, NotFoundError } from '@/lib/errors';
+import { parseJsonBody } from '@/lib/request';
 import { requireAuth } from "@/lib/auth/utils";
 import { deleteUserAccount } from "@/lib/auth/account-deletion";
 import {sanitizeUserInput} from "@/lib/utils";
@@ -36,7 +37,7 @@ export async function PATCH(request: NextRequest) {
     return withRateLimit(request, async () => {
         try {
             const session = await requireAuth();
-            const body = await request.json();
+            const body = await parseJsonBody(request);
 
             // Validate input
             const validatedData = UserApi.Patch.Request.parse(body);
@@ -75,29 +76,30 @@ export async function PATCH(request: NextRequest) {
     }, 'userUpdate');
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function DELETE(request: NextRequest) {
-    try {
-        const session = await requireAuth();
+    return withRateLimit(request, async () => {
+        try {
+            const session = await requireAuth();
 
-        const { username } = await deleteUserAccount(session.user.id);
+            const { username } = await deleteUserAccount(session.user.id);
 
-        logger.info('User account deleted', {
-            userId: session.user.id,
-            username,
-            deletedBy: session.user.id,
-        });
+            logger.info('User account deleted', {
+                userId: session.user.id,
+                username,
+                deletedBy: session.user.id,
+            });
 
-        return NextResponse.json({
-            success: true,
-            message: 'User account deleted successfully',
-        });
-    } catch (error) {
-        logger.error('User deletion failed', error, {
-            path: '/api/user',
-            method: 'DELETE',
-        });
+            return NextResponse.json({
+                success: true,
+                message: 'User account deleted successfully',
+            });
+        } catch (error) {
+            logger.error('User deletion failed', error, {
+                path: '/api/user',
+                method: 'DELETE',
+            });
 
-        return handleError(error);
-    }
+            return handleError(error);
+        }
+    }, 'accountDelete');
 }

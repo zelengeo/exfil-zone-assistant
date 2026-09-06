@@ -79,10 +79,12 @@ const UserSchema = new Schema({
 // });
 
 
-// For User collection - these would improve query performance:
-UserSchema.index({ _id: 1, isBanned: 1 }); // Compound index for auth checks
-UserSchema.index({ _id: 1, roles: 1 }); // Compound index for role checks
-UserSchema.index({ _id: 1, isBanned: 1, roles: 1 }); // Covering index for complete auth
+// There are deliberately no _id-prefixed compound indexes here. An equality match on _id resolves
+// through IDHACK against the default _id_ index and returns at most one document, so a compound
+// index starting with _id is never a candidate — explain on the auth query shape
+// (`findById().select('isBanned roles username')`) reports IDHACK with 0 rejected plans and 1 key
+// examined. The three that used to sit here cost writes and storage for nothing, and the one
+// labelled "covering" could not cover: it omitted `username`, which every auth gate selects.
 UserSchema.index({ 'stats.contributionPoints': -1 }); // For leaderboards
 UserSchema.index({ createdAt: -1 }); // For sorting new users
 UserSchema.index({ lastLoginAt: -1 }); // For tracking active users

@@ -7,6 +7,9 @@ import {connectDB} from "@/lib/mongodb";
 import { User } from "@/models/User";
 import {IUserToken} from "@/lib/schemas/user";
 import {authorizeOAuthSignIn} from '@/lib/auth/oauth-sign-in';
+import { NextResponse, type NextRequest } from 'next/server';
+import { getRateLimiter } from '@/lib/rate-limit/rate-limit-factory';
+import { getIdentifier, isSignInInitiation, RATE_LIMIT_CONFIGS } from '@/lib/rate-limit/rate-limit';
 
 class SessionUserNotFoundError extends Error {
     constructor() {
@@ -203,4 +206,60 @@ export const authOptions: NextAuthOptions = {
 
 const handler = NextAuth(authOptions);
 
-export { handler as GET, handler as POST };
+/**
+ * The limit is applied by path rather than to the route as a whole — see `isSignInInitiation`.
+ *
+ * The limiter is reached directly rather than through `withRateLimit`, because middleware.ts
+ * imports `authOptions` from this file and going the other way would close an import cycle.
+ */
+async function withAuthRateLimit(
+    request: NextRequest,
+    run: () => Promise<Response>,
+): Promise<Response> {
+    if (!isSignInInitiation(request.method, new URL(request.url).pathname)) {
+        return run();
+    }
+
+    const config = RATE_LIMIT_CONFIGS.auth;
+    // Sign-in initiation is anonymous by definition: there is no session to read yet.
+    const identifier = await getIdentifier();
+    const result = await getRateLimiter().check('auth', identifier, config);
+
+    // Sign-in is failClosed: an unavailable limiter must not become an unlimited login endpoint.
+    if (result.degraded && config.failClosed) {
+        return NextResponse.json(
+            {
+                error: 'Service unavailable',
+                message: 'Sign-in is temporarily unavailable. Please retry shortly.',
+                retryAfter: 30,
+            },
+            { status: 503, headers: { 'Retry-After': '30' } },
+        );
+    }
+
+    if (!result.success) {
+        return NextResponse.json(
+            {
+                error: 'Too many requests',
+                message: `Too many sign-in attempts. Please try again in ${result.retryAfter} seconds.`,
+                retryAfter: result.retryAfter,
+            },
+            {
+                status: 429,
+                headers: { 'Retry-After': result.retryAfter!.toString() },
+            },
+        );
+    }
+
+    return run();
+}
+
+type RouteContext = { params: Promise<{ nextauth: string[] }> };
+
+export async function GET(request: NextRequest, context: RouteContext): Promise<Response> {
+    return withAuthRateLimit(request, () => handler(request, context));
+}
+
+export async function POST(request: NextRequest, context: RouteContext): Promise<Response> {
+    return withAuthRateLimit(request, () => handler(request, context));
+}

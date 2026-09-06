@@ -6,6 +6,7 @@ export default defineConfig({
     test: {
         // Every suite here exercises pure modules against the published data. Nothing needs a DOM.
         environment: 'node',
-        include: ['src/**/*.test.ts'],
+        // scripts/ carries the operational tooling; its logic is tested the same way the app's is.
+        include: ['src/**/*.test.ts', 'scripts/**/*.test.ts'],
     },
 });

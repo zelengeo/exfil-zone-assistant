@@ -33,6 +33,11 @@ vi.mock('@/lib/auth/utils', () => ({
 
 vi.mock('@/lib/rate-limit/rate-limit-factory', () => ({
     getRateLimiter: () => ({ check: mocks.checkRateLimit }),
+    getRateLimiterSelection: () => ({
+        limiter: { check: mocks.checkRateLimit },
+        backend: 'memory' as const,
+        misconfigured: false,
+    }),
 }));
 
 vi.mock('@/lib/middleware', () => ({

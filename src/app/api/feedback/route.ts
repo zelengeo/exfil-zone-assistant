@@ -8,6 +8,7 @@ import {IFeedbackApi, FeedbackApi, type SubmittableFeedbackType} from "@/lib/sch
 import {withRateLimit} from "@/lib/middleware";
 import {logger} from "@/lib/logger";
 import {handleError} from "@/lib/errors";
+import { parseJsonBody } from '@/lib/request';
 import {sanitizeUserInput} from "@/lib/utils";
 import {requireAuthWithUserCheck} from "@/lib/auth/utils";
 import {getServerSession} from "next-auth";
@@ -29,7 +30,7 @@ export async function POST(request: NextRequest) {
             let mongooseSession: ClientSession | null = null;
 
             try {
-                const body = await request.json();
+                const body = await parseJsonBody(request);
                 const validatedData = FeedbackApi["Post"]["Request"].parse(body);
 
                 // If user is logged in, verify they're not banned

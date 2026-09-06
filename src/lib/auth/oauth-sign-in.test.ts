@@ -432,4 +432,71 @@ describe('OAuth sign-in', () => {
             'google:google-operator-1',
         ]));
     });
+
+    describe('persisted account record', () => {
+        const TOKEN_FIELDS = [
+            'access_token', 'refresh_token', 'id_token', 'expires_at',
+            'token_type', 'scope', 'session_state', 'oauth_token', 'oauth_token_secret',
+        ];
+
+        // A provider hands NextAuth every one of these; none of them may reach the database.
+        const accountWithTokens: OAuthAccount = {
+            ...discordAccount,
+            access_token: 'provider-access-token',
+            refresh_token: 'provider-refresh-token',
+            id_token: 'provider-id-token',
+            expires_at: 1_800_000_000,
+            token_type: 'bearer',
+            scope: 'identify email',
+            session_state: 'provider-session-state',
+        };
+
+        function createdRecord(): Record<string, unknown> {
+            expect(mocks.accountCreate).toHaveBeenCalledOnce();
+            const [records] = mocks.accountCreate.mock.calls[0] as [Record<string, unknown>[]];
+            return records[0];
+        }
+
+        function expectIdentityOnly(record: Record<string, unknown>) {
+            expect(Object.keys(record).sort())
+                .toEqual(['provider', 'providerAccountId', 'type', 'userId']);
+
+            const serialized = JSON.stringify(record);
+            for (const field of TOKEN_FIELDS) {
+                expect(record, field).not.toHaveProperty(field);
+            }
+            expect(serialized).not.toContain('provider-access-token');
+            expect(serialized).not.toContain('provider-refresh-token');
+            expect(serialized).not.toContain('provider-id-token');
+            expect(serialized).not.toContain('provider-session-state');
+        }
+
+        it('stores identity only when linking a provider to an existing user', async () => {
+            mocks.accountFindOne.mockReturnValue(queryReturning(null));
+            mocks.userFindOne.mockReturnValue(queryReturning(existingUser));
+
+            const { result } = await signIn({ email: 'admin@example.com', verified: true } as Profile, accountWithTokens);
+
+            expect(result).toBe(true);
+            expectIdentityOnly(createdRecord());
+        });
+
+        it('stores identity only for a brand new user', async () => {
+            mocks.accountFindOne.mockReturnValue(queryReturning(null));
+            mocks.userFindOne.mockReturnValue(queryReturning(null));
+            mocks.generateUsername.mockReturnValue('operator');
+            mocks.ensureUniqueUsername.mockResolvedValue('operator');
+            mocks.createUserDocument.mockReturnValue({
+                _id: { toString: () => '68bd5cf7c48ae02f50b1c900' },
+                roles: ['user'],
+                rank: 'recruit',
+                save: mocks.userSave,
+            });
+
+            const { result } = await signIn({ email: 'new@example.com', verified: true } as Profile, accountWithTokens);
+
+            expect(result).toBe(true);
+            expectIdentityOnly(createdRecord());
+        });
+    });
 });

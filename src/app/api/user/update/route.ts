@@ -5,6 +5,7 @@ import {User} from '@/models/User';
 import {withRateLimit} from "@/lib/middleware";
 import {requireAuth} from "@/lib/auth/utils";
 import {handleError, NotFoundError} from "@/lib/errors";
+import { parseJsonBody } from '@/lib/request';
 import {IUserApi, UserApi} from "@/lib/schemas/user";
 import {sanitizeUserInput} from "@/lib/utils";
 import {logger} from "@/lib/logger";
@@ -18,7 +19,7 @@ export async function PATCH(request: NextRequest) {
             try {
                 const session = await requireAuth();
 
-                const body = await request.json();
+                const body = await parseJsonBody(request);
 
                 // Validate input
                 const validatedData = UserApi.Patch.Request.parse(body);

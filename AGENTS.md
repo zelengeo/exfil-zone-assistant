@@ -76,7 +76,24 @@ processes, so an Atlas URI in `.env.local` stays unchanged. That override is als
 `*.integration.test.ts` suites, which refuse to run against anything but the loopback replica set.
 `npm run db:ui` explicitly enables the otherwise inactive mongo-express profile.
 
+## Index rollout
+
+`npm run db:sync` previews; `npm run db:sync -- --apply` applies and then verifies the identity
+unique constraints, failing nonzero if any is missing. Both print the target host and database
+without credentials. See [src/models/AGENTS.md](src/models/AGENTS.md#indexes-live-with-the-schema).
+
+A new environment is bootstrapped before traffic with `npm run db:bootstrap` — it creates the
+model indexes and asserts the three identity constraints exist, so a database that would silently
+accept duplicate accounts fails setup rather than serving. `npm run db:prepare:local` does that
+plus a real transaction check against the loopback replica set.
+
 ## Data migrations
+
+`scripts/strip-oauth-tokens.ts` clears the provider credentials stored on `accounts` rows written
+before the app stopped persisting them (audit B16). Dropping the fields from the schema stops new
+writes; it does not touch stored documents. `npm run db:strip-oauth-tokens` previews — field names
+and counts only, never a credential value — and writing needs `--apply --confirm=<database>`.
+Provider linkage is never altered, so nobody is unlinked or signed out.
 
 `scripts/retire-correction-data.ts` finishes the correction retirement and the account-deletion
 remediation that the code changes deliberately left alone: dropping `datacorrections`, and pulling

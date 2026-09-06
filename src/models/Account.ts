@@ -19,16 +19,10 @@ const AccountSchema = new Schema({
         type: String,
         required: true
     },
-    refresh_token: String,
-    access_token: String,
-    expires_at: Number,
-    token_type: String,
-    scope: String,
-    id_token: String,
-    session_state: String,
-    // Discord specific
-    oauth_token_secret: String,
-    oauth_token: String,
+    // No token fields. This record exists to answer "which user is this provider identity?", and
+    // nothing else. Provider credentials were declared and written here until 2026-09-06 (audit
+    // B16) with no reader anywhere in the app; `npm run db:strip-oauth-tokens` clears them from
+    // rows written before that. Do not re-add one without a consumer to point at.
 });
 
 // Compound index for provider + providerAccountId (required by NextAuth)

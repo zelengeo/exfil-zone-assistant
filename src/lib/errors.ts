@@ -70,10 +70,33 @@ export class RateLimitError extends AppError {
     }
 }
 
-interface MongoDBDuplicateKeyError extends MongooseError {
-    name: 'MongoError';
+interface DuplicateKeyError {
     code: 11000;
     keyPattern?: Record<string, number>;
+}
+
+/**
+ * A unique-index violation, whichever layer surfaces it.
+ *
+ * This is a structural check on purpose. The installed driver throws `MongoServerError`, which is
+ * **not** a `MongooseError` and is not named `MongoError` — the two conditions this used to be
+ * guarded by — so every duplicate key was reported as a 500. Matching on `code` covers the driver's
+ * error, a Mongoose-wrapped one and a bulk-write one without depending on a class identity that has
+ * already changed once.
+ */
+export function isDuplicateKeyError(error: unknown): error is DuplicateKeyError {
+    return typeof error === 'object'
+        && error !== null
+        && 'code' in error
+        && (error as { code?: unknown }).code === 11000;
+}
+
+/** The field a duplicate-key error names, without exposing the value that collided. */
+function duplicateKeyField(error: DuplicateKeyError): string {
+    const pattern = error.keyPattern;
+    const field = pattern ? Object.keys(pattern)[0] : undefined;
+
+    return field ?? 'field';
 }
 
 interface ErrorDetails {
@@ -88,11 +111,14 @@ interface ErrorDetails {
 const isDevelopment = process.env.NODE_ENV === 'development';
 const isTest = process.env.NODE_ENV === 'test';
 
-type KnownError = AppError | ZodError | MongooseError | Error;
-
 // Sanitize error details based on environment
-function sanitizeError(error: KnownError): ErrorResponse {
+function sanitizeError(error: unknown): ErrorResponse {
     const requestId = crypto.randomUUID();
+
+    // A thrown value is not necessarily an Error — `throw null` and `throw 'oops'` are legal, and
+    // reading .message off them here used to crash the error handler itself.
+    const asError = error instanceof Error ? error : undefined;
+    const message = asError?.message ?? String(error);
 
     // Log full error in development
     if (isDevelopment || isTest) {
@@ -100,8 +126,8 @@ function sanitizeError(error: KnownError): ErrorResponse {
     } else {
         // In production, log error but don't expose details
         const errorDetails: ErrorDetails = {
-            message: error.message,
-            stack: error.stack,
+            message,
+            stack: asError?.stack,
         }
         if (error instanceof AppError) {
             errorDetails.code = error.code;
@@ -137,22 +163,22 @@ function sanitizeError(error: KnownError): ErrorResponse {
         };
     }
 
+    // Checked before the Mongoose branch, because the driver's duplicate-key error is not a
+    // MongooseError. A uniqueness conflict is an expected outcome of a race that no availability
+    // pre-check can close, not a server fault.
+    if (isDuplicateKeyError(error)) {
+        return {
+            error: {
+                message: `${duplicateKeyField(error)} already exists`,
+                code: 'DUPLICATE_ERROR',
+                statusCode: 409,
+            },
+            requestId: isDevelopment ? requestId : undefined,
+        };
+    }
+
     // Handle Mongoose-specific errors
     if (error instanceof MongooseError) {
-        // Duplicate key error
-        const mongoError = error as MongoDBDuplicateKeyError;
-        if (error.name === 'MongoError' && mongoError.code === 11000) {
-            const field = mongoError.keyPattern ? Object.keys(mongoError.keyPattern)[0] : 'field';
-            return {
-                error: {
-                    message: `${field} already exists`,
-                    code: 'DUPLICATE_ERROR',
-                    statusCode: 409,
-                },
-                requestId: isDevelopment ? requestId : undefined,
-            };
-        }
-
         // Validation error
         if (error.name === 'ValidationError') {
             return {
@@ -178,13 +204,15 @@ function sanitizeError(error: KnownError): ErrorResponse {
         }
     }
 
-    // Generic error response for unknown errors
+    // Generic error response for unknown errors. A SyntaxError reaches here on purpose: only a
+    // deliberate request-body boundary (`parseJsonBody`) treats one as a client mistake, because
+    // a SyntaxError raised anywhere else is a bug in this code, not in the request.
     return {
         error: {
-            message: isDevelopment ? error.message : 'An unexpected error occurred',
+            message: isDevelopment ? message : 'An unexpected error occurred',
             code: 'INTERNAL_ERROR',
             statusCode: 500,
-            details: isDevelopment ? error.message : undefined,
+            details: isDevelopment ? message : undefined,
         },
         requestId: isDevelopment ? requestId : undefined,
     };
@@ -192,7 +220,7 @@ function sanitizeError(error: KnownError): ErrorResponse {
 
 // Main error handler
 export function handleError(error: unknown): NextResponse {
-    const errorResponse = sanitizeError(error as KnownError);
+    const errorResponse = sanitizeError(error);
 
     return NextResponse.json(errorResponse, {
         status: errorResponse.error.statusCode,

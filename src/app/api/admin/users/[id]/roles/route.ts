@@ -6,6 +6,7 @@ import {requireAdmin, requireAdminOrModerator} from "@/lib/auth/utils";
 import {withRateLimit} from "@/lib/middleware";
 import {IUserApi, UserApi, UserRoles,} from '@/lib/schemas/user';
 import {AuthorizationError, handleError, NotFoundError} from "@/lib/errors";
+import { parseJsonBody } from '@/lib/request';
 import {logger} from "@/lib/logger";
 
 // Helper function to validate roles
@@ -42,7 +43,7 @@ export async function PATCH(
                 await connectDB();
 
                 // Parse and validate request
-                const body = await request.json();
+                const body = await parseJsonBody(request);
                 const validatedData = UserApi.Admin.ById.Roles.Patch.Request.parse(body);
 
                 const targetUser = await User.findById(id);

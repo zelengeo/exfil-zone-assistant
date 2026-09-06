@@ -1,139 +1,81 @@
-// scripts/sync-mongodb-indexes.js
+/**
+ * Index rollout for the registered Mongoose models.
+ *
+ *   npm run db:sync                    # preview: prints the target and the diff, writes nothing
+ *   npm run db:sync -- --apply         # applies the diff, then verifies required constraints
+ *
+ * Preview is the default because `syncIndexes` **drops** indexes that are not in the schema. The
+ * previous version ran a global `connection.syncIndexes()` before anything was shown, so an
+ * operator's first feedback about a destructive change arrived after it had happened.
+ *
+ * Every failure exits nonzero. The previous version caught per-model errors, logged them, carried
+ * on, and still printed a completion message, so automation could not tell a successful rollout
+ * from a failed one; missing unique constraints likewise only printed a warning.
+ *
+ * The logic lives in `index-rollout.ts` so it can be tested without a database.
+ */
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
-// Load environment variables
 dotenv.config({ path: '.env.local' });
 
-// Import all your models to register their schemas and indexes
+// Importing a model registers its schema and its indexes.
 import '../src/models/User';
 import '../src/models/Account';
-import '../src/models/Session';
 import '../src/models/Feedback';
-// Import other models as needed
 
+import {
+    applyIndexes,
+    describeTarget,
+    previewIndexes,
+    verifyConstraints,
+    type RollableModel,
+} from './index-rollout';
 
-async function syncIndexes() {
+function registeredModels(): RollableModel[] {
+    return mongoose.modelNames().map(name => mongoose.model(name) as unknown as RollableModel);
+}
+
+const log = (line: string) => console.log(line);
+const logError = (line: string) => console.error(line);
+
+async function main(): Promise<void> {
+    const shouldApply = process.argv.includes('--apply');
+    const uri = process.env.MONGODB_URI;
+
+    if (!uri) {
+        throw new Error('MONGODB_URI is not set');
+    }
+
+    log(`Target: ${describeTarget(uri)}`);
+    log(`Mode:   ${shouldApply ? 'APPLY — indexes will be created and dropped' : 'preview — nothing is written'}`);
+
+    await mongoose.connect(uri);
+
     try {
-        // Connect to MongoDB
-        await mongoose.connect(process.env.MONGODB_URI!);
-        console.log('✅ Connected to MongoDB Atlas');
+        log('\nPending index changes:');
+        const changes = await previewIndexes(registeredModels(), log);
 
-        // Force Mongoose to build indexes (important for production)
-        await mongoose.connection.syncIndexes();
-        console.log('✅ Global index sync initiated');
-
-        // Get all registered models
-        const modelNames = mongoose.modelNames();
-        console.log(`\n📋 Found ${modelNames.length} models to sync:`, modelNames);
-
-        for (const modelName of modelNames) {
-            const model = mongoose.model(modelName);
-            console.log(`\n🔄 Syncing indexes for ${modelName}...`);
-
-            try {
-                // First, ensure the collection exists
-                const db = mongoose.connection.db;
-                if (!db) {
-                    throw new Error('Database connection not available');
-                }
-                const collections = await db.listCollections({ name: model.collection.name }).toArray();
-                if (collections.length === 0) {
-                    await db.createCollection(model.collection.name);
-                    console.log(`📁 Created collection: ${model.collection.name}`);
-                }
-
-                // Force index creation - this is more reliable than syncIndexes for unique constraints
-                await model.createIndexes();
-                console.log(`✅ Indexes created for ${modelName}`);
-
-                // Now sync to ensure they match the schema
-                await model.syncIndexes();
-
-                // List current indexes
-                const indexes = await model.collection.getIndexes();
-                console.log(`✅ ${modelName} indexes synced. Current indexes:`);
-                Object.entries(indexes).forEach(([name, spec]) => {
-                    console.log(`   - ${name}:`, spec);
-                });
-            } catch (error) {
-                console.error(`❌ Error syncing ${modelName} indexes:`, (error as Error).message);
-            }
+        if (!shouldApply) {
+            log(changes
+                ? '\n✅ Preview complete — re-run with --apply to make these changes'
+                : '\n✅ Preview complete — no changes pending');
+            return;
         }
 
-        // Verify unique constraints from schema
-        console.log('\n🔍 Verifying unique constraints...');
-        const User = mongoose.model('User');
-        // Use indexes() rather than getIndexes(): the latter returns the compact
-        // form, which omits index options such as `unique`.
-        const userIndexes = await User.collection.indexes();
+        log('\nApplying:');
+        await applyIndexes(registeredModels(), log, logError);
 
-        const emailIndex = userIndexes.find((index) => index.name === 'email_1');
-        if (emailIndex?.unique) {
-            console.log('✅ Email unique constraint is active');
-        } else {
-            console.log('⚠️  Email unique constraint missing!');
-        }
+        log('\nVerifying required constraints:');
+        await verifyConstraints(registeredModels(), log, logError);
 
-        const usernameIndex = userIndexes.find((index) => index.name === 'username_1');
-        if (usernameIndex?.unique) {
-            console.log('✅ Username unique constraint is active');
-        } else {
-            console.log('⚠️  Username unique constraint missing!');
-        }
-
-        console.log('\n✨ Index synchronization complete!');
-
-    } catch (error) {
-        console.error('❌ Sync failed:', error);
-        process.exit(1);
+        log('\n✨ Index rollout complete');
     } finally {
         await mongoose.disconnect();
-        console.log('\n🔒 Disconnected from MongoDB');
     }
 }
-// Run the sync
-syncIndexes();
 
-
-//
-// async function createIndexes() {
-//     try {
-//         await mongoose.connect(process.env.MONGODB_URI!);
-//         console.log('Connected to MongoDB');
-//
-//         // Drop existing indexes except _id and unique constraints
-//         console.log('Analyzing existing indexes...');
-//
-//         // Create all indexes
-//         console.log('Creating User indexes...');
-//         await User.createIndexes();
-//
-//         console.log('Creating Feedback indexes...');
-//         await Feedback.createIndexes();
-//
-//         console.log('Creating DataCorrection indexes...');
-//         await DataCorrection.createIndexes();
-//
-//         console.log('Creating Account indexes...');
-//         await Account.createIndexes();
-//
-//         // List all indexes for verification
-//         const collections = ['users', 'feedbacks', 'datacorrections', 'accounts'];
-//         for (const collection of collections) {
-//             const indexes = await mongoose.connection.db
-//                 .collection(collection)
-//                 .listIndexes()
-//                 .toArray();
-//             console.log(`\nIndexes for ${collection}:`, indexes.map(idx => idx.name));
-//         }
-//
-//         console.log('\n✅ All indexes created successfully!');
-//
-//     } catch (error) {
-//         console.error('Error creating indexes:', error);
-//     } finally {
-//         await mongoose.disconnect();
-//     }
-// }
-// createIndexes();
+main().catch((error: unknown) => {
+    console.error('❌ Index rollout failed:', error instanceof Error ? error.message : String(error));
+    process.exitCode = 1;
+});

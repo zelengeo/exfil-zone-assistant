@@ -52,13 +52,13 @@ vi.mock('@vercel/kv', () => ({
 
 import { InMemoryRateLimiter } from '@/lib/rate-limit/rate-limit-memory';
 import { KVRateLimiter } from '@/lib/rate-limit/rate-limit-kv';
-import { RATE_LIMIT_CONFIGS, resolveWindow, type RateLimiter } from '@/lib/rate-limit/rate-limit';
+import { RATE_LIMIT_CONFIGS, resolveWindow, type RateLimitConfig, type RateLimiter } from '@/lib/rate-limit/rate-limit';
 
 const READ_POLICY = 'feedbackGetAuthenticated';
 const WRITE_POLICY = 'feedbackPostAuthenticated';
 const CALLER = 'user:68bd5cf7c48ae02f50b1c200';
 
-async function exhaust(limiter: RateLimiter, policy: string, config: { interval: number; uniqueTokenPerInterval: number }, times: number) {
+async function exhaust(limiter: RateLimiter, policy: string, config: RateLimitConfig, times: number) {
     for (let i = 0; i < times; i++) {
         await limiter.check(policy, CALLER, config);
     }
@@ -66,7 +66,7 @@ async function exhaust(limiter: RateLimiter, policy: string, config: { interval:
 
 describe('resolveWindow', () => {
     it('namespaces by policy, caller and window, and never outlives its window', () => {
-        const config = { interval: 60, uniqueTokenPerInterval: 5 };
+        const config = { interval: 60, uniqueTokenPerInterval: 5, failClosed: false };
         const now = 1_000_000_000_000;
 
         const first = resolveWindow('api', CALLER, config, now);
@@ -80,7 +80,7 @@ describe('resolveWindow', () => {
     });
 
     it('gives the same caller a new key in the next window', () => {
-        const config = { interval: 60, uniqueTokenPerInterval: 5 };
+        const config = { interval: 60, uniqueTokenPerInterval: 5, failClosed: false };
         const now = 1_000_000_000_000;
 
         const current = resolveWindow('api', CALLER, config, now);
@@ -128,7 +128,7 @@ describe.each([
     });
 
     it('admits exactly the configured number of calls, then refuses', async () => {
-        const config = { interval: 60, uniqueTokenPerInterval: 3 };
+        const config = { interval: 60, uniqueTokenPerInterval: 3, failClosed: false };
 
         const results = [];
         for (let i = 0; i < 4; i++) {
@@ -142,7 +142,7 @@ describe.each([
     });
 
     it('separates callers', async () => {
-        const config = { interval: 60, uniqueTokenPerInterval: 1 };
+        const config = { interval: 60, uniqueTokenPerInterval: 1, failClosed: false };
 
         await limiter.check('api', 'user:a', config);
         const other = await limiter.check('api', 'user:b', config);
@@ -151,7 +151,7 @@ describe.each([
     });
 
     it('starts a fresh allowance in the next window', async () => {
-        const config = { interval: 60, uniqueTokenPerInterval: 1 };
+        const config = { interval: 60, uniqueTokenPerInterval: 1, failClosed: false };
 
         await limiter.check('api', CALLER, config);
         expect((await limiter.check('api', CALLER, config)).success).toBe(false);
@@ -192,7 +192,7 @@ describe('InMemoryRateLimiter cleanup', () => {
     });
 
     it('drops a counter once its own window has passed', async () => {
-        const config = { interval: 60, uniqueTokenPerInterval: 1 };
+        const config = { interval: 60, uniqueTokenPerInterval: 1, failClosed: false };
 
         await limiter.check('api', CALLER, config);
         await vi.advanceTimersByTimeAsync(10 * 60 * 1000);
@@ -219,7 +219,7 @@ describe('KVRateLimiter storage behaviour', () => {
     });
 
     it('sets an expiry on every call, in the same round trip as the increment', async () => {
-        const config = { interval: 60, uniqueTokenPerInterval: 5 };
+        const config = { interval: 60, uniqueTokenPerInterval: 5, failClosed: false };
 
         await limiter.check('api', CALLER, config);
         await limiter.check('api', CALLER, config);
@@ -236,7 +236,7 @@ describe('KVRateLimiter storage behaviour', () => {
     });
 
     it('fails open when the backend is unavailable', async () => {
-        const config = { interval: 60, uniqueTokenPerInterval: 1 };
+        const config = { interval: 60, uniqueTokenPerInterval: 1, failClosed: false };
         vi.spyOn(console, 'error').mockImplementation(() => undefined);
         failNextPipeline = true;
 

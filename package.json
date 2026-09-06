@@ -21,6 +21,8 @@
     "db:prepare:local": "npm run db:up && npm run db:bootstrap:local && npm run db:test:local",
     "db:bootstrap": "tsx scripts/bootstrap-local-mongodb.ts",
     "db:retire-corrections": "tsx scripts/retire-correction-data.ts",
+    "db:strip-oauth-tokens": "tsx scripts/strip-oauth-tokens.ts",
+    "db:strip-oauth-tokens:local": "tsx scripts/run-with-local-mongodb.ts db:strip-oauth-tokens",
     "db:retire-corrections:local": "tsx scripts/run-with-local-mongodb.ts db:retire-corrections",
     "validate-data": "tsx scripts/validate-data.ts",
     "lint:fix": "eslint . --fix",

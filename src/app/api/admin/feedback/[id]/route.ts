@@ -6,6 +6,7 @@ import {IFeedbackApi, FeedbackApi} from "@/lib/schemas/feedback";
 import {withRateLimit} from "@/lib/middleware";
 import {requireAdmin} from "@/lib/auth/utils";
 import {handleError, NotFoundError, ValidationError} from '@/lib/errors';
+import { parseJsonBody } from '@/lib/request';
 import {logger} from "@/lib/logger";
 
 
@@ -60,7 +61,7 @@ export async function PATCH(
             try {
                 const {session} = await requireAdmin();
 
-                const body = await request.json();
+                const body = await parseJsonBody(request);
                 const validatedData = FeedbackApi.Admin.ById.Patch.Request.parse(body);
 
                 const updateData = {

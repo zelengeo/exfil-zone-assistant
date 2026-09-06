@@ -20,14 +20,14 @@ The sections below are the exact proposed issue bodies, apart from GitHub number
 | [B06](#b06) | [High] Make account deletion atomic and consistent about retained references | bug, needs-triage | None — B04/B05 shipped; implemented locally, historical migration pending |
 | [B07](#b07) | [High] Restrict local MongoDB and mongo-express exposure | bug, ready-for-agent | None — already satisfied by commit 1c803be; verified |
 | [B08](#b08) | [Medium] Isolate rate-limit policies and preserve their full expiry windows | bug, ready-for-agent | None — implemented locally |
-| [B09](#b09) | [Medium] Make rate-limit backend failures explicit and health reporting truthful | bug, needs-triage | B08 |
-| [B10](#b10) | [Medium] Cover backend entry points with rate limits and fix quota inspection | bug, ready-for-agent | B08, B09 |
-| [B11](#b11) | [Medium] Make MongoDB index rollout previewable and verification fail reliably | bug, ready-for-agent | B04, B12 |
+| [B09](#b09) | [Medium] Make rate-limit backend failures explicit and health reporting truthful | bug, needs-triage | None — B08 shipped; implemented locally |
+| [B10](#b10) | [Medium] Cover backend entry points with rate limits and fix quota inspection | bug, ready-for-agent | None — B08/B09 shipped; implemented locally |
+| [B11](#b11) | [Medium] Make MongoDB index rollout previewable and verification fail reliably | bug, ready-for-agent | None — B04/B12 shipped; implemented locally |
 | [B12](#b12) | [Medium] Retire data-correction submissions across UI, APIs and moderation | enhancement, ready-for-agent | None — implemented locally; collection erasure pending |
 | [B13](#b13) | [Medium] Enforce current account status on mutations and session refresh | bug, needs-triage | B01 |
 | [B14](#b14) | [Medium] Enforce profile privacy in server responses and shared reads | bug, needs-triage | None |
-| [B15](#b15) | [Medium] Return correct API errors for duplicate keys and malformed JSON | bug, ready-for-agent | None |
-| [B16](#b16) | [Medium] Stop retaining unused OAuth provider tokens | enhancement, ready-for-agent | B02 |
+| [B15](#b15) | [Medium] Return correct API errors for duplicate keys and malformed JSON | bug, ready-for-agent | None — implemented locally |
+| [B16](#b16) | [Medium] Stop retaining unused OAuth provider tokens | enhancement, ready-for-agent | None — B02 shipped; implemented locally, migration pending |
 | [B17](#b17) | [Medium] Unify duplicated profile and admin mutation policies | bug, ready-for-agent | B01, B13 |
 | [B18](#b18) | [Medium] Correct backend agent guidance and add an operational runbook | documentation, needs-triage | B02, B04, B05, B06, B07, B09, B10, B11, B12, B13, B14, B15, B16, B17 |
 
@@ -862,6 +862,10 @@ Local audit: `docs/BACKEND_AUDIT_2026-09-05.md`, section `B08`. A GitHub trackin
 
 **Proposed labels:** bug, needs-triage
 
+**Implementation status:** Implemented locally on 2026-09-06, after triage with the maintainer.
+
+**Triage outcome.** KV has never been provisioned for this project, so requiring a distributed limiter in production would take the live site down on deploy for a protection that has never actually run. The maintainer chose to keep the in-memory fallback serving and defer KV itself. What changed is the *reporting*, not the availability: production on memory is now logged as an error and shown as `misconfigured` in the admin health view, rather than passing as healthy. The audit's "require distributed limiter configuration in production" is therefore **deliberately not implemented**; the misconfiguration is made loud instead of fatal. For a KV outage once KV does exist, the maintainer chose 503 on writes and auth with reads still served.
+
 Part of the backend audit dated 2026-09-05. Audit finding: **B09**. Priority: **Medium**.
 
 ### Concrete evidence and affected paths
@@ -895,10 +899,57 @@ No infrastructure purchase, KV credential rotation, quota redesign, or fallback 
 
 ### Acceptance criteria
 
-- [ ] Missing/partial production KV configuration is reported as an error rather than silent healthy memory mode.
-- [ ] KV timeouts/errors do not admit protected writes and are not represented as quota-exceeded 429.
-- [ ] Backend failures yield consistent controlled responses and bounded waits.
-- [ ] Health reports an outage/misconfiguration even when the normal limiter cannot operate; healthy probes do not consume user quotas.
+- [x] Missing/partial production KV configuration is reported as an error rather than silent healthy memory mode. Reported, not fatal — see the triage outcome above.
+- [x] KV timeouts/errors do not admit protected writes and are not represented as quota-exceeded 429.
+- [x] Backend failures yield consistent controlled responses and bounded waits.
+- [x] Health reports an outage/misconfiguration even when the normal limiter cannot operate; healthy probes do not consume user quotas.
+
+**What changed.** `RateLimitResult` gained `degraded`, which the KV backend sets when it cannot
+reach the store. That separates "you are within your quota" from "nobody knows" — a distinction the
+limiter used to collapse by returning a plain success on an exception, which is why an outage was
+invisible both to callers and to the health view.
+
+Every policy now declares `failClosed`. Mutations and authentication (`auth`, `admin`, `userUpdate`,
+`usernameUpdate`, `accountDelete`, both feedback POST policies) refuse a degraded check with a
+**503** and a 30-second `Retry-After`; reads (`api`, `usernameCheck`, `feedbackGetAuthenticated`,
+`healthCheck`) are still served. A backend failure is never a 429: telling a reader to slow down for
+a fault that is ours is the wrong answer, and it is asserted separately from a genuine quota denial.
+
+`getRateLimiterSelection()` replaces a bare `getRateLimiter()` for anything that needs to *report*
+state. The health route reads the backend the factory actually chose rather than re-deriving it from
+the same environment variables, since the two could disagree and this view is meant to be believed.
+Its status gained `misconfigured`, the overall rollup treats that as degraded, and the admin
+dashboard renders it as a destructive badge.
+
+### How it was verified
+
+`src/lib/rate-limit/availability.test.ts`, 12 cases:
+
+- Backend selection matrix: production with both variables picks KV; production with neither, only
+  the URL, or only the token reports `misconfigured` while still serving, and logs once;
+  development on memory is not misconfigured and logs nothing.
+- A degraded check on `accountDelete` returns 503 with `Retry-After`, does not run the handler, and
+  is asserted *not* to be a 429; the same check on `api` still serves.
+- `enforceRateLimit` throws a 503-shaped `RateLimitUnavailableError` from a server action.
+- Behaviour recovers on the next call once the backend answers.
+- A genuine quota denial is still a 429, so a policy decision is never reported as infrastructure
+  failure.
+- Every policy's fail-open/fail-closed assignment is pinned by name.
+
+Implemented in:
+
+- `src/lib/rate-limit/rate-limit.ts`, `rate-limit-kv.ts`, `rate-limit-factory.ts`
+- `src/lib/rate-limit/availability.test.ts`
+- `src/lib/middleware.ts`
+- `src/app/api/admin/health/route.ts` and its test
+- `src/app/admin/components/HealthCheckDashboard.tsx`
+- `src/app/api/auth/[...nextauth]/route.ts`
+- `.env.example`, `src/lib/AGENTS.md`
+
+**Not done, by decision.** Production still starts and serves without KV. If KV is provisioned
+later, the strict behaviour is a one-line change in `rate-limit-factory.ts`; nothing else needs to
+move, because the 503 path is already written and tested and simply never fires while the backend
+is memory.
 
 ### Required tests or verification
 
@@ -937,6 +988,8 @@ Local audit: `docs/BACKEND_AUDIT_2026-09-05.md`, section `B09`. A GitHub trackin
 
 **Proposed labels:** bug, ready-for-agent
 
+**Implementation status:** Implemented locally on 2026-09-06.
+
 Part of the backend audit dated 2026-09-05. Audit finding: **B10**. Priority: **Medium**.
 
 ### Concrete evidence and affected paths
@@ -972,11 +1025,83 @@ No global limit on static game-data pages, new CAPTCHA provider, guessed proxy/h
 
 ### Acceptance criteria
 
-- [ ] Auth initiation/update, account deletion and exported server actions have documented tested protection appropriate to their traffic.
-- [ ] The status endpoint is removed if unused, or independently limited and reads real quota state without consuming it.
-- [ ] Anonymous/authenticated policy selection refers to existing explicit policies.
-- [ ] Forwarded-header trust is documented for the actual host, with safe fallback and normalized identifiers; spoof resistance is verified rather than assumed.
-- [ ] Normal OAuth callback, CSRF and session-refresh flows still work.
+- [x] Auth initiation/update, account deletion and exported server actions have documented tested protection appropriate to their traffic.
+- [x] The status endpoint is removed if unused, or independently limited and reads real quota state without consuming it.
+- [x] Anonymous/authenticated policy selection refers to existing explicit policies.
+- [~] Forwarded-header trust is documented for the actual host, with safe fallback and normalized identifiers; spoof resistance is verified rather than assumed. Partial — see below.
+- [x] Normal OAuth callback, CSRF and session-refresh flows still work.
+
+**Coverage.** `DELETE /api/user` was the one unlimited mutation on the user API and now carries a
+new `accountDelete` policy (5/day — deleting succeeds once; the allowance is for retries). The two
+exported admin server actions now call `enforceRateLimit('admin')`; the comment claiming they needed
+no limit because they are "internal server-side only" was wrong, since a server action is a POST
+endpoint with a generated URL that the browser invokes.
+
+Sign-in initiation now uses the `auth` policy (5 per 15 minutes), which had been defined since the
+beginning with **zero call sites**. Only `POST /api/auth/signin*` is limited: `session` is polled by
+every signed-in page, `csrf` is fetched before each form post, and `callback` is where the provider
+returns the user — throttling any of those breaks ordinary logins rather than abuse. The predicate
+lives in `lib` rather than the route because Next rejects non-HTTP exports from a `route.ts`, and it
+needed to be testable.
+
+**The status endpoint is gone.** `GET /api/rate-limit/status` had no consumers anywhere in the
+codebase, so it was removed rather than rebuilt. It was unthrottled, called `check` once per policy,
+and each call *consumed* a token from a parallel `:check` counter while reporting that counter's
+remaining rather than the caller's real allowance — every number it displayed was fictional. If
+quota inspection is wanted later it needs a read-only `peek` on the limiter interface, which does
+not exist and was not invented for an endpoint nothing calls.
+
+**Anonymous policy selection** was already corrected in B08: the middleware used to rewrite
+`Authenticated` to a nonexistent `Anonymous` policy name and silently fall through to the
+authenticated cap.
+
+**Identity.** `getIdentifier` no longer takes a `request` it ignored. It reads
+`RATE_LIMIT_TRUSTED_IP_HEADER` when set, otherwise `x-forwarded-for` then `x-real-ip`, takes the
+client entry from the forwarded list, and normalizes brackets, ports and case so one caller cannot
+occupy several buckets by varying its source port. Callers with no usable address share one
+`ip:unknown` bucket — deliberately, since the alternative is an unlimited unidentified caller.
+
+**Why that criterion is partial.** The parsing and fallback are implemented, documented and tested,
+including that a named trusted header is not silently backfilled from an untrusted one. What is
+*not* verified is the platform half: whether this deployment's ingress overwrites a client-supplied
+`x-forwarded-for`. That cannot be established from the repository, and the audit explicitly forbids
+a guessed proxy claim, so `.env.example` and `lib/AGENTS.md` state the contract and say to confirm
+the header for the actual host before treating anonymous limits as abuse-resistant. Until then the
+env var is the supported way to name a header the operator knows is trustworthy.
+
+### How it was verified
+
+- `src/lib/rate-limit/identity.test.ts`, 30 cases: forwarded lists, whitespace, IPv4 with port,
+  bracketed and bare IPv6, case, empty and malformed values, missing headers, a configured header
+  winning over an untrusted one and not falling back to it, and the authenticated subject
+  outranking every header. Plus the auth path table — which NextAuth paths are limited and which
+  are explicitly left alone, including that `/api/auth/signinsomething` does not match.
+- `src/lib/rate-limit/coverage.test.ts`, 15 cases: a source scan asserting every
+  `app/api/**/route.ts` exports at least one HTTP method and applies a policy, every `'use server'`
+  action enforces one per exported action, and every policy named by a handler exists in
+  `RATE_LIMIT_CONFIGS`. It is a scan rather than a request test on purpose: the failure it guards
+  against is a *new* handler shipping without a policy, which no test of the existing routes can
+  catch. Confirmed to fail when a route is unwrapped.
+
+**Traffic risk worth knowing.** `auth` is 5 per 15 minutes per caller, and anonymous callers are
+keyed by IP. Where no client address is available — local development, or an ingress that does not
+set a forwarded header — every anonymous caller shares the `ip:unknown` bucket, so six sign-in
+attempts in fifteen minutes from one machine will be refused. That is the cap the policy was written
+with, unchanged per the issue's non-goal on cap changes; loosening it is a one-line config edit if
+it proves annoying in practice.
+
+Implemented in:
+
+- `src/lib/rate-limit/rate-limit.ts` (identity, `isSignInInitiation`, `accountDelete` policy)
+- `src/lib/rate-limit/identity.test.ts`, `src/lib/rate-limit/coverage.test.ts`
+- `src/lib/middleware.ts` (`checkRateLimit`, `enforceRateLimit`)
+- `src/app/api/user/route.ts`, `src/app/api/auth/[...nextauth]/route.ts`
+- `src/app/admin/users/[id]/edit/actions.ts`
+- removed `src/app/api/rate-limit/status/route.ts`
+- `.env.example`, `src/lib/AGENTS.md`
+
+Verification: 351 tests pass, `npm run type-check` and `npm run build` are clean, lint holds at its
+10 pre-existing problems.
 
 ### Required tests or verification
 
@@ -1017,6 +1142,8 @@ Primary references: [1](https://nextjs.org/docs/app/guides/data-security)
 
 **Proposed labels:** bug, ready-for-agent
 
+**Implementation status:** Implemented locally on 2026-09-06 and verified against the loopback replica set. No Atlas index was touched.
+
 Part of the backend audit dated 2026-09-05. Audit finding: **B11**. Priority: **Medium**.
 
 ### Concrete evidence and affected paths
@@ -1052,17 +1179,91 @@ No live Atlas index mutation in this implementation, guessed index pruning, data
 
 ### Acceptance criteria
 
-- [ ] Default invocation prints the target without credentials and the create/drop diff without mutation.
-- [ ] Explicit apply performs each intended change once and fails on any model error or absent required constraint.
-- [ ] db:test checks the configured database and fails for missing URI, failed connection or failed checks.
-- [ ] Index rationales match existing fields and query projections; removals include explain/query evidence.
-- [ ] A new environment has a documented index bootstrap path before traffic is enabled.
+- [x] Default invocation prints the target without credentials and the create/drop diff without mutation.
+- [x] Explicit apply performs each intended change once and fails on any model error or absent required constraint.
+- [x] db:test checks the configured database and fails for missing URI, failed connection or failed checks. Already true — see below.
+- [x] Index rationales match existing fields and query projections; removals include explain/query evidence.
+- [x] A new environment has a documented index bootstrap path before traffic is enabled.
 
-### Required tests or verification
+**The script.** `npm run db:sync` is now a preview: it prints the target as host plus database with
+credentials stripped, prints the per-model create/drop diff from `diffIndexes` (which is read-only),
+and writes nothing. `--apply` performs one `syncIndexes` pass per model — not `createIndexes`
+followed by `syncIndexes`, which built everything twice — and then verifies the identity unique
+constraints. Preview is the default because `syncIndexes` **drops** anything absent from the schema,
+and the old version ran a global `connection.syncIndexes()` before printing anything at all, so an
+operator's first notice of a destructive change arrived after it happened.
 
-- Mock preview/apply tests proving preview has zero writes and failures return nonzero.
-- Disposable replica-set integration tests for create/drop preview, unique conflicts, partial apply failure and verification.
-- Capture representative explain plans using fixtures; no production mutation required.
+Failures now exit nonzero. The old version caught each per-model error, logged it, continued, and
+still printed "✨ Index synchronization complete!", so automation could not distinguish a successful
+rollout from a failed one; the unique-constraint check printed "⚠️ missing!" and exited 0. Every
+model is still attempted on failure — stopping at the first would hide the state of the rest — but
+the run ends by throwing with every failing model named. Account's provider-identity constraint was
+added to the verified set; only User's two were checked before.
+
+The stale commented-out `createIndexes` block at the foot of the file is gone, along with the
+`Session` import — `Session.ts` is a commented-out placeholder that registers no model.
+
+**Index pruning, with the evidence the issue asks for.** Explain on the actual auth query shape,
+`findById().select('isBanned roles username')`, against a fixture collection carrying the indexes as
+they were declared:
+
+```
+winning plan  : {"stage":"PROJECTION_SIMPLE", ... "inputStage":{"stage":"IDHACK"}}
+docs examined : 1
+keys examined : 1
+rejected plans: 0
+```
+
+`IDHACK` is the `_id` fast path, and **0 rejected plans** means the three `_id`-prefixed compound
+indexes on `User` were never candidates. They cannot be: an equality match on `_id` returns at most
+one document. The one documented as "covering index for complete auth" could not cover either — it
+omits `username`, which all three auth gates select. All three were dropped.
+
+`Feedback`'s `{ reviewedBy: 1, reviewedAt: -1 }` sparse index was also dropped: neither field is
+declared on that schema. The reviewer reference it was presumably meant for is
+`reviewerNotes[].addedByUserId`.
+
+**db:test needed no change.** The audit's baseline predates commit `1c803be`. Verified rather than
+assumed: a missing `MONGODB_URI` exits 1, an unreachable host exits 1, and the database comes from
+`client.db()` rather than a hardcoded name.
+
+### How it was verified
+
+Against the loopback replica set, in order:
+
+1. Recorded `users` indexes before the run.
+2. Preview listed exactly the four pending drops; re-reading the indexes afterwards showed them
+   **unchanged** — the preview mutated nothing.
+3. `--apply` dropped exactly those four, verified all three identity constraints, exit 0.
+4. Re-running preview reported "no changes pending" — the rollout is idempotent.
+5. Missing `MONGODB_URI` and an unreachable host each exit 1.
+6. `npm run db:prepare:local` still passes end to end.
+
+`scripts/index-rollout.test.ts`, 14 cases over fakes — the rollout logic was split into
+`scripts/index-rollout.ts` so it is testable without a database, and `vitest.config.ts` now includes
+`scripts/**/*.test.ts`:
+
+- Preview never calls `syncIndexes`, which is the call that drops.
+- Apply calls `syncIndexes` exactly once per model.
+- A model failure throws and names every failing model, while still attempting the rest.
+- Constraint verification fails when an index is absent, when it exists but is **not unique** —
+  the case the old check could not catch, since it looked present and enforced nothing — and when a
+  required model is not registered at all.
+- `describeTarget` strips credentials; asserted against a URI containing a password.
+
+Implemented in:
+
+- `scripts/sync-mongodb-indexes.ts`, `scripts/index-rollout.ts`, `scripts/index-rollout.test.ts`
+- `src/models/User.ts`, `src/models/Feedback.ts`
+- `vitest.config.ts`
+- `src/models/AGENTS.md`, `AGENTS.md`
+
+Verification: 365 tests pass, `npm run type-check` and `npm run build` are clean, lint holds at its
+10 pre-existing problems.
+
+**Not done, deliberately.** No Atlas index was created or dropped — the issue's own non-goal. The
+four drops have been applied to the local replica set only; running `npm run db:sync -- --apply`
+against production is an operator action, and the preview is there to be read first.
 
 Add durable regression tests for changed behavior. Existing passing game-data tests alone do not verify this issue. Any infrastructure verification uses disposable/local resources unless live access and the specific operation are authorized.
 
@@ -1382,6 +1583,8 @@ Local audit: `docs/BACKEND_AUDIT_2026-09-05.md`, section `B14`. A GitHub trackin
 
 **Proposed labels:** bug, ready-for-agent
 
+**Implementation status:** Implemented locally on 2026-09-06.
+
 Part of the backend audit dated 2026-09-05. Audit finding: **B15**. Priority: **Medium**.
 
 ### Concrete evidence and affected paths
@@ -1415,16 +1618,66 @@ No swallowing arbitrary programming SyntaxErrors as client mistakes, schema vali
 
 ### Acceptance criteria
 
-- [ ] Real MongoServerError code 11000 yields the established 409 envelope.
-- [ ] Malformed JSON yields the established 400 envelope on affected JSON handlers.
-- [ ] Unknown errors still yield 500 and production responses do not expose raw queries, keys or stacks.
-- [ ] Concurrent username/email conflicts are handled even when initial availability checks pass.
+- [x] Real MongoServerError code 11000 yields the established 409 envelope.
+- [x] Malformed JSON yields the established 400 envelope on affected JSON handlers.
+- [x] Unknown errors still yield 500 and production responses do not expose raw queries, keys or stacks.
+- [x] Concurrent username/email conflicts are handled even when initial availability checks pass.
 
-### Required tests or verification
+**Reproduced before fixing.** A real duplicate-key error raised by the local replica set:
 
-- Use actual installed MongoServerError, Mongoose ValidationError/CastError and ZodError instances.
-- Malformed-body route tests, unknown thrown values and unexpected SyntaxError outside parsing.
-- Concurrent uniqueness conflict integration test using a disposable database.
+```
+constructor              : MongoServerError
+name                     : MongoServerError
+code                     : 11000
+instanceof MongooseError : false
+name === 'MongoError'    : false
+```
+
+The old branch required *both* `instanceof MongooseError` and `name === 'MongoError'`. The driver's
+error satisfies neither, so every uniqueness conflict fell through to a 500.
+
+**What changed.** `isDuplicateKeyError` is now a structural guard on `code === 11000`, checked
+*before* the Mongoose branch since the error is not a `MongooseError`. Matching on the code rather
+than a class identity also covers Mongoose-wrapped and bulk-write shapes, and does not depend on a
+class name that has already changed once. The 409 envelope names the field from `keyPattern` but
+never the colliding value, which is another user's data.
+
+Malformed JSON is handled at a deliberate boundary: `parseJsonBody(request)` in `src/lib/request.ts`
+replaces `request.json()` in all seven handlers that read a body, and turns a parse failure into the
+400 envelope. It is deliberately *not* a `SyntaxError` branch inside `handleError` — that would
+reclassify a genuine bug in our own code as the caller's mistake, which is this issue's own
+non-goal. A `SyntaxError` raised anywhere else still reports 500, and that is asserted.
+
+**Fixed while in the file.** `sanitizeError` read `.message` and `.stack` off the thrown value
+before any branch ran, so `handleError(null)` crashed the error handler itself. It now accepts
+`unknown` and normalises non-Error values.
+
+### How it was verified
+
+`src/lib/errors.test.ts`, 25 cases, built from the error objects the installed packages actually
+throw rather than look-alikes — the bug was precisely that the real error did not have the assumed
+shape:
+
+- A real `MongoServerError(11000)` is asserted to be neither a `MongooseError` nor named
+  `MongoError`, pinning why the old guard failed, and to translate to 409.
+- The colliding value is asserted absent from the response body.
+- Real `MongooseError.ValidationError`, `MongooseError.CastError` and a real `ZodError` still map to
+  400; `AppError` subclasses keep their status.
+- Malformed bodies (`{ not json`, empty, truncated, `undefined`) map to 400; a `SyntaxError` from
+  elsewhere maps to 500.
+- `null`, `undefined`, a string and a number being thrown all produce a clean 500.
+
+`src/lib/errors.integration.test.ts`, 3 cases against the loopback replica set — skipped unless
+`MONGODB_URI` points there — covering the race a pre-check cannot close: two writers both observe a
+username as free, both attempt it, exactly one wins, and the loser's error is a genuine
+`MongoServerError` with `keyPattern: { username: 1 }` that translates to 409.
+
+Implemented in:
+
+- `src/lib/errors.ts`, `src/lib/request.ts`
+- `src/lib/errors.test.ts`, `src/lib/errors.integration.test.ts`
+- the seven route handlers that read a JSON body
+- `src/lib/AGENTS.md`
 
 Add durable regression tests for changed behavior. Existing passing game-data tests alone do not verify this issue. Any infrastructure verification uses disposable/local resources unless live access and the specific operation are authorized.
 
@@ -1453,6 +1706,8 @@ Local audit: `docs/BACKEND_AUDIT_2026-09-05.md`, section `B15`. A GitHub trackin
 **Proposed title:** [Medium] Stop retaining unused OAuth provider tokens
 
 **Proposed labels:** enhancement, ready-for-agent
+
+**Implementation status:** Implemented locally on 2026-09-06. New logins store no tokens; clearing the tokens already stored is a prepared operator action that has not been run against any non-local database.
 
 Part of the backend audit dated 2026-09-05. Audit finding: **B16**. Priority: **Medium**.
 
@@ -1486,16 +1741,61 @@ No provider account revocation, production database mutation, credentials printe
 
 ### Acceptance criteria
 
-- [ ] New account creation/linking persists no unused access, refresh or ID tokens.
-- [ ] Google/Discord login and account association still work.
-- [ ] Migration preview reports counts/field names only, never credential values; application requires explicit target/apply.
-- [ ] Existing token fields are not assumed deleted merely because the schema changed.
-- [ ] Any discovered legitimate consumer is documented before changing its contract.
+- [x] New account creation/linking persists no unused access, refresh or ID tokens.
+- [x] Google/Discord login and account association still work.
+- [x] Migration preview reports counts/field names only, never credential values; application requires explicit target/apply.
+- [x] Existing token fields are not assumed deleted merely because the schema changed.
+- [x] Any discovered legitimate consumer is documented before changing its contract.
 
-### Required tests or verification
+**Consumer search, repeated before changing anything.** A repository-wide search for
+`access_token`, `refresh_token`, `id_token`, `session_state`, `oauth_token`, `expires_at` and
+`token_type` returns hits in exactly two files: `src/models/Account.ts`, which declared them, and
+`src/lib/auth/oauth-sign-in.ts`, which wrote them. **Nothing reads them.** There is no consumer to
+document, because there is no consumer: the app uses OAuth to identify a user and its NextAuth
+database adapter is disabled.
 
-- Capture persistence payloads for both new-user and existing-user linking paths.
-- Schema and migration tests using synthetic token fixtures, including idempotency and preservation of identity fields.
+The account record now stores `userId`, `type`, `provider` and `providerAccountId` — enough to
+answer "which user is this provider identity?", which is all it was ever asked. `scope` went with
+the credentials: not itself a secret, but equally unread. The Discord-specific `oauth_token` and
+`oauth_token_secret` were declared and never written at all.
+
+**The schema change is not a data change.** Removing the fields stops new writes and nothing else;
+every token already stored is still stored. `scripts/strip-oauth-tokens.ts`
+(`npm run db:strip-oauth-tokens`) is the operator action that clears them. Its preview reports field
+names and document counts via `countDocuments` and never projects a value — surfacing a credential
+in a terminal or CI log would defeat the point of removing it. Writing requires
+`--apply --confirm=<database>` naming the connected database. `userId`, `type`, `provider` and
+`providerAccountId` are never in the unset, so no link is broken and nobody is signed out.
+
+### How it was verified
+
+Two new cases in `src/lib/auth/oauth-sign-in.test.ts` capture the persisted payload for both paths —
+a brand new user, and linking a provider to an existing user — driving the callback with an account
+carrying every token a provider hands over. Each asserts the written record's keys are exactly
+`provider`, `providerAccountId`, `type`, `userId`, that no token field is present under any name,
+and that no token *value* appears anywhere in the serialised record. Confirmed to fail rather than
+assumed: re-adding `access_token` to the create payload fails both, and was reverted.
+
+The migration was exercised against the loopback replica set with three seeded accounts — one with a
+full token set, one with a single token, one already clean:
+
+- Preview reported per-field counts (`access_token: present on 2 document(s)`) with no value in the
+  output.
+- `--apply` with a mismatched `--confirm` was refused.
+- After applying, all three rows held exactly `_id, provider, providerAccountId, type, userId`, and
+  a search of the raw documents for the seeded secret values found none.
+- A second run reported nothing to clear — idempotent.
+
+Implemented in:
+
+- `src/lib/auth/oauth-sign-in.ts`, `src/models/Account.ts`
+- `src/lib/auth/oauth-sign-in.test.ts`
+- `scripts/strip-oauth-tokens.ts`, `package.json`
+- `AGENTS.md`, `src/models/AGENTS.md`
+
+**Still outstanding.** The migration has been run against the local replica set only. Clearing
+production is an operator action, deliberately not bundled into a code deployment — the issue's own
+non-goal forbids production mutation here.
 - Login regression after B02 using synthetic provider responses.
 
 Add durable regression tests for changed behavior. Existing passing game-data tests alone do not verify this issue. Any infrastructure verification uses disposable/local resources unless live access and the specific operation are authorized.
