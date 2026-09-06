@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title description">
+  <title id="title">ExfilZone Assistant dark monochrome logo</title>
+  <desc id="description">A dark monochrome version of the ExfilZone Assistant logo.</desc>
+
+  <g transform="skewX(-20)" fill="#0A0E12">
+    <rect x="80" y="56" width="24" height="24"/>
+    <rect x="80" y="116" width="24" height="24"/>
+    <rect x="80" y="176" width="24" height="24"/>
+
+    <g transform="matrix(1, 0, 0, 1, -2.000001, 0)">
+      <rect x="116" y="56" width="62" height="24"/>
+      <rect x="116" y="116" width="58" height="24"/>
+      <rect x="116" y="176" width="62" height="24"/>
+    </g>
+
+    <path
+      fill="none"
+      stroke="#0A0E12"
+      stroke-width="24"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      d="M 188 68 L 252 68 L 212 188 L 286 188"
+    />
+  </g>
+</svg>

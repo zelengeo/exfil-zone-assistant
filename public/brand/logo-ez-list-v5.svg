@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title description">
+  <title id="title">ExfilZone Assistant logo</title>
+  <desc id="description">Three angled list rows imply an E beside an optically balanced letter Z.</desc>
+
+  <!-- The shared shear keeps every terminal at the same angle. -->
+  <g transform="skewX(-20)">
+    <g fill="#FF4A24">
+      <rect x="80" y="56" width="24" height="24"/>
+      <rect x="80" y="116" width="24" height="24"/>
+      <rect x="80" y="176" width="24" height="24"/>
+    </g>
+
+    <g fill="#ECF2F7">
+      <rect x="116" y="56" width="62" height="24"/>
+      <rect x="116" y="116" width="58" height="24"/>
+      <rect x="116" y="176" width="62" height="24"/>
+    </g>
+
+    <!-- The Z diagonal is optically compensated for legibility after the shared shear. -->
+    <path
+      fill="none"
+      stroke="#FF4A24"
+      stroke-width="24"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      d="M210 68h64l-40 120h74"
+    />
+  </g>
+</svg>
