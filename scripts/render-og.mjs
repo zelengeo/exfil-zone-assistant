@@ -97,6 +97,15 @@ const cardPresets = {
     benefit: 'Know every item and what it is worth.',
     status: 'DATABASE // LIVE DATA',
   },
+  guides: {
+    eyebrow: 'FIELD SYSTEM / GUIDES',
+    titlePrimary: 'GUIDE',
+    titleAccent: 'S',
+    titleGap: 12,
+    descriptor: 'FIELD MANUALS',
+    benefit: 'Learn the systems that keep you alive.',
+    status: 'KNOWLEDGE // FIELD TESTED',
+  },
 };
 
 const card = cardPresets[presetArgument];

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
                 url: '/og/og-image-guides.jpg',
                 width: 1200,
                 height: 630,
-                alt: 'ExfilZone Guides and Tutorials',
+                alt: 'Guides for survival, combat, equipment, and game mechanics',
             }
         ],
     },
