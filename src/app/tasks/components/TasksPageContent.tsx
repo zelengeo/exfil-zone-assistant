@@ -3,7 +3,7 @@
 import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import Link from 'next/link';
 import {usePathname, useSearchParams} from 'next/navigation';
-import {ArrowLeft, Check, Filter, MapPin, MessageCircle, Search, X} from 'lucide-react';
+import {ArrowLeft, Check, Filter, MapPin, Search, X} from 'lucide-react';
 import {cn} from '@/lib/utils';
 import {useDebounce} from '@/hooks/useDebounce';
 import {Button} from '@/components/ui/button';

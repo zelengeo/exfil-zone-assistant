@@ -5,8 +5,9 @@ export const taskRewardSchema = z.object({
     type: z.enum(['money', 'reputation', 'experience', 'item']),
     quantity: z.number().int().positive(),
     corpId: z.string().optional(), // For reputation rewards
-    item_name: z.string().optional(), // Temp for item rewards
-    item_id: z.string().optional(), // Item rewards
+    item_name: z.string().optional(), // Display name, including rewards outside the item catalogue
+    item_id: z.string().optional(), // Published catalogue id, never a backend goods id
+    gameId: z.string().optional(), // Preserve the backend identity of rewards without a catalogue entry
 });
 
 // Task type enum

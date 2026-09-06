@@ -31,6 +31,25 @@ const isCookiePreferences = (input: unknown): input is CookiePreferences => {
     );
 };
 
+const applyPreferences = (prefs: CookiePreferences) => {
+    // Here you would actually enable/disable the respective services
+    if (prefs.analytics) {
+        // Enable Vercel Analytics
+        console.log('Analytics enabled');
+    } else {
+        // Disable Vercel Analytics if possible
+        console.log('Analytics disabled');
+    }
+
+    if (prefs.thirdParty) {
+        // Enable third-party services
+        console.log('Third-party cookies enabled');
+    } else {
+        // Restrict third-party services
+        console.log('Third-party cookies disabled');
+    }
+};
+
 export default function CookieConsentBanner() {
     const [isVisible, setIsVisible] = useState(false);
     const [showDetails, setShowDetails] = useState(false);
@@ -45,31 +64,14 @@ export default function CookieConsentBanner() {
         const consent = StorageService.getCookieConsent();
         if (!consent || !isCookiePreferences(consent)) {
             // Small delay to ensure smooth page load
-            setTimeout(() => setIsVisible(true), 1000);
+            const timeout = setTimeout(() => setIsVisible(true), 1000);
+            return () => clearTimeout(timeout);
         } else {
             // Apply saved preferences
             applyPreferences(consent);
         }
     }, []);
 
-    const applyPreferences = (prefs: CookiePreferences) => {
-        // Here you would actually enable/disable the respective services
-        if (prefs.analytics) {
-            // Enable Vercel Analytics
-            console.log('Analytics enabled');
-        } else {
-            // Disable Vercel Analytics if possible
-            console.log('Analytics disabled');
-        }
-
-        if (prefs.thirdParty) {
-            // Enable third-party services
-            console.log('Third-party cookies enabled');
-        } else {
-            // Restrict third-party services
-            console.log('Third-party cookies disabled');
-        }
-    };
 
     const handleAcceptAll = () => {
         const allEnabled: CookiePreferences = {

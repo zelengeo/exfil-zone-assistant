@@ -28,6 +28,17 @@ const allTasks = Object.values(tasksData);
 const lockedAt = (progress: TaskProgress) => (taskId: string) =>
     stateOf(tasksData[taskId], progress) === 'locked';
 
+it('preserves named non-catalogue rewards without inventing item-page ids', () => {
+    const rewards = allTasks.flatMap(task => [...task.reward, ...task.preReward]);
+    const nonCatalogueRewards = rewards.filter(reward => reward.gameId);
+    expect(nonCatalogueRewards.length).toBeGreaterThan(0);
+    for (const reward of nonCatalogueRewards) {
+        expect(reward.item_name?.trim()).toBeTruthy();
+        expect(reward.item_id).toBeUndefined();
+    }
+    expect(rewards.some(reward => reward.item_id?.startsWith('gds.'))).toBe(false);
+});
+
 describe('every task is laid out exactly once', () => {
     it('covers the database with no repeats', () => {
         const placed = owners.flatMap((owner) =>

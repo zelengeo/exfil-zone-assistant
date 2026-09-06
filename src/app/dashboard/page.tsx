@@ -60,6 +60,8 @@ export default async function DashboardPage() {
         : 100;
 
     // Format dates
+    // This authenticated async server page calculates age at request time, not during a client render.
+    // eslint-disable-next-line react-hooks/purity
     const accountAge = Math.floor((Date.now() - new Date(user.createdAt).getTime()) / (1000 * 60 * 60 * 24));
     const lastLogin = user.lastLoginAt
         ? new Date(user.lastLoginAt).toLocaleDateString()

@@ -3,7 +3,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useForm } from 'react-hook-form';
+import { useForm, useWatch } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { toast } from 'sonner';
 import { updateUser } from '../actions';
@@ -80,7 +80,8 @@ export function EditUserForm({ user }: EditUserFormProps) {
         }
     };
 
-    const selectedRoles = form.watch('roles') || [];
+    const selectedRoles = useWatch({ control: form.control, name: 'roles' }) || [];
+    const isBanned = useWatch({ control: form.control, name: 'isBanned' });
 
     const toggleRole = (role: typeof rolesEnum[number]) => {
         const currentRoles = form.getValues('roles') || [];
@@ -279,7 +280,7 @@ export function EditUserForm({ user }: EditUserFormProps) {
                         )}
                     />
 
-                    {form.watch('isBanned') && (
+                    {isBanned && (
                         <FormField
                             control={form.control}
                             name="banReason"

@@ -1,0 +1,20 @@
+# Upload only the application and its build inputs.
+/*
+!src
+!public
+!package.json
+!package-lock.json
+!next.config.ts
+!next-env.d.ts
+!env.d.ts
+!tsconfig.json
+!postcss.config.mjs
+!tailwind.config.js
+!eslint.config.mjs
+!vercel.json
+!components.json
+**/AGENTS.md
+**/CLAUDE.md
+**/*.test.ts
+**/*.test.tsx
+**/.env*

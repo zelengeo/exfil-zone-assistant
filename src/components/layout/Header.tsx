@@ -156,6 +156,151 @@ function Wordmark({compact = false}: { compact?: boolean }) {
     );
 }
 
+// Desktop user menu component
+const DesktopUserMenu = () => {
+    const {data: session, status} = useSession();
+    if (status === "loading") {
+        return (
+            <div className="flex items-center gap-3 px-3 py-2 border border-line-800 bg-steel-800">
+                <div className="relative h-6 w-7 flex items-center justify-center">
+                    <Shield className="h-5 w-5 text-ink-700 animate-pulse"/>
+                </div>
+                <div className="hidden md:flex flex-col gap-1.5 justify-center">
+                    <div className="h-2 w-12 bg-steel-600 animate-pulse [animation-duration:1s]"/>
+                    <div className="flex gap-1">
+                        {[...Array(3)].map((_, i) => (
+                            <div
+                                key={i}
+                                className="h-1.5 w-2 bg-steel-600 animate-pulse"
+                                style={{
+                                    animationDelay: `${i * 120 + 200}ms`,
+                                    animationDuration: '1.2s'
+                                }}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+    if (!session) {
+        return (
+            <Button
+                onClick={() => signIn()}
+                size="sm"
+                variant="outline"
+                className="font-display font-bold uppercase tracking-nav border-line-500 text-ink-100 hover:bg-steel-700 hover:text-ink-100"
+            >
+                <Shield className="mr-2 h-4 w-4"/>
+                Sign In
+            </Button>
+        );
+    }
+
+    const userInitial = session.user.displayName?.[0] || session.user.username?.[0] || "U";
+    const displayName = session.user.displayName || session.user.username || "User";
+
+    return (
+        <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+                <Button
+                    variant="ghost"
+                    className="flex items-center gap-3 px-3 py-2 hover:bg-steel-700 border border-transparent hover:border-line-700"
+                >
+                    <Avatar className="h-8 w-8">
+                        <AvatarImage
+                            src={session.user?.avatarUrl || undefined}
+                            alt={displayName}
+                        />
+                        <AvatarFallback className="bg-steel-600 text-ink-100 font-mono text-xs">
+                            {userInitial.toUpperCase()}
+                        </AvatarFallback>
+                    </Avatar>
+                    <div className="text-left pb-0.5">
+                        <p className="text-sm font-medium text-ink-100">{displayName}</p>
+                        <p className="micro-label text-info mt-0.5">
+                            {session.user.rank || 'Recruit'}
+                        </p>
+                    </div>
+                </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent
+                className="w-64 bg-steel-800 border-line-700"
+                align="end"
+            >
+                <DropdownMenuLabel className="font-normal">
+                    <div className="flex items-center gap-3">
+                        <Avatar className="h-10 w-10">
+                            <AvatarImage
+                                src={session.user?.avatarUrl || undefined}
+                                alt={displayName}
+                            />
+                            <AvatarFallback className="bg-steel-600 text-ink-100 font-mono text-xs">
+                                {userInitial.toUpperCase()}
+                            </AvatarFallback>
+                        </Avatar>
+                        <div className="space-y-1">
+                            <p className="text-sm font-medium leading-none text-ink-100">{session.user?.displayName}</p>
+                            <p className="text-xs leading-none font-mono text-ink-600">
+                                @{session.user?.username}
+                            </p>
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-2 mt-3">
+                        <Badge variant="secondary"
+                               className="bg-steel-600 text-info font-mono text-[10px] tracking-micro uppercase border-line-600">
+                            {session.user.rank || 'Recruit'}
+                        </Badge>
+                        <Badge variant="secondary"
+                               className="bg-steel-600 text-info font-mono text-[10px] tracking-micro uppercase border-line-600">
+                            {session.user.roles[session.user.roles.length - 1]}
+                        </Badge>
+                    </div>
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator className="bg-line-900"/>
+                <DropdownMenuItem asChild>
+                    <Link
+                        href={`/user/${session.user?.username || session.user?.id}`}
+                        className="cursor-pointer"
+                    >
+                        <User className="mr-2 h-4 w-4"/>
+                        <span>View Profile</span>
+                    </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                    <Link href="/dashboard" className="cursor-pointer">
+                        <BarChart3 className="mr-2 h-4 w-4"/>
+                        <span>Dashboard</span>
+                    </Link>
+                </DropdownMenuItem>
+                {session.user?.roles?.includes('admin') && (
+                    <>
+                        <DropdownMenuSeparator className="bg-line-900"/>
+                        <DropdownMenuItem asChild>
+                            <Link href="/admin" className="cursor-pointer">
+                                <Shield className="mr-2 h-4 w-4"/>
+                                <span>Admin Panel</span>
+                            </Link>
+                        </DropdownMenuItem>
+                    </>
+                )}
+                <DropdownMenuSeparator className="bg-line-900"/>
+                <DropdownMenuItem
+                    className="cursor-pointer text-bad focus:text-bad focus:bg-steel-700"
+                    onSelect={(event) => {
+                        event.preventDefault();
+                        signOut();
+                    }}
+                >
+                    <LogOut className="mr-2 h-4 w-4"/>
+                    <span>Sign out</span>
+                </DropdownMenuItem>
+            </DropdownMenuContent>
+        </DropdownMenu>
+    );
+};
+
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
     const {data: session, status} = useSession();
@@ -178,149 +323,6 @@ const Header: React.FC = () => {
         {name: 'Dashboard', href: '/dashboard', icon: BarChart3},
     ];
 
-    // Desktop user menu component
-    const DesktopUserMenu = () => {
-        if (status === "loading") {
-            return (
-                <div className="flex items-center gap-3 px-3 py-2 border border-line-800 bg-steel-800">
-                    <div className="relative h-6 w-7 flex items-center justify-center">
-                        <Shield className="h-5 w-5 text-ink-700 animate-pulse"/>
-                    </div>
-                    <div className="hidden md:flex flex-col gap-1.5 justify-center">
-                        <div className="h-2 w-12 bg-steel-600 animate-pulse [animation-duration:1s]"/>
-                        <div className="flex gap-1">
-                            {[...Array(3)].map((_, i) => (
-                                <div
-                                    key={i}
-                                    className="h-1.5 w-2 bg-steel-600 animate-pulse"
-                                    style={{
-                                        animationDelay: `${i * 120 + 200}ms`,
-                                        animationDuration: '1.2s'
-                                    }}
-                                />
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            );
-        }
-
-        if (!session) {
-            return (
-                <Button
-                    onClick={() => signIn()}
-                    size="sm"
-                    variant="outline"
-                    className="font-display font-bold uppercase tracking-nav border-line-500 text-ink-100 hover:bg-steel-700 hover:text-ink-100"
-                >
-                    <Shield className="mr-2 h-4 w-4"/>
-                    Sign In
-                </Button>
-            );
-        }
-
-        const userInitial = session.user.displayName?.[0] || session.user.username?.[0] || "U";
-        const displayName = session.user.displayName || session.user.username || "User";
-
-        return (
-            <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                    <Button
-                        variant="ghost"
-                        className="flex items-center gap-3 px-3 py-2 hover:bg-steel-700 border border-transparent hover:border-line-700"
-                    >
-                        <Avatar className="h-8 w-8">
-                            <AvatarImage
-                                src={session.user?.avatarUrl || undefined}
-                                alt={displayName}
-                            />
-                            <AvatarFallback className="bg-steel-600 text-ink-100 font-mono text-xs">
-                                {userInitial.toUpperCase()}
-                            </AvatarFallback>
-                        </Avatar>
-                        <div className="text-left pb-0.5">
-                            <p className="text-sm font-medium text-ink-100">{displayName}</p>
-                            <p className="micro-label text-info mt-0.5">
-                                {session.user.rank || 'Recruit'}
-                            </p>
-                        </div>
-                    </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent
-                    className="w-64 bg-steel-800 border-line-700"
-                    align="end"
-                >
-                    <DropdownMenuLabel className="font-normal">
-                        <div className="flex items-center gap-3">
-                            <Avatar className="h-10 w-10">
-                                <AvatarImage
-                                    src={session.user?.avatarUrl || undefined}
-                                    alt={displayName}
-                                />
-                                <AvatarFallback className="bg-steel-600 text-ink-100 font-mono text-xs">
-                                    {userInitial.toUpperCase()}
-                                </AvatarFallback>
-                            </Avatar>
-                            <div className="space-y-1">
-                                <p className="text-sm font-medium leading-none text-ink-100">{session.user?.displayName}</p>
-                                <p className="text-xs leading-none font-mono text-ink-600">
-                                    @{session.user?.username}
-                                </p>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-2 mt-3">
-                            <Badge variant="secondary"
-                                   className="bg-steel-600 text-info font-mono text-[10px] tracking-micro uppercase border-line-600">
-                                {session.user.rank || 'Recruit'}
-                            </Badge>
-                            <Badge variant="secondary"
-                                   className="bg-steel-600 text-info font-mono text-[10px] tracking-micro uppercase border-line-600">
-                                {session.user.roles[session.user.roles.length - 1]}
-                            </Badge>
-                        </div>
-                    </DropdownMenuLabel>
-                    <DropdownMenuSeparator className="bg-line-900"/>
-                    <DropdownMenuItem asChild>
-                        <Link
-                            href={`/user/${session.user?.username || session.user?.id}`}
-                            className="cursor-pointer"
-                        >
-                            <User className="mr-2 h-4 w-4"/>
-                            <span>View Profile</span>
-                        </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                        <Link href="/dashboard" className="cursor-pointer">
-                            <BarChart3 className="mr-2 h-4 w-4"/>
-                            <span>Dashboard</span>
-                        </Link>
-                    </DropdownMenuItem>
-                    {session.user?.roles?.includes('admin') && (
-                        <>
-                            <DropdownMenuSeparator className="bg-line-900"/>
-                            <DropdownMenuItem asChild>
-                                <Link href="/admin" className="cursor-pointer">
-                                    <Shield className="mr-2 h-4 w-4"/>
-                                    <span>Admin Panel</span>
-                                </Link>
-                            </DropdownMenuItem>
-                        </>
-                    )}
-                    <DropdownMenuSeparator className="bg-line-900"/>
-                    <DropdownMenuItem
-                        className="cursor-pointer text-bad focus:text-bad focus:bg-steel-700"
-                        onSelect={(event) => {
-                            event.preventDefault();
-                            signOut();
-                        }}
-                    >
-                        <LogOut className="mr-2 h-4 w-4"/>
-                        <span>Sign out</span>
-                    </DropdownMenuItem>
-                </DropdownMenuContent>
-            </DropdownMenu>
-        );
-    };
 
     return (
         <>

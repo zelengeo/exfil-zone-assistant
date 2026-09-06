@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { useDebounce } from '@/hooks/useDebounce';
 import {
     Table,
@@ -42,7 +42,8 @@ type RoleUpdateRequest = IUserApi['Admin']['ById']['Roles']['Patch']['Request'];
 
 export function UserRolesTable() {
     const [users, setUsers] = useState<UserListItem[]>([]);
-    const [loading, setLoading] = useState(true);
+    const [loadedRequest, setLoadedRequest] = useState<string | null>(null);
+    const [refreshVersion, setRefreshVersion] = useState(0);
     const [searchTerm, setSearchTerm] = useState('');
     const [roleFilter, setRoleFilter] = useState('all');
     const [currentPage, setCurrentPage] = useState(1);
@@ -54,35 +55,35 @@ export function UserRolesTable() {
 
     const debouncedSearchTerm = useDebounce(searchTerm, 300);
 
-    const fetchUsers = useCallback(async () => {
-        setLoading(true);
-        try {
-            const params = createSearchParams(
-                UserApi.Admin.List.Request,
-                {
-                    page: currentPage,
-                    limit: ITEMS_PER_PAGE,
-                    ...(debouncedSearchTerm && { search: debouncedSearchTerm }),
-                    ...(roleFilter !== 'all' && { role: roleFilter as IUserApi['Admin']['List']['Request']['role'] }),
-                }
-            );
+    const query = createSearchParams(UserApi.Admin.List.Request, {
+        page: currentPage,
+        limit: ITEMS_PER_PAGE,
+        ...(debouncedSearchTerm && { search: debouncedSearchTerm }),
+        ...(roleFilter !== 'all' && { role: roleFilter as IUserApi['Admin']['List']['Request']['role'] }),
+    }).toString();
+    const requestKey = JSON.stringify([query, refreshVersion]);
+    const loading = loadedRequest !== requestKey;
 
-            const response = await fetch(`/api/admin/users?${params}`);
-            const data: IUserApi['Admin']['List']['Response'] = await response.json();
-
-            if (response.ok) {
+    useEffect(() => {
+        const controller = new AbortController();
+        fetch(`/api/admin/users?${query}`, { signal: controller.signal })
+            .then(async response => {
+                if (!response.ok) throw new Error('Failed to load users');
+                const data: IUserApi['Admin']['List']['Response'] = await response.json();
+                if (controller.signal.aborted) return;
                 setUsers(data.users);
                 setTotalPages(data.pagination.pages);
-            }
-        } catch (error) {
-            console.error('Failed to fetch users:', error);
-            toast.error('Error', {
-                description: 'Failed to load users',
+            })
+            .catch((error: unknown) => {
+                if (controller.signal.aborted) return;
+                console.error('Failed to fetch users:', error);
+                toast.error('Error', { description: 'Failed to load users' });
+            })
+            .finally(() => {
+                if (!controller.signal.aborted) setLoadedRequest(requestKey);
             });
-        } finally {
-            setLoading(false);
-        }
-    }, [currentPage, debouncedSearchTerm, roleFilter]);
+        return () => controller.abort();
+    }, [query, requestKey]);
 
 
     const confirmRoleAction = async () => {
@@ -104,7 +105,7 @@ export function UserRolesTable() {
 
             if (response.ok) {
                 toast.success(`Role ${actionType}ed successfully for ${data.user.username}`, { description: `Resulted roles are: ${data.user.roles.join(', ')}` });
-                fetchUsers();
+                setRefreshVersion(version => version + 1);
             } else {
                 throw new Error('Failed to update role');
             }
@@ -114,9 +115,6 @@ export function UserRolesTable() {
             setIsDialogOpen(false);
         }
     };
-    useEffect(() => {
-        fetchUsers();
-    }, [fetchUsers]);
 
     const handleRoleAction = (user: UserListItem, action: RoleUpdateRequest['action'], role: RoleUpdateRequest['role']) => {
         setSelectedUser(user);

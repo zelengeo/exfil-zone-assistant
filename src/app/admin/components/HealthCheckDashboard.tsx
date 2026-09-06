@@ -51,21 +51,20 @@ export function HealthCheckDashboard() {
     const [loading, setLoading] = useState(true);
     const [refreshing, setRefreshing] = useState(false);
 
-    const fetchHealthData = async () => {
-        try {
-            const response = await fetch('/api/admin/health');
+    const fetchHealthData = () => {
+        return fetch('/api/admin/health').then(async (response) => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = await response.json();
             setHealthData(data);
-        } catch (error) {
+        }).catch((error: unknown) => {
             console.error('Failed to fetch health data:', error);
             toast.error('Failed to fetch health data');
-        } finally {
+        }).finally(() => {
             setLoading(false);
             setRefreshing(false);
-        }
+        });
     };
 
     useEffect(() => {

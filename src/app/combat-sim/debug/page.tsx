@@ -23,13 +23,84 @@ interface DeviationComputationValue {
 
 const UNARMORED = 'Unarmored';
 
+// Calculate summary statistics
+function calculateSummary(results: TestRunResult[]): TestSummary {
+    const totalTests = results.length;
+    const passedTests = results.filter(r => r.passed).length;
+    const failedTests = totalTests - passedTests;
+    const averageAccuracy = totalTests === 0 ? 0 : results.reduce((sum, r) => sum + r.accuracy, 0) / totalTests;
+
+    // Group by armor
+    const deviationStackByArmor: Record<string, DeviationComputationValue> = {};
+    const deviationStackByAmmo: Record<string, DeviationComputationValue> = {};
+
+    results.forEach(result => {
+        const armorId = result.testCase.armor?.id || UNARMORED;
+        const ammoId = result.testCase.ammo;
+
+        // Armor grouping
+        if (!deviationStackByArmor[armorId]) {
+            deviationStackByArmor[armorId] = {
+                armorDamageDeviations: [],
+                bodyDamageDeviations: [],
+                testCount: 0
+            };
+        }
+        deviationStackByArmor[armorId].armorDamageDeviations.push(result.deviation.armorDamage.percentage);
+        deviationStackByArmor[armorId].bodyDamageDeviations.push(result.deviation.bodyDamage.percentage);
+        deviationStackByArmor[armorId].testCount++;
+
+        // Ammo grouping
+        if (!deviationStackByAmmo[ammoId]) {
+            deviationStackByAmmo[ammoId] = {
+                armorDamageDeviations: [],
+                bodyDamageDeviations: [],
+                testCount: 0
+            };
+        }
+        deviationStackByAmmo[ammoId].armorDamageDeviations.push(result.deviation.armorDamage.percentage);
+        deviationStackByAmmo[ammoId].bodyDamageDeviations.push(result.deviation.bodyDamage.percentage);
+        deviationStackByAmmo[ammoId].testCount++;
+    });
+
+    const deviationByArmor: Record<string, DeviationValue> = {};
+    const deviationByAmmo: Record<string, DeviationValue> = {};
+
+    // Calculate averages
+    Object.keys(deviationStackByArmor).forEach(armorId => {
+        const data = deviationStackByArmor[armorId];
+        deviationByArmor[armorId] = {
+            averageArmorDamageDeviation: data.armorDamageDeviations.reduce((a: number, b: number) => a + b, 0) / data.testCount,
+            averageBodyDamageDeviation: data.bodyDamageDeviations.reduce((a: number, b: number) => a + b, 0) / data.testCount,
+            testCount: data.testCount
+        };
+    });
+
+    Object.keys(deviationStackByAmmo).forEach(ammoId => {
+        const data = deviationStackByAmmo[ammoId];
+        deviationByAmmo[ammoId] = {
+            averageArmorDamageDeviation: data.armorDamageDeviations.reduce((a: number, b: number) => a + b, 0) / data.testCount,
+            averageBodyDamageDeviation: data.bodyDamageDeviations.reduce((a: number, b: number) => a + b, 0) / data.testCount,
+            testCount: data.testCount
+        };
+    });
+
+    return {
+        totalTests,
+        passedTests,
+        failedTests,
+        averageAccuracy,
+        deviationByArmor,
+        deviationByAmmo
+    };
+}
+
 export default function CombatSimDebugPage() {
     const [testCases, setTestCases] = useState<SingleShotTestCase[]>([]);
     const [testResults, setTestResults] = useState<TestRunResult[]>([]);
     const [isRunning, setIsRunning] = useState(false);
     const [items, setItems] = useState<Item[]>([]);
     const [loading, setLoading] = useState(true);
-    const [summary, setSummary] = useState<TestSummary | null>(null);
     const [filterPenetrating, setFilterPenetrating] = useState<PenetratingFilter>('all');
     const [filterStatus, setFilterStatus] = useState<StatusFilter>('all');
     const [filterArmor, setFilterArmor] = useState<string>('all');
@@ -88,9 +159,7 @@ export default function CombatSimDebugPage() {
         loadData();
     }, []);
 
-    useEffect(() => {
-        calculateSummary(filteredResults)
-    }, [filteredResults]);
+    const summary = useMemo(() => calculateSummary(filteredResults), [filteredResults]);
 
 
     // Run single test
@@ -178,80 +247,7 @@ export default function CombatSimDebugPage() {
         }
 
         setTestResults(results);
-        calculateSummary(results);
         setIsRunning(false);
-    };
-
-    // Calculate summary statistics
-    const calculateSummary = (results: TestRunResult[]) => {
-        const totalTests = results.length;
-        const passedTests = results.filter(r => r.passed).length;
-        const failedTests = totalTests - passedTests;
-        const averageAccuracy = results.reduce((sum, r) => sum + r.accuracy, 0) / totalTests;
-
-        // Group by armor
-        const deviationStackByArmor: Record<string, DeviationComputationValue> = {};
-        const deviationStackByAmmo: Record<string, DeviationComputationValue> = {};
-
-        results.forEach(result => {
-            const armorId = result.testCase.armor?.id || UNARMORED;
-            const ammoId = result.testCase.ammo;
-
-            // Armor grouping
-            if (!deviationStackByArmor[armorId]) {
-                deviationStackByArmor[armorId] = {
-                    armorDamageDeviations: [],
-                    bodyDamageDeviations: [],
-                    testCount: 0
-                };
-            }
-            deviationStackByArmor[armorId].armorDamageDeviations.push(result.deviation.armorDamage.percentage);
-            deviationStackByArmor[armorId].bodyDamageDeviations.push(result.deviation.bodyDamage.percentage);
-            deviationStackByArmor[armorId].testCount++;
-
-            // Ammo grouping
-            if (!deviationStackByAmmo[ammoId]) {
-                deviationStackByAmmo[ammoId] = {
-                    armorDamageDeviations: [],
-                    bodyDamageDeviations: [],
-                    testCount: 0
-                };
-            }
-            deviationStackByAmmo[ammoId].armorDamageDeviations.push(result.deviation.armorDamage.percentage);
-            deviationStackByAmmo[ammoId].bodyDamageDeviations.push(result.deviation.bodyDamage.percentage);
-            deviationStackByAmmo[ammoId].testCount++;
-        });
-
-        const deviationByArmor: Record<string, DeviationValue> = {};
-        const deviationByAmmo: Record<string, DeviationValue> = {};
-
-        // Calculate averages
-        Object.keys(deviationStackByArmor).forEach(armorId => {
-            const data = deviationStackByArmor[armorId];
-            deviationByArmor[armorId] = {
-                averageArmorDamageDeviation: data.armorDamageDeviations.reduce((a: number, b: number) => a + b, 0) / data.testCount,
-                averageBodyDamageDeviation: data.bodyDamageDeviations.reduce((a: number, b: number) => a + b, 0) / data.testCount,
-                testCount: data.testCount
-            };
-        });
-
-        Object.keys(deviationStackByAmmo).forEach(ammoId => {
-            const data = deviationStackByAmmo[ammoId];
-            deviationByAmmo[ammoId] = {
-                averageArmorDamageDeviation: data.armorDamageDeviations.reduce((a: number, b: number) => a + b, 0) / data.testCount,
-                averageBodyDamageDeviation: data.bodyDamageDeviations.reduce((a: number, b: number) => a + b, 0) / data.testCount,
-                testCount: data.testCount
-            };
-        });
-
-        setSummary({
-            totalTests,
-            passedTests,
-            failedTests,
-            averageAccuracy,
-            deviationByArmor,
-            deviationByAmmo
-        });
     };
 
     // Export results

@@ -11,6 +11,8 @@ const eslintConfig = [
       "out/**",
       "build/**",
       "next-env.d.ts",
+      // Separate agent worktrees are not source for this checkout.
+      ".claude/worktrees/**",
       // Vendored design handoff export, not project source
       "VR extraction shooter webapp redesign/**",
     ],

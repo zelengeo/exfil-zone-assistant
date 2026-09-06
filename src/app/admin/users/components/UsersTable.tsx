@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useDebounce } from '@/hooks/useDebounce';
 import {
@@ -63,7 +63,8 @@ type RoleFilterType = UserApiBase['Request']['role'] | 'all';
 export function UsersTable() {
     const router = useRouter();
     const [users, setUsers] = useState<UserListItem[]>([]);
-    const [loading, setLoading] = useState(true);
+    const [loadedRequest, setLoadedRequest] = useState<string | null>(null);
+    const [refreshVersion, setRefreshVersion] = useState(0);
     const [searchTerm, setSearchTerm] = useState('');
     const [roleFilter, setRoleFilter] = useState<RoleFilterType>('all');
     const [sortBy, setSortBy] = useState<UserApiBase['Request']['sortBy']>('createdAt');
@@ -78,42 +79,38 @@ export function UsersTable() {
 
     const debouncedSearchTerm = useDebounce(searchTerm, 300);
 
-    const fetchUsers = useCallback(async () => {
-        setLoading(true);
-        try {
-            const params = createSearchParams(
-                UserApi.Admin.List.Request,
-                {
-                    page: currentPage,
-                    limit: ITEMS_PER_PAGE,
-                    sortBy,
-                    order: sortOrder,
-                    ...(debouncedSearchTerm && { search: debouncedSearchTerm }),
-                    ...(roleFilter !== 'all' && { role: roleFilter }),
-                }
-                );
+    const query = createSearchParams(UserApi.Admin.List.Request, {
+        page: currentPage,
+        limit: ITEMS_PER_PAGE,
+        sortBy,
+        order: sortOrder,
+        ...(debouncedSearchTerm && { search: debouncedSearchTerm }),
+        ...(roleFilter !== 'all' && { role: roleFilter }),
+    }).toString();
+    const requestKey = JSON.stringify([query, refreshVersion]);
+    const loading = loadedRequest !== requestKey;
 
-            const response = await fetch(`/api/admin/users?${params}`);
-            const data: UserApiBase['Response'] = await response.json();
-
-            if (response.ok) {
+    useEffect(() => {
+        const controller = new AbortController();
+        fetch(`/api/admin/users?${query}`, { signal: controller.signal })
+            .then(async response => {
+                if (!response.ok) throw new Error('Failed to load users');
+                const data: UserApiBase['Response'] = await response.json();
+                if (controller.signal.aborted) return;
                 setUsers(data.users);
                 setTotalPages(data.pagination.pages);
                 setTotalUsers(data.pagination.total);
-            }
-        } catch (error) {
-            console.error('Failed to fetch users:', error);
-            toast.error('Error',{
-                description: 'Failed to load users',
+            })
+            .catch((error: unknown) => {
+                if (controller.signal.aborted) return;
+                console.error('Failed to fetch users:', error);
+                toast.error('Error', { description: 'Failed to load users' });
+            })
+            .finally(() => {
+                if (!controller.signal.aborted) setLoadedRequest(requestKey);
             });
-        } finally {
-            setLoading(false);
-        }
-    }, [currentPage, debouncedSearchTerm, roleFilter, sortBy, sortOrder]);
-
-    useEffect(() => {
-        fetchUsers();
-    }, [fetchUsers]);
+        return () => controller.abort();
+    }, [query, requestKey]);
 
     // const handleSort = (field: string) => {
     //     if (sortBy === field) {
@@ -137,7 +134,7 @@ export function UsersTable() {
                 toast.success('Success',{
                     description: 'User deleted successfully',
                 });
-                fetchUsers();
+                setRefreshVersion(version => version + 1);
             } else {
                 throw new Error('Failed to delete user');
             }

@@ -14,6 +14,21 @@ import { ChevronLeft, Clock, User, Calendar, Tag } from 'lucide-react';
 import React from "react";
 import {GuideTag} from "@/types/guides";
 
+// Keep component identities stable across page renders.
+const guideComponents: Record<string, React.ComponentType> = Object.fromEntries(
+    getAllGuideSlugs().map(slug => [slug, dynamic(
+        () => import(`@/content/guides/${slug}`).then(mod => mod.default),
+        {
+            loading: () => (
+                <div className="flex justify-center items-center min-h-[400px]">
+                    <div className="text-tan-400">Loading guide content...</div>
+                </div>
+            ),
+            ssr: true,
+        },
+    )]),
+);
+
 // Generate static params for all guides
 export async function generateStaticParams() {
     const slugs = getAllGuideSlugs();
@@ -111,7 +126,6 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
         notFound();
     }
 
-    let content: React.ReactNode;
 
     // if (guide.contentType === 'markdown') {
     //     // Load markdown content
@@ -142,25 +156,8 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
     //         />
     //     );
     // } else {}
-    // Dynamically import component
-    try {
-        const GuideComponent = dynamic(
-            () => import(`@/content/guides/${guide.slug}`).then(mod => mod.default),
-            {
-                loading: () => (
-                    <div className="flex justify-center items-center min-h-[400px]">
-                        <div className="text-tan-400">Loading guide content...</div>
-                    </div>
-                ),
-                ssr: true
-            }
-        );
-        content = <GuideComponent />;
-    } catch (error) {
-        console.error(`Error loading component for ${guide.slug}:`, error);
-        notFound();
-    }
-
+    const GuideComponent = guideComponents[guide.slug];
+    const content = <GuideComponent />;
 
     // Get related guides
     const relatedGuides = getRelatedGuides(guide.slug, 3);
