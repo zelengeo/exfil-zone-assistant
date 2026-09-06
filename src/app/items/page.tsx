@@ -5,6 +5,7 @@ import Layout from '@/components/layout/Layout';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/items' },
     title: 'Item Database',
     description: 'Complete weapon and equipment database for Contractors Showdown ExfilZone. Stats, attachments, and detailed information for all items.',
     keywords: ['item wiki', 'weapon database', 'equipment guide', 'weapon stats', 'attachments', 'Contractors items'],

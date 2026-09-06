@@ -1,72 +1,34 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
 import { fetchTasks } from '@/services/TaskService';
-import {guidesConfig} from "@/config/guides";
+import { fetchItemsData } from '@/services/ItemService';
+import { absoluteUrl, DATA_RELEASE_DATE } from '@/lib/seo';
+import { guidesConfig } from '@/config/guides';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const baseUrl = 'https://www.exfil-zone-assistant.app';
-
-    const lastModified = new Date('2025-07-03');
-
-    // Generate task page entries
-    const taskPages = Object.keys(await fetchTasks()).map((taskId) => ({
-        url: `${baseUrl}/tasks/${taskId}`,
-        lastModified: lastModified,
-        changeFrequency: 'monthly' as const,
-        priority: 0.5,
-    }));
-
-    const guidePages = guidesConfig.map((guide) => ({
-        url: `${baseUrl}/guides/${guide.slug}`,
-        lastModified: new Date( guide.updatedAt ?? guide.publishedAt)  ,
-        changeFrequency: 'monthly' as const,
-        priority: 0.6, // Guides are generally important content
-    }));
-
-    // Add other static pages
-    const staticPages = [
-        {
-            url: baseUrl,
-            lastModified: lastModified,
-            changeFrequency: 'monthly' as const,
-            priority: 1,
-        },
-        {
-            url: `${baseUrl}/combat-sim`,
-            lastModified: lastModified,
-            changeFrequency: 'monthly' as const,
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/gunsmith`,
-            lastModified: lastModified,
-            changeFrequency: 'monthly' as const,
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/tasks`,
-            lastModified: lastModified,
-            changeFrequency: 'monthly' as const,
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/items`,
-            lastModified: lastModified,
-            changeFrequency: 'monthly' as const,
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/hideout-upgrades`,
-            lastModified: lastModified,
-            changeFrequency: 'monthly' as const,
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/guides`,
-            lastModified: lastModified,
-            changeFrequency: 'weekly' as const,
-            priority: 0.9,
-        },
+    const [tasks, { items }] = await Promise.all([fetchTasks(), fetchItemsData()]);
+    const staticPages: MetadataRoute.Sitemap = [
+        { url: absoluteUrl('/') },
+        { url: absoluteUrl('/combat-sim') },
+        { url: absoluteUrl('/gunsmith'), lastModified: '2026-09-06' },
+        { url: absoluteUrl('/tasks'), lastModified: DATA_RELEASE_DATE },
+        { url: absoluteUrl('/items'), lastModified: DATA_RELEASE_DATE },
+        { url: absoluteUrl('/hideout-upgrades') },
+        { url: absoluteUrl('/guides') },
     ];
 
-    return [...staticPages, ...taskPages, ...guidePages];
+    return [
+        ...staticPages,
+        ...items.map(item => ({
+            url: absoluteUrl(`/items/${item.id}`),
+            lastModified: DATA_RELEASE_DATE,
+        })),
+        ...Object.keys(tasks).map(id => ({
+            url: absoluteUrl(`/tasks/${id}`),
+            lastModified: DATA_RELEASE_DATE,
+        })),
+        ...guidesConfig.map(guide => ({
+            url: absoluteUrl(`/guides/${guide.slug}`),
+            lastModified: guide.updatedAt ?? guide.publishedAt,
+        })),
+    ];
 }

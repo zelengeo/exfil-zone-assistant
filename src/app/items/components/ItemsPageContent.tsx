@@ -2,7 +2,8 @@
 
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { LayoutGrid, Rows3, Search, SlidersHorizontal } from 'lucide-react';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
+import { useHydrated, useUrlSearchParams, UrlSearchParamsObserver } from '@/hooks/useUrlSearchParams';
 import Layout from '@/components/layout/Layout';
 import ItemCard from '@/app/items/components/ItemCard';
 import ItemRow from '@/app/items/components/ItemRow';
@@ -39,9 +40,9 @@ import { useDensity } from '@/app/items/hooks/useDensity';
 
 export default function ItemsPageContent() {
     const { items, getItemById } = useFetchItems();
-    const router = useRouter();
     const pathname = usePathname();
-    const searchParams = useSearchParams();
+    const searchParams = useUrlSearchParams();
+    const hydrated = useHydrated();
     const [density, setDensity] = useDensity();
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -49,15 +50,16 @@ export default function ItemsPageContent() {
 
     // The search box is local and debounced into the URL: typing should not push a history entry
     // per keystroke.
-    const [searchDraft, setSearchDraft] = useState(filters.search);
-    const debouncedSearch = useDebounce(searchDraft, 200);
+    const [searchDraft, setSearchDraft] = useState({ value: filters.search, source: filters.search });
+    const searchValue = searchDraft.source === filters.search ? searchDraft.value : filters.search;
+    const debouncedSearch = useDebounce(searchValue, 200);
 
     const write = useCallback(
         (next: ItemFilters) => {
             const query = serializeFilters(next);
-            router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false });
+            window.history.replaceState(null, '', query ? `${pathname}?${query}` : pathname);
         },
-        [pathname, router],
+        [pathname],
     );
 
     const update = useCallback(
@@ -66,7 +68,8 @@ export default function ItemsPageContent() {
     );
 
     useEffect(() => {
-        if (debouncedSearch !== filters.search) update({ search: debouncedSearch });
+        if (hydrated && searchDraft.source === filters.search && debouncedSearch === searchDraft.value &&
+            debouncedSearch !== filters.search) update({ search: debouncedSearch });
         // Only the debounced value should drive this, not every filter change.
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [debouncedSearch]);
@@ -88,7 +91,7 @@ export default function ItemsPageContent() {
     const expandGroups = filters.search.length > 0;
     const { groups, singles } = isWeaponsView
         ? groupWeaponsByFamily(visible)
-        : { groups: [], singles: visible };
+        : { groups: [], singles: hydrated ? visible : visible.slice(0, 40) };
 
     const categoryKey = categorySortLabel(filters.category);
     const sortOptions: { key: SortKey; label: string }[] = [
@@ -109,6 +112,7 @@ export default function ItemsPageContent() {
 
     return (
         <Layout>
+            <UrlSearchParamsObserver />
             <div className="container mx-auto px-4 py-8">
                 <header className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-5">
                     <h1 className="font-display text-3xl md:text-4xl text-ink-hi leading-none">ITEMS</h1>
@@ -128,8 +132,8 @@ export default function ItemsPageContent() {
                         <input
                             type="search"
                             placeholder="Search items…"
-                            value={searchDraft}
-                            onChange={(e) => setSearchDraft(e.target.value)}
+                            value={searchValue}
+                            onChange={(e) => setSearchDraft({ value: e.target.value, source: filters.search })}
                             aria-label="Search items by name or description"
                             className="w-full py-2 pl-9 pr-3 bg-steel-750 border border-line-600 focus:border-line-400 focus:outline-none text-sm text-ink-100 placeholder-ink-700"
                         />
@@ -217,7 +221,7 @@ export default function ItemsPageContent() {
                                 {filters.subcategory || (filters.category && itemCategories[filters.category]?.name) || 'All items'}
                             </span>
                             <span className="font-mono tabular text-xs text-ink-600">
-                                {visible.length.toLocaleString('en-US')} shown
+                                {visible.length.toLocaleString('en-US')} matches
                             </span>
                         </div>
 

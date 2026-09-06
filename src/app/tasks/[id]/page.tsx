@@ -4,7 +4,10 @@ import {notFound} from 'next/navigation';
 import Layout from '@/components/layout/Layout';
 import TaskPageContent from './components/TaskPageContent';
 import {fetchTasks} from '@/services/TaskService';
-import {getVendor} from '@/lib/vendors';
+import { breadcrumbData, taskMetadata } from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
+
+export const dynamicParams = false;
 
 interface TaskPageProps {
     params: Promise<{
@@ -12,50 +15,12 @@ interface TaskPageProps {
     }>;
 }
 
-// Generate metadata for each task page
 export async function generateMetadata({params}: TaskPageProps): Promise<Metadata> {
     const {id} = await params;
-    const task = (await fetchTasks())[id];
-    if (!task) {
-        return {
-            title: 'Task Not Found',
-            description: 'The requested task could not be found.',
-        };
-    }
-
-    const vendor = getVendor(task.corpId);
-
-    return {
-        title: `${task.name} - Task Guide`,
-        description: `Complete guide for "${task.name}" task in Contractors Showdown ExfilZone. View objectives, requirements, and tips.`,
-        keywords: [
-            task.name,
-            'ExfilZone mission',
-            'task walkthrough',
-            ...task.type || [],
-        ],
-        openGraph: {
-            title: `${task.name} Guide - ExfilZone Assistant`,
-            description: `Complete guide for "${task.name}" including objectives, rewards, and prerequisites.`,
-            type: 'website',
-            images: [
-                {
-                    url: vendor?.ogImage || '/og/og-image-task-manager.jpg',
-                    width: 1200,
-                    height: 630,
-                    alt: `${task.name} Task Guide - ExfilZone Assistant`,
-                }
-            ],
-        },
-        twitter: {
-            card: 'summary_large_image',
-            title: `${task.name} Guide - ExfilZone Assistant`,
-            description: `Complete guide with objectives, rewards, and tips for this task.`,
-        },
-        alternates: {
-            canonical: `/tasks/${id}`,
-        },
-    };
+    const tasks = await fetchTasks();
+    const task = tasks[id];
+    if (!task) notFound();
+    return taskMetadata(task, Object.values(tasks));
 }
 
 // Generate static params for all tasks
@@ -88,6 +53,11 @@ export default async function TaskPage({params}: TaskPageProps) {
 
     return (
         <Layout fullWidth containerClassName="w-full max-w-[1100px] mx-auto px-3 sm:px-4 py-4">
+            <JsonLd data={breadcrumbData([
+                { name: 'Home', path: '/' },
+                { name: 'Tasks', path: '/tasks' },
+                { name: task.name, path: `/tasks/${id}` },
+            ])} />
             <Suspense fallback={<TaskLoading/>}>
                 <TaskPageContent taskId={id}/>
             </Suspense>

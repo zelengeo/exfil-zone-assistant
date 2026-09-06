@@ -1,6 +1,6 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 import Layout from '@/components/layout/Layout';
@@ -11,7 +11,7 @@ import {
     getCategoryById,
 } from '@/types/items';
 import RarityBadge from '@/components/items/RarityBadge';
-import { getItemById, getItemsByCategory } from '@/services/ItemService';
+import { fetchItemsData, getItemById, getItemsByCategory } from '@/services/ItemService';
 import {
     isAmmunition,
     isAnyItem,
@@ -36,9 +36,10 @@ import ProvisionsSpecificStats from '@/app/items/[id]/components/ProvisionsSpeci
 import TaskItemsSpecificStats from '@/app/items/[id]/components/TaskItemsSpecificStats';
 import BackpackSpecificStats from '@/app/items/[id]/components/BackpackSpecificStats';
 import HolsterSpecificStats from '@/app/items/[id]/components/HolsterSpecificStats';
-import VendorLedger from '@/components/trade/VendorLedger';
-import WantedInBarter from '@/components/trade/WantedInBarter';
-import { useTradeIndex } from '@/app/items/hooks/useTradeIndex';
+import { buildBarterIndex } from '@/lib/trade';
+import { breadcrumbData, itemDescription, itemMetadata } from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
+import ItemTrade from './components/ItemTrade';
 import { ItemImage } from '@/app/items/components/ItemImage';
 
 /**
@@ -91,77 +92,42 @@ interface PageProps {
     params: Promise<{ id: string }>;
 }
 
-export default function ItemDetail({ params }: PageProps) {
-    const { id } = React.use(params);
-    const [item, setItem] = useState<Item | null>(null);
-    // The item's own category, for ranking its figures against what it competes with. Read in the
-    // same pass and off the same cache `getItemById` has already populated, so it costs no second
-    // round trip and shares this page's one loading state rather than growing another.
-    const [peers, setPeers] = useState<Item[]>([]);
-    const [loading, setLoading] = useState(true);
-    const trade = useTradeIndex();
+export const dynamicParams = false;
 
-    useEffect(() => {
-        let live = true;
-        const loadItem = async () => {
-            try {
-                const itemData = await getItemById(id);
-                if (!live) return;
-                setItem(itemData || null);
-                if (itemData) {
-                    const siblings = await getItemsByCategory(itemData.category);
-                    if (live) setPeers(siblings);
-                }
-            } catch (error) {
-                console.error('Failed to load item:', error);
-            } finally {
-                if (live) setLoading(false);
-            }
-        };
+export async function generateStaticParams() {
+    return (await fetchItemsData()).items.map(item => ({ id: item.id }));
+}
 
-        loadItem();
-        return () => { live = false; };
-    }, [id]);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const item = await getItemById((await params).id);
+    if (!item) notFound();
+    return itemMetadata(item);
+}
 
-    if (loading) {
-        return (
-            <Layout>
-                <div className="container mx-auto px-4 py-8">
-                    <div className="flex items-center justify-center min-h-96">
-                        <div className="bg-steel-900 border border-line-900 p-8 text-center">
-                            <div className="eyebrow mb-2">Loading</div>
-                            <p className="text-sm text-ink-500">Retrieving item data…</p>
-                        </div>
-                    </div>
-                </div>
-            </Layout>
-        );
-    }
-
-    if (!item) {
-        return (
-            <Layout>
-                <div className="container mx-auto px-4 py-8">
-                    <div className="flex items-center justify-center min-h-96">
-                        <div className="bg-steel-900 border border-line-900 border-l-2 border-l-ember p-8 text-center">
-                            <div className="eyebrow text-ember mb-2">Not found</div>
-                            <p className="text-sm text-ink-400">No item is published under that id.</p>
-                        </div>
-                    </div>
-                </div>
-            </Layout>
-        );
-    }
-
+export default async function ItemDetail({ params }: PageProps) {
+    const { id } = await params;
+    const item = await getItemById(id);
+    if (!item) notFound();
+    const peers = await getItemsByCategory(item.category);
+    const { items, itemMap } = await fetchItemsData();
+    const wantedIn = buildBarterIndex(items).get(id) ?? [];
+    const referenceIds = new Set([
+        ...(item.stats.buyOffers ?? []).flatMap(offer => (offer.exchange ?? []).map(cost => cost.itemId)),
+        ...wantedIn.map(use => use.itemId),
+    ]);
+    const references = [...referenceIds].flatMap(id => {
+        const reference = itemMap.get(id);
+        return reference ? [{ id, name: reference.name, images: reference.images }] : [];
+    });
     const category = getCategoryById(item.category);
-    const wantedIn = trade.wantedIn(item.id);
-
-    // Misc items have no specifications and often no description, which would leave the right
-    // column an empty half-page. Where there is nothing to put in it, do not reserve it.
-    const hasEvidence = Boolean(item.description) || (!isMisc(item) && isAnyItem(item)) || Boolean(item.tips);
 
     return (
         <Layout>
+            <JsonLd data={breadcrumbData([
+                { name: 'Home', path: '/' },
+                { name: 'Items', path: '/items' },
+                { name: item.name, path: `/items/${item.id}` },
+            ])} />
             <div className="container mx-auto px-4 py-8">
                 {/* Breadcrumb navigation */}
                 <nav className="flex items-center gap-2 mb-6 text-xs text-ink-600">
@@ -201,14 +167,10 @@ export default function ItemDetail({ params }: PageProps) {
                 </header>
 
                 <div
-                    className={
-                        hasEvidence
-                            ? 'grid grid-cols-1 lg:grid-cols-[minmax(0,340px)_minmax(0,1fr)] gap-6'
-                            : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start'
-                    }
+                    className="grid grid-cols-1 lg:grid-cols-[minmax(0,340px)_minmax(0,1fr)] gap-6"
                 >
                     {/* Left column - the subject */}
-                    <div className={hasEvidence ? 'space-y-6' : 'contents'}>
+                    <div className="space-y-6">
                         <div className="bg-steel-900 border border-line-900 p-4">
                             <div className="aspect-square relative bg-steel-850 border border-line-800 plot-grid overflow-hidden">
                                 <ItemImage
@@ -226,20 +188,15 @@ export default function ItemDetail({ params }: PageProps) {
                             </div>
                         </div>
 
-                        <VendorLedger stats={item.stats} resolve={trade.itemOf} />
-
-                        <WantedInBarter uses={wantedIn} resolve={trade.itemOf} />
+                        <ItemTrade stats={item.stats} uses={wantedIn} references={references} />
                     </div>
 
                     {/* Right column - the evidence */}
-                    {hasEvidence && (
                     <div className="space-y-6 min-w-0">
-                        {item.description && (
-                            <section className="bg-steel-900 border border-line-900 p-5">
-                                <SectionHeading>Description</SectionHeading>
-                                <p className="text-sm text-ink-300 leading-relaxed">{item.description}</p>
-                            </section>
-                        )}
+                        <section className="bg-steel-900 border border-line-900 p-5">
+                            <SectionHeading>Description</SectionHeading>
+                            <p className="text-sm text-ink-300 leading-relaxed">{itemDescription(item)}</p>
+                        </section>
 
                         {!isMisc(item) && isAnyItem(item) && (
                             <section className="bg-steel-900 border border-line-900 p-5">
@@ -255,7 +212,6 @@ export default function ItemDetail({ params }: PageProps) {
                             </section>
                         )}
                     </div>
-                    )}
                 </div>
             </div>
         </Layout>

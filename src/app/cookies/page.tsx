@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import React from 'react';
 import Layout from '@/components/layout/Layout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -5,6 +6,11 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Badge } from '@/components/ui/badge';
 import { Cookie, Shield, BarChart3, ExternalLink } from 'lucide-react';
 import { SiDiscord, SiGoogle, SiYoutube } from '@icons-pack/react-simple-icons';
+
+export const metadata: Metadata = {
+    title: 'Cookie Policy – ExfilZone Assistant',
+    alternates: { canonical: '/cookies' },
+};
 
 export default function CookiePolicyPage() {
     const lastUpdated = "July 2025";

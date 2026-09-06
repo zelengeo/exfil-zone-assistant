@@ -7,16 +7,21 @@ before adding a card, stats block, rarity treatment or grade. This file owns the
 
 ## The URL is the state
 
-Filters are not React state. `ItemsPageContent` reads `useSearchParams()` and derives them through
+Filters are not React state. `ItemsPageContent` reads `useUrlSearchParams()` and derives them through
 `parseFilters` in [`utils/filters.ts`](utils/filters.ts):
 
 ```typescript
 const filters = useMemo(() => parseFilters(searchParams), [searchParams]);
 ```
 
-Changing a filter pushes a new URL; the render follows from it. That is what makes a filtered view
+Changing a filter replaces the URL with `window.history.replaceState`; the render follows from it. That is what makes a filtered view
 shareable and survivable across a reload, and it is why nothing here holds a duplicate copy of the
 filter state. Add a filter by teaching `parseFilters` about it, not by adding a `useState`.
+
+`UrlSearchParamsObserver` keeps Next's query subscription in a separate Suspense boundary; the
+store's server snapshot is the unfiltered URL. Keep it beside the content, so the query subscription
+cannot replace the catalogue with a loading fallback during prerender. Only the first 40 cards
+render before hydration; the browser loads the full catalogue through the existing data cache.
 
 ## Detail pages dispatch on the discriminant
 
@@ -24,6 +29,10 @@ filter state. Add a filter by teaching `parseFilters` about it, not by adding a 
 `WeaponSpecificStats`, `AmmunitionSpecificStats`, `ArmorSpecificStats`, `AttachmentSpecificStats`,
 `BackpackSpecificStats`, `GrenadeSpecificStats`, `HolsterSpecificStats`, `MedicineSpecificStats`,
 `ProvisionsSpecificStats`, `TaskItemsSpecificStats`.
+
+The route loads the item on the server and generates every published id at build time. Unknown ids
+return 404. Keep metadata and the initial heading, image, description and statistics on that path;
+`ItemTrade` receives only the references needed by its offers, not a serialized copy of the catalogue.
 
 Choose by narrowing on `item.category` — never by casting. A cast past a wrong discriminant does not
 throw; it renders a stat block full of `undefined`. `StatLine` is the shared row, so a new stats

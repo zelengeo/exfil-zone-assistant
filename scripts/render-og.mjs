@@ -50,7 +50,7 @@ const cardPresets = {
     benefit: 'Know where to aim and how many rounds it takes.',
     status: 'AIMED SHOT // LIVE LOADOUT',
     screen: {
-      path: ['public', 'og', 'art', 'combat-sim-ui-capture.png'],
+      path: ['public', 'og', 'art', 'combat-sim-ui-capture-2.png'],
       left: 475,
       top: 135,
       width: 588,
@@ -105,6 +105,22 @@ const cardPresets = {
     descriptor: 'FIELD MANUALS',
     benefit: 'Learn the systems that keep you alive.',
     status: 'KNOWLEDGE // FIELD TESTED',
+  },
+  'guide-damage': {
+    eyebrow: 'FIELD MANUAL / COMBAT',
+    titlePrimary: 'DAMAGE',
+    titleAccent: '',
+    descriptor: 'STEP BY STEP',
+    benefit: 'From pulling the trigger to losing health.',
+    status: 'SHOT RESOLUTION // INTERACTIVE GUIDE',
+  },
+  'guide-armor': {
+    eyebrow: 'FIELD MANUAL / PROTECTION',
+    titlePrimary: 'ARMOR',
+    titleAccent: '',
+    descriptor: 'PENETRATION',
+    benefit: 'Penetration, wear, and the gaps in your armor.',
+    status: 'PROTECTION MODEL // FIELD GUIDE',
   },
   'vendor-ark': {
     eyebrow: 'FIELD SYSTEM / TASKS',

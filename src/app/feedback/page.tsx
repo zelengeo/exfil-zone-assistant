@@ -6,6 +6,7 @@ import {ChevronDown, MessageSquare} from 'lucide-react';
 import {FeedbackForm} from "@/app/feedback/components/FeedbackForm";
 
 export const metadata = {
+    alternates: { canonical: '/feedback' },
     title: 'Feedback | ExfilZone Assistant',
     description: 'Contribute data, share your feedback, suggestions, and bug reports to help us improve the ExfilZone Assistant.',
     openGraph: {

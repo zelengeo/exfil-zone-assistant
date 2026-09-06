@@ -233,6 +233,7 @@ function RelatedTask({
 export default function TaskDetailPane({
     task, progress, hydrated, onToggleObjective, onSetDone, onSelectTask, variant = 'pane',
 }: TaskDetailPaneProps) {
+    const Heading = variant === 'page' ? 'h1' : 'h2';
     const owner = ownerOf(task);
     const face = ownerFace(owner);
     const state = stateOf(task, progress);
@@ -295,9 +296,9 @@ export default function TaskDetailPane({
                     )}
                 </div>
 
-                <h2 className="mt-3.5 font-display text-2xl shell:text-3xl font-extrabold uppercase tracking-tight text-ink-hi leading-none">
+                <Heading className="mt-3.5 font-display text-2xl shell:text-3xl font-extrabold uppercase tracking-tight text-ink-hi leading-none">
                     {task.name}
-                </h2>
+                </Heading>
 
                 {task.description && (
                     <p className="mt-3 text-[12.5px] leading-relaxed text-ink-400 max-w-[70ch]">

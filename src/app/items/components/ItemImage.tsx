@@ -62,17 +62,8 @@ export const ItemImage: React.FC<ItemImageProps> = ({
     return (
         <>
             <div className={cn('relative', showZoom && 'cursor-pointer group', className)}>
-                {imageLoading && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-steel-850">
-                        <div className="w-6 h-6 border border-line-500 border-t-transparent rounded-full animate-spin" />
-                    </div>
-                )}
-
                 <div
-                    className={cn(
-                        'relative w-full h-full transition-opacity',
-                        imageLoading ? 'opacity-0' : 'opacity-100',
-                    )}
+                    className="relative w-full h-full"
                     onClick={toggleZoom}
                 >
                     <Image

@@ -1,7 +1,13 @@
+import type { Metadata } from 'next';
 // app/privacy/page.tsx
 import Layout from "@/components/layout/Layout";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
 import React from "react";
+
+export const metadata: Metadata = {
+    title: 'Privacy Policy – ExfilZone Assistant',
+    alternates: { canonical: '/privacy' },
+};
 
 export default function PrivacyPolicyPage() {
     return (

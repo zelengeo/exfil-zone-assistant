@@ -5,7 +5,7 @@ import Layout from '@/components/layout/Layout';
 import {LucideIcon, Search, Filter, Clock, Tag, Star, X, AlertCircle} from 'lucide-react';
 import * as Icons from 'lucide-react';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+import { useUrlSearchParams, UrlSearchParamsObserver } from '@/hooks/useUrlSearchParams';
 import { guidesConfig, guideTags, getFeaturedGuides } from '@/config/guides';
 import {GuideMetadata} from "@/types/guides";
 
@@ -51,7 +51,7 @@ const getTagColor = (color?: string) => {
 };
 
 export default function GuidesPageContent() {
-    const searchParams = useSearchParams();
+    const searchParams = useUrlSearchParams();
     const selectedTag = searchParams.get('tag');
 
     const [searchQuery, setSearchQuery] = useState('');
@@ -87,6 +87,7 @@ export default function GuidesPageContent() {
     const hasActiveFilters = searchQuery || selectedTag || selectedDifficulty;
     return (
         <Layout>
+            <UrlSearchParamsObserver />
             <div className="container mx-auto px-4 py-8">
                 {/* Page Header */}
                 <div className="mb-8">

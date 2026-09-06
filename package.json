@@ -31,6 +31,7 @@
     "test:watch": "vitest",
     "render:og": "node scripts/render-og.mjs",
     "verify": "npm run lint && npm run type-check && npm test && npm run validate-data && npm run build",
+    "verify:seo": "node scripts/verify-seo.mjs",
     "verify:local": "npm run db:prepare:local && tsx scripts/run-with-local-mongodb.ts verify"
   },
   "dependencies": {

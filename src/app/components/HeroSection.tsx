@@ -20,14 +20,13 @@ interface Slide {
     };
 }
 
-// Define your slides here
 const slides: Slide[] = [
     {
         id: "home",
         title: "EXFILZONE",
         subtitle: "VR EXTRACTION ASSISTANT",
         description: "Your ultimate tactical companion for the VR extraction shooter experience",
-        backgroundImage: "/images/hero/press_img_1920x1080.webp", // Add your image
+        backgroundImage: "/og/art/default-base.png",
         ctaText: "Start Here",
         ctaLink: "/guides/combat-sim-usage",
     },
@@ -36,7 +35,7 @@ const slides: Slide[] = [
         title: "COMBAT SIMULATOR",
         subtitle: "DAMAGE CALCULATION",
         description: "Compare performance of each weapon and ammunition against any armor",
-        backgroundImage: "/images/hero/sim_img.webp", // Add your image
+        backgroundImage: "/og/art/combat-sim-ui-capture-2.png",
         ctaText: "Check TTK",
         ctaLink: "/combat-sim"
     },
@@ -45,7 +44,7 @@ const slides: Slide[] = [
         title: "ITEMS DATABASE",
         subtitle: "COMPLETE ARSENAL",
         description: "Browse 500+ weapons, equipment, and items with detailed stats and locations",
-        backgroundImage: "/images/hero/items_img.webp", // Add your image
+        backgroundImage: "/og/art/items-cache.png",
         ctaText: "Browse Items",
         ctaLink: "/items"
     },
@@ -54,7 +53,7 @@ const slides: Slide[] = [
         title: "HIDEOUT SYSTEM",
         subtitle: "UPGRADE YOUR BASE",
         description: "Plan your hideout upgrades, track requirements, and maximize efficiency",
-        backgroundImage: "/images/hero/hideout_img.webp", // Add your image
+        backgroundImage: "/og/art/hideout-ui-capture.png",
         ctaText: "View Hideout",
         ctaLink: "/hideout-upgrades"
     },
@@ -63,9 +62,18 @@ const slides: Slide[] = [
         title: "TACTICAL GUIDES",
         subtitle: "MASTER THE GAME",
         description: "In-depth guides for combat, movement, and advanced strategies",
-        backgroundImage: "/images/hero/guide_img.webp", // Add your image
+        backgroundImage: "/og/art/guides-field-manual.png",
         ctaText: "Read Guides",
         ctaLink: "/guides"
+    },
+    {
+        id: "gunsmith",
+        title: "GUNSMITH",
+        subtitle: "WEAPON BUILDER",
+        description: "Assemble real parts and see how each choice changes the weapon",
+        backgroundImage: "/og/art/gunsmith-ui-capture.png",
+        ctaText: "Build a Weapon",
+        ctaLink: "/gunsmith"
     }
 ];
 
@@ -107,13 +115,11 @@ export default function HeroSlider() {
                         <div className="relative w-full h-full overflow-hidden">
                             <Image
                                 src={slide.backgroundImage}
-                                alt={slide.title}
-                                width={1000}
-                                height={500}
-                                className="absolute min-w-full w-auto h-auto max-w-none
-                                -right-4/5
-                 md:top-1/2  md:-translate-y-3/7
-                 md:left-auto md:right-0 md:translate-x-0"
+                                alt=""
+                                fill
+                                priority={index === 0}
+                                sizes="100vw"
+                                className="object-contain object-right"
                             />
                             <div
                                 className="absolute inset-0 bg-gradient-to-r from-steel-950 via-steel-950/85 to-transparent z-10"/>

@@ -4,6 +4,7 @@ import Layout from '@/components/layout/Layout';
 import GunsmithClient from './components/GunsmithClient';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/gunsmith' },
     title: 'Gunsmith',
     description:
         'Assemble a weapon from every gun part in Contractors Showdown: ExfilZone and see what it does — ergonomics, recoil, spread and firing power, plus the recoil pattern the gun actually draws.',

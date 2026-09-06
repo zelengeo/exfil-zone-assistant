@@ -115,9 +115,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  alternates: {
-    canonical: 'https://www.exfil-zone-assistant.app',
-  },
   other: {
     'msapplication-TileColor': '#0A0E12',
     'msapplication-TileImage': '/mstile-144x144.png',

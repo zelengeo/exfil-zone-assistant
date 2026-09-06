@@ -1,6 +1,12 @@
+import type { Metadata } from 'next';
 import React from "react";
 import Layout from "@/components/layout/Layout";
 import {Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card";
+
+export const metadata: Metadata = {
+    title: 'Terms of Service – ExfilZone Assistant',
+    alternates: { canonical: '/terms' },
+};
 
 export default function TermsOfServicePage() {
     return (

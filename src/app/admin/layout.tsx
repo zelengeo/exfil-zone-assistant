@@ -1,9 +1,12 @@
+import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 import { redirect } from 'next/navigation';
 import Layout from '@/components/layout/Layout';
 import { AdminSidebar } from './components/AdminSidebar';
 import {requireAdmin} from "@/lib/auth/utils";
 import {AuthenticationError, AuthorizationError} from "@/lib/errors";
+
+export const metadata: Metadata = { robots: { index: false, follow: true } };
 
 interface AdminLayoutProps {
     children: ReactNode;

@@ -4,6 +4,7 @@ import CombatSimClient from './components/CombatSimClient';
 import Layout from '@/components/layout/Layout';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/combat-sim' },
     title: 'Combat Simulator',
     description: 'Test weapon damage, TTK calculations, and combat scenarios for Contractors Showdown ExfilZone. Compare weapons and optimize your loadout.',
     keywords: ['combat simulator', 'weapon damage', 'TTK calculator', 'Contractors Showdown', 'loadout optimizer'],

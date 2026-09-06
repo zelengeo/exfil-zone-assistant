@@ -1,3 +1,5 @@
+import { breadcrumbData, guideArticleData, guideMetadata } from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import dynamic from 'next/dynamic';
@@ -29,6 +31,8 @@ const guideComponents: Record<string, React.ComponentType> = Object.fromEntries(
     )]),
 );
 
+export const dynamicParams = false;
+
 // Generate static params for all guides
 export async function generateStaticParams() {
     const slugs = getAllGuideSlugs();
@@ -43,39 +47,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const guide = getGuideBySlug(slug);
 
     if (!guide) {
-        return {
-            title: 'Guide Not Found',
-        };
+        notFound();
     }
 
-    const url = `https://www.exfil-zone-assistant.app/guides/${slug}`;
-
-    return {
-        title: `${guide.title}`,
-        description: guide.description,
-        openGraph: {
-            title: guide.title,
-            description: guide.description,
-            type: 'article',
-            publishedTime: guide.publishedAt,
-            modifiedTime: guide.updatedAt,
-            authors: guide.author ? [guide.author] : undefined,
-            tags: guide.tags,
-            url: url,
-            images: [
-                {
-                    url: guide.ogImageUrl || '/og-image.jpg',
-                    width: 1200,
-                    height: 630,
-                }
-            ],
-        },
-        twitter: {
-            card: 'summary_large_image',
-            title: guide.title,
-            description: guide.description,
-        },
-    };
+    return guideMetadata(guide);
 }
 
 // Helper function to load markdown content
@@ -164,6 +139,12 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
 
     return (
         <Layout>
+            <JsonLd data={guideArticleData(guide)} />
+            <JsonLd data={breadcrumbData([
+                { name: 'Home', path: '/' },
+                { name: 'Guides', path: '/guides' },
+                { name: guide.title, path: `/guides/${guide.slug}` },
+            ])} />
             <div className="container mx-auto px-4 py-8 max-w-4xl">
                 {/* Breadcrumb */}
                 <div className="flex items-center gap-2 mb-6 text-tan-300">

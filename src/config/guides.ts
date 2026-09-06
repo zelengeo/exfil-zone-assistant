@@ -119,6 +119,8 @@ export const guidesConfig: GuideMetadata[] = [
     },
     {
         slug: 'armor-penetration-guide',
+        updatedAt: '2026-09-02',
+        ogImageUrl: '/og/og-image-guide-armor.jpg',
         title: 'Penetration Mechanics Explained',
         description: 'How penetration is rolled, what damage survives it, how wear changes the odds, and the large parts of a body armor never covered',
         tags: ['combat', 'equipment', 'strategy'],
@@ -131,6 +133,7 @@ export const guidesConfig: GuideMetadata[] = [
     },
     {
         slug: 'damage-model',
+        ogImageUrl: '/og/og-image-guide-damage.jpg',
         title: 'The Damage Model, Step by Step',
         description: 'Every step between pulling the trigger and losing health, with a calculator that resolves one shot against any round, plate and body part',
         tags: ['combat', 'equipment'],
