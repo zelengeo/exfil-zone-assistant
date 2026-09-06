@@ -66,6 +66,17 @@ export interface ShotResult {
     damageToBodyPart: number;
     damageToArmor: number;
     penetrationChance: number;
+    /**
+     * The class the plate was actually rating when this shot met it — `armorClass` scaled by the
+     * durability it had left, which is the number `GetIsPenetrated` reads.
+     *
+     * Returned rather than re-derived by a caller. `effectiveArmorClass` exists for display and
+     * would give the same answer, but only if the caller reconstructs the pre-shot durability, uses
+     * the *zone's* class rather than the item's headline, and reads the curve off the right piece.
+     * Three chances to drift from the model for a number the shot path already holds. `0` where no
+     * armour covered the hit, which is an absence, not a rating.
+     */
+    effectiveArmorClass: number;
 }
 
 export interface ShotResultWithLeftovers extends ShotResult{

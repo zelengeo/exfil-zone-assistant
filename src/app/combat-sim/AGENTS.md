@@ -176,21 +176,31 @@ label and the rail's pip heights are derived from the stops — `shotsRangeLabel
 
 ## The shot ladder
 
-`ZoneReadout`'s ladder prints **every** shot, not the first twelve with a count of the rest: twelve
-is the preview and a button opens the whole run. Two damage columns, because they answer different
+`ZoneReadout`'s ladder prints **every** shot, not the first few with a count of the rest: nine is the
+preview and a button opens the whole run. Two damage columns, because they answer different
 questions — HP is progress toward the kill, Plate is progress toward the plate no longer helping,
 and a round being stopped is still winning if the second column is large.
 
 Everything else about a shot is one tap away on the row rather than four more columns: what was left
-standing, and how close the penetration roll was. Two things there are easy to misread and are
-labelled to prevent it:
+standing, the class the plate was rating when the round met it, and how close the penetration roll
+was. Three things there are easy to misread and are labelled to prevent it:
 
 - **`remainingHp` is the whole body's pool, not the bone's.** A limb kill drains all 440 HP, which
   is the entire reason a forearm costs nineteen rounds where the chest costs two. Invisible unless
   the popover says "of 440", so it does.
+- **`effectiveArmorClass` is per shot, and it falls.** Durability scales the class itself rather
+  than merely running out, so a class 6 plate at 12% durability rates 2.76, and 2.31 one round
+  later. That is why the penetration figure moves down the ladder, and it is unreadable from the
+  "class 6" on the panel header alone.
 - **`isPenetrating` is not a roll.** `simulateCombat` passes `applyRandom: false`, so the ladder
   takes `penetrationChance > 0.5` — the likelier half of every roll. In game each shot is rolled, so
   a plate at 50% is drawn stopping the round when half the time it would not. The panel note says so.
+
+`effectiveArmorClass` rides on `ShotResult` rather than being re-derived for the display. The
+exported helper of the same name would give the same answer, but only if the caller reconstructs the
+pre-shot durability, uses the *zone's* class rather than the item's headline, and reads the curve off
+the right piece — three chances to drift from the model, for a number `calculateShotDamage` already
+holds. It is `0` where no armour covered the hit, which is an absence and not a plate rating zero.
 
 `DAMAGE_GUIDE_HREF` points at `/guides/damage-model`, **which does not exist yet**. The link is a
 deliberate placeholder for [issue #9](https://github.com/zelengeo/exfil-zone-assistant/issues/9): the

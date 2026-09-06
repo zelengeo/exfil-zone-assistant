@@ -64,8 +64,8 @@ function Figure({ label, children }: { label: string; children: React.ReactNode 
  */
 const DAMAGE_GUIDE_HREF = '/guides/damage-model';
 
-/** Rows before the list folds. Twelve is a reading; ninety-nine is a scroll. */
-const LADDER_PREVIEW = 12;
+/** Rows before the list folds. Nine is a reading; ninety-nine is a scroll. */
+const LADDER_PREVIEW = 9;
 
 function LadderRow({ label, children }: { label: string; children: React.ReactNode }) {
     return (
@@ -155,10 +155,21 @@ function ShotLadder({ shots, zone }: { shots: ShotResultWithLeftovers[]; zone: T
                                         {Math.max(0, Math.round(shot.remainingHp))} of {TOTAL_HP}
                                     </LadderRow>
                                     {zone.armour && (
-                                        <LadderRow label="Plate left">
-                                            {Math.round(shot.remainingArmorDurability)}
-                                            {maxDurability ? ` of ${maxDurability}` : ''}
-                                        </LadderRow>
+                                        <>
+                                            <LadderRow label="Plate left">
+                                                {Math.round(shot.remainingArmorDurability)}
+                                                {maxDurability ? ` of ${maxDurability}` : ''}
+                                            </LadderRow>
+                                            {/* The class this shot met, not the one on the label.
+                                                Durability scales the class itself, so a worn plate
+                                                rates lower every round — which is the whole reason
+                                                the penetration figure below moves down the ladder. */}
+                                            <LadderRow label="Class it met">
+                                                {armorClassLabel(Number(shot.effectiveArmorClass.toFixed(2)))}
+                                                {' of '}
+                                                {armorClassLabel(zone.armour.armorClass)}
+                                            </LadderRow>
+                                        </>
                                     )}
                                     <LadderRow label="Penetration roll">
                                         {Math.round(shot.penetrationChance * 100)}%

@@ -134,7 +134,9 @@ function calculateShotDamage(
             isPenetrating: true,
             damageToBodyPart: baseDamage,
             damageToArmor: 0,
-            penetrationChance: 1
+            penetrationChance: 1,
+            // Nothing is rating anything here. Zero is the absence, not a plate that rates zero.
+            effectiveArmorClass: 0
         };
     }
 
@@ -194,7 +196,8 @@ function calculateShotDamage(
         isPenetrating,
         damageToBodyPart,
         damageToArmor,
-        penetrationChance
+        penetrationChance,
+        effectiveArmorClass
     };
 }
 
