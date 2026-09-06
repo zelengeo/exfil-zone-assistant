@@ -50,7 +50,9 @@ async function main(): Promise<void> {
     log(`Target: ${describeTarget(uri)}`);
     log(`Mode:   ${shouldApply ? 'APPLY — indexes will be created and dropped' : 'preview — nothing is written'}`);
 
-    await mongoose.connect(uri);
+    // Model initialization otherwise creates collections/indexes in the background, even when
+    // this command only previews. All index writes must go through the explicit --apply path.
+    await mongoose.connect(uri, { autoIndex: false, autoCreate: false });
 
     try {
         log('\nPending index changes:');
