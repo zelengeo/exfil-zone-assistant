@@ -5,6 +5,7 @@ import { spawnSync } from 'node:child_process';
 import { platform } from 'node:process';
 import { fileURLToPath } from 'node:url';
 
+// npm run render:og -- [input-art] [output-jpeg]
 const currentScriptPath = fileURLToPath(import.meta.url);
 const scriptDirectory = dirname(currentScriptPath);
 const repositoryRoot = resolve(scriptDirectory, '..');
