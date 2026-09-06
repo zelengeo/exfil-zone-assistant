@@ -57,8 +57,10 @@ Two things that changed when `body-zones.ts` went, both of which move published 
 cone regions are the *holes* in it; a face shield is the inverse, its regions *are* its shell; the
 two never stack. So `headReadings` collapses the six named head zones onto however many distinct
 armour classes actually apply — three with a visor, two without, one on a uniform helmet — and the
-UI carries that split at every size: banded head capsule on the body figure, a half-split first pip
-in the rail strip, Face and Shell as separate columns in Compare.
+UI carries that split at every size: slabbed head capsule on the body figure, a half-split first pip
+in the rail strip, Face and Shell as separate columns in Compare. The head capsule's single printed
+figure is its **worst** reading — the honest one-number answer to "if I shoot them in the head" —
+and the split itself is the readings list under the picture.
 
 ## The verdict, and why there are three tiers
 
@@ -127,6 +129,62 @@ never applies.
 `components/ui/slider.tsx` is hand-rolled rather than shadcn, and is the one non-shadcn file in that
 directory. `input[type=range]` insets its track by half a thumb at each end, which left visible
 stretches of the range and durability tracks that the handle could not reach.
+
+## The third pass: reading the body
+
+Two of the second pass's calls were wrong, and were reversed on 2026-09-06. The plan and the
+reasoning are in [docs/COMBAT_SIM_READABILITY_PLAN.md](../../../docs/COMBAT_SIM_READABILITY_PLAN.md);
+[ADR 0006](../../../docs/adr/0006-one-grade-scale-for-item-quality.md) is the decision that came out
+of it.
+
+- **Numerals are back on the figure, all thirteen of them.** "Colour is the whole reading" was right
+  for a four-way overlay and wrong the moment the picture showed one loadout. The ramp's worst rung
+  covers everything from ten rounds to the ninety-nine-shot safety limit, so it could not tell a
+  fight from a decision to disengage — and printing no figure broke the rule `armorClassScale`
+  binds every other surface to. **Never a merged figure:** a calf and a thigh carry different HP
+  pools and different scalars, so one "leg" number would be invented rather than measured. Clutter
+  is handled in `BodyViewer` — a projected-radius floor and a greedy vertical de-collision pass —
+  not by combining zones. `∞` is drawn hollow, because "never" is a different fact from "eventually".
+- **The camera preset row is gone.** A cosmetic `front | back | left | right` group sat directly
+  under a visually identical `Front | Flank | Rear` group, and only the second moves a number. The
+  camera follows the facing now; dragging still orbits, and picking a facing returns to the preset.
+  That Front and Rear agree is a `PanelNote` on the control rather than something a reader has to
+  infer from two buttons producing identical figures.
+
+`ZoneStrip` under the picture is the third piece: every zone as a 44px button carrying its own
+figure. The canvas answers a mouse; a thumb, a controller and a keyboard cannot aim at a six-pixel
+forearm capsule. `BodyViewer` now paints its own hover tint and cursor whenever `onSelect` is set,
+and its click test measures from the press rather than the last pointer move, so a long drag no
+longer both spins the model and selects whatever it finished over.
+
+**`BodyViewer.pick` never worked, on any route.** Its ray-to-segment solve took `ao` as `A - eye`
+where every line below it wants `eye - A`, which negates the ray parameter `t` — so the `t <= 0`
+guard, there to discard capsules behind the camera, discarded every capsule in front of it instead.
+`pick` returned null for every point on the canvas. Nothing was clickable and nothing said so, which
+is why the ladder of increasingly visible affordances above was built before anyone noticed the hit
+test was the problem. The items route's `BodyCoveragePanel` passes `onSelect` too and was equally
+inert. One inverted vector; both formulas below it come out right once it is the correct way round.
+
+## The ramp's rungs are actions, not verdicts
+
+`SHOTS_RAMP` names its rungs **tap, burst, spray, mag dump** at 1, 2–3, 4–9 and 10+. The earlier
+"drops them / workable / slow / don't" told the reader what to conclude; these tell them what they
+will be doing with the trigger, which is the thing a player can feel in the headset. Every band
+label and the rail's pip heights are derived from the stops — `shotsRangeLabel` and
+`shotsGrade().index` — rather than re-thresholded beside them, because the duplicated `<= 2 / <= 4 /
+<= 7` copies are exactly what survives a re-banding and then quietly disagrees with the colour.
+
+## The grade meter
+
+`SHOTS_RAMP` is one of three consumers of the app's shared four-rung grade scale
+(`src/lib/quality/grade.ts`), alongside the gunsmith's bands and the item detail pages. The meter
+under the aimed verdict and under the zone readout's shots figure is the same component the bench
+draws under every weapon stat — that shared vocabulary is the whole point, and
+[ADR 0006](../../../docs/adr/0006-one-grade-scale-for-item-quality.md) is why.
+
+The one deviation: this route's worst rung keeps the inert slate rather than the scale's ember,
+because ember is `BodyViewer`'s selection colour and a body filled with it cannot then show what is
+selected. `scenario.ts` carries that reason at the ramp.
 
 ## Loadouts
 

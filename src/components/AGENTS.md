@@ -9,11 +9,17 @@ when a second route needs it.
 |---|---|
 | `ui/` | shadcn primitives — 27 of them, generated, not hand-edited |
 | `layout/` | `Header`, `Footer`, navigation — every page |
-| `items/`, `tasks/`, `trade/`, `protection/`, `gunsmith/` | domain components |
+| `items/`, `tasks/`, `trade/`, `protection/`, `gunsmith/`, `quality/` | domain components |
 | root | the few app-wide singletons: `CookieConsentBanner`, `ShareButton`, `SessionRefreshButton` |
 
 Check `ui/` before building a primitive. Adding a shadcn component is a generator run, not a
 hand-written file, and a hand-rolled dialog will not inherit the theme or the focus behaviour.
+
+`quality/` holds one component, `GradeMeter`, and it is binding wherever a figure is graded: four
+rungs, one palette, and never rendered without the figure beside it. The tiers it draws live in
+`src/lib/quality/grade.ts` and are shared by the gunsmith, the combat simulator and the item detail
+pages — see [ADR 0006](../../docs/adr/0006-one-grade-scale-for-item-quality.md) before inventing a
+second way to say "this is good".
 
 [`ui/AGENTS.md`](ui/AGENTS.md) carries the layer above the primitives: the disclosure ladder that
 decides whether a piece of explanatory text belongs on the page, in a `Tooltip`, in an

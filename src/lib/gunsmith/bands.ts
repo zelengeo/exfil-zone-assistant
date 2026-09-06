@@ -13,6 +13,7 @@
 
 import type { GunsmithDisplay, Weapon } from '@/types/items';
 import type { GunsmithPart } from '@/types/gunsmith';
+import { gradeFromPercentile, type Grade } from '@/lib/quality/grade';
 import { findPart, type PartIndex } from './compatibility';
 
 export type BandedStat = 'ergonomics' | 'verticalRecoil' | 'horizontalRecoil' | 'firingPower' | 'spreadMOA';
@@ -26,30 +27,15 @@ export const BAND_DIRECTION: Record<BandedStat, 1 | -1> = {
     spreadMOA: -1,
 };
 
-export const BAND_TIERS = ['bottom', 'lower', 'upper', 'top'] as const;
-export type BandTier = typeof BAND_TIERS[number];
-
-export const BAND_LABELS: Record<BandTier, string> = {
-    bottom: 'Bottom 25%',
-    lower: 'Lower half',
-    upper: 'Upper half',
-    top: 'Top 25%',
-};
-
-/** Ember for the worst quartile, then warn, info, good — the Cold Steel semantic ramp. */
-export const BAND_COLORS: Record<BandTier, string> = {
-    bottom: '#FF4A24',
-    lower: '#FFB020',
-    upper: '#5B8CA8',
-    top: '#4ADE80',
-};
-
-export interface Band {
-    tier: BandTier;
-    /** 0-3, matching `BAND_TIERS` — the number of segments to light. */
-    index: number;
-    label: string;
-    color: string;
+/**
+ * A band is a `Grade` plus the evidence behind it.
+ *
+ * The four tiers, their labels, their colours and the meter that draws them moved to
+ * `src/lib/quality/grade.ts` when the item pages and the combat simulator needed the same
+ * vocabulary. What stays here is the part that is genuinely the gunsmith's: which guns count as
+ * peers, and how many of them there were.
+ */
+export interface Band extends Grade {
     /** Where the value sits in its class, 0-1. */
     percentile: number;
     /** How many presets it was ranked against. */
@@ -127,14 +113,5 @@ export function bandFor(
         else if (direction < 0 ? peer > value : peer < value) beaten += 1;
     }
     const percentile = (beaten + ties / 2) / distribution.length;
-    const index = percentile >= 0.75 ? 3 : percentile >= 0.5 ? 2 : percentile >= 0.25 ? 1 : 0;
-    const tier = BAND_TIERS[index];
-    return {
-        tier,
-        index,
-        label: BAND_LABELS[tier],
-        color: BAND_COLORS[tier],
-        percentile,
-        peers: distribution.length,
-    };
+    return { ...gradeFromPercentile(percentile), percentile, peers: distribution.length };
 }

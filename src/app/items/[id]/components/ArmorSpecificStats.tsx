@@ -5,7 +5,8 @@ import {
     Shield, ShieldCheck, ShieldMinus,
     Volume2,
 } from "lucide-react";
-import {Armor, CurvePoint} from "@/types/items";
+import {Armor, CurvePoint, Item} from "@/types/items";
+import {armorRankings} from "@/lib/quality/itemGrades";
 import BallisticCurveChart, {CURVE_COLOR} from "@/app/items/components/BallisticCurveChart";
 import {isBodyArmor, isHeadProtection, isHelmet} from "@/app/combat-sim/utils/types";
 import BodyCoveragePanel from "@/components/protection/BodyCoveragePanel";
@@ -82,8 +83,11 @@ function armorClass(item: Armor): string {
     return span === headline ? headline : `${headline} (${span})`;
 }
 
-export default function ArmorSpecificStats({item}: { item: Armor }) {
+export default function ArmorSpecificStats({item, peers = []}: { item: Armor; peers?: Item[] }) {
     const hasZones = Boolean(item.stats.protectiveData && item.stats.protectiveData.length > 0);
+    // Ranked within its own shelf. A helmet and a chest plate do not compete, so ranking them
+    // against each other would produce a number that reads as a judgement and is not one.
+    const rank = armorRankings(item, peers);
 
     return <>
         <StatGrid className="mb-6">
@@ -91,6 +95,7 @@ export default function ArmorSpecificStats({item}: { item: Armor }) {
                 icon={<ShieldCheck size={14}/>}
                 label="Armor class"
                 value={armorClass(item)}
+                ranking={rank.armorClass}
             />
             <StatLine
                 icon={<BowArrow size={14}/>}
@@ -101,6 +106,7 @@ export default function ArmorSpecificStats({item}: { item: Armor }) {
                 icon={<Shield size={14}/>}
                 label="Max durability"
                 value={item.stats.maxDurability ?? 'Unknown'}
+                ranking={rank.maxDurability}
             />
             <StatLine
                 icon={<Gavel size={14}/>}

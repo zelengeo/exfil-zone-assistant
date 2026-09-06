@@ -4,7 +4,8 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import { armorClassLabel } from '@/lib/protection/armorClassScale';
 import { Price } from '@/components/trade/Price';
-import { formatSeconds, formatShots, shotsColor, type ZoneOutcome } from '../utils/scenario';
+import GradeMeter from '@/components/quality/GradeMeter';
+import { formatSeconds, formatShots, shotsColor, shotsGrade, type ZoneOutcome } from '../utils/scenario';
 import type { Loadout } from '../utils/loadout';
 
 /**
@@ -28,11 +29,16 @@ export interface ZoneReadoutProps {
     className?: string;
 }
 
+/**
+ * A labelled figure. The value sits in a `div` rather than a `p` because some of these carry a
+ * `GradeMeter` under the number, and a block element inside a paragraph is invalid HTML that React
+ * reports as a hydration error rather than silently absorbing.
+ */
 function Figure({ label, children }: { label: string; children: React.ReactNode }) {
     return (
         <div>
             <p className="eyebrow">{label}</p>
-            <p className="mt-0.5">{children}</p>
+            <div className="mt-0.5">{children}</div>
         </div>
     );
 }
@@ -95,6 +101,10 @@ export default function ZoneReadout({ outcome, loadout, range, onShowAll, classN
                     >
                         {formatShots(outcome.shotsToKill)}
                     </span>
+                    {/* The app's own grade meter, the one the gunsmith draws on every weapon stat:
+                        the figure says how many, the meter says whether that is any good. Time and
+                        cost carry none, because neither is ranked against anything. */}
+                    <GradeMeter grade={shotsGrade(outcome.shotsToKill)} className="mt-2" />
                 </Figure>
                 <Figure label="Time">
                     <span className="font-mono tabular text-2xl text-ink-100 leading-none">

@@ -25,12 +25,25 @@ export interface ZoneOverlay {
     /** Short text drawn beside the capsule. */
     badge?: string;
     /**
-     * Horizontal bands down the capsule instead of one flat colour, top first, `share` summing to
+     * Outline only, with the fill left empty.
+     *
+     * A separate channel from `color` because "never" is a different fact from "eventually", and a
+     * ramp cannot say both: the simulator's darkest tone has to cover every reading from eight
+     * rounds to ninety-eight, so a round that cannot do the job at all was rendering as merely a
+     * darker version of a bad one.
+     */
+    hollow?: boolean;
+    /**
+     * Horizontal slabs down the capsule instead of one flat colour, top first, `share` summing to
      * 1. The head is the one bone that is not one reading: a helmet's shell, the shield filling its
      * holes and whatever neither reaches are three different armour classes on one capsule, so a
      * single tint would have to pick one of them and lie about the rest.
+     *
+     * Called slabs and not bands: a **band** is one rung of the app's quality grade
+     * (`lib/quality/grade.ts`), which is a different thing that also gets drawn as a run of
+     * coloured rectangles. See `CONTEXT.md`.
      */
-    bands?: Array<{ share: number; color: string }>;
+    slabs?: Array<{ share: number; color: string }>;
 }
 
 export interface BodyViewerProps {
@@ -39,6 +52,12 @@ export interface BodyViewerProps {
     selected?: number | null;
     /** Omitted ⇒ read-only, the way `BuildSlotList` reads an omitted `onSelectSlot`. */
     onSelect?: (capsuleIndex: number) => void;
+    /**
+     * Reported for a caller that wants to preview the hovered capsule. The tint and the cursor are
+     * not this callback's business — the viewer paints those itself whenever `onSelect` is set,
+     * because an affordance that only appears when a caller opts in is an affordance that will be
+     * missing somewhere.
+     */
     onHover?: (capsuleIndex: number | null) => void;
     overlay?: Record<number, ZoneOverlay>;
     view?: ViewName;
@@ -60,6 +79,9 @@ const COLORS = {
     bare: '#33414D',
     bareFill: 'rgba(26,34,42,0.55)',
     selected: '#FF4A24',
+    /** A step short of the selection ember: "you may click this", not "this is the one". */
+    hovered: '#B7C4CE',
+    hoverWash: 'rgba(236,242,247,0.10)',
 } as const;
 
 function hexToRgb(hex: string): [number, number, number] {
@@ -102,6 +124,41 @@ function capsuleOutline(
     return { a, b, r };
 }
 
+/**
+ * The figure drawn on a capsule.
+ *
+ * A step up from the 11px this used to be, because the root rule is that type errs one size larger
+ * than a desktop app would: these are read through a headset panel or one-handed on a phone.
+ */
+const LABEL_FONT_PX = 12;
+
+/** Projected capsule radius, in CSS pixels, below which a capsule carries no figure at all. */
+const LABEL_MIN_RADIUS = 5;
+
+/**
+ * Push overlapping figures apart, vertically.
+ *
+ * The simulator prints all thirteen capsules at once — every bone takes a different number of
+ * rounds, so a merged "leg" figure would be an invented number wearing the authority of a measured
+ * one — and at that density the chest, pelvis and shoulder labels collide in the front view. One
+ * greedy pass down the list: anything sitting on top of an already-placed figure moves down until
+ * it clears. Vertical only, because the body is taller than it is wide and a sideways nudge walks a
+ * figure off its own capsule and onto its neighbour's.
+ */
+function spreadLabels(labels: Array<{ x: number; y: number; text: string; colour: string }>) {
+    const gapY = LABEL_FONT_PX + 3;
+    const gapX = LABEL_FONT_PX * 1.6;
+    const placed: typeof labels = [];
+    for (const label of [...labels].sort((p, q) => p.y - q.y)) {
+        // Ascending, so each push-down is checked against everything already below it.
+        for (const other of [...placed].sort((p, q) => p.y - q.y)) {
+            if (Math.abs(label.x - other.x) >= gapX) continue;
+            if (Math.abs(label.y - other.y) < gapY) label.y = other.y + gapY;
+        }
+        placed.push(label);
+    }
+}
+
 export default function BodyViewer({
     coverage,
     selected = null,
@@ -127,8 +184,31 @@ export default function BodyViewer({
         }),
         [orbit, view],
     );
-    const drag = useRef<{ x: number; y: number } | null>(null);
+    /**
+     * Two points, not one.
+     *
+     * `press` is where the pointer went down and is never reassigned; `last` is where it was on the
+     * previous move and feeds the orbit delta. They used to be the same ref, which meant the click
+     * test in `onPointerUp` measured the release against the *last move* rather than the press — so
+     * a two-hundred-pixel drag both spun the model and then selected whatever it happened to finish
+     * over.
+     */
+    const press = useRef<{ x: number; y: number } | null>(null);
+    const last = useRef<{ x: number; y: number } | null>(null);
     const interactive = Boolean(onSelect);
+    // Tracked here rather than only reported outwards, because the affordance is this component's
+    // job: without a tint and a cursor, a clickable capsule looks exactly like a picture of one.
+    const [hovered, setHovered] = useState<number | null>(null);
+
+    // A preset click is a fresh camera intent: drop whatever orbit the reader had dragged to, so
+    // `view` takes over again. Without this, the first drag (or a stray move during a zone click)
+    // pins `orbit` non-null and the VIEWS buttons go dead. Reset during render — the pattern from
+    // React's "You Might Not Need an Effect" — rather than in an effect.
+    const [orbitView, setOrbitView] = useState<ViewName>(view);
+    if (orbitView !== view) {
+        setOrbitView(view);
+        setOrbit(null);
+    }
 
     useEffect(() => {
         const element = wrapRef.current;
@@ -140,7 +220,16 @@ export default function BodyViewer({
         return () => observer.disconnect();
     }, [height]);
 
-    /** Capsule under a canvas point, nearest first. */
+    /**
+     * Capsule under a canvas point, nearest first.
+     *
+     * The closest approach between the eye ray and the capsule's segment, tested against its
+     * radius. **`ao` is the eye relative to the segment's start, not the other way round** — it was
+     * `A - eye` for as long as this function has existed, which negates `t` and makes the
+     * `t <= 0` guard behind the camera reject every capsule in front of it. `pick` therefore
+     * returned null for every point on the canvas, and nothing here was ever clickable: not the
+     * simulator's zones, and not the items route's coverage panel either.
+     */
     const pick = useCallback(
         (px: number, py: number): number | null => {
             const projector = makeProjector(camera, size);
@@ -150,12 +239,12 @@ export default function BodyViewer({
             for (const zone of coverage.zones) {
                 const cap = zone.capsule;
                 const [A, B] = segment(cap);
-                // Distance from the ray to the capsule's segment, tested against its radius.
                 const ab = sub(B, A);
-                const ao = sub(A, projector.eye);
+                const ao = sub(projector.eye, A);
                 const abab = dot(ab, ab);
                 const abd = dot(ab, ray);
                 const abao = dot(ab, ao);
+                // The ray is a unit vector, so the `a` term of the standard line-line solve is 1.
                 const denom = 1 - (abd * abd) / (abab || 1);
                 if (Math.abs(denom) < 1e-9) continue;
                 const t = (-dot(ao, ray) + (abd * abao) / (abab || 1)) / denom;
@@ -234,6 +323,7 @@ export default function BodyViewer({
 
             const custom = overlay?.[zone.capsule.index];
             const isSelected = selected === zone.capsule.index;
+            const isHovered = interactive && !isSelected && hovered === zone.capsule.index;
 
             const stadium = () => {
                 ctx.beginPath();
@@ -245,35 +335,52 @@ export default function BodyViewer({
             };
 
             stadium();
-            ctx.strokeStyle = custom?.color ?? coverFill(zone);
+            ctx.strokeStyle = custom?.hollow ? COLORS.bareFill : custom?.color ?? coverFill(zone);
             ctx.stroke();
 
-            // Banded fill: the same stadium re-stroked once per band, each clipped to its own slab.
-            // Clipping rather than drawing slabs keeps the silhouette exactly the capsule's.
-            if (custom?.bands?.length) {
+            // Slabbed fill: the same stadium re-stroked once per slab, each clipped to its own
+            // band of the vertical extent. Clipping rather than drawing rectangles keeps the
+            // silhouette exactly the capsule's.
+            if (custom?.slabs?.length) {
                 const top = Math.min(a.y, b.y) - r;
                 const height = Math.abs(a.y - b.y) + r * 2;
                 let offset = 0;
-                for (const band of custom.bands) {
-                    const slab = height * band.share;
+                for (const slab of custom.slabs) {
+                    const extent = height * slab.share;
                     ctx.save();
                     ctx.beginPath();
-                    ctx.rect(Math.min(a.x, b.x) - r - 1, top + offset, Math.abs(a.x - b.x) + r * 2 + 2, slab);
+                    ctx.rect(Math.min(a.x, b.x) - r - 1, top + offset, Math.abs(a.x - b.x) + r * 2 + 2, extent);
                     ctx.clip();
                     stadium();
-                    ctx.strokeStyle = band.color;
+                    ctx.strokeStyle = slab.color;
                     ctx.stroke();
                     ctx.restore();
-                    offset += slab;
+                    offset += extent;
                 }
+            }
+
+            // A wash over the whole capsule, under the outline: lifting the fill reads as "this
+            // one" at a glance where a brighter edge alone does not, particularly on the small
+            // limb capsules where the outline is most of what is visible.
+            if (isHovered) {
+                stadium();
+                ctx.strokeStyle = COLORS.hoverWash;
+                ctx.stroke();
             }
 
             // Outline on top, so the shape reads even where two capsules meet.
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
-            ctx.lineWidth = 1.5;
-            ctx.strokeStyle = isSelected ? COLORS.selected : coverStroke(zone);
+            ctx.lineWidth = isSelected || isHovered ? 2 : 1.5;
+            ctx.strokeStyle = isSelected
+                ? COLORS.selected
+                : isHovered
+                    ? COLORS.hovered
+                    // A hollow capsule has no fill to carry the overlay's colour, so its edge does.
+                    : custom?.hollow && custom.color
+                        ? custom.color
+                        : coverStroke(zone);
             ctx.stroke();
 
             if (isSelected) {
@@ -291,7 +398,9 @@ export default function BodyViewer({
             // channel and the colour only the fast one. A caller's badge outranks it.
             const badge = custom?.badge
                 ?? (zone.zone && zone.fraction > 0.001 ? armorClassLabel(zone.zone.armorClass) : null);
-            if (badge) {
+            // Below this the text is wider than the shape it names, so it reads as debris on the
+            // silhouette rather than as that capsule's figure. A forearm seen end-on is the case.
+            if (badge && r >= LABEL_MIN_RADIUS) {
                 labels.push({
                     x: (a.x + b.x) / 2,
                     y: (a.y + b.y) / 2,
@@ -301,7 +410,9 @@ export default function BodyViewer({
             }
         }
 
-        ctx.font = "600 11px 'IBM Plex Mono', monospace";
+        spreadLabels(labels);
+
+        ctx.font = `600 ${LABEL_FONT_PX}px 'IBM Plex Mono', monospace`;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.lineWidth = 3;
@@ -312,7 +423,7 @@ export default function BodyViewer({
             ctx.fillStyle = label.colour;
             ctx.fillText(label.text, label.x, label.y);
         }
-    }, [camera, coverage, overlay, selected, size]);
+    }, [camera, coverage, hovered, interactive, overlay, selected, size]);
 
     return (
         <div ref={wrapRef} className={cn('relative select-none', className)}>
@@ -321,16 +432,19 @@ export default function BodyViewer({
                 style={{ width: size.width, height: size.height }}
                 className={cn(
                     'bg-steel-850 border border-line-800 plot-grid touch-none',
-                    interactive ? 'cursor-pointer' : 'cursor-grab',
+                    interactive && hovered !== null ? 'cursor-pointer' : 'cursor-grab',
                 )}
                 onPointerDown={(e) => {
-                    drag.current = { x: e.clientX, y: e.clientY };
+                    press.current = { x: e.clientX, y: e.clientY };
+                    last.current = { x: e.clientX, y: e.clientY };
                     e.currentTarget.setPointerCapture(e.pointerId);
                 }}
                 onPointerUp={(e) => {
-                    const start = drag.current;
-                    drag.current = null;
-                    // A press that did not move is a click, not the end of an orbit.
+                    const start = press.current;
+                    press.current = null;
+                    last.current = null;
+                    // A press that did not travel is a click, not the end of an orbit. Measured
+                    // from the press, so a long drag is never also a selection.
                     if (!onSelect || !start) return;
                     if (Math.hypot(e.clientX - start.x, e.clientY - start.y) > 4) return;
                     const rect = e.currentTarget.getBoundingClientRect();
@@ -338,10 +452,10 @@ export default function BodyViewer({
                     if (hit !== null) onSelect(hit);
                 }}
                 onPointerMove={(e) => {
-                    if (drag.current) {
-                        const dx = e.clientX - drag.current.x;
-                        const dy = e.clientY - drag.current.y;
-                        drag.current = { x: e.clientX, y: e.clientY };
+                    if (last.current) {
+                        const dx = e.clientX - last.current.x;
+                        const dy = e.clientY - last.current.y;
+                        last.current = { x: e.clientX, y: e.clientY };
                         setOrbit((prev) => {
                             const from = prev ?? VIEW_PRESETS[view];
                             return {
@@ -351,12 +465,17 @@ export default function BodyViewer({
                         });
                         return;
                     }
-                    if (!onHover) return;
+                    if (!interactive && !onHover) return;
                     const rect = e.currentTarget.getBoundingClientRect();
-                    onHover(pick(e.clientX - rect.left, e.clientY - rect.top));
+                    const hit = pick(e.clientX - rect.left, e.clientY - rect.top);
+                    if (hit === hovered) return;
+                    setHovered(hit);
+                    onHover?.(hit);
                 }}
                 onPointerLeave={() => {
-                    drag.current = null;
+                    press.current = null;
+                    last.current = null;
+                    setHovered(null);
                     onHover?.(null);
                 }}
             />

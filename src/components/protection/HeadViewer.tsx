@@ -320,7 +320,6 @@ function paintHead(
     const px = image.data;
     const buffer: DepthBuffer = { data: new Float32Array(size * size).fill(-Infinity), size };
 
-    const bg = hexToRgb(BACKGROUND);
     const exposedRgb = hexToRgb(EXPOSED);
     const bareRgb = hexToRgb(BARE);
     const reverseRgb = hexToRgb(REVERSE);
@@ -363,10 +362,9 @@ function paintHead(
             ];
             const hit = headRay(head, from, dir);
             if (!hit) {
-                px[i] = bg[0];
-                px[i + 1] = bg[1];
-                px[i + 2] = bg[2];
-                px[i + 3] = 255;
+                // Left transparent so the canvas's own `.plot-grid` shows through, the same
+                // backdrop the body viewer sits on. `createImageData` starts every pixel at
+                // zeroed RGBA, so a skipped pixel is already the transparent we want.
                 continue;
             }
 
@@ -542,7 +540,7 @@ export default function HeadViewer({
                         : 'Head with one colour per authored cone region'
                 }
                 className={cn(
-                    'bg-steel-850 border border-line-800 touch-none',
+                    'bg-steel-850 border border-line-800 plot-grid touch-none',
                     onOrbit && 'cursor-grab active:cursor-grabbing',
                 )}
                 onPointerDown={(e) => {

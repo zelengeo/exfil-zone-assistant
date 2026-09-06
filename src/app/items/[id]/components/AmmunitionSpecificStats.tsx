@@ -4,21 +4,37 @@ import {
     Info,
     ShieldX,
 } from "lucide-react";
-import {Ammunition} from "@/types/items";
+import {Ammunition, Item} from "@/types/items";
+import {ammoRankings} from "@/lib/quality/itemGrades";
 import BallisticCurveChart, {CURVE_COLOR} from "@/app/items/components/BallisticCurveChart";
 import StatLine, {StatGrid, StatPanel} from "./StatLine";
 
 const pct = (value: number): string => `${(value * 100).toFixed(0)}%`;
 
-export default function AmmunitionSpecificStats({item}: { item: Ammunition }) {
+export default function AmmunitionSpecificStats({item, peers = []}: { item: Ammunition; peers?: Item[] }) {
+    // Ranked against its own calibre, never against every round in the game: a 9x19 that outranked
+    // a .338 LM on paper would be answering a question nobody asks.
+    const rank = ammoRankings(item, peers);
+
     return <div className="space-y-5">
         <StatGrid>
-            <StatLine icon={<Crosshair size={14}/>} label="Damage" value={item.stats.damage}/>
-            <StatLine icon={<ShieldX size={14}/>} label="Penetration" value={item.stats.penetration}/>
+            <StatLine
+                icon={<Crosshair size={14}/>}
+                label="Damage"
+                value={item.stats.damage}
+                ranking={rank.damage}
+            />
+            <StatLine
+                icon={<ShieldX size={14}/>}
+                label="Penetration"
+                value={item.stats.penetration}
+                ranking={rank.penetration}
+            />
             <StatLine
                 icon={<Info size={14}/>}
                 label="Velocity"
                 value={`${item.stats.muzzleVelocity / 100} m/s`}
+                ranking={rank.muzzleVelocity}
             />
             <StatLine icon={<Info size={14}/>} label="Caliber" value={item.stats.caliber} text/>
         </StatGrid>

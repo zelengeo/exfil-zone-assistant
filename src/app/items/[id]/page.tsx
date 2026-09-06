@@ -11,7 +11,7 @@ import {
     getCategoryById,
 } from '@/types/items';
 import RarityBadge from '@/components/items/RarityBadge';
-import { getItemById } from '@/services/ItemService';
+import { getItemById, getItemsByCategory } from '@/services/ItemService';
 import {
     isAmmunition,
     isAnyItem,
@@ -50,13 +50,13 @@ import { ItemImage } from '@/app/items/components/ItemImage';
  */
 
 // Helper to render stats based on item category
-const renderCategorySpecificStats = (item: AnyItem) => {
+const renderCategorySpecificStats = (item: AnyItem, peers: Item[]) => {
     switch (item.category) {
         case 'weapons':
             if (isWeapon(item)) return <WeaponSpecificStats item={item} />;
             break;
         case 'ammo':
-            if (isAmmunition(item)) return <AmmunitionSpecificStats item={item} />;
+            if (isAmmunition(item)) return <AmmunitionSpecificStats item={item} peers={peers} />;
             break;
         case 'attachments':
             if (isAttachment(item)) return <AttachmentSpecificStats item={item} />;
@@ -65,7 +65,7 @@ const renderCategorySpecificStats = (item: AnyItem) => {
             if (isGrenade(item)) return <GrenadeSpecificStats item={item} />;
             break;
         case 'gear':
-            if (isArmor(item)) return <ArmorSpecificStats item={item} />;
+            if (isArmor(item)) return <ArmorSpecificStats item={item} peers={peers} />;
             if (isBackpack(item)) return <BackpackSpecificStats item={item} />;
             if (isHolster(item)) return <HolsterSpecificStats item={item} />;
             break;
@@ -94,22 +94,33 @@ interface PageProps {
 export default function ItemDetail({ params }: PageProps) {
     const { id } = React.use(params);
     const [item, setItem] = useState<Item | null>(null);
+    // The item's own category, for ranking its figures against what it competes with. Read in the
+    // same pass and off the same cache `getItemById` has already populated, so it costs no second
+    // round trip and shares this page's one loading state rather than growing another.
+    const [peers, setPeers] = useState<Item[]>([]);
     const [loading, setLoading] = useState(true);
     const trade = useTradeIndex();
 
     useEffect(() => {
+        let live = true;
         const loadItem = async () => {
             try {
                 const itemData = await getItemById(id);
+                if (!live) return;
                 setItem(itemData || null);
+                if (itemData) {
+                    const siblings = await getItemsByCategory(itemData.category);
+                    if (live) setPeers(siblings);
+                }
             } catch (error) {
                 console.error('Failed to load item:', error);
             } finally {
-                setLoading(false);
+                if (live) setLoading(false);
             }
         };
 
         loadItem();
+        return () => { live = false; };
     }, [id]);
 
     if (loading) {
@@ -233,7 +244,7 @@ export default function ItemDetail({ params }: PageProps) {
                         {!isMisc(item) && isAnyItem(item) && (
                             <section className="bg-steel-900 border border-line-900 p-5">
                                 <SectionHeading>Specifications</SectionHeading>
-                                {renderCategorySpecificStats(item)}
+                                {renderCategorySpecificStats(item, peers)}
                             </section>
                         )}
 

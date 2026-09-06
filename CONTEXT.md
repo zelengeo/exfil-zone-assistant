@@ -101,6 +101,32 @@ _Avoid_: Completed, unlocked, owned, purchased
 > The generated hideout data says `relatedQuests`, and the field name stays because the extraction
 > writes it. Everything a reader sees says **task**.
 
+### Quality
+
+**Grade**:
+How good one figure is, on a four-rung scale shared by every surface in the app: bottom quarter,
+lower half, upper half, top quarter. Drawn as four segments lit up to the rung, always beside the
+figure itself, never as colour alone. Lives in `src/lib/quality/grade.ts`.
+_Avoid_: Rating, score, quality, star
+
+**Band**:
+A grade plus the evidence behind it — which peers it was ranked against and how many there were.
+The gunsmith's word, kept because it predates the shared scale. Never used for a run of coloured
+rectangles that is not a grade: the head capsule's horizontal colour divisions are **slabs**.
+_Avoid_: Tier, bracket, quartile (as a noun for the thing itself)
+
+**Peer set**:
+The items one figure is ranked against — a round's own calibre, a vest's own shelf, a gun's own
+class. Never the whole catalogue: nobody chooses between a pistol round and a rifle round, so
+ranking them together would produce a number that reads as a judgement and is not one. Fewer than
+six peers and nothing is graded.
+_Avoid_: Comparison group, cohort, sample
+
+**Slab**:
+One horizontal division of a capsule in the body viewer, used where a single bone carries more than
+one reading. A presentation device, unrelated to grades.
+_Avoid_: Band, stripe, segment
+
 ### Combat
 
 **Loadout**:

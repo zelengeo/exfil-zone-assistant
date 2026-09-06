@@ -16,6 +16,7 @@ import {
     formatShots,
     shotsColor,
     SHOTS_RAMP,
+    shotsRangeLabel,
     type LoadoutOutcome,
     type ZoneOutcome,
 } from '../utils/scenario';
@@ -60,7 +61,7 @@ function headReading(head: ZoneOutcome[], source: 'mask' | 'helmet'): ZoneOutcom
 }
 
 /** Bands for the head capsule: one per reading, sized by its share of the head, colour by its ramp step. */
-function headBands(head: ZoneOutcome[]): Array<{ share: number; color: string }> {
+function headSlabs(head: ZoneOutcome[]): Array<{ share: number; color: string }> {
     const fallbackShare = head.length > 0 ? 1 / head.length : 1;
     const rawShares = head.map((outcome) => outcome.zone.headShare ?? fallbackShare);
     const total = rawShares.reduce((sum, share) => sum + share, 0) || 1;
@@ -74,15 +75,6 @@ function plateCost(chest: ZoneOutcome | null): string {
     let stopped = 0;
     while (stopped < total && !chest.shots[stopped].isPenetrating) stopped += 1;
     return `${total} · ${stopped} stopped, then ${total - stopped} through`;
-}
-
-/** "1–2", "8+" — the band a ramp step covers, read off the step before it. */
-function rampRange(index: number): string {
-    const step = SHOTS_RAMP[index];
-    const prevMax = index === 0 ? 0 : SHOTS_RAMP[index - 1].max;
-    if (step.max === Infinity) return `${prevMax + 1}+`;
-    if (prevMax + 1 === step.max) return `${step.max}`;
-    return `${prevMax + 1}–${step.max}`;
 }
 
 function formatRounds(rounds: number | null): string {
@@ -138,7 +130,7 @@ export default function CompareView({ outcomes, target, selectedLoadoutId, onSel
                             <li key={step.label} className="flex items-center gap-1.5">
                                 <span className="w-3 h-3 shrink-0" style={{ backgroundColor: step.color }} aria-hidden="true" />
                                 <span className="font-mono text-[10px] text-ink-300">
-                                    {rampRange(i)} · {step.label}
+                                    {shotsRangeLabel(i)} · {step.label}
                                 </span>
                             </li>
                         ))}
@@ -151,7 +143,7 @@ export default function CompareView({ outcomes, target, selectedLoadoutId, onSel
                         const overlay: Record<number, ZoneOverlay> = {};
                         for (const [capsule, zoneOutcome] of outcome.byCapsule) {
                             overlay[capsule] = capsule === HEAD_CAPSULE
-                                ? { bands: headBands(outcome.head), badge: '' }
+                                ? { slabs: headSlabs(outcome.head), badge: '' }
                                 : { color: shotsColor(zoneOutcome.shotsToKill), badge: '' };
                         }
                         const aimed = outcome.verdict.aimed;

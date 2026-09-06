@@ -137,6 +137,20 @@ reads, and `.select()` the fields you need.
 `utils.ts` is small and worth knowing by heart: `cn()` for Tailwind class composition, and
 `sanitizeUserInput` / `sanitizeFieldName` / `sanitizeSearchQuery` for anything a user typed.
 
+## Quality grades
+
+`quality/grade.ts` owns the four rungs every surface in the app uses to say how good a figure is,
+and the two ways a value earns one: `gradeFromPercentile` for a ranking against peers, and
+`gradeFromStops` for an authored threshold scale. `quality/itemGrades.ts` builds the peer sets for
+the catalogue — a round against its own calibre, a vest against its own shelf, never against
+everything.
+
+Three consumers, and this is deliberately a shared coupling rather than three private answers:
+`lib/gunsmith/bands.ts`, the combat simulator's `SHOTS_RAMP`, and the item detail pages. Anything
+that grades a figure goes through here and draws `components/quality/GradeMeter`. The rules — four
+rungs, the peer set is the ranking, and colour never travels without the figure — are in
+[ADR 0006](../../docs/adr/0006-one-grade-scale-for-item-quality.md).
+
 ## Gotchas
 
 - **There is no `constants.ts`.** Roles are `rolesEnum` in `schemas/user.ts`; rate limits are

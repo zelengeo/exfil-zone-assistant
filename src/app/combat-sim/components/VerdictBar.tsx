@@ -5,7 +5,8 @@ import { cn } from '@/lib/utils';
 import { AmmoTag } from './AmmoDisplay';
 import PanelNote from './PanelNote';
 import { Price } from '@/components/trade/Price';
-import { formatSeconds, formatShots, shotsColor, type LoadoutOutcome } from '../utils/scenario';
+import GradeMeter from '@/components/quality/GradeMeter';
+import { formatSeconds, formatShots, shotsColor, shotsGrade, type LoadoutOutcome } from '../utils/scenario';
 
 /**
  * The one answer, above everything else on the page.
@@ -97,6 +98,13 @@ export default function VerdictBar({ outcome, onShowHead, onExplainSpray, classN
                                 ? <Price amount={Math.round(aimed.costToKill)} size="sm" tone="dim" />
                                 : <span>&infin;</span>}
                         </p>
+                        {/* The rung, in words. Six is a number; "workable" is an answer, and it is
+                            the same meter the gunsmith puts under every weapon stat. */}
+                        <GradeMeter
+                            grade={aimed ? shotsGrade(aimed.shotsToKill) : null}
+                            note="no reading"
+                            className="mt-2 max-w-[11rem]"
+                        />
                     </div>
                 </div>
 

@@ -1,5 +1,9 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
+import InfoPopover from '@/components/ui/info-popover';
+import { GradeMeterInline } from '@/components/quality/GradeMeter';
+import type { Ranking } from '@/lib/quality/itemGrades';
+import { rankingNote } from '@/lib/quality/itemGrades';
 
 /**
  * One labelled figure on a detail page.
@@ -16,10 +20,20 @@ export interface StatLineProps {
     icon?: React.ReactNode;
     /** For prose values — a name, a mode, a list — which should not be tabular. */
     text?: boolean;
+    /**
+     * Where this figure sits among the items it competes with, drawn as the app's grade meter.
+     *
+     * Only some figures can be ranked, and the ones that cannot show no meter rather than an empty
+     * one — four unlit segments would read as "worst" when the truth is "not a question this
+     * catalogue can answer". The meter never appears without the figure beside it.
+     */
+    ranking?: Ranking | null;
     className?: string;
 }
 
-export default function StatLine({ label, value, icon, text = false, className }: StatLineProps) {
+export default function StatLine({
+    label, value, icon, text = false, ranking = null, className,
+}: StatLineProps) {
     return (
         <div className={cn('flex items-baseline gap-2 min-w-0', className)}>
             {icon && (
@@ -28,11 +42,33 @@ export default function StatLine({ label, value, icon, text = false, className }
                 </span>
             )}
             <span className="text-xs text-ink-600 truncate">{label}</span>
+            {ranking?.grade && (
+                <InfoPopover
+                    triggerStyle="bare"
+                    side="top"
+                    label={`How ${label.toLowerCase()} ranks`}
+                    className="ml-auto shrink-0 self-center"
+                    trigger={<GradeMeterInline grade={ranking.grade} />}
+                >
+                    <div className="text-sm text-ink-400 leading-relaxed space-y-2">
+                        <p>
+                            <strong className="text-ink-200">{ranking.grade.label}</strong> of the{' '}
+                            {ranking.peers} {ranking.peerLabel} in the catalogue.
+                        </p>
+                        <p>
+                            Ranked against what it competes with rather than against everything &mdash;
+                            nobody chooses between a pistol round and a rifle round.
+                        </p>
+                    </div>
+                </InfoPopover>
+            )}
             <span
                 className={cn(
-                    'ml-auto shrink-0 text-sm text-ink-200',
+                    'shrink-0 text-sm text-ink-200',
+                    ranking?.grade ? '' : 'ml-auto',
                     text ? 'text-right' : 'font-mono tabular',
                 )}
+                title={ranking && !ranking.grade ? rankingNote(ranking) : undefined}
             >
                 {value}
             </span>

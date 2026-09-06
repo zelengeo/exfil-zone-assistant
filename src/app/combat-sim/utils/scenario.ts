@@ -13,6 +13,7 @@
  */
 
 import { cheapestOffer } from '@/lib/trade';
+import { gradeFromStops, type Grade, type GradeStop } from '@/lib/quality/grade';
 import type { ShotResultWithLeftovers } from './types';
 import { simulateCombat } from './damage-calculations';
 import { ammoProperties, armorProperties } from './props';
@@ -166,24 +167,58 @@ export function runScenarios(
 /* -------------------------------------------------------------------------
  * The ramp
  *
- * Colour is spent on shots-to-kill and never on loadout identity. That is the whole reason the
- * body figure reads without a legend, and the reason the four-overlaid alternative had to be
- * dropped: once colour means "which gun", the picture can no longer say "this is the soft spot".
+ * Colour is spent on shots-to-kill and never on loadout identity. That is the reason the
+ * four-overlaid alternative had to be dropped: once colour means "which gun", the picture can no
+ * longer say "this is the soft spot".
  *
- * The four steps are the app's own semantic tokens, so the words in the key are the words the
- * colours already mean elsewhere on the site.
+ * These are the app's four shared grades (`src/lib/quality/grade.ts`), so the meter here is the
+ * meter on a weapon stat and on an item page. What is local is the wording — a rung is called
+ * "workable" rather than "upper half", because nobody can rank a shots-to-kill figure against a
+ * peer set: the peers would be every loadout the reader has not assembled.
+ *
+ * The worst rung deviates from the shared palette, and this is the one place that happens. Ember
+ * is `BodyViewer`'s selection colour, and these tones are painted onto the same capsules a reader
+ * selects — a body filled with the selection colour cannot then show which capsule is selected. It
+ * is also the wrong semantics: a zone that will not die is a dead end, not an alert.
+ *
+ * The rungs are named for **what the shot actually is**, not for a verdict on it. A rung called
+ * "workable" is the page telling the reader what to think; "burst" is the page telling them what
+ * they will be doing, which is the thing they can feel in the headset. The boundaries follow the
+ * same logic — one round is a tap, two or three is a burst, anything up to about nine is holding
+ * the trigger, and past that you are emptying the magazine into them.
+ *
+ * The last rung still runs to the ninety-nine-shot safety limit and `∞`, which is far too wide to
+ * be read as a colour. That is why the figure is printed on every capsule, and why `∞` is drawn
+ * hollow rather than merely darker.
  * ---------------------------------------------------------------------- */
 
-export const SHOTS_RAMP = [
-    { max: 2, color: '#4ADE80', label: 'drops them' },
-    { max: 4, color: '#FFB020', label: 'workable' },
-    { max: 7, color: '#5B8CA8', label: 'slow' },
-    { max: Infinity, color: '#33414D', label: "don't" },
-] as const;
+export const SHOTS_RAMP: readonly GradeStop[] = [
+    { max: 1, color: '#4ADE80', label: 'tap' },
+    { max: 3, color: '#FFB020', label: 'burst' },
+    { max: 9, color: '#5B8CA8', label: 'spray' },
+    { max: Infinity, color: '#33414D', label: 'mag dump' },
+];
+
+/**
+ * The span a rung covers, as a key reads it: `1`, `2–3`, `4–9`, `10+`.
+ *
+ * Derived from the stops rather than written beside them, so moving a boundary cannot leave the
+ * legend claiming the old one.
+ */
+export function shotsRangeLabel(index: number): string {
+    const step = SHOTS_RAMP[index];
+    const from = index === 0 ? 1 : SHOTS_RAMP[index - 1].max + 1;
+    if (!Number.isFinite(step.max)) return `${from}+`;
+    return from === step.max ? String(step.max) : `${from}–${step.max}`;
+}
+
+/** The shared grade for a shots-to-kill figure — the meter, the rung name and the colour. */
+export function shotsGrade(shots: number): Grade {
+    return gradeFromStops(shots, SHOTS_RAMP);
+}
 
 export function shotsColor(shots: number): string {
-    for (const step of SHOTS_RAMP) if (shots <= step.max) return step.color;
-    return SHOTS_RAMP[SHOTS_RAMP.length - 1].color;
+    return shotsGrade(shots).color;
 }
 
 /** `∞` for a round that cannot do it, which is a real answer and reads better than a blank. */

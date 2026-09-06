@@ -3,7 +3,7 @@
 import React from 'react';
 import { SlidersHorizontal } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { formatShots, shotsColor, type LoadoutOutcome, type ZoneOutcome } from '../utils/scenario';
+import { formatShots, shotsColor, shotsGrade, type LoadoutOutcome, type ZoneOutcome } from '../utils/scenario';
 import { ZONE_GROUPS, ZONE_GROUP_LABELS, type ZoneGroup } from '../utils/target-model';
 import { AmmoTag } from './AmmoDisplay';
 import PanelNote from './PanelNote';
@@ -33,12 +33,17 @@ export interface LoadoutRailProps {
     className?: string;
 }
 
-/** Taller is fewer shots. Four steps, matching the ramp's four, so the two channels agree. */
+/**
+ * Taller is fewer shots, in four steps read straight off the grade.
+ *
+ * Derived rather than re-thresholded: these used to carry their own `<= 2 / <= 4 / <= 7` copy of the
+ * ramp, which is exactly the sort of duplicate that survives a re-banding and quietly disagrees with
+ * the colour beside it.
+ */
+const PIP_HEIGHTS = [4, 7, 11, 14] as const;
+
 function pipHeight(shots: number): number {
-    if (shots <= 2) return 14;
-    if (shots <= 4) return 11;
-    if (shots <= 7) return 7;
-    return 4;
+    return PIP_HEIGHTS[shotsGrade(shots).index];
 }
 
 /** The worst reading in a group: if you hit them *there*, this is what it costs. */

@@ -1,6 +1,11 @@
 # Combat simulator rebuild — plan
 
 **Status:** built 2026-09-04. Stages 0-8 are in; the spray formula is the one thing still open.
+**Superseded in part:** two of this plan's calls were reversed on 2026-09-06 — see
+[COMBAT_SIM_READABILITY_PLAN.md](COMBAT_SIM_READABILITY_PLAN.md). Numerals are back on the body
+figure (colour alone could not separate eight rounds from ninety-eight), and the camera preset row
+is gone (it was a cosmetic twin of the facing control, which is the one that moves a number). The
+rest of the design below stands, and the reasoning for what was reversed is kept on purpose.
 **Design:** https://claude.ai/code/artifact/3f1f4bf8-dbc4-45ca-ad98-9bb40db46c41
 **Route:** `src/app/combat-sim/` — ~2,700 lines across 13 files
 **Read first:** [the route's own doc](../src/app/combat-sim/AGENTS.md), then
@@ -38,6 +43,9 @@ the code would otherwise have to reverse-engineer.
 - **Colour is the shots-to-kill ramp**, using the app's own semantic tokens so the scale reads
   without a legend: `good` 1–2, `warn` 3–4, `info` 5–7, `line-500` 8+. Colour is never spent on
   loadout identity — that is what killed the ramp in the current four-overlaid design.
+  *(2026-09-06: the ramp stands and is now one of three consumers of the shared grade scale, but
+  "without a legend" did not survive contact — the last rung spans eight rounds to ninety-eight, so
+  every capsule prints its figure. See ADR 0006.)*
 - **The verdict bar is a three-tier ladder**, replacing a census of body parts:
 
   | Tier | What it is | Computed as |

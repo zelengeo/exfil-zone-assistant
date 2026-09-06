@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { BAND_TIERS, type Band } from '@/lib/gunsmith/bands';
+import GradeMeter from '@/components/quality/GradeMeter';
+import type { Band } from '@/lib/gunsmith/bands';
 
 export interface StatReadoutProps {
     label: string;
@@ -67,27 +68,7 @@ export default function StatReadout({
                 )}
             </div>
 
-            {band ? (
-                <div className="mt-2.5">
-                    <div className="flex gap-0.5" aria-hidden="true">
-                        {BAND_TIERS.map((tier, i) => (
-                            <div
-                                key={tier}
-                                className="h-1 flex-1"
-                                style={{ backgroundColor: i <= band.index ? band.color : '#28323B' }}
-                            />
-                        ))}
-                    </div>
-                    <div className="micro-label mt-1.5" style={{ color: band.color }}>
-                        {band.label}
-                    </div>
-                </div>
-            ) : (
-                <div className="mt-2.5">
-                    <div className="h-1 bg-track" aria-hidden="true" />
-                    <div className="micro-label mt-1.5 text-ink-700">{note ?? 'Not ranked'}</div>
-                </div>
-            )}
+            <GradeMeter grade={band} note={note} className="mt-2.5" />
         </div>
     );
 }
