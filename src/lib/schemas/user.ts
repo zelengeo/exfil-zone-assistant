@@ -187,7 +187,7 @@ const userListItemSchema = userDocumentSchema.pick({
 });
 
 // User profile schema (public view)
-const userProfileSchema = userDocumentSchema.pick({
+export const userProfileSchema = userDocumentSchema.pick({
     _id: true,
     username: true,
     displayName: true,
@@ -201,6 +201,10 @@ const userProfileSchema = userDocumentSchema.pick({
     stats: true,
     createdAt: true,
 }).extend({
+    // Provider display names are not constrained by the profile-edit input format.
+    displayName: z.string().optional(),
+    location: z.enum(locationEnum).optional(),
+    createdAt: z.date().optional(),
     preferences: z.object({
         publicProfile: z.boolean(),
         showContributions: z.boolean(),

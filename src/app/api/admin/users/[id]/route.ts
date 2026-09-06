@@ -15,8 +15,8 @@ import {
 } from "@/lib/errors";
 import {parseJsonBody} from "@/lib/request";
 import {logger} from "@/lib/logger";
-import {AdminUserUpdateInput, IUserApi, UserApi} from "@/lib/schemas/user";
-import { sanitizeUserInput } from '@/lib/utils';
+import {IUserApi} from "@/lib/schemas/user";
+import { updateUserAsAdmin } from '@/lib/auth/admin-user-mutations';
 
 type ApiType = IUserApi['Admin']['ById']
 export async function GET(
@@ -115,69 +115,7 @@ export async function PATCH(
     return withRateLimit(request, async () => {
             const { id } = await params;
             try {
-                const {session} = await requireAdmin();
-                await connectDB();
-
-                const body = await parseJsonBody(request);
-                // Validate input
-                const validatedData = UserApi.Admin.ById.Patch.Request.parse(body);
-
-
-                // Sanitize text inputs
-                const updates: AdminUserUpdateInput = {...validatedData};
-                if (validatedData.displayName) {
-                    updates.displayName = sanitizeUserInput(validatedData.displayName);
-                }
-                if (validatedData.bio) {
-                    updates.bio = sanitizeUserInput(validatedData.bio);
-                }
-                if (validatedData.banReason) {
-                    updates.banReason = sanitizeUserInput(validatedData.banReason);
-                }
-
-                if (validatedData.username) {
-                    // Check if username is already taken
-                    const existingUser = await User.findOne({
-                        username: validatedData.username,
-                        _id: {$ne: id}
-                    });
-
-                    if (existingUser) {
-                        throw new ConflictError('Username already in use');
-                    }
-
-                    updates.username = validatedData.username;
-                }
-
-                if (validatedData.email) {
-                    // Check if email is already taken
-                    const existingUser = await User.findOne({
-                        email: validatedData.email,
-                        _id: {$ne: id}
-                    });
-
-                    if (existingUser) {
-                        throw new ConflictError('Email already in use');
-                    }
-
-                    updates.email = validatedData.email;
-                }
-
-                // Update user
-                const updatedUser = await User.findByIdAndUpdate(
-                    id,
-                    {$set: updates},
-                    {new: true}
-                );//.select('-password');
-
-                if (!updatedUser) {
-                    throw new NotFoundError('User');
-                }
-
-                logger.info('User profile updated', {
-                    userId: session.user.id,
-                    updatedFields: Object.keys(updates),
-                });
+                const updatedUser = await updateUserAsAdmin(id, await parseJsonBody(request));
 
                 return NextResponse.json<ApiType['Patch']['Response']>({
                     success: true,

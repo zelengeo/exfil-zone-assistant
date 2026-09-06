@@ -17,7 +17,7 @@ export const metadata: Metadata = {
                 url: '/og/og-image-hideout.jpg',
                 width: 1200,
                 height: 630,
-                alt: 'Hideout Upgrades Calculator',
+                alt: 'Hideout upgrade planner showing rooms, zones, and build readiness',
             }
         ],
     },

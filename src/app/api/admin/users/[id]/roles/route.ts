@@ -1,11 +1,12 @@
 // src/app/api/admin/users/[id]/roles/route.ts
 import {NextRequest, NextResponse} from 'next/server';
+import { updateUserRolesAsAdmin } from '@/lib/auth/admin-user-mutations';
 import { connectDB } from '@/lib/mongodb';
 import { User } from '@/models/User';
-import {requireAdmin, requireAdminOrModerator} from "@/lib/auth/utils";
+import {requireAdminOrModerator} from "@/lib/auth/utils";
 import {withRateLimit} from "@/lib/middleware";
-import {IUserApi, UserApi, UserRoles,} from '@/lib/schemas/user';
-import {AuthorizationError, handleError, NotFoundError} from "@/lib/errors";
+import {IUserApi, UserApi} from '@/lib/schemas/user';
+import {handleError, NotFoundError} from "@/lib/errors";
 import { parseJsonBody } from '@/lib/request';
 import {logger} from "@/lib/logger";
 
@@ -39,50 +40,15 @@ export async function PATCH(
         async () => {
             const { id } = await params;
             try {
-                const { session } = await requireAdmin();
-                await connectDB();
-
-                // Parse and validate request
                 const body = await parseJsonBody(request);
                 const validatedData = UserApi.Admin.ById.Roles.Patch.Request.parse(body);
-
-                const targetUser = await User.findById(id);
-                if (!targetUser) {
-                    throw new NotFoundError('User');
-                }
-
-                // Prevent self-role modification
-                if (session.user.id === id) {
-                    throw new AuthorizationError('Cannot modify your own roles');
-                }
-
-                // Prevent modification of other admins
-                if (targetUser.roles?.includes('admin')) {
-                    throw new AuthorizationError('Cannot change admin roles from another');
-                }
-
-                // Apply role change
-                if (validatedData.action === 'add') {
-                    if (!targetUser.roles?.includes(validatedData.role)) {
-                        targetUser.roles.push(validatedData.role);
-                    }
-                } else {
-                    targetUser.roles = targetUser.roles?.filter((r: UserRoles)  => r !== validatedData.role) || ["user"];
-                }
-
-                await targetUser.save();
-
-                logger.info('User role updated', {
-                    adminId: session.user.id,
-                    targetUserId: id,
-                    ...validatedData
-                });
+                const targetUser = await updateUserRolesAsAdmin(id, validatedData);
 
                 return NextResponse.json<ApiType['Patch']['Response']>({
                     success: true,
                     message: `Role ${validatedData.action}ed successfully`,
                     user: {
-                        id: targetUser._id,
+                        id: targetUser._id.toString(),
                         username: targetUser.username,
                         roles: targetUser.roles,
                         rank: targetUser.rank,

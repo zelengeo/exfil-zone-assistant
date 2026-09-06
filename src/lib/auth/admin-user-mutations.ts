@@ -19,7 +19,7 @@ function assertRoleChangeAllowed(actorId: string, target: IUser): void {
     if (target.roles.includes('admin')) throw new AuthorizationError('Cannot change admin roles from another');
 }
 
-async function saveAdminUpdate(actorId: string, target: IUser, updates: AdminUserUpdateInput): Promise<IUser> {
+async function saveAdminUpdate(actorId: string, target: IUser, updates: AdminUserUpdateInput, reason?: string): Promise<IUser> {
     const userId = target._id.toString();
     const changesRoles = updates.roles !== undefined;
     if (changesRoles) assertRoleChangeAllowed(actorId, target);
@@ -37,6 +37,7 @@ async function saveAdminUpdate(actorId: string, target: IUser, updates: AdminUse
     logger.info('User updated by admin', {
         adminId: actorId, targetUserId: userId, updatedFields: Object.keys(updates),
         action: 'admin.user.edit.update',
+        ...(reason ? { reason: sanitizeUserInput(reason) } : {}),
     });
     return updated;
 }
@@ -73,5 +74,5 @@ export async function updateUserRolesAsAdmin(userId: string, body: unknown): Pro
     const roles = data.action === 'add'
         ? [...new Set([...target.roles, data.role])]
         : target.roles.filter(role => role !== data.role);
-    return saveAdminUpdate(session.user.id, target, { roles });
+    return saveAdminUpdate(session.user.id, target, { roles }, data.reason);
 }

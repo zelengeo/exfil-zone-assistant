@@ -16,7 +16,7 @@ export const metadata: Metadata = {
                 url: '/og/og-image-combat-sim.jpg',
                 width: 1200,
                 height: 630,
-                alt: 'ExfilZone Assistant - VR Extraction Shooter Companion',
+                alt: 'Combat Simulator showing an aimed-shot verdict and target zones',
             },
         ]
     },

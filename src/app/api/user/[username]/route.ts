@@ -1,12 +1,12 @@
 // src/app/api/user/[username]/route.ts
 import { NextRequest, NextResponse } from 'next/server';
-import { connectDB } from '@/lib/mongodb';
-import { User } from '@/models/User';
+import { getServerSession } from 'next-auth';
 import { IUserApi } from '@/lib/schemas/user';
 import { withRateLimit } from '@/lib/middleware';
 import { logger } from '@/lib/logger';
 import { handleError, NotFoundError } from '@/lib/errors';
-import { sanitizeUserInput } from '@/lib/utils';
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import { getUserByUsername } from '@/lib/user';
 
 type ApiType = IUserApi['ByUsername'];
 
@@ -16,52 +16,10 @@ export async function GET(
 ) {
     return withRateLimit(request, async () => {
         try {
-            const { username: rawUsername } = await params;
-            const username = sanitizeUserInput(rawUsername).toLowerCase();
-
-            await connectDB();
-
-            const user = await User.findOne({
-                username,
-                isActive: true,
-                isBanned: false,
-            })
-                .select('-email -lastLoginAt -isActive -isBanned -banReason -preferences.emailNotifications')
-                .lean<ApiType['Get']['Response']['user']>();
-
-            if (!user) {
-                throw new NotFoundError('User profile');
-            }
-
-            // Apply privacy settings //TODO revisit - redefine private profile
-            if (!user.preferences.publicProfile) {
-                // Return limited data for private profiles
-                return NextResponse.json<ApiType['Get']['Response']>({
-                    user: {
-                        _id: user._id,
-                        username: user.username,
-                        displayName: user.displayName,
-                        avatarUrl: user.avatarUrl,
-                        rank: user.rank,
-                        roles: [],
-                        badges: [],
-                        bio: '',
-                        location: user.location,
-                        vrHeadset: user.vrHeadset,
-                        createdAt: user.createdAt,
-                        stats: {
-                            contributionPoints: 0,
-                            feedbackSubmitted: 0,
-                            bugsReported: 0,
-                            featuresProposed: 0,
-                        },
-                        preferences: {
-                            publicProfile: false,
-                            showContributions: false,
-                        },
-                    }
-                });
-            }
+            const { username } = await params;
+            const session = await getServerSession(authOptions);
+            const user = await getUserByUsername(username, session?.user?.id);
+            if (!user) throw new NotFoundError('User profile');
 
             return NextResponse.json<ApiType['Get']['Response']>({ user });
         } catch (error) {

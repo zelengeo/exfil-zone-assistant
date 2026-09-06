@@ -4,7 +4,7 @@ import { AuthenticationError, NotFoundError } from '@/lib/errors';
 
 const mocks = vi.hoisted(() => ({
     deleteUserAccount: vi.fn(),
-    requireAuth: vi.fn(),
+    requireSession: vi.fn(),
 }));
 
 vi.mock('@/lib/mongodb', () => ({
@@ -12,7 +12,7 @@ vi.mock('@/lib/mongodb', () => ({
 }));
 
 vi.mock('@/lib/auth/utils', () => ({
-    requireAuth: mocks.requireAuth,
+    requireSession: mocks.requireSession,
 }));
 
 vi.mock('@/lib/auth/account-deletion', () => ({
@@ -53,7 +53,7 @@ describe('DELETE /api/user', () => {
     beforeEach(() => {
         vi.clearAllMocks();
         vi.spyOn(console, 'error').mockImplementation(() => undefined);
-        mocks.requireAuth.mockResolvedValue({ user: { id: USER_ID, username: 'target' } });
+        mocks.requireSession.mockResolvedValue({ user: { id: USER_ID, username: 'target' } });
         mocks.deleteUserAccount.mockResolvedValue({ userId: USER_ID, username: 'target' });
     });
 
@@ -77,7 +77,7 @@ describe('DELETE /api/user', () => {
     });
 
     it('rejects an anonymous caller without attempting a deletion', async () => {
-        mocks.requireAuth.mockRejectedValueOnce(new AuthenticationError());
+        mocks.requireSession.mockRejectedValueOnce(new AuthenticationError());
 
         const response = await deleteOwnAccount();
 

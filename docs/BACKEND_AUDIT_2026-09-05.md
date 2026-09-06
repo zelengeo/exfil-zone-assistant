@@ -370,6 +370,8 @@ The complete implementation drafts and dependency graph are saved in [BACKEND_AU
 
 **Medium — Enforce current account status on mutations and session refresh**
 
+**Implementation status:** Implemented locally on 2026-09-06. Current-user gates now enforce bans and missing accounts on profile/username/feedback writes; unbans do not require token refresh. Profile writes also match current ban state. Banned users explicitly retain self-deletion and own-profile reads. B01 already covers missing-user session refresh. See src/lib/auth/utils.test.ts and user-policies.integration.test.ts. Production deployment remains unverified.
+
 **Evidence and affected paths:** requireAuth checks isBanned only from the JWT. Profile and username mutations and correction submission use this token-only gate. JWT state is refreshed only on sign-in/update, and a missing database row during refresh does not itself invalidate the old token. The session maxAge is 30 days.
 
 - [src/lib/auth/utils.ts:13](https://github.com/zelengeo/exfil-zone-assistant/blob/9639e01a1cdb4fb32435309eaf68f561e6b4046a/src/lib/auth/utils.ts#L13)
@@ -393,6 +395,8 @@ The complete implementation drafts and dependency graph are saved in [BACKEND_AU
 ## B14
 
 **Medium — Enforce profile privacy in server responses and shared reads**
+
+**Implementation status:** Implemented locally on 2026-09-06. API and page share getUserByUsername, with a positive projection and response-schema parsing. Anonymous readers use the same visibility rules; banned/inactive targets are hidden except from their owner. Private profiles omit location/headset/member date, with neutral contribution fields. Hidden contributions are neither queried nor rendered; owner views remain complete. The local integration suite checks API payloads and rendered pages across public/private, contribution visibility and viewer identity, including a future sensitive database field. Production deployment remains unverified.
 
 **Evidence and affected paths:** The public API returns the full selected user when publicProfile is true without applying showContributions, so contribution stats remain visible when disabled. The page hides a contributions section at render time. getUserByUsername separately comments out active/banned filters that the API applies, and private API profiles still return location/headset.
 
@@ -458,6 +462,8 @@ The complete implementation drafts and dependency graph are saved in [BACKEND_AU
 ## B17
 
 **Medium — Unify duplicated profile and admin mutation policies**
+
+**Implementation status:** Implemented locally on 2026-09-06. Profile PATCH wrappers share updateOwnProfile while retaining their response contracts. Generic admin PATCH, the edit server action and dedicated role PATCH use shared operations with current-admin authorization, validation, logging and errors. Actual role changes refuse self/existing-admin targets; unchanged submitted roles are omitted so normal admin profile edits work. Omitted PATCH fields have no creation defaults, and role writes use the read role snapshot to reject concurrent promotions. The local integration suite covers all three entry points and concurrent writes. Production deployment remains unverified.
 
 **Evidence and affected paths:** Two profile PATCH routes implement the same mutation with different response shapes. Role-specific admin mutation forbids self-modification and modifying other admins, but generic admin PATCH accepts roles through adminUserUpdateSchema and lacks those guards. The server action prevents only self-role changes. These entry points implement incompatible policies for the same data.
 

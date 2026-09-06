@@ -2,20 +2,20 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
 import { User } from '@/models/User';
-import { UserApi, IUserApi } from '@/lib/schemas/user';
+import { IUserApi } from '@/lib/schemas/user';
 import { withRateLimit } from '@/lib/middleware';
 import { logger } from '@/lib/logger';
 import { handleError, NotFoundError } from '@/lib/errors';
 import { parseJsonBody } from '@/lib/request';
-import { requireAuth } from "@/lib/auth/utils";
+import { requireSession } from "@/lib/auth/utils";
 import { deleteUserAccount } from "@/lib/auth/account-deletion";
-import {sanitizeUserInput} from "@/lib/utils";
+import { updateOwnProfile } from '@/lib/auth/profile-mutations';
 
 type ApiType = IUserApi;
 export async function GET(request: NextRequest) {
     return withRateLimit(request, async () => {
         try {
-            const session = await requireAuth();
+            const session = await requireSession();
             await connectDB();
 
             const user = await User.findById(session.user.id)
@@ -36,37 +36,7 @@ export async function GET(request: NextRequest) {
 export async function PATCH(request: NextRequest) {
     return withRateLimit(request, async () => {
         try {
-            const session = await requireAuth();
-            const body = await parseJsonBody(request);
-
-            // Validate input
-            const validatedData = UserApi.Patch.Request.parse(body);
-
-            // Sanitize text inputs
-            if (validatedData.displayName) {
-                validatedData.displayName = sanitizeUserInput(validatedData.displayName);
-            }
-            if (validatedData.bio) {
-                validatedData.bio = sanitizeUserInput(validatedData.bio);
-            }
-
-            await connectDB();
-
-            // Update user
-            const updatedUser = await User.findByIdAndUpdate(
-                session.user.id,
-                { $set: validatedData },
-                { new: true, runValidators: true }
-            ).lean<ApiType['Patch']['Response']['user']>();
-
-            if (!updatedUser) {
-                throw new NotFoundError('User');
-            }
-
-            logger.info('User profile updated', {
-                userId: session.user.id,
-                updatedFields: Object.keys(validatedData),
-            });
+            const updatedUser = await updateOwnProfile(await parseJsonBody(request));
 
             return NextResponse.json<ApiType['Patch']['Response']>({ user: updatedUser });
         } catch (error) {
@@ -79,7 +49,7 @@ export async function PATCH(request: NextRequest) {
 export async function DELETE(request: NextRequest) {
     return withRateLimit(request, async () => {
         try {
-            const session = await requireAuth();
+            const session = await requireSession();
 
             const { username } = await deleteUserAccount(session.user.id);
 

@@ -6,19 +6,19 @@ import { User } from '@/models/User';
 import { requireAdmin } from '@/lib/auth/utils';
 import {
     IUserApi,
-    AdminUserUpdateInput,
-    adminUserUpdateSchema
+    AdminUserUpdateInput
 } from '@/lib/schemas/user';
 import { isValidObjectId } from 'mongoose';
 import { logger } from '@/lib/logger';
-import { sanitizeUserInput } from '@/lib/utils';
+import { updateUserAsAdmin } from '@/lib/auth/admin-user-mutations';
+import type { ErrorResponse } from '@/lib/schemas/core';
 import { enforceRateLimit } from '@/lib/middleware';
 import { revalidatePath } from 'next/cache';
 import {
     NotFoundError,
     ValidationError,
     AuthorizationError,
-    ConflictError
+    handleError
 } from '@/lib/errors';
 
 /**
@@ -93,128 +93,29 @@ export async function updateUser(
     data: AdminUserUpdateInput
 ): Promise<UpdateUserResult> {
     try {
-        // 1. Check authentication and authorization
-        const { session } = await requireAdmin();
         await enforceRateLimit('admin');
+        const updatedUser = await updateUserAsAdmin(userId, data);
 
-        // 2. Validate inputs
-        if (!isValidObjectId(userId)) {
-            throw new ValidationError('Invalid user ID format');
-        }
-
-        const validatedData = adminUserUpdateSchema.parse(data);
-
-        // 3. Connect to database
-        await connectDB();
-
-        // 4. Sanitize text inputs
-        const updates: AdminUserUpdateInput = { ...validatedData };
-        if (validatedData.displayName) {
-            updates.displayName = sanitizeUserInput(validatedData.displayName);
-        }
-        if (validatedData.bio) {
-            updates.bio = sanitizeUserInput(validatedData.bio);
-        }
-        if (validatedData.banReason) {
-            updates.banReason = sanitizeUserInput(validatedData.banReason);
-        }
-
-        // 5. Check for conflicts (username/email uniqueness)
-        if (validatedData.username) {
-            const existingUser = await User.findOne({
-                username: validatedData.username,
-                _id: { $ne: userId }
-            });
-
-            if (existingUser) {
-                throw new ConflictError('Username already in use');
-            }
-        }
-
-        if (validatedData.email) {
-            const existingUser = await User.findOne({
-                email: validatedData.email,
-                _id: { $ne: userId }
-            });
-
-            if (existingUser) {
-                throw new ConflictError('Email already in use');
-            }
-        }
-
-        // 6. Prevent self-modification of critical fields
-        if (session.user.id === userId && validatedData.roles) {
-            throw new AuthorizationError('Cannot modify your own roles');
-        }
-
-        // 7. Update user
-        const updatedUser = await User.findByIdAndUpdate(
-            userId,
-            { $set: updates },
-            { new: true, runValidators: true }
-        ).lean<IUserApi['Admin']['ById']['Patch']['Response']['user']>();
-
-        if (!updatedUser) {
-            throw new NotFoundError('User');
-        }
-
-        // 8. Log the action
-        logger.info('User updated by admin', {
-            adminId: session.user.id,
-            targetUserId: userId,
-            updatedFields: Object.keys(updates),
-            action: 'admin.user.edit.update'
-        });
-
-        // 9. Revalidate cached pages
+        // Revalidate cached pages
         revalidatePath('/admin/users');
         revalidatePath(`/admin/users/${userId}/edit`);
         revalidatePath(`/user/${updatedUser.username}`);
 
-        // 10. Return success with updated data
+        // Return success with serialized data
         return {
             success: true as const,
             data: JSON.parse(JSON.stringify(updatedUser)),
             message: 'User updated successfully'
         };
     } catch (error) {
-        // 11. Log errors with context
+        // Log errors with context
         logger.error('Failed to update user', error, {
             userId,
             action: 'admin.user.edit.update'
         });
 
-        // 12. Return typed errors
-        if (error instanceof ValidationError) {
-            return {
-                success: false as const,
-                error: error.message,
-            };
-        }
-        if (error instanceof ConflictError) {
-            return {
-                success: false as const,
-                error: error.message
-            };
-        }
-        if (error instanceof AuthorizationError) {
-            return {
-                success: false as const,
-                error: 'You do not have permission to perform this action'
-            };
-        }
-        if (error instanceof NotFoundError) {
-            return {
-                success: false as const,
-                error: 'User not found'
-            };
-        }
-
-        // Generic error
-        return {
-            success: false as const,
-            error: 'Failed to update user. Please try again.'
-        };
+        const response: ErrorResponse = await handleError(error).json();
+        return { success: false, error: response.error.message, code: response.error.code };
     }
 }
 
@@ -227,4 +128,4 @@ export type GetUserForEditResult =
 
 export type UpdateUserResult =
     | { success: true; data: IUserApi['Admin']['ById']['Patch']['Response']['user']; message: string }
-    | { success: false; error: string; field?: string; code?: 'CONFLICT' | 'UNAUTHORIZED' | 'NOT_FOUND' | 'VALIDATION' | 'ERROR' };
+    | { success: false; error: string; field?: string; code?: ErrorResponse['error']['code'] };

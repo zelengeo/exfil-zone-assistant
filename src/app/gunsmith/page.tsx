@@ -13,6 +13,14 @@ export const metadata: Metadata = {
         description:
             'Build a gun from real parts and see its stats and recoil pattern, calculated with the game’s own model.',
         type: 'website',
+        images: [
+            {
+                url: '/og/og-image-gunsmith.jpg',
+                width: 1200,
+                height: 630,
+                alt: 'Gunsmith weapon builder showing calculated weapon stats and parts',
+            },
+        ],
     },
 };
 

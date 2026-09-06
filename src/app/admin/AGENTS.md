@@ -26,6 +26,13 @@ Five, from `rolesEnum` in `lib/schemas/user.ts`: `user`, `contributor`, `moderat
 `api/admin/users/[id]/roles/route.ts` but are commented out, so any admin can assign any role
 including admin. Treat that as the current behaviour rather than an oversight to code around.
 
+Every mutation goes through `lib/auth/admin-user-mutations.ts`, including the generic user PATCH
+and edit server action. Actual role changes cannot target self or an existing admin. The edit form
+sends unchanged roles with profile fields too; those roles are omitted from the write, so an admin
+can still edit their own profile or another admin's profile. A stale role snapshot returns a
+conflict instead of overwriting a concurrent promotion. Validators, mutation logging and error
+messages are shared across entry points.
+
 ## Corrections are gone
 
 `/admin/corrections`, the correction APIs, the `DataCorrection` model and its schemas were removed

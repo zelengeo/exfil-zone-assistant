@@ -1,4 +1,4 @@
-import {notFound, redirect} from 'next/navigation';
+import {notFound} from 'next/navigation';
 import Image from 'next/image';
 import {getServerSession} from "next-auth";
 import {authOptions} from "@/app/api/auth/[...nextauth]/route";
@@ -42,17 +42,7 @@ export default async function UserProfilePage({params}: UserProfilePageProps) {
 
     const session = await getServerSession(authOptions);
 
-    if (!session?.user?.id) {
-        redirect('/unauthorized')
-    }
-
-    if (session.user.isBanned && (session.user.username !== username)) {
-        redirect('/unauthorized/banned')
-    }
-
-
-
-    const user = await getUserByUsername(username)
+    const user = await getUserByUsername(username, session?.user?.id);
 
     // TODO not found user should have different fallback.
     if (!user) {
@@ -65,25 +55,28 @@ export default async function UserProfilePage({params}: UserProfilePageProps) {
     // If profile is private and not own profile, show limited view
     const isProfilePrivate = !user.preferences.publicProfile && !isOwnProfile;
 
+    const showContributions = isOwnProfile || (!isProfilePrivate && user.preferences.showContributions);
+
     // Fetch public feedback (only accepted/implemented)
-    const publicFeedback = isProfilePrivate ? [] : await Feedback.find({
+    const publicFeedback = !showContributions ? [] : await Feedback.find({
         userId: user._id,
         status: {$in: ['accepted', 'implemented']}
     })
+        .select('type title status category createdAt')
         .sort({createdAt: -1})
         .limit(10)
         .lean<IFeedback[]>();
 
     // Calculate member since
-    const memberSince = new Date(user.createdAt).toLocaleDateString('en-US', {
+    const memberSince = user.createdAt ? new Date(user.createdAt).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long'
-    });
+    }) : null;
 
     // Calculate contributions this month
     const thisMonth = new Date();
     thisMonth.setDate(1);
-    const monthlyContributions = isProfilePrivate ? 0 : await Feedback.countDocuments({
+    const monthlyContributions = !showContributions ? 0 : await Feedback.countDocuments({
         userId: user._id,
         createdAt: {$gte: thisMonth}
     });
@@ -142,10 +135,10 @@ export default async function UserProfilePage({params}: UserProfilePageProps) {
                             )}
 
                             <div className="flex flex-wrap gap-6 text-sm">
-                                <div className="flex items-center gap-2 text-ink-400">
+                                {memberSince && <div className="flex items-center gap-2 text-ink-400">
                                     <Calendar className="h-4 w-4" strokeWidth={1.6}/>
                                     <span>Member since {memberSince}</span>
-                                </div>
+                                </div>}
                                 {user.location && (
                                     <div className="flex items-center gap-2 text-ink-400">
                                         <MapPin className="h-4 w-4" strokeWidth={1.6}/>
@@ -186,7 +179,7 @@ export default async function UserProfilePage({params}: UserProfilePageProps) {
                 )}
 
                 {/* Public Content */}
-                {!isProfilePrivate && (
+                {showContributions && (
                     <>
                         {/* Stats Overview */}
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
@@ -275,7 +268,7 @@ export default async function UserProfilePage({params}: UserProfilePageProps) {
                         </div>
 
                         {/* Recent Accepted Contributions */}
-                        {user.preferences.showContributions && publicFeedback.length > 0 && (
+                        {publicFeedback.length > 0 && (
                             <div className="bg-steel-800 border border-line-800 p-6">
                                 <h3 className="font-display font-bold uppercase tracking-tight text-xl text-ink-100 mb-4">Recent Accepted Contributions</h3>
                                 <div className="space-y-3">

@@ -1,9 +1,13 @@
 import { randomUUID } from 'node:crypto';
 
 import type { NextRequest } from 'next/server';
+import type { ReactNode } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { assertLocalMongoUri } from '../../../scripts/local-mongodb';
+import type { IUser } from '@/lib/schemas/user';
+import type { ErrorResponse } from '@/lib/schemas/core';
 
 const mocks = vi.hoisted(() => ({ session: vi.fn() }));
 vi.mock('next-auth', () => ({ getServerSession: mocks.session }));
@@ -13,6 +17,7 @@ vi.mock('@/lib/middleware', () => ({
     enforceRateLimit: vi.fn(),
 }));
 vi.mock('next/cache', () => ({ revalidatePath: vi.fn() }));
+vi.mock('@/components/layout/Layout', () => ({ default: ({ children }: { children: ReactNode }) => children }));
 vi.mock('@/lib/logger', () => ({ logger: { info: vi.fn(), error: vi.fn(), warn: vi.fn() } }));
 
 const configuredUri = process.env.MONGODB_URI;
@@ -32,6 +37,8 @@ describe.skipIf(!canRun())('user policy entry points against a replica set', () 
     let admin: typeof import('@/app/api/admin/users/[id]/route');
     let roles: typeof import('@/app/api/admin/users/[id]/roles/route');
     let actions: typeof import('@/app/admin/users/[id]/edit/actions');
+    let publicProfile: typeof import('@/app/api/user/[username]/route');
+    let profilePage: typeof import('@/app/user/[username]/page');
     let actorId: string;
     let targetId: string;
     let otherAdminId: string;
@@ -53,6 +60,8 @@ describe.skipIf(!canRun())('user policy entry points against a replica set', () 
         admin = await import('@/app/api/admin/users/[id]/route');
         roles = await import('@/app/api/admin/users/[id]/roles/route');
         actions = await import('@/app/admin/users/[id]/edit/actions');
+        publicProfile = await import('@/app/api/user/[username]/route');
+        profilePage = await import('@/app/user/[username]/page');
     }, 30_000);
 
     afterAll(async () => {
@@ -138,10 +147,12 @@ describe.skipIf(!canRun())('user policy entry points against a replica set', () 
     const adminPaths = ['api', 'action', 'roles'] as const;
     async function mutateAdmin(path: typeof adminPaths[number], id: string, body: unknown) {
         if (path === 'action') {
-            return actions.updateUser(id, body as Parameters<typeof actions.updateUser>[1]);
+            const result = await actions.updateUser(id, body as Parameters<typeof actions.updateUser>[1]);
+            return { success: result.success, error: result.success ? undefined : { message: result.error, code: result.code } };
         }
         const response = await (path === 'api' ? admin.PATCH : roles.PATCH)(request(body), { params: Promise.resolve({ id }) });
-        return { ...await response.json(), status: response.status };
+        const result: Partial<ErrorResponse> & { success?: boolean } = await response.json();
+        return { ...result, status: response.status };
     }
     function roleChange(path: typeof adminPaths[number]) {
         return path === 'roles' ? { action: 'add', role: 'moderator' } : { roles: ['user', 'moderator'] };
@@ -150,29 +161,51 @@ describe.skipIf(!canRun())('user policy entry points against a replica set', () 
     describe.each(adminPaths)('%s admin mutation', path => {
         it('rejects ordinary callers despite forged/stale token roles', async () => {
             signIn(targetId);
-            expect((await mutateAdmin(path, otherAdminId, roleChange(path))).success).not.toBe(true);
-            expect((await User.findById(otherAdminId).lean()).roles).toEqual(['user', 'admin']);
+            expect((await mutateAdmin(path, otherAdminId, roleChange(path))).error?.code).toBe('INSUFFICIENT_PERMISSIONS');
+            expect((await User.findById(otherAdminId).lean<IUser>())?.roles).toEqual(['user', 'admin']);
         });
         it('rejects a newly banned administrator', async () => {
             await User.updateOne({ _id: actorId }, { $set: { isBanned: true } });
-            expect((await mutateAdmin(path, targetId, roleChange(path))).success).not.toBe(true);
-            expect((await User.findById(targetId).lean()).roles).toEqual(['user']);
+            expect((await mutateAdmin(path, targetId, roleChange(path))).error?.code).toBe('USER_BANNED');
+            expect((await User.findById(targetId).lean<IUser>())?.roles).toEqual(['user']);
         });
         it('rejects self-role changes', async () => {
-            expect((await mutateAdmin(path, actorId, roleChange(path))).success).not.toBe(true);
-            expect((await User.findById(actorId).lean()).roles).toEqual(['user', 'admin']);
+            expect((await mutateAdmin(path, actorId, roleChange(path))).error).toMatchObject({ code: 'AUTHORIZATION_ERROR', message: 'Cannot modify your own roles' });
+            expect((await User.findById(actorId).lean<IUser>())?.roles).toEqual(['user', 'admin']);
         });
         it('rejects changes to another administrator’s roles', async () => {
-            expect((await mutateAdmin(path, otherAdminId, roleChange(path))).success).not.toBe(true);
-            expect((await User.findById(otherAdminId).lean()).roles).toEqual(['user', 'admin']);
+            expect((await mutateAdmin(path, otherAdminId, roleChange(path))).error).toMatchObject({ code: 'AUTHORIZATION_ERROR', message: 'Cannot change admin roles from another' });
+            expect((await User.findById(otherAdminId).lean<IUser>())?.roles).toEqual(['user', 'admin']);
         });
         it('allows role changes on a normal target', async () => {
             expect((await mutateAdmin(path, targetId, roleChange(path))).success).toBe(true);
-            expect((await User.findById(targetId).lean()).roles).toEqual(['user', 'moderator']);
+            expect((await User.findById(targetId).lean<IUser>())?.roles).toEqual(['user', 'moderator']);
+        });
+        it('still permits granting admin to a normal target', async () => {
+            const body = path === 'roles' ? { action: 'add', role: 'admin' } : { roles: ['user', 'admin'] };
+            expect((await mutateAdmin(path, targetId, body)).success).toBe(true);
+            expect((await User.findById(targetId).lean<IUser>())?.roles).toEqual(['user', 'admin']);
+        });
+        it('does not overwrite a concurrent promotion after reading the target', async () => {
+            const write = User.collection.findOneAndUpdate.bind(User.collection);
+            const spy = vi.spyOn(User.collection, 'findOneAndUpdate').mockImplementationOnce(async (...args) => {
+                await User.collection.updateOne({ _id: new mongodb.mongoose.Types.ObjectId(targetId) }, { $set: { roles: ['user', 'admin'] } });
+                return write(...args);
+            });
+            try {
+                expect((await mutateAdmin(path, targetId, roleChange(path))).error?.code).toBe('CONFLICT_ERROR');
+                expect((await User.findById(targetId).lean<IUser>())?.roles).toEqual(['user', 'admin']);
+            } finally { spy.mockRestore(); }
         });
     });
 
     describe.each(['api', 'action'] as const)('%s generic edit', path => {
+        it('returns the same validation error for invalid roles', async () => {
+            expect((await mutateAdmin(path, targetId, { roles: ['invented-role'] })).error?.code).toBe('VALIDATION_ERROR');
+        });
+        it('returns the same conflict for a taken username', async () => {
+            expect((await mutateAdmin(path, targetId, { username: 'actor' })).error?.code).toBe('CONFLICT_ERROR');
+        });
         it('preserves omitted role, rank and ban fields', async () => {
             await User.updateOne({ _id: targetId }, { $set: { roles: ['partner'], rank: 'elite', isBanned: true } });
             expect((await mutateAdmin(path, targetId, { bio: 'An ordinary profile edit' })).success).toBe(true);
@@ -181,7 +214,80 @@ describe.skipIf(!canRun())('user policy entry points against a replica set', () 
         it.each(['self', 'other'] as const)('allows %s admin profile edits with unchanged submitted roles', async target => {
             const id = target === 'self' ? actorId : otherAdminId;
             expect((await mutateAdmin(path, id, { bio: 'Updated admin biography', roles: ['admin', 'user'] })).success).toBe(true);
-            expect((await User.findById(id).lean()).bio).toBe('Updated admin biography');
+            expect((await User.findById(id).lean<IUser>())?.bio).toBe('Updated admin biography');
         });
+    });
+
+    it.each(['profile', 'legacy', 'username'] as const)('%s refuses a ban arriving between authorization and write', async path => {
+        signIn(targetId);
+        const write = User.collection.findOneAndUpdate.bind(User.collection);
+        const spy = vi.spyOn(User.collection, 'findOneAndUpdate').mockImplementationOnce(async (...args) => {
+            await User.collection.updateOne({ _id: new mongodb.mongoose.Types.ObjectId(targetId) }, { $set: { isBanned: true } });
+            return write(...args);
+        });
+        try {
+            expect((await mutateOwn(path)).status).toBe(403);
+            expect(await User.findById(targetId).lean()).toMatchObject({ username: 'target' });
+        } finally { spy.mockRestore(); }
+    });
+
+    describe.each([true, false])('profile public=%s', isPublic => {
+        describe.each([true, false])('contributions=%s', contributions => {
+            it.each(['anonymous', 'other', 'owner'] as const)('enforces privacy for %s in the API and page', async viewer => {
+                if (viewer === 'anonymous') mocks.session.mockResolvedValue(null);
+                else signIn(viewer === 'owner' ? targetId : actorId);
+                // Raw collection bypasses schema strictness to stand in for a future sensitive field.
+                await User.collection.updateOne({ _id: new mongodb.mongoose.Types.ObjectId(targetId) }, { $set: {
+                    bio: 'Personal biography', location: 'eu', vrHeadset: 'quest3',
+                    'preferences.publicProfile': isPublic, 'preferences.showContributions': contributions,
+                    'stats.contributionPoints': 1234, futureSecret: 'must-never-leak',
+                } });
+                await Feedback.create({ userId: targetId, type: 'bug', status: 'accepted', title: 'Visible contribution marker', description: 'Synthetic contribution details' });
+
+                const response = await publicProfile.GET(request({}, 'POST'), { params: Promise.resolve({ username: 'target' }) });
+                expect(response.status).toBe(200);
+                const { user } = await response.json();
+                expect(user).not.toHaveProperty('email');
+                expect(user).not.toHaveProperty('futureSecret');
+                expect(user).not.toHaveProperty('emailVerified');
+                expect(user.preferences).not.toHaveProperty('emailNotifications');
+                const privateToViewer = !isPublic && viewer !== 'owner';
+                const showStats = viewer === 'owner' || (isPublic && contributions);
+                expect(user.stats.contributionPoints).toBe(showStats ? 1234 : 0);
+                if (privateToViewer) {
+                    expect(user).not.toHaveProperty('location');
+                    expect(user).not.toHaveProperty('vrHeadset');
+                    expect(user.bio).toBe('');
+                } else {
+                    expect(user.location).toBe('eu');
+                    expect(user.vrHeadset).toBe('quest3');
+                }
+
+                const find = vi.spyOn(Feedback, 'find');
+                const count = vi.spyOn(Feedback, 'countDocuments');
+                try {
+                    const html = renderToStaticMarkup(await profilePage.default({ params: Promise.resolve({ username: 'target' }) }));
+                    expect(html.includes('Visible contribution marker')).toBe(showStats);
+                    expect(html.includes('1234')).toBe(showStats);
+                    expect(html.includes('Personal biography')).toBe(!privateToViewer);
+                    if (!showStats) {
+                        expect(find).not.toHaveBeenCalled();
+                        expect(count).not.toHaveBeenCalled();
+                    }
+                } finally {
+                    find.mockRestore();
+                    count.mockRestore();
+                }
+            });
+        });
+    });
+
+    it.each(['isBanned', 'isActive'] as const)('uses the same %s visibility in API and page, with an owner exception', async field => {
+        await User.updateOne({ _id: targetId }, { $set: { [field]: field === 'isBanned' } });
+        expect((await publicProfile.GET(request({}, 'POST'), { params: Promise.resolve({ username: 'target' }) })).status).toBe(404);
+        await expect(profilePage.default({ params: Promise.resolve({ username: 'target' }) })).rejects.toThrow();
+        signIn(targetId);
+        expect((await publicProfile.GET(request({}, 'POST'), { params: Promise.resolve({ username: 'target' }) })).status).toBe(200);
+        await expect(profilePage.default({ params: Promise.resolve({ username: 'target' }) })).resolves.toBeDefined();
     });
 });

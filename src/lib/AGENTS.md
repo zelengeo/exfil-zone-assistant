@@ -10,18 +10,51 @@ advertise, and knowing which half you are in saves reading the wrong file:
 
 ## Auth
 
-Four gates in `auth/utils.ts`, each **throwing** rather than returning an error, so a route reads as
+The gates in `auth/utils.ts` **throw** rather than returning an error, so a route reads as
 a straight line and the catch does the work:
 
 | Gate | Costs | Use for |
 |---|---|---|
-| `requireAuth()` | session only | anything signed-in |
+| `requireSession()` | session only | own-profile reads and self-deletion, including banned users |
+| `requireAuth()` | session only | cheap reads where stale ban state is acceptable |
 | `requireAuthWithUserCheck()` | a database read | when roles or ban state must be current |
 | `requireAdmin()` | a database read | admin routes |
 | `requireAdminOrModerator()` | a database read | moderation routes |
 
 The session copy of roles and ban state can be stale — it is a token. Reach for the `WithUserCheck`
 form whenever acting on that state rather than merely reading behind it.
+
+Current-state gates start from `requireSession`, not `requireAuth`: rejecting a stale banned token
+first used to lock out a user after an unban. Missing accounts are rejected, and admin/moderator
+checks share the same current-user read. Self-deletion intentionally bypasses the ban check;
+`deleteUserAccount` verifies existence inside its transaction.
+
+`auth/profile-mutations.ts` owns both profile PATCH operations and username changes. It checks the
+current user, validates and sanitizes input, and includes ban state in the update predicate so a
+ban between authorization and the write cannot slip through. The two profile endpoints are
+response-compatible wrappers, not separate policies.
+
+`auth/admin-user-mutations.ts` owns generic admin edits and role updates. Actual role changes
+refuse self and existing-admin targets; unchanged submitted roles are omitted from the write so
+ordinary profile edits still work. Role writes match the roles read from the target, preventing a
+concurrent promotion from invalidating the protection. PATCH schemas must not supply creation
+defaults for omitted fields. API and server-action errors share `handleError`.
+
+## Profile visibility
+
+`user.ts#getUserByUsername` is the API/page reader. Pass a viewer id only from the session.
+It uses a positive projection and parses the response schema to strip future fields, including
+nested ones. Both readers allow anonymous access; banned/inactive targets are absent for other
+viewers, while owners retain their full profile view.
+
+A private profile exposes id, username, display name and avatar. Other required response fields
+are neutral: empty bio/roles/badges, zero stats and recruit rank; location, headset and member date
+are omitted. `showContributions=false` likewise neutralizes stats, badges and rank for others.
+The page does not query feedback or counts, or render contribution panels, when that data is hidden.
+Owner account/settings responses remain separate from this public projection.
+
+`auth/user-policies.integration.test.ts` exercises real API/action entry points, rendered profile
+pages and concurrent state changes in a disposable loopback database.
 
 ## Errors
 
@@ -170,4 +203,3 @@ rungs, the peer set is the ranking, and colour never travels without the figure 
   import dragged all 227 tasks into the client bundle of every route that names a vendor. A spec in
   `vendors.test.ts` compares the copy against `corps` so it cannot drift, and another asserts the
   import stays gone.
-

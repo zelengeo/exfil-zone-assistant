@@ -24,11 +24,11 @@ The sections below are the exact proposed issue bodies, apart from GitHub number
 | [B10](#b10) | [Medium] Cover backend entry points with rate limits and fix quota inspection | bug, ready-for-agent | None — B08/B09 shipped; implemented locally |
 | [B11](#b11) | [Medium] Make MongoDB index rollout previewable and verification fail reliably | bug, ready-for-agent | None — B04/B12 shipped; implemented locally |
 | [B12](#b12) | [Medium] Retire data-correction submissions across UI, APIs and moderation | enhancement, ready-for-agent | None — implemented locally; collection erasure pending |
-| [B13](#b13) | [Medium] Enforce current account status on mutations and session refresh | bug, needs-triage | B01 |
-| [B14](#b14) | [Medium] Enforce profile privacy in server responses and shared reads | bug, needs-triage | None |
+| [B13](#b13) | [Medium] Enforce current account status on mutations and session refresh | bug, needs-triage | None — implemented and locally verified; deployment unverified |
+| [B14](#b14) | [Medium] Enforce profile privacy in server responses and shared reads | bug, needs-triage | None — implemented and locally verified; deployment unverified |
 | [B15](#b15) | [Medium] Return correct API errors for duplicate keys and malformed JSON | bug, ready-for-agent | None — implemented locally |
 | [B16](#b16) | [Medium] Stop retaining unused OAuth provider tokens | enhancement, ready-for-agent | None — B02 shipped; implemented locally, migration pending |
-| [B17](#b17) | [Medium] Unify duplicated profile and admin mutation policies | bug, ready-for-agent | B01, B13 |
+| [B17](#b17) | [Medium] Unify duplicated profile and admin mutation policies | bug, ready-for-agent | None — implemented and locally verified; deployment unverified |
 | [B18](#b18) | [Medium] Correct backend agent guidance and add an operational runbook | documentation, needs-triage | B02, B04, B05, B06, B07, B09, B10, B11, B12, B13, B14, B15, B16, B17 |
 
 ## Dependency graph
@@ -1430,6 +1430,8 @@ Local audit: `docs/BACKEND_AUDIT_2026-09-05.md`, section `B12`. A GitHub trackin
 
 **Proposed title:** [Medium] Enforce current account status on mutations and session refresh
 
+**Implementation status:** Implemented locally on 2026-09-06. Current-user gates now enforce bans and missing accounts on profile/username/feedback writes; unbans do not require token refresh. Profile writes also match current ban state. Banned users explicitly retain self-deletion and own-profile reads. B01 already covers missing-user session refresh. See src/lib/auth/utils.test.ts and user-policies.integration.test.ts. Production deployment remains unverified.
+
 **Proposed labels:** bug, needs-triage
 
 Part of the backend audit dated 2026-09-05. Audit finding: **B13**. Priority: **Medium**.
@@ -1467,10 +1469,10 @@ No role hierarchy change, periodic DB query on every static page, new session-st
 
 ### Acceptance criteria
 
-- [ ] An account banned after token issuance cannot mutate profile, username, feedback or any retained correction endpoint.
-- [ ] Missing users cannot refresh into an apparently valid identity or create orphaned content.
-- [ ] Unban behavior and any self-deletion exception are documented and tested.
-- [ ] All retained mutation paths use the same current-state rule, including duplicate endpoints.
+- [x] An account banned after token issuance cannot mutate profile, username, feedback or any retained correction endpoint.
+- [x] Missing users cannot refresh into an apparently valid identity or create orphaned content.
+- [x] Unban behavior and any self-deletion exception are documented and tested.
+- [x] All retained mutation paths use the same current-state rule, including duplicate endpoints.
 
 ### Required tests or verification
 
@@ -1507,6 +1509,8 @@ Local audit: `docs/BACKEND_AUDIT_2026-09-05.md`, section `B13`. A GitHub trackin
 
 **Proposed title:** [Medium] Enforce profile privacy in server responses and shared reads
 
+**Implementation status:** Implemented locally on 2026-09-06. API and page share getUserByUsername, with a positive projection and response-schema parsing. Anonymous readers use the same visibility rules; banned/inactive targets are hidden except from their owner. Private profiles omit location/headset/member date, with neutral contribution fields. Hidden contributions are neither queried nor rendered; owner views remain complete. The local integration suite checks API payloads and rendered pages across public/private, contribution visibility and viewer identity, including a future sensitive database field. Production deployment remains unverified.
+
 **Proposed labels:** bug, needs-triage
 
 Part of the backend audit dated 2026-09-05. Audit finding: **B14**. Priority: **Medium**.
@@ -1542,11 +1546,11 @@ No new privacy UI, changing role semantics, hiding IDs as an authorization fix, 
 
 ### Acceptance criteria
 
-- [ ] Contribution stats/content are omitted or consistently neutralized in public responses when showContributions is false.
-- [ ] A private profile exposes only the documented minimal identity fields to other users.
-- [ ] API and page use consistent active/banned and visibility rules.
-- [ ] Email, account metadata and future model fields cannot leak through a negative projection.
-- [ ] Owner views remain authorized and usable.
+- [x] Contribution stats/content are omitted or consistently neutralized in public responses when showContributions is false.
+- [x] A private profile exposes only the documented minimal identity fields to other users.
+- [x] API and page use consistent active/banned and visibility rules.
+- [x] Email, account metadata and future model fields cannot leak through a negative projection.
+- [x] Owner views remain authorized and usable.
 
 ### Required tests or verification
 
@@ -1826,6 +1830,8 @@ Local audit: `docs/BACKEND_AUDIT_2026-09-05.md`, section `B16`. A GitHub trackin
 
 **Proposed title:** [Medium] Unify duplicated profile and admin mutation policies
 
+**Implementation status:** Implemented locally on 2026-09-06. Profile PATCH wrappers share updateOwnProfile while retaining their response contracts. Generic admin PATCH, the edit server action and dedicated role PATCH use shared operations with current-admin authorization, validation, logging and errors. Actual role changes refuse self/existing-admin targets; unchanged submitted roles are omitted so normal admin profile edits work. Omitted PATCH fields have no creation defaults, and role writes use the read role snapshot to reject concurrent promotions. The local integration suite covers all three entry points and concurrent writes. Production deployment remains unverified.
+
 **Proposed labels:** bug, ready-for-agent
 
 Part of the backend audit dated 2026-09-05. Audit finding: **B17**. Priority: **Medium**.
@@ -1863,11 +1869,11 @@ No invented role hierarchy, changing who can grant admin, new role UI, breaking 
 
 ### Acceptance criteria
 
-- [ ] Self-role and other-admin role restrictions hold through every mutation entry point.
-- [ ] Generic edits cannot accidentally reset or overwrite roles outside the shared role policy.
-- [ ] Profile wrappers call the same validated mutation and preserve documented response compatibility.
-- [ ] Database validation and audit logging are consistent across API and server-action paths.
-- [ ] Caller inventory is recorded before removing a duplicate endpoint.
+- [x] Self-role and other-admin role restrictions hold through every mutation entry point.
+- [x] Generic edits cannot accidentally reset or overwrite roles outside the shared role policy.
+- [x] Profile wrappers call the same validated mutation and preserve documented response compatibility.
+- [x] Database validation and audit logging are consistent across API and server-action paths.
+- [x] Caller inventory is recorded before removing a duplicate endpoint.
 
 ### Required tests or verification
 

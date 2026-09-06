@@ -1,56 +1,18 @@
 // src/app/api/user/update-username/route.ts
 import { NextRequest, NextResponse } from 'next/server';
-import { connectDB } from '@/lib/mongodb';
-import { User } from '@/models/User';
-import { UserApi, IUserApi } from '@/lib/schemas/user';
+import { updateOwnUsername } from '@/lib/auth/profile-mutations';
+import { IUserApi } from '@/lib/schemas/user';
 import { withRateLimit } from '@/lib/middleware';
 import { logger } from '@/lib/logger';
-import { ConflictError, handleError, NotFoundError } from '@/lib/errors';
+import { handleError } from '@/lib/errors';
 import { parseJsonBody } from '@/lib/request';
-import { sanitizeUserInput } from '@/lib/utils';
-import { requireAuth } from "@/lib/auth/utils";
 
 type ApiType = IUserApi['UpdateUsername'];
 
 export async function PATCH(request: NextRequest) {
     return withRateLimit(request, async () => {
         try {
-            const session = await requireAuth();
-            const body = await parseJsonBody(request);
-
-            // Validate input
-            const validatedData = UserApi.UpdateUsername.Patch.Request.parse(body);
-
-            // Sanitize username
-            const username = sanitizeUserInput(validatedData.username).toLowerCase();
-
-            await connectDB();
-
-            // Check if username is already taken
-            const existingUser = await User.findOne({
-                username,
-                _id: { $ne: session.user.id }
-            });
-
-            if (existingUser) {
-                throw new ConflictError('Username already taken');
-            }
-
-            // Update user
-            const updatedUser = await User.findByIdAndUpdate(
-                session.user.id,
-                { $set: { username } },
-                { new: true, runValidators: true }
-            ).select('username');
-
-            if (!updatedUser) {
-                throw new NotFoundError('User');
-            }
-
-            logger.info('Username updated', {
-                userId: session.user.id,
-                newUsername: username,
-            });
+            const updatedUser = await updateOwnUsername(await parseJsonBody(request));
 
             return NextResponse.json<ApiType['Patch']['Response']>({
                 success: true,

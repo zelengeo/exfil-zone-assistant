@@ -8,9 +8,11 @@ all share.
 | Path | Gate |
 |---|---|
 | `auth/[...nextauth]` | — |
-| `user`, `user/update`, `user/update-username`, `user/check-username` | `requireAuth` |
-| `user/[username]` | public profile |
-| `feedback` | `requireAuth` |
+| `user` GET/DELETE | `requireSession`; deletion remains available to banned users |
+| `user` PATCH, `user/update`, `user/update-username` | current user through `auth/profile-mutations.ts` |
+| `user/check-username` | anonymous |
+| `user/[username]` | shared public/owner projection in `lib/user.ts` |
+| `feedback` POST | anonymous allowed; signed-in callers require the current user |
 | `admin/feedback/[id]` | `requireAdmin` |
 | `admin/users`, `admin/users/[id]`, `admin/users/[id]/roles` | `requireAdmin` |
 | `admin/health` | `requireAdmin` |
@@ -29,20 +31,24 @@ export async function PATCH(request: NextRequest) {
             const { user } = await requireAdmin();
             await connectDB();
 
-            const data = UserApi.Patch.Request.parse(await request.json());
+            const data = UserApi.Patch.Request.parse(await parseJsonBody(request));
             const updated = await doTheWork(data);
 
             return NextResponse.json<IUserApi['Patch']['Response']>({ user: updated });
         } catch (error) {
             return handleError(error);
         }
-    });
+    }, 'admin');
 }
 ```
 
-Five things in that order, every time: rate limit, gate, connect, parse, respond. The gates throw,
-so there is no branching on their result; `handleError` is the only thing that formats an error, so
-routes never build a status code by hand.
+Shared mutation operations own their gates, connection and validation; wrappers parse the JSON
+transport and shape the response. The gates throw; `handleError` formats API errors and the admin
+edit action uses the same translator for its error message/code.
+
+`dashboard/SettingsSection.tsx` calls the legacy `user/update` PATCH and username PATCH, and uses
+`user` DELETE. Keep the legacy `{ success, user: { id, ... } }` response; canonical `user` PATCH
+returns `{ user }` with `_id`. Both profile PATCH wrappers call `updateOwnProfile`.
 
 ## Transactions
 
