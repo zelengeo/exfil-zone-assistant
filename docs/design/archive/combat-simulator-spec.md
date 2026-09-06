@@ -1,5 +1,10 @@
 # Combat Simulator Specification v2
 
+> **Archived, superseded.** Use the [current simulator guidance](../../../src/app/combat-sim/AGENTS.md)
+> and its calculation source for the model, and the [Cold Steel guide](../README.md) for UI work.
+> The implementation status, guessed multipliers and proposed UI below describe an earlier system;
+> they are not current fixes or acceptance criteria.
+
 ## Overview
 The Combat Simulator analyzes weapon effectiveness against armored targets using datamined game parameters. The system models penetration mechanics, armor degradation, and damage calculations based on real game data.
 

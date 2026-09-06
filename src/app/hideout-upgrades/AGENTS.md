@@ -197,23 +197,12 @@ focused-target concept, so it is gone from `StorageService`.
 
 ## Design rules for this route
 
-Cold Steel only: `steel-*`, `line-*`, `ink-*`, `ember`, `info`, `warn`, `good`, `bad`, `track`. No
-`military-*` / `olive-*` / `tan-*` — this route has none left.
+Use the [Cold Steel guide](../../../docs/design/README.md) for tokens and shared CSS traps.
+The [completed rewrite](../../../docs/design/archive/HIDEOUT_REWRITE_REQUEST.md) keeps the original
+reasoning; this file owns the current route behaviour.
 
 Ember is the one action: the selected zone, the open room, and Level Up. Nothing else on the screen
 is ember.
-
-Traps, all of which cost time here:
-
-- `globals.css` centres every `button`. A left-aligned button needs an explicit `justify-start` —
-  the zone list rows are buttons.
-- Colours in `tailwind.config.js` are **not** emitted as `--color-*` variables, so
-  `shadow-[inset_2px_0_0_var(--color-ember)]` renders nothing. The rail's open-room edge is a real
-  border for this reason.
-- `hidden` and `flex` are the same layer: write `cond ? 'hidden' : 'flex'`, not `flex ... hidden`.
-  `shell:flex` after `hidden` is fine — a variant is a different layer.
-
-Money is `formatEZD` from `@/lib/trade`, the app's one way of writing it.
 
 ---
 

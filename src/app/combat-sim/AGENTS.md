@@ -147,7 +147,7 @@ stretches of the range and durability tracks that the handle could not reach.
 ## The third pass: reading the body
 
 Two of the second pass's calls were wrong, and were reversed on 2026-09-06. The plan and the
-reasoning are in [docs/COMBAT_SIM_READABILITY_PLAN.md](../../../docs/COMBAT_SIM_READABILITY_PLAN.md);
+reasoning are in the [archived readability plan](../../../docs/design/archive/COMBAT_SIM_READABILITY_PLAN.md);
 [ADR 0006](../../../docs/adr/0006-one-grade-scale-for-item-quality.md) is the decision that came out
 of it.
 

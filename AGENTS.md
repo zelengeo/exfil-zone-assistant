@@ -25,11 +25,14 @@ closes with a paragraph explaining itself. A record marked
 superseded is kept on purpose — it is the account of why the thing it describes was ever done that
 way.
 
-`docs/*.md` contains plans, audit records and operational guidance. Check for a live brief covering
-the route you are touching before planning it yourself —
-`HIDEOUT_REWRITE_REQUEST.md` and `EXTRACTION_CHANGE_REQUEST.md` are the current pair, and each
-carries the reasoning that would otherwise have to be rediscovered. Their headers say whether they
-are still live.
+For new UI, item presentations or layout changes, start with
+[docs/design/README.md](docs/design/README.md): current Cold Steel rules, reusable components,
+responsive behaviour and completion checks. It groups brand guidance and historical redesign
+references; archived mockups and completed plans are not implementation instructions.
+
+`docs/*.md` contains data-access briefs, audits and operations guidance. Check a brief's status
+and the affected code before treating it as pending work. `EXTRACTION_CHANGE_REQUEST.md` is
+fulfilled; its publisher guidance remains relevant. Completed visual rewrites live in the design archive.
 
 Non-obvious ones worth reaching for by name:
 
@@ -126,23 +129,6 @@ localStorage, reached through two layers:
 
 Render the pre-hydration state first and swap once `hydrated` is true. Reading `localStorage` during
 the initial render breaks SSR.
-
-## VR-first design
-
-Players read this through a headset or one-handed on a phone mid-raid.
-
-- Touch targets at least 44x44px
-- High contrast; assume a dim, low-fidelity panel rather than a calibrated monitor
-- Type large enough to read at VR viewing distance — err a step bigger than a desktop app would
-- Mobile responsiveness matters as much as VR; both, not one
-- Explanatory text is disclosed, not parked on the page. A panel does not close with a paragraph
-  about how its figures were derived; the reader asks for that from the figure. The ladder, the
-  size caps and the trigger vocabulary are in [components/ui](src/components/ui/AGENTS.md).
-
-## Military aesthetic
-
-Olive greens, tactical browns, muted greys. Stencil faces for headers. Angular and utilitarian, a
-tactical HUD rather than a consumer dashboard. The design tokens are in `src/app/globals.css`.
 
 ## Conventions
 

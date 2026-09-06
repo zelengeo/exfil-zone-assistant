@@ -191,9 +191,12 @@ For detailed accuracy testing, visit [/combat-sim/debug](https://exfil-zone.verc
 
 This project is specifically optimized for VR browsers:
 - Large, easy-to-click touch targets
-- High contrast military-inspired design
+- High contrast Cold Steel design
 - Minimal animations to prevent motion sickness
 - Readable fonts at VR viewing distances
+
+For new UI, start with the [Cold Steel design guide](docs/design/README.md). It links the reusable
+components, current design rules, brand assets and archived redesign references.
 
 ## 📝 License
 

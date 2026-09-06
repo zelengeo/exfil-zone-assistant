@@ -1,15 +1,18 @@
 # Combat simulator rebuild — plan
 
 **Status:** built 2026-09-04. Stages 0-8 are in; the spray formula is the one thing still open.
+**Archive:** the original rebuild record. Use the [current design guide](../README.md) and route
+guidance for implementation and the outstanding spray-model question. The historical criteria
+below do not override subsequent changes.
 **Superseded in part:** two of this plan's calls were reversed on 2026-09-06 — see
 [COMBAT_SIM_READABILITY_PLAN.md](COMBAT_SIM_READABILITY_PLAN.md). Numerals are back on the body
 figure (colour alone could not separate eight rounds from ninety-eight), and the camera preset row
 is gone (it was a cosmetic twin of the facing control, which is the one that moves a number). The
-rest of the design below stands, and the reasoning for what was reversed is kept on purpose.
+reasoning for the original design is kept below; current behaviour lives in the route's guidance.
 **Design:** https://claude.ai/code/artifact/3f1f4bf8-dbc4-45ca-ad98-9bb40db46c41
 **Route:** `src/app/combat-sim/` — ~2,700 lines across 13 files
-**Read first:** [the route's own doc](../src/app/combat-sim/AGENTS.md), then
-[`src/lib/protection/`](../src/lib/protection) — the rebuild is mostly a matter of deleting the
+**Read first:** [the route's own doc](../../../src/app/combat-sim/AGENTS.md), then
+[`src/lib/protection/`](../../../src/lib/protection) — the rebuild is mostly a matter of deleting the
 route's private geometry and reading the shared one instead.
 
 Three things changed underneath this route, and the UI never caught up.

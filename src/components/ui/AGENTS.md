@@ -1,7 +1,8 @@
 # Design system: surfaces, reveals, and explanatory text
 
-The 28 primitives here are generated shadcn components, re-skinned to Cold Steel. Do not hand-edit
-one to fix a single call site; fix the call site, or change the primitive for everybody.
+These are themed shadcn primitives plus shared wrappers and documented exceptions. Adapt the
+call site for a local need; change a primitive for a shared requirement. For palette, shell,
+component reuse and responsive checks, read the [Cold Steel guide](../../../docs/design/README.md).
 
 Three of them carry design rules that live in their own docblocks and are binding:
 
@@ -11,26 +12,12 @@ Three of them carry design rules that live in their own docblocks and are bindin
 
 This file is the layer above those: **when text is allowed to occupy the screen at all.**
 
-## The problem this solves
+## Why disclosure
 
-The app explains itself in footnotes. A panel renders its figures, then closes with a paragraph
-saying how they were derived, what each column means, and what the model does not cover.
-`ZoneTable`, `NumbersView`, `LoadoutRail`, `HeadZoneTable` and `ArmorSpecificStats` each carry one.
-
-They fail three ways at once:
-
-1. **They are permanent.** The reader who needs the explanation needs it once. The reader who does
-   not need it pays for it on every visit, on a 390px phone, mid-raid.
-2. **They are set in a label face.** `micro-label` is 9px uppercase mono with `tracking-micro`. It
-   was built for a four-word column header. A four-sentence paragraph in it is unreadable at VR
-   viewing distance, which contradicts the root rule that type errs a step bigger than a desktop
-   app would.
-3. **They are detached from their subject.** A footnote defining the `Class`, `Wedge` and `Cover`
-   columns sits four rows below the header that raises the question, so the reader has to hold
-   three definitions in their head and map them back.
-
-The answer is not "move the paragraph into a tooltip." It is to sort explanatory text by *what it
-does* and give each kind a home.
+A permanent footnote costs phone space on every visit, even when the reader already knows the
+explanation. Attach it to the figure or label that raises the question, in a reading face.
+[ADR 0005](../../../docs/adr/0005-explanatory-text-is-disclosed-not-parked-on-the-page.md)
+records the decision; the ladder below owns its implementation rules.
 
 ## The disclosure ladder
 
@@ -114,7 +101,7 @@ Both carry their own hit target, and neither lets it set the height of the row i
   centring on it. This is the one place the 44px rule bends, on purpose: a header label is ~11px
   tall, and a box big enough to tap, centred, reaches into the first data row and swallows taps
   meant for that row. What sits above a header is a legend or a caption and takes no clicks, so
-  there is one safe direction to grow. Verified against `ZoneTable`: 36px of target, zero overlap.
+  there is one safe direction to grow. Check neighbouring hit areas when using it in a new layout.
 
 The dot glyph is `ink-700` at rest and `ink-400` on hover or focus — a header of dots should read as
 texture, not as a row of buttons. Note that the items route already puts decorative `lucide` icons
@@ -181,10 +168,11 @@ The dot trails the title inline rather than sitting in a flex row beside it: cha
 two lines at phone width, and a flex row has to truncate the title to keep the dot on the first —
 truncating the title to make room for its own explanation is a bad trade.
 
-### Still to convert
+### Existing debt
 
-`NumbersView` (two footnotes — one is the spray-estimate caveat; check whether that one is tier 1
-before you hide it), `LoadoutRail` and `HeadZoneTable`.
+`NumbersView` and `LoadoutRail` now use `PanelNote`; the spray-estimate label stays visible.
+`HeadZoneTable` still has a closing `micro-label` paragraph (checked 2026-09-06). When that component
+is next changed, classify its subjects with the ladder rather than copying the paragraph pattern.
 
 ## Anti-patterns
 
@@ -197,7 +185,7 @@ before you hide it), `LoadoutRail` and `HeadZoneTable`.
 | prose in the popover that repeats the panel | the panel is still visible behind it |
 | hiding a unit, a legend or an error | tier 1, always |
 
-## Guides are not exempt
+## Guide and legal bodies are prose
 
 `src/content/guides/` is tier 4 and is *supposed* to be prose — long explanations are the product
 there. Do not apply the ladder to a guide body. Legal pages (`/privacy`, `/cookies`, `/terms`) are

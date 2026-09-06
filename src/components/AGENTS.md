@@ -7,13 +7,14 @@ when a second route needs it.
 
 | Directory | Holds |
 |---|---|
-| `ui/` | shadcn primitives — 27 of them, generated, not hand-edited |
+| `ui/` | themed shadcn primitives and shared wrappers; see their docblocks for deliberate exceptions |
 | `layout/` | `Header`, `Footer`, navigation — every page |
 | `items/`, `tasks/`, `trade/`, `protection/`, `gunsmith/`, `quality/` | domain components |
 | root | the few app-wide singletons: `CookieConsentBanner`, `ShareButton`, `SessionRefreshButton` |
 
-Check `ui/` before building a primitive. Adding a shadcn component is a generator run, not a
-hand-written file, and a hand-rolled dialog will not inherit the theme or the focus behaviour.
+Check `ui/` before building a primitive. Start from shadcn when adding one and apply the shared
+theme; a hand-rolled dialog will not inherit its focus behaviour. Change a primitive for a shared
+requirement, and adapt the call site for a local one.
 
 `quality/` holds one component, `GradeMeter`, and it is binding wherever a figure is graded: four
 rungs, one palette, and never rendered without the figure beside it. The tiers it draws live in
@@ -42,23 +43,8 @@ convention in this repo.
 
 ## Styling
 
-Compose with `cn()` so later classes win:
-
-```tsx
-<div className={cn('military-box p-4', isActive && 'border-olive-400', className)}>
-```
-
-Take a `className` prop on anything reusable and merge it last. Shared classes belong in
-`@layer components` in `app/globals.css`, not repeated across files. Casing is CSS: `micro-label`
-and `eyebrow` uppercase, so data keeps its own casing — a vendor is `Boulder Forge` in data and
-`BOULDER FORGE` on screen.
-
-## VR and touch
-
-- Interactive targets at least 44x44px, including rows in a list
-- Contrast for a dim headset panel
-- Visible keyboard focus
-- Test at phone width as well as desktop; both are primary
+The [Cold Steel guide](../../docs/design/README.md) owns tokens, class composition, typography,
+VR/touch rules and responsive checks. Its reuse table is the starting point for a new domain UI.
 
 ## Images
 
@@ -69,4 +55,3 @@ and `eyebrow` uppercase, so data keeps its own casing — a vendor is `Boulder F
 
 Server components by default. Add `'use client'` only where the component needs state, an effect, or
 an event handler — and push it as far down the tree as it will go, so a page stays static.
-

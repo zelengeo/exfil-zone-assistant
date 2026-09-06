@@ -162,15 +162,8 @@ Split at the `shell:` breakpoint (900px), by CSS wherever possible:
 
 ## Design rules for this route
 
-Cold Steel only: `steel-*`, `line-*`, `ink-*`, `ember`, `info`, `warn`, `good`, `bad`, `track`.
-No `military-*` / `olive-*` / `tan-*` — those are the holding skin, and this route has none left.
-
-Two traps worth knowing:
-
-- `globals.css` centres every `button`. A left-aligned button needs an explicit `justify-start`.
-- Colours defined in `tailwind.config.js` are **not** emitted as `--color-*` variables, so
-  `shadow-[inset_2px_0_0_var(--color-ember)]` renders nothing. Use a `before:` pseudo-element.
-- `hidden` and `flex` are the same layer: write `cond ? 'hidden' : 'flex'`, not `flex ... hidden`.
+Use the [Cold Steel guide](../../../docs/design/README.md) for tokens and shared CSS traps.
+The rail/chain/pane behaviour and phone geometry above are this route's design constraints.
 
 ---
 

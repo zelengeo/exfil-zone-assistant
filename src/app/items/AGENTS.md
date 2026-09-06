@@ -2,6 +2,9 @@
 
 The catalogue: a filtered list at `/items`, a detail page at `/items/[id]`.
 
+For new item presentations, use the [Cold Steel reuse table](../../../docs/design/README.md#reuse-by-concept)
+before adding a card, stats block, rarity treatment or grade. This file owns the route's data and behaviour.
+
 ## The URL is the state
 
 Filters are not React state. `ItemsPageContent` reads `useSearchParams()` and derives them through

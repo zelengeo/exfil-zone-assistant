@@ -1,11 +1,13 @@
 # Hideout route rewrite — brief
 
 **Status:** done, 2026-09-04. Kept as the account of why the route looks like this.
+**Archive:** implementation history; use the [current design guide](../README.md) and route guidance
+for extensions. The instructions and measurements below describe the original rewrite.
 **Written:** 2026-09-04
 **Design:** https://claude.ai/code/artifact/f7f02f61-a355-4c1b-8ccd-cb0e38994d87
 **Route:** `src/app/hideout-upgrades/` — 1,000 lines across four files
-**Read first:** [the route's own doc](../src/app/hideout-upgrades/AGENTS.md), then
-[`CONTEXT.md`](../CONTEXT.md) for the vocabulary
+**Read first:** [the route's own doc](../../../src/app/hideout-upgrades/AGENTS.md), then
+[`CONTEXT.md`](../../../CONTEXT.md) for the vocabulary
 
 The job is a UI rewrite against a design that already exists. This brief is the other half: the
 things wrong with the route underneath the UI, gathered while working on neighbouring code, so they
@@ -85,7 +87,7 @@ semantics in `StorageService` are read as the list of what a wipe clears.
 same shape of problem the task database had, at a tenth the size — and the task side is now solved,
 so there is a worked pattern to copy rather than a decision to make:
 `public/data/tasks.json` + `src/services/TaskService.ts` + `useFetchTasks`, and
-[ADR 0004](adr/0004-task-data-is-json-in-public-data.md) for why.
+[ADR 0004](../../adr/0004-task-data-is-json-in-public-data.md) for why.
 
 **This is a judgement call, not a defect.** 44 KB is not 431 KB, the route is one page rather than
 four, and moving it means a schema, a service, a loading state and an extraction change

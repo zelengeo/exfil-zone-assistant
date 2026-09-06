@@ -1,6 +1,9 @@
 # Cold Steel brand and social-image generation brief
 
-Status: starting brief for concept generation, not an approved final identity.
+**Status:** archived concept brief, superseded for implementation on 2026-09-06 by
+[Brand assets](../BRAND_ASSETS.md). The shipped renderer uses `public/brand/logo-ez.svg`, not the
+proposed Extraction Frame. OG cards and Cold Steel manifest colours already exist. The proposals,
+asset-gap claims and approval steps below describe the original concept round, not current work.
 
 This brief translates the accepted Cold Steel UI direction into a repeatable brand-image system. The design handoff is visual reference material; this document does not import its implementation instructions.
 

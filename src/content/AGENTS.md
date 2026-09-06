@@ -39,6 +39,9 @@ drives the freshness line — move it when the content changes, not when the fil
 
 ## Writing one
 
+- Use the [Cold Steel guide](../../docs/design/README.md) for new UI and shared components.
+  Guide bodies are intentionally long-form prose; the disclosure ladder applies to their controls,
+  not to the article itself.
 - Compose from `components/ui/`; a guide is a page, not a place for bespoke primitives.
 - Game facts belong in `public/data` and should be read, not retyped into prose that goes stale.
 - Keep headings shallow. These are read on a phone beside a headset.

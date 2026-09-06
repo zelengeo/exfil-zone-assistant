@@ -39,21 +39,9 @@ first render breaks SSR.
 
 ## Styling
 
-Compose with `cn()`, never string concatenation, so later classes can override earlier ones:
-
-```tsx
-<div className={cn('military-box p-4', isActive && 'border-olive-400')}>
-```
-
-Shared component classes live in `@layer components` in `app/globals.css`. Casing is a CSS concern:
-the `micro-label` and `eyebrow` utilities uppercase, so data keeps its own casing.
-
-## VR and touch
-
-- Touch targets at least 44x44px, and the phone row height exists for this reason
-- Contrast for a dim headset panel, not a calibrated monitor
-- Keyboard focus stays visible
-- Mobile matters as much as VR
+For UI work, read the [Cold Steel guide](../docs/design/README.md) before choosing tokens,
+layout or interaction patterns. It owns the shared styling, VR/touch rules and verification steps.
+For explanatory copy, follow the [disclosure ladder](components/ui/AGENTS.md).
 
 ## Conventions
 

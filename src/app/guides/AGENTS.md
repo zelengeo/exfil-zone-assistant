@@ -32,5 +32,7 @@ by being used. `guideTags` remains the place a tag gets a label and a descriptio
 
 ## Also here
 
-`guide-specification.md` is a working note on guide structure, not a generated artefact and not
-loaded by the route.
+The [old guide specification](../../../docs/design/archive/guide-specification.md) is archived:
+its Markdown pipeline and pre-Cold Steel examples are superseded. Use
+[content/AGENTS.md](../../content/AGENTS.md) for authoring and the
+[design guide](../../../docs/design/README.md) for new UI.

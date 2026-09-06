@@ -1,5 +1,12 @@
 # Handoff: "Cold Steel" theme + responsive shell + Gunsmith (ExfilZone Assistant)
 
+> **Historical handoff — superseded for implementation (2026-09-06).** Start with the
+> [current design guide](../../README.md). The original brief below is preserved as design history:
+> its Next.js version, task-data paths, vendor names, currency, navigation destinations and universal
+> pane rules are outdated. Gunsmith is built. Current route guidance, components and token files
+> own new work. Blacksite remains a rejected alternative. The adjacent HTML and `support.js` are
+> preserved exports, not app source.
+
 ## Overview
 
 A full visual-language rework of the ExfilZone Assistant community wiki (Next.js 14 / App Router / Tailwind / shadcn), plus the information architecture for the not-yet-built **Gunsmith** module.

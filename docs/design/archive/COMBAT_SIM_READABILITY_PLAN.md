@@ -1,10 +1,14 @@
 # Combat simulator: reading the body, and one grade scale for the whole wiki — plan
 
-**Status:** in progress, started 2026-09-06. The three decisions at the bottom are settled.
+**Status:** archived implementation record, 2026-09-06. All stages below were recorded as landed;
+the shared grade modules, capsule figures, press/drag separation and zone selection strip are
+present in code. Use the route guidance and [ADR 0006](../../adr/0006-one-grade-scale-for-item-quality.md)
+for current behaviour, and the [design guide](../README.md) for extensions. The proposals below
+preserve the original reasoning, including API names and details that evolved during implementation.
 **Route:** `src/app/combat-sim/` — the model is not in question, only what it draws.
-**Read first:** [the route's own doc](../src/app/combat-sim/AGENTS.md), then
-[components/ui](../src/components/ui/AGENTS.md) for the disclosure ladder and
-[`armorClassScale`](../src/lib/protection/armorClassScale.ts) for the "colour is never alone" rule
+**Read first:** [the route's own doc](../../../src/app/combat-sim/AGENTS.md), then
+[components/ui](../../../src/components/ui/AGENTS.md) for the disclosure ladder and
+[`armorClassScale`](../../../src/lib/protection/armorClassScale.ts) for the "colour is never alone" rule
 this plan generalises.
 
 The 2026-09-04 rebuild fixed the arithmetic and the comparison. It did not fix the reading, and it
@@ -162,7 +166,7 @@ new Quality section with `rating`, `tier`, `score` and `quality` listed as words
   ranking rather than an absolute, why colour never travels alone, and why gunsmith's version was
   the one promoted.
 - `CONTEXT.md`: the Quality section and the `bands`/`slabs` split.
-- `docs/COMBAT_SIM_REBUILD.md`: note that stage 5's "numerals are off the figure" was reversed, and
+- `docs/design/archive/COMBAT_SIM_REBUILD.md`: note that stage 5's "numerals are off the figure" was reversed, and
   why. The record of why it was ever done that way is worth keeping.
 
 ---

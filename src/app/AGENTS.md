@@ -11,7 +11,7 @@ Next.js 16 App Router. Server components by default; `'use client'` is a decisio
 | `/combat-sim` | damage, penetration, TTK | [combat-sim](combat-sim/AGENTS.md) |
 | `/hideout-upgrades` | upgrade planner | [hideout-upgrades](hideout-upgrades/AGENTS.md) |
 | `/guides` | written and component guides | [guides](guides/AGENTS.md) |
-| `/gunsmith` | weapon build tool | — |
+| `/gunsmith` | weapon build tool | [design/reuse](../../docs/design/README.md#reuse-by-concept) |
 | `/admin` | moderation and health | [admin](admin/AGENTS.md) |
 | `/api` | route handlers | [api](api/AGENTS.md) |
 | `/dashboard`, `/user`, `/auth` | account | — |

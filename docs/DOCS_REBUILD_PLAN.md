@@ -113,9 +113,9 @@ trade-off:
   `.claude/settings.json` or delete
 - Add the `.env.example` the setup instructions have always referenced
 - ~~Decide on the tracked working notes~~ — `claude/audit_1/` deleted: 9 files of an audit this
-  rebuild supersedes, and the last thing referencing `CLAUDE-INDEX.md`. `VR extraction shooter
-  webapp redesign/` is kept: 7 files touched four days ago, live design handoff, already
-  eslint-ignored
+  rebuild supersedes, and the last thing referencing `CLAUDE-INDEX.md`. The design handoff was kept
+  at the time. On 2026-09-06 its exports moved into [design/archive](design/archive/), with a
+  [current implementation guide](design/README.md) replacing the handoff as the starting point.
 
 ### Stage 8 — `src/data/tasks.ts` seam (deferred)
 

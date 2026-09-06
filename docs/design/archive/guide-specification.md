@@ -1,5 +1,9 @@
 # Guide Creation Specification
 
+> **Archived, superseded.** Use [guide authoring](../../../src/content/AGENTS.md) and the
+> [Cold Steel guide](../README.md) for new work. The Markdown pipeline below does not ship, the
+> registry path changed, and the styling examples predate Cold Steel. Kept as historical reference.
+
 This document outlines the standards and best practices for creating guides for ExfilZone Assistant.
 
 ## Guide Types
