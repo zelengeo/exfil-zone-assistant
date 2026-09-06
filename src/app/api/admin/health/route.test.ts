@@ -40,9 +40,10 @@ vi.mock('@/lib/rate-limit/rate-limit-factory', () => ({
     }),
 }));
 
-vi.mock('@/lib/middleware', () => ({
-    withRateLimit: (_request: unknown, handler: () => Promise<Response>) => handler(),
+vi.mock('next-auth', () => ({
+    getServerSession: async () => ({ user: { id: 'admin' } }),
 }));
+vi.mock('@/app/api/auth/[...nextauth]/route', () => ({ authOptions: {} }));
 
 vi.mock('@/lib/logger', () => ({
     logger: mocks.logger,
@@ -65,7 +66,7 @@ describe('admin health database metrics', () => {
         vi.clearAllMocks();
         mocks.connectDB.mockResolvedValue(undefined);
         mocks.requireAdminOrModerator.mockResolvedValue({ user: { id: 'admin' } });
-        mocks.checkRateLimit.mockResolvedValue(true);
+        mocks.checkRateLimit.mockResolvedValue({ success: true, remaining: 99, reset: Date.now() + 60_000 });
     });
 
     it('omits unavailable socket-pool metrics and reports database stats separately', async () => {
@@ -94,5 +95,30 @@ describe('admin health database metrics', () => {
         expect(body.checks.database.status).toBe('connected');
         expect(body.checks.database).not.toHaveProperty('connections');
         expect(body.checks.database).not.toHaveProperty('stats');
+    });
+
+    it('reports an outage through the real middleware without spending admin mutation quotas', async () => {
+        mocks.checkRateLimit.mockResolvedValue({
+            success: true, degraded: true, remaining: 100, reset: Date.now() + 60_000,
+        });
+
+        const response = await GET({} as never);
+        const body = await response.json();
+
+        expect(response.status).toBe(200);
+        expect(body.status).toBe('degraded');
+        expect(body.checks.rateLimiter.status).toBe('degraded');
+        expect(mocks.requireAdminOrModerator).toHaveBeenCalledOnce();
+        expect(mocks.checkRateLimit.mock.calls.map(([policy]) => policy)).toEqual(['healthCheck', 'healthCheck']);
+        expect(mocks.checkRateLimit.mock.calls.map(([, caller]) => caller)).toEqual(['user:admin', 'health-check-probe']);
+    });
+
+    it('still limits excessive health requests before probing', async () => {
+        mocks.checkRateLimit.mockResolvedValue({
+            success: false, remaining: 0, retryAfter: 30, reset: Date.now() + 30_000,
+        });
+        expect((await GET({} as never)).status).toBe(429);
+        expect(mocks.checkRateLimit).toHaveBeenCalledOnce();
+        expect(mocks.connectDB).not.toHaveBeenCalled();
     });
 });

@@ -130,6 +130,18 @@ export const guidesConfig: GuideMetadata[] = [
         contentType: 'component'
     },
     {
+        slug: 'damage-model',
+        title: 'The Damage Model, Step by Step',
+        description: 'Every step between pulling the trigger and losing health, with a calculator that resolves one shot against any round, plate and body part',
+        tags: ['combat', 'equipment'],
+        difficulty: 'advanced',
+        readTime: '12 min',
+        author: 'pogapwnz',
+        publishedAt: '2026-09-06',
+        featured: false,
+        contentType: 'component'
+    },
+    {
         slug: 'combat-sim-usage',
         title: 'How to Use Combat Sim',
         description: 'Learn how to use our Combat Simulator effectively and understand simulation accuracy',

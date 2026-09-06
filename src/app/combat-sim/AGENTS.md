@@ -216,12 +216,15 @@ pre-shot durability, uses the *zone's* class rather than the item's headline, an
 the right piece — three chances to drift from the model, for a number `calculateShotDamage` already
 holds. It is `0` where no armour covered the hit, which is an absence and not a plate rating zero.
 
-`DAMAGE_GUIDE_HREF` points at `/guides/damage-model`, **which does not exist yet**. The link is a
-deliberate placeholder for [issue #9](https://github.com/zelengeo/exfil-zone-assistant/issues/9): the
-full chain behind one armoured hit is far more than a popover can hold, and this panel already
-refuses to print a shortened version of it — see the "where it is exact" block, which drops to prose
-the moment armour is involved. If that issue is closed `wontfix`, remove the link rather than leave
-it pointing at a 404.
+`damageGuideHref` builds a link to `/guides/damage-model` carrying **that row's own shot** — the
+round, the piece, the bone, the range, the firing power, and the durability the plate held *before*
+the bullet, which the row itself does not print. The guide's inspector seeds from those parameters,
+so "where does 40 come from" lands on the arithmetic for that shot. Every parameter is optional on
+the far side: a zone the inspector cannot reproduce still opens the guide rather than an error.
+
+That link exists because the full chain behind one armoured hit is far more than a popover can hold,
+and this panel refuses to print a shortened version of it — see the "where it is exact" block, which
+drops to prose the moment armour is involved.
 
 ## Naming the aimed zone
 

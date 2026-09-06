@@ -1,28 +1,52 @@
 # Backend audit — 2026-09-05
 
-**Status:** Remediation in progress. B01 and B02 are implemented and locally verified; production deployment, pre-fix session revocation and historical OAuth-link review remain pending.
+**Status (2026-09-06):** Local implementation closeout complete: 16 findings implemented, B03
+superseded by retirement, B07 already satisfied. Production deployment, session revocation,
+historical-data operations and infrastructure verification remain open. Real Redis verification is
+deferred with KV provisioning. See the implementation index and
+[operations runbook](BACKEND_OPERATIONS.md#production-evidence-still-required).
 **Repository:** zelengeo/exfil-zone-assistant.
 **Source snapshot verified when saving:** `9639e01a1cdb4fb32435309eaf68f561e6b4046a`.
 **Scope:** Next.js API routes, exported admin server actions, auth callbacks/gates, Mongoose models, MongoDB lifecycle and scripts, rate limiting, related UI entry points and agent documentation.
 
 ## Summary
 
-The highest-priority finding is authenticated identity replacement through client session updates, including escalation to an existing administrator. Independent correction-deletion authorization, MongoDB lifecycle/transaction and rate-limiter defects were also confirmed. Data suggestions remain active despite the product decision to retire them.
+The original snapshot exposed authenticated identity replacement through client session updates,
+including escalation to an existing administrator. Correction-deletion authorization, MongoDB
+lifecycle/transaction and rate-limiter defects were also confirmed. These findings now have local
+remediations; data-correction entry points have been retired.
 
-The database currently supports accounts, provider links, feedback and corrections. Published game data and player progress do not require MongoDB. This audit does not conclude that MongoDB must be replaced or that all account/feedback functionality should be removed.
+The current registered models support users, provider links and feedback. Historical corrections
+persist until the operator runs the prepared migration. Published game data and player progress
+do not require MongoDB. This audit does not call for replacing MongoDB or removing account/feedback
+functionality.
 
 ## Method and limits
 
 - Read application code, installed NextAuth/Mongoose implementations, root/scoped AGENTS files, operational scripts and environment examples.
 - Ran the existing suite through `node.exe node_modules/vitest/vitest.mjs run --reporter=dot`: **7 files, 210 tests passed**. The suites cover game logic/published data, not backend contracts.
 - Ran isolated in-memory reproductions against transpiled application source, the installed NextAuth core session handler and installed Mongoose/MongoDB errors. Persistence/provider responses were mocked; no live account impersonation, role update, index mutation or record deletion occurred.
-- Those ad-hoc reproductions were executed from shell input and were not committed as regression tests. B01 and B02 now have durable regression suites; the remaining implementation issues still require their own tests.
+- The initial ad-hoc reproductions were not committed. Subsequent remediations added durable
+  backend regression suites; per-finding implementation records distinguish mocked boundaries
+  from real local replica-set verification.
 - Confirmed reproductions: JWT identity substitution followed by the real admin gate; non-admin cross-user correction deletion; read/write quota collision in both backends; premature weekly quota cleanup; KV fail-open; stranded connection waiters; deletion writes outside the session; cold-connection startSession timeout; unverified-provider email linking; duplicate-key and malformed-JSON errors becoming 500.
 - Source-traced findings are identified separately below. A mocked-provider result proves the application accepts that input, not that a live provider takeover was performed.
 - **Unverified operational state:** Atlas users/permissions/network access, deployed indexes and explain plans, backup/restore configuration, production KV credentials/backend, ingress forwarding-header rewriting, platform rate limits, and whether this source snapshot is deployed.
-- Docker exposure is conditional on host firewall/routing; only configuration was inspected.
+- The original Docker finding was configuration-only; B07 subsequently verified the local stack.
+  This does not verify production networking or other hosts' firewall rules.
 - Only `.env.example` is tracked among environment files. Secret values were not needed for this audit.
-- The audit pass made no application source changes. B01 and B02 remediation were subsequently implemented in this branch; no production deployment, secret rotation or historical OAuth-link mutation was performed.
+- The initial audit pass made no application source changes. Remediation and B18 closeout followed;
+  no production deployment, secret rotation or historical OAuth-link mutation was performed.
+
+Evidence, impact and immutable source links in the finding bodies describe the original snapshot.
+Use the linked implementation section for current behavior and verification; historical test/build
+results are retained as dated evidence rather than current gate claims.
+
+**Closeout validation:** 486 tests passed across 29 files with local integration suites enabled;
+the final affected-suite rerun, type-check, changed-code lint and production build passed.
+`verify:local` is not green: the existing 9 lint errors/1 warning stop it, and separately run data
+validation reports 54 errors/602 warnings outside the backend changes. Detailed evidence and
+limits are in [B18](BACKEND_AUDIT_2026-09-05_ISSUES.md#b18).
 
 ## Prioritization
 
@@ -34,28 +58,29 @@ Issue dependencies distinguish actual implementation ordering from related work.
 
 Publication is pending explicit approval for public disclosure. Automatic approval review rejected creation of the tracking issue because this repository is public and the payload includes exploitable security findings. No GitHub issues were created.
 
-The complete implementation drafts and dependency graph are saved in [BACKEND_AUDIT_2026-09-05_ISSUES.md](BACKEND_AUDIT_2026-09-05_ISSUES.md).
+The implementation records and original dependency graph are saved in
+[BACKEND_AUDIT_2026-09-05_ISSUES.md](BACKEND_AUDIT_2026-09-05_ISSUES.md).
 
 | Finding | Implementation draft |
 |---|---|
 | B01 | [[Critical] Prevent client session updates from changing JWT identity](BACKEND_AUDIT_2026-09-05_ISSUES.md#b01) — implemented locally; rollout pending |
 | B02 | [[High] Verify OAuth email ownership and resolve linked accounts by provider identity](BACKEND_AUDIT_2026-09-05_ISSUES.md#b02) — implemented locally; rollout pending |
-| B03 | [[High] Enforce authorization on correction deletion until retirement](BACKEND_AUDIT_2026-09-05_ISSUES.md#b03) |
-| B04 | [[High] Repair MongoDB connection lifecycle and remove the unused client pool](BACKEND_AUDIT_2026-09-05_ISSUES.md#b04) |
-| B05 | [[High] Connect before creating database sessions in write handlers](BACKEND_AUDIT_2026-09-05_ISSUES.md#b05) |
-| B06 | [[High] Make account deletion atomic and consistent about retained references](BACKEND_AUDIT_2026-09-05_ISSUES.md#b06) |
-| B07 | [[High] Restrict local MongoDB and mongo-express exposure](BACKEND_AUDIT_2026-09-05_ISSUES.md#b07) |
-| B08 | [[Medium] Isolate rate-limit policies and preserve their full expiry windows](BACKEND_AUDIT_2026-09-05_ISSUES.md#b08) |
-| B09 | [[Medium] Make rate-limit backend failures explicit and health reporting truthful](BACKEND_AUDIT_2026-09-05_ISSUES.md#b09) |
-| B10 | [[Medium] Cover backend entry points with rate limits and fix quota inspection](BACKEND_AUDIT_2026-09-05_ISSUES.md#b10) |
-| B11 | [[Medium] Make MongoDB index rollout previewable and verification fail reliably](BACKEND_AUDIT_2026-09-05_ISSUES.md#b11) |
-| B12 | [[Medium] Retire data-correction submissions across UI, APIs and moderation](BACKEND_AUDIT_2026-09-05_ISSUES.md#b12) |
-| B13 | [[Medium] Enforce current account status on mutations and session refresh](BACKEND_AUDIT_2026-09-05_ISSUES.md#b13) |
-| B14 | [[Medium] Enforce profile privacy in server responses and shared reads](BACKEND_AUDIT_2026-09-05_ISSUES.md#b14) |
-| B15 | [[Medium] Return correct API errors for duplicate keys and malformed JSON](BACKEND_AUDIT_2026-09-05_ISSUES.md#b15) |
-| B16 | [[Medium] Stop retaining unused OAuth provider tokens](BACKEND_AUDIT_2026-09-05_ISSUES.md#b16) |
-| B17 | [[Medium] Unify duplicated profile and admin mutation policies](BACKEND_AUDIT_2026-09-05_ISSUES.md#b17) |
-| B18 | [[Medium] Correct backend agent guidance and add an operational runbook](BACKEND_AUDIT_2026-09-05_ISSUES.md#b18) |
+| B03 | [[High] Enforce authorization on correction deletion until retirement](BACKEND_AUDIT_2026-09-05_ISSUES.md#b03) — superseded by B12 removal |
+| B04 | [[High] Repair MongoDB connection lifecycle and remove the unused client pool](BACKEND_AUDIT_2026-09-05_ISSUES.md#b04) — implemented; real local reconnect checked |
+| B05 | [[High] Connect before creating database sessions in write handlers](BACKEND_AUDIT_2026-09-05_ISSUES.md#b05) — implemented; real local cold-handler smoke passed |
+| B06 | [[High] Make account deletion atomic and consistent about retained references](BACKEND_AUDIT_2026-09-05_ISSUES.md#b06) — implemented; historical cleanup pending |
+| B07 | [[High] Restrict local MongoDB and mongo-express exposure](BACKEND_AUDIT_2026-09-05_ISSUES.md#b07) — already satisfied and locally verified |
+| B08 | [[Medium] Isolate rate-limit policies and preserve their full expiry windows](BACKEND_AUDIT_2026-09-05_ISSUES.md#b08) — implemented; real Redis verification deferred |
+| B09 | [[Medium] Make rate-limit backend failures explicit and health reporting truthful](BACKEND_AUDIT_2026-09-05_ISSUES.md#b09) — implemented, including final timeout/health fixes; KV provisioning deferred |
+| B10 | [[Medium] Cover backend entry points with rate limits and fix quota inspection](BACKEND_AUDIT_2026-09-05_ISSUES.md#b10) — implemented locally |
+| B11 | [[Medium] Make MongoDB index rollout previewable and verification fail reliably](BACKEND_AUDIT_2026-09-05_ISSUES.md#b11) — implemented; production index rollout pending |
+| B12 | [[Medium] Retire data-correction submissions across UI, APIs and moderation](BACKEND_AUDIT_2026-09-05_ISSUES.md#b12) — implemented; collection erasure pending |
+| B13 | [[Medium] Enforce current account status on mutations and session refresh](BACKEND_AUDIT_2026-09-05_ISSUES.md#b13) — implemented and locally verified |
+| B14 | [[Medium] Enforce profile privacy in server responses and shared reads](BACKEND_AUDIT_2026-09-05_ISSUES.md#b14) — implemented and locally verified |
+| B15 | [[Medium] Return correct API errors for duplicate keys and malformed JSON](BACKEND_AUDIT_2026-09-05_ISSUES.md#b15) — implemented locally |
+| B16 | [[Medium] Stop retaining unused OAuth provider tokens](BACKEND_AUDIT_2026-09-05_ISSUES.md#b16) — implemented; historical token cleanup pending |
+| B17 | [[Medium] Unify duplicated profile and admin mutation policies](BACKEND_AUDIT_2026-09-05_ISSUES.md#b17) — implemented and locally verified |
+| B18 | [[Medium] Correct backend agent guidance and add an operational runbook](BACKEND_AUDIT_2026-09-05_ISSUES.md#b18) — locally complete; operator evidence checklist retained |
 
 ## B01
 
@@ -488,6 +513,14 @@ The complete implementation drafts and dependency graph are saved in [BACKEND_AU
 ## B18
 
 **Medium — Correct backend agent guidance and add an operational runbook**
+
+**Implementation status (2026-09-06):** Locally complete. Scoped guidance, environment comments
+and the method/gate inventory now match the implementation. The
+[operations runbook](BACKEND_OPERATIONS.md) covers deployment/revocation, local setup, index and
+migration effects/recovery, retention, backups, ingress trust and limiter outages. It explicitly
+retains unverified production checks. Reconciliation also closed B04/B05's remaining local smoke
+checks and the B09 timeout/health middleware gaps. Current validation is recorded in
+[the B18 implementation section](BACKEND_AUDIT_2026-09-05_ISSUES.md#b18).
 
 **Evidence and affected paths:** Model docs claim five active models and adapter-owned Account/Session collections, but Session.ts is commented out and no adapter runs. API docs describe feedback and check-username as authenticated despite anonymous access, and misstate moderator gates. Guidance claims a covering index that omits a selected field. No backend runbook was found for index deployment, recovery, retention, session revocation or limiter outage behavior.
 

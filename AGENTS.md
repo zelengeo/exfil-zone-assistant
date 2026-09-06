@@ -25,8 +25,8 @@ closes with a paragraph explaining itself. A record marked
 superseded is kept on purpose — it is the account of why the thing it describes was ever done that
 way.
 
-`docs/*.md` is the work not yet done: a plan, or a brief for a change this repo is waiting on or
-about to start. Check for one covering the route you are touching before planning it yourself —
+`docs/*.md` contains plans, audit records and operational guidance. Check for a live brief covering
+the route you are touching before planning it yourself —
 `HIDEOUT_REWRITE_REQUEST.md` and `EXTRACTION_CHANGE_REQUEST.md` are the current pair, and each
 carries the reasoning that would otherwise have to be rediscovered. Their headers say whether they
 are still live.
@@ -41,6 +41,8 @@ Non-obvious ones worth reaching for by name:
 - `src/app/tasks/AGENTS.md` — the chain DAG, and why there are no status tabs
 - `src/lib/AGENTS.md` — auth, middleware, rate limiting, zod schemas
 - `src/models/AGENTS.md` — Mongoose schemas
+- `docs/BACKEND_OPERATIONS.md` — read before backend deployment, index rollout, data cleanup,
+  session revocation or incident recovery; includes the unresolved production checks
 
 ## Critical rules
 
@@ -62,6 +64,8 @@ Non-obvious ones worth reaching for by name:
   file has a header comment explaining the whole trap.
 - **`src/data/hideout-upgrades.ts`**, `community.ts`, `taskInconsistencies.json` — still committed
   TypeScript. Small enough that the bundle cost has never been the question.
+  [src/data/AGENTS.md](src/data/AGENTS.md) covers all three, and is the procedure a partner follows
+  to add themselves to the community listing in a PR.
 
 Tasks are reached through `src/services/TaskService.ts`, which loads `tasks.json` once and then
 answers synchronously; `useFetchTasks` suspends a client tree until that has happened. They were a
@@ -86,10 +90,10 @@ processes, so an Atlas URI in `.env.local` stays unchanged. That override is als
 unique constraints, failing nonzero if any is missing. Both print the target host and database
 without credentials. See [src/models/AGENTS.md](src/models/AGENTS.md#indexes-live-with-the-schema).
 
-A new environment is bootstrapped before traffic with `npm run db:bootstrap` — it creates the
-model indexes and asserts the three identity constraints exist, so a database that would silently
-accept duplicate accounts fails setup rather than serving. `npm run db:prepare:local` does that
-plus a real transaction check against the loopback replica set.
+`npm run db:bootstrap` is local-only: its URI guard accepts loopback port 27018. It creates missing
+model indexes and asserts the three identity constraints. `npm run db:prepare:local` does that
+plus a real transaction check. A non-local environment uses the reviewed `db:sync` preview/apply
+procedure in the operations runbook before traffic is enabled.
 
 ## Data migrations
 
@@ -169,9 +173,9 @@ Rate limiting picks its backend in `src/lib/rate-limit/rate-limit-factory.ts`: V
 in-memory limiter. Development is always in-memory, so a limit that holds locally proves nothing
 about production.
 
-`ADMIN_EMAIL_1` through `ADMIN_EMAIL_3` promote those accounts to admin on sign-in, checked in
-`src/app/api/auth/[...nextauth]/route.ts`. That is how the first admin is created; after that, an
-existing admin can grant roles through the admin users API.
+`ADMIN_EMAIL_1` through `ADMIN_EMAIL_3` bootstrap admin on a verified provider email, checked in
+`src/lib/auth/oauth-sign-in.ts`. Existing provider links resolve by provider identity first.
+After bootstrap, an existing admin can grant roles through the admin users API.
 
 ## Agent skills
 

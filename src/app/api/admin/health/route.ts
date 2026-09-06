@@ -237,6 +237,6 @@ export async function GET(request: NextRequest) {
                 return handleError(error);
             }
         },
-        'admin'
+        'healthCheck'
     );
 }

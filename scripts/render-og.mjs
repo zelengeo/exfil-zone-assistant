@@ -88,6 +88,15 @@ const cardPresets = {
       height: 352,
     },
   },
+  items: {
+    eyebrow: 'FIELD SYSTEM / ITEMS',
+    titlePrimary: 'ITEM',
+    titleAccent: 'S',
+    titleGap: 12,
+    descriptor: 'DATABASE',
+    benefit: 'Know every item and what it is worth.',
+    status: 'DATABASE // LIVE DATA',
+  },
 };
 
 const card = cardPresets[presetArgument];

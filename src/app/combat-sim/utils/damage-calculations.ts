@@ -419,9 +419,136 @@ function effectiveArmorClass(
     return armorClass * getArmorEffectivenessFromDurability(clamped, curve);
 }
 
+/* ============================================================
+   The derivation, for the guide
+   ============================================================ */
+
+/**
+ * One armoured hit, opened up: every intermediate value the shot passed through, in order.
+ *
+ * This exists so `/guides/damage-model` can show the arithmetic without re-implementing it. A
+ * guide that recomputed these steps from the published fields would be a second copy of the model
+ * — right on the day it was written and wrong the first time a rule moved, and wrong *plausibly*,
+ * which is worse than wrong loudly. So the derivation is produced here, beside the code it
+ * describes, from the same private helpers `calculateShotDamage` uses.
+ *
+ * Both branches are always returned. The shot path has to pick one, and off the roll it takes the
+ * likelier; a reader asking where a number came from is owed the other one too, because near a 50%
+ * chance the two are far apart and the honest answer is that the game rolls.
+ */
+export interface ShotBranch {
+    /** What multiplies `baseDamage` on this branch, before firing power lands a second time. */
+    scalar: number;
+    damage: number;
+    durabilityLoss: number;
+}
+
+export interface ShotExplanation {
+    /** Off `DamageOverDistance`, keyed in centimetres. Past point blank it *supplies* the damage. */
+    rangeDamage: number;
+    /** Off `PenetrationPowerOverDistance`. Firing power never touches this. */
+    rangePenetration: number;
+    /** `0.9 + 0.2 * fp`. */
+    firePower: number;
+    /** `rangeDamage * boneScalar * firePower` — what both the body and the plate are billed from. */
+    baseDamage: number;
+    /** What the same round does to this bone with nothing covering it. */
+    bareDamage: number;
+
+    /** Null when nothing covers the hit; every field below it is then meaningless. */
+    armour: {
+        durabilityFraction: number;
+        /** `AntiPenetrationDurabilityScalarCurve` read at `1 - durabilityFraction`. */
+        effectiveness: number;
+        effectiveArmorClass: number;
+        /** `effectiveArmorClass - rangePenetration`, the x both armour curves are read on. */
+        delta: number;
+        /** The same delta clamped at -2, which is where the damage curve is actually sampled. */
+        clampedDelta: number;
+        penetrationChance: number;
+        stopped: ShotBranch;
+        through: ShotBranch;
+        /** What the deterministic path draws: the likelier half of the roll. */
+        likelier: 'stopped' | 'through';
+        /** Broken armour is bypassed outright, so there is no roll to report. */
+        bypassed: boolean;
+    } | null;
+}
+
+/**
+ * Resolve one shot and report every step of it.
+ *
+ * `durability` is absolute, not a fraction, and is the durability the plate holds *before* this
+ * bullet — the same value the shot path reads.
+ */
+function explainShot(
+    ammo: AmmoProperties,
+    armor: ArmorProperties | null,
+    durability: number | null,
+    weaponFiringPower: number,
+    boneScalar: number,
+    range: number,
+): ShotExplanation {
+    const rangeDamage = applyRangeFalloff((ammo.pellets || 1) * ammo.damage, ammo, range);
+    const rangePenetration = Math.max(0, applyRangePenetrationFalloff(ammo.penetration, ammo, range));
+    const firePower = firePowerScalar(weaponFiringPower);
+    const baseDamage = rangeDamage * boneScalar * firePower;
+
+    const bare = calculateShotDamage(ammo, null, null, weaponFiringPower, boneScalar, range);
+
+    if (!armor) {
+        return {
+            rangeDamage, rangePenetration, firePower, baseDamage,
+            bareDamage: bare.damageToBodyPart,
+            armour: null,
+        };
+    }
+
+    const durabilityFraction = durability == null ? 1 : durability / armor.maxDurability;
+    const effectiveness = getArmorEffectivenessFromDurability(
+        durabilityFraction, armor.antiPenetrationDurabilityScalarCurve);
+    const effective = armor.armorClass * effectiveness;
+    const delta = effective - rangePenetration;
+
+    const branch = (through: boolean): ShotBranch => {
+        const shot = calculateShotDamage(
+            ammo, armor, durability, weaponFiringPower, boneScalar, range, through);
+        return {
+            scalar: through
+                ? getPenetrationDamageScalar(
+                    armor.penetrationDamageScalarCurve, rangePenetration, effective)
+                : ammo.bluntDamageScale * armor.bluntDamageScalar,
+            damage: shot.damageToBodyPart,
+            durabilityLoss: shot.damageToArmor,
+        };
+    };
+
+    const penetrationChance = calculatePenetrationChance(
+        rangePenetration, effective, armor.penetrationChanceCurve);
+    const bypassed = !(durabilityFraction > 0);
+
+    return {
+        rangeDamage, rangePenetration, firePower, baseDamage,
+        bareDamage: bare.damageToBodyPart,
+        armour: {
+            durabilityFraction,
+            effectiveness,
+            effectiveArmorClass: effective,
+            delta,
+            clampedDelta: Math.max(-2, delta),
+            penetrationChance,
+            stopped: branch(false),
+            through: branch(true),
+            likelier: bypassed || penetrationChance > 0.5 ? 'through' : 'stopped',
+            bypassed,
+        },
+    };
+}
+
 export {
     simulateCombat,
     calculateShotDamage,
-    effectiveArmorClass
+    effectiveArmorClass,
+    explainShot
 };
 export type { HitPart };

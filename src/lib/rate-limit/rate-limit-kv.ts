@@ -1,4 +1,4 @@
-import { kv } from '@vercel/kv';
+import { createClient } from '@vercel/kv';
 import {
     resolveWindow,
     type RateLimiter,
@@ -14,13 +14,22 @@ export class KVRateLimiter implements RateLimiter {
     ): Promise<RateLimitResult> {
         const now = Date.now();
         const window = resolveWindow(policy, identifier, config, now);
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 2_000);
 
         try {
-            // One round trip, so a process that dies mid-check cannot leave a counter without an
-            // expiry the way a separate INCR then EXPIRE could. The TTL is set on every call
-            // rather than only on the first: it is the time left in this window, so re-setting it
-            // never extends the counter past the window, and it repairs any key that somehow lost
-            // its expiry.
+            const kv = createClient({
+                url: process.env.KV_REST_API_URL!,
+                token: process.env.KV_REST_API_TOKEN!,
+                // A timed-out INCR may already have executed. Let the caller retry explicitly.
+                retry: { retries: 0 },
+                // The installed client throws on abort with a signal factory; a static signal
+                // takes its legacy synthetic-response path instead.
+                signal: () => controller.signal,
+            });
+            // One request removes the client-side gap between INCR and EXPIRE. Each successful
+            // check reapplies the remaining-window TTL (plus its rounding allowance); a pipeline
+            // does not guarantee atomic execution if Redis itself fails between commands.
             const [current] = await kv.pipeline()
                 .incr(window.key)
                 .expire(window.key, window.ttlSeconds)
@@ -46,6 +55,8 @@ export class KVRateLimiter implements RateLimiter {
                 remaining: config.uniqueTokenPerInterval,
                 reset: window.reset,
             };
+        } finally {
+            clearTimeout(timeout);
         }
     }
 }

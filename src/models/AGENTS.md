@@ -1,6 +1,6 @@
 # Database Models
 
-Three active Mongoose models. Everything else the app knows is static data, not database rows.
+Three active Mongoose models. Published game data is static; player progress stays in localStorage.
 
 | Model | Holds | Owned by |
 |---|---|---|
@@ -36,13 +36,18 @@ the changes, then verifies the unique constraints identity depends on (`User.ema
 `User.username`, `Account.provider` + `providerAccountId`) and exits nonzero if any is absent or
 non-unique. Preview is the default because `syncIndexes` **drops** anything not in the schema.
 
-**Do not add an `_id`-prefixed compound index.** An equality match on `_id` resolves through IDHACK
-against the default `_id_` index and returns at most one document, so such an index is never a
-candidate. `User` carried three of them, justified as covering the auth path; explain on the real
+**Require query-plan evidence before adding an `_id`-prefixed compound index.** `User` carried
+three of them, justified as covering the auth path; local MongoDB 7 explain on the real
 auth query — `findById().select('isBanned roles username')` — reports IDHACK, 1 key examined and
 **0 rejected plans**, meaning the planner never considered them. They were removed on 2026-09-06
 (audit B11), along with a `Feedback` index on `reviewedBy`/`reviewedAt`, neither of which is a field
-that schema declares.
+that schema declares. This is local evidence for these queries, not a production explain result
+or a guarantee about every MongoDB planner version.
+
+`db:bootstrap` accepts only loopback port 27018 and creates missing indexes without dropping old
+ones. Production bootstrap uses the reviewed preview/apply workflow. Index changes can apply
+partially across models; recovery and the required production evidence are in
+[operations](../../docs/BACKEND_OPERATIONS.md#index-rollout-and-recovery).
 
 An index whose comment explains a query nobody runs is the failure mode to watch for here: it costs
 writes and storage silently, and the comment makes it look considered.

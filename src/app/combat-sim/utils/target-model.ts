@@ -102,7 +102,8 @@ const GROUP_OF_BONE: Record<string, ZoneGroup> = {
     calf_l: 'calf', calf_r: 'calf',
 };
 
-const LABEL_OF_BONE: Record<string, string> = {
+/** Exported for the damage-model guide, which names a bone without building a whole target. */
+export const LABEL_OF_BONE: Record<string, string> = {
     head: 'Head',
     spine_03: 'Upper chest', spine_02: 'Mid chest',
     spine_01: 'Lower chest', pelvis: 'Pelvis',

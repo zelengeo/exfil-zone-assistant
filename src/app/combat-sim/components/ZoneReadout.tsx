@@ -52,17 +52,42 @@ function Figure({ label, children }: { label: string; children: React.ReactNode 
 /**
  * Where the damage model will be written out in full.
  *
- * Deliberately a link to a page that does not exist yet. The ladder can show *what* each round did,
- * but the chain behind one armoured hit - the round's curves read at range, the class-minus-
- * penetration lookup, the durability the plate has left, firing power, the blunt scalar - is far
- * more than a popover can hold without becoming the simplification-presented-as-a-derivation this
- * panel already refuses to print. The guide is the place for it, and it should be able to take a
- * single shot straight out of this simulation and show the arithmetic behind it.
+ * The ladder shows *what* each round did and refuses to show *why*: the chain behind one armoured
+ * hit - the round's curves read at range, the class-minus-penetration lookup, the durability the
+ * plate has left, firing power, the blunt scalar - is far more than a popover can hold without
+ * becoming the simplification-presented-as-a-derivation this panel declines to print.
  *
- * Tracked as a feature proposal; the route does not resolve until that ships:
- * https://github.com/zelengeo/exfil-zone-assistant/issues/9
+ * So the guide holds it, and `damageGuideHref` hands it this exact shot rather than a generic
+ * explainer the reader has to re-enter their setup into. Shipped as issue #9.
  */
 const DAMAGE_GUIDE_HREF = '/guides/damage-model';
+
+/**
+ * That guide, seeded with this exact shot.
+ *
+ * The point of the link is that it lands on the arithmetic for the row the reader tapped, not on a
+ * generic explainer they then have to re-enter their setup into. Every parameter is optional on the
+ * far side, so a zone the inspector cannot reproduce still opens the guide rather than an error.
+ *
+ * `durability` is the plate's reading BEFORE this bullet, which is what the shot path reads and
+ * what the ladder does not print - the row shows what was left afterwards. For the first shot that
+ * is the plate's starting condition; after that it is the previous row's remainder.
+ */
+function damageGuideHref(
+    zone: TargetZone,
+    loadout: Loadout,
+    range: number,
+    durabilityBefore: number | null,
+): string {
+    const params = new URLSearchParams();
+    if (loadout.ammo) params.set('ammo', loadout.ammo.id);
+    if (zone.armour) params.set('armor', zone.armour.item.id);
+    params.set('bone', zone.bone);
+    params.set('fp', String(loadout.build.sim.firingPower));
+    params.set('range', String(range));
+    if (durabilityBefore !== null) params.set('dur', durabilityBefore.toFixed(2));
+    return `${DAMAGE_GUIDE_HREF}?${params.toString()}`;
+}
 
 /** Rows before the list folds. Nine is a reading; ninety-nine is a scroll. */
 const LADDER_PREVIEW = 9;
@@ -88,7 +113,12 @@ function LadderRow({ label, children }: { label: string; children: React.ReactNo
  * this bone's: a limb kill drains all 440, which is what makes a forearm cost nineteen rounds and
  * is invisible unless the panel says so.
  */
-function ShotLadder({ shots, zone }: { shots: ShotResultWithLeftovers[]; zone: TargetZone }) {
+function ShotLadder({ shots, zone, loadout, range }: {
+    shots: ShotResultWithLeftovers[];
+    zone: TargetZone;
+    loadout: Loadout;
+    range: number;
+}) {
     const [expanded, setExpanded] = useState(false);
     const visible = expanded ? shots : shots.slice(0, LADDER_PREVIEW);
     const maxDurability = zone.armour?.item.stats.maxDurability ?? null;
@@ -176,7 +206,16 @@ function ShotLadder({ shots, zone }: { shots: ShotResultWithLeftovers[]; zone: T
                                     </LadderRow>
                                 </dl>
                                 <a
-                                    href={DAMAGE_GUIDE_HREF}
+                                    href={damageGuideHref(
+                                        zone,
+                                        loadout,
+                                        range,
+                                        zone.armour
+                                            ? (index === 0
+                                                ? zone.armour.item.stats.maxDurability * zone.armour.condition
+                                                : visible[index - 1].remainingArmorDurability)
+                                            : null,
+                                    )}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center gap-1 micro-label text-ember hover:underline"
@@ -280,7 +319,7 @@ export default function ZoneReadout({ outcome, loadout, range, onShowAll, classN
             </div>
 
             <div className="p-4 border-b border-line-900">
-                <ShotLadder shots={shots} zone={zone} />
+                <ShotLadder shots={shots} zone={zone} loadout={loadout} range={range} />
 
                 <div className="grid grid-cols-2 gap-3 mt-3 pt-3 border-t border-line-900">
                     <Figure label="Health">

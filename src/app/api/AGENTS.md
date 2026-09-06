@@ -5,18 +5,31 @@ all share.
 
 ## The endpoints
 
-| Path | Gate |
-|---|---|
-| `auth/[...nextauth]` | — |
-| `user` GET/DELETE | `requireSession`; deletion remains available to banned users |
-| `user` PATCH, `user/update`, `user/update-username` | current user through `auth/profile-mutations.ts` |
-| `user/check-username` | anonymous |
-| `user/[username]` | shared public/owner projection in `lib/user.ts` |
-| `feedback` POST | anonymous allowed; signed-in callers require the current user |
-| `admin/feedback/[id]` | `requireAdmin` |
-| `admin/users`, `admin/users/[id]`, `admin/users/[id]/roles` | `requireAdmin` |
-| `admin/health` | `requireAdmin` |
-| `rate-limit/status` | — |
+Paths below are relative to `/api`. This inventory includes every exported route method.
+
+| Path | Methods | Gate | Rate policy |
+|---|---|---|---|
+| `auth/[...nextauth]` | GET, POST | NextAuth protocol and callbacks | `auth` on POST sign-in initiation only |
+| `user` | GET | `requireSession`, then own row exists; banned owner allowed | `api` |
+| `user` | DELETE | `requireSession`, then existence inside deletion transaction; banned owner allowed | `accountDelete` |
+| `user`, `user/update` | PATCH | current unbanned user through `profile-mutations.ts` | `userUpdate` |
+| `user/update-username` | PATCH | current unbanned user through `profile-mutations.ts` | `usernameUpdate` |
+| `user/check-username` | GET | anonymous | `usernameCheck` |
+| `user/[username]` | GET | anonymous; shared public/owner projection in `lib/user.ts` | `api` |
+| `feedback` | POST | anonymous allowed; signed-in callers require current unbanned user | `feedbackPostAuthenticated` / `feedbackPostUnauthenticated` |
+| `admin/feedback/[id]` | GET, PATCH, DELETE | `requireAdmin` | `admin` |
+| `admin/users` | GET | `requireAdmin` | `admin` |
+| `admin/users/[id]` | GET, DELETE | `requireAdmin`; DELETE also refuses self/admin targets | `admin` |
+| `admin/users/[id]` | PATCH | `requireAdmin` inside `updateUserAsAdmin` | `admin` |
+| `admin/users/[id]/roles` | GET | `requireAdminOrModerator` | `api` |
+| `admin/users/[id]/roles` | PATCH | `requireAdmin` inside `updateUserRolesAsAdmin` | `admin` |
+| `admin/health` | GET | `requireAdminOrModerator` | `healthCheck` |
+
+The two exported server actions in `admin/users/[id]/edit/actions.ts` are callable POST entry
+points too: `getUserForEdit` requires admin and enforces `admin`; `updateUser` enforces `admin`
+and delegates authorization to `updateUserAsAdmin`. An admin layout cannot authorize either call.
+The unused `/api/rate-limit/status` route is removed. There is no feedback-list GET API; server
+pages perform the retained feedback reads.
 
 The correction endpoints were removed on 2026-09-05 (audit B12). `feedback` still stores rows of
 type `data_correction` from before the retirement and must keep rendering them, but
@@ -119,12 +132,12 @@ The JWT `update` callback treats the update payload as untrusted and uses it onl
 signal. It preserves the token's existing subject and replaces profile, role and ban claims from
 the matching user row. A missing user throws so NextAuth clears the session cookie.
 
-When deploying the 2026-09-05 B01 fix, rotate `NEXTAUTH_SECRET` once in every deployed environment
-to revoke tokens issued while client input could replace the subject. A code deployment alone does
-not invalidate those tokens.
+For B01 deployment and pre-fix session revocation, follow
+[the operations runbook](../../../docs/BACKEND_OPERATIONS.md#deployment-and-session-revocation).
 
 ## Rate limiting
 
-`'auth'` is the strict tier, `'api'` the ordinary one. The backend is Vercel KV only in production
-with both KV variables set, and in-memory otherwise — so a limit that holds in development proves
-nothing, and the in-memory store is per-lambda.
+The inventory above names the policy for each method; caps and windows live in `RATE_LIMIT_CONFIGS`.
+Policies have independent counters. Shared `admin` reads and writes deliberately spend the same
+allowance. Backend selection, proxy trust and outage semantics are in
+[lib](../../lib/AGENTS.md#rate-limiting); production verification is in the operations runbook.

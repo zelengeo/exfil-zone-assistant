@@ -1,12 +1,28 @@
 # Backend audit implementation issue drafts — 2026-09-05
 
+**Local closeout (2026-09-06):** B01–B18 now have a repository disposition: 16 implemented,
+B03 superseded by removal, B07 already satisfied. B18 reconciles the guidance and adds
+[backend operations](BACKEND_OPERATIONS.md). B04/B05's outstanding local smoke checks now pass.
+B09's final reconciliation also fixed the missing transport deadline and health middleware outage
+path. This closes the local implementation work, not production remediation.
+
+**Still open:** deployment and B01 session revocation; B02 historical OAuth-link review;
+B02/B11 production indexes; B06/B12/B16 historical cleanup and retention decisions; production
+access, backup/restore and ingress verification. B08's real Redis concurrency/failure test is
+deferred with the maintainer's B09 KV provisioning decision. The runbook's
+[production evidence table](BACKEND_OPERATIONS.md#production-evidence-still-required) owns the
+operator checklist. Public issue publication remains a separate disclosure decision.
+
 **Publication status:** Not published. Automatic approval review blocked the first GitHub tracking-issue creation because the destination repository is public and the audit includes exploitable security evidence. Explicit user approval for public disclosure is required before retrying that action. No GitHub issues were created in this run.
 
 **Destination:** https://github.com/zelengeo/exfil-zone-assistant (public).
 **Saved audit:** [BACKEND_AUDIT_2026-09-05.md](BACKEND_AUDIT_2026-09-05.md).
 **Scope:** 18 implementation issues plus one audit tracking issue. Existing repository issues were checked; the four existing issues are closed and do not overlap these findings.
 
-The sections below are the exact proposed issue bodies, apart from GitHub numbers and tracking links that can only be filled after creation. Each body contains all eight requested fields. Immutable source references use the verified audit snapshot. A `needs-triage` label identifies issues that include policy/retention or operator decisions; other issues are specified for agent implementation, subject to their blockers.
+The sections below retain the proposed issue bodies with implementation and verification updates.
+Evidence and immutable source references describe the original audit snapshot, not current code.
+Labels and dependency lists are the original publication drafts; the current disposition is stated
+in each implementation status. B-key links are the local tracking references until publication.
 
 ## Proposed issue index
 
@@ -15,8 +31,8 @@ The sections below are the exact proposed issue bodies, apart from GitHub number
 | [B01](#b01) | [Critical] Prevent client session updates from changing JWT identity | bug | None — implemented locally; rollout pending |
 | [B02](#b02) | [High] Verify OAuth email ownership and resolve linked accounts by provider identity | bug | None — implemented locally; rollout pending |
 | [B03](#b03) | [High] Enforce authorization on correction deletion until retirement | bug, ready-for-agent | Superseded by B12 — the vulnerable route was deleted, not gated |
-| [B04](#b04) | [High] Repair MongoDB connection lifecycle and remove the unused client pool | bug | None — implemented locally; local replica-set verification pending |
-| [B05](#b05) | [High] Connect before creating database sessions in write handlers | bug | None — implemented locally; local replica-set smoke pending |
+| [B04](#b04) | [High] Repair MongoDB connection lifecycle and remove the unused client pool | bug | None — implemented; local reconnect verification complete |
+| [B05](#b05) | [High] Connect before creating database sessions in write handlers | bug | None — implemented; local cold-handler smoke complete |
 | [B06](#b06) | [High] Make account deletion atomic and consistent about retained references | bug, needs-triage | None — B04/B05 shipped; implemented locally, historical migration pending |
 | [B07](#b07) | [High] Restrict local MongoDB and mongo-express exposure | bug, ready-for-agent | None — already satisfied by commit 1c803be; verified |
 | [B08](#b08) | [Medium] Isolate rate-limit policies and preserve their full expiry windows | bug, ready-for-agent | None — implemented locally |
@@ -29,11 +45,12 @@ The sections below are the exact proposed issue bodies, apart from GitHub number
 | [B15](#b15) | [Medium] Return correct API errors for duplicate keys and malformed JSON | bug, ready-for-agent | None — implemented locally |
 | [B16](#b16) | [Medium] Stop retaining unused OAuth provider tokens | enhancement, ready-for-agent | None — B02 shipped; implemented locally, migration pending |
 | [B17](#b17) | [Medium] Unify duplicated profile and admin mutation policies | bug, ready-for-agent | None — implemented and locally verified; deployment unverified |
-| [B18](#b18) | [Medium] Correct backend agent guidance and add an operational runbook | documentation, needs-triage | B02, B04, B05, B06, B07, B09, B10, B11, B12, B13, B14, B15, B16, B17 |
+| [B18](#b18) | [Medium] Correct backend agent guidance and add an operational runbook | documentation, needs-triage | None — locally complete; production unknowns explicitly recorded |
 
 ## Dependency graph
 
-Arrows mean prerequisite -> dependent. Related-work links in individual bodies are not blockers.
+Arrows retain the original implementation ordering; all local prerequisites are now satisfied.
+Related-work links in individual bodies are not blockers. Production operations remain separate.
 
 ```mermaid
 flowchart TD
@@ -328,7 +345,7 @@ Local audit: `docs/BACKEND_AUDIT_2026-09-05.md`, section `B03`. A GitHub trackin
 
 **Proposed labels:** bug
 
-**Implementation status:** Implemented locally on 2026-09-05; a disposable local replica-set reconnect check remains pending because the Docker daemon was unavailable. No Atlas connection was attempted.
+**Implementation status:** Implemented locally on 2026-09-05; remaining local reconnect verification completed on 2026-09-06. `backend-smoke.integration.test.ts` shares concurrent real connection attempts across three shutdown/reconnect cycles, verifies ping and stable listener counts, and leaves explicit shutdown disconnected. Initial connection failure/retry remains covered by the controlled-driver suite. No Atlas connection was attempted.
 
 Part of the backend audit dated 2026-09-05. Audit finding: **B04**. Priority: **High**.
 
@@ -387,7 +404,7 @@ Implemented in:
 - [x] Concurrent success, initial failure, retry, disconnect and deliberate shutdown lifecycle tests using controlled driver events.
 - [x] Assert one pool/connection attempt and bounded listeners/timers.
 - [x] Verify health response distinguishes unavailable metrics from zero.
-- [ ] Exercise a local replica-set reconnect without touching Atlas.
+- [x] Exercise a local replica-set reconnect without touching Atlas — `src/lib/auth/backend-smoke.integration.test.ts`, 2026-09-06.
 
 Local verification result: **11 test files, 242 tests passed**; TypeScript and changed-file ESLint passed. The package lock parses successfully, the unused Auth MongoDB adapter and its lockfile subtree were removed, and the native `mongodb` dependency remains for `scripts/test-mongodb-connection.ts`. Docker is installed, but its daemon was not running, so the disposable replica-set check could not be executed. No configured remote database was contacted.
 
@@ -421,7 +438,7 @@ Local audit: `docs/BACKEND_AUDIT_2026-09-05.md`, section `B04`. A GitHub trackin
 
 **Proposed labels:** bug
 
-**Implementation status:** Implemented locally on 2026-09-05; a disposable local replica-set smoke test for feedback submission and admin deletion remains pending because the Docker daemon was unavailable. No development-cluster records were created or deleted during automated verification.
+**Implementation status:** Implemented locally on 2026-09-05; remaining replica-set smoke completed on 2026-09-06. `backend-smoke.integration.test.ts` invokes real anonymous/authenticated feedback and admin deletion handlers from a disconnected Mongoose state, verifies committed records/stats and deletion anonymization, and removes only its UUID-named loopback database. Session identity and rate-limit middleware are mocked; database, transactions and authorization gates are real. No non-local records were changed.
 
 Part of the backend audit dated 2026-09-05. Audit finding: **B05**. Priority: **High**.
 
@@ -474,7 +491,7 @@ Implemented in:
 
 - [x] Cold-start route tests with no pre-existing Mongoose connection.
 - [x] Inject connect, startSession, write, commit, abort and end-session failures and assert response and cleanup behavior.
-- [ ] Replica-set smoke test for feedback submission and admin deletion.
+- [x] Replica-set smoke test for feedback submission and admin deletion — `src/lib/auth/backend-smoke.integration.test.ts`, 2026-09-06.
 
 Local verification result: **14 test files, 261 tests passed**; TypeScript and changed-file ESLint passed. The route tests control the connection boundary and driver session directly, reproducing the cold-start hang before the fix and verifying connection/session ordering, error translation, active-transaction aborts and exactly-once cleanup after the fix. Docker is installed, but its daemon was not running, so the disposable replica-set smoke test could not be executed. No configured remote database was contacted.
 
@@ -556,7 +573,7 @@ wholesale, so anonymizing those rows would be discarded work. Recorded in
 `src/app/api/AGENTS.md` under "Account deletion", with a pointer from `src/models/AGENTS.md`.
 
 **Historical remediation still owed.** No migration was executed. Two classes of pre-fix record may
-exist and are the remaining work behind the last unticked criterion:
+exist and remain operator work beyond the completed local implementation criteria:
 
 1. `Feedback.reviewerNotes` entries written by the old self-service path, holding
    `User account deleted - <username>` and the deleted user's id in `addedByUserId`. These are the
@@ -777,8 +794,9 @@ count to the cap passed on *this* call, rather than to a cap captured when the c
 Memory stores each counter's own `expiresAt` and cleans up against that, replacing the fixed
 one-hour cutoff that silently reset the daily and weekly policies. KV issues INCR and EXPIRE in a
 single pipeline, with a TTL of the time remaining in the window: one round trip instead of two, the
-TTL can never be missing, re-setting it never extends a counter past its window, and a legacy key
-that lost its expiry is repaired on next use.
+TTL is reapplied on successful checks, with a one-second rounding allowance. A pipeline closes the
+client-side gap between separate requests; atomicity under a Redis server failure is not verified.
+A legacy key that lost its expiry is repaired on its next successful check.
 
 `withRateLimit` no longer accepts an inline config object — a counter needs a stable name to be
 namespaced by. The two inline configs became named policies (`usernameUpdate`, `usernameCheck`), and
@@ -802,7 +820,8 @@ themselves, as `feedback` does, so the substitution is gone rather than repaired
 - Boundary admission: exactly the cap succeeds, the next call is refused, `remaining` and
   `retryAfter` match, and the next window starts a fresh allowance.
 - A weekly counter survives two hours of scheduled cleanups.
-- KV sets an expiry on every call, never longer than the window, and fails open when unavailable.
+- KV sets an expiry on every successful call within the window plus its one-second allowance.
+  B09 subsequently added an explicit degraded result on failure, interpreted by the caller's policy.
 
 Both regressions were confirmed to be caught rather than assumed: removing the policy from the key
 fails 3 cases including both backends' isolation test, and restoring the original
@@ -831,8 +850,8 @@ is B10's scope. The route carries a `FIXME (audit B10)` saying so.
 ### Required tests or verification
 
 - [x] Fake-clock parity suite covering read/write separation, same-interval different caps, 24-hour and 7-day cleanup, boundary/reset and retry headers.
-- [ ] Concurrent KV checks against a disposable Redis-compatible instance. Not run: no Redis-compatible instance is provisioned for this repo, and the KV backend is unreachable in development by design. Covered instead by a fake pipeline asserting the single-round-trip INCR+EXPIRE contract.
-- [x] Failure between increment and expiry, and repeated retries, cannot create unbounded stale keys. The two operations are now one pipeline, and the TTL is re-set on every call, so a key cannot outlive its window even if an earlier call was interrupted.
+- [ ] Concurrent KV checks against a disposable Redis-compatible instance. Deferred with the B09 decision not to provision KV. Fake-pipeline parity and real REST-client transport tests do not verify Redis concurrency or server failure behavior.
+- [x] INCR and EXPIRE share one client request and every successful check reapplies the window TTL. This closes the client-side interruption gap; pipeline execution is not asserted atomic under server failure. Automatic HTTP retries are disabled in the B09 closeout to avoid replaying an increment with an unknown outcome.
 
 Add durable regression tests for changed behavior. Existing passing game-data tests alone do not verify this issue. Any infrastructure verification uses disposable/local resources unless live access and the specific operation are authorized.
 
@@ -863,6 +882,15 @@ Local audit: `docs/BACKEND_AUDIT_2026-09-05.md`, section `B08`. A GitHub trackin
 **Proposed labels:** bug, needs-triage
 
 **Implementation status:** Implemented locally on 2026-09-06, after triage with the maintainer.
+
+**Closeout verification:** B18 reconciliation found two unchecked end-to-end requirements behind
+the completed checklist: the health route still used fail-closed `admin` middleware, and the KV
+client had no application deadline. Both are fixed in this closeout. Health now uses the independent
+fail-open `healthCheck` policy; its test runs the real middleware and verifies degraded reporting,
+unchanged authorization and quota enforcement. KV aborts after two seconds using the installed
+client's signal-factory contract, disables automatic INCR retries, and clears the timer. The new
+`src/lib/rate-limit/transport.test.ts` exercises the real REST client with stalled/error fetches and
+recovery. The deadline is per check, not an end-to-end route budget.
 
 **Triage outcome.** KV has never been provisioned for this project, so requiring a distributed limiter in production would take the live site down on deploy for a protection that has never actually run. The maintainer chose to keep the in-memory fallback serving and defer KV itself. What changed is the *reporting*, not the availability: production on memory is now logged as an error and shown as `misconfigured` in the admin health view, rather than passing as healthy. The audit's "require distributed limiter configuration in production" is therefore **deliberately not implemented**; the misconfiguration is made loud instead of fatal. For a KV outage once KV does exist, the maintainer chose 503 on writes and auth with reads still served.
 
@@ -1144,6 +1172,10 @@ Primary references: [1](https://nextjs.org/docs/app/guides/data-security)
 
 **Implementation status:** Implemented locally on 2026-09-06 and verified against the loopback replica set. No Atlas index was touched.
 
+**B18 clarification:** `db:bootstrap` is loopback-only. A new non-local environment must use the
+reviewed `db:sync` preview/apply procedure and verify actual index keys/options before traffic.
+See [index rollout and recovery](BACKEND_OPERATIONS.md#index-rollout-and-recovery).
+
 Part of the backend audit dated 2026-09-05. Audit finding: **B11**. Priority: **Medium**.
 
 ### Concrete evidence and affected paths
@@ -1215,8 +1247,8 @@ rejected plans: 0
 ```
 
 `IDHACK` is the `_id` fast path, and **0 rejected plans** means the three `_id`-prefixed compound
-indexes on `User` were never candidates. They cannot be: an equality match on `_id` returns at most
-one document. The one documented as "covering index for complete auth" could not cover either — it
+indexes on `User` were not candidates in this local MongoDB 7 plan. This is evidence for that query,
+not a claim about all planner versions. The one documented as "covering index for complete auth" could not cover either — it
 omits `username`, which all three auth gates select. All three were dropped.
 
 `Feedback`'s `{ reviewedBy: 1, reviewedAt: -1 }` sparse index was also dropped: neither field is
@@ -1910,6 +1942,36 @@ Local audit: `docs/BACKEND_AUDIT_2026-09-05.md`, section `B17`. A GitHub trackin
 
 **Proposed title:** [Medium] Correct backend agent guidance and add an operational runbook
 
+**Implementation status:** Locally complete on 2026-09-06. Root/src/lib/models/api/admin guidance
+and `.env.example` now agree with the live model/session strategy, method-specific gates and
+policies, shared mutation boundaries and retired routes. `docs/BACKEND_OPERATIONS.md` documents
+local-only bootstrap versus non-local index rollout, command effects and failure semantics,
+deployment/session revocation, partial migration/index recovery, backup restore checks, historical
+retention, proxy trust and limiter outages. Production facts are explicitly unverified, with required
+operator evidence. Both audit documents retain all 18 finding links and distinguish local completion
+from operational closure. The writing-for-agents skill kept scoped guidance linked to one runbook.
+
+**Closeout validation (2026-09-06):**
+
+- `npm run db:prepare:local` passed against loopback MongoDB: healthy Compose service, identity
+  indexes verified and a real transaction committed. `db:sync` preview then reported all three
+  models up to date without writing.
+- Full local-enabled suite: **29 files, 486 tests passed**. After making the new smoke fixtures
+  independent, the four affected suites were rerun: **24 tests passed**. The disposable smoke
+  database is dropped after the run; existing local application data is retained.
+- Type-check and production build passed. The build generated **266 pages** against loopback
+  MongoDB; it does not establish a production deployment or live provider verification.
+- Changed-code ESLint passed. `verify:local` as a whole remains **failed** at the existing lint
+  baseline: **9 errors, 1 warning**. Remaining gates were run separately with the loopback URI.
+- Data validation remains **failed**: **54 errors** (45 unresolved task-item references and 9
+  missing-image references), plus 602 warnings. These are outside this backend closeout; no game
+  data or frontend lint fixes are included. Historical green-build/test statements above describe
+  their own snapshots, not a currently green `verify:local` run.
+- Reconciled every exported API method and both server actions against the documented gates and
+  policies; verified local Markdown links/anchors in the changed guidance and audit
+  documents. `git diff --check` passed. Reviewed documentation for secret values and kept
+  production access/configuration claims explicitly unverified.
+
 **Proposed labels:** documentation, needs-triage
 
 Part of the backend audit dated 2026-09-05. Audit finding: **B18**. Priority: **Medium**.
@@ -1947,11 +2009,11 @@ No large documentation mirror of code/package.json, fabricated Atlas backup or p
 
 ### Acceptance criteria
 
-- [ ] All documented models, gates, session strategy, live endpoints and retired features match code and tests.
-- [ ] Commands specify target, whether they read/write/drop data and how failure is signalled.
-- [ ] Runbook includes rollback/recovery and session revocation steps, plus retention and migration boundaries.
-- [ ] Atlas permissions, backups/restore history, deployed indexes, production KV and ingress configuration are marked verified with evidence or explicitly unverified with the required operator check.
-- [ ] Every audit finding links to its implementation/verification issue; no finding disappears through documentation edits alone.
+- [x] All documented models, gates, session strategy, live endpoints and retired features match code and tests.
+- [x] Commands specify target, whether they read/write/drop data and how failure is signalled.
+- [x] Runbook includes rollback/recovery and session revocation steps, plus retention and migration boundaries.
+- [x] Atlas permissions, backups/restore history, deployed indexes, production KV and ingress configuration are explicitly unverified with the required operator check.
+- [x] Every audit finding links to its local implementation/verification section; public issue publication remains separately pending disclosure approval.
 
 ### Required tests or verification
 

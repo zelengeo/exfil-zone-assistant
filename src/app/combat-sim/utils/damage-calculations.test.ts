@@ -16,7 +16,7 @@
  * and past point blank it supplies the damage outright rather than scaling the round's own figure.
  */
 import { describe, expect, it } from 'vitest';
-import { calculateShotDamage } from '@/app/combat-sim/utils/damage-calculations';
+import { calculateShotDamage, explainShot } from '@/app/combat-sim/utils/damage-calculations';
 import { CALIBERS, type AmmoProperties, type ArmorProperties, type CurvePoint } from '@/types/items';
 
 /** A straight line between the given points — enough to make a lookup predictable. */
@@ -175,6 +175,28 @@ describe('an armoured hit', () => {
 
         expect(shot.damageToBodyPart).toBeCloseTo(100 * 1.1 * 1.1);
         expect(shot.damageToArmor).toBeCloseTo(100 * 1.1);
+    });
+
+    it('explains the same shot it resolves', () => {
+        /*
+         * The one thing that can go wrong with `explainShot`: it drifting from the shot path it
+         * describes. A guide printing a derivation that lands somewhere other than the simulator
+         * would be wrong *plausibly*, which is worse than wrong loudly. So both branches of the
+         * explanation are pinned to what `calculateShotDamage` returns when told to take them.
+         */
+        const plate = armor();
+        const explained = explainShot(ammo(), plate, plate.maxDurability, NEUTRAL_FIRING_POWER, 1, 0);
+
+        expect(explained.armour).not.toBeNull();
+        for (const [key, through] of [['stopped', false], ['through', true]] as const) {
+            const shot = calculateShotDamage(
+                ammo(), plate, plate.maxDurability, NEUTRAL_FIRING_POWER, 1, 0, through);
+            expect(explained.armour![key].damage).toBeCloseTo(shot.damageToBodyPart);
+            expect(explained.armour![key].durabilityLoss).toBeCloseTo(shot.damageToArmor);
+        }
+        expect(explained.armour!.penetrationChance).toBeCloseTo(shoot(true).penetrationChance);
+        expect(explained.armour!.effectiveArmorClass).toBeCloseTo(shoot(true).effectiveArmorClass);
+        expect(explained.bareDamage).toBeCloseTo(unarmoured().damageToBodyPart);
     });
 
     it('rewards beating the armour class, rather than truncating at parity', () => {

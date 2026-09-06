@@ -11,7 +11,7 @@ const pipelineCalls: { key: string; ttlSeconds: number }[] = [];
 let failNextPipeline = false;
 
 vi.mock('@vercel/kv', () => ({
-    kv: {
+    createClient: () => ({
         pipeline() {
             const operations: (() => number)[] = [];
 
@@ -47,7 +47,7 @@ vi.mock('@vercel/kv', () => ({
 
             return chain;
         },
-    },
+    }),
 }));
 
 import { InMemoryRateLimiter } from '@/lib/rate-limit/rate-limit-memory';
@@ -235,7 +235,7 @@ describe('KVRateLimiter storage behaviour', () => {
         expect(stored.ttlSeconds).not.toBeNull();
     });
 
-    it('fails open when the backend is unavailable', async () => {
+    it('reports an unknown decision when the backend is unavailable', async () => {
         const config = { interval: 60, uniqueTokenPerInterval: 1, failClosed: false };
         vi.spyOn(console, 'error').mockImplementation(() => undefined);
         failNextPipeline = true;
@@ -243,6 +243,7 @@ describe('KVRateLimiter storage behaviour', () => {
         const result = await limiter.check('api', CALLER, config);
 
         expect(result.success).toBe(true);
+        expect(result.degraded).toBe(true);
         expect(result.remaining).toBe(config.uniqueTokenPerInterval);
     });
 });

@@ -6,7 +6,7 @@ advertise, and knowing which half you are in saves reading the wrong file:
 - **Request plumbing** — `auth/`, `schemas/`, `rate-limit/`, `errors.ts`, `middleware.ts`,
   `mongodb.ts`, `logger.ts`, `user.ts`, `utils.ts`
 - **Game logic** — `gunsmith/`, `protection/`, `gates.ts`, `trade.ts`, `vendors.ts`. Pure, data-fed,
-  and the part with tests.
+  with tests alongside the modules.
 
 ## Auth
 
@@ -71,8 +71,8 @@ turn it into a response.
 | `RateLimitError` | 429 |
 | `AppError` | 500 |
 
-`handleError(error)` also understands `ZodError`, and hides detail in production. Every route ends
-in `catch (error) { return handleError(error); }` — nothing else formats an error response. It
+`handleError(error)` also understands `ZodError`, and hides unexpected error details in production.
+Use it for handler failures; rate-limit middleware and NextAuth have their own response envelopes. It
 accepts `unknown`, including a thrown `null` or string, because reading `.message` off one used to
 crash the handler itself.
 
@@ -121,14 +121,18 @@ against both caps. Sharing an allowance now requires deliberately passing the sa
 Both backends admit identically: increment, then compare the running count to the cap passed on
 *this* call. Memory expires a counter at its own window end rather than after a fixed hour — the old
 cutoff silently reset the daily and weekly policies. KV increments and sets expiry in one pipeline,
-with a TTL of the time left in the window, so a counter can never be left without one.
+with a TTL of the time left in the window plus a one-second rounding allowance. This avoids a
+client interruption between two separate HTTP requests; a pipeline is not a Redis transaction and
+does not prove atomic execution under a server failure. Real Redis concurrency/failure verification
+remains deferred with KV provisioning (B08).
 
 A route that limits signed-in and anonymous callers differently passes the matching policy itself,
 as `feedback` does. There is no automatic substitution in the middleware.
 
-**Coverage is enforced by a test, not by discipline.** `rate-limit/coverage.test.ts` walks
-`app/api/**/route.ts` and every `'use server'` `actions.ts`, and fails when a handler ships without
-a policy or names one that does not exist. A server action is a POST endpoint with a generated URL,
+**Coverage has a source-scan guard.** `rate-limit/coverage.test.ts` walks
+`app/api/**/route.ts` and every `'use server'` `actions.ts`, checking policy presence and names.
+It does not prove that each method reaches its policy; keep request tests with changed behavior.
+A server action is a POST endpoint with a generated URL,
 not an internal call, so it needs a policy too — `enforceRateLimit(policy)` throws instead of
 returning a response, which is what a server action can use. The NextAuth catch-all is the one
 allowed exception: it reaches the limiter directly, because `middleware.ts` imports `authOptions`
@@ -146,16 +150,19 @@ alternative is an unlimited unidentified caller.
 
 ## When the limiter cannot answer
 
-Every policy declares `failClosed`. Anything that mutates or authenticates refuses with a **503**
-when the backend is unavailable, so an outage cannot be used as a way around the limit; reads stay
-open so an outage degrades the site instead of taking it down. A backend failure is never reported
-as a 429 — that would tell a reader to slow down for a fault that is ours.
+Every policy declares `failClosed`. Mutations and sign-in initiation refuse with a **503** when
+the backend is unavailable. The `api`, `usernameCheck` and `healthCheck` read policies still serve;
+admin reads sharing the `admin` mutation policy fail closed too. A backend failure is never a 429.
+KV transport aborts after two seconds and disables automatic increment retries. The timeout is per
+check, not an end-to-end request deadline. `transport.test.ts` exercises the installed REST client
+with a stalled fetch and recovery. Health uses its own fail-open request policy and a separate
+probe caller, so an outage does not prevent diagnosis or consume mutation quotas.
 
 `getRateLimiterSelection()` reports which backend is live and whether production fell back to
 memory. That fallback still serves — refusing every request is worse than a weak limit — but it is
 **not** a healthy state: a cold start logs an error and `/admin/health` shows the limiter as
-`misconfigured`. KV has never been provisioned for this project, so that is the current production
-state by choice, and the health view is where it stays visible.
+`misconfigured`. The maintainer deferred KV provisioning during B09 triage; deployed configuration
+is unverified. Confirm it through the [operations runbook](../../docs/BACKEND_OPERATIONS.md).
 
 ## Database
 

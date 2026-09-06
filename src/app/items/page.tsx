@@ -12,6 +12,14 @@ export const metadata: Metadata = {
         title: 'Item Database - ExfilZone Assistant',
         description: 'Complete weapon and equipment database with stats, attachments, and detailed information.',
         type: 'website',
+        images: [
+            {
+                url: '/og/og-image-items.jpg',
+                width: 1200,
+                height: 630,
+                alt: 'Item database for weapons, armor, equipment, and valuables',
+            },
+        ],
     },
 };
 
