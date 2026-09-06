@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import Link from 'next/link';
-import { usePathname, useSearchParams } from 'next/navigation';
-import { ArrowLeft, Check, Filter, MapPin, Search, X } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { useDebounce } from '@/hooks/useDebounce';
-import { Button } from '@/components/ui/button';
+import {usePathname, useSearchParams} from 'next/navigation';
+import {ArrowLeft, Check, Filter, MapPin, MessageCircle, Search, X} from 'lucide-react';
+import {cn} from '@/lib/utils';
+import {useDebounce} from '@/hooks/useDebounce';
+import {Button} from '@/components/ui/button';
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -14,13 +14,13 @@ import {
     DropdownMenuRadioItem,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { loadedTasks } from '@/services/TaskService';
-import { useFetchTasks } from '@/hooks/useFetchTasks';
-import type { Task, TaskMap } from '@/types/tasks';
-import { useTaskProgress } from '../hooks/useTaskProgress';
-import { buildChains } from '../utils/chain';
-import { countsFor, isDone, nextUpIn, stateOf } from '../utils/progress';
-import { ownerFace, ownerOf, populatedOwners, tasksForOwner, type ChainOwner } from '../utils/vendors';
+import {loadedTasks} from '@/services/TaskService';
+import {useFetchTasks} from '@/hooks/useFetchTasks';
+import type {Task, TaskMap} from '@/types/tasks';
+import {useTaskProgress} from '../hooks/useTaskProgress';
+import {buildChains} from '../utils/chain';
+import {countsFor, isDone, nextUpIn, stateOf} from '../utils/progress';
+import {ownerFace, ownerOf, populatedOwners, tasksForOwner, type ChainOwner} from '../utils/vendors';
 import {
     ALL_OWNERS,
     TASK_MAPS,
@@ -34,9 +34,9 @@ import {
 } from '../utils/filters';
 import ChainColumn from './ChainColumn';
 import NextUpCard from './NextUpCard';
-import SearchResults, { type SearchGroup } from './SearchResults';
+import SearchResults, {type SearchGroup} from './SearchResults';
 import TaskDetailPane from './TaskDetailPane';
-import VendorRail, { VendorStrip } from './VendorRail';
+import VendorRail, {VendorStrip} from './VendorRail';
 
 /**
  * The tasks route: 227 contracts across seven vendors, read as chains rather than as a list.
@@ -65,7 +65,7 @@ export default function TasksPageContent() {
     useFetchTasks();
     const pathname = usePathname();
     const searchParams = useSearchParams();
-    const { progress, hydrated, setDone, toggleObjective } = useTaskProgress();
+    const {progress, hydrated, setDone, toggleObjective} = useTaskProgress();
 
     const filters = useMemo(() => parseFilters(searchParams), [searchParams]);
 
@@ -91,12 +91,12 @@ export default function TasksPageContent() {
     );
 
     const update = useCallback(
-        (patch: Partial<TaskFilters>) => write({ ...filters, ...patch }),
+        (patch: Partial<TaskFilters>) => write({...filters, ...patch}),
         [filters, write],
     );
 
     useEffect(() => {
-        if (debouncedSearch !== filters.search) update({ search: debouncedSearch });
+        if (debouncedSearch !== filters.search) update({search: debouncedSearch});
         // Only the debounced value should drive this, not every filter change.
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [debouncedSearch]);
@@ -181,7 +181,7 @@ export default function TasksPageContent() {
             if (bucket) bucket.push(task);
             else byOwner.set(owner, [task]);
         }
-        return [...byOwner.entries()].map(([owner, tasks]) => ({ owner, tasks }));
+        return [...byOwner.entries()].map(([owner, tasks]) => ({owner, tasks}));
     }, [gathered, listed, progress]);
 
     /** Every chain's next-up task, so a gathered row keeps the marker it has in its own column. */
@@ -218,18 +218,18 @@ export default function TasksPageContent() {
 
     const campaign = useMemo(() => {
         const all = Object.values(loadedTasks());
-        return { done: all.filter((task) => isDone(progress, task.id)).length, total: all.length };
+        return {done: all.filter((task) => isDone(progress, task.id)).length, total: all.length};
     }, [progress]);
 
     const vendorCount = owners.filter((owner) => owner !== 'daily').length;
 
     // Picking a vendor drops the selected task with it — it belonged to the chain you just left.
     const selectOwner = useCallback(
-        (owner: OwnerSelection) => update({ owner, task: '' }),
+        (owner: OwnerSelection) => update({owner, task: ''}),
         [update],
     );
 
-    const selectTask = useCallback((task: string) => update({ task }), [update]);
+    const selectTask = useCallback((task: string) => update({task}), [update]);
 
     /**
      * Recording work pins the pane to that task.
@@ -239,7 +239,7 @@ export default function TasksPageContent() {
      * chance to see it land or undo it. Acting on a task selects it.
      */
     const pin = useCallback((task: Task) => {
-        if (!filters.task) update({ task: task.id });
+        if (!filters.task) update({task: task.id});
     }, [filters.task, update]);
 
     const markDone = useCallback((task: Task, done: boolean) => {
@@ -254,13 +254,13 @@ export default function TasksPageContent() {
 
     const clearSearch = useCallback(() => {
         setSearchDraft('');
-        update({ search: '' });
+        update({search: ''});
     }, [update]);
 
     /** Out of the gathered list and back to a single vendor's sequence. */
     const backToChain = useCallback(() => {
         setSearchDraft('');
-        update({ search: '', owner: filters.owner === ALL_OWNERS ? '' : filters.owner });
+        update({search: '', owner: filters.owner === ALL_OWNERS ? '' : filters.owner});
     }, [filters.owner, update]);
 
     /**
@@ -273,7 +273,7 @@ export default function TasksPageContent() {
      */
     const mobileDetail = filters.task !== '';
 
-    const closeTask = useCallback(() => update({ task: '' }), [update]);
+    const closeTask = useCallback(() => update({task: ''}), [update]);
 
     /**
      * The task the phone opens on. Only a sequence has a next contract — the dailies are all
@@ -300,8 +300,9 @@ export default function TasksPageContent() {
                     </h1>
                 </div>
 
-                <div className="order-3 shell:order-2 w-full shell:w-72 flex items-center gap-2 h-9 px-3 bg-steel-750 border border-line-600 focus-within:border-ember flex-none">
-                    <Search size={15} className="text-ink-700 flex-none" />
+                <div
+                    className="order-3 shell:order-2 w-full shell:w-72 flex items-center gap-2 h-9 px-3 bg-steel-750 border border-line-600 focus-within:border-ember flex-none">
+                    <Search size={15} className="text-ink-700 flex-none"/>
                     <input
                         type="search"
                         value={searchDraft}
@@ -311,8 +312,9 @@ export default function TasksPageContent() {
                         className="flex-1 min-w-0 bg-transparent border-0 p-0 min-h-0 font-mono text-[11px] text-ink-100 placeholder:text-ink-700 focus:outline-none"
                     />
                     {searchDraft && (
-                        <button type="button" onClick={clearSearch} aria-label="Clear search" className="text-ink-600 hover:text-ink-200">
-                            <X size={13} />
+                        <button type="button" onClick={clearSearch} aria-label="Clear search"
+                                className="text-ink-600 hover:text-ink-200">
+                            <X size={13}/>
                         </button>
                     )}
                 </div>
@@ -325,7 +327,7 @@ export default function TasksPageContent() {
                     <div className="h-[3px] w-[120px] shell:w-[186px] bg-track" aria-hidden="true">
                         <div
                             className="h-[3px] bg-good"
-                            style={{ width: `${campaign.total ? (campaign.done / campaign.total) * 100 : 0}%` }}
+                            style={{width: `${campaign.total ? (campaign.done / campaign.total) * 100 : 0}%`}}
                         />
                     </div>
                 </div>
@@ -339,14 +341,14 @@ export default function TasksPageContent() {
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Button variant="quiet" size="micro" aria-label="Filter by map">
-                            <MapPin />
+                            <MapPin/>
                             Map: {filters.map === 'all' ? 'all' : MAP_LABELS[filters.map]}
                         </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="start">
                         <DropdownMenuRadioGroup
                             value={filters.map}
-                            onValueChange={(value) => update({ map: value as TaskFilters['map'] })}
+                            onValueChange={(value) => update({map: value as TaskFilters['map']})}
                         >
                             <DropdownMenuRadioItem value="all">All maps</DropdownMenuRadioItem>
                             {TASK_MAPS.map((map) => (
@@ -359,18 +361,19 @@ export default function TasksPageContent() {
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Button variant="quiet" size="micro" aria-label="Filter by task type">
-                            <Filter />
+                            <Filter/>
                             Type: {filters.type}
                         </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="start">
                         <DropdownMenuRadioGroup
                             value={filters.type}
-                            onValueChange={(value) => update({ type: value as TaskFilters['type'] })}
+                            onValueChange={(value) => update({type: value as TaskFilters['type']})}
                         >
                             <DropdownMenuRadioItem value="all">All types</DropdownMenuRadioItem>
                             {TASK_TYPES.map((type) => (
-                                <DropdownMenuRadioItem key={type} value={type} className="capitalize">{type}</DropdownMenuRadioItem>
+                                <DropdownMenuRadioItem key={type} value={type}
+                                                       className="capitalize">{type}</DropdownMenuRadioItem>
                             ))}
                         </DropdownMenuRadioGroup>
                     </DropdownMenuContent>
@@ -380,10 +383,10 @@ export default function TasksPageContent() {
                     variant="quiet"
                     size="micro"
                     aria-pressed={filters.hideDone}
-                    onClick={() => update({ hideDone: !filters.hideDone })}
+                    onClick={() => update({hideDone: !filters.hideDone})}
                     className={cn(filters.hideDone && 'border-line-400 text-ink-200 bg-steel-700')}
                 >
-                    <Check />
+                    <Check/>
                     Hide completed
                 </Button>
 
@@ -393,19 +396,19 @@ export default function TasksPageContent() {
                     </span>
                 )}
 
-                <div className="flex-1" />
+                <div className="flex-1"/>
 
                 <span className="hidden shell:flex items-center gap-4" aria-hidden="true">
                     <span className="flex items-center gap-1.5">
-                        <span className="w-[9px] h-[9px] bg-good block flex-none" />
+                        <span className="w-[9px] h-[9px] bg-good block flex-none"/>
                         <span className="micro-label">Done</span>
                     </span>
                     <span className="flex items-center gap-1.5">
-                        <span className="w-3 h-3 border-2 border-ember block flex-none" />
+                        <span className="w-3 h-3 border-2 border-ember block flex-none"/>
                         <span className="micro-label text-ember-soft">Next up</span>
                     </span>
                     <span className="flex items-center gap-1.5">
-                        <span className="w-2 h-2 border border-line-400 block flex-none" />
+                        <span className="w-2 h-2 border border-line-400 block flex-none"/>
                         <span className="micro-label">Locked</span>
                     </span>
                 </span>
@@ -420,7 +423,8 @@ export default function TasksPageContent() {
               * layout is unaffected by what the phone adds.
               */}
             <div className="grid grid-cols-1 shell:grid-cols-[244px_372px_1fr] gap-3 items-start">
-                <div className="hidden shell:flex shell:sticky shell:top-4 shell:max-h-[calc(100vh-2rem)] flex-col min-h-0">
+                <div
+                    className="hidden shell:flex shell:sticky shell:top-4 shell:max-h-[calc(100vh-2rem)] flex-col min-h-0">
                     <VendorRail
                         owners={owners}
                         selected={selection}
@@ -490,7 +494,8 @@ export default function TasksPageContent() {
                                 />
                             ))}
                             {listed.length === 0 && (
-                                <p className="px-3 py-6 text-center text-sm text-ink-700">Nothing matches those filters.</p>
+                                <p className="px-3 py-6 text-center text-sm text-ink-700">Nothing matches those
+                                    filters.</p>
                             )}
                         </div>
                     )}
@@ -508,7 +513,7 @@ export default function TasksPageContent() {
                             // `justify-start` is not redundant: the base stylesheet centres buttons.
                             className="shell:hidden h-11 flex items-center justify-start gap-2 px-3 bg-steel-900 border border-line-900 text-left"
                         >
-                            <ArrowLeft size={14} className="text-ink-600 flex-none" />
+                            <ArrowLeft size={14} className="text-ink-600 flex-none"/>
                             <span className="micro-label">
                                 {gathered ? 'Back to the list' : 'Back to the chain'}
                             </span>
@@ -538,7 +543,6 @@ export default function TasksPageContent() {
               * the part still being verified, and Discord is where a wrong edge gets fixed.
               */}
             <p className="micro-label text-ink-800 pt-1">
-                Prerequisites are still being verified —{' '}
                 <Link
                     href="https://discord.gg/2FCDZK6C25"
                     target="_blank"
@@ -546,6 +550,12 @@ export default function TasksPageContent() {
                     className="text-info hover:text-info-pale underline"
                 >
                     report anything wrong on Discord
+                </Link>
+                ㅤor viaㅤ
+                <Link href="/feedback" target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-info hover:text-info-pale underline">
+                    Feedback
                 </Link>
             </p>
         </div>
