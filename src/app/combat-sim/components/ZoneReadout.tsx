@@ -1,7 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
+import { ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import InfoPopover from '@/components/ui/info-popover';
+import { TOTAL_HP } from '@/lib/protection/bodyModel';
+import PanelNote from './PanelNote';
+import type { TargetZone } from '../utils/target-model';
+import type { ShotResultWithLeftovers } from '../utils/types';
 import { armorClassLabel } from '@/lib/protection/armorClassScale';
 import { Price } from '@/components/trade/Price';
 import GradeMeter from '@/components/quality/GradeMeter';
@@ -39,6 +45,150 @@ function Figure({ label, children }: { label: string; children: React.ReactNode 
         <div>
             <p className="eyebrow">{label}</p>
             <div className="mt-0.5">{children}</div>
+        </div>
+    );
+}
+
+/**
+ * Where the damage model will be written out in full.
+ *
+ * Deliberately a link to a page that does not exist yet. The ladder can show *what* each round did,
+ * but the chain behind one armoured hit - the round's curves read at range, the class-minus-
+ * penetration lookup, the durability the plate has left, firing power, the blunt scalar - is far
+ * more than a popover can hold without becoming the simplification-presented-as-a-derivation this
+ * panel already refuses to print. The guide is the place for it, and it should be able to take a
+ * single shot straight out of this simulation and show the arithmetic behind it.
+ *
+ * Tracked as a feature proposal; the route does not resolve until that ships:
+ * https://github.com/zelengeo/exfil-zone-assistant/issues/9
+ */
+const DAMAGE_GUIDE_HREF = '/guides/damage-model';
+
+/** Rows before the list folds. Twelve is a reading; ninety-nine is a scroll. */
+const LADDER_PREVIEW = 12;
+
+function LadderRow({ label, children }: { label: string; children: React.ReactNode }) {
+    return (
+        <div className="flex justify-between gap-3">
+            <dt className="text-ink-500">{label}</dt>
+            <dd className="font-mono tabular text-ink-200">{children}</dd>
+        </div>
+    );
+}
+
+/**
+ * Every shot, and what it did to each pool.
+ *
+ * Two damage columns rather than one, because they answer different questions: HP is progress
+ * toward the kill, the plate column is progress toward the plate no longer helping. A round being
+ * stopped is still winning if the second column is large.
+ *
+ * The rest - what was left standing after the shot, and how close the penetration roll was - is one
+ * tap away per row rather than four more columns. `remainingHp` is the **whole body's** pool, not
+ * this bone's: a limb kill drains all 440, which is what makes a forearm cost nineteen rounds and
+ * is invisible unless the panel says so.
+ */
+function ShotLadder({ shots, zone }: { shots: ShotResultWithLeftovers[]; zone: TargetZone }) {
+    const [expanded, setExpanded] = useState(false);
+    const visible = expanded ? shots : shots.slice(0, LADDER_PREVIEW);
+    const maxDurability = zone.armour?.item.stats.maxDurability ?? null;
+
+    return (
+        <div>
+            <div className="flex items-center justify-between gap-2 mb-2">
+                <p className="eyebrow">Shot by shot</p>
+                <PanelNote label="the shot ladder">
+                    <p>
+                        Each row is one round: what it took off this bone&rsquo;s health, and what it took
+                        off the plate. Tap a row for what was left standing afterwards.
+                    </p>
+                    <p>
+                        Penetration is <em>rolled</em> per shot in game. This ladder takes the likelier
+                        half of every roll, so a plate at 50% is drawn as stopping the round.
+                    </p>
+                </PanelNote>
+            </div>
+
+            <div className="grid grid-cols-[1.5rem_3rem_3rem_minmax(0,1fr)] items-center gap-2 pb-1 border-b border-line-900">
+                <span className="micro-label text-ink-700 text-right">#</span>
+                <span className="micro-label text-ink-700 text-right">HP</span>
+                <span className="micro-label text-ink-700 text-right">Plate</span>
+                <span className="micro-label text-ink-700">Result</span>
+            </div>
+
+            <ol className="divide-y divide-line-900">
+                {visible.map((shot, index) => (
+                    <li key={index}>
+                        <InfoPopover
+                            triggerStyle="bare"
+                            side="left"
+                            align="center"
+                            label={`Shot ${index + 1} in detail`}
+                            className="w-full text-left"
+                            trigger={
+                                <span className="w-full grid grid-cols-[1.5rem_3rem_3rem_minmax(0,1fr)] items-center gap-2 py-1.5 hover:bg-steel-750 transition-colors">
+                                    <span className="micro-label text-ink-700 text-right">{index + 1}</span>
+                                    <span className="font-mono tabular text-sm text-ink-100 text-right">
+                                        {shot.damageToBodyPart.toFixed(0)}
+                                    </span>
+                                    <span className="font-mono tabular text-sm text-ink-400 text-right">
+                                        {zone.armour ? shot.damageToArmor.toFixed(0) : '—'}
+                                    </span>
+                                    <span
+                                        className={cn(
+                                            'micro-label truncate',
+                                            shot.isPenetrating ? 'text-ink-400' : 'text-info',
+                                        )}
+                                    >
+                                        {shot.isPenetrating ? 'through' : 'stopped'}
+                                    </span>
+                                </span>
+                            }
+                        >
+                            <div className="text-sm text-ink-400 leading-relaxed space-y-2">
+                                <p className="text-ink-200">
+                                    Shot {index + 1} &mdash;{' '}
+                                    {shot.isPenetrating ? 'went through' : 'stopped by the plate'}
+                                </p>
+                                <dl className="space-y-1">
+                                    <LadderRow label="Body HP left">
+                                        {Math.max(0, Math.round(shot.remainingHp))} of {TOTAL_HP}
+                                    </LadderRow>
+                                    {zone.armour && (
+                                        <LadderRow label="Plate left">
+                                            {Math.round(shot.remainingArmorDurability)}
+                                            {maxDurability ? ` of ${maxDurability}` : ''}
+                                        </LadderRow>
+                                    )}
+                                    <LadderRow label="Penetration roll">
+                                        {Math.round(shot.penetrationChance * 100)}%
+                                    </LadderRow>
+                                </dl>
+                                <a
+                                    href={DAMAGE_GUIDE_HREF}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-1 micro-label text-ember hover:underline"
+                                >
+                                    Where this number comes from
+                                    <ExternalLink size={11} aria-hidden="true" />
+                                </a>
+                            </div>
+                        </InfoPopover>
+                    </li>
+                ))}
+            </ol>
+
+            {shots.length > LADDER_PREVIEW && (
+                <button
+                    type="button"
+                    onClick={() => setExpanded((open) => !open)}
+                    aria-expanded={expanded}
+                    className="mt-1 w-full min-h-11 micro-label text-ink-500 border border-line-800 hover:border-line-600 hover:text-ink-100 transition-colors"
+                >
+                    {expanded ? 'Show fewer' : `Show all ${shots.length} shots`}
+                </button>
+            )}
         </div>
     );
 }
@@ -118,30 +268,8 @@ export default function ZoneReadout({ outcome, loadout, range, onShowAll, classN
                 </Figure>
             </div>
 
-            {/* The ladder. Capped, because ninety-nine rows is not a reading. */}
             <div className="p-4 border-b border-line-900">
-                <p className="eyebrow mb-2">Shot by shot</p>
-                <ol className="space-y-1">
-                    {shots.slice(0, 12).map((shot, index) => (
-                        <li key={index} className="grid grid-cols-[1.5rem_3.5rem_minmax(0,1fr)] items-center gap-2">
-                            <span className="micro-label text-ink-700 text-right">{index + 1}</span>
-                            <span className="font-mono tabular text-sm text-ink-100 text-right">
-                                {shot.damageToBodyPart.toFixed(0)}
-                            </span>
-                            <span
-                                className={cn(
-                                    'micro-label',
-                                    shot.isPenetrating ? 'text-ink-400' : 'text-info',
-                                )}
-                            >
-                                {shot.isPenetrating ? 'through' : 'stopped by the plate'}
-                            </span>
-                        </li>
-                    ))}
-                    {shots.length > 12 && (
-                        <li className="micro-label text-ink-700 pl-8">&hellip; and {shots.length - 12} more</li>
-                    )}
-                </ol>
+                <ShotLadder shots={shots} zone={zone} />
 
                 <div className="grid grid-cols-2 gap-3 mt-3 pt-3 border-t border-line-900">
                     <Figure label="Health">

@@ -15,7 +15,7 @@
  * Ammunition sits beside the build rather than in it: a build carries a magazine, never a round.
  */
 
-import type { Ammunition, Weapon } from '@/types/items';
+import type { Ammunition, FireMode, Weapon } from '@/types/items';
 import type { GunsmithPart, SavedBuild } from '@/types/gunsmith';
 import type { PartIndex } from '@/lib/gunsmith/compatibility';
 import {
@@ -43,6 +43,16 @@ export interface Loadout {
     fitted: FittedMap;
     build: AssembledBuild;
     ammo: Ammunition | null;
+    /**
+     * How the gun fires, resolved once at construction.
+     *
+     * It has to be resolved here rather than read back later, because the two places it can live
+     * are not both reachable from an assembled build: 38 of the 63 lower receivers author it, and
+     * for the rest — the AK-74N's among them — the only copy is on the *preset weapon*, which a
+     * `Loadout` keeps only as an id. Null where neither authors one, which is a real answer and not
+     * a reason to guess.
+     */
+    fireMode: FireMode | null;
 }
 
 /** The four slots, and the order they are offered in. */
@@ -50,6 +60,44 @@ export const MAX_LOADOUTS = 4;
 
 /** Opened on nothing in particular, the route starts here — the gunsmith's own default. */
 export const DEFAULT_PRESET_ID = 'weapon-ak74n-factory';
+
+/**
+ * What holding the trigger on this gun actually looks like.
+ *
+ * The spray estimate walks the gun's own fire rate whatever the receiver is, so the figure is
+ * meaningful on a DMR too — but calling it "full auto" on one is simply false. `fireModes` is the
+ * game's own bit set and wins wherever the receiver authors it; `fireMode` is the curated single
+ * value for the receivers that author none, which is the rule `types/items.ts` states.
+ */
+/**
+ * The mode a gun fires in, from whichever source authors it.
+ *
+ * `fireModes` is the game's own bit set and wins wherever the receiver carries it; `fireMode` is
+ * the curated single value that `types/items.ts` keeps for the receivers authoring none. Where the
+ * receiver has neither, a preset weapon's own `stats.fireMode` is the last source — 33 of the 149
+ * presets do not carry that either, and those resolve to null rather than to a guess.
+ *
+ * Full auto is preferred out of a multi-mode set because it is the one the spray estimate models:
+ * the estimate holds the trigger, so the cadence it is labelled with should be the one it walked.
+ */
+export function resolveFireMode(receiver: GunsmithPart, preset?: Weapon | null): FireMode | null {
+    const gun = receiver.stats.gunData;
+    const modes = gun?.fireModes ?? [];
+    if (modes.length > 0) return modes.includes('fullAuto') ? 'fullAuto' : modes[0];
+    return gun?.fireMode ?? preset?.stats.fireMode ?? null;
+}
+
+export function sprayCadence(loadout: Loadout): string {
+    switch (loadout.fireMode) {
+        case 'fullAuto': return 'full auto';
+        case 'burstFire': return 'burst after burst';
+        case 'pumpAction': return 'pumped as fast as it cycles';
+        case 'boltAction': return 'cycled as fast as it will go';
+        case 'semiAuto': return 'trigger spammed';
+        // Nothing authored a mode. Describe what the estimate does, and claim nothing about the gun.
+        default: return 'trigger held down';
+    }
+}
 
 /** A build and a round agree when their calibres do. An empty slot is not a disagreement. */
 export function ammoFits(loadout: Loadout): boolean {
@@ -81,6 +129,7 @@ export function loadoutFromPreset(
         fitted,
         build: assembleBuild(receiver, fitted, index),
         ammo,
+        fireMode: resolveFireMode(receiver, preset),
     };
 }
 
@@ -101,6 +150,7 @@ export function loadoutFromSaved(
         fitted,
         build: assembleBuild(receiver, fitted, index),
         ammo,
+        fireMode: resolveFireMode(receiver),
     };
 }
 
@@ -122,6 +172,7 @@ export function loadoutFromEncoded(
         fitted: decoded.fitted,
         build: assembleBuild(decoded.receiver, decoded.fitted, index),
         ammo,
+        fireMode: resolveFireMode(decoded.receiver),
     };
 }
 

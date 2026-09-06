@@ -6,7 +6,8 @@ import { AmmoTag } from './AmmoDisplay';
 import PanelNote from './PanelNote';
 import { Price } from '@/components/trade/Price';
 import GradeMeter from '@/components/quality/GradeMeter';
-import { formatSeconds, formatShots, shotsColor, shotsGrade, type LoadoutOutcome } from '../utils/scenario';
+import { aimedZoneLabel, formatSeconds, formatShots, shotsColor, shotsGrade, type LoadoutOutcome } from '../utils/scenario';
+import { sprayCadence } from '../utils/loadout';
 
 /**
  * The one answer, above everything else on the page.
@@ -65,6 +66,9 @@ export default function VerdictBar({ outcome, onShowHead, onExplainSpray, classN
     }
 
     const { bestCase, aimed, spray } = outcome.verdict;
+    // Measured, not assumed: only the zones that actually return the same figure share a name.
+    const aimedLabel = aimed ? aimedZoneLabel(aimed, outcome.body) : null;
+    const cadence = sprayCadence(outcome.loadout);
     const headSpread = outcome.head
         .map((entry) => `${entry.zone.short ?? 'head'} ${formatShots(entry.shotsToKill)}`)
         .join(', ');
@@ -89,7 +93,7 @@ export default function VerdictBar({ outcome, onShowHead, onExplainSpray, classN
                     </span>
                     <div className="min-w-0">
                         <p className="text-base text-ink-100">
-                            Aimed &mdash; {aimed ? aimed.zone.label.toLowerCase() : 'nothing lands'}
+                            Aimed &mdash; {aimedLabel ?? 'nothing lands'}
                         </p>
                         <p className="micro-label text-ink-600 flex items-center gap-2">
                             {aimed ? formatSeconds(aimed.ttk) : '—'}
@@ -133,7 +137,7 @@ export default function VerdictBar({ outcome, onShowHead, onExplainSpray, classN
                             shots={formatShots(aimed.shotsToKill)}
                             colour={shotsColor(aimed.shotsToKill)}
                         >
-                            {aimed.zone.label.toLowerCase()}{' '}&mdash; the recommendation above
+                            {aimedLabel}{' '}&mdash; the recommendation above
                         </Tier>
                     )}
                     {spray && (
@@ -142,7 +146,7 @@ export default function VerdictBar({ outcome, onShowHead, onExplainSpray, classN
                             shots={spray.rounds === null ? '∞' : String(Math.round(spray.rounds))}
                             colour={shotsColor(spray.rounds ?? Infinity)}
                         >
-                            centre mass, full auto
+                            centre mass, {cadence}
                         </Tier>
                     )}
                 </div>

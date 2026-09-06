@@ -14,6 +14,7 @@
 
 import { cheapestOffer } from '@/lib/trade';
 import { gradeFromStops, type Grade, type GradeStop } from '@/lib/quality/grade';
+import { LIMB_TIERS, ZONE_GROUP_PLURALS } from './target-model';
 import type { ShotResultWithLeftovers } from './types';
 import { simulateCombat } from './damage-calculations';
 import { ammoProperties, armorProperties } from './props';
@@ -219,6 +220,35 @@ export function shotsGrade(shots: number): Grade {
 
 export function shotsColor(shots: number): string {
     return shotsGrade(shots).color;
+}
+
+/**
+ * What to call the aimed recommendation.
+ *
+ * "Left upper arm" is an arbitrary pick whenever its mirror — and often a thigh too — returns the
+ * same number: `DETAIL_SCALAR` rates both upper limbs at 0.7 and both lower limbs at 0.5, so on a
+ * bare target four capsules tie for the same recommendation and the reader is told to aim at one
+ * of them for no reason.
+ *
+ * The set is measured, never assumed. Only zones that **actually return the same figure** are
+ * folded into one name, so a vest that reaches a shoulder and not a thigh breaks the tie and the
+ * verdict goes back to naming the single zone that wins. That is the same rule as the body figure's
+ * thirteen numerals: a shared name is only honest where the readings behind it agree.
+ */
+export function aimedZoneLabel(aimed: ZoneOutcome, body: ZoneOutcome[]): string {
+    const tied = body.filter((entry) => entry.shotsToKill === aimed.shotsToKill);
+    if (tied.length < 2) return aimed.zone.label.toLowerCase();
+
+    const groups = new Set(tied.map((entry) => entry.zone.group));
+
+    // A whole tier only earns its name when every group in it ties, and nothing outside it does.
+    for (const tier of LIMB_TIERS) {
+        if (groups.size !== tier.groups.length) continue;
+        if (tier.groups.every((group) => groups.has(group))) return tier.label;
+    }
+
+    // Otherwise name the winner's own group, which every tying member of it shares.
+    return ZONE_GROUP_PLURALS[aimed.zone.group];
 }
 
 /** `∞` for a round that cannot do it, which is a real answer and reads better than a blank. */

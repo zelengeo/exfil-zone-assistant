@@ -174,6 +174,57 @@ label and the rail's pip heights are derived from the stops — `shotsRangeLabel
 `shotsGrade().index` — rather than re-thresholded beside them, because the duplicated `<= 2 / <= 4 /
 <= 7` copies are exactly what survives a re-banding and then quietly disagrees with the colour.
 
+## The shot ladder
+
+`ZoneReadout`'s ladder prints **every** shot, not the first twelve with a count of the rest: twelve
+is the preview and a button opens the whole run. Two damage columns, because they answer different
+questions — HP is progress toward the kill, Plate is progress toward the plate no longer helping,
+and a round being stopped is still winning if the second column is large.
+
+Everything else about a shot is one tap away on the row rather than four more columns: what was left
+standing, and how close the penetration roll was. Two things there are easy to misread and are
+labelled to prevent it:
+
+- **`remainingHp` is the whole body's pool, not the bone's.** A limb kill drains all 440 HP, which
+  is the entire reason a forearm costs nineteen rounds where the chest costs two. Invisible unless
+  the popover says "of 440", so it does.
+- **`isPenetrating` is not a roll.** `simulateCombat` passes `applyRandom: false`, so the ladder
+  takes `penetrationChance > 0.5` — the likelier half of every roll. In game each shot is rolled, so
+  a plate at 50% is drawn stopping the round when half the time it would not. The panel note says so.
+
+`DAMAGE_GUIDE_HREF` points at `/guides/damage-model`, **which does not exist yet**. The link is a
+deliberate placeholder for [issue #9](https://github.com/zelengeo/exfil-zone-assistant/issues/9): the
+full chain behind one armoured hit is far more than a popover can hold, and this panel already
+refuses to print a shortened version of it — see the "where it is exact" block, which drops to prose
+the moment armour is involved. If that issue is closed `wontfix`, remove the link rather than leave
+it pointing at a 404.
+
+## Naming the aimed zone
+
+"Left upper arm" is an arbitrary pick. `DETAIL_SCALAR` rates both upper limbs at 0.7 and both lower
+limbs at 0.5, so on a bare target four capsules return the same figure and the reader is told to aim
+at one of them for no reason.
+
+`aimedZoneLabel` folds only the zones that **actually return the same figure** into one name —
+`LIMB_TIERS` offers "upper limbs" and "lower limbs", `ZONE_GROUP_PLURALS` offers the single-group
+names, and a lone winner keeps its own label. The set is measured against the outcome every time,
+never asserted, so a vest reaching a shoulder and not a thigh breaks the tie and the verdict goes
+back to naming one zone. Same rule as the body figure's thirteen numerals: a shared name is honest
+only where the readings behind it agree.
+
+## Fire mode
+
+`Loadout.fireMode` is resolved once at construction by `resolveFireMode`, and it has to be, because
+the two places it can live are not both reachable later. 38 of the 63 lower receivers author it; for
+the rest — the AK-74N's among them — the only copy is on the **preset weapon**, which a `Loadout`
+keeps only as an id. 33 of the 149 presets carry none either, and those resolve to null rather than
+to a guess.
+
+`sprayCadence` turns it into the words under the spray verdict. The estimate holds the trigger at
+the gun's own fire rate whatever the receiver is, so the figure is meaningful on a bolt-action —
+but labelling one "full auto" was simply false, which is what it used to do for every gun in the
+game.
+
 ## The grade meter
 
 `SHOTS_RAMP` is one of three consumers of the app's shared four-rung grade scale

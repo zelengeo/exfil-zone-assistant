@@ -3,6 +3,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import ItemIcon from '@/components/items/ItemIcon';
+import { sprayCadence } from '../utils/loadout';
 import PanelNote from './PanelNote';
 import BodyViewer, { type ZoneOverlay } from '@/components/protection/BodyViewer';
 import {
@@ -17,6 +18,7 @@ import {
     shotsColor,
     SHOTS_RAMP,
     shotsRangeLabel,
+    aimedZoneLabel,
     type LoadoutOutcome,
     type ZoneOutcome,
 } from '../utils/scenario';
@@ -185,7 +187,7 @@ export default function CompareView({ outcomes, target, selectedLoadoutId, onSel
                                             {aimed ? formatShots(aimed.shotsToKill) : '—'}
                                         </span>
                                         <span className="micro-label text-ink-700 block mt-1 truncate">
-                                            {aimed ? aimed.zone.label : '—'}
+                                            {aimed ? aimedZoneLabel(aimed, outcome.body) : '—'}
                                         </span>
                                     </span>
                                     <span className="flex-1 bg-steel-850 py-2 px-1">
@@ -193,7 +195,9 @@ export default function CompareView({ outcomes, target, selectedLoadoutId, onSel
                                         <span className="font-mono text-base text-ink-hi block mt-1 tabular">
                                             {formatRounds(sprayRounds)}
                                         </span>
-                                        <span className="micro-label text-ink-700 block mt-1">full auto</span>
+                                        <span className="micro-label text-ink-700 block mt-1 truncate">
+                                            {sprayCadence(outcome.loadout)}
+                                        </span>
                                     </span>
                                 </div>
                             </div>

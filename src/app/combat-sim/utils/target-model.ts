@@ -65,6 +65,33 @@ export const ZONE_GROUP_LABELS: Record<ZoneGroup, string> = {
     calf: 'Calf',
 };
 
+/** The same groups named as a set, for a verdict that covers more than one capsule. */
+export const ZONE_GROUP_PLURALS: Record<ZoneGroup, string> = {
+    head: 'the head',
+    chest: 'the chest',
+    pelvis: 'the pelvis',
+    upperArm: 'upper arms',
+    forearm: 'forearms',
+    thigh: 'thighs',
+    calf: 'calves',
+};
+
+/**
+ * Limbs come in two damage tiers, and both tiers cross the arm/leg divide.
+ *
+ * `DETAIL_SCALAR` rates an upper arm and a thigh at 0.7, and a forearm and a calf at 0.5 — so on a
+ * bare target the upper arms and thighs return the same shots-to-kill, as do the forearms and
+ * calves. Naming one of the four is arbitrary, which is why the verdict says "upper limbs" when all
+ * four tie rather than picking "left upper arm" out of a hat.
+ *
+ * A tier is only ever *offered* as a name. Whether it is used is decided against the outcome, since
+ * a vest reaching a shoulder and not a thigh breaks the tie and makes the shared name a lie.
+ */
+export const LIMB_TIERS: ReadonlyArray<{ label: string; groups: readonly ZoneGroup[] }> = [
+    { label: 'upper limbs', groups: ['upperArm', 'thigh'] },
+    { label: 'lower limbs', groups: ['forearm', 'calf'] },
+];
+
 const GROUP_OF_BONE: Record<string, ZoneGroup> = {
     head: 'head',
     spine_03: 'chest', spine_02: 'chest',
