@@ -26,7 +26,7 @@ const slides: Slide[] = [
         title: "EXFILZONE",
         subtitle: "VR EXTRACTION ASSISTANT",
         description: "Your ultimate tactical companion for the VR extraction shooter experience",
-        backgroundImage: "/og/art/default-base.png",
+        backgroundImage: "/images/hero/press_img_1920x1080.webp",
         ctaText: "Start Here",
         ctaLink: "/guides/combat-sim-usage",
     },
@@ -119,7 +119,7 @@ export default function HeroSlider() {
                                 fill
                                 priority={index === 0}
                                 sizes="100vw"
-                                className="object-contain object-right"
+                                className="object-cover object-center"
                             />
                             <div
                                 className="absolute inset-0 bg-gradient-to-r from-steel-950 via-steel-950/85 to-transparent z-10"/>
