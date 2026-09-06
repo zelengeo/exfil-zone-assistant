@@ -5,15 +5,49 @@ import { spawnSync } from 'node:child_process';
 import { platform } from 'node:process';
 import { fileURLToPath } from 'node:url';
 
-// npm run render:og -- [input-art] [output-jpeg]
+// npm run render:og -- [input-art] [output-jpeg] [card-preset]
 const currentScriptPath = fileURLToPath(import.meta.url);
 const scriptDirectory = dirname(currentScriptPath);
 const repositoryRoot = resolve(scriptDirectory, '..');
 
 const inputArgument = process.argv[2] ?? 'public/og/art/default-base.png';
 const outputArgument = process.argv[3] ?? 'public/og-image.jpg';
+const presetArgument = process.argv[4] ?? 'base';
 const inputPath = isAbsolute(inputArgument) ? inputArgument : resolve(repositoryRoot, inputArgument);
 const outputPath = isAbsolute(outputArgument) ? outputArgument : resolve(repositoryRoot, outputArgument);
+
+const cardPresets = {
+  base: {
+    eyebrow: 'FIELD SYSTEM / EXTRACTION INTELLIGENCE',
+    titlePrimary: 'EXFIL',
+    titleAccent: 'ZONE',
+    descriptor: 'ASSISTANT',
+    benefit: 'Plan tasks, builds, and the route out.',
+    status: 'FIELD READY // LIVE DATA',
+  },
+  tasks: {
+    eyebrow: 'FIELD SYSTEM / TASKS',
+    titlePrimary: 'TASK',
+    titleAccent: 'CHAINS',
+    titleGap: 12,
+    descriptor: 'PROGRESS TRACKER',
+    benefit: 'Track requirements, progress, and what opens next.',
+    status: 'CHAIN STATE // LOCAL PROGRESS',
+    screen: {
+      path: ['public', 'og', 'art', 'tasks-ui-capture.png'],
+      left: 475,
+      top: 135,
+      width: 588,
+      height: 352,
+    },
+  },
+};
+
+const card = cardPresets[presetArgument];
+
+if (!card) {
+  throw new Error(`Unknown OG card preset: ${presetArgument}`);
+}
 
 const assetPath = (...segments) => resolve(scriptDirectory, 'assets', ...segments);
 const repositoryPath = (...segments) => resolve(repositoryRoot, ...segments);
@@ -83,29 +117,45 @@ const overlay = Buffer.from(`
   <path d="M1090 24L1122 56H1176" fill="none" stroke="#8DA0AE" stroke-opacity="0.7" stroke-width="1"/>
 
   <rect x="202" y="81" width="26" height="2" fill="#FF4A24"/>
-  <text x="242" y="88" fill="#8DA0AE" font-family="IBM Plex Mono OG, monospace" font-size="16" font-weight="600" letter-spacing="2.8">FIELD SYSTEM / EXTRACTION INTELLIGENCE</text>
+  <text x="242" y="88" fill="#8DA0AE" font-family="IBM Plex Mono OG, monospace" font-size="16" font-weight="600" letter-spacing="2.8">${card.eyebrow}</text>
 
-  <text x="72" y="302" font-family="Saira Condensed OG, Arial Narrow, sans-serif" font-size="108" font-weight="800" letter-spacing="-1"><tspan fill="#ECF2F7">EXFIL</tspan><tspan fill="#FF4A24">ZONE</tspan></text>
-  <text x="76" y="364" fill="#ECF2F7" font-family="IBM Plex Mono OG, monospace" font-size="34" font-weight="600" letter-spacing="11">ASSISTANT</text>
+  <text x="72" y="302" font-family="Saira Condensed OG, Arial Narrow, sans-serif" font-size="108" font-weight="800" letter-spacing="-1"><tspan fill="#ECF2F7">${card.titlePrimary}</tspan><tspan dx="${card.titleGap ?? 0}" fill="#FF4A24">${card.titleAccent}</tspan></text>
+  <text x="76" y="364" fill="#ECF2F7" font-family="IBM Plex Mono OG, monospace" font-size="34" font-weight="600" letter-spacing="11">${card.descriptor}</text>
 
   <path d="M72 410H504" stroke="#33414D" stroke-width="1"/>
   <path d="M72 410H122" stroke="#FF4A24" stroke-width="3"/>
-  <text x="72" y="453" fill="#B9C6CF" font-family="IBM Plex Sans OG, sans-serif" font-size="24" font-weight="600">Plan tasks, builds, and the route out.</text>
+  <text x="72" y="453" fill="#B9C6CF" font-family="IBM Plex Sans OG, sans-serif" font-size="24" font-weight="600">${card.benefit}</text>
 
   <g transform="translate(72 540)">
     <rect width="10" height="10" fill="#FF4A24"/>
-    <text x="25" y="11" fill="#8DA0AE" font-family="IBM Plex Mono OG, monospace" font-size="14" font-weight="600" letter-spacing="2.4">FIELD READY // LIVE DATA</text>
+    <text x="25" y="11" fill="#8DA0AE" font-family="IBM Plex Mono OG, monospace" font-size="14" font-weight="600" letter-spacing="2.4">${card.status}</text>
   </g>
 </svg>`);
 
 await mkdir(dirname(outputPath), { recursive: true });
 
-const [background, logo] = await Promise.all([
+const [background, logo, screen] = await Promise.all([
   sharp(inputPath).resize(1200, 630, { fit: 'cover', position: 'centre' }).toBuffer(),
   sharp(repositoryPath('public', 'brand', 'logo-ez.svg')).resize(110, 110, { fit: 'contain' }).png().toBuffer(),
+  card.screen
+    ? sharp(repositoryPath(...card.screen.path))
+      .resize(card.screen.width, card.screen.height, { fit: 'cover', position: 'centre' })
+      .modulate({ brightness: 0.98, saturation: 0.9 })
+      .sharpen({ sigma: 0.6 })
+      .png()
+      .toBuffer()
+    : null,
 ]);
 
-await sharp(background)
+const art = screen && card.screen
+  ? await sharp(background).composite([{
+    input: screen,
+    left: card.screen.left,
+    top: card.screen.top,
+  }]).toBuffer()
+  : background;
+
+await sharp(art)
   .composite([
     { input: overlay, top: 0, left: 0 },
     { input: logo, top: 51, left: 75 },
