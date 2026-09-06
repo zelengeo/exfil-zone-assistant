@@ -20,7 +20,8 @@ gotchas, point at the script rather than restating it.
 not to use. Check it before naming anything.
 
 `docs/adr/` records the decisions that would otherwise look arbitrary: why the task data moved out
-of the bundle, why zod outranks hand-written types, why there is no `Corp`. A record marked
+of the bundle, why zod outranks hand-written types, why there is no `Corp`, why a panel no longer
+closes with a paragraph explaining itself. A record marked
 superseded is kept on purpose — it is the account of why the thing it describes was ever done that
 way.
 
@@ -32,6 +33,9 @@ are still live.
 
 Non-obvious ones worth reaching for by name:
 
+- `src/components/ui/AGENTS.md` — the disclosure ladder: when explanatory text is allowed on the
+  page at all, and which reveal it goes in when it is not. Read it before writing a sentence of
+  UI copy longer than a label.
 - `public/data/AGENTS.md` — item JSON schemas, and the procedure for a game-version data update
 - `src/app/combat-sim/AGENTS.md` — damage, penetration and TTK model
 - `src/app/tasks/AGENTS.md` — the chain DAG, and why there are no status tabs
@@ -127,6 +131,9 @@ Players read this through a headset or one-handed on a phone mid-raid.
 - High contrast; assume a dim, low-fidelity panel rather than a calibrated monitor
 - Type large enough to read at VR viewing distance — err a step bigger than a desktop app would
 - Mobile responsiveness matters as much as VR; both, not one
+- Explanatory text is disclosed, not parked on the page. A panel does not close with a paragraph
+  about how its figures were derived; the reader asks for that from the figure. The ladder, the
+  size caps and the trigger vocabulary are in [components/ui](src/components/ui/AGENTS.md).
 
 ## Military aesthetic
 

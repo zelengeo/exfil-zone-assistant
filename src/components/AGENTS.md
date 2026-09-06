@@ -15,6 +15,10 @@ when a second route needs it.
 Check `ui/` before building a primitive. Adding a shadcn component is a generator run, not a
 hand-written file, and a hand-rolled dialog will not inherit the theme or the focus behaviour.
 
+[`ui/AGENTS.md`](ui/AGENTS.md) carries the layer above the primitives: the disclosure ladder that
+decides whether a piece of explanatory text belongs on the page, in a `Tooltip`, in an
+`InfoPopover`, or in a guide. Read it before adding prose to a component.
+
 ## Props
 
 Explicit interface, named for the component. No inline shapes, no `any` — reach for `unknown` and

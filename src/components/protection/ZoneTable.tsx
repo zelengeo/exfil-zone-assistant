@@ -2,6 +2,8 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import type { Coverage } from '@/lib/protection/coverage';
 import { armorClassColor, armorClassLabel, UNCOVERED_COLOR } from '@/lib/protection/armorClassScale';
+import InfoPopover from '@/components/ui/info-popover';
+import { PopoverHeading, PopoverProse } from '@/components/ui/popover';
 
 /**
  * The numbers behind the picture, one row per collision body the piece actually covers.
@@ -18,6 +20,23 @@ export interface ZoneTableProps {
     onHover?: (capsuleIndex: number | null) => void;
     className?: string;
 }
+
+/**
+ * Header and rows share one template so a label sits over its own digits.
+ *
+ * The narrow set is not the wide set scaled down, it is measured. At 375px this table has about
+ * 202px to spend, and the wide tracks plus their gaps come to roughly 192 of it before the zone
+ * column has asked for anything — so `minmax(0,1fr)` resolved to nearly zero and every zone name
+ * wrapped a character at a time. Chrome's mobile text boosting makes it exactly zero, but the
+ * squeeze is there on a real phone too.
+ *
+ * Below `sm` the numeric tracks are sized to their DATA (22 / 25 / 33px measured) rather than to
+ * their headers, and the headers give up `tracking-eyebrow` to fit — see `ColumnHead`. That leaves
+ * the zone column ~78px, enough for the part name on one line with the bone wrapping under it.
+ */
+const COLUMNS =
+    'grid gap-x-1.5 grid-cols-[minmax(0,1fr)_1.75rem_1.75rem_2.25rem] ' +
+    'sm:gap-x-3 sm:grid-cols-[minmax(0,1fr)_3.25rem_3rem_3.5rem]';
 
 const PART_LABELS: Record<string, string> = {
     Head: 'Head',
@@ -38,6 +57,37 @@ function boneLabel(bone: string): string {
 /** The same bone where the part beside it has already said which side: `lowerarm_l` -> `lowerarm`. */
 function shortBone(bone: string): string {
     return bone.replace(/_[lr]$/i, '').replace(/_/g, ' ');
+}
+
+/**
+ * A column header that answers what its column means.
+ *
+ * This table used to close with one four-sentence footnote defining all of its columns, set in
+ * `micro-label` — 9px uppercase mono, a label face carrying paragraphs, permanently on screen for
+ * a reader who needed it once. It is now a note per column, on the header that raises the
+ * question. The disclosure ladder is in `components/ui/AGENTS.md`.
+ *
+ * The label itself is the trigger rather than a dot beside it. A dot costs about a rem of column
+ * width, and three of them turned every row on a phone into three wrapped lines — the header here
+ * is 3rem wide and has none to give.
+ *
+ * `.eyebrow-tight` for the same reason: the wide tracking is what makes a five-letter eyebrow 42px,
+ * and 42 × 3 is more than this table can spend on headers at phone width. It gets the tracking back
+ * at `sm`, where the wide tracks apply too.
+ */
+function ColumnHead({ label, children }: { label: string; children: React.ReactNode }) {
+    return (
+        <InfoPopover
+            trigger={<span className="eyebrow-tight">{label}</span>}
+            label={`What ${label} means`}
+            side="bottom"
+            align="end"
+            className="justify-self-end"
+        >
+            <PopoverHeading>{label}</PopoverHeading>
+            <PopoverProse>{children}</PopoverProse>
+        </InfoPopover>
+    );
 }
 
 export default function ZoneTable({ coverage, selected, onSelect, onHover, className }: ZoneTableProps) {
@@ -68,11 +118,23 @@ export default function ZoneTable({ coverage, selected, onSelect, onHover, class
 
     return (
         <div className={cn('min-w-0', className)}>
-            <div className="grid grid-cols-[minmax(0,1fr)_3.25rem_3rem_3.5rem] gap-x-3 px-2 pb-1.5 border-b border-line-900">
-                <span className="eyebrow">Zone</span>
-                <span className="eyebrow text-right">Class</span>
-                <span className="eyebrow text-right">Wedge</span>
-                <span className="eyebrow text-right">Cover</span>
+            <div className={cn(COLUMNS, 'px-2 pb-1.5 border-b border-line-900')}>
+                {/* Zone carries no note. The footnote's opening sentence — "only the bodies this
+                    piece reaches are listed" — is answered as data by the Unprotected line under
+                    the table, so it was deleted rather than hidden. */}
+                <span className="eyebrow-tight">Zone</span>
+                <ColumnHead label="Class">
+                    The plate&rsquo;s own rating for that spot, which need not match the vest&rsquo;s
+                    headline &mdash; a vest rates its chest plate and its shoulder separately.
+                </ColumnHead>
+                <ColumnHead label="Wedge">
+                    The protected arc, and it is two-sided: a 90&deg; plate covers front and back,
+                    never the flank.
+                </ColumnHead>
+                <ColumnHead label="Cover">
+                    The share of that collision body the plate actually protects, measured by running
+                    the game&rsquo;s own <em>Is Protected</em> test over its surface.
+                </ColumnHead>
             </div>
 
             <div className="divide-y divide-line-900">
@@ -94,7 +156,8 @@ export default function ZoneTable({ coverage, selected, onSelect, onHover, class
                             onMouseEnter={() => onHover?.(zone.capsule.index)}
                             onMouseLeave={() => onHover?.(null)}
                             className={cn(
-                                'grid grid-cols-[minmax(0,1fr)_3.25rem_3rem_3.5rem] gap-x-3 items-baseline px-2 py-1.5 border-l-2 transition-colors',
+                                COLUMNS,
+                                'items-baseline px-2 py-1.5 border-l-2 transition-colors',
                                 isSelected ? 'border-l-ember bg-steel-800' : 'border-l-transparent',
                                 onSelect && 'cursor-pointer hover:bg-steel-800',
                             )}
@@ -103,6 +166,11 @@ export default function ZoneTable({ coverage, selected, onSelect, onHover, class
                                 <span className="text-xs text-ink-200">
                                     {PART_LABELS[zone.part] ?? zone.part}
                                 </span>
+                                {/* JSX drops the newline between these two spans, and a margin is
+                                    not a break opportunity — so "chest" and its bone were one
+                                    unbreakable 84px word, and the part name broke instead of it.
+                                    `wbr` gives the line somewhere to break at no visual cost. */}
+                                <wbr />
                                 <span className="micro-label text-ink-700 ml-1.5">
                                     {boneLabel(zone.capsule.bone)}
                                 </span>
@@ -140,17 +208,10 @@ export default function ZoneTable({ coverage, selected, onSelect, onHover, class
                 </p>
             )}
 
-            <p className="micro-label text-ink-700 mt-3 leading-relaxed">
-                Only the bodies this piece reaches are listed. Class is the plate&apos;s own rating for
-                that spot, which need not match the vest&apos;s headline. Cover is the share of that
-                collision body the plate actually protects, measured by running the game&apos;s own{' '}
-                <span className="text-ink-500">Is Protected</span> test over its surface. The wedge is
-                two-sided: a 90° plate covers front and back, never the flank.
-            </p>
-
+            {/* Data the reader came for, not an explanation of data — it stays on the page. */}
             {uncovered.length > 0 && (
-                <p className="micro-label text-ink-700 mt-1.5 leading-relaxed">
-                    <span className="text-ink-500">Unprotected:</span> {uncovered.join(', ')}.
+                <p className="mt-3 text-xs leading-relaxed text-ink-600">
+                    <span className="eyebrow">Unprotected</span> {uncovered.join(', ')}.
                 </p>
             )}
         </div>

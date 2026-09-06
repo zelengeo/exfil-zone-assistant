@@ -19,13 +19,17 @@ import { cn } from '@/lib/utils';
  *     `bad` for a verdict); the accent is not.
  *  3. THE AFFORDANCE LIVES ON THE TRIGGER. A dashed border or dotted underline plus `cursor-help`,
  *     or a real button. Never a coloured trigger that only reveals itself on hover.
- *  4. STRUCTURE, NOT PROSE. An eyebrow for the head, then either one short line or a two-column
- *     grid with mono tabular figures on the right. If it needs paragraphs it is a panel on the
- *     page, not a popover.
+ *  4. TWO GENRES, BOTH CAPPED. A LEDGER is an eyebrow then a two-column grid with mono tabular
+ *     figures on the right — `PopoverHeading` + `PopoverRow`. A NOTE is an eyebrow then at most
+ *     three sentences of reading-face prose — `PopoverHeading` + `PopoverProse`. Past the note cap
+ *     it is a guide section, and the popover keeps three sentences plus the link to it.
  *  5. 18REM MAX. Anything wider has outgrown the format.
  *  6. TOOLTIP vs POPOVER. `Tooltip` is one line of plain text, hover/focus only, never
  *     interactive. Anything with links, rows or figures is a `Popover` — see `InfoPopover`, which
  *     opens on hover for a mouse and on tap or Enter for everything else.
+ *
+ * Which of these a given piece of text belongs in at all — and when it is allowed to stay on the
+ * page instead — is the disclosure ladder in `components/ui/AGENTS.md`.
  */
 
 function Popover(props: React.ComponentProps<typeof PopoverPrimitive.Root>) {
@@ -103,6 +107,22 @@ function PopoverRow({
     );
 }
 
+/**
+ * The note body: the sentences a panel used to close with. Rule 4's other genre.
+ *
+ * A reading face, deliberately — `micro-label` is 9px uppercase mono built for a four-word column
+ * header, and the footnotes this replaces were setting whole paragraphs in it. Sized to stay
+ * legible at VR viewing distance, which is a step larger than a desktop app would use.
+ */
+function PopoverProse({ className, ...props }: React.ComponentProps<'p'>) {
+    return (
+        <p
+            className={cn('text-xs leading-relaxed text-ink-300 [&_em]:not-italic [&_em]:text-ink-100', className)}
+            {...props}
+        />
+    );
+}
+
 /** The closing line — provenance, or the caveat a figure needs. */
 function PopoverNote({ className, ...props }: React.ComponentProps<'p'>) {
     return (
@@ -120,5 +140,6 @@ export {
     PopoverContent,
     PopoverHeading,
     PopoverRow,
+    PopoverProse,
     PopoverNote,
 };

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { Info } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Popover, PopoverContent, PopoverTrigger } from './popover';
 
@@ -23,8 +24,13 @@ export interface InfoPopoverProps {
     /** What the reader sees and points at. */
     trigger: React.ReactNode;
     children: React.ReactNode;
-    /** Trigger chrome. `dashed` is the standard hoverable-figure affordance; `bare` opts out. */
-    triggerStyle?: 'dashed' | 'bare';
+    /**
+     * Trigger chrome. `dashed` is the standard hoverable-figure affordance for a term inside text
+     * or a cell; `icon` is the header affordance and carries its own 44px hit target; `bare` opts
+     * out, for a trigger that is already an affordance on its own. The whole vocabulary — there is
+     * no fourth. See `components/ui/AGENTS.md`.
+     */
+    triggerStyle?: 'dashed' | 'icon' | 'bare';
     side?: 'top' | 'right' | 'bottom' | 'left';
     align?: 'start' | 'center' | 'end';
     /** Accessible name for the trigger, when the visible text is not enough on its own. */
@@ -35,6 +41,17 @@ export interface InfoPopoverProps {
 
 /** Long enough to cross the gap into the panel, short enough not to feel stuck open. */
 const CLOSE_DELAY_MS = 120;
+
+/**
+ * The header affordance: the glyph that goes in `trigger` under `triggerStyle="icon"`.
+ *
+ * Small on purpose. A column header carrying one of these is still a header, and a row of four
+ * should read as texture rather than as four buttons — the colour step on hover and focus is what
+ * says it answers a question. The hit target is on the trigger, not on the glyph.
+ */
+export function InfoDot({ className }: { className?: string }) {
+    return <Info aria-hidden="true" className={cn('w-3 h-3 shrink-0', className)} />;
+}
 
 export default function InfoPopover({
     trigger,
@@ -95,10 +112,25 @@ export default function InfoPopover({
                     onPointerEnter={onPointerEnter}
                     onPointerLeave={onPointerLeave}
                     className={cn(
-                        'inline-flex items-baseline gap-1 text-left align-baseline',
+                        'text-left transition-colors',
+                        triggerStyle !== 'icon' && 'inline-flex items-baseline gap-1 align-baseline',
+                        // A dashed trigger's usual home is a dense table header, where the label is
+                        // ~11px tall. The hit area grows UPWARD from just under the label rather
+                        // than centring on it: centred, a box big enough to tap reaches into the
+                        // first data row and swallows taps meant for it, and what sits above a
+                        // header is a legend or a caption that takes no clicks. 32px, not the 44px
+                        // asked for elsewhere, for the same reason — it has one direction to grow.
                         triggerStyle === 'dashed' &&
-                            'border-b border-dashed border-line-500 cursor-help hover:border-ink-600',
-                        'transition-colors',
+                            'relative border-b border-dashed border-line-500 cursor-help hover:border-ink-600 ' +
+                                "before:content-[''] before:absolute before:inset-x-[-0.25rem] " +
+                                'before:bottom-[-0.25rem] before:h-8',
+                        // The 44px target the VR and touch rules ask for, without letting it set
+                        // the height of the dense header row the dot usually sits in.
+                        triggerStyle === 'icon' &&
+                            'relative inline-flex items-center justify-center align-middle cursor-help ' +
+                                'text-ink-700 hover:text-ink-400 focus-visible:text-ink-400 ' +
+                                "before:content-[''] before:absolute before:left-1/2 before:top-1/2 " +
+                                'before:w-11 before:h-11 before:-translate-x-1/2 before:-translate-y-1/2',
                         className,
                     )}
                 >

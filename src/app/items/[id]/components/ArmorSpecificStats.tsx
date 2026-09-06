@@ -157,24 +157,22 @@ export default function ArmorSpecificStats({item}: { item: Armor }) {
           * would draw an axis with no data, so both are gated on length rather than on truthiness.
           */}
         {!!item.stats.penetrationChanceCurve?.length && (
-            <>
-                <BallisticCurveChart
-                    title="Penetration Chance Curve"
-                    curves={[{
-                        name: 'Penetration Chance',
-                        data: item.stats.penetrationChanceCurve,
-                        color: CURVE_COLOR.chance
-                    }]}
-                    xLabel="Armor Class - Penetration"
-                    yLabel="Chance"
-                    height={250}
-                />
-                <p className="mt-2 text-xs text-ink-500">
+            <BallisticCurveChart
+                title="Penetration Chance Curve"
+                curves={[{
+                    name: 'Penetration Chance',
+                    data: item.stats.penetrationChanceCurve,
+                    color: CURVE_COLOR.chance
+                }]}
+                info={<>
                     Rolled per shot, not a threshold: the game draws a number and the shot goes
                     through when this chance beats it. Two shots with identical stats can land
                     differently.
-                </p>
-            </>
+                </>}
+                xLabel="Armor Class - Penetration"
+                yLabel="Chance"
+                height={250}
+            />
         )}
 
         {!!item.stats.penetrationDamageScalarCurve?.length && (
@@ -186,15 +184,15 @@ export default function ArmorSpecificStats({item}: { item: Armor }) {
                         data: item.stats.penetrationDamageScalarCurve,
                         color: CURVE_COLOR.damage
                     }]}
+                    info={<>
+                        Applies only to shots that got through. The curve is sampled down to −2, so
+                        beating the armour by a full class already means full damage — there is no
+                        further reward past that, and no penalty either.
+                    </>}
                     xLabel="Armor Class - Penetration"
                     yLabel="Damage Scalar"
                     height={250}
                 />
-                <p className="mt-2 text-xs text-ink-500">
-                    Applies only to shots that got through. The curve is sampled down to −2, so
-                    beating the armour by a full class already means full damage — there is no
-                    further reward past that, and no penalty either.
-                </p>
             </div>
         )}
 
@@ -207,15 +205,16 @@ export default function ArmorSpecificStats({item}: { item: Armor }) {
                         data: item.stats.antiPenetrationDurabilityScalarCurve,
                         color: CURVE_COLOR.effectiveness
                     }]}
+                    info={<>
+                        Multiplies the armour class as the plate wears. Broken armour is a special
+                        case the curve does not cover: at zero durability every shot penetrates
+                        outright.
+                    </>}
                     xLabel="Missing Durability %"
                     xLabelModifier={100}
                     yLabel="Effectiveness"
                     height={250}
                 />
-                <p className="mt-2 text-xs text-ink-500">
-                    Multiplies the armour class as the plate wears. Broken armour is a special case
-                    the curve does not cover: at zero durability every shot penetrates outright.
-                </p>
             </div>
         )}
     </>

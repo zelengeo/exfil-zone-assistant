@@ -4,6 +4,8 @@ import React, {useState, useRef, useEffect, useLayoutEffect, useCallback, useMem
 import {ChevronRight} from "lucide-react";
 import {CurvePoint} from "@/types/items";
 import {cn} from "@/lib/utils";
+import InfoPopover, {InfoDot} from "@/components/ui/info-popover";
+import {PopoverHeading, PopoverProse} from "@/components/ui/popover";
 
 /**
  * A Cold Steel plot for the game's authored curve assets.
@@ -46,6 +48,14 @@ export interface BallisticCurve {
 interface BallisticCurveChartProps {
     title: string;
     curves: BallisticCurve[];
+    /**
+     * What the curve means — how to read it, and what it does not cover.
+     *
+     * Disclosed from a dot on the title rather than parked in a paragraph under the plot, which is
+     * where every call site used to put it. Three sentences at most; past that it is a guide
+     * section. See the disclosure ladder in `components/ui/AGENTS.md`.
+     */
+    info?: React.ReactNode;
     xLabel?: string;
     xLabelModifier?: number;
     yLabel?: string;
@@ -228,6 +238,7 @@ function formatValue(value: number): string {
 export default function BallisticCurveChart({
                                                 title,
                                                 curves,
+                                                info,
                                                 xLabel = 'Distance',
                                                 xLabelModifier = 1,
                                                 yLabel = 'Value',
@@ -440,7 +451,27 @@ export default function BallisticCurveChart({
     return (
         <section className={cn('bg-steel-850 border border-line-800 p-4', className)}>
             <div className="flex items-baseline justify-between gap-4 mb-3">
-                <h4 className="eyebrow">{title}</h4>
+                {/* A chart title has room for a dot, unlike the numeric column headers in
+                    `ZoneTable` — so this takes the icon trigger and its full 44px target. */}
+                {/* The dot trails the title inline rather than sitting in a flex row beside it:
+                    "Penetration Chance Curve" wraps to two lines at phone width, and a flex row
+                    would have to truncate it to keep the dot on the first. */}
+                <h4 className="eyebrow">
+                    {title}
+                    {info && (
+                        <InfoPopover
+                            triggerStyle="icon"
+                            trigger={<InfoDot/>}
+                            label={`How to read ${title}`}
+                            side="bottom"
+                            align="start"
+                            className="ml-1.5"
+                        >
+                            <PopoverHeading>{title}</PopoverHeading>
+                            <PopoverProse>{info}</PopoverProse>
+                        </InfoPopover>
+                    )}
+                </h4>
                 <span className="micro-label text-right shrink-0">{yLabel}</span>
             </div>
 

@@ -181,6 +181,22 @@
     @apply font-mono text-[10px] tracking-eyebrow uppercase text-ink-600 leading-none;
   }
 
+  /* An eyebrow for a dense numeric table header, which gets its tracking back once there is room
+     for it. The wide tracking is what makes a five-letter label 42px wide, and three of those plus
+     their gaps is more than a table like `ZoneTable` has to spend at phone width — it was what
+     drove that table's `1fr` name column to zero. The switch lives here rather than as a
+     `tracking-normal` utility at the call site because `.eyebrow` is itself in the utilities layer,
+     so a utility cannot outrank it without `!`. */
+  .eyebrow-tight {
+    @apply font-mono text-[10px] uppercase text-ink-600 leading-none tracking-normal;
+  }
+
+  @media (min-width: 40rem) {
+    .eyebrow-tight {
+      @apply tracking-eyebrow;
+    }
+  }
+
   .micro-label {
     @apply font-mono text-[9px] tracking-micro uppercase text-ink-600 leading-none;
   }
