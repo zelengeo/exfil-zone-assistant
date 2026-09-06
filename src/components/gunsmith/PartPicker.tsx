@@ -173,7 +173,7 @@ export default function PartPicker({
                                     </span>
                                 </span>
                             </span>
-                            <PartAvailability part={part} className="mt-0.5" />
+                            <PartAvailability part={part} interactive={false} className="mt-0.5" />
                         </button>
                     );
                 })}

@@ -23,9 +23,11 @@ export function cheapestOffer(part: GunsmithPart): BuyOffer | null {
 
 interface PartAvailabilityProps {
     part: GunsmithPart;
+    /** Off inside the picker row, which is itself a button and may not contain one. */
+    interactive?: boolean;
     className?: string;
 }
 
-export default function PartAvailability({ part, className }: PartAvailabilityProps) {
-    return <AvailabilityChip stats={part.stats} className={className} />;
+export default function PartAvailability({ part, interactive, className }: PartAvailabilityProps) {
+    return <AvailabilityChip stats={part.stats} interactive={interactive} className={className} />;
 }
