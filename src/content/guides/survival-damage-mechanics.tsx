@@ -1,405 +1,356 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { Heart, Shield, AlertTriangle, Droplets, Apple, Target, Activity, Volume2, Zap } from 'lucide-react';
+import {
+    AlertTriangle,
+    ArrowRight,
+    Bandage,
+    Bone,
+    Crosshair,
+    Droplets,
+    HeartPulse,
+    ShieldCheck,
+    Utensils,
+} from 'lucide-react';
+
+import { PART_HP, TOTAL_HP } from '@/lib/protection/bodyModel';
+import { cn } from '@/lib/utils';
+
+const HP_POOLS = [
+    { key: 'Head', label: 'Head', zones: 1, vital: true },
+    { key: 'UpperChest', label: 'Upper chest', zones: 2, vital: true },
+    { key: 'LowerChest', label: 'Lower chest', zones: 2, vital: false },
+    { key: 'LeftArm', label: 'Left arm', zones: 2, vital: false },
+    { key: 'RightArm', label: 'Right arm', zones: 2, vital: false },
+    { key: 'LeftLeg', label: 'Left leg', zones: 2, vital: false },
+    { key: 'RightLeg', label: 'Right leg', zones: 2, vital: false },
+] as const;
+
+function GuideLink({ href, children }: { href: string; children: React.ReactNode }) {
+    return (
+        <Link
+            href={href}
+            className="inline-flex min-h-11 items-center gap-1 text-sm text-ember hover:underline"
+        >
+            {children}
+            <ArrowRight size={14} aria-hidden="true" />
+        </Link>
+    );
+}
+
+function ItemLink({ href, children }: { href: string; children: React.ReactNode }) {
+    return (
+        <Link href={href} className="font-semibold text-ink-100 hover:text-ember hover:underline">
+            {children}
+        </Link>
+    );
+}
 
 export default function SurvivalDamageGuide() {
     return (
-        <div className="space-y-8">
-            {/* Introduction */}
-            <section>
-                <p className="text-lg text-tan-200 leading-relaxed">
-                    Surviving in ExfilZone isn&#39;t just about good aim - it&#39;s about understanding how your body takes damage,
-                    managing your health status, and knowing when to fight or flee. This guide covers everything you need to
-                    know about staying alive in the zone.
+        <div className="space-y-10">
+            <section className="space-y-3">
+                <p className="text-lg leading-relaxed text-ink-200">
+                    A bullet lands on one of 13 physical hit zones, but damage comes out of seven
+                    larger health pools. Keeping those two layers separate makes injuries, fatal
+                    hits and medical choices much easier to read.
+                </p>
+                <p className="text-sm text-ink-500">
+                    This guide covers the survival decisions. The{' '}
+                    <Link href="/guides/damage-model" className="text-ember hover:underline">
+                        Damage Model
+                    </Link>{' '}
+                    owns the shot arithmetic, and the{' '}
+                    <Link
+                        href="/guides/armor-penetration-guide"
+                        className="text-ember hover:underline"
+                    >
+                        Armour Penetration guide
+                    </Link>{' '}
+                    covers protection and wear.
                 </p>
             </section>
 
-            {/* Quick Survival Tips */}
-            <section className="bg-green-900/20 border border-green-700/50 rounded-sm p-6">
-                <div className="flex items-start gap-3 mb-4">
-                    <Zap className="text-green-400 flex-shrink-0" size={24} />
-                    <h2 className="text-2xl font-bold text-green-300">Quick Survival Tips</h2>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4 text-green-200">
-                    <div className="bg-green-900/30 p-4 rounded-sm">
-                        <h3 className="font-semibold mb-2">🩹 Always Carry</h3>
-                        <ul className="text-sm space-y-1">
-                            <li>• 2+ bandages (heavy bleed capable)</li>
-                            <li>• Painkillers (pre-use before fights)</li>
-                            <li>• Suture kit for emergencies</li>
-                            <li>• Food and water</li>
-                        </ul>
-                    </div>
-                    <div className="bg-green-900/30 p-4 rounded-sm">
-                        <h3 className="font-semibold mb-2">⚡ Combat Priority</h3>
-                        <ul className="text-sm space-y-1">
-                            <li>• Keep meds on quick-access slots</li>
-                            <li>• Pop painkillers as soon as possible</li>
-                            <li>• Fix bleeds immediately after fights</li>
-                            <li>• Heal with off-hand while keeping gun ready</li>
-                        </ul>
+            <section className="space-y-5">
+                <div className="flex items-start gap-3">
+                    <Crosshair className="mt-0.5 shrink-0 text-ember" size={22} />
+                    <div className="space-y-2">
+                        <h2 className="text-2xl text-ink-100">Thirteen zones feed seven HP pools</h2>
+                        <p className="text-ink-300">
+                            The collision model has one head zone, four torso zones, four arm zones
+                            and four leg zones. Each zone maps to exactly one of the pools below.
+                        </p>
                     </div>
                 </div>
-            </section>
 
-            {/* Body Zones and HP */}
-            <section className="military-box p-6 rounded-sm">
-                <div className="flex items-start gap-3 mb-4">
-                    <div className="p-2 bg-military-700 rounded-sm border border-olive-700">
-                        <Heart size={20} className="text-olive-400" />
+                <div className="grid gap-px border border-line-800 bg-line-800 md:grid-cols-[1fr_auto_1fr]">
+                    <div className="bg-steel-800 p-5">
+                        <div className="font-mono text-4xl tabular text-ink-hi">13</div>
+                        <h3 className="mt-2 text-xl text-ink-100">Collision zones</h3>
+                        <p className="mt-2 text-sm leading-relaxed text-ink-500">
+                            The physical capsules a round can hit. Hands, feet and the neck do not
+                            have separate capsules.
+                        </p>
                     </div>
-                    <h2 className="text-2xl font-bold text-tan-100">Understanding Body Zones</h2>
-                </div>
-
-                <div className="space-y-4 text-tan-200">
-                    <p>
-                        Your body is divided into <strong>7 distinct zones</strong>, each with its own health pool.
-                        Understanding these zones is crucial for both dealing and surviving damage.
-                    </p>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                        {/* Visual representation */}
-                        <div className="flex justify-center items-center">
-                            <div className="relative" style={{maxWidth: '250px'}}>
-                                <Image
-                                    src="/images/Img_BodyPartsMain.webp"
-                                    alt="Body Zones"
-                                    width={250}
-                                    height={500}
-                                />
-                                {/* Optional: You could add HP overlays on the image if desired */}
-                            </div>
-                        </div>
-
-                        {/* Zone details */}
-                        <div className="space-y-3">
-                            <h3 className="text-red-400 font-semibold flex items-center gap-2">
-                                <AlertTriangle size={18} />
-                                Vital Zones (Death if destroyed)
-                            </h3>
-
-                            <div className="space-y-2">
-                                <div className="bg-red-900/20 border-l-4 border-red-600 p-3">
-                                    <div className="flex justify-between items-center">
-                                        <span className="font-semibold text-red-300">Head</span>
-                                        <span className="text-xl font-bold text-red-400">35 HP</span>
-                                    </div>
-                                </div>
-
-                                <div className="bg-red-900/20 border-l-4 border-red-600 p-3">
-                                    <div className="flex justify-between items-center">
-                                        <span className="font-semibold text-red-300">Chest</span>
-                                        <span className="text-xl font-bold text-red-400">85 HP</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <h3 className="text-yellow-400 font-semibold mt-4">
-                                Non-Vital Zones (Debuffs if destroyed)
-                            </h3>
-
-                            <div className="space-y-2">
-                                <div className="bg-military-800 border-l-4 border-yellow-600 p-3">
-                                    <div className="flex justify-between items-center mb-1">
-                                        <span className="font-semibold">Stomach</span>
-                                        <span className="text-xl font-bold text-olive-400">70 HP</span>
-                                    </div>
-                                    <p className="text-xs text-yellow-400">Rapid hydration/nutrition loss</p>
-                                </div>
-
-                                <div className="bg-military-800 border-l-4 border-military-600 p-3">
-                                    <div className="flex justify-between items-center mb-1">
-                                        <span className="font-semibold">Arms (x2)</span>
-                                        <span className="text-xl font-bold text-olive-400">60 HP</span>
-                                    </div>
-                                    <p className="text-xs text-tan-400">Severe aim wobble</p>
-                                </div>
-
-                                <div className="bg-military-800 border-l-4 border-military-600 p-3">
-                                    <div className="flex justify-between items-center mb-1">
-                                        <span className="font-semibold">Legs (x2)</span>
-                                        <span className="text-xl font-bold text-olive-400">65 HP</span>
-                                    </div>
-                                    <p className="text-xs text-tan-400">No sprint, reduced speed</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div className="flex items-center justify-center bg-steel-850 px-4 py-2">
+                        <ArrowRight className="rotate-90 text-ink-600 md:rotate-0" aria-hidden="true" />
                     </div>
-
-                    {/* Damage Distribution warning stays the same */}
-                    <div className="bg-yellow-900/20 border border-yellow-700/50 rounded-sm p-4 mt-6">
-                        <div className="flex items-start gap-2">
-                            <AlertTriangle className="text-yellow-400 flex-shrink-0 mt-0.5" size={18} />
-                            <div>
-                                <h4 className="font-semibold text-yellow-300 mb-1">Blacked-Out Limb Damage</h4>
-                                <p className="text-sm text-yellow-200">
-                                    When a limb reaches 0 HP, further damage to it is <strong>distributed proportionally</strong> to
-                                    all remaining body parts based on their max HP. This means you can kill someone by repeatedly
-                                    shooting their legs!
-                                </p>
-                            </div>
-                        </div>
+                    <div className="bg-steel-800 p-5">
+                        <div className="font-mono text-4xl tabular text-ink-hi">7</div>
+                        <h3 className="mt-2 text-xl text-ink-100">Health pools</h3>
+                        <p className="mt-2 text-sm leading-relaxed text-ink-500">
+                            The shared bars those zones drain. Together they start at{' '}
+                            <span className="font-mono tabular text-ink-300">{TOTAL_HP} HP</span>.
+                        </p>
                     </div>
                 </div>
-            </section>
 
-            {/* Bleeding Mechanics */}
-            <section className="military-box p-6 rounded-sm">
-                <div className="flex items-start gap-3 mb-4">
-                    <div className="p-2 bg-red-900/30 rounded-sm border border-red-700">
-                        <Droplets size={20} className="text-red-400" />
-                    </div>
-                    <h2 className="text-2xl font-bold text-tan-100">Bleeding System</h2>
-                </div>
-
-                <div className="space-y-4 text-tan-200">
-                    <p>
-                        Getting shot can cause bleeding - a dangerous status effect that continuously drains your health
-                        and reveals your position through audio cues. Bleeding chance is determined by the ammunition type.
-                    </p>
-
-                    <div className="grid md:grid-cols-2 gap-4">
-                        {/* Light Bleeding */}
-                        <div className="bg-military-800 border border-military-600 rounded-sm p-4">
-                            <div className="flex items-center gap-3 mb-3">
-                                <Image src="/images/icon_bleed1.webp" unoptimized={true} alt="Light Bleeding" width={24} height={24} />
-                                <h3 className="font-semibold text-tan-100">Light Bleeding</h3>
-                            </div>
-                            <ul className="space-y-2 text-sm">
-                                <li className="text-red-400">• -0.5 HP per second</li>
-                                <li>• Fixed with any bandage</li>
-                                <li>• Common occurrence from most hits</li>
-                                <li>• Causes heavy breathing sounds</li>
-                            </ul>
-                        </div>
-
-                        {/* Deep Wound */}
-                        <div className="bg-military-800 border border-red-600/50 rounded-sm p-4">
-                            <div className="flex items-center gap-3 mb-3">
-                                <Image src="/images/icon_bleed2.webp" unoptimized={true} alt="Deep Wound" width={24} height={24} />
-                                <h3 className="font-semibold text-red-400">Deep Wound</h3>
-                            </div>
-                            <ul className="space-y-2 text-sm">
-                                <li className="text-red-400 font-semibold">• -2 HP per second</li>
-                                <li>• Requires uncommon+ bandages</li>
-                                <li>• Less common than light bleeding</li>
-                                <li>• Often stacks on existing bleeds</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div className="bg-red-900/20 border border-red-700/50 rounded-sm p-4">
-                        <div className="flex items-start gap-2">
-                            <Volume2 className="text-red-400 flex-shrink-0 mt-0.5" size={18} />
-                            <p className="text-sm text-red-200">
-                                <strong>Audio Warning:</strong> Both bleeding types and blacked-out limbs cause the same heavy breathing sounds that
-                                enemies can hear. This makes you easier to track and locate!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Medical Items */}
-            <section className="military-box p-6 rounded-sm">
-                <div className="flex items-start gap-3 mb-4">
-                    <div className="p-2 bg-military-700 rounded-sm border border-olive-700">
-                        <Shield size={20} className="text-olive-400" />
-                    </div>
-                    <h2 className="text-2xl font-bold text-tan-100">Medical Supplies & Usage</h2>
-                </div>
-
-                <div className="space-y-4 text-tan-200">
-                    {/* Painkillers */}
-                    <div className="bg-military-800 border border-military-600 rounded-sm p-4">
-                        <div className="flex items-center gap-3 mb-3">
-                            <Link href="/items?category=medicine&subcategory=Painkillers">
-                                <Image src="/images/items/medical/Icon_WarfarePainkillerLv1_cropped.webp" alt="Painkillers" unoptimized={true} width={48} height={48} />
-                            </Link>
-                            <div>
-                                <h3 className="font-semibold text-olive-400">Painkillers</h3>
-                                <p className="text-sm text-tan-400">Temporary symptom relief</p>
-                            </div>
-                        </div>
-                        <ul className="space-y-1 text-sm">
-                            <li className="text-green-400">✓ Removes heavy breathing sounds</li>
-                            <li className="text-green-400">✓ Negates blacked limb debuffs</li>
-                            <li className="text-green-400">✓ Can be used preemptively</li>
-                            <li className="text-green-400">✓ Long duration effect</li>
-                        </ul>
-                        <div className="mt-3 p-2 bg-green-900/20 rounded-sm">
-                            <p className="text-xs text-green-300">
-                                <strong>Pro Tip:</strong> Pop painkillers before engaging enemies to avoid getting debuffs mid fight!
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Suture Kit */}
-                    <div className="bg-military-800 border border-military-600 rounded-sm p-4">
-                        <div className="flex items-center gap-3 mb-3">
-                            <Link href="/items?category=medicine&subcategory=Suturing%20Tools">
-                                <Image src="/images/items/medical/icon_suturingdevice.webp" alt="Suture Instrument" unoptimized={true} width={48} height={48} />
-                            </Link>
-                            <div>
-                                <h3 className="font-semibold text-olive-400">Suture Instrument</h3>
-                                <p className="text-sm text-tan-400">Blacked out limb fix</p>
-                            </div>
-                        </div>
-                        <ul className="space-y-1 text-sm">
-                            <li>• Repairs blacked-out limbs to 1 HP</li>
-                            <li>• Reduces maximum HP of the limb</li>
-                            <li>• Essential</li>
-                            <li className="text-yellow-400">⚠ Takes time to use - find cover!</li>
-                        </ul>
-                    </div>
-
-                    {/* Bandages */}
-                    <div className="bg-military-800 border border-military-600 rounded-sm p-4">
-                        <div className="flex items-center gap-3 mb-3">
-                            <Link href={"/items?category=medicine&subcategory=Bandages"}>
-                                <Image src="/images/items/medical/icon_Gauze_cropped.webp" alt="Bandage" unoptimized={true} width={48} height={48} />
-                            </Link>
-                            <div>
-                                <h3 className="font-semibold text-olive-400">Bandages</h3>
-                                <p className="text-sm text-tan-400">Crucial for survival</p>
-                            </div>
-                        </div>
-                        <div className="space-y-2 text-sm">
-                            <p><strong>Common:</strong> Stops light bleeding only</p>
-                            <p><strong>Uncommon+:</strong> Stops both light and heavy bleeding</p>
-                            <p className="text-green-400">✓ Can be applied to any body part</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Hydration and Nutrition */}
-            <section className="military-box p-6 rounded-sm">
-                <div className="flex items-start gap-3 mb-4">
-                    <div className="p-2 bg-blue-900/30 rounded-sm border border-blue-700">
-                        <Apple size={20} className="text-blue-400" />
-                    </div>
-                    <h2 className="text-2xl font-bold text-tan-100">Hydration & Nutrition</h2>
-                </div>
-
-                <div className="space-y-4 text-tan-200">
-                    <p>
-                        Your survival isn&#39;t just about bullets - maintaining your body&#39;s basic needs is crucial for
-                        extended operations in the zone.
-                    </p>
-
-                    <div className="grid md:grid-cols-2 gap-4">
-                        {/* Hydration */}
-                        <div className="bg-blue-900/20 border border-blue-700/50 p-4 rounded-sm">
-                            <div className="flex items-center gap-2 mb-3">
-                                <Droplets className="text-blue-400" size={20} />
-                                <h3 className="font-semibold text-blue-300">Hydration</h3>
-                            </div>
-                            <div className="space-y-2 text-sm">
-                                <p>Depletes faster when:</p>
-                                <ul className="ml-4 space-y-1">
-                                    <li>• Stomach is blacked out</li>
-                                    <li>• Natural depletion over time</li>
-                                    <li>• Painkillers/stimulators used</li>
-                                </ul>
-                                <div className="mt-3 p-2 bg-red-900/20 rounded-sm">
-                                    <p className="text-red-300">
-                                        <strong>Low Hydration:</strong> Stamina regeneration penalty
+                <div className="grid gap-px border border-line-800 bg-line-800 sm:grid-cols-2 lg:grid-cols-4">
+                    {HP_POOLS.map((pool) => (
+                        <div
+                            key={pool.key}
+                            className={cn(
+                                'bg-steel-900 p-4',
+                                pool.vital && 'border-l-2 border-bad'
+                            )}
+                        >
+                            <div className="flex items-start justify-between gap-3">
+                                <div>
+                                    <h3 className="font-semibold text-ink-100">{pool.label}</h3>
+                                    <p className="micro-label mt-1 text-ink-700">
+                                        {pool.zones} {pool.zones === 1 ? 'zone' : 'zones'} feed this
+                                        pool
                                     </p>
                                 </div>
+                                <span className="font-mono text-xl tabular text-ink-hi">
+                                    {PART_HP[pool.key]}
+                                </span>
                             </div>
-                        </div>
-
-                        {/* Nutrition */}
-                        <div className="bg-yellow-900/20 border border-yellow-700/50 p-4 rounded-sm">
-                            <div className="flex items-center gap-2 mb-3">
-                                <Apple className="text-yellow-400" size={20} />
-                                <h3 className="font-semibold text-yellow-300">Nutrition</h3>
-                            </div>
-                            <div className="space-y-2 text-sm">
-                                <p>Depletes when:</p>
-                                <ul className="ml-4 space-y-1">
-                                    <li>• Stomach is blacked out</li>
-                                    <li>• Natural depletion over time</li>
-                                    <li>• Stimulators used</li>
-                                </ul>
-                                <div className="mt-3 p-2 bg-red-900/20 rounded-sm">
-                                    <p className="text-red-300">
-                                        <strong>Low Nutrition:</strong> Carrying capacity penalty
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="bg-red-900/20 border border-red-700/50 rounded-sm p-4">
-                        <div className="flex items-start gap-2">
-                            <AlertTriangle className="text-red-400 flex-shrink-0 mt-0.5" size={18} />
-                            <p className="text-red-200">
-                                <strong>Critical Warning:</strong> When either hydration or nutrition reaches 0, you begin
-                                taking damage to all body parts. Death from dehydration/starvation is slow but inevitable!
+                            <p
+                                className={cn(
+                                    'mt-3 text-xs',
+                                    pool.vital ? 'text-bad' : 'text-ink-600'
+                                )}
+                            >
+                                {pool.vital ? 'Fatal at zero' : 'Not directly fatal at zero'}
                             </p>
                         </div>
+                    ))}
+                </div>
+            </section>
+
+            <section className="border border-line-700 bg-steel-800 p-5 sm:p-6">
+                <div className="flex items-start gap-3">
+                    <HeartPulse className="mt-0.5 shrink-0 text-bad" size={22} />
+                    <div className="space-y-3">
+                        <h2 className="text-2xl text-ink-100">What happens when a pool reaches zero</h2>
+                        <p className="text-ink-300">
+                            Head or upper chest at zero kills. A destroyed lower chest, arm or leg
+                            does not kill by itself. Any damage that overflows that exhausted pool
+                            drains all seven current pools proportionally; repeated hits on the same
+                            destroyed limb therefore keep hurting the rest of the body.
+                        </p>
+                        <p className="text-sm text-ink-500">
+                            The exact hit count is never universal. Round, range, build firing power,
+                            landed zone, armour coverage and armour condition can all change it.
+                        </p>
+                    </div>
+                </div>
+
+                <div className="mt-5 border-l-2 border-warn bg-steel-900 p-4">
+                    <div className="flex items-start gap-3">
+                        <AlertTriangle className="mt-0.5 shrink-0 text-warn" size={20} />
+                        <div className="space-y-2">
+                            <h3 className="font-semibold text-ink-100">How to read the simulator</h3>
+                            <p className="text-sm leading-relaxed text-ink-400">
+                                For head and upper-chest shots, the simulator uses that vital
+                                pool&rsquo;s real HP. For every non-vital zone, it subtracts damage
+                                from one pooled{' '}
+                                <span className="font-mono tabular text-ink-300">
+                                    {TOTAL_HP} HP
+                                </span>{' '}
+                                budget instead. It does not reproduce the game&rsquo;s seven-pool
+                                overflow redistribution or its final sub-0.5 HP snap, so a limb
+                                result is a damage-budget estimate rather than an exact destroyed-limb
+                                simulation.
+                            </p>
+                        </div>
+                    </div>
+                    <GuideLink href="/combat-sim">Build a scenario in Combat Sim</GuideLink>
+                </div>
+            </section>
+
+            <section className="space-y-5">
+                <div className="flex items-start gap-3">
+                    <Droplets className="mt-0.5 shrink-0 text-bad" size={22} />
+                    <div className="space-y-2">
+                        <h2 className="text-2xl text-ink-100">Bleeding and Deep Wound</h2>
+                        <p className="text-ink-300">
+                            Shots can cause Bleeding, and every round publishes its own Bleeding
+                            Chance value. Deep Wound is the more demanding status: while untreated,
+                            it continues to drain health and hydration.
+                        </p>
+                    </div>
+                </div>
+
+                <div className="grid gap-px border border-line-800 bg-line-800 md:grid-cols-2">
+                    <div className="bg-steel-900 p-5">
+                        <h3 className="text-xl text-ink-100">Bleeding</h3>
+                        <p className="mt-2 text-sm leading-relaxed text-ink-400">
+                            Treat it with Gauze or either advanced bandage. A round&rsquo;s catalogue
+                            entry shows its Bleeding Chance; the exact runtime formula and damage
+                            rate are not verified, so this guide does not invent either.
+                        </p>
+                        <GuideLink href="/items?category=ammo">Compare ammunition</GuideLink>
+                    </div>
+                    <div className="bg-steel-900 p-5">
+                        <h3 className="text-xl text-ink-100">Deep Wound</h3>
+                        <p className="mt-2 text-sm leading-relaxed text-ink-400">
+                            Treat it with an advanced Bandage, Military Bandage or H.C. stimulant.
+                            Gauze does not treat Deep Wound. No verified per-second rate or stacking
+                            rule is published here.
+                        </p>
+                        <GuideLink href="/items?category=medicine&subcategory=Bandages">
+                            Browse bandages
+                        </GuideLink>
                     </div>
                 </div>
             </section>
 
-            {/* Tactical Tips */}
-            <section className="bg-green-900/20 border border-green-700/50 rounded-sm p-6">
-                <h2 className="text-xl font-bold text-green-300 mb-4">Combat Tactics</h2>
-
-                <div className="space-y-3 text-green-200">
-                    <div className="flex items-start gap-2">
-                        <Target className="text-green-400 flex-shrink-0 mt-0.5" size={16} />
-                        <div>
-                            <p className="font-medium mb-1">Leg Meta Strategy</p>
-                            <p className="text-sm">
-                                Against heavily armored opponents, targeting legs can be more effective than trying to
-                                penetrate armor. 4-5 shots to one leg can kill via damage distribution.
-                            </p>
-                        </div>
+            <section className="space-y-5">
+                <div className="flex items-start gap-3">
+                    <Bandage className="mt-0.5 shrink-0 text-good" size={22} />
+                    <div className="space-y-2">
+                        <h2 className="text-2xl text-ink-100">Choose treatment by status</h2>
+                        <p className="text-ink-300">
+                            Item name matters more than rarity shorthand. Match the status shown in
+                            game to a medical item whose current description treats it.
+                        </p>
                     </div>
+                </div>
 
-                    <div className="flex items-start gap-2">
-                        <Activity className="text-green-400 flex-shrink-0 mt-0.5" size={16} />
-                        <div>
-                            <p className="font-medium mb-1">Listen for Audio Cues</p>
-                            <p className="text-sm">
-                                Heavy breathing from injured players is audible from significant distances. Use this to
-                                track wounded enemies or know when to stay quiet.
-                            </p>
-                        </div>
+                <div className="divide-y divide-line-800 border border-line-800 bg-steel-900">
+                    <div className="grid gap-2 p-4 sm:grid-cols-[10rem_1fr] sm:gap-5">
+                        <h3 className="font-semibold text-ink-100">Bleeding only</h3>
+                        <p className="text-sm leading-relaxed text-ink-400">
+                            <ItemLink href="/items/med-bandage-lv1">Gauze</ItemLink> treats Bleeding,
+                            but not Deep Wound.
+                        </p>
                     </div>
+                    <div className="grid gap-2 p-4 sm:grid-cols-[10rem_1fr] sm:gap-5">
+                        <h3 className="font-semibold text-ink-100">Either wound</h3>
+                        <p className="text-sm leading-relaxed text-ink-400">
+                            <ItemLink href="/items/med-bandage-lv2">Bandage</ItemLink> and{' '}
+                            <ItemLink href="/items/med-bandage-lv3">Military Bandage</ItemLink>{' '}
+                            treat both Bleeding and Deep Wound. The{' '}
+                            <ItemLink href="/items/med-stimul-hc">H.C. stimulant</ItemLink> also
+                            describes healing and preventing both.
+                        </p>
+                    </div>
+                    <div className="grid gap-2 p-4 sm:grid-cols-[10rem_1fr] sm:gap-5">
+                        <h3 className="font-semibold text-ink-100">Destroyed limb</h3>
+                        <p className="text-sm leading-relaxed text-ink-400">
+                            <ItemLink href="/items?category=medicine&subcategory=Suturing%20Tools">
+                                Suturing instruments
+                            </ItemLink>{' '}
+                            restore damaged limbs. Their tiers differ, but the exact post-use HP
+                            behavior is not stated here because the runtime treatment path remains
+                            unverified.
+                        </p>
+                    </div>
+                    <div className="grid gap-2 p-4 sm:grid-cols-[10rem_1fr] sm:gap-5">
+                        <h3 className="font-semibold text-ink-100">Pain</h3>
+                        <p className="text-sm leading-relaxed text-ink-400">
+                            <ItemLink href="/items?category=medicine&subcategory=Painkillers">
+                                Painkillers
+                            </ItemLink>{' '}
+                            temporarily suppress pain and consume energy and hydration. Their item
+                            pages carry the current doses, duration and side-effect data.
+                        </p>
+                    </div>
+                </div>
 
-                    <div className="flex items-start gap-2">
-                        <Shield className="text-green-400 flex-shrink-0 mt-0.5" size={16} />
-                        <div>
-                            <p className="font-medium mb-1">Medical Priority</p>
-                            <p className="text-sm">
-                                Order of operations: Pop painkillers → Stop heavy bleeds → Stop light bleeds → Heal/Suture → Eat/Drink. Always find cover first!
-                            </p>
-                        </div>
+                <GuideLink href="/items?category=medicine">Browse all medical items</GuideLink>
+            </section>
+
+            <section className="border border-line-700 bg-steel-800 p-5 sm:p-6">
+                <div className="flex items-start gap-3">
+                    <Utensils className="mt-0.5 shrink-0 text-info" size={22} />
+                    <div className="space-y-3">
+                        <h2 className="text-2xl text-ink-100">Hydration and energy</h2>
+                        <p className="text-ink-300">
+                            Both meters drain during a raid, and the game ties staying hydrated and
+                            fueled to stamina. Provisions restore energy, hydration or a mix of both;
+                            painkillers consume some of each, and Deep Wound adds hydration loss while
+                            it remains untreated.
+                        </p>
+                        <p className="text-sm text-ink-500">
+                            This guide does not attach invented thresholds or debuffs to a low or empty
+                            meter. Read each provision&rsquo;s current split before choosing what to
+                            carry.
+                        </p>
+                        <GuideLink href="/items?category=provisions">Browse provisions</GuideLink>
                     </div>
                 </div>
             </section>
 
-            {/* Conclusion */}
-            <section className="bg-military-800 border border-olive-700 rounded-sm p-6">
-                <h2 className="text-xl font-bold text-tan-100 mb-3">Master Your Survival</h2>
-                <p className="text-tan-200 mb-4">
-                    Understanding these mechanics transforms you from prey to predator. Every decision - from where
-                    you aim to when you heal - can mean the difference between extraction and elimination.
-                </p>
-                <Link
-                    href="/combat-sim"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-olive-600 hover:bg-olive-500 
-                             text-military-900 rounded-sm transition-colors font-medium"
-                >
-                    Test damage calculations in Combat Sim
-                    <Target size={16} />
-                </Link>
+            <section className="space-y-5">
+                <div className="flex items-start gap-3">
+                    <ShieldCheck className="mt-0.5 shrink-0 text-good" size={22} />
+                    <div className="space-y-2">
+                        <h2 className="text-2xl text-ink-100">Make the next safe decision</h2>
+                        <p className="text-ink-300">
+                            There is no universal medication order. The useful sequence changes with
+                            the status, remaining HP, cover and whether another fight is already on
+                            you.
+                        </p>
+                    </div>
+                </div>
+
+                <ol className="grid gap-px border border-line-800 bg-line-800 sm:grid-cols-2 lg:grid-cols-4">
+                    {[
+                        ['1', 'Get behind cover', 'Treatment animations cost time and attention.'],
+                        [
+                            '2',
+                            'Read the status',
+                            'Bleeding, Deep Wound, a destroyed limb and pain need different items.',
+                        ],
+                        [
+                            '3',
+                            'Match the item',
+                            'Use the current medical description instead of rarity as shorthand.',
+                        ],
+                        [
+                            '4',
+                            'Recheck the raid',
+                            'Review HP, hydration and energy before moving or fighting again.',
+                        ],
+                    ].map(([step, title, body]) => (
+                        <li key={step} className="bg-steel-900 p-4">
+                            <span className="font-mono text-sm tabular text-ember">{step}</span>
+                            <h3 className="mt-2 font-semibold text-ink-100">{title}</h3>
+                            <p className="mt-2 text-sm leading-relaxed text-ink-500">{body}</p>
+                        </li>
+                    ))}
+                </ol>
+
+                <div className="flex flex-wrap gap-x-6 gap-y-1">
+                    <GuideLink href="/guides/combat-sim-usage">
+                        Learn the simulator workflow
+                    </GuideLink>
+                    <GuideLink href="/guides/damage-model">Read the exact damage path</GuideLink>
+                </div>
+            </section>
+
+            <section className="border-l-2 border-info bg-steel-800 p-5">
+                <div className="flex items-start gap-3">
+                    <Bone className="mt-0.5 shrink-0 text-info" size={20} />
+                    <p className="text-sm leading-relaxed text-ink-300">
+                        Limb targeting is a scenario choice, not a four-shot rule. If the selected
+                        armour leaves a limb open, compare that zone against the protected torso at
+                        the range and durability you expect, then treat the simulator&rsquo;s non-vital
+                        result as the pooled estimate described above.
+                    </p>
+                </div>
             </section>
         </div>
     );

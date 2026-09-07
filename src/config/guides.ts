@@ -1,337 +1,100 @@
-// Define all available tags
-import {GuideMetadata, GuideTag} from "@/types/guides";
+import { guideMetadataSchema, guideTagSchema, type GuideMetadata, type GuideTag } from '@/types/guides';
 
-export const guideTags: GuideTag[] = [
-    {
-        id: 'getting-started',
-        name: 'Getting Started',
-        description: 'Essential guides for new players',
-        color: 'green',
-        icon: 'Compass'
-    },
-    {
-        id: 'gameplay',
-        name: 'Gameplay',
-        description: 'Core game mechanics and systems',
-        color: 'blue',
-        icon: 'Gamepad2'
-    },
-    {
-        id: 'combat',
-        name: 'Combat',
-        description: 'Fighting and weapon guides',
-        color: 'red',
-        icon: 'Crosshair'
-    },
-    {
-        id: 'equipment',
-        name: 'Equipment',
-        description: 'Gear and loadout guides',
-        color: 'orange',
-        icon: 'Shield'
-    },
-    {
-        id: 'vr-specific',
-        name: 'VR Specific',
-        description: 'VR optimization and comfort',
-        color: 'purple',
-        icon: 'Glasses'
-    },
-    {
-        id: 'strategy',
-        name: 'Strategy',
-        description: 'Advanced tactics and tips',
-        color: 'yellow',
-        icon: 'Brain'
-    },
-    {
-        id: 'economy',
-        name: 'Economy',
-        description: 'Trading and resource management',
-        color: 'emerald',
-        icon: 'TrendingUp'
-    },
-    {
-        id: 'maps',
-        name: 'Maps',
-        description: 'Location and navigation guides',
-        color: 'teal',
-        icon: 'Map'
-    }
-];
+export const guideTags: GuideTag[] = guideTagSchema.array().parse([
+    { id: 'getting-started', name: 'Getting Started', description: 'Essential guides for new players', icon: 'Compass' },
+    { id: 'gameplay', name: 'Gameplay', description: 'Core game mechanics and systems', icon: 'Gamepad2' },
+    { id: 'combat', name: 'Combat', description: 'Fighting and weapon guides', icon: 'Crosshair' },
+    { id: 'equipment', name: 'Equipment', description: 'Gear and loadout guides', icon: 'Shield' },
+    { id: 'strategy', name: 'Strategy', description: 'Advanced tactics and tips', icon: 'Brain' },
+]);
 
-// All guides configuration
-export const guidesConfig: GuideMetadata[] = [
-    //APP state and plans
+export const guidesConfig: GuideMetadata[] = guideMetadataSchema.array().parse([
     {
-        slug: 'app-roadmap',
-        title: 'Current Features & Dev Roadmap',
-        description: 'Discover what\'s available now, what\'s coming soon, and help shape the future of ExfilZone Assistant',
-        tags: ['getting-started'],
-        difficulty: 'beginner',
-        readTime: '3 min',
-        author: 'pogapwnz',
-        publishedAt: '2025-06-10',
-        updatedAt: '2025-07-08',
-        featured: false,
-        contentType: 'component'
-    },
-
-    // Gameplay Mechanics
-    {
-        slug: 'when-is-the-wipe',
-        title: 'When is the Next Wipe?',
-        description: 'Everything we know about the wipe schedule.',
+        slug: 'when-is-the-wipe', title: 'When is the Next Wipe?',
+        description: 'Official wipe history, PvP and PvE scope, and the latest confirmed status.',
         tags: ['getting-started', 'gameplay'],
-        difficulty: 'beginner',
-        readTime: '3 min',
-        author: 'pogapwnz',
-        publishedAt: '2025-07-08',
-        updatedAt: '2026-08-17',
-        featured: true,
-        contentType: 'component'
+        relatedSlugs: ['survival-damage-mechanics', 'combat-sim-usage', 'damage-model'],
+        difficulty: 'beginner', readTimeMinutes: 5, author: 'pogapwnz',
+        publishedAt: '2025-07-08', updatedAt: '2026-09-06', featured: true,
     },
     {
-        slug: 'survival-damage-mechanics',
-        title: 'Survival & Damage Mechanics',
-        description: 'Essential guide to body zones, health management, bleeding, and staying alive in ExfilZone',
+        slug: 'survival-damage-mechanics', title: 'Survival & Damage Mechanics',
+        description: 'How 13 collision zones feed seven HP pools, which medical items treat each status, and where the simulator approximates.',
         tags: ['getting-started', 'gameplay'],
-        difficulty: 'beginner',
-        readTime: '10 min',
-        author: 'pogapwnz',
-        publishedAt: '2025-06-15',
-        featured: true,
+        relatedSlugs: ['damage-model', 'combat-sim-usage', 'when-is-the-wipe'],
+        difficulty: 'beginner', readTimeMinutes: 4, author: 'pogapwnz',
+        publishedAt: '2025-06-15', updatedAt: '2026-09-06', featured: true,
         ogImageUrl: '/og/og-image-guide-survival.jpg',
-        contentType: 'component'
     },
     {
-        slug: 'ammo-selection-beginners',
-        title: 'Ammunition Selection for Beginners',
-        description: 'Learn which ammo to use, when to target armor vs limbs, and master penetration mechanics for effective combat',
+        slug: 'ammo-selection-beginners', title: 'Ammunition Selection for Beginners',
+        description: 'Choose a compatible round, decide whether to challenge protection or aim around it, and compare the result before buying a stack.',
         tags: ['getting-started', 'combat', 'equipment'],
-        difficulty: 'beginner',
-        readTime: '12 min',
-        author: 'pogapwnz',
-        publishedAt: '2025-07-19',
-        featured: true,
+        relatedSlugs: ['damage-model', 'armor-penetration-guide', 'combat-sim-usage'],
+        difficulty: 'beginner', readTimeMinutes: 2, author: 'pogapwnz',
+        publishedAt: '2025-07-19', updatedAt: '2026-09-06', featured: true,
         ogImageUrl: '/og/og-image-guide-ammo.jpg',
-        contentType: 'component'
     },
     {
-        slug: 'armor-penetration-guide',
-        updatedAt: '2026-09-02',
-        ogImageUrl: '/og/og-image-guide-armor.jpg',
-        title: 'Penetration Mechanics Explained',
-        description: 'How penetration is rolled, what damage survives it, how wear changes the odds, and the large parts of a body armor never covered',
+        slug: 'armor-penetration-guide', title: 'Penetration Mechanics Explained',
+        description: 'How coverage, facing and wear change an armor matchup, and how to turn the simulator reading into a tactical decision.',
         tags: ['combat', 'equipment', 'strategy'],
-        difficulty: 'advanced',
-        readTime: '10 min',
-        author: 'pogapwnz',
-        publishedAt: '2025-06-10',
-        featured: true,
-        contentType: 'component'
+        relatedSlugs: ['damage-model', 'ammo-selection-beginners', 'combat-sim-usage'],
+        difficulty: 'advanced', readTimeMinutes: 3, author: 'pogapwnz',
+        publishedAt: '2025-06-10', updatedAt: '2026-09-06', featured: true,
+        ogImageUrl: '/og/og-image-guide-armor.jpg',
     },
     {
-        slug: 'damage-model',
-        ogImageUrl: '/og/og-image-guide-damage.jpg',
-        title: 'The Damage Model, Step by Step',
-        description: 'Every step between pulling the trigger and losing health, with a calculator that resolves one shot against any round, plate and body part',
+        slug: 'damage-model', title: 'The Damage Model, Step by Step',
+        description: 'Every step between pulling the trigger and losing health, with a calculator that resolves one shot against any round, plate and zone.',
         tags: ['combat', 'equipment'],
-        difficulty: 'advanced',
-        readTime: '12 min',
-        author: 'pogapwnz',
-        publishedAt: '2026-09-06',
-        featured: false,
-        contentType: 'component'
+        relatedSlugs: ['armor-penetration-guide', 'ammo-selection-beginners', 'combat-sim-usage'],
+        difficulty: 'advanced', readTimeMinutes: 12, author: 'pogapwnz',
+        publishedAt: '2026-09-06', updatedAt: '2026-09-06', featured: false,
+        ogImageUrl: '/og/og-image-guide-damage.jpg',
     },
     {
-        slug: 'combat-sim-usage',
-        title: 'How to Use Combat Sim',
-        description: 'Learn how to use our Combat Simulator effectively and understand simulation accuracy',
-        tags: ['getting-started', 'strategy'],
-        difficulty: 'beginner',
-        readTime: '5 min',
-        author: 'pogapwnz',
-        publishedAt: '2025-06-10',
-        featured: true,
-        contentType: 'component'
+        slug: 'combat-sim-usage', title: 'How to Use Combat Sim',
+        description: 'Set up a loadout and target, then read the Best case, Aimed and Spraying verdicts across Read, Compare and Numbers.',
+        tags: ['getting-started', 'combat', 'equipment'],
+        relatedSlugs: ['damage-model', 'armor-penetration-guide', 'ammo-selection-beginners'],
+        difficulty: 'beginner', readTimeMinutes: 3, author: 'pogapwnz',
+        publishedAt: '2025-06-10', updatedAt: '2026-09-06', featured: true,
     },
-    // {
-    //     slug: 'movement-mechanics',
-    //     title: 'Advanced Movement Mechanics',
-    //     description: 'Master sliding, vaulting, and tactical positioning in VR',
-    //     tags: ['gameplay', 'vr-specific'],
-    //     difficulty: 'intermediate',
-    //     readTime: '10 min',
-    //     publishedAt: '2024-01-17',
-    //     contentType: 'component'
-    // },
-    // {
-    //     slug: 'inventory-management',
-    //     title: 'Inventory & Safe Management',
-    //     description: 'Optimize your loadout and storage with efficient inventory strategies',
-    //     tags: ['gameplay', 'strategy'],
-    //     difficulty: 'beginner',
-    //     readTime: '8 min',
-    //     publishedAt: '2024-01-18',
-    //     contentType: 'markdown'
-    // },
+]);
 
-    // Combat Guides
-    // {
-    //     slug: 'combat-basics',
-    //     title: 'Combat System Fundamentals',
-    //     description: 'Understanding weapon handling, recoil patterns, and damage mechanics',
-    //     tags: ['combat', 'gameplay'],
-    //     difficulty: 'beginner',
-    //     readTime: '12 min',
-    //     publishedAt: '2024-01-19',
-    //     featured: true,
-    //     contentType: 'component'
-    // },
-    // {
-    //     slug: 'armor-penetration-guide',
-    //     title: 'Armor & Penetration Explained',
-    //     description: 'Deep dive into armor classes, penetration values, and damage calculation',
-    //     tags: ['combat', 'equipment'],
-    //     difficulty: 'advanced',
-    //     readTime: '10 min',
-    //     publishedAt: '2024-01-20',
-    //     contentType: 'component'
-    // },
+export const formatReadTime = (minutes: number): string => minutes + ' min read';
 
-    // Equipment & Loadouts
-    // {
-    //     slug: 'budget-loadouts',
-    //     title: 'Best Budget Loadouts',
-    //     description: 'Cost-effective gear combinations for new and experienced players',
-    //     tags: ['equipment', 'economy', 'getting-started'],
-    //     difficulty: 'beginner',
-    //     readTime: '10 min',
-    //     publishedAt: '2024-01-21',
-    //     featured: true,
-    //     contentType: 'component'
-    // },
-    // {
-    //     slug: 'weapon-modding-guide',
-    //     title: 'Weapon Modification Guide',
-    //     description: 'Optimize your weapons with the best attachments and modifications',
-    //     tags: ['equipment', 'combat'],
-    //     difficulty: 'intermediate',
-    //     readTime: '14 min',
-    //     publishedAt: '2024-01-22',
-    //     contentType: 'component'
-    // },
-
-    // VR Specific
-    // {
-    //     slug: 'vr-comfort-settings',
-    //     title: 'VR Comfort Settings Guide',
-    //     description: 'Reduce motion sickness and optimize comfort for extended play sessions',
-    //     tags: ['vr-specific', 'getting-started'],
-    //     difficulty: 'beginner',
-    //     readTime: '6 min',
-    //     publishedAt: '2024-01-23',
-    //     contentType: 'markdown'
-    // },
-    // {
-    //     slug: 'physical-space-setup',
-    //     title: 'Physical Space Setup for VR',
-    //     description: 'Configure your play area for maximum safety and immersion',
-    //     tags: ['vr-specific'],
-    //     difficulty: 'beginner',
-    //     readTime: '5 min',
-    //     publishedAt: '2024-01-24',
-    //     contentType: 'markdown'
-    // },
-
-    // Strategy & Advanced
-    // {
-    //     slug: 'extraction-strategies',
-    //     title: 'Safe Extraction Strategies',
-    //     description: 'Timing, routes, and tactics for successful extractions',
-    //     tags: ['strategy', 'gameplay'],
-    //     difficulty: 'intermediate',
-    //     readTime: '11 min',
-    //     publishedAt: '2024-01-25',
-    //     contentType: 'component'
-    // },
-    // {
-    //     slug: 'stealth-tactics',
-    //     title: 'Stealth & Positioning Guide',
-    //     description: 'Move unseen and gain tactical advantages over opponents',
-    //     tags: ['strategy', 'combat'],
-    //     difficulty: 'advanced',
-    //     readTime: '13 min',
-    //     publishedAt: '2024-01-26',
-    //     contentType: 'markdown'
-    // },
-
-    // Economy
-    // {
-    //     slug: 'trading-basics',
-    //     title: 'Trading & Economy Basics',
-    //     description: 'Maximize profits and understand the in-game economy',
-    //     tags: ['economy', 'getting-started'],
-    //     difficulty: 'beginner',
-    //     readTime: '9 min',
-    //     publishedAt: '2024-01-27',
-    //     contentType: 'markdown'
-    // },
-    // {
-    //     slug: 'hideout-investment-guide',
-    //     title: 'Hideout Investment Strategy',
-    //     description: 'Which hideout upgrades provide the best return on investment',
-    //     tags: ['economy', 'strategy'],
-    //     difficulty: 'intermediate',
-    //     readTime: '12 min',
-    //     publishedAt: '2024-01-28',
-    //     contentType: 'component'
-    // }
-];
-
-// Helper functions
 export function getGuideBySlug(slug: string): GuideMetadata | undefined {
-    return guidesConfig.find(guide => guide.slug === slug);
+    return guidesConfig.find((guide) => guide.slug === slug);
 }
-
 export function getGuidesByTag(tagId: string): GuideMetadata[] {
-    return guidesConfig.filter(guide => guide.tags.includes(tagId));
+    return guidesConfig.filter((guide) => guide.tags.includes(tagId));
 }
-
 export function getFeaturedGuides(): GuideMetadata[] {
-    return guidesConfig.filter(guide => guide.featured);
+    return guidesConfig.filter((guide) => guide.featured);
 }
-
-export function getRelatedGuides(currentSlug: string, limit: number = 3): GuideMetadata[] {
-    const currentGuide = getGuideBySlug(currentSlug);
-    if (!currentGuide) return [];
-
-    // Find guides with overlapping tags
-    return guidesConfig
-        .filter(guide =>
-            guide.slug !== currentSlug &&
-            guide.tags.some(tag => currentGuide.tags.includes(tag))
-        )
-        .map(guide => ({
-            guide,
-            // Score based on number of matching tags
-            score: guide.tags.filter(tag => currentGuide.tags.includes(tag)).length
-        }))
-        .sort((a, b) => b.score - a.score)
-        .slice(0, limit)
-        .map(item => item.guide);
+export function getRelatedGuides(currentSlug: string, limit = 3): GuideMetadata[] {
+    const guide = getGuideBySlug(currentSlug);
+    if (!guide) return [];
+    return guide.relatedSlugs
+        .map((slug) => getGuideBySlug(slug))
+        .filter((related): related is GuideMetadata => related !== undefined)
+        .slice(0, limit);
 }
-
 export function getAllTags(): string[] {
-    const tags = new Set<string>();
-    guidesConfig.forEach(guide => {
-        guide.tags.forEach(tag => tags.add(tag));
-    });
-    return Array.from(tags);
+    return [...new Set(guidesConfig.flatMap((guide) => guide.tags))];
 }
-
-// For static generation
+export function getAvailableGuideTags(): GuideTag[] {
+    const used = new Set(getAllTags());
+    return guideTags.filter((tag) => used.has(tag.id));
+}
+export function guideMatchesSearch(guide: GuideMetadata, query: string): boolean {
+    const normalized = query.trim().toLowerCase();
+    if (!normalized) return true;
+    const tagNames = guide.tags.map((id) => guideTags.find((tag) => tag.id === id)?.name ?? id);
+    return [guide.title, guide.description, ...tagNames].join(' ').toLowerCase().includes(normalized);
+}
 export function getAllGuideSlugs(): string[] {
-    return guidesConfig.map(guide => guide.slug);
+    return guidesConfig.map((guide) => guide.slug);
 }

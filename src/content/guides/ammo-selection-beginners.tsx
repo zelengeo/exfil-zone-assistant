@@ -1,270 +1,169 @@
 import React from 'react';
 import Link from 'next/link';
-import { Target, Zap, Shield, AlertTriangle, Info, ExternalLink } from 'lucide-react';
+import { ArrowRight, CircleDollarSign, Crosshair, Gauge, Shield } from 'lucide-react';
+
+const DECISIONS = [
+    {
+        situation: 'You can challenge the protected zone',
+        choice: 'Prioritise penetration, then damage',
+        reason: 'The round still needs enough surviving damage to finish the target after it gets through.',
+    },
+    {
+        situation: 'The expected armour outclasses the round',
+        choice: 'Choose an uncovered zone plan',
+        reason: 'Damage and controllability matter more when the shot is not asking the vest or helmet for permission.',
+    },
+    {
+        situation: 'You do not know what they will wear',
+        choice: 'Compare both plans',
+        reason: 'Test an aimed protected-zone result and a repeatable uncovered-zone result before paying for the round.',
+    },
+] as const;
+
+function RouteLink({ href, children }: { href: string; children: React.ReactNode }) {
+    return (
+        <Link href={href} className="inline-flex min-h-11 items-center gap-1 text-sm text-ember hover:underline">
+            {children}
+            <ArrowRight size={14} aria-hidden="true" />
+        </Link>
+    );
+}
 
 export default function AmmoSelectionBeginners() {
     return (
-        <div className="space-y-8">
-            {/* Introduction */}
-            <section>
-                <p className="text-lg text-tan-200 leading-relaxed">
-                    Choosing the right ammunition is crucial for survival. This guide will teach you
-                    the fundamentals of penetration mechanics, when to target armor versus limbs,
-                    and how to make effective decisions in combat situations.
+        <div className="space-y-10">
+            <section className="space-y-3">
+                <p className="text-lg leading-relaxed text-ink-200">
+                    Pick ammunition for the shot you expect to take, not for one headline stat. Start
+                    with what your build chambers, decide whether you are challenging protection or
+                    avoiding it, then compare the result at the range you actually fight.
+                </p>
+                <p className="text-sm text-ink-500">
+                    This is the beginner decision guide. Exact penetration probabilities and damage
+                    formulas live in the{' '}
+                    <Link href="/guides/damage-model" className="text-ember hover:underline">
+                        Damage Model
+                    </Link>; coverage and armour wear live in the{' '}
+                    <Link href="/guides/armor-penetration-guide" className="text-ember hover:underline">
+                        Armour Penetration guide
+                    </Link>.
                 </p>
             </section>
 
-            {/* TLDR Section */}
-            <section className="bg-green-900/20 border border-green-700/50 rounded-sm p-6">
-                <div className="flex items-start gap-3 mb-4">
-                    <Zap className="text-green-400 mt-1" size={24} />
-                    <h2 className="text-2xl font-bold text-tan-100">TL;DR - Quick Guide</h2>
-                </div>
-                <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                        <Target className="text-green-400 mt-1 flex-shrink-0" size={20} />
-                        <p className="text-tan-200">
-                            <strong className="text-green-300">Use the best ammo available</strong> and aim for the head whenever possible.
-                            Memorize the better armor in the game and evaluate if your ammo can penetrate it.
-                        </p>
-                    </div>
+            <section className="border border-line-700 bg-steel-800 p-5 sm:p-6">
+                <h2 className="text-2xl text-ink-100">A four-step choice</h2>
+                <ol className="mt-5 space-y-5">
+                    {[
+                        ['Start with the build', 'A loadout is a build and the round it fires. Filter to the calibre it chambers; a strong round you cannot load is not an option.'],
+                        ['Choose the target plan', 'Challenge the helmet or vest when the round is competitive there. Otherwise plan for a zone the gear does not cover.'],
+                        ['Check the range', 'Damage and penetration can change with distance. Compare at the distance you expect, not only at point blank.'],
+                        ['Check the whole result', 'Shots, time, cost and the spray estimate answer different questions. Pick the trade-off you can execute and afford.'],
+                    ].map(([title, body], index) => (
+                        <li key={title} className="grid grid-cols-[2rem_minmax(0,1fr)] gap-3">
+                            <span className="font-mono text-xl text-ember">{index + 1}</span>
+                            <span>
+                                <strong className="block text-ink-100">{title}</strong>
+                                <span className="mt-1 block text-sm leading-relaxed text-ink-400">{body}</span>
+                            </span>
+                        </li>
+                    ))}
+                </ol>
+            </section>
 
-                    <div className="flex items-start gap-3">
-                        <Shield className="text-yellow-400 mt-1 flex-shrink-0" size={20} />
-                        <p className="text-tan-200">
-                            <strong className="text-yellow-300">If armor is too strong:</strong> Shoot unprotected body parts like arms and legs instead of wasting ammo on armor.
-                        </p>
-                    </div>
-
-                    <div className="flex items-start gap-3">
-                        <AlertTriangle className="text-blue-400 mt-1 flex-shrink-0" size={20} />
-                        <p className="text-tan-200">
-                            <strong className="text-blue-300">Alternative &#34;Leg Meta&#34;:</strong> Use lowest-tier ammo and focus only on
-                            unprotected parts. Cheap, effective, but requires more shots than headshots.
-                        </p>
-                    </div>
+            <section className="space-y-4">
+                <h2 className="text-2xl text-ink-100">Read the round as a trade-off</h2>
+                <div className="grid gap-px border border-line-800 bg-line-800 sm:grid-cols-2">
+                    {[
+                        {
+                            icon: <Shield size={20} />,
+                            title: 'Penetration',
+                            body: 'How well the round challenges effective armour class. Compare it with the zone and its current condition, not only the gear badge.',
+                        },
+                        {
+                            icon: <Crosshair size={20} />,
+                            title: 'Damage',
+                            body: 'What the hit can take from the target before protection and zone scaling. It matters directly when you aim around armour.',
+                        },
+                        {
+                            icon: <Gauge size={20} />,
+                            title: 'Blunt and range',
+                            body: 'A stopped round may still deal damage and wear gear, while ballistic curves can change the matchup with distance. Let the simulator calculate both.',
+                        },
+                        {
+                            icon: <CircleDollarSign size={20} />,
+                            title: 'Price and availability',
+                            body: 'A theoretical improvement is only useful when you can buy enough to load and replace it. Compare cost to kill, not price per round alone.',
+                        },
+                    ].map((item) => (
+                        <div key={item.title} className="bg-steel-900 p-4">
+                            <span className="text-info">{item.icon}</span>
+                            <h3 className="mt-3 font-semibold text-ink-100">{item.title}</h3>
+                            <p className="mt-2 text-sm leading-relaxed text-ink-400">{item.body}</p>
+                        </div>
+                    ))}
                 </div>
             </section>
 
-            {/* Penetration Mechanics */}
-            <section className="military-box p-6 rounded-sm">
-                <div className="flex items-start gap-3 mb-4">
-                    <Shield className="text-blue-400 mt-1" size={24} />
-                    <h2 className="text-2xl font-bold text-tan-100">Penetration Mechanics</h2>
-                </div>
-
-                <div className="space-y-4 text-tan-200">
-                    <p className="text-lg">
-                        The penetration system is straightforward: if your <strong>ammo&#39;s penetration power</strong> is
-                        greater than the enemy&#39;s <strong>armor class</strong>, you have a <strong>92% chance</strong>
-                        ‎ to penetrate their armor.
-                    </p>
-
-                    <div className="bg-military-800 border-l-4 border-blue-600 p-4">
-                        <p className="mb-2"><strong>What happens when you shoot:</strong></p>
-                        <ul className="space-y-1 list-disc list-inside ml-4">
-                            <li>If penetration succeeds: Damage applied to the body part is reduced by armor&#39;s penetration resistance (typically 20-40%)</li>
-                            <li>If penetration fails: Only marginal blunt damage</li>
-                            <li>In both cases: Armor durability is depleted</li>
-                        </ul>
-                    </div>
-
-                    <p>
-                        As armor durability decreases, its effective <strong>armor class</strong> drops.
-                        At 0 durability, even the strongest armor can be penetrated with 92% chance.
-                    </p>
-
-                    <div className="bg-blue-900/20 border border-blue-700/50 rounded-sm p-4">
-                        <div className="flex items-start gap-3">
-                            <Info className="text-blue-400 mt-1" size={20} />
-                            <div>
-                                <p className="text-blue-200">
-                                    <strong>Rule of thumb:</strong> Higher ammo tier = more armor damage and penetration power.
-                                    When shooting protected areas, better ammo depletes enemy armor faster.
-                                </p>
-                                <Link
-                                    href="/items/ammunition"
-                                    className="inline-flex items-center gap-1 mt-2 text-sm text-blue-400 hover:text-blue-300 transition-colors"
-                                >
-                                    View all ammunition stats <ExternalLink size={14} />
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-
-                    <p>
-                        For detailed mechanics, check our comprehensive
-                        <Link
-                            href="/guides/armor-penetration-guide"
-                            className="inline-flex items-center gap-1 ml-1 text-olive-400 hover:text-olive-300 transition-colors"
-                        >
-                            penetration guide <ExternalLink size={14} />
-                        </Link>.
-                    </p>
+            <section className="border border-line-700 bg-steel-850 p-5 sm:p-6">
+                <h2 className="text-2xl text-ink-100">Decide by situation</h2>
+                <div className="mt-5 overflow-x-auto">
+                    <table className="w-full min-w-[40rem] text-sm">
+                        <thead>
+                            <tr className="border-b border-line-700 text-left text-ink-600">
+                                <th className="py-2 pr-4 font-medium">Situation</th>
+                                <th className="py-2 pr-4 font-medium">Choice</th>
+                                <th className="py-2 font-medium">Why</th>
+                            </tr>
+                        </thead>
+                        <tbody className="divide-y divide-line-800">
+                            {DECISIONS.map((row) => (
+                                <tr key={row.situation}>
+                                    <td className="py-3 pr-4 text-ink-300">{row.situation}</td>
+                                    <td className="py-3 pr-4 font-semibold text-ink-100">{row.choice}</td>
+                                    <td className="py-3 text-ink-500">{row.reason}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
             </section>
 
-            {/* Combat Example */}
-            <section className="military-box p-6 rounded-sm">
-                <div className="flex items-start gap-3 mb-4">
-                    <Target className="text-red-400 mt-1" size={24} />
-                    <h2 className="text-2xl font-bold text-tan-100">Practical Combat Example</h2>
+            <section className="space-y-4">
+                <h2 className="text-2xl text-ink-100">Verify before you buy a stack</h2>
+                <p className="text-ink-300">
+                    Put the build and round into the simulator, equip the target you care about, set
+                    its condition and facing, then compare a protected zone with an uncovered one.
+                    Add alternatives as extra loadouts so range and target stay fixed while the round
+                    changes.
+                </p>
+                <div className="border border-line-800 bg-steel-800 p-4 text-sm text-ink-400">
+                    <strong className="text-ink-100">Example:</strong> compare an{' '}
+                    <Link href="/items/weapon-ak74n-factory" className="text-ember hover:underline">
+                        AK-74N (Factory)
+                    </Link>{' '}
+                    firing{' '}
+                    <Link href="/items/ammo-545x39-fmj" className="text-ember hover:underline">
+                        5.45x39mm FMJ
+                    </Link>{' '}
+                    against a fresh{' '}
+                    <Link href="/items/armor-6b17-upgrade" className="text-ember hover:underline">
+                        6B17 Upgraded Body Armor
+                    </Link>{' '}
+                    and{' '}
+                    <Link href="/items/helmet-ach-green" className="text-ember hover:underline">
+                        ACH Helmet
+                    </Link>{' '}
+                    at 60 m. The link restores that exact build, round, target, condition, facing and view.
+                    <span className="mt-2 block">
+                        <RouteLink href="/combat-sim?a0w=weapon-ak74n-factory&amp;a0a=ammo-545x39-fmj&amp;da=armor-6b17-upgrade&amp;dad=100&amp;dh=helmet-ach-green&amp;dhd=100&amp;r=60&amp;f=front&amp;v=read">
+                            Open the example
+                        </RouteLink>
+                    </span>
                 </div>
-
-                <div className="space-y-4 text-tan-200">
-
-                    <div className="space-y-4 text-tan-200">
-                        <div>
-                            <span>Consider a starter kit with </span>
-                            <Link
-                                href="/items/weapon-m4a1-cqbr"
-                                className="inline-flex gap-1 items-center text-olive-400 hover:text-olive-300 transition-colors"
-                            >
-                                <span className="text-sm font-medium">M4A1 CQBR</span><ExternalLink size={14} />
-                            </Link>
-                            <span> and </span>
-                            <Link
-                                href="/items/ammo-556x45-mk318"
-                                className="inline-flex gap-1 items-center text-olive-400 hover:text-olive-300 transition-colors"
-                            >
-                                <span className="text-sm font-medium">Mk318</span><ExternalLink size={14} />
-                            </Link>
-                            <span> ammo versus a mid-game enemy wearing </span>
-                            <Link
-                                href="/items/helmet-ach-green"
-                                className="inline-flex gap-1 items-center text-olive-400 hover:text-olive-300 transition-colors"
-                            >
-                                <span className="text-sm font-medium">ACH Helmet</span><ExternalLink size={14} />
-                            </Link>
-                            <span> and </span>
-                            <Link
-                                href="/items/armor-6b17-upgrade"
-                                className="inline-flex gap-1 items-center text-olive-400 hover:text-olive-300 transition-colors"
-                            >
-                                <span className="text-sm font-medium">6B17 Upgraded Body Armor</span><ExternalLink size={14} />
-                            </Link>
-                            <span>.</span>
-                        </div>
-
-                        <Link
-                            href="/combat-sim?a0w=weapon-m4a1-cqbr&a0a=ammo-556x45-mk318&da=armor-6b17-upgrade&dad=100&dh=helmet-ach-green&dhd=100&df=mask-ach-faceshield&r=0&d=stk"
-                            className="inline-flex items-center gap-1 mt-2 text-sm text-yellow-400 hover:text-yellow-300 transition-colors"
-                        >
-                            Try this setup in the Combat Simulator <ExternalLink size={14} />
-                        </Link>
-                    </div>
-
-                    <div className="bg-military-800 p-4 rounded border-l-4 border-red-600">
-                        <p className="mb-3"><strong>Combat Simulation Results:</strong></p>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                            <div className="text-center">
-                                <div className="text-red-400 font-bold text-lg">5</div>
-                                <div>Head shots</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-yellow-400 font-bold text-lg">8</div>
-                                <div>Chest shots</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-orange-400 font-bold text-lg">18</div>
-                                <div>Stomach shots</div>
-                            </div>
-                            <div className="text-center">
-                                <div className="text-green-400 font-bold text-lg">12</div>
-                                <div>Limb shots</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <p>
-                        Depending on your aim confidence, either go for headshots (fastest kill) or
-                        target limbs (more reliable but requires more shots).
-                    </p>
-
-                    <div className="bg-yellow-900/20 border border-yellow-700/50 rounded-sm p-4">
-                        <div className="flex items-start gap-3">
-                            <AlertTriangle className="text-yellow-400 mt-1" size={20} />
-                            <div>
-                                <p className="text-yellow-200">
-                                    <strong>Headshot Advantage:</strong> Enemy armor might already be damaged,
-                                    or you might hit that lucky 2-8% penetration chance even when your ammo
-                                    isn&#39;t strong enough.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Leg Meta Strategy */}
-            <section className="military-box p-6 rounded-sm">
-                <div className="flex items-start gap-3 mb-4">
-                    <Target className="text-green-400 mt-1" size={24} />
-                    <h2 className="text-2xl font-bold text-tan-100">The &#34;Leg Meta&#34; Approach</h2>
-                </div>
-
-                <div className="space-y-4 text-tan-200">
-                    <p className="text-lg">
-                        The leg meta strategy involves using the <strong>lowest tier ammo</strong> and
-                        exclusively targeting unprotected body parts (arms and legs).
-                    </p>
-
-                    <div className="bg-green-900/20 border border-green-700/50 rounded-sm p-4">
-                        <p className="mb-3 text-green-200"><strong>Advantages of Leg Meta:</strong></p>
-                        <ul className="space-y-1 list-disc list-inside ml-4 text-green-200">
-                            <li><strong>Cheap:</strong> Lowest tier ammo costs significantly less</li>
-                            <li><strong>Universal:</strong> Works against any armor level</li>
-                            <li><strong>Consistent:</strong> Same number of leg shots regardless of enemy gear</li>
-                            <li><strong>Counter-intuitive effectiveness:</strong> Often surprising to enemies</li>
-                        </ul>
-                    </div>
-
-                    <div className="bg-red-900/20 border border-red-700/50 rounded-sm p-4">
-                        <div className="flex items-start gap-3">
-                            <AlertTriangle className="text-red-400 mt-1" size={20} />
-                            <div className="text-red-200">
-                                <p><strong>Leg Meta Weakness:</strong></p>
-                                <p>
-                                    Skilled enemies with good aim will always outplay you with a single headshot.
-                                    You&#39;re trading firepower for cost-effectiveness and consistency.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Strategy Summary */}
-            <section className="bg-military-800 border border-military-600 rounded-sm p-6">
-                <h2 className="text-2xl font-bold text-tan-100 mb-4">Combat Strategy Summary</h2>
-
-                <div className="space-y-4 text-tan-200">
-                    <p className="text-lg">
-                        <strong>Remember the better armor pieces</strong> in the game and mentally evaluate
-                        whether your current ammo can penetrate them. When facing well-armored enemies:
-                    </p>
-
-                    <div className="grid md:grid-cols-2 gap-4">
-                        <div className="bg-olive-900/30 border border-olive-700 p-4 rounded">
-                            <h3 className="font-bold text-olive-400 mb-2">High-Tier Ammo Strategy</h3>
-                            <ul className="space-y-1 list-disc list-inside text-sm">
-                                <li>Aim for head when confident</li>
-                                <li>Target chest if head shots are difficult</li>
-                                <li>Switch to limbs only if armor is too strong</li>
-                                <li>Consider armor damage over time</li>
-                            </ul>
-                        </div>
-
-                        <div className="bg-blue-900/30 border border-blue-700 p-4 rounded">
-                            <h3 className="font-bold text-blue-400 mb-2">Leg Meta Strategy</h3>
-                            <ul className="space-y-1 list-disc list-inside text-sm">
-                                <li>Use cheapest ammo available</li>
-                                <li>Focus exclusively on arms and legs</li>
-                                <li>Maintain speed te be a harder target</li>
-                                <li>Strike when least expected</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div className="flex flex-wrap gap-x-6">
+                    <RouteLink href="/items?category=ammo">Browse ammunition</RouteLink>
+                    <RouteLink href="/combat-sim">Open Combat Simulator</RouteLink>
+                    <RouteLink href="/guides/combat-sim-usage">Follow the simulator workflow</RouteLink>
                 </div>
             </section>
         </div>

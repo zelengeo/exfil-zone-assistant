@@ -4664,6 +4664,311 @@
     "tips": ""
   },
   {
+    "id": "misc_warfareposter_01",
+    "name": "Tanvarian's Poster",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_warfareposter_01.webp",
+      "thumbnail": "/images/items/misc/misc_warfareposter_01.webp",
+      "fullsize": "/images/items/misc/misc_warfareposter_01.webp"
+    },
+    "stats": {
+      "weight": 0.2,
+      "rarity": "Legendary",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005,
+      "basePrice": 656328,
+      "sellPrices": [
+        656328,
+        656328,
+        590696,
+        459430,
+        459430,
+        459430
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_warfareposter_02",
+    "name": "Ravager's Poster",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_warfareposter_02.webp",
+      "thumbnail": "/images/items/misc/misc_warfareposter_02.webp",
+      "fullsize": "/images/items/misc/misc_warfareposter_02.webp"
+    },
+    "stats": {
+      "weight": 0.2,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005,
+      "basePrice": 268524,
+      "sellPrices": [
+        268524,
+        268524,
+        241672,
+        187967,
+        187967,
+        187967
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_warfareposter_03",
+    "name": "Butcher's Poster",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_warfareposter_03.webp",
+      "thumbnail": "/images/items/misc/misc_warfareposter_03.webp",
+      "fullsize": "/images/items/misc/misc_warfareposter_03.webp"
+    },
+    "stats": {
+      "weight": 0.2,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005,
+      "basePrice": 278422,
+      "sellPrices": [
+        278422,
+        278422,
+        250580,
+        194896,
+        194896,
+        194896
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_warfareposter_04",
+    "name": "The Dam's Poster",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_warfareposter_04.webp",
+      "thumbnail": "/images/items/misc/misc_warfareposter_04.webp",
+      "fullsize": "/images/items/misc/misc_warfareposter_04.webp"
+    },
+    "stats": {
+      "weight": 0.2,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005,
+      "basePrice": 261757,
+      "sellPrices": [
+        261757,
+        261757,
+        235582,
+        183230,
+        183230,
+        183230
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.valuable.highvalue.poster_official_3-2",
+          "level": 1,
+          "price": 261757,
+          "bundle": 1,
+          "bundlePrice": 261757,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "itemId": "misc_b_gunoil",
+              "sellId": "valuable.combustible.gunoil",
+              "count": 1
+            },
+            {
+              "itemId": "misc_b_rat_poison",
+              "sellId": "valuable.household.ratpoison",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_warfareposter_05",
+    "name": "'Extraction' Poster",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_warfareposter_05.webp",
+      "thumbnail": "/images/items/misc/misc_warfareposter_05.webp",
+      "fullsize": "/images/items/misc/misc_warfareposter_05.webp"
+    },
+    "stats": {
+      "weight": 0.2,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005,
+      "basePrice": 280312,
+      "sellPrices": [
+        280312,
+        280312,
+        252281,
+        196219,
+        196219,
+        196219
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_warfareposter_06",
+    "name": "The Tunnel's Poster",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_warfareposter_06.webp",
+      "thumbnail": "/images/items/misc/misc_warfareposter_06.webp",
+      "fullsize": "/images/items/misc/misc_warfareposter_06.webp"
+    },
+    "stats": {
+      "weight": 0.2,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005,
+      "basePrice": 263303,
+      "sellPrices": [
+        263303,
+        263303,
+        236973,
+        184313,
+        184313,
+        184313
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_warfareposter_07",
+    "name": "Mince's Poster",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_warfareposter_07.webp",
+      "thumbnail": "/images/items/misc/misc_warfareposter_07.webp",
+      "fullsize": "/images/items/misc/misc_warfareposter_07.webp"
+    },
+    "stats": {
+      "weight": 0.2,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005,
+      "basePrice": 280453,
+      "sellPrices": [
+        280453,
+        280453,
+        252408,
+        196318,
+        196318,
+        196318
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_warfareposter_08",
+    "name": "Hand drawn Map",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_warfareposter_08.webp",
+      "thumbnail": "/images/items/misc/misc_warfareposter_08.webp",
+      "fullsize": "/images/items/misc/misc_warfareposter_08.webp"
+    },
+    "stats": {
+      "weight": 0.2,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_warfareposter_09",
+    "name": "'Outbreak' Poster",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_warfareposter_09.webp",
+      "thumbnail": "/images/items/misc/misc_warfareposter_09.webp",
+      "fullsize": "/images/items/misc/misc_warfareposter_09.webp"
+    },
+    "stats": {
+      "weight": 0.2,
+      "rarity": "Legendary",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005,
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        900,
+        700,
+        700,
+        700
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_warfareposter_pumpkin",
+    "name": "Pumpkin Poster",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_warfareposter_pumpkin.webp",
+      "thumbnail": "/images/items/misc/misc_warfareposter_pumpkin.webp",
+      "fullsize": "/images/items/misc/misc_warfareposter_pumpkin.webp"
+    },
+    "stats": {
+      "weight": 0.2,
+      "rarity": "Epic",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1.005,
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        900,
+        700,
+        700,
+        700
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
+  },
+  {
     "id": "misc_wastechip",
     "name": "Waste Chip",
     "description": "",
@@ -4687,6 +4992,93 @@
         14183,
         14183,
         14183
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_wf_box_blindbox",
+    "name": "BlindBox",
+    "description": "SHOWDOWN series figurines.",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_wf_box_blindbox.webp",
+      "thumbnail": "/images/items/misc/misc_wf_box_blindbox.webp",
+      "fullsize": "/images/items/misc/misc_wf_box_blindbox.webp"
+    },
+    "stats": {
+      "weight": null,
+      "rarity": "Common",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 0,
+      "basePrice": 1800,
+      "sellPrices": [
+        1800,
+        1800,
+        1800,
+        1800,
+        1800,
+        1800
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_wf_box_carblindbox",
+    "name": "Model Car: Blind Box",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_wf_box_carblindbox.webp",
+      "thumbnail": "/images/items/misc/misc_wf_box_carblindbox.webp",
+      "fullsize": "/images/items/misc/misc_wf_box_carblindbox.webp"
+    },
+    "stats": {
+      "weight": 0.35,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1,
+      "basePrice": 1800,
+      "sellPrices": [
+        1800,
+        1620,
+        1260,
+        1260,
+        1260,
+        1800
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "misc_wf_box_carblindbox_advanced",
+    "name": "Model Car: Premium Blind Box",
+    "description": "",
+    "category": "misc",
+    "subcategory": "HighValue",
+    "images": {
+      "icon": "/images/items/misc/misc_wf_box_carblindbox_advanced.webp",
+      "thumbnail": "/images/items/misc/misc_wf_box_carblindbox_advanced.webp",
+      "fullsize": "/images/items/misc/misc_wf_box_carblindbox_advanced.webp"
+    },
+    "stats": {
+      "weight": 0.35,
+      "rarity": "Uncommon",
+      "backpackDimensionMultiplier": 0.95,
+      "safeContainerBoundScale": 1,
+      "basePrice": 3600,
+      "sellPrices": [
+        3600,
+        3240,
+        2520,
+        2520,
+        2520,
+        3600
       ],
       "buyOffers": []
     },

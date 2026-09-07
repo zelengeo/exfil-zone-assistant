@@ -162,21 +162,9 @@ Found a bug or have a suggestion? [Open an issue](https://github.com/zelengeo/ex
 - Expected vs actual behavior
 - Screenshots if applicable
 
-## 🗺️ Roadmap
+## 🗺️ Development
 
-### Coming Soon
-- 🎯 **Weapon Recoil Patterns** - Visual recoil analysis and control guides
-- 🔧 **Attachment System** - Complete attachment database with hidden stats
-- 💣 **Throwable Analysis** - Grenade damage ranges and effectiveness
-- 📊 **Complete Item Database** - All consumables with hidden properties
-
-### Future Plans (Community Driven)
-- 📜 Quest Database & Walkthroughs
-- 🏠 Hideout Calculator
-- 🗺️ Interactive Maps
-- 📱 Mobile App
-
-See our [Development Roadmap](https://exfil-zone.vercel.app/guides/app-roadmap) for more details.
+Current work and feature requests are tracked in [GitHub Issues](https://github.com/zelengeo/exfil-zone-assistant/issues).
 
 ## 📊 Data Accuracy
 

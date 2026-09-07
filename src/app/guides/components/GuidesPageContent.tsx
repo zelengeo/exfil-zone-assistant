@@ -1,82 +1,70 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
-import Layout from '@/components/layout/Layout';
-import {LucideIcon, Search, Filter, Clock, Tag, Star, X, AlertCircle} from 'lucide-react';
-import * as Icons from 'lucide-react';
+import { useMemo, useState } from 'react';
 import Link from 'next/link';
+import { Clock, Filter, Search, Star, Tag, X } from 'lucide-react';
+
+import type { GuideMetadata } from '@/types/guides';
+import { cn } from '@/lib/utils';
+import {
+    formatReadTime,
+    getAvailableGuideTags,
+    getFeaturedGuides,
+    guideMatchesSearch,
+    guidesConfig,
+} from '@/config/guides';
 import { useUrlSearchParams, UrlSearchParamsObserver } from '@/hooks/useUrlSearchParams';
-import { guidesConfig, guideTags, getFeaturedGuides } from '@/config/guides';
-import {GuideMetadata} from "@/types/guides";
+import Layout from '@/components/layout/Layout';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
-const getIconComponent = (icon: string) => {
-    const found = Icons[icon as keyof typeof Icons];
-    return (found && typeof found === 'function' ? found : Tag) as LucideIcon;
+const DIFFICULTIES = ['beginner', 'intermediate', 'advanced'] as const;
+type Difficulty = typeof DIFFICULTIES[number];
+
+function GuideCard({ guide, featured = false }: { guide: GuideMetadata; featured?: boolean }) {
+    return (
+        <Link
+            href={'/guides/' + guide.slug}
+            className={cn(
+                'group block min-h-44 border bg-steel-850 p-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ember',
+                featured ? 'border-line-500' : 'border-line-800',
+            )}
+        >
+            <div className="flex items-start justify-between gap-4">
+                <h3 className="text-xl leading-tight text-ink-100 group-hover:text-ember">{guide.title}</h3>
+                {featured && <Star className="mt-0.5 size-4 shrink-0 text-warn" fill="currentColor" aria-hidden="true" />}
+            </div>
+            <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-ink-400">{guide.description}</p>
+            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-xs text-ink-600">
+                <span className="capitalize">{guide.difficulty}</span>
+                <span className="inline-flex items-center gap-1">
+                    <Clock className="size-3.5" aria-hidden="true" />
+                    {formatReadTime(guide.readTimeMinutes)}
+                </span>
+            </div>
+        </Link>
+    );
 }
-
-const getDifficultyColor = (difficulty?: string) => {
-    switch (difficulty) {
-        case 'beginner':
-            return 'text-green-400 bg-green-900/30 border-green-800';
-        case 'intermediate':
-            return 'text-yellow-400 bg-yellow-900/30 border-yellow-800';
-        case 'advanced':
-            return 'text-red-400 bg-red-900/30 border-red-800';
-        default:
-            return 'text-tan-300 bg-military-700 border-military-600';
-    }
-};
-
-const getTagColor = (color?: string) => {
-    switch (color) {
-        case 'green':
-            return 'bg-green-900/30 border-green-800 text-green-400 hover:bg-green-900/50';
-        case 'blue':
-            return 'bg-blue-900/30 border-blue-800 text-blue-400 hover:bg-blue-900/50';
-        case 'red':
-            return 'bg-red-900/30 border-red-800 text-red-400 hover:bg-red-900/50';
-        case 'orange':
-            return 'bg-orange-900/30 border-orange-800 text-orange-400 hover:bg-orange-900/50';
-        case 'purple':
-            return 'bg-purple-900/30 border-purple-800 text-purple-400 hover:bg-purple-900/50';
-        case 'yellow':
-            return 'bg-yellow-900/30 border-yellow-800 text-yellow-400 hover:bg-yellow-900/50';
-        case 'emerald':
-            return 'bg-emerald-900/30 border-emerald-800 text-emerald-400 hover:bg-emerald-900/50';
-        case 'teal':
-            return 'bg-teal-900/30 border-teal-800 text-teal-400 hover:bg-teal-900/50';
-        default:
-            return 'bg-military-700 border-military-600 text-tan-300 hover:bg-military-600';
-    }
-};
 
 export default function GuidesPageContent() {
     const searchParams = useUrlSearchParams();
     const selectedTag = searchParams.get('tag');
-
     const [searchQuery, setSearchQuery] = useState('');
-    const [selectedDifficulty, setSelectedDifficulty] = useState<string | null>(null);
+    const [selectedDifficulty, setSelectedDifficulty] = useState<Difficulty | null>(null);
     const [showFilters, setShowFilters] = useState(false);
+    const availableTags = getAvailableGuideTags();
 
-    // Filter guides based on search and filters
-    const filteredGuides = useMemo(() => {
-        return guidesConfig.filter(guide => {
-            // Search filter
-            const matchesSearch = !searchQuery ||
-                guide.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                guide.description.toLowerCase().includes(searchQuery.toLowerCase());
-
-            // Tag filter
-            const matchesTag = !selectedTag || guide.tags.includes(selectedTag);
-
-            // Difficulty filter
-            const matchesDifficulty = !selectedDifficulty || guide.difficulty === selectedDifficulty;
-
-            return matchesSearch && matchesTag && matchesDifficulty;
-        });
-    }, [searchQuery, selectedTag, selectedDifficulty]);
+    const filteredGuides = useMemo(
+        () => guidesConfig.filter((guide) =>
+            guideMatchesSearch(guide, searchQuery) &&
+            (!selectedTag || guide.tags.includes(selectedTag)) &&
+            (!selectedDifficulty || guide.difficulty === selectedDifficulty)),
+        [searchQuery, selectedTag, selectedDifficulty],
+    );
 
     const featuredGuides = getFeaturedGuides();
+    const remainingGuides = guidesConfig.filter((guide) => !guide.featured);
+    const hasActiveFilters = Boolean(searchQuery.trim() || selectedTag || selectedDifficulty);
 
     const clearFilters = () => {
         setSearchQuery('');
@@ -84,268 +72,117 @@ export default function GuidesPageContent() {
         window.history.pushState({}, '', '/guides');
     };
 
-    const hasActiveFilters = searchQuery || selectedTag || selectedDifficulty;
     return (
         <Layout>
             <UrlSearchParamsObserver />
-            <div className="container mx-auto px-4 py-8">
-                {/* Page Header */}
-                <div className="mb-8">
-                    <h1 className="text-3xl md:text-4xl font-bold text-tan-100 mb-2 military-stencil">
-                        GAME GUIDES
-                    </h1>
-                    <p className="text-tan-300 max-w-3xl">
-                        Master the game with our comprehensive guides covering everything from basic mechanics to advanced strategies.
+            <div className="container mx-auto max-w-6xl px-4 py-8">
+                <header className="border-l-2 border-ember pl-5">
+                    <h1 className="font-display text-4xl text-ink-100 sm:text-5xl">Game guides</h1>
+                    <p className="mt-2 max-w-2xl text-ink-400">
+                        Field references for combat, survival, equipment and confirmed wipe history.
                     </p>
-                </div>
+                </header>
 
-                {/* Search and Filters */}
-                <div className="mb-8 space-y-4">
-                    {/* Search Bar */}
-                    <div className="flex gap-4">
-                        <div className="flex-1 relative">
-                            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-tan-400" size={20} />
-                            <input
-                                type="text"
-                                placeholder="Search guides..."
+                <section aria-label="Guide search and filters" className="mt-8 border border-line-700 bg-steel-900 p-3">
+                    <div className="flex gap-2">
+                        <div className="relative min-w-0 flex-1">
+                            <label htmlFor="guide-search" className="sr-only">Search guide titles, descriptions and tags</label>
+                            <Search className="pointer-events-none absolute left-3 top-1/2 size-5 -translate-y-1/2 text-ink-600" aria-hidden="true" />
+                            <Input
+                                id="guide-search"
+                                type="search"
                                 value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                                className="w-full pl-10 pr-4 py-3 bg-military-800 border border-military-600
-                         rounded-sm text-tan-100 placeholder-tan-500
-                         focus:border-olive-600 focus:outline-none transition-colors"
+                                onChange={(event) => setSearchQuery(event.target.value)}
+                                placeholder="Search titles, descriptions and tags"
+                                className="h-11 rounded-none border-line-700 bg-steel-850 pl-10 text-ink-100"
                             />
                         </div>
-                        <button
-                            onClick={() => setShowFilters(!showFilters)}
-                            className={`px-4 py-3 bg-military-800 border rounded-sm transition-all
-                         ${showFilters ? 'border-olive-600 text-olive-400' : 'border-military-600 text-tan-300'}
-                         hover:border-olive-600 hover:text-olive-400`}
+                        <Button
+                            type="button"
+                            variant="quiet"
+                            className="size-11 px-0"
+                            aria-label={showFilters ? 'Hide guide filters' : 'Show guide filters'}
+                            aria-expanded={showFilters}
+                            onClick={() => setShowFilters((visible) => !visible)}
                         >
-                            <Filter size={20} />
-                        </button>
+                            <Filter aria-hidden="true" />
+                        </Button>
                     </div>
 
-                    {/* Filter Options */}
                     {showFilters && (
-                        <div className="p-4 bg-military-800 border border-military-600 rounded-sm space-y-4">
-                            {/* Difficulty Filter */}
-                            <div>
-                                <h3 className="text-sm font-semibold text-tan-300 mb-2">Difficulty</h3>
-                                <div className="flex flex-wrap gap-2">
-                                    {['beginner', 'intermediate', 'advanced'].map((difficulty) => (
-                                        <button
+                        <div className="mt-3 space-y-4 border-t border-line-800 pt-3">
+                            <fieldset>
+                                <legend className="micro-label text-ink-600">Difficulty</legend>
+                                <div className="mt-2 flex flex-wrap gap-2">
+                                    {DIFFICULTIES.map((difficulty) => (
+                                        <Button
                                             key={difficulty}
-                                            onClick={() => setSelectedDifficulty(
-                                                selectedDifficulty === difficulty ? null : difficulty
-                                            )}
-                                            className={`px-3 py-1 rounded-sm border capitalize text-sm transition-all
-                                 ${selectedDifficulty === difficulty
-                                                ? getDifficultyColor(difficulty)
-                                                : 'bg-military-700 border-military-600 text-tan-400 hover:border-military-500'}`}
+                                            type="button"
+                                            variant="quiet"
+                                            className={cn('min-h-11 capitalize', selectedDifficulty === difficulty && 'border-ember text-ink-100')}
+                                            aria-pressed={selectedDifficulty === difficulty}
+                                            onClick={() => setSelectedDifficulty((current) => current === difficulty ? null : difficulty)}
                                         >
                                             {difficulty}
-                                        </button>
+                                        </Button>
                                     ))}
                                 </div>
-                            </div>
-
-                            {/* Tags Filter */}
-                            <div>
-                                <h3 className="text-sm font-semibold text-tan-300 mb-2">Tags</h3>
-                                <div className="flex flex-wrap gap-2">
-                                    {guideTags.map((tag) => {
-                                        const IconComponent = getIconComponent(tag.icon);
-                                        return (
-                                            <Link
-                                                key={tag.id}
-                                                href={selectedTag === tag.id ? '/guides' : `/guides?tag=${tag.id}`}
-                                                className={`inline-flex items-center gap-1 px-3 py-1 rounded-sm border text-sm transition-all
-                                   ${selectedTag === tag.id
-                                                    ? getTagColor(tag.color)
-                                                    : 'bg-military-700 border-military-600 text-tan-400 hover:border-military-500'}`}
-                                            >
-                                                <IconComponent size={14} />
+                            </fieldset>
+                            <fieldset>
+                                <legend className="micro-label text-ink-600">Subject</legend>
+                                <div className="mt-2 flex flex-wrap gap-2">
+                                    {availableTags.map((tag) => (
+                                        <Button key={tag.id} asChild variant="quiet" className={cn('min-h-11', selectedTag === tag.id && 'border-ember text-ink-100')}>
+                                            <Link href={selectedTag === tag.id ? '/guides' : '/guides?tag=' + tag.id}>
+                                                <Tag aria-hidden="true" />
                                                 {tag.name}
                                             </Link>
-                                        );
-                                    })}
+                                        </Button>
+                                    ))}
                                 </div>
-                            </div>
-
-                            {/* Clear Filters */}
-                            {hasActiveFilters && (
-                                <button
-                                    onClick={clearFilters}
-                                    className="text-sm text-red-400 hover:text-red-300 transition-colors"
-                                >
-                                    Clear all filters
-                                </button>
-                            )}
-                        </div>
-                    )}
-                </div>
-
-                {/* Active Filters Display */}
-                {hasActiveFilters && (
-                    <div className="mb-6 flex flex-wrap items-center gap-2">
-                        <span className="text-sm text-tan-400">Active filters:</span>
-                        {searchQuery && (
-                            <span className="inline-flex items-center gap-1 px-3 py-1 bg-military-800
-                             border border-military-600 rounded-sm text-sm text-tan-300">
-                Search: &#34;{searchQuery}&#34;
-                                <button onClick={() => setSearchQuery('')} className="ml-1 hover:text-red-400">
-                  <X size={14} />
-                </button>
-              </span>
-                        )}
-                        {selectedTag && (
-                            <span className="inline-flex items-center gap-1 px-3 py-1 bg-military-800
-                             border border-military-600 rounded-sm text-sm text-tan-300">
-                Tag: {guideTags.find(t => t.id === selectedTag)?.name}
-                                <Link href="/guides" className="ml-1 hover:text-red-400">
-                  <X size={14} />
-                </Link>
-              </span>
-                        )}
-                        {selectedDifficulty && (
-                            <span className="inline-flex items-center gap-1 px-3 py-1 bg-military-800
-                             border border-military-600 rounded-sm text-sm text-tan-300">
-                Difficulty: {selectedDifficulty}
-                                <button onClick={() => setSelectedDifficulty(null)} className="ml-1 hover:text-red-400">
-                  <X size={14} />
-                </button>
-              </span>
-                        )}
-                    </div>
-                )}
-
-                {/* Featured Guides */}
-                {!hasActiveFilters && featuredGuides.length > 0 && (
-                    <section className="mb-12">
-                        <h2 className="text-2xl font-bold text-tan-100 mb-6 flex items-center gap-2">
-                            <Star className="text-yellow-400" size={24} />
-                            Featured Guides
-                        </h2>
-                        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                            {featuredGuides.map((guide) => (
-                                <Link
-                                    key={guide.slug}
-                                    href={`/guides/${guide.slug}`}
-                                    className="block p-6 bg-military-800 border-2 border-yellow-800/50 rounded-sm
-                           hover:border-yellow-700 transition-all group relative overflow-hidden"
-                                >
-                                    <div className="absolute top-2 right-2">
-                                        <Star className="text-yellow-400" size={16} fill="currentColor" />
-                                    </div>
-                                    <h3 className="font-semibold text-lg text-tan-100 mb-2 group-hover:text-olive-400 transition-colors">
-                                        {guide.title}
-                                    </h3>
-                                    <p className="text-sm text-tan-300 mb-4 line-clamp-2">
-                                        {guide.description}
-                                    </p>
-                                    <div className="flex items-center justify-between">
-                                        <div className="flex items-center gap-2">
-                                            {guide.difficulty && (
-                                                <span className={`text-xs px-2 py-1 rounded-sm border ${getDifficultyColor(guide.difficulty)}`}>
-                          {guide.difficulty}
-                        </span>
-                                            )}
-                                            {guide.readTime && (
-                                                <span className="text-xs text-tan-400 flex items-center gap-1">
-                          <Clock size={12} />
-                                                    {guide.readTime}
-                        </span>
-                                            )}
-                                        </div>
-                                    </div>
-                                </Link>
-                            ))}
-                        </div>
-                    </section>
-                )}
-
-                {/* All Guides */}
-                <section>
-                    <h2 className="text-2xl font-bold text-tan-100 mb-6">
-                        {hasActiveFilters ? `${filteredGuides.length} Guides Found` : 'All Guides'}
-                    </h2>
-
-                    {filteredGuides.length === 0 ? (
-                        <div className="text-center py-12 military-box rounded-sm">
-                            <p className="text-tan-300 mb-4">No guides found matching your criteria.</p>
-                            <button
-                                onClick={clearFilters}
-                                className="text-olive-400 hover:text-olive-300 transition-colors"
-                            >
-                                Clear filters
-                            </button>
-                        </div>
-                    ) : (
-                        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                            {filteredGuides.map((guide: GuideMetadata) => (
-                                <Link
-                                    key={guide.slug}
-                                    href={`/guides/${guide.slug}`}
-                                    className="block p-4 bg-military-800 border border-military-600 rounded-sm
-                           hover:border-olive-700 transition-all group"
-                                >
-                                    <h3 className="font-semibold text-tan-100 mb-2 group-hover:text-olive-400 transition-colors">
-                                        {guide.title}
-                                    </h3>
-                                    <p className="text-sm text-tan-300 mb-4 line-clamp-2">
-                                        {guide.description}
-                                    </p>
-                                    <div className="flex items-center justify-between">
-                                        <div className="flex items-center gap-2">
-                                            {guide.difficulty && (
-                                                <span className={`text-xs px-2 py-1 rounded-sm border ${getDifficultyColor(guide.difficulty)}`}>
-                          {guide.difficulty}
-                        </span>
-                                            )}
-                                            {guide.readTime && (
-                                                <span className="text-xs text-tan-400 flex items-center gap-1">
-                          <Clock size={12} />
-                                                    {guide.readTime}
-                        </span>
-                                            )}
-                                        </div>
-                                    </div>
-                                    <div className="flex flex-wrap gap-1 mt-3">
-                                        {guide.tags.slice(0, 3).map((tagId) => {
-                                            const tagInfo = guideTags.find(t => t.id === tagId);
-                                            return (
-                                                <span
-                                                    key={tagId}
-                                                    className="text-xs px-2 py-0.5 bg-military-900 text-tan-400 rounded-sm"
-                                                >
-                          {tagInfo?.name || tagId}
-                        </span>
-                                            );
-                                        })}
-                                        {guide.tags.length > 3 && (
-                                            <span className="text-xs px-2 py-0.5 text-tan-500">
-                        +{guide.tags.length - 3}
-                      </span>
-                                        )}
-                                    </div>
-                                </Link>
-                            ))}
+                            </fieldset>
                         </div>
                     )}
                 </section>
 
-                {/* Coming Soon Notice */}
-                <div className="mt-12 p-6 bg-yellow-900/20 border border-yellow-700/50 rounded-sm">
-                    <div className="flex items-start gap-3">
-                        <AlertCircle className="text-yellow-400 mt-1 flex-shrink-0" size={20} />
-                        <div>
-                            <p className="text-yellow-200 font-medium">More Guides Coming Soon</p>
-                            <p className="text-yellow-300/80 text-sm mt-1">
-                                We&#39;re actively working on expanding our guide collection. Check back regularly for new content!
-                            </p>
+                {hasActiveFilters ? (
+                    <section className="mt-10">
+                        <div className="flex min-h-11 items-center justify-between gap-4">
+                            <h2 className="text-2xl text-ink-100">{filteredGuides.length} guides found</h2>
+                            <Button type="button" variant="quiet" className="min-h-11" onClick={clearFilters}>
+                                <X aria-hidden="true" /> Clear filters
+                            </Button>
                         </div>
-                    </div>
-                </div>
+                        {filteredGuides.length > 0 ? (
+                            <div className="mt-5 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+                                {filteredGuides.map((guide) => <GuideCard key={guide.slug} guide={guide} />)}
+                            </div>
+                        ) : (
+                            <p className="mt-5 border border-line-800 bg-steel-850 p-6 text-ink-400">
+                                No guide matches these filters. Clear them to return to the full field manual.
+                            </p>
+                        )}
+                    </section>
+                ) : (
+                    <>
+                        <section className="mt-10">
+                            <h2 className="flex items-center gap-2 text-2xl text-ink-100">
+                                <Star className="size-5 text-warn" aria-hidden="true" /> Featured
+                            </h2>
+                            <div className="mt-5 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+                                {featuredGuides.map((guide) => <GuideCard key={guide.slug} guide={guide} featured />)}
+                            </div>
+                        </section>
+                        {remainingGuides.length > 0 && (
+                            <section className="mt-10">
+                                <h2 className="text-2xl text-ink-100">More guides</h2>
+                                <div className="mt-5 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+                                    {remainingGuides.map((guide) => <GuideCard key={guide.slug} guide={guide} />)}
+                                </div>
+                            </section>
+                        )}
+                    </>
+                )}
             </div>
         </Layout>
     );

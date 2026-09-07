@@ -17,18 +17,17 @@ unreachable, while a config entry with no file breaks the build.
 
 ## Related guides
 
-`getRelatedGuides` scores every other guide by how many tags it shares with the current one, sorts
-by that count, and takes the top three. No recency, no popularity, no curation — so the lever for a
-better suggestion is the tag list, and a guide tagged only `getting-started` will pull in whatever
-else carries that tag.
+`relatedSlugs` in the registry is the ordered recommendation list. Keep combat references
+deliberate; the integrity test rejects missing and duplicate relations.
 
 ## Filtering
 
 The list filters client-side over the whole config. That is right while there are six guides and
 would stop being right at a few hundred; the config is already in the bundle either way.
 
-`getAllTags()` derives the filter vocabulary from the guides themselves, so a tag appears in the UI
-by being used. `guideTags` remains the place a tag gets a label and a description.
+The filter vocabulary is the intersection of registered tags and `guideTags`; the integrity test
+requires every defined tag to be used. Search covers registry titles, descriptions and tag labels.
+Guide bodies stay out of the client search bundle.
 
 ## Also here
 

@@ -71,6 +71,12 @@ export default function DamageModelGuide() {
                     single-shot arithmetic was checked against an in-game capture in September 2026:
                     53 recorded damage readings reproduced to within 0.0004 HP.
                 </p>
+                <div className="border-l-2 border-warn bg-steel-800 p-4 text-sm text-ink-400">
+                    This is the canonical description of what the simulator currently calculates,
+                    not a promise that every live-game outcome is deterministic. The per-shot roll
+                    cannot be reproduced, the durability curve interpretation still needs wider
+                    in-game spot checks, and the limits below remain outside the model.
+                </div>
             </section>
 
             {/* ---------------------------------------------------------------- */}
@@ -324,6 +330,46 @@ export default function DamageModelGuide() {
                         reaches the armour path at all is an open question.
                     </li>
                 </ul>
+            </section>
+
+            {/* ---------------------------------------------------------------- */}
+            <section className="grid gap-4 sm:grid-cols-3">
+                <div className="border border-line-800 bg-steel-800 p-4">
+                    <h2 className="text-lg text-ink-100">Coverage and wear</h2>
+                    <p className="mt-2 text-sm text-ink-500">
+                        Turn zone coverage, facing and durability into a tactical choice.
+                    </p>
+                    <Link
+                        href="/guides/armor-penetration-guide"
+                        className="mt-2 inline-flex min-h-11 items-center text-sm text-ember hover:underline"
+                    >
+                        Read Armour Penetration &rarr;
+                    </Link>
+                </div>
+                <div className="border border-line-800 bg-steel-800 p-4">
+                    <h2 className="text-lg text-ink-100">Choosing a round</h2>
+                    <p className="mt-2 text-sm text-ink-500">
+                        Make the beginner decision without memorising these formulas.
+                    </p>
+                    <Link
+                        href="/guides/ammo-selection-beginners"
+                        className="mt-2 inline-flex min-h-11 items-center text-sm text-ember hover:underline"
+                    >
+                        Read Ammunition Selection &rarr;
+                    </Link>
+                </div>
+                <div className="border border-line-800 bg-steel-800 p-4">
+                    <h2 className="text-lg text-ink-100">Using the interface</h2>
+                    <p className="mt-2 text-sm text-ink-500">
+                        Follow the current Read, Compare and Numbers workflow.
+                    </p>
+                    <Link
+                        href="/guides/combat-sim-usage"
+                        className="mt-2 inline-flex min-h-11 items-center text-sm text-ember hover:underline"
+                    >
+                        Read Combat Simulator Usage &rarr;
+                    </Link>
+                </div>
             </section>
 
             {/* ---------------------------------------------------------------- */}

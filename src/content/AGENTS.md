@@ -1,7 +1,7 @@
 # Guides
 
-Six guides, each a React component rather than markdown. The markdown path was started and is still
-commented out in `app/guides/[slug]/page.tsx`; nothing ships through it.
+Six guides, each a React component. The retired App Roadmap redirects to the guide index and is not
+part of the registry.
 
 ## How a guide is wired
 
@@ -24,18 +24,19 @@ one in the config without a file breaks the build.
     description: 'Everything we know about the wipe schedule.',
     tags: ['getting-started', 'gameplay'],
     difficulty: 'beginner',
-    readTime: '3 min',
+    readTimeMinutes: 3,
     author: 'pogapwnz',
     publishedAt: '2025-07-08',
     updatedAt: '2026-08-17',
     featured: false,
-    contentType: 'component',
+    relatedSlugs: ['survival-damage-mechanics'],
 }
 ```
 
-`description` is the og description and the card copy, so write it for someone who has not opened
-the guide. `tags` must exist in `guideTags`; an unknown tag simply fails to filter. `updatedAt`
-drives the freshness line — move it when the content changes, not when the file does.
+`description` is the OG description, card copy and search text. `tags` must exist in `guideTags`.
+`relatedSlugs` is the deliberate recommendation order. `readTimeMinutes` and `updatedAt` are
+required; move the date when content changes. `src/config/guides.test.ts` checks the registry,
+relations, tags, component files, internal links and referenced item ids.
 
 ## Writing one
 

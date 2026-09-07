@@ -1,406 +1,275 @@
-import React from 'react';
-import {ExternalLink, Info, Megaphone, History, BookOpen, Radar, CalendarClock} from 'lucide-react';
+import { CalendarClock, ExternalLink, History, Info, Radio } from 'lucide-react';
 
+import {
+  LONGEST_COMPLETED_WIPE_DAYS,
+  WIPE_PERIODS,
+  getWipeDurationState,
+  toUtcIsoCalendarDate,
+  type WipePeriod,
+} from '@/app/guides/utils/wipeTimeline';
+import { cn } from '@/lib/utils';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Progress } from '@/components/ui/progress';
 
-// const AVERAGE_DURATION_DAYS = (136 + 153 + 88 + 122) / 4;
-const MAX_DURATION_DAYS = 153;
+const OFFICIAL_STATUS_CHECKED_AT = '2026-09-06';
+const OFFICIAL_DISCORD_URL = 'https://discord.com/invite/contractorsshowdown';
+const OFFICIAL_STEAM_URL =
+  'https://store.steampowered.com/news/app/2719160?updates=true';
 
-const WipeDurationTracker = ({startDate, endDate}: { startDate: string, endDate?: string }) => {
-    const start = new Date(startDate);
-    const now = endDate ? new Date(endDate) : new Date();
-    const diff = now.getTime() - start.getTime();
-    const daysPassed = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const progressPercentage = Math.min((daysPassed / MAX_DURATION_DAYS) * 100, 100);
+const dateFormatter = new Intl.DateTimeFormat('en-US', {
+  day: 'numeric',
+  month: 'short',
+  timeZone: 'UTC',
+  year: 'numeric',
+});
 
-    return (
-        <>
-            <p className="text-xs text-tan-400">Duration</p>
-            <p className="font-semibold text-tan-200">{daysPassed} days {endDate ? null : "(Ongoing)"}</p>
-            <div className="w-full bg-military-700 rounded-full h-2.5 mt-2"
-                 title={`${Math.round(progressPercentage)}% of average wipe length`}>
-                <div className="bg-green-600 h-2.5 rounded-full" style={{width: `${progressPercentage}%`}}></div>
-            </div>
-        </>
-    );
-};
+function formatDate(date: string) {
+  return dateFormatter.format(new Date(`${date}T00:00:00.000Z`));
+}
+
+function getOrdinal(value: number) {
+  const remainder = value % 100;
+
+  if (remainder >= 11 && remainder <= 13) {
+    return `${value}th`;
+  }
+
+  switch (value % 10) {
+    case 1:
+      return `${value}st`;
+    case 2:
+      return `${value}nd`;
+    case 3:
+      return `${value}rd`;
+    default:
+      return `${value}th`;
+  }
+}
+
+function getPeriodHeading(period: WipePeriod) {
+  return period.kind === 'launch'
+    ? 'Public alpha launch'
+    : `${getOrdinal(period.ordinal)} wipe`;
+}
+
+function WipeDuration({ period, today }: { period: WipePeriod; today: string }) {
+  const endDate = period.endDate ?? today;
+  const state = getWipeDurationState(period.startDate, endDate);
+  const isOverReference = state.status === 'past-reference';
+  const durationLabel = period.endDate
+    ? `${state.days} days until the next wipe`
+    : `${state.days} days in the current wipe period`;
+
+  return (
+    <div className="space-y-2">
+      <div className="flex items-center justify-between gap-4 text-xs uppercase tracking-[0.14em] text-ink-muted">
+        <span>{durationLabel}</span>
+        <span className={cn('font-mono', isOverReference && 'text-warn')}>
+          {state.days}d
+        </span>
+      </div>
+      <Progress
+        aria-label={durationLabel}
+        aria-valuemax={state.referenceDays}
+        aria-valuemin={0}
+        aria-valuenow={Math.min(state.days, state.referenceDays)}
+        className={cn(
+          'h-2 rounded-none bg-track [&_[data-slot=progress-indicator]]:bg-info',
+          isOverReference && '[&_[data-slot=progress-indicator]]:bg-warn',
+        )}
+        value={state.progressPercentage}
+      />
+      {!period.endDate && isOverReference ? (
+        <p className="text-xs leading-relaxed text-warn">
+          {state.overflowDays} days beyond the longest completed wipe-to-wipe period.
+          This is context, not a forecast.
+        </p>
+      ) : null}
+    </div>
+  );
+}
+
+function WipeHistoryCard({ period, today }: { period: WipePeriod; today: string }) {
+  return (
+    <Card
+      className={cn(
+        'rounded-none border-line bg-steel-2',
+        !period.endDate && 'border-warn/50 bg-warn/5',
+      )}
+    >
+      <CardHeader className="gap-3 border-b border-line-subtle pb-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <CardTitle className="font-display text-xl uppercase tracking-[0.06em] text-ink">
+            {getPeriodHeading(period)}
+          </CardTitle>
+          <Badge
+            className={cn(
+              'rounded-none border-line bg-steel-3 text-ink-muted',
+              !period.endDate && 'border-warn/50 bg-warn/10 text-warn',
+            )}
+            variant="outline"
+          >
+            {period.endDate ? 'Completed' : 'Current'}
+          </Badge>
+        </div>
+        <p className="font-mono text-xs uppercase tracking-[0.14em] text-ink-muted">
+          {formatDate(period.startDate)}
+          {period.endDate ? ` — ${formatDate(period.endDate)}` : ' — present'}
+        </p>
+      </CardHeader>
+      <CardContent className="space-y-5 pt-5">
+        <ul className="space-y-2 text-sm leading-relaxed text-ink-muted">
+          {period.additions.map((highlight) => (
+            <li className="flex gap-3" key={highlight}>
+              <span aria-hidden="true" className="mt-2 size-1.5 shrink-0 bg-info" />
+              <span>{highlight}</span>
+            </li>
+          ))}
+        </ul>
+
+        <WipeDuration period={period} today={today} />
+
+        <div className="flex flex-wrap gap-2">
+          {period.sources.map((source) => (
+            <Button asChild className="min-h-11 rounded-none" key={source.url} variant="outline">
+              <a href={source.url} rel="noreferrer" target="_blank">
+                {source.label}
+                <ExternalLink aria-hidden="true" />
+              </a>
+            </Button>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
 
 export default function WhenIsTheWipeGuide() {
-    return (
-        <div className="space-y-8">
-            {/* Official Information Section uncomment when 3rd wipe progresses*/}
-            <section className="military-box p-6 rounded-sm">
-                <div className="flex items-start gap-3 mb-4">
-                    <Megaphone className="text-blue-400 mt-1" size={24}/>
-                    <h2 className="text-2xl font-bold text-tan-100">Official Wipe Announcements</h2>
-                </div>
+  const today = toUtcIsoCalendarDate(new Date());
+  const newestFirst = [...WIPE_PERIODS].reverse();
 
-                <div className="space-y-4 text-tan-200">
-                    <p className="text-lg">
-                        The developers, <strong>Caveman Studios</strong>, are the only reliable source for wipe
-                        information.
-                        They always announce the official wipe date several weeks in advance to give players time to
-                        prepare.
-                    </p>
-
-                    <div className="bg-blue-900/20 border-l-4 border-blue-600 p-4">
-                        <div className="flex items-start gap-3">
-                            <Info className="text-blue-400 mt-1" size={20}/>
-                            <div>
-                                <p className="text-blue-200">
-                                    <strong>Rule of thumb:</strong> If you haven&#39;t seen an announcement on the
-                                    official ExfilZone Discord or <a
-                                    href="https://x.com/ContractorsBR" target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-blue-400 hover:text-blue-300 transition-colors"
-                                >
-                                    Twitter
-                                </a>,
-                                    any wipe date you hear is just a rumor.
-                                </p>
-                                <a
-                                    href="https://discord.gg/KyPzc7GRfe"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-1 mt-2 text-sm text-blue-400 hover:text-blue-300 transition-colors"
-                                >
-                                    Join the Official Discord <ExternalLink size={14}/>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <p>
-                        Announcements are typically made through their official channels to ensure everyone gets the
-                        same information at the same time.
-                        Avoid trusting second-hand information or unverified sources.
-                    </p>
-                </div>
-            </section>
-
-            {/* Wipe Watch Section - swap for the announcement block once Caveman Studios confirm a date */}
-            <section className="military-box p-6 rounded-sm border-2 border-yellow-600 bg-yellow-900/10">
-                <div className="flex items-start gap-3 mb-4">
-                    <Radar className="text-yellow-400 mt-1 animate-pulse" size={24}/>
-                    <h2 className="text-2xl font-bold text-yellow-400">Wipe Watch: The 6th Wipe Is Approaching</h2>
-                </div>
-
-                <div className="space-y-4 text-tan-200">
-                    <div className="bg-yellow-900/20 border-l-4 border-yellow-500 p-4">
-                        <p className="text-xl font-bold text-yellow-300 mb-2">
-                            Estimated window: late September 2026
-                        </p>
-                        <p className="text-tan-200">
-                            <strong>There is no official date yet.</strong> Everything below is our own estimate based
-                            on how the previous four wipes played out. Treat it as a signal to start wrapping up your
-                            progression, not as a confirmed date.
-                        </p>
-                    </div>
-
-                    <div className="space-y-3">
-                        <h3 className="text-lg font-semibold text-olive-400">Signal #1: A Fresh Dev Peek Dropped</h3>
-                        <p>
-                            Caveman Studios publish a <strong className="text-tan-100">Dev Peek</strong> showing off the
-                            next season&#39;s content before every wipe. A new one landed on{' '}
-                            <strong className="text-tan-100">August 15th, 2026</strong> &mdash; and three of the four
-                            previous Dev Peeks were followed by a wipe within 2&ndash;6 weeks.
-                        </p>
-
-                        <div className="overflow-x-auto">
-                            <table className="w-full text-sm border border-military-600">
-                                <thead>
-                                <tr className="bg-military-800 text-tan-300">
-                                    <th className="text-left p-3 font-semibold">Dev Peek</th>
-                                    <th className="text-left p-3 font-semibold">Wipe That Followed</th>
-                                    <th className="text-left p-3 font-semibold">Lead Time</th>
-                                </tr>
-                                </thead>
-                                <tbody className="text-tan-200">
-                                <tr className="border-t border-military-600">
-                                    <td className="p-3">March 21st, 2025</td>
-                                    <td className="p-3">April 24th, 2025</td>
-                                    <td className="p-3">34 days</td>
-                                </tr>
-                                <tr className="border-t border-military-600">
-                                    <td className="p-3">December 6th, 2025</td>
-                                    <td className="p-3">December 22nd, 2025</td>
-                                    <td className="p-3">16 days</td>
-                                </tr>
-                                <tr className="border-t border-military-600">
-                                    <td className="p-3">March 11th, 2026</td>
-                                    <td className="p-3">April 23rd, 2026</td>
-                                    <td className="p-3">43 days</td>
-                                </tr>
-                                <tr className="border-t border-military-600 bg-yellow-900/20">
-                                    <td className="p-3 font-semibold text-yellow-200">August 15th, 2026</td>
-                                    <td className="p-3 font-semibold text-yellow-200">Aug 31st &ndash; Sep 27th, 2026
-                                        (estimate)
-                                    </td>
-                                    <td className="p-3 font-semibold text-yellow-200">16&ndash;43 days</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <p className="text-sm text-tan-300">
-                            The June 2025 Dev Peek is the one that breaks the pattern: it arrived only 47 days into
-                            Season 2 and the wipe was still 106 days away. If August 2026 turns out to be that kind of
-                            early teaser rather than a pre-wipe reveal, the wipe could slip toward the end of the year
-                            instead.
-                        </p>
-                    </div>
-
-                    <div className="space-y-3">
-                        <h3 className="text-lg font-semibold text-olive-400">Signal #2: Season 5 Is Getting Long</h3>
-                        <p>
-                            Season 5 started on April 23rd, 2026. Past seasons have run between 88 and 153 days, with an
-                            average of roughly 125. That average lands in late August 2026, and the longest season on
-                            record would still put the wipe before the end of September &mdash; the same window the Dev
-                            Peek points at.
-                        </p>
-                    </div>
-
-                    <div className="bg-blue-900/20 border border-blue-700/50 rounded-sm p-4">
-                        <div className="flex items-start gap-3">
-                            <CalendarClock className="text-blue-400 mt-1" size={20}/>
-                            <div>
-                                <p className="text-blue-200">
-                                    <strong>Next milestone to watch:</strong> the pre-wipe event announcement. The last
-                                    two pre-wipe events were announced about 3&ndash;4 weeks ahead of the wipe itself,
-                                    so once you see one, you know almost exactly how much time is left.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="space-y-3">
-                        <h3 className="text-lg font-semibold text-olive-400">How to Prepare</h3>
-                        <ul className="space-y-2 ml-4">
-                            <li className="flex items-start gap-2">
-                                <span className="text-yellow-400 mt-1">•</span>
-                                <span className="text-tan-300">
-                                    Finish the tasks and hideout upgrades you are close to &mdash; everything resets.
-                                </span>
-                            </li>
-                            <li className="flex items-start gap-2">
-                                <span className="text-yellow-400 mt-1">•</span>
-                                <span className="text-tan-300">
-                                    Spend your stash. Hoarded money and high-tier gear are worth nothing after the wipe.
-                                </span>
-                            </li>
-                            <li className="flex items-start gap-2">
-                                <span className="text-yellow-400 mt-1">•</span>
-                                <span className="text-tan-300">
-                                    Use the remaining weeks to run the loadouts you have been saving &quot;for
-                                    later&quot;.
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div className="flex gap-4 mt-4">
-                        <a
-                            href="https://discord.com/invite/contractorsshowdown"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-sm text-white transition-colors"
-                        >
-                            Join Discord for Updates <ExternalLink size={16}/>
-                        </a>
-                        <a
-                            href="https://x.com/contractorsbr"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-4 py-2 bg-military-700 hover:bg-military-600 rounded-sm text-tan-200 transition-colors border border-military-500"
-                        >
-                            Follow on X <ExternalLink size={16}/>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            {/* Wipe History Section */}
-            <section className="military-box p-6 rounded-sm">
-                <div className="flex items-start gap-3 mb-4">
-                    <History className="text-olive-400 mt-1" size={24}/>
-                    <h2 className="text-2xl font-bold text-tan-100">Wipe History</h2>
-                </div>
-
-                <div className="space-y-6 text-tan-200">
-                    {/* Season 5 */}
-                    <div className="bg-military-800 border border-yellow-700/60 rounded-sm p-4">
-                        <h3 className="font-semibold text-olive-400 mb-3 text-lg">Season 5: PVE (Current)</h3>
-                        <div className="grid md:grid-cols-3 gap-4 text-sm mb-3">
-                            <div className="bg-military-900 p-3 rounded-sm">
-                                <p className="text-xs text-tan-400">Start Date</p>
-                                <p className="font-semibold text-tan-200">April 23rd, 2026</p>
-                            </div>
-                            <div className="bg-military-900 p-3 rounded-sm">
-                                <p className="text-xs text-tan-400">End Date</p>
-                                <p className="font-semibold text-yellow-300">Estimated late Aug. &ndash; Sep. 2026</p>
-                            </div>
-                            <div className="bg-military-900 p-3 rounded-sm">
-                                <WipeDurationTracker startDate="2026-04-23"/>
-                            </div>
-                        </div>
-                        <div>
-                            <p className="text-sm text-tan-300 font-medium">Major Additions:</p>
-                            <ul className="list-disc list-inside ml-4 text-sm text-tan-400 mt-2">
-                                <li>PVE mode</li>
-                                <li>Dog tag system</li>
-                                <li>New helmets and armors</li>
-                                <li>Bots revamp</li>
-                            </ul>
-                        </div>
-                    </div>
-                    {/* Season 4 */}
-                    <div className="bg-military-800 border border-military-600 rounded-sm p-4">
-                        <h3 className="font-semibold text-olive-400 mb-3 text-lg">Season 4: Placeholder</h3>
-                        <div className="grid md:grid-cols-3 gap-4 text-sm mb-3">
-                            <div className="bg-military-900 p-3 rounded-sm">
-                                <p className="text-xs text-tan-400">Start Date</p>
-                                <p className="font-semibold text-tan-200">Dec. 22nd, 2025</p>
-                            </div>
-                            <div className="bg-military-900 p-3 rounded-sm">
-                                <p className="text-xs text-tan-400">End Date</p>
-                                <p className="font-semibold text-tan-200">April 23rd, 2026</p>
-                            </div>
-                            <div className="bg-military-900 p-3 rounded-sm">
-                                <WipeDurationTracker startDate="2025-12-22" endDate="2026-04-23"/>
-                            </div>
-                        </div>
-                        <div>
-                            <p className="text-sm text-tan-300 font-medium">Major Additions:</p>
-                            <ul className="list-disc list-inside ml-4 text-sm text-tan-400 mt-2">
-                                <li>Dam rework</li>
-                                <li>SVD VSS</li>
-                                <li>New Ammo</li>
-                                <li>QoL improvements</li>
-                            </ul>
-                        </div>
-                    </div>
-                    {/* Season 3 */}
-                    <div className="bg-military-800 border border-military-600 rounded-sm p-4">
-                        <h3 className="font-semibold text-olive-400 mb-3 text-lg">Season 3: Gunsmith</h3>
-                        <div className="grid md:grid-cols-3 gap-4 text-sm mb-3">
-                            <div className="bg-military-900 p-3 rounded-sm">
-                                <p className="text-xs text-tan-400">Start Date</p>
-                                <p className="font-semibold text-tan-200">September 25th, 2025</p>
-                            </div>
-                            <div className="bg-military-900 p-3 rounded-sm">
-                                <p className="text-xs text-tan-400">End Date</p>
-                                <p className="font-semibold text-tan-200">Dec. 22nd, 2025</p>
-                            </div>
-                            <div className="bg-military-900 p-3 rounded-sm">
-                                <WipeDurationTracker startDate="2025-09-25" endDate="2025-12-22"/>
-                            </div>
-                        </div>
-                        <div>
-                            <p className="text-sm text-tan-300 font-medium">Major Additions:</p>
-                            <ul className="list-disc list-inside ml-4 text-sm text-tan-400 mt-2">
-                                <li>UE5</li>
-                                <li>Gunsmith system</li>
-                                <li>Smugglers Hideout map</li>
-                                <li>Revised hideout</li>
-                            </ul>
-                        </div>
-                    </div>
-                    {/* Season 2 */}
-                    <div className="bg-military-800 border border-military-600 rounded-sm p-4">
-                        <h3 className="font-semibold text-olive-400 mb-3 text-lg">Season 2: The Resort</h3>
-                        <div className="grid md:grid-cols-3 gap-4 text-sm mb-3">
-                            <div className="bg-military-900 p-3 rounded-sm">
-                                <p className="text-xs text-tan-400">Start Date</p>
-                                <p className="font-semibold text-tan-200">April 24th, 2025</p>
-                            </div>
-                            <div className="bg-military-900 p-3 rounded-sm">
-                                <p className="text-xs text-tan-400">End Date</p>
-                                <p className="font-semibold text-tan-200">September 25th, 2025</p>
-                            </div>
-                            <div className="bg-military-900 p-3 rounded-sm">
-                                <WipeDurationTracker startDate="2025-04-25" endDate="2025-09-25"/>
-                            </div>
-                        </div>
-                        <div>
-                            <p className="text-sm text-tan-300 font-medium">Major Additions:</p>
-                            <ul className="list-disc list-inside ml-4 text-sm text-tan-400 mt-2">
-                                <li>Revised hideout</li>
-                                <li>Expanded medical system (3 levels of bandages, pills, and suture kits)</li>
-                                <li>New G3-based weapons</li>
-                                <li>Secure containers</li>
-                                <li>The Resort map</li>
-                            </ul>
-                        </div>
-                    </div>
-                    {/* Season 1 */}
-                    <div className="bg-military-800 border border-military-600 rounded-sm p-4">
-                        <h3 className="font-semibold text-olive-400 mb-3 text-lg">Season 1: Early Access</h3>
-                        <div className="grid md:grid-cols-3 gap-4 text-sm mb-3">
-                            <div className="bg-military-900 p-3 rounded-sm">
-                                <p className="text-xs text-tan-400">Start Date</p>
-                                <p className="font-semibold text-tan-200">December 9th, 2024</p>
-                            </div>
-                            <div className="bg-military-900 p-3 rounded-sm">
-                                <p className="text-xs text-tan-400">End Date</p>
-                                <p className="font-semibold text-tan-200">April 24th, 2025</p>
-                            </div>
-                            <div className="bg-military-900 p-3 rounded-sm">
-                                <div className="bg-military-900 p-3 rounded-sm">
-                                    <WipeDurationTracker startDate="2024-12-09" endDate={"2025-04-24"}/>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <p className="text-sm text-tan-300 font-medium">Major Additions:</p>
-                            <ul className="list-disc list-inside ml-4 text-sm text-tan-400 mt-2">
-                                <li>Initial early access release</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* What is a Wipe Section */}
-            <section className="military-box p-6 rounded-sm">
-                <div className="flex items-start gap-3 mb-4">
-                    <BookOpen className="text-green-400 mt-1" size={24}/>
-                    <h2 className="text-2xl font-bold text-tan-100">What is a Wipe?</h2>
-                </div>
-
-                <div className="space-y-4 text-tan-200">
-                    <p className="text-lg">
-                        In extraction shooters like ExfilZone, a &#34;wipe&#34; is a complete reset of all player
-                        progression. This includes your character level, skills, inventory, and faction reputation.
-                    </p>
-
-                    <div className="bg-green-900/20 border-l-4 border-green-600 p-4">
-                        <p className="mb-2"><strong>Why are wipes necessary?</strong></p>
-                        <ul className="space-y-1 list-disc list-inside ml-4">
-                            <li><strong>Fair Play:</strong> Wipes create a level playing field, allowing new players to
-                                compete with veterans.
-                            </li>
-                            <li><strong>Economic Reset:</strong> They reset the in-game economy, preventing inflation
-                                and making all items valuable again.
-                            </li>
-                            <li><strong>Fresh Experience:</strong> Wipes provide a fresh start, encouraging players to
-                                try new strategies and content.
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div className="bg-blue-900/20 border border-blue-700/50 rounded-sm p-4">
-                        <div className="flex items-start gap-3">
-                            <Info className="text-blue-400 mt-1" size={20}/>
-                            <div>
-                                <p className="text-blue-200">
-                                    <strong>DLC and Bonuses:</strong> Any bonuses from DLCs or special editions of the
-                                    game are reapplied to your account after each wipe. You will not lose your purchased
-                                    benefits.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+  return (
+    <article className="mx-auto max-w-4xl space-y-12 text-ink">
+      <section
+        aria-labelledby="wipe-status-heading"
+        className="clip-shoulder border border-warn/50 bg-steel-2 p-5 sm:p-7"
+      >
+        <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+          <Badge className="rounded-none border-warn/50 bg-warn/10 text-warn" variant="outline">
+            <Radio aria-hidden="true" />
+            Unconfirmed
+          </Badge>
+          <span className="font-mono text-xs uppercase tracking-[0.14em] text-ink-muted">
+            Checked {formatDate(OFFICIAL_STATUS_CHECKED_AT)}
+          </span>
         </div>
-    );
+
+        <h2
+          className="font-display text-3xl uppercase tracking-[0.04em] text-ink sm:text-4xl"
+          id="wipe-status-heading"
+        >
+          No official fifth-wipe date
+        </h2>
+        <p className="mt-4 max-w-3xl text-base leading-relaxed text-ink-muted">
+          Caveman Studio has not published a fifth-wipe date in the publicly accessible official
+          announcements we could verify. We do not convert past timing into an estimate: announced
+          targets have changed before, and a long-running period is not evidence of an imminent
+          wipe.
+        </p>
+
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          <Button asChild className="min-h-12 rounded-none bg-ember text-ink-inverse hover:bg-ember-bright">
+            <a href={OFFICIAL_DISCORD_URL} rel="noreferrer" target="_blank">
+              Official Discord
+              <ExternalLink aria-hidden="true" />
+            </a>
+          </Button>
+          <Button asChild className="min-h-12 rounded-none" variant="outline">
+            <a href={OFFICIAL_STEAM_URL} rel="noreferrer" target="_blank">
+              Official Steam news
+              <ExternalLink aria-hidden="true" />
+            </a>
+          </Button>
+        </div>
+      </section>
+
+      <section aria-labelledby="wipe-scope-heading" className="space-y-5">
+        <div className="flex items-center gap-3">
+          <Info aria-hidden="true" className="size-5 text-info" />
+          <h2
+            className="font-display text-2xl uppercase tracking-[0.06em] text-ink"
+            id="wipe-scope-heading"
+          >
+            PvP and PvE do not share wipe scope
+          </h2>
+        </div>
+        <Card className="rounded-none border-info/40 bg-info/5">
+          <CardContent className="space-y-3 pt-6 text-sm leading-relaxed text-ink-muted">
+            <p>
+              The fourth-wipe announcement states that PvE progression is separate from PvP and is
+              unaffected by wipes. That makes a PvP wipe announcement inapplicable to PvE
+              progression unless Caveman Studio explicitly says otherwise.
+            </p>
+            <p>
+              The public announcement does not provide a field-by-field list of every affected PvP
+              value. Treat more specific claims about retained or cleared inventory, Tasks, Vendor
+              Reputation, and Hideout progress as unconfirmed until an official announcement names
+              them.
+            </p>
+          </CardContent>
+        </Card>
+      </section>
+
+      <section aria-labelledby="wipe-history-heading" className="space-y-6">
+        <div className="space-y-2">
+          <div className="flex items-center gap-3">
+            <History aria-hidden="true" className="size-5 text-info" />
+            <h2
+              className="font-display text-2xl uppercase tracking-[0.06em] text-ink"
+              id="wipe-history-heading"
+            >
+              Official wipe history
+            </h2>
+          </div>
+          <p className="max-w-3xl text-sm leading-relaxed text-ink-muted">
+            Four numbered wipes are documented in official announcements. The public alpha launch
+            is included as the start of the first tracked progression period, not counted as a
+            numbered wipe.
+          </p>
+        </div>
+
+        <div className="grid gap-5">
+          {newestFirst.map((period) => (
+            <WipeHistoryCard key={period.id} period={period} today={today} />
+          ))}
+        </div>
+
+        <div className="flex gap-3 border-l-2 border-info bg-steel-2 p-4 text-sm leading-relaxed text-ink-muted">
+          <CalendarClock aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-info" />
+          <p>
+            The longest completed wipe-to-wipe period was {LONGEST_COMPLETED_WIPE_DAYS} days. The
+            progress bars compare elapsed time with that historical maximum; they are not countdowns
+            or predictions.
+          </p>
+        </div>
+      </section>
+
+      <section aria-labelledby="date-policy-heading" className="space-y-3 border-t border-line pt-8">
+        <h2
+          className="font-display text-xl uppercase tracking-[0.06em] text-ink"
+          id="date-policy-heading"
+        >
+          How dates are reported
+        </h2>
+        <p className="text-sm leading-relaxed text-ink-muted">
+          This guide records the date each wipe actually shipped. Announced targets stay in the
+          source history when relevant, but they do not replace the release date: the second wipe
+          moved from its initial September 4 target to September 25, and the fourth moved forward
+          from April 23 to April 21.
+        </p>
+      </section>
+    </article>
+  );
 }

@@ -1104,7 +1104,7 @@
               "count": 3
             },
             {
-              "itemId": "taskitem_gold_lion",
+              "itemId": "misc_b_electricdrill",
               "sellId": "valuable.tools.electricdrill",
               "count": 2
             }
@@ -5874,7 +5874,7 @@
               "count": 1
             },
             {
-              "itemId": "taskitem_gold_lion",
+              "itemId": "misc_b_electricdrill",
               "sellId": "valuable.tools.electricdrill",
               "count": 1
             }

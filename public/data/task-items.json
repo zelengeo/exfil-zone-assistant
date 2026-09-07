@@ -148,14 +148,14 @@
       "weight": 0.2,
       "rarity": "Common",
       "taskIds": [],
-      "basePrice": 49348,
+      "basePrice": 1000,
       "sellPrices": [
-        49348,
-        49348,
-        49348,
-        49348,
-        49348,
-        49348
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
       ],
       "buyOffers": []
     },
@@ -352,6 +352,62 @@
     "tips": ""
   },
   {
+    "id": "taskitem_giftbox",
+    "name": "Giftbox(Ember)",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Activity/Christmas",
+    "images": {
+      "icon": "/images/items/task/taskitem_giftbox.webp",
+      "thumbnail": "/images/items/task/taskitem_giftbox.webp",
+      "fullsize": "/images/items/task/taskitem_giftbox.webp"
+    },
+    "stats": {
+      "weight": 1.3,
+      "rarity": "Epic",
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        900,
+        700,
+        700,
+        700
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_giftbox_deliver",
+    "name": "Giftbox(Snowy)",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "Activity/Christmas",
+    "images": {
+      "icon": "/images/items/task/taskitem_giftbox_deliver.webp",
+      "thumbnail": "/images/items/task/taskitem_giftbox_deliver.webp",
+      "fullsize": "/images/items/task/taskitem_giftbox_deliver.webp"
+    },
+    "stats": {
+      "weight": 1.3,
+      "rarity": "Epic",
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        900,
+        700,
+        700,
+        700
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
+  },
+  {
     "id": "taskitem_gold_lion",
     "name": "Golden Lion",
     "description": "",
@@ -366,14 +422,14 @@
       "weight": 0.2,
       "rarity": "Common",
       "taskIds": [],
-      "basePrice": 49348,
+      "basePrice": 1000,
       "sellPrices": [
-        49348,
-        49348,
-        49348,
-        49348,
-        49348,
-        49348
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
       ],
       "buyOffers": []
     },
@@ -1924,14 +1980,14 @@
       "weight": 0.2,
       "rarity": "Common",
       "taskIds": [],
-      "basePrice": 49348,
+      "basePrice": 1000,
       "sellPrices": [
-        49348,
-        49348,
-        49348,
-        49348,
-        49348,
-        49348
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
       ],
       "buyOffers": []
     },
@@ -1988,6 +2044,312 @@
           "exchange": []
         }
       ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_virussample_dt83",
+    "name": "DT83 Virus Sample",
+    "description": "A Virus Sample found in the Smuggling Tunnel Lab area.\r\nExhibits extreme lethality; infected individuals regress to dangerous, reflex‑driven behavior.",
+    "category": "task-items",
+    "subcategory": "Activity/Halloween",
+    "images": {
+      "icon": "/images/items/task/taskitem_virussample_dt83.webp",
+      "thumbnail": "/images/items/task/taskitem_virussample_dt83.webp",
+      "fullsize": "/images/items/task/taskitem_virussample_dt83.webp"
+    },
+    "stats": {
+      "weight": 0.25,
+      "rarity": "Epic",
+      "taskIds": [],
+      "basePrice": 1200,
+      "sellPrices": [
+        1200,
+        1200,
+        1080,
+        840,
+        840,
+        840
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_virussample_dt83_lv2",
+    "name": "DT83 Virus Sample (Concentrated)",
+    "description": "A Virus Sample found in the Smuggling Tunnel Lab area.\r\nExhibits extreme lethality; infected individuals regress to dangerous, reflex‑driven behavior.",
+    "category": "task-items",
+    "subcategory": "Activity/Halloween",
+    "images": {
+      "icon": "/images/items/task/taskitem_virussample_dt83_lv2.webp",
+      "thumbnail": "/images/items/task/taskitem_virussample_dt83_lv2.webp",
+      "fullsize": "/images/items/task/taskitem_virussample_dt83_lv2.webp"
+    },
+    "stats": {
+      "weight": 0.25,
+      "rarity": "Epic",
+      "taskIds": [],
+      "basePrice": 2400,
+      "sellPrices": [
+        2400,
+        2400,
+        2160,
+        1680,
+        1680,
+        1680
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_virussample_dt83_lv3",
+    "name": "DT83 Virus Sample (Pure)",
+    "description": "A Virus Sample found in the Smuggling Tunnel Lab area.\r\nExhibits extreme lethality; infected individuals regress to dangerous, reflex‑driven behavior.",
+    "category": "task-items",
+    "subcategory": "Activity/Halloween",
+    "images": {
+      "icon": "/images/items/task/taskitem_virussample_dt83_lv3.webp",
+      "thumbnail": "/images/items/task/taskitem_virussample_dt83_lv3.webp",
+      "fullsize": "/images/items/task/taskitem_virussample_dt83_lv3.webp"
+    },
+    "stats": {
+      "weight": 0.25,
+      "rarity": "Epic",
+      "taskIds": [],
+      "basePrice": 3600,
+      "sellPrices": [
+        3600,
+        3600,
+        3240,
+        2520,
+        2520,
+        2520
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_warfare_dogtag",
+    "name": "ID tag",
+    "description": "",
+    "category": "task-items",
+    "subcategory": "DogTag",
+    "images": {
+      "icon": "/images/items/task/taskitem_warfare_dogtag.webp",
+      "thumbnail": "/images/items/task/taskitem_warfare_dogtag.webp",
+      "fullsize": "/images/items/task/taskitem_warfare_dogtag.webp"
+    },
+    "stats": {
+      "weight": null,
+      "rarity": "Common",
+      "taskIds": [],
+      "basePrice": 3600,
+      "sellPrices": [
+        3600,
+        3600,
+        3600,
+        3600,
+        3600,
+        3600
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_warfaredlcmica",
+    "name": "M.I.C.A.",
+    "description": "Multifunctional Integrated Combat Assistant",
+    "category": "task-items",
+    "subcategory": "MICA/DLCMica",
+    "images": {
+      "icon": "/images/items/task/taskitem_warfaredlcmica.webp",
+      "thumbnail": "/images/items/task/taskitem_warfaredlcmica.webp",
+      "fullsize": "/images/items/task/taskitem_warfaredlcmica.webp"
+    },
+    "stats": {
+      "weight": null,
+      "rarity": "Common",
+      "taskIds": [],
+      "basePrice": 1000,
+      "sellPrices": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        700
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.valuable.task.marcus.mica",
+          "level": 1,
+          "price": 1000,
+          "bundle": 1,
+          "bundlePrice": 1000,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            {
+              "gameId": "task.doc.dlc.01",
+              "id": "ntg_63",
+              "name": "Messenger",
+              "corpId": "ntg"
+            }
+          ],
+          "requiresDlc": [
+            "dlc.s5.brokencontact"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_warfaresignalgun",
+    "name": "Flare Gun - ARK",
+    "description": "While at the launch site, press the Trigger toward the sky to call for supplies. Different colors indicate whether you can currently fire.",
+    "category": "task-items",
+    "subcategory": "Activity/SignalGun",
+    "images": {
+      "icon": "/images/items/task/taskitem_warfaresignalgun.webp",
+      "thumbnail": "/images/items/task/taskitem_warfaresignalgun.webp",
+      "fullsize": "/images/items/task/taskitem_warfaresignalgun.webp"
+    },
+    "stats": {
+      "weight": 1,
+      "rarity": "Common",
+      "taskIds": [],
+      "basePrice": 595812,
+      "sellPrices": [
+        595812,
+        595812,
+        536231,
+        417069,
+        417069,
+        417069
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.valuable.task.flaregun_ark",
+          "level": 1,
+          "price": 595812,
+          "bundle": 1,
+          "bundlePrice": 595812,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.valuable.task.flaregun_ark-2",
+          "level": 1,
+          "price": 595812,
+          "bundle": 1,
+          "bundlePrice": 595812,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "itemId": "misc_b_marinestoragebattery",
+              "sellId": "valuable.batteries.marinestoragebattery",
+              "count": 1
+            },
+            {
+              "itemId": "misc_b_gunoil",
+              "sellId": "valuable.combustible.gunoil",
+              "count": 3
+            },
+            {
+              "itemId": "misc_b_transformer",
+              "sellId": "valuable.electric.transformer",
+              "count": 2
+            }
+          ]
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_warfaresignalgun_doctor",
+    "name": "",
+    "description": "While at the launch site, press the Trigger toward the sky to call for supplies. Different colors indicate whether you can currently fire.",
+    "category": "task-items",
+    "subcategory": "Activity/SignalGun",
+    "images": {
+      "icon": "/images/items/task/taskitem_warfaresignalgun_doctor.webp",
+      "thumbnail": "/images/items/task/taskitem_warfaresignalgun_doctor.webp",
+      "fullsize": "/images/items/task/taskitem_warfaresignalgun_doctor.webp"
+    },
+    "stats": {
+      "weight": 1,
+      "rarity": "Common",
+      "taskIds": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_warfaresignalgun_gear",
+    "name": "",
+    "description": "While at the launch site, press the Trigger toward the sky to call for supplies. Different colors indicate whether you can currently fire.",
+    "category": "task-items",
+    "subcategory": "Activity/SignalGun",
+    "images": {
+      "icon": "/images/items/task/taskitem_warfaresignalgun_gear.webp",
+      "thumbnail": "/images/items/task/taskitem_warfaresignalgun_gear.webp",
+      "fullsize": "/images/items/task/taskitem_warfaresignalgun_gear.webp"
+    },
+    "stats": {
+      "weight": 1,
+      "rarity": "Common",
+      "taskIds": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_warfaresignalgun_mall",
+    "name": "",
+    "description": "While at the launch site, press the Trigger toward the sky to call for supplies. Different colors indicate whether you can currently fire.",
+    "category": "task-items",
+    "subcategory": "Activity/SignalGun",
+    "images": {
+      "icon": "/images/items/task/taskitem_warfaresignalgun_mall.webp",
+      "thumbnail": "/images/items/task/taskitem_warfaresignalgun_mall.webp",
+      "fullsize": "/images/items/task/taskitem_warfaresignalgun_mall.webp"
+    },
+    "stats": {
+      "weight": 1,
+      "rarity": "Common",
+      "taskIds": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "taskitem_warfaresignalgun_wolf",
+    "name": "",
+    "description": "While at the launch site, press the Trigger toward the sky to call for supplies. Different colors indicate whether you can currently fire.",
+    "category": "task-items",
+    "subcategory": "Activity/SignalGun",
+    "images": {
+      "icon": "/images/items/task/taskitem_warfaresignalgun_wolf.webp",
+      "thumbnail": "/images/items/task/taskitem_warfaresignalgun_wolf.webp",
+      "fullsize": "/images/items/task/taskitem_warfaresignalgun_wolf.webp"
+    },
+    "stats": {
+      "weight": 1,
+      "rarity": "Common",
+      "taskIds": []
     },
     "tips": ""
   },

@@ -3,16 +3,11 @@ import JsonLd from '@/components/JsonLd';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import dynamic from 'next/dynamic';
-import { getGuideBySlug, getAllGuideSlugs, getRelatedGuides, guideTags } from '@/config/guides';
+import { formatReadTime, getGuideBySlug, getAllGuideSlugs, getRelatedGuides, guideTags } from '@/config/guides';
 import Layout from '@/components/layout/Layout';
 import Link from 'next/link';
 import { ChevronLeft, Clock, User, Calendar, Tag } from 'lucide-react';
 
-// For Markdown content rendering
-// import { remark } from 'remark';
-// import html from 'remark-html';
-// import fs from 'fs/promises';
-// import path from 'path';
 import React from "react";
 import {GuideTag} from "@/types/guides";
 
@@ -53,27 +48,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return guideMetadata(guide);
 }
 
-// Helper function to load markdown content
-// async function getMarkdownContent(slug: string): Promise<string | null> {
-//     try {
-//         const filePath = path.join(process.cwd(), 'content', 'guides', `${slug}.md`);
-//         const fileContent = await fs.readFile(filePath, 'utf8');
-//
-//         // Remove frontmatter if present (between ---)
-//         const contentWithoutFrontmatter = fileContent.replace(/^---[\s\S]*?---\n/, '');
-//
-//         // Process markdown to HTML
-//         const processedContent = await remark()
-//             .use(html)
-//             .process(contentWithoutFrontmatter);
-//
-//         return processedContent.toString();
-//     } catch (error) {
-//         console.error(`Error loading markdown for ${slug}:`, error);
-//         return null;
-//     }
-// }
-
 // Helper to get difficulty styling
 const getDifficultyStyle = (difficulty?: string) => {
     switch (difficulty) {
@@ -102,35 +76,6 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
     }
 
 
-    // if (guide.contentType === 'markdown') {
-    //     // Load markdown content
-    //     const markdownContent = await getMarkdownContent(guide.slug);
-    //     if (!markdownContent) {
-    //         notFound();
-    //     }
-    //
-    //     content = (
-    //         <div
-    //             className="prose prose-invert max-w-none
-    //       prose-headings:text-tan-100 prose-headings:font-bold
-    //       prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4
-    //       prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
-    //       prose-p:text-tan-200 prose-p:leading-relaxed prose-p:mb-4
-    //       prose-a:text-olive-400 prose-a:no-underline hover:prose-a:text-olive-300
-    //       prose-strong:text-tan-100 prose-strong:font-semibold
-    //       prose-ul:text-tan-200 prose-ul:my-4
-    //       prose-ol:text-tan-200 prose-ol:my-4
-    //       prose-li:my-1
-    //       prose-blockquote:border-l-4 prose-blockquote:border-olive-600
-    //       prose-blockquote:bg-military-800/50 prose-blockquote:py-2 prose-blockquote:px-4
-    //       prose-blockquote:text-tan-300 prose-blockquote:not-italic
-    //       prose-code:text-olive-400 prose-code:bg-military-800
-    //       prose-code:px-1 prose-code:py-0.5 prose-code:rounded
-    //       prose-pre:bg-military-900 prose-pre:border prose-pre:border-military-700"
-    //             dangerouslySetInnerHTML={{ __html: markdownContent }}
-    //         />
-    //     );
-    // } else {}
     const GuideComponent = guideComponents[guide.slug];
     const content = <GuideComponent />;
 
@@ -148,7 +93,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
             <div className="container mx-auto px-4 py-8 max-w-4xl">
                 {/* Breadcrumb */}
                 <div className="flex items-center gap-2 mb-6 text-tan-300">
-                    <Link href="/guides" className="flex items-center gap-1 hover:text-olive-400 transition-colors">
+                    <Link href="/guides" className="flex min-h-11 items-center gap-1 hover:text-olive-400 transition-colors">
                         <ChevronLeft size={16}/>
                         <span>Guides</span>
                     </Link>
@@ -175,12 +120,10 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
 
                     {/* Meta information */}
                     <div className="flex flex-wrap items-center gap-4 text-sm text-tan-400">
-                        {guide.readTime && (
-                            <div className="flex items-center gap-1">
-                                <Clock size={16} />
-                                <span>{guide.readTime}</span>
-                            </div>
-                        )}
+                        <div className="flex items-center gap-1">
+                            <Clock size={16} />
+                            <span>{formatReadTime(guide.readTimeMinutes)}</span>
+                        </div>
                         {guide.author && (
                             <div className="flex items-center gap-1">
                                 <User size={16} />
@@ -201,7 +144,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
                                 <Link
                                     key={tagId}
                                     href={`/guides?tag=${tagId}`}
-                                    className="inline-flex items-center gap-1 px-3 py-1 bg-military-800
+                                    className="inline-flex min-h-11 items-center gap-1 px-3 py-1 bg-military-800
                            border border-military-600 rounded-sm text-sm text-tan-300
                            hover:border-olive-700 hover:text-olive-400 transition-all"
                                 >
@@ -240,9 +183,9 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
                     <span className={`px-2 py-1 rounded-sm border ${getDifficultyStyle(relatedGuide.difficulty)}`}>
                       {relatedGuide.difficulty || 'All Levels'}
                     </span>
-                                        {relatedGuide.readTime && (
-                                            <span className="text-tan-400">{relatedGuide.readTime}</span>
-                                        )}
+                                        <span className="text-tan-400">
+                                            {formatReadTime(relatedGuide.readTimeMinutes)}
+                                        </span>
                                     </div>
                                 </Link>
                             ))}
@@ -254,7 +197,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
                 <div className="mt-8 pt-8 border-t border-military-700">
                     <Link
                         href="/guides"
-                        className="inline-flex items-center gap-2 text-olive-400 hover:text-olive-300 transition-colors"
+                        className="inline-flex min-h-11 items-center gap-2 text-olive-400 hover:text-olive-300 transition-colors"
                     >
                         <ChevronLeft size={18} />
                         Back to All Guides
