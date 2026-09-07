@@ -1,0 +1,3466 @@
+[
+  {
+    "id": "paint-empty",
+    "name": "Paint Stripper",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-empty.webp",
+      "thumbnail": "/images/items/paints/paint-empty.webp",
+      "fullsize": "/images/items/paints/paint-empty.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.empty",
+      "finish": "empty",
+      "colors": [],
+      "metallic": null,
+      "roughness": null,
+      "charges": 10,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.empty.an",
+          "level": 1,
+          "price": 1000,
+          "bundle": 1,
+          "bundlePrice": 1000,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.color.paintcan.empty.do",
+          "level": 1,
+          "price": 1000,
+          "bundle": 1,
+          "bundlePrice": 1000,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "forge",
+          "goodsId": "gds.color.paintcan.empty.ge",
+          "level": 1,
+          "price": 1000,
+          "bundle": 1,
+          "bundlePrice": 1000,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.color.paintcan.empty.ma",
+          "level": 1,
+          "price": 1000,
+          "bundle": 1,
+          "bundlePrice": 1000,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.color.paintcan.empty.na",
+          "level": 2,
+          "price": 1000,
+          "bundle": 1,
+          "bundlePrice": 1000,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.color.paintcan.empty.wp",
+          "level": 2,
+          "price": 1000,
+          "bundle": 1,
+          "bundlePrice": 1000,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-metal-006",
+    "name": "Golden Gleam",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-metal-006.webp",
+      "thumbnail": "/images/items/paints/paint-metal-006.webp",
+      "fullsize": "/images/items/paints/paint-metal-006.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.metal.006",
+      "finish": "metal",
+      "colors": [
+        "#ffcb59",
+        "#ffcb5a"
+      ],
+      "metallic": 1,
+      "roughness": 0.25,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.metal.006",
+          "level": 1,
+          "price": 519804,
+          "bundle": 1,
+          "bundlePrice": 519804,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.pure"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-metal-008",
+    "name": "Mithril",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-metal-008.webp",
+      "thumbnail": "/images/items/paints/paint-metal-008.webp",
+      "fullsize": "/images/items/paints/paint-metal-008.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.metal.008",
+      "finish": "metal",
+      "colors": [
+        "#9e9e9e",
+        "#e7f0f2"
+      ],
+      "metallic": 1,
+      "roughness": 0.25,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.metal.008",
+          "level": 1,
+          "price": 549988,
+          "bundle": 1,
+          "bundlePrice": 549988,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.pure"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-metal-063",
+    "name": "Zeal",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-metal-063.webp",
+      "thumbnail": "/images/items/paints/paint-metal-063.webp",
+      "fullsize": "/images/items/paints/paint-metal-063.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.metal.063",
+      "finish": "metal",
+      "colors": [
+        "#8f0000",
+        "#ae0000"
+      ],
+      "metallic": 1,
+      "roughness": 0.25,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.metal.063",
+          "level": 1,
+          "price": 550142,
+          "bundle": 1,
+          "bundlePrice": 550142,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.pure"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-metal-064",
+    "name": "Turquoise",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-metal-064.webp",
+      "thumbnail": "/images/items/paints/paint-metal-064.webp",
+      "fullsize": "/images/items/paints/paint-metal-064.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.metal.064",
+      "finish": "metal",
+      "colors": [
+        "#026408",
+        "#4f8100"
+      ],
+      "metallic": 1,
+      "roughness": 0.25,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.metal.064",
+          "level": 1,
+          "price": 549781,
+          "bundle": 1,
+          "bundlePrice": 549781,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.pure"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-001",
+    "name": "Tiger Stripes",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-001.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-001.webp",
+      "fullsize": "/images/items/paints/paint-plastic-001.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.001",
+      "finish": "plastic",
+      "colors": [
+        "#bf7934",
+        "#2d2926"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.color.paintcan.plastic.001",
+          "level": 2,
+          "price": 100269,
+          "bundle": 1,
+          "bundlePrice": 100269,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-002",
+    "name": "Jungle Camo 1",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-002.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-002.webp",
+      "fullsize": "/images/items/paints/paint-plastic-002.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.002",
+      "finish": "plastic",
+      "colors": [
+        "#6d5a1b",
+        "#897a59"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.002",
+          "level": 1,
+          "price": 349812,
+          "bundle": 1,
+          "bundlePrice": 349812,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.military"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-003",
+    "name": "Marine Camo 1",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-003.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-003.webp",
+      "fullsize": "/images/items/paints/paint-plastic-003.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.003",
+      "finish": "plastic",
+      "colors": [
+        "#b3d2d4",
+        "#afbdc2"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.color.paintcan.plastic.003",
+          "level": 2,
+          "price": 99623,
+          "bundle": 1,
+          "bundlePrice": 99623,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-004",
+    "name": "Tri-Phase",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-004.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-004.webp",
+      "fullsize": "/images/items/paints/paint-plastic-004.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.004",
+      "finish": "plastic",
+      "colors": [
+        "#cea645",
+        "#454544"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.color.paintcan.plastic.004",
+          "level": 3,
+          "price": 100115,
+          "bundle": 1,
+          "bundlePrice": 100115,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-005",
+    "name": "Shattered",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-005.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-005.webp",
+      "fullsize": "/images/items/paints/paint-plastic-005.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.005",
+      "finish": "plastic",
+      "colors": [
+        "#cc8a4e",
+        "#e4e0de"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.color.paintcan.plastic.005",
+          "level": 4,
+          "price": 159515,
+          "bundle": 1,
+          "bundlePrice": 159515,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-007",
+    "name": "Pristine White",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-007.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-007.webp",
+      "fullsize": "/images/items/paints/paint-plastic-007.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.007",
+      "finish": "plastic",
+      "colors": [
+        "#ffffff",
+        "#f7fdff"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.007",
+          "level": 1,
+          "price": 500127,
+          "bundle": 1,
+          "bundlePrice": 500127,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.pure"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-009",
+    "name": "Jungle Camo 2",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-009.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-009.webp",
+      "fullsize": "/images/items/paints/paint-plastic-009.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.009",
+      "finish": "plastic",
+      "colors": [
+        "#a19477",
+        "#76705a"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.009",
+          "level": 1,
+          "price": 349942,
+          "bundle": 1,
+          "bundlePrice": 349942,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.military"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-010",
+    "name": "Undercurrent",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-010.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-010.webp",
+      "fullsize": "/images/items/paints/paint-plastic-010.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.010",
+      "finish": "plastic",
+      "colors": [
+        "#596068",
+        "#354145"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.color.paintcan.plastic.010",
+          "level": 2,
+          "price": 99515,
+          "bundle": 1,
+          "bundlePrice": 99515,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-011",
+    "name": "Mountain Camo 1",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-011.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-011.webp",
+      "fullsize": "/images/items/paints/paint-plastic-011.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.011",
+      "finish": "plastic",
+      "colors": [
+        "#5e5945",
+        "#a5a6a5"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.011",
+          "level": 1,
+          "price": 350112,
+          "bundle": 1,
+          "bundlePrice": 350112,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.military"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-012",
+    "name": "Desert Camo 1",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-012.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-012.webp",
+      "fullsize": "/images/items/paints/paint-plastic-012.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.012",
+      "finish": "plastic",
+      "colors": [
+        "#f3e6ac",
+        "#4b3421"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.012",
+          "level": 1,
+          "price": 349973,
+          "bundle": 1,
+          "bundlePrice": 349973,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.military"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-013",
+    "name": "Antiqued",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-013.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-013.webp",
+      "fullsize": "/images/items/paints/paint-plastic-013.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.013",
+      "finish": "plastic",
+      "colors": [
+        "#a09684",
+        "#76562c"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.color.paintcan.plastic.013",
+          "level": 2,
+          "price": 99546,
+          "bundle": 1,
+          "bundlePrice": 99546,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-014",
+    "name": "Breaker",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-014.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-014.webp",
+      "fullsize": "/images/items/paints/paint-plastic-014.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.014",
+      "finish": "plastic",
+      "colors": [
+        "#f9f6f2",
+        "#9bd8db"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.014",
+          "level": 1,
+          "price": 499819,
+          "bundle": 1,
+          "bundlePrice": 499819,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.fantasy"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-015",
+    "name": "Radiant",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-015.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-015.webp",
+      "fullsize": "/images/items/paints/paint-plastic-015.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.015",
+      "finish": "plastic",
+      "colors": [
+        "#80c1aa",
+        "#efa639"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.015",
+          "level": 1,
+          "price": 499765,
+          "bundle": 1,
+          "bundlePrice": 499765,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.ak"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-016",
+    "name": "Fervor",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-016.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-016.webp",
+      "fullsize": "/images/items/paints/paint-plastic-016.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.016",
+      "finish": "plastic",
+      "colors": [
+        "#730e2a",
+        "#d4512e"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.016",
+          "level": 1,
+          "price": 500058,
+          "bundle": 1,
+          "bundlePrice": 500058,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.ak"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-017",
+    "name": "Scaled",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-017.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-017.webp",
+      "fullsize": "/images/items/paints/paint-plastic-017.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.017",
+      "finish": "plastic",
+      "colors": [
+        "#56567a",
+        "#596089"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.color.paintcan.plastic.017",
+          "level": 3,
+          "price": 99685,
+          "bundle": 1,
+          "bundlePrice": 99685,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-018",
+    "name": "Current",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-018.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-018.webp",
+      "fullsize": "/images/items/paints/paint-plastic-018.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.018",
+      "finish": "plastic",
+      "colors": [
+        "#3a92c7",
+        "#5a4566"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.018",
+          "level": 1,
+          "price": 350158,
+          "bundle": 1,
+          "bundlePrice": 350158,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.military"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-019",
+    "name": "Lattice",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-019.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-019.webp",
+      "fullsize": "/images/items/paints/paint-plastic-019.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.019",
+      "finish": "plastic",
+      "colors": [
+        "#7f7c5f",
+        "#322e1e"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.color.paintcan.plastic.019",
+          "level": 4,
+          "price": 99762,
+          "bundle": 1,
+          "bundlePrice": 99762,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-020",
+    "name": "Merry",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-020.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-020.webp",
+      "fullsize": "/images/items/paints/paint-plastic-020.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.020",
+      "finish": "plastic",
+      "colors": [
+        "#ba6b5f",
+        "#faf1ef"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.color.paintcan.plastic.020",
+          "level": 2,
+          "price": 100454,
+          "bundle": 1,
+          "bundlePrice": 100454,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-021",
+    "name": "Jungle Camo 3",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-021.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-021.webp",
+      "fullsize": "/images/items/paints/paint-plastic-021.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.021",
+      "finish": "plastic",
+      "colors": [
+        "#5a6144",
+        "#364131"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.021",
+          "level": 1,
+          "price": 350165,
+          "bundle": 1,
+          "bundlePrice": 350165,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.military"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-022",
+    "name": "Ukiyo-e",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-022.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-022.webp",
+      "fullsize": "/images/items/paints/paint-plastic-022.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.022",
+      "finish": "plastic",
+      "colors": [
+        "#5d6999",
+        "#445279"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.022",
+          "level": 1,
+          "price": 499958,
+          "bundle": 1,
+          "bundlePrice": 499958,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.fantasy"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-023",
+    "name": "Reminiscence",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-023.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-023.webp",
+      "fullsize": "/images/items/paints/paint-plastic-023.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.023",
+      "finish": "plastic",
+      "colors": [
+        "#2c3032",
+        "#948e7b"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.color.paintcan.plastic.023",
+          "level": 2,
+          "price": 99577,
+          "bundle": 1,
+          "bundlePrice": 99577,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-024",
+    "name": "Smear",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-024.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-024.webp",
+      "fullsize": "/images/items/paints/paint-plastic-024.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.024",
+      "finish": "plastic",
+      "colors": [
+        "#888959",
+        "#dbcc99"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.color.paintcan.plastic.024",
+          "level": 3,
+          "price": 99700,
+          "bundle": 1,
+          "bundlePrice": 99700,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-025",
+    "name": "Crimson Depth",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-025.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-025.webp",
+      "fullsize": "/images/items/paints/paint-plastic-025.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.025",
+      "finish": "plastic",
+      "colors": [
+        "#523137",
+        "#383c44"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.025",
+          "level": 1,
+          "price": 350235,
+          "bundle": 1,
+          "bundlePrice": 350235,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.ak"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-026",
+    "name": "Stratified",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-026.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-026.webp",
+      "fullsize": "/images/items/paints/paint-plastic-026.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.026",
+      "finish": "plastic",
+      "colors": [
+        "#dc7f43",
+        "#839c59"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.color.paintcan.plastic.026",
+          "level": 4,
+          "price": 159515,
+          "bundle": 1,
+          "bundlePrice": 159515,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-027",
+    "name": "Rosy Blush",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-027.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-027.webp",
+      "fullsize": "/images/items/paints/paint-plastic-027.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.027",
+      "finish": "plastic",
+      "colors": [
+        "#8f4e45",
+        "#6f695d"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.027",
+          "level": 1,
+          "price": 349804,
+          "bundle": 1,
+          "bundlePrice": 349804,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.ak"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-028",
+    "name": "Geometric 1",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-028.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-028.webp",
+      "fullsize": "/images/items/paints/paint-plastic-028.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.028",
+      "finish": "plastic",
+      "colors": [
+        "#a0b9b7",
+        "#666773"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.color.paintcan.plastic.028",
+          "level": 1,
+          "price": 100023,
+          "bundle": 1,
+          "bundlePrice": 100023,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-029",
+    "name": "Tectonic",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-029.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-029.webp",
+      "fullsize": "/images/items/paints/paint-plastic-029.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.029",
+      "finish": "plastic",
+      "colors": [
+        "#bba579",
+        "#696456"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.color.paintcan.plastic.029",
+          "level": 2,
+          "price": 100469,
+          "bundle": 1,
+          "bundlePrice": 100469,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-030",
+    "name": "Geometric 2",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-030.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-030.webp",
+      "fullsize": "/images/items/paints/paint-plastic-030.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.030",
+      "finish": "plastic",
+      "colors": [
+        "#dbbcb0",
+        "#846566"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.color.paintcan.plastic.030",
+          "level": 3,
+          "price": 100054,
+          "bundle": 1,
+          "bundlePrice": 100054,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-031",
+    "name": "Whimsical",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-031.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-031.webp",
+      "fullsize": "/images/items/paints/paint-plastic-031.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.031",
+      "finish": "plastic",
+      "colors": [
+        "#c6bfa6",
+        "#25323a"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.031",
+          "level": 1,
+          "price": 350081,
+          "bundle": 1,
+          "bundlePrice": 350081,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.military"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-032",
+    "name": "Microcosm",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-032.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-032.webp",
+      "fullsize": "/images/items/paints/paint-plastic-032.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.032",
+      "finish": "plastic",
+      "colors": [
+        "#344f50",
+        "#afbdc2"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.032",
+          "level": 1,
+          "price": 149850,
+          "bundle": 1,
+          "bundlePrice": 149850,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.m4"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-033",
+    "name": "Marine Camo 2",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-033.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-033.webp",
+      "fullsize": "/images/items/paints/paint-plastic-033.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.033",
+      "finish": "plastic",
+      "colors": [
+        "#b3d2d4",
+        "#384e5a"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.033",
+          "level": 1,
+          "price": 150188,
+          "bundle": 1,
+          "bundlePrice": 150188,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.m4"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-034",
+    "name": "Impression",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-034.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-034.webp",
+      "fullsize": "/images/items/paints/paint-plastic-034.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.034",
+      "finish": "plastic",
+      "colors": [
+        "#ded6ce",
+        "#945c50"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.color.paintcan.plastic.034",
+          "level": 4,
+          "price": 99715,
+          "bundle": 1,
+          "bundlePrice": 99715,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-035",
+    "name": "Jungle Camo 4",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-035.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-035.webp",
+      "fullsize": "/images/items/paints/paint-plastic-035.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.035",
+      "finish": "plastic",
+      "colors": [
+        "#5d744d",
+        "#858359"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.color.paintcan.plastic.035",
+          "level": 2,
+          "price": 100008,
+          "bundle": 1,
+          "bundlePrice": 100008,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-036",
+    "name": "Elegance",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-036.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-036.webp",
+      "fullsize": "/images/items/paints/paint-plastic-036.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.036",
+      "finish": "plastic",
+      "colors": [
+        "#132838",
+        "#d7d1bf"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.036",
+          "level": 1,
+          "price": 499881,
+          "bundle": 1,
+          "bundlePrice": 499881,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.fantasy"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-037",
+    "name": "Leopard Print",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-037.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-037.webp",
+      "fullsize": "/images/items/paints/paint-plastic-037.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.037",
+      "finish": "plastic",
+      "colors": [
+        "#5d4232",
+        "#8e7555"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.color.paintcan.plastic.037",
+          "level": 2,
+          "price": 99992,
+          "bundle": 1,
+          "bundlePrice": 99992,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-038",
+    "name": "Ripple",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-038.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-038.webp",
+      "fullsize": "/images/items/paints/paint-plastic-038.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.038",
+      "finish": "plastic",
+      "colors": [
+        "#394058",
+        "#416770"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.color.paintcan.plastic.038",
+          "level": 3,
+          "price": 100038,
+          "bundle": 1,
+          "bundlePrice": 100038,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-039",
+    "name": "Mountain Camo 2",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-039.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-039.webp",
+      "fullsize": "/images/items/paints/paint-plastic-039.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.039",
+      "finish": "plastic",
+      "colors": [
+        "#ccceb4",
+        "#485a54"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.039",
+          "level": 1,
+          "price": 349919,
+          "bundle": 1,
+          "bundlePrice": 349919,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.military"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-040",
+    "name": "Liquefied",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-040.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-040.webp",
+      "fullsize": "/images/items/paints/paint-plastic-040.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.040",
+      "finish": "plastic",
+      "colors": [
+        "#b15646",
+        "#646b72"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ntg",
+          "goodsId": "gds.color.paintcan.plastic.040",
+          "level": 4,
+          "price": 100192,
+          "bundle": 1,
+          "bundlePrice": 100192,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-041",
+    "name": "Desert Camo 2",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-041.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-041.webp",
+      "fullsize": "/images/items/paints/paint-plastic-041.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.041",
+      "finish": "plastic",
+      "colors": [
+        "#8e7e60",
+        "#cebc8a"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.041",
+          "level": 1,
+          "price": 349781,
+          "bundle": 1,
+          "bundlePrice": 349781,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.military"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-042",
+    "name": "Graffiti",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-042.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-042.webp",
+      "fullsize": "/images/items/paints/paint-plastic-042.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.042",
+      "finish": "plastic",
+      "colors": [
+        "#1fcbc4",
+        "#db5178"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.042",
+          "level": 1,
+          "price": 500135,
+          "bundle": 1,
+          "bundlePrice": 500135,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.fantasy"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-043",
+    "name": "Vault",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-043.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-043.webp",
+      "fullsize": "/images/items/paints/paint-plastic-043.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.043",
+      "finish": "plastic",
+      "colors": [
+        "#a49644",
+        "#594f28"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.color.paintcan.plastic.043",
+          "level": 1,
+          "price": 100177,
+          "bundle": 1,
+          "bundlePrice": 100177,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-044",
+    "name": "Acid Etch",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-044.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-044.webp",
+      "fullsize": "/images/items/paints/paint-plastic-044.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.044",
+      "finish": "plastic",
+      "colors": [
+        "#e8e46f",
+        "#1d4a22"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.color.paintcan.plastic.044",
+          "level": 1,
+          "price": 153512,
+          "bundle": 1,
+          "bundlePrice": 153512,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-045",
+    "name": "Pebbled",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-045.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-045.webp",
+      "fullsize": "/images/items/paints/paint-plastic-045.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.045",
+      "finish": "plastic",
+      "colors": [
+        "#b0a9a3",
+        "#afbdc2"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.color.paintcan.plastic.045",
+          "level": 1,
+          "price": 99808,
+          "bundle": 1,
+          "bundlePrice": 99808,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-046",
+    "name": "Dune",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-046.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-046.webp",
+      "fullsize": "/images/items/paints/paint-plastic-046.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.046",
+      "finish": "plastic",
+      "colors": [
+        "#9d947d",
+        "#5f442c"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.color.paintcan.plastic.046",
+          "level": 1,
+          "price": 99823,
+          "bundle": 1,
+          "bundlePrice": 99823,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-047",
+    "name": "Digital Camo",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-047.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-047.webp",
+      "fullsize": "/images/items/paints/paint-plastic-047.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.047",
+      "finish": "plastic",
+      "colors": [
+        "#6abe8e",
+        "#cc5ca3"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.047",
+          "level": 1,
+          "price": 499865,
+          "bundle": 1,
+          "bundlePrice": 499865,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.fantasy"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-048",
+    "name": "Lush",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-048.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-048.webp",
+      "fullsize": "/images/items/paints/paint-plastic-048.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.048",
+      "finish": "plastic",
+      "colors": [
+        "#9a9169",
+        "#606d48"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.048",
+          "level": 1,
+          "price": 349988,
+          "bundle": 1,
+          "bundlePrice": 349988,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.military"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-049",
+    "name": "Understated",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-049.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-049.webp",
+      "fullsize": "/images/items/paints/paint-plastic-049.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.049",
+      "finish": "plastic",
+      "colors": [
+        "#637a94",
+        "#cfb2ab"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.color.paintcan.plastic.049",
+          "level": 1,
+          "price": 99931,
+          "bundle": 1,
+          "bundlePrice": 99931,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-050",
+    "name": "Bounty",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-050.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-050.webp",
+      "fullsize": "/images/items/paints/paint-plastic-050.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.050",
+      "finish": "plastic",
+      "colors": [
+        "#515d45",
+        "#eaaf69"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.050",
+          "level": 2,
+          "price": 100423,
+          "bundle": 1,
+          "bundlePrice": 100423,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-051",
+    "name": "Psychedelic",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-051.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-051.webp",
+      "fullsize": "/images/items/paints/paint-plastic-051.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.051",
+      "finish": "plastic",
+      "colors": [
+        "#cffcff",
+        "#b0a4ff"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.051",
+          "level": 1,
+          "price": 500235,
+          "bundle": 1,
+          "bundlePrice": 500235,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.fantasy"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-052",
+    "name": "Decrypt",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-052.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-052.webp",
+      "fullsize": "/images/items/paints/paint-plastic-052.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.052",
+      "finish": "plastic",
+      "colors": [
+        "#354a58",
+        "#54a0a2"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.052",
+          "level": 1,
+          "price": 499781,
+          "bundle": 1,
+          "bundlePrice": 499781,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.m4"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-053",
+    "name": "Matrix",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-053.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-053.webp",
+      "fullsize": "/images/items/paints/paint-plastic-053.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.053",
+      "finish": "plastic",
+      "colors": [
+        "#077568",
+        "#1aa998"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.053",
+          "level": 1,
+          "price": 500096,
+          "bundle": 1,
+          "bundlePrice": 500096,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.m4"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-055",
+    "name": "Summer Bliss",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-055.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-055.webp",
+      "fullsize": "/images/items/paints/paint-plastic-055.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.055",
+      "finish": "plastic",
+      "colors": [
+        "#02b1ad",
+        "#ffd162"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.055",
+          "level": 2,
+          "price": 151335,
+          "bundle": 1,
+          "bundlePrice": 151335,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-056",
+    "name": "Tangy",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-056.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-056.webp",
+      "fullsize": "/images/items/paints/paint-plastic-056.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.056",
+      "finish": "plastic",
+      "colors": [
+        "#ecd442",
+        "#237937"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.056",
+          "level": 2,
+          "price": 100285,
+          "bundle": 1,
+          "bundlePrice": 100285,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-057",
+    "name": "Lemon Zest",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-057.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-057.webp",
+      "fullsize": "/images/items/paints/paint-plastic-057.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.057",
+      "finish": "plastic",
+      "colors": [
+        "#fdbf23",
+        "#1a8354"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.057",
+          "level": 3,
+          "price": 156315,
+          "bundle": 1,
+          "bundlePrice": 156315,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-058",
+    "name": "Gradient 1",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-058.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-058.webp",
+      "fullsize": "/images/items/paints/paint-plastic-058.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.058",
+      "finish": "plastic",
+      "colors": [
+        "#1deee4",
+        "#4632d4"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.058",
+          "level": 3,
+          "price": 99977,
+          "bundle": 1,
+          "bundlePrice": 99977,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-059",
+    "name": "Morning Haze",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-059.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-059.webp",
+      "fullsize": "/images/items/paints/paint-plastic-059.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.059",
+      "finish": "plastic",
+      "colors": [
+        "#7168c9",
+        "#ee6b4d"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.059",
+          "level": 4,
+          "price": 151216,
+          "bundle": 1,
+          "bundlePrice": 151216,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-060",
+    "name": "Gradient 2",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-060.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-060.webp",
+      "fullsize": "/images/items/paints/paint-plastic-060.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.060",
+      "finish": "plastic",
+      "colors": [
+        "#ee8340",
+        "#e94a5c"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.060",
+          "level": 4,
+          "price": 99962,
+          "bundle": 1,
+          "bundlePrice": 99962,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-061",
+    "name": "Candy Blue",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-061.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-061.webp",
+      "fullsize": "/images/items/paints/paint-plastic-061.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.061",
+      "finish": "plastic",
+      "colors": [
+        "#16b9ff",
+        "#16b9ff"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.061",
+          "level": 1,
+          "price": 499981,
+          "bundle": 1,
+          "bundlePrice": 499981,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.pure"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-062",
+    "name": "Candy Pink",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-062.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-062.webp",
+      "fullsize": "/images/items/paints/paint-plastic-062.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.062",
+      "finish": "plastic",
+      "colors": [
+        "#ff7cb0",
+        "#ff449c"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.color.paintcan.plastic.062",
+          "level": 1,
+          "price": 500088,
+          "bundle": 1,
+          "bundlePrice": 500088,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.can.pure"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-065",
+    "name": "Spooky",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-065.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-065.webp",
+      "fullsize": "/images/items/paints/paint-plastic-065.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.065",
+      "finish": "plastic",
+      "colors": [
+        "#f7e6d3",
+        "#466789"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.color.paintcan.plastic.065",
+          "level": 1,
+          "price": 348134,
+          "bundle": 1,
+          "bundlePrice": 348134,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.zombie"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-066",
+    "name": "Raving Skulls",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-066.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-066.webp",
+      "fullsize": "/images/items/paints/paint-plastic-066.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.066",
+      "finish": "plastic",
+      "colors": [
+        "#4e2e52",
+        "#f2ebdc"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "paint-plastic-068",
+    "name": "Carved Scars",
+    "description": "",
+    "category": "paints",
+    "subcategory": "Paint",
+    "images": {
+      "icon": "/images/items/paints/paint-plastic-068.webp",
+      "thumbnail": "/images/items/paints/paint-plastic-068.webp",
+      "fullsize": "/images/items/paints/paint-plastic-068.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Common",
+      "sellId": "color.paintcan.plastic.068",
+      "finish": "plastic",
+      "colors": [
+        "#00735e",
+        "#a10f00"
+      ],
+      "metallic": 0,
+      "roughness": 0.35,
+      "charges": 1,
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "forge",
+          "goodsId": "gds.color.paintcan.plastic.068",
+          "level": 1,
+          "price": 493276,
+          "bundle": 1,
+          "bundlePrice": 493276,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [
+            "dlc.s3.zombie"
+          ],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  }
+]

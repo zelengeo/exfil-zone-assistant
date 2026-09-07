@@ -1,0 +1,1394 @@
+[
+  {
+    "id": "container-ammobox-12ga",
+    "name": "12ga Ammo box",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Ammo Box",
+    "images": {
+      "icon": "/images/items/containers/container-ammobox-12ga.webp",
+      "thumbnail": "/images/items/containers/container-ammobox-12ga.webp",
+      "fullsize": "/images/items/containers/container-ammobox-12ga.webp"
+    },
+    "stats": {
+      "weight": 3,
+      "rarity": "Epic",
+      "sellId": "storage.all.ammobox.12ga",
+      "weightLimit": null,
+      "capacity": 720,
+      "caliber": "12Gauge",
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 2300,
+      "sellPrices": [
+        1610,
+        1610,
+        1610,
+        2300,
+        2300,
+        1610
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.storage.all.ammobox.12ga",
+          "level": 1,
+          "price": 110130,
+          "bundle": 1,
+          "bundlePrice": 110130,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-ammobox-45acp",
+    "name": "45acp Ammo box",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Ammo Box",
+    "images": {
+      "icon": "/images/items/containers/container-ammobox-45acp.webp",
+      "thumbnail": "/images/items/containers/container-ammobox-45acp.webp",
+      "fullsize": "/images/items/containers/container-ammobox-45acp.webp"
+    },
+    "stats": {
+      "weight": 3,
+      "rarity": "Epic",
+      "sellId": "storage.all.ammobox.45acp",
+      "weightLimit": null,
+      "capacity": 720,
+      "caliber": "45ACP",
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 2300,
+      "sellPrices": [
+        1610,
+        1610,
+        1610,
+        2300,
+        2300,
+        1610
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.storage.all.ammobox.45acp",
+          "level": 1,
+          "price": 128900,
+          "bundle": 1,
+          "bundlePrice": 128900,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-ammobox-54539",
+    "name": "545x39 Ammo box",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Ammo Box",
+    "images": {
+      "icon": "/images/items/containers/container-ammobox-54539.webp",
+      "thumbnail": "/images/items/containers/container-ammobox-54539.webp",
+      "fullsize": "/images/items/containers/container-ammobox-54539.webp"
+    },
+    "stats": {
+      "weight": 3,
+      "rarity": "Epic",
+      "sellId": "storage.all.ammobox.54539",
+      "weightLimit": null,
+      "capacity": 720,
+      "caliber": "545x39",
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 2300,
+      "sellPrices": [
+        1610,
+        1610,
+        1610,
+        2300,
+        2300,
+        1610
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.storage.all.ammobox.54539",
+          "level": 1,
+          "price": 136400,
+          "bundle": 1,
+          "bundlePrice": 136400,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [
+            {
+              "gameId": "task.mall.c.04",
+              "id": "trupiks_29",
+              "name": "First Touch at the Bench",
+              "corpId": "trupiks"
+            }
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-ammobox-55645",
+    "name": "556x45 Ammo box",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Ammo Box",
+    "images": {
+      "icon": "/images/items/containers/container-ammobox-55645.webp",
+      "thumbnail": "/images/items/containers/container-ammobox-55645.webp",
+      "fullsize": "/images/items/containers/container-ammobox-55645.webp"
+    },
+    "stats": {
+      "weight": 3,
+      "rarity": "Epic",
+      "sellId": "storage.all.ammobox.55645",
+      "weightLimit": null,
+      "capacity": 720,
+      "caliber": "556x45",
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 2300,
+      "sellPrices": [
+        1610,
+        1610,
+        1610,
+        2300,
+        2300,
+        1610
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.storage.all.ammobox.55645",
+          "level": 1,
+          "price": 144700,
+          "bundle": 1,
+          "bundlePrice": 144700,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [
+            {
+              "gameId": "task.mall.c.05",
+              "id": "trupiks_30",
+              "name": "First Supply Run",
+              "corpId": "trupiks"
+            }
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-ammobox-6851",
+    "name": "68x51 Ammo box",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Ammo Box",
+    "images": {
+      "icon": "/images/items/containers/container-ammobox-6851.webp",
+      "thumbnail": "/images/items/containers/container-ammobox-6851.webp",
+      "fullsize": "/images/items/containers/container-ammobox-6851.webp"
+    },
+    "stats": {
+      "weight": 3,
+      "rarity": "Epic",
+      "sellId": "storage.all.ammobox.6851",
+      "weightLimit": null,
+      "capacity": 720,
+      "caliber": "68x51",
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 2300,
+      "sellPrices": [
+        1610,
+        1610,
+        1610,
+        2300,
+        2300,
+        1610
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.storage.all.ammobox.6851",
+          "level": 1,
+          "price": 191300,
+          "bundle": 1,
+          "bundlePrice": 191300,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [
+            {
+              "gameId": "task.mall.b.04",
+              "id": "trupiks_9",
+              "name": "Canal Run",
+              "corpId": "trupiks"
+            }
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-ammobox-76239",
+    "name": "762x39 Ammo box",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Ammo Box",
+    "images": {
+      "icon": "/images/items/containers/container-ammobox-76239.webp",
+      "thumbnail": "/images/items/containers/container-ammobox-76239.webp",
+      "fullsize": "/images/items/containers/container-ammobox-76239.webp"
+    },
+    "stats": {
+      "weight": 3,
+      "rarity": "Epic",
+      "sellId": "storage.all.ammobox.76239",
+      "weightLimit": null,
+      "capacity": 720,
+      "caliber": "762x39",
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 2300,
+      "sellPrices": [
+        1610,
+        1610,
+        1610,
+        2300,
+        2300,
+        1610
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.storage.all.ammobox.76239",
+          "level": 1,
+          "price": 153200,
+          "bundle": 1,
+          "bundlePrice": 153200,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [
+            {
+              "gameId": "task.mall.c.06",
+              "id": "trupiks_31",
+              "name": "Building the Range",
+              "corpId": "trupiks"
+            }
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-ammobox-76251",
+    "name": "762x51 Ammo box",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Ammo Box",
+    "images": {
+      "icon": "/images/items/containers/container-ammobox-76251.webp",
+      "thumbnail": "/images/items/containers/container-ammobox-76251.webp",
+      "fullsize": "/images/items/containers/container-ammobox-76251.webp"
+    },
+    "stats": {
+      "weight": 3,
+      "rarity": "Epic",
+      "sellId": "storage.all.ammobox.76251",
+      "weightLimit": null,
+      "capacity": 720,
+      "caliber": "762x51NATO",
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 2300,
+      "sellPrices": [
+        1610,
+        1610,
+        1610,
+        2300,
+        2300,
+        1610
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.storage.all.ammobox.76251",
+          "level": 1,
+          "price": 172400,
+          "bundle": 1,
+          "bundlePrice": 172400,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [
+            {
+              "gameId": "task.mall.c.07",
+              "id": "trupiks_32",
+              "name": "Back Home",
+              "corpId": "trupiks"
+            }
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-ammobox-76254r",
+    "name": "762x54r Ammo box",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Ammo Box",
+    "images": {
+      "icon": "/images/items/containers/container-ammobox-76254r.webp",
+      "thumbnail": "/images/items/containers/container-ammobox-76254r.webp",
+      "fullsize": "/images/items/containers/container-ammobox-76254r.webp"
+    },
+    "stats": {
+      "weight": 3,
+      "rarity": "Epic",
+      "sellId": "storage.all.ammobox.76254r",
+      "weightLimit": null,
+      "capacity": 720,
+      "caliber": "762x54R",
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 2300,
+      "sellPrices": [
+        1610,
+        1610,
+        1610,
+        2300,
+        2300,
+        1610
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.storage.all.ammobox.76254r",
+          "level": 1,
+          "price": 181600,
+          "bundle": 1,
+          "bundlePrice": 181600,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [
+            {
+              "gameId": "task.mall.b.01",
+              "id": "trupiks_25",
+              "name": "Generator Upgrade",
+              "corpId": "trupiks"
+            }
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-ammobox-919",
+    "name": "9x19 Ammo box",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Ammo Box",
+    "images": {
+      "icon": "/images/items/containers/container-ammobox-919.webp",
+      "thumbnail": "/images/items/containers/container-ammobox-919.webp",
+      "fullsize": "/images/items/containers/container-ammobox-919.webp"
+    },
+    "stats": {
+      "weight": 3,
+      "rarity": "Epic",
+      "sellId": "storage.all.ammobox.919",
+      "weightLimit": null,
+      "capacity": 720,
+      "caliber": "9x19",
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 2300,
+      "sellPrices": [
+        1610,
+        1610,
+        1610,
+        2300,
+        2300,
+        1610
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.storage.all.ammobox.919",
+          "level": 1,
+          "price": 121500,
+          "bundle": 1,
+          "bundlePrice": 121500,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [
+            {
+              "gameId": "task.mall.c.03",
+              "id": "trupiks_28",
+              "name": "Old Faithful",
+              "corpId": "trupiks"
+            }
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-ammobox-939",
+    "name": "9x39 Ammo box",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Ammo Box",
+    "images": {
+      "icon": "/images/items/containers/container-ammobox-939.webp",
+      "thumbnail": "/images/items/containers/container-ammobox-939.webp",
+      "fullsize": "/images/items/containers/container-ammobox-939.webp"
+    },
+    "stats": {
+      "weight": 3,
+      "rarity": "Epic",
+      "sellId": "storage.all.ammobox.939",
+      "weightLimit": null,
+      "capacity": 720,
+      "caliber": "9x39",
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 2300,
+      "sellPrices": [
+        1610,
+        1610,
+        1610,
+        2300,
+        2300,
+        1610
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.storage.all.ammobox.939",
+          "level": 1,
+          "price": 161800,
+          "bundle": 1,
+          "bundlePrice": 161800,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-caselv0",
+    "name": "Pluto container",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Secure Container",
+    "images": {
+      "icon": "/images/items/containers/container-caselv0.webp",
+      "thumbnail": "/images/items/containers/container-caselv0.webp",
+      "fullsize": "/images/items/containers/container-caselv0.webp"
+    },
+    "stats": {
+      "weight": 0,
+      "rarity": "Legendary",
+      "sellId": "sc.caselv0",
+      "weightLimit": null,
+      "capacity": null,
+      "caliber": null,
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 1,
+      "sellPrices": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "buyOffers": [
+        {
+          "vendor": "Safe",
+          "goodsId": "gds.sc.caselv0",
+          "level": 1,
+          "price": 1555,
+          "bundle": 1,
+          "bundlePrice": 1555,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [
+            {
+              "gameId": "task.mall.b.02",
+              "id": "trupiks_1",
+              "name": "Secure Support",
+              "corpId": "trupiks"
+            }
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-caselv1",
+    "name": "Mercury container",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Secure Container",
+    "images": {
+      "icon": "/images/items/containers/container-caselv1.webp",
+      "thumbnail": "/images/items/containers/container-caselv1.webp",
+      "fullsize": "/images/items/containers/container-caselv1.webp"
+    },
+    "stats": {
+      "weight": 0,
+      "rarity": "Legendary",
+      "sellId": "sc.caselv1",
+      "weightLimit": null,
+      "capacity": null,
+      "caliber": null,
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 2,
+      "sellPrices": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "buyOffers": [
+        {
+          "vendor": "Safe",
+          "goodsId": "gds.sc.caselv1",
+          "level": 1,
+          "price": 1266666,
+          "bundle": 1,
+          "bundlePrice": 1266666,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [
+            {
+              "gameId": "task.mall.b.03",
+              "id": "trupiks_26",
+              "name": "Expansion Protocol",
+              "corpId": "trupiks"
+            }
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-caselv1pro",
+    "name": "Mars container",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Secure Container",
+    "images": {
+      "icon": "/images/items/containers/container-caselv1pro.webp",
+      "thumbnail": "/images/items/containers/container-caselv1pro.webp",
+      "fullsize": "/images/items/containers/container-caselv1pro.webp"
+    },
+    "stats": {
+      "weight": 0,
+      "rarity": "Legendary",
+      "sellId": "sc.caselv1pro",
+      "weightLimit": null,
+      "capacity": null,
+      "caliber": null,
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 3,
+      "sellPrices": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "buyOffers": [
+        {
+          "vendor": "Safe",
+          "goodsId": "gds.sc.caselv1pro",
+          "level": 1,
+          "price": 0,
+          "bundle": 1,
+          "bundlePrice": 0,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-caselv2",
+    "name": "Venus container",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Secure Container",
+    "images": {
+      "icon": "/images/items/containers/container-caselv2.webp",
+      "thumbnail": "/images/items/containers/container-caselv2.webp",
+      "fullsize": "/images/items/containers/container-caselv2.webp"
+    },
+    "stats": {
+      "weight": 0,
+      "rarity": "Legendary",
+      "sellId": "sc.caselv2",
+      "weightLimit": null,
+      "capacity": null,
+      "caliber": null,
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 4,
+      "sellPrices": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "buyOffers": [
+        {
+          "vendor": "Safe",
+          "goodsId": "gds.sc.caselv2",
+          "level": 1,
+          "price": 2288888,
+          "bundle": 1,
+          "bundlePrice": 2288888,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [
+            {
+              "gameId": "task.mall.b.05",
+              "id": "trupiks_10",
+              "name": "Capacity Upgrade 2",
+              "corpId": "trupiks"
+            }
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-caselv2pro",
+    "name": "Callisto container",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Secure Container",
+    "images": {
+      "icon": "/images/items/containers/container-caselv2pro.webp",
+      "thumbnail": "/images/items/containers/container-caselv2pro.webp",
+      "fullsize": "/images/items/containers/container-caselv2pro.webp"
+    },
+    "stats": {
+      "weight": 0,
+      "rarity": "Legendary",
+      "sellId": "sc.caselv2pro",
+      "weightLimit": null,
+      "capacity": null,
+      "caliber": null,
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-caselv3",
+    "name": "Titan container",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Secure Container",
+    "images": {
+      "icon": "/images/items/containers/container-caselv3.webp",
+      "thumbnail": "/images/items/containers/container-caselv3.webp",
+      "fullsize": "/images/items/containers/container-caselv3.webp"
+    },
+    "stats": {
+      "weight": 0,
+      "rarity": "Legendary",
+      "sellId": "sc.caselv3",
+      "weightLimit": null,
+      "capacity": null,
+      "caliber": null,
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 6,
+      "sellPrices": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        5
+      ],
+      "buyOffers": [
+        {
+          "vendor": "Safe",
+          "goodsId": "gds.sc.caselv3",
+          "level": 1,
+          "price": 3699999,
+          "bundle": 1,
+          "bundlePrice": 3699999,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [
+            {
+              "gameId": "task.mall.a.01",
+              "id": "trupiks_22",
+              "name": "Capacity Upgrade 3",
+              "corpId": "trupiks"
+            }
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-caselv3pro",
+    "name": "Ganymede container",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Secure Container",
+    "images": {
+      "icon": "/images/items/containers/container-caselv3pro.webp",
+      "thumbnail": "/images/items/containers/container-caselv3pro.webp",
+      "fullsize": "/images/items/containers/container-caselv3pro.webp"
+    },
+    "stats": {
+      "weight": 0,
+      "rarity": "Legendary",
+      "sellId": "sc.caselv3pro",
+      "weightLimit": null,
+      "capacity": null,
+      "caliber": null,
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 7,
+      "sellPrices": [
+        7,
+        7,
+        7,
+        7,
+        7,
+        5
+      ],
+      "buyOffers": [
+        {
+          "vendor": "Safe",
+          "goodsId": "gds.sc.caselv3pro",
+          "level": 1,
+          "price": 0,
+          "bundle": 1,
+          "bundlePrice": 0,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-caselv4",
+    "name": "Uranus container",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Secure Container",
+    "images": {
+      "icon": "/images/items/containers/container-caselv4.webp",
+      "thumbnail": "/images/items/containers/container-caselv4.webp",
+      "fullsize": "/images/items/containers/container-caselv4.webp"
+    },
+    "stats": {
+      "weight": 0,
+      "rarity": "Legendary",
+      "sellId": "sc.caselv4",
+      "weightLimit": null,
+      "capacity": null,
+      "caliber": null,
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-caselv4pro",
+    "name": "Neptune container",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Secure Container",
+    "images": {
+      "icon": "/images/items/containers/container-caselv4pro.webp",
+      "thumbnail": "/images/items/containers/container-caselv4pro.webp",
+      "fullsize": "/images/items/containers/container-caselv4pro.webp"
+    },
+    "stats": {
+      "weight": 0,
+      "rarity": "Legendary",
+      "sellId": "sc.caselv4pro",
+      "weightLimit": null,
+      "capacity": null,
+      "caliber": null,
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 9,
+      "sellPrices": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        7
+      ],
+      "buyOffers": [
+        {
+          "vendor": "Safe",
+          "goodsId": "gds.sc.caselv4pro",
+          "level": 1,
+          "price": 4899999,
+          "bundle": 1,
+          "bundlePrice": 4899999,
+          "stock": 1,
+          "resetType": "daily",
+          "requiresTasks": [
+            {
+              "gameId": "task.mall.a.07",
+              "id": "trupiks_17",
+              "name": "Like Finds Like 4",
+              "corpId": "trupiks"
+            }
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-collectionbox",
+    "name": "Collection Box",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Collection Box",
+    "images": {
+      "icon": "/images/items/containers/container-collectionbox.webp",
+      "thumbnail": "/images/items/containers/container-collectionbox.webp",
+      "fullsize": "/images/items/containers/container-collectionbox.webp"
+    },
+    "stats": {
+      "weight": 1,
+      "rarity": "Common",
+      "sellId": "storage.all.collectionbox",
+      "weightLimit": 30,
+      "capacity": null,
+      "caliber": null,
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 30000,
+      "sellPrices": [
+        21000,
+        21000,
+        21000,
+        30000,
+        30000,
+        21000
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.storage.all.collectionbox",
+          "level": 1,
+          "price": 1070000,
+          "bundle": 1,
+          "bundlePrice": 1070000,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-dogtagcase",
+    "name": "Dog Tag Case",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Collection Box",
+    "images": {
+      "icon": "/images/items/containers/container-dogtagcase.webp",
+      "thumbnail": "/images/items/containers/container-dogtagcase.webp",
+      "fullsize": "/images/items/containers/container-dogtagcase.webp"
+    },
+    "stats": {
+      "weight": 1,
+      "rarity": "Common",
+      "sellId": "storage.all.dogtagcase",
+      "weightLimit": 30,
+      "capacity": 100,
+      "caliber": null,
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 600000,
+      "sellPrices": [
+        300000,
+        300000,
+        300000,
+        300000,
+        420000,
+        300000
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.storage.all.dogtagcase",
+          "level": 1,
+          "price": 600000,
+          "bundle": 1,
+          "bundlePrice": 600000,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-grenadecase",
+    "name": "Grenade Case",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Collection Box",
+    "images": {
+      "icon": "/images/items/containers/container-grenadecase.webp",
+      "thumbnail": "/images/items/containers/container-grenadecase.webp",
+      "fullsize": "/images/items/containers/container-grenadecase.webp"
+    },
+    "stats": {
+      "weight": 1,
+      "rarity": "Common",
+      "sellId": "storage.all.grenadecase",
+      "weightLimit": 30,
+      "capacity": null,
+      "caliber": null,
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 550000,
+      "sellPrices": [
+        275000,
+        275000,
+        275000,
+        275000,
+        385000,
+        275000
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.storage.all.grenadecase",
+          "level": 1,
+          "price": 550000,
+          "bundle": 1,
+          "bundlePrice": 550000,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-hqfuel",
+    "name": "HQ Power Fuel Can",
+    "description": "Fuel up the power generator in HQ.",
+    "category": "containers",
+    "subcategory": "Fuel",
+    "images": {
+      "icon": "/images/items/containers/container-hqfuel.webp",
+      "thumbnail": "/images/items/containers/container-hqfuel.webp",
+      "fullsize": "/images/items/containers/container-hqfuel.webp"
+    },
+    "stats": {
+      "weight": 0,
+      "rarity": "Epic",
+      "sellId": "consumption.all.hqfuel",
+      "weightLimit": null,
+      "capacity": null,
+      "caliber": null,
+      "fuel": 100,
+      "fuelPerPour": 20,
+      "accepts": [],
+      "basePrice": 65860,
+      "sellPrices": [
+        65860,
+        65860,
+        65860,
+        65860,
+        65860,
+        65860
+      ],
+      "buyOffers": []
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-hqfuel-xl",
+    "name": "HQ Power Fuel Can L",
+    "description": "Fuel up the power generator in HQ.",
+    "category": "containers",
+    "subcategory": "Fuel",
+    "images": {
+      "icon": "/images/items/containers/container-hqfuel-xl.webp",
+      "thumbnail": "/images/items/containers/container-hqfuel-xl.webp",
+      "fullsize": "/images/items/containers/container-hqfuel-xl.webp"
+    },
+    "stats": {
+      "weight": 16,
+      "rarity": "Epic",
+      "sellId": "consumption.all.hqfuel.xl",
+      "weightLimit": null,
+      "capacity": null,
+      "caliber": null,
+      "fuel": 1500,
+      "fuelPerPour": 40,
+      "accepts": [],
+      "basePrice": 6435,
+      "sellPrices": [
+        4505,
+        4505,
+        4505,
+        3218,
+        3218,
+        4505
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.consumption.all.hqfuel.xl",
+          "level": 1,
+          "price": 32930,
+          "bundle": 1,
+          "bundlePrice": 32930,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [
+            {
+              "gameId": "task.mall.c.02",
+              "id": "trupiks_3",
+              "name": "The Source of Life",
+              "corpId": "trupiks"
+            }
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-magazinebox",
+    "name": "Mag&Attachment Box",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Collection Box",
+    "images": {
+      "icon": "/images/items/containers/container-magazinebox.webp",
+      "thumbnail": "/images/items/containers/container-magazinebox.webp",
+      "fullsize": "/images/items/containers/container-magazinebox.webp"
+    },
+    "stats": {
+      "weight": 1,
+      "rarity": "Common",
+      "sellId": "storage.all.magazinebox",
+      "weightLimit": 12,
+      "capacity": null,
+      "caliber": null,
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [
+        "ZomboyGunClipBaseBP_C",
+        "ZomboyGunSystemBase"
+      ],
+      "basePrice": 85644,
+      "sellPrices": [
+        59951,
+        59951,
+        59951,
+        85644,
+        85644,
+        59951
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.storage.all.magazinebox",
+          "level": 1,
+          "price": 171289,
+          "bundle": 1,
+          "bundlePrice": 171289,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-medicalbox",
+    "name": "Medical Box",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Collection Box",
+    "images": {
+      "icon": "/images/items/containers/container-medicalbox.webp",
+      "thumbnail": "/images/items/containers/container-medicalbox.webp",
+      "fullsize": "/images/items/containers/container-medicalbox.webp"
+    },
+    "stats": {
+      "weight": 1.5,
+      "rarity": "Common",
+      "sellId": "storage.all.medicalbox",
+      "weightLimit": 8,
+      "capacity": null,
+      "caliber": null,
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [
+        "HPSyringeBase_C",
+        "WarfareBandageBase_C",
+        "WarfarePainkiller_C",
+        "WarfareBrokenLimbRestorer_C",
+        "BuffSyringeBase_C",
+        "WarfareMorphineNeedle_C"
+      ],
+      "basePrice": 140000,
+      "sellPrices": [
+        98000,
+        98000,
+        98000,
+        140000,
+        140000,
+        98000
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.storage.all.medicalbox",
+          "level": 1,
+          "price": 280000,
+          "bundle": 1,
+          "bundlePrice": 280000,
+          "stock": 2,
+          "resetType": "daily",
+          "requiresTasks": [
+            {
+              "gameId": "task.mall.c.07",
+              "id": "trupiks_32",
+              "name": "Back Home",
+              "corpId": "trupiks"
+            }
+          ],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-mini-collectionbox",
+    "name": "Collection Box Small",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Collection Box",
+    "images": {
+      "icon": "/images/items/containers/container-mini-collectionbox.webp",
+      "thumbnail": "/images/items/containers/container-mini-collectionbox.webp",
+      "fullsize": "/images/items/containers/container-mini-collectionbox.webp"
+    },
+    "stats": {
+      "weight": 0.7,
+      "rarity": "Common",
+      "sellId": "storage.all.mini.collectionbox",
+      "weightLimit": 10,
+      "capacity": null,
+      "caliber": null,
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [],
+      "basePrice": 15000,
+      "sellPrices": [
+        10500,
+        10500,
+        10500,
+        15000,
+        15000,
+        10500
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.storage.all.mini.collectionbox",
+          "level": 1,
+          "price": 481500,
+          "bundle": 1,
+          "bundlePrice": 481500,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  },
+  {
+    "id": "container-paintcan-box",
+    "name": "Paint Storage Box",
+    "description": "",
+    "category": "containers",
+    "subcategory": "Collection Box",
+    "images": {
+      "icon": "/images/items/containers/container-paintcan-box.webp",
+      "thumbnail": "/images/items/containers/container-paintcan-box.webp",
+      "fullsize": "/images/items/containers/container-paintcan-box.webp"
+    },
+    "stats": {
+      "weight": 1,
+      "rarity": "Common",
+      "sellId": "storage.paintcan.box",
+      "weightLimit": 30,
+      "capacity": null,
+      "caliber": null,
+      "fuel": null,
+      "fuelPerPour": null,
+      "accepts": [
+        "SprayPaintCansBase_C"
+      ],
+      "basePrice": 100,
+      "sellPrices": [
+        100,
+        100,
+        90,
+        70,
+        70,
+        70
+      ],
+      "buyOffers": [
+        {
+          "vendor": "trupiks",
+          "goodsId": "gds.storage.paintcan.box",
+          "level": 1,
+          "price": 501863,
+          "bundle": 1,
+          "bundlePrice": 501863,
+          "stock": 99,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "tips": ""
+  }
+]
