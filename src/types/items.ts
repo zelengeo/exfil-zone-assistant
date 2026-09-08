@@ -429,6 +429,60 @@ export interface Misc extends Item {
     };
 }
 
+/**
+ * A storage box, case or fuel can. Extracted whole — nothing here is curated.
+ *
+ * The four subcategories carry four different stat sets and only ever one of them, which is why
+ * every field below is optional: an ammo box has `capacity` and `caliber`, a collection box
+ * `weightLimit` and `accepts`, a fuel can `fuel` and `fuelPerPour`, and a secure container none of
+ * them. `accepts` is a Blueprint-class vocabulary, not item ids — `ZomboyGunClipBaseBP_C` means
+ * "every magazine" — so it is deliberately unresolved.
+ */
+export interface Container extends Item {
+    category: 'containers';
+    subcategory: 'Ammo Box' | 'Collection Box' | 'Fuel' | 'Secure Container';
+    stats: Item['stats'] & {
+        /** Shop id, e.g. `storage.all.ammobox.45acp`. */
+        sellId?: string;
+        /** Collection boxes: the kilograms it holds. */
+        weightLimit?: number | null;
+        /** Ammo boxes: rounds held. Fuel cans: `RemainingOil`, not `MaxOil`. */
+        capacity?: number | null;
+        /** Ammo boxes: which round fits, as the shared `EBulletCaliber` name. */
+        caliber?: string | null;
+        /** Fuel cans: oil remaining. */
+        fuel?: number | null;
+        /** Fuel cans: how much one pour transfers. */
+        fuelPerPour?: number | null;
+        /** Collection boxes: what goes in, as Blueprint class names. */
+        accepts?: string[];
+    };
+}
+
+/**
+ * A weapon skin in a spray can. The item list is a DataTable read of `SparyDataTable`, whose row
+ * name is the shop id; the Blueprints contribute only what every can shares.
+ *
+ * `colors` is the pair of `SparyColor01`/`02` as hex, ready to draw as a swatch. Empty on the
+ * Paint Stripper, which has no skin at all.
+ */
+export interface Paint extends Item {
+    category: 'paints';
+    subcategory: 'Paint';
+    stats: Item['stats'] & {
+        /** Shop id, e.g. `color.paintcan.plastic.001`. */
+        sellId?: string;
+        /** The material family the can drives — `plastic`, `metal`, or `empty` for the stripper. */
+        finish?: string;
+        /** `SparyColor01`/`02` as hex. */
+        colors?: string[];
+        metallic?: number;
+        roughness?: number;
+        /** Sprays per can. */
+        charges?: number;
+    };
+}
+
 export type AnyItem =
     Weapon
     | Gear
@@ -446,7 +500,9 @@ export type AnyItem =
     | Attachment
     | TaskItem
     | Keys
-    | Misc;
+    | Misc
+    | Container
+    | Paint;
 
 /**
  * One protection point on a piece of armour: a bone, and the wedge around it the plate covers.
@@ -805,6 +861,27 @@ export const itemCategories: Record<string, ItemCategory> = {
             'Resort',
             'Smuggling Tunnel',
             'Smuggling Tunnel (Infection)',
+        ]
+    },
+    'containers': {
+        id: 'containers',
+        name: 'Containers',
+        description: 'Storage boxes, cases and fuel cans',
+        icon: 'box',
+        subcategories: [
+            'Ammo Box',
+            'Collection Box',
+            'Fuel',
+            'Secure Container',
+        ]
+    },
+    'paints': {
+        id: 'paints',
+        name: 'Paints',
+        description: 'Spray cans that repaint a weapon',
+        icon: 'box',
+        subcategories: [
+            'Paint',
         ]
     },
     'misc': {

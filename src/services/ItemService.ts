@@ -38,6 +38,8 @@ const DATA_FILES = [
     'task-items.json',
     'keys.json',
     'misc.json',
+    'containers.json',
+    'paints.json',
 ];
 
 

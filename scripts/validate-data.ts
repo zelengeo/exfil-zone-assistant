@@ -62,6 +62,8 @@ const DATA_FILES: Array<{ file: string; category: string }> = [
     { file: 'task-items.json', category: 'task-items' },
     { file: 'keys.json', category: 'keys' },
     { file: 'misc.json', category: 'misc' },
+    { file: 'containers.json', category: 'containers' },
+    { file: 'paints.json', category: 'paints' },
 ];
 
 /** Files whose items carry a `stats.caliber` that must be a known caliber. */

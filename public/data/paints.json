@@ -133,7 +133,7 @@
       ],
       "metallic": 1,
       "roughness": 0.25,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -185,7 +185,7 @@
       ],
       "metallic": 1,
       "roughness": 0.25,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -237,7 +237,7 @@
       ],
       "metallic": 1,
       "roughness": 0.25,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -289,7 +289,7 @@
       ],
       "metallic": 1,
       "roughness": 0.25,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -341,7 +341,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -391,7 +391,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -443,7 +443,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -493,7 +493,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -543,7 +543,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -593,7 +593,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -645,7 +645,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -697,7 +697,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -747,7 +747,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -799,7 +799,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -851,7 +851,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -901,7 +901,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -953,7 +953,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -1005,7 +1005,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -1057,7 +1057,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -1107,7 +1107,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -1159,7 +1159,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -1209,7 +1209,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -1259,7 +1259,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -1311,7 +1311,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -1363,7 +1363,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -1413,7 +1413,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -1463,7 +1463,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -1515,7 +1515,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -1565,7 +1565,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -1617,7 +1617,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -1667,7 +1667,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -1717,7 +1717,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -1767,7 +1767,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -1819,7 +1819,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -1871,7 +1871,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -1923,7 +1923,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -1973,7 +1973,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -2023,7 +2023,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -2075,7 +2075,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -2125,7 +2125,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -2175,7 +2175,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -2227,7 +2227,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -2277,7 +2277,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -2329,7 +2329,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -2381,7 +2381,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -2431,7 +2431,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -2481,7 +2481,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -2531,7 +2531,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -2581,7 +2581,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -2633,7 +2633,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -2685,7 +2685,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -2735,7 +2735,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -2785,7 +2785,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -2837,7 +2837,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -2889,7 +2889,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -2941,7 +2941,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -2991,7 +2991,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -3041,7 +3041,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -3091,7 +3091,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -3141,7 +3141,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -3191,7 +3191,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 30,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -3241,7 +3241,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -3293,7 +3293,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -3345,7 +3345,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -3397,7 +3397,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,
@@ -3433,7 +3433,7 @@
       ],
       "metallic": 0,
       "roughness": 0.35,
-      "charges": 1,
+      "charges": 100,
       "basePrice": 100,
       "sellPrices": [
         100,

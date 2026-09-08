@@ -541,7 +541,7 @@
         "type": "item",
         "quantity": 1,
         "item_id": "taskitem_photophone",
-        "item_name": "New Phone"
+        "item_name": "FotoVision+ Phone"
       }
     ],
     "requiredTasks": [
@@ -787,7 +787,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.consumption.all.hqfuel.xl",
+        "item_id": "container-hqfuel-xl",
         "item_name": "HQ Power Fuel Can L"
       },
       {
@@ -853,7 +853,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.consumption.all.hqfuel.xl",
+        "item_id": "container-hqfuel-xl",
         "item_name": "HQ Power Fuel Can L"
       }
     ],
@@ -1562,7 +1562,7 @@
       {
         "type": "item",
         "quantity": 2,
-        "gameId": "gds.consumption.all.hqfuel.xl",
+        "item_id": "container-hqfuel-xl",
         "item_name": "HQ Power Fuel Can L"
       },
       {
@@ -1941,7 +1941,7 @@
       {
         "type": "item",
         "quantity": 3,
-        "gameId": "gds.consumption.all.hqfuel.xl",
+        "item_id": "container-hqfuel-xl",
         "item_name": "HQ Power Fuel Can L"
       },
       {
@@ -2321,7 +2321,7 @@
       {
         "type": "item",
         "quantity": 2,
-        "gameId": "gds.consumption.all.hqfuel.xl",
+        "item_id": "container-hqfuel-xl",
         "item_name": "HQ Power Fuel Can L"
       },
       {
@@ -2766,7 +2766,7 @@
       {
         "type": "item",
         "quantity": 2,
-        "gameId": "gds.consumption.all.hqfuel.xl",
+        "item_id": "container-hqfuel-xl",
         "item_name": "HQ Power Fuel Can L"
       },
       {
@@ -2802,7 +2802,7 @@
     "id": "forge_5",
     "name": "No Caller Rejected",
     "gameId": "task.gear.a.01",
-    "description": "Heard about that recent heist in the [Resort Area]? Everyone's scrambling to find ways to launder the loot, and there's no way I'm sitting that out.\nTake this [phone] and place it at the [Wall Fountain in the Rua Algasol].\nSomeone will reach out to me,no names, no questions.\nIf you lose the task item, please come back to me to repurchase it.",
+    "description": "Heard about that recent heist in the [Resort Area]? Everyone's scrambling to find ways to launder the loot, and there's no way I'm sitting that out.\r\nTake this [phone] and place it at the [Wall Fountain in the Rua Algasol].\r\nSomeone will reach out to me,no names, no questions.\r\nIf you lose the task item, please come back to me to repurchase it.",
     "objectives": [
       "Arrive the Rua Algasol",
       "Place in the wall fountain in Rua Algasol",
@@ -2873,7 +2873,7 @@
     "id": "forge_6",
     "name": "Hovolt Smuggling",
     "gameId": "task.gear.a.02",
-    "description": "Ever heard of Hovolt cars? Gorgeous machines,sleek design, purr like a dream.\nThere's a dealership in the [Resort Area] still intact. I want a few rides from there... eventually.\nBut first, do me a favor: [snap a picture of every color variant] they've got in the showroom.\nI need to confirm the stock.",
+    "description": "Ever heard of Hovolt cars? Gorgeous machines,sleek design, purr like a dream.\r\nThere's a dealership in the [Resort Area] still intact. I want a few rides from there... eventually.\r\nBut first, do me a favor: [snap a picture of every color variant] they've got in the showroom.\r\nI need to confirm the stock.",
     "objectives": [
       "Take photo of a black Hovolt car",
       "Take photo of a yellow Hovolt car",
@@ -2913,7 +2913,7 @@
         "type": "item",
         "quantity": 1,
         "item_id": "taskitem_photophone",
-        "item_name": "New Phone"
+        "item_name": "FotoVision+ Phone"
       }
     ],
     "requiredTasks": [
@@ -2943,7 +2943,7 @@
     "id": "forge_7",
     "name": "Bargain Hunter",
     "gameId": "task.gear.a.03",
-    "description": "Word is the northern gang's got their eyes on that mythical gem.\nSeems like everything else is beneath them now. Fools.\nYou head to the [Flea Market] in the [Resort Area] and see what's been overlooked.\nThey might've missed some [antiques], and I'm more than happy to take those off their hands.",
+    "description": "Word is the northern gang's got their eyes on that mythical gem.\r\nSeems like everything else is beneath them now. Fools.\r\nYou head to the [Flea Market] in the [Resort Area] and see what's been overlooked.\r\nThey might've missed some [antiques], and I'm more than happy to take those off their hands.",
     "objectives": [
       "Find Antique Tea Plate - Yang",
       "Find Antique Tea Plate - Yin",
@@ -3135,7 +3135,7 @@
     "id": "forge_12",
     "name": "No Deal, No Mercy",
     "gameId": "task.gear.a.06",
-    "description": "Remember that cop who wanted to fence stolen goods? Damn pig never intended to hand over the goods from the start. I need to show him what happens when you play games doing business with me!\nAlright partner, head to [Silverwave Bank] and teach the leader of that [Barricade] a lesson. But be careful, he's definitely prepared. He's the one dressed head-to-toe in gear.",
+    "description": "Remember that cop who wanted to fence stolen goods? Damn pig never intended to hand over the goods from the start. I need to show him what happens when you play games doing business with me!\r\nAlright partner, head to [Silverwave Bank] and teach the leader of that [Barricade] a lesson. But be careful, he's definitely prepared. He's the one dressed head-to-toe in gear.",
     "objectives": [
       "Eliminate Bank's Barricade"
     ],
@@ -3191,7 +3191,7 @@
     "id": "forge_31",
     "name": "The Collector",
     "gameId": "task.gear.a.07",
-    "description": "Trends in collectibles have shifted. Now everyone's into action figure toys.\nI'll admit, I used to think they were just decorations, but you know what? Collecting stuff really is fun. Watching your storage slowly fill up gives a certain... satisfaction.\nBring me a [full set of character figure toys], and make sure to include the [hidden variant]. I hear that one's more valuable, supposedly it has a [gold paint] finish.",
+    "description": "Trends in collectibles have shifted. Now everyone's into action figure toys.\r\nI'll admit, I used to think they were just decorations, but you know what? Collecting stuff really is fun. Watching your storage slowly fill up gives a certain... satisfaction.\r\nBring me a [full set of character figure toys], and make sure to include the [hidden variant]. I hear that one's more valuable, supposedly it has a [gold paint] finish.",
     "objectives": [
       "Turn in CS Figure St",
       "Turn in Medium Operator #2",
@@ -3254,7 +3254,7 @@
     "id": "forge_32",
     "name": "Collectors Edition",
     "gameId": "task.gear.a.08",
-    "description": "I'd really like to show you my collection, but my shelf is just a few items away from perfection. I can't stand an incomplete collection.\nMaybe you can help me complete the final piece: find me [a full set of Contractors game discs]. Note, there are [4 versions] in total: [one standard and one deluxe edition of Contractors], and [one standard and one deluxe edition of Showdown].",
+    "description": "I'd really like to show you my collection, but my shelf is just a few items away from perfection. I can't stand an incomplete collection.\r\nMaybe you can help me complete the final piece: find me [a full set of Contractors game discs]. Note, there are [4 versions] in total: [one standard and one deluxe edition of Contractors], and [one standard and one deluxe edition of Showdown].",
     "objectives": [
       "Turn in Contractors Game Disc",
       "ShowDown Game Disc",
@@ -3388,7 +3388,7 @@
     "id": "forge_26",
     "name": "Business Development",
     "gameId": "task.gear.a.10",
-    "description": "I think you should try extracting from multiple exfil points.\nThis is basically scouting work, don't rush, it's all preparation for future operations. Safely exfil once from each of these nearby locations: [Drive-in Theater in Suburb Area], [Convoy in Dam Area], and [the ambulance in Resort Area].",
+    "description": "I think you should try extracting from multiple exfil points.\r\nThis is basically scouting work, don't rush, it's all preparation for future operations. Safely exfil once from each of these nearby locations: [Drive-in Theater in Suburb Area], [Convoy in Dam Area], and [the ambulance in Resort Area].",
     "objectives": [
       "Successfully extract from Outdoor Cinema",
       "Extract from Convoy",
@@ -3471,7 +3471,7 @@
     "id": "forge_28",
     "name": "Treasure Beyond Measure",
     "gameId": "task.gear.a.11",
-    "description": "That hacker sure took her time.\nThere wasn't much data inside, plus lots of useless junk files. But after her analysis, she found some important intel: a strange launcher program, a string of passwords, and a [location].\nI'll focus on studying the link between the program and the passwords. You go check the [control room] in the subway at [Metro Area] and find a [special briefcase].",
+    "description": "That hacker sure took her time.\r\nThere wasn't much data inside, plus lots of useless junk files. But after her analysis, she found some important intel: a strange launcher program, a string of passwords, and a [location].\r\nI'll focus on studying the link between the program and the passwords. You go check the [control room] in the subway at [Metro Area] and find a [special briefcase].",
     "objectives": [
       "Find the Metro Control Room",
       "Find Missile Launcher",
@@ -3542,7 +3542,7 @@
     "id": "forge_29",
     "name": "Perfect Collaboration",
     "gameId": "task.gear.a.12",
-    "description": "You're back. Guess what you brought? Let me tell you, that earlier program is actually a missile launch program. And that case isn't just an ordinary computer. You need to connect the program from the hard drive into it and enter that password sequence to make the program run properly.\nThis thing's value is beyond money! Haha, you're my most efficient, most reliable partner.\nTake this key. Get to [the locked room in the subway sewers in Metro Area]. Everything inside is yours, take as much as you can carry. Consider this your reward as my most valued business partner.",
+    "description": "You're back. Guess what you brought? Let me tell you, that earlier program is actually a missile launch program. And that case isn't just an ordinary computer. You need to connect the program from the hard drive into it and enter that password sequence to make the program run properly.\r\nThis thing's value is beyond money! Haha, you're my most efficient, most reliable partner.\r\nTake this key. Get to [the locked room in the subway sewers in Metro Area]. Everything inside is yours, take as much as you can carry. Consider this your reward as my most valued business partner.",
     "objectives": [
       "Find the Sewer Area Back Room"
     ],
@@ -3621,7 +3621,7 @@
     "id": "forge_15",
     "name": "Purge the Ranks",
     "gameId": "task.gear.b.01",
-    "description": "I've got something that needs handling now, and from what I gather, you're good at this kind of thing.\nOne of my men stole a few gold bars from me. It's not about the money, I can't stand people taking what's mine. That's betrayal. My other guys have already cornered him inside [Trupiks Mall]. Your job is simple: go to the room on [-1F], do whatever it takes, and [get my gold back].",
+    "description": "I've got something that needs handling now, and from what I gather, you're good at this kind of thing.\r\nOne of my men stole a few gold bars from me. It's not about the money, I can't stand people taking what's mine. That's betrayal. My other guys have already cornered him inside [Trupiks Mall]. Your job is simple: go to the room on [-1F], do whatever it takes, and [get my gold back].",
     "objectives": [
       "Find Maximilian's Golden Ingots 1",
       "Turn in Maximilian's Golden Ingots"
@@ -3683,7 +3683,7 @@
     "id": "forge_16",
     "name": "Better Safe than Sorry 2",
     "gameId": "task.gear.b.02",
-    "description": "In business, staying alert is everything. I have a few stash spots in [Suburb Area] that I use for storage and transfers during regular operations. I need to make sure they're always ready and intact.\nCheck these locations: [the water tower north of Altibuy], [the green tent in the square north of Trupiks], and [the small house past the overpass further north of the mall]. Once you've checked them thoroughly, extract back.",
+    "description": "In business, staying alert is everything. I have a few stash spots in [Suburb Area] that I use for storage and transfers during regular operations. I need to make sure they're always ready and intact.\r\nCheck these locations: [the water tower north of Altibuy], [the green tent in the square north of Trupiks], and [the small house past the overpass further north of the mall]. Once you've checked them thoroughly, extract back.",
     "objectives": [
       "Find the water tower near the AltiBuy",
       "Find the green tent in the TRUPIKS plaza",
@@ -3753,7 +3753,7 @@
     "id": "forge_17",
     "name": "Don't Play with Fire",
     "gameId": "task.gear.b.03",
-    "description": "My hiding spots are flawless. But some of them are at risk of accidental damage.\nI need you to go check them and mark them with trackers so I can monitor the safety of my goods in real time. Location: [Farm Area], [mark the tall round silos up north]. And for safety, bring back any [flammable materials] nearby.",
+    "description": "My hiding spots are flawless. But some of them are at risk of accidental damage.\r\nI need you to go check them and mark them with trackers so I can monitor the safety of my goods in real time. Location: [Farm Area], [mark the tall round silos up north]. And for safety, bring back any [flammable materials] nearby.",
     "objectives": [
       "Mark the the North Barn",
       "Turn in Combustible Items Found In Raid"
@@ -3890,7 +3890,7 @@
     "id": "forge_22",
     "name": "Cold Hard Cash 2",
     "gameId": "task.gear.b.05",
-    "description": "After comparing the gold bar you brought with the ones I got back earlier... I realized the recovered bars were fakes!\nI must get my real gold back. The traitor left a contact clue, something about meeting a forklift driver disguised in [Dam Area].\nGo to [Dam Area] and mark the [forklifts] at the [Dock] and [Old Factory]. I need more leads.",
+    "description": "After comparing the gold bar you brought with the ones I got back earlier... I realized the recovered bars were fakes!\r\nI must get my real gold back. The traitor left a contact clue, something about meeting a forklift driver disguised in [Dam Area].\r\nGo to [Dam Area] and mark the [forklifts] at the [Dock] and [Old Factory]. I need more leads.",
     "objectives": [
       "Mark the forklift 1 in Dock",
       "Mark the forklift 2 in Dock",
@@ -3961,7 +3961,7 @@
     "id": "forge_25",
     "name": "Cold Hard Cash 3",
     "gameId": "task.gear.b.06",
-    "description": "All this trouble over a few gold ingots, I should've put holes in him from the start! Anyway, we found a new note under a forklift with location info and a riddle.\nThe gold is in [Dam Area]. The exact spot should be this riddle:\n[Waves crash and builders scheme, a lift with a metal beam, see the gold where the heights convene.]\nSounds like you should look somewhere high up. Go get my [gold ingots] back.",
+    "description": "All this trouble over a few gold ingots, I should've put holes in him from the start! Anyway, we found a new note under a forklift with location info and a riddle.\r\nThe gold is in [Dam Area]. The exact spot should be this riddle:\r\n[Waves crash and builders scheme, a lift with a metal beam, see the gold where the heights convene.]\r\nSounds like you should look somewhere high up. Go get my [gold ingots] back.",
     "objectives": [
       "Find the Top Crane",
       "Find Maximilian's Golden Ingots 1",
@@ -4090,7 +4090,7 @@
     "id": "forge_13",
     "name": "All pieces together 3",
     "gameId": "task.gear.b.08",
-    "description": "Let's turn to another collection target: [old mobile phones]. Yeah, I know, they look like junk to you, but there's real value inside: information.\nBusiness is all about information asymmetry. More intel means more options. Hell, just trading info can be more profitable than you'd think!",
+    "description": "Let's turn to another collection target: [old mobile phones]. Yeah, I know, they look like junk to you, but there's real value inside: information.\r\nBusiness is all about information asymmetry. More intel means more options. Hell, just trading info can be more profitable than you'd think!",
     "objectives": [
       "Turn in Old Phone"
     ],
@@ -4125,7 +4125,7 @@
         "type": "item",
         "quantity": 1,
         "item_id": "misc_b_harddrive",
-        "item_name": "Hard drive"
+        "item_name": "Hard Drive"
       }
     ],
     "preReward": [],
@@ -4153,7 +4153,7 @@
     "id": "forge_14",
     "name": "All pieces together 4",
     "gameId": "task.gear.b.09",
-    "description": "While exploring, have you come across any valuable antiques?\nListen, I've recently had clients asking to buy second-hand cameras. They say it's some new photo trend.\nWell, I'm not missing this chance. Try your luck, bring me a few [cameras]. Maybe I can make some profit off this trend.",
+    "description": "While exploring, have you come across any valuable antiques?\r\nListen, I've recently had clients asking to buy second-hand cameras. They say it's some new photo trend.\r\nWell, I'm not missing this chance. Try your luck, bring me a few [cameras]. Maybe I can make some profit off this trend.",
     "objectives": [
       "Turn in Camera"
     ],
@@ -4362,7 +4362,7 @@
         "type": "item",
         "quantity": 1,
         "item_id": "taskitem_photophone",
-        "item_name": "New Phone"
+        "item_name": "FotoVision+ Phone"
       }
     ],
     "requiredTasks": [
@@ -4785,7 +4785,7 @@
         "type": "item",
         "quantity": 1,
         "item_id": "taskitem_photophone",
-        "item_name": "New Phone"
+        "item_name": "FotoVision+ Phone"
       }
     ],
     "requiredTasks": [
@@ -5204,7 +5204,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.color.paintcan.plastic.050",
+        "item_id": "paint-plastic-050",
         "item_name": "Bounty"
       }
     ],
@@ -5216,7 +5216,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 2
+    "order": 15
   },
   "gunsmith_3": {
     "id": "gunsmith_3",
@@ -5301,13 +5301,13 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 3
+    "order": 16
   },
   "gunsmith_5": {
     "id": "gunsmith_5",
     "name": "The Gunsmith 'Assemble'",
     "gameId": "task.gunsmith.003",
-    "description": "Get all the 1911 parts from the mailbox, then head to the gunsmith station to assemble the weapon.\nFinally, submit the completed gun to me.",
+    "description": "Get all the 1911 parts from the mailbox, then head to the gunsmith station to assemble the weapon.\r\nFinally, submit the completed gun to me.",
     "objectives": [
       "Install Barrel kw1911",
       "Install Frontsight kw1911",
@@ -5395,7 +5395,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 5
+    "order": 19
   },
   "gunsmith_7": {
     "id": "gunsmith_7",
@@ -5467,7 +5467,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 7
+    "order": 22
   },
   "gunsmith_9": {
     "id": "gunsmith_9",
@@ -5530,7 +5530,7 @@
     "requiredTrust": 2,
     "tips": "",
     "videoGuides": [],
-    "order": 9
+    "order": 25
   },
   "gunsmith_11": {
     "id": "gunsmith_11",
@@ -5593,7 +5593,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 11
+    "order": 29
   },
   "gunsmith_13": {
     "id": "gunsmith_13",
@@ -5656,7 +5656,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 12
+    "order": 30
   },
   "gunsmith_15": {
     "id": "gunsmith_15",
@@ -5695,7 +5695,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.color.paintcan.plastic.003",
+        "item_id": "paint-plastic-003",
         "item_name": "Marine Camo 1"
       }
     ],
@@ -5707,7 +5707,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 13
+    "order": 32
   },
   "gunsmith_17": {
     "id": "gunsmith_17",
@@ -5770,7 +5770,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 14
+    "order": 33
   },
   "gunsmith_2": {
     "id": "gunsmith_2",
@@ -5830,7 +5830,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 1
+    "order": 12
   },
   "gunsmith_4": {
     "id": "gunsmith_4",
@@ -5884,7 +5884,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 4
+    "order": 17
   },
   "gunsmith_6": {
     "id": "gunsmith_6",
@@ -5939,7 +5939,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 6
+    "order": 20
   },
   "gunsmith_8": {
     "id": "gunsmith_8",
@@ -5999,7 +5999,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 8
+    "order": 23
   },
   "gunsmith_10": {
     "id": "gunsmith_10",
@@ -6059,7 +6059,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 10
+    "order": 26
   },
   "gunsmith_12": {
     "id": "gunsmith_12",
@@ -6104,13 +6104,13 @@
     "requiredTrust": 2,
     "tips": "",
     "videoGuides": [],
-    "order": 15
+    "order": 34
   },
   "gunsmith_14": {
     "id": "gunsmith_14",
     "name": "Protection Racket",
     "gameId": "task.gunsmith.m07",
-    "description": "To infiltrate and dismantle this transport line, we've gotta grease some palms to get our shot.\nListen up, head to the [guard post] near the [southern elevator] in the [Smuggling Tunnel] and grab the cash we've stashed. Then drop it in the designated cardboard boxes to butter up our contacts at these locations:\n[Control room], [Dock], [Warehouse], [Southern elevator].",
+    "description": "To infiltrate and dismantle this transport line, we've gotta grease some palms to get our shot.\r\nListen up, head to the [guard post] near the [southern elevator] in the [Smuggling Tunnel] and grab the cash we've stashed. Then drop it in the designated cardboard boxes to butter up our contacts at these locations:\r\n[Control room], [Dock], [Warehouse], [Southern elevator].",
     "objectives": [
       "Find money at Southern tunnel post",
       "Placement: control room",
@@ -6161,7 +6161,7 @@
     "requiredTrust": 2,
     "tips": "",
     "videoGuides": [],
-    "order": 16
+    "order": 35
   },
   "gunsmith_16": {
     "id": "gunsmith_16",
@@ -6221,7 +6221,7 @@
     "requiredTrust": 2,
     "tips": "",
     "videoGuides": [],
-    "order": 17
+    "order": 36
   },
   "gunsmith_18": {
     "id": "gunsmith_18",
@@ -6283,7 +6283,7 @@
     "requiredTrust": 2,
     "tips": "",
     "videoGuides": [],
-    "order": 18
+    "order": 37
   },
   "gunsmith_19": {
     "id": "gunsmith_19",
@@ -6341,7 +6341,7 @@
     "requiredTrust": 3,
     "tips": "",
     "videoGuides": [],
-    "order": 19
+    "order": 38
   },
   "gunsmith_20": {
     "id": "gunsmith_20",
@@ -6398,7 +6398,7 @@
     "requiredTrust": 3,
     "tips": "",
     "videoGuides": [],
-    "order": 20
+    "order": 39
   },
   "gunsmith_21": {
     "id": "gunsmith_21",
@@ -6438,7 +6438,7 @@
     "requiredTrust": 3,
     "tips": "",
     "videoGuides": [],
-    "order": 21
+    "order": 40
   },
   "gunsmith_22": {
     "id": "gunsmith_22",
@@ -6494,7 +6494,7 @@
     "requiredTrust": 3,
     "tips": "",
     "videoGuides": [],
-    "order": 22
+    "order": 41
   },
   "gunsmith_23": {
     "id": "gunsmith_23",
@@ -6563,7 +6563,7 @@
     "requiredTrust": 3,
     "tips": "",
     "videoGuides": [],
-    "order": 23
+    "order": 42
   },
   "gunsmith_24": {
     "id": "gunsmith_24",
@@ -6620,7 +6620,7 @@
     "requiredTrust": 4,
     "tips": "",
     "videoGuides": [],
-    "order": 24
+    "order": 43
   },
   "gunsmith_25": {
     "id": "gunsmith_25",
@@ -6672,7 +6672,7 @@
     "requiredTrust": 4,
     "tips": "",
     "videoGuides": [],
-    "order": 25
+    "order": 44
   },
   "research_1": {
     "id": "research_1",
@@ -6927,7 +6927,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 13
+    "order": 14
   },
   "research_17": {
     "id": "research_17",
@@ -6972,7 +6972,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 15
+    "order": 21
   },
   "research_18": {
     "id": "research_18",
@@ -7016,7 +7016,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 16
+    "order": 24
   },
   "research_19": {
     "id": "research_19",
@@ -7060,7 +7060,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 18
+    "order": 28
   },
   "research_2": {
     "id": "research_2",
@@ -7318,7 +7318,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 12
+    "order": 13
   },
   "research_14": {
     "id": "research_14",
@@ -7362,7 +7362,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 14
+    "order": 18
   },
   "research_4": {
     "id": "research_4",
@@ -7448,7 +7448,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 17
+    "order": 27
   },
   "research_12": {
     "id": "research_12",
@@ -7492,7 +7492,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 19
+    "order": 31
   },
   "ntg_34": {
     "id": "ntg_34",
@@ -7558,7 +7558,7 @@
     "requiredTrust": 3,
     "tips": "",
     "videoGuides": [],
-    "order": 21
+    "order": 20
   },
   "ntg_35": {
     "id": "ntg_35",
@@ -7617,7 +7617,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 23
+    "order": 22
   },
   "ntg_36": {
     "id": "ntg_36",
@@ -7672,7 +7672,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 24
+    "order": 23
   },
   "ntg_37": {
     "id": "ntg_37",
@@ -7729,7 +7729,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 25
+    "order": 24
   },
   "ntg_38": {
     "id": "ntg_38",
@@ -7787,7 +7787,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 26
+    "order": 25
   },
   "ntg_39": {
     "id": "ntg_39",
@@ -7842,7 +7842,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 28
+    "order": 27
   },
   "ntg_40": {
     "id": "ntg_40",
@@ -7929,7 +7929,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 29
+    "order": 28
   },
   "ntg_29": {
     "id": "ntg_29",
@@ -8000,7 +8000,7 @@
         "startTs": 712
       }
     ],
-    "order": 30
+    "order": 29
   },
   "ntg_41": {
     "id": "ntg_41",
@@ -8055,7 +8055,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 31
+    "order": 30
   },
   "ntg_42": {
     "id": "ntg_42",
@@ -8113,7 +8113,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 33
+    "order": 32
   },
   "ntg_43": {
     "id": "ntg_43",
@@ -8172,7 +8172,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 34
+    "order": 33
   },
   "ntg_44": {
     "id": "ntg_44",
@@ -8232,13 +8232,13 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 27
+    "order": 26
   },
   "ntg_45": {
     "id": "ntg_45",
     "name": "Medical Delivery 2",
     "gameId": "task.doc.a.13",
-    "description": "A few poor, isolated Scavengers reached out to me hoping to order some medication. Could you help me make a delivery run for them? These are the agreed drop-off locations, once you arrive, find the [cardboard box] and simply [place the medicine inside]:\nAt the [construction site rooftop crane] in [Dam Area],\nInside the [small hut with the satellite radar at the Dock] in [Dam Area],\nAnd at the [Italian restaurant in the -1F of Crimson Luxe, Resort Area].\nIf you lose any mission items, come to me to repurchase them.",
+    "description": "A few poor, isolated Scavengers reached out to me hoping to order some medication. Could you help me make a delivery run for them? These are the agreed drop-off locations, once you arrive, find the [cardboard box] and simply [place the medicine inside]:\r\nAt the [construction site rooftop crane] in [Dam Area],\r\nInside the [small hut with the satellite radar at the Dock] in [Dam Area],\r\nAnd at the [Italian restaurant in the -1F of Crimson Luxe, Resort Area].\r\nIf you lose any mission items, come to me to repurchase them.",
     "objectives": [
       "Arrive the satellite radar room at the Dock",
       "Arrive the Construction Site's tower crane",
@@ -8299,13 +8299,13 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 32
+    "order": 31
   },
   "ntg_46": {
     "id": "ntg_46",
     "name": "Record Left Behind",
     "gameId": "task.doc.a.14",
-    "description": "This island still holds scattered investigation reports left behind by NTG. Please help me recover another batch of them:\nIn the [rest area on the 2F of Trupiks Mall, Suburb Area],\nInside the [wrecked truck at the bottom of the dry riverbed] in [Dam Area],\nAnd within the [restroom of the medical base at the lowest level of Metro Area].",
+    "description": "This island still holds scattered investigation reports left behind by NTG. Please help me recover another batch of them:\r\nIn the [rest area on the 2F of Trupiks Mall, Suburb Area],\r\nInside the [wrecked truck at the bottom of the dry riverbed] in [Dam Area],\r\nAnd within the [restroom of the medical base at the lowest level of Metro Area].",
     "objectives": [
       "Find NTG Medical Report Mall -1F",
       "Find NTG Medical Report Dam Accident Truck",
@@ -8351,7 +8351,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.valuable.highvalue.poster_official_6",
+        "item_id": "misc_warfareposter_07",
         "item_name": "Mince's Poster"
       }
     ],
@@ -8370,7 +8370,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 35
+    "order": 34
   },
   "ark_4": {
     "id": "ark_4",
@@ -8453,7 +8453,7 @@
         "startTs": 90
       }
     ],
-    "order": 10
+    "order": 9
   },
   "ntg_47": {
     "id": "ntg_47",
@@ -8511,7 +8511,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 11
+    "order": 10
   },
   "ntg_48": {
     "id": "ntg_48",
@@ -8577,7 +8577,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 12
+    "order": 11
   },
   "ntg_49": {
     "id": "ntg_49",
@@ -8653,7 +8653,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 13
+    "order": 12
   },
   "ntg_50": {
     "id": "ntg_50",
@@ -8724,7 +8724,7 @@
         "type": "item",
         "quantity": 1,
         "item_id": "taskitem_photophone",
-        "item_name": "New Phone"
+        "item_name": "FotoVision+ Phone"
       }
     ],
     "requiredTasks": [
@@ -8734,7 +8734,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 20
+    "order": 19
   },
   "ntg_51": {
     "id": "ntg_51",
@@ -8804,7 +8804,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 22
+    "order": 21
   },
   "ntg_52": {
     "id": "ntg_52",
@@ -8877,7 +8877,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 14
+    "order": 13
   },
   "ntg_53": {
     "id": "ntg_53",
@@ -8944,7 +8944,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 15
+    "order": 14
   },
   "ntg_18": {
     "id": "ntg_18",
@@ -9027,7 +9027,7 @@
         "startTs": 472
       }
     ],
-    "order": 16
+    "order": 15
   },
   "ntg_54": {
     "id": "ntg_54",
@@ -9104,7 +9104,7 @@
         "type": "item",
         "quantity": 1,
         "item_id": "taskitem_photophone",
-        "item_name": "New Phone"
+        "item_name": "FotoVision+ Phone"
       }
     ],
     "requiredTasks": [
@@ -9114,7 +9114,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 17
+    "order": 16
   },
   "ntg_55": {
     "id": "ntg_55",
@@ -9179,7 +9179,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 18
+    "order": 17
   },
   "ntg_7": {
     "id": "ntg_7",
@@ -9261,7 +9261,7 @@
         "startTs": 185
       }
     ],
-    "order": 19
+    "order": 18
   },
   "ntg_56": {
     "id": "ntg_56",
@@ -9315,7 +9315,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 2
+    "order": 1
   },
   "ntg_1": {
     "id": "ntg_1",
@@ -9384,7 +9384,7 @@
         "ytId": "ZOuSedSDlUE"
       }
     ],
-    "order": 3
+    "order": 2
   },
   "ntg_57": {
     "id": "ntg_57",
@@ -9452,7 +9452,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 4
+    "order": 3
   },
   "ntg_58": {
     "id": "ntg_58",
@@ -9512,7 +9512,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 5
+    "order": 4
   },
   "ntg_59": {
     "id": "ntg_59",
@@ -9571,7 +9571,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 6
+    "order": 5
   },
   "ntg_60": {
     "id": "ntg_60",
@@ -9634,7 +9634,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 7
+    "order": 6
   },
   "ntg_61": {
     "id": "ntg_61",
@@ -9702,7 +9702,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 8
+    "order": 7
   },
   "ntg_62": {
     "id": "ntg_62",
@@ -9779,68 +9779,13 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 9
-  },
-  "ntg_63": {
-    "id": "ntg_63",
-    "name": "Messenger",
-    "gameId": "task.doc.dlc.01",
-    "description": "Hey, new face. Snap out of it. I’m Johnny, your contact.\r\nI got word you’d be coming. A guy asked me to pass something along to one of his colleagues. Well, not the package itself. Just a pickup spot.\r\nJudging by the way you’re dressed, I’d say that means you.\r\nDon’t expect me to hand-deliver it, though. This island’s no vacation spot these days. The pickup is on the roof of the Dam Dock Office. You’ll have to go get it yourself.\r\nAnd be careful with it. That thing is one pricey piece of electronics. Bring it back to me once you’ve got it, and I’ll take care of the rest.",
-    "objectives": [
-      "Find Locked OPS Terminal in Dam",
-      "Turn in Locked OPS Terminal"
-    ],
-    "corpId": "ntg",
-    "type": [
-      "retrieve",
-      "submit"
-    ],
-    "map": [
-      "any"
-    ],
-    "reward": [
-      {
-        "type": "money",
-        "quantity": 60000
-      },
-      {
-        "type": "item",
-        "quantity": 10,
-        "item_id": "ammo-12-7x55-fmj",
-        "item_name": "12.7x55mm PS12"
-      },
-      {
-        "type": "item",
-        "quantity": 1,
-        "gameId": "gds.color.paintcan.plastic.005",
-        "item_name": "Shattered"
-      },
-      {
-        "type": "item",
-        "quantity": 1,
-        "item_id": "weapon-rsh12silver",
-        "item_name": "RSH-12 12.7x55mm Revolver silver"
-      },
-      {
-        "type": "item",
-        "quantity": 1,
-        "gameId": "gds.valuable.task.marcus.mica",
-        "item_name": "Agent's MICA II"
-      }
-    ],
-    "preReward": [],
-    "requiredTasks": [],
-    "requiredPlayerLevel": 0,
-    "requiredTrust": 0,
-    "tips": "",
-    "videoGuides": [],
-    "order": 1
+    "order": 8
   },
   "regiment_23": {
     "id": "regiment_23",
     "name": "Taste of Life 2",
     "gameId": "task.wp.a.01",
-    "description": "You know [Smuggling Tunnel] has always been one of the top spots for smugglers and black market dealers. Goods from everywhere, so I bet among those goodies there's Asian booze I haven't tasted.\nGo get me some [sake].",
+    "description": "You know [Smuggling Tunnel] has always been one of the top spots for smugglers and black market dealers. Goods from everywhere, so I bet among those goodies there's Asian booze I haven't tasted.\r\nGo get me some [sake].",
     "objectives": [
       "Find Sake",
       "Turn in Sake"
@@ -9908,7 +9853,7 @@
     "id": "regiment_36",
     "name": "Rebellious Reporter",
     "gameId": "task.wp.a.02",
-    "description": "That cave is full of fun, heard those hypocrites put up skeleton scarecrows to warn people!\nThen we'll do the opposite, go to [Smuggling Tunnel] and snap photos of some [No Photography] signs and [skeleton scarecrows].",
+    "description": "That cave is full of fun, heard those hypocrites put up skeleton scarecrows to warn people!\r\nThen we'll do the opposite, go to [Smuggling Tunnel] and snap photos of some [No Photography] signs and [skeleton scarecrows].",
     "objectives": [
       "Capture the 'No Photo' Sign 1 on Northeast",
       "Capture the 'No Photo' Sign 2 at Water Gate",
@@ -9961,7 +9906,7 @@
         "type": "item",
         "quantity": 1,
         "item_id": "taskitem_photophone",
-        "item_name": "New Phone"
+        "item_name": "FotoVision+ Phone"
       }
     ],
     "requiredTasks": [
@@ -10053,7 +9998,7 @@
     "id": "regiment_27",
     "name": "My Favourite: Mosin",
     "gameId": "task.wp.a.04",
-    "description": "My favorite gun is Mosin. This old rifle has a legendary history, every time I stroke it, I feel the hot blood from those battles.\nBut maybe you can challenge my past glory. Just grab a [Mosin], find a good spot, wait quietly, then 'bang!' Surprise your enemies with its precision and power.",
+    "description": "My favorite gun is Mosin. This old rifle has a legendary history, every time I stroke it, I feel the hot blood from those battles.\r\nBut maybe you can challenge my past glory. Just grab a [Mosin], find a good spot, wait quietly, then 'bang!' Surprise your enemies with its precision and power.",
     "objectives": [
       "Mosin series: Eliminate targets"
     ],
@@ -10121,7 +10066,7 @@
     "id": "regiment_37",
     "name": "My Favourite: AK",
     "gameId": "task.wp.a.05",
-    "description": "You know AK series guns have average accuracy but super reliable operation, simple structure, perfect for mid-close range firepower. That's why I love 'em so much.\nBet you're no stranger to [AK series firearms], how about adding another layer of battle glory to it.",
+    "description": "You know AK series guns have average accuracy but super reliable operation, simple structure, perfect for mid-close range firepower. That's why I love 'em so much.\r\nBet you're no stranger to [AK series firearms], how about adding another layer of battle glory to it.",
     "objectives": [
       "AK74 series: Eliminate targets"
     ],
@@ -10317,7 +10262,7 @@
     "id": "regiment_31",
     "name": "My Favourite: Sjogren",
     "gameId": "task.wp.a.08",
-    "description": "My other favorite gun is Sjogren! This one's like my savior in adventures, with it I face any challenge head-on.\nBack in those chaotic battle days, it got me out of jams countless times!\nThis time, I want you to feel its power too. So take the [Sjogren] to [Metro Area] and school those scavengers. Make every bullet thunder like lightning and shake 'em up!",
+    "description": "My other favorite gun is Sjogren! This one's like my savior in adventures, with it I face any challenge head-on.\r\nBack in those chaotic battle days, it got me out of jams countless times!\r\nThis time, I want you to feel its power too. So take the [Sjogren] to [Metro Area] and school those scavengers. Make every bullet thunder like lightning and shake 'em up!",
     "objectives": [
       "Sjogren series: Eliminate targets in Metro Area"
     ],
@@ -10380,7 +10325,7 @@
     "id": "regiment_17",
     "name": "Pistol Glory",
     "gameId": "task.wp.a.09",
-    "description": "Story time. Once my old war buddy griped that our issued pistols were useless, said they're like firecrackers, just noise to scare timid foes. Then we got pinned behind a rock, couldn't poke our heads out, only my sidearm left.\nHe said we're done for, but I drew that pistol, yelled and charged out, dropped all those enemies! Afterward, he snagged my gun and carried it everywhere.\nAlright, story's over. Now your turn to make the [pistol] shine!",
+    "description": "Story time. Once my old war buddy griped that our issued pistols were useless, said they're like firecrackers, just noise to scare timid foes. Then we got pinned behind a rock, couldn't poke our heads out, only my sidearm left.\r\nHe said we're done for, but I drew that pistol, yelled and charged out, dropped all those enemies! Afterward, he snagged my gun and carried it everywhere.\r\nAlright, story's over. Now your turn to make the [pistol] shine!",
     "objectives": [
       "Eliminate targets with Glock18c",
       "Eliminate targets with KW1911",
@@ -10411,7 +10356,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.color.paintcan.plastic.013",
+        "item_id": "paint-plastic-013",
         "item_name": "Antiqued"
       }
     ],
@@ -10440,7 +10385,7 @@
     "id": "regiment_39",
     "name": "My Favourite: FAL",
     "gameId": "task.wp.a.10",
-    "description": "My other favorite, the ferocious FAL! It's like my old pal, got me through countless wild moments.\nNow, take that [FAL] and give those bastards a few rounds! Let the bullets unleash its power, drop every enemy! Don't be scared, picture their fear, savor the moment!",
+    "description": "My other favorite, the ferocious FAL! It's like my old pal, got me through countless wild moments.\r\nNow, take that [FAL] and give those bastards a few rounds! Let the bullets unleash its power, drop every enemy! Don't be scared, picture their fear, savor the moment!",
     "objectives": [
       "SA58 (FAL): Eliminate targets",
       "AKM series: Eliminate targets"
@@ -10574,7 +10519,7 @@
     "id": "regiment_30",
     "name": "Forever in a Flash",
     "gameId": "task.wp.a.12",
-    "description": "You know what's common between statues and photos? They both freeze a thing in eternal instant. So romantic... Hurry to the island and snap some statue pics for me to enjoy.\nLike [Hyder Town]'s [grizzly bear statue],\n[Resort Area] flea market's [bull statue],\n[Clifton church]'s nearby [angel statue],\nAnd [Metro Area]'s [hunting dog statue].",
+    "description": "You know what's common between statues and photos? They both freeze a thing in eternal instant. So romantic... Hurry to the island and snap some statue pics for me to enjoy.\r\nLike [Hyder Town]'s [grizzly bear statue],\r\n[Resort Area] flea market's [bull statue],\r\n[Clifton church]'s nearby [angel statue],\r\nAnd [Metro Area]'s [hunting dog statue].",
     "objectives": [
       "Take photo of the Bear statue",
       "Take photo of the Bull statue",
@@ -10660,7 +10605,7 @@
     "id": "regiment_34",
     "name": "War Within Self",
     "gameId": "task.wp.a.13",
-    "description": "Warrior, stand tall and listen. The scariest enemy might be your own heart. Final challenge: conquer your fear, hesitation, weakness, and self-doubt.\nForge your will... Not joking this time. All those previous tasks were to build you a steel heart.\n[No matter the method, no matter the weapon, take on a massive horde solo, challenge yourself, conquer yourself] (can kill other contractors).",
+    "description": "Warrior, stand tall and listen. The scariest enemy might be your own heart. Final challenge: conquer your fear, hesitation, weakness, and self-doubt.\r\nForge your will... Not joking this time. All those previous tasks were to build you a steel heart.\r\n[No matter the method, no matter the weapon, take on a massive horde solo, challenge yourself, conquer yourself] (can kill other contractors).",
     "objectives": [
       "Eliminate Contractors or Scavangers"
     ],
@@ -10728,7 +10673,7 @@
     "id": "regiment_35",
     "name": "Intermission",
     "gameId": "task.wp.a.14",
-    "description": "You did great, haha! Knew you could, catching up to me back in the day!\n...\nDon't just stand there, don't you think this is the perfect moment for a little break? Don't worry, got some prime stash here, go grab a [lighter], don't forget the fuel!",
+    "description": "You did great, haha! Knew you could, catching up to me back in the day!\r\n...\r\nDon't just stand there, don't you think this is the perfect moment for a little break? Don't worry, got some prime stash here, go grab a [lighter], don't forget the fuel!",
     "objectives": [
       "Turn in Lighter",
       "Turn in Lighter fluid"
@@ -10797,7 +10742,7 @@
     "id": "regiment_10",
     "name": "Treasure in the Sewage",
     "gameId": "task.wp.b.01",
-    "description": "Heard [Resort Area] has been really chaotic lately, that's bad, my most precious treasure, [my notebook], is still hidden there! \nThey say the faintest pencil is better than the sharpest memory, that notebook is the most valuable thing to an old guy like me! Hurry and help me get it back! It's inside the [Wastewater Plant] west of [Resort Area].",
+    "description": "Heard [Resort Area] has been really chaotic lately, that's bad, my most precious treasure, [my notebook], is still hidden there! \r\nThey say the faintest pencil is better than the sharpest memory, that notebook is the most valuable thing to an old guy like me! Hurry and help me get it back! It's inside the [Wastewater Plant] west of [Resort Area].",
     "objectives": [
       "Reach the Wastewater treatment plant",
       "Find Igor's treasure 1",
@@ -10868,7 +10813,7 @@
     "id": "regiment_11",
     "name": "Long live friendship 1",
     "gameId": "task.wp.b.02",
-    "description": "I have an old friend who used to live in [Resort Area], he loved messing with stones and metals. In my opinion, how can those things compare to guns? Guns are practical and can protect you. \nSpeaking of this makes me mad, [Resort Area] is now a mess because of a bunch of bandits, they must be disturbing my friend's rest! Go [teach those troublemakers a lesson]!",
+    "description": "I have an old friend who used to live in [Resort Area], he loved messing with stones and metals. In my opinion, how can those things compare to guns? Guns are practical and can protect you. \r\nSpeaking of this makes me mad, [Resort Area] is now a mess because of a bunch of bandits, they must be disturbing my friend's rest! Go [teach those troublemakers a lesson]!",
     "objectives": [
       "Eliminate Scavangers in Resort Area"
     ],
@@ -10987,7 +10932,7 @@
         "type": "item",
         "quantity": 1,
         "item_id": "taskitem_photophone",
-        "item_name": "New Phone"
+        "item_name": "FotoVision+ Phone"
       }
     ],
     "requiredTasks": [
@@ -11244,7 +11189,7 @@
     "id": "regiment_29",
     "name": "Dress the Part",
     "gameId": "task.wp.b.07",
-    "description": "Sometimes I think the police guys look pretty cool, holding guns and 'enforcing law' on disobedient people. Hmm... why don't you try it too!\nPut on [Police PACA body armor] and [Beret Hat Black], give those law-breaking guys some lessons.",
+    "description": "Sometimes I think the police guys look pretty cool, holding guns and 'enforcing law' on disobedient people. Hmm... why don't you try it too!\r\nPut on [Police PACA body armor] and [Beret Hat Black], give those law-breaking guys some lessons.",
     "objectives": [
       "Eliminate targets in police outfits"
     ],
@@ -11312,7 +11257,7 @@
     "id": "regiment_8",
     "name": "Submachine Guns",
     "gameId": "task.wp.b.08",
-    "description": "I once made a bet with a war buddy on the battlefield, only using submachine guns, see who kills more enemies. But guess what, that guy rushed out and never came back, I bet he went somewhere to slack off, really disrespecting our bet! You ask where he is now? Here, this dog tag is his.\nNow, wanna finish that bet for him? Try it, [kill a few scavengers with a submachine gun].",
+    "description": "I once made a bet with a war buddy on the battlefield, only using submachine guns, see who kills more enemies. But guess what, that guy rushed out and never came back, I bet he went somewhere to slack off, really disrespecting our bet! You ask where he is now? Here, this dog tag is his.\r\nNow, wanna finish that bet for him? Try it, [kill a few scavengers with a submachine gun].",
     "objectives": [
       "SMG: Eliminate targets"
     ],
@@ -11489,7 +11434,7 @@
     "id": "regiment_15",
     "name": "Reading Habits",
     "gameId": "task.wp.b.11",
-    "description": "Hey, you hate power outages? Just now while reading my magazine, it suddenly went pitch black, weird, someday I'll go check the lines myself.\nBut before that, I need to prepare some emergency stuff. Go get me a [flashlight] and [size D battery2], so at least during blackout I can still read my magazine in peace.",
+    "description": "Hey, you hate power outages? Just now while reading my magazine, it suddenly went pitch black, weird, someday I'll go check the lines myself.\r\nBut before that, I need to prepare some emergency stuff. Go get me a [flashlight] and [size D battery2], so at least during blackout I can still read my magazine in peace.",
     "objectives": [
       "Turn in Flash light",
       "Turn in Size D battery2"
@@ -12219,7 +12164,7 @@
         "type": "item",
         "quantity": 1,
         "item_id": "taskitem_photophone",
-        "item_name": "New Phone"
+        "item_name": "FotoVision+ Phone"
       }
     ],
     "requiredTasks": [
@@ -12230,6 +12175,61 @@
     "tips": "",
     "videoGuides": [],
     "order": 8
+  },
+  "ntg_63": {
+    "id": "ntg_63",
+    "name": "Messenger",
+    "gameId": "task.doc.dlc.01",
+    "description": "Hey, new face. Snap out of it. I’m Johnny, your contact.\r\nI got word you’d be coming. A guy asked me to pass something along to one of his colleagues. Well, not the package itself. Just a pickup spot.\r\nJudging by the way you’re dressed, I’d say that means you.\r\nDon’t expect me to hand-deliver it, though. This island’s no vacation spot these days. The pickup is on the roof of the Dam Dock Office. You’ll have to go get it yourself.\r\nAnd be careful with it. That thing is one pricey piece of electronics. Bring it back to me once you’ve got it, and I’ll take care of the rest.",
+    "objectives": [
+      "Find Locked OPS Terminal in Dam",
+      "Turn in Locked OPS Terminal"
+    ],
+    "corpId": "trupiks",
+    "type": [
+      "retrieve",
+      "submit"
+    ],
+    "map": [
+      "any"
+    ],
+    "reward": [
+      {
+        "type": "money",
+        "quantity": 60000
+      },
+      {
+        "type": "item",
+        "quantity": 10,
+        "item_id": "ammo-12-7x55-fmj",
+        "item_name": "12.7x55mm PS12"
+      },
+      {
+        "type": "item",
+        "quantity": 1,
+        "item_id": "paint-plastic-005",
+        "item_name": "Shattered"
+      },
+      {
+        "type": "item",
+        "quantity": 1,
+        "item_id": "weapon-rsh12silver",
+        "item_name": "RSH-12 12.7x55mm Revolver silver"
+      },
+      {
+        "type": "item",
+        "quantity": 1,
+        "item_id": "taskitem_warfaredlcmica",
+        "item_name": "M.I.C.A."
+      }
+    ],
+    "preReward": [],
+    "requiredTasks": [],
+    "requiredPlayerLevel": 0,
+    "requiredTrust": 0,
+    "tips": "",
+    "videoGuides": [],
+    "order": 1
   },
   "trupiks_22": {
     "id": "trupiks_22",
@@ -12260,7 +12260,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.sc.caselv3",
+        "item_id": "container-caselv3",
         "item_name": "Titan container"
       }
     ],
@@ -12273,7 +12273,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 19
+    "order": 26
   },
   "trupiks_12": {
     "id": "trupiks_12",
@@ -12308,7 +12308,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.consumption.all.hqfuel.xl",
+        "item_id": "container-hqfuel-xl",
         "item_name": "HQ Power Fuel Can L"
       },
       {
@@ -12346,13 +12346,13 @@
         "startTs": 360
       }
     ],
-    "order": 17
+    "order": 24
   },
   "trupiks_23": {
     "id": "trupiks_23",
     "name": "Hidden Exfils",
     "gameId": "task.mall.a.03",
-    "description": "During your explorations, you've probably come across special exfiltration points that require specific rare keys to unlock. That's why these routes are rarely used.\nI'd like you to scout them for me, use the [corresponding keys] to exfil from the locked exfil points in [Dam Area], [Suburb Area], and [Resort Area].",
+    "description": "During your explorations, you've probably come across special exfiltration points that require specific rare keys to unlock. That's why these routes are rarely used.\r\nI'd like you to scout them for me, use the [corresponding keys] to exfil from the locked exfil points in [Dam Area], [Suburb Area], and [Resort Area].",
     "objectives": [
       "Successfully extract from Central Bunker",
       "Extract from Western Bunker",
@@ -12405,13 +12405,13 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 18
+    "order": 25
   },
   "trupiks_14": {
     "id": "trupiks_14",
     "name": "Like Finds Like 1",
     "gameId": "task.mall.a.04",
-    "description": "Repairs and production eat up resources fast.\nI'm stocking up on supplies,and the first category is [household items].\nHere's a list. See what you can find.",
+    "description": "Repairs and production eat up resources fast.\r\nI'm stocking up on supplies,and the first category is [household items].\r\nHere's a list. See what you can find.",
     "objectives": [
       "Turn in Nail",
       "Turn in Bolts",
@@ -12441,7 +12441,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.valuable.highvalue.poster_official_1",
+        "item_id": "misc_warfareposter_02",
         "item_name": "Ravager's Poster"
       },
       {
@@ -12476,13 +12476,13 @@
         "startTs": 425
       }
     ],
-    "order": 20
+    "order": 27
   },
   "trupiks_15": {
     "id": "trupiks_15",
     "name": "Like Finds Like 2",
     "gameId": "task.mall.a.05",
-    "description": "Thanks for the last delivery. Since you're already helping, let's keep going.\nThis time I'm looking for [specific tools].\nYou'll need to collect the ones listed here exactly,no substitutes. Much appreciated.",
+    "description": "Thanks for the last delivery. Since you're already helping, let's keep going.\r\nThis time I'm looking for [specific tools].\r\nYou'll need to collect the ones listed here exactly,no substitutes. Much appreciated.",
     "objectives": [
       "Turn in Climb rope",
       "Turn in Tire Sealant",
@@ -12512,7 +12512,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.valuable.highvalue.poster_official_2",
+        "item_id": "misc_warfareposter_03",
         "item_name": "Butcher's Poster"
       },
       {
@@ -12547,13 +12547,13 @@
         "startTs": 450
       }
     ],
-    "order": 21
+    "order": 28
   },
   "trupiks_16": {
     "id": "trupiks_16",
     "name": "Like Finds Like 3",
     "gameId": "task.mall.a.06",
-    "description": "Next up,[storage media].\nI'm particular about these. I need the right types to ensure data integrity.\nCheck the list and get me what you can.",
+    "description": "Next up,[storage media].\r\nI'm particular about these. I need the right types to ensure data integrity.\r\nCheck the list and get me what you can.",
     "objectives": [
       "Turn in CD",
       "Turn in Magazine",
@@ -12583,7 +12583,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.valuable.highvalue.poster_official_3",
+        "item_id": "misc_warfareposter_04",
         "item_name": "The Dam's Poster"
       },
       {
@@ -12618,13 +12618,13 @@
         "startTs": 465
       }
     ],
-    "order": 22
+    "order": 29
   },
   "trupiks_17": {
     "id": "trupiks_17",
     "name": "Like Finds Like 4",
     "gameId": "task.mall.a.07",
-    "description": "You've gotten me this far,thank you.\nThis is the final set of supplies I need: [energy-based items].\nThese are vital to keeping our systems running smoothly. As always, here's the list. I appreciate your help.",
+    "description": "You've gotten me this far,thank you.\r\nThis is the final set of supplies I need: [energy-based items].\r\nThese are vital to keeping our systems running smoothly. As always, here's the list. I appreciate your help.",
     "objectives": [
       "Turn in WD-40",
       "Turn in Oil can",
@@ -12660,7 +12660,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.sc.caselv4pro",
+        "item_id": "container-caselv4pro",
         "item_name": "Neptune container"
       }
     ],
@@ -12683,13 +12683,13 @@
         "startTs": 480
       }
     ],
-    "order": 23
+    "order": 30
   },
   "trupiks_24": {
     "id": "trupiks_24",
     "name": "Signal Supplies",
     "gameId": "task.mall.a.08",
-    "description": "Want to try out the new batch of signal flares we just got? With these, you can call in supply crates at specific locations.\n1. Supply point in [Suburb Area]: [Central area, high ground, good visibility, it used to be a lively place once bustling with crowds.]\n2. Supply point in [Resort Area]: [Only one path leads here, and the road ends ahead. The right spot is surrounded by water.]\n3. Supply point in [Dam Area]: [Head north, find the high-rise that never rose. From up there, the view is wide open.]",
+    "description": "Want to try out the new batch of signal flares we just got? With these, you can call in supply crates at specific locations.\r\n1. Supply point in [Suburb Area]: [Central area, high ground, good visibility, it used to be a lively place once bustling with crowds.]\r\n2. Supply point in [Resort Area]: [Only one path leads here, and the road ends ahead. The right spot is surrounded by water.]\r\n3. Supply point in [Dam Area]: [Head north, find the high-rise that never rose. From up there, the view is wide open.]",
     "objectives": [
       "Arrive the launch site on Trupiks rooftop",
       "Arrive the launch site on top of Construction Site",
@@ -12714,7 +12714,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.consumption.all.hqfuel.xl",
+        "item_id": "container-hqfuel-xl",
         "item_name": "HQ Power Fuel Can L"
       },
       {
@@ -12732,7 +12732,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 16
+    "order": 23
   },
   "trupiks_21": {
     "id": "trupiks_21",
@@ -12777,7 +12777,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.valuable.task.flaregun_ark",
+        "item_id": "taskitem_warfaresignalgun",
         "item_name": "Flare Gun - ARK"
       }
     ],
@@ -12798,7 +12798,7 @@
         "startTs": 110
       }
     ],
-    "order": 13
+    "order": 20
   },
   "ntg_13": {
     "id": "ntg_13",
@@ -12827,7 +12827,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.consumption.all.hqfuel.xl",
+        "item_id": "container-hqfuel-xl",
         "item_name": "HQ Power Fuel Can L"
       },
       {
@@ -12839,7 +12839,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.valuable.highvalue.poster_official_4",
+        "item_id": "misc_warfareposter_05",
         "item_name": "'Extraction' Poster"
       }
     ],
@@ -12861,7 +12861,7 @@
         "startTs": 367
       }
     ],
-    "order": 14
+    "order": 21
   },
   "trupiks_25": {
     "id": "trupiks_25",
@@ -12892,8 +12892,8 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.storage.all.magazinebox",
-        "item_name": "Magazine Box"
+        "item_id": "container-magazinebox",
+        "item_name": "Mag&Attachment Box"
       }
     ],
     "preReward": [],
@@ -12904,13 +12904,13 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 9
+    "order": 16
   },
   "trupiks_1": {
     "id": "trupiks_1",
     "name": "Secure Support",
     "gameId": "task.mall.b.02",
-    "description": "I've noticed your operations outside come with high risks. I can make a special safe to help you out.\nThis unique safe straps firmly to your lower back, no battlefield mishap will affect it.\nWhile I'm making the safe, I'd like you to check the safety of three locations in [Suburb Area]: [Hyder Town], [Power Plant], and [the warehouse east of the Office Building].",
+    "description": "I've noticed your operations outside come with high risks. I can make a special safe to help you out.\r\nThis unique safe straps firmly to your lower back, no battlefield mishap will affect it.\r\nWhile I'm making the safe, I'd like you to check the safety of three locations in [Suburb Area]: [Hyder Town], [Power Plant], and [the warehouse east of the Office Building].",
     "objectives": [
       "Reach Hydertown",
       "Reach the warehouses in Surburb area",
@@ -12935,7 +12935,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.sc.caselv0",
+        "item_id": "container-caselv0",
         "item_name": "Pluto container"
       }
     ],
@@ -12960,7 +12960,7 @@
         "ytId": "DIjbTZN_Wxc"
       }
     ],
-    "order": 5
+    "order": 9
   },
   "trupiks_26": {
     "id": "trupiks_26",
@@ -12993,7 +12993,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.sc.caselv1",
+        "item_id": "container-caselv1",
         "item_name": "Mercury container"
       }
     ],
@@ -13005,7 +13005,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 12
+    "order": 19
   },
   "trupiks_9": {
     "id": "trupiks_9",
@@ -13038,7 +13038,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.consumption.all.hqfuel.xl",
+        "item_id": "container-hqfuel-xl",
         "item_name": "HQ Power Fuel Can L"
       },
       {
@@ -13071,13 +13071,13 @@
         "startTs": 241
       }
     ],
-    "order": 10
+    "order": 17
   },
   "trupiks_10": {
     "id": "trupiks_10",
     "name": "Capacity Upgrade 2",
     "gameId": "task.mall.b.05",
-    "description": "I need to recover some special parts, the tricky part is they all come from the same model of television.\nThis TV is the same model as the one I have at home. I've already reclaimed some parts, but I'd like you to keep searching inside [residential houses in Suburb Area]. Photograph those TVs, and I'll recover the components.",
+    "description": "I need to recover some special parts, the tricky part is they all come from the same model of television.\r\nThis TV is the same model as the one I have at home. I've already reclaimed some parts, but I'd like you to keep searching inside [residential houses in Suburb Area]. Photograph those TVs, and I'll recover the components.",
     "objectives": [
       "Capture TV 1 (Cottage northeast of Hyder Town)",
       "Capture TV 2 (Cottage next to the Northern Tunnel)",
@@ -13104,7 +13104,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.sc.caselv2",
+        "item_id": "container-caselv2",
         "item_name": "Venus container"
       }
     ],
@@ -13127,7 +13127,7 @@
         "startTs": 292
       }
     ],
-    "order": 15
+    "order": 22
   },
   "trupiks_27": {
     "id": "trupiks_27",
@@ -13157,7 +13157,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.consumption.all.hqfuel.xl",
+        "item_id": "container-hqfuel-xl",
         "item_name": "HQ Power Fuel Can L"
       },
       {
@@ -13181,7 +13181,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 11
+    "order": 18
   },
   "trupiks_2": {
     "id": "trupiks_2",
@@ -13216,7 +13216,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.storage.all.ammobox.919",
+        "item_id": "container-ammobox-919",
         "item_name": "9x19 Ammo box"
       }
     ],
@@ -13236,7 +13236,7 @@
         "startTs": 58
       }
     ],
-    "order": 1
+    "order": 2
   },
   "trupiks_3": {
     "id": "trupiks_3",
@@ -13271,7 +13271,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.storage.all.medicalbox",
+        "item_id": "container-medicalbox",
         "item_name": "Medical Box"
       }
     ],
@@ -13293,7 +13293,7 @@
         "startTs": 101
       }
     ],
-    "order": 2
+    "order": 4
   },
   "trupiks_28": {
     "id": "trupiks_28",
@@ -13326,19 +13326,19 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.consumption.all.hqfuel.xl",
+        "item_id": "container-hqfuel-xl",
         "item_name": "HQ Power Fuel Can L"
       },
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.storage.all.ammobox.55645",
+        "item_id": "container-ammobox-55645",
         "item_name": "556x45 Ammo box"
       },
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.storage.all.ammobox.919",
+        "item_id": "container-ammobox-919",
         "item_name": "9x19 Ammo box"
       }
     ],
@@ -13350,7 +13350,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 3
+    "order": 6
   },
   "trupiks_29": {
     "id": "trupiks_29",
@@ -13381,7 +13381,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.color.paintcan.plastic.010",
+        "item_id": "paint-plastic-010",
         "item_name": "Undercurrent"
       },
       {
@@ -13393,7 +13393,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.storage.all.ammobox.54539",
+        "item_id": "container-ammobox-54539",
         "item_name": "545x39 Ammo box"
       }
     ],
@@ -13405,7 +13405,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 4
+    "order": 8
   },
   "trupiks_30": {
     "id": "trupiks_30",
@@ -13437,19 +13437,19 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.consumption.all.hqfuel.xl",
+        "item_id": "container-hqfuel-xl",
         "item_name": "HQ Power Fuel Can L"
       },
       {
         "type": "item",
         "quantity": 2,
-        "gameId": "gds.storage.all.ammobox.55645",
+        "item_id": "container-ammobox-55645",
         "item_name": "556x45 Ammo box"
       },
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.storage.all.ammobox.919",
+        "item_id": "container-ammobox-919",
         "item_name": "9x19 Ammo box"
       }
     ],
@@ -13461,7 +13461,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 6
+    "order": 10
   },
   "trupiks_31": {
     "id": "trupiks_31",
@@ -13494,13 +13494,13 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.color.paintcan.empty.ma",
-        "item_name": "Paint Can Empty"
+        "item_id": "paint-empty",
+        "item_name": "Paint Stripper"
       },
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.storage.all.ammobox.76239",
+        "item_id": "container-ammobox-76239",
         "item_name": "762x39 Ammo box"
       }
     ],
@@ -13512,7 +13512,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 7
+    "order": 12
   },
   "trupiks_32": {
     "id": "trupiks_32",
@@ -13543,8 +13543,8 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.storage.all.mini.collectionbox",
-        "item_name": "Mini Junk Box"
+        "item_id": "container-mini-collectionbox",
+        "item_name": "Collection Box Small"
       }
     ],
     "preReward": [
@@ -13557,7 +13557,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.consumption.all.hqfuel.xl",
+        "item_id": "container-hqfuel-xl",
         "item_name": "HQ Power Fuel Can L"
       },
       {
@@ -13574,7 +13574,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 8
+    "order": 14
   },
   "trupiks_33": {
     "id": "trupiks_33",
@@ -13642,7 +13642,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 1
+    "order": 3
   },
   "trupiks_34": {
     "id": "trupiks_34",
@@ -13673,7 +13673,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.color.paintcan.plastic.019",
+        "item_id": "paint-plastic-019",
         "item_name": "Lattice"
       }
     ],
@@ -13685,7 +13685,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 2
+    "order": 5
   },
   "trupiks_35": {
     "id": "trupiks_35",
@@ -13718,20 +13718,20 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.color.paintcan.plastic.026",
+        "item_id": "paint-plastic-026",
         "item_name": "Stratified"
       },
       {
         "type": "item",
         "quantity": 2,
         "item_id": "misc_b_militaryharddrive",
-        "item_name": "Hard drive"
+        "item_name": "Hard drive - classified "
       },
       {
         "type": "item",
         "quantity": 2,
         "item_id": "misc_b_militaryusbdrive",
-        "item_name": "CPU Fan"
+        "item_name": "USB - classified "
       }
     ],
     "preReward": [],
@@ -13742,7 +13742,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 3
+    "order": 7
   },
   "trupiks_36": {
     "id": "trupiks_36",
@@ -13797,7 +13797,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 4
+    "order": 11
   },
   "trupiks_37": {
     "id": "trupiks_37",
@@ -13827,7 +13827,7 @@
       {
         "type": "item",
         "quantity": 1,
-        "gameId": "gds.color.paintcan.plastic.034",
+        "item_id": "paint-plastic-034",
         "item_name": "Impression"
       },
       {
@@ -13864,7 +13864,7 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 5
+    "order": 13
   },
   "trupiks_38": {
     "id": "trupiks_38",
@@ -13909,6 +13909,6 @@
     "requiredTrust": 0,
     "tips": "",
     "videoGuides": [],
-    "order": 6
+    "order": 15
   }
 }

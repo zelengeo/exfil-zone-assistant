@@ -13,6 +13,10 @@
 // Curated, and preserved across regeneration: `relatedQuests` and `hideoutUpgradesTasks`. Both
 // describe quest gating, which exists nowhere in the client data. Everything else comes from the
 // game, price included - this is the one dataset here whose prices are not server-side.
+//
+// `perks` is the buff the level grants: `description` is the line the in-game upgrade menu
+// prints for this level, `value` the number the game applies. They can disagree - the menu text
+// and the applied value are authored separately - so both ship.
 
 export const hideoutUpgrades = {
     "RestRoomLv1": {
@@ -35,6 +39,14 @@ export const hideoutUpgrades = {
         "relatedQuests": [
             "task.mall.4"
         ],
+        "perks": [
+            {
+                "key": "expboost",
+                "perkClass": "ExpBonus_C",
+                "description": "Increased Experiece gain: +2%",
+                "value": 0.019999999552965164
+            }
+        ],
         "levelUpIcon": "RestRoomLv1"
     },
     "RestRoomLv2": {
@@ -55,6 +67,14 @@ export const hideoutUpgrades = {
             "Player": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "expboost",
+                "perkClass": "ExpBonus_C",
+                "description": "Increased Experiece gain: +5%",
+                "value": 0.05000000074505806
+            }
+        ],
         "levelUpIcon": "RestRoomLv2"
     },
     "RestRoomLv3": {
@@ -75,6 +95,14 @@ export const hideoutUpgrades = {
             "Player": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "expboost",
+                "perkClass": "ExpBonus_C",
+                "description": "Increased Experiece gain: +10%",
+                "value": 0.10000000149011612
+            }
+        ],
         "levelUpIcon": "RestRoomLv3"
     },
     "SofaLv1": {
@@ -97,6 +125,14 @@ export const hideoutUpgrades = {
         "relatedQuests": [
             "task.mall.4"
         ],
+        "perks": [
+            {
+                "key": "Weight_BaseLimit_Scale",
+                "perkClass": "Enduring_C",
+                "description": "Increase limit of weight-bearing: +5kg",
+                "value": 5
+            }
+        ],
         "levelUpIcon": "SofaLv1"
     },
     "SofaLv2": {
@@ -116,6 +152,14 @@ export const hideoutUpgrades = {
             "Generator": 2
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "Weight_BaseLimit_Scale",
+                "perkClass": "Enduring_C",
+                "description": "Increase limit of weight-bearing: +10kg",
+                "value": 10
+            }
+        ],
         "levelUpIcon": "SofaLv2"
     },
     "SofaLv3": {
@@ -135,6 +179,14 @@ export const hideoutUpgrades = {
             "Generator": 3
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "Weight_BaseLimit_Scale",
+                "perkClass": "Enduring_C",
+                "description": "Increase limit of weight-bearing: +20kg",
+                "value": 20
+            }
+        ],
         "levelUpIcon": "SofaLv3"
     },
     "BookcaseLv1": {
@@ -157,6 +209,14 @@ export const hideoutUpgrades = {
         "relatedQuests": [
             "task.mall.4"
         ],
+        "perks": [
+            {
+                "key": "SpeedUpTheReloadingSpeed_Scalar",
+                "perkClass": "SpeedUpReloadingSpeed_C",
+                "description": "Reload Speed +10%",
+                "value": 0.8999999761581421
+            }
+        ],
         "levelUpIcon": "BookcaseLv1"
     },
     "BookcaseLv2": {
@@ -176,6 +236,14 @@ export const hideoutUpgrades = {
             "Generator": 2
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "SpeedUpTheReloadingSpeed_Scalar",
+                "perkClass": "SpeedUpReloadingSpeed_C",
+                "description": "Reload Speed +20%",
+                "value": 0.800000011920929
+            }
+        ],
         "levelUpIcon": "BookcaseLv2"
     },
     "BookcaseLv3": {
@@ -195,6 +263,14 @@ export const hideoutUpgrades = {
             "Generator": 3
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "SpeedUpTheReloadingSpeed_Scalar",
+                "perkClass": "SpeedUpReloadingSpeed_C",
+                "description": "Reload Speed +30%",
+                "value": 0.699999988079071
+            }
+        ],
         "levelUpIcon": "BookcaseLv3"
     },
     "TVSetLv1": {
@@ -215,6 +291,14 @@ export const hideoutUpgrades = {
             "WorkshopZone": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "scavcd",
+                "perkClass": "ScavCD_C",
+                "description": "Reduce SCAV. mode CD: -10%",
+                "value": 0.10000000149011612
+            }
+        ],
         "levelUpIcon": "TVSetLv1"
     },
     "TVSetLv2": {
@@ -235,6 +319,14 @@ export const hideoutUpgrades = {
             "Player": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "scavcd",
+                "perkClass": "ScavCD_C",
+                "description": "Reduce SCAV. mode CD: -20%",
+                "value": 0.20000000298023224
+            }
+        ],
         "levelUpIcon": "TVSetLv2"
     },
     "TVSetLv3": {
@@ -255,6 +347,14 @@ export const hideoutUpgrades = {
             "Player": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "scavcd",
+                "perkClass": "ScavCD_C",
+                "description": "Reduce SCAV. mode CD: -30%",
+                "value": 0.30000001192092896
+            }
+        ],
         "levelUpIcon": "TVSetLv3"
     },
     "MedicalAreaLv1": {
@@ -272,6 +372,20 @@ export const hideoutUpgrades = {
         "levelConditions": {},
         "relatedQuests": [
             "task.doc.c.04"
+        ],
+        "perks": [
+            {
+                "key": "HQRecoveryHealth_Scale",
+                "perkClass": "HQRecoveryHealth_C",
+                "description": "Gradually restores HP while in HQ: 1HP/min",
+                "value": 2
+            },
+            {
+                "key": "MedicalAreaItem",
+                "perkClass": "MedicalAreaPerk_C",
+                "description": "Free limb damage repair available every hour.",
+                "value": null
+            }
         ],
         "levelUpIcon": "MedicalAreaLv1"
     },
@@ -294,6 +408,14 @@ export const hideoutUpgrades = {
         "relatedQuests": [
             "task.doc.b.06"
         ],
+        "perks": [
+            {
+                "key": "HQRecoveryHealth_Scale2",
+                "perkClass": "HQRecoveryHealth_2_C",
+                "description": "Gradually restores HP while in HQ: 1HP/min",
+                "value": 1
+            }
+        ],
         "levelUpIcon": "OperationBedLv1"
     },
     "OperationBedLv2": {
@@ -313,6 +435,14 @@ export const hideoutUpgrades = {
             "Generator": 2
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "HQRecoveryHealth_Scale2",
+                "perkClass": "HQRecoveryHealth_2_C",
+                "description": "Gradually restores HP while in HQ: 1HP/min",
+                "value": 2
+            }
+        ],
         "levelUpIcon": "OperationBedLv2"
     },
     "OperationBedLv3": {
@@ -333,6 +463,14 @@ export const hideoutUpgrades = {
             "WaterCollector": 3
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "HQRecoveryHealth_Scale2",
+                "perkClass": "HQRecoveryHealth_2_C",
+                "description": "Gradually restores HP while in HQ: 2HP/min",
+                "value": 3
+            }
+        ],
         "levelUpIcon": "OperationBedLv3"
     },
     "PlantingLv1": {
@@ -352,6 +490,14 @@ export const hideoutUpgrades = {
             "MedicalArea": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "IncreaseEnergyRecovery_Scale",
+                "perkClass": "IncreaseEnergyRecovery_C",
+                "description": "Increased food recovery rate: +10%",
+                "value": null
+            }
+        ],
         "levelUpIcon": "PlantingLv1"
     },
     "PlantingLv2": {
@@ -372,6 +518,14 @@ export const hideoutUpgrades = {
             "Player": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "IncreaseEnergyRecovery_Scale",
+                "perkClass": "IncreaseEnergyRecovery_C",
+                "description": "Increased food recovery rate: +20%",
+                "value": 1.2000000476837158
+            }
+        ],
         "levelUpIcon": "PlantingLv2"
     },
     "PlantingLv3": {
@@ -392,6 +546,14 @@ export const hideoutUpgrades = {
             "Player": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "IncreaseEnergyRecovery_Scale",
+                "perkClass": "IncreaseEnergyRecovery_C",
+                "description": "Increased food recovery rate: +30%",
+                "value": 1.2999999523162842
+            }
+        ],
         "levelUpIcon": "PlantingLv3"
     },
     "MedDeskLv1": {
@@ -411,6 +573,14 @@ export const hideoutUpgrades = {
             "MedicalArea": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "IncreaseHydraRecovery_Scale",
+                "perkClass": "IncreaseHydraRecovery_C",
+                "description": "Increase beverage recovery rate: +10%",
+                "value": null
+            }
+        ],
         "levelUpIcon": "MedDeskLv1"
     },
     "MedDeskLv2": {
@@ -431,6 +601,14 @@ export const hideoutUpgrades = {
             "Generator": 2
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "IncreaseHydraRecovery_Scale",
+                "perkClass": "IncreaseHydraRecovery_C",
+                "description": "Increase beverage recovery rate: +20%",
+                "value": 1.2000000476837158
+            }
+        ],
         "levelUpIcon": "MedDeskLv2"
     },
     "MedDeskLv3": {
@@ -450,6 +628,14 @@ export const hideoutUpgrades = {
             "WaterCollector": 3
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "IncreaseHydraRecovery_Scale",
+                "perkClass": "IncreaseHydraRecovery_C",
+                "description": "Increase beverage recovery rate: +30%",
+                "value": 1.2999999523162842
+            }
+        ],
         "levelUpIcon": "MedDeskLv3"
     },
     "WaterCollectorLv1": {
@@ -467,6 +653,14 @@ export const hideoutUpgrades = {
         "levelConditions": {},
         "relatedQuests": [
             "task.mall.c.04"
+        ],
+        "perks": [
+            {
+                "key": "HQRecoveryHydra_Scale",
+                "perkClass": "HQRecoveryHydra_C",
+                "description": "Regenerate Thirst while in Hideout: 0.15/min",
+                "value": 0.33
+            }
         ],
         "levelUpIcon": "WaterCollectorLv1"
     },
@@ -487,6 +681,14 @@ export const hideoutUpgrades = {
             "WaterCollector": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "HQRecoveryHydra_Scale",
+                "perkClass": "HQRecoveryHydra_C",
+                "description": "Regenerate Thirst while in Hideout: 0.33/min",
+                "value": 0.5
+            }
+        ],
         "levelUpIcon": "WaterCollectorLv2"
     },
     "WaterCollectorLv3": {
@@ -506,6 +708,14 @@ export const hideoutUpgrades = {
             "WaterCollector": 2
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "HQRecoveryHydra_Scale",
+                "perkClass": "HQRecoveryHydra_C",
+                "description": "Regenerate Thirst while in Hideout: 0.5/min",
+                "value": 0.8
+            }
+        ],
         "levelUpIcon": "WaterCollectorLv3"
     },
     "KitchenAreaLv1": {
@@ -525,6 +735,14 @@ export const hideoutUpgrades = {
             "WaterCollector": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "MaxEnergyHydra_AddsValue",
+                "perkClass": "MaxEnergyAndHydra_C",
+                "description": "Max Water: x1.1",
+                "value": 5
+            }
+        ],
         "levelUpIcon": "KitchenAreaLv1"
     },
     "KitchenAreaLv2": {
@@ -544,6 +762,14 @@ export const hideoutUpgrades = {
             "KitchenArea": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "MaxEnergyHydra_AddsValue",
+                "perkClass": "MaxEnergyAndHydra_C",
+                "description": "Max Water: x1.2",
+                "value": 10
+            }
+        ],
         "levelUpIcon": "KitchenAreaLv2"
     },
     "KitchenAreaLv3": {
@@ -563,6 +789,14 @@ export const hideoutUpgrades = {
             "KitchenArea": 2
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "MaxEnergyHydra_AddsValue",
+                "perkClass": "MaxEnergyAndHydra_C",
+                "description": "Max Water: x1.3",
+                "value": 15
+            }
+        ],
         "levelUpIcon": "KitchenAreaLv3"
     },
     "KitchenAreaLv4": {
@@ -582,6 +816,14 @@ export const hideoutUpgrades = {
             "KitchenArea": 3
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "MaxEnergyHydra_AddsValue",
+                "perkClass": "MaxEnergyAndHydra_C",
+                "description": "Max Water: x1.4",
+                "value": 20
+            }
+        ],
         "levelUpIcon": "KitchenAreaLv4"
     },
     "RefrigeratorLv1": {
@@ -601,6 +843,14 @@ export const hideoutUpgrades = {
             "KitchenArea": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "HQRecoveryEnergy_Scale",
+                "perkClass": "HQRecoveryEnergy_C",
+                "description": "Regenerate Energy while in Hideout: 0.15/min",
+                "value": 0.33
+            }
+        ],
         "levelUpIcon": "RefrigeratorLv1"
     },
     "RefrigeratorLv2": {
@@ -620,6 +870,14 @@ export const hideoutUpgrades = {
             "Generator": 2
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "HQRecoveryEnergy_Scale",
+                "perkClass": "HQRecoveryEnergy_C",
+                "description": "Regenerate Energy while in Hideout: 0.33/min",
+                "value": 0.5
+            }
+        ],
         "levelUpIcon": "RefrigeratorLv2"
     },
     "RefrigeratorLv3": {
@@ -637,6 +895,14 @@ export const hideoutUpgrades = {
         },
         "levelConditions": {},
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "HQRecoveryEnergy_Scale",
+                "perkClass": "HQRecoveryEnergy_C",
+                "description": "Regenerate Energy while in Hideout: 0.5/min",
+                "value": 0.8
+            }
+        ],
         "levelUpIcon": "RefrigeratorLv3"
     },
     "MicrowaveOvenLv1": {
@@ -656,6 +922,14 @@ export const hideoutUpgrades = {
             "KitchenArea": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "InGameRecoveryEnergy_Scale",
+                "perkClass": "InGameRecoveryEnergy_C",
+                "description": "In-Raid Energy Consumption -5%",
+                "value": 0.949999988079071
+            }
+        ],
         "levelUpIcon": "MicrowaveOvenLv1"
     },
     "MicrowaveOvenLv2": {
@@ -675,6 +949,14 @@ export const hideoutUpgrades = {
             "Generator": 2
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "InGameRecoveryEnergy_Scale",
+                "perkClass": "InGameRecoveryEnergy_C",
+                "description": "In-Raid Energy Consumption -10%",
+                "value": 0.8999999761581421
+            }
+        ],
         "levelUpIcon": "MicrowaveOvenLv2"
     },
     "MicrowaveOvenLv3": {
@@ -694,6 +976,14 @@ export const hideoutUpgrades = {
             "Generator": 3
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "InGameRecoveryEnergy_Scale",
+                "perkClass": "InGameRecoveryEnergy_C",
+                "description": "In-Raid Energy Consumption -15%",
+                "value": 0.8500000238418579
+            }
+        ],
         "levelUpIcon": "MicrowaveOvenLv3"
     },
     "CoffeeMakerLv1": {
@@ -713,6 +1003,14 @@ export const hideoutUpgrades = {
             "KitchenArea": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "InGameRecoveryHydra_Scale",
+                "perkClass": "InGameRecoveryHydra_C",
+                "description": "In-Raid Hydration Consumption -5%",
+                "value": 0.949999988079071
+            }
+        ],
         "levelUpIcon": "CoffeeMakerLv1"
     },
     "CoffeeMakerLv2": {
@@ -732,6 +1030,14 @@ export const hideoutUpgrades = {
             "Generator": 2
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "InGameRecoveryHydra_Scale",
+                "perkClass": "InGameRecoveryHydra_C",
+                "description": "In-Raid Hydration Consumption -10%",
+                "value": 0.8999999761581421
+            }
+        ],
         "levelUpIcon": "CoffeeMakerLv2"
     },
     "CoffeeMakerLv3": {
@@ -751,6 +1057,14 @@ export const hideoutUpgrades = {
             "Generator": 3
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "InGameRecoveryHydra_Scale",
+                "perkClass": "InGameRecoveryHydra_C",
+                "description": "In-Raid Hydration Consumption -15%",
+                "value": 0.8500000238418579
+            }
+        ],
         "levelUpIcon": "CoffeeMakerLv3"
     },
     "IntelligentLv1": {
@@ -768,6 +1082,20 @@ export const hideoutUpgrades = {
         },
         "levelConditions": {},
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "Intelligence",
+                "perkClass": "IntelligencePerk_C",
+                "description": "Show item prices with M.I.C.A.",
+                "value": 1
+            },
+            {
+                "key": "expboost_intelligence",
+                "perkClass": "ExpBonus_Intelligence_C",
+                "description": "Increased Experiece gain: +2%",
+                "value": null
+            }
+        ],
         "levelUpIcon": "IntelligentLv1"
     },
     "IntelligentLv2": {
@@ -787,6 +1115,20 @@ export const hideoutUpgrades = {
             "WorkshopZone": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "Intelligence",
+                "perkClass": "IntelligencePerk_C",
+                "description": "Show item prices with M.I.C.A.",
+                "value": 1
+            },
+            {
+                "key": "expboost_intelligence",
+                "perkClass": "ExpBonus_Intelligence_C",
+                "description": "Increased Experiece gain: +5%",
+                "value": 0.15000000596046448
+            }
+        ],
         "levelUpIcon": "IntelligentLv2"
     },
     "IntelligentLv3": {
@@ -807,6 +1149,20 @@ export const hideoutUpgrades = {
             "RestRoom": 2
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "Intelligence",
+                "perkClass": "IntelligencePerk_C",
+                "description": "Show item prices with M.I.C.A.",
+                "value": 1
+            },
+            {
+                "key": "expboost_intelligence",
+                "perkClass": "ExpBonus_Intelligence_C",
+                "description": "Increased Experiece gain: +10%",
+                "value": 0.20000000298023224
+            }
+        ],
         "levelUpIcon": "IntelligentLv3"
     },
     "IntelligentLv4": {
@@ -827,6 +1183,20 @@ export const hideoutUpgrades = {
             "RestRoom": 3
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "Intelligence",
+                "perkClass": "IntelligencePerk_C",
+                "description": "Show item prices with M.I.C.A.",
+                "value": 1
+            },
+            {
+                "key": "expboost_intelligence",
+                "perkClass": "ExpBonus_Intelligence_C",
+                "description": "Increased Experiece gain: +10%",
+                "value": 0.30000001192092896
+            }
+        ],
         "levelUpIcon": "IntelligentLv4"
     },
     "CryptoMiningLv1": {
@@ -846,6 +1216,7 @@ export const hideoutUpgrades = {
         "relatedQuests": [
             "task.mall.b.02"
         ],
+        "perks": [],
         "levelUpIcon": "CryptoMiningLv1"
     },
     "CryptoMiningLv2": {
@@ -865,6 +1236,7 @@ export const hideoutUpgrades = {
             "CryptoMining": 1
         },
         "relatedQuests": [],
+        "perks": [],
         "levelUpIcon": "CryptoMiningLv2"
     },
     "CryptoMiningLv3": {
@@ -884,6 +1256,7 @@ export const hideoutUpgrades = {
             "CryptoMining": 2
         },
         "relatedQuests": [],
+        "perks": [],
         "levelUpIcon": "CryptoMiningLv3"
     },
     "CryptoMiningLv4": {
@@ -904,6 +1277,7 @@ export const hideoutUpgrades = {
             "Generator": 3
         },
         "relatedQuests": [],
+        "perks": [],
         "levelUpIcon": "CryptoMiningLv4"
     },
     "GeneratorLv1": {
@@ -916,6 +1290,7 @@ export const hideoutUpgrades = {
         "exchange": {},
         "levelConditions": {},
         "relatedQuests": [],
+        "perks": [],
         "levelUpIcon": "GeneratorLv1"
     },
     "GeneratorLv2": {
@@ -937,6 +1312,7 @@ export const hideoutUpgrades = {
         "relatedQuests": [
             "task.mall.3"
         ],
+        "perks": [],
         "levelUpIcon": "GeneratorLv2"
     },
     "GeneratorLv3": {
@@ -956,6 +1332,7 @@ export const hideoutUpgrades = {
             "Generator": 2
         },
         "relatedQuests": [],
+        "perks": [],
         "levelUpIcon": "GeneratorLv3"
     },
     "ShootingRangeLv1": {
@@ -975,6 +1352,7 @@ export const hideoutUpgrades = {
         "relatedQuests": [
             "task.mall.c.06"
         ],
+        "perks": [],
         "levelUpIcon": "ShootingRangeLv1"
     },
     "WorkshopZoneLv1": {
@@ -989,6 +1367,7 @@ export const hideoutUpgrades = {
         "relatedQuests": [
             "task.na.c.02"
         ],
+        "perks": [],
         "levelUpIcon": "WorkshopZoneLv1"
     },
     "StorageExpansionStartLv1": {
@@ -1006,6 +1385,7 @@ export const hideoutUpgrades = {
         },
         "levelConditions": {},
         "relatedQuests": [],
+        "perks": [],
         "levelUpIcon": "StorageExpansionStartLv1"
     },
     "StorageZoneLock1Lv1": {
@@ -1025,6 +1405,7 @@ export const hideoutUpgrades = {
             "WorkshopZone": 1
         },
         "relatedQuests": [],
+        "perks": [],
         "levelUpIcon": "StorageZoneLock1Lv1"
     },
     "StorageZoneLock2Lv1": {
@@ -1044,6 +1425,7 @@ export const hideoutUpgrades = {
             "WorkshopZone": 1
         },
         "relatedQuests": [],
+        "perks": [],
         "levelUpIcon": "StorageZoneLock2Lv1"
     },
     "StorageZoneLock3Lv1": {
@@ -1063,6 +1445,7 @@ export const hideoutUpgrades = {
             "WorkshopZone": 1
         },
         "relatedQuests": [],
+        "perks": [],
         "levelUpIcon": "StorageZoneLock3Lv1"
     },
     "StorageZoneLock4Lv1": {
@@ -1083,6 +1466,7 @@ export const hideoutUpgrades = {
             "StorageZoneLock3": 1
         },
         "relatedQuests": [],
+        "perks": [],
         "levelUpIcon": "StorageZoneLock4Lv1"
     },
     "GunsmithLv1": {
@@ -1102,6 +1486,14 @@ export const hideoutUpgrades = {
             "WorkshopZone": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "GunsmithArea",
+                "perkClass": "GunSmithPerk_C",
+                "description": "",
+                "value": 30
+            }
+        ],
         "levelUpIcon": "GunsmithLv1"
     },
     "GunsmithLv2": {
@@ -1121,6 +1513,14 @@ export const hideoutUpgrades = {
             "WorkshopZone": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "GunsmithArea",
+                "perkClass": "GunSmithPerk_C",
+                "description": "",
+                "value": 40
+            }
+        ],
         "levelUpIcon": "GunsmithLv2"
     },
     "GunsmithLv3": {
@@ -1140,6 +1540,14 @@ export const hideoutUpgrades = {
             "Generator": 2
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "GunsmithArea",
+                "perkClass": "GunSmithPerk_C",
+                "description": "",
+                "value": 50
+            }
+        ],
         "levelUpIcon": "GunsmithLv3"
     },
     "GunsmithLv4": {
@@ -1159,6 +1567,14 @@ export const hideoutUpgrades = {
             "Generator": 3
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "GunsmithArea",
+                "perkClass": "GunSmithPerk_C",
+                "description": "",
+                "value": 60
+            }
+        ],
         "levelUpIcon": "GunsmithLv4"
     },
     "GeneratorZoneLv1": {
@@ -1173,6 +1589,7 @@ export const hideoutUpgrades = {
         "relatedQuests": [
             "task.mall.c.01"
         ],
+        "perks": [],
         "levelUpIcon": "GeneratorZoneLv1"
     },
     "RestroomZoneLv1": {
@@ -1187,6 +1604,7 @@ export const hideoutUpgrades = {
         "relatedQuests": [
             "task.mall.c.05"
         ],
+        "perks": [],
         "levelUpIcon": "RestroomZoneLv1"
     },
     "BlackmarketMoreitemLv1": {
@@ -1203,6 +1621,14 @@ export const hideoutUpgrades = {
         },
         "levelConditions": {},
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "BlackmarketMoreitem",
+                "perkClass": "BlackmarketMoreitem_C",
+                "description": "The supply market can provide a wider range of goods",
+                "value": null
+            }
+        ],
         "levelUpIcon": "BlackmarketMoreitemLv1"
     },
     "BlackmarketMoreitemLv2": {
@@ -1222,6 +1648,14 @@ export const hideoutUpgrades = {
             "BlackmarketMoreitem": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "BlackmarketMoreitem",
+                "perkClass": "BlackmarketMoreitem_C",
+                "description": "The supply market can provide a wider range of goods",
+                "value": null
+            }
+        ],
         "levelUpIcon": "BlackmarketMoreitemLv2"
     },
     "BlackmarketQualityLv1": {
@@ -1239,6 +1673,14 @@ export const hideoutUpgrades = {
         },
         "levelConditions": {},
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "BlackmarketQuality",
+                "perkClass": "BlackmarketQuality_C",
+                "description": "The quality of goods provided by the supply market is higher",
+                "value": null
+            }
+        ],
         "levelUpIcon": "BlackmarketQualityLv1"
     },
     "BlackmarketQualityLv2": {
@@ -1258,6 +1700,14 @@ export const hideoutUpgrades = {
             "BlackmarketQuality": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "BlackmarketQuality",
+                "perkClass": "BlackmarketQuality_C",
+                "description": "The quality of goods provided by the supply market is higher",
+                "value": null
+            }
+        ],
         "levelUpIcon": "BlackmarketQualityLv2"
     },
     "BlackmarketQualityLv3": {
@@ -1278,6 +1728,14 @@ export const hideoutUpgrades = {
             "Generator": 3
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "BlackmarketQuality",
+                "perkClass": "BlackmarketQuality_C",
+                "description": "The quality of goods provided by the supply market is higher",
+                "value": null
+            }
+        ],
         "levelUpIcon": "BlackmarketQualityLv3"
     },
     "AreaUpgradeAreaLv1": {
@@ -1295,6 +1753,14 @@ export const hideoutUpgrades = {
         },
         "levelConditions": {},
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "wsAreaUpgradeArea",
+                "perkClass": "UpgradeAreaPerk_C",
+                "description": "",
+                "value": 40
+            }
+        ],
         "levelUpIcon": "AreaUpgradeAreaLv1"
     },
     "AreaUpgradeAreaLv2": {
@@ -1314,6 +1780,14 @@ export const hideoutUpgrades = {
             "AreaUpgradeArea": 1
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "wsAreaUpgradeArea",
+                "perkClass": "UpgradeAreaPerk_C",
+                "description": "",
+                "value": 60
+            }
+        ],
         "levelUpIcon": "AreaUpgradeAreaLv2"
     },
     "AreaUpgradeAreaLv3": {
@@ -1334,6 +1808,14 @@ export const hideoutUpgrades = {
             "Generator": 3
         },
         "relatedQuests": [],
+        "perks": [
+            {
+                "key": "wsAreaUpgradeArea",
+                "perkClass": "UpgradeAreaPerk_C",
+                "description": "",
+                "value": 80
+            }
+        ],
         "levelUpIcon": "AreaUpgradeAreaLv3"
     }
 } as const;

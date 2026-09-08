@@ -28,10 +28,13 @@ const allTasks = Object.values(tasksData);
 const lockedAt = (progress: TaskProgress) => (taskId: string) =>
     stateOf(tasksData[taskId], progress) === 'locked';
 
+// The `gameId` fallback is for a reward the publisher could not resolve to a published item. It
+// is currently unused: the last 45 holdouts all pointed at containers and paints, and both became
+// real item files on 2026-09-08. So this asserts the shape of the fallback without requiring the
+// database to still contain one - a publish that resolves everything is the goal, not a failure.
 it('preserves named non-catalogue rewards without inventing item-page ids', () => {
     const rewards = allTasks.flatMap(task => [...task.reward, ...task.preReward]);
     const nonCatalogueRewards = rewards.filter(reward => reward.gameId);
-    expect(nonCatalogueRewards.length).toBeGreaterThan(0);
     for (const reward of nonCatalogueRewards) {
         expect(reward.item_name?.trim()).toBeTruthy();
         expect(reward.item_id).toBeUndefined();
