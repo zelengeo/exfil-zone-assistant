@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import {Armor, CurvePoint, Item} from "@/types/items";
 import {armorRankings} from "@/lib/quality/itemGrades";
-import BallisticCurveChart, {CURVE_COLOR} from "@/app/items/components/BallisticCurveChart";
+import BallisticCurveChart from "@/app/items/components/BallisticCurveChart";
 import {isBodyArmor, isHeadProtection, isHelmet} from "@/app/combat-sim/utils/types";
 import BodyCoveragePanel from "@/components/protection/BodyCoveragePanel";
 import HeadCoveragePanel from "@/components/protection/HeadCoveragePanel";
@@ -168,7 +168,7 @@ export default function ArmorSpecificStats({item, peers = []}: { item: Armor; pe
                 curves={[{
                     name: 'Penetration Chance',
                     data: item.stats.penetrationChanceCurve,
-                    color: CURVE_COLOR.chance
+                    role: 'chance'
                 }]}
                 info={<>
                     Rolled per shot, not a threshold: the game draws a number and the shot goes
@@ -188,7 +188,7 @@ export default function ArmorSpecificStats({item, peers = []}: { item: Armor; pe
                     curves={[{
                         name: 'Damage Multiplier',
                         data: item.stats.penetrationDamageScalarCurve,
-                        color: CURVE_COLOR.damage
+                        role: 'damage'
                     }]}
                     info={<>
                         Applies only to shots that got through. The curve is sampled down to −2, so
@@ -209,7 +209,7 @@ export default function ArmorSpecificStats({item, peers = []}: { item: Armor; pe
                     curves={[{
                         name: 'Armor Effectiveness',
                         data: item.stats.antiPenetrationDurabilityScalarCurve,
-                        color: CURVE_COLOR.effectiveness
+                        role: 'effectiveness'
                     }]}
                     info={<>
                         Multiplies the armour class as the plate wears. Broken armour is a special

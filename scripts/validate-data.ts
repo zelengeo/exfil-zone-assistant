@@ -18,8 +18,8 @@
 import fs from 'fs';
 import path from 'path';
 
-import { CALIBERS, itemCategories, RARITY_CONFIG } from '../src/types/items';
-import { hideoutUpgrades } from '../src/data/hideout-upgrades';
+import { CALIBERS, itemCategories, RARITY_CONFIG } from '@/types/items';
+import { hideoutUpgrades } from '@/data/hideout-upgrades';
 import type { TasksDatabase } from '../src/types/tasks';
 
 const ROOT = path.join(__dirname, '..');

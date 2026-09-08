@@ -1,6 +1,6 @@
 import React from "react";
 import {Grenade} from "@/types/items";
-import BallisticCurveChart, {CURVE_COLOR} from "@/app/items/components/BallisticCurveChart";
+import BallisticCurveChart from "@/app/items/components/BallisticCurveChart";
 import {Radius, Timer, TimerReset} from "lucide-react";
 import StatLine, {StatGrid, StatPanel} from "./StatLine";
 
@@ -54,7 +54,7 @@ export default function GrenadeSpecificStats({item}: { item: Grenade }) {
                     {
                         name: "Apply Chance",
                         data: item.stats.applyChanceCurve,
-                        color: CURVE_COLOR.chance
+                        role: 'chance'
                     }
                 ]}
                 xLabel="Distance (m)"
@@ -70,7 +70,7 @@ export default function GrenadeSpecificStats({item}: { item: Grenade }) {
                     {
                         name: "Damage",
                         data: item.stats.damageOverDistance,
-                        color: CURVE_COLOR.damage
+                        role: 'damage'
                     }
                 ]}
                 xLabel="Distance (m)"
@@ -87,7 +87,7 @@ export default function GrenadeSpecificStats({item}: { item: Grenade }) {
                     {
                         name: "Penetration Power",
                         data: item.stats.penetrationPowerOverDistance,
-                        color: CURVE_COLOR.penetration
+                        role: 'penetration'
                     }
                 ]}
                 xLabel="Distance (m)"

@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 import {Ammunition, Item} from "@/types/items";
 import {ammoRankings} from "@/lib/quality/itemGrades";
-import BallisticCurveChart, {CURVE_COLOR} from "@/app/items/components/BallisticCurveChart";
+import BallisticCurveChart from "@/app/items/components/BallisticCurveChart";
 import StatLine, {StatGrid, StatPanel} from "./StatLine";
 
 const pct = (value: number): string => `${(value * 100).toFixed(0)}%`;
@@ -60,7 +60,7 @@ export default function AmmunitionSpecificStats({item, peers = []}: { item: Ammu
             curves={[{
                 name: 'Damage',
                 data: item.stats.ballisticCurves.damageOverDistance,
-                color: CURVE_COLOR.damage
+                role: 'damage'
             }]}
             xLabel="Distance (m)"
             xLabelModifier={0.01}
@@ -72,7 +72,7 @@ export default function AmmunitionSpecificStats({item, peers = []}: { item: Ammu
             curves={[{
                 name: 'Penetration',
                 data: item.stats.ballisticCurves.penetrationPowerOverDistance,
-                color: CURVE_COLOR.penetration
+                role: 'penetration'
             }]}
             xLabel="Distance (m)"
             xLabelModifier={0.01}

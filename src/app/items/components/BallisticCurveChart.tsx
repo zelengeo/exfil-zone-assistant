@@ -25,12 +25,15 @@ import {PopoverHeading, PopoverProse} from "@/components/ui/popover";
  * (the aggressive quantity), warn for penetration, info for a probability, good for a
  * favourable scalar. Call sites name a role rather than pasting a hex.
  */
-export const CURVE_COLOR = {
+const CURVE_COLOR = {
     damage: '#FF4A24',        // ember
     penetration: '#FFB020',   // warn
     chance: '#6E9DB8',        // info-light — the plain info step reads near-grey on the plot ground
     effectiveness: '#4ADE80', // good
 } as const;
+
+type CurveRole = keyof typeof CURVE_COLOR;
+type CurveColor = (typeof CURVE_COLOR)[CurveRole];
 
 /* Plot chrome. Hairline, solid, one step off the surface — the data is the only loud thing. */
 const SURFACE = '#0C1116';   // steel-900 — plot ground, and the ring/gap colour
@@ -42,7 +45,7 @@ const TICK_INK = '#7E909F';  // ink-600
 export interface BallisticCurve {
     name: string;
     data: CurvePoint[];
-    color: string;
+    role: CurveRole;
 }
 
 interface BallisticCurveChartProps {
@@ -70,7 +73,7 @@ interface Readout {
     px: number;
     /** X in display units. */
     x: number;
-    points: { name: string; color: string; value: number; py: number }[];
+    points: { name: string; color: CurveColor; value: number; py: number }[];
 }
 
 /* ---------------------------------------------------------------- curve maths */
@@ -278,7 +281,11 @@ export default function BallisticCurveChart({
 
     /** Curves with their keyframes resolved once — drawing, the readout and the table share these. */
     const series = useMemo(
-        () => curves.map(curve => ({name: curve.name, color: curve.color, keys: toKeys(curve.data)})),
+        () => curves.map(curve => ({
+            name: curve.name,
+            color: CURVE_COLOR[curve.role],
+            keys: toKeys(curve.data),
+        })),
         [curves],
     );
 
