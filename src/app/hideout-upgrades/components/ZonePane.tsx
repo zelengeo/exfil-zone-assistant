@@ -6,6 +6,8 @@ import { ArrowRight, ArrowUp, Check, ChevronDown, ChevronLeft, ChevronUp, Flag, 
 import { cn } from '@/lib/utils';
 import { formatEZD } from '@/lib/trade';
 import type { Item } from '@/types/items';
+import InfoPopover, { InfoDot } from '@/components/ui/info-popover';
+import { PopoverHeading, PopoverNote, PopoverRow } from '@/components/ui/popover';
 import {
     type AreaLevels,
     type Built,
@@ -15,6 +17,7 @@ import {
     canUndo,
     gatesOf,
     maxLevelOf,
+    perkRowsOf,
     roomName,
     upgradeId,
 } from '../utils/hideout';
@@ -100,6 +103,8 @@ function ZoneDetail({
 
     const materials = Object.entries(upgrade.exchange);
     const units = materials.reduce((sum, [, quantity]) => sum + quantity, 0);
+
+    const perks = perkRowsOf(upgrade);
 
     /** The one area whose next level would unblock this one, when there is exactly one. */
     const blocker = missingAreas.length === 1 && missingAreas[0].kind === 'area' ? missingAreas[0] : null;
@@ -211,6 +216,8 @@ function ZoneDetail({
                 <p className="whitespace-pre-line text-sm leading-relaxed text-ink-500 text-pretty">
                     {upgrade.upgradeDesc}
                 </p>
+
+                <Perks perks={perks} />
 
                 {(missingAreas.length > 0 || taskGates.length > 0 || gates.length > 0) && (
                     <div className="flex flex-col gap-2">
@@ -359,6 +366,69 @@ function ZoneDetail({
                 </div>
             </footer>
         </>
+    );
+}
+
+/**
+ * What the level grants, under the description it refines.
+ *
+ * Secondary on purpose. `upgradeDesc` already says what the level is for in the game's own words;
+ * these are the quantified versions of the same claim, so they read a step quieter and never take
+ * a section rule of their own the way Requires and Materials do.
+ *
+ * The numbers are the problem this shape exists to handle. The game authors the menu line and the
+ * applied value separately and they disagree often — Intelligent Lv2 prints "+5%" against an
+ * applied 0.15, and Refrigerator counts in a unit the line never names — so the page carries the
+ * line a player can act on and the reveal carries the raw figure with the caveat attached. That
+ * split is the disclosure ladder's tier 1 / tier 3 test: the effect is data the reader came for,
+ * the provenance is not.
+ *
+ * It is a popover rather than a `Tooltip` because a tooltip opens on hover only, and this route is
+ * read on a phone and inside a headset. See `components/ui/AGENTS.md`.
+ *
+ * The 16 levels that grant access rather than a stat carry no perks and render nothing.
+ */
+function Perks({ perks }: { perks: ReturnType<typeof perkRowsOf> }) {
+    if (perks.length === 0) return null;
+
+    return (
+        <div className="-mt-1 flex items-start gap-2.5">
+            <span className="micro-label flex-none pt-[3px] text-ink-700">Grants</span>
+            <ul className="flex min-w-0 flex-1 flex-col gap-1">
+                {perks.map((perk) => (
+                    <li key={perk.key} className="text-[12px] leading-snug text-ink-600 text-pretty">
+                        {perk.label}
+                        {/* A curated label names the stat but carries no figure, so it takes one. */}
+                        {!perk.described && perk.value !== null && (
+                            <span className="tabular ml-1.5 font-mono text-ink-500">{perk.value}</span>
+                        )}
+                    </li>
+                ))}
+            </ul>
+            <InfoPopover
+                triggerStyle="icon"
+                trigger={<InfoDot />}
+                label="Where these numbers come from"
+                side="bottom"
+                align="end"
+                className="mt-px flex-none"
+            >
+                <PopoverHeading>Applied values</PopoverHeading>
+                {perks.map((perk) => (
+                    <PopoverRow
+                        key={perk.key}
+                        label={perk.key}
+                        value={perk.value ?? 'None'}
+                        dim={perk.value === null}
+                    />
+                ))}
+                <PopoverNote>
+                    Both halves come out of the game&rsquo;s own upgrade table: the line its menu
+                    prints, and the number it applies. They are authored separately, so they
+                    sometimes disagree — and some levels set no number at all.
+                </PopoverNote>
+            </InfoPopover>
+        </div>
     );
 }
 

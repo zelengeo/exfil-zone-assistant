@@ -26,6 +26,8 @@ import {
     isUpgradeId,
     levelsOfArea,
     maxLevelOf,
+    formatPerkValue,
+    perkRowsOf,
     questName,
     rankMaterials,
     remaining,
@@ -523,5 +525,66 @@ describe('wantedBy', () => {
         for (const row of wantedBy(busiest, NOTHING, areaLevelsOf(NOTHING))) {
             expect(row.room).toBeTruthy();
         }
+    });
+});
+
+describe('perks', () => {
+    it('reads one for every upgrade, and none for the levels that only open a door', () => {
+        for (const id of ids) expect(Array.isArray(UPGRADES[id].perks)).toBe(true);
+
+        // The 16 access-only levels — a storage room, the generator zone — grant no stat.
+        expect(perkRowsOf(UPGRADES.StorageZoneLock1Lv1)).toEqual([]);
+        expect(perkRowsOf(UPGRADES.CryptoMiningLv1)).toEqual([]);
+    });
+
+    it('takes the float noise off an applied value without moving it', () => {
+        // The table stores 32-bit floats, so a flat +2% arrives long.
+        expect(formatPerkValue(0.019999999552965164)).toBe('0.02');
+        expect(formatPerkValue(0.949999988079071)).toBe('0.95');
+        expect(formatPerkValue(1.2000000476837158)).toBe('1.2');
+        expect(formatPerkValue(30)).toBe('30');
+    });
+
+    it('says nothing rather than zero where the table sets no value', () => {
+        expect(formatPerkValue(null)).toBeNull();
+        expect(perkRowsOf(UPGRADES.BlackmarketMoreitemLv1)[0].value).toBeNull();
+    });
+
+    it('prints the game’s own menu line when there is one', () => {
+        const [perk] = perkRowsOf(UPGRADES.RestRoomLv1);
+        expect(perk.label).toBe('Increased Experiece gain: +2%');
+        expect(perk.described).toBe(true);
+    });
+
+    it('falls back to a curated label for the two keys the menu prints nothing for', () => {
+        const [gunsmith] = perkRowsOf(UPGRADES.GunsmithLv1);
+        expect(gunsmith.described).toBe(false);
+        expect(gunsmith.label).toBe('Capacity');
+        expect(gunsmith.value).toBe('30');
+
+        const [junk] = perkRowsOf(UPGRADES.AreaUpgradeAreaLv1);
+        expect(junk.label).toBe('Capacity');
+        expect(junk.value).toBe('40');
+    });
+
+    it('never leaves a row blank, whatever a future extraction adds', () => {
+        for (const id of ids) {
+            for (const row of perkRowsOf(UPGRADES[id])) {
+                expect(row.label.length).toBeGreaterThan(0);
+            }
+        }
+    });
+
+    it('keeps both halves, because the line and the number disagree', () => {
+        // The reason `value` ships at all: the menu says +5%, the game applies 0.15.
+        const boost = perkRowsOf(UPGRADES.IntelligentLv2)
+            .find((perk) => perk.key === 'expboost_intelligence');
+        expect(boost?.label).toBe('Increased Experiece gain: +5%');
+        expect(boost?.value).toBe('0.15');
+    });
+
+    it('carries the two-perk levels in full', () => {
+        expect(perkRowsOf(UPGRADES.MedicalAreaLv1).map((perk) => perk.key))
+            .toEqual(['HQRecoveryHealth_Scale', 'MedicalAreaItem']);
     });
 });

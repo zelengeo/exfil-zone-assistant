@@ -44,7 +44,7 @@ app/hideout-upgrades/
 ├── hooks/
 │   └── useHideoutProgress.ts   # the progress store
 └── utils/
-    ├── hideout.ts              # every rule
+    ├── hideout.ts              # every rule, and the perk rows
     └── hideout.test.ts         # `npm test`
 ```
 
@@ -156,6 +156,41 @@ testable without loading 1,500 items.
 **One of the 89 materials has no price** (Household Cleaner). Unpriced sorts *last* under a value
 order and prints "No price" — never zero, because the catalogue genuinely prices some things at
 zero and "unknown" is not "worthless".
+
+---
+
+## Perks: the line and the number disagree
+
+Every upgrade carries `perks` — what the level actually grants. `perkRowsOf` in `utils/hideout.ts`
+turns one into a printable row, and `ZonePane`'s `Perks` draws it directly under `upgradeDesc`.
+
+The data is awkward in four separate ways, and the shape on screen is the response to all four:
+
+- **The menu line and the applied value are authored separately in the game's table, and disagree
+  often.** Intelligent Lv2 prints "+5%" against an applied `0.15`; Refrigerator Lv1 prints
+  "0.15/min" against `0.33`. Neither can be derived from the other, so both ship and both are
+  shown — the line on the page, the figure in the reveal.
+- **Values arrive as widened 32-bit floats.** A flat +2% is `0.019999999552965164`. `formatPerkValue`
+  takes six significant digits, which is past anything the game authors and short of the noise.
+- **Nine perks set no value at all**, and 16 upgrades have no perks — the levels that open a storage
+  room or a zone rather than granting a stat. Both render as absence, never as a zero the game does
+  not apply.
+- **Two keys ship a number with an empty description.** `PERK_LABELS` names the axis for those,
+  and nothing more; see its docblock for why "capacity" is claimed and "total capacity" is not.
+
+### Why it is a popover and not a tooltip
+
+The effect line is data a player came for, so it stays on the page — tier 1. The raw figure and the
+caveat that it may disagree with that line are provenance, so they sit behind an `InfoPopover` —
+tier 3. That split is the [disclosure ladder](../../components/ui/AGENTS.md), and its worked example
+is the same shape.
+
+A `Tooltip` was the obvious reach and is wrong here: it opens on hover only, and this route is read
+on a phone and inside a headset, where nothing hovers. Tier 2 is for text nobody needs.
+
+The block takes no section `Rule` of its own the way Requires and Materials do. It is a refinement
+of the description it sits under, not a peer of the panel's other sections, and giving it a rule
+would say otherwise.
 
 ---
 

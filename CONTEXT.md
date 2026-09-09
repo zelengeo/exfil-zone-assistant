@@ -89,6 +89,12 @@ kitchen and HQ pad. `categoryId` in the data. Two rooms are also zones, and two 
 their own.
 _Avoid_: Category, floor, section, tab
 
+**Perk**:
+The buff one upgrade grants — the EXP boost, the reload speed, the carry weight. `perks` in the
+data, where each carries the line the game's menu prints and the number the game applies. The two
+are authored separately and often disagree, so neither is called the perk on its own.
+_Avoid_: Buff, bonus, effect, stat
+
 **Materials**:
 The items an upgrade asks for, on top of its price. `exchange` in the data.
 _Avoid_: Ingredients, components, requirements, costs

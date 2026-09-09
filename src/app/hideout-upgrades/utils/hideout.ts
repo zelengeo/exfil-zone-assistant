@@ -20,6 +20,21 @@ import {
 export type UpgradeId = keyof typeof hideoutUpgrades;
 
 /**
+ * One buff a level grants.
+ *
+ * `description` is the line the in-game upgrade menu prints; `value` is the number the game
+ * actually applies. The two are authored separately in the game's table and they disagree often
+ * enough that neither can stand in for the other — Intelligent Lv2 prints "+5%" and applies 0.15 —
+ * so both ship and the pane shows both.
+ */
+export interface Perk {
+    key: string;
+    perkClass: string;
+    description: string;
+    value: number | null;
+}
+
+/**
  * One upgrade, widened.
  *
  * `hideout-upgrades.ts` is `as const`, so every field arrives as a literal type and `exchange`
@@ -37,6 +52,7 @@ export interface Upgrade {
     exchange: Readonly<Record<string, number>>;
     levelConditions: Readonly<Record<string, number>>;
     relatedQuests: readonly string[];
+    perks: readonly Perk[];
     levelUpIcon: string;
 }
 
@@ -351,6 +367,64 @@ export function gatesOf(
 
     return [...areas, ...tasks];
 }
+
+/* -------------------------------------------------------------------------- */
+/* Perks                                                                       */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Display copy for the two perk keys the game's menu prints no line for.
+ *
+ * `GunsmithArea` (30/40/50/60) and `wsAreaUpgradeArea` (40/60/80) ship a number and an empty
+ * `description`, so without a label there is nothing to hang the figure on. Both name the axis
+ * only — *what* is being sized, never what of — because `upgradeDesc` is already on the page a
+ * line above saying that, and a label repeating it would leave the figure as the sole new word on
+ * a line of echo. It is also all the two keys support: the weapon rack's steps of 10 match its
+ * "+ 10kg", the junk box's steps of 20 match nothing it says, so "capacity" is claimed and
+ * "total capacity" is not. Same shape and same reason as `ROOM_NAMES`: engine keys are not copy.
+ */
+const PERK_LABELS: Record<string, string> = {
+    GunsmithArea: 'Capacity',
+    wsAreaUpgradeArea: 'Capacity',
+};
+
+/**
+ * The applied number, with the float noise taken off.
+ *
+ * The table stores 32-bit floats and the extraction widens them, so a flat +2% arrives as
+ * 0.019999999552965164. Six significant digits is past anything the game authors and short of the
+ * noise, so `Number(v.toPrecision(6))` lands back on 0.02 without rounding a real value away.
+ * Null is the table setting no number at all, which nine perks do — the caller says so in words
+ * rather than printing a zero the game never applies.
+ */
+export const formatPerkValue = (value: number | null): string | null =>
+    value === null ? null : String(Number(value.toPrecision(6)));
+
+/** One perk, ready to print. */
+export interface PerkRow {
+    key: string;
+    /** The game's own menu line, a curated label where it prints none, or the raw key. */
+    label: string;
+    /** Whether that label came from the menu. A curated label carries no figure of its own. */
+    described: boolean;
+    /** The applied number, cleaned, or null where the table sets none. */
+    value: string | null;
+}
+
+/**
+ * What one upgrade grants, in the order the table lists it.
+ *
+ * Empty for the 16 levels that grant access rather than a stat — a storage room, the generator
+ * zone — where `upgradeDesc` already says what opens and a "grants nothing" line would be noise.
+ * Falling back to the raw key keeps a season that adds a perk readable instead of blank.
+ */
+export const perkRowsOf = (upgrade: Upgrade): PerkRow[] =>
+    upgrade.perks.map((perk) => ({
+        key: perk.key,
+        label: perk.description || PERK_LABELS[perk.key] || perk.key,
+        described: perk.description.length > 0,
+        value: formatPerkValue(perk.value),
+    }));
 
 /* -------------------------------------------------------------------------- */
 /* Materials                                                                   */
