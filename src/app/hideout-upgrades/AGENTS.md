@@ -178,6 +178,16 @@ The data is awkward in four separate ways, and the shape on screen is the respon
 - **Two keys ship a number with an empty description.** `PERK_LABELS` names the axis for those,
   and nothing more; see its docblock for why "capacity" is claimed and "total capacity" is not.
 
+### The reveal is tagged `Unverified`
+
+Nothing in it has been measured in a raid — it is what the table says, not what the game was seen
+to do. That is a standing property of the extraction rather than a caveat about one figure, so it
+rides on the ledger's heading as a tag and the prose stays two plain sentences. **Remove the tag
+once the values have been confirmed in game**, and say so here when you do.
+
+The tag is `ink-600` on a `line-700` hairline, not `warn`: warn already means "ready to build"
+everywhere else on this screen, and popover rule 2 rules out ember.
+
 ### Why it is a popover and not a tooltip
 
 The effect line is data a player came for, so it stays on the page — tier 1. The raw figure and the

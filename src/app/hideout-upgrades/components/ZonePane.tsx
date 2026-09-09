@@ -383,6 +383,11 @@ function ZoneDetail({
  * split is the disclosure ladder's tier 1 / tier 3 test: the effect is data the reader came for,
  * the provenance is not.
  *
+ * The reveal is tagged `Unverified` because nothing here has been measured in a raid: it is what
+ * the table says, not what the game was seen to do. That is a standing property of the extraction
+ * rather than a note about one figure, so it sits on the ledger's heading and the prose underneath
+ * stays two plain sentences. Drop the tag when the values have actually been tested in game.
+ *
  * It is a popover rather than a `Tooltip` because a tooltip opens on hover only, and this route is
  * read on a phone and inside a headset. See `components/ui/AGENTS.md`.
  *
@@ -413,7 +418,13 @@ function Perks({ perks }: { perks: ReturnType<typeof perkRowsOf> }) {
                 align="end"
                 className="mt-px flex-none"
             >
-                <PopoverHeading>Applied values</PopoverHeading>
+                <div className="mb-2 flex items-baseline justify-between gap-3">
+                    <PopoverHeading className="mb-0">Applied values</PopoverHeading>
+                    {/* Not ember, not warn: warn already means "ready to build" on this screen. */}
+                    <span className="micro-label flex-none border border-line-700 px-1.5 py-0.5 text-ink-600">
+                        Unverified
+                    </span>
+                </div>
                 {perks.map((perk) => (
                     <PopoverRow
                         key={perk.key}
@@ -423,9 +434,8 @@ function Perks({ perks }: { perks: ReturnType<typeof perkRowsOf> }) {
                     />
                 ))}
                 <PopoverNote>
-                    Both halves come out of the game&rsquo;s own upgrade table: the line its menu
-                    prints, and the number it applies. They are authored separately, so they
-                    sometimes disagree — and some levels set no number at all.
+                    Read straight from the game files, never checked in a raid. The menu text and
+                    the number often disagree, and some levels set no number at all.
                 </PopoverNote>
             </InfoPopover>
         </div>
