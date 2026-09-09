@@ -181,12 +181,15 @@ The data is awkward in four separate ways, and the shape on screen is the respon
 ### The reveal is tagged `Unverified`
 
 Nothing in it has been measured in a raid — it is what the table says, not what the game was seen
-to do. That is a standing property of the extraction rather than a caveat about one figure, so it
-rides on the ledger's heading as a tag and the prose stays two plain sentences. **Remove the tag
-once the values have been confirmed in game**, and say so here when you do.
+to do. `SourceNote` from [`components/ui/confidence.tsx`](../../components/ui/confidence.tsx) draws
+it, and `unverified` is one of the app's two words for a figure that cannot be stated flatly; the
+[vocabulary](../../components/ui/AGENTS.md) is shared so the tag means the same thing here as it
+does on the spray estimate. **Remove the level once the values have been confirmed in game**, and
+say so here when you do.
 
-The tag is `ink-600` on a `line-700` hairline, not `warn`: warn already means "ready to build"
-everywhere else on this screen, and popover rule 2 rules out ember.
+The tag stays `quiet` (neutral) rather than `loud` (ember) for a reason this route already knows:
+ember is the selected zone and Level Up and nothing else, so a loud tag would read as a third
+action.
 
 ### Why it is a popover and not a tooltip
 

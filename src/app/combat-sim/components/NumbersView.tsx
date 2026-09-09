@@ -5,6 +5,7 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import ItemIcon from '@/components/items/ItemIcon';
 import PanelNote from './PanelNote';
+import { ConfidenceTag } from '@/components/ui/confidence';
 import { armorClassColor, armorClassLabel, UNCOVERED_COLOR } from '@/lib/protection/armorClassScale';
 import { Price } from '@/components/trade/Price';
 
@@ -306,7 +307,11 @@ function SprayCard({ outcome }: { outcome: LoadoutOutcome | null }) {
         <section className="border border-line-800 bg-steel-800">
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 px-3 py-2.5 border-b border-line-800">
                 <h2 className="military-stencil text-base text-ink-100">The spray estimate</h2>
-                <span className="micro-label text-ember-soft">estimate &middot; models the player, not the game</span>
+                {/* Tier 1: taking this for the game's own number changes which gun you carry, so
+                    the tag is on the page rather than in the note beside it. `loud` is legal here —
+                    combat-sim spends no other ember on this panel. */}
+                <ConfidenceTag level="estimated" tone="loud" />
+                <span className="micro-label text-ink-600">models the player, not the game</span>
                 <span className="flex-1" />
                 <PanelNote label="the spray estimate">
                     <p>

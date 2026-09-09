@@ -107,6 +107,21 @@ _Avoid_: Completed, unlocked, owned, purchased
 > The generated hideout data says `relatedQuests`, and the field name stays because the extraction
 > writes it. Everything a reader sees says **task**.
 
+### Confidence
+
+**Unverified**:
+A figure read out of the game's own files that nobody has confirmed in play. Testing it is what
+removes the label, so it is a promise rather than a permanent disclaimer.
+_Avoid_: Unconfirmed, untested, provisional, beta
+
+**Estimate**:
+A figure this app computes from a model of its own, which the game states nothing to check against.
+Permanently labelled, because there is no test that would settle it.
+_Avoid_: Approximation, guess, prediction, simulation
+
+> A figure with neither word is read from the game and has been seen to hold. That is the floor and
+> it is never labelled — see [the confidence vocabulary](src/components/ui/AGENTS.md).
+
 ### Quality
 
 **Grade**:

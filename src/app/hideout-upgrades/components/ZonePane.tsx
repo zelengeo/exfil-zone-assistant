@@ -6,8 +6,7 @@ import { ArrowRight, ArrowUp, Check, ChevronDown, ChevronLeft, ChevronUp, Flag, 
 import { cn } from '@/lib/utils';
 import { formatEZD } from '@/lib/trade';
 import type { Item } from '@/types/items';
-import InfoPopover, { InfoDot } from '@/components/ui/info-popover';
-import { PopoverHeading, PopoverNote, PopoverRow } from '@/components/ui/popover';
+import SourceNote from '@/components/ui/confidence';
 import {
     type AreaLevels,
     type Built,
@@ -383,10 +382,11 @@ function ZoneDetail({
  * split is the disclosure ladder's tier 1 / tier 3 test: the effect is data the reader came for,
  * the provenance is not.
  *
- * The reveal is tagged `Unverified` because nothing here has been measured in a raid: it is what
- * the table says, not what the game was seen to do. That is a standing property of the extraction
- * rather than a note about one figure, so it sits on the ledger's heading and the prose underneath
- * stays two plain sentences. Drop the tag when the values have actually been tested in game.
+ * `SourceNote` draws the reveal, and `level="unverified"` is the claim: this is what the game's
+ * table says, not what the game was seen to do. That standing is shared with every other shaky
+ * figure in the app rather than described again here — `components/ui/confidence.tsx` owns the
+ * vocabulary and the chrome, so a reader who has met the tag elsewhere already knows what it means.
+ * Drop the level to nothing once the values have actually been tested in game.
  *
  * It is a popover rather than a `Tooltip` because a tooltip opens on hover only, and this route is
  * read on a phone and inside a headset. See `components/ui/AGENTS.md`.
@@ -410,34 +410,19 @@ function Perks({ perks }: { perks: ReturnType<typeof perkRowsOf> }) {
                     </li>
                 ))}
             </ul>
-            <InfoPopover
-                triggerStyle="icon"
-                trigger={<InfoDot />}
-                label="Where these numbers come from"
-                side="bottom"
-                align="end"
+            <SourceNote
+                level="unverified"
+                heading="Applied values"
+                rows={perks.map((perk) => ({
+                    label: perk.key,
+                    value: perk.value ?? 'None',
+                    dim: perk.value === null,
+                }))}
                 className="mt-px flex-none"
             >
-                <div className="mb-2 flex items-baseline justify-between gap-3">
-                    <PopoverHeading className="mb-0">Applied values</PopoverHeading>
-                    {/* Not ember, not warn: warn already means "ready to build" on this screen. */}
-                    <span className="micro-label flex-none border border-line-700 px-1.5 py-0.5 text-ink-600">
-                        Unverified
-                    </span>
-                </div>
-                {perks.map((perk) => (
-                    <PopoverRow
-                        key={perk.key}
-                        label={perk.key}
-                        value={perk.value ?? 'None'}
-                        dim={perk.value === null}
-                    />
-                ))}
-                <PopoverNote>
-                    Read straight from the game files, never checked in a raid. The menu text and
-                    the number often disagree, and some levels set no number at all.
-                </PopoverNote>
-            </InfoPopover>
+                Read straight from the game files, never checked in a raid. The menu text and the
+                number often disagree, and some levels set no number at all.
+            </SourceNote>
         </div>
     );
 }

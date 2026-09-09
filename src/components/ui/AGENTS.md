@@ -9,6 +9,8 @@ Three of them carry design rules that live in their own docblocks and are bindin
 - `popover.tsx` — the reveal surface, and the six Cold Steel popover rules
 - `info-popover.tsx` — the reveal that works on a mouse, a finger and a controller
 - `tooltip.tsx` — one line of plain text, hover and focus only
+- `confidence.tsx` — the two words for a figure that cannot be stated flatly, and the chip and
+  reveal that carry them
 
 This file is the layer above those: **when text is allowed to occupy the screen at all.**
 
@@ -184,6 +186,59 @@ is next changed, classify its subjects with the ladder rather than copying the p
 | an info dot on every row | on the header; rows inherit the definition |
 | prose in the popover that repeats the panel | the panel is still visible behind it |
 | hiding a unit, a legend or an error | tier 1, always |
+
+## Unverified figures have their own two words
+
+The ladder decides *where* explanatory text goes. This decides what a figure is allowed to claim,
+which is a separate question, and `confidence.tsx` owns it.
+
+Almost every number here was read from the game's files and has been seen to hold. That is the
+floor, it is what a reader assumes, and **it carries no label** — a badge on every verified figure
+is a badge on nothing. Two kinds of number cannot be stated that flatly:
+
+| Level | Means | Fix | Live at |
+|---|---|---|---|
+| `unverified` | the game's own number, never confirmed in play | go and test it; the tag comes off | hideout perks |
+| `estimated` | computed by our model; the game states nothing to check against | none — the tag is permanent | the spray estimate |
+
+Keep them apart. They look similar and they are not: one is a promise to go and check, the other is
+a standing admission. A reader deciding how much weight to put on a figure wants to know which.
+
+**Do not add a third level until a real figure needs one.** Two levels with two live call sites is a
+vocabulary; six with four unused is decoration.
+
+### The two parts
+
+- `ConfidenceTag` — the chip. `quiet` (neutral, the default) is the only tone legal inside a
+  reveal, because popover rule 2 keeps ember out of a surface that is read. `loud` is ember-soft on
+  an ember hairline, for a tier-1 tag on the page — and never in a route that has already spent
+  ember on something else. The hideout gives ember to the selected zone and Level Up, so a loud tag
+  there would read as a third action.
+- `SourceNote` — the whole reveal: heading and tag on one line, the raw figures as a ledger, then
+  one or two plain sentences of where they came from. Fixed shape on purpose. The reader is learning
+  a convention, and a convention that looks different per route is not one.
+
+### Which tier a tag sits at is still the ladder's call
+
+The two live cases land on opposite sides, which is the useful example:
+
+- The **spray estimate** is tier 1. Mistaking it for the game's own number changes which gun a
+  player takes, so its tag is on the page.
+- The **hideout perks** are tier 3. The effect line is on the page — data the reader came for — but
+  that the applied number has never been checked is provenance, so the tag rides inside the reveal
+  on `SourceNote`'s heading and costs the panel no space.
+
+Ask the ladder's question, not "how shaky is it": would a reader who has used this panel ten times
+need telling again?
+
+### Anti-patterns
+
+| Don't | Do |
+|---|---|
+| a hand-rolled "unverified" chip at a call site | `ConfidenceTag`, so every one reads the same |
+| `estimated` for a figure the game does state | `unverified` — it can be tested, and should be |
+| a tag on every row of a ledger | one on the heading; the ledger shares a standing |
+| tagging a verified figure to look rigorous | no tag. The floor is silent |
 
 ## Guide and legal bodies are prose
 
