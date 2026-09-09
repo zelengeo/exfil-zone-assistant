@@ -374,6 +374,8 @@
     "stats": {
       "weight": 0.08,
       "rarity": "Common",
+      "perk": "PainkillerPerk",
+      "perkDuration": 160,
       "usesCount": 3,
       "effectTime": 160,
       "sideEffectTime": 60,
@@ -423,6 +425,8 @@
     "stats": {
       "weight": 0.08,
       "rarity": "Uncommon",
+      "perk": "PainkillerPerk",
+      "perkDuration": 200,
       "usesCount": 6,
       "effectTime": 200,
       "sideEffectTime": 60,
@@ -472,6 +476,8 @@
     "stats": {
       "weight": 0.08,
       "rarity": "Rare",
+      "perk": "PainkillerPerk",
+      "perkDuration": 240,
       "usesCount": 6,
       "effectTime": 240,
       "sideEffectTime": 40,
@@ -521,6 +527,40 @@
     "stats": {
       "weight": 0.03,
       "rarity": "Epic",
+      "perk": "RapidPulsePerk",
+      "perkDuration": 120,
+      "perkEffects": [
+        {
+          "attribute": "rapidPulse_stamina_scalar",
+          "value": 0.25,
+          "target": "maxStamina",
+          "mode": "scalar"
+        },
+        {
+          "attribute": "rapidPulse_stamina_restore_scalar",
+          "value": 0.25,
+          "target": "staminaRecovery",
+          "mode": "scalar"
+        },
+        {
+          "attribute": "rapidPulse_move_scalar",
+          "value": 0.15,
+          "target": "movementSpeed",
+          "mode": "scalar"
+        },
+        {
+          "attribute": "rapidPulse_energy",
+          "value": 0.1,
+          "target": "energyDrain",
+          "mode": "perSecond"
+        },
+        {
+          "attribute": "rapidPulse_hydra",
+          "value": 0.1,
+          "target": "hydrationDrain",
+          "mode": "perSecond"
+        }
+      ],
       "effectTime": 120,
       "useTime": 5,
       "sellId": "medical.morphineneedle",
@@ -554,8 +594,7 @@
           "requiresDlc": [],
           "exchange": []
         }
-      ],
-      "perk": "RapidPulsePerk"
+      ]
     },
     "tips": "Usable",
     "notes": "Stops bleeding."
@@ -574,6 +613,16 @@
     "stats": {
       "weight": 0.03,
       "rarity": "Epic",
+      "perk": "HemostasisPerk",
+      "perkDuration": 120,
+      "perkEffects": [
+        {
+          "attribute": "hemostasis_hydra",
+          "value": 0.1,
+          "target": "hydrationDrain",
+          "mode": "perSecond"
+        }
+      ],
       "effectTime": 120,
       "useTime": 5,
       "sellId": "medical.morphineneedle",
@@ -607,8 +656,7 @@
           "requiresDlc": [],
           "exchange": []
         }
-      ],
-      "perk": "HemostasisPerk"
+      ]
     },
     "tips": "Very expensive bandage.",
     "notes": "Stops bleeding."
@@ -627,6 +675,28 @@
     "stats": {
       "weight": 0.03,
       "rarity": "Epic",
+      "perk": "LoadMasterPerk",
+      "perkDuration": 600,
+      "perkEffects": [
+        {
+          "attribute": "LoadMaster_weight_scalar",
+          "value": 0.3,
+          "target": "weightLimit",
+          "mode": "scalar"
+        },
+        {
+          "attribute": "LoadMaster_energy",
+          "value": 0.3,
+          "target": "energyDrain",
+          "mode": "perSecond"
+        },
+        {
+          "attribute": "LoadMaster_hydra",
+          "value": 0.3,
+          "target": "hydrationDrain",
+          "mode": "perSecond"
+        }
+      ],
       "effectTime": 600,
       "useTime": 5,
       "sellId": "medical.morphineneedle",
@@ -660,8 +730,7 @@
           "requiresDlc": [],
           "exchange": []
         }
-      ],
-      "perk": "LoadMasterPerk"
+      ]
     },
     "tips": "Can be useful for loot runs or when planning to extract with heavy gear.",
     "notes": "Stops bleeding."
@@ -680,6 +749,8 @@
     "stats": {
       "weight": 0.03,
       "rarity": "Epic",
+      "perk": "PainkillerPerk",
+      "perkDuration": 120,
       "effectTime": 120,
       "useTime": 5,
       "sellId": "medical.morphineneedle",
@@ -732,6 +803,43 @@
     "stats": {
       "weight": 0.03,
       "rarity": "Epic",
+      "perk": "BoundlessEnergyPerk",
+      "perkDuration": 240,
+      "perkEffects": [
+        {
+          "attribute": "boundlessEnergy_stamina_scalar",
+          "value": 0.3,
+          "target": "maxStamina",
+          "mode": "scalar"
+        },
+        {
+          "attribute": "boundlessEnergy_stamina_restore_scalar",
+          "value": 0.3,
+          "target": "staminaRecovery",
+          "mode": "scalar"
+        },
+        {
+          "attribute": "boundlessEnergy_energy",
+          "value": 0.3,
+          "target": "energyDrain",
+          "mode": "perSecond"
+        },
+        {
+          "attribute": "boundlessEnergy_hydra",
+          "value": 0.3,
+          "target": "hydrationDrain",
+          "mode": "perSecond"
+        }
+      ],
+      "perkAfterDuration": 30,
+      "perkAfterEffects": [
+        {
+          "attribute": "boundlessEnergy_stamina_restore_scalar",
+          "value": -0.2,
+          "target": "staminaRecovery",
+          "mode": "scalar"
+        }
+      ],
       "effectTime": 5,
       "useTime": 5,
       "sellId": "medical.injector.p4",
@@ -765,8 +873,7 @@
           "requiresDlc": [],
           "exchange": []
         }
-      ],
-      "perk": "BoundlessEnergyPerk"
+      ]
     },
     "tips": "Don't know about max health. But definitely makes you hungry.",
     "notes": "Stops bleeding."

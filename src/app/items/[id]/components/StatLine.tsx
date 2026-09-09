@@ -94,11 +94,21 @@ export function StatGrid({ children, className }: { children: React.ReactNode; c
 export function StatPanel({
     title,
     icon,
+    note,
+    action,
     children,
     className,
 }: {
     title: string;
     icon?: React.ReactNode;
+    /** A figure or qualifier for the panel as a whole, set beside the title. */
+    note?: React.ReactNode;
+    /**
+     * A control belonging to the panel rather than to any row in it — a reveal about where the
+     * panel's figures came from, say. Pushed to the end of the title row, which is where the
+     * disclosure ladder puts an info dot: on a panel title, never on every row.
+     */
+    action?: React.ReactNode;
     children: React.ReactNode;
     className?: string;
 }) {
@@ -111,6 +121,8 @@ export function StatPanel({
                     </span>
                 )}
                 <h4 className="eyebrow">{title}</h4>
+                {note && <span className="micro-label text-ink-700">{note}</span>}
+                {action && <span className="ml-auto shrink-0">{action}</span>}
             </div>
             {children}
         </section>

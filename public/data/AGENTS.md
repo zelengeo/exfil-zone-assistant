@@ -34,7 +34,29 @@ like the curation backlog. Its header explains the split and the `--data <dir>` 
 candidate set before it is published.
 
 Run it after any edit here. Run `npm test` too when the change touches tasks or vendor keys: the
-task DAG is asserted against this data, not against fixtures.
+task DAG is asserted against this data, not against fixtures — and medical perks, which
+`src/lib/medical/perks.test.ts` reads straight out of `medical.json` rather than out of a fixture.
+
+## Medical perks
+
+Eight of the eighteen items in `medical.json` carry `perk`, the buff the item applies. Three shapes,
+and all three are load-bearing:
+
+- `perkEffects` is a list of `{ attribute, value, target, mode }`. `mode` says how to read `value` —
+  `scalar` is a fraction of the base, `perSecond` a flat rate — so **the same `0.3` means +30% on
+  one row and +0.3/s on the next**. Nothing may format one without reading the other.
+- **A positive value is not always good.** `energyDrain` and `hydrationDrain` count upward, so
+  `+0.3/s` there is what the item costs you. `lib/medical/perks.ts` marks those rows as costs;
+  colour never follows the sign.
+- `perkAfterEffects` with `perkAfterDuration` is the comedown, a second window rather than a
+  modifier on the first. Only the P4 injector has one.
+
+Four items carry a perk with no effects at all — every painkiller, and morphine. That is not a gap
+in the data: `PainkillerPerk` is a state rather than a set of modifiers.
+
+The item-to-perk link is **curated**, because the game holds it in Blueprint graph code rather than
+in data, and none of the numbers has been confirmed in a raid. Both are why the item page tags the
+panel `Unverified` — see [the confidence vocabulary](../../src/components/ui/AGENTS.md).
 
 ## Conventions
 

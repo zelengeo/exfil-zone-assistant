@@ -397,7 +397,7 @@ function Perks({ perks }: { perks: ReturnType<typeof perkRowsOf> }) {
     if (perks.length === 0) return null;
 
     return (
-        <div className="-mt-1 flex items-start gap-2.5">
+        <div className="-mt-1 flex items-center gap-2.5">
             <span className="micro-label flex-none pt-[3px] text-ink-700">Grants</span>
             <ul className="flex min-w-0 flex-1 flex-col gap-1">
                 {perks.map((perk) => (

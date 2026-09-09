@@ -280,15 +280,54 @@ export interface Holster extends Gear {
     stats: Item['stats'] & HolsterProperties;
 }
 
+/**
+ * One thing a medical perk changes while it is up.
+ *
+ * `target` says what moves and `mode` says how to read `value`: `scalar` is a fraction of the base
+ * (0.25 is +25%), `perSecond` a flat rate applied every second. A *drain* target counts upward, so
+ * a positive value there is a cost rather than a gain — which is why nothing here can be coloured
+ * by sign alone.
+ *
+ * `target` and `mode` are strings rather than unions on purpose. They are read out of a JSON file
+ * at runtime, and a union would be a promise this module cannot keep the first time an extraction
+ * adds a seventh target; `lib/medical/perks.ts` falls back to a derived label instead of throwing.
+ * `attribute` is the game's own id and is kept as the stable handle on an effect.
+ */
+export interface PerkEffect {
+    attribute: string;
+    value: number;
+    target: string;
+    mode: string;
+}
+
+/**
+ * The perk a medical item applies, if it applies one.
+ *
+ * On `Medicine` rather than on `Stim` because painkillers carry it too — `PainkillerPerk` is a real
+ * perk with a duration, and morphine is filed under Stims while applying it. `perkAfter*` is the
+ * comedown: only the P4 injector has one, and it is a separate window with its own effects rather
+ * than a modifier on the first.
+ */
+export interface MedicinePerkStats {
+    /** Curated: the item -> perk link is Blueprint graph code, not data. */
+    perk?: string,
+    /** Seconds the perk is up. Matches `effectTime` on every item that has both. */
+    perkDuration?: number,
+    /** Empty or absent for a perk that is a state rather than a set of modifiers. */
+    perkEffects?: PerkEffect[],
+    perkAfterDuration?: number,
+    perkAfterEffects?: PerkEffect[],
+}
+
 export interface Medicine extends Item {
     category: 'medicine';
     subcategory: 'Bandages' | 'Suturing Tools' | "Painkillers" | "Syringes" | "Stims";
-    stats: Item['stats'];
+    stats: Item['stats'] & MedicinePerkStats;
 }
 
 export interface Bandage extends Medicine {
     subcategory: 'Bandages';
-    stats: Item['stats'] & {
+    stats: Medicine['stats'] & {
         /** Curated - the game files do not record it. */
         canHealDeepWound: boolean,
         healPerSecond?: number,
@@ -300,7 +339,7 @@ export interface Bandage extends Medicine {
 
 export interface LimbRestore extends Medicine {
     subcategory: 'Suturing Tools';
-    stats: Item['stats'] & {
+    stats: Medicine['stats'] & {
         hpPercentage: number,
         useTime: number,
         usesCount: number,
@@ -310,7 +349,7 @@ export interface LimbRestore extends Medicine {
 
 export interface Painkiller extends Medicine {
     subcategory: 'Painkillers';
-    stats: Item['stats'] & {
+    stats: Medicine['stats'] & {
         usesCount: number,
         effectTime: number,
         energyFactor: number,
@@ -327,18 +366,16 @@ export interface Painkiller extends Medicine {
 
 export interface Stim extends Medicine {
     subcategory: 'Stims';
-    stats: Item['stats'] & {
+    stats: Medicine['stats'] & {
         useTime: number,
         effectTime: number,
         sellId?: string,
-        /** Curated: the item -> perk link is Blueprint graph code, not data. */
-        perk?: string,
     }
 }
 
 export interface Syringe extends Medicine {
     subcategory: 'Syringes';
-    stats: Item['stats'] & {
+    stats: Medicine['stats'] & {
         capacity: number,
         cureSpeed: number,
         /** Curated - the game files do not record it. */

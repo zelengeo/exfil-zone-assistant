@@ -99,6 +99,12 @@ _Avoid_: Buff, bonus, effect, stat
 The items an upgrade asks for, on top of its price. `exchange` in the data.
 _Avoid_: Ingredients, components, requirements, costs
 
+> **Perk** is also a medical term: the buff a stim or painkiller applies while it is up, `perk` in
+> `medical.json`. Same word on purpose — both are a named effect the game switches on, and a reader
+> who has met one understands the other.
+
+
+
 **Built**:
 An upgrade the player has recorded as done. The hideout's form of progress, and the only thing the
 route stores.

@@ -250,6 +250,15 @@ function transformItemData(rawItem: Item): Item {
         }
 
         if (isMedicine(rawItem)) {
+            if (!isMedicine(baseItem)) return baseItem;
+            // The perk fields sit on `Medicine`, not on one subcategory - painkillers and stims
+            // both carry them - so they are copied once here rather than in each branch below.
+            baseItem.stats.perk = rawItem.stats.perk;
+            baseItem.stats.perkDuration = rawItem.stats.perkDuration;
+            baseItem.stats.perkEffects = rawItem.stats.perkEffects;
+            baseItem.stats.perkAfterDuration = rawItem.stats.perkAfterDuration;
+            baseItem.stats.perkAfterEffects = rawItem.stats.perkAfterEffects;
+
             if (isBandage(rawItem)) {
                 if (!isBandage(baseItem)) return baseItem;
                 baseItem.stats.canHealDeepWound = rawItem.stats.canHealDeepWound;
@@ -278,7 +287,6 @@ function transformItemData(rawItem: Item): Item {
                 baseItem.stats.effectTime = rawItem.stats.effectTime;
                 baseItem.stats.useTime = rawItem.stats.useTime;
                 baseItem.stats.sellId = rawItem.stats.sellId;
-                baseItem.stats.perk = rawItem.stats.perk;
             } else if (isLimbRestore(rawItem)) {
                 if (!isLimbRestore(baseItem)) return baseItem;
                 baseItem.stats.hpPercentage = rawItem.stats.hpPercentage;

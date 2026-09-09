@@ -5,8 +5,8 @@ advertise, and knowing which half you are in saves reading the wrong file:
 
 - **Request plumbing** — `auth/`, `schemas/`, `rate-limit/`, `errors.ts`, `middleware.ts`,
   `mongodb.ts`, `logger.ts`, `user.ts`, `utils.ts`
-- **Game logic** — `gunsmith/`, `protection/`, `gates.ts`, `trade.ts`, `vendors.ts`. Pure, data-fed,
-  with tests alongside the modules.
+- **Game logic** — `gunsmith/`, `protection/`, `medical/`, `gates.ts`, `trade.ts`, `vendors.ts`.
+  Pure, data-fed, with tests alongside the modules.
 
 ## Auth
 
@@ -190,6 +190,22 @@ Three consumers, and this is deliberately a shared coupling rather than three pr
 that grades a figure goes through here and draws `components/quality/GradeMeter`. The rules — four
 rungs, the peer set is the ranking, and colour never travels without the figure — are in
 [ADR 0006](../../docs/adr/0006-one-grade-scale-for-item-quality.md).
+
+## Medical perks
+
+`medical/perks.ts` turns the raw perk rows on a medical item into lines a page can print. Two
+things in it are not obvious and both are in the spec:
+
+- **Sign is not the same as good.** Two of the six targets are drains, so `+0.3/s` on energy is what
+  the stim costs while `+30%` on carry weight is why you took it. Each row carries `cost`, and no
+  caller may colour by sign.
+- **Names are derived, not mapped.** `RapidPulsePerk` becomes "Rapid Pulse" by stripping the suffix
+  and splitting the camel case, which lands all five perks in the data correctly and needs no edit
+  for a sixth. Target labels keep a one-entry table only where the derivation reads worse.
+
+`perkEarnsPanel` is the rule for whether a perk is worth the space: always when it has effects,
+otherwise only when the item's own name does not already say it. That is what keeps a
+"Painkiller · 160s / no modifiers" panel off the item called Painkiller while keeping it on morphine.
 
 ## Gotchas
 
