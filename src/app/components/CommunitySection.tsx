@@ -3,6 +3,7 @@ import Image from 'next/image';
 import {Heart, Globe, Star} from 'lucide-react';
 import {SiDiscord, SiGithub, SiTwitch, SiX, SiYoutube, SiTelegram} from "@icons-pack/react-simple-icons";
 import {cn} from "@/lib/utils";
+import {Button} from "@/components/ui/button";
 import {getAllContributorsByRole, getRoleConfig} from "@/data/community";
 import {PartnerContributor, StandardContributor} from "@/types/community";
 
@@ -104,8 +105,19 @@ const PartnerCard = ({partner}: { partner: PartnerContributor }) => {
                     className="inline-flex items-center gap-2 px-4 py-2 border border-warn/50 text-warn hover:bg-steel-700 transition-colors font-display font-semibold uppercase tracking-nav text-sm"
                 >
                     {getPlatformIcon(partner.platform)}
-                    <span>Visit Channel</span>
+                    <span>{partner.platform === 'website' ? 'Visit Website' : 'Visit Channel'}</span>
                 </a>
+            )}
+            {partner.socialLinks && partner.socialLinks.length > 0 && (
+                <div className="flex flex-wrap gap-2 mt-4">
+                    {partner.socialLinks.map(({label, href}) => (
+                        <Button key={href} asChild variant="quiet" className="min-h-11 min-w-11">
+                            <a href={href} target="_blank" rel="noopener noreferrer">
+                                {label}
+                            </a>
+                        </Button>
+                    ))}
+                </div>
             )}
         </div>
     );

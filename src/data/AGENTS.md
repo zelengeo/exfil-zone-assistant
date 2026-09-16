@@ -38,8 +38,8 @@ step, no database.
 | `creator` | a new key in `communityCreatorMap` | Content Creators | 2 |
 | `contributor` | the `contributors` array | Contributors | 3 |
 
-`partnerMap` is `{}` today and `contributors` is empty — both are wired up and ready, just add an
-entry. Map keys (`orbb`, `radFoxVR`, …) are arbitrary camelCase ids; keep them unique.
+Add partners to `partnerMap`; `contributors` is empty but wired up and ready for entries.
+Map keys (`moonst3ad`, `orbb`, `radFoxVR`, …) are arbitrary camelCase ids; keep them unique.
 
 ### The one gotcha: `featured` gates visibility for everyone except partners
 
@@ -70,6 +70,7 @@ Common to every role (`BaseContributor`):
 | `priority` | sort order within Partners, lower first; default `999` |
 | `highlighted` | heavier border treatment |
 | `tags` | `readonly string[]` of short labels, e.g. `['Tutorial Creator']` |
+| `socialLinks` | optional `readonly { label: string; href: string }[]`, rendered below the main link as named links opening in a new tab |
 | `stats` | `{ subscribers?, videos?, followers? }`, all strings |
 | `customComponent` | a React component that replaces the whole card — rare, needs a real code review |
 
