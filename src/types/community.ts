@@ -20,6 +20,7 @@ export interface PartnerContributor extends BaseContributor {
     customComponent?: React.ComponentType; // Override with custom card
     priority?: number;             // Sort order (lower = higher priority)
     tags?: readonly string[];              // Additional labels like "VR Content", "Tutorial Creator"
+    socialLinks?: readonly { label: string; href: string }[];
     stats?: {                     // Optional stats for partners
         subscribers?: string;
         videos?: string;

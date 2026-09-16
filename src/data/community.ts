@@ -39,7 +39,23 @@ export const communityCreatorMap = {
     }
 } as const;
 
-export const partnerMap = {} as const;
+export const partnerMap = {
+    moonst3ad: {
+        name: 'Moonst3ad',
+        role: 'partner',
+        description: 'FPS and shooter streams, gameplay highlights, and community.',
+        link: 'https://moonst3ad.com/',
+        logo: '/images/community/moonst3ad_logo.webp',
+        platform: 'website',
+        socialLinks: [
+            {label: 'Twitch', href: 'https://www.twitch.tv/moonst3ad'},
+            {label: 'YouTube', href: 'https://www.youtube.com/@Moonst3ad'},
+            {label: 'Kick', href: 'https://kick.com/moonst3ad'},
+            {label: 'Telegram', href: 'https://t.me/moonst3ad'},
+            {label: 'TikTok', href: 'https://www.tiktok.com/@moonst3ad'},
+        ],
+    },
+} as const;
 
 // Partners - get priority positioning and enhanced features
 const partners: PartnerContributor[] = Object.values(partnerMap) as PartnerContributor[];
