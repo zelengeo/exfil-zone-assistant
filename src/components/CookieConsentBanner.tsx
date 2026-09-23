@@ -269,6 +269,7 @@ export default function CookieConsentBanner() {
 
                         <Link
                             href="/cookies"
+                            prefetch={false}
                             className="text-xs text-ink-500 hover:text-ink-300 text-center sm:text-right"
                         >
                             Cookie Policy →

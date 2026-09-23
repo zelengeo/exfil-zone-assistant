@@ -42,6 +42,7 @@ export default function ItemRow({ item, resolve, className }: ItemRowProps) {
             {/* Covers the row, sits under the two interactive cells. */}
             <Link
                 href={`/items/${item.id}`}
+                prefetch={false}
                 className="absolute inset-0 focus-visible:outline-2"
                 aria-label={item.name}
             />

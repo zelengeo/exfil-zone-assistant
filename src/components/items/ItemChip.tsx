@@ -120,6 +120,7 @@ export default function ItemChip({
     return (
         <Link
             href={`/items/${itemId}`}
+            prefetch={false}
             {...(newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             className={shell}
         >

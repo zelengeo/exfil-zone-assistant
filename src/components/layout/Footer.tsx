@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
                                     </a>
                                 </Button>
                                 <Button variant="quiet" size="sm" asChild>
-                                    <Link href="/feedback">
+                                    <Link href="/feedback" prefetch={false}>
                                         <MessageCircle className="h-4 w-4" />
                                         Feedback
                                     </Link>
@@ -105,6 +105,7 @@ const Footer: React.FC = () => {
                                     <Link
                                         key={item.name}
                                         href={item.href}
+                                        prefetch={false}
                                         target={item.external ? "_blank" : undefined}
                                         rel={item.external ? "noopener noreferrer" : undefined}
                                         className="flex items-center gap-2 text-sm text-ink-400 hover:text-ink-100 transition-colors"
@@ -127,6 +128,7 @@ const Footer: React.FC = () => {
                                     <Link
                                         key={item.name}
                                         href={item.href}
+                                        prefetch={false}
                                         className="block text-sm text-ink-400 hover:text-ink-100 transition-colors"
                                     >
                                         {item.name}

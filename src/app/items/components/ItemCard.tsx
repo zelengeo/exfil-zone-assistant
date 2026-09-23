@@ -29,6 +29,7 @@ const ItemCard: React.FC<ItemCardProps> = ({ item }) => {
     return (
         <Link
             href={`/items/${item.id}`}
+            prefetch={false}
             className="group block bg-steel-800 border border-line-800 hover:border-line-500 hover:bg-steel-700 transition-colors"
         >
             <div className="relative aspect-square bg-steel-850 border-b border-line-800 overflow-hidden">
