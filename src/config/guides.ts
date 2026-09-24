@@ -10,6 +10,14 @@ export const guideTags: GuideTag[] = guideTagSchema.array().parse([
 
 export const guidesConfig: GuideMetadata[] = guideMetadataSchema.array().parse([
     {
+        slug: '1-7-0-0-changes', title: '1.7.0.0 changes',
+        description: 'What the combat balance changes mean for stopped bullets, body armor penetration and durability, with before-and-after examples. In-game testing is still in progress.',
+        tags: ['combat', 'equipment', 'gameplay'],
+        relatedSlugs: ['armor-penetration-guide', 'ammo-selection-beginners', 'damage-model'],
+        difficulty: 'beginner', readTimeMinutes: 5, author: 'pogapwnz',
+        publishedAt: '2026-09-24', updatedAt: '2026-09-24', featured: true,
+    },
+    {
         slug: 'when-is-the-wipe', title: 'When is the Next Wipe?',
         description: 'Official wipe history, PvP and PvE scope, and the latest confirmed status.',
         tags: ['getting-started', 'gameplay'],
