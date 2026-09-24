@@ -4,7 +4,7 @@
     "name": "Size D battery",
     "description": "",
     "category": "misc",
-    "subcategory": "Power",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_1batterie_2.webp",
       "thumbnail": "/images/items/misc/misc_1batterie_2.webp",
@@ -33,7 +33,7 @@
     "name": "Size D battery",
     "description": "",
     "category": "misc",
-    "subcategory": "Power",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_1battery.webp",
       "thumbnail": "/images/items/misc/misc_b_1battery.webp",
@@ -62,7 +62,7 @@
     "name": "Aladdin lamp",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_aladdinlamp.webp",
       "thumbnail": "/images/items/misc/misc_b_aladdinlamp.webp",
@@ -91,7 +91,7 @@
     "name": "Antique book",
     "description": "",
     "category": "misc",
-    "subcategory": "Intel",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_antiquebook.webp",
       "thumbnail": "/images/items/misc/misc_b_antiquebook.webp",
@@ -120,7 +120,7 @@
     "name": "Antique Tea cup",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_antiqueteaset.webp",
       "thumbnail": "/images/items/misc/misc_b_antiqueteaset.webp",
@@ -149,7 +149,7 @@
     "name": "Aspirin",
     "description": "",
     "category": "misc",
-    "subcategory": "Medicine",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_aspire.webp",
       "thumbnail": "/images/items/misc/misc_b_aspire.webp",
@@ -178,7 +178,7 @@
     "name": "Asthma medicine",
     "description": "",
     "category": "misc",
-    "subcategory": "Medicine",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_asthmamedication.webp",
       "thumbnail": "/images/items/misc/misc_b_asthmamedication.webp",
@@ -207,7 +207,7 @@
     "name": "Adhesive bandages",
     "description": "",
     "category": "misc",
-    "subcategory": "Medicine",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_bandaid.webp",
       "thumbnail": "/images/items/misc/misc_b_bandaid.webp",
@@ -236,7 +236,7 @@
     "name": "Storage Battery",
     "description": "",
     "category": "misc",
-    "subcategory": "Power",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_batter_large.webp",
       "thumbnail": "/images/items/misc/misc_b_batter_large.webp",
@@ -294,7 +294,7 @@
     "name": "Bottled glucose",
     "description": "",
     "category": "misc",
-    "subcategory": "Medicine",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_bottledglucose.webp",
       "thumbnail": "/images/items/misc/misc_b_bottledglucose.webp",
@@ -323,7 +323,7 @@
     "name": "Bull statue",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_bullstatue.webp",
       "thumbnail": "/images/items/misc/misc_b_bullstatue.webp",
@@ -352,7 +352,7 @@
     "name": "Cash 25k",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_cash.webp",
       "thumbnail": "/images/items/misc/misc_b_cash.webp",
@@ -395,7 +395,7 @@
     "name": "Cash 50k",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_cash2.webp",
       "thumbnail": "/images/items/misc/misc_b_cash2.webp",
@@ -438,7 +438,7 @@
     "name": "Cash 75k",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_cash3.webp",
       "thumbnail": "/images/items/misc/misc_b_cash3.webp",
@@ -466,7 +466,7 @@
           "price": 100000,
           "bundle": 1,
           "bundlePrice": 100000,
-          "stock": 96,
+          "stock": 99,
           "resetType": "daily",
           "requiresTasks": [],
           "requiresDlc": [],
@@ -481,7 +481,7 @@
     "name": "Ceramic adhesive",
     "description": "",
     "category": "misc",
-    "subcategory": "Building",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_ceramic_adhesive.webp",
       "thumbnail": "/images/items/misc/misc_b_ceramic_adhesive.webp",
@@ -510,7 +510,7 @@
     "name": "Civil radio",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_civilradio.webp",
       "thumbnail": "/images/items/misc/misc_b_civilradio.webp",
@@ -539,7 +539,7 @@
     "name": "Data Cord",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_dataline.webp",
       "thumbnail": "/images/items/misc/misc_b_dataline.webp",
@@ -568,7 +568,7 @@
     "name": "Defibrillator",
     "description": "",
     "category": "misc",
-    "subcategory": "Medicine",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_defibrillator.webp",
       "thumbnail": "/images/items/misc/misc_b_defibrillator.webp",
@@ -626,7 +626,7 @@
     "name": "Digital sensor",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_digitalsensor.webp",
       "thumbnail": "/images/items/misc/misc_b_digitalsensor.webp",
@@ -655,7 +655,7 @@
     "name": "Disinfectant wipes",
     "description": "",
     "category": "misc",
-    "subcategory": "Medicine",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_disinfectingwipes.webp",
       "thumbnail": "/images/items/misc/misc_b_disinfectingwipes.webp",
@@ -684,7 +684,7 @@
     "name": "Electric drill",
     "description": "",
     "category": "misc",
-    "subcategory": "Tools",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_electricdrill.webp",
       "thumbnail": "/images/items/misc/misc_b_electricdrill.webp",
@@ -732,7 +732,7 @@
     "name": "Flash light",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_flashlight.webp",
       "thumbnail": "/images/items/misc/misc_b_flashlight.webp",
@@ -761,7 +761,7 @@
     "name": "GrimLord' Cart",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_gamecartridge.webp",
       "thumbnail": "/images/items/misc/misc_b_gamecartridge.webp",
@@ -790,7 +790,7 @@
     "name": "'Showdown' Cart",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_gamecartridge_a.webp",
       "thumbnail": "/images/items/misc/misc_b_gamecartridge_a.webp",
@@ -819,7 +819,7 @@
     "name": "'Contractors' Cart",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_gamecartridge_b.webp",
       "thumbnail": "/images/items/misc/misc_b_gamecartridge_b.webp",
@@ -848,7 +848,7 @@
     "name": "'Exfilzone' Cart",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_gamecartridge_d.webp",
       "thumbnail": "/images/items/misc/misc_b_gamecartridge_d.webp",
@@ -877,7 +877,7 @@
     "name": "Game console",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_gameconsole.webp",
       "thumbnail": "/images/items/misc/misc_b_gameconsole.webp",
@@ -906,7 +906,7 @@
     "name": "Gas pipe pliers",
     "description": "",
     "category": "misc",
-    "subcategory": "Tools",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_gaspipewrench.webp",
       "thumbnail": "/images/items/misc/misc_b_gaspipewrench.webp",
@@ -935,7 +935,7 @@
     "name": "Gas can",
     "description": "",
     "category": "misc",
-    "subcategory": "Combustible",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_gastank.webp",
       "thumbnail": "/images/items/misc/misc_b_gastank.webp",
@@ -964,7 +964,7 @@
     "name": "Large gas can",
     "description": "",
     "category": "misc",
-    "subcategory": "Combustible",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_gastank_large.webp",
       "thumbnail": "/images/items/misc/misc_b_gastank_large.webp",
@@ -993,7 +993,7 @@
     "name": "Instant glue",
     "description": "",
     "category": "misc",
-    "subcategory": "Building",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_glue_large.webp",
       "thumbnail": "/images/items/misc/misc_b_glue_large.webp",
@@ -1022,7 +1022,7 @@
     "name": "Golden elephant",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_goldelephant.webp",
       "thumbnail": "/images/items/misc/misc_b_goldelephant.webp",
@@ -1051,7 +1051,7 @@
     "name": "Golden prize",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_goldenknife.webp",
       "thumbnail": "/images/items/misc/misc_b_goldenknife.webp",
@@ -1080,7 +1080,7 @@
     "name": "Gold lion ring",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_goldenlionring.webp",
       "thumbnail": "/images/items/misc/misc_b_goldenlionring.webp",
@@ -1109,7 +1109,7 @@
     "name": "Golden prize",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_goldenprize.webp",
       "thumbnail": "/images/items/misc/misc_b_goldenprize.webp",
@@ -1138,7 +1138,7 @@
     "name": "Gun Oil",
     "description": "",
     "category": "misc",
-    "subcategory": "Combustible",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_gunoil.webp",
       "thumbnail": "/images/items/misc/misc_b_gunoil.webp",
@@ -1167,7 +1167,7 @@
     "name": "Hard drive",
     "description": "",
     "category": "misc",
-    "subcategory": "Intel",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_harddrive.webp",
       "thumbnail": "/images/items/misc/misc_b_harddrive.webp",
@@ -1196,7 +1196,7 @@
     "name": "Horror novel",
     "description": "",
     "category": "misc",
-    "subcategory": "Intel",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_horrornovel.webp",
       "thumbnail": "/images/items/misc/misc_b_horrornovel.webp",
@@ -1225,7 +1225,7 @@
     "name": "Insulating Tape",
     "description": "",
     "category": "misc",
-    "subcategory": "Building",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_insulatingtape.webp",
       "thumbnail": "/images/items/misc/misc_b_insulatingtape.webp",
@@ -1254,7 +1254,7 @@
     "name": "Iodine",
     "description": "",
     "category": "misc",
-    "subcategory": "Medicine",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_iodophor.webp",
       "thumbnail": "/images/items/misc/misc_b_iodophor.webp",
@@ -1283,7 +1283,7 @@
     "name": "Ion Battery",
     "description": "",
     "category": "misc",
-    "subcategory": "Power",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_ionbattery.webp",
       "thumbnail": "/images/items/misc/misc_b_ionbattery.webp",
@@ -1312,7 +1312,7 @@
     "name": "Energy-saving lamp",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_lightbulb.webp",
       "thumbnail": "/images/items/misc/misc_b_lightbulb.webp",
@@ -1341,7 +1341,7 @@
     "name": "Lighter",
     "description": "",
     "category": "misc",
-    "subcategory": "Combustible",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_lighter.webp",
       "thumbnail": "/images/items/misc/misc_b_lighter.webp",
@@ -1370,7 +1370,7 @@
     "name": "Lighter fluid",
     "description": "",
     "category": "misc",
-    "subcategory": "Combustible",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_lighterfluid.webp",
       "thumbnail": "/images/items/misc/misc_b_lighterfluid.webp",
@@ -1399,7 +1399,7 @@
     "name": "Magazine",
     "description": "",
     "category": "misc",
-    "subcategory": "Intel",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_magazine.webp",
       "thumbnail": "/images/items/misc/misc_b_magazine.webp",
@@ -1428,7 +1428,7 @@
     "name": "Marine Battery",
     "description": "",
     "category": "misc",
-    "subcategory": "Power",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_marinestoragebattery.webp",
       "thumbnail": "/images/items/misc/misc_b_marinestoragebattery.webp",
@@ -1457,7 +1457,7 @@
     "name": "Matches",
     "description": "",
     "category": "misc",
-    "subcategory": "Combustible",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_match.webp",
       "thumbnail": "/images/items/misc/misc_b_match.webp",
@@ -1486,7 +1486,7 @@
     "name": "Portable medical kit",
     "description": "",
     "category": "misc",
-    "subcategory": "Medicine",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_medicalkit.webp",
       "thumbnail": "/images/items/misc/misc_b_medicalkit.webp",
@@ -1515,7 +1515,7 @@
     "name": "Medical scissors",
     "description": "",
     "category": "misc",
-    "subcategory": "Medicine",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_medicalscissors.webp",
       "thumbnail": "/images/items/misc/misc_b_medicalscissors.webp",
@@ -1544,7 +1544,7 @@
     "name": "Hard drive - classified",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_militaryharddrive.webp",
       "thumbnail": "/images/items/misc/misc_b_militaryharddrive.webp",
@@ -1573,7 +1573,7 @@
     "name": "USB - classified",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_militaryusbdrive.webp",
       "thumbnail": "/images/items/misc/misc_b_militaryusbdrive.webp",
@@ -1602,7 +1602,7 @@
     "name": "Moldboard",
     "description": "",
     "category": "misc",
-    "subcategory": "Tools",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_moldboard.webp",
       "thumbnail": "/images/items/misc/misc_b_moldboard.webp",
@@ -1631,7 +1631,7 @@
     "name": "Gun Oil",
     "description": "",
     "category": "misc",
-    "subcategory": "Combustible",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_multipurposecleaner.webp",
       "thumbnail": "/images/items/misc/misc_b_multipurposecleaner.webp",
@@ -1650,7 +1650,7 @@
     "name": "Nails",
     "description": "",
     "category": "misc",
-    "subcategory": "Building",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_nail.webp",
       "thumbnail": "/images/items/misc/misc_b_nail.webp",
@@ -1679,7 +1679,7 @@
     "name": "New Phone",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_newphone.webp",
       "thumbnail": "/images/items/misc/misc_b_newphone.webp",
@@ -1708,7 +1708,7 @@
     "name": "Nuts",
     "description": "",
     "category": "misc",
-    "subcategory": "Building",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_nut.webp",
       "thumbnail": "/images/items/misc/misc_b_nut.webp",
@@ -1737,7 +1737,7 @@
     "name": "Big Nut",
     "description": "",
     "category": "misc",
-    "subcategory": "Building",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_nut2.webp",
       "thumbnail": "/images/items/misc/misc_b_nut2.webp",
@@ -1766,7 +1766,7 @@
     "name": "Oil Storage",
     "description": "",
     "category": "misc",
-    "subcategory": "Combustible",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_oilstorage_large.webp",
       "thumbnail": "/images/items/misc/misc_b_oilstorage_large.webp",
@@ -1785,7 +1785,7 @@
     "name": "Old Phone",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_oldphone.webp",
       "thumbnail": "/images/items/misc/misc_b_oldphone.webp",
@@ -1814,7 +1814,7 @@
     "name": "Olive oil",
     "description": "",
     "category": "misc",
-    "subcategory": "Combustible",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_oliveoil.webp",
       "thumbnail": "/images/items/misc/misc_b_oliveoil.webp",
@@ -1843,7 +1843,7 @@
     "name": "CD",
     "description": "",
     "category": "misc",
-    "subcategory": "Intel",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_opticaldisc.webp",
       "thumbnail": "/images/items/misc/misc_b_opticaldisc.webp",
@@ -1872,7 +1872,7 @@
     "name": "CPU Fan",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_pcfan.webp",
       "thumbnail": "/images/items/misc/misc_b_pcfan.webp",
@@ -1901,7 +1901,7 @@
     "name": "Perfume",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_perfume.webp",
       "thumbnail": "/images/items/misc/misc_b_perfume.webp",
@@ -1959,7 +1959,7 @@
     "name": "Piezometer",
     "description": "",
     "category": "misc",
-    "subcategory": "Building",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_piezometer.webp",
       "thumbnail": "/images/items/misc/misc_b_piezometer.webp",
@@ -1988,7 +1988,7 @@
     "name": "Valve",
     "description": "",
     "category": "misc",
-    "subcategory": "Building",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_pipeline.webp",
       "thumbnail": "/images/items/misc/misc_b_pipeline.webp",
@@ -2017,7 +2017,7 @@
     "name": "Plier",
     "description": "",
     "category": "misc",
-    "subcategory": "Tools",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_plier.webp",
       "thumbnail": "/images/items/misc/misc_b_plier.webp",
@@ -2046,7 +2046,7 @@
     "name": "Large plier",
     "description": "",
     "category": "misc",
-    "subcategory": "Tools",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_plier_large.webp",
       "thumbnail": "/images/items/misc/misc_b_plier_large.webp",
@@ -2075,7 +2075,7 @@
     "name": "Power Bank",
     "description": "",
     "category": "misc",
-    "subcategory": "Power",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_powerbank.webp",
       "thumbnail": "/images/items/misc/misc_b_powerbank.webp",
@@ -2104,7 +2104,7 @@
     "name": "Radio scanner",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_radioscanner.webp",
       "thumbnail": "/images/items/misc/misc_b_radioscanner.webp",
@@ -2133,7 +2133,7 @@
     "name": "RAM",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_ram.webp",
       "thumbnail": "/images/items/misc/misc_b_ram.webp",
@@ -2191,7 +2191,7 @@
     "name": "Recorder",
     "description": "",
     "category": "misc",
-    "subcategory": "Intel",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_recorder.webp",
       "thumbnail": "/images/items/misc/misc_b_recorder.webp",
@@ -2278,7 +2278,7 @@
     "name": "Bolts",
     "description": "",
     "category": "misc",
-    "subcategory": "Building",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_screw.webp",
       "thumbnail": "/images/items/misc/misc_b_screw.webp",
@@ -2336,7 +2336,7 @@
     "name": "Small Shovel",
     "description": "",
     "category": "misc",
-    "subcategory": "Tools",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_smallshovel.webp",
       "thumbnail": "/images/items/misc/misc_b_smallshovel.webp",
@@ -2365,7 +2365,7 @@
     "name": "Smokeless powder",
     "description": "",
     "category": "misc",
-    "subcategory": "Combustible",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_smokelesspowder.webp",
       "thumbnail": "/images/items/misc/misc_b_smokelesspowder.webp",
@@ -2423,7 +2423,7 @@
     "name": "Socket",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_socket.webp",
       "thumbnail": "/images/items/misc/misc_b_socket.webp",
@@ -2452,7 +2452,7 @@
     "name": "Spark Plug",
     "description": "",
     "category": "misc",
-    "subcategory": "Tools",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_sparkplug.webp",
       "thumbnail": "/images/items/misc/misc_b_sparkplug.webp",
@@ -2481,7 +2481,7 @@
     "name": "Spray Can",
     "description": "",
     "category": "misc",
-    "subcategory": "Building",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_spraycan.webp",
       "thumbnail": "/images/items/misc/misc_b_spraycan.webp",
@@ -2510,7 +2510,7 @@
     "name": "Stone lion",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_stonlion.webp",
       "thumbnail": "/images/items/misc/misc_b_stonlion.webp",
@@ -2539,7 +2539,7 @@
     "name": "Car Battery",
     "description": "",
     "category": "misc",
-    "subcategory": "Power",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_storagebattery.webp",
       "thumbnail": "/images/items/misc/misc_b_storagebattery.webp",
@@ -2568,7 +2568,7 @@
     "name": "Super Glue",
     "description": "",
     "category": "misc",
-    "subcategory": "Building",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_superglue.webp",
       "thumbnail": "/images/items/misc/misc_b_superglue.webp",
@@ -2597,7 +2597,7 @@
     "name": "Tape",
     "description": "",
     "category": "misc",
-    "subcategory": "Intel",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_tape.webp",
       "thumbnail": "/images/items/misc/misc_b_tape.webp",
@@ -2626,7 +2626,7 @@
     "name": "Tape holder",
     "description": "",
     "category": "misc",
-    "subcategory": "Tools",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_tape_holder.webp",
       "thumbnail": "/images/items/misc/misc_b_tape_holder.webp",
@@ -2655,7 +2655,7 @@
     "name": "Gas can",
     "description": "",
     "category": "misc",
-    "subcategory": "Combustible",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_tape_large.webp",
       "thumbnail": "/images/items/misc/misc_b_tape_large.webp",
@@ -2674,7 +2674,7 @@
     "name": "Measuring Tape",
     "description": "",
     "category": "misc",
-    "subcategory": "Tools",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_tapemeasure.webp",
       "thumbnail": "/images/items/misc/misc_b_tapemeasure.webp",
@@ -2703,7 +2703,7 @@
     "name": "Civil radio",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_tapeplayer.webp",
       "thumbnail": "/images/items/misc/misc_b_tapeplayer.webp",
@@ -2732,7 +2732,7 @@
     "name": "Tire sealant",
     "description": "",
     "category": "misc",
-    "subcategory": "Tools",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_tire_sealant.webp",
       "thumbnail": "/images/items/misc/misc_b_tire_sealant.webp",
@@ -2819,7 +2819,7 @@
     "name": "Voltage transformer",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_transformer.webp",
       "thumbnail": "/images/items/misc/misc_b_transformer.webp",
@@ -2848,7 +2848,7 @@
     "name": "UV lamp",
     "description": "",
     "category": "misc",
-    "subcategory": "Medicine",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_uvlight.webp",
       "thumbnail": "/images/items/misc/misc_b_uvlight.webp",
@@ -2877,7 +2877,7 @@
     "name": "Imaging module",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_visionmodule.webp",
       "thumbnail": "/images/items/misc/misc_b_visionmodule.webp",
@@ -2906,7 +2906,7 @@
     "name": "Flash light",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_washingliquid.webp",
       "thumbnail": "/images/items/misc/misc_b_washingliquid.webp",
@@ -2925,7 +2925,7 @@
     "name": "WD-40",
     "description": "",
     "category": "misc",
-    "subcategory": "Combustible",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_wd40.webp",
       "thumbnail": "/images/items/misc/misc_b_wd40.webp",
@@ -2954,7 +2954,7 @@
     "name": "Wire",
     "description": "",
     "category": "misc",
-    "subcategory": "Building",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_wire.webp",
       "thumbnail": "/images/items/misc/misc_b_wire.webp",
@@ -2983,7 +2983,7 @@
     "name": "Wire Cutter",
     "description": "",
     "category": "misc",
-    "subcategory": "Tools",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_wirecutting.webp",
       "thumbnail": "/images/items/misc/misc_b_wirecutting.webp",
@@ -3012,7 +3012,7 @@
     "name": "Wrench",
     "description": "",
     "category": "misc",
-    "subcategory": "Tools",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_b_wrench.webp",
       "thumbnail": "/images/items/misc/misc_b_wrench.webp",
@@ -3041,7 +3041,7 @@
     "name": "Sheriff's Badge",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_badge.webp",
       "thumbnail": "/images/items/misc/misc_badge.webp",
@@ -3108,7 +3108,7 @@
     "name": "Centrifuge",
     "description": "",
     "category": "misc",
-    "subcategory": "Medicine",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_bentrifuge.webp",
       "thumbnail": "/images/items/misc/misc_bentrifuge.webp",
@@ -3137,7 +3137,7 @@
     "name": "Climbing rope",
     "description": "",
     "category": "misc",
-    "subcategory": "Tools",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_blimbingrope.webp",
       "thumbnail": "/images/items/misc/misc_blimbingrope.webp",
@@ -3166,7 +3166,7 @@
     "name": "Computer manual",
     "description": "",
     "category": "misc",
-    "subcategory": "Intel",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_bomputertextbook.webp",
       "thumbnail": "/images/items/misc/misc_bomputertextbook.webp",
@@ -3195,7 +3195,7 @@
     "name": "CPU",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_bpu.webp",
       "thumbnail": "/images/items/misc/misc_bpu.webp",
@@ -3224,7 +3224,7 @@
     "name": "Ruby ring",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_brimsonqueenring.webp",
       "thumbnail": "/images/items/misc/misc_brimsonqueenring.webp",
@@ -3253,7 +3253,7 @@
     "name": "Vintage Camera",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_camera.webp",
       "thumbnail": "/images/items/misc/misc_camera.webp",
@@ -3282,7 +3282,7 @@
     "name": "Model Car: Caveman (Gold)",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_cardoll_cavemangold.webp",
       "thumbnail": "/images/items/misc/misc_cardoll_cavemangold.webp",
@@ -3311,7 +3311,7 @@
     "name": "Model Car: Outlaw 01",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_cardoll_outlaw01.webp",
       "thumbnail": "/images/items/misc/misc_cardoll_outlaw01.webp",
@@ -3340,7 +3340,7 @@
     "name": "Model Car: Outlaw 02",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_cardoll_outlaw02.webp",
       "thumbnail": "/images/items/misc/misc_cardoll_outlaw02.webp",
@@ -3369,7 +3369,7 @@
     "name": "Model Car: Racer 01",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_cardoll_racer01.webp",
       "thumbnail": "/images/items/misc/misc_cardoll_racer01.webp",
@@ -3398,7 +3398,7 @@
     "name": "Model Car: Racer 02",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_cardoll_racer02.webp",
       "thumbnail": "/images/items/misc/misc_cardoll_racer02.webp",
@@ -3427,7 +3427,7 @@
     "name": "Model Car: Racer 03",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_cardoll_racer03.webp",
       "thumbnail": "/images/items/misc/misc_cardoll_racer03.webp",
@@ -3456,7 +3456,7 @@
     "name": "Model Car: Warrior 01",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_cardoll_warrior01.webp",
       "thumbnail": "/images/items/misc/misc_cardoll_warrior01.webp",
@@ -3485,7 +3485,7 @@
     "name": "Model Car: Warrior 02",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_cardoll_warrior02.webp",
       "thumbnail": "/images/items/misc/misc_cardoll_warrior02.webp",
@@ -3533,7 +3533,7 @@
     "name": "Copper Wire",
     "description": "",
     "category": "misc",
-    "subcategory": "Building",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_copperwire.webp",
       "thumbnail": "/images/items/misc/misc_copperwire.webp",
@@ -3562,7 +3562,7 @@
     "name": "Game Figurine (hidden)",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_csdoll_gold.webp",
       "thumbnail": "/images/items/misc/misc_csdoll_gold.webp",
@@ -3641,7 +3641,7 @@
     "name": "Game Figurine #1",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_csdoll_standard.webp",
       "thumbnail": "/images/items/misc/misc_csdoll_standard.webp",
@@ -3670,7 +3670,7 @@
     "name": "Game Figurine #2",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_csdoll_standard_2.webp",
       "thumbnail": "/images/items/misc/misc_csdoll_standard_2.webp",
@@ -3699,7 +3699,7 @@
     "name": "Game Figurine #3",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_csdoll_standard_3.webp",
       "thumbnail": "/images/items/misc/misc_csdoll_standard_3.webp",
@@ -3728,7 +3728,7 @@
     "name": "Game Figurine #4",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_csdoll_standard_4.webp",
       "thumbnail": "/images/items/misc/misc_csdoll_standard_4.webp",
@@ -3757,7 +3757,7 @@
     "name": "Game Figurine #5",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_csdoll_standard_5.webp",
       "thumbnail": "/images/items/misc/misc_csdoll_standard_5.webp",
@@ -3786,7 +3786,7 @@
     "name": "Game Figurine #6",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_csdoll_standard_6.webp",
       "thumbnail": "/images/items/misc/misc_csdoll_standard_6.webp",
@@ -3815,7 +3815,7 @@
     "name": "Game Figurine #7",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_csdoll_standard_7.webp",
       "thumbnail": "/images/items/misc/misc_csdoll_standard_7.webp",
@@ -3844,7 +3844,7 @@
     "name": "Diamond ring",
     "description": "A diamond ring well-kept in a box.",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_diamondring.webp",
       "thumbnail": "/images/items/misc/misc_diamondring.webp",
@@ -3921,7 +3921,7 @@
     "name": "Floppy Disk",
     "description": "",
     "category": "misc",
-    "subcategory": "Intel",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_floppydisk.webp",
       "thumbnail": "/images/items/misc/misc_floppydisk.webp",
@@ -3950,7 +3950,7 @@
     "name": "Fossil",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_fossil.webp",
       "thumbnail": "/images/items/misc/misc_fossil.webp",
@@ -3979,7 +3979,7 @@
     "name": "Game Disc",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_gamedisk.webp",
       "thumbnail": "/images/items/misc/misc_gamedisk.webp",
@@ -4008,7 +4008,7 @@
     "name": "Contractors Delux Edition",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_gamedisk_deluxedition.webp",
       "thumbnail": "/images/items/misc/misc_gamedisk_deluxedition.webp",
@@ -4037,7 +4037,7 @@
     "name": "ShowDown",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_gamedisk_showdown.webp",
       "thumbnail": "/images/items/misc/misc_gamedisk_showdown.webp",
@@ -4066,7 +4066,7 @@
     "name": "ShowDown Delux Edition",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_gamedisk_showdown_deluxedition.webp",
       "thumbnail": "/images/items/misc/misc_gamedisk_showdown_deluxedition.webp",
@@ -4095,7 +4095,7 @@
     "name": "Antique Gold Goblet",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_goldcup.webp",
       "thumbnail": "/images/items/misc/misc_goldcup.webp",
@@ -4124,7 +4124,7 @@
     "name": "Gold Ingot",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_goldingot.webp",
       "thumbnail": "/images/items/misc/misc_goldingot.webp",
@@ -4153,7 +4153,7 @@
     "name": "Graphic Card",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_graphiccard.webp",
       "thumbnail": "/images/items/misc/misc_graphiccard.webp",
@@ -4182,7 +4182,7 @@
     "name": "Gunpowder",
     "description": "",
     "category": "misc",
-    "subcategory": "Combustible",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_gunpowder.webp",
       "thumbnail": "/images/items/misc/misc_gunpowder.webp",
@@ -4211,7 +4211,7 @@
     "name": "Hammer",
     "description": "",
     "category": "misc",
-    "subcategory": "Tools",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_hammer.webp",
       "thumbnail": "/images/items/misc/misc_hammer.webp",
@@ -4331,7 +4331,7 @@
     "name": "Mouse",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_mouse.webp",
       "thumbnail": "/images/items/misc/misc_mouse.webp",
@@ -4379,7 +4379,7 @@
     "name": "Notebook",
     "description": "",
     "category": "misc",
-    "subcategory": "Intel",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_notebook.webp",
       "thumbnail": "/images/items/misc/misc_notebook.webp",
@@ -4408,7 +4408,7 @@
     "name": "Oil can",
     "description": "",
     "category": "misc",
-    "subcategory": "Combustible",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_oilcan.webp",
       "thumbnail": "/images/items/misc/misc_oilcan.webp",
@@ -4437,7 +4437,7 @@
     "name": "Pocketwatch",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_pocketwatch.webp",
       "thumbnail": "/images/items/misc/misc_pocketwatch.webp",
@@ -4466,7 +4466,7 @@
     "name": "Portable Radio",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_radio.webp",
       "thumbnail": "/images/items/misc/misc_radio.webp",
@@ -4495,7 +4495,7 @@
     "name": "Remote Control",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_remote.webp",
       "thumbnail": "/images/items/misc/misc_remote.webp",
@@ -4524,7 +4524,7 @@
     "name": "Screwdriver",
     "description": "",
     "category": "misc",
-    "subcategory": "Tools",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_screwdriver.webp",
       "thumbnail": "/images/items/misc/misc_screwdriver.webp",
@@ -4553,7 +4553,7 @@
     "name": "Antique Silver Goblet",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_silvercup.webp",
       "thumbnail": "/images/items/misc/misc_silvercup.webp",
@@ -4601,7 +4601,7 @@
     "name": "Toy Car",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_toycar.webp",
       "thumbnail": "/images/items/misc/misc_toycar.webp",
@@ -4620,7 +4620,7 @@
     "name": "Videotape",
     "description": "",
     "category": "misc",
-    "subcategory": "Intel",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_videotape.webp",
       "thumbnail": "/images/items/misc/misc_videotape.webp",
@@ -4649,7 +4649,7 @@
     "name": "VR Headset",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_vrheadset.webp",
       "thumbnail": "/images/items/misc/misc_vrheadset.webp",
@@ -4668,7 +4668,7 @@
     "name": "Tanvarian's Poster",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_warfareposter_01.webp",
       "thumbnail": "/images/items/misc/misc_warfareposter_01.webp",
@@ -4697,7 +4697,7 @@
     "name": "Ravager's Poster",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_warfareposter_02.webp",
       "thumbnail": "/images/items/misc/misc_warfareposter_02.webp",
@@ -4726,7 +4726,7 @@
     "name": "Butcher's Poster",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_warfareposter_03.webp",
       "thumbnail": "/images/items/misc/misc_warfareposter_03.webp",
@@ -4755,7 +4755,7 @@
     "name": "The Dam's Poster",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_warfareposter_04.webp",
       "thumbnail": "/images/items/misc/misc_warfareposter_04.webp",
@@ -4809,7 +4809,7 @@
     "name": "'Extraction' Poster",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_warfareposter_05.webp",
       "thumbnail": "/images/items/misc/misc_warfareposter_05.webp",
@@ -4838,7 +4838,7 @@
     "name": "The Tunnel's Poster",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_warfareposter_06.webp",
       "thumbnail": "/images/items/misc/misc_warfareposter_06.webp",
@@ -4867,7 +4867,7 @@
     "name": "Mince's Poster",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_warfareposter_07.webp",
       "thumbnail": "/images/items/misc/misc_warfareposter_07.webp",
@@ -4896,7 +4896,7 @@
     "name": "Hand drawn Map",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_warfareposter_08.webp",
       "thumbnail": "/images/items/misc/misc_warfareposter_08.webp",
@@ -4915,7 +4915,7 @@
     "name": "'Outbreak' Poster",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_warfareposter_09.webp",
       "thumbnail": "/images/items/misc/misc_warfareposter_09.webp",
@@ -4944,7 +4944,7 @@
     "name": "Pumpkin Poster",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_warfareposter_pumpkin.webp",
       "thumbnail": "/images/items/misc/misc_warfareposter_pumpkin.webp",
@@ -4973,7 +4973,7 @@
     "name": "Waste Chip",
     "description": "",
     "category": "misc",
-    "subcategory": "Electric",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_wastechip.webp",
       "thumbnail": "/images/items/misc/misc_wastechip.webp",
@@ -5002,14 +5002,14 @@
     "name": "BlindBox",
     "description": "SHOWDOWN series figurines.",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_wf_box_blindbox.webp",
       "thumbnail": "/images/items/misc/misc_wf_box_blindbox.webp",
       "fullsize": "/images/items/misc/misc_wf_box_blindbox.webp"
     },
     "stats": {
-      "weight": null,
+      "weight": 0,
       "rarity": "Common",
       "backpackDimensionMultiplier": 0.95,
       "safeContainerBoundScale": 0,
@@ -5031,7 +5031,7 @@
     "name": "Model Car: Blind Box",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_wf_box_carblindbox.webp",
       "thumbnail": "/images/items/misc/misc_wf_box_carblindbox.webp",
@@ -5060,7 +5060,7 @@
     "name": "Model Car: Premium Blind Box",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_wf_box_carblindbox_advanced.webp",
       "thumbnail": "/images/items/misc/misc_wf_box_carblindbox_advanced.webp",
@@ -5089,7 +5089,7 @@
     "name": "Wood Doll",
     "description": "",
     "category": "misc",
-    "subcategory": "HighValue",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_wooddoll.webp",
       "thumbnail": "/images/items/misc/misc_wooddoll.webp",
@@ -5118,7 +5118,7 @@
     "name": "Small Wrench",
     "description": "",
     "category": "misc",
-    "subcategory": "Tools",
+    "subcategory": "Household",
     "images": {
       "icon": "/images/items/misc/misc_wrench.webp",
       "thumbnail": "/images/items/misc/misc_wrench.webp",

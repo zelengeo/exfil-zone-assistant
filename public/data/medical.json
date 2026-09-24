@@ -250,7 +250,7 @@
             {
               "gameId": "task.doc.c.02",
               "id": "ntg_1",
-              "name": "Supply Shortage 1",
+              "name": "Short on Supplies",
               "corpId": "ntg"
             }
           ],
@@ -266,14 +266,7 @@
           "bundlePrice": 11883,
           "stock": 99,
           "resetType": "daily",
-          "requiresTasks": [
-            {
-              "gameId": "task.doc.c.02",
-              "id": "ntg_1",
-              "name": "Supply Shortage 1",
-              "corpId": "ntg"
-            }
-          ],
+          "requiresTasks": [],
           "requiresDlc": [],
           "exchange": [
             {
@@ -329,7 +322,7 @@
             {
               "gameId": "task.doc.b.04",
               "id": "ntg_49",
-              "name": "River Valley Pylon Security",
+              "name": "Repurposed Landmarks",
               "corpId": "ntg"
             }
           ],
@@ -351,7 +344,14 @@
           "bundlePrice": 48771,
           "stock": 99,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.doc.a.04",
+              "id": "ntg_37",
+              "name": "Foreign Remedy",
+              "corpId": "ntg"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         }
@@ -453,7 +453,14 @@
           "bundlePrice": 9110,
           "stock": 99,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.doc.c.03",
+              "id": "ntg_57",
+              "name": "Old Aid Station",
+              "corpId": "ntg"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         }
@@ -531,38 +538,38 @@
       "perkDuration": 120,
       "perkEffects": [
         {
-          "attribute": "rapidPulse_stamina_scalar",
+          "attribute": "warfare.medical.rapid_pulse.stamina.scale",
           "value": 0.25,
-          "target": "maxStamina",
-          "mode": "scalar"
+          "target": null,
+          "mode": null
         },
         {
-          "attribute": "rapidPulse_stamina_restore_scalar",
+          "attribute": "warfare.medical.rapid_pulse.stamina_recovery.scale",
           "value": 0.25,
-          "target": "staminaRecovery",
-          "mode": "scalar"
+          "target": null,
+          "mode": null
         },
         {
-          "attribute": "rapidPulse_move_scalar",
+          "attribute": "warfare.medical.rapid_pulse.move_speed.scale",
           "value": 0.15,
-          "target": "movementSpeed",
-          "mode": "scalar"
+          "target": null,
+          "mode": null
         },
         {
-          "attribute": "rapidPulse_energy",
+          "attribute": "warfare.medical.rapid_pulse.energy.scale",
           "value": 0.1,
-          "target": "energyDrain",
-          "mode": "perSecond"
+          "target": null,
+          "mode": null
         },
         {
-          "attribute": "rapidPulse_hydra",
+          "attribute": "warfare.medical.rapid_pulse.hydration.scale",
           "value": 0.1,
-          "target": "hydrationDrain",
-          "mode": "perSecond"
+          "target": null,
+          "mode": null
         }
       ],
       "effectTime": 120,
-      "useTime": 5,
+      "useTime": 1.5,
       "sellId": "medical.morphineneedle",
       "basePrice": 22681,
       "sellPrices": [
@@ -587,7 +594,7 @@
             {
               "gameId": "task.doc.b.03",
               "id": "ntg_48",
-              "name": "NTG Medical Reports",
+              "name": "Shadows of the Past",
               "corpId": "ntg"
             }
           ],
@@ -617,14 +624,14 @@
       "perkDuration": 120,
       "perkEffects": [
         {
-          "attribute": "hemostasis_hydra",
+          "attribute": "warfare.medical.hemostasis.hydration.scale",
           "value": 0.1,
-          "target": "hydrationDrain",
-          "mode": "perSecond"
+          "target": null,
+          "mode": null
         }
       ],
       "effectTime": 120,
-      "useTime": 5,
+      "useTime": 1.5,
       "sellId": "medical.morphineneedle",
       "basePrice": 22681,
       "sellPrices": [
@@ -649,7 +656,7 @@
             {
               "gameId": "task.doc.b.03",
               "id": "ntg_48",
-              "name": "NTG Medical Reports",
+              "name": "Shadows of the Past",
               "corpId": "ntg"
             }
           ],
@@ -679,26 +686,26 @@
       "perkDuration": 600,
       "perkEffects": [
         {
-          "attribute": "LoadMaster_weight_scalar",
+          "attribute": "warfare.medical.load_master.weight.scale",
           "value": 0.3,
-          "target": "weightLimit",
-          "mode": "scalar"
+          "target": null,
+          "mode": null
         },
         {
-          "attribute": "LoadMaster_energy",
+          "attribute": "warfare.medical.load_master.energy.scale",
           "value": 0.3,
-          "target": "energyDrain",
-          "mode": "perSecond"
+          "target": null,
+          "mode": null
         },
         {
-          "attribute": "LoadMaster_hydra",
+          "attribute": "warfare.medical.load_master.hydration.scale",
           "value": 0.3,
-          "target": "hydrationDrain",
-          "mode": "perSecond"
+          "target": null,
+          "mode": null
         }
       ],
       "effectTime": 600,
-      "useTime": 5,
+      "useTime": 1.5,
       "sellId": "medical.morphineneedle",
       "basePrice": 22681,
       "sellPrices": [
@@ -723,7 +730,7 @@
             {
               "gameId": "task.doc.b.03",
               "id": "ntg_48",
-              "name": "NTG Medical Reports",
+              "name": "Shadows of the Past",
               "corpId": "ntg"
             }
           ],
@@ -752,7 +759,7 @@
       "perk": "PainkillerPerk",
       "perkDuration": 120,
       "effectTime": 120,
-      "useTime": 5,
+      "useTime": 1.5,
       "sellId": "medical.morphineneedle",
       "basePrice": 22681,
       "sellPrices": [
@@ -777,7 +784,7 @@
             {
               "gameId": "task.doc.b.03",
               "id": "ntg_48",
-              "name": "NTG Medical Reports",
+              "name": "Shadows of the Past",
               "corpId": "ntg"
             }
           ],
@@ -807,41 +814,41 @@
       "perkDuration": 240,
       "perkEffects": [
         {
-          "attribute": "boundlessEnergy_stamina_scalar",
+          "attribute": "warfare.medical.boundless_energy.stamina.scale",
           "value": 0.3,
-          "target": "maxStamina",
-          "mode": "scalar"
+          "target": null,
+          "mode": null
         },
         {
-          "attribute": "boundlessEnergy_stamina_restore_scalar",
+          "attribute": "warfare.medical.boundless_energy.stamina_recovery.scale",
           "value": 0.3,
-          "target": "staminaRecovery",
-          "mode": "scalar"
+          "target": null,
+          "mode": null
         },
         {
-          "attribute": "boundlessEnergy_energy",
+          "attribute": "warfare.medical.boundless_energy.energy.scale",
           "value": 0.3,
-          "target": "energyDrain",
-          "mode": "perSecond"
+          "target": null,
+          "mode": null
         },
         {
-          "attribute": "boundlessEnergy_hydra",
+          "attribute": "warfare.medical.boundless_energy.hydration.scale",
           "value": 0.3,
-          "target": "hydrationDrain",
-          "mode": "perSecond"
+          "target": null,
+          "mode": null
         }
       ],
       "perkAfterDuration": 30,
       "perkAfterEffects": [
         {
-          "attribute": "boundlessEnergy_stamina_restore_scalar",
+          "attribute": "warfare.medical.boundless_energy.stamina_recovery.scale",
           "value": -0.2,
-          "target": "staminaRecovery",
-          "mode": "scalar"
+          "target": null,
+          "mode": null
         }
       ],
       "effectTime": 5,
-      "useTime": 5,
+      "useTime": 1.5,
       "sellId": "medical.injector.p4",
       "basePrice": 79715,
       "sellPrices": [
@@ -866,7 +873,7 @@
             {
               "gameId": "task.doc.a.11",
               "id": "ntg_43",
-              "name": "Mercy in Retrospect",
+              "name": "★ Mercy, Once More",
               "corpId": "ntg"
             }
           ],
@@ -984,14 +991,7 @@
           "bundlePrice": 10252,
           "stock": 99,
           "resetType": "daily",
-          "requiresTasks": [
-            {
-              "gameId": "task.doc.c.01",
-              "id": "ntg_56",
-              "name": "First Contact",
-              "corpId": "ntg"
-            }
-          ],
+          "requiresTasks": [],
           "requiresDlc": [],
           "exchange": [
             {
@@ -1049,7 +1049,7 @@
             {
               "gameId": "task.doc.c.06",
               "id": "ntg_60",
-              "name": "Meg's Camera",
+              "name": "Borrowed and Returned",
               "corpId": "ntg"
             }
           ],
@@ -1136,7 +1136,7 @@
             {
               "gameId": "task.doc.b.02",
               "id": "ntg_47",
-              "name": "Dam First Aid Point",
+              "name": "A Small Kindness",
               "corpId": "ntg"
             }
           ],

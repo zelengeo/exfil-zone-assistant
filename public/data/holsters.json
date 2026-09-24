@@ -67,7 +67,7 @@
             {
               "gameId": "task.gear.b.04",
               "id": "forge_19",
-              "name": "Cold Hard Cash 1",
+              "name": "Real Gold: Supply",
               "corpId": "forge"
             }
           ],
@@ -116,7 +116,7 @@
             {
               "gameId": "task.gear.b.05",
               "id": "forge_22",
-              "name": "Cold Hard Cash 2",
+              "name": "Real Gold: Counterfeit",
               "corpId": "forge"
             }
           ],
@@ -149,14 +149,14 @@
         "holster_magm_pumpkin",
         "holster_mags_pumpkin"
       ],
-      "basePrice": 1048,
+      "basePrice": 516,
       "sellPrices": [
-        734,
-        734,
-        1048,
-        629,
-        419,
-        734
+        362,
+        362,
+        516,
+        310,
+        206,
+        362
       ],
       "buyOffers": [
         {
@@ -168,7 +168,14 @@
           "bundlePrice": 1291,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.gear.c.03",
+              "id": "forge_36",
+              "name": "Rumor Has It",
+              "corpId": "forge"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         }
@@ -236,15 +243,9 @@
       "fullsize": "/images/items/holsters/holster_magm_pumpkin.webp"
     },
     "stats": {
-      "weight": 0.1,
-      "rarity": "Uncommon",
-      "canAttach": [
-        "holster_magm",
-        "holster_mags",
-        "holster_grenade",
-        "holster_magm_pumpkin",
-        "holster_mags_pumpkin"
-      ],
+      "weight": 0.3,
+      "rarity": "Common",
+      "canAttach": [],
       "basePrice": 366,
       "sellPrices": [
         366,
@@ -375,14 +376,14 @@
       "weight": 0.17,
       "rarity": "Uncommon",
       "canAttach": [],
-      "basePrice": 1560,
+      "basePrice": 612,
       "sellPrices": [
-        1092,
-        1092,
-        1560,
-        936,
-        624,
-        1092
+        429,
+        429,
+        612,
+        367,
+        245,
+        429
       ],
       "buyOffers": [
         {

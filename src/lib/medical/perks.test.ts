@@ -105,15 +105,15 @@ describe('medicinePerkOf, against the real catalogue', () => {
         expect(medicinePerkOf(byId('med-bandage-lv1').stats)).toBeNull();
     });
 
-    it('reads the KB-22 as carry weight bought with drain', () => {
+    it('retains current KB-22 attributes without assigning unverified units', () => {
         const perk = medicinePerkOf(byId('med-stimul-kb22').stats);
         expect(perk?.name).toBe('Load Master');
         expect(perk?.duration).toBe(600);
         expect(perk?.effects).toEqual([
-            { attribute: 'LoadMaster_weight_scalar', label: 'Carry weight', value: '+30%', cost: false },
-            // Both drains are rates, not scalars — the same 0.3 reads differently per mode.
-            { attribute: 'LoadMaster_energy', label: 'Energy drain', value: '+0.3/s', cost: true },
-            { attribute: 'LoadMaster_hydra', label: 'Hydration drain', value: '+0.3/s', cost: true },
+            ...['weight', 'energy', 'hydration'].map(target => ({
+                attribute: `warfare.medical.load_master.${target}.scale`,
+                label: `warfare.medical.load_master.${target}.scale`, value: '+0.3', cost: null,
+            })),
         ]);
     });
 
@@ -132,10 +132,10 @@ describe('medicinePerkOf, against the real catalogue', () => {
         expect(perk?.after?.duration).toBe(30);
         expect(perk?.after?.effects).toEqual([
             {
-                attribute: 'boundlessEnergy_stamina_restore_scalar',
-                label: 'Stamina recovery',
-                value: '−20%',
-                cost: true,
+                attribute: 'warfare.medical.boundless_energy.stamina_recovery.scale',
+                label: 'warfare.medical.boundless_energy.stamina_recovery.scale',
+                value: '−0.2',
+                cost: null,
             },
         ]);
     });

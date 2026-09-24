@@ -15,6 +15,7 @@ function isSavedBuild(value: unknown): value is SavedBuild {
 
 export class StorageService {
     private static VERSION_KEY = 'exfilzone_app_version';
+    private static WIPE_KEY = 'exfilzone_progress_wipe';
     private static hasCheckedVersion = false;
 
     // All storage keys - centralized management
@@ -168,6 +169,7 @@ export class StorageService {
             localStorage.removeItem(key);
         });
         localStorage.removeItem(this.VERSION_KEY);
+        localStorage.removeItem(this.WIPE_KEY);
         this.hasCheckedVersion = false;
     }
 
@@ -179,7 +181,11 @@ export class StorageService {
         this.LEGACY_KEYS.forEach(key => localStorage.removeItem(key));
 
         const storedVersion = localStorage.getItem(this.VERSION_KEY);
-        const needsWipe = !storedVersion || compareVersions(storedVersion, GAME_VERSION.lastWipe) < 0;
+        // A stable wipe ID also resets clients storing the erroneous higher 1.14.x series.
+        // Keep this ID unchanged for ordinary patches so progress resets only once.
+        const storedWipe = localStorage.getItem(this.WIPE_KEY);
+        const needsWipe = storedWipe !== GAME_VERSION.wipeId
+            || !storedVersion || compareVersions(storedVersion, GAME_VERSION.lastWipe) < 0;
 
         if (needsWipe) {
             // Clear only game progress data
@@ -195,6 +201,7 @@ export class StorageService {
         if (storedVersion !== GAME_VERSION.current) {
             localStorage.setItem(this.VERSION_KEY, GAME_VERSION.current);
         }
+        localStorage.setItem(this.WIPE_KEY, GAME_VERSION.wipeId);
         this.hasCheckedVersion = true;
     }
 }

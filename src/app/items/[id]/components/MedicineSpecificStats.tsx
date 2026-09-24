@@ -173,7 +173,7 @@ function PerkPanel({perk}: { perk: MedicinePerk }) {
                         <StatLine
                             key={effect.attribute}
                             label={effect.label}
-                            value={<span className={effect.cost ? 'text-warn' : 'text-good'}>{effect.value}</span>}
+                            value={<span className={effect.cost === null ? 'text-foreground' : effect.cost ? 'text-warn' : 'text-good'}>{effect.value}</span>}
                         />
                     ))}
                 </div>
@@ -192,7 +192,7 @@ function PerkPanel({perk}: { perk: MedicinePerk }) {
                             <StatLine
                                 key={effect.attribute}
                                 label={effect.label}
-                                value={<span className={effect.cost ? 'text-warn' : 'text-good'}>{effect.value}</span>}
+                                value={<span className={effect.cost === null ? 'text-foreground' : effect.cost ? 'text-warn' : 'text-good'}>{effect.value}</span>}
                             />
                         ))}
                     </div>

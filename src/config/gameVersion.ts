@@ -1,7 +1,9 @@
 // Game version configuration
 export const GAME_VERSION = {
-    current: "1.14.0.2", // Update this with each app release
-    lastWipe: "1.14.0.0", // Update this when a new wipe happens
+    current: "1.7.0.0", // ContractorsSettings.VersionNum, published by
+    // exfil-zone-assistant-extraction: node tools/publishGameVersion.js
+    lastWipe: "1.7.0.0", // Editorial - not extractable; move it with --wipe on a season reset
+    wipeId: "1.7.0.0", // Stable across patches; change only for an intentional progress reset
 };
 
 // Helper function for version comparison

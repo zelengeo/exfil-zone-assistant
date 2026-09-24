@@ -129,6 +129,32 @@
               "count": 1
             }
           ]
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.127x55.fmjv1-weaponwp",
+          "level": 3,
+          "price": 590,
+          "bundle": 15,
+          "bundlePrice": 8850,
+          "stock": 39,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.127x55.fmjv1_WeaponWP_one",
+          "level": 3,
+          "price": 590,
+          "bundle": 1,
+          "bundlePrice": 590,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
         }
       ]
     },
@@ -392,6 +418,32 @@
               "count": 1
             }
           ]
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.127x55.hpv1-weaponwp",
+          "level": 2,
+          "price": 320,
+          "bundle": 15,
+          "bundlePrice": 4800,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.bullet.127x55.hpv1_WeaponWP_one",
+          "level": 2,
+          "price": 320,
+          "bundle": 1,
+          "bundlePrice": 320,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
         }
       ]
     },
@@ -946,7 +998,7 @@
             {
               "gameId": "task.wp.a.11",
               "id": "regiment_40",
-              "name": "Taste of Life 3",
+              "name": "Taste of Life: Red Wine",
               "corpId": "regiment"
             }
           ],
@@ -1355,7 +1407,7 @@
             {
               "gameId": "task.wp.b.11",
               "id": "regiment_15",
-              "name": "Reading Habits",
+              "name": "Reading Habit",
               "corpId": "regiment"
             }
           ],
@@ -1375,7 +1427,7 @@
             {
               "gameId": "task.wp.b.11",
               "id": "regiment_15",
-              "name": "Reading Habits",
+              "name": "Reading Habit",
               "corpId": "regiment"
             }
           ],
@@ -1395,7 +1447,7 @@
             {
               "gameId": "task.wp.b.11",
               "id": "regiment_15",
-              "name": "Reading Habits",
+              "name": "Reading Habit",
               "corpId": "regiment"
             }
           ],
@@ -1751,7 +1803,47 @@
           }
         ]
       },
-      "bulletProfileId": "338LM_DamageType_APV1"
+      "bulletProfileId": "338LM_DamageType_APV1",
+      "basePrice": 1635,
+      "sellPrices": [
+        1635,
+        1635,
+        1145,
+        1145,
+        1145,
+        1635
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.338lm.apv1-2",
+          "level": 4,
+          "price": 12580,
+          "bundle": 15,
+          "bundlePrice": 188700,
+          "stock": 59,
+          "resetType": "weekly",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": [
+            {
+              "itemId": "misc_b_radioscanner",
+              "sellId": "valuable.electric.radioscanner",
+              "count": 3
+            },
+            {
+              "itemId": "misc_b_perfume",
+              "sellId": "valuable.highvalue.perfume",
+              "count": 2
+            },
+            {
+              "itemId": "misc_b_sparkplug",
+              "sellId": "valuable.tools.sparkplug",
+              "count": 3
+            }
+          ]
+        }
+      ]
     },
     "tips": ""
   },
@@ -1834,7 +1926,70 @@
           }
         ]
       },
-      "bulletProfileId": "338LM_DamageType_FMJ"
+      "bulletProfileId": "338LM_DamageType_FMJ",
+      "basePrice": 268,
+      "sellPrices": [
+        268,
+        268,
+        188,
+        188,
+        188,
+        268
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.338lm.fmjv1",
+          "level": 4,
+          "price": 2065,
+          "bundle": 15,
+          "bundlePrice": 30975,
+          "stock": 69,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.338lm.fmjv1-NA",
+          "level": 4,
+          "price": 2065,
+          "bundle": 15,
+          "bundlePrice": 30975,
+          "stock": 69,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.338lm.fmjv1_Gunsmith_one",
+          "level": 4,
+          "price": 2065,
+          "bundle": 1,
+          "bundlePrice": 2065,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.338lm.fmjv1_WeaponNA_one",
+          "level": 4,
+          "price": 2065,
+          "bundle": 1,
+          "bundlePrice": 2065,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -1917,7 +2072,70 @@
           }
         ]
       },
-      "bulletProfileId": "338LM_DamageType_HPV1"
+      "bulletProfileId": "338LM_DamageType_HPV1",
+      "basePrice": 77,
+      "sellPrices": [
+        77,
+        77,
+        54,
+        54,
+        54,
+        77
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.338lm.hpv1",
+          "level": 4,
+          "price": 590,
+          "bundle": 15,
+          "bundlePrice": 8850,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.338lm.hpv1-NA",
+          "level": 4,
+          "price": 590,
+          "bundle": 15,
+          "bundlePrice": 8850,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.338lm.hpv1_Gunsmith_one",
+          "level": 4,
+          "price": 590,
+          "bundle": 1,
+          "bundlePrice": 590,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.338lm.hpv1_WeaponNA_one",
+          "level": 4,
+          "price": 590,
+          "bundle": 1,
+          "bundlePrice": 590,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -2000,7 +2218,70 @@
           }
         ]
       },
-      "bulletProfileId": "338LM_DamageType_HPV2"
+      "bulletProfileId": "338LM_DamageType_HPV2",
+      "basePrice": 88,
+      "sellPrices": [
+        88,
+        88,
+        62,
+        62,
+        62,
+        88
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.338lm.hpv2",
+          "level": 4,
+          "price": 680,
+          "bundle": 15,
+          "bundlePrice": 10200,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.338lm.hpv2-NA",
+          "level": 4,
+          "price": 680,
+          "bundle": 15,
+          "bundlePrice": 10200,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.bullet.338lm.hpv2_Gunsmith_one",
+          "level": 4,
+          "price": 680,
+          "bundle": 1,
+          "bundlePrice": 680,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
+          "vendor": "ark",
+          "goodsId": "gds.bullet.338lm.hpv2_WeaponNA_one",
+          "level": 4,
+          "price": 680,
+          "bundle": 1,
+          "bundlePrice": 680,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "tips": ""
   },
@@ -2107,7 +2388,7 @@
             {
               "gameId": "task.wp.a.03",
               "id": "regiment_28",
-              "name": "Movie Night 2",
+              "name": "Movie Night: Mad Surgeon",
               "corpId": "regiment"
             }
           ],
@@ -2127,7 +2408,7 @@
             {
               "gameId": "task.wp.a.03",
               "id": "regiment_28",
-              "name": "Movie Night 2",
+              "name": "Movie Night: Mad Surgeon",
               "corpId": "regiment"
             }
           ],
@@ -2147,7 +2428,7 @@
             {
               "gameId": "task.wp.a.03",
               "id": "regiment_28",
-              "name": "Movie Night 2",
+              "name": "Movie Night: Mad Surgeon",
               "corpId": "regiment"
             }
           ],
@@ -2579,7 +2860,7 @@
             {
               "gameId": "task.na.a.11",
               "id": "ark_46",
-              "name": "Heavy Iron: Tank Marking",
+              "name": "Heavy Armor Below",
               "corpId": "ark"
             }
           ],
@@ -2861,9 +3142,9 @@
       "penetration": 5.5,
       "muzzleVelocity": 83000,
       "bleedingChance": 0.095,
-      "bluntDamageScale": 0.33,
+      "bluntDamageScale": 0.304,
       "protectionGearPenetratedDamageScale": 1.05,
-      "protectionGearBluntDamageScale": 0.825,
+      "protectionGearBluntDamageScale": 0.89,
       "damageFalloffFactor": 0.72,
       "penetrationFalloffFactor": 0.72,
       "ballisticCurves": {
@@ -2945,7 +3226,7 @@
             {
               "gameId": "task.gunsmith.m03",
               "id": "gunsmith_6",
-              "name": "The Artisan's Touch",
+              "name": "Craftsmanship",
               "corpId": "gunsmith"
             }
           ],
@@ -2991,7 +3272,7 @@
       "penetration": 6.2,
       "muzzleVelocity": 91000,
       "bleedingChance": 0.095,
-      "bluntDamageScale": 0.33,
+      "bluntDamageScale": 0.395,
       "protectionGearPenetratedDamageScale": 1.35,
       "protectionGearBluntDamageScale": 1.125,
       "damageFalloffFactor": 0.72,
@@ -3075,7 +3356,7 @@
             {
               "gameId": "task.gunsmith.m12",
               "id": "gunsmith_21",
-              "name": "Secure the Retreat — LMG Suppression",
+              "name": "Keep the Way Clear",
               "corpId": "gunsmith"
             }
           ],
@@ -3201,14 +3482,7 @@
           "bundlePrice": 2505,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [
-            {
-              "gameId": "task.wp.b.10",
-              "id": "regiment_42",
-              "name": "Old Computer",
-              "corpId": "regiment"
-            }
-          ],
+          "requiresTasks": [],
           "requiresDlc": [],
           "exchange": []
         },
@@ -3620,14 +3894,7 @@
           "bundlePrice": 1125,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [
-            {
-              "gameId": "task.wp.c.07",
-              "id": "regiment_49",
-              "name": "Rifle Proficiency",
-              "corpId": "regiment"
-            }
-          ],
+          "requiresTasks": [],
           "requiresDlc": [],
           "exchange": []
         },
@@ -3640,14 +3907,7 @@
           "bundlePrice": 75,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [
-            {
-              "gameId": "task.wp.c.08",
-              "id": "regiment_50",
-              "name": "A Farewell Gift",
-              "corpId": "regiment"
-            }
-          ],
+          "requiresTasks": [],
           "requiresDlc": [],
           "exchange": []
         },
@@ -3660,14 +3920,7 @@
           "bundlePrice": 75,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [
-            {
-              "gameId": "task.wp.c.08",
-              "id": "regiment_50",
-              "name": "A Farewell Gift",
-              "corpId": "regiment"
-            }
-          ],
+          "requiresTasks": [],
           "requiresDlc": [],
           "exchange": []
         }
@@ -3787,7 +4040,14 @@
           "bundlePrice": 795,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.wp.b.01",
+              "id": "regiment_10",
+              "name": "Wastewater Treasure Hunt",
+              "corpId": "regiment"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         },
@@ -3800,7 +4060,14 @@
           "bundlePrice": 53,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.wp.b.01",
+              "id": "regiment_10",
+              "name": "Wastewater Treasure Hunt",
+              "corpId": "regiment"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         },
@@ -3813,7 +4080,14 @@
           "bundlePrice": 53,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.wp.b.01",
+              "id": "regiment_10",
+              "name": "Wastewater Treasure Hunt",
+              "corpId": "regiment"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         }
@@ -3933,14 +4207,7 @@
           "bundlePrice": 251,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [
-            {
-              "gameId": "task.wp.b.10",
-              "id": "regiment_42",
-              "name": "Old Computer",
-              "corpId": "regiment"
-            }
-          ],
+          "requiresTasks": [],
           "requiresDlc": [],
           "exchange": []
         },
@@ -3953,14 +4220,7 @@
           "bundlePrice": 251,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [
-            {
-              "gameId": "task.wp.b.10",
-              "id": "regiment_42",
-              "name": "Old Computer",
-              "corpId": "regiment"
-            }
-          ],
+          "requiresTasks": [],
           "requiresDlc": [],
           "exchange": []
         }
@@ -4217,7 +4477,7 @@
             {
               "gameId": "task.gunsmith.m02",
               "id": "gunsmith_4",
-              "name": "The Lost Part",
+              "name": "Missing Part",
               "corpId": "gunsmith"
             }
           ],
@@ -4355,7 +4615,7 @@
             {
               "gameId": "task.gunsmith.m07",
               "id": "gunsmith_14",
-              "name": "Protection Racket",
+              "name": "Buying Access",
               "corpId": "gunsmith"
             }
           ],
@@ -4777,7 +5037,7 @@
             {
               "gameId": "task.na.c.04",
               "id": "ark_63",
-              "name": "Prove Yourself",
+              "name": "Before the Chaos",
               "corpId": "ark"
             }
           ],
@@ -4793,7 +5053,14 @@
           "bundlePrice": 127,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.na.c.04",
+              "id": "ark_63",
+              "name": "Before the Chaos",
+              "corpId": "ark"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         },
@@ -4806,7 +5073,14 @@
           "bundlePrice": 127,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.na.c.04",
+              "id": "ark_63",
+              "name": "Before the Chaos",
+              "corpId": "ark"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         }
@@ -5238,14 +5512,14 @@
       "fullsize": "/images/items/ammo/ammo-556x45-tracer.webp"
     },
     "stats": {
-      "rarity": "Rare",
+      "rarity": "Uncommon",
       "caliber": "5.56x45",
       "weight": 0.01,
       "damage": 58,
       "penetration": 2.9,
       "muzzleVelocity": 87000,
       "bleedingChance": 0.1,
-      "bluntDamageScale": 0.16,
+      "bluntDamageScale": 0.195,
       "protectionGearPenetratedDamageScale": 0.5925,
       "protectionGearBluntDamageScale": 0.345,
       "damageFalloffFactor": 0.7,
@@ -5329,7 +5603,7 @@
             {
               "gameId": "task.na.b.11",
               "id": "ark_60",
-              "name": "M16A2 Proficiency",
+              "name": "Show of Force: M16A2",
               "corpId": "ark"
             }
           ],
@@ -5349,7 +5623,7 @@
             {
               "gameId": "task.na.b.11",
               "id": "ark_60",
-              "name": "M16A2 Proficiency",
+              "name": "Show of Force: M16A2",
               "corpId": "ark"
             }
           ],
@@ -5369,7 +5643,7 @@
             {
               "gameId": "task.na.b.11",
               "id": "ark_60",
-              "name": "M16A2 Proficiency",
+              "name": "Show of Force: M16A2",
               "corpId": "ark"
             }
           ],
@@ -5483,7 +5757,7 @@
             {
               "gameId": "task.na.b.12",
               "id": "ark_61",
-              "name": "MK17 Proficiency",
+              "name": "Show of Force: MK17",
               "corpId": "ark"
             }
           ],
@@ -5503,7 +5777,7 @@
             {
               "gameId": "task.na.b.12",
               "id": "ark_61",
-              "name": "MK17 Proficiency",
+              "name": "Show of Force: MK17",
               "corpId": "ark"
             }
           ],
@@ -5523,7 +5797,7 @@
             {
               "gameId": "task.na.b.12",
               "id": "ark_61",
-              "name": "MK17 Proficiency",
+              "name": "Show of Force: MK17",
               "corpId": "ark"
             }
           ],
@@ -5637,7 +5911,7 @@
             {
               "gameId": "task.na.a.13",
               "id": "ark_48",
-              "name": "Show of Force IV: AUG",
+              "name": "Show of Force: AUG",
               "corpId": "ark"
             }
           ],
@@ -5657,7 +5931,7 @@
             {
               "gameId": "task.na.a.13",
               "id": "ark_48",
-              "name": "Show of Force IV: AUG",
+              "name": "Show of Force: AUG",
               "corpId": "ark"
             }
           ],
@@ -5677,7 +5951,7 @@
             {
               "gameId": "task.na.a.13",
               "id": "ark_48",
-              "name": "Show of Force IV: AUG",
+              "name": "Show of Force: AUG",
               "corpId": "ark"
             }
           ],
@@ -5804,7 +6078,7 @@
             {
               "gameId": "task.gunsmith.m05",
               "id": "gunsmith_10",
-              "name": "The Last Screw Before Iron Wolf",
+              "name": "Quick Aim",
               "corpId": "gunsmith"
             }
           ],
@@ -6201,9 +6475,9 @@
           "resetType": "weekly",
           "requiresTasks": [
             {
-              "gameId": "task.wp.a.09",
-              "id": "regiment_17",
-              "name": "Pistol Glory",
+              "gameId": "task.wp.a.02",
+              "id": "regiment_36",
+              "name": "Paparazzi Rebellion",
               "corpId": "regiment"
             }
           ],
@@ -6336,7 +6610,7 @@
             {
               "gameId": "task.gunsmith.m11",
               "id": "gunsmith_20",
-              "name": "White Virus",
+              "name": "Purge Protocol",
               "corpId": "gunsmith"
             }
           ],
@@ -6469,7 +6743,7 @@
             {
               "gameId": "task.wp.b.09",
               "id": "regiment_41",
-              "name": "Hair Care",
+              "name": "Personal Grooming",
               "corpId": "regiment"
             }
           ],
@@ -6489,7 +6763,7 @@
             {
               "gameId": "task.wp.b.09",
               "id": "regiment_41",
-              "name": "Hair Care",
+              "name": "Personal Grooming",
               "corpId": "regiment"
             }
           ],
@@ -6509,7 +6783,7 @@
             {
               "gameId": "task.wp.b.09",
               "id": "regiment_41",
-              "name": "Hair Care",
+              "name": "Personal Grooming",
               "corpId": "regiment"
             }
           ],
@@ -6756,7 +7030,7 @@
             {
               "gameId": "task.wp.c.05",
               "id": "regiment_47",
-              "name": "Keep the Hair Sharp",
+              "name": "Hair Comes First",
               "corpId": "regiment"
             }
           ],
@@ -6776,7 +7050,7 @@
             {
               "gameId": "task.wp.c.05",
               "id": "regiment_47",
-              "name": "Keep the Hair Sharp",
+              "name": "Hair Comes First",
               "corpId": "regiment"
             }
           ],
@@ -6796,7 +7070,7 @@
             {
               "gameId": "task.wp.c.05",
               "id": "regiment_47",
-              "name": "Keep the Hair Sharp",
+              "name": "Hair Comes First",
               "corpId": "regiment"
             }
           ],
@@ -7348,7 +7622,7 @@
             {
               "gameId": "task.gunsmith.m13",
               "id": "gunsmith_22",
-              "name": "Smuggling Route: Surveillance II",
+              "name": "Blind Spot",
               "corpId": "gunsmith"
             }
           ],
@@ -7486,7 +7760,7 @@
             {
               "gameId": "task.gunsmith.m14",
               "id": "gunsmith_23",
-              "name": "Data Smuggling",
+              "name": "Encrypted Lead",
               "corpId": "gunsmith"
             }
           ],
@@ -7786,9 +8060,9 @@
           "resetType": "weekly",
           "requiresTasks": [
             {
-              "gameId": "task.na.a.12",
-              "id": "ark_47",
-              "name": "Show of Force I: M4A1",
+              "gameId": "task.na.a.10",
+              "id": "ark_45",
+              "name": "Twists and Turns",
               "corpId": "ark"
             }
           ],
@@ -8528,7 +8802,7 @@
       "penetration": 6.1,
       "muzzleVelocity": 89000,
       "bleedingChance": 0.125,
-      "bluntDamageScale": 0.3,
+      "bluntDamageScale": 0.247,
       "protectionGearPenetratedDamageScale": 1.125,
       "protectionGearBluntDamageScale": 0.6225,
       "damageFalloffFactor": 0.8,
@@ -8612,7 +8886,7 @@
             {
               "gameId": "task.gunsmith.m15",
               "id": "gunsmith_24",
-              "name": "White Recorder Retrieval",
+              "name": "Communication Recovery",
               "corpId": "gunsmith"
             }
           ],
@@ -8658,7 +8932,7 @@
       "penetration": 7,
       "muzzleVelocity": 78000,
       "bleedingChance": 0.125,
-      "bluntDamageScale": 0.33,
+      "bluntDamageScale": 0.288,
       "protectionGearPenetratedDamageScale": 1.35,
       "protectionGearBluntDamageScale": 0.675,
       "damageFalloffFactor": 0.833333,
@@ -8742,7 +9016,7 @@
             {
               "gameId": "task.gunsmith.m16",
               "id": "gunsmith_25",
-              "name": "The Real Iron Wolf",
+              "name": "★ Real Iron Wolf",
               "corpId": "gunsmith"
             }
           ],
@@ -9141,7 +9415,7 @@
             {
               "gameId": "task.wp.a.10",
               "id": "regiment_39",
-              "name": "My Favourite: FAL",
+              "name": "My Favorite: FAL",
               "corpId": "regiment"
             }
           ],
@@ -9261,7 +9535,7 @@
             {
               "gameId": "task.wp.b.12",
               "id": "regiment_16",
-              "name": "The Best Can",
+              "name": "Best Canned Food",
               "corpId": "regiment"
             }
           ],
@@ -9281,7 +9555,7 @@
             {
               "gameId": "task.wp.b.12",
               "id": "regiment_16",
-              "name": "The Best Can",
+              "name": "Best Canned Food",
               "corpId": "regiment"
             }
           ],
@@ -9301,7 +9575,7 @@
             {
               "gameId": "task.wp.b.12",
               "id": "regiment_16",
-              "name": "The Best Can",
+              "name": "Best Canned Food",
               "corpId": "regiment"
             }
           ],
@@ -9835,9 +10109,9 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.na.b.05",
-              "id": "ark_54",
-              "name": "★ The Traitor BOSS",
+              "gameId": "task.na.a.02",
+              "id": "ark_37",
+              "name": "A Different Angle",
               "corpId": "ark"
             }
           ],
@@ -9859,7 +10133,14 @@
           "bundlePrice": 10245,
           "stock": 89,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.na.a.02",
+              "id": "ark_37",
+              "name": "A Different Angle",
+              "corpId": "ark"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         },
@@ -9872,7 +10153,14 @@
           "bundlePrice": 683,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.na.a.02",
+              "id": "ark_37",
+              "name": "A Different Angle",
+              "corpId": "ark"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         },
@@ -9885,7 +10173,14 @@
           "bundlePrice": 683,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.na.a.02",
+              "id": "ark_37",
+              "name": "A Different Angle",
+              "corpId": "ark"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         }
@@ -10007,10 +10302,10 @@
           "resetType": "weekly",
           "requiresTasks": [
             {
-              "gameId": "task.na.a.05",
-              "id": "ark_40",
-              "name": "First Test: BMP Marking",
-              "corpId": "ark"
+              "gameId": "task.wp.a.09",
+              "id": "regiment_17",
+              "name": "Pistol Glory",
+              "corpId": "regiment"
             }
           ],
           "requiresDlc": [],
@@ -10027,10 +10322,10 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.na.a.05",
-              "id": "ark_40",
-              "name": "First Test: BMP Marking",
-              "corpId": "ark"
+              "gameId": "task.wp.a.09",
+              "id": "regiment_17",
+              "name": "Pistol Glory",
+              "corpId": "regiment"
             }
           ],
           "requiresDlc": [],
@@ -10047,10 +10342,10 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.na.a.05",
-              "id": "ark_40",
-              "name": "First Test: BMP Marking",
-              "corpId": "ark"
+              "gameId": "task.wp.a.09",
+              "id": "regiment_17",
+              "name": "Pistol Glory",
+              "corpId": "regiment"
             }
           ],
           "requiresDlc": [],
@@ -10163,7 +10458,7 @@
             {
               "gameId": "task.na.c.03",
               "id": "ark_3",
-              "name": "Recon 1",
+              "name": "Intelligence Gathering",
               "corpId": "ark"
             }
           ],
@@ -10179,7 +10474,14 @@
           "bundlePrice": 67,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.na.c.03",
+              "id": "ark_3",
+              "name": "Intelligence Gathering",
+              "corpId": "ark"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         },
@@ -10192,7 +10494,14 @@
           "bundlePrice": 67,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.na.c.03",
+              "id": "ark_3",
+              "name": "Intelligence Gathering",
+              "corpId": "ark"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         },
@@ -10205,7 +10514,14 @@
           "bundlePrice": 67,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.na.c.03",
+              "id": "ark_3",
+              "name": "Intelligence Gathering",
+              "corpId": "ark"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         }
@@ -10338,14 +10654,7 @@
           "bundlePrice": 135,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [
-            {
-              "gameId": "task.na.b.05",
-              "id": "ark_54",
-              "name": "★ The Traitor BOSS",
-              "corpId": "ark"
-            }
-          ],
+          "requiresTasks": [],
           "requiresDlc": [],
           "exchange": []
         },
@@ -10358,14 +10667,7 @@
           "bundlePrice": 135,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [
-            {
-              "gameId": "task.na.b.05",
-              "id": "ark_54",
-              "name": "★ The Traitor BOSS",
-              "corpId": "ark"
-            }
-          ],
+          "requiresTasks": [],
           "requiresDlc": [],
           "exchange": []
         },
@@ -11086,7 +11388,7 @@
             {
               "gameId": "task.wp.a.12",
               "id": "regiment_30",
-              "name": "Forever in a Flash",
+              "name": "Frozen in Time",
               "corpId": "regiment"
             }
           ],
@@ -11206,7 +11508,7 @@
             {
               "gameId": "task.gunsmith.m06",
               "id": "gunsmith_12",
-              "name": "Parts Upgrade",
+              "name": "Tools of the Trade",
               "corpId": "gunsmith"
             }
           ],

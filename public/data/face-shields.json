@@ -16,7 +16,7 @@
       "armorClass": 4,
       "maxDurability": 95,
       "durabilityDamageScalar": 0.5,
-      "bluntDamageScalar": 0.45,
+      "bluntDamageScalar": 0.35,
       "sellId": "hmat.mask.ACH",
       "coneRegions": [
         {
@@ -162,7 +162,7 @@
             {
               "gameId": "task.gear.b.02",
               "id": "forge_16",
-              "name": "Better Safe than Sorry 2",
+              "name": "Plan Ahead: Safehouses",
               "corpId": "forge"
             }
           ],
@@ -387,7 +387,7 @@
       "armorClass": 3,
       "maxDurability": 120,
       "durabilityDamageScalar": 0.5,
-      "bluntDamageScalar": 0.55,
+      "bluntDamageScalar": 0.35,
       "sellId": "hmat.mask.KiverM",
       "coneRegions": [
         {
@@ -569,7 +569,7 @@
       "armorClass": 1,
       "maxDurability": 30,
       "durabilityDamageScalar": 0.7,
-      "bluntDamageScalar": 0.7,
+      "bluntDamageScalar": 0.4,
       "sellId": "hmat.mask.LH250google",
       "coneRegions": [
         {
@@ -721,7 +721,7 @@
       "armorClass": 1,
       "maxDurability": null,
       "durabilityDamageScalar": 0.7,
-      "bluntDamageScalar": 0.7,
+      "bluntDamageScalar": 0.4,
       "sellId": "hmat.mask.LH250mask",
       "coneRegions": [
         {
@@ -873,7 +873,7 @@
       "armorClass": 6,
       "maxDurability": 59,
       "durabilityDamageScalar": 0.25,
-      "bluntDamageScalar": 0.4,
+      "bluntDamageScalar": 0.25,
       "sellId": "hmat.mask.m1schgreen",
       "coneRegions": [
         {
@@ -1441,7 +1441,7 @@
       "armorClass": 5,
       "maxDurability": 86,
       "durabilityDamageScalar": 0.3,
-      "bluntDamageScalar": 0.4,
+      "bluntDamageScalar": 0.3,
       "sellId": "hmat.mask.ryt.bonecrusher",
       "coneRegions": [
         {
@@ -1632,7 +1632,7 @@
             {
               "gameId": "task.gear.b.01",
               "id": "forge_15",
-              "name": "Purge the Ranks",
+              "name": "Cleaning House",
               "corpId": "forge"
             }
           ],

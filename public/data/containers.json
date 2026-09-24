@@ -139,7 +139,7 @@
             {
               "gameId": "task.mall.c.04",
               "id": "trupiks_29",
-              "name": "First Touch at the Bench",
+              "name": "Getting into Gunsmithing",
               "corpId": "trupiks"
             }
           ],
@@ -359,7 +359,7 @@
             {
               "gameId": "task.mall.c.07",
               "id": "trupiks_32",
-              "name": "Back Home",
+              "name": "Home Sweet Home",
               "corpId": "trupiks"
             }
           ],
@@ -570,9 +570,9 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.mall.b.02",
-              "id": "trupiks_1",
-              "name": "Secure Support",
+              "gameId": "task.mall.c.01",
+              "id": "trupiks_2",
+              "name": "Supply Check",
               "corpId": "trupiks"
             }
           ],
@@ -627,7 +627,7 @@
             {
               "gameId": "task.mall.b.03",
               "id": "trupiks_26",
-              "name": "Expansion Protocol",
+              "name": "Capacity Upgrade I",
               "corpId": "trupiks"
             }
           ],
@@ -730,7 +730,7 @@
             {
               "gameId": "task.mall.b.05",
               "id": "trupiks_10",
-              "name": "Capacity Upgrade 2",
+              "name": "Capacity Upgrade II",
               "corpId": "trupiks"
             }
           ],
@@ -809,7 +809,7 @@
             {
               "gameId": "task.mall.a.01",
               "id": "trupiks_22",
-              "name": "Capacity Upgrade 3",
+              "name": "Capacity Upgrade III",
               "corpId": "trupiks"
             }
           ],
@@ -936,7 +936,7 @@
             {
               "gameId": "task.mall.a.07",
               "id": "trupiks_17",
-              "name": "Like Finds Like 4",
+              "name": "Stockpiling IV: Energy Supplies",
               "corpId": "trupiks"
             }
           ],
@@ -1169,7 +1169,7 @@
             {
               "gameId": "task.mall.c.02",
               "id": "trupiks_3",
-              "name": "The Source of Life",
+              "name": "Let There Be Light",
               "corpId": "trupiks"
             }
           ],
@@ -1282,7 +1282,7 @@
             {
               "gameId": "task.mall.c.07",
               "id": "trupiks_32",
-              "name": "Back Home",
+              "name": "Home Sweet Home",
               "corpId": "trupiks"
             }
           ],

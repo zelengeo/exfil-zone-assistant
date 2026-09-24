@@ -372,7 +372,7 @@
             {
               "gameId": "task.wp.c.09",
               "id": "regiment_51",
-              "name": "The Veteran's Courts",
+              "name": "Old Haunts",
               "corpId": "regiment"
             }
           ],
@@ -498,9 +498,9 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.wp.a.07",
-              "id": "regiment_32",
-              "name": "One-Time Delivery",
+              "gameId": "task.wp.a.05",
+              "id": "regiment_37",
+              "name": "My Favorite: AK",
               "corpId": "regiment"
             }
           ],
@@ -552,6 +552,7 @@
         "weapon-m4a1-walther",
         "weapon-hk416",
         "weapon-rc416a5-2025hallow",
+        "weapon-rc416a5-twitchdrop",
         "weapon-scar16"
       ],
       "basePrice": 1600,
@@ -676,6 +677,7 @@
         "weapon-m4a1-walther",
         "weapon-hk416",
         "weapon-rc416a5-2025hallow",
+        "weapon-rc416a5-twitchdrop",
         "weapon-scar16"
       ],
       "basePrice": 3630,
@@ -701,7 +703,7 @@
             {
               "gameId": "task.na.b.10",
               "id": "ark_59",
-              "name": "★ Silver Skull BOSS",
+              "name": "★ Silver Skull",
               "corpId": "ark"
             }
           ],
@@ -753,6 +755,7 @@
         "weapon-m4a1-walther",
         "weapon-hk416",
         "weapon-rc416a5-2025hallow",
+        "weapon-rc416a5-twitchdrop",
         "weapon-scar16"
       ],
       "basePrice": 3900,
@@ -823,6 +826,7 @@
         "weapon-m4a1-walther",
         "weapon-hk416",
         "weapon-rc416a5-2025hallow",
+        "weapon-rc416a5-twitchdrop",
         "weapon-scar16"
       ],
       "basePrice": 3322,
@@ -900,10 +904,10 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.na.a.04",
-              "id": "ark_39",
-              "name": "Keeping the Peace",
-              "corpId": "ark"
+              "gameId": "task.gear.a.11",
+              "id": "forge_28",
+              "name": "Worth More Than Gold",
+              "corpId": "forge"
             }
           ],
           "requiresDlc": [],
@@ -954,6 +958,7 @@
         "weapon-m4a1-walther",
         "weapon-hk416",
         "weapon-rc416a5-2025hallow",
+        "weapon-rc416a5-twitchdrop",
         "weapon-scar16"
       ],
       "basePrice": 15397,
@@ -969,7 +974,7 @@
         {
           "vendor": "ark",
           "goodsId": "gds.gunsmith.ar15.clip.drum50",
-          "level": 4,
+          "level": 3,
           "price": 51323,
           "bundle": 1,
           "bundlePrice": 51323,
@@ -979,7 +984,7 @@
             {
               "gameId": "task.na.a.03",
               "id": "ark_38",
-              "name": "Police Car Photos",
+              "name": "A Closer Look",
               "corpId": "ark"
             }
           ],
@@ -1031,6 +1036,7 @@
         "weapon-m4a1-walther",
         "weapon-hk416",
         "weapon-rc416a5-2025hallow",
+        "weapon-rc416a5-twitchdrop",
         "weapon-scar16"
       ],
       "basePrice": 16740,
@@ -1056,7 +1062,7 @@
             {
               "gameId": "task.na.a.07",
               "id": "ark_42",
-              "name": "★18 Judgment Day BOSS",
+              "name": "★ Judgment",
               "corpId": "ark"
             }
           ],
@@ -1074,10 +1080,10 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.na.a.07",
-              "id": "ark_42",
-              "name": "★18 Judgment Day BOSS",
-              "corpId": "ark"
+              "gameId": "task.research.d2",
+              "id": "research_8",
+              "name": "AR-15 60rd P-Drum",
+              "corpId": "gunsmith"
             }
           ],
           "requiresDlc": [],
@@ -1139,6 +1145,7 @@
         "weapon-m4a1-walther",
         "weapon-hk416",
         "weapon-rc416a5-2025hallow",
+        "weapon-rc416a5-twitchdrop",
         "weapon-scar16"
       ],
       "basePrice": 18985,
@@ -1162,10 +1169,10 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.gunsmith.m09",
-              "id": "gunsmith_18",
-              "name": "Smuggling Route: Surveillance I",
-              "corpId": "gunsmith"
+              "gameId": "task.na.a.08",
+              "id": "ark_43",
+              "name": "Going Underground",
+              "corpId": "ark"
             }
           ],
           "requiresDlc": [],
@@ -1180,14 +1187,7 @@
           "bundlePrice": 63282,
           "stock": 2,
           "resetType": "daily",
-          "requiresTasks": [
-            {
-              "gameId": "task.research.d2",
-              "id": "research_8",
-              "name": "AR-15 60rd P-Drum",
-              "corpId": "gunsmith"
-            }
-          ],
+          "requiresTasks": [],
           "requiresDlc": [],
           "exchange": [
             {
@@ -1758,7 +1758,14 @@
           "bundlePrice": 10137,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.wp.a.01",
+              "id": "regiment_23",
+              "name": "Taste of Life: Sake",
+              "corpId": "regiment"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         }
@@ -1984,9 +1991,9 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.wp.a.08",
-              "id": "regiment_31",
-              "name": "My Favourite: Sjogren",
+              "gameId": "task.wp.a.10",
+              "id": "regiment_39",
+              "name": "My Favorite: FAL",
               "corpId": "regiment"
             }
           ],
@@ -2004,9 +2011,9 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.wp.a.08",
-              "id": "regiment_31",
-              "name": "My Favourite: Sjogren",
+              "gameId": "task.wp.a.10",
+              "id": "regiment_39",
+              "name": "My Favorite: FAL",
               "corpId": "regiment"
             }
           ],
@@ -2189,7 +2196,7 @@
             {
               "gameId": "task.na.b.06",
               "id": "ark_55",
-              "name": "Disguised Baseball",
+              "name": "Baseball Cams",
               "corpId": "ark"
             }
           ],
@@ -2279,6 +2286,8 @@
         "weapon-sa58-hallows02",
         "weapon-sa58-para",
         "weapon-sa58-hallows01",
+        "weapon-sa58-twitchdrop",
+        "weapon-sa58-voucherlv3",
         "weapon-rfb"
       ],
       "basePrice": 2926,
@@ -3200,7 +3209,7 @@
       ]
     },
     "gameId": "gunsmith.bx4.clip.25mag",
-    "family": "Bx4",
+    "family": "BX4",
     "tips": "Shared compatibility between BX4 and M92 platforms."
   },
   {
@@ -3306,7 +3315,7 @@
             {
               "gameId": "task.na.c.02",
               "id": "ark_62",
-              "name": "Wind Farm Recon",
+              "name": "Northern Camp Recon",
               "corpId": "ark"
             }
           ],
@@ -3468,9 +3477,9 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.na.b.10",
-              "id": "ark_59",
-              "name": "★ Silver Skull BOSS",
+              "gameId": "task.na.a.01",
+              "id": "ark_36",
+              "name": "Coastal Pursuit",
               "corpId": "ark"
             }
           ],
@@ -3627,6 +3636,19 @@
       ],
       "buyOffers": [
         {
+          "vendor": "wipeshop",
+          "goodsId": "gds.gunsmith.9x39.clip.30-wipe",
+          "level": 4,
+          "price": 5,
+          "bundle": 1,
+          "bundlePrice": 5,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
           "vendor": "regiment",
           "goodsId": "gds.gunsmith.9x39.clip.30",
           "level": 4,
@@ -3643,6 +3665,100 @@
     },
     "gameId": "gunsmith.9x39.clip.30",
     "family": "SR3M_VSS_ASVAL",
+    "tips": ""
+  },
+  {
+    "id": "magazine-ak-545pufgun60-ws",
+    "name": "AK74 PufGun 5.45x39mm 150rnd magazine rebirth",
+    "description": "60 Rounds drum Magazine for AK 5.45 series weapon.",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-ak-545pufgun60-ws.webp",
+      "thumbnail": "/images/items/magazines/magazine-ak-545pufgun60-ws.webp",
+      "fullsize": "/images/items/magazines/magazine-ak-545pufgun60-ws.webp"
+    },
+    "stats": {
+      "weight": 0.35,
+      "rarity": "Uncommon",
+      "capacity": 150,
+      "caliber": "5.45x39",
+      "ammoSubcategory": "5.45x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.17,
+      "compatibleWeapons": [
+        "weapon-aks74u",
+        "weapon-aks74unvoucher1",
+        "weapon-ak74m",
+        "weapon-ak-aks74n-standard",
+        "weapon-ak74",
+        "weapon-ak-ak74-modt",
+        "weapon-ak74n-caa74n",
+        "weapon-ak74n-fullattach",
+        "weapon-ak74n-lhv",
+        "weapon-ak74n-factory"
+      ],
+      "basePrice": 8888,
+      "sellPrices": [
+        8888,
+        8888,
+        6222,
+        6222,
+        6222,
+        6222
+      ],
+      "buyOffers": []
+    },
+    "gameId": "gunsmith.ak.clip.545pufgun60-ws",
+    "family": "",
+    "tips": ""
+  },
+  {
+    "id": "magazine-ak-762quad60fde-ws",
+    "name": "AKM Quad FDE 7.62x39mm 150rnd magazine rebirth",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-ak-762quad60fde-ws.webp",
+      "thumbnail": "/images/items/magazines/magazine-ak-762quad60fde-ws.webp",
+      "fullsize": "/images/items/magazines/magazine-ak-762quad60fde-ws.webp"
+    },
+    "stats": {
+      "weight": 0.23,
+      "rarity": "Epic",
+      "capacity": 150,
+      "caliber": "7.62x39",
+      "ammoSubcategory": "7.62x39mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.2,
+      "compatibleWeapons": [
+        "weapon-vpo136",
+        "weapon-akmcaa47",
+        "weapon-akmn",
+        "weapon-akmn2025hallows",
+        "weapon-akmn-g",
+        "weapon-nostockakm",
+        "weapon-akmn-titan",
+        "weapon-akmn-voucherlv2",
+        "weapon-rd704",
+        "weapon-rd704-2025hallows",
+        "weapon-rd704voucherlv3",
+        "weapon-akalpha"
+      ],
+      "basePrice": 8888,
+      "sellPrices": [
+        8888,
+        8888,
+        6222,
+        6222,
+        6222,
+        6222
+      ],
+      "buyOffers": []
+    },
+    "gameId": "gunsmith.ak.clip.762quad60fde-ws",
+    "family": "",
     "tips": ""
   },
   {
@@ -3707,6 +3823,202 @@
     "tips": ""
   },
   {
+    "id": "magazine-ar15-drum50-ws",
+    "name": "AR-15 5.56x45mm 150rnd Drum magazine rebirth",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-ar15-drum50-ws.webp",
+      "thumbnail": "/images/items/magazines/magazine-ar15-drum50-ws.webp",
+      "fullsize": "/images/items/magazines/magazine-ar15-drum50-ws.webp"
+    },
+    "stats": {
+      "weight": 0.41,
+      "rarity": "Epic",
+      "capacity": 150,
+      "caliber": "5.56x45",
+      "ammoSubcategory": "5.56x45mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.12,
+      "compatibleWeapons": [
+        "weapon-m4a1-hunter",
+        "weapon-ar15longbarrelhunter",
+        "weapon-ar15-pistol",
+        "weapon-car15",
+        "weapon-car15-walther",
+        "weapon-m16a2",
+        "weapon-m16ris",
+        "weapon-m16a2-lv2",
+        "weapon-m4a1-factory",
+        "weapon-m4a1-fullattach-2025hallows",
+        "weapon-m4a1arx",
+        "weapon-m4a1cqb",
+        "weapon-m4a1-dd",
+        "weapon-m4a1ddpve",
+        "weapon-m4a1-fullattach",
+        "weapon-m4a1voucherlv3",
+        "weapon-m4a1-walther",
+        "weapon-hk416",
+        "weapon-rc416a5-2025hallow",
+        "weapon-rc416a5-twitchdrop",
+        "weapon-scar16"
+      ],
+      "basePrice": 8888,
+      "sellPrices": [
+        8888,
+        8888,
+        6222,
+        6222,
+        6222,
+        6222
+      ],
+      "buyOffers": []
+    },
+    "gameId": "gunsmith.ar15.clip.drum50-ws",
+    "family": "",
+    "tips": ""
+  },
+  {
+    "id": "magazine-ash12-10",
+    "name": "ASH-12 12.7x55mm 10rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-ash12-10.webp",
+      "thumbnail": "/images/items/magazines/magazine-ash12-10.webp",
+      "fullsize": "/images/items/magazines/magazine-ash12-10.webp"
+    },
+    "stats": {
+      "weight": 0.3,
+      "rarity": "Uncommon",
+      "capacity": 10,
+      "caliber": "12.7x55",
+      "ammoSubcategory": "12.7x55mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0,
+      "compatibleWeapons": [
+        "weapon-ash12-com"
+      ],
+      "basePrice": 896,
+      "sellPrices": [
+        896,
+        807,
+        628,
+        628,
+        628,
+        896
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ash12.clip.10",
+          "level": 1,
+          "price": 2561,
+          "bundle": 1,
+          "bundlePrice": 2561,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "gameId": "gunsmith.ash12.clip.10",
+    "family": "ASH12",
+    "tips": ""
+  },
+  {
+    "id": "magazine-ash12-20",
+    "name": "ASH-12 12.7x55mm 20rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-ash12-20.webp",
+      "thumbnail": "/images/items/magazines/magazine-ash12-20.webp",
+      "fullsize": "/images/items/magazines/magazine-ash12-20.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Uncommon",
+      "capacity": 20,
+      "caliber": "12.7x55",
+      "ammoSubcategory": "12.7x55mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.05,
+      "compatibleWeapons": [
+        "weapon-ash12-com"
+      ],
+      "basePrice": 2688,
+      "sellPrices": [
+        2688,
+        2420,
+        1882,
+        1882,
+        1882,
+        2688
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ash12.clip.20",
+          "level": 1,
+          "price": 7680,
+          "bundle": 1,
+          "bundlePrice": 7680,
+          "stock": 88,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "gameId": "gunsmith.ash12.clip.20",
+    "family": "ASH12",
+    "tips": ""
+  },
+  {
+    "id": "magazine-ash12-20-ws",
+    "name": "ASH-12 12.7x55mm 90rnd magazine rebirth",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-ash12-20-ws.webp",
+      "thumbnail": "/images/items/magazines/magazine-ash12-20-ws.webp",
+      "fullsize": "/images/items/magazines/magazine-ash12-20-ws.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Uncommon",
+      "capacity": 90,
+      "caliber": "12.7x55",
+      "ammoSubcategory": "12.7x55mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.05,
+      "compatibleWeapons": [
+        "weapon-ash12-com"
+      ],
+      "basePrice": 8888,
+      "sellPrices": [
+        8888,
+        8888,
+        6222,
+        6222,
+        6222,
+        6222
+      ],
+      "buyOffers": []
+    },
+    "gameId": "gunsmith.ash12.clip.20-ws",
+    "family": "",
+    "tips": ""
+  },
+  {
     "id": "magazine-evo3-50",
     "name": "EVO3 9x19mm Mag",
     "description": "",
@@ -3732,7 +4044,8 @@
     },
     "gameId": "pvegunsmith.evo3.clip.50",
     "family": "Evo3",
-    "tips": ""
+    "tips": "",
+    "extractionStatus": "missing-from-game-data"
   },
   {
     "id": "magazine-g18c-30rnd",
@@ -3822,7 +4135,7 @@
         {
           "vendor": "gunsmith",
           "goodsId": "gds.gunsmith.g18c.clip.50rnd",
-          "level": 4,
+          "level": 3,
           "price": 37675,
           "bundle": 1,
           "bundlePrice": 37675,
@@ -3832,7 +4145,7 @@
             {
               "gameId": "task.gunsmith.m10",
               "id": "gunsmith_19",
-              "name": "Malyuk Field Trial",
+              "name": "Field Adaptation",
               "corpId": "gunsmith"
             }
           ],
@@ -3843,6 +4156,43 @@
     },
     "gameId": "gunsmith.g18c.clip.50rnd",
     "family": "Vector",
+    "tips": ""
+  },
+  {
+    "id": "magazine-gp100-gp100",
+    "name": "GP100 9x19mm cylinder",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-gp100-gp100.webp",
+      "thumbnail": "/images/items/magazines/magazine-gp100-gp100.webp",
+      "fullsize": "/images/items/magazines/magazine-gp100-gp100.webp"
+    },
+    "stats": {
+      "weight": 0.36,
+      "rarity": "Common",
+      "capacity": null,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": 0,
+      "compatibleWeapons": [
+        "weapon-gp100"
+      ],
+      "basePrice": 0,
+      "sellPrices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "buyOffers": []
+    },
+    "gameId": "gunsmith.gp100.clip.gp100",
+    "family": "GP100",
     "tips": ""
   },
   {
@@ -4313,7 +4663,14 @@
           "bundlePrice": 27593,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.na.a.11",
+              "id": "ark_46",
+              "name": "Heavy Armor Below",
+              "corpId": "ark"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         }
@@ -4321,6 +4678,45 @@
     },
     "gameId": "gunsmith.mcx.clip.xm5-30",
     "family": "XM5",
+    "tips": ""
+  },
+  {
+    "id": "magazine-mcx-xm5-30-ws",
+    "name": "XM5 6.8x51mm 90rnd magazine rebirth",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-mcx-xm5-30-ws.webp",
+      "thumbnail": "/images/items/magazines/magazine-mcx-xm5-30-ws.webp",
+      "fullsize": "/images/items/magazines/magazine-mcx-xm5-30-ws.webp"
+    },
+    "stats": {
+      "weight": 0.24,
+      "rarity": "Uncommon",
+      "capacity": 90,
+      "caliber": "6.8x51",
+      "ammoSubcategory": "6.8x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.03,
+      "compatibleWeapons": [
+        "weapon-xm5",
+        "weapon-xm5-fullattach",
+        "weapon-xm5light"
+      ],
+      "basePrice": 8888,
+      "sellPrices": [
+        8888,
+        8888,
+        6222,
+        6222,
+        6222,
+        6222
+      ],
+      "buyOffers": []
+    },
+    "gameId": "gunsmith.mcx.clip.xm5-30-ws",
+    "family": "",
     "tips": ""
   },
   {
@@ -4444,6 +4840,49 @@
     },
     "gameId": "gunsmith.mp5.clip.100rnd",
     "family": "Mp5",
+    "tips": ""
+  },
+  {
+    "id": "magazine-mp5-100rnd-ws",
+    "name": "MP5 9x19mm 200rnd Drum magazine rebirth",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-mp5-100rnd-ws.webp",
+      "thumbnail": "/images/items/magazines/magazine-mp5-100rnd-ws.webp",
+      "fullsize": "/images/items/magazines/magazine-mp5-100rnd-ws.webp"
+    },
+    "stats": {
+      "weight": 1.3,
+      "rarity": "Uncommon",
+      "capacity": 200,
+      "caliber": "9x19",
+      "ammoSubcategory": "9x19mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.2,
+      "compatibleWeapons": [
+        "weapon-mp5flashlight",
+        "weapon-mp5a3",
+        "weapon-mp5a4supwalther",
+        "weapon-mp5a4voucher1",
+        "weapon-mp5k-pdw",
+        "weapon-mp5k",
+        "weapon-mp5sd"
+      ],
+      "basePrice": 45888,
+      "sellPrices": [
+        8888,
+        8888,
+        6222,
+        6222,
+        6222,
+        6222
+      ],
+      "buyOffers": []
+    },
+    "gameId": "gunsmith.mp5.clip.100rnd-ws",
+    "family": "",
     "tips": ""
   },
   {
@@ -4581,6 +5020,30 @@
       "ergonomicsModifier": -0.02,
       "compatibleWeapons": [
         "weapon-mx338-nf"
+      ],
+      "basePrice": 5583,
+      "sellPrices": [
+        5583,
+        5025,
+        3909,
+        3909,
+        3909,
+        5583
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.mx338.clip.5",
+          "level": 1,
+          "price": 15951,
+          "bundle": 1,
+          "bundlePrice": 15951,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.mx338.clip.5",
@@ -4713,6 +5176,8 @@
         "weapon-sa58-hallows02",
         "weapon-sa58-para",
         "weapon-sa58-hallows01",
+        "weapon-sa58-twitchdrop",
+        "weapon-sa58-voucherlv3",
         "weapon-rfb"
       ],
       "basePrice": 3658,
@@ -4844,6 +5309,8 @@
         "weapon-sa58-hallows02",
         "weapon-sa58-para",
         "weapon-sa58-hallows01",
+        "weapon-sa58-twitchdrop",
+        "weapon-sa58-voucherlv3",
         "weapon-rfb"
       ],
       "basePrice": 1618,
@@ -4899,6 +5366,8 @@
         "weapon-sa58-hallows02",
         "weapon-sa58-para",
         "weapon-sa58-hallows01",
+        "weapon-sa58-twitchdrop",
+        "weapon-sa58-voucherlv3",
         "weapon-rfb"
       ],
       "basePrice": 4446,
@@ -4954,6 +5423,8 @@
         "weapon-sa58-hallows02",
         "weapon-sa58-para",
         "weapon-sa58-hallows01",
+        "weapon-sa58-twitchdrop",
+        "weapon-sa58-voucherlv3",
         "weapon-rfb"
       ],
       "basePrice": 7681,
@@ -4986,6 +5457,49 @@
     "tips": ""
   },
   {
+    "id": "magazine-sa58-30rnd-ws",
+    "name": "SA58 7.62x51mm 90rnd magazine rebirth",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-sa58-30rnd-ws.webp",
+      "thumbnail": "/images/items/magazines/magazine-sa58-30rnd-ws.webp",
+      "fullsize": "/images/items/magazines/magazine-sa58-30rnd-ws.webp"
+    },
+    "stats": {
+      "weight": 0.49,
+      "rarity": "Rare",
+      "capacity": 90,
+      "caliber": "7.62x51",
+      "ammoSubcategory": "7.62x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.09,
+      "compatibleWeapons": [
+        "weapon-fn-fal",
+        "weapon-sa58-hallows02",
+        "weapon-sa58-para",
+        "weapon-sa58-hallows01",
+        "weapon-sa58-twitchdrop",
+        "weapon-sa58-voucherlv3",
+        "weapon-rfb"
+      ],
+      "basePrice": 8888,
+      "sellPrices": [
+        8888,
+        8888,
+        6222,
+        6222,
+        6222,
+        6222
+      ],
+      "buyOffers": []
+    },
+    "gameId": "gunsmith.sa58.clip.30rnd-ws",
+    "family": "",
+    "tips": ""
+  },
+  {
     "id": "magazine-sa58-50rnd",
     "name": "SA58 7.62x51mm 50rnd Drum magazine",
     "description": "",
@@ -5008,7 +5522,9 @@
         "weapon-fn-fal",
         "weapon-sa58-hallows02",
         "weapon-sa58-para",
-        "weapon-sa58-hallows01"
+        "weapon-sa58-hallows01",
+        "weapon-sa58-twitchdrop",
+        "weapon-sa58-voucherlv3"
       ],
       "basePrice": 14769,
       "sellPrices": [
@@ -5031,10 +5547,10 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.gunsmith.m08",
-              "id": "gunsmith_16",
-              "name": "Close Quarters — MP9 Drill",
-              "corpId": "gunsmith"
+              "gameId": "task.na.a.14",
+              "id": "ark_49",
+              "name": "★ Lord of the Underground",
+              "corpId": "ark"
             }
           ],
           "requiresDlc": [],
@@ -5051,10 +5567,10 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.gunsmith.m08",
-              "id": "gunsmith_16",
-              "name": "Close Quarters — MP9 Drill",
-              "corpId": "gunsmith"
+              "gameId": "task.na.a.14",
+              "id": "ark_49",
+              "name": "★ Lord of the Underground",
+              "corpId": "ark"
             }
           ],
           "requiresDlc": [],
@@ -5070,6 +5586,46 @@
     },
     "gameId": "gunsmith.sa58.clip.50rnd",
     "family": "SA58",
+    "tips": ""
+  },
+  {
+    "id": "magazine-scar-mk17-bk-ws",
+    "name": "SECA17 BK 7.62x51mm 90rnd magazine rebirth",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Magazines",
+    "images": {
+      "icon": "/images/items/magazines/magazine-scar-mk17-bk-ws.webp",
+      "thumbnail": "/images/items/magazines/magazine-scar-mk17-bk-ws.webp",
+      "fullsize": "/images/items/magazines/magazine-scar-mk17-bk-ws.webp"
+    },
+    "stats": {
+      "weight": 0.15,
+      "rarity": "Rare",
+      "capacity": 90,
+      "caliber": "7.62x51",
+      "ammoSubcategory": "7.62x51mm",
+      "ADSSpeedModifier": 0,
+      "ergonomicsModifier": -0.02,
+      "compatibleWeapons": [
+        "weapon-scar17-fde",
+        "weapon-scar17-black",
+        "weapon-seca17-fullattachssr",
+        "weapon-scar17-ssr"
+      ],
+      "basePrice": 8888,
+      "sellPrices": [
+        8888,
+        8888,
+        6222,
+        6222,
+        6222,
+        6222
+      ],
+      "buyOffers": []
+    },
+    "gameId": "gunsmith.scar.clip.mk17-bk-ws",
+    "family": "",
     "tips": ""
   },
   {
@@ -5094,6 +5650,30 @@
       "compatibleWeapons": [
         "weapon-sesa2-fullattached",
         "weapon-sesa2-shortstandard"
+      ],
+      "basePrice": 2175,
+      "sellPrices": [
+        2175,
+        1958,
+        1523,
+        1523,
+        1523,
+        2175
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.sesa2.clip.5",
+          "level": 1,
+          "price": 6215,
+          "bundle": 1,
+          "bundlePrice": 6215,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.sesa2.clip.5",
@@ -5122,6 +5702,30 @@
       "compatibleWeapons": [
         "weapon-sesa2-fullattached",
         "weapon-sesa2-shortstandard"
+      ],
+      "basePrice": 4461,
+      "sellPrices": [
+        4461,
+        4015,
+        3123,
+        3123,
+        3123,
+        4461
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.sesa2.clip.8",
+          "level": 1,
+          "price": 12745,
+          "bundle": 1,
+          "bundlePrice": 12745,
+          "stock": 50,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
       ]
     },
     "gameId": "gunsmith.sesa2.clip.8",

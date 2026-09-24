@@ -1089,14 +1089,7 @@
           "bundlePrice": 4920,
           "stock": 99,
           "resetType": "daily",
-          "requiresTasks": [
-            {
-              "gameId": "task.doc.b.01",
-              "id": "ark_4",
-              "name": "Lost and Found",
-              "corpId": "ntg"
-            }
-          ],
+          "requiresTasks": [],
           "requiresDlc": [],
           "exchange": []
         }
@@ -1140,14 +1133,7 @@
           "bundlePrice": 16709,
           "stock": 99,
           "resetType": "daily",
-          "requiresTasks": [
-            {
-              "gameId": "task.doc.a.06",
-              "id": "ntg_39",
-              "name": "Bunker Records",
-              "corpId": "ntg"
-            }
-          ],
+          "requiresTasks": [],
           "requiresDlc": [],
           "exchange": []
         }
@@ -2143,7 +2129,7 @@
       "fullsize": "/images/items/task/taskitem_warfare_dogtag.webp"
     },
     "stats": {
-      "weight": null,
+      "weight": 0,
       "rarity": "Common",
       "taskIds": [],
       "basePrice": 3600,
@@ -2171,7 +2157,7 @@
       "fullsize": "/images/items/task/taskitem_warfaredlcmica.webp"
     },
     "stats": {
-      "weight": null,
+      "weight": 0,
       "rarity": "Common",
       "taskIds": [],
       "basePrice": 1000,
@@ -2283,7 +2269,7 @@
   },
   {
     "id": "taskitem_warfaresignalgun_doctor",
-    "name": "",
+    "name": "Flare Gun (Doctor variant)",
     "description": "While at the launch site, press the Trigger toward the sky to call for supplies. Different colors indicate whether you can currently fire.",
     "category": "task-items",
     "subcategory": "Activity/SignalGun",
@@ -2301,7 +2287,7 @@
   },
   {
     "id": "taskitem_warfaresignalgun_gear",
-    "name": "",
+    "name": "Flare Gun (Gear variant)",
     "description": "While at the launch site, press the Trigger toward the sky to call for supplies. Different colors indicate whether you can currently fire.",
     "category": "task-items",
     "subcategory": "Activity/SignalGun",
@@ -2319,7 +2305,7 @@
   },
   {
     "id": "taskitem_warfaresignalgun_mall",
-    "name": "",
+    "name": "Flare Gun (Mall variant)",
     "description": "While at the launch site, press the Trigger toward the sky to call for supplies. Different colors indicate whether you can currently fire.",
     "category": "task-items",
     "subcategory": "Activity/SignalGun",
@@ -2337,7 +2323,7 @@
   },
   {
     "id": "taskitem_warfaresignalgun_wolf",
-    "name": "",
+    "name": "Flare Gun (Wolf variant)",
     "description": "While at the launch site, press the Trigger toward the sky to call for supplies. Different colors indicate whether you can currently fire.",
     "category": "task-items",
     "subcategory": "Activity/SignalGun",

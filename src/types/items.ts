@@ -296,8 +296,8 @@ export interface Holster extends Gear {
 export interface PerkEffect {
     attribute: string;
     value: number;
-    target: string;
-    mode: string;
+    target: string | null;
+    mode: string | null;
 }
 
 /**

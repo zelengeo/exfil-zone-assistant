@@ -65,8 +65,7 @@
       "attachmentModifier": {
         "ergonomicsModifier": 0.03,
         "verticalRecoilModifier": -0.02,
-        "horizontalRecoilModifier": -0.03,
-        "ADSSpeedModifier": 0.15
+        "horizontalRecoilModifier": -0.03
       },
       "basePrice": 5012,
       "sellPrices": [
@@ -113,8 +112,7 @@
       "attachmentModifier": {
         "ergonomicsModifier": 0.03,
         "verticalRecoilModifier": -0.02,
-        "horizontalRecoilModifier": -0.03,
-        "ADSSpeedModifier": 0.15
+        "horizontalRecoilModifier": -0.03
       },
       "basePrice": 5407,
       "sellPrices": [
@@ -161,8 +159,7 @@
       "attachmentModifier": {
         "ergonomicsModifier": 0.03,
         "verticalRecoilModifier": -0.02,
-        "horizontalRecoilModifier": -0.03,
-        "ADSSpeedModifier": 0.15
+        "horizontalRecoilModifier": -0.03
       },
       "basePrice": 5587,
       "sellPrices": [
@@ -521,10 +518,10 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.gunsmith.008",
-              "id": "gunsmith_15",
-              "name": "SKS Modification Trial",
-              "corpId": "gunsmith"
+              "gameId": "task.wp.a.04",
+              "id": "regiment_27",
+              "name": "My Favorite: Mosin",
+              "corpId": "regiment"
             }
           ],
           "requiresDlc": [],
@@ -624,9 +621,9 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.gunsmith.m04",
-              "id": "gunsmith_8",
-              "name": "Field Test",
+              "gameId": "task.gunsmith.m08",
+              "id": "gunsmith_16",
+              "name": "Close Quarters",
               "corpId": "gunsmith"
             }
           ],
@@ -706,14 +703,14 @@
         "horizontalRecoilModifier": -0.04,
         "ADSSpeedModifier": 0.15
       },
-      "basePrice": 10281,
+      "basePrice": 10088,
       "sellPrices": [
-        10281,
-        9253,
-        7197,
-        7197,
-        7197,
-        10281
+        10088,
+        9080,
+        7062,
+        7062,
+        7062,
+        10088
       ],
       "buyOffers": [
         {
@@ -1148,7 +1145,9 @@
         "ergonomicsModifier": 0.04,
         "verticalRecoilModifier": -0.02,
         "horizontalRecoilModifier": -0.01,
-        "ADSSpeedModifier": 0.15
+        "ADSSpeedModifier": 0.15,
+        "yawMomentumModifer": -0.1,
+        "rollMomentumModifer": -0.05
       },
       "basePrice": 2795,
       "sellPrices": [
@@ -1196,7 +1195,9 @@
         "ergonomicsModifier": 0.04,
         "verticalRecoilModifier": -0.02,
         "horizontalRecoilModifier": -0.01,
-        "ADSSpeedModifier": 0.15
+        "ADSSpeedModifier": 0.15,
+        "yawMomentumModifer": -0.1,
+        "rollMomentumModifer": -0.05
       },
       "basePrice": 3198,
       "sellPrices": [
@@ -1240,17 +1241,7 @@
     "stats": {
       "weight": 0.05,
       "rarity": "Uncommon",
-      "attachmentModifier": {},
-      "basePrice": 800,
-      "sellPrices": [
-        800,
-        800,
-        560,
-        560,
-        560,
-        800
-      ],
-      "buyOffers": []
+      "attachmentModifier": {}
     },
     "tips": "Required adapter for AUG builds - enables access to other compensators and muzzle devices"
   },
@@ -1273,17 +1264,7 @@
         "ergonomicsModifier": -0.03,
         "verticalRecoilModifier": -0.08,
         "horizontalRecoilModifier": -0.08
-      },
-      "basePrice": 4284,
-      "sellPrices": [
-        4284,
-        4284,
-        2999,
-        2999,
-        2999,
-        4284
-      ],
-      "buyOffers": []
+      }
     },
     "tips": ""
   },
@@ -1305,17 +1286,7 @@
       "attachmentModifier": {
         "verticalRecoilModifier": -0.155,
         "horizontalRecoilModifier": -0.16
-      },
-      "basePrice": 18681,
-      "sellPrices": [
-        18681,
-        18681,
-        13077,
-        13077,
-        13077,
-        18681
-      ],
-      "buyOffers": []
+      }
     },
     "tips": ""
   },
@@ -1338,17 +1309,7 @@
         "ergonomicsModifier": -0.08,
         "verticalRecoilModifier": -0.165,
         "horizontalRecoilModifier": -0.165
-      },
-      "basePrice": 24240,
-      "sellPrices": [
-        24240,
-        24240,
-        16968,
-        16968,
-        16968,
-        24240
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Legendary tier - use when recoil control is absolutely critical and you can manage the ergo hit"
   },
@@ -1371,17 +1332,7 @@
         "ergonomicsModifier": -0.05,
         "verticalRecoilModifier": -0.08,
         "horizontalRecoilModifier": -0.08
-      },
-      "basePrice": 4570,
-      "sellPrices": [
-        4570,
-        4570,
-        3199,
-        3199,
-        3199,
-        4570
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Ideal for single-shot and semi-auto builds where weight penalty is acceptable"
   },
@@ -1404,17 +1355,7 @@
         "ergonomicsModifier": -0.03,
         "verticalRecoilModifier": -0.11,
         "horizontalRecoilModifier": -0.09
-      },
-      "basePrice": 8969,
-      "sellPrices": [
-        8969,
-        8969,
-        6279,
-        6279,
-        6279,
-        8969
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Budget-friendly option that prioritizes vertical recoil over horizontal - good for spray patterns"
   },
@@ -1437,17 +1378,7 @@
         "ergonomicsModifier": -0.01,
         "verticalRecoilModifier": -0.1,
         "horizontalRecoilModifier": -0.085
-      },
-      "basePrice": 7605,
-      "sellPrices": [
-        7605,
-        7605,
-        5324,
-        5324,
-        5324,
-        7605
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Excellent choice for mobile builds where weight matters - solid performance with low penalties"
   },
@@ -1469,17 +1400,7 @@
       "attachmentModifier": {
         "verticalRecoilModifier": -0.12,
         "horizontalRecoilModifier": -0.1
-      },
-      "basePrice": 11424,
-      "sellPrices": [
-        11424,
-        11424,
-        7997,
-        7997,
-        7997,
-        11424
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Rare find with no downsides - prioritize acquiring this for versatile builds"
   },
@@ -1502,17 +1423,7 @@
         "ergonomicsModifier": -0.04,
         "verticalRecoilModifier": -0.08,
         "horizontalRecoilModifier": -0.08
-      },
-      "basePrice": 4570,
-      "sellPrices": [
-        4570,
-        4570,
-        3199,
-        3199,
-        3199,
-        4570
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Reliable baseline option when other compensators aren't available or budget is tight"
   },
@@ -1535,17 +1446,7 @@
         "ergonomicsModifier": -0.03,
         "verticalRecoilModifier": -0.12,
         "horizontalRecoilModifier": -0.12
-      },
-      "basePrice": 13847,
-      "sellPrices": [
-        13847,
-        13847,
-        9693,
-        9693,
-        9693,
-        13847
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Good all-around choice for mid-tier builds when you want consistent recoil control"
   },
@@ -1568,17 +1469,7 @@
         "ergonomicsModifier": -0.03,
         "verticalRecoilModifier": -0.145,
         "horizontalRecoilModifier": -0.145
-      },
-      "basePrice": 20006,
-      "sellPrices": [
-        20006,
-        20006,
-        14005,
-        14005,
-        14005,
-        20006
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Best-in-class recoil control for high-end builds, worth the ergonomics trade-off"
   },
@@ -1601,17 +1492,7 @@
         "ergonomicsModifier": -0.022,
         "verticalRecoilModifier": -0.16,
         "horizontalRecoilModifier": -0.14
-      },
-      "basePrice": 16977,
-      "sellPrices": [
-        16977,
-        16977,
-        11884,
-        11884,
-        11884,
-        16977
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Best raw recoil reduction but consider the headshot damage penalty for your playstyle"
   },
@@ -1632,17 +1513,7 @@
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.02
-      },
-      "basePrice": 1863,
-      "sellPrices": [
-        1863,
-        1863,
-        1305,
-        1305,
-        1305,
-        1863
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Classic AK optic mounting - slightly heavier penalty but authentic mounting solution"
   },
@@ -1663,17 +1534,7 @@
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.02
-      },
-      "basePrice": 2017,
-      "sellPrices": [
-        2017,
-        2017,
-        1412,
-        1412,
-        1412,
-        2017
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Upgraded AK rail option - same penalties as standard but potentially better compatibility"
   },
@@ -1694,17 +1555,7 @@
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.01
-      },
-      "basePrice": 989,
-      "sellPrices": [
-        989,
-        989,
-        693,
-        693,
-        693,
-        989
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Required for AK74U optics - necessary adapter with standard penalties for the platform"
   },
@@ -1725,17 +1576,7 @@
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.02
-      },
-      "basePrice": 2195,
-      "sellPrices": [
-        2195,
-        2195,
-        1537,
-        1537,
-        1537,
-        2195
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Heaviest G3 rail option - use when maximum stability is needed over mobility"
   },
@@ -1754,17 +1595,7 @@
     "stats": {
       "weight": 0.02,
       "rarity": "Common",
-      "attachmentModifier": {},
-      "basePrice": 1280,
-      "sellPrices": [
-        1280,
-        1280,
-        896,
-        896,
-        896,
-        1280
-      ],
-      "buyOffers": []
+      "attachmentModifier": {}
     },
     "tips": "Best G3 rail choice - no ergo penalty makes it ideal for maintaining weapon handling"
   },
@@ -1785,17 +1616,7 @@
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.01
-      },
-      "basePrice": 1600,
-      "sellPrices": [
-        1600,
-        1600,
-        1120,
-        1120,
-        1120,
-        1600
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Good middle-ground G3 option - reasonable penalties for most G3 builds"
   },
@@ -1816,17 +1637,7 @@
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.01
-      },
-      "basePrice": 1584,
-      "sellPrices": [
-        1584,
-        1584,
-        1109,
-        1109,
-        1109,
-        1584
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Classic AR15 setup - necessary for traditional carry handle configurations"
   },
@@ -1845,17 +1656,7 @@
     "stats": {
       "weight": 0.012,
       "rarity": "Epic",
-      "attachmentModifier": {},
-      "basePrice": 627,
-      "sellPrices": [
-        627,
-        627,
-        439,
-        439,
-        439,
-        627
-      ],
-      "buyOffers": []
+      "attachmentModifier": {}
     },
     "tips": "Premium MLOK rail - no penalties make it perfect for competitive builds"
   },
@@ -1874,17 +1675,7 @@
     "stats": {
       "weight": 0.008,
       "rarity": "Common",
-      "attachmentModifier": {},
-      "basePrice": 621,
-      "sellPrices": [
-        621,
-        621,
-        435,
-        435,
-        435,
-        621
-      ],
-      "buyOffers": []
+      "attachmentModifier": {}
     },
     "tips": "Lightest rail option - perfect for side-mounted accessories without any drawbacks"
   },
@@ -1907,17 +1698,7 @@
         "ergonomicsModifier": -0.02,
         "pitchMomentumModifer": -0.01,
         "rollMomentumModifer": 0.02
-      },
-      "basePrice": 1332,
-      "sellPrices": [
-        1332,
-        1332,
-        933,
-        933,
-        933,
-        1332
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Required for MP5 optics - moderate penalty but necessary for sight upgrades"
   },
@@ -1938,17 +1719,7 @@
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.05
-      },
-      "basePrice": 1537,
-      "sellPrices": [
-        1537,
-        1537,
-        1076,
-        1076,
-        1076,
-        1537
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Significant handling penalty - only use when pistol accessories are absolutely needed"
   },
@@ -1969,17 +1740,7 @@
       "rarity": "Rare",
       "attachmentModifier": {
         "ergonomicsModifier": -0.03
-      },
-      "basePrice": 2195,
-      "sellPrices": [
-        2195,
-        2195,
-        1537,
-        1537,
-        1537,
-        2195
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Heavy but necessary for PKP optics - moderate penalty for machine gun capability"
   },
@@ -2000,17 +1761,7 @@
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.01
-      },
-      "basePrice": 1280,
-      "sellPrices": [
-        1280,
-        1280,
-        896,
-        896,
-        896,
-        1280
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Standard PSG rail - minimal penalty for precision rifle optic compatibility"
   },
@@ -2031,17 +1782,7 @@
       "rarity": "Uncommon",
       "attachmentModifier": {
         "ergonomicsModifier": -0.01
-      },
-      "basePrice": 1306,
-      "sellPrices": [
-        1306,
-        1306,
-        915,
-        915,
-        915,
-        1306
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Heaviest standard rail - momentum changes affect handling, consider impact on playstyle"
   },
@@ -2062,17 +1803,7 @@
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": -0.01
-      },
-      "basePrice": 941,
-      "sellPrices": [
-        941,
-        941,
-        659,
-        659,
-        659,
-        941
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "No-penalty angled mounting - excellent choice when you need 45-degree capability"
   },
@@ -2292,14 +2023,14 @@
         "verticalRecoilModifier": 0.01,
         "horizontalRecoilModifier": 0.01
       },
-      "basePrice": 9308,
+      "basePrice": 8320,
       "sellPrices": [
-        9308,
-        8378,
-        6516,
-        6516,
-        6516,
-        9308
+        8320,
+        7488,
+        5824,
+        5824,
+        5824,
+        8320
       ],
       "buyOffers": [
         {
@@ -2339,14 +2070,14 @@
         "verticalRecoilModifier": 0.01,
         "horizontalRecoilModifier": 0.01
       },
-      "basePrice": 8233,
+      "basePrice": 7434,
       "sellPrices": [
-        8233,
-        7410,
-        5764,
-        5764,
-        5764,
-        8233
+        7434,
+        6691,
+        5204,
+        5204,
+        5204,
+        7434
       ],
       "buyOffers": [
         {
@@ -2440,9 +2171,9 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.gunsmith.m05",
-              "id": "gunsmith_10",
-              "name": "The Last Screw Before Iron Wolf",
+              "gameId": "task.gunsmith.m09",
+              "id": "gunsmith_18",
+              "name": "Surveillance Setup",
               "corpId": "gunsmith"
             }
           ],
@@ -2541,9 +2272,9 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.gunsmith.m03",
-              "id": "gunsmith_6",
-              "name": "The Artisan's Touch",
+              "gameId": "task.gunsmith.008",
+              "id": "gunsmith_15",
+              "name": "Modding Trial: SKS",
               "corpId": "gunsmith"
             }
           ],
@@ -2848,7 +2579,7 @@
             {
               "gameId": "task.na.b.09",
               "id": "ark_58",
-              "name": "Factory Oil Tanks",
+              "name": "Factory Tanks",
               "corpId": "ark"
             }
           ],
@@ -3247,7 +2978,7 @@
             {
               "gameId": "task.na.c.07",
               "id": "ark_66",
-              "name": "Clearing Drill",
+              "name": "Another Option",
               "corpId": "ark"
             }
           ],
@@ -3547,17 +3278,7 @@
         "ergonomicsModifier": -0.25,
         "verticalRecoilModifier": -0.05,
         "horizontalRecoilModifier": -0.05
-      },
-      "basePrice": 10445,
-      "sellPrices": [
-        10445,
-        10445,
-        7312,
-        7312,
-        7312,
-        10445
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Basic suppression option - heavy ergo penalty but provides consistent stealth and recoil benefits"
   },
@@ -3580,17 +3301,7 @@
         "ergonomicsModifier": -0.13,
         "verticalRecoilModifier": -0.07,
         "horizontalRecoilModifier": -0.07
-      },
-      "basePrice": 17920,
-      "sellPrices": [
-        17920,
-        17920,
-        12544,
-        12544,
-        12544,
-        17920
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Better than standard rifle suppressor - improved ergo penalty makes it worth the upgrade"
   },
@@ -3613,17 +3324,7 @@
         "ergonomicsModifier": -0.13,
         "verticalRecoilModifier": -0.07,
         "horizontalRecoilModifier": -0.07
-      },
-      "basePrice": 18261,
-      "sellPrices": [
-        18261,
-        18261,
-        12783,
-        12783,
-        12783,
-        18261
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Same stats as BK version - choose based on camouflage needs and aesthetic preference"
   },
@@ -3646,17 +3347,7 @@
         "ergonomicsModifier": -0.22,
         "verticalRecoilModifier": -0.065,
         "horizontalRecoilModifier": -0.065
-      },
-      "basePrice": 13516,
-      "sellPrices": [
-        13516,
-        13516,
-        9462,
-        9462,
-        9462,
-        13516
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Heaviest standard option - only choose when maximum recoil control outweighs mobility"
   },
@@ -3714,17 +3405,7 @@
         "ergonomicsModifier": -0.12,
         "verticalRecoilModifier": -0.075,
         "horizontalRecoilModifier": -0.075
-      },
-      "basePrice": 19360,
-      "sellPrices": [
-        19360,
-        19360,
-        13552,
-        13552,
-        13552,
-        19360
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Best overall suppressor - lightest weight with superior recoil reduction and low ergo penalty"
   },
@@ -3747,17 +3428,7 @@
         "ergonomicsModifier": -0.15,
         "verticalRecoilModifier": -0.045,
         "horizontalRecoilModifier": -0.045
-      },
-      "basePrice": 8235,
-      "sellPrices": [
-        8235,
-        8235,
-        5765,
-        5765,
-        5765,
-        8235
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Essential for stealth pistol builds - moderate penalties for valuable sound reduction"
   },
@@ -3813,17 +3484,7 @@
         "ergonomicsModifier": -0.33,
         "verticalRecoilModifier": -0.09,
         "horizontalRecoilModifier": -0.09
-      },
-      "basePrice": 23174,
-      "sellPrices": [
-        23174,
-        23174,
-        16222,
-        16222,
-        16222,
-        23174
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Maximum recoil control option - extreme ergo penalty requires specialized builds to manage"
   },
@@ -3846,17 +3507,7 @@
         "ergonomicsModifier": -0.33,
         "verticalRecoilModifier": -0.09,
         "horizontalRecoilModifier": -0.09
-      },
-      "basePrice": 22560,
-      "sellPrices": [
-        22560,
-        22560,
-        15792,
-        15792,
-        15792,
-        22560
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Same recoil benefits as grey but no weight - potential bug or special variant"
   },
@@ -3879,17 +3530,7 @@
         "ergonomicsModifier": -0.2,
         "verticalRecoilModifier": -0.08,
         "horizontalRecoilModifier": -0.08
-      },
-      "basePrice": 22524,
-      "sellPrices": [
-        22524,
-        22524,
-        15767,
-        15767,
-        15767,
-        22524
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Solid mid-tier choice - balanced stats make it suitable for most rifle builds"
   },
@@ -3912,17 +3553,7 @@
         "ergonomicsModifier": -0.21,
         "verticalRecoilModifier": -0.11,
         "horizontalRecoilModifier": -0.11
-      },
-      "basePrice": 29343,
-      "sellPrices": [
-        29343,
-        29343,
-        20541,
-        20541,
-        20541,
-        29343
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Premium Sleipnir variant - legendary tier justified by superior recoil control"
   },
@@ -3945,17 +3576,7 @@
         "ergonomicsModifier": -0.21,
         "verticalRecoilModifier": -0.11,
         "horizontalRecoilModifier": -0.11
-      },
-      "basePrice": 29841,
-      "sellPrices": [
-        29841,
-        29841,
-        20889,
-        20889,
-        20889,
-        29841
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Premium Sleipnir variant - legendary tier justified by superior recoil control"
   },
@@ -3978,17 +3599,7 @@
         "ergonomicsModifier": -0.21,
         "verticalRecoilModifier": -0.11,
         "horizontalRecoilModifier": -0.11
-      },
-      "basePrice": 29769,
-      "sellPrices": [
-        29769,
-        29769,
-        20839,
-        20839,
-        20839,
-        29769
-      ],
-      "buyOffers": []
+      }
     },
     "tips": "Premium Sleipnir variant - legendary tier justified by superior recoil control"
   },
@@ -4035,7 +3646,7 @@
             {
               "gameId": "task.wp.c.09",
               "id": "regiment_51",
-              "name": "The Veteran's Courts",
+              "name": "Old Haunts",
               "corpId": "regiment"
             }
           ],
@@ -4113,14 +3724,14 @@
         "verticalRecoilModifier": 0.015,
         "horizontalRecoilModifier": 0.015
       },
-      "basePrice": 11894,
+      "basePrice": 7253,
       "sellPrices": [
-        11894,
-        10705,
-        8326,
-        8326,
-        8326,
-        11894
+        7253,
+        6528,
+        5078,
+        5078,
+        5078,
+        7253
       ],
       "buyOffers": [
         {
@@ -4167,14 +3778,14 @@
         "verticalRecoilModifier": 0.03,
         "horizontalRecoilModifier": 0.03
       },
-      "basePrice": 7721,
+      "basePrice": 5119,
       "sellPrices": [
-        7721,
-        6949,
-        5405,
-        5405,
-        5405,
-        7721
+        5119,
+        4608,
+        3584,
+        3584,
+        3584,
+        5119
       ],
       "buyOffers": [
         {
@@ -4214,14 +3825,14 @@
         "verticalRecoilModifier": 0.01,
         "horizontalRecoilModifier": 0.01
       },
-      "basePrice": 5175,
+      "basePrice": 3763,
       "sellPrices": [
-        5175,
-        4658,
-        3623,
-        3623,
-        3623,
-        5175
+        3763,
+        3387,
+        2635,
+        2635,
+        2635,
+        3763
       ],
       "buyOffers": [
         {
@@ -4261,14 +3872,14 @@
         "verticalRecoilModifier": 0.02,
         "horizontalRecoilModifier": 0.02
       },
-      "basePrice": 8172,
+      "basePrice": 5760,
       "sellPrices": [
-        8172,
-        7355,
-        5721,
-        5721,
-        5721,
-        8172
+        5760,
+        5184,
+        4032,
+        4032,
+        4032,
+        5760
       ],
       "buyOffers": [
         {
@@ -4308,14 +3919,14 @@
         "verticalRecoilModifier": 0.02,
         "horizontalRecoilModifier": 0.02
       },
-      "basePrice": 8243,
+      "basePrice": 5759,
       "sellPrices": [
-        8243,
-        7419,
-        5771,
-        5771,
-        5771,
-        8243
+        5759,
+        5184,
+        4032,
+        4032,
+        4032,
+        5759
       ],
       "buyOffers": [
         {

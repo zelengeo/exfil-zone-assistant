@@ -68,7 +68,7 @@
             {
               "gameId": "task.doc.a.09",
               "id": "ntg_41",
-              "name": "Evidence of Atrocity",
+              "name": "Damning Evidence",
               "corpId": "ntg"
             }
           ],
@@ -335,7 +335,7 @@
             {
               "gameId": "task.doc.c.07",
               "id": "ntg_61",
-              "name": "Dock Intel",
+              "name": "Dock Investigation",
               "corpId": "ntg"
             }
           ],
@@ -416,7 +416,7 @@
             {
               "gameId": "task.doc.b.04",
               "id": "ntg_49",
-              "name": "River Valley Pylon Security",
+              "name": "Repurposed Landmarks",
               "corpId": "ntg"
             }
           ],
@@ -447,7 +447,7 @@
             {
               "gameId": "task.doc.b.04",
               "id": "ntg_49",
-              "name": "River Valley Pylon Security",
+              "name": "Repurposed Landmarks",
               "corpId": "ntg"
             }
           ],
@@ -514,7 +514,21 @@
         4596,
         4596
       ],
-      "buyOffers": []
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.card.map2.dockhouse",
+          "level": 2,
+          "price": 131719,
+          "bundle": 1,
+          "bundlePrice": 131719,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "gameId": "card.map2.dockhouse",
     "tips": ""
@@ -848,7 +862,7 @@
             {
               "gameId": "task.doc.a.13",
               "id": "ntg_45",
-              "name": "Medical Delivery 2",
+              "name": "Medicine Delivery II",
               "corpId": "ntg"
             }
           ],
@@ -940,7 +954,7 @@
             {
               "gameId": "task.doc.b.07",
               "id": "ntg_52",
-              "name": "Suburb Recon",
+              "name": "Leftover Supplies",
               "corpId": "ntg"
             }
           ],
@@ -1128,7 +1142,7 @@
             {
               "gameId": "task.gear.b.08",
               "id": "forge_13",
-              "name": "All pieces together 3",
+              "name": "Small Things Add Up: Old Phones",
               "corpId": "forge"
             }
           ],
@@ -1195,7 +1209,7 @@
             {
               "gameId": "task.doc.b.08",
               "id": "ntg_53",
-              "name": "Suburban Emergency Med Network",
+              "name": "Emergency Cache",
               "corpId": "ntg"
             }
           ],
@@ -1262,7 +1276,7 @@
             {
               "gameId": "task.doc.b.10",
               "id": "ntg_54",
-              "name": "Farmstead Investigation",
+              "name": "Laid to Rest",
               "corpId": "ntg"
             }
           ],
@@ -1433,7 +1447,7 @@
             {
               "gameId": "task.doc.a.07",
               "id": "ntg_40",
-              "name": "The Final Shot",
+              "name": "Way Out",
               "corpId": "ntg"
             }
           ],
@@ -1705,7 +1719,7 @@
             {
               "gameId": "task.gear.c.06",
               "id": "forge_39",
-              "name": "Hidden Path",
+              "name": "Back Route",
               "corpId": "forge"
             }
           ],

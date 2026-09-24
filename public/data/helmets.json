@@ -216,8 +216,8 @@
       "armorClass": 4,
       "maxDurability": 90,
       "durabilityDamageScalar": 0.28,
-      "bluntDamageScalar": 0.35,
-      "sellId": "",
+      "bluntDamageScalar": 0.3,
+      "sellId": "helmet.achfb",
       "coneRegions": [
         {
           "region": "cone",
@@ -410,7 +410,7 @@
       "armorClass": 4,
       "maxDurability": 90,
       "durabilityDamageScalar": 0.28,
-      "bluntDamageScalar": 0.35,
+      "bluntDamageScalar": 0.3,
       "sellId": "helmet.achf",
       "coneRegions": [
         {
@@ -587,7 +587,7 @@
             {
               "gameId": "task.gear.a.03",
               "id": "forge_7",
-              "name": "Bargain Hunter",
+              "name": "Easy Pickings",
               "corpId": "forge"
             }
           ],
@@ -626,7 +626,7 @@
       "maxDurability": 1,
       "durabilityDamageScalar": 0,
       "bluntDamageScalar": 1,
-      "sellId": "",
+      "sellId": "helmet.beanie",
       "coneRegions": [
         {
           "region": "cone",
@@ -749,7 +749,7 @@
       "maxDurability": 1,
       "durabilityDamageScalar": 0,
       "bluntDamageScalar": 1,
-      "sellId": "",
+      "sellId": "helmet.bkberet",
       "coneRegions": [
         {
           "region": "cone",
@@ -872,7 +872,7 @@
       "maxDurability": 1,
       "durabilityDamageScalar": 0,
       "bluntDamageScalar": 1,
-      "sellId": "",
+      "sellId": "helmet.camoberet",
       "coneRegions": [
         {
           "region": "cone",
@@ -994,7 +994,7 @@
       "armorClass": 2,
       "maxDurability": 120,
       "durabilityDamageScalar": 0.7,
-      "bluntDamageScalar": 0.5,
+      "bluntDamageScalar": 0.45,
       "sellId": "helmet.1",
       "coneRegions": [
         {
@@ -1166,7 +1166,7 @@
       "maxDurability": 1,
       "durabilityDamageScalar": 0,
       "bluntDamageScalar": 1,
-      "sellId": "",
+      "sellId": "helmet.gcap",
       "coneRegions": [
         {
           "region": "cone",
@@ -1288,7 +1288,7 @@
       "armorClass": 4,
       "maxDurability": 78,
       "durabilityDamageScalar": 0.35,
-      "bluntDamageScalar": 0.5,
+      "bluntDamageScalar": 0.4,
       "sellId": "helmet.ccbmblack",
       "coneRegions": [
         {
@@ -1664,7 +1664,7 @@
       "armorClass": 4,
       "maxDurability": 93,
       "durabilityDamageScalar": 0.37,
-      "bluntDamageScalar": 0.35,
+      "bluntDamageScalar": 0.3,
       "sellId": "helmet.4.5",
       "coneRegions": [
         {
@@ -2051,7 +2051,7 @@
       "armorClass": 5,
       "maxDurability": 97,
       "durabilityDamageScalar": 0.28,
-      "bluntDamageScalar": 0.3,
+      "bluntDamageScalar": 0.25,
       "sellId": "helmet.galvor1",
       "coneRegions": [
         {
@@ -2486,7 +2486,7 @@
       "armorClass": 3,
       "maxDurability": 96,
       "durabilityDamageScalar": 0.4,
-      "bluntDamageScalar": 0.4,
+      "bluntDamageScalar": 0.35,
       "sellId": "helmet.kiverf",
       "coneRegions": [
         {
@@ -2667,7 +2667,7 @@
       "armorClass": 2,
       "maxDurability": 125,
       "durabilityDamageScalar": 0.45,
-      "bluntDamageScalar": 0.6,
+      "bluntDamageScalar": 0.45,
       "sellId": "helmet.lh250",
       "coneRegions": [
         {
@@ -3096,7 +3096,7 @@
       "armorClass": 3,
       "maxDurability": 75,
       "durabilityDamageScalar": 0.4,
-      "bluntDamageScalar": 0.6,
+      "bluntDamageScalar": 0.45,
       "sellId": "helmet.m1",
       "coneRegions": [
         {
@@ -3259,7 +3259,7 @@
             {
               "gameId": "task.gear.c.07",
               "id": "forge_40",
-              "name": "Every Little Bit Counts",
+              "name": "Small Things Add Up: Notebooks",
               "corpId": "forge"
             }
           ],
@@ -3297,7 +3297,7 @@
       "armorClass": 5,
       "maxDurability": 107,
       "durabilityDamageScalar": 0.35,
-      "bluntDamageScalar": 0.25,
+      "bluntDamageScalar": 0.2,
       "sellId": "helmet.m1sch",
       "coneRegions": [
         {
@@ -3831,7 +3831,7 @@
       "armorClass": 5,
       "maxDurability": 95,
       "durabilityDamageScalar": 0.37,
-      "bluntDamageScalar": 0.3,
+      "bluntDamageScalar": 0.25,
       "sellId": "helmet.5",
       "coneRegions": [
         {
@@ -4008,7 +4008,7 @@
             {
               "gameId": "task.gear.a.09",
               "id": "forge_30",
-              "name": "Virtual Realities",
+              "name": "Virtual Reality",
               "corpId": "forge"
             }
           ],
@@ -4510,7 +4510,7 @@
       "maxDurability": 1,
       "durabilityDamageScalar": 0,
       "bluntDamageScalar": 1,
-      "sellId": "",
+      "sellId": "helmet.bkberet.red",
       "coneRegions": [
         {
           "region": "cone",
@@ -4618,7 +4618,7 @@
       "armorClass": 4,
       "maxDurability": 66,
       "durabilityDamageScalar": 0.22,
-      "bluntDamageScalar": 0.5,
+      "bluntDamageScalar": 0.4,
       "sellId": "helmet.rivetedmask",
       "coneRegions": [
         {
@@ -4842,7 +4842,7 @@
       "armorClass": 5,
       "maxDurability": 95,
       "durabilityDamageScalar": 0.28,
-      "bluntDamageScalar": 0.3,
+      "bluntDamageScalar": 0.25,
       "sellId": "helmet.5.5",
       "coneRegions": [
         {
@@ -5046,7 +5046,7 @@
       "armorClass": 5,
       "maxDurability": 95,
       "durabilityDamageScalar": 0.28,
-      "bluntDamageScalar": 0.3,
+      "bluntDamageScalar": 0.25,
       "sellId": "helmet.5.5nk",
       "coneRegions": [
         {
@@ -5217,9 +5217,9 @@
           "resetType": "weekly",
           "requiresTasks": [
             {
-              "gameId": "task.gear.a.05",
-              "id": "forge_10",
-              "name": "Freight Runner",
+              "gameId": "task.gear.sq.04",
+              "id": "forge_45",
+              "name": "Clearing the Noise",
               "corpId": "forge"
             }
           ],
@@ -5257,7 +5257,7 @@
       "armorClass": 5,
       "maxDurability": 95,
       "durabilityDamageScalar": 0.28,
-      "bluntDamageScalar": 0.3,
+      "bluntDamageScalar": 0.25,
       "sellId": "helmet.5.5n",
       "coneRegions": [
         {
@@ -5619,9 +5619,9 @@
           "resetType": "weekly",
           "requiresTasks": [
             {
-              "gameId": "task.gear.a.11",
-              "id": "forge_28",
-              "name": "Treasure Beyond Measure",
+              "gameId": "task.gear.sq.02",
+              "id": "forge_43",
+              "name": "Sizing Them Up",
               "corpId": "forge"
             }
           ],
@@ -5639,9 +5639,9 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.gear.a.08",
-              "id": "forge_32",
-              "name": "Collectors Edition",
+              "gameId": "task.gear.sq.01",
+              "id": "forge_42",
+              "name": "Rumors",
               "corpId": "forge"
             }
           ],
@@ -5866,21 +5866,21 @@
       "rarity": "Epic",
       "armorClass": 5,
       "maxDurability": 81,
-      "durabilityDamageScalar": 0.35,
+      "durabilityDamageScalar": 0.3,
       "bluntDamageScalar": 0.3,
       "sellId": "helmet.6.pumpkin",
       "coneRegions": [
         {
           "region": "cone",
-          "widthAngle": 42.5,
-          "heightAngle": 40,
+          "widthAngle": 37,
+          "heightAngle": 33,
           "offset": {
-            "x": -3.7,
+            "x": -7,
             "y": 0,
-            "z": 6
+            "z": 9
           },
           "rotation": {
-            "pitch": -24,
+            "pitch": -32.999965,
             "yaw": 0,
             "roll": 0
           }
@@ -5889,9 +5889,7 @@
       "faceWidthAngle": 60,
       "faceHeightAngle": 40,
       "canAttach": [
-        "mask-ryst-faceshield",
-        "mask-rys-tfaceshield-pumpkin",
-        "mask-ryst-faceshield-bonecrusher"
+        "nvg-anpvs31"
       ],
       "attachExclusive": [],
       "penetrationChanceCurve": [
@@ -5965,43 +5963,27 @@
       "antiPenetrationDurabilityScalarCurve": [
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 0,
-          "value": 1,
-          "arriveTangent": 0,
-          "leaveTangent": 0
-        },
-        {
-          "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 1,
-          "arriveTangent": -0.017256,
-          "leaveTangent": -0.017256
-        },
-        {
-          "interpMode": "cubic",
-          "tangentMode": "auto",
           "time": 0.5,
-          "value": 0.95,
-          "arriveTangent": -0.4,
-          "leaveTangent": -0.4
+          "value": 1,
+          "arriveTangent": -0.057609,
+          "leaveTangent": -0.057609
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.7,
-          "value": 0.8,
-          "arriveTangent": -1.255167,
-          "leaveTangent": -1.255167
+          "time": 0.798511,
+          "value": 0.894253,
+          "arriveTangent": -1.307344,
+          "leaveTangent": -1.307348
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 1,
-          "value": 0.33,
-          "arriveTangent": -0.001907,
-          "leaveTangent": -0.001907
+          "value": 0,
+          "arriveTangent": -10.323797,
+          "leaveTangent": -10.323785
         }
       ],
       "basePrice": 44000,
@@ -6034,7 +6016,7 @@
       "armorClass": 1,
       "maxDurability": 105,
       "durabilityDamageScalar": 0.7,
-      "bluntDamageScalar": 0.8,
+      "bluntDamageScalar": 0.5,
       "sellId": "helmet.0.7",
       "coneRegions": [
         {
@@ -6177,7 +6159,14 @@
           "bundlePrice": 8666,
           "stock": 99,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.gear.c.02",
+              "id": "forge_35",
+              "name": "Seeing Is Believing",
+              "corpId": "forge"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         }
@@ -6477,7 +6466,7 @@
       "armorClass": 3,
       "maxDurability": 90,
       "durabilityDamageScalar": 0.3,
-      "bluntDamageScalar": 0.4,
+      "bluntDamageScalar": 0.35,
       "sellId": "helmet.4",
       "coneRegions": [
         {
@@ -6631,7 +6620,7 @@
             {
               "gameId": "task.gear.b.06",
               "id": "forge_25",
-              "name": "Cold Hard Cash 3",
+              "name": "Real Gold: The Riddle",
               "corpId": "forge"
             }
           ],
@@ -6681,8 +6670,8 @@
       "armorClass": 0.3,
       "maxDurability": 134,
       "durabilityDamageScalar": 0.7,
-      "bluntDamageScalar": 0.9,
-      "sellId": "",
+      "bluntDamageScalar": 0.7,
+      "sellId": "helmet.tsh4m",
       "coneRegions": [
         {
           "region": "cone",
@@ -6852,7 +6841,7 @@
       "armorClass": 4,
       "maxDurability": 100,
       "durabilityDamageScalar": 0.4,
-      "bluntDamageScalar": 0.5,
+      "bluntDamageScalar": 0.35,
       "sellId": "helmet.warrior",
       "coneRegions": [
         {
@@ -7054,7 +7043,7 @@
       "maxDurability": 1,
       "durabilityDamageScalar": 0,
       "bluntDamageScalar": 1,
-      "sellId": "",
+      "sellId": "helmet.hat.wbk",
       "coneRegions": [
         {
           "region": "cone",

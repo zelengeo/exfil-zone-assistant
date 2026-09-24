@@ -62,7 +62,7 @@ export interface PerkEffectRow {
     label: string;
     value: string;
     /** Whether this line is something the item takes rather than gives. */
-    cost: boolean;
+    cost: boolean | null;
 }
 
 /**
@@ -83,9 +83,9 @@ export function formatEffectValue(effect: PerkEffect): string {
 
 export const effectRow = (effect: PerkEffect): PerkEffectRow => ({
     attribute: effect.attribute,
-    label: targetLabel(effect.target),
+    label: effect.target ? targetLabel(effect.target) : effect.attribute,
     value: formatEffectValue(effect),
-    cost: DRAIN_TARGETS.has(effect.target) ? effect.value > 0 : effect.value < 0,
+    cost: effect.target === null ? null : DRAIN_TARGETS.has(effect.target) ? effect.value > 0 : effect.value < 0,
 });
 
 /** The comedown: its own window, with its own effects. */

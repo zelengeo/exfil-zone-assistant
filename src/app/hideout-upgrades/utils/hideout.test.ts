@@ -123,9 +123,10 @@ describe('canBuild', () => {
     it('refuses a level more than one step ahead', () => {
         // The pane's chevrons reach Lv3 of an area standing at 0; building from there would skip
         // Lv2's price and materials entirely.
-        expect(canBuild('CryptoMining', 1, levels)).toBe(true);
-        expect(canBuild('CryptoMining', 2, levels)).toBe(false);
-        expect(canBuild('CryptoMining', 3, levels)).toBe(false);
+        const ready = { ...levels, ...UPGRADES.CryptoMiningLv1.levelConditions };
+        expect(canBuild('CryptoMining', 1, ready)).toBe(true);
+        expect(canBuild('CryptoMining', 2, ready)).toBe(false);
+        expect(canBuild('CryptoMining', 3, ready)).toBe(false);
     });
 
     it('refuses a level that does not exist', () => {
@@ -138,7 +139,7 @@ describe('canBuild', () => {
         const workshopOnly = areaLevelsOf(new Set<UpgradeId>(['WorkshopZoneLv1']));
         expect(canBuild('StorageZoneLock4', 1, workshopOnly)).toBe(false);
 
-        const both = areaLevelsOf(new Set<UpgradeId>(['WorkshopZoneLv1', 'StorageZoneLock3Lv1']));
+        const both = { ...workshopOnly, ...UPGRADES.StorageZoneLock4Lv1.levelConditions };
         expect(canBuild('StorageZoneLock4', 1, both)).toBe(true);
     });
 
@@ -178,9 +179,11 @@ describe('canUndo', () => {
     });
 
     it('refuses while another area stands on it', () => {
-        const built = new Set<UpgradeId>(['WorkshopZoneLv1', 'GunsmithLv1']);
-        expect(canUndo('WorkshopZone', 1, built)).toBe(false);
-        expect(canUndo('Gunsmith', 1, built)).toBe(true);
+        const dependent = ids.find(id => Object.keys(UPGRADES[id].levelConditions).some(area => area !== 'Player' && area !== UPGRADES[id].areaId))!;
+        const [area, level] = Object.entries(UPGRADES[dependent].levelConditions).find(([area]) => area !== 'Player' && area !== UPGRADES[dependent].areaId)!;
+        const built = new Set<UpgradeId>([upgradeId(area, level)!, dependent]);
+        expect(canUndo(area, level, built)).toBe(false);
+        expect(canUndo(UPGRADES[dependent].areaId, UPGRADES[dependent].level, built)).toBe(true);
     });
 
     it('refuses while a higher level of the same area stands on it', () => {
@@ -290,7 +293,7 @@ describe('zonesOf', () => {
 
         expect(gated).toContain('ShootingRange');
         expect(gated).toContain('CryptoMining');
-        expect(gated).not.toContain('Gunsmith');
+        expect(gated).toContain('Gunsmith');
     });
 
     it('counts a room pin by its upgrades, not its levels', () => {
@@ -578,13 +581,13 @@ describe('perks', () => {
     it('keeps both halves, because the line and the number disagree', () => {
         // The reason `value` ships at all: the menu says +5%, the game applies 0.15.
         const boost = perkRowsOf(UPGRADES.IntelligentLv2)
-            .find((perk) => perk.key === 'expboost_intelligence');
+            .find((perk) => perk.key === 'warfare.progression.intelligence_experience_boost.value');
         expect(boost?.label).toBe('Increased Experiece gain: +5%');
-        expect(boost?.value).toBe('0.15');
+        expect(boost?.value).toBe('0.1');
     });
 
     it('carries the two-perk levels in full', () => {
-        expect(perkRowsOf(UPGRADES.MedicalAreaLv1).map((perk) => perk.key))
-            .toEqual(['HQRecoveryHealth_Scale', 'MedicalAreaItem']);
+        expect(perkRowsOf(UPGRADES.IntelligentLv2).map((perk) => perk.key))
+            .toEqual(['warfare.area.intelligence.perk.value', 'warfare.progression.intelligence_experience_boost.value']);
     });
 });

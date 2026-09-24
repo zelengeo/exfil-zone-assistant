@@ -24,7 +24,7 @@ export const hideoutUpgrades = {
         "categoryId": "None",
         "level": 1,
         "upgradeName": "Toilet",
-        "upgradeDesc": "Increased EXP Gain",
+        "upgradeDesc": "Experience gain +5%\nUnlocks: Sofa",
         "price": 120000,
         "exchange": {
             "misc_b_toiletpaper": 2,
@@ -33,18 +33,18 @@ export const hideoutUpgrades = {
             "misc_b_rustedcleaner": 1
         },
         "levelConditions": {
-            "WaterCollector": 1,
-            "RestroomZone": 1
+            "KitchenArea": 1,
+            "Player": 9
         },
         "relatedQuests": [
             "task.mall.4"
         ],
         "perks": [
             {
-                "key": "expboost",
+                "key": "warfare.progression.experience_boost.value",
                 "perkClass": "ExpBonus_C",
                 "description": "Increased Experiece gain: +2%",
-                "value": 0.019999999552965164
+                "value": 0.05
             }
         ],
         "levelUpIcon": "RestRoomLv1"
@@ -54,25 +54,26 @@ export const hideoutUpgrades = {
         "categoryId": "None",
         "level": 2,
         "upgradeName": "Toilet",
-        "upgradeDesc": "Increased EXP Gain",
+        "upgradeDesc": "Experience gain +15%\nUnlocks: Bookcase Lv2, Sofa Lv2",
         "price": 228000,
         "exchange": {
-            "misc_b_toiletpaper": 3,
-            "misc_b_beardoil": 3,
-            "misc_barcleaner": 3,
-            "misc_b_shampoo": 3
+            "misc_b_toiletpaper": 2,
+            "misc_b_beardoil": 2,
+            "misc_barcleaner": 2,
+            "misc_b_shampoo": 2
         },
         "levelConditions": {
             "RestRoom": 1,
-            "Player": 1
+            "Player": 21,
+            "TVSet": 2
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "expboost",
+                "key": "warfare.progression.experience_boost.value",
                 "perkClass": "ExpBonus_C",
                 "description": "Increased Experiece gain: +5%",
-                "value": 0.05000000074505806
+                "value": 0.15
             }
         ],
         "levelUpIcon": "RestRoomLv2"
@@ -82,25 +83,26 @@ export const hideoutUpgrades = {
         "categoryId": "None",
         "level": 3,
         "upgradeName": "Toilet",
-        "upgradeDesc": "Increased EXP Gain",
+        "upgradeDesc": "Experience gain +25%\nUnlocks: Bookcase Lv3, Sofa Lv3, Intel Lv4",
         "price": 350000,
         "exchange": {
-            "misc_b_toiletpaper": 8,
-            "misc_b_deodorant": 8,
-            "misc_b_shampoo": 5,
-            "misc_b_piezometer": 5
+            "misc_b_toiletpaper": 5,
+            "misc_b_deodorant": 5,
+            "misc_b_shampoo": 3,
+            "misc_b_piezometer": 3
         },
         "levelConditions": {
-            "RestRoom": 1,
-            "Player": 1
+            "Player": 30,
+            "TVSet": 3,
+            "RestRoom": 2
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "expboost",
+                "key": "warfare.progression.experience_boost.value",
                 "perkClass": "ExpBonus_C",
                 "description": "Increased Experiece gain: +10%",
-                "value": 0.10000000149011612
+                "value": 0.25
             }
         ],
         "levelUpIcon": "RestRoomLv3"
@@ -110,27 +112,27 @@ export const hideoutUpgrades = {
         "categoryId": "Lounge",
         "level": 1,
         "upgradeName": "Sofa",
-        "upgradeDesc": "Increased Carry Weight Capacity",
+        "upgradeDesc": "Carry weight capacity +10 kg\nUnlocks: Bookcase",
         "price": 50000,
         "exchange": {
-            "misc_blimbingrope": 5,
-            "misc_b_tire_sealant": 3,
-            "misc_b_plier_large": 3,
-            "misc_hammer": 5
+            "misc_blimbingrope": 3,
+            "misc_b_tire_sealant": 2,
+            "misc_b_plier_large": 2,
+            "misc_hammer": 3
         },
         "levelConditions": {
-            "WorkshopZone": 1,
-            "RestroomZone": 1
+            "RestRoom": 1,
+            "Player": 11
         },
         "relatedQuests": [
             "task.mall.4"
         ],
         "perks": [
             {
-                "key": "Weight_BaseLimit_Scale",
+                "key": "warfare.weight.base_limit.scale",
                 "perkClass": "Enduring_C",
                 "description": "Increase limit of weight-bearing: +5kg",
-                "value": 5
+                "value": 10
             }
         ],
         "levelUpIcon": "SofaLv1"
@@ -140,24 +142,26 @@ export const hideoutUpgrades = {
         "categoryId": "Lounge",
         "level": 2,
         "upgradeName": "Sofa",
-        "upgradeDesc": "Increased Carry Weight Capacity",
+        "upgradeDesc": "Carry weight capacity +20 kg",
         "price": 128000,
         "exchange": {
             "misc_b_superglue": 2,
-            "misc_b_magazine": 5,
-            "misc_b_insulatingtape": 8,
-            "misc_blimbingrope": 5
+            "misc_b_magazine": 3,
+            "misc_b_insulatingtape": 5,
+            "misc_blimbingrope": 3
         },
         "levelConditions": {
-            "Generator": 2
+            "RestRoom": 2,
+            "Player": 22,
+            "Sofa": 1
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "Weight_BaseLimit_Scale",
+                "key": "warfare.weight.base_limit.scale",
                 "perkClass": "Enduring_C",
                 "description": "Increase limit of weight-bearing: +10kg",
-                "value": 10
+                "value": 20
             }
         ],
         "levelUpIcon": "SofaLv2"
@@ -167,24 +171,26 @@ export const hideoutUpgrades = {
         "categoryId": "Lounge",
         "level": 3,
         "upgradeName": "Sofa",
-        "upgradeDesc": "Increased Carry Weight Capacity",
+        "upgradeDesc": "Carry weight capacity +30 kg",
         "price": 500000,
         "exchange": {
             "misc_b_gameconsole": 2,
-            "misc_b_tire_sealant": 8,
-            "misc_b_deodorant": 6,
+            "misc_b_tire_sealant": 5,
+            "misc_b_deodorant": 4,
             "misc_b_defibrillator": 1
         },
         "levelConditions": {
-            "Generator": 3
+            "RestRoom": 3,
+            "Player": 30,
+            "Sofa": 2
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "Weight_BaseLimit_Scale",
+                "key": "warfare.weight.base_limit.scale",
                 "perkClass": "Enduring_C",
                 "description": "Increase limit of weight-bearing: +20kg",
-                "value": 20
+                "value": 30
             }
         ],
         "levelUpIcon": "SofaLv3"
@@ -194,24 +200,24 @@ export const hideoutUpgrades = {
         "categoryId": "Lounge",
         "level": 1,
         "upgradeName": "Bookdesk",
-        "upgradeDesc": "Reduced Magazine Load Time",
+        "upgradeDesc": "Reduced Magazine Load Time: -10%",
         "price": 50000,
         "exchange": {
-            "misc_b_flashlight": 5,
-            "misc_b_lightbulb": 5,
-            "misc_b_socket": 3,
+            "misc_b_flashlight": 3,
+            "misc_b_lightbulb": 3,
+            "misc_b_socket": 2,
             "misc_b_civilradio": 2
         },
         "levelConditions": {
-            "WorkshopZone": 1,
-            "RestroomZone": 1
+            "Sofa": 1,
+            "Player": 13
         },
         "relatedQuests": [
             "task.mall.4"
         ],
         "perks": [
             {
-                "key": "SpeedUpTheReloadingSpeed_Scalar",
+                "key": "warfare.weapon.reload_speed.scale",
                 "perkClass": "SpeedUpReloadingSpeed_C",
                 "description": "Reload Speed +10%",
                 "value": 0.8999999761581421
@@ -224,21 +230,23 @@ export const hideoutUpgrades = {
         "categoryId": "Lounge",
         "level": 2,
         "upgradeName": "Bookdesk",
-        "upgradeDesc": "Reduced Magazine Load Time",
+        "upgradeDesc": "Reduced Magazine Load Time: -20%",
         "price": 180000,
         "exchange": {
-            "misc_b_tape": 8,
-            "misc_b_antiquebook": 4,
-            "misc_b_recorder": 5,
-            "misc_b_powerbank": 4
+            "misc_b_tape": 5,
+            "misc_b_antiquebook": 3,
+            "misc_b_recorder": 3,
+            "misc_b_powerbank": 3
         },
         "levelConditions": {
-            "Generator": 2
+            "RestRoom": 2,
+            "Player": 23,
+            "Bookcase": 1
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "SpeedUpTheReloadingSpeed_Scalar",
+                "key": "warfare.weapon.reload_speed.scale",
                 "perkClass": "SpeedUpReloadingSpeed_C",
                 "description": "Reload Speed +20%",
                 "value": 0.800000011920929
@@ -251,21 +259,23 @@ export const hideoutUpgrades = {
         "categoryId": "Lounge",
         "level": 3,
         "upgradeName": "Bookdesk",
-        "upgradeDesc": "Reduced Magazine Load Time",
+        "upgradeDesc": "Reduced Magazine Load Time: -30%",
         "price": 420000,
         "exchange": {
             "misc_b_transformer": 2,
-            "misc_bomputertextbook": 8,
+            "misc_bomputertextbook": 5,
             "misc_b_digitalsensor": 2,
-            "misc_b_antiquebook": 6
+            "misc_b_antiquebook": 4
         },
         "levelConditions": {
-            "Generator": 3
+            "RestRoom": 3,
+            "Player": 34,
+            "Bookcase": 2
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "SpeedUpTheReloadingSpeed_Scalar",
+                "key": "warfare.weapon.reload_speed.scale",
                 "perkClass": "SpeedUpReloadingSpeed_C",
                 "description": "Reload Speed +30%",
                 "value": 0.699999988079071
@@ -278,22 +288,22 @@ export const hideoutUpgrades = {
         "categoryId": "Lounge",
         "level": 1,
         "upgradeName": "TV Set",
-        "upgradeDesc": "Reduced Scav Mode Cooldown",
+        "upgradeDesc": "Scav mode cooldown -10%",
         "price": 50000,
         "exchange": {
-            "misc_1batterie_2": 3,
-            "misc_b_1battery": 3,
-            "misc_b_ionbattery": 3,
-            "misc_b_civilradio": 3
+            "misc_1batterie_2": 2,
+            "misc_b_1battery": 2,
+            "misc_b_ionbattery": 2,
+            "misc_b_civilradio": 2
         },
         "levelConditions": {
-            "Player": 5,
-            "WorkshopZone": 1
+            "Player": 3,
+            "RestroomZone": 1
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "scavcd",
+                "key": "warfare.scav.cooldown.value",
                 "perkClass": "ScavCD_C",
                 "description": "Reduce SCAV. mode CD: -10%",
                 "value": 0.10000000149011612
@@ -306,22 +316,23 @@ export const hideoutUpgrades = {
         "categoryId": "Lounge",
         "level": 2,
         "upgradeName": "TV Set",
-        "upgradeDesc": "Reduced Scav Mode Cooldown",
+        "upgradeDesc": "Scav mode cooldown -20%\nUnlocks: Rest Room Lv2",
         "price": 180000,
         "exchange": {
-            "misc_1batterie_2": 5,
-            "misc_b_1battery": 5,
+            "misc_1batterie_2": 3,
+            "misc_b_1battery": 3,
             "misc_videotape": 1,
             "misc_b_electricdrill": 1
         },
         "levelConditions": {
             "Generator": 2,
-            "Player": 1
+            "Player": 20,
+            "TVSet": 1
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "scavcd",
+                "key": "warfare.scav.cooldown.value",
                 "perkClass": "ScavCD_C",
                 "description": "Reduce SCAV. mode CD: -20%",
                 "value": 0.20000000298023224
@@ -334,22 +345,23 @@ export const hideoutUpgrades = {
         "categoryId": "Lounge",
         "level": 3,
         "upgradeName": "TV Set",
-        "upgradeDesc": "Reduced Scav Mode Cooldown",
+        "upgradeDesc": "Scav mode cooldown -30%\nUnlocks: Rest Room Lv3",
         "price": 420000,
         "exchange": {
-            "misc_1batterie_2": 8,
-            "misc_b_1battery": 8,
-            "misc_videotape": 5,
+            "misc_1batterie_2": 5,
+            "misc_b_1battery": 5,
+            "misc_videotape": 3,
             "misc_b_rat_poison": 2
         },
         "levelConditions": {
             "Generator": 3,
-            "Player": 1
+            "Player": 29,
+            "TVSet": 2
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "scavcd",
+                "key": "warfare.scav.cooldown.value",
                 "perkClass": "ScavCD_C",
                 "description": "Reduce SCAV. mode CD: -30%",
                 "value": 0.30000001192092896
@@ -362,7 +374,7 @@ export const hideoutUpgrades = {
         "categoryId": "MedicalArea",
         "level": 1,
         "upgradeName": "Medical Area",
-        "upgradeDesc": "Slowly regenerate health while in HQ;\r\nUnlocks Operation Bed, Planting, and Med Desk.",
+        "upgradeDesc": "HQ health regeneration +5 HP/min\nUnlocks: Med Desk, Plant Stand",
         "price": 70000,
         "exchange": {
             "misc_b_disinfectingwipes": 1,
@@ -371,20 +383,14 @@ export const hideoutUpgrades = {
         },
         "levelConditions": {},
         "relatedQuests": [
-            "task.doc.c.04"
+            "task.doc.c.07"
         ],
         "perks": [
             {
-                "key": "HQRecoveryHealth_Scale",
+                "key": "warfare.survival.hq.health_recovery.scale",
                 "perkClass": "HQRecoveryHealth_C",
                 "description": "Gradually restores HP while in HQ: 1HP/min",
-                "value": 2
-            },
-            {
-                "key": "MedicalAreaItem",
-                "perkClass": "MedicalAreaPerk_C",
-                "description": "Free limb damage repair available every hour.",
-                "value": null
+                "value": 5
             }
         ],
         "levelUpIcon": "MedicalAreaLv1"
@@ -394,7 +400,7 @@ export const hideoutUpgrades = {
         "categoryId": "MedicalArea",
         "level": 1,
         "upgradeName": "Operating Bed",
-        "upgradeDesc": "Faster HP Regeneration in HQ",
+        "upgradeDesc": "HQ health regeneration +10 HP/min",
         "price": 60000,
         "exchange": {
             "misc_b_medicalkit": 2,
@@ -403,17 +409,18 @@ export const hideoutUpgrades = {
             "misc_b_iodophor": 1
         },
         "levelConditions": {
+            "Player": 14,
             "MedicalArea": 1
         },
         "relatedQuests": [
-            "task.doc.b.06"
+            "task.doc.b.01"
         ],
         "perks": [
             {
-                "key": "HQRecoveryHealth_Scale2",
+                "key": "warfare.survival.hq.health_recovery.extra.scale",
                 "perkClass": "HQRecoveryHealth_2_C",
                 "description": "Gradually restores HP while in HQ: 1HP/min",
-                "value": 1
+                "value": 10
             }
         ],
         "levelUpIcon": "OperationBedLv1"
@@ -423,24 +430,26 @@ export const hideoutUpgrades = {
         "categoryId": "MedicalArea",
         "level": 2,
         "upgradeName": "Operating Bed",
-        "upgradeDesc": "Faster HP Regeneration in HQ",
+        "upgradeDesc": "HQ health regeneration +15 HP/min",
         "price": 120000,
         "exchange": {
-            "misc_b_bottledglucose": 5,
-            "misc_b_medicalscissors": 3,
+            "misc_b_bottledglucose": 3,
+            "misc_b_medicalscissors": 2,
             "misc_b_bandaid": 2,
             "misc_bentrifuge": 1
         },
         "levelConditions": {
-            "Generator": 2
+            "Generator": 2,
+            "Player": 27,
+            "OperationBed": 1
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "HQRecoveryHealth_Scale2",
+                "key": "warfare.survival.hq.health_recovery.extra.scale",
                 "perkClass": "HQRecoveryHealth_2_C",
                 "description": "Gradually restores HP while in HQ: 1HP/min",
-                "value": 2
+                "value": 15
             }
         ],
         "levelUpIcon": "OperationBedLv2"
@@ -450,25 +459,26 @@ export const hideoutUpgrades = {
         "categoryId": "MedicalArea",
         "level": 3,
         "upgradeName": "Operating Bed",
-        "upgradeDesc": "Faster HP Regeneration in HQ",
+        "upgradeDesc": "HQ health regeneration +20 HP/min",
         "price": 240000,
         "exchange": {
-            "misc_b_bottledglucose": 10,
-            "misc_b_medicalscissors": 5,
-            "misc_b_uvlight": 3,
+            "misc_b_bottledglucose": 7,
+            "misc_b_medicalscissors": 3,
+            "misc_b_uvlight": 2,
             "misc_bentrifuge": 1
         },
         "levelConditions": {
-            "Player": 1,
-            "WaterCollector": 3
+            "Player": 40,
+            "MedDesk": 3,
+            "OperationBed": 2
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "HQRecoveryHealth_Scale2",
+                "key": "warfare.survival.hq.health_recovery.extra.scale",
                 "perkClass": "HQRecoveryHealth_2_C",
                 "description": "Gradually restores HP while in HQ: 2HP/min",
-                "value": 3
+                "value": 20
             }
         ],
         "levelUpIcon": "OperationBedLv3"
@@ -478,7 +488,7 @@ export const hideoutUpgrades = {
         "categoryId": "MedicalArea",
         "level": 1,
         "upgradeName": "Plant Stand",
-        "upgradeDesc": "Improved Food Recovery Efficiency",
+        "upgradeDesc": "Food recovery efficiency +10%",
         "price": 70000,
         "exchange": {
             "misc_b_disinfectingwipes": 2,
@@ -487,12 +497,13 @@ export const hideoutUpgrades = {
             "misc_b_insulatingtape": 1
         },
         "levelConditions": {
-            "MedicalArea": 1
+            "MedicalArea": 1,
+            "Player": 14
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "IncreaseEnergyRecovery_Scale",
+                "key": "warfare.survival.energy_recovery.scale",
                 "perkClass": "IncreaseEnergyRecovery_C",
                 "description": "Increased food recovery rate: +10%",
                 "value": null
@@ -505,22 +516,23 @@ export const hideoutUpgrades = {
         "categoryId": "MedicalArea",
         "level": 2,
         "upgradeName": "Plant Stand",
-        "upgradeDesc": "Improved Food Recovery Efficiency",
+        "upgradeDesc": "Food recovery efficiency +20%",
         "price": 220000,
         "exchange": {
-            "misc_b_moldboard": 6,
+            "misc_b_moldboard": 4,
             "misc_b_aspire": 2,
-            "misc_b_pesticide": 5,
+            "misc_b_pesticide": 3,
             "misc_b_gaspipewrench": 2
         },
         "levelConditions": {
             "Generator": 2,
-            "Player": 1
+            "Player": 24,
+            "Planting": 1
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "IncreaseEnergyRecovery_Scale",
+                "key": "warfare.survival.energy_recovery.scale",
                 "perkClass": "IncreaseEnergyRecovery_C",
                 "description": "Increased food recovery rate: +20%",
                 "value": 1.2000000476837158
@@ -533,22 +545,23 @@ export const hideoutUpgrades = {
         "categoryId": "MedicalArea",
         "level": 3,
         "upgradeName": "Plant Stand",
-        "upgradeDesc": "Improved Food Recovery Efficiency",
+        "upgradeDesc": "Food recovery efficiency +30%",
         "price": 340000,
         "exchange": {
-            "misc_b_moldboard": 12,
-            "misc_b_match": 6,
-            "misc_b_iodophor": 6,
-            "misc_b_gaspipewrench": 3
+            "misc_b_moldboard": 8,
+            "misc_b_match": 4,
+            "misc_b_iodophor": 4,
+            "misc_b_gaspipewrench": 2
         },
         "levelConditions": {
             "WaterCollector": 3,
-            "Player": 1
+            "Player": 32,
+            "Planting": 2
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "IncreaseEnergyRecovery_Scale",
+                "key": "warfare.survival.energy_recovery.scale",
                 "perkClass": "IncreaseEnergyRecovery_C",
                 "description": "Increased food recovery rate: +30%",
                 "value": 1.2999999523162842
@@ -561,7 +574,7 @@ export const hideoutUpgrades = {
         "categoryId": "MedicalArea",
         "level": 1,
         "upgradeName": "Med Desk",
-        "upgradeDesc": "Improved Hydration Recovery Efficiency",
+        "upgradeDesc": "Drink recovery efficiency +10%",
         "price": 70000,
         "exchange": {
             "misc_b_bottledglucose": 1,
@@ -572,10 +585,12 @@ export const hideoutUpgrades = {
         "levelConditions": {
             "MedicalArea": 1
         },
-        "relatedQuests": [],
+        "relatedQuests": [
+            "task.doc.b.09"
+        ],
         "perks": [
             {
-                "key": "IncreaseHydraRecovery_Scale",
+                "key": "warfare.survival.hydration_recovery.scale",
                 "perkClass": "IncreaseHydraRecovery_C",
                 "description": "Increase beverage recovery rate: +10%",
                 "value": null
@@ -588,22 +603,24 @@ export const hideoutUpgrades = {
         "categoryId": "MedicalArea",
         "level": 2,
         "upgradeName": "Med Desk",
-        "upgradeDesc": "Improved Hydration Recovery Efficiency",
+        "upgradeDesc": "Drink recovery efficiency +20%",
         "price": 220000,
         "exchange": {
-            "misc_b_uvlight": 3,
-            "misc_b_medicalkit": 6,
-            "misc_b_asthmamedication": 4,
+            "misc_b_uvlight": 2,
+            "misc_b_medicalkit": 4,
+            "misc_b_asthmamedication": 3,
             "misc_bentrifuge": 2
         },
         "levelConditions": {
-            "WaterCollector": 1,
-            "Generator": 2
+            "Generator": 2,
+            "MedDesk": 1
         },
-        "relatedQuests": [],
+        "relatedQuests": [
+            "task.doc.b.11"
+        ],
         "perks": [
             {
-                "key": "IncreaseHydraRecovery_Scale",
+                "key": "warfare.survival.hydration_recovery.scale",
                 "perkClass": "IncreaseHydraRecovery_C",
                 "description": "Increase beverage recovery rate: +20%",
                 "value": 1.2000000476837158
@@ -616,21 +633,23 @@ export const hideoutUpgrades = {
         "categoryId": "MedicalArea",
         "level": 3,
         "upgradeName": "Med Desk",
-        "upgradeDesc": "Improved Hydration Recovery Efficiency",
+        "upgradeDesc": "Drink recovery efficiency +30%\nUnlocks: Operation Bed Lv3",
         "price": 340000,
         "exchange": {
-            "misc_b_uvlight": 5,
-            "misc_b_medicalkit": 9,
-            "misc_b_asthmamedication": 5,
-            "misc_bentrifuge": 3
+            "misc_b_uvlight": 3,
+            "misc_b_medicalkit": 6,
+            "misc_b_asthmamedication": 3,
+            "misc_bentrifuge": 2
         },
         "levelConditions": {
-            "WaterCollector": 3
+            "WaterCollector": 3,
+            "Player": 39,
+            "MedDesk": 2
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "IncreaseHydraRecovery_Scale",
+                "key": "warfare.survival.hydration_recovery.scale",
                 "perkClass": "IncreaseHydraRecovery_C",
                 "description": "Increase beverage recovery rate: +30%",
                 "value": 1.2999999523162842
@@ -643,7 +662,7 @@ export const hideoutUpgrades = {
         "categoryId": "None",
         "level": 1,
         "upgradeName": "Water Collector",
-        "upgradeDesc": "Faster Hydration Regeneration in HQ",
+        "upgradeDesc": "HQ hydration regeneration 1/min\nUnlocks: Kitchen Area Lv2",
         "price": 10000,
         "exchange": {
             "misc_b_rustedcleaner": 1,
@@ -656,10 +675,10 @@ export const hideoutUpgrades = {
         ],
         "perks": [
             {
-                "key": "HQRecoveryHydra_Scale",
+                "key": "warfare.survival.hq.hydration_recovery.scale",
                 "perkClass": "HQRecoveryHydra_C",
                 "description": "Regenerate Thirst while in Hideout: 0.15/min",
-                "value": 0.33
+                "value": 1
             }
         ],
         "levelUpIcon": "WaterCollectorLv1"
@@ -669,24 +688,25 @@ export const hideoutUpgrades = {
         "categoryId": "None",
         "level": 2,
         "upgradeName": "Water Collector",
-        "upgradeDesc": "Faster Hydration Regeneration in HQ",
+        "upgradeDesc": "HQ hydration regeneration 3/min\nUnlocks: Med Desk Lv3, Operating Bed Lv3, Plant Stand Lv3",
         "price": 50000,
         "exchange": {
-            "misc_b_pipeline": 5,
-            "misc_b_insulatingtape": 5,
-            "misc_b_nail": 6,
+            "misc_b_pipeline": 3,
+            "misc_b_insulatingtape": 3,
+            "misc_b_nail": 4,
             "misc_b_spraycan": 2
         },
         "levelConditions": {
-            "WaterCollector": 1
+            "WaterCollector": 1,
+            "Player": 19
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "HQRecoveryHydra_Scale",
+                "key": "warfare.survival.hq.hydration_recovery.scale",
                 "perkClass": "HQRecoveryHydra_C",
                 "description": "Regenerate Thirst while in Hideout: 0.33/min",
-                "value": 0.5
+                "value": 3
             }
         ],
         "levelUpIcon": "WaterCollectorLv2"
@@ -696,24 +716,25 @@ export const hideoutUpgrades = {
         "categoryId": "None",
         "level": 3,
         "upgradeName": "Water Collector",
-        "upgradeDesc": "Faster Hydration Regeneration in HQ",
+        "upgradeDesc": "HQ hydration regeneration 5/min",
         "price": 100000,
         "exchange": {
-            "misc_b_pipeline": 10,
-            "misc_barcleaner": 4,
-            "misc_b_storagebattery": 3,
+            "misc_b_pipeline": 7,
+            "misc_barcleaner": 3,
+            "misc_b_storagebattery": 2,
             "misc_b_piezometer": 1
         },
         "levelConditions": {
-            "WaterCollector": 2
+            "WaterCollector": 2,
+            "Player": 28
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "HQRecoveryHydra_Scale",
+                "key": "warfare.survival.hq.hydration_recovery.scale",
                 "perkClass": "HQRecoveryHydra_C",
                 "description": "Regenerate Thirst while in Hideout: 0.5/min",
-                "value": 0.8
+                "value": 5
             }
         ],
         "levelUpIcon": "WaterCollectorLv3"
@@ -723,10 +744,10 @@ export const hideoutUpgrades = {
         "categoryId": "KitchenArea",
         "level": 1,
         "upgradeName": "Kitchen Area",
-        "upgradeDesc": "Unlocks Coffee Machine, Microwave, Refrigerator\r\nIncreased Energy & Hydration Cap",
+        "upgradeDesc": "Energy and Hydration cap +5\nUnlocks: Rest Room",
         "price": 70000,
         "exchange": {
-            "misc_b_oliveoil": 3,
+            "misc_b_oliveoil": 2,
             "misc_b_saltcan": 2,
             "misc_b_gastank": 1,
             "misc_b_plier_large": 1
@@ -737,7 +758,7 @@ export const hideoutUpgrades = {
         "relatedQuests": [],
         "perks": [
             {
-                "key": "MaxEnergyHydra_AddsValue",
+                "key": "warfare.survival.energy_hydration.max.add",
                 "perkClass": "MaxEnergyAndHydra_C",
                 "description": "Max Water: x1.1",
                 "value": 5
@@ -750,21 +771,24 @@ export const hideoutUpgrades = {
         "categoryId": "KitchenArea",
         "level": 2,
         "upgradeName": "Kitchen Area",
-        "upgradeDesc": "Increased Energy & Hydration Cap",
+        "upgradeDesc": "Energy and Hydration cap +10\nUnlocks: Coffee Machine Lv2, Refrigerator Lv2",
         "price": 220000,
         "exchange": {
-            "misc_b_gastank": 4,
-            "misc_b_insulatingtape": 4,
-            "misc_b_pesticide": 5,
-            "misc_b_wd40": 5
+            "misc_b_gastank": 3,
+            "misc_b_insulatingtape": 3,
+            "misc_b_pesticide": 3,
+            "misc_b_wd40": 3
         },
         "levelConditions": {
-            "KitchenArea": 1
+            "KitchenArea": 1,
+            "WaterCollector": 2,
+            "Generator": 2,
+            "Player": 21
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "MaxEnergyHydra_AddsValue",
+                "key": "warfare.survival.energy_hydration.max.add",
                 "perkClass": "MaxEnergyAndHydra_C",
                 "description": "Max Water: x1.2",
                 "value": 10
@@ -777,24 +801,26 @@ export const hideoutUpgrades = {
         "categoryId": "KitchenArea",
         "level": 3,
         "upgradeName": "Kitchen Area",
-        "upgradeDesc": "Increased Energy & Hydration Cap",
+        "upgradeDesc": "Energy and Hydration cap +20\nUnlocks: Microwave Lv3",
         "price": 330000,
         "exchange": {
-            "misc_b_oliveoil": 5,
-            "misc_b_insulatingtape": 4,
-            "misc_b_saltcan": 6,
-            "misc_b_lighter": 4
+            "misc_b_oliveoil": 3,
+            "misc_b_insulatingtape": 3,
+            "misc_b_saltcan": 4,
+            "misc_b_lighter": 3
         },
         "levelConditions": {
-            "KitchenArea": 2
+            "KitchenArea": 2,
+            "Generator": 3,
+            "Player": 31
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "MaxEnergyHydra_AddsValue",
+                "key": "warfare.survival.energy_hydration.max.add",
                 "perkClass": "MaxEnergyAndHydra_C",
                 "description": "Max Water: x1.3",
-                "value": 15
+                "value": 20
             }
         ],
         "levelUpIcon": "KitchenAreaLv3"
@@ -804,24 +830,25 @@ export const hideoutUpgrades = {
         "categoryId": "KitchenArea",
         "level": 4,
         "upgradeName": "Kitchen Area",
-        "upgradeDesc": "Increased Energy & Hydration Cap",
+        "upgradeDesc": "Energy and Hydration cap +30",
         "price": 450000,
         "exchange": {
-            "misc_copperwire": 5,
-            "misc_b_gaspipewrench": 4,
-            "misc_b_insulatingtape": 4,
-            "misc_b_lighter": 5
+            "misc_copperwire": 3,
+            "misc_b_gaspipewrench": 3,
+            "misc_b_insulatingtape": 3,
+            "misc_b_lighter": 3
         },
         "levelConditions": {
-            "KitchenArea": 3
+            "KitchenArea": 3,
+            "Player": 37
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "MaxEnergyHydra_AddsValue",
+                "key": "warfare.survival.energy_hydration.max.add",
                 "perkClass": "MaxEnergyAndHydra_C",
                 "description": "Max Water: x1.4",
-                "value": 20
+                "value": 30
             }
         ],
         "levelUpIcon": "KitchenAreaLv4"
@@ -831,7 +858,7 @@ export const hideoutUpgrades = {
         "categoryId": "KitchenArea",
         "level": 1,
         "upgradeName": "Refrigerator",
-        "upgradeDesc": "Faster Energy Regeneration in HQ",
+        "upgradeDesc": "HQ energy regeneration 1/min",
         "price": 90000,
         "exchange": {
             "misc_oilcan": 2,
@@ -840,15 +867,17 @@ export const hideoutUpgrades = {
             "misc_b_plier_large": 1
         },
         "levelConditions": {
+            "Generator": 1,
+            "Player": 12,
             "KitchenArea": 1
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "HQRecoveryEnergy_Scale",
+                "key": "warfare.survival.hq.energy_recovery.scale",
                 "perkClass": "HQRecoveryEnergy_C",
                 "description": "Regenerate Energy while in Hideout: 0.15/min",
-                "value": 0.33
+                "value": 1
             }
         ],
         "levelUpIcon": "RefrigeratorLv1"
@@ -858,24 +887,26 @@ export const hideoutUpgrades = {
         "categoryId": "KitchenArea",
         "level": 2,
         "upgradeName": "Refrigerator",
-        "upgradeDesc": "Faster Energy Regeneration in HQ",
+        "upgradeDesc": "HQ energy regeneration 3/min",
         "price": 160000,
         "exchange": {
             "misc_b_oliveoil": 2,
             "misc_b_match": 2,
-            "misc_b_wirecutting": 4,
+            "misc_b_wirecutting": 3,
             "misc_b_socket": 2
         },
         "levelConditions": {
-            "Generator": 2
+            "KitchenArea": 2,
+            "Player": 22,
+            "Refrigerator": 1
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "HQRecoveryEnergy_Scale",
+                "key": "warfare.survival.hq.energy_recovery.scale",
                 "perkClass": "HQRecoveryEnergy_C",
                 "description": "Regenerate Energy while in Hideout: 0.33/min",
-                "value": 0.5
+                "value": 3
             }
         ],
         "levelUpIcon": "RefrigeratorLv2"
@@ -885,22 +916,26 @@ export const hideoutUpgrades = {
         "categoryId": "KitchenArea",
         "level": 3,
         "upgradeName": "Refrigerator",
-        "upgradeDesc": "Faster Energy Regeneration in HQ",
+        "upgradeDesc": "HQ energy regeneration 5/min",
         "price": 240000,
         "exchange": {
-            "misc_b_oliveoil": 4,
-            "misc_b_match": 4,
-            "misc_b_plier_large": 8,
+            "misc_b_oliveoil": 3,
+            "misc_b_match": 3,
+            "misc_b_plier_large": 5,
             "misc_copperwire": 2
         },
-        "levelConditions": {},
+        "levelConditions": {
+            "KitchenArea": 3,
+            "Player": 30,
+            "Refrigerator": 2
+        },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "HQRecoveryEnergy_Scale",
+                "key": "warfare.survival.hq.energy_recovery.scale",
                 "perkClass": "HQRecoveryEnergy_C",
                 "description": "Regenerate Energy while in Hideout: 0.5/min",
-                "value": 0.8
+                "value": 5
             }
         ],
         "levelUpIcon": "RefrigeratorLv3"
@@ -910,7 +945,7 @@ export const hideoutUpgrades = {
         "categoryId": "KitchenArea",
         "level": 1,
         "upgradeName": "Microwave",
-        "upgradeDesc": "Slower In-Raid Energy Drain",
+        "upgradeDesc": "In-raid energy drain -10%",
         "price": 90000,
         "exchange": {
             "misc_b_oliveoil": 2,
@@ -919,15 +954,16 @@ export const hideoutUpgrades = {
             "misc_b_moldboard": 1
         },
         "levelConditions": {
-            "KitchenArea": 1
+            "CoffeeMaker": 1,
+            "Player": 15
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "InGameRecoveryEnergy_Scale",
+                "key": "warfare.survival.ingame.energy_recovery.scale",
                 "perkClass": "InGameRecoveryEnergy_C",
                 "description": "In-Raid Energy Consumption -5%",
-                "value": 0.949999988079071
+                "value": 0.9
             }
         ],
         "levelUpIcon": "MicrowaveOvenLv1"
@@ -937,24 +973,26 @@ export const hideoutUpgrades = {
         "categoryId": "KitchenArea",
         "level": 2,
         "upgradeName": "Microwave",
-        "upgradeDesc": "Slower In-Raid Energy Drain",
+        "upgradeDesc": "In-raid energy drain -20%",
         "price": 200000,
         "exchange": {
-            "misc_b_plier_large": 8,
-            "misc_b_gastank": 8,
-            "misc_wastechip": 5,
-            "misc_b_oliveoil": 3
+            "misc_b_plier_large": 5,
+            "misc_b_gastank": 5,
+            "misc_wastechip": 3,
+            "misc_b_oliveoil": 2
         },
         "levelConditions": {
-            "Generator": 2
+            "Generator": 2,
+            "Player": 25,
+            "MicrowaveOven": 1
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "InGameRecoveryEnergy_Scale",
+                "key": "warfare.survival.ingame.energy_recovery.scale",
                 "perkClass": "InGameRecoveryEnergy_C",
                 "description": "In-Raid Energy Consumption -10%",
-                "value": 0.8999999761581421
+                "value": 0.8
             }
         ],
         "levelUpIcon": "MicrowaveOvenLv2"
@@ -964,24 +1002,26 @@ export const hideoutUpgrades = {
         "categoryId": "KitchenArea",
         "level": 3,
         "upgradeName": "Microwave",
-        "upgradeDesc": "Slower In-Raid Energy Drain",
+        "upgradeDesc": "In-raid energy drain -30%",
         "price": 300000,
         "exchange": {
-            "misc_copperwire": 6,
-            "misc_b_lighter": 6,
-            "misc_b_wd40": 12,
+            "misc_copperwire": 4,
+            "misc_b_lighter": 4,
+            "misc_b_wd40": 8,
             "misc_b_digitalsensor": 2
         },
         "levelConditions": {
-            "Generator": 3
+            "KitchenArea": 3,
+            "Player": 35,
+            "MicrowaveOven": 2
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "InGameRecoveryEnergy_Scale",
+                "key": "warfare.survival.ingame.energy_recovery.scale",
                 "perkClass": "InGameRecoveryEnergy_C",
                 "description": "In-Raid Energy Consumption -15%",
-                "value": 0.8500000238418579
+                "value": 0.7
             }
         ],
         "levelUpIcon": "MicrowaveOvenLv3"
@@ -991,7 +1031,7 @@ export const hideoutUpgrades = {
         "categoryId": "KitchenArea",
         "level": 1,
         "upgradeName": "Coffee Maker",
-        "upgradeDesc": "Slower In-Raid Hydration Drain",
+        "upgradeDesc": "In-raid hydration drain -10%\nUnlocks: Microwave",
         "price": 90000,
         "exchange": {
             "misc_b_gastank": 2,
@@ -1000,15 +1040,16 @@ export const hideoutUpgrades = {
             "misc_b_wirecutting": 1
         },
         "levelConditions": {
-            "KitchenArea": 1
+            "Refrigerator": 1,
+            "Player": 13
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "InGameRecoveryHydra_Scale",
+                "key": "warfare.survival.ingame.hydration_recovery.scale",
                 "perkClass": "InGameRecoveryHydra_C",
                 "description": "In-Raid Hydration Consumption -5%",
-                "value": 0.949999988079071
+                "value": 0.9
             }
         ],
         "levelUpIcon": "CoffeeMakerLv1"
@@ -1018,24 +1059,26 @@ export const hideoutUpgrades = {
         "categoryId": "KitchenArea",
         "level": 2,
         "upgradeName": "Coffee Maker",
-        "upgradeDesc": "Slower In-Raid Hydration Drain",
+        "upgradeDesc": "In-raid hydration drain -20%",
         "price": 200000,
         "exchange": {
-            "misc_b_nut": 5,
-            "misc_barcleaner": 3,
+            "misc_b_nut": 3,
+            "misc_barcleaner": 2,
             "misc_b_gameconsole": 1,
-            "misc_b_saltcan": 6
+            "misc_b_saltcan": 4
         },
         "levelConditions": {
-            "Generator": 2
+            "KitchenArea": 2,
+            "Player": 23,
+            "CoffeeMaker": 1
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "InGameRecoveryHydra_Scale",
+                "key": "warfare.survival.ingame.hydration_recovery.scale",
                 "perkClass": "InGameRecoveryHydra_C",
                 "description": "In-Raid Hydration Consumption -10%",
-                "value": 0.8999999761581421
+                "value": 0.8
             }
         ],
         "levelUpIcon": "CoffeeMakerLv2"
@@ -1045,24 +1088,26 @@ export const hideoutUpgrades = {
         "categoryId": "KitchenArea",
         "level": 3,
         "upgradeName": "Coffee Maker",
-        "upgradeDesc": "Slower In-Raid Hydration Drain",
+        "upgradeDesc": "In-raid hydration drain -30%",
         "price": 300000,
         "exchange": {
-            "misc_b_nut": 12,
-            "misc_b_electricdrill": 3,
-            "misc_copperwire": 3,
-            "misc_b_lighter": 3
+            "misc_b_nut": 8,
+            "misc_b_electricdrill": 2,
+            "misc_copperwire": 2,
+            "misc_b_lighter": 2
         },
         "levelConditions": {
-            "Generator": 3
+            "KitchenArea": 3,
+            "Player": 32,
+            "CoffeeMaker": 2
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "InGameRecoveryHydra_Scale",
+                "key": "warfare.survival.ingame.hydration_recovery.scale",
                 "perkClass": "InGameRecoveryHydra_C",
                 "description": "In-Raid Hydration Consumption -15%",
-                "value": 0.8500000238418579
+                "value": 0.7
             }
         ],
         "levelUpIcon": "CoffeeMakerLv3"
@@ -1081,16 +1126,18 @@ export const hideoutUpgrades = {
             "misc_b_oldphone": 1
         },
         "levelConditions": {},
-        "relatedQuests": [],
+        "relatedQuests": [
+            "task.na.c.02"
+        ],
         "perks": [
             {
-                "key": "Intelligence",
+                "key": "warfare.area.intelligence.perk.value",
                 "perkClass": "IntelligencePerk_C",
                 "description": "Show item prices with M.I.C.A.",
                 "value": 1
             },
             {
-                "key": "expboost_intelligence",
+                "key": "warfare.progression.intelligence_experience_boost.value",
                 "perkClass": "ExpBonus_Intelligence_C",
                 "description": "Increased Experiece gain: +2%",
                 "value": null
@@ -1103,30 +1150,32 @@ export const hideoutUpgrades = {
         "categoryId": "None",
         "level": 2,
         "upgradeName": "Intel Center",
-        "upgradeDesc": "Increased EXP Gain",
+        "upgradeDesc": "Experience gain +10%",
         "price": 160000,
         "exchange": {
-            "misc_b_opticaldisc": 4,
-            "misc_b_tape": 3,
-            "misc_notebook": 3,
+            "misc_b_opticaldisc": 3,
+            "misc_b_tape": 2,
+            "misc_notebook": 2,
             "misc_radio": 2
         },
         "levelConditions": {
-            "WorkshopZone": 1
+            "WorkshopZone": 1,
+            "Player": 18,
+            "Intelligent": 1
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "Intelligence",
+                "key": "warfare.area.intelligence.perk.value",
                 "perkClass": "IntelligencePerk_C",
                 "description": "Show item prices with M.I.C.A.",
                 "value": 1
             },
             {
-                "key": "expboost_intelligence",
+                "key": "warfare.progression.intelligence_experience_boost.value",
                 "perkClass": "ExpBonus_Intelligence_C",
                 "description": "Increased Experiece gain: +5%",
-                "value": 0.15000000596046448
+                "value": 0.1
             }
         ],
         "levelUpIcon": "IntelligentLv2"
@@ -1136,31 +1185,32 @@ export const hideoutUpgrades = {
         "categoryId": "None",
         "level": 3,
         "upgradeName": "Intel Center",
-        "upgradeDesc": "Increased EXP Gain",
+        "upgradeDesc": "Experience gain +20%\nUnlocks: Valuables Storage Lv3",
         "price": 320000,
         "exchange": {
-            "misc_b_opticaldisc": 6,
-            "misc_b_tape": 3,
+            "misc_b_opticaldisc": 4,
+            "misc_b_tape": 2,
             "misc_videotape": 2,
-            "misc_b_powerbank": 3
+            "misc_b_powerbank": 2
         },
         "levelConditions": {
             "Intelligent": 2,
-            "RestRoom": 2
+            "Generator": 3,
+            "Player": 31
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "Intelligence",
+                "key": "warfare.area.intelligence.perk.value",
                 "perkClass": "IntelligencePerk_C",
                 "description": "Show item prices with M.I.C.A.",
                 "value": 1
             },
             {
-                "key": "expboost_intelligence",
+                "key": "warfare.progression.intelligence_experience_boost.value",
                 "perkClass": "ExpBonus_Intelligence_C",
                 "description": "Increased Experiece gain: +10%",
-                "value": 0.20000000298023224
+                "value": 0.2
             }
         ],
         "levelUpIcon": "IntelligentLv3"
@@ -1170,31 +1220,32 @@ export const hideoutUpgrades = {
         "categoryId": "None",
         "level": 4,
         "upgradeName": "Intel Center",
-        "upgradeDesc": "Increased EXP Gain",
+        "upgradeDesc": "Experience gain +30%\nUnlocks: Storage Room D",
         "price": 500000,
         "exchange": {
-            "misc_b_opticaldisc": 10,
-            "misc_b_digitalsensor": 4,
-            "misc_floppydisk": 3,
+            "misc_b_opticaldisc": 7,
+            "misc_b_digitalsensor": 3,
+            "misc_floppydisk": 2,
             "misc_b_visionmodule": 1
         },
         "levelConditions": {
             "Intelligent": 3,
-            "RestRoom": 3
+            "RestRoom": 3,
+            "Player": 40
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "Intelligence",
+                "key": "warfare.area.intelligence.perk.value",
                 "perkClass": "IntelligencePerk_C",
                 "description": "Show item prices with M.I.C.A.",
                 "value": 1
             },
             {
-                "key": "expboost_intelligence",
+                "key": "warfare.progression.intelligence_experience_boost.value",
                 "perkClass": "ExpBonus_Intelligence_C",
                 "description": "Increased Experiece gain: +10%",
-                "value": 0.30000001192092896
+                "value": 0.3
             }
         ],
         "levelUpIcon": "IntelligentLv4"
@@ -1208,11 +1259,13 @@ export const hideoutUpgrades = {
         "price": 100000,
         "exchange": {
             "misc_bpu": 1,
-            "misc_b_rustedcleaner": 5,
-            "misc_b_ram": 6,
-            "misc_b_harddrive": 5
+            "misc_b_rustedcleaner": 3,
+            "misc_b_ram": 4,
+            "misc_b_harddrive": 3
         },
-        "levelConditions": {},
+        "levelConditions": {
+            "GeneratorZone": 1
+        },
         "relatedQuests": [
             "task.mall.b.02"
         ],
@@ -1227,13 +1280,14 @@ export const hideoutUpgrades = {
         "upgradeDesc": "Unlock more slots; Increase money output.",
         "price": 200000,
         "exchange": {
-            "misc_bpu": 4,
-            "misc_b_pcfan": 6,
-            "misc_b_ram": 4,
-            "misc_floppydisk": 4
+            "misc_bpu": 3,
+            "misc_b_pcfan": 4,
+            "misc_b_ram": 3,
+            "misc_floppydisk": 3
         },
         "levelConditions": {
-            "CryptoMining": 1
+            "CryptoMining": 1,
+            "Player": 24
         },
         "relatedQuests": [],
         "perks": [],
@@ -1247,13 +1301,15 @@ export const hideoutUpgrades = {
         "upgradeDesc": "Unlock more slots; Increase money output.",
         "price": 300000,
         "exchange": {
-            "misc_bpu": 4,
-            "misc_b_pcfan": 8,
-            "misc_b_ram": 6,
-            "misc_b_harddrive": 6
+            "misc_bpu": 3,
+            "misc_b_pcfan": 5,
+            "misc_b_ram": 4,
+            "misc_b_harddrive": 4
         },
         "levelConditions": {
-            "CryptoMining": 2
+            "CryptoMining": 2,
+            "Generator": 3,
+            "Player": 36
         },
         "relatedQuests": [],
         "perks": [],
@@ -1267,14 +1323,14 @@ export const hideoutUpgrades = {
         "upgradeDesc": "Unlock more slots; Increase money output.",
         "price": 400000,
         "exchange": {
-            "misc_bpu": 6,
-            "misc_b_pcfan": 10,
-            "misc_b_ram": 8,
-            "misc_b_harddrive": 6
+            "misc_bpu": 4,
+            "misc_b_pcfan": 7,
+            "misc_b_ram": 5,
+            "misc_b_harddrive": 4
         },
         "levelConditions": {
             "CryptoMining": 3,
-            "Generator": 3
+            "Player": 40
         },
         "relatedQuests": [],
         "perks": [],
@@ -1288,7 +1344,10 @@ export const hideoutUpgrades = {
         "upgradeDesc": "Increase Fuel capacity, reduce power consumption.\nSupport upgrades for more facilities.",
         "price": 10000,
         "exchange": {},
-        "levelConditions": {},
+        "levelConditions": {
+            "GeneratorZone": 1,
+            "Player": 7
+        },
         "relatedQuests": [],
         "perks": [],
         "levelUpIcon": "GeneratorLv1"
@@ -1301,16 +1360,16 @@ export const hideoutUpgrades = {
         "upgradeDesc": "Increase Fuel capacity, reduce power consumption.\nSupport upgrades for more facilities.",
         "price": 100000,
         "exchange": {
-            "misc_b_lighterfluid": 6,
-            "misc_oilcan": 8,
-            "misc_b_insulatingtape": 6,
+            "misc_b_lighterfluid": 4,
+            "misc_oilcan": 5,
+            "misc_b_insulatingtape": 4,
             "misc_b_sparkplug": 1
         },
         "levelConditions": {
             "Generator": 1
         },
         "relatedQuests": [
-            "task.mall.3"
+            "task.mall.b.01"
         ],
         "perks": [],
         "levelUpIcon": "GeneratorLv2"
@@ -1323,13 +1382,14 @@ export const hideoutUpgrades = {
         "upgradeDesc": "Increase Fuel capacity, reduce power consumption.\nSupport upgrades for more facilities.",
         "price": 300000,
         "exchange": {
-            "misc_b_visionmodule": 4,
-            "misc_b_sparkplug": 4,
+            "misc_b_visionmodule": 3,
+            "misc_b_sparkplug": 3,
             "misc_b_transformer": 2,
-            "misc_b_marinestoragebattery": 3
+            "misc_b_marinestoragebattery": 2
         },
         "levelConditions": {
-            "Generator": 2
+            "Generator": 2,
+            "Player": 29
         },
         "relatedQuests": [],
         "perks": [],
@@ -1346,7 +1406,7 @@ export const hideoutUpgrades = {
             "misc_b_gunoil": 2,
             "misc_b_insulatingtape": 2,
             "misc_b_ceramic_adhesive": 1,
-            "misc_b_tire_sealant": 3
+            "misc_b_tire_sealant": 2
         },
         "levelConditions": {},
         "relatedQuests": [
@@ -1365,7 +1425,7 @@ export const hideoutUpgrades = {
         "exchange": {},
         "levelConditions": {},
         "relatedQuests": [
-            "task.na.c.02"
+            "task.na.c.03"
         ],
         "perks": [],
         "levelUpIcon": "WorkshopZoneLv1"
@@ -1375,7 +1435,7 @@ export const hideoutUpgrades = {
         "categoryId": "None",
         "level": 1,
         "upgradeName": "Starter‘s Storage Expansion",
-        "upgradeDesc": "Access to Starter‘s Storage",
+        "upgradeDesc": "Expand storage capacity in the Terminal area.",
         "price": 80000,
         "exchange": {
             "misc_b_screw": 2,
@@ -1383,7 +1443,10 @@ export const hideoutUpgrades = {
             "misc_barcleaner": 1,
             "misc_b_wrench": 2
         },
-        "levelConditions": {},
+        "levelConditions": {
+            "StorageZoneLock1": 1,
+            "Player": 11
+        },
         "relatedQuests": [],
         "perks": [],
         "levelUpIcon": "StorageExpansionStartLv1"
@@ -1396,13 +1459,14 @@ export const hideoutUpgrades = {
         "upgradeDesc": "Access to storage room A",
         "price": 80000,
         "exchange": {
-            "misc_b_nail": 3,
-            "misc_b_screw": 3,
-            "misc_b_disinfectingwipes": 3,
-            "misc_b_gastank_large": 3
+            "misc_b_nail": 2,
+            "misc_b_screw": 2,
+            "misc_b_disinfectingwipes": 2,
+            "misc_b_gastank_large": 2
         },
         "levelConditions": {
-            "WorkshopZone": 1
+            "Generator": 1,
+            "Player": 10
         },
         "relatedQuests": [],
         "perks": [],
@@ -1416,13 +1480,14 @@ export const hideoutUpgrades = {
         "upgradeDesc": "Access to storage room B",
         "price": 400000,
         "exchange": {
-            "misc_b_gastank_large": 6,
-            "misc_b_wrench": 6,
-            "misc_screwdriver": 6,
-            "misc_b_batter_large": 6
+            "misc_b_gastank_large": 4,
+            "misc_b_wrench": 4,
+            "misc_screwdriver": 4,
+            "misc_b_batter_large": 4
         },
         "levelConditions": {
-            "WorkshopZone": 1
+            "StorageZoneLock1": 1,
+            "Player": 21
         },
         "relatedQuests": [],
         "perks": [],
@@ -1436,13 +1501,14 @@ export const hideoutUpgrades = {
         "upgradeDesc": "Access to storage room C",
         "price": 400000,
         "exchange": {
-            "misc_gunpowder": 10,
-            "misc_b_smokelesspowder": 10,
-            "misc_b_piezometer": 8,
-            "misc_b_visionmodule": 6
+            "misc_gunpowder": 7,
+            "misc_b_smokelesspowder": 7,
+            "misc_b_piezometer": 5,
+            "misc_b_visionmodule": 4
         },
         "levelConditions": {
-            "WorkshopZone": 1
+            "StorageZoneLock2": 1,
+            "Player": 41
         },
         "relatedQuests": [],
         "perks": [],
@@ -1456,14 +1522,15 @@ export const hideoutUpgrades = {
         "upgradeDesc": "Access to storage room D",
         "price": 760000,
         "exchange": {
-            "misc_b_lightbulb": 10,
-            "misc_b_wrench": 10,
-            "misc_b_medicalscissors": 5,
-            "misc_b_defibrillator": 4
+            "misc_b_lightbulb": 7,
+            "misc_b_wrench": 7,
+            "misc_b_medicalscissors": 3,
+            "misc_b_defibrillator": 3
         },
         "levelConditions": {
-            "WorkshopZone": 1,
-            "StorageZoneLock3": 1
+            "StorageZoneLock3": 1,
+            "Intelligent": 4,
+            "Player": 41
         },
         "relatedQuests": [],
         "perks": [],
@@ -1483,12 +1550,14 @@ export const hideoutUpgrades = {
             "misc_barcleaner": 2
         },
         "levelConditions": {
-            "WorkshopZone": 1
+            "ShootingRange": 1
         },
-        "relatedQuests": [],
+        "relatedQuests": [
+            "task.gunsmith.002"
+        ],
         "perks": [
             {
-                "key": "GunsmithArea",
+                "key": "warfare.area.gunsmith.perk.value",
                 "perkClass": "GunSmithPerk_C",
                 "description": "",
                 "value": 30
@@ -1505,17 +1574,18 @@ export const hideoutUpgrades = {
         "price": 80000,
         "exchange": {
             "misc_b_pipeline": 2,
-            "misc_b_nail": 6,
-            "misc_b_ceramic_adhesive": 8,
+            "misc_b_nail": 4,
+            "misc_b_ceramic_adhesive": 5,
             "misc_floppydisk": 2
         },
         "levelConditions": {
-            "WorkshopZone": 1
+            "Player": 24,
+            "Gunsmith": 1
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "GunsmithArea",
+                "key": "warfare.area.gunsmith.perk.value",
                 "perkClass": "GunSmithPerk_C",
                 "description": "",
                 "value": 40
@@ -1531,18 +1601,20 @@ export const hideoutUpgrades = {
         "upgradeDesc": "Weapon parts storage capacity + 10kg",
         "price": 200000,
         "exchange": {
-            "misc_b_powerbank": 6,
-            "misc_b_oldphone": 10,
-            "misc_b_sparkplug": 6,
-            "misc_b_civilradio": 4
+            "misc_b_powerbank": 4,
+            "misc_b_oldphone": 7,
+            "misc_b_sparkplug": 4,
+            "misc_b_civilradio": 3
         },
         "levelConditions": {
-            "Generator": 2
+            "Generator": 3,
+            "Player": 33,
+            "Gunsmith": 2
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "GunsmithArea",
+                "key": "warfare.area.gunsmith.perk.value",
                 "perkClass": "GunSmithPerk_C",
                 "description": "",
                 "value": 50
@@ -1558,18 +1630,19 @@ export const hideoutUpgrades = {
         "upgradeDesc": "Weapon parts storage capacity + 10kg",
         "price": 400000,
         "exchange": {
-            "misc_b_superglue": 10,
-            "misc_b_newphone": 10,
-            "misc_b_glue_large": 8,
-            "misc_b_electricdrill": 6
+            "misc_b_superglue": 7,
+            "misc_b_newphone": 7,
+            "misc_b_glue_large": 5,
+            "misc_b_electricdrill": 4
         },
         "levelConditions": {
-            "Generator": 3
+            "Gunsmith": 3,
+            "Player": 38
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "GunsmithArea",
+                "key": "warfare.area.gunsmith.perk.value",
                 "perkClass": "GunSmithPerk_C",
                 "description": "",
                 "value": 60
@@ -1581,13 +1654,13 @@ export const hideoutUpgrades = {
         "areaId": "GeneratorZone",
         "categoryId": "None",
         "level": 1,
-        "upgradeName": "GeneratorZone",
+        "upgradeName": "Unlock Generator Zone",
         "upgradeDesc": "Unlock Generator Zone",
         "price": 0,
         "exchange": {},
         "levelConditions": {},
         "relatedQuests": [
-            "task.mall.c.01"
+            "task.mall.c.02"
         ],
         "perks": [],
         "levelUpIcon": "GeneratorZoneLv1"
@@ -1596,7 +1669,7 @@ export const hideoutUpgrades = {
         "areaId": "RestroomZone",
         "categoryId": "None",
         "level": 1,
-        "upgradeName": "Rest Area",
+        "upgradeName": "Unlock Restroom",
         "upgradeDesc": "Unlock Restroom",
         "price": 10000,
         "exchange": {},
@@ -1616,14 +1689,17 @@ export const hideoutUpgrades = {
         "price": 120000,
         "exchange": {
             "misc_hammer": 2,
-            "misc_b_recorder": 3,
-            "misc_b_1battery": 5
+            "misc_b_recorder": 2,
+            "misc_b_1battery": 3
         },
-        "levelConditions": {},
+        "levelConditions": {
+            "AreaUpgradeArea": 1,
+            "Player": 16
+        },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "BlackmarketMoreitem",
+                "key": "warfare.black_market.item_count.add",
                 "perkClass": "BlackmarketMoreitem_C",
                 "description": "The supply market can provide a wider range of goods",
                 "value": null
@@ -1639,18 +1715,19 @@ export const hideoutUpgrades = {
         "upgradeDesc": "More goods",
         "price": 280000,
         "exchange": {
-            "misc_b_recorder": 3,
+            "misc_b_recorder": 2,
             "misc_b_powerbank": 2,
-            "misc_b_oldphone": 4,
+            "misc_b_oldphone": 3,
             "misc_b_militaryusbdrive": 2
         },
         "levelConditions": {
-            "BlackmarketMoreitem": 1
+            "BlackmarketMoreitem": 1,
+            "Player": 25
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "BlackmarketMoreitem",
+                "key": "warfare.black_market.item_count.add",
                 "perkClass": "BlackmarketMoreitem_C",
                 "description": "The supply market can provide a wider range of goods",
                 "value": null
@@ -1669,13 +1746,16 @@ export const hideoutUpgrades = {
             "misc_b_recorder": 2,
             "misc_b_powerbank": 2,
             "misc_b_ram": 2,
-            "misc_b_tape": 8
+            "misc_b_tape": 5
         },
-        "levelConditions": {},
+        "levelConditions": {
+            "BlackmarketMoreitem": 1,
+            "Player": 17
+        },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "BlackmarketQuality",
+                "key": "warfare.black_market.quality.value",
                 "perkClass": "BlackmarketQuality_C",
                 "description": "The quality of goods provided by the supply market is higher",
                 "value": null
@@ -1691,18 +1771,19 @@ export const hideoutUpgrades = {
         "upgradeDesc": "Higher quality",
         "price": 300000,
         "exchange": {
-            "misc_bpu": 5,
-            "misc_copperwire": 9,
+            "misc_bpu": 3,
+            "misc_copperwire": 6,
             "misc_b_transformer": 2,
-            "misc_b_piezometer": 4
+            "misc_b_piezometer": 3
         },
         "levelConditions": {
-            "BlackmarketQuality": 1
+            "BlackmarketQuality": 1,
+            "Player": 27
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "BlackmarketQuality",
+                "key": "warfare.black_market.quality.value",
                 "perkClass": "BlackmarketQuality_C",
                 "description": "The quality of goods provided by the supply market is higher",
                 "value": null
@@ -1718,19 +1799,20 @@ export const hideoutUpgrades = {
         "upgradeDesc": "Higher quality",
         "price": 520000,
         "exchange": {
-            "misc_graphiccard": 3,
+            "misc_graphiccard": 2,
             "misc_b_militaryusbdrive": 2,
             "misc_b_militaryharddrive": 1,
             "misc_b_digitalsensor": 2
         },
         "levelConditions": {
             "BlackmarketQuality": 2,
-            "Generator": 3
+            "Generator": 3,
+            "Player": 40
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "BlackmarketQuality",
+                "key": "warfare.black_market.quality.value",
                 "perkClass": "BlackmarketQuality_C",
                 "description": "The quality of goods provided by the supply market is higher",
                 "value": null
@@ -1751,11 +1833,14 @@ export const hideoutUpgrades = {
             "misc_b_ionbattery": 2,
             "misc_b_tapeplayer": 1
         },
-        "levelConditions": {},
+        "levelConditions": {
+            "StorageZoneLock1": 1,
+            "Player": 14
+        },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "wsAreaUpgradeArea",
+                "key": "warfare.area.upgrade.perk.value",
                 "perkClass": "UpgradeAreaPerk_C",
                 "description": "",
                 "value": 40
@@ -1771,18 +1856,19 @@ export const hideoutUpgrades = {
         "upgradeDesc": "Expand Junk Box Capacity",
         "price": 807000,
         "exchange": {
-            "misc_b_wirecutting": 4,
-            "misc_wastechip": 3,
-            "misc_screwdriver": 3,
+            "misc_b_wirecutting": 3,
+            "misc_wastechip": 2,
+            "misc_screwdriver": 2,
             "misc_b_storagebattery": 1
         },
         "levelConditions": {
-            "AreaUpgradeArea": 1
+            "AreaUpgradeArea": 1,
+            "Player": 23
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "wsAreaUpgradeArea",
+                "key": "warfare.area.upgrade.perk.value",
                 "perkClass": "UpgradeAreaPerk_C",
                 "description": "",
                 "value": 60
@@ -1798,19 +1884,20 @@ export const hideoutUpgrades = {
         "upgradeDesc": "Expand Junk Box Capacity",
         "price": 1530200,
         "exchange": {
-            "misc_wastechip": 8,
-            "misc_screwdriver": 8,
+            "misc_wastechip": 5,
+            "misc_screwdriver": 5,
             "misc_b_storagebattery": 2,
             "misc_b_militaryharddrive": 1
         },
         "levelConditions": {
             "AreaUpgradeArea": 2,
-            "Generator": 3
+            "Intelligent": 3,
+            "Player": 35
         },
         "relatedQuests": [],
         "perks": [
             {
-                "key": "wsAreaUpgradeArea",
+                "key": "warfare.area.upgrade.perk.value",
                 "perkClass": "UpgradeAreaPerk_C",
                 "description": "",
                 "value": 80
@@ -1950,11 +2037,11 @@ export const areaIcons = {
     },
     "GeneratorZone": {
         "icon": "areas/GeneratorZone.webp",
-        "alt": "GeneratorZone"
+        "alt": "Unlock Generator Zone"
     },
     "RestroomZone": {
         "icon": "areas/RestroomZone.webp",
-        "alt": "Rest Area"
+        "alt": "Unlock Restroom"
     },
     "BlackmarketMoreitem": {
         "icon": "areas/BlackmarketMoreitem.webp",

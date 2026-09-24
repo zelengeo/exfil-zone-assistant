@@ -15,31 +15,21 @@
       "rarity": "Epic",
       "sizes": "62x23x33",
       "storageGrid": {
-        "x": 12,
-        "y": 8,
-        "z": 21,
-        "unit": 1
+        "x": null,
+        "y": null,
+        "z": null,
+        "unit": null
       },
       "sellId": "backpack.bp007.pumpkin",
       "attachmentPoints": [
         {
-          "tag": "back",
+          "tag": "",
           "types": [
-            "GunAdvance_BP_C",
-            "Shotgun"
-          ]
-        },
-        {
-          "tag": "bottom",
-          "types": [
-            "Vest"
-          ]
-        },
-        {
-          "tag": "sides",
-          "types": [
+            "Holster",
             "Helmet",
-            "Holster"
+            "GunAdvance_BP_C",
+            "Shotgun",
+            "Vest"
           ]
         }
       ],
@@ -72,18 +62,18 @@
       "rarity": "Uncommon",
       "sizes": "47x18x27",
       "storageGrid": {
-        "x": 12,
-        "y": 8,
-        "z": 21,
-        "unit": 1
+        "x": null,
+        "y": null,
+        "z": null,
+        "unit": null
       },
       "sellId": "backpack.lv1.01",
       "attachmentPoints": [
         {
-          "tag": "sides",
+          "tag": "",
           "types": [
-            "Helmet",
-            "Holster"
+            "Holster",
+            "Helmet"
           ]
         }
       ],
@@ -130,20 +120,20 @@
       "rarity": "Epic",
       "sizes": "79x28x36",
       "storageGrid": {
-        "x": 12,
-        "y": 8,
+        "x": null,
+        "y": null,
         "z": 23,
-        "unit": 1
+        "unit": null
       },
       "sellId": "backpack.lv3.01",
       "attachmentPoints": [
         {
-          "tag": "sides",
+          "tag": "",
           "types": [
             "GunAdvance_BP_C",
-            "Helmet",
             "Shotgun",
-            "Vest"
+            "Vest",
+            "Helmet"
           ]
         }
       ],
@@ -190,25 +180,20 @@
       "rarity": "Rare",
       "sizes": "48x18x29",
       "storageGrid": {
-        "x": 12,
-        "y": 8,
-        "z": 21,
-        "unit": 1
+        "x": null,
+        "y": null,
+        "z": null,
+        "unit": null
       },
       "sellId": "backpack.lv2.01",
       "attachmentPoints": [
         {
-          "tag": "back",
+          "tag": "",
           "types": [
+            "Holster",
             "GunAdvance_BP_C",
-            "Shotgun"
-          ]
-        },
-        {
-          "tag": "sides",
-          "types": [
-            "Helmet",
-            "Holster"
+            "Shotgun",
+            "Helmet"
           ]
         }
       ],
@@ -255,25 +240,20 @@
       "rarity": "Rare",
       "sizes": "48x18x29",
       "storageGrid": {
-        "x": 12,
-        "y": 8,
-        "z": 21,
-        "unit": 1
+        "x": null,
+        "y": null,
+        "z": null,
+        "unit": null
       },
       "sellId": "backpack.lv2.green",
       "attachmentPoints": [
         {
-          "tag": "back",
+          "tag": "",
           "types": [
+            "Holster",
             "GunAdvance_BP_C",
-            "Shotgun"
-          ]
-        },
-        {
-          "tag": "sides",
-          "types": [
-            "Helmet",
-            "Holster"
+            "Shotgun",
+            "Helmet"
           ]
         }
       ],
@@ -339,31 +319,21 @@
       "rarity": "Epic",
       "sizes": "62x23x33",
       "storageGrid": {
-        "x": 12,
-        "y": 8,
-        "z": 21,
-        "unit": 1
+        "x": null,
+        "y": null,
+        "z": null,
+        "unit": null
       },
       "sellId": "backpack.bp007",
       "attachmentPoints": [
         {
-          "tag": "back",
+          "tag": "",
           "types": [
-            "GunAdvance_BP_C",
-            "Shotgun"
-          ]
-        },
-        {
-          "tag": "bottom",
-          "types": [
-            "Vest"
-          ]
-        },
-        {
-          "tag": "sides",
-          "types": [
+            "Holster",
             "Helmet",
-            "Holster"
+            "GunAdvance_BP_C",
+            "Shotgun",
+            "Vest"
           ]
         }
       ],
@@ -410,20 +380,20 @@
       "rarity": "Epic",
       "sizes": "72x20x35",
       "storageGrid": {
-        "x": 12,
-        "y": 8,
-        "z": 21,
-        "unit": 1
+        "x": null,
+        "y": null,
+        "z": null,
+        "unit": null
       },
       "sellId": "backpack.bp006",
       "attachmentPoints": [
         {
-          "tag": "sides",
+          "tag": "",
           "types": [
             "GunAdvance_BP_C",
-            "Helmet",
             "Shotgun",
-            "Vest"
+            "Vest",
+            "Helmet"
           ]
         }
       ],
@@ -450,7 +420,7 @@
             {
               "gameId": "task.gear.a.10",
               "id": "forge_26",
-              "name": "Business Development",
+              "name": "Business Expansion",
               "corpId": "forge"
             }
           ],
@@ -477,31 +447,21 @@
       "rarity": "Epic",
       "sizes": "53x19x31",
       "storageGrid": {
-        "x": 12,
-        "y": 8,
-        "z": 21,
-        "unit": 1
+        "x": null,
+        "y": null,
+        "z": null,
+        "unit": null
       },
       "sellId": "backpack.mbod",
       "attachmentPoints": [
         {
-          "tag": "back",
+          "tag": "",
           "types": [
-            "GunAdvance_BP_C",
-            "Shotgun"
-          ]
-        },
-        {
-          "tag": "bottom",
-          "types": [
-            "Vest"
-          ]
-        },
-        {
-          "tag": "sides",
-          "types": [
+            "Holster",
             "Helmet",
-            "Holster"
+            "GunAdvance_BP_C",
+            "Shotgun",
+            "Vest"
           ]
         }
       ],
@@ -548,10 +508,10 @@
       "rarity": "Rare",
       "sizes": "45x18x34",
       "storageGrid": {
-        "x": 12,
-        "y": 8,
-        "z": 21,
-        "unit": 1
+        "x": null,
+        "y": null,
+        "z": null,
+        "unit": null
       },
       "sellId": "backpack.odldos.black",
       "attachmentPoints": [],
@@ -578,7 +538,7 @@
             {
               "gameId": "task.doc.c.08",
               "id": "ntg_62",
-              "name": "Clifton Hidden Room Radio",
+              "name": "Reestablishing Contact",
               "corpId": "ntg"
             }
           ],
@@ -600,7 +560,14 @@
           "bundlePrice": 75600,
           "stock": 99,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.doc.c.08",
+              "id": "ntg_62",
+              "name": "Reestablishing Contact",
+              "corpId": "ntg"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         }
@@ -624,10 +591,10 @@
       "rarity": "Rare",
       "sizes": "52x18x34",
       "storageGrid": {
-        "x": 12,
-        "y": 8,
-        "z": 21,
-        "unit": 1
+        "x": null,
+        "y": null,
+        "z": null,
+        "unit": null
       },
       "sellId": "backpack.odldos.flower",
       "attachmentPoints": [],
@@ -654,7 +621,7 @@
             {
               "gameId": "task.doc.b.06",
               "id": "ntg_51",
-              "name": "★ Factory Foreman",
+              "name": "★ Power Obstruction",
               "corpId": "ntg"
             }
           ],
@@ -681,31 +648,21 @@
       "rarity": "Epic",
       "sizes": "55x18x35",
       "storageGrid": {
-        "x": 12,
-        "y": 8,
-        "z": 21,
-        "unit": 1
+        "x": null,
+        "y": null,
+        "z": null,
+        "unit": null
       },
       "sellId": "backpack.operatorgreencamo",
       "attachmentPoints": [
         {
-          "tag": "back",
+          "tag": "",
           "types": [
-            "GunAdvance_BP_C",
-            "Shotgun"
-          ]
-        },
-        {
-          "tag": "bottom",
-          "types": [
-            "Vest"
-          ]
-        },
-        {
-          "tag": "sides",
-          "types": [
+            "Holster",
             "Helmet",
-            "Holster"
+            "GunAdvance_BP_C",
+            "Shotgun",
+            "Vest"
           ]
         }
       ],
@@ -752,30 +709,20 @@
       "rarity": "Epic",
       "sizes": "56x19x36",
       "storageGrid": {
-        "x": 12,
-        "y": 8,
-        "z": 21,
-        "unit": 1
+        "x": null,
+        "y": null,
+        "z": null,
+        "unit": null
       },
       "sellId": "backpack.robinson",
       "attachmentPoints": [
         {
-          "tag": "back",
+          "tag": "",
           "types": [
+            "Helmet",
             "GunAdvance_BP_C",
-            "Shotgun"
-          ]
-        },
-        {
-          "tag": "bottom",
-          "types": [
+            "Shotgun",
             "Vest"
-          ]
-        },
-        {
-          "tag": "sides",
-          "types": [
-            "Helmet"
           ]
         }
       ],
@@ -822,10 +769,10 @@
       "rarity": "Common",
       "sizes": "33x12.650868x19",
       "storageGrid": {
-        "x": 12,
-        "y": 8,
-        "z": 21,
-        "unit": 1
+        "x": null,
+        "y": null,
+        "z": null,
+        "unit": null
       },
       "sellId": "backpack.rs",
       "attachmentPoints": [],
@@ -872,10 +819,10 @@
       "rarity": "Common",
       "sizes": "34x13x19.002891",
       "storageGrid": {
-        "x": 12,
-        "y": 8,
-        "z": 21,
-        "unit": 1
+        "x": null,
+        "y": null,
+        "z": null,
+        "unit": null
       },
       "sellId": "backpack.lv1.sportbag",
       "attachmentPoints": [],

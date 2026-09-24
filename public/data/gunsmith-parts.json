@@ -58,11 +58,62 @@
     "compatibility": {
       "installsOn": [],
       "provides": [
-        "GunSmithSlot.WFAtt.Foregrip"
+        "BR.attachments.Foregrip"
       ],
       "requiresPartTypes": [],
       "tags": [
         "Att.Foregrip.Vertical"
+      ]
+    }
+  },
+  {
+    "id": "part-20rail-foregrip-transfer-red-ws",
+    "gameId": "gunsmith.20rail.foregrip.transfer_red-ws",
+    "name": "Transfer 20mm foregrip RED rebirth",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "",
+    "group": "20rail",
+    "slot": "foregrip",
+    "partType": null,
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-20rail-foregrip-transfer-red-ws.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-20rail-foregrip-transfer-red-ws.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-20rail-foregrip-transfer-red-ws.webp"
+    },
+    "stats": {
+      "weight": 0.09,
+      "rarity": "Epic",
+      "attachmentModifier": {
+        "ergonomicsModifier": 0.06,
+        "verticalRecoilModifier": -0.7,
+        "horizontalRecoilModifier": -0.7,
+        "ADSSpeedModifier": 0.15
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null,
+      "basePrice": 8888,
+      "sellPrices": [
+        8888,
+        8888,
+        6222,
+        6222,
+        6222,
+        6222
+      ],
+      "buyOffers": []
+    },
+    "compatibility": {
+      "installsOn": [],
+      "provides": [
+        "GunSmithSlot.WFAtt.Foregrip"
+      ],
+      "requiresPartTypes": [],
+      "tags": [
+        "Att.Foregrip"
       ]
     }
   },
@@ -425,6 +476,68 @@
       "requiresPartTypes": [],
       "tags": [
         "Att.Mount.45DegreeRail"
+      ]
+    }
+  },
+  {
+    "id": "part-20rail-rearsight-ash12handle",
+    "gameId": "gunsmith.20rail.rearsight.ash12handle",
+    "name": "ASH-12 Handle rear sight",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "ASH12",
+    "group": "20rail",
+    "slot": "rearsight",
+    "partType": null,
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-20rail-rearsight-ash12handle.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-20rail-rearsight-ash12handle.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-20rail-rearsight-ash12handle.webp"
+    },
+    "stats": {
+      "weight": 0.2,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.01
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null,
+      "basePrice": 651,
+      "sellPrices": [
+        651,
+        586,
+        456,
+        456,
+        456,
+        651
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.20rail.rearsight.ash12handle",
+          "level": 1,
+          "price": 1860,
+          "bundle": 1,
+          "bundlePrice": 1860,
+          "stock": 20,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "compatibility": {
+      "installsOn": [],
+      "provides": [
+        "GunSmithSlot.Ironsight.RearSight"
+      ],
+      "requiresPartTypes": [],
+      "tags": [
+        "Att.Mount.ASH12Handle"
       ]
     }
   },
@@ -1063,9 +1176,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -1131,9 +1242,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -1176,6 +1285,19 @@
       ],
       "buyOffers": [
         {
+          "vendor": "wipeshop",
+          "goodsId": "gds.gunsmith.9x39.clip.30-wipe",
+          "level": 4,
+          "price": 5,
+          "bundle": 1,
+          "bundlePrice": 5,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        },
+        {
           "vendor": "regiment",
           "goodsId": "gds.gunsmith.9x39.clip.30",
           "level": 4,
@@ -1199,9 +1321,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -1726,8 +1846,7 @@
       "requiresPartTypes": [
         "LowerReceiver",
         "UpperReceiver",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.Rifle.ASVAL",
@@ -1827,8 +1946,7 @@
         "LowerReceiver",
         "UpperReceiver",
         "Stock",
-        "Barrel",
-        "Clip"
+        "Barrel"
       ],
       "tags": [
         "RifleType.RifleClassic",
@@ -1926,8 +2044,7 @@
       "provides": [],
       "requiresPartTypes": [
         "LowerReceiver",
-        "UpperReceiver",
-        "Clip"
+        "UpperReceiver"
       ],
       "tags": [
         "GunType.DMR.VSS"
@@ -2879,9 +2996,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -2936,7 +3051,7 @@
             {
               "gameId": "task.wp.c.09",
               "id": "regiment_51",
-              "name": "The Veteran's Courts",
+              "name": "Old Haunts",
               "corpId": "regiment"
             }
           ],
@@ -2956,9 +3071,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -3024,9 +3137,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -3079,9 +3190,9 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.wp.a.07",
-              "id": "regiment_32",
-              "name": "One-Time Delivery",
+              "gameId": "task.wp.a.05",
+              "id": "regiment_37",
+              "name": "My Favorite: AK",
               "corpId": "regiment"
             }
           ],
@@ -3100,9 +3211,60 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Clip"
+      ]
+    }
+  },
+  {
+    "id": "part-ak-clip-545pufgun60-ws",
+    "gameId": "gunsmith.ak.clip.545pufgun60-ws",
+    "name": "AK74 PufGun 5.45x39mm 150rnd magazine rebirth",
+    "description": "60 Rounds drum Magazine for AK 5.45 series weapon.",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "",
+    "group": "ak",
+    "slot": "clip",
+    "partType": "Clip",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-ak-clip-545pufgun60-ws.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-ak-clip-545pufgun60-ws.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-ak-clip-545pufgun60-ws.webp"
+    },
+    "stats": {
+      "weight": 0.35,
+      "rarity": "Uncommon",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.17
+      },
+      "partMOA": null,
+      "capacity": 150,
+      "caliber": "545x39",
+      "gunData": null,
+      "basePrice": 8888,
+      "sellPrices": [
+        8888,
+        8888,
+        6222,
+        6222,
+        6222,
+        6222
       ],
+      "buyOffers": []
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.AK74U.LowerReceiver",
+        "GunSmith.AK100.LowerReceiver.AK74M",
+        "GunSmith.AK.LowerReceiver.AK74",
+        "GunSmith.AK.LowerReceiver.AK74N"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Clip"
+      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -3170,9 +3332,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -3238,9 +3398,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -3306,9 +3464,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -3361,9 +3517,9 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.wp.a.08",
-              "id": "regiment_31",
-              "name": "My Favourite: Sjogren",
+              "gameId": "task.wp.a.10",
+              "id": "regiment_39",
+              "name": "My Favorite: FAL",
               "corpId": "regiment"
             }
           ],
@@ -3381,9 +3537,9 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.wp.a.08",
-              "id": "regiment_31",
-              "name": "My Favourite: Sjogren",
+              "gameId": "task.wp.a.10",
+              "id": "regiment_39",
+              "name": "My Favorite: FAL",
               "corpId": "regiment"
             }
           ],
@@ -3413,9 +3569,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -3464,7 +3618,14 @@
           "bundlePrice": 10137,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.wp.a.01",
+              "id": "regiment_23",
+              "name": "Taste of Life: Sake",
+              "corpId": "regiment"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         }
@@ -3481,9 +3642,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -3549,9 +3708,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -3617,9 +3774,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -3685,9 +3840,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -3753,9 +3906,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -3841,9 +3992,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -3929,9 +4078,60 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Clip"
+      ]
+    }
+  },
+  {
+    "id": "part-ak-clip-762quad60fde-ws",
+    "gameId": "gunsmith.ak.clip.762quad60fde-ws",
+    "name": "AKM Quad FDE 7.62x39mm 150rnd magazine rebirth",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "",
+    "group": "ak",
+    "slot": "clip",
+    "partType": "Clip",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-ak-clip-762quad60fde-ws.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-ak-clip-762quad60fde-ws.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-ak-clip-762quad60fde-ws.webp"
+    },
+    "stats": {
+      "weight": 0.23,
+      "rarity": "Epic",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.2
+      },
+      "partMOA": null,
+      "capacity": 150,
+      "caliber": "762x39",
+      "gunData": null,
+      "basePrice": 8888,
+      "sellPrices": [
+        8888,
+        8888,
+        6222,
+        6222,
+        6222,
+        6222
       ],
+      "buyOffers": []
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.AK.LowerReceiver.Vpo-136",
+        "GunSmith.AK.LowerReceiver.AKMN",
+        "GunSmith.RD704.LowerReceiver.RD704",
+        "GunSmith.AKalpha.LowerReceiver.AKalpha"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Clip"
+      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -4007,6 +4207,144 @@
     }
   },
   {
+    "id": "part-ak-handguard-1u020bk",
+    "gameId": "gunsmith.ak.handguard.1u020bk",
+    "name": "AK74/AKM 1U020 handguard BK",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "AK74",
+    "group": "ak",
+    "slot": "handguard",
+    "partType": "Handguard",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-ak-handguard-1u020bk.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-ak-handguard-1u020bk.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-ak-handguard-1u020bk.webp"
+    },
+    "stats": {
+      "weight": 0.24,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": 0.1,
+        "verticalRecoilModifier": -0.08,
+        "horizontalRecoilModifier": -0.08
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null,
+      "basePrice": 12855,
+      "sellPrices": [
+        12855,
+        11570,
+        8999,
+        8999,
+        8999,
+        12855
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ak.handguard.1u020bk",
+          "level": 4,
+          "price": 42587,
+          "bundle": 1,
+          "bundlePrice": 42587,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.AK.LowerReceiver",
+        "GunSmith.AK100.LowerReceiver"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Handguard"
+      ],
+      "requiresPartTypes": [
+        "Handguard"
+      ],
+      "tags": [
+        "GunpartType.Handguard"
+      ]
+    }
+  },
+  {
+    "id": "part-ak-handguard-1u020fde",
+    "gameId": "gunsmith.ak.handguard.1u020fde",
+    "name": "AK74/AKM 1U020 handguard FDE",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "AK74",
+    "group": "ak",
+    "slot": "handguard",
+    "partType": "Handguard",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-ak-handguard-1u020fde.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-ak-handguard-1u020fde.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-ak-handguard-1u020fde.webp"
+    },
+    "stats": {
+      "weight": 0.24,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": 0.1,
+        "verticalRecoilModifier": -0.08,
+        "horizontalRecoilModifier": -0.08
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null,
+      "basePrice": 12856,
+      "sellPrices": [
+        12856,
+        11571,
+        9000,
+        9000,
+        9000,
+        12856
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ak.handguard.1u020fde",
+          "level": 4,
+          "price": 42854,
+          "bundle": 1,
+          "bundlePrice": 42854,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.AK.LowerReceiver",
+        "GunSmith.AK100.LowerReceiver"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Handguard"
+      ],
+      "requiresPartTypes": [
+        "Handguard"
+      ],
+      "tags": [
+        "GunpartType.Handguard"
+      ]
+    }
+  },
+  {
     "id": "part-ak-handguard-6p1-sb6-1",
     "gameId": "gunsmith.ak.handguard.6p1-sb6-1",
     "name": "AK74/AKM 6p1-sb6-1 handguard",
@@ -4053,7 +4391,14 @@
           "bundlePrice": 2683,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.wp.c.02",
+              "id": "regiment_44",
+              "name": "Taste of Life: Beer",
+              "corpId": "regiment"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         }
@@ -4463,7 +4808,7 @@
         {
           "vendor": "gunsmith",
           "goodsId": "gds.gunsmith.ak.handguard.xrs74yg",
-          "level": 4,
+          "level": 3,
           "price": 28486,
           "bundle": 1,
           "bundlePrice": 28486,
@@ -4591,8 +4936,7 @@
         "LowerReceiver",
         "UpperReceiver",
         "Stock",
-        "Barrel",
-        "Clip"
+        "Barrel"
       ],
       "tags": [
         "GunType.Rifle.AK",
@@ -4692,8 +5036,7 @@
         "LowerReceiver",
         "UpperReceiver",
         "Stock",
-        "Barrel",
-        "Clip"
+        "Barrel"
       ],
       "tags": [
         "GunType.Rifle.AK",
@@ -4793,8 +5136,7 @@
         "LowerReceiver",
         "UpperReceiver",
         "Stock",
-        "Barrel",
-        "Clip"
+        "Barrel"
       ],
       "tags": [
         "GunType.Rifle.AK",
@@ -4897,8 +5239,7 @@
         "LowerReceiver",
         "UpperReceiver",
         "Stock",
-        "Barrel",
-        "Clip"
+        "Barrel"
       ],
       "tags": [
         "GunType.Rifle.AK",
@@ -5033,7 +5374,7 @@
             {
               "gameId": "task.wp.c.01",
               "id": "regiment_43",
-              "name": "A Real Rifle",
+              "name": "Different Style",
               "corpId": "regiment"
             }
           ],
@@ -5830,7 +6171,7 @@
             {
               "gameId": "task.wp.c.04",
               "id": "regiment_46",
-              "name": "Get Back My Shades",
+              "name": "Blinding Light",
               "corpId": "regiment"
             }
           ],
@@ -5947,7 +6288,7 @@
       "fullsize": "/images/items/gunsmith-parts/part-ak-pistolgrip-moeak.webp"
     },
     "stats": {
-      "weight": 0,
+      "weight": 0.045,
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": 0.12
@@ -6193,7 +6534,14 @@
           "bundlePrice": 2592,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.wp.c.02",
+              "id": "regiment_44",
+              "name": "Taste of Life: Beer",
+              "corpId": "regiment"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         }
@@ -6479,6 +6827,74 @@
       "tags": [
         "GunpartType.Stock",
         "Store.stock.extendable"
+      ]
+    }
+  },
+  {
+    "id": "part-ak-stock-kek",
+    "gameId": "gunsmith.ak.stock.kek",
+    "name": "AK74/AKM KEK stock",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "AK74",
+    "group": "ak",
+    "slot": "stock",
+    "partType": "Stock",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-ak-stock-kek.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-ak-stock-kek.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-ak-stock-kek.webp"
+    },
+    "stats": {
+      "weight": 0.37,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": 0.12,
+        "verticalRecoilModifier": -0.29,
+        "horizontalRecoilModifier": -0.29,
+        "accuracyModifier": 0.02
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null,
+      "basePrice": 10962,
+      "sellPrices": [
+        10962,
+        9866,
+        7674,
+        7674,
+        7674,
+        10962
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ak.stock.kek",
+          "level": 4,
+          "price": 36540,
+          "bundle": 1,
+          "bundlePrice": 36540,
+          "stock": 19,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.AK.LowerReceiver",
+        "GunSmith.RD704.LowerReceiver.RD704"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Stock"
+      ],
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Stock"
       ]
     }
   },
@@ -6978,8 +7394,7 @@
         "LowerReceiver",
         "UpperReceiver",
         "Stock",
-        "Barrel",
-        "Clip"
+        "Barrel"
       ],
       "tags": [
         "GunType.Rifle.AK",
@@ -8339,8 +8754,7 @@
         "LowerReceiver",
         "UpperReceiver",
         "Stock",
-        "Barrel",
-        "Clip"
+        "Barrel"
       ],
       "tags": [
         "GunType.Rifle.AK",
@@ -8737,9 +9151,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -8906,8 +9318,7 @@
         "LowerReceiver",
         "PistolGrip",
         "Stock",
-        "Barrel",
-        "Clip"
+        "Barrel"
       ],
       "tags": [
         "GunType.Rifle.AKalpha",
@@ -9246,9 +9657,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -9312,9 +9721,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -9411,8 +9818,7 @@
       "installsOn": [],
       "provides": [],
       "requiresPartTypes": [
-        "LowerReceiver",
-        "Clip"
+        "LowerReceiver"
       ],
       "tags": [
         "GunType.DMR.AR308",
@@ -11161,7 +11567,7 @@
             {
               "gameId": "task.na.c.10",
               "id": "ark_69",
-              "name": "Pre-war Recon",
+              "name": "Tracks of the Wolf",
               "corpId": "ark"
             }
           ],
@@ -11309,7 +11715,7 @@
             {
               "gameId": "task.na.b.01",
               "id": "ark_50",
-              "name": "Camera Placement: Warehouse & Supermarket",
+              "name": "Redeployment",
               "corpId": "ark"
             }
           ],
@@ -11600,7 +12006,7 @@
             {
               "gameId": "task.na.c.08",
               "id": "ark_67",
-              "name": "Transport Clues",
+              "name": "End of the Line",
               "corpId": "ark"
             }
           ],
@@ -11684,9 +12090,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -11752,9 +12156,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -11799,7 +12201,7 @@
         {
           "vendor": "ark",
           "goodsId": "gds.gunsmith.ar15.clip.drum50",
-          "level": 4,
+          "level": 3,
           "price": 51323,
           "bundle": 1,
           "bundlePrice": 51323,
@@ -11809,7 +12211,7 @@
             {
               "gameId": "task.na.a.03",
               "id": "ark_38",
-              "name": "Police Car Photos",
+              "name": "A Closer Look",
               "corpId": "ark"
             }
           ],
@@ -11827,9 +12229,59 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Clip"
+      ]
+    }
+  },
+  {
+    "id": "part-ar15-clip-drum50-ws",
+    "gameId": "gunsmith.ar15.clip.drum50-ws",
+    "name": "AR-15 5.56x45mm 150rnd Drum magazine rebirth",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "",
+    "group": "ar15",
+    "slot": "clip",
+    "partType": "Clip",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-ar15-clip-drum50-ws.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-ar15-clip-drum50-ws.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-ar15-clip-drum50-ws.webp"
+    },
+    "stats": {
+      "weight": 0.41,
+      "rarity": "Epic",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.12
+      },
+      "partMOA": null,
+      "capacity": 150,
+      "caliber": "556x45",
+      "gunData": null,
+      "basePrice": 8888,
+      "sellPrices": [
+        8888,
+        8888,
+        6222,
+        6222,
+        6222,
+        6222
       ],
+      "buyOffers": []
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.AR15.LowerReceiver",
+        "GunSmith.HK416.LowerReceiver",
+        "GunSmith.SCAR.LowerReceiver.MK16"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Clip"
+      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -11884,7 +12336,7 @@
             {
               "gameId": "task.na.b.10",
               "id": "ark_59",
-              "name": "★ Silver Skull BOSS",
+              "name": "★ Silver Skull",
               "corpId": "ark"
             }
           ],
@@ -11902,9 +12354,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -11959,7 +12409,7 @@
             {
               "gameId": "task.na.a.07",
               "id": "ark_42",
-              "name": "★18 Judgment Day BOSS",
+              "name": "★ Judgment",
               "corpId": "ark"
             }
           ],
@@ -11977,10 +12427,10 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.na.a.07",
-              "id": "ark_42",
-              "name": "★18 Judgment Day BOSS",
-              "corpId": "ark"
+              "gameId": "task.research.d2",
+              "id": "research_8",
+              "name": "AR-15 60rd P-Drum",
+              "corpId": "gunsmith"
             }
           ],
           "requiresDlc": [],
@@ -12008,9 +12458,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -12074,9 +12522,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -12129,10 +12575,10 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.gunsmith.m09",
-              "id": "gunsmith_18",
-              "name": "Smuggling Route: Surveillance I",
-              "corpId": "gunsmith"
+              "gameId": "task.na.a.08",
+              "id": "ark_43",
+              "name": "Going Underground",
+              "corpId": "ark"
             }
           ],
           "requiresDlc": [],
@@ -12147,14 +12593,7 @@
           "bundlePrice": 63282,
           "stock": 2,
           "resetType": "daily",
-          "requiresTasks": [
-            {
-              "gameId": "task.research.d2",
-              "id": "research_8",
-              "name": "AR-15 60rd P-Drum",
-              "corpId": "gunsmith"
-            }
-          ],
+          "requiresTasks": [],
           "requiresDlc": [],
           "exchange": [
             {
@@ -12180,9 +12619,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -12387,9 +12824,9 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.gunsmith.m03",
-              "id": "gunsmith_6",
-              "name": "The Artisan's Touch",
+              "gameId": "task.gunsmith.m07",
+              "id": "gunsmith_14",
+              "name": "Buying Access",
               "corpId": "gunsmith"
             }
           ],
@@ -12853,6 +13290,79 @@
     }
   },
   {
+    "id": "part-ar15-handguard-nightrail",
+    "gameId": "gunsmith.ar15.handguard.nightrail",
+    "name": "AR-15 NightRail handguard",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "AR15",
+    "group": "ar15",
+    "slot": "handguard",
+    "partType": "Handguard",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-ar15-handguard-nightrail.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-ar15-handguard-nightrail.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-ar15-handguard-nightrail.webp"
+    },
+    "stats": {
+      "weight": 0.29,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": 0.11,
+        "verticalRecoilModifier": -0.12,
+        "horizontalRecoilModifier": -0.12
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null,
+      "basePrice": 17591,
+      "sellPrices": [
+        17591,
+        15832,
+        12314,
+        12314,
+        12314,
+        17591
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.ar15.handguard.nightrail",
+          "level": 4,
+          "price": 58636,
+          "bundle": 1,
+          "bundlePrice": 58636,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.AR15.UpperReceiver"
+      ],
+      "provides": [
+        "GunSmithSlot.UpperReceiver.Handguard",
+        "GunSmithSlot.GasBlock.255sight",
+        "GunSmithSlot.GasBlock.368sight",
+        "GunSmithSlot.GasBlock.180sight",
+        "GunSmithSlot.GasBlock.180",
+        "GunSmithSlot.GasBlock.255"
+      ],
+      "requiresPartTypes": [
+        "Handguard"
+      ],
+      "tags": [
+        "GunpartType.Handguard"
+      ]
+    }
+  },
+  {
     "id": "part-ar15-handguard-ssgen3",
     "gameId": "gunsmith.ar15.handguard.ssgen3",
     "name": "AR-15 SSR Gen3 handguard",
@@ -12894,7 +13404,7 @@
         {
           "vendor": "gunsmith",
           "goodsId": "gds.gunsmith.ar15.handguard.ssgen3",
-          "level": 4,
+          "level": 3,
           "price": 56739,
           "bundle": 1,
           "bundlePrice": 56739,
@@ -12914,7 +13424,7 @@
         {
           "vendor": "gunsmith",
           "goodsId": "gds.gunsmith.ar15.handguard.ssgen3-2",
-          "level": 4,
+          "level": 3,
           "price": 56739,
           "bundle": 1,
           "bundlePrice": 56739,
@@ -13052,8 +13562,7 @@
       "installsOn": [],
       "provides": [],
       "requiresPartTypes": [
-        "LowerReceiver",
-        "Clip"
+        "LowerReceiver"
       ],
       "tags": [
         "GunType.Rifle.AR",
@@ -13154,8 +13663,7 @@
       "installsOn": [],
       "provides": [],
       "requiresPartTypes": [
-        "LowerReceiver",
-        "Clip"
+        "LowerReceiver"
       ],
       "tags": [
         "GunType.Rifle.AR",
@@ -13257,8 +13765,7 @@
       "installsOn": [],
       "provides": [],
       "requiresPartTypes": [
-        "LowerReceiver",
-        "Clip"
+        "LowerReceiver"
       ],
       "tags": [
         "GunType.Rifle.AR",
@@ -13532,9 +14039,9 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.gunsmith.m05",
-              "id": "gunsmith_10",
-              "name": "The Last Screw Before Iron Wolf",
+              "gameId": "task.gunsmith.m09",
+              "id": "gunsmith_18",
+              "name": "Surveillance Setup",
               "corpId": "gunsmith"
             }
           ],
@@ -13838,7 +14345,7 @@
             {
               "gameId": "task.na.c.06",
               "id": "ark_65",
-              "name": "Truck Marking",
+              "name": "Where Did the Trucks Go",
               "corpId": "ark"
             }
           ],
@@ -14313,7 +14820,7 @@
       "fullsize": "/images/items/gunsmith-parts/part-ar15-pistolgrip-m16a1.webp"
     },
     "stats": {
-      "weight": 0,
+      "weight": 0.06,
       "rarity": "Common",
       "attachmentModifier": {
         "ergonomicsModifier": 0.04
@@ -15521,7 +16028,7 @@
         {
           "vendor": "gunsmith",
           "goodsId": "gds.gunsmith.arbuffer.stock.prsgen3",
-          "level": 4,
+          "level": 3,
           "price": 36248,
           "bundle": 1,
           "bundlePrice": 36248,
@@ -15548,6 +16055,85 @@
         "GunSmith.AR15.LowerReceiver",
         "GunSmith.HK416.LowerReceiver",
         "GunSmith.AR10.LowerReceiver.AR308",
+        "GunSmith.SVD.Stock.BufferTubeAdapter"
+      ],
+      "provides": [
+        "GunSmithSlot.Stock.ARbuffer"
+      ],
+      "requiresPartTypes": [
+        "Stock"
+      ],
+      "tags": [
+        "GunpartType.Stock"
+      ]
+    }
+  },
+  {
+    "id": "part-arbuffer-stock-scs",
+    "gameId": "gunsmith.arbuffer.stock.scs",
+    "name": "AR-15 SCS buffer tube stock",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "AR15",
+    "group": "arbuffer",
+    "slot": "stock",
+    "partType": "Stock",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-arbuffer-stock-scs.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-arbuffer-stock-scs.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-arbuffer-stock-scs.webp"
+    },
+    "stats": {
+      "weight": 0.31,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": 0.12,
+        "verticalRecoilModifier": -0.22,
+        "horizontalRecoilModifier": -0.22,
+        "accuracyModifier": 0.02
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null,
+      "basePrice": 12376,
+      "sellPrices": [
+        12376,
+        11139,
+        8664,
+        8664,
+        8664,
+        12376
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.arbuffer.stock.scs",
+          "level": 4,
+          "price": 41252,
+          "bundle": 1,
+          "bundlePrice": 41252,
+          "stock": 19,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.AK.Stock.ARbufferAdapter",
+        "GunSmith.Flame12.Stock.ARbufferAdapter",
+        "GunSmith.G3.Stock.ARbufferAdapter",
+        "GunSmith.AR15.LowerReceiver",
+        "GunSmith.HK416.LowerReceiver",
+        "GunSmith.AR10.LowerReceiver.AR308",
+        "GunSmith.Vector.Stock.BufferTubeAdapter",
+        "GunSmith.SA58.Stock.Adpt",
+        "GunSmith.MP5.Stock.BufferTubeAdapter",
+        "GunSmith.M870.Stock.BufferTubeAdapter",
         "GunSmith.SVD.Stock.BufferTubeAdapter"
       ],
       "provides": [
@@ -15602,7 +16188,7 @@
         {
           "vendor": "ark",
           "goodsId": "gds.gunsmith.arbuffer.stock.ubr",
-          "level": 4,
+          "level": 3,
           "price": 31370,
           "bundle": 1,
           "bundlePrice": 31370,
@@ -16231,6 +16817,622 @@
     }
   },
   {
+    "id": "part-ash12-clip-10",
+    "gameId": "gunsmith.ash12.clip.10",
+    "name": "ASH-12 12.7x55mm 10rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "ASH12",
+    "group": "ash12",
+    "slot": "clip",
+    "partType": "Clip",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-ash12-clip-10.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-ash12-clip-10.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-ash12-clip-10.webp"
+    },
+    "stats": {
+      "weight": 0.3,
+      "rarity": "Uncommon",
+      "attachmentModifier": {},
+      "partMOA": null,
+      "capacity": 10,
+      "caliber": "127x55",
+      "gunData": null,
+      "basePrice": 896,
+      "sellPrices": [
+        896,
+        807,
+        628,
+        628,
+        628,
+        896
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ash12.clip.10",
+          "level": 1,
+          "price": 2561,
+          "bundle": 1,
+          "bundlePrice": 2561,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.ASH12.LowerReceiver.ASH12"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Clip"
+      ],
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Clip"
+      ]
+    }
+  },
+  {
+    "id": "part-ash12-clip-20",
+    "gameId": "gunsmith.ash12.clip.20",
+    "name": "ASH-12 12.7x55mm 20rnd magazine",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "ASH12",
+    "group": "ash12",
+    "slot": "clip",
+    "partType": "Clip",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-ash12-clip-20.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-ash12-clip-20.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-ash12-clip-20.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Uncommon",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.05
+      },
+      "partMOA": null,
+      "capacity": 20,
+      "caliber": "127x55",
+      "gunData": null,
+      "basePrice": 2688,
+      "sellPrices": [
+        2688,
+        2420,
+        1882,
+        1882,
+        1882,
+        2688
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ash12.clip.20",
+          "level": 1,
+          "price": 7680,
+          "bundle": 1,
+          "bundlePrice": 7680,
+          "stock": 88,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.ASH12.LowerReceiver.ASH12"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Clip"
+      ],
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Clip"
+      ]
+    }
+  },
+  {
+    "id": "part-ash12-clip-20-ws",
+    "gameId": "gunsmith.ash12.clip.20-ws",
+    "name": "ASH-12 12.7x55mm 90rnd magazine rebirth",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "",
+    "group": "ash12",
+    "slot": "clip",
+    "partType": "Clip",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-ash12-clip-20-ws.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-ash12-clip-20-ws.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-ash12-clip-20-ws.webp"
+    },
+    "stats": {
+      "weight": 0.5,
+      "rarity": "Uncommon",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.05
+      },
+      "partMOA": null,
+      "capacity": 90,
+      "caliber": "127x55",
+      "gunData": null,
+      "basePrice": 8888,
+      "sellPrices": [
+        8888,
+        8888,
+        6222,
+        6222,
+        6222,
+        6222
+      ],
+      "buyOffers": []
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.ASH12.LowerReceiver.ASH12"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Clip"
+      ],
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Clip"
+      ]
+    }
+  },
+  {
+    "id": "part-ash12-frontsight-flip",
+    "gameId": "gunsmith.ash12.frontsight.flip",
+    "name": "ASH-12 front sight",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "ASH12",
+    "group": "ash12",
+    "slot": "frontsight",
+    "partType": null,
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-ash12-frontsight-flip.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-ash12-frontsight-flip.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-ash12-frontsight-flip.webp"
+    },
+    "stats": {
+      "weight": 0.06,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.01
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null,
+      "basePrice": 427,
+      "sellPrices": [
+        427,
+        385,
+        299,
+        299,
+        299,
+        427
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ash12.frontsight.flip",
+          "level": 1,
+          "price": 1219,
+          "bundle": 1,
+          "bundlePrice": 1219,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "compatibility": {
+      "installsOn": [],
+      "provides": [
+        "GunSmithSlot.Ironsight.FrontSight"
+      ],
+      "requiresPartTypes": [],
+      "tags": [
+        "Att.IronSight.FrontSight"
+      ]
+    }
+  },
+  {
+    "id": "part-ash12-handguard-ash12",
+    "gameId": "gunsmith.ash12.handguard.ash12",
+    "name": "ASH-12 polymer handguard",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "ASH12",
+    "group": "ash12",
+    "slot": "handguard",
+    "partType": "Handguard",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-ash12-handguard-ash12.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-ash12-handguard-ash12.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-ash12-handguard-ash12.webp"
+    },
+    "stats": {
+      "weight": 0.3,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": 0.1,
+        "verticalRecoilModifier": -0.05,
+        "horizontalRecoilModifier": -0.05
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null,
+      "basePrice": 5517,
+      "sellPrices": [
+        5517,
+        4966,
+        3862,
+        3862,
+        3862,
+        5517
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ash12.handguard.ash12",
+          "level": 4,
+          "price": 15763,
+          "bundle": 1,
+          "bundlePrice": 15763,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.ASH12.UpperReceiver.ASH12"
+      ],
+      "provides": [
+        "GunSmithSlot.UpperReceiver.Handguard"
+      ],
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Handguard"
+      ]
+    }
+  },
+  {
+    "id": "part-ash12-lowerreceiver-ash12",
+    "gameId": "gunsmith.ash12.lowerreceiver.ash12",
+    "name": "ASH-12 12.7x55mm assault rifle",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "ASH12",
+    "group": "ash12",
+    "slot": "lowerreceiver",
+    "partType": "LowerReceiver",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-ash12-lowerreceiver-ash12.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-ash12-lowerreceiver-ash12.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-ash12-lowerreceiver-ash12.webp"
+    },
+    "stats": {
+      "weight": 1.6,
+      "rarity": "Common",
+      "attachmentModifier": {},
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": {
+        "fireRate": 600,
+        "fireRateIsDefault": true,
+        "MOA": null,
+        "penetration": null,
+        "ergonomics": 0.6,
+        "firingPower": 0.5,
+        "hitDamage": null,
+        "headDamageScale": null,
+        "muzzleVelocity": null,
+        "ADSSpeed": 1,
+        "fireMode": null,
+        "fireModes": [],
+        "recoilParameters": {
+          "shiftMomentum": 120,
+          "pitchBaseMomentum": 32,
+          "yawBaseMomentum": 29,
+          "rollBaseMomentum": 0,
+          "shiftStiffness": 215,
+          "pitchStiffness": 910,
+          "yawStiffness": 555,
+          "rollStiffness": 800,
+          "pitchDamping": 2.58,
+          "yawDamping": 2.4,
+          "rollDamping": 1.17,
+          "pitchMass": 2,
+          "yawMass": 1.4,
+          "rollMass": 0.5,
+          "oneHandedMultiplier": 0.05,
+          "oneHandedADSMultiplier": 0.1,
+          "verticalRecoilControl": 0.48,
+          "horizontalRecoilControl": 0.56
+        },
+        "recoilComponentParameters": null,
+        "damageRangeCurve": "BR_DOD_Rfile_GY",
+        "caliber": "12.7x55"
+      },
+      "basePrice": 3971,
+      "sellPrices": [
+        3971,
+        3574,
+        2780,
+        2780,
+        2780,
+        3971
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ash12.lowerreceiver.ash12",
+          "level": 1,
+          "price": 113450,
+          "bundle": 1,
+          "bundlePrice": 113450,
+          "stock": 20,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "compatibility": {
+      "installsOn": [],
+      "provides": [],
+      "requiresPartTypes": [
+        "LowerReceiver",
+        "PistolGrip",
+        "Stock"
+      ],
+      "tags": [
+        "RifleType.RifleModern",
+        "GunType.Rifle.ASH12"
+      ]
+    }
+  },
+  {
+    "id": "part-ash12-muzzle-compensator",
+    "gameId": "gunsmith.ash12.muzzle.compensator",
+    "name": "ASH-12 12.7x55mm compensator",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "ASH12",
+    "group": "ash12",
+    "slot": "muzzle",
+    "partType": "Muzzle",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-ash12-muzzle-compensator.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-ash12-muzzle-compensator.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-ash12-muzzle-compensator.webp"
+    },
+    "stats": {
+      "weight": 0.25,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.05,
+        "verticalRecoilModifier": -0.2,
+        "horizontalRecoilModifier": -0.2,
+        "shiftMomentumModifer": -0.2,
+        "shiftStiffnessModifer": 0.05,
+        "yawStiffnessModifer": 0.2,
+        "pitchStiffnessModifer": 0.1,
+        "rollStiffnessModifer": 0.2
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null,
+      "basePrice": 3063,
+      "sellPrices": [
+        3063,
+        2757,
+        2145,
+        2145,
+        2145,
+        3063
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.ash12.muzzle.compensator",
+          "level": 1,
+          "price": 18750,
+          "bundle": 1,
+          "bundlePrice": 18750,
+          "stock": 20,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.ASH12.UpperReceiver.ASH12"
+      ],
+      "provides": [
+        "GunSmithSlot.Barrel.Muzzle"
+      ],
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Muzzle.compensator"
+      ]
+    }
+  },
+  {
+    "id": "part-ash12-muzzle-suppressor",
+    "gameId": "gunsmith.ash12.muzzle.suppressor",
+    "name": "ASH-12 12.7x55mm suppressor",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "ASH12",
+    "group": "ash12",
+    "slot": "muzzle",
+    "partType": "Muzzle",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-ash12-muzzle-suppressor.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-ash12-muzzle-suppressor.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-ash12-muzzle-suppressor.webp"
+    },
+    "stats": {
+      "weight": 0.7,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.2,
+        "verticalRecoilModifier": -0.1,
+        "horizontalRecoilModifier": -0.1,
+        "shiftMomentumModifer": -0.05,
+        "yawMomentumModifer": -0.025,
+        "pitchMomentumModifer": 0.03,
+        "shiftStiffnessModifer": 0.05,
+        "yawStiffnessModifer": 0.025,
+        "pitchStiffnessModifer": 0.05,
+        "firingPowerModifier": 0.01,
+        "shotgunSpreadModifer": -0.1
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null,
+      "basePrice": 4212,
+      "sellPrices": [
+        4212,
+        3791,
+        2949,
+        2949,
+        2949,
+        4212
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.ash12.muzzle.suppressor",
+          "level": 1,
+          "price": 12035,
+          "bundle": 1,
+          "bundlePrice": 12035,
+          "stock": 20,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.ASH12.UpperReceiver.ASH12"
+      ],
+      "provides": [
+        "GunSmithSlot.Barrel.Muzzle"
+      ],
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Muzzle.suppressor"
+      ]
+    }
+  },
+  {
+    "id": "part-ash12-upperreceiver-ash12",
+    "gameId": "gunsmith.ash12.upperreceiver.ash12",
+    "name": "ASH-12 12.7x55mm upper receiver",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "ASH12",
+    "group": "ash12",
+    "slot": "upperreceiver",
+    "partType": "UpperReceiver",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-ash12-upperreceiver-ash12.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-ash12-upperreceiver-ash12.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-ash12-upperreceiver-ash12.webp"
+    },
+    "stats": {
+      "weight": 0.75,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.05
+      },
+      "partMOA": 2.8,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null,
+      "basePrice": 12896,
+      "sellPrices": [
+        12896,
+        11607,
+        9028,
+        9028,
+        9028,
+        12896
+      ],
+      "buyOffers": [
+        {
+          "vendor": "regiment",
+          "goodsId": "gds.gunsmith.ash12.upperreceiver.ash12",
+          "level": 1,
+          "price": 36845,
+          "bundle": 1,
+          "bundlePrice": 36845,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.ASH12.LowerReceiver.ASH12"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.UpperReceiver"
+      ],
+      "requiresPartTypes": [
+        "UpperReceiver",
+        "Handguard",
+        "Barrel"
+      ],
+      "tags": [
+        "GunpartType.UpperReceiver"
+      ]
+    }
+  },
+  {
     "id": "part-aug-barrel-383",
     "gameId": "gunsmith.aug.barrel.383",
     "name": "AUG 5.56x45mm 383mm barrel",
@@ -16352,7 +17554,7 @@
             {
               "gameId": "task.na.b.03",
               "id": "ark_52",
-              "name": "Retrieve ARK Disks",
+              "name": "Secret Contact",
               "corpId": "ark"
             }
           ],
@@ -16576,9 +17778,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -16631,10 +17831,10 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.na.a.04",
-              "id": "ark_39",
-              "name": "Keeping the Peace",
-              "corpId": "ark"
+              "gameId": "task.gear.a.11",
+              "id": "forge_28",
+              "name": "Worth More Than Gold",
+              "corpId": "forge"
             }
           ],
           "requiresDlc": [],
@@ -16650,9 +17850,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -16716,9 +17914,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -16884,8 +18080,7 @@
         "LowerReceiver",
         "PistolGrip",
         "Handguard",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.SMG.AUG"
@@ -16986,8 +18181,7 @@
         "LowerReceiver",
         "PistolGrip",
         "Handguard",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.Rifle.AUG",
@@ -17089,8 +18283,7 @@
         "LowerReceiver",
         "PistolGrip",
         "Handguard",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.Rifle.AUG",
@@ -18068,7 +19261,7 @@
             {
               "gameId": "task.na.b.04",
               "id": "ark_53",
-              "name": "Hide Discs",
+              "name": "The Bait",
               "corpId": "ark"
             }
           ],
@@ -18168,7 +19361,7 @@
     "description": "",
     "category": "attachments",
     "subcategory": "Gunsmith Parts",
-    "family": "Bx4",
+    "family": "BX4",
     "group": "bx4",
     "slot": "barrel",
     "partType": "Barrel",
@@ -18238,7 +19431,7 @@
     "description": "",
     "category": "attachments",
     "subcategory": "Gunsmith Parts",
-    "family": "Bx4",
+    "family": "BX4",
     "group": "bx4",
     "slot": "barrel",
     "partType": "Barrel",
@@ -18308,7 +19501,7 @@
     "description": "",
     "category": "attachments",
     "subcategory": "Gunsmith Parts",
-    "family": "Bx4",
+    "family": "BX4",
     "group": "bx4",
     "slot": "clip",
     "partType": "Clip",
@@ -18360,9 +19553,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -18375,7 +19566,7 @@
     "description": "",
     "category": "attachments",
     "subcategory": "Gunsmith Parts",
-    "family": "Bx4",
+    "family": "BX4",
     "group": "bx4",
     "slot": "lowerreceiver",
     "partType": "LowerReceiver",
@@ -18461,8 +19652,7 @@
         "UpperReceiver",
         "PistolGrip",
         "Handguard",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.SMG"
@@ -18476,7 +19666,7 @@
     "description": "",
     "category": "attachments",
     "subcategory": "Gunsmith Parts",
-    "family": "Bx4",
+    "family": "BX4",
     "group": "bx4",
     "slot": "mount",
     "partType": "Mount",
@@ -18540,7 +19730,7 @@
     "description": "",
     "category": "attachments",
     "subcategory": "Gunsmith Parts",
-    "family": "Bx4",
+    "family": "BX4",
     "group": "bx4",
     "slot": "muzzle",
     "partType": "Muzzle",
@@ -18729,9 +19919,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -18786,9 +19974,9 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.na.b.10",
-              "id": "ark_59",
-              "name": "★ Silver Skull BOSS",
+              "gameId": "task.na.a.01",
+              "id": "ark_36",
+              "name": "Coastal Pursuit",
               "corpId": "ark"
             }
           ],
@@ -18804,9 +19992,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -18975,8 +20161,7 @@
       "requiresPartTypes": [
         "LowerReceiver",
         "PistolGrip",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.SMG.Evo3",
@@ -19385,9 +20570,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -19555,8 +20738,7 @@
       "requiresPartTypes": [
         "LowerReceiver",
         "UpperReceiver",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.shotgun.flame12",
@@ -19857,7 +21039,7 @@
         "horizontalRecoilModifier": -0.04,
         "firingPowerModifier": -0.03
       },
-      "partMOA": null,
+      "partMOA": 12.1,
       "capacity": null,
       "caliber": null,
       "gunData": null,
@@ -19960,9 +21142,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -20027,9 +21207,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -20094,9 +21272,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -20143,7 +21319,7 @@
         {
           "vendor": "gunsmith",
           "goodsId": "gds.gunsmith.g18c.clip.50rnd",
-          "level": 4,
+          "level": 3,
           "price": 37675,
           "bundle": 1,
           "bundlePrice": 37675,
@@ -20153,7 +21329,7 @@
             {
               "gameId": "task.gunsmith.m10",
               "id": "gunsmith_19",
-              "name": "Malyuk Field Trial",
+              "name": "Field Adaptation",
               "corpId": "gunsmith"
             }
           ],
@@ -20170,9 +21346,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -20337,8 +21511,7 @@
         "LowerReceiver",
         "PistolGrip",
         "Handguard",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.Pistol.G18C",
@@ -20538,9 +21711,7 @@
       "provides": [
         "GunSmithSlot.UpperReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -20606,9 +21777,7 @@
       "provides": [
         "GunSmithSlot.UpperReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -20674,9 +21843,7 @@
       "provides": [
         "GunSmithSlot.UpperReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -20768,9 +21935,7 @@
       "provides": [
         "GunSmithSlot.UpperReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -20862,9 +22027,7 @@
       "provides": [
         "GunSmithSlot.UpperReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -21268,7 +22431,7 @@
             {
               "gameId": "task.na.c.09",
               "id": "ark_68",
-              "name": "Rifle Drills",
+              "name": "Better Safe Than Sorry",
               "corpId": "ark"
             }
           ],
@@ -21381,8 +22544,7 @@
       "installsOn": [],
       "provides": [],
       "requiresPartTypes": [
-        "LowerReceiver",
-        "Clip"
+        "LowerReceiver"
       ],
       "tags": [
         "GunType.Rifle.G3",
@@ -21479,8 +22641,7 @@
       "installsOn": [],
       "provides": [],
       "requiresPartTypes": [
-        "LowerReceiver",
-        "Clip"
+        "LowerReceiver"
       ],
       "tags": [
         "GunType.Rifle.G3",
@@ -21579,8 +22740,7 @@
       "installsOn": [],
       "provides": [],
       "requiresPartTypes": [
-        "LowerReceiver",
-        "Clip"
+        "LowerReceiver"
       ],
       "tags": [
         "GunType.Rifle.G3",
@@ -21674,8 +22834,7 @@
       "weight": 0.32,
       "rarity": "Common",
       "attachmentModifier": {
-        "ergonomicsModifier": -0.06,
-        "ADSSpeedModifier": -0.4
+        "ergonomicsModifier": -0.06
       },
       "partMOA": null,
       "capacity": null,
@@ -21694,7 +22853,7 @@
         {
           "vendor": "ark",
           "goodsId": "gds.gunsmith.g3.mount.falconscope",
-          "level": 4,
+          "level": 3,
           "price": 42121,
           "bundle": 1,
           "bundlePrice": 42121,
@@ -23034,6 +24193,258 @@
     }
   },
   {
+    "id": "part-gp100-clip-gp100",
+    "gameId": "gunsmith.gp100.clip.gp100",
+    "name": "GP100 9x19mm cylinder",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "GP100",
+    "group": "gp100",
+    "slot": "clip",
+    "partType": "Clip",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-gp100-clip-gp100.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-gp100-clip-gp100.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-gp100-clip-gp100.webp"
+    },
+    "stats": {
+      "weight": 0.36,
+      "rarity": "Common",
+      "attachmentModifier": {},
+      "partMOA": null,
+      "capacity": null,
+      "caliber": "9x19mm",
+      "gunData": null,
+      "basePrice": 0,
+      "sellPrices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "buyOffers": []
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.GP100.UpperReceiver.GP100"
+      ],
+      "provides": [
+        "GunSmithSlot.UpperReceiver.Clip"
+      ],
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Clip"
+      ]
+    }
+  },
+  {
+    "id": "part-gp100-lowerreceiver-gp100",
+    "gameId": "gunsmith.gp100.lowerreceiver.gp100",
+    "name": "GP100 9x19mm revolver",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "GP100",
+    "group": "gp100",
+    "slot": "lowerreceiver",
+    "partType": "LowerReceiver",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-gp100-lowerreceiver-gp100.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-gp100-lowerreceiver-gp100.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-gp100-lowerreceiver-gp100.webp"
+    },
+    "stats": {
+      "weight": 0.65,
+      "rarity": "Common",
+      "attachmentModifier": {},
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": {
+        "fireRate": 600,
+        "fireRateIsDefault": true,
+        "MOA": 8.5,
+        "penetration": null,
+        "ergonomics": 0.4,
+        "firingPower": 0.8,
+        "hitDamage": null,
+        "headDamageScale": null,
+        "muzzleVelocity": null,
+        "ADSSpeed": null,
+        "fireMode": "semiAuto",
+        "fireModes": [
+          "semiAuto"
+        ],
+        "recoilParameters": {
+          "shiftMomentum": 275,
+          "pitchBaseMomentum": 165,
+          "yawBaseMomentum": 19,
+          "rollBaseMomentum": 10,
+          "shiftStiffness": 680,
+          "pitchStiffness": 1020,
+          "yawStiffness": 955,
+          "rollStiffness": 850,
+          "pitchDamping": 1.15,
+          "yawDamping": 1.2,
+          "rollDamping": 0.17,
+          "shiftMass": 1.9,
+          "pitchMass": 0.25,
+          "yawMass": 0.75,
+          "rollMass": 0.4,
+          "oneHandedMultiplier": 0.05,
+          "oneHandedADSMultiplier": 0.1,
+          "verticalRecoilControl": 0.382,
+          "horizontalRecoilControl": 0.293,
+          "bUseShoulderRest": false
+        },
+        "recoilComponentParameters": null,
+        "damageRangeCurve": null,
+        "caliber": "9x19"
+      },
+      "basePrice": 29923,
+      "sellPrices": [
+        29923,
+        26931,
+        20947,
+        20947,
+        20947,
+        29923
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.gp100.lowerreceiver.gp100",
+          "level": 3,
+          "price": 85496,
+          "bundle": 1,
+          "bundlePrice": 85496,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "compatibility": {
+      "installsOn": [],
+      "provides": [],
+      "requiresPartTypes": [
+        "LowerReceiver",
+        "Handguard",
+        "Stock"
+      ],
+      "tags": [
+        "GunType.Pistol.GP100"
+      ]
+    }
+  },
+  {
+    "id": "part-gp100-pistolgrip-gp100",
+    "gameId": "gunsmith.gp100.pistolgrip.gp100",
+    "name": "GP100 pistol grip",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "GP100",
+    "group": "gp100",
+    "slot": "pistolgrip",
+    "partType": "PistolGrip",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-gp100-pistolgrip-gp100.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-gp100-pistolgrip-gp100.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-gp100-pistolgrip-gp100.webp"
+    },
+    "stats": {
+      "weight": 0.24,
+      "rarity": "Common",
+      "attachmentModifier": {},
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null,
+      "basePrice": 0,
+      "sellPrices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "buyOffers": []
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.GP100.LowerReceiver.GP100"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Pistolgrip"
+      ],
+      "requiresPartTypes": [
+        "PistolGrip"
+      ],
+      "tags": [
+        "GunpartType.PistolGrip"
+      ]
+    }
+  },
+  {
+    "id": "part-gp100-upperreceiver-gp100",
+    "gameId": "gunsmith.gp100.upperreceiver.gp100",
+    "name": "GP100 9x19mm upper receiver",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "GP100",
+    "group": "gp100",
+    "slot": "upperreceiver",
+    "partType": "UpperReceiver",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-gp100-upperreceiver-gp100.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-gp100-upperreceiver-gp100.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-gp100-upperreceiver-gp100.webp"
+    },
+    "stats": {
+      "weight": 0.3,
+      "rarity": "Common",
+      "attachmentModifier": {},
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null,
+      "basePrice": 0,
+      "sellPrices": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "buyOffers": []
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.GP100.LowerReceiver.GP100"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.UpperReceiver"
+      ],
+      "requiresPartTypes": [
+        "UpperReceiver",
+        "PistolGrip",
+        "Barrel"
+      ],
+      "tags": [
+        "GunpartType.UpperReceiver"
+      ]
+    }
+  },
+  {
     "id": "part-hk416-barrel-358mm",
     "gameId": "gunsmith.hk416.barrel.358mm",
     "name": "RC416A5 5.56x45mm 358mm barrel",
@@ -23224,6 +24635,146 @@
     }
   },
   {
+    "id": "part-hk416-handguard-smrbk",
+    "gameId": "gunsmith.hk416.handguard.smrbk",
+    "name": "RC416A5 SMR handguard BK",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "HK416",
+    "group": "hk416",
+    "slot": "handguard",
+    "partType": "Handguard",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-hk416-handguard-smrbk.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-hk416-handguard-smrbk.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-hk416-handguard-smrbk.webp"
+    },
+    "stats": {
+      "weight": 0.35,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": 0.09,
+        "verticalRecoilModifier": -0.07,
+        "horizontalRecoilModifier": -0.07
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null,
+      "basePrice": 14474,
+      "sellPrices": [
+        14474,
+        13027,
+        10132,
+        10132,
+        10132,
+        14474
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.hk416.handguard.smrbk",
+          "level": 4,
+          "price": 48245,
+          "bundle": 1,
+          "bundlePrice": 48245,
+          "stock": 39,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.HK416.UpperReceiver.HK416A5"
+      ],
+      "provides": [
+        "GunSmithSlot.UpperReceiver.Handguard",
+        "GunSmithSlot.GasBlock.180sight",
+        "GunSmithSlot.GasBlock.180"
+      ],
+      "requiresPartTypes": [
+        "Handguard"
+      ],
+      "tags": [
+        "GunpartType.Handguard"
+      ]
+    }
+  },
+  {
+    "id": "part-hk416-handguard-smrfde",
+    "gameId": "gunsmith.hk416.handguard.smrfde",
+    "name": "RC416A5 SMR handguard FDE",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "HK416",
+    "group": "hk416",
+    "slot": "handguard",
+    "partType": "Handguard",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-hk416-handguard-smrfde.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-hk416-handguard-smrfde.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-hk416-handguard-smrfde.webp"
+    },
+    "stats": {
+      "weight": 0.35,
+      "rarity": "Common",
+      "attachmentModifier": {
+        "ergonomicsModifier": 0.09,
+        "verticalRecoilModifier": -0.07,
+        "horizontalRecoilModifier": -0.07
+      },
+      "partMOA": null,
+      "capacity": null,
+      "caliber": null,
+      "gunData": null,
+      "basePrice": 14474,
+      "sellPrices": [
+        14474,
+        13027,
+        10132,
+        10132,
+        10132,
+        14474
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.hk416.handguard.smrfde",
+          "level": 4,
+          "price": 48250,
+          "bundle": 1,
+          "bundlePrice": 48250,
+          "stock": 39,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.HK416.UpperReceiver.HK416A5"
+      ],
+      "provides": [
+        "GunSmithSlot.UpperReceiver.Handguard",
+        "GunSmithSlot.GasBlock.180sight",
+        "GunSmithSlot.GasBlock.180"
+      ],
+      "requiresPartTypes": [
+        "Handguard"
+      ],
+      "tags": [
+        "GunpartType.Handguard"
+      ]
+    }
+  },
+  {
     "id": "part-hk416-lowerreceiver-hk416a5",
     "gameId": "gunsmith.hk416.lowerreceiver.hk416a5",
     "name": "RC416A5 5.56x45mm assault rifle",
@@ -23312,8 +24863,7 @@
       "installsOn": [],
       "provides": [],
       "requiresPartTypes": [
-        "LowerReceiver",
-        "Clip"
+        "LowerReceiver"
       ],
       "tags": [
         "GunType.Rifle.AR",
@@ -23927,9 +25477,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -24094,8 +25642,7 @@
       "requiresPartTypes": [
         "LowerReceiver",
         "Handguard",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "WeaponHolster.SideArm",
@@ -24428,9 +25975,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -24826,7 +26371,7 @@
         "verticalRecoilModifier": -0.03,
         "horizontalRecoilModifier": -0.03
       },
-      "partMOA": 5.8,
+      "partMOA": 3.9,
       "capacity": null,
       "caliber": null,
       "gunData": null,
@@ -24901,7 +26446,7 @@
         "horizontalRecoilModifier": -0.04,
         "firingPowerModifier": -0.03
       },
-      "partMOA": 6.1,
+      "partMOA": 5.8,
       "capacity": null,
       "caliber": null,
       "gunData": null,
@@ -24970,7 +26515,7 @@
         "horizontalRecoilModifier": -0.06,
         "firingPowerModifier": -0.04
       },
-      "partMOA": 6.2,
+      "partMOA": 8.2,
       "capacity": null,
       "caliber": null,
       "gunData": null,
@@ -25145,9 +26690,7 @@
       "provides": [
         "GunSmithSlot.UpperReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -25383,8 +26926,7 @@
       "provides": [],
       "requiresPartTypes": [
         "LowerReceiver",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.SMG.M1928"
@@ -25925,9 +27467,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -26090,8 +27630,7 @@
       "provides": [],
       "requiresPartTypes": [
         "LowerReceiver",
-        "UpperReceiver",
-        "Clip"
+        "UpperReceiver"
       ],
       "tags": [
         "GunType.DMR.M1A"
@@ -26493,9 +28032,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -26596,8 +28133,7 @@
         "UpperReceiver",
         "PistolGrip",
         "Handguard",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.SMG.M3A1"
@@ -26720,9 +28256,9 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.na.b.07",
-              "id": "ark_56",
-              "name": "New Bridge Maintenance",
+              "gameId": "task.na.a.01",
+              "id": "ark_36",
+              "name": "Coastal Pursuit",
               "corpId": "ark"
             }
           ],
@@ -26795,7 +28331,7 @@
             {
               "gameId": "task.na.b.06",
               "id": "ark_55",
-              "name": "Disguised Baseball",
+              "name": "Baseball Cams",
               "corpId": "ark"
             }
           ],
@@ -26811,9 +28347,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -26877,9 +28411,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -26979,8 +28511,7 @@
       "provides": [],
       "requiresPartTypes": [
         "LowerReceiver",
-        "UpperReceiver",
-        "Clip"
+        "UpperReceiver"
       ],
       "tags": [
         "GunType.Boltaction.m40a5"
@@ -27237,7 +28768,7 @@
             {
               "gameId": "task.na.b.08",
               "id": "ark_57",
-              "name": "Clifton Recon",
+              "name": "Patrol",
               "corpId": "ark"
             }
           ],
@@ -27532,9 +29063,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -27598,9 +29127,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -27664,9 +29191,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -28206,8 +29731,7 @@
       "provides": [],
       "requiresPartTypes": [
         "LowerReceiver",
-        "UpperReceiver",
-        "Clip"
+        "UpperReceiver"
       ],
       "tags": [
         "GunType.shotgun.m870",
@@ -28813,9 +30337,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -28949,9 +30471,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -29116,8 +30636,7 @@
       "requiresPartTypes": [
         "LowerReceiver",
         "Handguard",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.Pistol.M9",
@@ -29416,8 +30935,7 @@
         "PistolGrip",
         "Handguard",
         "Stock",
-        "Barrel",
-        "Clip"
+        "Barrel"
       ],
       "tags": [
         "GunType.Rifle.Malyuk",
@@ -29518,8 +31036,7 @@
         "PistolGrip",
         "Handguard",
         "Stock",
-        "Barrel",
-        "Clip"
+        "Barrel"
       ],
       "tags": [
         "GunType.Rifle.Malyuk",
@@ -29834,7 +31351,14 @@
           "bundlePrice": 26320,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.na.a.09",
+              "id": "ark_44",
+              "name": "Undercurrents",
+              "corpId": "ark"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         }
@@ -29913,9 +31437,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -29966,7 +31488,14 @@
           "bundlePrice": 27593,
           "stock": -1,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.na.a.11",
+              "id": "ark_46",
+              "name": "Heavy Armor Below",
+              "corpId": "ark"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         }
@@ -29979,9 +31508,57 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Clip"
+      ]
+    }
+  },
+  {
+    "id": "part-mcx-clip-xm5-30-ws",
+    "gameId": "gunsmith.mcx.clip.xm5-30-ws",
+    "name": "XM5 6.8x51mm 90rnd magazine rebirth",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "",
+    "group": "mcx",
+    "slot": "clip",
+    "partType": "Clip",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-mcx-clip-xm5-30-ws.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-mcx-clip-xm5-30-ws.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-mcx-clip-xm5-30-ws.webp"
+    },
+    "stats": {
+      "weight": 0.24,
+      "rarity": "Uncommon",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.03
+      },
+      "partMOA": null,
+      "capacity": 90,
+      "caliber": "68x51",
+      "gunData": null,
+      "basePrice": 8888,
+      "sellPrices": [
+        8888,
+        8888,
+        6222,
+        6222,
+        6222,
+        6222
       ],
+      "buyOffers": []
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.MCX.LowerReceiver.XM5"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Clip"
+      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -30145,8 +31722,7 @@
       "provides": [],
       "requiresPartTypes": [
         "LowerReceiver",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.Rifle.AR",
@@ -30884,9 +32460,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -31946,9 +33520,61 @@
       "provides": [
         "GunSmithSlot.UpperReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Clip"
+      ]
+    }
+  },
+  {
+    "id": "part-mp5-clip-100rnd-ws",
+    "gameId": "gunsmith.mp5.clip.100rnd-ws",
+    "name": "MP5 9x19mm 200rnd Drum magazine rebirth",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "",
+    "group": "mp5",
+    "slot": "clip",
+    "partType": "Clip",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-mp5-clip-100rnd-ws.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-mp5-clip-100rnd-ws.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-mp5-clip-100rnd-ws.webp"
+    },
+    "stats": {
+      "weight": 1.3,
+      "rarity": "Uncommon",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.2,
+        "verticalRecoilModifier": 0.04,
+        "horizontalRecoilModifier": 0.04
+      },
+      "partMOA": null,
+      "capacity": 200,
+      "caliber": "9x19mm",
+      "gunData": null,
+      "basePrice": 45888,
+      "sellPrices": [
+        8888,
+        8888,
+        6222,
+        6222,
+        6222,
+        6222
       ],
+      "buyOffers": []
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.MP5.UpperReceiver.MP5A4",
+        "GunSmith.MP5.UpperReceiver.MP5K",
+        "GunSmith.MP5.UpperReceiver.MP5SD"
+      ],
+      "provides": [
+        "GunSmithSlot.UpperReceiver.Clip"
+      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -32014,9 +33640,7 @@
       "provides": [
         "GunSmithSlot.UpperReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -32071,7 +33695,7 @@
             {
               "gameId": "task.na.c.02",
               "id": "ark_62",
-              "name": "Wind Farm Recon",
+              "name": "Northern Camp Recon",
               "corpId": "ark"
             }
           ],
@@ -32089,9 +33713,7 @@
       "provides": [
         "GunSmithSlot.UpperReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -32159,9 +33781,7 @@
       "provides": [
         "GunSmithSlot.UpperReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -32873,8 +34493,7 @@
       "provides": [],
       "requiresPartTypes": [
         "LowerReceiver",
-        "PistolGrip",
-        "Clip"
+        "PistolGrip"
       ],
       "tags": [
         "GunType.SMG.MP5A4",
@@ -32972,8 +34591,7 @@
       "provides": [],
       "requiresPartTypes": [
         "LowerReceiver",
-        "PistolGrip",
-        "Clip"
+        "PistolGrip"
       ],
       "tags": [
         "GunType.SMG.MP5K",
@@ -33394,7 +35012,7 @@
             {
               "gameId": "task.na.c.03",
               "id": "ark_3",
-              "name": "Recon 1",
+              "name": "Intelligence Gathering",
               "corpId": "ark"
             }
           ],
@@ -33473,7 +35091,7 @@
             {
               "gameId": "task.na.c.03",
               "id": "ark_3",
-              "name": "Recon 1",
+              "name": "Intelligence Gathering",
               "corpId": "ark"
             }
           ],
@@ -34294,9 +35912,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -34360,9 +35976,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -34426,9 +36040,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -34527,8 +36139,7 @@
         "PistolGrip",
         "Handguard",
         "Stock",
-        "Barrel",
-        "Clip"
+        "Barrel"
       ],
       "tags": [
         "GunType.SMG.MP9",
@@ -35035,7 +36646,31 @@
       "partMOA": 0.38,
       "capacity": null,
       "caliber": null,
-      "gunData": null
+      "gunData": null,
+      "basePrice": 18853,
+      "sellPrices": [
+        18853,
+        16968,
+        13198,
+        13198,
+        13198,
+        18853
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.mx338.barrel.mx338",
+          "level": 4,
+          "price": 62843,
+          "bundle": 1,
+          "bundlePrice": 62843,
+          "stock": 19,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "compatibility": {
       "installsOn": [
@@ -35076,8 +36711,32 @@
       },
       "partMOA": null,
       "capacity": 5,
-      "caliber": "338Lapua",
-      "gunData": null
+      "caliber": "338lm",
+      "gunData": null,
+      "basePrice": 5583,
+      "sellPrices": [
+        5583,
+        5025,
+        3909,
+        3909,
+        3909,
+        5583
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.mx338.clip.5",
+          "level": 1,
+          "price": 15951,
+          "bundle": 1,
+          "bundlePrice": 15951,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "compatibility": {
       "installsOn": [
@@ -35121,7 +36780,31 @@
       "partMOA": null,
       "capacity": null,
       "caliber": null,
-      "gunData": null
+      "gunData": null,
+      "basePrice": 9714,
+      "sellPrices": [
+        9714,
+        8743,
+        6800,
+        6800,
+        6800,
+        9714
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.mx338.handguard.mx338",
+          "level": 4,
+          "price": 32380,
+          "bundle": 1,
+          "bundlePrice": 32380,
+          "stock": 30,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "compatibility": {
       "installsOn": [
@@ -35162,9 +36845,9 @@
       "capacity": null,
       "caliber": null,
       "gunData": {
-        "fireRate": 30,
+        "fireRate": 300,
         "fireRateIsDefault": false,
-        "MOA": null,
+        "MOA": 0.53,
         "penetration": 2,
         "ergonomics": 0.7,
         "firingPower": 0.5,
@@ -35201,7 +36884,31 @@
         "recoilComponentParameters": null,
         "damageRangeCurve": null,
         "caliber": ".338 LM"
-      }
+      },
+      "basePrice": 29826,
+      "sellPrices": [
+        29826,
+        26844,
+        20879,
+        20879,
+        20879,
+        29826
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.mx338.lowerreceiver.mx338",
+          "level": 1,
+          "price": 85216,
+          "bundle": 1,
+          "bundlePrice": 85216,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "compatibility": {
       "installsOn": [],
@@ -35211,8 +36918,7 @@
         "UpperReceiver",
         "PistolGrip",
         "Handguard",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.Boltaction.MX338"
@@ -35252,7 +36958,31 @@
       "partMOA": null,
       "capacity": null,
       "caliber": null,
-      "gunData": null
+      "gunData": null,
+      "basePrice": 5286,
+      "sellPrices": [
+        5286,
+        4758,
+        3701,
+        3701,
+        3701,
+        5286
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.mx338.muzzle.compensator",
+          "level": 4,
+          "price": 27619,
+          "bundle": 1,
+          "bundlePrice": 27619,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "compatibility": {
       "installsOn": [
@@ -35298,7 +37028,31 @@
       "partMOA": null,
       "capacity": null,
       "caliber": null,
-      "gunData": null
+      "gunData": null,
+      "basePrice": 4695,
+      "sellPrices": [
+        4695,
+        4226,
+        3287,
+        3287,
+        3287,
+        4695
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.mx338.muzzle.suppressor",
+          "level": 4,
+          "price": 15650,
+          "bundle": 1,
+          "bundlePrice": 15650,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "compatibility": {
       "installsOn": [
@@ -35342,7 +37096,31 @@
       "partMOA": null,
       "capacity": null,
       "caliber": null,
-      "gunData": null
+      "gunData": null,
+      "basePrice": 11895,
+      "sellPrices": [
+        11895,
+        10706,
+        8327,
+        8327,
+        8327,
+        11895
+      ],
+      "buyOffers": [
+        {
+          "vendor": "gunsmith",
+          "goodsId": "gds.gunsmith.mx338.stock.mx338",
+          "level": 4,
+          "price": 39650,
+          "bundle": 1,
+          "bundlePrice": 39650,
+          "stock": 20,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "compatibility": {
       "installsOn": [
@@ -35553,9 +37331,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -35619,9 +37395,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -35788,8 +37562,7 @@
         "LowerReceiver",
         "PistolGrip",
         "Handguard",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.Pistol.P226",
@@ -36459,9 +38232,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -36629,8 +38400,7 @@
       "requiresPartTypes": [
         "LowerReceiver",
         "UpperReceiver",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.LMG"
@@ -37059,8 +38829,7 @@
       "installsOn": [],
       "provides": [],
       "requiresPartTypes": [
-        "LowerReceiver",
-        "Clip"
+        "LowerReceiver"
       ],
       "tags": [
         "GunType.DMR.PSG"
@@ -37277,7 +39046,7 @@
     "family": "Evo3",
     "group": "evo3",
     "slot": "clip",
-    "partType": "Clip",
+    "partType": null,
     "images": {
       "icon": "/images/items/gunsmith-parts/part-pvegunsmith-evo3-clip-50.webp",
       "thumbnail": "/images/items/gunsmith-parts/part-pvegunsmith-evo3-clip-50.webp",
@@ -37293,22 +39062,14 @@
       },
       "partMOA": null,
       "capacity": 50,
-      "caliber": "9x19mm",
+      "caliber": "None",
       "gunData": null
     },
     "compatibility": {
-      "installsOn": [
-        "GunSmith.Evo3.LowerReceiver.Evo3"
-      ],
-      "provides": [
-        "GunSmithSlot.LowerReceiver.Clip"
-      ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
-      "tags": [
-        "GunpartType.Clip"
-      ]
+      "installsOn": [],
+      "provides": [],
+      "requiresPartTypes": [],
+      "tags": []
     }
   },
   {
@@ -37471,8 +39232,7 @@
         "LowerReceiver",
         "UpperReceiver",
         "Stock",
-        "Barrel",
-        "Clip"
+        "Barrel"
       ],
       "tags": [
         "GunType.Rifle.AK",
@@ -37608,9 +39368,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -37780,8 +39538,7 @@
         "LowerReceiver",
         "UpperReceiver",
         "PistolGrip",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.DMR.RFB"
@@ -38024,9 +39781,7 @@
       "provides": [
         "GunSmithSlot.UpperReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -38074,9 +39829,7 @@
       "provides": [
         "GunSmithSlot.UpperReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -38738,9 +40491,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -38805,9 +40556,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -38872,9 +40621,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -38939,9 +40686,58 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Clip"
+      ]
+    }
+  },
+  {
+    "id": "part-sa58-clip-30rnd-ws",
+    "gameId": "gunsmith.sa58.clip.30rnd-ws",
+    "name": "SA58 7.62x51mm 90rnd magazine rebirth",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "",
+    "group": "sa58",
+    "slot": "clip",
+    "partType": "Clip",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-sa58-clip-30rnd-ws.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-sa58-clip-30rnd-ws.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-sa58-clip-30rnd-ws.webp"
+    },
+    "stats": {
+      "weight": 0.49,
+      "rarity": "Rare",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.09
+      },
+      "partMOA": null,
+      "capacity": 90,
+      "caliber": "762x51",
+      "gunData": null,
+      "basePrice": 8888,
+      "sellPrices": [
+        8888,
+        8888,
+        6222,
+        6222,
+        6222,
+        6222
       ],
+      "buyOffers": []
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.SA58.LowerReceiver.SA58",
+        "GunSmith.RFB.LowerReceiver.RFB"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Clip"
+      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -38996,10 +40792,10 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.gunsmith.m08",
-              "id": "gunsmith_16",
-              "name": "Close Quarters — MP9 Drill",
-              "corpId": "gunsmith"
+              "gameId": "task.na.a.14",
+              "id": "ark_49",
+              "name": "★ Lord of the Underground",
+              "corpId": "ark"
             }
           ],
           "requiresDlc": [],
@@ -39016,10 +40812,10 @@
           "resetType": "daily",
           "requiresTasks": [
             {
-              "gameId": "task.gunsmith.m08",
-              "id": "gunsmith_16",
-              "name": "Close Quarters — MP9 Drill",
-              "corpId": "gunsmith"
+              "gameId": "task.na.a.14",
+              "id": "ark_49",
+              "name": "★ Lord of the Underground",
+              "corpId": "ark"
             }
           ],
           "requiresDlc": [],
@@ -39040,9 +40836,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -39612,8 +41406,7 @@
       "requiresPartTypes": [
         "LowerReceiver",
         "UpperReceiver",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.Rifle.SA58",
@@ -40798,9 +42591,58 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
+      "requiresPartTypes": [],
+      "tags": [
+        "GunpartType.Clip"
+      ]
+    }
+  },
+  {
+    "id": "part-scar-clip-mk17-bk-ws",
+    "gameId": "gunsmith.scar.clip.mk17-bk-ws",
+    "name": "SECA17 BK 7.62x51mm 90rnd magazine rebirth",
+    "description": "",
+    "category": "attachments",
+    "subcategory": "Gunsmith Parts",
+    "family": "",
+    "group": "scar",
+    "slot": "clip",
+    "partType": "Clip",
+    "images": {
+      "icon": "/images/items/gunsmith-parts/part-scar-clip-mk17-bk-ws.webp",
+      "thumbnail": "/images/items/gunsmith-parts/part-scar-clip-mk17-bk-ws.webp",
+      "fullsize": "/images/items/gunsmith-parts/part-scar-clip-mk17-bk-ws.webp"
+    },
+    "stats": {
+      "weight": 0.15,
+      "rarity": "Rare",
+      "attachmentModifier": {
+        "ergonomicsModifier": -0.02
+      },
+      "partMOA": null,
+      "capacity": 90,
+      "caliber": "762x51",
+      "gunData": null,
+      "basePrice": 8888,
+      "sellPrices": [
+        8888,
+        8888,
+        6222,
+        6222,
+        6222,
+        6222
       ],
+      "buyOffers": []
+    },
+    "compatibility": {
+      "installsOn": [
+        "GunSmith.SCAR.LowerReceiver.MK17-FDE",
+        "GunSmith.SCAR.LowerReceiver.MK17-BK"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Clip"
+      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -40865,9 +42707,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -41027,8 +42867,7 @@
       "installsOn": [],
       "provides": [],
       "requiresPartTypes": [
-        "LowerReceiver",
-        "Clip"
+        "LowerReceiver"
       ],
       "tags": [
         "GunType.Rifle.MK16",
@@ -41125,8 +42964,7 @@
       "installsOn": [],
       "provides": [],
       "requiresPartTypes": [
-        "LowerReceiver",
-        "Clip"
+        "LowerReceiver"
       ],
       "tags": [
         "RifleType.RifleModern",
@@ -41223,8 +43061,7 @@
       "installsOn": [],
       "provides": [],
       "requiresPartTypes": [
-        "LowerReceiver",
-        "Clip"
+        "LowerReceiver"
       ],
       "tags": [
         "RifleType.RifleModern",
@@ -42010,12 +43847,37 @@
         "verticalRecoilModifier": -0.3,
         "horizontalRecoilModifier": -0.3,
         "pitchMomentumModifer": 0.05,
-        "pitchStiffnessModifer": 0.05
+        "pitchStiffnessModifer": 0.05,
+        "firingPowerModifier": 0.04
       },
       "partMOA": 1.12,
       "capacity": null,
       "caliber": null,
-      "gunData": null
+      "gunData": null,
+      "basePrice": 14777,
+      "sellPrices": [
+        14777,
+        13300,
+        10344,
+        10344,
+        10344,
+        14777
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.sesa2.barrel.410mm",
+          "level": 4,
+          "price": 49257,
+          "bundle": 1,
+          "bundlePrice": 49257,
+          "stock": 30,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "compatibility": {
       "installsOn": [
@@ -42056,12 +43918,37 @@
         "verticalRecoilModifier": -0.23,
         "horizontalRecoilModifier": -0.23,
         "pitchMomentumModifer": 0.05,
-        "pitchStiffnessModifer": 0.05
+        "pitchStiffnessModifer": 0.05,
+        "firingPowerModifier": 0.04
       },
       "partMOA": 0.85,
       "capacity": null,
       "caliber": null,
-      "gunData": null
+      "gunData": null,
+      "basePrice": 16577,
+      "sellPrices": [
+        16577,
+        14920,
+        11604,
+        11604,
+        11604,
+        16577
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.sesa2.barrel.560mm",
+          "level": 4,
+          "price": 55257,
+          "bundle": 1,
+          "bundlePrice": 55257,
+          "stock": 20,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "compatibility": {
       "installsOn": [
@@ -42102,12 +43989,37 @@
         "verticalRecoilModifier": -0.16,
         "horizontalRecoilModifier": -0.16,
         "pitchMomentumModifer": 0.05,
-        "pitchStiffnessModifer": 0.05
+        "pitchStiffnessModifer": 0.05,
+        "firingPowerModifier": 0.04
       },
       "partMOA": 0.66,
       "capacity": null,
       "caliber": null,
-      "gunData": null
+      "gunData": null,
+      "basePrice": 11904,
+      "sellPrices": [
+        11904,
+        10714,
+        8333,
+        8333,
+        8333,
+        11904
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.sesa2.barrel.660mm",
+          "level": 4,
+          "price": 39680,
+          "bundle": 1,
+          "bundlePrice": 39680,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "compatibility": {
       "installsOn": [
@@ -42148,8 +44060,32 @@
       },
       "partMOA": null,
       "capacity": 5,
-      "caliber": "338Lapua",
-      "gunData": null
+      "caliber": "338lm",
+      "gunData": null,
+      "basePrice": 2175,
+      "sellPrices": [
+        2175,
+        1958,
+        1523,
+        1523,
+        1523,
+        2175
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.sesa2.clip.5",
+          "level": 1,
+          "price": 6215,
+          "bundle": 1,
+          "bundlePrice": 6215,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "compatibility": {
       "installsOn": [
@@ -42188,8 +44124,32 @@
       },
       "partMOA": null,
       "capacity": 8,
-      "caliber": "338Lapua",
-      "gunData": null
+      "caliber": "338lm",
+      "gunData": null,
+      "basePrice": 4461,
+      "sellPrices": [
+        4461,
+        4015,
+        3123,
+        3123,
+        3123,
+        4461
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.sesa2.clip.8",
+          "level": 1,
+          "price": 12745,
+          "bundle": 1,
+          "bundlePrice": 12745,
+          "stock": 50,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "compatibility": {
       "installsOn": [
@@ -42233,7 +44193,31 @@
       "partMOA": null,
       "capacity": null,
       "caliber": null,
-      "gunData": null
+      "gunData": null,
+      "basePrice": 13458,
+      "sellPrices": [
+        13458,
+        12113,
+        9421,
+        9421,
+        9421,
+        13458
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.sesa2.handguard.long",
+          "level": 1,
+          "price": 38450,
+          "bundle": 1,
+          "bundlePrice": 38450,
+          "stock": 30,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "compatibility": {
       "installsOn": [
@@ -42279,7 +44263,31 @@
       "partMOA": null,
       "capacity": null,
       "caliber": null,
-      "gunData": null
+      "gunData": null,
+      "basePrice": 9391,
+      "sellPrices": [
+        9391,
+        8452,
+        6574,
+        6574,
+        6574,
+        9391
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.sesa2.handguard.short",
+          "level": 1,
+          "price": 26830,
+          "bundle": 1,
+          "bundlePrice": 26830,
+          "stock": 69,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "compatibility": {
       "installsOn": [
@@ -42320,9 +44328,9 @@
       "capacity": null,
       "caliber": null,
       "gunData": {
-        "fireRate": 30,
+        "fireRate": 300,
         "fireRateIsDefault": false,
-        "MOA": null,
+        "MOA": 0.53,
         "penetration": 2,
         "ergonomics": 0.7,
         "firingPower": 0.5,
@@ -42359,7 +44367,31 @@
         "recoilComponentParameters": null,
         "damageRangeCurve": null,
         "caliber": ".338 LM"
-      }
+      },
+      "basePrice": 3834,
+      "sellPrices": [
+        3834,
+        3451,
+        2684,
+        2684,
+        2684,
+        3834
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.sesa2.lowerreceiver.sesa2",
+          "level": 1,
+          "price": 109500,
+          "bundle": 1,
+          "bundlePrice": 109500,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "compatibility": {
       "installsOn": [],
@@ -42368,8 +44400,7 @@
         "LowerReceiver",
         "UpperReceiver",
         "PistolGrip",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.Boltaction.SESA2"
@@ -42409,7 +44440,31 @@
       "partMOA": null,
       "capacity": null,
       "caliber": null,
-      "gunData": null
+      "gunData": null,
+      "basePrice": 2862,
+      "sellPrices": [
+        2862,
+        2576,
+        2004,
+        2004,
+        2004,
+        2862
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.sesa2.muzzle.compensator",
+          "level": 4,
+          "price": 23541,
+          "bundle": 1,
+          "bundlePrice": 23541,
+          "stock": -1,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "compatibility": {
       "installsOn": [
@@ -42455,7 +44510,31 @@
       "partMOA": null,
       "capacity": null,
       "caliber": null,
-      "gunData": null
+      "gunData": null,
+      "basePrice": 3554,
+      "sellPrices": [
+        3554,
+        3199,
+        2488,
+        2488,
+        2488,
+        3554
+      ],
+      "buyOffers": [
+        {
+          "vendor": "ark",
+          "goodsId": "gds.gunsmith.sesa2.muzzle.suppressor",
+          "level": 4,
+          "price": 11845,
+          "bundle": 1,
+          "bundlePrice": 11845,
+          "stock": 10,
+          "resetType": "daily",
+          "requiresTasks": [],
+          "requiresDlc": [],
+          "exchange": []
+        }
+      ]
     },
     "compatibility": {
       "installsOn": [
@@ -42739,8 +44818,7 @@
         "GunSmithSlot.LowerReceiver.Clip"
       ],
       "requiresPartTypes": [
-        "Handguard",
-        "Clip"
+        "Handguard"
       ],
       "tags": [
         "GunpartType.Clip",
@@ -42810,8 +44888,7 @@
         "GunSmithSlot.LowerReceiver.Clip"
       ],
       "requiresPartTypes": [
-        "Handguard",
-        "Clip"
+        "Handguard"
       ],
       "tags": [
         "GunpartType.Clip",
@@ -42881,8 +44958,7 @@
         "GunSmithSlot.LowerReceiver.Clip"
       ],
       "requiresPartTypes": [
-        "Handguard",
-        "Clip"
+        "Handguard"
       ],
       "tags": [
         "GunpartType.Clip",
@@ -43384,9 +45460,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -43471,9 +45545,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -43537,9 +45609,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -43639,8 +45709,7 @@
       "provides": [],
       "requiresPartTypes": [
         "LowerReceiver",
-        "Barrel",
-        "Clip"
+        "Barrel"
       ],
       "tags": [
         "RifleType.RifleClassic",
@@ -44642,7 +46711,7 @@
         "horizontalRecoilModifier": -0.06,
         "firingPowerModifier": -0.02
       },
-      "partMOA": 1.75,
+      "partMOA": 1.41,
       "capacity": null,
       "caliber": null,
       "gunData": null,
@@ -44711,7 +46780,7 @@
         "horizontalRecoilModifier": -0.07,
         "firingPowerModifier": 0.01
       },
-      "partMOA": 1.2,
+      "partMOA": 1.12,
       "capacity": null,
       "caliber": null,
       "gunData": null,
@@ -44813,9 +46882,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -45118,8 +47185,7 @@
       "installsOn": [],
       "provides": [],
       "requiresPartTypes": [
-        "LowerReceiver",
-        "Clip"
+        "LowerReceiver"
       ],
       "tags": [
         "GunType.DMR.SVD"
@@ -45943,9 +48009,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -46045,8 +48109,7 @@
       "provides": [],
       "requiresPartTypes": [
         "LowerReceiver",
-        "UpperReceiver",
-        "Clip"
+        "UpperReceiver"
       ],
       "tags": [
         "GunType.DMR.SVT40"
@@ -46513,9 +48576,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -46616,8 +48677,7 @@
       "requiresPartTypes": [
         "LowerReceiver",
         "PistolGrip",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.SMG.UMP45"
@@ -47085,7 +49145,7 @@
             {
               "gameId": "task.gunsmith.m02",
               "id": "gunsmith_4",
-              "name": "The Lost Part",
+              "name": "Missing Part",
               "corpId": "gunsmith"
             }
           ],
@@ -47305,9 +49365,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -47371,9 +49429,7 @@
       "provides": [
         "GunSmithSlot.LowerReceiver.Clip"
       ],
-      "requiresPartTypes": [
-        "Clip"
-      ],
+      "requiresPartTypes": [],
       "tags": [
         "GunpartType.Clip"
       ]
@@ -47614,8 +49670,7 @@
         "UpperReceiver",
         "PistolGrip",
         "Handguard",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.SMG.Vector10mm"
@@ -47720,8 +49775,7 @@
         "UpperReceiver",
         "PistolGrip",
         "Handguard",
-        "Stock",
-        "Clip"
+        "Stock"
       ],
       "tags": [
         "GunType.SMG.Vector9mm"

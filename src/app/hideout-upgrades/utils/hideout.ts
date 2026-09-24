@@ -67,11 +67,11 @@ export type AreaLevels = Readonly<Record<string, number>>;
 /**
  * The player level every `Player` condition is measured against.
  *
- * Six upgrades gate on it and this wiki tracks no player level, so the choice is to treat it as
- * always met or to invent a control nobody asked for. It is treated as met: the highest `Player`
- * requirement in the database is 5, and a level a raider passes early is not the interesting gate.
+ * This wiki tracks no player level, so these informational requirements are always met.
+ * An unbounded sentinel preserves that policy across seasons; a fixed level 10 stranded S6
+ * upgrades whose requirements reach level 40.
  */
-const PLAYER_LEVEL = 10;
+const PLAYER_LEVEL = Number.POSITIVE_INFINITY;
 
 export const isUpgradeId = (key: string): key is UpgradeId => key in hideoutUpgrades;
 
@@ -385,6 +385,8 @@ export function gatesOf(
  */
 const PERK_LABELS: Record<string, string> = {
     GunsmithArea: 'Capacity',
+    'warfare.area.gunsmith.perk.value': 'Capacity',
+    'warfare.area.upgrade.perk.value': 'Capacity',
     wsAreaUpgradeArea: 'Capacity',
 };
 

@@ -309,7 +309,7 @@
             {
               "gameId": "task.doc.c.02",
               "id": "ntg_1",
-              "name": "Supply Shortage 1",
+              "name": "Short on Supplies",
               "corpId": "ntg"
             }
           ],
@@ -360,7 +360,14 @@
           "bundlePrice": 10173,
           "stock": 99,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.doc.c.05",
+              "id": "ntg_59",
+              "name": "Repurposing Equipment",
+              "corpId": "ntg"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         }
@@ -538,7 +545,14 @@
           "bundlePrice": 4800,
           "stock": 99,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.doc.b.05",
+              "id": "ntg_50",
+              "name": "Missing Pieces",
+              "corpId": "ntg"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         }
@@ -682,7 +696,14 @@
           "bundlePrice": 27600,
           "stock": 99,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.doc.b.02",
+              "id": "ntg_47",
+              "name": "A Small Kindness",
+              "corpId": "ntg"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         }
@@ -722,7 +743,8 @@
       ],
       "buyOffers": []
     },
-    "tips": ""
+    "tips": "",
+    "extractionStatus": "missing-from-game-data"
   },
   {
     "id": "food_watle1_bear_festival",
@@ -756,6 +778,7 @@
       ],
       "buyOffers": []
     },
-    "tips": ""
+    "tips": "",
+    "extractionStatus": "missing-from-game-data"
   }
 ]

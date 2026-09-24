@@ -16,13 +16,13 @@
       "armorClass": 4,
       "maxDurability": 90,
       "durabilityDamageScalar": 0.25,
-      "bluntDamageScalar": 0.4,
+      "bluntDamageScalar": 0.5,
       "sellId": "vest.6b17",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 4,
-          "bluntDamageScalar": 0.4,
+          "bluntDamageScalar": 0.5,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -30,7 +30,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 4,
-          "bluntDamageScalar": 0.4,
+          "bluntDamageScalar": 0.5,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -38,7 +38,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 4,
-          "bluntDamageScalar": 0.4,
+          "bluntDamageScalar": 0.5,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -72,26 +72,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -215,13 +215,13 @@
       "armorClass": 5,
       "maxDurability": 95,
       "durabilityDamageScalar": 0.25,
-      "bluntDamageScalar": 0.4,
+      "bluntDamageScalar": 0.6,
       "sellId": "vest.6b17rig",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 5,
-          "bluntDamageScalar": 0.4,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -229,7 +229,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 5,
-          "bluntDamageScalar": 0.4,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -237,7 +237,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 5,
-          "bluntDamageScalar": 0.4,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -271,26 +271,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -414,13 +414,13 @@
       "armorClass": 4,
       "maxDurability": 110,
       "durabilityDamageScalar": 0.35,
-      "bluntDamageScalar": 0.4,
+      "bluntDamageScalar": 0.6,
       "sellId": "vest.6b23-one",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 4,
-          "bluntDamageScalar": 0.4,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -428,7 +428,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 4,
-          "bluntDamageScalar": 0.4,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -436,7 +436,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 4,
-          "bluntDamageScalar": 0.4,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -470,26 +470,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -612,13 +612,13 @@
       "armorClass": 3,
       "maxDurability": 110,
       "durabilityDamageScalar": 0.35,
-      "bluntDamageScalar": 0.4,
+      "bluntDamageScalar": 0.6,
       "sellId": "vest.6b23-two",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 3,
-          "bluntDamageScalar": 0.4,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 80,
           "forwardAxis": 1,
           "upAxis": 0
@@ -626,7 +626,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 3,
-          "bluntDamageScalar": 0.4,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 80,
           "forwardAxis": 1,
           "upAxis": 0
@@ -634,7 +634,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 3,
-          "bluntDamageScalar": 0.4,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -642,7 +642,7 @@
         {
           "bodyPart": "pelvis",
           "armorClass": 3,
-          "bluntDamageScalar": 0.4,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 85,
           "forwardAxis": 1,
           "upAxis": 0
@@ -668,26 +668,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -798,17 +798,17 @@
     },
     "stats": {
       "weight": 13,
-      "rarity": "Ultimate",
+      "rarity": "Legendary",
       "armorClass": 5,
       "maxDurability": 140,
       "durabilityDamageScalar": 0.28,
-      "bluntDamageScalar": 0.2,
+      "bluntDamageScalar": 0.55,
       "sellId": "vest.6b45-one",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 5,
-          "bluntDamageScalar": 0.2,
+          "bluntDamageScalar": 0.55,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -816,7 +816,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 5,
-          "bluntDamageScalar": 0.2,
+          "bluntDamageScalar": 0.55,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -824,7 +824,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 5,
-          "bluntDamageScalar": 0.2,
+          "bluntDamageScalar": 0.55,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -832,7 +832,7 @@
         {
           "bodyPart": "pelvis",
           "armorClass": 4,
-          "bluntDamageScalar": 0.4,
+          "bluntDamageScalar": 0.65,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -858,26 +858,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -1000,13 +1000,13 @@
       "armorClass": 3,
       "maxDurability": 130,
       "durabilityDamageScalar": 0.3,
-      "bluntDamageScalar": 0.4,
+      "bluntDamageScalar": 0.6,
       "sellId": "vest.6b516",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 3,
-          "bluntDamageScalar": 0.4,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -1014,7 +1014,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 3,
-          "bluntDamageScalar": 0.4,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 80,
           "forwardAxis": 1,
           "upAxis": 0
@@ -1022,7 +1022,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 3,
-          "bluntDamageScalar": 0.4,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -1056,26 +1056,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -1186,17 +1186,17 @@
     },
     "stats": {
       "weight": 5.5,
-      "rarity": "Rare",
+      "rarity": "Epic",
       "armorClass": 5,
       "maxDurability": 110,
       "durabilityDamageScalar": 0.25,
-      "bluntDamageScalar": 0.28,
+      "bluntDamageScalar": 0.45,
       "sellId": "vest.lv6",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 5,
-          "bluntDamageScalar": 0.28,
+          "bluntDamageScalar": 0.45,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -1204,7 +1204,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 5,
-          "bluntDamageScalar": 0.28,
+          "bluntDamageScalar": 0.45,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -1212,7 +1212,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 5,
-          "bluntDamageScalar": 0.28,
+          "bluntDamageScalar": 0.45,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -1238,26 +1238,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -1359,7 +1359,7 @@
             {
               "gameId": "task.gear.a.04",
               "id": "forge_8",
-              "name": "Hidden in Plain Sight",
+              "name": "Right Under Their Nose",
               "corpId": "forge"
             }
           ],
@@ -1388,13 +1388,13 @@
       "armorClass": 5,
       "maxDurability": 110,
       "durabilityDamageScalar": 0.25,
-      "bluntDamageScalar": 0.28,
+      "bluntDamageScalar": 0.45,
       "sellId": "vest.lv7",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 5,
-          "bluntDamageScalar": 0.28,
+          "bluntDamageScalar": 0.45,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -1402,7 +1402,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 5,
-          "bluntDamageScalar": 0.28,
+          "bluntDamageScalar": 0.45,
           "protectionAngle": 80,
           "forwardAxis": 1,
           "upAxis": 0
@@ -1410,7 +1410,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 5,
-          "bluntDamageScalar": 0.28,
+          "bluntDamageScalar": 0.45,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -1436,26 +1436,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -1579,13 +1579,13 @@
       "armorClass": 5,
       "maxDurability": 130,
       "durabilityDamageScalar": 0.25,
-      "bluntDamageScalar": 0.25,
+      "bluntDamageScalar": 0.5,
       "sellId": "vest.centurionv3smc",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 5,
-          "bluntDamageScalar": 0.25,
+          "bluntDamageScalar": 0.5,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -1593,7 +1593,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 5,
-          "bluntDamageScalar": 0.25,
+          "bluntDamageScalar": 0.5,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -1601,7 +1601,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 5,
-          "bluntDamageScalar": 0.25,
+          "bluntDamageScalar": 0.5,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -1627,26 +1627,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -1769,13 +1769,13 @@
       "armorClass": 5,
       "maxDurability": 130,
       "durabilityDamageScalar": 0.25,
-      "bluntDamageScalar": 0.25,
+      "bluntDamageScalar": 0.5,
       "sellId": "vest.centurionv3ssd",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 5,
-          "bluntDamageScalar": 0.25,
+          "bluntDamageScalar": 0.5,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -1783,7 +1783,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 5,
-          "bluntDamageScalar": 0.25,
+          "bluntDamageScalar": 0.5,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -1791,7 +1791,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 5,
-          "bluntDamageScalar": 0.25,
+          "bluntDamageScalar": 0.5,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -1817,26 +1817,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -1959,13 +1959,13 @@
       "armorClass": 5,
       "maxDurability": 130,
       "durabilityDamageScalar": 0.25,
-      "bluntDamageScalar": 0.25,
+      "bluntDamageScalar": 0.5,
       "sellId": "vest.centurionv3stg",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 5,
-          "bluntDamageScalar": 0.25,
+          "bluntDamageScalar": 0.5,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -1973,7 +1973,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 5,
-          "bluntDamageScalar": 0.25,
+          "bluntDamageScalar": 0.5,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -1981,7 +1981,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 5,
-          "bluntDamageScalar": 0.25,
+          "bluntDamageScalar": 0.5,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -2007,26 +2007,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -2149,13 +2149,13 @@
       "armorClass": 4,
       "maxDurability": 130,
       "durabilityDamageScalar": 0.4,
-      "bluntDamageScalar": 0.5,
+      "bluntDamageScalar": 0.65,
       "sellId": "vest.lv3",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 4,
-          "bluntDamageScalar": 0.5,
+          "bluntDamageScalar": 0.65,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -2163,7 +2163,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 4,
-          "bluntDamageScalar": 0.5,
+          "bluntDamageScalar": 0.65,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -2197,26 +2197,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -2314,7 +2314,14 @@
           "bundlePrice": 100696,
           "stock": 99,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.gear.b.07",
+              "id": "forge_27",
+              "name": "Top Hacker",
+              "corpId": "forge"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         },
@@ -2327,14 +2334,7 @@
           "bundlePrice": 100696,
           "stock": 8,
           "resetType": "daily",
-          "requiresTasks": [
-            {
-              "gameId": "task.gear.b.07",
-              "id": "forge_27",
-              "name": "Hack to Play",
-              "corpId": "forge"
-            }
-          ],
+          "requiresTasks": [],
           "requiresDlc": [],
           "exchange": [
             {
@@ -2366,13 +2366,13 @@
       "armorClass": 5,
       "maxDurability": 150,
       "durabilityDamageScalar": 0.25,
-      "bluntDamageScalar": 0.4,
+      "bluntDamageScalar": 0.6,
       "sellId": "vest.lv5-imtv",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 5,
-          "bluntDamageScalar": 0.4,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -2380,7 +2380,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 5,
-          "bluntDamageScalar": 0.4,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -2388,7 +2388,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 5,
-          "bluntDamageScalar": 0.4,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -2414,26 +2414,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -2533,9 +2533,9 @@
           "resetType": "weekly",
           "requiresTasks": [
             {
-              "gameId": "task.gear.a.12",
-              "id": "forge_29",
-              "name": "Perfect Collaboration",
+              "gameId": "task.gear.sq.03",
+              "id": "forge_44",
+              "name": "Casting the Net",
               "corpId": "forge"
             }
           ],
@@ -2551,14 +2551,7 @@
           "bundlePrice": 300598,
           "stock": 8,
           "resetType": "daily",
-          "requiresTasks": [
-            {
-              "gameId": "task.gear.a.12",
-              "id": "forge_29",
-              "name": "Perfect Collaboration",
-              "corpId": "forge"
-            }
-          ],
+          "requiresTasks": [],
           "requiresDlc": [],
           "exchange": [
             {
@@ -2638,26 +2631,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -2762,17 +2755,17 @@
     },
     "stats": {
       "weight": 9.3,
-      "rarity": "Epic",
+      "rarity": "Ultimate",
       "armorClass": 6,
       "maxDurability": 200,
       "durabilityDamageScalar": 0.28,
-      "bluntDamageScalar": 0.23,
+      "bluntDamageScalar": 0.5,
       "sellId": "vest.lv6iotv",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 6,
-          "bluntDamageScalar": 0.23,
+          "bluntDamageScalar": 0.5,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -2780,7 +2773,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 6,
-          "bluntDamageScalar": 0.23,
+          "bluntDamageScalar": 0.5,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -2788,7 +2781,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 6,
-          "bluntDamageScalar": 0.23,
+          "bluntDamageScalar": 0.5,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -2796,7 +2789,7 @@
         {
           "bodyPart": "pelvis",
           "armorClass": 6,
-          "bluntDamageScalar": 0.23,
+          "bluntDamageScalar": 0.5,
           "protectionAngle": 60,
           "forwardAxis": 1,
           "upAxis": 0
@@ -2838,26 +2831,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -3010,7 +3003,7 @@
       "armorClass": 5,
       "maxDurability": 156,
       "durabilityDamageScalar": 0.28,
-      "bluntDamageScalar": 0.23,
+      "bluntDamageScalar": 0.5,
       "sellId": "vest.lv6iotv.pumpkin",
       "protectiveData": [
         {
@@ -3082,26 +3075,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -3210,13 +3203,13 @@
       "armorClass": 4,
       "maxDurability": 95,
       "durabilityDamageScalar": 0.25,
-      "bluntDamageScalar": 0.35,
+      "bluntDamageScalar": 0.5,
       "sellId": "vest.lv4",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 4,
-          "bluntDamageScalar": 0.35,
+          "bluntDamageScalar": 0.5,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -3224,7 +3217,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 4,
-          "bluntDamageScalar": 0.35,
+          "bluntDamageScalar": 0.5,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -3232,7 +3225,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 3.5,
-          "bluntDamageScalar": 0.35,
+          "bluntDamageScalar": 0.5,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -3258,26 +3251,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -3424,26 +3417,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -3534,13 +3527,13 @@
       "armorClass": 3,
       "maxDurability": 170,
       "durabilityDamageScalar": 0.32,
-      "bluntDamageScalar": 0.55,
+      "bluntDamageScalar": 0.7,
       "sellId": "vest.police",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 3,
-          "bluntDamageScalar": 0.55,
+          "bluntDamageScalar": 0.7,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -3548,7 +3541,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 3,
-          "bluntDamageScalar": 0.55,
+          "bluntDamageScalar": 0.7,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -3556,7 +3549,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 3,
-          "bluntDamageScalar": 0.55,
+          "bluntDamageScalar": 0.7,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -3582,26 +3575,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -3717,13 +3710,13 @@
       "armorClass": 2,
       "maxDurability": 225,
       "durabilityDamageScalar": 0.4,
-      "bluntDamageScalar": 0.55,
+      "bluntDamageScalar": 0.7,
       "sellId": "vest.press",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 2,
-          "bluntDamageScalar": 0.55,
+          "bluntDamageScalar": 0.7,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -3731,7 +3724,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 2,
-          "bluntDamageScalar": 0.55,
+          "bluntDamageScalar": 0.7,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -3739,7 +3732,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 2,
-          "bluntDamageScalar": 0.55,
+          "bluntDamageScalar": 0.7,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -3765,26 +3758,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -3900,13 +3893,13 @@
       "armorClass": 3,
       "maxDurability": 105,
       "durabilityDamageScalar": 0.32,
-      "bluntDamageScalar": 0.5,
+      "bluntDamageScalar": 0.65,
       "sellId": "vest.lv2-black",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 3,
-          "bluntDamageScalar": 0.5,
+          "bluntDamageScalar": 0.65,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -3914,7 +3907,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 3,
-          "bluntDamageScalar": 0.5,
+          "bluntDamageScalar": 0.65,
           "protectionAngle": 80,
           "forwardAxis": 1,
           "upAxis": 0
@@ -3922,7 +3915,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 3,
-          "bluntDamageScalar": 0.5,
+          "bluntDamageScalar": 0.65,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -3948,26 +3941,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -4083,13 +4076,13 @@
       "armorClass": 3,
       "maxDurability": 105,
       "durabilityDamageScalar": 0.32,
-      "bluntDamageScalar": 0.5,
+      "bluntDamageScalar": 0.65,
       "sellId": "vest.lv2-sd",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 3,
-          "bluntDamageScalar": 0.5,
+          "bluntDamageScalar": 0.65,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -4097,7 +4090,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 3,
-          "bluntDamageScalar": 0.5,
+          "bluntDamageScalar": 0.65,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -4105,7 +4098,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 3,
-          "bluntDamageScalar": 0.5,
+          "bluntDamageScalar": 0.65,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -4131,26 +4124,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -4266,13 +4259,13 @@
       "armorClass": 4,
       "maxDurability": 130,
       "durabilityDamageScalar": 0.32,
-      "bluntDamageScalar": 0.45,
+      "bluntDamageScalar": 0.6,
       "sellId": "vest.lv5",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 4,
-          "bluntDamageScalar": 0.45,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -4280,7 +4273,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 4,
-          "bluntDamageScalar": 0.45,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -4288,7 +4281,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 4,
-          "bluntDamageScalar": 0.45,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -4314,26 +4307,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -4505,26 +4498,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -4630,17 +4623,17 @@
     },
     "stats": {
       "weight": 5.3,
-      "rarity": "Epic",
+      "rarity": "Rare",
       "armorClass": 4,
       "maxDurability": 130,
       "durabilityDamageScalar": 0.32,
-      "bluntDamageScalar": 0.45,
+      "bluntDamageScalar": 0.6,
       "sellId": "vest.lv5od",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 4,
-          "bluntDamageScalar": 0.45,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -4648,7 +4641,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 4,
-          "bluntDamageScalar": 0.45,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -4656,7 +4649,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 4,
-          "bluntDamageScalar": 0.45,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -4666,26 +4659,42 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
+          "time": -1,
+          "value": 1,
+          "arriveTangent": -0.017256,
+          "leaveTangent": -0.017256
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
           "time": 0,
-          "value": 0.92,
-          "arriveTangent": -4.856966,
-          "leaveTangent": -4.856977
+          "value": 0.85,
+          "arriveTangent": -0.164904,
+          "leaveTangent": -0.164904
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 0.5,
-          "value": 0.12,
-          "arriveTangent": -0.463078,
-          "leaveTangent": -0.463078
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
           "time": 1,
-          "value": 0.03,
-          "arriveTangent": -0.035238,
-          "leaveTangent": -0.035238
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
+        },
+        {
+          "interpMode": "cubic",
+          "tangentMode": "user",
+          "time": 1.5,
+          "value": 0,
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -4787,7 +4796,7 @@
             {
               "gameId": "task.gear.a.07",
               "id": "forge_31",
-              "name": "The Collector",
+              "name": "Collector",
               "corpId": "forge"
             }
           ],
@@ -4864,26 +4873,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -4993,13 +5002,13 @@
       "armorClass": 6,
       "maxDurability": 225,
       "durabilityDamageScalar": 0.25,
-      "bluntDamageScalar": 0.2,
+      "bluntDamageScalar": 0.6,
       "sellId": "vest.fb012",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 6,
-          "bluntDamageScalar": 0.2,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -5007,7 +5016,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 6,
-          "bluntDamageScalar": 0.2,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -5015,7 +5024,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 6,
-          "bluntDamageScalar": 0.2,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -5023,7 +5032,7 @@
         {
           "bodyPart": "pelvis",
           "armorClass": 6,
-          "bluntDamageScalar": 0.2,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -5081,26 +5090,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -5318,26 +5327,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -5535,26 +5544,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -5663,13 +5672,13 @@
       "armorClass": 2,
       "maxDurability": 225,
       "durabilityDamageScalar": 0.4,
-      "bluntDamageScalar": 0.35,
+      "bluntDamageScalar": 0.65,
       "sellId": "vest.security",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 2,
-          "bluntDamageScalar": 0.9,
+          "bluntDamageScalar": 0.65,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -5677,7 +5686,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 2,
-          "bluntDamageScalar": 0.9,
+          "bluntDamageScalar": 0.65,
           "protectionAngle": 80,
           "forwardAxis": 1,
           "upAxis": 0
@@ -5685,7 +5694,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 2,
-          "bluntDamageScalar": 0.9,
+          "bluntDamageScalar": 0.65,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -5711,26 +5720,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -5842,17 +5851,17 @@
     },
     "stats": {
       "weight": 4.2,
-      "rarity": "Common",
+      "rarity": "Uncommon",
       "armorClass": 3,
       "maxDurability": 180,
       "durabilityDamageScalar": 0.7,
-      "bluntDamageScalar": 0.35,
+      "bluntDamageScalar": 0.7,
       "sellId": "vest.lv2",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 3,
-          "bluntDamageScalar": 0.9,
+          "bluntDamageScalar": 0.7,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -5860,7 +5869,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 3,
-          "bluntDamageScalar": 0.9,
+          "bluntDamageScalar": 0.7,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -5868,7 +5877,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 3,
-          "bluntDamageScalar": 0.9,
+          "bluntDamageScalar": 0.7,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -5894,26 +5903,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -6003,7 +6012,14 @@
           "bundlePrice": 45153,
           "stock": 99,
           "resetType": "daily",
-          "requiresTasks": [],
+          "requiresTasks": [
+            {
+              "gameId": "task.gear.c.04",
+              "id": "forge_37",
+              "name": "Worth the Price",
+              "corpId": "forge"
+            }
+          ],
           "requiresDlc": [],
           "exchange": []
         },
@@ -6048,13 +6064,13 @@
       "armorClass": 2,
       "maxDurability": 110,
       "durabilityDamageScalar": 0.37,
-      "bluntDamageScalar": 0.55,
+      "bluntDamageScalar": 0.7,
       "sellId": "vest.6b2",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 2,
-          "bluntDamageScalar": 0.55,
+          "bluntDamageScalar": 0.7,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -6062,7 +6078,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 2,
-          "bluntDamageScalar": 0.55,
+          "bluntDamageScalar": 0.7,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -6070,7 +6086,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 2,
-          "bluntDamageScalar": 0.55,
+          "bluntDamageScalar": 0.7,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -6096,26 +6112,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -6231,13 +6247,13 @@
       "armorClass": 2,
       "maxDurability": 120,
       "durabilityDamageScalar": 0.45,
-      "bluntDamageScalar": 0.55,
+      "bluntDamageScalar": 0.65,
       "sellId": "vest.lv1-sudden",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 2,
-          "bluntDamageScalar": 0.55,
+          "bluntDamageScalar": 0.65,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -6245,7 +6261,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 2,
-          "bluntDamageScalar": 0.55,
+          "bluntDamageScalar": 0.65,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -6253,7 +6269,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 2,
-          "bluntDamageScalar": 0.55,
+          "bluntDamageScalar": 0.65,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -6279,26 +6295,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -6414,13 +6430,13 @@
       "armorClass": 4,
       "maxDurability": 125,
       "durabilityDamageScalar": 0.25,
-      "bluntDamageScalar": 0.28,
+      "bluntDamageScalar": 0.45,
       "sellId": "vest.tbasv5bk",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 4,
-          "bluntDamageScalar": 0.28,
+          "bluntDamageScalar": 0.45,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -6428,7 +6444,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 4,
-          "bluntDamageScalar": 0.28,
+          "bluntDamageScalar": 0.45,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -6436,7 +6452,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 4,
-          "bluntDamageScalar": 0.28,
+          "bluntDamageScalar": 0.45,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -6444,7 +6460,7 @@
         {
           "bodyPart": "pelvis",
           "armorClass": 3,
-          "bluntDamageScalar": 0.5,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 25,
           "forwardAxis": 1,
           "upAxis": 0
@@ -6470,26 +6486,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -6612,13 +6628,13 @@
       "armorClass": 4,
       "maxDurability": 125,
       "durabilityDamageScalar": 0.25,
-      "bluntDamageScalar": 0.28,
+      "bluntDamageScalar": 0.45,
       "sellId": "vest.tbasv5mc",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 4,
-          "bluntDamageScalar": 0.28,
+          "bluntDamageScalar": 0.45,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -6626,7 +6642,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 4,
-          "bluntDamageScalar": 0.28,
+          "bluntDamageScalar": 0.45,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -6634,7 +6650,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 4,
-          "bluntDamageScalar": 0.28,
+          "bluntDamageScalar": 0.45,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -6642,7 +6658,7 @@
         {
           "bodyPart": "pelvis",
           "armorClass": 3,
-          "bluntDamageScalar": 0.5,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 25,
           "forwardAxis": 1,
           "upAxis": 0
@@ -6668,26 +6684,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -6806,17 +6822,17 @@
     },
     "stats": {
       "weight": 7.5,
-      "rarity": "Epic",
+      "rarity": "Legendary",
       "armorClass": 6,
       "maxDurability": 160,
       "durabilityDamageScalar": 0.25,
-      "bluntDamageScalar": 0.2,
+      "bluntDamageScalar": 0.45,
       "sellId": "vest.lv8",
       "protectiveData": [
         {
           "bodyPart": "spine_03",
           "armorClass": 6,
-          "bluntDamageScalar": 0.2,
+          "bluntDamageScalar": 0.45,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -6824,7 +6840,7 @@
         {
           "bodyPart": "spine_02",
           "armorClass": 6,
-          "bluntDamageScalar": 0.2,
+          "bluntDamageScalar": 0.45,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -6832,7 +6848,7 @@
         {
           "bodyPart": "spine_01",
           "armorClass": 6,
-          "bluntDamageScalar": 0.2,
+          "bluntDamageScalar": 0.45,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -6840,7 +6856,7 @@
         {
           "bodyPart": "pelvis",
           "armorClass": 6,
-          "bluntDamageScalar": 0.2,
+          "bluntDamageScalar": 0.45,
           "protectionAngle": 60,
           "forwardAxis": 1,
           "upAxis": 0
@@ -6848,7 +6864,7 @@
         {
           "bodyPart": "UpperArm_L",
           "armorClass": 3,
-          "bluntDamageScalar": 0.2,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -6856,7 +6872,7 @@
         {
           "bodyPart": "UpperArm_R",
           "armorClass": 3,
-          "bluntDamageScalar": 0.2,
+          "bluntDamageScalar": 0.6,
           "protectionAngle": 90,
           "forwardAxis": 1,
           "upAxis": 0
@@ -6882,26 +6898,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
@@ -7083,26 +7099,26 @@
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.2,
-          "value": 0.1,
-          "arriveTangent": -0.30005,
-          "leaveTangent": -0.30005
+          "time": 0.5,
+          "value": 0.2,
+          "arriveTangent": -0.319829,
+          "leaveTangent": -0.319829
         },
         {
           "interpMode": "cubic",
           "tangentMode": "user",
-          "time": 0.5,
-          "value": 0.04,
-          "arriveTangent": -0.202114,
-          "leaveTangent": -0.202114
+          "time": 1,
+          "value": 0.08,
+          "arriveTangent": -0.195055,
+          "leaveTangent": -0.195055
         },
         {
           "interpMode": "cubic",
-          "tangentMode": "auto",
-          "time": 1,
+          "tangentMode": "user",
+          "time": 1.5,
           "value": 0,
-          "arriveTangent": 0,
-          "leaveTangent": 0
+          "arriveTangent": 0.000642,
+          "leaveTangent": 0.000642
         }
       ],
       "penetrationDamageScalarCurve": [
