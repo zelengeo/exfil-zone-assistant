@@ -7,6 +7,14 @@ headset, or in the headset's own browser.
 Stack, scripts and dependencies live in `package.json`; the layout is the directory tree. This file
 carries only what neither of those can tell you.
 
+## Checkout policy
+
+Use the main checkout for routine work so changes appear in the user's usual Git view.
+Create a worktree only when the user explicitly requests one. If a task starts in an existing
+worktree, inspect the main checkout and bring the work there before reporting completion,
+preserving unrelated changes. State the checkout and whether changes are uncommitted, committed,
+merged into master, or pushed; passing checks alone does not mean the update has shipped.
+
 ## Documentation map
 
 `AGENTS.md` is the canonical, provider-neutral instruction format. `CLAUDE.md` files are compatibility
