@@ -12,12 +12,12 @@ describe('wipe timeline', () => {
             .filter((period) => period.endDate)
             .map((period) => differenceInUtcCalendarDays(period.startDate, period.endDate!));
 
-        expect(completedDurations).toEqual([126, 154, 88, 120]);
-        expect(LONGEST_COMPLETED_WIPE_DAYS).toBe(154);
+        expect(completedDurations).toEqual([126, 154, 88, 120, 155]);
+        expect(LONGEST_COMPLETED_WIPE_DAYS).toBe(155);
     });
 
     it('stays within the reference duration before the historical maximum', () => {
-        const duration = getWipeDurationState('2025-04-24', '2025-09-24');
+        const duration = getWipeDurationState('2025-04-24', '2025-09-24', 154);
 
         expect(duration).toEqual({
             days: 153,
@@ -29,7 +29,7 @@ describe('wipe timeline', () => {
     });
 
     it('marks the exact historical maximum without overflow', () => {
-        const duration = getWipeDurationState('2025-04-24', '2025-09-25');
+        const duration = getWipeDurationState('2025-04-24', '2025-09-25', 154);
 
         expect(duration.status).toBe('at-reference');
         expect(duration.progressPercentage).toBe(100);
@@ -37,7 +37,7 @@ describe('wipe timeline', () => {
     });
 
     it('clamps the bar and exposes elapsed days after the maximum', () => {
-        const duration = getWipeDurationState('2025-04-24', '2025-09-26');
+        const duration = getWipeDurationState('2025-04-24', '2025-09-26', 154);
 
         expect(duration.status).toBe('past-reference');
         expect(duration.days).toBe(155);
@@ -46,7 +46,7 @@ describe('wipe timeline', () => {
     });
 
     it('keeps the real duration for a far-overdue period', () => {
-        const duration = getWipeDurationState('2025-04-24', '2026-04-24');
+        const duration = getWipeDurationState('2025-04-24', '2026-04-24', 154);
 
         expect(duration.days).toBe(365);
         expect(duration.overflowDays).toBe(211);

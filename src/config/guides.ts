@@ -23,7 +23,7 @@ export const guidesConfig: GuideMetadata[] = guideMetadataSchema.array().parse([
         tags: ['getting-started', 'gameplay'],
         relatedSlugs: ['survival-damage-mechanics', 'combat-sim-usage', 'damage-model'],
         difficulty: 'beginner', readTimeMinutes: 5, author: 'pogapwnz',
-        publishedAt: '2025-07-08', updatedAt: '2026-09-06', featured: true,
+        publishedAt: '2025-07-08', updatedAt: '2026-09-24', featured: true,
     },
     {
         slug: 'survival-damage-mechanics', title: 'Survival & Damage Mechanics',
