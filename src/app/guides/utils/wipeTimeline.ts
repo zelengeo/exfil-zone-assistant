@@ -23,7 +23,7 @@ export interface LaunchPeriod extends WipePeriodBase {
 
 export interface NumberedWipePeriod extends WipePeriodBase {
     kind: 'wipe';
-    ordinal: 1 | 2 | 3 | 4;
+    ordinal: 1 | 2 | 3 | 4 | 5;
     endDate?: string;
 }
 
@@ -122,6 +122,7 @@ export const WIPE_PERIODS: readonly WipePeriod[] = [
         ordinal: 4,
         title: 'PvE and economy',
         startDate: '2026-04-21',
+        endDate: '2026-09-23',
         additions: [
             'Separate PvE progression',
             'Upgraded Scav and PMC AI',
@@ -132,6 +133,25 @@ export const WIPE_PERIODS: readonly WipePeriod[] = [
             {
                 label: 'Fourth wipe announcement',
                 url: 'https://www.contractorsvr.com/single-post/sitrep-exfilzone-4th-wipe-update-live',
+            },
+        ],
+    },
+    {
+        id: 'fifth-wipe',
+        kind: 'wipe',
+        ordinal: 5,
+        title: 'Season 6',
+        startDate: '2026-09-23',
+        additions: [
+            'Reworked task chains and hideout upgrades',
+            'Optional PvE Rebirth and special store (level 20+)',
+            'MX338, SES-A2, ASH-12 and GP100',
+            'Trupiks Mall, North Camp and Dam Factory overhauls',
+        ],
+        sources: [
+            {
+                label: 'Season 6 release notes',
+                url: 'https://steamcommunity.com/games/2719160/announcements/detail/694273194214818885',
             },
         ],
     },

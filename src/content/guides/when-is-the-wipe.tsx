@@ -1,4 +1,5 @@
-import { CalendarClock, ExternalLink, History, Info, Radio } from 'lucide-react';
+import { CalendarClock, ExternalLink, History, Info } from 'lucide-react';
+// import { Radio } from 'lucide-react'; // Restore with the pre-wipe section.
 
 import {
   LONGEST_COMPLETED_WIPE_DAYS,
@@ -13,10 +14,12 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 
+/* Pre-wipe status settings; refresh before restoring the section.
 const OFFICIAL_STATUS_CHECKED_AT = '2026-09-06';
 const OFFICIAL_DISCORD_URL = 'https://discord.com/invite/contractorsshowdown';
 const OFFICIAL_STEAM_URL =
   'https://store.steampowered.com/news/app/2719160?updates=true';
+*/
 
 const dateFormatter = new Intl.DateTimeFormat('en-US', {
   day: 'numeric',
@@ -51,7 +54,7 @@ function getOrdinal(value: number) {
 function getPeriodHeading(period: WipePeriod) {
   return period.kind === 'launch'
     ? 'Public alpha launch'
-    : `${getOrdinal(period.ordinal)} wipe`;
+    : `${getOrdinal(period.ordinal)} wipe${period.ordinal === 5 ? ' — Season 6' : ''}`;
 }
 
 function WipeDuration({ period, today }: { period: WipePeriod; today: string }) {
@@ -152,6 +155,7 @@ export default function WhenIsTheWipeGuide() {
 
   return (
     <article className="mx-auto max-w-4xl space-y-12 text-ink">
+      {/* Pre-wipe section retained for a future season; refresh its status before restoring.
       <section
         aria-labelledby="wipe-status-heading"
         className="clip-shoulder border border-warn/50 bg-steel-2 p-5 sm:p-7"
@@ -194,6 +198,7 @@ export default function WhenIsTheWipeGuide() {
           </Button>
         </div>
       </section>
+      */}
 
       <section aria-labelledby="wipe-scope-heading" className="space-y-5">
         <div className="flex items-center gap-3">
@@ -208,15 +213,12 @@ export default function WhenIsTheWipeGuide() {
         <Card className="rounded-none border-info/40 bg-info/5">
           <CardContent className="space-y-3 pt-6 text-sm leading-relaxed text-ink-muted">
             <p>
-              The fourth-wipe announcement states that PvE progression is separate from PvP and is
-              unaffected by wipes. That makes a PvP wipe announcement inapplicable to PvE
-              progression unless Caveman Studio explicitly says otherwise.
+              Season 6 is live. PvE has no forced wipe: players at level 20+ can choose to wipe
+              through Rebirth and access a special store.
             </p>
             <p>
-              The public announcement does not provide a field-by-field list of every affected PvP
-              value. Treat more specific claims about retained or cleared inventory, Tasks, Vendor
-              Reputation, and Hideout progress as unconfirmed until an official announcement names
-              them.
+              PvE task progress is recalculated for the new chains based on the number of tasks
+              completed for each vendor in Season 5.
             </p>
           </CardContent>
         </Card>
@@ -234,7 +236,7 @@ export default function WhenIsTheWipeGuide() {
             </h2>
           </div>
           <p className="max-w-3xl text-sm leading-relaxed text-ink-muted">
-            Four numbered wipes are documented in official announcements. The public alpha launch
+            Five numbered wipes are documented in official announcements. The public alpha launch
             is included as the start of the first tracked progression period, not counted as a
             numbered wipe.
           </p>
