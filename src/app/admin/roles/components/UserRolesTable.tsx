@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { deploymentFetch } from '@/services/deploymentFetch';
 import { useDebounce } from '@/hooks/useDebounce';
 import {
     Table,
@@ -66,7 +67,7 @@ export function UserRolesTable() {
 
     useEffect(() => {
         const controller = new AbortController();
-        fetch(`/api/admin/users?${query}`, { signal: controller.signal })
+        deploymentFetch(`/api/admin/users?${query}`, { signal: controller.signal })
             .then(async response => {
                 if (!response.ok) throw new Error('Failed to load users');
                 const data: IUserApi['Admin']['List']['Response'] = await response.json();
@@ -95,7 +96,7 @@ export function UserRolesTable() {
                 role: selectedRole as RoleUpdateRequest['role'],
             };
 
-            const response = await fetch(`/api/admin/users/${selectedUser._id}/roles`, {
+            const response = await deploymentFetch(`/api/admin/users/${selectedUser._id}/roles`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(requestBody),

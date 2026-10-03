@@ -2,8 +2,7 @@ import React from "react";
 import type { Metadata, Viewport } from "next";
 import { AuthProvider } from '@/app/components/providers/AuthProvider';
 import { Saira_Condensed, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
-import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import ConsentAnalytics from '@/components/ConsentAnalytics';
 import "./globals.css";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 
@@ -133,8 +132,7 @@ export default function RootLayout({
       >
           <AuthProvider>
             {children}
-            <SpeedInsights />
-            <Analytics />
+            <ConsentAnalytics />
             <CookieConsentBanner />
           </AuthProvider>
       </body>

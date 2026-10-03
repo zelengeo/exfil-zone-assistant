@@ -2,6 +2,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { deploymentFetch } from '@/services/deploymentFetch';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
@@ -52,7 +53,7 @@ export function HealthCheckDashboard() {
     const [refreshing, setRefreshing] = useState(false);
 
     const fetchHealthData = () => {
-        return fetch('/api/admin/health').then(async (response) => {
+        return deploymentFetch('/api/admin/health').then(async (response) => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

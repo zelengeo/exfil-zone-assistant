@@ -2,118 +2,59 @@
 
 import React, {useState, useEffect} from 'react';
 import Link from 'next/link';
+import {Cookie, Settings, X} from 'lucide-react';
+import {cn} from '@/lib/utils';
+import {DEFAULT_COOKIE_PREFERENCES, type CookiePreferences} from '@/services/StorageService';
+import {cookiePreferencesStore, useCookiePreferences} from '@/hooks/useCookiePreferences';
 import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from '@/components/ui/card';
 import {Button} from '@/components/ui/button';
 import {Checkbox} from '@/components/ui/checkbox';
 import {Label} from '@/components/ui/label';
 import {Separator} from '@/components/ui/separator';
-import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle} from '@/components/ui/dialog';
-import {Cookie, Settings, X} from 'lucide-react';
-import {cn} from '@/lib/utils';
-import {StorageService} from "@/services/StorageService";
-
-interface CookiePreferences {
-    essential: boolean;
-    analytics: boolean;
-    thirdParty: boolean;
-}
-
-const isCookiePreferences = (input: unknown): input is CookiePreferences => {
-    return (
-        typeof input === "object" &&
-        input !== null &&
-        "essential" in input &&
-        typeof input.essential === "boolean" &&
-        "analytics" in input &&
-        typeof input.analytics === "boolean" &&
-        "thirdParty" in input &&
-        typeof input.thirdParty === "boolean"
-    );
-};
-
-const applyPreferences = (prefs: CookiePreferences) => {
-    // Here you would actually enable/disable the respective services
-    if (prefs.analytics) {
-        // Enable Vercel Analytics
-        console.log('Analytics enabled');
-    } else {
-        // Disable Vercel Analytics if possible
-        console.log('Analytics disabled');
-    }
-
-    if (prefs.thirdParty) {
-        // Enable third-party services
-        console.log('Third-party cookies enabled');
-    } else {
-        // Restrict third-party services
-        console.log('Third-party cookies disabled');
-    }
-};
 
 export default function CookieConsentBanner() {
+    const {preferences: savedPreferences, hydrated, savePreferences} = useCookiePreferences();
     const [isVisible, setIsVisible] = useState(false);
+    const [isManaging, setIsManaging] = useState(false);
     const [showDetails, setShowDetails] = useState(false);
-    const [preferences, setPreferences] = useState<CookiePreferences>({
-        essential: true, // Always true, cannot be changed
-        analytics: false,
-        thirdParty: false,
-    });
+    const [draft, setDraft] = useState<CookiePreferences | null>(null);
+    const preferences = draft ?? savedPreferences ?? DEFAULT_COOKIE_PREFERENCES;
 
     useEffect(() => {
-        // Check if user has already made a choice
-        const consent = StorageService.getCookieConsent();
-        if (!consent || !isCookiePreferences(consent)) {
-            // Small delay to ensure smooth page load
+        if (hydrated && savedPreferences === null) {
             const timeout = setTimeout(() => setIsVisible(true), 1000);
             return () => clearTimeout(timeout);
-        } else {
-            // Apply saved preferences
-            applyPreferences(consent);
         }
+    }, [hydrated, savedPreferences]);
+
+    useEffect(() => {
+        const open = () => {
+            setDraft(cookiePreferencesStore.getSnapshot().preferences);
+            setShowDetails(true);
+            setIsManaging(true);
+            setIsVisible(true);
+        };
+        window.addEventListener('open-cookie-preferences', open);
+        return () => window.removeEventListener('open-cookie-preferences', open);
     }, []);
 
-
-    const handleAcceptAll = () => {
-        const allEnabled: CookiePreferences = {
-            essential: true,
-            analytics: true,
-            thirdParty: true,
-        };
-
-        StorageService.setCookieConsent(JSON.stringify(allEnabled));
-        StorageService.setCookieConsentDate(new Date().toISOString());
-        applyPreferences(allEnabled);
+    const save = (next: CookiePreferences) => {
+        savePreferences(next);
         setIsVisible(false);
+        setIsManaging(false);
+        setDraft(null);
     };
+    const handleAcceptAll = () => save({essential: true, analytics: true, thirdParty: true});
+    const handleAcceptSelected = () => save(preferences);
+    const handleRejectNonEssential = () => save(DEFAULT_COOKIE_PREFERENCES);
 
-    const handleAcceptSelected = () => {
-        StorageService.setCookieConsent(JSON.stringify(preferences));
-        StorageService.setCookieConsentDate(new Date().toISOString());
-        applyPreferences(preferences);
-        setIsVisible(false);
-    };
-
-    const handleRejectNonEssential = () => {
-        const essentialOnly: CookiePreferences = {
-            essential: true,
-            analytics: false,
-            thirdParty: false,
-        };
-
-
-        StorageService.setCookieConsent(JSON.stringify(essentialOnly));
-        StorageService.setCookieConsentDate(new Date().toISOString());
-        applyPreferences(essentialOnly);
-        setIsVisible(false);
-    };
-
-    if (!isVisible) return null;
+    if (!hydrated || !isVisible || (savedPreferences !== null && !isManaging)) return null;
 
     return (
         <>
             {/* Main Banner */}
             <div className={cn(
-                "fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6",
+                "fixed bottom-bottomnav shell:bottom-0 left-0 right-0 z-50 max-h-[calc(100dvh-5rem)] overflow-y-auto p-4 md:p-6",
                 "animate-in slide-in-from-bottom duration-500"
             )}>
                 <Card className="max-w-5xl mx-auto bg-steel-900/95 backdrop-blur-md border-line-700 shadow-none">
@@ -133,7 +74,7 @@ export default function CookieConsentBanner() {
                             <Button
                                 variant="ghost"
                                 size="icon"
-                                className="h-8 w-8 -mt-2 -mr-2"
+                                className="h-11 w-11 shrink-0 -mt-2 -mr-2"
                                 onClick={() => setIsVisible(false)}
                             >
                                 <X className="h-4 w-4"/>
@@ -155,7 +96,7 @@ export default function CookieConsentBanner() {
                             <Button
                                 variant="link"
                                 onClick={() => setShowDetails(true)}
-                                className="p-0 h-auto text-info hover:text-info-light"
+                                className="min-h-11 p-0 h-auto text-info hover:text-info-light"
                             >
                                 <Settings className="h-4 w-4 mr-2"/>
                                 Manage preferences
@@ -193,7 +134,7 @@ export default function CookieConsentBanner() {
                                             id="analytics"
                                             checked={preferences.analytics}
                                             onCheckedChange={(checked) =>
-                                                setPreferences(prev => ({...prev, analytics: checked as boolean}))
+                                                setDraft({...preferences, analytics: checked === true})
                                             }
                                             className="mt-1"
                                         />
@@ -217,7 +158,7 @@ export default function CookieConsentBanner() {
                                             id="thirdParty"
                                             checked={preferences.thirdParty}
                                             onCheckedChange={(checked) =>
-                                                setPreferences(prev => ({...prev, thirdParty: checked as boolean}))
+                                                setDraft({...preferences, thirdParty: checked === true})
                                             }
                                             className="mt-1"
                                         />
@@ -245,7 +186,7 @@ export default function CookieConsentBanner() {
                             <Button
                                 onClick={handleRejectNonEssential}
                                 variant="quiet"
-                                className="flex-1 sm:flex-initial"
+                                className="min-h-11 flex-1 sm:flex-initial"
                             >
                                 Essential only
                             </Button>
@@ -253,7 +194,7 @@ export default function CookieConsentBanner() {
                                 <Button
                                     onClick={handleAcceptSelected}
                                     variant="quiet"
-                                    className="flex-1 sm:flex-initial"
+                                    className="min-h-11 flex-1 sm:flex-initial"
                                 >
                                     Save preferences
                                 </Button>
@@ -261,7 +202,7 @@ export default function CookieConsentBanner() {
                             <Button
                                 onClick={handleAcceptAll}
                                 variant="ember"
-                                className="flex-1 sm:flex-initial"
+                                className="min-h-11 flex-1 sm:flex-initial"
                             >
                                 Accept all
                             </Button>
@@ -277,20 +218,6 @@ export default function CookieConsentBanner() {
                     </CardFooter>
                 </Card>
             </div>
-
-            {/* Settings Dialog (for reopening preferences) */}
-            <Dialog open={false} onOpenChange={() => {
-            }}>
-                <DialogContent className="bg-steel-900 border-line-700">
-                    <DialogHeader>
-                        <DialogTitle>Cookie Preferences</DialogTitle>
-                        <DialogDescription className="text-ink-400">
-                            Manage your cookie preferences. You can change these settings at any time.
-                        </DialogDescription>
-                    </DialogHeader>
-                    {/* Content would go here for a full settings dialog */}
-                </DialogContent>
-            </Dialog>
         </>
     );
 }

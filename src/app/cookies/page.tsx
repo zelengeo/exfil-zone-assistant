@@ -286,8 +286,8 @@ export default function CookiePolicyPage() {
                                     <li className="flex items-start gap-2">
                                         <span className="text-info mt-1">•</span>
                                         <div>
-                                            <strong className="text-ink-300">Analytics Cookies:</strong> You can opt out of Vercel Analytics by using
-                                            browser extensions that block analytics scripts.
+                                            <strong className="text-ink-300">Analytics Cookies:</strong> Use Cookie preferences in the footer to
+                                            enable or disable analytics and performance collection.
                                         </div>
                                     </li>
                                     <li className="flex items-start gap-2">

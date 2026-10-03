@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import CookiePreferencesButton from '@/components/CookiePreferencesButton';
 import {
     Package,
     Goal,
@@ -135,6 +136,7 @@ const Footer: React.FC = () => {
                                         {item.name}
                                     </Link>
                                 ))}
+                                <CookiePreferencesButton />
                             </nav>
                         </div>
                     </div>

@@ -1,8 +1,10 @@
 'use client';
 
 import { useCallback, useSyncExternalStore } from 'react';
+import { trackAnalyticsEvent } from '@/lib/analytics';
 import { StorageService } from '@/services/StorageService';
 import { type Built, type UpgradeId, isUpgradeId } from '../utils/hideout';
+import { hideoutUpgrades } from '@/data/hideout-upgrades';
 
 /**
  * What the player has built — one store, read from `localStorage` once and written back as it
@@ -62,15 +64,18 @@ function subscribe(onChange: () => void): () => void {
     return () => { listeners.delete(onChange); };
 }
 
-function write(next: Built): void {
+function write(next: Built): boolean {
     snapshot = { built: next, hydrated: true };
+    let persisted = true;
     try {
         StorageService.setHideout([...next]);
     } catch {
+        persisted = false;
         // A full or disabled store must not take the route down with it: the session keeps working
         // from memory and the next write gets another go.
     }
     listeners.forEach((listener) => listener());
+    return persisted;
 }
 
 export interface UseHideoutProgress {
@@ -85,9 +90,16 @@ export function useHideoutProgress(): UseHideoutProgress {
     const { built, hydrated } = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
     const setBuilt = useCallback((id: UpgradeId, isBuilt: boolean) => {
-        const next = new Set(getSnapshot().built);
+        const current = getSnapshot().built;
+        if (!isUpgradeId(id) || current.has(id) === isBuilt) return;
+        const next = new Set(current);
         if (isBuilt) next.add(id); else next.delete(id);
-        write(next);
+        if (write(next) && isBuilt) {
+            trackAnalyticsEvent({
+                name: 'hideout_upgrade_built',
+                properties: {room: hideoutUpgrades[id].categoryId},
+            });
+        }
     }, []);
 
     const reset = useCallback(() => write(EMPTY), []);

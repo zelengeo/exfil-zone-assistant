@@ -2,6 +2,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { deploymentFetch } from '@/services/deploymentFetch';
 import {
     Dialog,
     DialogContent,
@@ -93,7 +94,7 @@ export function FeedbackDetailModal({
     const handleSaveChanges = async () => {
         setIsSaving(true);
         try {
-            const response = await fetch(`/api/admin/feedback/${feedback._id}`, {
+            const response = await deploymentFetch(`/api/admin/feedback/${feedback._id}`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

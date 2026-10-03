@@ -25,7 +25,7 @@ describe('versioned data loading', () => {
         const [first, second] = await Promise.all([fetchItemsData(), fetchItemsData()]);
         await fetchItemsData();
         expect(first.items).toEqual(second.items);
-        expect(fetch).toHaveBeenCalledExactlyOnceWith(dataAssets['catalogue.json']);
+        expect(fetch).toHaveBeenCalledExactlyOnceWith(dataAssets['catalogue.json'], undefined);
     });
 
     it('does not cache a failed request and permits a subsequent retry', async () => {

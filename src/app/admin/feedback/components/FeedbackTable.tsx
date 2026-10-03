@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { deploymentFetch } from '@/services/deploymentFetch';
 import {
     Table,
     TableBody,
@@ -100,7 +101,7 @@ export function FeedbackTable({ feedback, pagination }: FeedbackTableProps) {
 
     const handleStatusChange = async (feedbackId: string, newStatus: string) => {
         try {
-            const response = await fetch(`/api/admin/feedback/${feedbackId}`, {
+            const response = await deploymentFetch(`/api/admin/feedback/${feedbackId}`, {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ status: newStatus }),

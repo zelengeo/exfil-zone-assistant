@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Loader2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { trackAnalyticsEvent } from '@/lib/analytics';
 import Layout from '@/components/layout/Layout';
 import ShareButton from '@/components/ShareButton';
 import Slider from '@/components/ui/slider';
@@ -76,7 +77,14 @@ export default function CombatSimClient() {
                                 </button>
                             ))}
                         </div>
-                        <ShareButton getShareLink={sim.shareLink} title="Share setup" />
+                        <ShareButton
+                            getShareLink={sim.shareLink}
+                            onShared={() => trackAnalyticsEvent({
+                                name: 'comparison_shared',
+                                properties: {loadout_count: sim.loadouts.length},
+                            })}
+                            title="Share setup"
+                        />
                     </div>
                 </header>
 

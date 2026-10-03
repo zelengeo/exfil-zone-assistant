@@ -1,9 +1,10 @@
 'use client';
 
 import { useCallback, useSyncExternalStore } from 'react';
+import { trackAnalyticsEvent } from '@/lib/analytics';
 import { StorageService } from '@/services/StorageService';
 import type { Task, TaskProgress } from '@/types/tasks';
-import { EMPTY_PROGRESS, setDone as applyDone, toggleObjective as applyObjective } from '../utils/progress';
+import { EMPTY_PROGRESS, isDone, setDone as applyDone, toggleObjective as applyObjective } from '../utils/progress';
 
 /**
  * The player's progress — one store, read from `localStorage` once and written back as it changes.
@@ -46,15 +47,29 @@ function subscribe(onChange: () => void): () => void {
     return () => { listeners.delete(onChange); };
 }
 
-function write(next: TaskProgress): void {
+function write(next: TaskProgress): boolean {
     snapshot = { progress: next, hydrated: true };
+    let persisted = true;
     try {
         StorageService.setTaskProgress(next);
     } catch {
+        persisted = false;
         // A full or disabled store must not take the route down with it: the session keeps working
         // from memory and the next write gets another go.
     }
     listeners.forEach((listener) => listener());
+    return persisted;
+}
+
+/** Both completion controls use the same transition, read from the live shared store. */
+function recordAction(task: Task, next: TaskProgress): void {
+    const completed = !isDone(getSnapshot().progress, task.id) && isDone(next, task.id);
+    if (write(next) && completed) {
+        // Published game ids distinguish research from Anna's standard gunsmith tasks.
+        const kind = task.gameId.startsWith('task.daily.') ? 'daily'
+            : task.gameId.startsWith('task.research.') ? 'research' : 'standard';
+        trackAnalyticsEvent({name: 'task_completed', properties: {kind}});
+    }
 }
 
 export interface UseTaskProgress {
@@ -70,11 +85,11 @@ export function useTaskProgress(): UseTaskProgress {
     const { progress, hydrated } = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
     const setDone = useCallback((task: Task, done: boolean) => {
-        write(applyDone(getSnapshot().progress, task, done));
+        recordAction(task, applyDone(getSnapshot().progress, task, done));
     }, []);
 
     const toggleObjective = useCallback((task: Task, index: number) => {
-        write(applyObjective(getSnapshot().progress, task, index));
+        recordAction(task, applyObjective(getSnapshot().progress, task, index));
     }, []);
 
     const reset = useCallback(() => write(EMPTY_PROGRESS), []);

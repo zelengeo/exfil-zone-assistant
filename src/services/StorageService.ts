@@ -1,6 +1,21 @@
+import {z} from 'zod';
 import {UserProgress, TaskStatus, isUserProgress, TaskProgress, isTaskProgress} from '@/types/tasks';
 import {SavedBuild} from '@/types/gunsmith';
 import {GAME_VERSION, compareVersions} from "@/config/gameVersion";
+
+export const cookiePreferencesSchema = z.object({
+    essential: z.boolean(),
+    analytics: z.boolean(),
+    thirdParty: z.boolean(),
+});
+export type CookiePreferences = z.infer<typeof cookiePreferencesSchema>;
+export const DEFAULT_COOKIE_PREFERENCES: CookiePreferences = {
+    essential: true,
+    analytics: false,
+    thirdParty: false,
+};
+
+const consentListeners = new Set<() => void>();
 
 /** Storage is a text file a user can edit, so anything read back out of it is checked. */
 function isSavedBuild(value: unknown): value is SavedBuild {
@@ -138,17 +153,34 @@ export class StorageService {
     }
 
     // Cookie consent (preserved on wipe)
-    static getCookieConsent(): Record<string, boolean> {
+    static getCookieConsent(): CookiePreferences | null {
         try {
             const data = localStorage.getItem(this.STORAGE_KEYS.cookieConsent);
-            return data ? JSON.parse(data) : {}
+            const result = cookiePreferencesSchema.safeParse(data ? JSON.parse(data) : null);
+            return result.success ? result.data : null;
         } catch {
-            return {};
+            return null;
         }
     }
 
     static setCookieConsent(preferencesString: string): void {
         localStorage.setItem(this.STORAGE_KEYS.cookieConsent, preferencesString);
+        consentListeners.forEach(listener => listener());
+    }
+
+    static subscribeCookieConsent(listener: () => void): () => void {
+        const onStorage = (event: StorageEvent) => {
+            if (event.storageArea === window.localStorage
+                && (event.key === null || event.key === this.STORAGE_KEYS.cookieConsent)) {
+                listener();
+            }
+        };
+        consentListeners.add(listener);
+        window.addEventListener('storage', onStorage);
+        return () => {
+            consentListeners.delete(listener);
+            window.removeEventListener('storage', onStorage);
+        };
     }
 
     static getCookieConsentDate(): Date | null {
@@ -171,6 +203,7 @@ export class StorageService {
         localStorage.removeItem(this.VERSION_KEY);
         localStorage.removeItem(this.WIPE_KEY);
         this.hasCheckedVersion = false;
+        consentListeners.forEach(listener => listener());
     }
 
     // Check version once per app session
