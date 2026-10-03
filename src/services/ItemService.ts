@@ -21,28 +21,6 @@ export interface ItemCache {
     itemMap: Map<string, Item>;
 }
 
-// List of data files to fetch
-const DATA_FILES = [
-    'weapons.json',
-    'ammunition.json',
-    `magazines.json`,
-    'attachments.json',
-    'grenades.json',
-    'armor.json',
-    'helmets.json',
-    'face-shields.json',
-    'backpacks.json',
-    'holsters.json',
-    'medical.json',
-    'provisions.json',
-    'task-items.json',
-    'keys.json',
-    'misc.json',
-    'containers.json',
-    'paints.json',
-];
-
-
 /**
  * Check if cache is still valid
  */
@@ -334,30 +312,17 @@ function transformItemData(rawItem: Item): Item {
 }
 
 /**
- * Read every data file and fold the rows into one list.
- *
- * A file that fails to load is warned about and skipped rather than failing the whole database:
- * losing one category is recoverable, losing all of them leaves the page with nothing to render.
+ * The build combines the source categories into one content-versioned catalogue request.
+ * Propagate failures to the caller's error boundary instead of caching an empty catalogue.
  */
 async function fetchDataInternal(): Promise<Item[]> {
-    const perFile = await Promise.all(DATA_FILES.map(async (filename): Promise<Item[]> => {
-        try {
-            const data = await loadDataFile<unknown>(filename);
-            if (!Array.isArray(data)) return [];
-            return (data as Item[])
-                .map(transformItemData)
-                .filter(item => item.id && item.name);
-        } catch (error) {
-            console.warn(`Error loading ${filename}:`, error);
-            return [];
-        }
-    }));
-
-    return perFile.flat();
+    const data = await loadDataFile<unknown>('catalogue.json');
+    if (!Array.isArray(data) || data.length === 0) throw new Error('Invalid item catalogue');
+    return (data as Item[]).map(transformItemData).filter(item => item.id && item.name);
 }
 
 /**
- * Fetch and parse items data from multiple JSON files
+ * Fetch and parse the generated item catalogue
  * This is the main export that handles caching and deduplication
  */
 export async function fetchItemsData(): Promise<ItemCache> {
@@ -389,7 +354,7 @@ export async function fetchItemsData(): Promise<ItemCache> {
         }, new Map as Map<string, Item>)
         cacheTimestamp = Date.now();
 
-        console.log(`✅ Loaded ${data.length} items from ${DATA_FILES.length} data files`);
+        console.log(`✅ Loaded ${data.length} items from the catalogue`);
         return {items: data, itemMap: itemsMapCache};
     } catch (error) {
         console.error('Error fetching items data:', error);

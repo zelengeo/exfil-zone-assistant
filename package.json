@@ -6,6 +6,12 @@
     "node": ">=20.9.0"
   },
   "scripts": {
+    "assets:generate": "tsx scripts/generate-static-assets.ts",
+    "predev": "npm run assets:generate",
+    "prebuild": "npm run assets:generate",
+    "pretest": "npm run assets:generate",
+    "pretest:watch": "npm run assets:generate",
+    "pretype-check": "npm run assets:generate",
     "dev": "next dev",
     "dev:local": "npm run db:prepare:local && tsx scripts/run-with-local-mongodb.ts dev",
     "build": "next build",

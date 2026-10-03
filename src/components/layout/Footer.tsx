@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
                         {/* Brand section */}
                         <div className="space-y-4">
-                            <Link href="/" className="inline-flex items-baseline gap-2 group">
+                            <Link href="/" prefetch={false} className="inline-flex items-baseline gap-2 group">
                                 <span className="military-stencil text-2xl text-ink-100 transition-colors group-hover:text-ember">
                                     <strong className="font-extrabold">EXFIL</strong>ZONE
                                 </span>
@@ -88,6 +88,7 @@ const Footer: React.FC = () => {
                                     <Link
                                         key={item.name}
                                         href={item.href}
+                                        prefetch={false}
                                         className="flex items-center gap-2 text-sm text-ink-400 hover:text-ink-100 transition-colors"
                                     >
                                         <item.icon className="h-4 w-4 text-info" strokeWidth={1.6} />

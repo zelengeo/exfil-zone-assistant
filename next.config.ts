@@ -6,11 +6,19 @@ const nextConfig: NextConfig = {
   turbopack: {
       root: process.cwd(),
   },
-  // `loadDataFile` reads public/data off disk when there is no origin to fetch from. Next ships
+  // `loadDataFile` reads the generated JSON off disk when there is no origin to fetch from. Next ships
   // `public/` to the CDN but not into the function bundle, so the server half would find nothing
-  // there at runtime without this; 3.2 MB against a 250 MB bundle limit.
+  // there at runtime without this. Images only need to be shipped as CDN assets.
   outputFileTracingIncludes: {
-      '/**': ['./public/data/**/*.json'],
+      '/**': ['./public/assets/data/*.json'],
+  },
+  async headers() {
+      return [{
+          // Only generated, content-hashed assets are immutable. Source URLs keep their
+          // default revalidation policy so old clients and external consumers stay safe.
+          source: '/assets/:path*',
+          headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
+      }];
   },
   images: {
         minimumCacheTTL: 2678400, // 31 days

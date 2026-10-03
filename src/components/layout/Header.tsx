@@ -140,7 +140,7 @@ function useIsActive() {
 
 function Wordmark({compact = false}: { compact?: boolean }) {
     return (
-        <Link href="/" className="flex items-center gap-2 group shrink-0">
+        <Link href="/" prefetch={false} className="flex items-center gap-2 group shrink-0">
             <span className="flex items-baseline gap-1 sm:gap-2">
                 <span className="military-stencil text-xl md:text-2xl text-ink-100 transition-colors group-hover:text-ember">
                     <span className="hidden sm:inline"><strong className="font-extrabold">EXFIL</strong>ZONE</span>
@@ -262,6 +262,7 @@ const DesktopUserMenu = () => {
                 <DropdownMenuItem asChild>
                     <Link
                         href={`/user/${session.user?.username || session.user?.id}`}
+                        prefetch={false}
                         className="cursor-pointer"
                     >
                         <User className="mr-2 h-4 w-4"/>
@@ -269,7 +270,7 @@ const DesktopUserMenu = () => {
                     </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                    <Link href="/dashboard" className="cursor-pointer">
+                    <Link href="/dashboard" prefetch={false} className="cursor-pointer">
                         <BarChart3 className="mr-2 h-4 w-4"/>
                         <span>Dashboard</span>
                     </Link>
@@ -278,7 +279,7 @@ const DesktopUserMenu = () => {
                     <>
                         <DropdownMenuSeparator className="bg-line-900"/>
                         <DropdownMenuItem asChild>
-                            <Link href="/admin" className="cursor-pointer">
+                            <Link href="/admin" prefetch={false} className="cursor-pointer">
                                 <Shield className="mr-2 h-4 w-4"/>
                                 <span>Admin Panel</span>
                             </Link>
@@ -339,6 +340,7 @@ const Header: React.FC = () => {
                                     <Link
                                         key={item.href}
                                         href={item.href}
+                                        prefetch={false}
                                         aria-current={active ? 'page' : undefined}
                                         className={cn(
                                             "relative flex items-center gap-2 h-full px-4",
@@ -416,6 +418,7 @@ const Header: React.FC = () => {
                                                                     <Link
                                                                         key={item.name}
                                                                         href={item.href}
+                                                                        prefetch={false}
                                                                         onClick={() => setIsOpen(false)}
                                                                         className="flex items-center gap-3 px-3 py-2 text-sm hover:bg-steel-700 transition-colors"
                                                                     >
@@ -456,6 +459,7 @@ const Header: React.FC = () => {
                                                         <Link
                                                             key={item.href}
                                                             href={item.href}
+                                                            prefetch={false}
                                                             onClick={() => setIsOpen(false)}
                                                             aria-current={active ? 'page' : undefined}
                                                             className={cn(
@@ -495,6 +499,7 @@ const Header: React.FC = () => {
                                                 <h3 className="eyebrow mb-3">Community</h3>
                                                 <Link
                                                     href="/feedback"
+                                                    prefetch={false}
                                                     onClick={() => setIsOpen(false)}
                                                     className="flex items-center gap-3 px-3 py-2 text-sm hover:bg-steel-700 transition-colors"
                                                 >
@@ -574,6 +579,7 @@ function BottomNav({isActive}: { isActive: (href: string) => boolean }) {
                         <li key={item.href}>
                             <Link
                                 href={item.href}
+                                prefetch={false}
                                 aria-current={active ? 'page' : undefined}
                                 className={cn(
                                     "relative flex flex-col items-center justify-center gap-1.5 h-bottomnav",

@@ -16,6 +16,8 @@
 # next.js
 /.next/
 /out/
+/public/assets/
+/src/services/generated/
 
 # production
 /build

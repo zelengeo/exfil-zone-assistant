@@ -72,6 +72,7 @@ export default function NavigationSection() {
                             <Link
                                 key={op.name}
                                 href={op.href}
+                                prefetch={false}
                                 className="group flex items-start gap-4 p-6 bg-steel-800 border border-line-800 hover:bg-steel-700 hover:border-line-600 transition-colors"
                             >
                                 {body}

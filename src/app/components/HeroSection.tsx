@@ -161,6 +161,7 @@ export default function HeroSlider() {
                                 <div className="flex flex-wrap gap-3">
                                     <Link
                                         href={slide.ctaLink}
+                                        prefetch={false}
                                         className="bg-ember hover:bg-ember-hover text-ember-ink px-6 py-3 font-display font-bold uppercase tracking-nav text-lg transition-colors flex items-center gap-2"
                                     >
                                         {slide.ctaText}
@@ -170,6 +171,7 @@ export default function HeroSlider() {
                                     {slide.ctaSecondary && (
                                         <Link
                                             href={slide.ctaSecondary.link}
+                                            prefetch={false}
                                             className="bg-transparent hover:bg-steel-700 text-ink-200 px-6 py-3 font-display font-bold uppercase tracking-nav text-lg transition-colors border border-line-500"
                                         >
                                             {slide.ctaSecondary.text}
