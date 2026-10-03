@@ -2,6 +2,10 @@
 /*
 !src
 !public
+# The prebuild hook needs this script in the deployment input.
+!scripts
+scripts/*
+!scripts/generate-static-assets.ts
 !package.json
 !package-lock.json
 !next.config.ts
