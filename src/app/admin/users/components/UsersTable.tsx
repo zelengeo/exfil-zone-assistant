@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { deploymentFetch } from '@/services/deploymentFetch';
 import { useDebounce } from '@/hooks/useDebounce';
 import {
     Table,
@@ -92,7 +93,7 @@ export function UsersTable() {
 
     useEffect(() => {
         const controller = new AbortController();
-        fetch(`/api/admin/users?${query}`, { signal: controller.signal })
+        deploymentFetch(`/api/admin/users?${query}`, { signal: controller.signal })
             .then(async response => {
                 if (!response.ok) throw new Error('Failed to load users');
                 const data: UserApiBase['Response'] = await response.json();
@@ -126,7 +127,7 @@ export function UsersTable() {
         if (!deleteUser) return;
 
         try {
-            const response = await fetch(`/api/admin/users/${deleteUser._id}`, {
+            const response = await deploymentFetch(`/api/admin/users/${deleteUser._id}`, {
                 method: 'DELETE',
             });
 

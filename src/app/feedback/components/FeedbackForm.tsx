@@ -2,6 +2,7 @@
 'use client';
 
 import React, {useState} from 'react';
+import { deploymentFetch } from '@/services/deploymentFetch';
 import {Button} from '@/components/ui/button';
 import {Input} from '@/components/ui/input';
 import {Label} from '@/components/ui/label';
@@ -43,7 +44,7 @@ export function FeedbackForm() {
         setError(null);
 
         try {
-            const response = await fetch('/api/feedback', {
+            const response = await deploymentFetch('/api/feedback', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(formData)

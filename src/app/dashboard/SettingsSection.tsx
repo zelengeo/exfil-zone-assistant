@@ -3,6 +3,7 @@
 
 import {useState} from 'react';
 import {signOut, useSession} from 'next-auth/react';
+import { deploymentFetch } from '@/services/deploymentFetch';
 import {IUserApi, UserApi, UserSettings, userUsernameUpdateSchema} from "@/lib/schemas/user";
 import {Switch} from "@/components/ui/switch"
 import {
@@ -60,7 +61,7 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
 
     const checkUsernameAvailability = async (username: string): Promise<boolean> => {
         try {
-            const response = await fetch(`/api/user/check-username?username=${encodeURIComponent(username)}`);
+            const response = await deploymentFetch(`/api/user/check-username?username=${encodeURIComponent(username)}`);
             const data: ApiResponse<IUserApi['CheckUsername']['Get']['Response']> = await response.json();
 
             if (!response.ok) {
@@ -91,7 +92,7 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
 
         try {
             const validatedSettings = UserApi.Patch.Request.parse(settings);
-            const response = await fetch('/api/user/update', {
+            const response = await deploymentFetch('/api/user/update', {
                 method: 'PATCH',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(validatedSettings),
@@ -133,7 +134,7 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
 
         setLoading(true);
         try {
-            const response = await fetch('/api/user', {
+            const response = await deploymentFetch('/api/user', {
                 method: 'DELETE',
                 headers: {'Content-Type': 'application/json'},
             });
@@ -170,7 +171,7 @@ export default function SettingsSection({initialSettings}: SettingsSectionProps)
                     return;
                 }
             }
-            const response = await fetch('/api/user/update-username', {
+            const response = await deploymentFetch('/api/user/update-username', {
                 method: 'PATCH',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({username: validatedUsername}),

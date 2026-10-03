@@ -17,6 +17,7 @@
  * read also works at runtime, where Next does not ship `public/` by default.
  */
 
+import { deploymentFetch } from './deploymentFetch';
 import dataAssets from './generated/data-assets.json';
 
 const assetUrls: Readonly<Record<string, string>> = dataAssets;
@@ -51,7 +52,7 @@ export async function loadDataFile<T>(filename: string): Promise<T> {
         return JSON.parse(await loadFromDisk(url)) as T;
     }
 
-    const response = await fetch(url);
+    const response = await deploymentFetch(url);
     if (!response.ok) {
         throw new Error(`Failed to load ${url}: ${response.status} ${response.statusText}`);
     }
