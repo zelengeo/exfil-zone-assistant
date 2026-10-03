@@ -158,13 +158,13 @@ describe('analytics preference contract', () => {
     it('never queues custom events without consent, including after revocation', async () => {
         const {cookiePreferencesStore: store} = await loadStore();
         const {trackAnalyticsEvent} = await import('@/lib/analytics');
-        trackAnalyticsEvent('test');
+        trackAnalyticsEvent({name: 'build_saved', properties: {operation: 'create'}});
         expect(track).not.toHaveBeenCalled();
         store.save(optIn);
-        trackAnalyticsEvent('test', {count: 1});
-        expect(track).toHaveBeenCalledExactlyOnceWith('test', {count: 1});
+        trackAnalyticsEvent({name: 'build_saved', properties: {operation: 'create'}});
+        expect(track).toHaveBeenCalledExactlyOnceWith('build_saved', {operation: 'create'});
         store.save(optOut);
-        trackAnalyticsEvent('test');
+        trackAnalyticsEvent({name: 'build_saved', properties: {operation: 'create'}});
         expect(track).toHaveBeenCalledTimes(1);
     });
 });

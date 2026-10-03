@@ -7,6 +7,8 @@ type ButtonProps = React.ComponentProps<typeof Button>;
 
 interface ShareButtonProps {
     getShareLink: () => string;
+    /** Called once the clipboard accepts the link, never merely when it is constructed. */
+    onShared?: () => void;
     title: string;
     className?: string;
     variant?: ButtonProps['variant'];
@@ -19,6 +21,7 @@ const LEGACY_SKIN =
 
 export default function ShareButton({
                                         getShareLink,
+                                        onShared,
                                         className,
                                         title,
                                         variant = 'outline',
@@ -30,6 +33,7 @@ export default function ShareButton({
         try {
             const link = getShareLink();
             await navigator.clipboard.writeText(link);
+            onShared?.();
             setCopied(true);
 
             setTimeout(() => {

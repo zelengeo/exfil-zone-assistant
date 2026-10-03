@@ -15,6 +15,7 @@
 
 import { useCallback, useSyncExternalStore } from 'react';
 import type { SavedBuild } from '@/types/gunsmith';
+import { trackAnalyticsEvent } from '@/lib/analytics';
 import { StorageService } from '@/services/StorageService';
 
 export interface SavedBuildsState {
@@ -59,8 +60,8 @@ function getServerSnapshot(): SavedBuild[] {
 }
 
 function write(next: SavedBuild[]): void {
-    snapshot = next;
     StorageService.setBuilds(next);
+    snapshot = next;
     emit();
 }
 
@@ -86,6 +87,7 @@ export function useSavedBuilds(): SavedBuildsState {
         write(existing
             ? current.map((build) => (build.id === saved.id ? saved : build))
             : [saved, ...current]);
+        trackAnalyticsEvent({name: 'build_saved', properties: {operation: existing ? 'update' : 'create'}});
         return saved;
     }, []);
 

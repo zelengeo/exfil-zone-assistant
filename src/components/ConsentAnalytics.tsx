@@ -4,6 +4,7 @@ import {Suspense, useEffect, useRef} from 'react';
 import {useParams, usePathname} from 'next/navigation';
 import {computeRoute, inject, pageview} from '@vercel/analytics';
 import {SpeedInsights} from '@vercel/speed-insights/next';
+import {filterProductEvent} from '@/lib/analytics';
 import {filterAnalyticsEvent, isAnalyticsEnabled, useCookiePreferences} from '@/hooks/useCookiePreferences';
 
 function AnalyticsCollection() {
@@ -23,7 +24,7 @@ function AnalyticsCollection() {
         inject({
             framework: 'next',
             disableAutoTrack: true,
-            beforeSend: filterAnalyticsEvent,
+            beforeSend: filterProductEvent,
             basePath: process.env.NEXT_PUBLIC_VERCEL_OBSERVABILITY_BASEPATH,
         });
         // The Next SDK replays its pageview effect in Strict Mode. Own this small effect so
