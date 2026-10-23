@@ -1376,7 +1376,7 @@
     "objectives": [
       "Arrive the Turbine Field",
       "Arrive the Weather Outpost",
-      "到达码头电塔",
+      "Find the Dock Pylon",
       "Find Ark's disk",
       "Turn in ARK Floppydisk"
     ],
@@ -6064,7 +6064,7 @@
       "Install AKS74UN 5.45x39mm carbine rifle",
       "Muzzle",
       "Install a Mount",
-      "安装 Cobra 20mm 瞄具"
+      "Install Cobra 20mm sight"
     ],
     "corpId": "gunsmith",
     "type": [
