@@ -372,7 +372,7 @@
             {
               "gameId": "task.wp.c.09",
               "id": "regiment_51",
-              "name": "Old Haunts",
+              "name": "The Veteran's Courts",
               "corpId": "regiment"
             }
           ],
@@ -500,7 +500,7 @@
             {
               "gameId": "task.wp.a.05",
               "id": "regiment_37",
-              "name": "My Favorite: AK",
+              "name": "My Favourite: AK",
               "corpId": "regiment"
             }
           ],
@@ -703,7 +703,7 @@
             {
               "gameId": "task.na.b.10",
               "id": "ark_59",
-              "name": "★ Silver Skull",
+              "name": "★ Silver Skull BOSS",
               "corpId": "ark"
             }
           ],
@@ -906,7 +906,7 @@
             {
               "gameId": "task.gear.a.11",
               "id": "forge_28",
-              "name": "Worth More Than Gold",
+              "name": "Treasure Beyond Measure",
               "corpId": "forge"
             }
           ],
@@ -984,7 +984,7 @@
             {
               "gameId": "task.na.a.03",
               "id": "ark_38",
-              "name": "A Closer Look",
+              "name": "Police Car Photos",
               "corpId": "ark"
             }
           ],
@@ -1062,7 +1062,7 @@
             {
               "gameId": "task.na.a.07",
               "id": "ark_42",
-              "name": "★ Judgment",
+              "name": "★18 Judgment Day BOSS",
               "corpId": "ark"
             }
           ],
@@ -1171,7 +1171,7 @@
             {
               "gameId": "task.na.a.08",
               "id": "ark_43",
-              "name": "Going Underground",
+              "name": "Into the Underground",
               "corpId": "ark"
             }
           ],
@@ -1762,7 +1762,7 @@
             {
               "gameId": "task.wp.a.01",
               "id": "regiment_23",
-              "name": "Taste of Life: Sake",
+              "name": "Taste of Life 2",
               "corpId": "regiment"
             }
           ],
@@ -1993,7 +1993,7 @@
             {
               "gameId": "task.wp.a.10",
               "id": "regiment_39",
-              "name": "My Favorite: FAL",
+              "name": "My Favourite: FAL",
               "corpId": "regiment"
             }
           ],
@@ -2013,7 +2013,7 @@
             {
               "gameId": "task.wp.a.10",
               "id": "regiment_39",
-              "name": "My Favorite: FAL",
+              "name": "My Favourite: FAL",
               "corpId": "regiment"
             }
           ],
@@ -2196,7 +2196,7 @@
             {
               "gameId": "task.na.b.06",
               "id": "ark_55",
-              "name": "Baseball Cams",
+              "name": "Disguised Baseball",
               "corpId": "ark"
             }
           ],
@@ -3209,7 +3209,7 @@
       ]
     },
     "gameId": "gunsmith.bx4.clip.25mag",
-    "family": "BX4",
+    "family": "Bx4",
     "tips": "Shared compatibility between BX4 and M92 platforms."
   },
   {
@@ -3315,7 +3315,7 @@
             {
               "gameId": "task.na.c.02",
               "id": "ark_62",
-              "name": "Northern Camp Recon",
+              "name": "Wind Farm Recon",
               "corpId": "ark"
             }
           ],
@@ -3479,7 +3479,7 @@
             {
               "gameId": "task.na.a.01",
               "id": "ark_36",
-              "name": "Coastal Pursuit",
+              "name": "Seaside Pursuit",
               "corpId": "ark"
             }
           ],
@@ -3914,7 +3914,7 @@
         {
           "vendor": "regiment",
           "goodsId": "gds.gunsmith.ash12.clip.10",
-          "level": 1,
+          "level": 4,
           "price": 2561,
           "bundle": 1,
           "bundlePrice": 2561,
@@ -3965,7 +3965,7 @@
         {
           "vendor": "regiment",
           "goodsId": "gds.gunsmith.ash12.clip.20",
-          "level": 1,
+          "level": 4,
           "price": 7680,
           "bundle": 1,
           "bundlePrice": 7680,
@@ -4044,8 +4044,7 @@
     },
     "gameId": "pvegunsmith.evo3.clip.50",
     "family": "Evo3",
-    "tips": "",
-    "extractionStatus": "missing-from-game-data"
+    "tips": ""
   },
   {
     "id": "magazine-g18c-30rnd",
@@ -4145,7 +4144,7 @@
             {
               "gameId": "task.gunsmith.m10",
               "id": "gunsmith_19",
-              "name": "Field Adaptation",
+              "name": "Malyuk Field Trial",
               "corpId": "gunsmith"
             }
           ],
@@ -4667,7 +4666,7 @@
             {
               "gameId": "task.na.a.11",
               "id": "ark_46",
-              "name": "Heavy Armor Below",
+              "name": "Heavy Iron: Tank Marking",
               "corpId": "ark"
             }
           ],
@@ -5549,7 +5548,7 @@
             {
               "gameId": "task.na.a.14",
               "id": "ark_49",
-              "name": "★ Lord of the Underground",
+              "name": "★19 Master of the Underground: Final BOSS",
               "corpId": "ark"
             }
           ],
@@ -5569,7 +5568,7 @@
             {
               "gameId": "task.na.a.14",
               "id": "ark_49",
-              "name": "★ Lord of the Underground",
+              "name": "★19 Master of the Underground: Final BOSS",
               "corpId": "ark"
             }
           ],

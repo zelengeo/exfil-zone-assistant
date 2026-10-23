@@ -587,7 +587,7 @@
             {
               "gameId": "task.gear.a.03",
               "id": "forge_7",
-              "name": "Easy Pickings",
+              "name": "Bargain Hunter",
               "corpId": "forge"
             }
           ],
@@ -3259,7 +3259,7 @@
             {
               "gameId": "task.gear.c.07",
               "id": "forge_40",
-              "name": "Small Things Add Up: Notebooks",
+              "name": "Every Little Bit Counts",
               "corpId": "forge"
             }
           ],
@@ -4008,7 +4008,7 @@
             {
               "gameId": "task.gear.a.09",
               "id": "forge_30",
-              "name": "Virtual Reality",
+              "name": "Virtual Realities",
               "corpId": "forge"
             }
           ],
@@ -5219,7 +5219,7 @@
             {
               "gameId": "task.gear.sq.04",
               "id": "forge_45",
-              "name": "Clearing the Noise",
+              "name": "Cleanup",
               "corpId": "forge"
             }
           ],
@@ -5621,7 +5621,7 @@
             {
               "gameId": "task.gear.sq.02",
               "id": "forge_43",
-              "name": "Sizing Them Up",
+              "name": "Recon",
               "corpId": "forge"
             }
           ],
@@ -6163,7 +6163,7 @@
             {
               "gameId": "task.gear.c.02",
               "id": "forge_35",
-              "name": "Seeing Is Believing",
+              "name": "Dam Aircraft Recon",
               "corpId": "forge"
             }
           ],
@@ -6620,7 +6620,7 @@
             {
               "gameId": "task.gear.b.06",
               "id": "forge_25",
-              "name": "Real Gold: The Riddle",
+              "name": "Cold Hard Cash 3",
               "corpId": "forge"
             }
           ],

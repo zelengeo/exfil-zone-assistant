@@ -67,7 +67,7 @@
             {
               "gameId": "task.gear.b.04",
               "id": "forge_19",
-              "name": "Real Gold: Supply",
+              "name": "Cold Hard Cash 1",
               "corpId": "forge"
             }
           ],
@@ -116,7 +116,7 @@
             {
               "gameId": "task.gear.b.05",
               "id": "forge_22",
-              "name": "Real Gold: Counterfeit",
+              "name": "Cold Hard Cash 2",
               "corpId": "forge"
             }
           ],
@@ -172,7 +172,7 @@
             {
               "gameId": "task.gear.c.03",
               "id": "forge_36",
-              "name": "Rumor Has It",
+              "name": "My Convoy",
               "corpId": "forge"
             }
           ],

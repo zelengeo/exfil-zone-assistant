@@ -309,7 +309,7 @@
             {
               "gameId": "task.doc.c.02",
               "id": "ntg_1",
-              "name": "Short on Supplies",
+              "name": "Supply Shortage 1",
               "corpId": "ntg"
             }
           ],
@@ -364,7 +364,7 @@
             {
               "gameId": "task.doc.c.05",
               "id": "ntg_59",
-              "name": "Repurposing Equipment",
+              "name": "Modified Equipment",
               "corpId": "ntg"
             }
           ],
@@ -549,7 +549,7 @@
             {
               "gameId": "task.doc.b.05",
               "id": "ntg_50",
-              "name": "Missing Pieces",
+              "name": "West Tower Secret Room Map",
               "corpId": "ntg"
             }
           ],
@@ -700,7 +700,7 @@
             {
               "gameId": "task.doc.b.02",
               "id": "ntg_47",
-              "name": "A Small Kindness",
+              "name": "Dam First Aid Point",
               "corpId": "ntg"
             }
           ],

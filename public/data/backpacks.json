@@ -420,7 +420,7 @@
             {
               "gameId": "task.gear.a.10",
               "id": "forge_26",
-              "name": "Business Expansion",
+              "name": "Business Development",
               "corpId": "forge"
             }
           ],
@@ -538,7 +538,7 @@
             {
               "gameId": "task.doc.c.08",
               "id": "ntg_62",
-              "name": "Reestablishing Contact",
+              "name": "Clifton Hidden Room Radio",
               "corpId": "ntg"
             }
           ],
@@ -564,7 +564,7 @@
             {
               "gameId": "task.doc.c.08",
               "id": "ntg_62",
-              "name": "Reestablishing Contact",
+              "name": "Clifton Hidden Room Radio",
               "corpId": "ntg"
             }
           ],
@@ -621,7 +621,7 @@
             {
               "gameId": "task.doc.b.06",
               "id": "ntg_51",
-              "name": "★ Power Obstruction",
+              "name": "★ Factory Foreman",
               "corpId": "ntg"
             }
           ],

@@ -20,7 +20,7 @@
       "bleedingChance": 0.12,
       "bluntDamageScale": 0.06,
       "protectionGearPenetratedDamageScale": 0.6,
-      "protectionGearBluntDamageScale": 0.38,
+      "protectionGearBluntDamageScale": 0.347,
       "damageFalloffFactor": 0.4,
       "penetrationFalloffFactor": 0.4,
       "ballisticCurves": {
@@ -181,7 +181,7 @@
       "bleedingChance": 0.1,
       "bluntDamageScale": 0.08,
       "protectionGearPenetratedDamageScale": 0.75,
-      "protectionGearBluntDamageScale": 0.6,
+      "protectionGearBluntDamageScale": 0.451,
       "damageFalloffFactor": 0.45,
       "penetrationFalloffFactor": 0.45,
       "ballisticCurves": {
@@ -316,7 +316,7 @@
       "bleedingChance": 0.15,
       "bluntDamageScale": 0.04,
       "protectionGearPenetratedDamageScale": 0.4,
-      "protectionGearBluntDamageScale": 0.15,
+      "protectionGearBluntDamageScale": 0.197,
       "damageFalloffFactor": 0.35,
       "penetrationFalloffFactor": 0.35,
       "ballisticCurves": {
@@ -470,7 +470,7 @@
       "bleedingChance": 0.04,
       "bluntDamageScale": 0.05,
       "protectionGearPenetratedDamageScale": 0.1875,
-      "protectionGearBluntDamageScale": 0.09,
+      "protectionGearBluntDamageScale": 0.13,
       "damageFalloffFactor": 0.25,
       "penetrationFalloffFactor": 0.25,
       "ballisticCurves": {
@@ -762,7 +762,7 @@
       "bleedingChance": 0.03,
       "bluntDamageScale": 0,
       "protectionGearPenetratedDamageScale": 0.06,
-      "protectionGearBluntDamageScale": 0.03,
+      "protectionGearBluntDamageScale": 0.064,
       "damageFalloffFactor": 0.25,
       "penetrationFalloffFactor": 0.25,
       "ballisticCurves": {
@@ -916,7 +916,7 @@
       "bleedingChance": 0.2,
       "bluntDamageScale": 0.06,
       "protectionGearPenetratedDamageScale": 0.175,
-      "protectionGearBluntDamageScale": 0.075,
+      "protectionGearBluntDamageScale": 0.221,
       "damageFalloffFactor": 0.4,
       "penetrationFalloffFactor": 0.4,
       "ballisticCurves": {
@@ -998,7 +998,7 @@
             {
               "gameId": "task.wp.a.11",
               "id": "regiment_40",
-              "name": "Taste of Life: Red Wine",
+              "name": "Taste of Life 3",
               "corpId": "regiment"
             }
           ],
@@ -1054,7 +1054,7 @@
       "bleedingChance": 0.275,
       "bluntDamageScale": 0.05,
       "protectionGearPenetratedDamageScale": 0.125,
-      "protectionGearBluntDamageScale": 0.035,
+      "protectionGearBluntDamageScale": 0.04,
       "damageFalloffFactor": 0.3,
       "penetrationFalloffFactor": 0.3,
       "ballisticCurves": {
@@ -1192,7 +1192,7 @@
       "bleedingChance": 0.2,
       "bluntDamageScale": 0.06,
       "protectionGearPenetratedDamageScale": 0.175,
-      "protectionGearBluntDamageScale": 0.075,
+      "protectionGearBluntDamageScale": 0.156,
       "damageFalloffFactor": 0.4,
       "penetrationFalloffFactor": 0.4,
       "ballisticCurves": {
@@ -1325,7 +1325,7 @@
       "bleedingChance": 0.2,
       "bluntDamageScale": 0.05,
       "protectionGearPenetratedDamageScale": 0.125,
-      "protectionGearBluntDamageScale": 0.09,
+      "protectionGearBluntDamageScale": 0.17,
       "damageFalloffFactor": 0.4,
       "penetrationFalloffFactor": 0.4,
       "ballisticCurves": {
@@ -1407,7 +1407,7 @@
             {
               "gameId": "task.wp.b.11",
               "id": "regiment_15",
-              "name": "Reading Habit",
+              "name": "Reading Habits",
               "corpId": "regiment"
             }
           ],
@@ -1427,7 +1427,7 @@
             {
               "gameId": "task.wp.b.11",
               "id": "regiment_15",
-              "name": "Reading Habit",
+              "name": "Reading Habits",
               "corpId": "regiment"
             }
           ],
@@ -1447,7 +1447,7 @@
             {
               "gameId": "task.wp.b.11",
               "id": "regiment_15",
-              "name": "Reading Habit",
+              "name": "Reading Habits",
               "corpId": "regiment"
             }
           ],
@@ -1479,7 +1479,7 @@
       "bleedingChance": 0.275,
       "bluntDamageScale": 0.05,
       "protectionGearPenetratedDamageScale": 0.125,
-      "protectionGearBluntDamageScale": 0.035,
+      "protectionGearBluntDamageScale": 0.125,
       "damageFalloffFactor": 0.3,
       "penetrationFalloffFactor": 0.3,
       "ballisticCurves": {
@@ -1612,7 +1612,7 @@
       "bleedingChance": 0.03,
       "bluntDamageScale": 0,
       "protectionGearPenetratedDamageScale": 0.11,
-      "protectionGearBluntDamageScale": 0.03,
+      "protectionGearBluntDamageScale": 0.08,
       "damageFalloffFactor": 0.3,
       "penetrationFalloffFactor": 0.3,
       "ballisticCurves": {
@@ -1739,21 +1739,21 @@
       "rarity": "Uncommon",
       "caliber": ".338 LM",
       "weight": 0.01,
-      "damage": 115,
-      "penetration": 7.7,
+      "damage": 95,
+      "penetration": 6.7,
       "muzzleVelocity": 93000,
       "bleedingChance": 0.13,
       "bluntDamageScale": 0.3,
       "protectionGearPenetratedDamageScale": 1,
-      "protectionGearBluntDamageScale": 0.6,
+      "protectionGearBluntDamageScale": 0.73,
       "damageFalloffFactor": 0.8,
       "penetrationFalloffFactor": 0.8,
       "ballisticCurves": {
         "interpolation": "linear+cubic",
         "damageOverDistance": [
           {
-            "time": 0,
-            "value": 115,
+            "time": -196.032333,
+            "value": 95,
             "interpMode": "linear",
             "tangentMode": "auto",
             "arriveTangent": 0,
@@ -1761,25 +1761,25 @@
           },
           {
             "time": 26000,
-            "value": 115,
+            "value": 95,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.0006835872773,
-            "leaveTangent": -0.000683736871
+            "arriveTangent": -0.0005604766775,
+            "leaveTangent": -0.0005648261285
           },
           {
             "time": 75000,
-            "value": 92,
+            "value": 76,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.0003694452462,
-            "leaveTangent": -0.0003670266597
+            "arriveTangent": -0.0003051939129,
+            "leaveTangent": -0.000303195935
           }
         ],
         "penetrationPowerOverDistance": [
           {
-            "time": 0,
-            "value": 7.7,
+            "time": -196.032333,
+            "value": 6.7,
             "interpMode": "linear",
             "tangentMode": "auto",
             "arriveTangent": 0,
@@ -1787,19 +1787,19 @@
           },
           {
             "time": 26000,
-            "value": 7.7,
+            "value": 6.7,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.00004498370254,
-            "leaveTangent": -0.00004489511775
+            "arriveTangent": -0.00003884875332,
+            "leaveTangent": -0.00003906458369
           },
           {
             "time": 75000,
-            "value": 6.16,
+            "value": 5.36,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.000002310476475,
-            "leaveTangent": -0.000002310478749
+            "arriveTangent": -0.000002010414619,
+            "leaveTangent": -0.000002010416665
           }
         ]
       },
@@ -1862,13 +1862,13 @@
       "rarity": "Uncommon",
       "caliber": ".338 LM",
       "weight": 0.01,
-      "damage": 122,
+      "damage": 110,
       "penetration": 5.6,
       "muzzleVelocity": 90500,
       "bleedingChance": 0.14,
       "bluntDamageScale": 0.27,
       "protectionGearPenetratedDamageScale": 0.9,
-      "protectionGearBluntDamageScale": 0.55,
+      "protectionGearBluntDamageScale": 0.61,
       "damageFalloffFactor": 0.75,
       "penetrationFalloffFactor": 0.75,
       "ballisticCurves": {
@@ -1876,7 +1876,7 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 122,
+            "value": 110,
             "interpMode": "linear",
             "tangentMode": "auto",
             "arriveTangent": 0,
@@ -1884,19 +1884,19 @@
           },
           {
             "time": 24500,
-            "value": 122,
+            "value": 110,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.0004988364526,
-            "leaveTangent": -0.0004981745733
+            "arriveTangent": -0.0004497705668,
+            "leaveTangent": -0.0004491737927
           },
           {
             "time": 72500,
-            "value": 91.5,
+            "value": 82.5,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.001123355119,
-            "leaveTangent": -0.001125204726
+            "arriveTangent": -0.001012861147,
+            "leaveTangent": -0.001014528796
           }
         ],
         "penetrationPowerOverDistance": [
@@ -2008,13 +2008,13 @@
       "rarity": "Uncommon",
       "caliber": ".338 LM",
       "weight": 0.01,
-      "damage": 196,
+      "damage": 166,
       "penetration": 2,
       "muzzleVelocity": 79000,
       "bleedingChance": 0.15,
       "bluntDamageScale": 0.13,
       "protectionGearPenetratedDamageScale": 0.5,
-      "protectionGearBluntDamageScale": 0.28,
+      "protectionGearBluntDamageScale": 0.331,
       "damageFalloffFactor": 0.6,
       "penetrationFalloffFactor": 0.6,
       "ballisticCurves": {
@@ -2022,7 +2022,7 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 196,
+            "value": 166,
             "interpMode": "linear",
             "tangentMode": "auto",
             "arriveTangent": 0,
@@ -2030,19 +2030,19 @@
           },
           {
             "time": 22000,
-            "value": 196,
+            "value": 166,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.00007046953397,
-            "leaveTangent": -0.000070469614
+            "arriveTangent": -0.00005968338155,
+            "leaveTangent": -0.00005968344703
           },
           {
             "time": 79000,
-            "value": 117.599998,
+            "value": 99.599998,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.001123355119,
-            "leaveTangent": -0.001125204726
+            "arriveTangent": -0.000951413007,
+            "leaveTangent": -0.0009529794916
           }
         ],
         "penetrationPowerOverDistance": [
@@ -2154,13 +2154,13 @@
       "rarity": "Uncommon",
       "caliber": ".338 LM",
       "weight": 0.01,
-      "damage": 142,
+      "damage": 128,
       "penetration": 3.9,
       "muzzleVelocity": 82500,
       "bleedingChance": 0.18,
       "bluntDamageScale": 0,
       "protectionGearPenetratedDamageScale": 0.75,
-      "protectionGearBluntDamageScale": 0.42,
+      "protectionGearBluntDamageScale": 0.466,
       "damageFalloffFactor": 0.65,
       "penetrationFalloffFactor": 0.65,
       "ballisticCurves": {
@@ -2168,7 +2168,7 @@
         "damageOverDistance": [
           {
             "time": 0,
-            "value": 142,
+            "value": 128,
             "interpMode": "linear",
             "tangentMode": "auto",
             "arriveTangent": 0,
@@ -2176,19 +2176,19 @@
           },
           {
             "time": 23000,
-            "value": 142,
+            "value": 128,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.001376815257,
-            "leaveTangent": -0.001368237892
+            "arriveTangent": -0.001241072896,
+            "leaveTangent": -0.001233341172
           },
           {
             "time": 64500,
-            "value": 92.300003,
+            "value": 83.200005,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.001123355119,
-            "leaveTangent": -0.001125204726
+            "arriveTangent": -0.001012601773,
+            "leaveTangent": -0.001014269073
           }
         ],
         "penetrationPowerOverDistance": [
@@ -2388,7 +2388,7 @@
             {
               "gameId": "task.wp.a.03",
               "id": "regiment_28",
-              "name": "Movie Night: Mad Surgeon",
+              "name": "Movie Night 2",
               "corpId": "regiment"
             }
           ],
@@ -2408,7 +2408,7 @@
             {
               "gameId": "task.wp.a.03",
               "id": "regiment_28",
-              "name": "Movie Night: Mad Surgeon",
+              "name": "Movie Night 2",
               "corpId": "regiment"
             }
           ],
@@ -2428,7 +2428,7 @@
             {
               "gameId": "task.wp.a.03",
               "id": "regiment_28",
-              "name": "Movie Night: Mad Surgeon",
+              "name": "Movie Night 2",
               "corpId": "regiment"
             }
           ],
@@ -2473,7 +2473,7 @@
       "bleedingChance": 0.11,
       "bluntDamageScale": 0.13,
       "protectionGearPenetratedDamageScale": 0.18,
-      "protectionGearBluntDamageScale": 0.165,
+      "protectionGearBluntDamageScale": 0.336,
       "damageFalloffFactor": 0.45,
       "penetrationFalloffFactor": 0.45,
       "ballisticCurves": {
@@ -2632,7 +2632,7 @@
       "bleedingChance": 0.15,
       "bluntDamageScale": 0.07,
       "protectionGearPenetratedDamageScale": 0.15,
-      "protectionGearBluntDamageScale": 0.1125,
+      "protectionGearBluntDamageScale": 0.221,
       "damageFalloffFactor": 0.45,
       "penetrationFalloffFactor": 0.45,
       "ballisticCurves": {
@@ -2778,7 +2778,7 @@
       "bleedingChance": 0.175,
       "bluntDamageScale": 0.03,
       "protectionGearPenetratedDamageScale": 0.075,
-      "protectionGearBluntDamageScale": 0.0675,
+      "protectionGearBluntDamageScale": 0.15,
       "damageFalloffFactor": 0.45,
       "penetrationFalloffFactor": 0.45,
       "ballisticCurves": {
@@ -2860,7 +2860,7 @@
             {
               "gameId": "task.na.a.11",
               "id": "ark_46",
-              "name": "Heavy Armor Below",
+              "name": "Heavy Iron: Tank Marking",
               "corpId": "ark"
             }
           ],
@@ -2892,7 +2892,7 @@
       "bleedingChance": 0.11,
       "bluntDamageScale": 0.15,
       "protectionGearPenetratedDamageScale": 0.375,
-      "protectionGearBluntDamageScale": 0.315,
+      "protectionGearBluntDamageScale": 0.394,
       "damageFalloffFactor": 0.4,
       "penetrationFalloffFactor": 0.4,
       "ballisticCurves": {
@@ -3226,7 +3226,7 @@
             {
               "gameId": "task.gunsmith.m03",
               "id": "gunsmith_6",
-              "name": "Craftsmanship",
+              "name": "The Artisan's Touch",
               "corpId": "gunsmith"
             }
           ],
@@ -3269,7 +3269,7 @@
       "caliber": "5.45x39",
       "weight": 0.01,
       "damage": 38,
-      "penetration": 6.2,
+      "penetration": 5.8,
       "muzzleVelocity": 91000,
       "bleedingChance": 0.095,
       "bluntDamageScale": 0.395,
@@ -3308,7 +3308,7 @@
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 6.2,
+            "value": 5.8,
             "interpMode": "linear",
             "tangentMode": "auto",
             "arriveTangent": 0,
@@ -3316,19 +3316,19 @@
           },
           {
             "time": 16000,
-            "value": 6.2,
+            "value": 5.8,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.000171093372,
-            "leaveTangent": -0.0001711427758
+            "arriveTangent": -0.0001600551041,
+            "leaveTangent": -0.0001601013209
           },
           {
             "time": 50000,
-            "value": 4.464,
+            "value": 4.176001,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.00001238106506,
-            "leaveTangent": -0.00001251963477
+            "arriveTangent": -0.0000115822877,
+            "leaveTangent": -0.00001171191707
           }
         ]
       },
@@ -3356,7 +3356,7 @@
             {
               "gameId": "task.gunsmith.m12",
               "id": "gunsmith_21",
-              "name": "Keep the Way Clear",
+              "name": "Secure the Retreat — LMG Suppression",
               "corpId": "gunsmith"
             }
           ],
@@ -3404,7 +3404,7 @@
       "bleedingChance": 0.095,
       "bluntDamageScale": 0.13,
       "protectionGearPenetratedDamageScale": 0.465,
-      "protectionGearBluntDamageScale": 0.285,
+      "protectionGearBluntDamageScale": 0.426,
       "damageFalloffFactor": 0.7,
       "penetrationFalloffFactor": 0.7,
       "ballisticCurves": {
@@ -3550,7 +3550,7 @@
       "bleedingChance": 0.095,
       "bluntDamageScale": 0,
       "protectionGearPenetratedDamageScale": 0.675,
-      "protectionGearBluntDamageScale": 0.53,
+      "protectionGearBluntDamageScale": 0.564,
       "damageFalloffFactor": 0.7,
       "penetrationFalloffFactor": 0.7,
       "ballisticCurves": {
@@ -3683,7 +3683,7 @@
       "bleedingChance": 0.095,
       "bluntDamageScale": 0.25,
       "protectionGearPenetratedDamageScale": 0.825,
-      "protectionGearBluntDamageScale": 0.6225,
+      "protectionGearBluntDamageScale": 0.698,
       "damageFalloffFactor": 0.65,
       "penetrationFalloffFactor": 0.65,
       "ballisticCurves": {
@@ -3816,7 +3816,7 @@
       "bleedingChance": 0.15,
       "bluntDamageScale": 0.08,
       "protectionGearPenetratedDamageScale": 0.3375,
-      "protectionGearBluntDamageScale": 0.1875,
+      "protectionGearBluntDamageScale": 0.307,
       "damageFalloffFactor": 0.67,
       "penetrationFalloffFactor": 0.67,
       "ballisticCurves": {
@@ -3962,7 +3962,7 @@
       "bleedingChance": 0.175,
       "bluntDamageScale": 0.05,
       "protectionGearPenetratedDamageScale": 0.2625,
-      "protectionGearBluntDamageScale": 0.12,
+      "protectionGearBluntDamageScale": 0.225,
       "damageFalloffFactor": 0.67,
       "penetrationFalloffFactor": 0.67,
       "ballisticCurves": {
@@ -4044,7 +4044,7 @@
             {
               "gameId": "task.wp.b.01",
               "id": "regiment_10",
-              "name": "Wastewater Treasure Hunt",
+              "name": "Treasure in the Sewage",
               "corpId": "regiment"
             }
           ],
@@ -4064,7 +4064,7 @@
             {
               "gameId": "task.wp.b.01",
               "id": "regiment_10",
-              "name": "Wastewater Treasure Hunt",
+              "name": "Treasure in the Sewage",
               "corpId": "regiment"
             }
           ],
@@ -4084,7 +4084,7 @@
             {
               "gameId": "task.wp.b.01",
               "id": "regiment_10",
-              "name": "Wastewater Treasure Hunt",
+              "name": "Treasure in the Sewage",
               "corpId": "regiment"
             }
           ],
@@ -4116,7 +4116,7 @@
       "bleedingChance": 0.095,
       "bluntDamageScale": 0.16,
       "protectionGearPenetratedDamageScale": 0.5925,
-      "protectionGearBluntDamageScale": 0.345,
+      "protectionGearBluntDamageScale": 0.5,
       "damageFalloffFactor": 0.7,
       "penetrationFalloffFactor": 0.7,
       "ballisticCurves": {
@@ -4262,7 +4262,7 @@
       "bleedingChance": 0.095,
       "bluntDamageScale": 0.22,
       "protectionGearPenetratedDamageScale": 0.75,
-      "protectionGearBluntDamageScale": 0.5025,
+      "protectionGearBluntDamageScale": 0.62,
       "damageFalloffFactor": 0.7,
       "penetrationFalloffFactor": 0.7,
       "ballisticCurves": {
@@ -4395,7 +4395,7 @@
       "bleedingChance": 0.1,
       "bluntDamageScale": 0.32,
       "protectionGearPenetratedDamageScale": 1.05,
-      "protectionGearBluntDamageScale": 0.825,
+      "protectionGearBluntDamageScale": 0.868,
       "damageFalloffFactor": 0.65,
       "penetrationFalloffFactor": 0.65,
       "ballisticCurves": {
@@ -4477,7 +4477,7 @@
             {
               "gameId": "task.gunsmith.m02",
               "id": "gunsmith_4",
-              "name": "Missing Part",
+              "name": "The Lost Part",
               "corpId": "gunsmith"
             }
           ],
@@ -4528,7 +4528,7 @@
       "caliber": "5.56x45",
       "weight": 0.013,
       "damage": 39,
-      "penetration": 5.8,
+      "penetration": 5.7,
       "muzzleVelocity": 101000,
       "bleedingChance": 0.1,
       "bluntDamageScale": 0.4,
@@ -4567,7 +4567,7 @@
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 5.8,
+            "value": 5.7,
             "interpMode": "linear",
             "tangentMode": "auto",
             "arriveTangent": 0,
@@ -4575,19 +4575,19 @@
           },
           {
             "time": 16000,
-            "value": 5.8,
+            "value": 5.7,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.0001501966181,
-            "leaveTangent": -0.0001501965598
+            "arriveTangent": -0.0001476070174,
+            "leaveTangent": -0.0001476069592
           },
           {
             "time": 53000,
-            "value": 4.176,
+            "value": 4.104,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.00003208427734,
-            "leaveTangent": -0.00003223120439
+            "arriveTangent": -0.00003153109719,
+            "leaveTangent": -0.00003167549221
           }
         ]
       },
@@ -4615,7 +4615,7 @@
             {
               "gameId": "task.gunsmith.m07",
               "id": "gunsmith_14",
-              "name": "Buying Access",
+              "name": "Protection Racket",
               "corpId": "gunsmith"
             }
           ],
@@ -4676,7 +4676,7 @@
       "bleedingChance": 0.1,
       "bluntDamageScale": 0.14,
       "protectionGearPenetratedDamageScale": 0.465,
-      "protectionGearBluntDamageScale": 0.285,
+      "protectionGearBluntDamageScale": 0.435,
       "damageFalloffFactor": 0.7,
       "penetrationFalloffFactor": 0.7,
       "ballisticCurves": {
@@ -4822,7 +4822,7 @@
       "bleedingChance": 0.1,
       "bluntDamageScale": 0.28,
       "protectionGearPenetratedDamageScale": 0.825,
-      "protectionGearBluntDamageScale": 0.6225,
+      "protectionGearBluntDamageScale": 0.745,
       "damageFalloffFactor": 0.7,
       "penetrationFalloffFactor": 0.7,
       "ballisticCurves": {
@@ -4955,7 +4955,7 @@
       "bleedingChance": 0.15,
       "bluntDamageScale": 0.1,
       "protectionGearPenetratedDamageScale": 0.3375,
-      "protectionGearBluntDamageScale": 0.1875,
+      "protectionGearBluntDamageScale": 0.315,
       "damageFalloffFactor": 0.67,
       "penetrationFalloffFactor": 0.67,
       "ballisticCurves": {
@@ -5037,7 +5037,7 @@
             {
               "gameId": "task.na.c.04",
               "id": "ark_63",
-              "name": "Before the Chaos",
+              "name": "Prove Yourself",
               "corpId": "ark"
             }
           ],
@@ -5057,7 +5057,7 @@
             {
               "gameId": "task.na.c.04",
               "id": "ark_63",
-              "name": "Before the Chaos",
+              "name": "Prove Yourself",
               "corpId": "ark"
             }
           ],
@@ -5077,7 +5077,7 @@
             {
               "gameId": "task.na.c.04",
               "id": "ark_63",
-              "name": "Before the Chaos",
+              "name": "Prove Yourself",
               "corpId": "ark"
             }
           ],
@@ -5109,7 +5109,7 @@
       "bleedingChance": 0.175,
       "bluntDamageScale": 0.08,
       "protectionGearPenetratedDamageScale": 0.2625,
-      "protectionGearBluntDamageScale": 0.12,
+      "protectionGearBluntDamageScale": 0.247,
       "damageFalloffFactor": 0.653457,
       "penetrationFalloffFactor": 0.67,
       "ballisticCurves": {
@@ -5242,7 +5242,7 @@
       "bleedingChance": 0.2,
       "bluntDamageScale": 0.05,
       "protectionGearPenetratedDamageScale": 0.165,
-      "protectionGearBluntDamageScale": 0.06,
+      "protectionGearBluntDamageScale": 0.206,
       "damageFalloffFactor": 0.7,
       "penetrationFalloffFactor": 0.7,
       "ballisticCurves": {
@@ -5375,7 +5375,7 @@
       "bleedingChance": 0.2,
       "bluntDamageScale": 0.05,
       "protectionGearPenetratedDamageScale": 0.372,
-      "protectionGearBluntDamageScale": 0.268,
+      "protectionGearBluntDamageScale": 0.563,
       "damageFalloffFactor": 0.7,
       "penetrationFalloffFactor": 0.7,
       "ballisticCurves": {
@@ -5520,8 +5520,8 @@
       "muzzleVelocity": 87000,
       "bleedingChance": 0.1,
       "bluntDamageScale": 0.195,
-      "protectionGearPenetratedDamageScale": 0.5925,
-      "protectionGearBluntDamageScale": 0.345,
+      "protectionGearPenetratedDamageScale": 0.597,
+      "protectionGearBluntDamageScale": 0.509,
       "damageFalloffFactor": 0.7,
       "penetrationFalloffFactor": 0.7,
       "ballisticCurves": {
@@ -5603,7 +5603,7 @@
             {
               "gameId": "task.na.b.11",
               "id": "ark_60",
-              "name": "Show of Force: M16A2",
+              "name": "M16A2 Proficiency",
               "corpId": "ark"
             }
           ],
@@ -5623,7 +5623,7 @@
             {
               "gameId": "task.na.b.11",
               "id": "ark_60",
-              "name": "Show of Force: M16A2",
+              "name": "M16A2 Proficiency",
               "corpId": "ark"
             }
           ],
@@ -5643,7 +5643,7 @@
             {
               "gameId": "task.na.b.11",
               "id": "ark_60",
-              "name": "Show of Force: M16A2",
+              "name": "M16A2 Proficiency",
               "corpId": "ark"
             }
           ],
@@ -5675,7 +5675,7 @@
       "bleedingChance": 0.1,
       "bluntDamageScale": 0.24,
       "protectionGearPenetratedDamageScale": 0.75,
-      "protectionGearBluntDamageScale": 0.5025,
+      "protectionGearBluntDamageScale": 0.644,
       "damageFalloffFactor": 0.7,
       "penetrationFalloffFactor": 0.7,
       "ballisticCurves": {
@@ -5757,7 +5757,7 @@
             {
               "gameId": "task.na.b.12",
               "id": "ark_61",
-              "name": "Show of Force: MK17",
+              "name": "MK17 Proficiency",
               "corpId": "ark"
             }
           ],
@@ -5777,7 +5777,7 @@
             {
               "gameId": "task.na.b.12",
               "id": "ark_61",
-              "name": "Show of Force: MK17",
+              "name": "MK17 Proficiency",
               "corpId": "ark"
             }
           ],
@@ -5797,7 +5797,7 @@
             {
               "gameId": "task.na.b.12",
               "id": "ark_61",
-              "name": "Show of Force: MK17",
+              "name": "MK17 Proficiency",
               "corpId": "ark"
             }
           ],
@@ -5911,7 +5911,7 @@
             {
               "gameId": "task.na.a.13",
               "id": "ark_48",
-              "name": "Show of Force: AUG",
+              "name": "Show of Force IV: AUG",
               "corpId": "ark"
             }
           ],
@@ -5931,7 +5931,7 @@
             {
               "gameId": "task.na.a.13",
               "id": "ark_48",
-              "name": "Show of Force: AUG",
+              "name": "Show of Force IV: AUG",
               "corpId": "ark"
             }
           ],
@@ -5951,7 +5951,7 @@
             {
               "gameId": "task.na.a.13",
               "id": "ark_48",
-              "name": "Show of Force: AUG",
+              "name": "Show of Force IV: AUG",
               "corpId": "ark"
             }
           ],
@@ -5996,7 +5996,7 @@
       "bleedingChance": 0.115,
       "bluntDamageScale": 0.28,
       "protectionGearPenetratedDamageScale": 0.975,
-      "protectionGearBluntDamageScale": 0.675,
+      "protectionGearBluntDamageScale": 0.705,
       "damageFalloffFactor": 0.72,
       "penetrationFalloffFactor": 0.72,
       "ballisticCurves": {
@@ -6078,7 +6078,7 @@
             {
               "gameId": "task.gunsmith.m05",
               "id": "gunsmith_10",
-              "name": "Quick Aim",
+              "name": "The Last Screw Before Iron Wolf",
               "corpId": "gunsmith"
             }
           ],
@@ -6116,7 +6116,7 @@
       "bleedingChance": 0.115,
       "bluntDamageScale": 0.16,
       "protectionGearPenetratedDamageScale": 0.495,
-      "protectionGearBluntDamageScale": 0.3675,
+      "protectionGearBluntDamageScale": 0.45,
       "damageFalloffFactor": 0.7,
       "penetrationFalloffFactor": 0.7,
       "ballisticCurves": {
@@ -6262,7 +6262,7 @@
       "bleedingChance": 0.115,
       "bluntDamageScale": 0.1,
       "protectionGearPenetratedDamageScale": 0.42,
-      "protectionGearBluntDamageScale": 0.2625,
+      "protectionGearBluntDamageScale": 0.364,
       "damageFalloffFactor": 0.7,
       "penetrationFalloffFactor": 0.7,
       "ballisticCurves": {
@@ -6395,7 +6395,7 @@
       "bleedingChance": 0.125,
       "bluntDamageScale": 0.26,
       "protectionGearPenetratedDamageScale": 0.975,
-      "protectionGearBluntDamageScale": 0.6225,
+      "protectionGearBluntDamageScale": 0.728,
       "damageFalloffFactor": 0.69,
       "penetrationFalloffFactor": 0.69,
       "ballisticCurves": {
@@ -6477,7 +6477,7 @@
             {
               "gameId": "task.wp.a.02",
               "id": "regiment_36",
-              "name": "Paparazzi Rebellion",
+              "name": "Rebellious Reporter",
               "corpId": "regiment"
             }
           ],
@@ -6528,7 +6528,7 @@
       "bleedingChance": 0.125,
       "bluntDamageScale": 0.33,
       "protectionGearPenetratedDamageScale": 1.05,
-      "protectionGearBluntDamageScale": 0.7425,
+      "protectionGearBluntDamageScale": 0.858,
       "damageFalloffFactor": 0.78,
       "penetrationFalloffFactor": 0.78,
       "ballisticCurves": {
@@ -6610,7 +6610,7 @@
             {
               "gameId": "task.gunsmith.m11",
               "id": "gunsmith_20",
-              "name": "Purge Protocol",
+              "name": "White Virus",
               "corpId": "gunsmith"
             }
           ],
@@ -6661,7 +6661,7 @@
       "bleedingChance": 0.125,
       "bluntDamageScale": 0.12,
       "protectionGearPenetratedDamageScale": 0.465,
-      "protectionGearBluntDamageScale": 0.285,
+      "protectionGearBluntDamageScale": 0.425,
       "damageFalloffFactor": 0.72,
       "penetrationFalloffFactor": 0.72,
       "ballisticCurves": {
@@ -6743,7 +6743,7 @@
             {
               "gameId": "task.wp.b.09",
               "id": "regiment_41",
-              "name": "Personal Grooming",
+              "name": "Hair Care",
               "corpId": "regiment"
             }
           ],
@@ -6763,7 +6763,7 @@
             {
               "gameId": "task.wp.b.09",
               "id": "regiment_41",
-              "name": "Personal Grooming",
+              "name": "Hair Care",
               "corpId": "regiment"
             }
           ],
@@ -6783,7 +6783,7 @@
             {
               "gameId": "task.wp.b.09",
               "id": "regiment_41",
-              "name": "Personal Grooming",
+              "name": "Hair Care",
               "corpId": "regiment"
             }
           ],
@@ -6815,7 +6815,7 @@
       "bleedingChance": 0.125,
       "bluntDamageScale": 0.26,
       "protectionGearPenetratedDamageScale": 0.9,
-      "protectionGearBluntDamageScale": 0.5025,
+      "protectionGearBluntDamageScale": 0.655,
       "damageFalloffFactor": 0.69,
       "penetrationFalloffFactor": 0.69,
       "ballisticCurves": {
@@ -6948,7 +6948,7 @@
       "bleedingChance": 0.17,
       "bluntDamageScale": 0.08,
       "protectionGearPenetratedDamageScale": 0.3375,
-      "protectionGearBluntDamageScale": 0.1875,
+      "protectionGearBluntDamageScale": 0.333,
       "damageFalloffFactor": 0.69,
       "penetrationFalloffFactor": 0.766667,
       "ballisticCurves": {
@@ -7030,7 +7030,7 @@
             {
               "gameId": "task.wp.c.05",
               "id": "regiment_47",
-              "name": "Hair Comes First",
+              "name": "Keep the Hair Sharp",
               "corpId": "regiment"
             }
           ],
@@ -7050,7 +7050,7 @@
             {
               "gameId": "task.wp.c.05",
               "id": "regiment_47",
-              "name": "Hair Comes First",
+              "name": "Keep the Hair Sharp",
               "corpId": "regiment"
             }
           ],
@@ -7070,7 +7070,7 @@
             {
               "gameId": "task.wp.c.05",
               "id": "regiment_47",
-              "name": "Hair Comes First",
+              "name": "Keep the Hair Sharp",
               "corpId": "regiment"
             }
           ],
@@ -7115,7 +7115,7 @@
       "bleedingChance": 0.17,
       "bluntDamageScale": 0.05,
       "protectionGearPenetratedDamageScale": 0.27,
-      "protectionGearBluntDamageScale": 0.112,
+      "protectionGearBluntDamageScale": 0.238,
       "damageFalloffFactor": 0.69,
       "penetrationFalloffFactor": 0.69,
       "ballisticCurves": {
@@ -7248,7 +7248,7 @@
       "bleedingChance": 0.125,
       "bluntDamageScale": 0.12,
       "protectionGearPenetratedDamageScale": 0.465,
-      "protectionGearBluntDamageScale": 0.285,
+      "protectionGearBluntDamageScale": 0.556,
       "damageFalloffFactor": 0.72,
       "penetrationFalloffFactor": 0.72,
       "ballisticCurves": {
@@ -7394,7 +7394,7 @@
       "bleedingChance": 0.125,
       "bluntDamageScale": 0.17,
       "protectionGearPenetratedDamageScale": 0.5925,
-      "protectionGearBluntDamageScale": 0.345,
+      "protectionGearBluntDamageScale": 0.485,
       "damageFalloffFactor": 0.72,
       "penetrationFalloffFactor": 0.72,
       "ballisticCurves": {
@@ -7535,7 +7535,7 @@
       "caliber": "7.62x51",
       "weight": 0.025,
       "damage": 69,
-      "penetration": 6,
+      "penetration": 5.6,
       "muzzleVelocity": 82000,
       "bleedingChance": 0.125,
       "bluntDamageScale": 0.24,
@@ -7574,7 +7574,7 @@
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 6,
+            "value": 5.6,
             "interpMode": "linear",
             "tangentMode": "auto",
             "arriveTangent": 0,
@@ -7582,19 +7582,19 @@
           },
           {
             "time": 18000,
-            "value": 6,
+            "value": 5.6,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.0001349768572,
-            "leaveTangent": -0.0001349804224
+            "arriveTangent": -0.000125978404,
+            "leaveTangent": -0.0001259817218
           },
           {
             "time": 52000,
-            "value": 4.2,
+            "value": 3.92,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.00002133433372,
-            "leaveTangent": -0.00002091369242
+            "arriveTangent": -0.00001991204408,
+            "leaveTangent": -0.00001951944614
           }
         ]
       },
@@ -7622,7 +7622,7 @@
             {
               "gameId": "task.gunsmith.m13",
               "id": "gunsmith_22",
-              "name": "Blind Spot",
+              "name": "Smuggling Route: Surveillance II",
               "corpId": "gunsmith"
             }
           ],
@@ -7673,12 +7673,12 @@
       "caliber": "7.62x51",
       "weight": 0.025,
       "damage": 63,
-      "penetration": 6.5,
+      "penetration": 6,
       "muzzleVelocity": 91000,
       "bleedingChance": 0.125,
       "bluntDamageScale": 0.28,
       "protectionGearPenetratedDamageScale": 1.2,
-      "protectionGearBluntDamageScale": 0.7425,
+      "protectionGearBluntDamageScale": 0.727,
       "damageFalloffFactor": 0.8,
       "penetrationFalloffFactor": 0.8,
       "ballisticCurves": {
@@ -7712,7 +7712,7 @@
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 6.5,
+            "value": 6,
             "interpMode": "linear",
             "tangentMode": "auto",
             "arriveTangent": 0,
@@ -7720,19 +7720,19 @@
           },
           {
             "time": 20000,
-            "value": 6.5,
+            "value": 6,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.00004767855717,
-            "leaveTangent": -0.00004754322799
+            "arriveTangent": -0.00004401097613,
+            "leaveTangent": -0.00004388605521
           },
           {
             "time": 65000,
-            "value": 5.2,
+            "value": 4.8,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.000009389519619,
-            "leaveTangent": -0.000009439371752
+            "arriveTangent": -0.000008667248949,
+            "leaveTangent": -0.000008713266652
           }
         ]
       },
@@ -7760,7 +7760,7 @@
             {
               "gameId": "task.gunsmith.m14",
               "id": "gunsmith_23",
-              "name": "Encrypted Lead",
+              "name": "Data Smuggling",
               "corpId": "gunsmith"
             }
           ],
@@ -7821,7 +7821,7 @@
       "bleedingChance": 0.125,
       "bluntDamageScale": 0.1,
       "protectionGearPenetratedDamageScale": 0.465,
-      "protectionGearBluntDamageScale": 0.33,
+      "protectionGearBluntDamageScale": 0.398,
       "damageFalloffFactor": 0.75,
       "penetrationFalloffFactor": 0.75,
       "ballisticCurves": {
@@ -8062,7 +8062,7 @@
             {
               "gameId": "task.na.a.10",
               "id": "ark_45",
-              "name": "Twists and Turns",
+              "name": "Deep Roots I",
               "corpId": "ark"
             }
           ],
@@ -8100,7 +8100,7 @@
       "bleedingChance": 0.15,
       "bluntDamageScale": 0.08,
       "protectionGearPenetratedDamageScale": 0.3375,
-      "protectionGearBluntDamageScale": 0.24,
+      "protectionGearBluntDamageScale": 0.337,
       "damageFalloffFactor": 0.7,
       "penetrationFalloffFactor": 0.7,
       "ballisticCurves": {
@@ -8259,7 +8259,7 @@
       "bleedingChance": 0.175,
       "bluntDamageScale": 0.05,
       "protectionGearPenetratedDamageScale": 0.3375,
-      "protectionGearBluntDamageScale": 0.195,
+      "protectionGearBluntDamageScale": 0.3,
       "damageFalloffFactor": 0.75,
       "penetrationFalloffFactor": 0.75,
       "ballisticCurves": {
@@ -8392,7 +8392,7 @@
       "bleedingChance": 0.175,
       "bluntDamageScale": 0.03,
       "protectionGearPenetratedDamageScale": 0.3375,
-      "protectionGearBluntDamageScale": 0.1425,
+      "protectionGearBluntDamageScale": 0.238,
       "damageFalloffFactor": 0.75,
       "penetrationFalloffFactor": 0.75,
       "ballisticCurves": {
@@ -8525,7 +8525,7 @@
       "bleedingChance": 0.125,
       "bluntDamageScale": 0.13,
       "protectionGearPenetratedDamageScale": 0.5925,
-      "protectionGearBluntDamageScale": 0.4125,
+      "protectionGearBluntDamageScale": 0.451,
       "damageFalloffFactor": 0.75,
       "penetrationFalloffFactor": 0.75,
       "ballisticCurves": {
@@ -8671,7 +8671,7 @@
       "bleedingChance": 0.125,
       "bluntDamageScale": 0.16,
       "protectionGearPenetratedDamageScale": 0.6375,
-      "protectionGearBluntDamageScale": 0.495,
+      "protectionGearBluntDamageScale": 0.52,
       "damageFalloffFactor": 0.75,
       "penetrationFalloffFactor": 0.75,
       "ballisticCurves": {
@@ -8799,7 +8799,7 @@
       "caliber": "7.62x54R",
       "weight": 0.01,
       "damage": 75,
-      "penetration": 6.1,
+      "penetration": 5.9,
       "muzzleVelocity": 89000,
       "bleedingChance": 0.125,
       "bluntDamageScale": 0.247,
@@ -8838,7 +8838,7 @@
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 6.1,
+            "value": 5.9,
             "interpMode": "linear",
             "tangentMode": "auto",
             "arriveTangent": 0,
@@ -8846,19 +8846,19 @@
           },
           {
             "time": 22500,
-            "value": 6.1,
+            "value": 5.9,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.00008254962449,
-            "leaveTangent": -0.00008241621981
+            "arriveTangent": -0.00007984308468,
+            "leaveTangent": -0.00007971405284
           },
           {
             "time": 64000,
-            "value": 4.88,
+            "value": 4.72,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.000002993357612,
-            "leaveTangent": -0.00000296031385
+            "arriveTangent": -0.00000289521472,
+            "leaveTangent": -0.000002863254394
           }
         ]
       },
@@ -8886,7 +8886,7 @@
             {
               "gameId": "task.gunsmith.m15",
               "id": "gunsmith_24",
-              "name": "Communication Recovery",
+              "name": "White Recorder Retrieval",
               "corpId": "gunsmith"
             }
           ],
@@ -8929,7 +8929,7 @@
       "caliber": "7.62x54R",
       "weight": 0.01,
       "damage": 72,
-      "penetration": 7,
+      "penetration": 6.4,
       "muzzleVelocity": 78000,
       "bleedingChance": 0.125,
       "bluntDamageScale": 0.288,
@@ -8968,7 +8968,7 @@
         "penetrationPowerOverDistance": [
           {
             "time": 0,
-            "value": 7,
+            "value": 6.4,
             "interpMode": "linear",
             "tangentMode": "auto",
             "arriveTangent": 0,
@@ -8976,19 +8976,19 @@
           },
           {
             "time": 24000,
-            "value": 7,
+            "value": 6.4,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.0001545486448,
-            "leaveTangent": -0.0001552038593
+            "arriveTangent": -0.0001413016143,
+            "leaveTangent": -0.000141900673
           },
           {
             "time": 58000,
-            "value": 4.9,
+            "value": 4.48,
             "interpMode": "cubic",
             "tangentMode": "user",
-            "arriveTangent": -0.00001080008951,
-            "leaveTangent": -0.00001096810956
+            "arriveTangent": -0.000009874367606,
+            "leaveTangent": -0.00001002798581
           }
         ]
       },
@@ -9016,7 +9016,7 @@
             {
               "gameId": "task.gunsmith.m16",
               "id": "gunsmith_25",
-              "name": "★ Real Iron Wolf",
+              "name": "The Real Iron Wolf",
               "corpId": "gunsmith"
             }
           ],
@@ -9054,7 +9054,7 @@
       "bleedingChance": 0.125,
       "bluntDamageScale": 0.1,
       "protectionGearPenetratedDamageScale": 0.465,
-      "protectionGearBluntDamageScale": 0.3675,
+      "protectionGearBluntDamageScale": 0.39,
       "damageFalloffFactor": 0.7,
       "penetrationFalloffFactor": 0.7,
       "ballisticCurves": {
@@ -9200,7 +9200,7 @@
       "bleedingChance": 0.125,
       "bluntDamageScale": 0.16,
       "protectionGearPenetratedDamageScale": 0.6375,
-      "protectionGearBluntDamageScale": 0.525,
+      "protectionGearBluntDamageScale": 0.494,
       "damageFalloffFactor": 0.7,
       "penetrationFalloffFactor": 0.7,
       "ballisticCurves": {
@@ -9333,7 +9333,7 @@
       "bleedingChance": 0.125,
       "bluntDamageScale": 0,
       "protectionGearPenetratedDamageScale": 0.765,
-      "protectionGearBluntDamageScale": 0.5775,
+      "protectionGearBluntDamageScale": 0.562,
       "damageFalloffFactor": 0.65,
       "penetrationFalloffFactor": 0.65,
       "ballisticCurves": {
@@ -9415,7 +9415,7 @@
             {
               "gameId": "task.wp.a.10",
               "id": "regiment_39",
-              "name": "My Favorite: FAL",
+              "name": "My Favourite: FAL",
               "corpId": "regiment"
             }
           ],
@@ -9453,7 +9453,7 @@
       "bleedingChance": 0.195,
       "bluntDamageScale": 0.08,
       "protectionGearPenetratedDamageScale": 0.3375,
-      "protectionGearBluntDamageScale": 0.24,
+      "protectionGearBluntDamageScale": 0.265,
       "damageFalloffFactor": 0.7,
       "penetrationFalloffFactor": 0.7,
       "ballisticCurves": {
@@ -9535,7 +9535,7 @@
             {
               "gameId": "task.wp.b.12",
               "id": "regiment_16",
-              "name": "Best Canned Food",
+              "name": "The Best Can",
               "corpId": "regiment"
             }
           ],
@@ -9555,7 +9555,7 @@
             {
               "gameId": "task.wp.b.12",
               "id": "regiment_16",
-              "name": "Best Canned Food",
+              "name": "The Best Can",
               "corpId": "regiment"
             }
           ],
@@ -9575,7 +9575,7 @@
             {
               "gameId": "task.wp.b.12",
               "id": "regiment_16",
-              "name": "Best Canned Food",
+              "name": "The Best Can",
               "corpId": "regiment"
             }
           ],
@@ -9620,7 +9620,7 @@
       "bleedingChance": 0.195,
       "bluntDamageScale": 0.08,
       "protectionGearPenetratedDamageScale": 0.3375,
-      "protectionGearBluntDamageScale": 0.24,
+      "protectionGearBluntDamageScale": 0.328,
       "damageFalloffFactor": 0.7,
       "penetrationFalloffFactor": 0.7,
       "ballisticCurves": {
@@ -9753,7 +9753,7 @@
       "bleedingChance": 0.125,
       "bluntDamageScale": 0.13,
       "protectionGearPenetratedDamageScale": 0.5925,
-      "protectionGearBluntDamageScale": 0.495,
+      "protectionGearBluntDamageScale": 0.447,
       "damageFalloffFactor": 0.7,
       "penetrationFalloffFactor": 0.7,
       "ballisticCurves": {
@@ -9899,7 +9899,7 @@
       "bleedingChance": 0.125,
       "bluntDamageScale": 0.22,
       "protectionGearPenetratedDamageScale": 0.825,
-      "protectionGearBluntDamageScale": 0.6,
+      "protectionGearBluntDamageScale": 0.587,
       "damageFalloffFactor": 0.65,
       "penetrationFalloffFactor": 0.65,
       "ballisticCurves": {
@@ -10029,7 +10029,7 @@
       "bleedingChance": 0.075,
       "bluntDamageScale": 0,
       "protectionGearPenetratedDamageScale": 0.5625,
-      "protectionGearBluntDamageScale": 0.5025,
+      "protectionGearBluntDamageScale": 0.528,
       "damageFalloffFactor": 0.43,
       "penetrationFalloffFactor": 0.43,
       "ballisticCurves": {
@@ -10111,7 +10111,7 @@
             {
               "gameId": "task.na.a.02",
               "id": "ark_37",
-              "name": "A Different Angle",
+              "name": "Rangefinder Scope",
               "corpId": "ark"
             }
           ],
@@ -10137,7 +10137,7 @@
             {
               "gameId": "task.na.a.02",
               "id": "ark_37",
-              "name": "A Different Angle",
+              "name": "Rangefinder Scope",
               "corpId": "ark"
             }
           ],
@@ -10157,7 +10157,7 @@
             {
               "gameId": "task.na.a.02",
               "id": "ark_37",
-              "name": "A Different Angle",
+              "name": "Rangefinder Scope",
               "corpId": "ark"
             }
           ],
@@ -10177,7 +10177,7 @@
             {
               "gameId": "task.na.a.02",
               "id": "ark_37",
-              "name": "A Different Angle",
+              "name": "Rangefinder Scope",
               "corpId": "ark"
             }
           ],
@@ -10376,7 +10376,7 @@
       "bleedingChance": 0.075,
       "bluntDamageScale": 0.14,
       "protectionGearPenetratedDamageScale": 0.315,
-      "protectionGearBluntDamageScale": 0.2475,
+      "protectionGearBluntDamageScale": 0.379,
       "damageFalloffFactor": 0.45,
       "penetrationFalloffFactor": 0.45,
       "ballisticCurves": {
@@ -10458,7 +10458,7 @@
             {
               "gameId": "task.na.c.03",
               "id": "ark_3",
-              "name": "Intelligence Gathering",
+              "name": "Recon 1",
               "corpId": "ark"
             }
           ],
@@ -10478,7 +10478,7 @@
             {
               "gameId": "task.na.c.03",
               "id": "ark_3",
-              "name": "Intelligence Gathering",
+              "name": "Recon 1",
               "corpId": "ark"
             }
           ],
@@ -10498,7 +10498,7 @@
             {
               "gameId": "task.na.c.03",
               "id": "ark_3",
-              "name": "Intelligence Gathering",
+              "name": "Recon 1",
               "corpId": "ark"
             }
           ],
@@ -10518,7 +10518,7 @@
             {
               "gameId": "task.na.c.03",
               "id": "ark_3",
-              "name": "Intelligence Gathering",
+              "name": "Recon 1",
               "corpId": "ark"
             }
           ],
@@ -10563,7 +10563,7 @@
       "bleedingChance": 0.075,
       "bluntDamageScale": 0.16,
       "protectionGearPenetratedDamageScale": 0.5025,
-      "protectionGearBluntDamageScale": 0.39,
+      "protectionGearBluntDamageScale": 0.481,
       "damageFalloffFactor": 0.4,
       "penetrationFalloffFactor": 0.4,
       "ballisticCurves": {
@@ -10709,7 +10709,7 @@
       "bleedingChance": 0.175,
       "bluntDamageScale": 0.07,
       "protectionGearPenetratedDamageScale": 0.1875,
-      "protectionGearBluntDamageScale": 0.15,
+      "protectionGearBluntDamageScale": 0.236,
       "damageFalloffFactor": 0.35,
       "penetrationFalloffFactor": 0.35,
       "ballisticCurves": {
@@ -10842,7 +10842,7 @@
       "bleedingChance": 0.225,
       "bluntDamageScale": 0.07,
       "protectionGearPenetratedDamageScale": 0.075,
-      "protectionGearBluntDamageScale": 0.045,
+      "protectionGearBluntDamageScale": 0.183,
       "damageFalloffFactor": 0.3,
       "penetrationFalloffFactor": 0.3,
       "ballisticCurves": {
@@ -10975,7 +10975,7 @@
       "bleedingChance": 0.125,
       "bluntDamageScale": 0.14,
       "protectionGearPenetratedDamageScale": 0.2625,
-      "protectionGearBluntDamageScale": 0.24,
+      "protectionGearBluntDamageScale": 0.285,
       "damageFalloffFactor": 0.45,
       "penetrationFalloffFactor": 0.45,
       "ballisticCurves": {
@@ -11134,7 +11134,7 @@
       "bleedingChance": 0.075,
       "bluntDamageScale": 0.16,
       "protectionGearPenetratedDamageScale": 0.55,
-      "protectionGearBluntDamageScale": 0.43,
+      "protectionGearBluntDamageScale": 0.449,
       "damageFalloffFactor": 0.392857,
       "penetrationFalloffFactor": 0.4,
       "ballisticCurves": {
@@ -11306,7 +11306,7 @@
       "bleedingChance": 0.1,
       "bluntDamageScale": 0.18,
       "protectionGearPenetratedDamageScale": 0.75,
-      "protectionGearBluntDamageScale": 0.465,
+      "protectionGearBluntDamageScale": 0.618,
       "damageFalloffFactor": 0.5,
       "penetrationFalloffFactor": 0.5,
       "ballisticCurves": {
@@ -11388,7 +11388,7 @@
             {
               "gameId": "task.wp.a.12",
               "id": "regiment_30",
-              "name": "Frozen in Time",
+              "name": "Forever in a Flash",
               "corpId": "regiment"
             }
           ],
@@ -11426,7 +11426,7 @@
       "bleedingChance": 0.1,
       "bluntDamageScale": 0.25,
       "protectionGearPenetratedDamageScale": 0.975,
-      "protectionGearBluntDamageScale": 0.54,
+      "protectionGearBluntDamageScale": 0.719,
       "damageFalloffFactor": 0.6,
       "penetrationFalloffFactor": 0.6,
       "ballisticCurves": {
@@ -11508,7 +11508,7 @@
             {
               "gameId": "task.gunsmith.m06",
               "id": "gunsmith_12",
-              "name": "Tools of the Trade",
+              "name": "Parts Upgrade",
               "corpId": "gunsmith"
             }
           ],
@@ -11551,7 +11551,7 @@
       "bleedingChance": 0.1,
       "bluntDamageScale": 0.1,
       "protectionGearPenetratedDamageScale": 0.375,
-      "protectionGearBluntDamageScale": 0.24,
+      "protectionGearBluntDamageScale": 0.393,
       "damageFalloffFactor": 0.4,
       "penetrationFalloffFactor": 0.4,
       "ballisticCurves": {
@@ -11684,7 +11684,7 @@
       "bleedingChance": 0.1,
       "bluntDamageScale": 0.13,
       "protectionGearPenetratedDamageScale": 0.45,
-      "protectionGearBluntDamageScale": 0.315,
+      "protectionGearBluntDamageScale": 0.455,
       "damageFalloffFactor": 0.45,
       "penetrationFalloffFactor": 0.45,
       "ballisticCurves": {
@@ -11817,7 +11817,7 @@
       "bleedingChance": 0.1,
       "bluntDamageScale": 0.16,
       "protectionGearPenetratedDamageScale": 0.675,
-      "protectionGearBluntDamageScale": 0.39,
+      "protectionGearBluntDamageScale": 0.549,
       "damageFalloffFactor": 0.45,
       "penetrationFalloffFactor": 0.45,
       "ballisticCurves": {
@@ -11950,7 +11950,7 @@
       "bleedingChance": 0.125,
       "bluntDamageScale": 0.08,
       "protectionGearPenetratedDamageScale": 0.3,
-      "protectionGearBluntDamageScale": 0.1575,
+      "protectionGearBluntDamageScale": 0.329,
       "damageFalloffFactor": 0.35,
       "penetrationFalloffFactor": 0.35,
       "ballisticCurves": {

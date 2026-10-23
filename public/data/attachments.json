@@ -65,7 +65,8 @@
       "attachmentModifier": {
         "ergonomicsModifier": 0.03,
         "verticalRecoilModifier": -0.02,
-        "horizontalRecoilModifier": -0.03
+        "horizontalRecoilModifier": -0.03,
+        "ADSSpeedModifier": 0.15
       },
       "basePrice": 5012,
       "sellPrices": [
@@ -112,7 +113,8 @@
       "attachmentModifier": {
         "ergonomicsModifier": 0.03,
         "verticalRecoilModifier": -0.02,
-        "horizontalRecoilModifier": -0.03
+        "horizontalRecoilModifier": -0.03,
+        "ADSSpeedModifier": 0.15
       },
       "basePrice": 5407,
       "sellPrices": [
@@ -159,7 +161,8 @@
       "attachmentModifier": {
         "ergonomicsModifier": 0.03,
         "verticalRecoilModifier": -0.02,
-        "horizontalRecoilModifier": -0.03
+        "horizontalRecoilModifier": -0.03,
+        "ADSSpeedModifier": 0.15
       },
       "basePrice": 5587,
       "sellPrices": [
@@ -520,7 +523,7 @@
             {
               "gameId": "task.wp.a.04",
               "id": "regiment_27",
-              "name": "My Favorite: Mosin",
+              "name": "My Favourite: Mosin",
               "corpId": "regiment"
             }
           ],
@@ -623,7 +626,7 @@
             {
               "gameId": "task.gunsmith.m08",
               "id": "gunsmith_16",
-              "name": "Close Quarters",
+              "name": "Close Quarters — MP9 Drill",
               "corpId": "gunsmith"
             }
           ],
@@ -1145,9 +1148,7 @@
         "ergonomicsModifier": 0.04,
         "verticalRecoilModifier": -0.02,
         "horizontalRecoilModifier": -0.01,
-        "ADSSpeedModifier": 0.15,
-        "yawMomentumModifer": -0.1,
-        "rollMomentumModifer": -0.05
+        "ADSSpeedModifier": 0.15
       },
       "basePrice": 2795,
       "sellPrices": [
@@ -1195,9 +1196,7 @@
         "ergonomicsModifier": 0.04,
         "verticalRecoilModifier": -0.02,
         "horizontalRecoilModifier": -0.01,
-        "ADSSpeedModifier": 0.15,
-        "yawMomentumModifer": -0.1,
-        "rollMomentumModifer": -0.05
+        "ADSSpeedModifier": 0.15
       },
       "basePrice": 3198,
       "sellPrices": [
@@ -2173,7 +2172,7 @@
             {
               "gameId": "task.gunsmith.m09",
               "id": "gunsmith_18",
-              "name": "Surveillance Setup",
+              "name": "Smuggling Route: Surveillance I",
               "corpId": "gunsmith"
             }
           ],
@@ -2274,7 +2273,7 @@
             {
               "gameId": "task.gunsmith.008",
               "id": "gunsmith_15",
-              "name": "Modding Trial: SKS",
+              "name": "SKS Modification Trial",
               "corpId": "gunsmith"
             }
           ],
@@ -2377,8 +2376,7 @@
       "attachmentModifier": {
         "ergonomicsModifier": -0.12,
         "verticalRecoilModifier": 0.015,
-        "horizontalRecoilModifier": 0.03,
-        "ADSSpeedModifier": -0.4
+        "horizontalRecoilModifier": 0.03
       },
       "basePrice": 20563,
       "sellPrices": [
@@ -2579,7 +2577,7 @@
             {
               "gameId": "task.na.b.09",
               "id": "ark_58",
-              "name": "Factory Tanks",
+              "name": "Factory Oil Tanks",
               "corpId": "ark"
             }
           ],
@@ -2978,7 +2976,7 @@
             {
               "gameId": "task.na.c.07",
               "id": "ark_66",
-              "name": "Another Option",
+              "name": "Clearing Drill",
               "corpId": "ark"
             }
           ],
@@ -3646,7 +3644,7 @@
             {
               "gameId": "task.wp.c.09",
               "id": "regiment_51",
-              "name": "Old Haunts",
+              "name": "The Veteran's Courts",
               "corpId": "regiment"
             }
           ],

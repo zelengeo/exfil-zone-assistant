@@ -1741,7 +1741,7 @@
             {
               "gameId": "task.wp.a.13",
               "id": "regiment_34",
-              "name": "Final Challenge",
+              "name": "War Within Self",
               "corpId": "regiment"
             }
           ],
@@ -1761,7 +1761,7 @@
             {
               "gameId": "task.wp.a.13",
               "id": "regiment_34",
-              "name": "Final Challenge",
+              "name": "War Within Self",
               "corpId": "regiment"
             }
           ],
@@ -1957,7 +1957,7 @@
             {
               "gameId": "task.wp.c.04",
               "id": "regiment_46",
-              "name": "Blinding Light",
+              "name": "Get Back My Shades",
               "corpId": "regiment"
             }
           ],
@@ -2936,7 +2936,7 @@
             {
               "gameId": "task.wp.c.04",
               "id": "regiment_46",
-              "name": "Blinding Light",
+              "name": "Get Back My Shades",
               "corpId": "regiment"
             }
           ],
@@ -5099,7 +5099,7 @@
             {
               "gameId": "task.na.c.08",
               "id": "ark_67",
-              "name": "End of the Line",
+              "name": "Transport Clues",
               "corpId": "ark"
             }
           ],
@@ -5477,7 +5477,7 @@
       "mag_9x19mm_25_2",
       "mag_9x19mm_17_2"
     ],
-    "family": "BX4",
+    "family": "Bx4",
     "gameClass": "GunGenerator_BX4_C",
     "gameId": "gungenerator.bx4",
     "tips": "Bridge between SMGs and rifles with better range capability. Lower MOA than most SMGs makes it effective at medium range.",
@@ -5601,7 +5601,7 @@
       "mag_9x19mm_25_2",
       "mag_9x19mm_17_2"
     ],
-    "family": "BX4",
+    "family": "Bx4",
     "gameClass": "GunGenerator_BX4LongBarrel_C",
     "gameId": "gungenerator.bx4longbarrel",
     "tips": ""
@@ -6140,6 +6140,7 @@
     "defaultClip": "Mag_Evo3_Drum",
     "compatibleMagazines": [
       "mag_9x19mm_30_evo",
+      "magazine-evo3-50",
       "mag_9x19mm_50_evo"
     ],
     "family": "Evo3",
@@ -6638,7 +6639,7 @@
             {
               "gameId": "task.wp.c.05",
               "id": "regiment_47",
-              "name": "Hair Comes First",
+              "name": "Keep the Hair Sharp",
               "corpId": "regiment"
             }
           ],
@@ -10583,7 +10584,7 @@
             {
               "gameId": "task.na.b.02",
               "id": "ark_51",
-              "name": "Field Photography",
+              "name": "Mall Photography",
               "corpId": "ark"
             }
           ],
@@ -10609,7 +10610,7 @@
             {
               "gameId": "task.na.b.02",
               "id": "ark_51",
-              "name": "Field Photography",
+              "name": "Mall Photography",
               "corpId": "ark"
             }
           ],
@@ -11299,7 +11300,7 @@
             {
               "gameId": "task.na.c.04",
               "id": "ark_63",
-              "name": "Before the Chaos",
+              "name": "Prove Yourself",
               "corpId": "ark"
             }
           ],
@@ -11856,7 +11857,7 @@
             {
               "gameId": "task.na.c.04",
               "id": "ark_63",
-              "name": "Before the Chaos",
+              "name": "Prove Yourself",
               "corpId": "ark"
             }
           ],
@@ -13973,7 +13974,7 @@
             {
               "gameId": "task.wp.b.05",
               "id": "regiment_18",
-              "name": "Movie Night: Shark Thriller",
+              "name": "Movie Night 1",
               "corpId": "regiment"
             }
           ],
@@ -14130,7 +14131,7 @@
             {
               "gameId": "task.wp.c.06",
               "id": "regiment_48",
-              "name": "Work Smarter",
+              "name": "The Sausage Trap",
               "corpId": "regiment"
             }
           ],
@@ -14287,7 +14288,7 @@
             {
               "gameId": "task.wp.c.07",
               "id": "regiment_49",
-              "name": "Hunter",
+              "name": "Rifle Proficiency",
               "corpId": "regiment"
             }
           ],
@@ -14584,7 +14585,7 @@
             {
               "gameId": "task.na.c.02",
               "id": "ark_62",
-              "name": "Northern Camp Recon",
+              "name": "Wind Farm Recon",
               "corpId": "ark"
             }
           ],
@@ -15203,7 +15204,7 @@
             {
               "gameId": "task.na.c.02",
               "id": "ark_62",
-              "name": "Northern Camp Recon",
+              "name": "Wind Farm Recon",
               "corpId": "ark"
             }
           ],
@@ -20302,6 +20303,7 @@
     "defaultClip": "Mag_Evo3_30",
     "compatibleMagazines": [
       "mag_9x19mm_30_evo",
+      "magazine-evo3-50",
       "mag_9x19mm_50_evo"
     ],
     "family": "Evo3",
@@ -21327,7 +21329,7 @@
             {
               "gameId": "task.wp.c.01",
               "id": "regiment_43",
-              "name": "Different Style",
+              "name": "A Real Rifle",
               "corpId": "regiment"
             }
           ],
@@ -21486,7 +21488,7 @@
             {
               "gameId": "task.wp.c.01",
               "id": "regiment_43",
-              "name": "Different Style",
+              "name": "A Real Rifle",
               "corpId": "regiment"
             }
           ],
@@ -23972,7 +23974,7 @@
             {
               "gameId": "task.na.a.14",
               "id": "ark_49",
-              "name": "★ Lord of the Underground",
+              "name": "★19 Master of the Underground: Final BOSS",
               "corpId": "ark"
             }
           ],
@@ -24351,7 +24353,7 @@
             {
               "gameId": "task.na.a.06",
               "id": "ark_41",
-              "name": "Crime Scene",
+              "name": "★15 Pushing the Limit Lv4",
               "corpId": "ark"
             }
           ],
@@ -24371,7 +24373,7 @@
             {
               "gameId": "task.na.a.06",
               "id": "ark_41",
-              "name": "Crime Scene",
+              "name": "★15 Pushing the Limit Lv4",
               "corpId": "ark"
             }
           ],

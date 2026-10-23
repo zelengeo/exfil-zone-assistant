@@ -58,7 +58,7 @@
     "compatibility": {
       "installsOn": [],
       "provides": [
-        "BR.attachments.Foregrip"
+        "GunSmithSlot.WFAtt.Foregrip"
       ],
       "requiresPartTypes": [],
       "tags": [
@@ -518,7 +518,7 @@
         {
           "vendor": "ark",
           "goodsId": "gds.gunsmith.20rail.rearsight.ash12handle",
-          "level": 1,
+          "level": 4,
           "price": 1860,
           "bundle": 1,
           "bundlePrice": 1860,
@@ -3051,7 +3051,7 @@
             {
               "gameId": "task.wp.c.09",
               "id": "regiment_51",
-              "name": "Old Haunts",
+              "name": "The Veteran's Courts",
               "corpId": "regiment"
             }
           ],
@@ -3192,7 +3192,7 @@
             {
               "gameId": "task.wp.a.05",
               "id": "regiment_37",
-              "name": "My Favorite: AK",
+              "name": "My Favourite: AK",
               "corpId": "regiment"
             }
           ],
@@ -3519,7 +3519,7 @@
             {
               "gameId": "task.wp.a.10",
               "id": "regiment_39",
-              "name": "My Favorite: FAL",
+              "name": "My Favourite: FAL",
               "corpId": "regiment"
             }
           ],
@@ -3539,7 +3539,7 @@
             {
               "gameId": "task.wp.a.10",
               "id": "regiment_39",
-              "name": "My Favorite: FAL",
+              "name": "My Favourite: FAL",
               "corpId": "regiment"
             }
           ],
@@ -3622,7 +3622,7 @@
             {
               "gameId": "task.wp.a.01",
               "id": "regiment_23",
-              "name": "Taste of Life: Sake",
+              "name": "Taste of Life 2",
               "corpId": "regiment"
             }
           ],
@@ -4395,7 +4395,7 @@
             {
               "gameId": "task.wp.c.02",
               "id": "regiment_44",
-              "name": "Taste of Life: Beer",
+              "name": "The Old Soldier's Beer",
               "corpId": "regiment"
             }
           ],
@@ -5374,7 +5374,7 @@
             {
               "gameId": "task.wp.c.01",
               "id": "regiment_43",
-              "name": "Different Style",
+              "name": "A Real Rifle",
               "corpId": "regiment"
             }
           ],
@@ -6171,7 +6171,7 @@
             {
               "gameId": "task.wp.c.04",
               "id": "regiment_46",
-              "name": "Blinding Light",
+              "name": "Get Back My Shades",
               "corpId": "regiment"
             }
           ],
@@ -6538,7 +6538,7 @@
             {
               "gameId": "task.wp.c.02",
               "id": "regiment_44",
-              "name": "Taste of Life: Beer",
+              "name": "The Old Soldier's Beer",
               "corpId": "regiment"
             }
           ],
@@ -11567,7 +11567,7 @@
             {
               "gameId": "task.na.c.10",
               "id": "ark_69",
-              "name": "Tracks of the Wolf",
+              "name": "Pre-war Recon",
               "corpId": "ark"
             }
           ],
@@ -11715,7 +11715,7 @@
             {
               "gameId": "task.na.b.01",
               "id": "ark_50",
-              "name": "Redeployment",
+              "name": "Camera Placement: Warehouse & Supermarket",
               "corpId": "ark"
             }
           ],
@@ -12006,7 +12006,7 @@
             {
               "gameId": "task.na.c.08",
               "id": "ark_67",
-              "name": "End of the Line",
+              "name": "Transport Clues",
               "corpId": "ark"
             }
           ],
@@ -12211,7 +12211,7 @@
             {
               "gameId": "task.na.a.03",
               "id": "ark_38",
-              "name": "A Closer Look",
+              "name": "Police Car Photos",
               "corpId": "ark"
             }
           ],
@@ -12336,7 +12336,7 @@
             {
               "gameId": "task.na.b.10",
               "id": "ark_59",
-              "name": "★ Silver Skull",
+              "name": "★ Silver Skull BOSS",
               "corpId": "ark"
             }
           ],
@@ -12409,7 +12409,7 @@
             {
               "gameId": "task.na.a.07",
               "id": "ark_42",
-              "name": "★ Judgment",
+              "name": "★18 Judgment Day BOSS",
               "corpId": "ark"
             }
           ],
@@ -12577,7 +12577,7 @@
             {
               "gameId": "task.na.a.08",
               "id": "ark_43",
-              "name": "Going Underground",
+              "name": "Into the Underground",
               "corpId": "ark"
             }
           ],
@@ -12826,7 +12826,7 @@
             {
               "gameId": "task.gunsmith.m07",
               "id": "gunsmith_14",
-              "name": "Buying Access",
+              "name": "Protection Racket",
               "corpId": "gunsmith"
             }
           ],
@@ -14041,7 +14041,7 @@
             {
               "gameId": "task.gunsmith.m09",
               "id": "gunsmith_18",
-              "name": "Surveillance Setup",
+              "name": "Smuggling Route: Surveillance I",
               "corpId": "gunsmith"
             }
           ],
@@ -14345,7 +14345,7 @@
             {
               "gameId": "task.na.c.06",
               "id": "ark_65",
-              "name": "Where Did the Trucks Go",
+              "name": "Truck Marking",
               "corpId": "ark"
             }
           ],
@@ -16853,7 +16853,7 @@
         {
           "vendor": "regiment",
           "goodsId": "gds.gunsmith.ash12.clip.10",
-          "level": 1,
+          "level": 4,
           "price": 2561,
           "bundle": 1,
           "bundlePrice": 2561,
@@ -16917,7 +16917,7 @@
         {
           "vendor": "regiment",
           "goodsId": "gds.gunsmith.ash12.clip.20",
-          "level": 1,
+          "level": 4,
           "price": 7680,
           "bundle": 1,
           "bundlePrice": 7680,
@@ -17031,7 +17031,7 @@
         {
           "vendor": "regiment",
           "goodsId": "gds.gunsmith.ash12.frontsight.flip",
-          "level": 1,
+          "level": 4,
           "price": 1219,
           "bundle": 1,
           "bundlePrice": 1219,
@@ -17193,7 +17193,7 @@
         {
           "vendor": "regiment",
           "goodsId": "gds.gunsmith.ash12.lowerreceiver.ash12",
-          "level": 1,
+          "level": 4,
           "price": 113450,
           "bundle": 1,
           "bundlePrice": 113450,
@@ -17265,7 +17265,7 @@
         {
           "vendor": "ark",
           "goodsId": "gds.gunsmith.ash12.muzzle.compensator",
-          "level": 1,
+          "level": 4,
           "price": 18750,
           "bundle": 1,
           "bundlePrice": 18750,
@@ -17339,7 +17339,7 @@
         {
           "vendor": "ark",
           "goodsId": "gds.gunsmith.ash12.muzzle.suppressor",
-          "level": 1,
+          "level": 4,
           "price": 12035,
           "bundle": 1,
           "bundlePrice": 12035,
@@ -17403,7 +17403,7 @@
         {
           "vendor": "regiment",
           "goodsId": "gds.gunsmith.ash12.upperreceiver.ash12",
-          "level": 1,
+          "level": 4,
           "price": 36845,
           "bundle": 1,
           "bundlePrice": 36845,
@@ -17554,7 +17554,7 @@
             {
               "gameId": "task.na.b.03",
               "id": "ark_52",
-              "name": "Secret Contact",
+              "name": "Retrieve ARK Disks",
               "corpId": "ark"
             }
           ],
@@ -17833,7 +17833,7 @@
             {
               "gameId": "task.gear.a.11",
               "id": "forge_28",
-              "name": "Worth More Than Gold",
+              "name": "Treasure Beyond Measure",
               "corpId": "forge"
             }
           ],
@@ -19261,7 +19261,7 @@
             {
               "gameId": "task.na.b.04",
               "id": "ark_53",
-              "name": "The Bait",
+              "name": "Hide Discs",
               "corpId": "ark"
             }
           ],
@@ -19361,7 +19361,7 @@
     "description": "",
     "category": "attachments",
     "subcategory": "Gunsmith Parts",
-    "family": "BX4",
+    "family": "Bx4",
     "group": "bx4",
     "slot": "barrel",
     "partType": "Barrel",
@@ -19431,7 +19431,7 @@
     "description": "",
     "category": "attachments",
     "subcategory": "Gunsmith Parts",
-    "family": "BX4",
+    "family": "Bx4",
     "group": "bx4",
     "slot": "barrel",
     "partType": "Barrel",
@@ -19501,7 +19501,7 @@
     "description": "",
     "category": "attachments",
     "subcategory": "Gunsmith Parts",
-    "family": "BX4",
+    "family": "Bx4",
     "group": "bx4",
     "slot": "clip",
     "partType": "Clip",
@@ -19566,7 +19566,7 @@
     "description": "",
     "category": "attachments",
     "subcategory": "Gunsmith Parts",
-    "family": "BX4",
+    "family": "Bx4",
     "group": "bx4",
     "slot": "lowerreceiver",
     "partType": "LowerReceiver",
@@ -19666,7 +19666,7 @@
     "description": "",
     "category": "attachments",
     "subcategory": "Gunsmith Parts",
-    "family": "BX4",
+    "family": "Bx4",
     "group": "bx4",
     "slot": "mount",
     "partType": "Mount",
@@ -19730,7 +19730,7 @@
     "description": "",
     "category": "attachments",
     "subcategory": "Gunsmith Parts",
-    "family": "BX4",
+    "family": "Bx4",
     "group": "bx4",
     "slot": "muzzle",
     "partType": "Muzzle",
@@ -19976,7 +19976,7 @@
             {
               "gameId": "task.na.a.01",
               "id": "ark_36",
-              "name": "Coastal Pursuit",
+              "name": "Seaside Pursuit",
               "corpId": "ark"
             }
           ],
@@ -21329,7 +21329,7 @@
             {
               "gameId": "task.gunsmith.m10",
               "id": "gunsmith_19",
-              "name": "Field Adaptation",
+              "name": "Malyuk Field Trial",
               "corpId": "gunsmith"
             }
           ],
@@ -22431,7 +22431,7 @@
             {
               "gameId": "task.na.c.09",
               "id": "ark_68",
-              "name": "Better Safe Than Sorry",
+              "name": "Rifle Drills",
               "corpId": "ark"
             }
           ],
@@ -24338,6 +24338,7 @@
         "Stock"
       ],
       "tags": [
+        "WeaponHolster.SideArm",
         "GunType.Pistol.GP100"
       ]
     }
@@ -28258,7 +28259,7 @@
             {
               "gameId": "task.na.a.01",
               "id": "ark_36",
-              "name": "Coastal Pursuit",
+              "name": "Seaside Pursuit",
               "corpId": "ark"
             }
           ],
@@ -28331,7 +28332,7 @@
             {
               "gameId": "task.na.b.06",
               "id": "ark_55",
-              "name": "Baseball Cams",
+              "name": "Disguised Baseball",
               "corpId": "ark"
             }
           ],
@@ -28768,7 +28769,7 @@
             {
               "gameId": "task.na.b.08",
               "id": "ark_57",
-              "name": "Patrol",
+              "name": "Clifton Recon",
               "corpId": "ark"
             }
           ],
@@ -31355,7 +31356,7 @@
             {
               "gameId": "task.na.a.09",
               "id": "ark_44",
-              "name": "Undercurrents",
+              "name": "Undercurrent",
               "corpId": "ark"
             }
           ],
@@ -31492,7 +31493,7 @@
             {
               "gameId": "task.na.a.11",
               "id": "ark_46",
-              "name": "Heavy Armor Below",
+              "name": "Heavy Iron: Tank Marking",
               "corpId": "ark"
             }
           ],
@@ -33695,7 +33696,7 @@
             {
               "gameId": "task.na.c.02",
               "id": "ark_62",
-              "name": "Northern Camp Recon",
+              "name": "Wind Farm Recon",
               "corpId": "ark"
             }
           ],
@@ -35012,7 +35013,7 @@
             {
               "gameId": "task.na.c.03",
               "id": "ark_3",
-              "name": "Intelligence Gathering",
+              "name": "Recon 1",
               "corpId": "ark"
             }
           ],
@@ -35091,7 +35092,7 @@
             {
               "gameId": "task.na.c.03",
               "id": "ark_3",
-              "name": "Intelligence Gathering",
+              "name": "Recon 1",
               "corpId": "ark"
             }
           ],
@@ -39046,7 +39047,7 @@
     "family": "Evo3",
     "group": "evo3",
     "slot": "clip",
-    "partType": null,
+    "partType": "Clip",
     "images": {
       "icon": "/images/items/gunsmith-parts/part-pvegunsmith-evo3-clip-50.webp",
       "thumbnail": "/images/items/gunsmith-parts/part-pvegunsmith-evo3-clip-50.webp",
@@ -39062,14 +39063,20 @@
       },
       "partMOA": null,
       "capacity": 50,
-      "caliber": "None",
+      "caliber": "9x19mm",
       "gunData": null
     },
     "compatibility": {
-      "installsOn": [],
-      "provides": [],
+      "installsOn": [
+        "GunSmith.Evo3.LowerReceiver.Evo3"
+      ],
+      "provides": [
+        "GunSmithSlot.LowerReceiver.Clip"
+      ],
       "requiresPartTypes": [],
-      "tags": []
+      "tags": [
+        "GunpartType.Clip"
+      ]
     }
   },
   {
@@ -40794,7 +40801,7 @@
             {
               "gameId": "task.na.a.14",
               "id": "ark_49",
-              "name": "★ Lord of the Underground",
+              "name": "★19 Master of the Underground: Final BOSS",
               "corpId": "ark"
             }
           ],
@@ -40814,7 +40821,7 @@
             {
               "gameId": "task.na.a.14",
               "id": "ark_49",
-              "name": "★ Lord of the Underground",
+              "name": "★19 Master of the Underground: Final BOSS",
               "corpId": "ark"
             }
           ],
@@ -49145,7 +49152,7 @@
             {
               "gameId": "task.gunsmith.m02",
               "id": "gunsmith_4",
-              "name": "Missing Part",
+              "name": "The Lost Part",
               "corpId": "gunsmith"
             }
           ],

@@ -162,7 +162,7 @@
             {
               "gameId": "task.gear.b.02",
               "id": "forge_16",
-              "name": "Plan Ahead: Safehouses",
+              "name": "Better Safe than Sorry 2",
               "corpId": "forge"
             }
           ],
@@ -1632,7 +1632,7 @@
             {
               "gameId": "task.gear.b.01",
               "id": "forge_15",
-              "name": "Cleaning House",
+              "name": "Purge the Ranks",
               "corpId": "forge"
             }
           ],
