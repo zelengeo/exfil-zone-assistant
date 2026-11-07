@@ -11,6 +11,8 @@ const eslintConfig = [
       "out/**",
       "build/**",
       "next-env.d.ts",
+      // Vercel CLI state, gitignored; it has held local scratch scripts.
+      ".vercel/**",
       // Separate agent worktrees are not source for this checkout.
       ".claude/worktrees/**",
       // Vendored design handoff export, not project source

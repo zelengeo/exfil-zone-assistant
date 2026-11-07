@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { AlertTriangle, Crosshair, Dices, Shield, Wrench } from 'lucide-react';
+import { AlertTriangle, ChevronRight, Crosshair, Dices, Scale, Shield, Wrench } from 'lucide-react';
 import ShotInspector from '@/app/combat-sim/components/ShotInspector';
 
 /**
@@ -16,6 +16,13 @@ import ShotInspector from '@/app/combat-sim/components/ShotInspector';
  * guide that recomputed the model from published fields would be a second implementation: correct
  * the day it was written, and wrong *plausibly* the first time a rule moved. So the prose explains
  * and the code computes, and the two cannot disagree.
+ *
+ * The page is ordered for the reader the simulator sends here. They tapped a shot asking where a
+ * number came from, so the inspector — seeded with that shot — is first, and reads the answer out
+ * in sentences before it offers the arithmetic. The takeaways and the step-by-step follow. The
+ * provenance, the model's known gaps and the bug-report procedure are for a reader checking the
+ * model rather than using it, and sit folded at the end: the first version of this page opened
+ * with them, and readers called it too heavy. Nothing was cut; it was reordered.
  */
 
 const CHAIN = [
@@ -37,7 +44,7 @@ function Formula({ children }: { children: React.ReactNode }) {
     );
 }
 
-function Rule({
+function Takeaway({
     icon, title, children,
 }: {
     icon: React.ReactNode;
@@ -61,68 +68,82 @@ export default function DamageModelGuide() {
             <section className="space-y-3">
                 <p className="text-lg text-ink-200 leading-relaxed">
                     One bullet hitting one armoured body part passes through eight steps before the
-                    game takes a number off your health. This page writes all eight out, and lets you
-                    run any of them against any round, any plate and any body part.
+                    game takes a number off your health. Run them on any round, plate and body part
+                    below, read the result in plain words, then follow each step if you want to.
                 </p>
                 <p className="text-sm text-ink-500">
-                    None of this is fitted to testing. The rules are read out of the shipped binary
-                    &mdash; <code className="text-ink-300">ProcessDamageReceived</code> and{' '}
-                    <code className="text-ink-300">GetDamagePostGearProtection</code> &mdash; and the
-                    single-shot arithmetic was checked against an in-game capture in September 2026:
-                    53 recorded damage readings reproduced to within 0.0004 HP.
-                </p>
-                <div className="border-l-2 border-warn bg-steel-800 p-4 text-sm text-ink-400">
-                    This is the canonical description of what the simulator currently calculates,
-                    not a promise that every live-game outcome is deterministic. The per-shot roll
-                    cannot be reproduced, the durability curve interpretation still needs wider
-                    in-game spot checks, and the limits below remain outside the model.
-                </div>
-            </section>
-
-            {/* ---------------------------------------------------------------- */}
-            <section className="space-y-4">
-                <h2 className="text-2xl text-ink-100">The whole chain</h2>
-                <p className="text-ink-300">
-                    In the order the game works in. Everything after this section is one line of it,
-                    explained.
-                </p>
-                <div className="bg-steel-900 border border-line-800 divide-y divide-line-800">
-                    {CHAIN.map(([name, body]) => (
-                        <div key={name} className="px-4 py-3 sm:flex sm:items-baseline sm:gap-4">
-                            <code className="font-mono text-sm text-ember w-20 shrink-0 block">{name}</code>
-                            <span className="font-mono text-xs sm:text-sm text-ink-300 break-words">{body}</span>
-                        </div>
-                    ))}
-                </div>
-                <p className="text-sm text-ink-500">
-                    The two lines worth reading twice are the last two. <strong className="text-ink-300">
-                    Firing power appears in <em>base</em> and again in <em>body</em></strong>, so a hit
-                    the armour covers is scaled by it twice and a bare hit once. And the plate is billed
-                    from the same <em>base</em> the body is &mdash; including the body-part multiplier
-                    &mdash; using the durability it held <em>before</em> the bullet landed.
+                    The rules are read out of the game itself, not fitted to testing, and the figures
+                    are the simulator&rsquo;s own. Where the game rolls, this page prints the chance
+                    and both outcomes.
                 </p>
             </section>
 
             {/* ---------------------------------------------------------------- */}
             <section className="space-y-4">
-                <h2 className="text-2xl text-ink-100">Try it on one shot</h2>
-                <p className="text-ink-300">
-                    Pick a round, a plate, a body part and a range. Every intermediate value is printed,
-                    and both outcomes are shown &mdash; because the game rolls, and the simulator&rsquo;s
-                    ladder has to commit to one of them.
-                </p>
+                <h2 className="text-2xl text-ink-100">One shot, in words</h2>
                 <ShotInspector />
                 <p className="text-sm text-ink-500">
                     Arriving from a shot in the{' '}
                     <Link href="/combat-sim" className="text-ember hover:underline">combat simulator</Link>?
-                    The link carries that shot&rsquo;s exact inputs, so the figures above are the ones
-                    behind that row.
+                    The link carried that shot&rsquo;s exact inputs, so the reading above is the one
+                    behind that row. The simulator has to commit to one outcome and draws the
+                    likelier; the game rolls, which is why both are printed here.
                 </p>
+            </section>
+
+            {/* ---------------------------------------------------------------- */}
+            <section className="space-y-4">
+                <h2 className="text-2xl text-ink-100">Five things worth remembering</h2>
+                <div className="grid gap-4 sm:grid-cols-2">
+                    <Takeaway icon={<Scale size={18} />} title="Class minus penetration is the whole test">
+                        <p>
+                            Armour class and penetration are the same scale, so the game subtracts
+                            one from the other. Level is roughly an 85% chance to go through. A round
+                            a full class short never goes through; a round a full class ahead does
+                            full damage, and there is no reward past that.
+                        </p>
+                    </Takeaway>
+                    <Takeaway icon={<Shield size={18} />} title="A worn plate is a lower class">
+                        <p>
+                            Durability does not run out &mdash; it scales the class down every round.
+                            A class 5 vest at 40% durability is not a class 5 vest, and a round that
+                            bounced ten times can go through on the eleventh without anything about
+                            the round changing.
+                        </p>
+                    </Takeaway>
+                    <Takeaway icon={<Crosshair size={18} />} title="The zone's class, not the badge">
+                        <p>
+                            A piece rates each body part separately; the number on the item card is
+                            a display field. A 6B45 badged class 5 carries class 5 on the chest and
+                            class 4 on the pelvis &mdash; a full class of difference, decided by where
+                            you aim.
+                        </p>
+                    </Takeaway>
+                    <Takeaway icon={<Wrench size={18} />} title="Firing power barely matters, and never for penetration">
+                        <p>
+                            A 105% gun does 5% more damage on a bare hit and about 10% more on a covered
+                            one. It does not push a round through anything a 100% gun would not. Of
+                            the six gunsmith figures, this is the only one that reaches the model.
+                        </p>
+                    </Takeaway>
+                    <Takeaway icon={<Dices size={18} />} title="A bounce is small, a penetration is big">
+                        <p>
+                            On most vests a stopped round does 1&ndash;7 damage and a penetrating one
+                            18&ndash;60, an order of magnitude apart. You never need a precise reading
+                            to tell which happened. Full damage <em>and</em> no durability lost means
+                            the gear never covered the hit at all.
+                        </p>
+                    </Takeaway>
+                </div>
             </section>
 
             {/* ---------------------------------------------------------------- */}
             <section className="space-y-4">
                 <h2 className="text-2xl text-ink-100">Step by step</h2>
+                <p className="text-ink-300">
+                    In the order the game works in. Each is one line of the ledger the inspector
+                    folds away.
+                </p>
 
                 <div className="space-y-6">
                     <div className="space-y-2">
@@ -151,7 +172,9 @@ export default function DamageModelGuide() {
                         <p className="text-sm text-ink-500">
                             The percentage on the bench is that factor, times 100: a gun reading 105% is
                             a factor of 1.05. Which is why the inspector asks for the percentage &mdash;
-                            it is the number you can actually see in game.
+                            it is the number you can actually see in game. A hit the armour covers is
+                            scaled by it twice, once before the gear sees the hit and once inside the
+                            armour code; a bare hit once.
                         </p>
                     </div>
 
@@ -192,26 +215,18 @@ export default function DamageModelGuide() {
                         </p>
                         <Formula>{'effective class = zone class × curve(1 − durability ÷ max durability)'}</Formula>
                         <p className="text-ink-300">
-                            A class 5 vest at 40% durability is not a class 5 vest. In a recorded
-                            in-game sequence an IMTV walked from 5.0 down to 3.5 over sixteen rifle
-                            hits, and the round that had been bouncing all along went through on the
-                            sixteenth without anything about the round changing.
+                            In a recorded in-game sequence an IMTV walked from 5.0 down to 3.5 over
+                            sixteen rifle hits, and the round that had been bouncing all along went
+                            through on the sixteenth without anything about the round changing.
                         </p>
-                        <div className="bg-steel-800 border-l-2 border-warn p-4 text-sm text-ink-300">
-                            <strong className="text-ink-100">Zone class, not the badge.</strong> A piece
-                            rates each body part separately and the headline number on the item card is a
-                            display field. A 6B45 badged class 5 carries class 5 on the chest and class 4
-                            on the pelvis &mdash; a full class of difference, on the same vest, decided by
-                            where you aim.
-                        </div>
                     </div>
 
                     <div className="space-y-2">
                         <h3 className="text-xl text-ink-100">5. The gap, and the roll</h3>
                         <p className="text-ink-300">
                             Armour class and penetration are the same axis, so the game simply subtracts
-                            them. That difference &mdash; not a ratio &mdash; is what both armour curves
-                            are read on.
+                            them. That difference &mdash; the gap, not a ratio &mdash; is what both
+                            armour curves are read on.
                         </p>
                         <Formula>gap = effective class − penetration</Formula>
                         <p className="text-ink-300">
@@ -232,10 +247,7 @@ export default function DamageModelGuide() {
                         <p className="text-ink-300">
                             <strong className="text-ink-100">Stopped:</strong> two multipliers, both small
                             &mdash; the round&rsquo;s own blunt scale, and the blunt scale of the zone it
-                            hit. On a class 6 vest a 5.56 FMJ comes out at about 2 HP a shot. That is the
-                            useful discriminator in game: on most vests a bounce is 1&ndash;7 damage and a
-                            penetration is 18&ndash;60, an order of magnitude apart, so you never need a
-                            precise reading to tell which happened.
+                            hit. On a class 6 vest a 5.56 FMJ comes out at about 2 HP a shot.
                         </p>
                     </div>
 
@@ -244,92 +256,11 @@ export default function DamageModelGuide() {
                         <p className="text-ink-300">
                             The armour loses durability on <em>every</em> hit it covers, stopped or not,
                             and a penetrating hit costs it more. It is billed from the same base figure
-                            the body is &mdash; body-part multiplier included, firing power counted once.
-                        </p>
-                        <p className="text-sm text-ink-500">
-                            Which is the one free discriminator in game: full damage <em>and</em> zero
-                            durability lost happens only when the gear did not cover the hit at all.
-                            Every other way of taking a big hit still spends durability.
+                            the body is &mdash; body-part multiplier included, firing power counted once
+                            &mdash; using the durability it held <em>before</em> the bullet landed.
                         </p>
                     </div>
                 </div>
-            </section>
-
-            {/* ---------------------------------------------------------------- */}
-            <section className="space-y-4">
-                <h2 className="text-2xl text-ink-100">Four rules that are easy to get backwards</h2>
-                <p className="text-ink-300">
-                    Each of these was wrong in this app at some point, and each was wrong in a way that
-                    still produced plausible numbers.
-                </p>
-                <div className="grid gap-4 sm:grid-cols-2">
-                    <Rule icon={<Wrench size={18} />} title="Firing power lands twice — on covered hits">
-                        <p>
-                            Once before the gear sees the hit, once inside the armour code. A bare hit
-                            gets it once, and the plate&rsquo;s durability loss only ever carries the
-                            first. A single fitted factor cannot match both cases, which is exactly why
-                            the old one never did.
-                        </p>
-                    </Rule>
-                    <Rule icon={<Crosshair size={18} />} title="Firing power never touches penetration">
-                        <p>
-                            A 105% gun does not push a round through anything a 100% gun would not.
-                            Nothing in the armour path applies it to penetration; the only thing
-                            subtracted there is penetration already spent crossing an earlier surface.
-                        </p>
-                    </Rule>
-                    <Rule icon={<Shield size={18} />} title="The damage curve clamps at −2, not 0">
-                        <p>
-                            Clamping the gap at zero throws away the whole region where good ammo beats
-                            good armour, and under-reads every over-penetrating shot. Below &minus;1 the
-                            curve is already flat at full damage.
-                        </p>
-                    </Rule>
-                    <Rule icon={<Dices size={18} />} title="The simulator does not roll">
-                        <p>
-                            The per-shot seed travels with the shot so client and server agree, and
-                            cannot be reproduced from published data. So the simulator takes the likelier
-                            half of every roll. Near 50% the two branches are far apart and the true
-                            expected damage sits between them &mdash; which is why the inspector above
-                            always prints both.
-                        </p>
-                    </Rule>
-                </div>
-            </section>
-
-            {/* ---------------------------------------------------------------- */}
-            <section className="space-y-3">
-                <h2 className="text-2xl text-ink-100 flex items-center gap-2">
-                    <AlertTriangle size={22} className="text-warn" />
-                    What this model does not cover
-                </h2>
-                <ul className="space-y-2 text-ink-300">
-                    <li>
-                        <strong className="text-ink-100">Coverage.</strong> Whether a plate is between
-                        the muzzle and the bone is geometry &mdash; a vest&rsquo;s protection wedge, a
-                        helmet&rsquo;s cone regions. The{' '}
-                        <Link href="/combat-sim" className="text-ember hover:underline">simulator</Link>{' '}
-                        measures it per body part; this page assumes the piece you picked covers the hit.
-                    </li>
-                    <li>
-                        <strong className="text-ink-100">Penetration already spent.</strong> A bullet
-                        that crossed an outstretched forearm before reaching the chest arrives with less.
-                        Not modelled, and not yet measured in game.
-                    </li>
-                    <li>
-                        <strong className="text-ink-100">Bleeding.</strong> Every round publishes a
-                        bleeding chance and nothing here reads it.
-                    </li>
-                    <li>
-                        <strong className="text-ink-100">How a killing shot spills over.</strong> Damage
-                        past a destroyed body part redistributes across the others; the simulator budgets
-                        against one pooled 440 HP instead, which is close but is not the seven-pool rule.
-                    </li>
-                    <li>
-                        <strong className="text-ink-100">Explosions.</strong> Whether grenade damage
-                        reaches the armour path at all is an open question.
-                    </li>
-                </ul>
             </section>
 
             {/* ---------------------------------------------------------------- */}
@@ -372,22 +303,115 @@ export default function DamageModelGuide() {
                 </div>
             </section>
 
-            {/* ---------------------------------------------------------------- */}
-            <section className="space-y-3">
-                <h2 className="text-2xl text-ink-100">Think a number is wrong?</h2>
-                <p className="text-ink-300">
-                    Good &mdash; and now you can say which step you disagree with, which is worth far
-                    more than a disagreement about the final figure. Note the round, the plate, the body
-                    part, the durability before the shot, and the firing power your gun displayed, and
-                    open an issue or use the{' '}
-                    <Link href="/feedback" className="text-ember hover:underline">feedback form</Link>.
-                </p>
-                <p className="text-sm text-ink-500">
-                    Durability before and after the shot is the single most valuable thing to record: it
-                    is the only reading that separates a hit the armour never covered from one that got
-                    lucky.
-                </p>
-            </section>
+            {/* ----------------------------------------------------------------
+              * The audit tail. Everything a reader needs to *check* the model rather than use it:
+              * where the rules came from, the compressed chain, what is outside it, and how to
+              * report a figure. One native disclosure, closed by default, which is the one piece of
+              * client state a guide is allowed.
+              * ---------------------------------------------------------------- */}
+            <details className="group border border-line-800 bg-steel-850">
+                <summary
+                    className="min-h-14 px-4 flex items-center gap-2 cursor-pointer select-none list-none text-ink-200 hover:text-ink-hi [&::-webkit-details-marker]:hidden"
+                >
+                    <ChevronRight
+                        size={18}
+                        className="shrink-0 text-ink-500 transition-transform group-open:rotate-90 motion-reduce:transition-none"
+                        aria-hidden="true"
+                    />
+                    <span className="text-lg">For the auditor: where this comes from, and what it leaves out</span>
+                </summary>
+                <div className="px-4 pb-6 space-y-8 border-t border-line-800 pt-6">
+                    <section className="space-y-3">
+                        <h2 className="text-xl text-ink-100">Provenance</h2>
+                        <p className="text-ink-300">
+                            None of this is fitted to testing. The rules are read out of the shipped
+                            binary &mdash; <code className="text-ink-300">ProcessDamageReceived</code> and{' '}
+                            <code className="text-ink-300">GetDamagePostGearProtection</code> &mdash; and the
+                            single-shot arithmetic was checked against an in-game capture in September
+                            2026: 53 recorded damage readings reproduced to within 0.0004 HP.
+                        </p>
+                        <div className="border-l-2 border-warn bg-steel-800 p-4 text-sm text-ink-400">
+                            This is the canonical description of what the simulator currently
+                            calculates, not a promise that every live-game outcome is deterministic.
+                            The per-shot roll travels with the shot so client and server agree, and
+                            cannot be reproduced from published data; the durability curve
+                            interpretation still needs wider in-game spot checks; and the limits below
+                            remain outside the model.
+                        </div>
+                    </section>
+
+                    <section className="space-y-3">
+                        <h2 className="text-xl text-ink-100">The whole chain</h2>
+                        <div className="bg-steel-900 border border-line-800 divide-y divide-line-800">
+                            {CHAIN.map(([name, body]) => (
+                                <div key={name} className="px-4 py-3 sm:flex sm:items-baseline sm:gap-4">
+                                    <code className="font-mono text-sm text-ember w-20 shrink-0 block">{name}</code>
+                                    <span className="font-mono text-xs sm:text-sm text-ink-300 break-words">{body}</span>
+                                </div>
+                            ))}
+                        </div>
+                        <p className="text-sm text-ink-500">
+                            The two lines worth reading twice are the last two. Firing power appears in{' '}
+                            <em>base</em> and again in <em>body</em>, so a hit the armour covers is scaled
+                            by it twice and a bare hit once. And the plate is billed from the same{' '}
+                            <em>base</em> the body is &mdash; including the body-part multiplier &mdash;
+                            using the durability it held before the bullet landed. The damage curve is
+                            clamped at &minus;2, not 0: clamping at zero throws away the whole region
+                            where good ammo beats good armour.
+                        </p>
+                    </section>
+
+                    <section className="space-y-3">
+                        <h2 className="text-xl text-ink-100 flex items-center gap-2">
+                            <AlertTriangle size={20} className="text-warn" />
+                            What this model does not cover
+                        </h2>
+                        <ul className="space-y-2 text-ink-300">
+                            <li>
+                                <strong className="text-ink-100">Coverage.</strong> Whether a plate is between
+                                the muzzle and the bone is geometry &mdash; a vest&rsquo;s protection wedge, a
+                                helmet&rsquo;s cone regions. The{' '}
+                                <Link href="/combat-sim" className="text-ember hover:underline">simulator</Link>{' '}
+                                measures it per body part; this page assumes the piece you picked covers the hit.
+                            </li>
+                            <li>
+                                <strong className="text-ink-100">Penetration already spent.</strong> A bullet
+                                that crossed an outstretched forearm before reaching the chest arrives with less.
+                                Not modelled, and not yet measured in game.
+                            </li>
+                            <li>
+                                <strong className="text-ink-100">Bleeding.</strong> Every round publishes a
+                                bleeding chance and nothing here reads it.
+                            </li>
+                            <li>
+                                <strong className="text-ink-100">How a killing shot spills over.</strong> Damage
+                                past a destroyed body part redistributes across the others; the simulator budgets
+                                against one pooled 440 HP instead, which is close but is not the seven-pool rule.
+                            </li>
+                            <li>
+                                <strong className="text-ink-100">Explosions.</strong> Whether grenade damage
+                                reaches the armour path at all is an open question.
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section className="space-y-3">
+                        <h2 className="text-xl text-ink-100">Think a number is wrong?</h2>
+                        <p className="text-ink-300">
+                            Good &mdash; and now you can say which step you disagree with, which is worth far
+                            more than a disagreement about the final figure. Note the round, the plate, the body
+                            part, the durability before the shot, and the firing power your gun displayed, and
+                            open an issue or use the{' '}
+                            <Link href="/feedback" className="text-ember hover:underline">feedback form</Link>.
+                        </p>
+                        <p className="text-sm text-ink-500">
+                            Durability before and after the shot is the single most valuable thing to record: it
+                            is the only reading that separates a hit the armour never covered from one that got
+                            lucky.
+                        </p>
+                    </section>
+                </div>
+            </details>
         </div>
     );
 }

@@ -54,11 +54,11 @@ export const guidesConfig: GuideMetadata[] = guideMetadataSchema.array().parse([
     },
     {
         slug: 'damage-model', title: 'The Damage Model, Step by Step',
-        description: 'Every step between pulling the trigger and losing health, with a calculator that resolves one shot against any round, plate and zone.',
+        description: 'Run one shot against any round, plate and body part, read the result in plain words, then follow every step behind it.',
         tags: ['combat', 'equipment'],
         relatedSlugs: ['armor-penetration-guide', 'ammo-selection-beginners', '1-7-0-0-changes'],
-        difficulty: 'advanced', readTimeMinutes: 12, author: 'pogapwnz',
-        publishedAt: '2026-09-06', updatedAt: '2026-09-06', featured: false,
+        difficulty: 'advanced', readTimeMinutes: 6, author: 'pogapwnz',
+        publishedAt: '2026-09-06', updatedAt: '2026-11-07', featured: false,
         ogImageUrl: '/og/og-image-guide-damage.jpg',
     },
     {

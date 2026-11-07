@@ -38,7 +38,7 @@ describe('sitemap', () => {
             expect(entry.lastModified).toBe(DATA_RELEASE_DATE);
         }
         expect(dateOf('/gunsmith')).toBe('2026-09-06');
-        expect(dateOf('/guides/damage-model')).toBe('2026-09-06');
+        expect(dateOf('/guides/damage-model')).toBe('2026-11-07');
         expect(dateOf('/guides/armor-penetration-guide')).toBe('2026-09-06');
         for (const path of ['/', '/combat-sim', '/hideout-upgrades', '/guides']) {
             expect(dateOf(path)).toBeUndefined();

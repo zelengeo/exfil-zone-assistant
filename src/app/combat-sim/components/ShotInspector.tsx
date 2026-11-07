@@ -3,7 +3,7 @@
 import React, { Suspense, useMemo, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { Loader2, Search, X } from 'lucide-react';
+import { ChevronRight, Loader2, Search, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Input } from '@/components/ui/input';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
@@ -98,6 +98,107 @@ function zoneFor(item: Armor | null, bone: string): { armorClass: number; blunt:
 
 const fmt = (value: number, places = 3): string =>
     value.toLocaleString('en-US', { minimumFractionDigits: places, maximumFractionDigits: places });
+
+/** A figure inside the reading: mono so it lines up with the cards, a step brighter so it is found. */
+function Figure({ children }: { children: React.ReactNode }) {
+    return <strong className="font-mono tabular font-normal text-ink-100">{children}</strong>;
+}
+
+/**
+ * The shot, in sentences.
+ *
+ * The derivation prints every figure under the game's own names, and that is the right record
+ * for a reader checking the model. It is the wrong first thing to meet for a reader who tapped a
+ * row in the simulator asking why it said 40: eight mono lines of `PenetrationChanceCurve` was the
+ * guide readers called too heavy. So the same figures are read out once in plain words, with the
+ * reader's own round, plate and bone substituted in, and the arithmetic is folded under it.
+ *
+ * Nothing here is computed. Every number is a field of `explanation`, so the sentences cannot say
+ * something the derivation does not.
+ */
+function Narrative({
+    round, plate, zone, bone, boneScalar, range, firingPercent, durability, maxDurability, explanation,
+}: {
+    round: Ammunition;
+    plate: Armor | null;
+    zone: { armorClass: number; blunt: number } | null;
+    bone: string;
+    boneScalar: number;
+    range: number;
+    firingPercent: number;
+    durability: number;
+    maxDurability: number;
+    explanation: ShotExplanation;
+}) {
+    const where = (BONE_LABEL[bone] ?? bone).toLowerCase();
+    const armour = explanation.armour;
+
+    const arrival = range === 0
+        ? <>At point blank, <em className="not-italic text-ink-200">{round.name}</em> carries</>
+        : <>At {range} m, <em className="not-italic text-ink-200">{round.name}</em> arrives with</>;
+
+    let plateReading: React.ReactNode = null;
+    let outcome: React.ReactNode;
+
+    if (!armour || !plate || !zone) {
+        outcome = plate
+            ? <>{plate.name} does not reach the {where}, so the hit lands on bare flesh: <Figure>{fmt(explanation.bareDamage, 1)}</Figure> HP.</>
+            : <>Nothing covers the {where}, so it takes all <Figure>{fmt(explanation.bareDamage, 1)}</Figure> HP.</>;
+    } else {
+        const worn = Math.abs(armour.effectiveArmorClass - zone.armorClass) >= 0.005;
+        const chance = armour.penetrationChance;
+        const chanceText = chance <= 0
+            ? 'so it will not go through'
+            : chance >= 0.9995
+                ? 'so it always goes through'
+                : <>so it goes through <Figure>{(chance * 100).toFixed(0)}%</Figure> of the time</>;
+        const gap = armour.delta;
+        const contest = Math.abs(gap) < 0.05
+            ? <>The round and the plate are level, {chanceText}.</>
+            : gap > 0
+                ? <>The plate sits <Figure>{fmt(gap, 2)}</Figure> class above the round, {chanceText}.</>
+                : <>The round sits <Figure>{fmt(-gap, 2)}</Figure> class above the plate, {chanceText}.</>;
+
+        plateReading = (
+            <p>
+                <em className="not-italic text-ink-200">{plate.name}</em> rates the {where} class{' '}
+                <Figure>{armorClassLabel(zone.armorClass)}</Figure>
+                {armour.bypassed
+                    ? <>, but it is broken. A broken plate is bypassed outright: there is no roll, and the round goes straight through.</>
+                    : worn
+                        ? <>, but at <Figure>{Math.round(durability)} of {maxDurability}</Figure> durability it is really class <Figure>{fmt(armour.effectiveArmorClass, 2)}</Figure>. {contest}</>
+                        : <>, and at this durability it is worth all of it. {contest}</>}
+            </p>
+        );
+
+        outcome = armour.bypassed
+            ? <>The {where} loses <Figure>{fmt(armour.through.damage, 1)}</Figure> HP and the plate loses <Figure>{fmt(armour.through.durabilityLoss, 1)}</Figure> durability.</>
+            : (
+                <>
+                    If it goes through, the {where} loses <Figure>{fmt(armour.through.damage, 1)}</Figure> HP;
+                    if it is stopped, <Figure>{fmt(armour.stopped.damage, 1)}</Figure> HP. Either way the plate
+                    loses durability: <Figure>{fmt(armour.through.durabilityLoss, 1)}</Figure> through,{' '}
+                    <Figure>{fmt(armour.stopped.durabilityLoss, 1)}</Figure> stopped. The simulator draws
+                    the {armour.likelier === 'through' ? 'goes-through' : 'stopped'} figure, the likelier
+                    half of the roll.
+                </>
+            );
+    }
+
+    return (
+        <div className="px-4 pb-4 space-y-3 text-base leading-relaxed text-ink-300">
+            <p>
+                {arrival} <Figure>{fmt(explanation.rangeDamage, 1)}</Figure> damage and{' '}
+                <Figure>{fmt(explanation.rangePenetration, 2)}</Figure> penetration. A hit on the {where}{' '}
+                counts <Figure>{boneScalar}&times;</Figure>, and at <Figure>{firingPercent}%</Figure> firing
+                power that is <Figure>{fmt(explanation.baseDamage, 1)}</Figure> HP before any armour is
+                consulted.
+            </p>
+            {plateReading}
+            <p>{outcome}</p>
+        </div>
+    );
+}
 
 /** One line of the derivation: what it is, how it is computed, and what it came to. */
 function Step({
@@ -437,81 +538,114 @@ function Inspector() {
                 </div>
             </div>
 
-            {/* ---- the derivation ---- */}
+            {/* ---- the reading ---- */}
+            <Narrative
+                round={round}
+                plate={plate}
+                zone={zone}
+                bone={bone}
+                boneScalar={resolved.scalar}
+                range={range}
+                firingPercent={Math.round(displayFromFp(firingPower))}
+                durability={durability}
+                maxDurability={maxDurability}
+                explanation={explanation}
+            />
+
+            {/*
+              * ---- the derivation ----
+              * Folded, closed by default. The reading above says the same things in words; this is
+              * the ledger for a reader who wants the game's own names and every intermediate value.
+              */}
             <div className="px-4 pb-4">
-                <div className="bg-steel-900 border border-line-800 px-4">
-                    <Step
-                        label="Damage at this range"
-                        expression={range === 0
-                            ? `${round.stats.damage} — point blank reads the round's own figure`
-                            : `DamageOverDistance read at ${range * 100} cm`}
-                        value={fmt(explanation.rangeDamage, 2)}
-                    />
-                    <Step
-                        label="Penetration at this range"
-                        expression={range === 0
-                            ? `${round.stats.penetration} — firing power never touches this`
-                            : `PenetrationPowerOverDistance at ${range * 100} cm`}
-                        value={fmt(explanation.rangePenetration, 2)}
-                    />
-                    <Step
-                        label="Firing power factor"
-                        expression={`0.9 + 0.2 × ${fmt(firingPower, 2)}`}
-                        value={fmt(explanation.firePower, 3)}
-                    />
-                    <Step
-                        label="Base damage"
-                        expression={`${fmt(explanation.rangeDamage, 2)} × ${resolved.scalar} (${BONE_LABEL[bone]}) × ${fmt(explanation.firePower, 3)}`}
-                        value={fmt(explanation.baseDamage)}
-                        unit="HP"
+                <details className="group">
+                    <summary
+                        className={cn(
+                            'min-h-11 flex items-center gap-1.5 cursor-pointer select-none list-none',
+                            'text-sm text-ink-400 hover:text-ink-200 [&::-webkit-details-marker]:hidden',
+                        )}
                     >
-                        <p className="mt-1 text-xs text-ink-500">
-                            The plate is billed from this same number, not from a separate
-                            pre-multiplier figure.
-                        </p>
-                    </Step>
-
-                    {!armour && (
-                        <Step
-                            label="Nothing covers the hit"
-                            expression="ProcessDamageReceived returns before it writes a damage figure"
-                            value={fmt(explanation.bareDamage)}
-                            unit="HP"
+                        <ChevronRight
+                            size={14}
+                            className="transition-transform group-open:rotate-90 motion-reduce:transition-none"
+                            aria-hidden="true"
                         />
-                    )}
+                        Every step, in the game&rsquo;s own terms
+                    </summary>
+                    <div className="bg-steel-900 border border-line-800 px-4">
+                        <Step
+                            label="Damage at this range"
+                            expression={range === 0
+                                ? `${round.stats.damage} — point blank reads the round's own figure`
+                                : `DamageOverDistance read at ${range * 100} cm`}
+                            value={fmt(explanation.rangeDamage, 2)}
+                        />
+                        <Step
+                            label="Penetration at this range"
+                            expression={range === 0
+                                ? `${round.stats.penetration} — firing power never touches this`
+                                : `PenetrationPowerOverDistance at ${range * 100} cm`}
+                            value={fmt(explanation.rangePenetration, 2)}
+                        />
+                        <Step
+                            label="Firing power factor"
+                            expression={`0.9 + 0.2 × ${fmt(firingPower, 2)}`}
+                            value={fmt(explanation.firePower, 3)}
+                        />
+                        <Step
+                            label="Base damage"
+                            expression={`${fmt(explanation.rangeDamage, 2)} × ${resolved.scalar} (${BONE_LABEL[bone]}) × ${fmt(explanation.firePower, 3)}`}
+                            value={fmt(explanation.baseDamage)}
+                            unit="HP"
+                        >
+                            <p className="mt-1 text-xs text-ink-500">
+                                The plate is billed from this same number, not from a separate
+                                pre-multiplier figure.
+                            </p>
+                        </Step>
 
-                    {armour && zone && (
-                        <>
+                        {!armour && (
                             <Step
-                                label="Plate effectiveness"
-                                expression={`AntiPenetrationDurabilityScalarCurve at ${fmt(1 - armour.durabilityFraction, 3)} (= 1 − ${Math.round(durability)}/${maxDurability})`}
-                                value={fmt(armour.effectiveness, 3)}
+                                label="Nothing covers the hit"
+                                expression="ProcessDamageReceived returns before it writes a damage figure"
+                                value={fmt(explanation.bareDamage)}
+                                unit="HP"
                             />
-                            <Step
-                                label="Class it is actually rating"
-                                expression={`${armorClassLabel(zone.armorClass)} × ${fmt(armour.effectiveness, 3)}`}
-                                value={fmt(armour.effectiveArmorClass, 2)}
-                            >
-                                <p className="mt-1 text-xs text-ink-500">
-                                    Durability scales the class itself. A worn plate does not merely
-                                    run out — it rates lower every round.
-                                </p>
-                            </Step>
-                            <Step
-                                label="Gap"
-                                expression={`${fmt(armour.effectiveArmorClass, 2)} − ${fmt(explanation.rangePenetration, 2)}`}
-                                value={fmt(armour.delta, 2)}
-                            />
-                            <Step
-                                label="Chance it goes through"
-                                expression={armour.bypassed
-                                    ? 'DurabilityLevel ≤ 0 — GetIsPenetrated returns true without consulting the curve'
-                                    : `PenetrationChanceCurve read at ${fmt(armour.delta, 2)}`}
-                                value={`${(armour.penetrationChance * 100).toFixed(1)}%`}
-                            />
-                        </>
-                    )}
-                </div>
+                        )}
+
+                        {armour && zone && (
+                            <>
+                                <Step
+                                    label="Plate effectiveness"
+                                    expression={`AntiPenetrationDurabilityScalarCurve at ${fmt(1 - armour.durabilityFraction, 3)} (= 1 − ${Math.round(durability)}/${maxDurability})`}
+                                    value={fmt(armour.effectiveness, 3)}
+                                />
+                                <Step
+                                    label="Class it is actually rating"
+                                    expression={`${armorClassLabel(zone.armorClass)} × ${fmt(armour.effectiveness, 3)}`}
+                                    value={fmt(armour.effectiveArmorClass, 2)}
+                                >
+                                    <p className="mt-1 text-xs text-ink-500">
+                                        Durability scales the class itself. A worn plate does not merely
+                                        run out — it rates lower every round.
+                                    </p>
+                                </Step>
+                                <Step
+                                    label="Gap"
+                                    expression={`${fmt(armour.effectiveArmorClass, 2)} − ${fmt(explanation.rangePenetration, 2)}`}
+                                    value={fmt(armour.delta, 2)}
+                                />
+                                <Step
+                                    label="Chance it goes through"
+                                    expression={armour.bypassed
+                                        ? 'DurabilityLevel ≤ 0 — GetIsPenetrated returns true without consulting the curve'
+                                        : `PenetrationChanceCurve read at ${fmt(armour.delta, 2)}`}
+                                    value={`${(armour.penetrationChance * 100).toFixed(1)}%`}
+                                />
+                            </>
+                        )}
+                    </div>
+                </details>
 
                 {/* ---- the two outcomes ---- */}
                 {armour && zone && (
@@ -562,11 +696,6 @@ function Inspector() {
                     The same round on bare flesh here does{' '}
                     <span className="font-mono tabular text-ink-200">{fmt(explanation.bareDamage)}</span> HP.
                     {armour && ' A hit the armour covers is scaled by firing power twice; a bare one, once.'}
-                    {armour && !armour.bypassed && (armour.likelier === 'through'
-                        ? ' The simulator draws the “goes through” figure, as the likelier half of the roll.'
-                        : ' The simulator draws the “stopped” figure, as the likelier half of the roll.')}
-                    {armour && armour.bypassed
-                        && ' A broken plate is bypassed outright, so there is no roll to lose.'}
                 </p>
             </div>
 
