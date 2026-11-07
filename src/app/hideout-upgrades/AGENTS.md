@@ -263,5 +263,9 @@ Split at the `shell:` breakpoint (900px), by CSS wherever possible — one DOM t
 - The plate is 195px tall and its pins are 26px, which is under the touch-target floor. That is why
   `ZoneList` exists: the same zones as 56px rows, ready-first, each carrying its next level's price.
   The pins stay tappable as a bonus, not as the path.
-- The pane becomes a full-height sheet (`fixed inset-0`), with a handle and a back row instead of the
-  artwork's close button.
+- The pane becomes a sheet between the header and the bottom bar (`fixed top-chrome
+  bottom-bottomnav`), with a handle and a back row instead of the artwork's close button. **Not
+  `inset-0`:** `<main>` is a stacking context (`relative z-10`), so nothing inside a route can paint
+  over the chrome, and a sheet that claims the whole viewport loses its back row under the header
+  and Level Up under the bar. The navigation stays reachable while a zone is open, as it does
+  behind the tasks briefing.

@@ -39,17 +39,18 @@ export interface ZoneListProps {
     readyFirst: boolean;
     onReadyFirstChange: (readyFirst: boolean) => void;
     roomLabel: string;
+    className?: string;
 }
 
 export default function ZoneList({
-    zones, selectedArea, onSelect, readyFirst, onReadyFirstChange, roomLabel,
+    zones, selectedArea, onSelect, readyFirst, onReadyFirstChange, roomLabel, className,
 }: ZoneListProps) {
     const rows = readyFirst
         ? [...zones].sort((a, b) => ORDER[a.state] - ORDER[b.state] || a.name.localeCompare(b.name))
         : zones;
 
     return (
-        <div className="shell:hidden">
+        <div className={cn('shell:hidden', className)}>
             <div className="flex items-center gap-2 px-3.5 py-3">
                 <Chip active={readyFirst} onClick={() => onReadyFirstChange(true)}>Ready first</Chip>
                 <Chip active={!readyFirst} onClick={() => onReadyFirstChange(false)}>All {zones.length}</Chip>

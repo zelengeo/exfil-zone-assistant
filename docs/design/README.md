@@ -72,6 +72,10 @@ list. A new page should not invent a second navigation list.
 
 `shell:` is 900px: top navigation above it, fixed bottom navigation below it. Sticky phone actions
 must clear `bottom-bottomnav`; check overlays and the last row as well as the initial viewport.
+A `fixed` overlay inside a route cannot cover the chrome at all: `<main>` is `relative z-10`, a
+stacking context that keeps every descendant below the `z-50` header and bottom bar. Give a phone
+sheet `top-chrome bottom-bottomnav` rather than `inset-0`, or it loses its top and bottom rows
+under them (the hideout zone sheet did).
 Choose pane breakpoints from the route's content, not the prototype's blanket 1200px rule:
 
 - Tasks use a vendor rail, chain and shared detail pane; phone selection is URL state.

@@ -126,7 +126,9 @@ export default function MaterialsPanel({ built, levels, getItemById, hydrated }:
                     </h2>
                 </div>
 
-                <div className="flex flex-none flex-wrap items-center gap-x-3 gap-y-2">
+                {/* min-w-0, not flex-none: the row is wider than a phone and has to be allowed to
+                    shrink before its own wrap can fire, or it drags the whole page sideways. */}
+                <div className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-2">
                     <button
                         type="button"
                         onClick={() => setReadyOnly((on) => !on)}

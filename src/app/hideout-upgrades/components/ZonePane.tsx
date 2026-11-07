@@ -25,9 +25,16 @@ import {
  * One zone, and what it asks for.
  *
  * The route used to open this as a full-screen modal over the map, so choosing between two zones
- * meant closing one to look at the other. It is a pane beside the plate on desktop and a full-height
- * sheet on the phone — one tree either way, positioned by CSS, because a second copy of a panel this
+ * meant closing one to look at the other. It is a pane beside the plate on desktop and a sheet on
+ * the phone — one tree either way, positioned by CSS, because a second copy of a panel this
  * detailed is a second copy to keep correct.
+ *
+ * The phone sheet fills the space *between* the header and the bottom bar, never the whole
+ * viewport. It cannot cover them: `<main>` is `relative z-10`, which is a stacking context, so a
+ * `fixed` element inside a route paints below the chrome whatever z-index it claims — `inset-0`
+ * put the back row under the header and Level Up under the bottom bar. Sitting between them is
+ * also the shape the tasks briefing already has on a phone, with the app's navigation still
+ * reachable while a zone is open.
  */
 
 export interface ZonePaneProps {
@@ -50,8 +57,12 @@ export default function ZonePane({
         <section
             className={cn(
                 'min-h-0 flex-col border border-line-900 bg-steel-900',
-                upgrade ? 'fixed inset-0 z-50 flex' : 'hidden',
-                'shell:static shell:z-auto shell:flex',
+                // `top-chrome` and `bottom-bottomnav` are the header's and the bar's heights; the
+                // inset padding clears the iOS home indicator the bar itself pads for.
+                upgrade
+                    ? 'fixed inset-x-0 top-chrome bottom-bottomnav z-50 flex pb-[env(safe-area-inset-bottom)]'
+                    : 'hidden',
+                'shell:static shell:z-auto shell:flex shell:pb-0',
             )}
             aria-label="Zone detail"
         >
@@ -164,7 +175,8 @@ function ZoneDetail({
                 </button>
             </header>
 
-            <div className="flex min-h-0 flex-1 flex-col gap-3.5 overflow-y-auto px-4 pt-3.5">
+            {/* overscroll-contain: a flick past the end scrolls the sheet, not the map under it. */}
+            <div className="flex min-h-0 flex-1 flex-col gap-3.5 overflow-y-auto overscroll-contain px-4 pt-3.5">
                 <div className="flex items-center gap-2">
                     <span
                         className={cn(

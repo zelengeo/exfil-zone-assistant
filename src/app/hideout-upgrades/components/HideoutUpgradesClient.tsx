@@ -159,16 +159,17 @@ export default function HideoutUpgradesClient({ questNames }: HideoutUpgradesCli
                         />
                     </div>
 
-                    <div className="order-3">
-                        <ZoneList
-                            zones={zones}
-                            selectedArea={selectedArea}
-                            onSelect={selectZone}
-                            readyFirst={readyFirst}
-                            onReadyFirstChange={setReadyFirst}
-                            roomLabel={openRoom === MAIN_FLOOR ? 'Main floor' : roomName(openRoom)}
-                        />
-                    </div>
+                    {/* The list is the flex item itself: a wrapper around a hidden child would still
+                        be laid out, and the column's gap-3 would trail it on desktop. */}
+                    <ZoneList
+                        className="order-3"
+                        zones={zones}
+                        selectedArea={selectedArea}
+                        onSelect={selectZone}
+                        readyFirst={readyFirst}
+                        onReadyFirstChange={setReadyFirst}
+                        roomLabel={openRoom === MAIN_FLOOR ? 'Main floor' : roomName(openRoom)}
+                    />
                 </div>
 
                 <ZonePane
