@@ -437,7 +437,13 @@
     "requiredPlayerLevel": 23,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+-    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1770
+      }
+    ],
     "order": 24
   },
   "ark_37": {
@@ -498,7 +504,13 @@
     "requiredPlayerLevel": 24,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1861
+      }
+    ],
     "order": 25
   },
   "ark_38": {
@@ -547,7 +559,13 @@
     "requiredPlayerLevel": 25,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1931
+      }
+    ],
     "order": 26
   },
   "ark_39": {
@@ -605,7 +623,13 @@
     "requiredPlayerLevel": 27,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 2361
+      }
+    ],
     "order": 28
   },
   "ark_40": {
@@ -670,7 +694,13 @@
     "requiredPlayerLevel": 28,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 2461
+      }
+    ],
     "order": 29
   },
   "ark_41": {
@@ -734,7 +764,13 @@
     "requiredPlayerLevel": 29,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 371
+      }
+    ],
     "order": 30
   },
   "ark_42": {
@@ -805,7 +841,13 @@
     "requiredPlayerLevel": 34,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 889
+      }
+    ],
     "order": 31
   },
   "ark_43": {
@@ -862,7 +904,13 @@
     "requiredPlayerLevel": 36,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1610
+      }
+    ],
     "order": 33
   },
   "ark_44": {
@@ -923,7 +971,13 @@
     "requiredPlayerLevel": 37,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1924
+      }
+    ],
     "order": 34
   },
   "ark_45": {
@@ -987,7 +1041,13 @@
     "requiredPlayerLevel": 38,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1992
+      }
+    ],
     "order": 35
   },
   "ark_46": {
@@ -1055,7 +1115,13 @@
     "requiredPlayerLevel": 39,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 2114
+      }
+    ],
     "order": 36
   },
   "ark_47": {
@@ -1114,7 +1180,13 @@
     "requiredPlayerLevel": 26,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 2264
+      }
+    ],
     "order": 27
   },
   "ark_48": {
@@ -1173,7 +1245,13 @@
     "requiredPlayerLevel": 32,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 573
+      }
+    ],
     "order": 32
   },
   "ark_49": {
@@ -1241,7 +1319,13 @@
     "requiredPlayerLevel": 40,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 2260
+      }
+    ],
     "order": 37
   },
   "ark_50": {
@@ -1301,7 +1385,13 @@
     "requiredPlayerLevel": 12,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 352
+      }
+    ],
     "order": 12
   },
   "ark_51": {
@@ -1365,7 +1455,13 @@
     "requiredPlayerLevel": 13,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 416
+      }
+    ],
     "order": 13
   },
   "ark_52": {
@@ -1430,7 +1526,13 @@
     "requiredPlayerLevel": 20,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 818
+      }
+    ],
     "order": 20
   },
   "ark_53": {
@@ -1495,7 +1597,13 @@
     "requiredPlayerLevel": 14,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 474
+      }
+    ],
     "order": 14
   },
   "ark_54": {
@@ -1580,7 +1688,13 @@
     "requiredPlayerLevel": 15,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 664
+      }
+    ],
     "order": 15
   },
   "ark_55": {
@@ -1656,7 +1770,13 @@
     "requiredPlayerLevel": 16,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 346
+      }
+    ],
     "order": 16
   },
   "ark_56": {
@@ -1730,7 +1850,13 @@
     "requiredPlayerLevel": 18,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 391
+      }
+    ],
     "order": 17
   },
   "ark_57": {
@@ -1810,7 +1936,13 @@
     "requiredPlayerLevel": 19,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 555
+      }
+    ],
     "order": 19
   },
   "ark_58": {
@@ -1877,7 +2009,13 @@
     "requiredPlayerLevel": 21,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1325
+      }
+    ],
     "order": 22
   },
   "ark_59": {
@@ -1950,7 +2088,13 @@
     "requiredPlayerLevel": 22,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1729
+      }
+    ],
     "order": 23
   },
   "ark_60": {
@@ -2008,7 +2152,13 @@
     "requiredPlayerLevel": 17,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 377
+      }
+    ],
     "order": 18
   },
   "ark_61": {
@@ -2075,7 +2225,13 @@
     "requiredPlayerLevel": 23,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1080
+      }
+    ],
     "order": 21
   },
   "ark_1": {
@@ -2131,7 +2287,13 @@
     "requiredPlayerLevel": 1,
     "requiredTrust": 0,
     "tips": "Check the 'Extraction' tab in the menu or use the M.I.C.A. map to find extraction points.",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "CmZvROF1rjY",
+        "startTs": 25
+      }
+    ],
     "order": 1
   },
   "ark_62": {
@@ -2189,7 +2351,13 @@
     "requiredPlayerLevel": 2,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "CmZvROF1rjY",
+        "startTs": 77
+      }
+    ],
     "order": 2
   },
   "ark_3": {
@@ -2241,7 +2409,13 @@
     "requiredPlayerLevel": 3,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "CmZvROF1rjY",
+        "startTs": 238
+      }
+    ],
     "order": 3
   },
   "ark_63": {
@@ -2309,7 +2483,13 @@
     "requiredPlayerLevel": 4,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "CmZvROF1rjY",
+        "startTs": 292
+      }
+    ],
     "order": 4
   },
   "ark_64": {
@@ -2366,7 +2546,13 @@
     "requiredPlayerLevel": 5,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "CmZvROF1rjY",
+        "startTs": 372
+      }
+    ],
     "order": 5
   },
   "ark_65": {
@@ -2431,7 +2617,13 @@
     "requiredPlayerLevel": 6,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "CmZvROF1rjY",
+        "startTs": 485
+      }
+    ],
     "order": 6
   },
   "ark_66": {
@@ -2490,7 +2682,13 @@
     "requiredPlayerLevel": 7,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "x88mUrZlxZc",
+        "startTs": 199
+      }
+    ],
     "order": 7
   },
   "ark_67": {
@@ -2548,7 +2746,13 @@
     "requiredPlayerLevel": 8,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 33
+      }
+    ],
     "order": 8
   },
   "ark_68": {
@@ -2614,7 +2818,13 @@
     "requiredPlayerLevel": 9,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 110
+      }
+    ],
     "order": 9
   },
   "ark_69": {
@@ -2687,7 +2897,13 @@
     "requiredPlayerLevel": 10,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 257
+      }
+    ],
     "order": 10
   },
   "ark_70": {
@@ -2762,7 +2978,13 @@
     "requiredPlayerLevel": 11,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 307
+      }
+    ],
     "order": 11
   },
   "forge_5": {
@@ -2821,17 +3043,17 @@
     "tips": "Small fountain on wall in Rua Algasol.",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1592
+      },
+      {
         "author": "HayaPlays",
         "ytId": "ojHsAVaiLPE"
       },
       {
         "author": "orbb",
         "ytId": "8un2o6BUoH8"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "BO5uihtPyLM",
-        "startTs": 154
       }
     ],
     "order": 17
@@ -2892,17 +3114,17 @@
     "tips": "Car dealership located east side by tunnel extract. All required cars are nearby.",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1805
+      },
+      {
         "author": "HayaPlays",
         "ytId": "AXEVE_bEJK0"
       },
       {
         "author": "orbb",
         "ytId": "XVqVAHhgKFI"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "BO5uihtPyLM",
-        "startTs": 190
       }
     ],
     "order": 20
@@ -2963,17 +3185,17 @@
     "tips": "",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1833
+      },
+      {
         "author": "HayaPlays",
         "ytId": "l1N7_xwWR1w"
       },
       {
         "author": "orbb",
         "ytId": "Rsc3sPUjoXI"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "BO5uihtPyLM",
-        "startTs": 214
       }
     ],
     "order": 21
@@ -3026,17 +3248,17 @@
     "tips": "[Max's Cash](https://www.exfil-zone-assistant.app/items/taskitem_placement_max_cash)",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1971
+      },
+      {
         "author": "HayaPlays",
         "ytId": "ho4Q5Dg93Js"
       },
       {
         "author": "orbb",
         "ytId": "nGyTYeMvmTE"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "BO5uihtPyLM",
-        "startTs": 241
       }
     ],
     "order": 22
@@ -3090,13 +3312,13 @@
     "tips": "[Max's Diamond ring](https://www.exfil-zone-assistant.app/items/taskitem_placement_max_ring)",
     "videoGuides": [
       {
-        "author": "HayaPlays",
-        "ytId": "vrx-_rTWR4Y"
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 2180
       },
       {
-        "author": "radFoxVR",
-        "ytId": "BO5uihtPyLM",
-        "startTs": 286
+        "author": "HayaPlays",
+        "ytId": "vrx-_rTWR4Y"
       }
     ],
     "order": 24
@@ -3148,13 +3370,13 @@
     "tips": "SWAT boss located at the Bank main entrance.(Not Bonecrusher in yellow helmet)",
     "videoGuides": [
       {
-        "author": "HayaPlays",
-        "ytId": "IqXpiTJIIBU"
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 444
       },
       {
-        "author": "radFoxVR",
-        "ytId": "BO5uihtPyLM",
-        "startTs": 353
+        "author": "HayaPlays",
+        "ytId": "IqXpiTJIIBU"
       }
     ],
     "order": 28
@@ -3212,13 +3434,13 @@
     "tips": "Reward not worth it. Exchange gold figurine for Endgame equipment in official discord.",
     "videoGuides": [
       {
-        "author": "HayaPlays",
-        "ytId": "383lGK564T0"
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 612
       },
       {
-        "author": "radFoxVR",
-        "ytId": "BO5uihtPyLM",
-        "startTs": 1016
+        "author": "HayaPlays",
+        "ytId": "383lGK564T0"
       }
     ],
     "order": 23
@@ -3272,13 +3494,13 @@
     "tips": "Not worth a hassle.",
     "videoGuides": [
       {
-        "author": "HayaPlays",
-        "ytId": "vRhiIYSbB0g"
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 626
       },
       {
-        "author": "radFoxVR",
-        "ytId": "BO5uihtPyLM",
-        "startTs": 1028
+        "author": "HayaPlays",
+        "ytId": "vRhiIYSbB0g"
       }
     ],
     "order": 25
@@ -3344,17 +3566,17 @@
     "tips": "",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 961
+      },
+      {
         "author": "HayaPlays",
         "ytId": "91XCL2Z6FT0"
       },
       {
         "author": "orbb",
         "ytId": "OCRTBDedB3Q"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "BO5uihtPyLM",
-        "startTs": 944
       }
     ],
     "order": 26
@@ -3425,7 +3647,13 @@
     "requiredPlayerLevel": 27,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 2581
+      }
+    ],
     "order": 27
   },
   "forge_28": {
@@ -3485,17 +3713,17 @@
     "tips": "",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 914
+      },
+      {
         "author": "HayaPlays",
         "ytId": "yVQPG5eGVAQ"
       },
       {
         "author": "orbb",
         "ytId": "yEf6vs-lZDg"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "BO5uihtPyLM",
-        "startTs": 887
       }
     ],
     "order": 29
@@ -3565,17 +3793,17 @@
     "tips": "",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1101
+      },
+      {
         "author": "HayaPlays",
         "ytId": "RgQT3Xioohs"
       },
       {
         "author": "orbb",
         "ytId": "Gl_3o8UfEyI"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "BO5uihtPyLM",
-        "startTs": 913
       }
     ],
     "order": 30
@@ -3628,17 +3856,17 @@
     "tips": "Located in the center of the Mall on -1F, in the room below escalator stairs.",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 1432
+      },
+      {
         "author": "HayaPlays",
         "ytId": "diP48Y1DWF8"
       },
       {
         "author": "orbb",
         "ytId": "KoE9YIrOaGI"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "BO5uihtPyLM",
-        "startTs": 406
       }
     ],
     "order": 8
@@ -3699,17 +3927,17 @@
     "tips": "water tower (more of a tank than a tower) 50M north of altibuy in the backyard of the 3 story house, green tent located in front of mall northeast corner by overpass, cabin located north of mall just past overpass before tunnel",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 432
+      },
+      {
         "author": "HayaPlays",
         "ytId": "6fwy6vogZ2A"
       },
       {
         "author": "orbb",
         "ytId": "rrL25q04zaE"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "BO5uihtPyLM",
-        "startTs": 427
       }
     ],
     "order": 10
@@ -3774,17 +4002,17 @@
     "tips": "These are *not* barns, they are tall silos.",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 485
+      },
+      {
         "author": "HayaPlays",
         "ytId": "KVF1oaD3r9E"
       },
       {
         "author": "orbb",
         "ytId": "Yq6b9D90zyY"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "BO5uihtPyLM",
-        "startTs": 467
       }
     ],
     "order": 11
@@ -3842,13 +4070,13 @@
     "tips": "[Gold Ingot](https://www.exfil-zone-assistant.app/items/misc_goldingot)]",
     "videoGuides": [
       {
-        "author": "HayaPlays",
-        "ytId": "VquEUm6y5jY"
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 636
       },
       {
-        "author": "radFoxVR",
-        "ytId": "BO5uihtPyLM",
-        "startTs": 624
+        "author": "HayaPlays",
+        "ytId": "VquEUm6y5jY"
       }
     ],
     "order": 12
@@ -3909,17 +4137,17 @@
     "tips": "",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 735
+      },
+      {
         "author": "HayaPlays",
         "ytId": "GWm8GgszaR4"
       },
       {
         "author": "orbb",
         "ytId": "VuvURKV4MWk"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "BO5uihtPyLM",
-        "startTs": 657
       }
     ],
     "order": 13
@@ -3973,17 +4201,17 @@
     "tips": "Climb to the top of the crane. Acrophobia is a thing.",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 933
+      },
+      {
         "author": "HayaPlays",
         "ytId": "c-J7YeSm0e0"
       },
       {
         "author": "orbb",
         "ytId": "OC9DuhsBReg"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "BO5uihtPyLM",
-        "startTs": 699
       }
     ],
     "order": 14
@@ -4039,17 +4267,17 @@
     "tips": "",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1179
+      },
+      {
         "author": "HayaPlays",
         "ytId": "qP2i6afqkCc"
       },
       {
         "author": "orbb",
         "ytId": "p2W4kXJUtIA"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "BO5uihtPyLM",
-        "startTs": 859
       }
     ],
     "order": 15
@@ -4104,7 +4332,13 @@
     "requiredPlayerLevel": 21,
     "requiredTrust": 0,
     "tips": "[Old Phone](https://www.exfil-zone-assistant.app/items/misc_b_oldphone)",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1155
+      }
+    ],
     "order": 16
   },
   "forge_14": {
@@ -4159,13 +4393,13 @@
     "tips": "[Camera](https://www.exfil-zone-assistant.app/items/misc_camera)",
     "videoGuides": [
       {
-        "author": "HayaPlays",
-        "ytId": "FD9FA0PsFU0"
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1914
       },
       {
-        "author": "radFoxVR",
-        "ytId": "BO5uihtPyLM",
-        "startTs": 391
+        "author": "HayaPlays",
+        "ytId": "FD9FA0PsFU0"
       }
     ],
     "order": 18
@@ -4218,7 +4452,13 @@
     "requiredPlayerLevel": 23,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 82
+      }
+    ],
     "order": 19
   },
   "forge_34": {
@@ -4269,7 +4509,13 @@
     "requiredPlayerLevel": 8,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "x88mUrZlxZc",
+        "startTs": 95
+      }
+    ],
     "order": 1
   },
   "forge_35": {
@@ -4331,7 +4577,13 @@
     "requiredPlayerLevel": 9,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "x88mUrZlxZc",
+        "startTs": 257
+      }
+    ],
     "order": 2
   },
   "forge_36": {
@@ -4395,7 +4647,13 @@
     "requiredPlayerLevel": 9,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "x88mUrZlxZc",
+        "startTs": 380
+      }
+    ],
     "order": 3
   },
   "forge_37": {
@@ -4452,7 +4710,13 @@
     "requiredPlayerLevel": 11,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 764
+      }
+    ],
     "order": 4
   },
   "forge_38": {
@@ -4507,7 +4771,13 @@
     "requiredPlayerLevel": 13,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 852
+      }
+    ],
     "order": 5
   },
   "forge_39": {
@@ -4557,7 +4827,13 @@
     "requiredPlayerLevel": 14,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 1170
+      }
+    ],
     "order": 6
   },
   "forge_40": {
@@ -4609,7 +4885,13 @@
     "requiredPlayerLevel": 15,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 1237
+      }
+    ],
     "order": 7
   },
   "forge_41": {
@@ -4663,13 +4945,13 @@
     "tips": "[Tape](https://www.exfil-zone-assistant.app/items/misc_b_tape)",
     "videoGuides": [
       {
-        "author": "HayaPlays",
-        "ytId": "nC2k-wBIU6k"
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 1247
       },
       {
-        "author": "radFoxVR",
-        "ytId": "BO5uihtPyLM",
-        "startTs": 378
+        "author": "HayaPlays",
+        "ytId": "nC2k-wBIU6k"
       }
     ],
     "order": 9
@@ -4723,7 +5005,13 @@
     "requiredPlayerLevel": 36,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1342
+      }
+    ],
     "order": 31
   },
   "forge_43": {
@@ -4782,7 +5070,13 @@
     "requiredPlayerLevel": 37,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1563
+      }
+    ],
     "order": 32
   },
   "forge_44": {
@@ -4840,7 +5134,13 @@
     "requiredPlayerLevel": 38,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 2054
+      }
+    ],
     "order": 33
   },
   "forge_45": {
@@ -4904,7 +5204,13 @@
     "requiredPlayerLevel": 39,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 2164
+      }
+    ],
     "order": 34
   },
   "forge_46": {
@@ -4959,7 +5265,13 @@
     "requiredPlayerLevel": 40,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 2338
+      }
+    ],
     "order": 35
   },
   "forge_47": {
@@ -5235,7 +5547,13 @@
     "requiredPlayerLevel": 10,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 746
+      }
+    ],
     "order": 5
   },
   "gunsmith_3": {
@@ -5322,7 +5640,13 @@
     "requiredPlayerLevel": 12,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 794
+      }
+    ],
     "order": 6
   },
   "gunsmith_5": {
@@ -5423,7 +5747,13 @@
     "requiredPlayerLevel": 13,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 974
+      }
+    ],
     "order": 7
   },
   "gunsmith_7": {
@@ -5495,7 +5825,13 @@
     "requiredPlayerLevel": 14,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 1013
+      }
+    ],
     "order": 9
   },
   "gunsmith_9": {
@@ -5559,7 +5895,13 @@
     "requiredPlayerLevel": 16,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 1341
+      }
+    ],
     "order": 10
   },
   "gunsmith_11": {
@@ -5622,7 +5964,13 @@
     "requiredPlayerLevel": 18,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 662
+      }
+    ],
     "order": 14
   },
   "gunsmith_13": {
@@ -5689,7 +6037,13 @@
     "requiredPlayerLevel": 19,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 45
+      }
+    ],
     "order": 11
   },
   "gunsmith_15": {
@@ -5743,7 +6097,13 @@
     "requiredPlayerLevel": 22,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1263
+      }
+    ],
     "order": 20
   },
   "gunsmith_17": {
@@ -5809,7 +6169,13 @@
     "requiredPlayerLevel": 20,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 98
+      }
+    ],
     "order": 12
   },
   "gunsmith_2": {
@@ -5857,7 +6223,13 @@
     "requiredPlayerLevel": 7,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "x88mUrZlxZc",
+        "startTs": 72
+      }
+    ],
     "order": 1
   },
   "gunsmith_4": {
@@ -5912,7 +6284,13 @@
     "requiredPlayerLevel": 8,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 45
+      }
+    ],
     "order": 2
   },
   "gunsmith_6": {
@@ -5967,7 +6345,13 @@
     "requiredPlayerLevel": 9,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 81
+      }
+    ],
     "order": 3
   },
   "gunsmith_8": {
@@ -6028,7 +6412,13 @@
     "requiredPlayerLevel": 10,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 136
+      }
+    ],
     "order": 4
   },
   "gunsmith_10": {
@@ -6084,7 +6474,13 @@
     "requiredPlayerLevel": 14,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 927
+      }
+    ],
     "order": 8
   },
   "gunsmith_12": {
@@ -6129,7 +6525,13 @@
     "requiredPlayerLevel": 24,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 0
+      }
+    ],
     "order": 31
   },
   "gunsmith_14": {
@@ -6187,7 +6589,13 @@
     "requiredPlayerLevel": 26,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 96
+      }
+    ],
     "order": 35
   },
   "gunsmith_16": {
@@ -6247,7 +6655,13 @@
     "requiredPlayerLevel": 27,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 246
+      }
+    ],
     "order": 36
   },
   "gunsmith_18": {
@@ -6305,7 +6719,13 @@
     "requiredPlayerLevel": 28,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 308
+      }
+    ],
     "order": 37
   },
   "gunsmith_19": {
@@ -6358,7 +6778,13 @@
     "requiredPlayerLevel": 29,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1134
+      }
+    ],
     "order": 38
   },
   "gunsmith_20": {
@@ -6415,7 +6841,13 @@
     "requiredPlayerLevel": 30,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1157
+      }
+    ],
     "order": 39
   },
   "gunsmith_21": {
@@ -6456,7 +6888,13 @@
     "requiredPlayerLevel": 31,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1234
+      }
+    ],
     "order": 40
   },
   "gunsmith_22": {
@@ -6512,7 +6950,13 @@
     "requiredPlayerLevel": 32,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1244
+      }
+    ],
     "order": 41
   },
   "gunsmith_23": {
@@ -6579,7 +7023,13 @@
     "requiredPlayerLevel": 33,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1385
+      }
+    ],
     "order": 42
   },
   "gunsmith_24": {
@@ -6636,7 +7086,13 @@
     "requiredPlayerLevel": 34,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1427
+      }
+    ],
     "order": 43
   },
   "gunsmith_25": {
@@ -6688,7 +7144,13 @@
     "requiredPlayerLevel": 35,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1546
+      }
+    ],
     "order": 44
   },
   "research_1": {
@@ -7560,17 +8022,17 @@
     "tips": "Drop the [X-NAX](https://www.exfil-zone-assistant.app/items/taskitem_placement_maggie_medicine) at the Crimson Luxe front desk (the Modern Apartment reception). The [Pink USB](https://www.exfil-zone-assistant.app/items/taskitem_placement_maggie_usb) is there too.",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 2498
+      },
+      {
         "author": "HayaPlays",
         "ytId": "va7YysdhN-0"
       },
       {
         "author": "orbb",
         "ytId": "bFUfOW56zp0"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "ZOuSedSDlUE",
-        "startTs": 185
       }
     ],
     "order": 21
@@ -7632,7 +8094,13 @@
     "requiredPlayerLevel": 30,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 468
+      }
+    ],
     "order": 23
   },
   "ntg_36": {
@@ -7687,7 +8155,13 @@
     "requiredPlayerLevel": 31,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 530
+      }
+    ],
     "order": 24
   },
   "ntg_37": {
@@ -7744,7 +8218,13 @@
     "requiredPlayerLevel": 32,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 704
+      }
+    ],
     "order": 26
   },
   "ntg_38": {
@@ -7801,7 +8281,13 @@
     "requiredPlayerLevel": 34,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 753
+      }
+    ],
     "order": 25
   },
   "ntg_39": {
@@ -7857,7 +8343,13 @@
     "requiredPlayerLevel": 36,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1653
+      }
+    ],
     "order": 27
   },
   "ntg_40": {
@@ -7945,7 +8437,13 @@
     "requiredPlayerLevel": 38,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1941
+      }
+    ],
     "order": 28
   },
   "ntg_29": {
@@ -8005,17 +8503,17 @@
     "tips": "Bodies and medical bag are on the lowest level. ",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 2310
+      },
+      {
         "author": "HayaPlays",
         "ytId": "jzX3dSns-Tg"
       },
       {
         "author": "orbb",
         "ytId": "zhZlEVICwsU"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "ZOuSedSDlUE",
-        "startTs": 712
       }
     ],
     "order": 29
@@ -8200,7 +8698,13 @@
     "requiredPlayerLevel": 28,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 2523
+      }
+    ],
     "order": 22
   },
   "ntg_46": {
@@ -8342,7 +8846,13 @@
     "requiredPlayerLevel": 18,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 515
+      }
+    ],
     "order": 12
   },
   "ntg_47": {
@@ -8400,7 +8910,13 @@
     "requiredPlayerLevel": 19,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 906
+      }
+    ],
     "order": 13
   },
   "ntg_48": {
@@ -8466,7 +8982,13 @@
     "requiredPlayerLevel": 20,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1220
+      }
+    ],
     "order": 14
   },
   "ntg_49": {
@@ -8543,7 +9065,13 @@
     "requiredPlayerLevel": 21,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1381
+      }
+    ],
     "order": 15
   },
   "ntg_50": {
@@ -8624,7 +9152,13 @@
     "requiredPlayerLevel": 22,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1516
+      }
+    ],
     "order": 16
   },
   "ntg_51": {
@@ -8694,7 +9228,13 @@
     "requiredPlayerLevel": 23,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1566
+      }
+    ],
     "order": 17
   },
   "ntg_52": {
@@ -8767,7 +9307,13 @@
     "requiredPlayerLevel": 15,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 1263
+      }
+    ],
     "order": 9
   },
   "ntg_53": {
@@ -8834,7 +9380,13 @@
     "requiredPlayerLevel": 16,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 1480
+      }
+    ],
     "order": 10
   },
   "ntg_18": {
@@ -8905,17 +9457,17 @@
     "tips": "",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 0
+      },
+      {
         "author": "HayaPlays",
         "ytId": "MssJiMkn_Lg"
       },
       {
         "author": "orbb",
         "ytId": "F5OLdAL41Rw"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "ZOuSedSDlUE",
-        "startTs": 472
       }
     ],
     "order": 11
@@ -9004,7 +9556,13 @@
     "requiredPlayerLevel": 24,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1683
+      }
+    ],
     "order": 18
   },
   "ntg_55": {
@@ -9070,7 +9628,13 @@
     "requiredPlayerLevel": 26,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 2313
+      }
+    ],
     "order": 19
   },
   "ntg_7": {
@@ -9139,7 +9703,13 @@
     "requiredPlayerLevel": 27,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 2421
+      }
+    ],
     "order": 20
   },
   "ntg_56": {
@@ -9193,7 +9763,13 @@
     "requiredPlayerLevel": 5,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "x88mUrZlxZc",
+        "startTs": 0
+      }
+    ],
     "order": 1
   },
   "ntg_1": {
@@ -9253,7 +9829,13 @@
     "requiredPlayerLevel": 6,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "x88mUrZlxZc",
+        "startTs": 169
+      }
+    ],
     "order": 2
   },
   "ntg_57": {
@@ -9321,7 +9903,13 @@
     "requiredPlayerLevel": 7,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "x88mUrZlxZc",
+        "startTs": 219
+      }
+    ],
     "order": 3
   },
   "ntg_58": {
@@ -9381,7 +9969,13 @@
     "requiredPlayerLevel": 9,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "x88mUrZlxZc",
+        "startTs": 320
+      }
+    ],
     "order": 5
   },
   "ntg_59": {
@@ -9441,7 +10035,13 @@
     "requiredPlayerLevel": 7,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "x88mUrZlxZc",
+        "startTs": 304
+      }
+    ],
     "order": 4
   },
   "ntg_60": {
@@ -9505,7 +10105,13 @@
     "requiredPlayerLevel": 10,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 720
+      }
+    ],
     "order": 6
   },
   "ntg_61": {
@@ -9574,7 +10180,13 @@
     "requiredPlayerLevel": 11,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 1044
+      }
+    ],
     "order": 7
   },
   "ntg_62": {
@@ -9652,7 +10264,13 @@
     "requiredPlayerLevel": 13,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 1120
+      }
+    ],
     "order": 8
   },
   "regiment_23": {
@@ -9706,7 +10324,13 @@
     "requiredPlayerLevel": 26,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 39
+      }
+    ],
     "order": 20
   },
   "regiment_36": {
@@ -9776,7 +10400,13 @@
     "requiredPlayerLevel": 27,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 185
+      }
+    ],
     "order": 23
   },
   "regiment_28": {
@@ -9839,7 +10469,13 @@
     "requiredPlayerLevel": 28,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 260
+      }
+    ],
     "order": 24
   },
   "regiment_27": {
@@ -9899,13 +10535,13 @@
     "tips": "Try to roleplay WW2 Soviet partisan for better accuracy. Only [Mosin 91-30](https://www.exfil-zone-assistant.app/items/weapon-mosin-91-30) can have a [scope](https://www.exfil-zone-assistant.app/items/scope_mosinpu).",
     "videoGuides": [
       {
-        "author": "HayaPlays",
-        "ytId": "c-oA5Mwd0_E"
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 355
       },
       {
-        "author": "radFoxVR",
-        "ytId": "YEPtvxMzsBY",
-        "startTs": 894
+        "author": "HayaPlays",
+        "ytId": "c-oA5Mwd0_E"
       }
     ],
     "order": 25
@@ -9965,7 +10601,13 @@
     "requiredPlayerLevel": 35,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1143
+      }
+    ],
     "order": 27
   },
   "regiment_38": {
@@ -10036,7 +10678,13 @@
     "requiredPlayerLevel": 36,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1753
+      }
+    ],
     "order": 30
   },
   "regiment_32": {
@@ -10093,17 +10741,17 @@
     "tips": "[Igor's Supply Case](https://www.exfil-zone-assistant.app/items/taskitem_placement_igor_supplycase). One located on shelf in control room; One located on barrels in large gate room. pull lever in control room to open gate; One located in the east room of sewer area, place task item west of sewer room, two extracts, climb ladder, cross pipe, place on box outside door; items are heavy and might take two trips up ladder",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1785
+      },
+      {
         "author": "HayaPlays",
         "ytId": "Hj_tdUpEZVY"
       },
       {
         "author": "orbb",
         "ytId": "qfRvA2MBmGI"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "YEPtvxMzsBY",
-        "startTs": 1167
       }
     ],
     "order": 31
@@ -10162,13 +10810,13 @@
     "tips": "[Sjogren](https://www.exfil-zone-assistant.app/items/weapon-sjogren-inertia)",
     "videoGuides": [
       {
-        "author": "HayaPlays",
-        "ytId": "y92XkaY4ZOs"
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 2041
       },
       {
-        "author": "radFoxVR",
-        "ytId": "YEPtvxMzsBY",
-        "startTs": 1125
+        "author": "HayaPlays",
+        "ytId": "y92XkaY4ZOs"
       }
     ],
     "order": 32
@@ -10222,13 +10870,13 @@
     "tips": "",
     "videoGuides": [
       {
-        "author": "HayaPlays",
-        "ytId": "QlyJuqdDRQI"
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 587
       },
       {
-        "author": "radFoxVR",
-        "ytId": "YEPtvxMzsBY",
-        "startTs": 465
+        "author": "HayaPlays",
+        "ytId": "QlyJuqdDRQI"
       }
     ],
     "order": 26
@@ -10290,7 +10938,13 @@
     "requiredPlayerLevel": 33,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1217
+      }
+    ],
     "order": 28
   },
   "regiment_40": {
@@ -10366,17 +11020,17 @@
     "tips": "White farmhouse in the Suburb farm area. Mark one of the huge wine barrels in the basement on the SW side; a dry wine bottle is in the kitchen sink on the ground level.",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 641
+      },
+      {
         "author": "HayaPlays",
         "ytId": "8jXo9LaZmuU"
       },
       {
         "author": "orbb",
         "ytId": "tw_SplvvQO8"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "YEPtvxMzsBY",
-        "startTs": 749
       }
     ],
     "order": 29
@@ -10453,11 +11107,6 @@
       {
         "author": "orbb",
         "ytId": "JIacdtZ1GGE"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "YEPtvxMzsBY",
-        "startTs": 1094
       }
     ],
     "order": 33
@@ -10519,11 +11168,6 @@
       {
         "author": "HayaPlays",
         "ytId": "o29YJdDw1fs"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "YEPtvxMzsBY",
-        "startTs": 1272
       }
     ],
     "order": 34
@@ -10584,11 +11228,6 @@
       {
         "author": "HayaPlays",
         "ytId": "vK0wnfTx2_Y"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "YEPtvxMzsBY",
-        "startTs": 1302
       }
     ],
     "order": 35
@@ -10649,17 +11288,17 @@
     "tips": "",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 611
+      },
+      {
         "author": "HayaPlays",
         "ytId": "S1GprlYcPsI"
       },
       {
         "author": "orbb",
         "ytId": "ZRnKbMybPzo"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "YEPtvxMzsBY",
-        "startTs": 274
       }
     ],
     "order": 8
@@ -10721,13 +11360,13 @@
     "tips": "",
     "videoGuides": [
       {
-        "author": "HayaPlays",
-        "ytId": "wE-rSY_zl2c"
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 652
       },
       {
-        "author": "radFoxVR",
-        "ytId": "YEPtvxMzsBY",
-        "startTs": 293
+        "author": "HayaPlays",
+        "ytId": "wE-rSY_zl2c"
       }
     ],
     "order": 9
@@ -10799,17 +11438,17 @@
     "tips": "",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 1575
+      },
+      {
         "author": "HayaPlays",
         "ytId": "_7scXRp08Hg"
       },
       {
         "author": "orbb",
         "ytId": "oAQ9Rl2WTmM"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "YEPtvxMzsBY",
-        "startTs": 342
       }
     ],
     "order": 10
@@ -10887,17 +11526,17 @@
     "tips": "Bring beer to lighthouse on resort, small grave behind, place beer",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 1661
+      },
+      {
         "author": "HayaPlays",
         "ytId": "g5pxrf7Qm_s"
       },
       {
         "author": "orbb",
         "ytId": "fmGJ_eR3m2Y"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "YEPtvxMzsBY",
-        "startTs": 420
       }
     ],
     "order": 11
@@ -10964,17 +11603,17 @@
     "tips": "One on toilet at Skatepark cafe. Second CD on barrel at Rua Algasol.",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 983
+      },
+      {
         "author": "HayaPlays",
         "ytId": "PXbAP1j56eI"
       },
       {
         "author": "orbb",
         "ytId": "cNQ5CB60RpU"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "YEPtvxMzsBY",
-        "startTs": 503
       }
     ],
     "order": 13
@@ -11032,6 +11671,11 @@
     "requiredTrust": 0,
     "tips": "The tram train cars are located on the road by hotel, two in front of hotel and one located on the road west toward construction.",
     "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1035
+      },
       {
         "author": "HayaPlays",
         "ytId": "EjvHz2SbegQ"
@@ -11100,13 +11744,13 @@
     "tips": "Dress with [Police PACA Body Armor](https://www.exfil-zone-assistant.app/items/armor-police-vest) and [Black Beret](https://www.exfil-zone-assistant.app/items/helmet-beanie-black) and eliminate the targets - 7 of them as of 1.7.3.1 (it used to be 16).",
     "videoGuides": [
       {
-        "author": "HayaPlays",
-        "ytId": "ng-d0GwVA64"
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1140
       },
       {
-        "author": "radFoxVR",
-        "ytId": "YEPtvxMzsBY",
-        "startTs": 1014
+        "author": "HayaPlays",
+        "ytId": "ng-d0GwVA64"
       }
     ],
     "order": 15
@@ -11157,13 +11801,13 @@
     "tips": "",
     "videoGuides": [
       {
-        "author": "HayaPlays",
-        "ytId": "x6OfU5ufssU"
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1632
       },
       {
-        "author": "radFoxVR",
-        "ytId": "YEPtvxMzsBY",
-        "startTs": 186
+        "author": "HayaPlays",
+        "ytId": "x6OfU5ufssU"
       }
     ],
     "order": 17
@@ -11226,7 +11870,13 @@
     "requiredPlayerLevel": 15,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 710
+      }
+    ],
     "order": 12
   },
   "regiment_42": {
@@ -11288,7 +11938,13 @@
     "requiredPlayerLevel": 22,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1618
+      }
+    ],
     "order": 18
   },
   "regiment_15": {
@@ -11351,13 +12007,13 @@
     "tips": "[Size D Battery](https://www.exfil-zone-assistant.app/items/misc_b_1battery), [Flashlight](https://www.exfil-zone-assistant.app/items/misc_b_flashlight)",
     "videoGuides": [
       {
-        "author": "HayaPlays",
-        "ytId": "lq5gbS1uohg"
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1093
       },
       {
-        "author": "radFoxVR",
-        "ytId": "YEPtvxMzsBY",
-        "startTs": 440
+        "author": "HayaPlays",
+        "ytId": "lq5gbS1uohg"
       }
     ],
     "order": 16
@@ -11421,13 +12077,13 @@
     "tips": "Can submit half-eaten can.",
     "videoGuides": [
       {
-        "author": "HayaPlays",
-        "ytId": "hYVVofQYJ2I"
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1715
       },
       {
-        "author": "radFoxVR",
-        "ytId": "YEPtvxMzsBY",
-        "startTs": 452
+        "author": "HayaPlays",
+        "ytId": "hYVVofQYJ2I"
       }
     ],
     "order": 21
@@ -11487,7 +12143,13 @@
     "requiredPlayerLevel": 6,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "x88mUrZlxZc",
+        "startTs": 27
+      }
+    ],
     "order": 1
   },
   "regiment_44": {
@@ -11563,7 +12225,13 @@
     "requiredPlayerLevel": 6,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "x88mUrZlxZc",
+        "startTs": 62
+      }
+    ],
     "order": 2
   },
   "regiment_45": {
@@ -11636,7 +12304,13 @@
     "requiredPlayerLevel": 7,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "x88mUrZlxZc",
+        "startTs": 138
+      }
+    ],
     "order": 3
   },
   "regiment_46": {
@@ -11705,7 +12379,13 @@
     "requiredPlayerLevel": 7,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "x88mUrZlxZc",
+        "startTs": 341
+      }
+    ],
     "order": 4
   },
   "regiment_47": {
@@ -11775,7 +12455,13 @@
     "requiredPlayerLevel": 8,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "x88mUrZlxZc",
+        "startTs": 366
+      }
+    ],
     "order": 5
   },
   "regiment_48": {
@@ -11850,7 +12536,13 @@
     "requiredPlayerLevel": 9,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "x88mUrZlxZc",
+        "startTs": 421
+      }
+    ],
     "order": 6
   },
   "regiment_49": {
@@ -11915,7 +12607,13 @@
     "requiredPlayerLevel": 11,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 168
+      }
+    ],
     "order": 7
   },
   "regiment_50": {
@@ -11979,7 +12677,13 @@
     "requiredPlayerLevel": 24,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1649
+      }
+    ],
     "order": 19
   },
   "regiment_51": {
@@ -12040,7 +12744,13 @@
     "requiredPlayerLevel": 25,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 2274
+      }
+    ],
     "order": 22
   },
   "ntg_63": {
@@ -12140,13 +12850,13 @@
     "tips": "Located at the Workers Dormitory, in the laundromat.",
     "videoGuides": [
       {
-        "author": "HayaPlays",
-        "ytId": "_74hXHJgw0w"
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 2726
       },
       {
-        "author": "radFoxVR",
-        "ytId": "DIjbTZN_Wxc",
-        "startTs": 292
+        "author": "HayaPlays",
+        "ytId": "_74hXHJgw0w"
       }
     ],
     "order": 26
@@ -12210,17 +12920,17 @@
     "tips": "[Walkie-Talkie](https://www.exfil-zone-assistant.app/items/taskitem_placement_johnny_walkietalkie)",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 2082
+      },
+      {
         "author": "HayaPlays",
         "ytId": "0iiqLGdw9Ao"
       },
       {
         "author": "orbb",
         "ytId": "kAvBXhqCx6c"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "DIjbTZN_Wxc",
-        "startTs": 360
       }
     ],
     "order": 24
@@ -12281,7 +12991,13 @@
     "requiredPlayerLevel": 28,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 2633
+      }
+    ],
     "order": 25
   },
   "trupiks_14": {
@@ -12339,7 +13055,13 @@
     "requiredPlayerLevel": 34,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 738
+      }
+    ],
     "order": 27
   },
   "trupiks_15": {
@@ -12396,7 +13118,13 @@
     "requiredPlayerLevel": 36,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1327
+      }
+    ],
     "order": 28
   },
   "trupiks_16": {
@@ -12453,7 +13181,13 @@
     "requiredPlayerLevel": 38,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "FrJjLlh1I6w",
+        "startTs": 1771
+      }
+    ],
     "order": 29
   },
   "trupiks_17": {
@@ -12554,7 +13288,13 @@
     "requiredPlayerLevel": 23,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1108
+      }
+    ],
     "order": 22
   },
   "trupiks_21": {
@@ -12610,13 +13350,13 @@
     "tips": "",
     "videoGuides": [
       {
-        "author": "HayaPlays",
-        "ytId": "uBKQha76Pds"
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 1535
       },
       {
-        "author": "radFoxVR",
-        "ytId": "ARAiv_2rqhM",
-        "startTs": 110
+        "author": "HayaPlays",
+        "ytId": "uBKQha76Pds"
       }
     ],
     "order": 18
@@ -12674,13 +13414,13 @@
     "tips": "Not full Coffee Drinks can be submitted too.",
     "videoGuides": [
       {
-        "author": "HayaPlays",
-        "ytId": "Rc94nXBvY0A"
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 28
       },
       {
-        "author": "radFoxVR",
-        "ytId": "ZOuSedSDlUE",
-        "startTs": 367
+        "author": "HayaPlays",
+        "ytId": "Rc94nXBvY0A"
       }
     ],
     "order": 20
@@ -12727,7 +13467,13 @@
     "requiredPlayerLevel": 19,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 1017
+      }
+    ],
     "order": 23
   },
   "trupiks_1": {
@@ -12778,16 +13524,17 @@
     "tips": "Power plant is marked on the map, near the western bunker. Warehouses are just east next to the office building.",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "CmZvROF1rjY",
+        "startTs": 326
+      },
+      {
         "author": "HayaPlays",
         "ytId": "ukhEmupVCc4"
       },
       {
         "author": "orbb",
         "ytId": "quTZvsysQCQ"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "DIjbTZN_Wxc"
       }
     ],
     "order": 10
@@ -12835,7 +13582,13 @@
     "requiredPlayerLevel": 10,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 895
+      }
+    ],
     "order": 17
   },
   "trupiks_9": {
@@ -12888,17 +13641,17 @@
     "tips": "",
     "videoGuides": [
       {
+        "author": "radFoxVR",
+        "ytId": "CmZvROF1rjY",
+        "startTs": 411
+      },
+      {
         "author": "HayaPlays",
         "ytId": "A1wWvu-8XCw"
       },
       {
         "author": "orbb",
         "ytId": "_gVFJBMxPr8"
-      },
-      {
-        "author": "radFoxVR",
-        "ytId": "DIjbTZN_Wxc",
-        "startTs": 241
       }
     ],
     "order": 12
@@ -12945,7 +13698,13 @@
     "requiredPlayerLevel": 20,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "viV90lyJKFM",
+        "startTs": 193
+      }
+    ],
     "order": 21
   },
   "trupiks_27": {
@@ -13000,7 +13759,13 @@
     "requiredPlayerLevel": 7,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 188
+      }
+    ],
     "order": 16
   },
   "trupiks_2": {
@@ -13039,7 +13804,13 @@
     "requiredPlayerLevel": 1,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "CmZvROF1rjY",
+        "startTs": 40
+      }
+    ],
     "order": 2
   },
   "trupiks_3": {
@@ -13086,7 +13857,13 @@
     "requiredPlayerLevel": 1,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "CmZvROF1rjY",
+        "startTs": 68
+      }
+    ],
     "order": 4
   },
   "trupiks_28": {
@@ -13141,7 +13918,13 @@
     "requiredPlayerLevel": 3,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "CmZvROF1rjY",
+        "startTs": 204
+      }
+    ],
     "order": 6
   },
   "trupiks_29": {
@@ -13197,7 +13980,13 @@
     "requiredPlayerLevel": 6,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "x88mUrZlxZc",
+        "startTs": 37
+      }
+    ],
     "order": 14
   },
   "trupiks_30": {
@@ -13254,7 +14043,13 @@
     "requiredPlayerLevel": 4,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "CmZvROF1rjY",
+        "startTs": 253
+      }
+    ],
     "order": 8
   },
   "trupiks_31": {
@@ -13308,7 +14103,13 @@
     "requiredPlayerLevel": 12,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 1215
+      }
+    ],
     "order": 19
   },
   "trupiks_32": {
@@ -13371,7 +14172,13 @@
     "requiredPlayerLevel": 8,
     "requiredTrust": 0,
     "tips": "",
-    "videoGuides": [],
+    "videoGuides": [
+      {
+        "author": "radFoxVR",
+        "ytId": "yTnm4dict7M",
+        "startTs": 0
+      }
+    ],
     "order": 15
   },
   "trupiks_33": {
