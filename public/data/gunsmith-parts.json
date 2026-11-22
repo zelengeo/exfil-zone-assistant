@@ -3051,7 +3051,7 @@
             {
               "gameId": "task.wp.c.09",
               "id": "regiment_51",
-              "name": "The Veteran's Courts",
+              "name": "Old Haunts",
               "corpId": "regiment"
             }
           ],
@@ -3192,7 +3192,7 @@
             {
               "gameId": "task.wp.a.05",
               "id": "regiment_37",
-              "name": "My Favourite: AK",
+              "name": "My Favorite: AK",
               "corpId": "regiment"
             }
           ],
@@ -3519,7 +3519,7 @@
             {
               "gameId": "task.wp.a.10",
               "id": "regiment_39",
-              "name": "My Favourite: FAL",
+              "name": "My Favorite: FAL",
               "corpId": "regiment"
             }
           ],
@@ -3539,7 +3539,7 @@
             {
               "gameId": "task.wp.a.10",
               "id": "regiment_39",
-              "name": "My Favourite: FAL",
+              "name": "My Favorite: FAL",
               "corpId": "regiment"
             }
           ],
@@ -3622,7 +3622,7 @@
             {
               "gameId": "task.wp.a.01",
               "id": "regiment_23",
-              "name": "Taste of Life 2",
+              "name": "Taste of Life: Sake",
               "corpId": "regiment"
             }
           ],
@@ -4395,7 +4395,7 @@
             {
               "gameId": "task.wp.c.02",
               "id": "regiment_44",
-              "name": "The Old Soldier's Beer",
+              "name": "Taste of Life: Beer",
               "corpId": "regiment"
             }
           ],
@@ -5374,7 +5374,7 @@
             {
               "gameId": "task.wp.c.01",
               "id": "regiment_43",
-              "name": "A Real Rifle",
+              "name": "Different Style",
               "corpId": "regiment"
             }
           ],
@@ -6171,7 +6171,7 @@
             {
               "gameId": "task.wp.c.04",
               "id": "regiment_46",
-              "name": "Get Back My Shades",
+              "name": "Blinding Light",
               "corpId": "regiment"
             }
           ],
@@ -6538,7 +6538,7 @@
             {
               "gameId": "task.wp.c.02",
               "id": "regiment_44",
-              "name": "The Old Soldier's Beer",
+              "name": "Taste of Life: Beer",
               "corpId": "regiment"
             }
           ],
@@ -11567,7 +11567,7 @@
             {
               "gameId": "task.na.c.10",
               "id": "ark_69",
-              "name": "Pre-war Recon",
+              "name": "Tracks of the Wolf",
               "corpId": "ark"
             }
           ],
@@ -11715,7 +11715,7 @@
             {
               "gameId": "task.na.b.01",
               "id": "ark_50",
-              "name": "Camera Placement: Warehouse & Supermarket",
+              "name": "Redeployment",
               "corpId": "ark"
             }
           ],
@@ -12006,7 +12006,7 @@
             {
               "gameId": "task.na.c.08",
               "id": "ark_67",
-              "name": "Transport Clues",
+              "name": "End of the Line",
               "corpId": "ark"
             }
           ],
@@ -12211,7 +12211,7 @@
             {
               "gameId": "task.na.a.03",
               "id": "ark_38",
-              "name": "Police Car Photos",
+              "name": "A Closer Look",
               "corpId": "ark"
             }
           ],
@@ -12336,7 +12336,7 @@
             {
               "gameId": "task.na.b.10",
               "id": "ark_59",
-              "name": "★ Silver Skull BOSS",
+              "name": "★ Silver Skull",
               "corpId": "ark"
             }
           ],
@@ -12409,7 +12409,7 @@
             {
               "gameId": "task.na.a.07",
               "id": "ark_42",
-              "name": "★18 Judgment Day BOSS",
+              "name": "★ Judgment",
               "corpId": "ark"
             }
           ],
@@ -12577,7 +12577,7 @@
             {
               "gameId": "task.na.a.08",
               "id": "ark_43",
-              "name": "Into the Underground",
+              "name": "Going Underground",
               "corpId": "ark"
             }
           ],
@@ -12826,7 +12826,7 @@
             {
               "gameId": "task.gunsmith.m07",
               "id": "gunsmith_14",
-              "name": "Protection Racket",
+              "name": "Buying Access",
               "corpId": "gunsmith"
             }
           ],
@@ -14041,7 +14041,7 @@
             {
               "gameId": "task.gunsmith.m09",
               "id": "gunsmith_18",
-              "name": "Smuggling Route: Surveillance I",
+              "name": "Surveillance Setup",
               "corpId": "gunsmith"
             }
           ],
@@ -14345,7 +14345,7 @@
             {
               "gameId": "task.na.c.06",
               "id": "ark_65",
-              "name": "Truck Marking",
+              "name": "Where Did the Trucks Go",
               "corpId": "ark"
             }
           ],
@@ -17554,7 +17554,7 @@
             {
               "gameId": "task.na.b.03",
               "id": "ark_52",
-              "name": "Retrieve ARK Disks",
+              "name": "Secret Contact",
               "corpId": "ark"
             }
           ],
@@ -17833,7 +17833,7 @@
             {
               "gameId": "task.gear.a.11",
               "id": "forge_28",
-              "name": "Treasure Beyond Measure",
+              "name": "Worth More Than Gold",
               "corpId": "forge"
             }
           ],
@@ -19261,7 +19261,7 @@
             {
               "gameId": "task.na.b.04",
               "id": "ark_53",
-              "name": "Hide Discs",
+              "name": "The Bait",
               "corpId": "ark"
             }
           ],
@@ -19976,7 +19976,7 @@
             {
               "gameId": "task.na.a.01",
               "id": "ark_36",
-              "name": "Seaside Pursuit",
+              "name": "Coastal Pursuit",
               "corpId": "ark"
             }
           ],
@@ -21329,7 +21329,7 @@
             {
               "gameId": "task.gunsmith.m10",
               "id": "gunsmith_19",
-              "name": "Malyuk Field Trial",
+              "name": "Field Adaptation",
               "corpId": "gunsmith"
             }
           ],
@@ -22431,7 +22431,7 @@
             {
               "gameId": "task.na.c.09",
               "id": "ark_68",
-              "name": "Rifle Drills",
+              "name": "Better Safe Than Sorry",
               "corpId": "ark"
             }
           ],
@@ -28259,7 +28259,7 @@
             {
               "gameId": "task.na.a.01",
               "id": "ark_36",
-              "name": "Seaside Pursuit",
+              "name": "Coastal Pursuit",
               "corpId": "ark"
             }
           ],
@@ -28332,7 +28332,7 @@
             {
               "gameId": "task.na.b.06",
               "id": "ark_55",
-              "name": "Disguised Baseball",
+              "name": "Baseball Cams",
               "corpId": "ark"
             }
           ],
@@ -28769,7 +28769,7 @@
             {
               "gameId": "task.na.b.08",
               "id": "ark_57",
-              "name": "Clifton Recon",
+              "name": "Patrol",
               "corpId": "ark"
             }
           ],
@@ -31356,7 +31356,7 @@
             {
               "gameId": "task.na.a.09",
               "id": "ark_44",
-              "name": "Undercurrent",
+              "name": "Undercurrents",
               "corpId": "ark"
             }
           ],
@@ -31493,7 +31493,7 @@
             {
               "gameId": "task.na.a.11",
               "id": "ark_46",
-              "name": "Heavy Iron: Tank Marking",
+              "name": "Heavy Armor Below",
               "corpId": "ark"
             }
           ],
@@ -33696,7 +33696,7 @@
             {
               "gameId": "task.na.c.02",
               "id": "ark_62",
-              "name": "Wind Farm Recon",
+              "name": "Northern Camp Recon",
               "corpId": "ark"
             }
           ],
@@ -35013,7 +35013,7 @@
             {
               "gameId": "task.na.c.03",
               "id": "ark_3",
-              "name": "Recon 1",
+              "name": "Intelligence Gathering",
               "corpId": "ark"
             }
           ],
@@ -35092,7 +35092,7 @@
             {
               "gameId": "task.na.c.03",
               "id": "ark_3",
-              "name": "Recon 1",
+              "name": "Intelligence Gathering",
               "corpId": "ark"
             }
           ],
@@ -40801,7 +40801,7 @@
             {
               "gameId": "task.na.a.14",
               "id": "ark_49",
-              "name": "★19 Master of the Underground: Final BOSS",
+              "name": "★ Lord of the Underground",
               "corpId": "ark"
             }
           ],
@@ -40821,7 +40821,7 @@
             {
               "gameId": "task.na.a.14",
               "id": "ark_49",
-              "name": "★19 Master of the Underground: Final BOSS",
+              "name": "★ Lord of the Underground",
               "corpId": "ark"
             }
           ],
@@ -49152,7 +49152,7 @@
             {
               "gameId": "task.gunsmith.m02",
               "id": "gunsmith_4",
-              "name": "The Lost Part",
+              "name": "Missing Part",
               "corpId": "gunsmith"
             }
           ],

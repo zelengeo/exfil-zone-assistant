@@ -250,7 +250,7 @@
             {
               "gameId": "task.doc.c.02",
               "id": "ntg_1",
-              "name": "Supply Shortage 1",
+              "name": "Short on Supplies",
               "corpId": "ntg"
             }
           ],
@@ -322,7 +322,7 @@
             {
               "gameId": "task.doc.b.04",
               "id": "ntg_49",
-              "name": "River Valley Pylon Security",
+              "name": "Repurposed Landmarks",
               "corpId": "ntg"
             }
           ],
@@ -348,7 +348,7 @@
             {
               "gameId": "task.doc.a.04",
               "id": "ntg_37",
-              "name": "★ Meg's Request",
+              "name": "Foreign Remedy",
               "corpId": "ntg"
             }
           ],
@@ -457,7 +457,7 @@
             {
               "gameId": "task.doc.c.03",
               "id": "ntg_57",
-              "name": "Mark the Treatment Points",
+              "name": "Old Aid Station",
               "corpId": "ntg"
             }
           ],
@@ -594,7 +594,7 @@
             {
               "gameId": "task.doc.b.03",
               "id": "ntg_48",
-              "name": "NTG Medical Reports",
+              "name": "Shadows of the Past",
               "corpId": "ntg"
             }
           ],
@@ -656,7 +656,7 @@
             {
               "gameId": "task.doc.b.03",
               "id": "ntg_48",
-              "name": "NTG Medical Reports",
+              "name": "Shadows of the Past",
               "corpId": "ntg"
             }
           ],
@@ -730,7 +730,7 @@
             {
               "gameId": "task.doc.b.03",
               "id": "ntg_48",
-              "name": "NTG Medical Reports",
+              "name": "Shadows of the Past",
               "corpId": "ntg"
             }
           ],
@@ -784,7 +784,7 @@
             {
               "gameId": "task.doc.b.03",
               "id": "ntg_48",
-              "name": "NTG Medical Reports",
+              "name": "Shadows of the Past",
               "corpId": "ntg"
             }
           ],
@@ -873,7 +873,7 @@
             {
               "gameId": "task.doc.a.11",
               "id": "ntg_43",
-              "name": "Mercy in Retrospect",
+              "name": "★ Mercy, Once More",
               "corpId": "ntg"
             }
           ],
@@ -1049,7 +1049,7 @@
             {
               "gameId": "task.doc.c.06",
               "id": "ntg_60",
-              "name": "Meg's Camera",
+              "name": "Borrowed and Returned",
               "corpId": "ntg"
             }
           ],
@@ -1136,7 +1136,7 @@
             {
               "gameId": "task.doc.b.02",
               "id": "ntg_47",
-              "name": "Dam First Aid Point",
+              "name": "A Small Kindness",
               "corpId": "ntg"
             }
           ],

@@ -1741,7 +1741,7 @@
             {
               "gameId": "task.wp.a.13",
               "id": "regiment_34",
-              "name": "War Within Self",
+              "name": "Final Challenge",
               "corpId": "regiment"
             }
           ],
@@ -1761,7 +1761,7 @@
             {
               "gameId": "task.wp.a.13",
               "id": "regiment_34",
-              "name": "War Within Self",
+              "name": "Final Challenge",
               "corpId": "regiment"
             }
           ],
@@ -1957,7 +1957,7 @@
             {
               "gameId": "task.wp.c.04",
               "id": "regiment_46",
-              "name": "Get Back My Shades",
+              "name": "Blinding Light",
               "corpId": "regiment"
             }
           ],
@@ -2936,7 +2936,7 @@
             {
               "gameId": "task.wp.c.04",
               "id": "regiment_46",
-              "name": "Get Back My Shades",
+              "name": "Blinding Light",
               "corpId": "regiment"
             }
           ],
@@ -5099,7 +5099,7 @@
             {
               "gameId": "task.na.c.08",
               "id": "ark_67",
-              "name": "Transport Clues",
+              "name": "End of the Line",
               "corpId": "ark"
             }
           ],
@@ -6639,7 +6639,7 @@
             {
               "gameId": "task.wp.c.05",
               "id": "regiment_47",
-              "name": "Keep the Hair Sharp",
+              "name": "Hair Comes First",
               "corpId": "regiment"
             }
           ],
@@ -10584,7 +10584,7 @@
             {
               "gameId": "task.na.b.02",
               "id": "ark_51",
-              "name": "Mall Photography",
+              "name": "Field Photography",
               "corpId": "ark"
             }
           ],
@@ -10610,7 +10610,7 @@
             {
               "gameId": "task.na.b.02",
               "id": "ark_51",
-              "name": "Mall Photography",
+              "name": "Field Photography",
               "corpId": "ark"
             }
           ],
@@ -11300,7 +11300,7 @@
             {
               "gameId": "task.na.c.04",
               "id": "ark_63",
-              "name": "Prove Yourself",
+              "name": "Before the Chaos",
               "corpId": "ark"
             }
           ],
@@ -11857,7 +11857,7 @@
             {
               "gameId": "task.na.c.04",
               "id": "ark_63",
-              "name": "Prove Yourself",
+              "name": "Before the Chaos",
               "corpId": "ark"
             }
           ],
@@ -13974,7 +13974,7 @@
             {
               "gameId": "task.wp.b.05",
               "id": "regiment_18",
-              "name": "Movie Night 1",
+              "name": "Movie Night: Shark Thriller",
               "corpId": "regiment"
             }
           ],
@@ -14131,7 +14131,7 @@
             {
               "gameId": "task.wp.c.06",
               "id": "regiment_48",
-              "name": "The Sausage Trap",
+              "name": "Work Smarter",
               "corpId": "regiment"
             }
           ],
@@ -14288,7 +14288,7 @@
             {
               "gameId": "task.wp.c.07",
               "id": "regiment_49",
-              "name": "Rifle Proficiency",
+              "name": "Hunter",
               "corpId": "regiment"
             }
           ],
@@ -14585,7 +14585,7 @@
             {
               "gameId": "task.na.c.02",
               "id": "ark_62",
-              "name": "Wind Farm Recon",
+              "name": "Northern Camp Recon",
               "corpId": "ark"
             }
           ],
@@ -15204,7 +15204,7 @@
             {
               "gameId": "task.na.c.02",
               "id": "ark_62",
-              "name": "Wind Farm Recon",
+              "name": "Northern Camp Recon",
               "corpId": "ark"
             }
           ],
@@ -21329,7 +21329,7 @@
             {
               "gameId": "task.wp.c.01",
               "id": "regiment_43",
-              "name": "A Real Rifle",
+              "name": "Different Style",
               "corpId": "regiment"
             }
           ],
@@ -21488,7 +21488,7 @@
             {
               "gameId": "task.wp.c.01",
               "id": "regiment_43",
-              "name": "A Real Rifle",
+              "name": "Different Style",
               "corpId": "regiment"
             }
           ],
@@ -23974,7 +23974,7 @@
             {
               "gameId": "task.na.a.14",
               "id": "ark_49",
-              "name": "★19 Master of the Underground: Final BOSS",
+              "name": "★ Lord of the Underground",
               "corpId": "ark"
             }
           ],
@@ -24353,7 +24353,7 @@
             {
               "gameId": "task.na.a.06",
               "id": "ark_41",
-              "name": "★15 Pushing the Limit Lv4",
+              "name": "Crime Scene",
               "corpId": "ark"
             }
           ],
@@ -24373,7 +24373,7 @@
             {
               "gameId": "task.na.a.06",
               "id": "ark_41",
-              "name": "★15 Pushing the Limit Lv4",
+              "name": "Crime Scene",
               "corpId": "ark"
             }
           ],

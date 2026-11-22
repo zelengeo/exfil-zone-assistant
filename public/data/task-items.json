@@ -13,7 +13,9 @@
     "stats": {
       "weight": 0.3,
       "rarity": "Common",
-      "taskIds": [],
+      "taskIds": [
+        "trupiks_37"
+      ],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -42,7 +44,8 @@
       "weight": 0.15,
       "rarity": "Common",
       "taskIds": [
-        "ark_21"
+        "ark_52",
+        "ark_63"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -71,7 +74,9 @@
     "stats": {
       "weight": 0.15,
       "rarity": "Rare",
-      "taskIds": [],
+      "taskIds": [
+        "gunsmith_20"
+      ],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -118,7 +123,7 @@
       "weight": 0.3,
       "rarity": "Common",
       "taskIds": [
-        "ark_22"
+        "ark_55"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -147,7 +152,9 @@
     "stats": {
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": [],
+      "taskIds": [
+        "forge_49"
+      ],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -193,7 +200,9 @@
     "stats": {
       "weight": 0.3,
       "rarity": "Common",
-      "taskIds": [],
+      "taskIds": [
+        "trupiks_33"
+      ],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -221,7 +230,9 @@
     "stats": {
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": [],
+      "taskIds": [
+        "ntg_63"
+      ],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -278,7 +289,7 @@
       "weight": 1.2,
       "rarity": "Common",
       "taskIds": [
-        "trupiks_4"
+        "trupiks_28"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -307,7 +318,9 @@
     "stats": {
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": [],
+      "taskIds": [
+        "trupiks_38"
+      ],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -336,7 +349,7 @@
       "weight": 0.35,
       "rarity": "Common",
       "taskIds": [
-        "trupiks_5"
+        "trupiks_32"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -421,7 +434,9 @@
     "stats": {
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": [],
+      "taskIds": [
+        "forge_48"
+      ],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -450,7 +465,7 @@
       "weight": 4.2,
       "rarity": "Common",
       "taskIds": [
-        "forge_1"
+        "forge_37"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -480,7 +495,7 @@
       "weight": 4.2,
       "rarity": "Common",
       "taskIds": [
-        "forge_18"
+        "forge_34"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -509,7 +524,10 @@
     "stats": {
       "weight": 0.8,
       "rarity": "Common",
-      "taskIds": [],
+      "taskIds": [
+        "forge_15",
+        "forge_25"
+      ],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -538,7 +556,7 @@
       "weight": 0.8,
       "rarity": "Common",
       "taskIds": [
-        "regiment_3"
+        "regiment_45"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -597,7 +615,9 @@
     "stats": {
       "weight": 0.03,
       "rarity": "Epic",
-      "taskIds": [],
+      "taskIds": [
+        "regiment_28"
+      ],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -625,7 +645,9 @@
     "stats": {
       "weight": 0.03,
       "rarity": "Epic",
-      "taskIds": [],
+      "taskIds": [
+        "regiment_28"
+      ],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -654,7 +676,7 @@
       "weight": 1.7,
       "rarity": "Common",
       "taskIds": [
-        "ntg_2"
+        "ntg_60"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -712,7 +734,7 @@
       "weight": 4.5,
       "rarity": "Common",
       "taskIds": [
-        "ntg_9"
+        "ntg_37"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -741,7 +763,10 @@
     "stats": {
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": [],
+      "taskIds": [
+        "ntg_18",
+        "ntg_29"
+      ],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -797,7 +822,9 @@
     "stats": {
       "weight": 0.24,
       "rarity": "Epic",
-      "taskIds": [],
+      "taskIds": [
+        "ark_64"
+      ],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -825,7 +852,9 @@
     "stats": {
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": [],
+      "taskIds": [
+        "trupiks_33"
+      ],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -853,7 +882,9 @@
     "stats": {
       "weight": 0.3,
       "rarity": "Epic",
-      "taskIds": [],
+      "taskIds": [
+        "ntg_58"
+      ],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -882,15 +913,22 @@
       "weight": 0.21,
       "rarity": "Common",
       "taskIds": [
-        "ark_8",
-        "ark_19",
-        "ntg_8",
-        "ntg_17",
-        "ntg_30",
-        "trupiks_11",
+        "ark_38",
+        "ark_51",
+        "forge_35",
+        "forge_43",
+        "forge_6",
+        "ntg_36",
+        "ntg_39",
+        "ntg_41",
+        "ntg_50",
+        "ntg_54",
         "regiment_12",
         "regiment_25",
-        "forge_6"
+        "regiment_30",
+        "regiment_36",
+        "regiment_51",
+        "trupiks_10"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -947,7 +985,7 @@
       "weight": 0.8,
       "rarity": "Common",
       "taskIds": [
-        "regiment_24"
+        "regiment_50"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -976,9 +1014,7 @@
     "stats": {
       "weight": 0.8,
       "rarity": "Common",
-      "taskIds": [
-        "regiment_14"
-      ],
+      "taskIds": [],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -1067,8 +1103,9 @@
       "weight": 0.2,
       "rarity": "Common",
       "taskIds": [
-        "ntg_7",
-        "ntg_21"
+        "ark_4",
+        "ntg_34",
+        "ntg_45"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -1112,7 +1149,8 @@
       "weight": 0.2,
       "rarity": "Common",
       "taskIds": [
-        "ntg_16"
+        "ntg_40",
+        "ntg_55"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -1156,7 +1194,7 @@
       "weight": 0.08,
       "rarity": "Common",
       "taskIds": [
-        "ntg_7"
+        "ntg_34"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -1186,7 +1224,8 @@
       "weight": 0.18,
       "rarity": "Common",
       "taskIds": [
-        "forge_8"
+        "forge_8",
+        "gunsmith_14"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -1290,7 +1329,7 @@
       "weight": 0.24,
       "rarity": "Common",
       "taskIds": [
-        "ntg_11"
+        "ntg_38"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -1320,7 +1359,9 @@
       "weight": 0.8,
       "rarity": "Common",
       "taskIds": [
-        "ark_17"
+        "ark_50",
+        "gunsmith_18",
+        "gunsmith_22"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -1350,7 +1391,7 @@
       "weight": 1,
       "rarity": "Common",
       "taskIds": [
-        "ark_7"
+        "ark_37"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -1380,7 +1421,7 @@
       "weight": 7,
       "rarity": "Common",
       "taskIds": [
-        "ntg_5"
+        "ntg_62"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -1409,7 +1450,9 @@
     "stats": {
       "weight": 0.24,
       "rarity": "Epic",
-      "taskIds": [],
+      "taskIds": [
+        "gunsmith_24"
+      ],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -1465,7 +1508,10 @@
     "stats": {
       "weight": 7,
       "rarity": "Common",
-      "taskIds": [],
+      "taskIds": [
+        "trupiks_22",
+        "trupiks_26"
+      ],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -1493,7 +1539,9 @@
     "stats": {
       "weight": 1.3,
       "rarity": "Common",
-      "taskIds": [],
+      "taskIds": [
+        "regiment_23"
+      ],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -1638,7 +1686,7 @@
       "weight": 0.03,
       "rarity": "Common",
       "taskIds": [
-        "regiment_28"
+        "regiment_38"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -1668,7 +1716,7 @@
       "weight": 0.03,
       "rarity": "Common",
       "taskIds": [
-        "regiment_28"
+        "regiment_38"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -1728,7 +1776,7 @@
       "weight": 0.1,
       "rarity": "Common",
       "taskIds": [
-        "regiment_4"
+        "regiment_46"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -1757,7 +1805,10 @@
     "stats": {
       "weight": 0.3,
       "rarity": "Common",
-      "taskIds": [],
+      "taskIds": [
+        "ntg_46",
+        "ntg_48"
+      ],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -1846,7 +1897,7 @@
       "weight": 0.21,
       "rarity": "Common",
       "taskIds": [
-        "ark_4"
+        "forge_42"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -1936,7 +1987,7 @@
       "weight": 0.005,
       "rarity": "Common",
       "taskIds": [
-        "trupiks_7"
+        "trupiks_31"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -1965,7 +2016,9 @@
     "stats": {
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": [],
+      "taskIds": [
+        "forge_46"
+      ],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -1994,17 +2047,21 @@
       "weight": 0.24,
       "rarity": "Common",
       "taskIds": [
-        "ark_12",
-        "ark_16",
-        "ark_24",
-        "ark_26",
-        "ark_33",
-        "ntg_12",
-        "ntg_19",
-        "trupiks_13",
-        "regiment_23",
-        "forge_11",
-        "forge_22"
+        "ark_40",
+        "ark_46",
+        "ark_56",
+        "ark_58",
+        "ark_65",
+        "forge_17",
+        "forge_22",
+        "forge_36",
+        "forge_44",
+        "ntg_29",
+        "ntg_35",
+        "ntg_49",
+        "ntg_57",
+        "ntg_61",
+        "regiment_40"
       ],
       "basePrice": 1000,
       "sellPrices": [
@@ -2047,7 +2104,9 @@
     "stats": {
       "weight": 0.25,
       "rarity": "Epic",
-      "taskIds": [],
+      "taskIds": [
+        "trupiks_37"
+      ],
       "basePrice": 1200,
       "sellPrices": [
         1200,
@@ -2353,7 +2412,9 @@
     "stats": {
       "weight": 0.2,
       "rarity": "Common",
-      "taskIds": [],
+      "taskIds": [
+        "trupiks_37"
+      ],
       "basePrice": 1000,
       "sellPrices": [
         1000,
@@ -2382,7 +2443,7 @@
       "weight": 1.3,
       "rarity": "Common",
       "taskIds": [
-        "regiment_23"
+        "regiment_40"
       ],
       "basePrice": 1000,
       "sellPrices": [

@@ -523,7 +523,7 @@
             {
               "gameId": "task.wp.a.04",
               "id": "regiment_27",
-              "name": "My Favourite: Mosin",
+              "name": "My Favorite: Mosin",
               "corpId": "regiment"
             }
           ],
@@ -626,7 +626,7 @@
             {
               "gameId": "task.gunsmith.m08",
               "id": "gunsmith_16",
-              "name": "Close Quarters — MP9 Drill",
+              "name": "Close Quarters",
               "corpId": "gunsmith"
             }
           ],
@@ -2172,7 +2172,7 @@
             {
               "gameId": "task.gunsmith.m09",
               "id": "gunsmith_18",
-              "name": "Smuggling Route: Surveillance I",
+              "name": "Surveillance Setup",
               "corpId": "gunsmith"
             }
           ],
@@ -2273,7 +2273,7 @@
             {
               "gameId": "task.gunsmith.008",
               "id": "gunsmith_15",
-              "name": "SKS Modification Trial",
+              "name": "Modding Trial: SKS",
               "corpId": "gunsmith"
             }
           ],
@@ -2577,7 +2577,7 @@
             {
               "gameId": "task.na.b.09",
               "id": "ark_58",
-              "name": "Factory Oil Tanks",
+              "name": "Factory Tanks",
               "corpId": "ark"
             }
           ],
@@ -2976,7 +2976,7 @@
             {
               "gameId": "task.na.c.07",
               "id": "ark_66",
-              "name": "Clearing Drill",
+              "name": "Another Option",
               "corpId": "ark"
             }
           ],
@@ -3644,7 +3644,7 @@
             {
               "gameId": "task.wp.c.09",
               "id": "regiment_51",
-              "name": "The Veteran's Courts",
+              "name": "Old Haunts",
               "corpId": "regiment"
             }
           ],

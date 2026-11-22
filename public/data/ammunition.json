@@ -998,7 +998,7 @@
             {
               "gameId": "task.wp.a.11",
               "id": "regiment_40",
-              "name": "Taste of Life 3",
+              "name": "Taste of Life: Red Wine",
               "corpId": "regiment"
             }
           ],
@@ -1407,7 +1407,7 @@
             {
               "gameId": "task.wp.b.11",
               "id": "regiment_15",
-              "name": "Reading Habits",
+              "name": "Reading Habit",
               "corpId": "regiment"
             }
           ],
@@ -1427,7 +1427,7 @@
             {
               "gameId": "task.wp.b.11",
               "id": "regiment_15",
-              "name": "Reading Habits",
+              "name": "Reading Habit",
               "corpId": "regiment"
             }
           ],
@@ -1447,7 +1447,7 @@
             {
               "gameId": "task.wp.b.11",
               "id": "regiment_15",
-              "name": "Reading Habits",
+              "name": "Reading Habit",
               "corpId": "regiment"
             }
           ],
@@ -2388,7 +2388,7 @@
             {
               "gameId": "task.wp.a.03",
               "id": "regiment_28",
-              "name": "Movie Night 2",
+              "name": "Movie Night: Mad Surgeon",
               "corpId": "regiment"
             }
           ],
@@ -2408,7 +2408,7 @@
             {
               "gameId": "task.wp.a.03",
               "id": "regiment_28",
-              "name": "Movie Night 2",
+              "name": "Movie Night: Mad Surgeon",
               "corpId": "regiment"
             }
           ],
@@ -2428,7 +2428,7 @@
             {
               "gameId": "task.wp.a.03",
               "id": "regiment_28",
-              "name": "Movie Night 2",
+              "name": "Movie Night: Mad Surgeon",
               "corpId": "regiment"
             }
           ],
@@ -2860,7 +2860,7 @@
             {
               "gameId": "task.na.a.11",
               "id": "ark_46",
-              "name": "Heavy Iron: Tank Marking",
+              "name": "Heavy Armor Below",
               "corpId": "ark"
             }
           ],
@@ -3226,7 +3226,7 @@
             {
               "gameId": "task.gunsmith.m03",
               "id": "gunsmith_6",
-              "name": "The Artisan's Touch",
+              "name": "Craftsmanship",
               "corpId": "gunsmith"
             }
           ],
@@ -3356,7 +3356,7 @@
             {
               "gameId": "task.gunsmith.m12",
               "id": "gunsmith_21",
-              "name": "Secure the Retreat — LMG Suppression",
+              "name": "Keep the Way Clear",
               "corpId": "gunsmith"
             }
           ],
@@ -4044,7 +4044,7 @@
             {
               "gameId": "task.wp.b.01",
               "id": "regiment_10",
-              "name": "Treasure in the Sewage",
+              "name": "Wastewater Treasure Hunt",
               "corpId": "regiment"
             }
           ],
@@ -4064,7 +4064,7 @@
             {
               "gameId": "task.wp.b.01",
               "id": "regiment_10",
-              "name": "Treasure in the Sewage",
+              "name": "Wastewater Treasure Hunt",
               "corpId": "regiment"
             }
           ],
@@ -4084,7 +4084,7 @@
             {
               "gameId": "task.wp.b.01",
               "id": "regiment_10",
-              "name": "Treasure in the Sewage",
+              "name": "Wastewater Treasure Hunt",
               "corpId": "regiment"
             }
           ],
@@ -4477,7 +4477,7 @@
             {
               "gameId": "task.gunsmith.m02",
               "id": "gunsmith_4",
-              "name": "The Lost Part",
+              "name": "Missing Part",
               "corpId": "gunsmith"
             }
           ],
@@ -4615,7 +4615,7 @@
             {
               "gameId": "task.gunsmith.m07",
               "id": "gunsmith_14",
-              "name": "Protection Racket",
+              "name": "Buying Access",
               "corpId": "gunsmith"
             }
           ],
@@ -5037,7 +5037,7 @@
             {
               "gameId": "task.na.c.04",
               "id": "ark_63",
-              "name": "Prove Yourself",
+              "name": "Before the Chaos",
               "corpId": "ark"
             }
           ],
@@ -5057,7 +5057,7 @@
             {
               "gameId": "task.na.c.04",
               "id": "ark_63",
-              "name": "Prove Yourself",
+              "name": "Before the Chaos",
               "corpId": "ark"
             }
           ],
@@ -5077,7 +5077,7 @@
             {
               "gameId": "task.na.c.04",
               "id": "ark_63",
-              "name": "Prove Yourself",
+              "name": "Before the Chaos",
               "corpId": "ark"
             }
           ],
@@ -5603,7 +5603,7 @@
             {
               "gameId": "task.na.b.11",
               "id": "ark_60",
-              "name": "M16A2 Proficiency",
+              "name": "Show of Force: M16A2",
               "corpId": "ark"
             }
           ],
@@ -5623,7 +5623,7 @@
             {
               "gameId": "task.na.b.11",
               "id": "ark_60",
-              "name": "M16A2 Proficiency",
+              "name": "Show of Force: M16A2",
               "corpId": "ark"
             }
           ],
@@ -5643,7 +5643,7 @@
             {
               "gameId": "task.na.b.11",
               "id": "ark_60",
-              "name": "M16A2 Proficiency",
+              "name": "Show of Force: M16A2",
               "corpId": "ark"
             }
           ],
@@ -5757,7 +5757,7 @@
             {
               "gameId": "task.na.b.12",
               "id": "ark_61",
-              "name": "MK17 Proficiency",
+              "name": "Show of Force: MK17",
               "corpId": "ark"
             }
           ],
@@ -5777,7 +5777,7 @@
             {
               "gameId": "task.na.b.12",
               "id": "ark_61",
-              "name": "MK17 Proficiency",
+              "name": "Show of Force: MK17",
               "corpId": "ark"
             }
           ],
@@ -5797,7 +5797,7 @@
             {
               "gameId": "task.na.b.12",
               "id": "ark_61",
-              "name": "MK17 Proficiency",
+              "name": "Show of Force: MK17",
               "corpId": "ark"
             }
           ],
@@ -5911,7 +5911,7 @@
             {
               "gameId": "task.na.a.13",
               "id": "ark_48",
-              "name": "Show of Force IV: AUG",
+              "name": "Show of Force: AUG",
               "corpId": "ark"
             }
           ],
@@ -5931,7 +5931,7 @@
             {
               "gameId": "task.na.a.13",
               "id": "ark_48",
-              "name": "Show of Force IV: AUG",
+              "name": "Show of Force: AUG",
               "corpId": "ark"
             }
           ],
@@ -5951,7 +5951,7 @@
             {
               "gameId": "task.na.a.13",
               "id": "ark_48",
-              "name": "Show of Force IV: AUG",
+              "name": "Show of Force: AUG",
               "corpId": "ark"
             }
           ],
@@ -6078,7 +6078,7 @@
             {
               "gameId": "task.gunsmith.m05",
               "id": "gunsmith_10",
-              "name": "The Last Screw Before Iron Wolf",
+              "name": "Quick Aim",
               "corpId": "gunsmith"
             }
           ],
@@ -6477,7 +6477,7 @@
             {
               "gameId": "task.wp.a.02",
               "id": "regiment_36",
-              "name": "Rebellious Reporter",
+              "name": "Paparazzi Rebellion",
               "corpId": "regiment"
             }
           ],
@@ -6610,7 +6610,7 @@
             {
               "gameId": "task.gunsmith.m11",
               "id": "gunsmith_20",
-              "name": "White Virus",
+              "name": "Purge Protocol",
               "corpId": "gunsmith"
             }
           ],
@@ -6743,7 +6743,7 @@
             {
               "gameId": "task.wp.b.09",
               "id": "regiment_41",
-              "name": "Hair Care",
+              "name": "Personal Grooming",
               "corpId": "regiment"
             }
           ],
@@ -6763,7 +6763,7 @@
             {
               "gameId": "task.wp.b.09",
               "id": "regiment_41",
-              "name": "Hair Care",
+              "name": "Personal Grooming",
               "corpId": "regiment"
             }
           ],
@@ -6783,7 +6783,7 @@
             {
               "gameId": "task.wp.b.09",
               "id": "regiment_41",
-              "name": "Hair Care",
+              "name": "Personal Grooming",
               "corpId": "regiment"
             }
           ],
@@ -7030,7 +7030,7 @@
             {
               "gameId": "task.wp.c.05",
               "id": "regiment_47",
-              "name": "Keep the Hair Sharp",
+              "name": "Hair Comes First",
               "corpId": "regiment"
             }
           ],
@@ -7050,7 +7050,7 @@
             {
               "gameId": "task.wp.c.05",
               "id": "regiment_47",
-              "name": "Keep the Hair Sharp",
+              "name": "Hair Comes First",
               "corpId": "regiment"
             }
           ],
@@ -7070,7 +7070,7 @@
             {
               "gameId": "task.wp.c.05",
               "id": "regiment_47",
-              "name": "Keep the Hair Sharp",
+              "name": "Hair Comes First",
               "corpId": "regiment"
             }
           ],
@@ -7622,7 +7622,7 @@
             {
               "gameId": "task.gunsmith.m13",
               "id": "gunsmith_22",
-              "name": "Smuggling Route: Surveillance II",
+              "name": "Blind Spot",
               "corpId": "gunsmith"
             }
           ],
@@ -7760,7 +7760,7 @@
             {
               "gameId": "task.gunsmith.m14",
               "id": "gunsmith_23",
-              "name": "Data Smuggling",
+              "name": "Encrypted Lead",
               "corpId": "gunsmith"
             }
           ],
@@ -8062,7 +8062,7 @@
             {
               "gameId": "task.na.a.10",
               "id": "ark_45",
-              "name": "Deep Roots I",
+              "name": "Twists and Turns",
               "corpId": "ark"
             }
           ],
@@ -8886,7 +8886,7 @@
             {
               "gameId": "task.gunsmith.m15",
               "id": "gunsmith_24",
-              "name": "White Recorder Retrieval",
+              "name": "Communication Recovery",
               "corpId": "gunsmith"
             }
           ],
@@ -9016,7 +9016,7 @@
             {
               "gameId": "task.gunsmith.m16",
               "id": "gunsmith_25",
-              "name": "The Real Iron Wolf",
+              "name": "★ Real Iron Wolf",
               "corpId": "gunsmith"
             }
           ],
@@ -9415,7 +9415,7 @@
             {
               "gameId": "task.wp.a.10",
               "id": "regiment_39",
-              "name": "My Favourite: FAL",
+              "name": "My Favorite: FAL",
               "corpId": "regiment"
             }
           ],
@@ -9535,7 +9535,7 @@
             {
               "gameId": "task.wp.b.12",
               "id": "regiment_16",
-              "name": "The Best Can",
+              "name": "Best Canned Food",
               "corpId": "regiment"
             }
           ],
@@ -9555,7 +9555,7 @@
             {
               "gameId": "task.wp.b.12",
               "id": "regiment_16",
-              "name": "The Best Can",
+              "name": "Best Canned Food",
               "corpId": "regiment"
             }
           ],
@@ -9575,7 +9575,7 @@
             {
               "gameId": "task.wp.b.12",
               "id": "regiment_16",
-              "name": "The Best Can",
+              "name": "Best Canned Food",
               "corpId": "regiment"
             }
           ],
@@ -10111,7 +10111,7 @@
             {
               "gameId": "task.na.a.02",
               "id": "ark_37",
-              "name": "Rangefinder Scope",
+              "name": "A Different Angle",
               "corpId": "ark"
             }
           ],
@@ -10137,7 +10137,7 @@
             {
               "gameId": "task.na.a.02",
               "id": "ark_37",
-              "name": "Rangefinder Scope",
+              "name": "A Different Angle",
               "corpId": "ark"
             }
           ],
@@ -10157,7 +10157,7 @@
             {
               "gameId": "task.na.a.02",
               "id": "ark_37",
-              "name": "Rangefinder Scope",
+              "name": "A Different Angle",
               "corpId": "ark"
             }
           ],
@@ -10177,7 +10177,7 @@
             {
               "gameId": "task.na.a.02",
               "id": "ark_37",
-              "name": "Rangefinder Scope",
+              "name": "A Different Angle",
               "corpId": "ark"
             }
           ],
@@ -10458,7 +10458,7 @@
             {
               "gameId": "task.na.c.03",
               "id": "ark_3",
-              "name": "Recon 1",
+              "name": "Intelligence Gathering",
               "corpId": "ark"
             }
           ],
@@ -10478,7 +10478,7 @@
             {
               "gameId": "task.na.c.03",
               "id": "ark_3",
-              "name": "Recon 1",
+              "name": "Intelligence Gathering",
               "corpId": "ark"
             }
           ],
@@ -10498,7 +10498,7 @@
             {
               "gameId": "task.na.c.03",
               "id": "ark_3",
-              "name": "Recon 1",
+              "name": "Intelligence Gathering",
               "corpId": "ark"
             }
           ],
@@ -10518,7 +10518,7 @@
             {
               "gameId": "task.na.c.03",
               "id": "ark_3",
-              "name": "Recon 1",
+              "name": "Intelligence Gathering",
               "corpId": "ark"
             }
           ],
@@ -11388,7 +11388,7 @@
             {
               "gameId": "task.wp.a.12",
               "id": "regiment_30",
-              "name": "Forever in a Flash",
+              "name": "Frozen in Time",
               "corpId": "regiment"
             }
           ],
@@ -11508,7 +11508,7 @@
             {
               "gameId": "task.gunsmith.m06",
               "id": "gunsmith_12",
-              "name": "Parts Upgrade",
+              "name": "Tools of the Trade",
               "corpId": "gunsmith"
             }
           ],

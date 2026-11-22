@@ -1359,7 +1359,7 @@
             {
               "gameId": "task.gear.a.04",
               "id": "forge_8",
-              "name": "Hidden in Plain Sight",
+              "name": "Right Under Their Nose",
               "corpId": "forge"
             }
           ],
@@ -2318,7 +2318,7 @@
             {
               "gameId": "task.gear.b.07",
               "id": "forge_27",
-              "name": "Hack to Play",
+              "name": "Top Hacker",
               "corpId": "forge"
             }
           ],
@@ -2535,7 +2535,7 @@
             {
               "gameId": "task.gear.sq.03",
               "id": "forge_44",
-              "name": "Stakeout",
+              "name": "Casting the Net",
               "corpId": "forge"
             }
           ],
@@ -4796,7 +4796,7 @@
             {
               "gameId": "task.gear.a.07",
               "id": "forge_31",
-              "name": "The Collector",
+              "name": "Collector",
               "corpId": "forge"
             }
           ],
@@ -6016,7 +6016,7 @@
             {
               "gameId": "task.gear.c.04",
               "id": "forge_37",
-              "name": "Wyeth Farm",
+              "name": "Worth the Price",
               "corpId": "forge"
             }
           ],
